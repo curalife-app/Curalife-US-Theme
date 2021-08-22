@@ -1,0 +1,362 @@
+<div class="choose-package">
+        <div class="container">
+            <div class="sub-title wow fadeInUp">
+                <h2>{{ section.settings.title }}</h2>
+            </div>
+            <div class="data">
+                <div class="prod-img wow fadeInUp">
+                    <div class="label-wrap">
+                      
+                        <div class="info-label price">
+                            <p><ls-static-638276>As low as</ls-static-638276>
+                              <span class="current-price {% if section.settings.default_pack == "6_pack" %}active{% endif %}"><span class="money">{{ all_products["curalin-6-pack"].price | minus: 2500 | divided_by: 6 | money }}</span></span>
+                              <span class="current-price {% if section.settings.default_pack == "3_pack" %}active{% endif %}"><span class="money">{{ all_products["curalin-3-pack"].price | minus: 2500 | divided_by: 3 | money }}</span></span>
+                              <span class="current-price {% if section.settings.default_pack == "1_pack" %}active{% endif %}"><span class="money">{{ all_products["curalin"].price | minus: 2500 | money }}</span></span>
+                              {% comment %}
+                              <span class="current-price {% if section.settings.default_pack == "6_pack" %}active{% endif %}"><span class="money">{{ all_products["curalin-6-pack"].price | times : 0.9 | divided_by: 6 | money }}</span></span>
+                              <span class="current-price {% if section.settings.default_pack == "3_pack" %}active{% endif %}"><span class="money">{{ all_products["curalin-3-pack"].price | times : 0.9 | divided_by: 3 | money }}</span></span>
+                              <span class="current-price {% if section.settings.default_pack == "1_pack" %}active{% endif %}"><span class="money">{{ all_products["curalin"].price | times : 0.9 | money }}</span></span>
+                              {% endcomment %}
+                              <ls-static-901349>per bottle</ls-static-901349></p>
+                        </div>
+                     
+                      {% unless section.settings.shipping == blank %}
+                        <div class="info-label shipping">
+                            <p><span class="icon-shipping"></span>{{ section.settings.shipping }}</p>
+                        </div>
+                      {% endunless %}
+                    </div>
+                    <div class="bg">
+                        <img class="lazyload" data-src="{{ section.settings.img_bg | img_url : 'master' }}" alt="">
+                    </div>
+                    <div class="img-list">
+                        <span {% if section.settings.default_pack == "6_pack" %}class="active"{% endif %}>
+                            <img class="lazyload" data-src="{{ section.settings.img_6p | img_url : 'master' }}" alt="">
+                        </span>
+                        <span {% if section.settings.default_pack == "3_pack" %}class="active"{% endif %}>
+                            <img class="lazyload" data-src="{{ section.settings.img_3p | img_url : 'master' }}" alt="">
+                        </span>
+                        <span {% if section.settings.default_pack == "1_pack" %}class="active"{% endif %}>
+                            <img class="lazyload" data-src="{{ section.settings.img_1p | img_url : 'master' }}" alt="">
+                        </span>
+                    </div>
+                </div>
+                <div id="od_now" class="package-info wow fadeInUp">
+                    <div class="info-title">
+                        <h3>{{ section.settings.options_title }}</h3>
+                    </div>
+                    <div class="options-wrap">
+                        <div class="options-text">
+                            <p>{{ section.settings.options_subtitle }}</p>
+                        </div>
+                        <div class="package-drop">
+                            <div class="active-option">
+                              <p>{% if section.settings.default_pack == "6_pack" %}{{ section.settings.name_6p}}{% endif %}
+                              {% if section.settings.default_pack == "3_pack" %}{{ section.settings.name_3p}}{% endif %}
+                              {% if section.settings.default_pack == "1_pack" %}{{ section.settings.name_1p}}{% endif %}
+                                </p>
+                            </div>
+                            <div class="options-list">
+                                <label>
+                                    <input type="radio" {% if section.settings.default_pack == "6_pack" %} class="checked"{% endif %}>
+                                    <span class="option-wrap">
+                                    <span class="name">{{ section.settings.name_6p}}</span>
+                                    <span class="price"><span class="money">{{ all_products["curalin-6-pack"].price | minus: 2500 | divided_by: 6 | money }}</span> <ls-static-620639>per bottle!</ls-static-620639></span>
+                                    <span class="save"><ls-static-644175>20% Discount</ls-static-644175></span>
+                                      <span class="save"><ls-static-847840>Save</ls-static-847840> {{ 2500 | money }}</span>
+                                      {% comment %}
+                                      <span class="price"><span class="money">{{ all_products["curalin-6-pack"].price | times : 0.9 | divided_by: 6 | money }}</span> per bottle!</span>
+                                    <span class="save">Save {{ all_products["curalin-6-pack"].compare_at_price | minus: all_products["curalin-6-pack"].price | times: 100.0 | divided_by: all_products["curalin-6-pack"].compare_at_price | money_without_currency | times: 100 | remove: '.0' | plus: 10 }}%</span>
+                                      {% endcomment %}
+                                </span>
+                                </label>
+                                <label>
+                                    <input type="radio" {% if section.settings.default_pack == "3_pack" %}class="checked"{% endif %}>
+                                    <span class="option-wrap">
+                                    <span class="name">{{ section.settings.name_3p}}</span>
+                                    <span class="price"><span class="money">{{ all_products["curalin-3-pack"].price | minus: 2500 | divided_by: 3 | money }}</span> <ls-static-885042>per bottle</ls-static-885042></span>
+                                    <span class="save"><ls-static-215966>10% Discount</ls-static-215966></span>
+                                      <span class="save"><ls-static-913944>Save</ls-static-913944> {{ 2500 | money }}</span>
+                                      {% comment %}
+                                      <span class="price"><span class="money">{{ all_products["curalin-3-pack"].price | times : 0.9 | divided_by: 3 | money }}</span> per bottle</span>
+                                    <span class="save">Save {{ all_products["curalin-3-pack"].compare_at_price | minus: all_products["curalin-3-pack"].price | times: 100.0 | divided_by: all_products["curalin-3-pack"].compare_at_price | money_without_currency | times: 100 | remove: '.0'| plus: 10 }}%</span>
+                                      {% endcomment %}
+                                </span>
+                                </label>
+                                <label>
+                                    <input type="radio" {% if section.settings.default_pack == "1_pack" %}class="checked"{% endif %}>
+                                    <span class="option-wrap">
+                                    <span class="name">{{ section.settings.name_1p}}</span>
+                                    <span class="price"><span class="money">{{ all_products["curalin"].price | minus: 2500 | money }}</span></span>
+                                    <span class="save"><ls-static-229895>Save</ls-static-229895> {{ 2500 | money }}</span>
+                                      {% comment %}
+                                    <span class="price"><span class="money">{{ all_products["curalin"].price | times : 0.9 | money }}</span></span>
+                                    <span class="save">Save 10%</span>
+                                      {% endcomment %}
+                                </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="option-tabs">
+                            <div class="option-item {% if section.settings.default_pack == "6_pack" %}active{% endif %}">
+                                <div class="chosen-info">
+                                    <table class="mobile-info">
+                                        <tbody>
+                                        <tr>
+                                          <td><span class="money"><b>{{ all_products["curalin-6-pack"].price | minus: 2500 | divided_by: 6 | money }}</b></span> <b><ls-static-6260>per bottle</ls-static-6260></b></td>
+                                            <td><ls-static-546794>Save</ls-static-546794> {{ 2500 | money }}</td>
+                                        {% comment %}
+                                          <td><span class="money"><b>{{ all_products["curalin-6-pack"].price | times : 0.9 | divided_by: 6 | money }}</b></span> <b>per bottle</b></td>
+                                            <td>Save {{ all_products["curalin-6-pack"].compare_at_price | minus: all_products["curalin-6-pack"].price | times: 100.0 | divided_by: all_products["curalin-6-pack"].compare_at_price | money_without_currency | times: 100 | remove: '.0' | plus: 10 }}%</td>
+                                          {% endcomment %}
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                  <table>
+                                        <tbody>
+                                        <tr>
+                                            <td><ls-static-832570>Retail price:</ls-static-832570></td>
+                                          <td><span class="money"><strike>{{ all_products["curalin-6-pack"].compare_at_price | money }}</strike></span></td>
+                                          </tr>
+                                        <tr>
+                                            <td><ls-static-92796>6-pack price:</ls-static-92796></td>
+                                            <td><span class="money"><strike>{{ all_products["curalin-6-pack"].price | money }}</strike></span></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td><ls-static-921577>Referral Price:</ls-static-921577></td>
+                                            <td><span class="money">{{ all_products["curalin-6-pack"].price | minus: 2500 | money }}</span></td>
+                                        {% comment %}
+                                          <td><span class="money">{{ all_products["curalin-6-pack"].price | times : 0.9 | money }}</span></td>
+                                          {% endcomment %}
+                                          </tr>
+                                        </tfoot>
+                                    </table>
+                                    <p><ls-static-949456>Instant Savings:</ls-static-949456> <span class="money">{{ all_products["curalin-6-pack"].price | minus: 2500 | minus: all_products["curalin-6-pack"].compare_at_price | abs | money }}</span></p>
+                              {% comment %}
+                                          <p>Instant Savings: <span class="money">{{ all_products["curalin-6-pack"].price | times : 0.9 | minus: all_products["curalin-6-pack"].compare_at_price | abs | money }}</span></p>
+                                          {% endcomment %}  
+                                    
+                              </div>
+                                <form method="post" action="/cart/add">
+                                    <input type="hidden" name="id" value="{{ all_products["curalin-6-pack"].first_available_variant.id }}">
+                                    <button type="submit" name="add" class="main-btn big radius orange"><ls-static-965093>Order Now</ls-static-965093>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="option-item {% if section.settings.default_pack == "3_pack" %}active{% endif %}">
+                                <div class="chosen-info">
+                                    <table class="mobile-info">
+                                        <tbody>
+                                        <tr>
+                                          <td><span class="money"><b>{{ all_products["curalin-3-pack"].price | minus: 2500 | divided_by: 3 | money }}</b></span> <b><ls-static-948553>per bottle</ls-static-948553></b></td>
+                                            <td><ls-static-160228>Save</ls-static-160228> {{ 2500 | money }}</td>
+                                        {% comment %}
+                                          <td><span class="money"><b>{{ all_products["curalin-3-pack"].price | times : 0.9 | divided_by: 3 | money }}</b></span> <b>per bottle</b></td>
+                                          <td>Save {{ all_products["curalin-3-pack"].compare_at_price | minus: all_products["curalin-3-pack"].price | times: 100.0 | divided_by: all_products["curalin-3-pack"].compare_at_price | money_without_currency | times: 100 | remove: '.0' | plus: 10 }}%</td>
+                                          {% endcomment %}
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td><ls-static-7600>Retail price:</ls-static-7600></td>
+                                          <td><span class="money"><strike>{{ all_products["curalin-3-pack"].compare_at_price | money }}</strike></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><ls-static-496198>3-pack price:</ls-static-496198></td>
+                                            <td><span class="money"><strike>{{ all_products["curalin-3-pack"].price | money }}</strike></span></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td><ls-static-819388>Referral Price:</ls-static-819388></td>
+                                            <td><span class="money">{{ all_products["curalin-3-pack"].price | minus: 2500 | money }}</span></td>
+                                          {% comment %}
+                                          <td><span class="money">{{ all_products["curalin-3-pack"].price | times : 0.9 | money }}</span></td>
+                                          {% endcomment %}
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    <p><ls-static-330129>Instant Savings:</ls-static-330129> <span class="money">{{ all_products["curalin-3-pack"].price | minus: 2500 | minus: all_products["curalin-3-pack"].compare_at_price | abs | money }}</span></p>
+                              {% comment %}
+                                          <p>Instant Savings: <span class="money">{{ all_products["curalin-3-pack"].price | times : 0.9 | minus: all_products["curalin-3-pack"].compare_at_price | abs | money }}</span></p>
+                                          {% endcomment %}
+                              </div>
+                                <form method="post" action="/cart/add">
+                                    <input type="hidden" name="id" value="{{ all_products["curalin-3-pack"].first_available_variant.id }}">
+                                    <button type="submit" name="add" class="main-btn big radius orange"><ls-static-829611>Order Now</ls-static-829611>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="option-item {% if section.settings.default_pack == "1_pack" %}active{% endif %}">
+                                <div class="chosen-info">
+                                    <table class="mobile-info">
+                                        <tbody>
+                                        <tr>
+                                          <td><span class="money"><b>{{ all_products["curalin"].price | minus: 2500 | money }}</b></span> <b><ls-static-158267>per bottle</ls-static-158267></b></td>
+                                            <td><ls-static-127310>Save</ls-static-127310> {{ 2500 | money }}</td>
+                                          {% comment %}
+                                          <td><span class="money"><b>{{ all_products["curalin"].price | times : 0.9 | money }}</b></span> <b>per bottle</b></td>
+                                            <td>Save 10%</td>
+                                          {% endcomment %}
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td><ls-static-977898>Retail price:</ls-static-977898></td>
+                                          <td><span class="money"><strike>{{ all_products["curalin"].price | money }}</strike></span></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td><ls-static-452729>Referral Price:</ls-static-452729></td>
+                                            <td><span class="money">{{ all_products["curalin"].price | minus: 2500 | money }}</span></td>
+                                          {% comment %}
+                                          <td><span class="money">{{ all_products["curalin"].price | times : 0.9 | money }}</span></td>
+                                          {% endcomment %}
+                                        </tr>
+                                          <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    <p><ls-static-987572>Instant Savings:</ls-static-987572> <span class="money">{{ all_products["curalin"].price | minus: 2500 | minus: all_products["curalin"].price | abs | money }}</span></p>
+                                  {% comment %}
+                                          <p>Instant Savings: <span class="money">{{ all_products["curalin"].price | times : 0.9 | minus: all_products["curalin"].price | abs | money }}</span></p>
+                                          {% endcomment %}
+                              </div>
+                                <form method="post" action="/cart/add">
+                                    <input type="hidden" name="id" value="{{ all_products["curalin"].first_available_variant.id }}">
+                                    <button type="submit" name="add" class="main-btn big radius orange"><ls-static-926167>Order Now</ls-static-926167>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="bottom-text">
+                            {{ section.settings.bottom_text }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% schema %}
+    {
+    "name": "Discount Package",
+    "settings": [
+    {
+    "type": "textarea",
+    "id": "title",
+    "label": "Title"
+    },
+    {
+    "type": "image_picker",
+    "id": "img_bg",
+    "label": "Background Image"
+    },
+    {
+    "type": "textarea",
+    "id": "shipping",
+    "label": "Shipping Label"
+    },
+{
+    "type": "html",
+    "id": "bottom_text",
+    "label": "Bottom Text"
+    },
+
+{
+    "type": "text",
+    "id": "options_title",
+    "label": "Options Title"
+    },
+{
+    "type": "text",
+    "id": "options_subtitle",
+    "label": "Options Subtitle"
+    },
+
+
+
+{
+"type": "radio",
+"id": "default_pack",
+"label": "Default Pack",
+"options": [
+{
+"value": "1_pack",
+"label": "1 Pack"
+},
+{
+"value": "3_pack",
+"label": "3 Pack"
+},
+{
+"value": "6_pack",
+"label": "6 Pack"
+}
+],
+"default": "3_pack"
+},
+
+
+    {
+    "type": "header",
+    "content": "1 Pack"
+    },
+    {
+    "type": "text",
+    "id": "name_1p",
+    "label": "1 Pack Name"
+    },
+    {
+    "type": "image_picker",
+    "id": "img_1p",
+    "label": "1 Pack Image"
+    },
+
+    {
+    "type": "header",
+    "content": "3 Pack"
+    },
+    {
+    "type": "text",
+    "id": "name_3p",
+    "label": "3 Pack Name"
+    },
+    {
+    "type": "image_picker",
+    "id": "img_3p",
+    "label": "3 Pack Image"
+    },
+
+    {
+    "type": "header",
+    "content": "6 Pack"
+    },
+    {
+    "type": "text",
+    "id": "name_6p",
+    "label": "6 Pack Name"
+    },
+    {
+    "type": "image_picker",
+    "id": "img_6p",
+    "label": "6 Pack Image"
+    }
+
+
+
+
+    ]
+    }
+{% endschema %}

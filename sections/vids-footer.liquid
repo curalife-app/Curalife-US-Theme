@@ -1,0 +1,94 @@
+{% if section.settings.copyright != blank or section.settings.facebook_link != blank or section.settings.insta != blank or section.settings.twitter != blank %}	
+  <style>
+    footer div.copy-txt{
+    	color: #efefef;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 22px;
+    }
+    footer div.terms-txt {
+        color: #efefef;
+        font-size: 12px;
+        font-weight: 300;
+        text-align: center;
+        width: 100%;
+        line-height: 16px;
+        max-width: 1000px;
+      	margin: 0 auto;
+    }
+    footer div.terms-txt p:first-child{
+    	margin-bottom: 12px;
+    }
+  </style>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="top-ftr">
+            <div class="social">
+              {% if section.settings.facebook_link != blank or section.settings.insta != blank or section.settings.twitter != blank %}	
+                <ul>
+                  <li> <a href="https://www.facebook.com/curalife/" title="Facebook" target="_blank"> <img class="social1 advert-img" src="//cdn.shopify.com/s/files/1/0495/2621/0723/t/8/assets/facebook-icon.png?v=1611312852" alt="Facebook" title="Facebook"> </a>
+                  </li>
+                  <li> <a href="https://twitter.com/CuraLife" title="Twitter" target="_blank"> <img class="social2 advert-img" src="//cdn.shopify.com/s/files/1/0495/2621/0723/t/8/assets/twitter-icon.png?v=1611312991" alt="Twitter" title="Twitter"> </a>
+                  </li>
+                  <li> <a href="https://www.instagram.com/curalife/" title="Instagram" target="_blank"> <img class="social3 advert-img" src="//cdn.shopify.com/s/files/1/0495/2621/0723/t/8/assets/instagram-icon.png?v=1611313010" alt="Instagram" title="Instagram"> </a>
+                  </li>
+                </ul>
+              {% endif %}
+              {% if section.settings.copyright %}
+                  <div class="copy-txt">{{ section.settings.copyright }}</div>
+              {% endif %}
+              <div class="terms-txt">
+             		{{ section.settings.subheading }}
+                	{{ section.settings.footer_bottom }}
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+		{
+          "type": "text",
+          "id": "facebook_link",
+          "label": "Facebook Link"
+        },
+		{
+          "type": "text",
+          "id": "twitter",
+          "label": "Twitter Link"
+        },
+		{
+          "type": "text",
+          "id": "insta",
+          "label": "Instagram Link"
+        },
+		{
+          "type": "richtext",
+          "id": "copyright",
+          "label": "Copyright"
+        },
+		{
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Subheading"
+        },
+		{
+          "type": "richtext",
+          "id": "footer_bottom",
+          "label": "Description"
+        }
+	]
+  }
+{% endschema %}
+

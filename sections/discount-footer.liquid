@@ -1,0 +1,57 @@
+    <div class="bottom-info">
+        <div class="container">
+          {% if section.settings.facebook != blank or section.settings.twitter != blank or section.settings.instagram != blank %}
+            <div class="social-links wow fadeInUp">
+                <p>
+                    {% unless section.settings.facebook == blank %}<a href="{{ section.settings.facebook }}" target="_blank"><span class="icon-fb"></span></a>{% endunless %}
+                    {% unless section.settings.twitter == blank %}<a href="{{ section.settings.twitter }}" target="_blank"><span class="icon-tw"></span></a>{% endunless %}
+                    {% unless section.settings.instagram == blank %}<a href="{{ section.settings.instagram }}" target="_blank"><span class="icon-insta"></span></a>{% endunless %}
+                </p>
+            </div>
+          {% endif %}
+            <div class="text wow fadeInUp">
+                <p>{{ section.settings.copyright }}</p>
+                <p><span>{{ section.settings.agreement }}</span></p>
+                <p>{{ section.settings.text }}</p>
+            </div>
+        </div>
+    </div>
+  
+
+{% schema %}
+    {
+    "name": "Bottom Text",
+    "settings": [
+    {
+    "type": "url",
+    "id": "facebook",
+    "label": "Facebook Link"
+    },
+{
+    "type": "url",
+    "id": "twitter",
+    "label": "Twitter Link"
+    },
+{
+    "type": "url",
+    "id": "instagram",
+    "label": "Instagram Link"
+    },
+{
+    "type": "textarea",
+    "id": "copyright",
+    "label": "Copyright"
+    },
+{
+    "type": "textarea",
+    "id": "agreement",
+    "label": "Agreement Text"
+    },
+{
+    "type": "textarea",
+    "id": "text",
+    "label": "Text"
+    }
+    ]
+    }
+{% endschema %}

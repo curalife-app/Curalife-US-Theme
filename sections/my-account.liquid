@@ -1,0 +1,404 @@
+
+{% if customer %}
+<div class="account-page">
+    <div class="container">
+        <div class="mini-wrap" id="tabs">
+            <div class="page-title">
+                <div class="sub-title">
+                    <h1>{{section.settings.acnt_titl}}</h1>
+                </div>
+            </div>
+            <div class="account-content">
+                <div class="account-menu">
+                    <div class="active-item"><p></p></div>
+                    <div class="menu-list" >
+                        <ul>
+                            <li class=""><a href="#a"><span class="icon-user"></span>My
+                                Profile</a></li>
+                            <li><a href="#b"><span class="icon-orders"></span>Orders</a></li>
+                            <!-- <li><a href="#c"><span class="icon-payment"></span>Manage Payments</a></li> -->
+                            <!--  <li><a href="#d"><span class="icon-refer-friend"></span>Refer a Friend</a> -->
+                            </li>
+                             <li><a href="#e"><span class="icon-loyalty"></span>Loyalty</a></li>
+                            <li><a href="#f"><span class="icon-password"></span>Change password</a></li>
+                            <a class="lgoutlnk" href="/account/logout" ><span class="icon-logout"></span>Logout</a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="account-data"> 
+                    <div class="data-row" id="a">
+                        <div class="data-wrap with-border">
+                            <div class="data-title">
+                                <h3>Contact Information</h3>
+                            </div>
+                            <div class="data-content">
+                                <div class="contact-info">
+                                    <ul>
+                                        
+                                        <li><p>First Name<span>{{ customer.first_name }}</span></p></li>
+                                        <li><p>Last Name<span>{{ customer.last_name }}</span></p></li>
+                                        <li><p>Email<span>{{ customer.email }}</span></p></li>
+                                        <li><p>Password<span>{{ customer.password }}</span></p></li>
+                                        
+                                    </ul>
+                                </div>
+                                <div class="data-btn">
+                                    <a href="/account/addresses" class="main-btn blank">Edit <i
+                                            class="icon-edit"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-wrap with-border">
+                            <div class="data-title">
+                                <h3>Shipping Addresses</h3>
+                            </div>
+                            <div class="data-content">
+                                <div class="shipping-addresses">
+                                    <div class="empty-text">
+                                        <p><span class="icon-shipping"></span>You don't have a<br> shipping address yet.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="data-btn">
+                                    <a href="/account/addresses" class="main-btn blank">add adress</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-wrap" id="b">
+                        <div class="data-title">
+                            <h3>Your Orders</h3>
+                        </div>
+                        {% if order.attributes %}
+                        <div class="data-list">
+                            <ul>
+                                
+                                {% for a in order.lineItems %}
+
+                                <li>
+                                    <div class="order-head">
+                                        <div class="number">
+                                            <p>Order {{ order.order_number }}</p>
+                                        </div>
+                                        <div class="date">
+                                            <p>{{ order.created_at | date: format: 'abbreviated_date' }}</p>
+                                        </div>
+                                        <div class="more">
+                                            <p><a href="javascript:void(0)">Dowload invoice</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="order-body">
+                                        <div class="order-item">
+                                            <div class="rows-wrap">
+                                                <div class="img-wrap">
+                                                    <span><img src="images/product/slider/01.1.png" alt=""></span>
+                                                </div>
+                                                <div class="name">
+                                                    <p>{{ product.title }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="value">
+                                                <p>{{a.sku}} -capsule bottle</p>
+                                            </div>
+                                            <div class="quantity">
+                                                <p>Quantity: ( {{a.quantity}} )</p>
+                                            </div>
+                                            <div class="price">
+                                                <p>{{order.total_price}}</p>
+                                            </div>
+                                            <div class="status done">
+                                                <p><span>{{ order.fulfillment_status }}</span></p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="view-details d-mobile">
+                                        <div class="more-btn">
+                                            <p><a href="javascript:void(0)">Dowload invoice</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                               {% endfor %}
+                             
+                            </ul>
+                        </div>
+                        {% else %}
+                                <div class="data-content">
+                                <div class="empty-content">
+                               <div class="empty-text">
+                                   <p><span class="icon-smile"></span>You haven't placed any orders yet.</p>
+                                   <a href="{{section.settings.ord_btnlink}}" class="main-btn blank">SHOP NOW</a>
+                               </div>
+                           </div>
+                       </div>
+                           {% endif %}
+                    </div>
+                   <!--  <div class="data-wrap" id="c">
+                        <div class="data-title">
+                            <h3>Manage Payments</h3>
+                        </div>
+                        <div class="data-list">
+                            <ul>
+                                <li>
+                                    <div class="payments-head">
+                                        <div class="number">
+                                            <p># 1 <span><img src="images/visa.svg" alt=""></span></p>
+                                        </div>
+                                        <div class="active-payment">
+                                            <label><input type="radio" name="set-default" checked>
+                                                <span class="label-wrap">
+                                                    <span class="active">Default Card</span><span class="set-active">Set Default</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="payments-body">
+                                        <div class="payments-item">
+                                            <div class="card-number">
+                                                <p><span>1234</span></p>
+                                            </div>
+                                            <div class="exp-date">
+                                                <p>05/23</p>
+                                            </div>
+                                            <div class="name">
+                                                <p>Thomas Jhones</p>
+                                            </div>
+                                            <div class="delete">
+                                                <p><a href="javascript:void(0)">Delete card</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="payments-head">
+                                        <div class="number">
+                                            <p># 2 <span><img src="images/master-card.svg" alt=""></span></p>
+                                        </div>
+                                        <div class="active-payment">
+                                            <label><input type="radio" name="set-default">
+                                                <span class="label-wrap">
+                                                    <span class="active">Default Card</span><span class="set-active">Set Default</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="payments-body">
+                                        <div class="payments-item">
+                                            <div class="card-number">
+                                                <p><span>1451</span></p>
+                                            </div>
+                                            <div class="exp-date">
+                                                <p>07/22</p>
+                                            </div>
+                                            <div class="name">
+                                                <p>Thomas Jhones</p>
+                                            </div>
+                                            <div class="delete">
+                                                <p><a href="javascript:void(0)">Delete card</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="list-btn">
+                                <button type="button" class="main-btn blank">add credit card</button>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="data-wrap with-border" id="d">
+                        <div class="data-title">
+                            <h3>Refer a Partner</h3>
+                        </div>
+                        <div class="data-content">
+                            <div class="form-wrap">
+                                <div class="form-text">
+                                    <span class="icon-notice"></span>
+                                    <p>If you have seen your patients or customers
+                                        succeed with CuraLin, we’d love for you to help spread the word by telling other
+                                        doctors, health practitioners, retailers, and distributors about your
+                                        experience.</p>
+                                </div>
+                                <form>
+                                    <div class="form-fields">
+                                        <label class="full-size">
+                                            <textarea placeholder="Who do you want to tell about CuraLin? *"></textarea>
+                                        </label>
+                                        <label class="full-size">
+                                            <textarea placeholder="What’s their email address? *"></textarea>
+                                        </label>
+                                        <label class="full-size">
+                                            <textarea placeholder="What’s their email address? *"></textarea>
+                                        </label>
+                                        <label class="full-size">
+                                            <textarea placeholder="Phone No. *"></textarea>
+                                        </label>
+                                        <label class="full-size">
+                                                <textarea class="more-text"
+                                                        placeholder="Please tell us a bit more about the person you’re referring. ?"></textarea>
+                                        </label>
+                                    </div>
+                                    <div class="submit-wrap">
+                                        <div class="submit-form">
+                                            <button type="button" class="main-btn">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="data-wrap" id="e">
+                        <div class="data-title">
+                            <h3>Rewards history</h3>
+                        </div>
+                        <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
+
+                        <script>
+                        $(document).on("swell:setup", function(){
+                            var customerDetails = swellAPI.getCustomerDetails();
+
+                            $("#custom-point-balance-ui").html(customerDetails.pointsBalance);
+                            $("#custom-referral-link-ui").html(customerDetails.referralLink);
+
+                            customerDetails.actionHistoryItems.forEach(function(item) {
+                             $("#custom-history-container").append(
+                              "<tr>" +
+                                "<td>" + item.date   + "</td>" +
+                                "<td>" +item.action + " </td>" +
+                                 "<td>" +item.points + " </td>" +
+                                "<td>" +item.status +
+                              "</td><tr>");
+                          });
+                          })
+                        </script>
+
+                        <div class="rewards-table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                    <th>Points</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody id="custom-history-container">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="data-wrap with-border" id="f">
+                        <div class="data-title">
+                            <h3>Change password</h3>
+                        </div>
+                        <div class="data-content">
+                            <div class="form-wrap">
+                                <div class="form-text">
+                                    <span class="icon-password"></span>
+                                </div>
+                                {% form 'reset_customer_password' %}
+                                    <div class="form-fields">
+                                        <label class="full-size">
+                                            <input type="password" placeholder="Old password" name="customer[old_password]">
+                                        </label>
+                                        <label class="full-size">
+                                            <input type="password" placeholder="New password" name="customer[new_password]">
+                                        </label>
+                                        <label class="full-size">
+                                            <input type="password" placeholder="Re-enter new password " name="customer[password_confirmation]">
+                                        </label>
+                                    </div>
+                                    <div class="submit-wrap">
+                                        <div class="submit-form">
+                                            <button type="submit" class="main-btn">Save</button>
+                                        </div>
+                                    </div>
+                                {% endform %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endif %}
+
+{% schema %}
+    {
+        "name": "My Account",
+        "settings": [
+            {
+                "type": "text",
+                "id": "acnt_titl",
+                "label": "Title",
+                "default": "Enter Title"
+            },
+            {
+                "type": "header", 
+                "content": "Order Section Start" 
+            },
+            
+            {
+                "id": "ord_btnlink",
+                "type": "url",
+                "label": "Button Link"
+            }
+            
+           
+        ],
+
+        "presets":[
+            {
+                "name": "My Account",
+                "category": "Account"
+            }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+<script >
+    $('#tabs')
+    .tabs();
+</script>
+<style>
+    .ui-tabs-active.ui-state-active a:before {
+    border-color: #01C6B2 !important;
+}
+
+.ui-tabs-active a {
+    color: #01C6B2 !important;
+}
+@media only screen and (min-width: 1591px){
+    a.lgoutlnk{
+        padding-left: 29px !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        padding-right: 5px !important;
+        font-size: 16px;
+    }
+}
+
+</style>

@@ -1,0 +1,52 @@
+    <div class="faq-section">
+        <div class="container">
+            <div class="sub-title wow fadeInUp">
+                <h2>{{ section.settings.title }}</h2>
+            </div>
+            <div class="faq-list wow fadeInUp">
+                <ul>
+                  {% for block in section.blocks %}
+                    <li>
+                        <div class="question">
+                            <h4>{{ block.settings.question }}</h4>
+                        </div>
+                        <div class="answer">
+                            <p>{{ block.settings.answer }}</p>
+                        </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+    {
+    "name": "FAQ",
+    "settings": [
+    {
+    "type": "textarea",
+    "id": "title",
+    "label": "Title"
+    }
+    ],
+    "blocks": [
+    {
+    "type": "team",
+    "name": "FAQ List",
+    "settings": [
+{
+    "type": "textarea",
+    "id": "question",
+    "label": "Question"
+    },
+    {
+    "type": "textarea",
+    "id": "answer",
+    "label": "Answer"
+    }
+    ]
+    }
+    ]
+    }
+{% endschema %}

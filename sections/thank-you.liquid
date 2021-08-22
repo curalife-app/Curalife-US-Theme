@@ -1,0 +1,62 @@
+<style>
+    .modal-content{
+        max-width: 100% !important;
+    }
+    .modal-content .modal-btn .main-btn{
+        max-width: 285px !important;
+    }
+</style>
+<div class="modal-content" id="thanks-modal">
+        <div class="modal-bg">
+            <div class="data-wrap">
+                <div class="modal-scroll">
+                    <div class="modal-title">
+                        <h3>{{settings.thnk_titl}}</h3>
+                    </div>
+                    <div class="modal-icon">
+                        <span class="icon-done"></span>
+                    </div>
+                    <div class="modal-text">
+                        <p>{{settings.thnk_desc}}</p>
+                    </div>
+                    <div class="modal-btn">
+                        
+                        <a href="https://curalife.com/" class="main-btn">CONTINUE TO HOMEPAGE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for line_item in order.line_items %}
+    {%- assign comma_list_append = ', ' -%}
+    {%- if forloop.last -%}
+    {%- assign comma_list_append = '' -%}
+    {%- endif -%}
+    {%- assign productIds = productIds | append: line_item.product.id | append: comma_list_append -%}
+    {% endfor %}
+    {% assign product_ids = productIds | split: ", " %}
+<script>
+
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+    'event': 'purchase',
+    'transectionID': '{{transaction.id}}',          //order ID
+    'content_type': 'product_group',
+    'content_ids': '[{{ productIds }}]',            //if multiple conttent are purchased add array of all products IDs
+     'value': '{{ checkout.total_price | money_without_currency }}',
+    'currency': 'USD',
+    'userId': '{{ checkout.customer.id }}',
+    'email': '{{ checkout.email }}',
+    'city': '{{checkout.shipping_address.city }}',
+    'country': '{{checkout.shipping_address.country_code }}',
+    'name': '{{ checkout.shipping_address.first_name }}',
+    'surname': '{{ checkout.shipping_address.last_name }}',
+    'phone_number': '{{checkout.shipping_address.phone }}',
+    'state': '{{checkout.shipping_address.province }}',       //state or province
+    'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
+    'num_items': '{{ line_items.size }}'
+
+ });
+
+</script>

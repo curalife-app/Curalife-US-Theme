@@ -1,0 +1,132 @@
+.capsule-usa-sec .cap-main{display:flex;flex-wrap:wrap;justify-content:space-between}
+main.blogs section.latest-article .blog h2.blog-title.col-xs-12.col-md-12.main-blog-tile {
+    padding: 0px 0 15px 0;
+}
+.newcura-shop-page nav.woocommerce-breadcrumb {
+    padding: 0 0px 0 15px;
+}
+.capsule-usa-sec .capsule-block{width:100%;display:flex;flex-wrap:wrap;overflow:hidden;border-radius:120px;flex:0 0 18%;max-width:18%}.ingredient_design{flex:0 0 20%;max-width:20%;border-right:2px solid #649296;height:400px}.cap-two{width:82px;height:40px}.caps.cap-three{width:85px;height:40px}.caps.cap-four{width:85px;height:40px}.caps.cap-five{width:109px;height:40px}.caps.cap-six{width:109px;height:40px}.caps.cap-seven{width:109px;height:40px}.caps.cap-eight{width:109px;height:40px}.caps.cap-nine{width:78px;height:40px}.caps.cap-ten{width:100%;height:45px}.cap-one{margin:3px 0 0 0;width:100%;height:44px}.capsule-usa-sec .cap-right .active img{opacity:1}.capsule-usa-sec .cap-left{flex:0 0 50%;max-width:50%}.ingredient_design .ingd{height:10%;position:relative}.ingredient_design .ingd::after{content:'';width:0;height:1px;background-color:#649296;position:absolute;top:50%;transform:translateY(-50%);right:-1px;transition:all .5s}.ingredient_design .ingd.active::after{width:100%}.capsule-usa-sec .cap-right{flex:0 0 50%;max-width:50%}.capsule-usa-sec .cap-right img{opacity:.3;width:100%;height:100%}.capsule-usa-sec .cap-six.active img{opacity:1!important}.capsule-usa-sec .txt-item{flex:0 0 20%;max-width:20%}.capsule-usa-sec .txt-item li{font-size:21px;font-weight:600;line-height:25px;color:rgba(0,0,0,.9);max-width:200px;margin:0 auto;list-style:none;padding-bottom:15px;position:relative;display:none;padding-left:10px}.capsule-usa-sec li.active{display:block!important}.capsule-usa-sec .txt-item li:before{position:absolute;content:'';top:5px;left:-25px;width:35px;height:50px;background:url(images/text-arrow-icon.png) no-repeat;background-size:cover;background-position:center bottom}.capsule-usa-sec .cap-detail{flex:0 0 60%;max-width:60%}.capsule-usa-sec .cap-detail p{font-size: 17px;
+font-family: 'Open Sans',sans-serif;
+line-height: 1.7;
+color: #649296;
+text-align: center;
+display: inline-block;
+min-height: 170px;
+}.capsule-usa-sec .cap-pic{flex:0 0 10%;max-width:10%}.capsule-usa-sec .cap-pic li{list-style:none;padding-bottom:5px}.capsule-usa-sec .cap-txt{display:flex!important;flex-wrap:wrap}.capsule-usa-sec .cap-txt .txt-details h2{color:#649296;margin-bottom:.5rem;text-align:center}.capsule-usa-sec .cap-txt .txt-details{flex:0 0 100%;max-width:100%}.capsule-usa-sec .cap-txt .txt-details aside{margin-top:40px}.capsule-usa-sec .cap-txt .txt-details img{margin:0 auto 0}.capsule-usa-sec .capsule-usa-sec.slick-initialized.slick-slider{width:100%}.capsule-usa-sec .slick-prev.slick-arrow{position:absolute;left:0;z-index:999;background:url(//cdn.shopify.com/s/files/1/0452/2459/1511/t/2/assets/left-er.png?v=1602682292);text-indent:-545454455px;width:50px;height:50px;background-repeat:no-repeat;background-size:cover;bottom:10%}.capsule-usa-sec .slick-prev.slick-arrow img{width:70px}.capsule-usa-sec .slick-next.slick-arrow{position:absolute;right:0;bottom:10%;background:url(//cdn.shopify.com/s/files/1/0452/2459/1511/t/2/assets/right-er.png?v=1602682321);text-indent:-545454455px;width:50px;height:50px;background-repeat:no-repeat;background-size:cover}.capsule-usa-sec .slick-next.slick-arrow img{width:70px}.capsule-usa-sec .slick-next.slick-arrow span{font-size:25px;line-height:35px;color:#000;font-weight:700;padding:0 0 0 15px}main.homepage .ingredients .research-arrow{left:-33px;top:calc(3% + 40px)}main.homepage .ingredients .research{top:3%}main.homepage .ingredients .production-arrow{left:-67px;top:calc(61% + 40px);width:70px}main.homepage .ingredients .production{/* top:62%; */top:59%}main.homepage .ingredients .development-arrow{right:-80px;top:calc(33% + 40px);width:190px}main.homepage .ingredients .development{top:34%}section.ingredients .titles h2.title{font-size:43px}.our_story_main-banner img{width:100%}.our_story_main-banner{position:relative}.our_story_main-banner .our_story_info h2.title{font-weight:600;font-size:55px;line-height:66px;font-family:Poppins,sans-serif;color:var(--color-turquoise)}.our_story_main-banner .our_story_info p.comunity-full{font-size:18px;line-height:30px;padding:16px 0;color:var(--color-turquoise)}.our_story_main-banner .our_story_info a.cura-btn.gold{height:auto!important;margin:22px 0 0;font-size:18px}.our_story_info_main{max-width:1170px;margin:0 auto;height:100%;clear:both;position:absolute;right:0;left:0;top:0;display:flex;align-items:center;justify-content:flex-end}.our_story_main-banner .our_story_info{width:100%;max-width:510px}.story_bg_mobile{display:none}section.ourStory img.bg{height:100%!important;width:auto!important}main.community-page section.hero{height:80vh}.page-template-page-community main.community-page .row.hero-content-wrapper p.text{font-size:24px;line-height:38px;margin-bottom:0;margin-top:0}.page-template-page-community main.community-page .down{margin:0!important}.page-template-page-community main.community-page .row.hero-content-wrapper button.cura-btn.community{margin:20px 0; flex: 0 0 48px;}main.community-page section.hero .hero-container{height:auto}main.community-page section.hero .down{margin-bottom:0;margin-top:68px}.newcura-shop-page .shop-blackfriday-desktop{text-align:center;padding:50px 0 0}.newcura-shop-page .shop-blackfriday-mobile{display:none}.newcura-shop-page .shop-blackfriday-mobile{text-align:center}.newcura-shop-page .shop-blackfriday-desktop img{width:100%;max-width:680px}span.woo-sctr-shortcode-countdown-text-before{font-weight:700;font-size:25px}.blog_main.col-xs-12.col-md-2{width:18%}.blog_in{padding-bottom:5px}.blog_in h2{margin:0;padding:0;font-size:inherit}.blog_in h2 a{color:#fff;font-size:14px;line-height:14px;text-transform:uppercase}.saying_blog_title{display:none}p.saying_blog_title span.bold{font-weight:500;text-transform:uppercase}p.saying_blog_title{margin:20px 0 0}.team-container{display:flex;justify-content:flex-start;flex-wrap:wrap}.team-container .single-person{flex:0 0 33.3%;max-width:33.3%;padding:20px 50px}@media screen and (max-width:1150px){.our_story_main-banner .our_story_info p.comunity-full{font-size:20px;line-height:30px}}@media screen and (max-width:1024px){.our_story_info_main,section.ourStory{height:100%!important}section.ourStory img.bg{height:100%!important;display:none}.story_bg_mobile{display:block}.our_story_main-banner .our_story_info{width:100%;max-width:100%;text-align:center;padding:40px 15px}.our_story_info_main{position:static;background:#649296}.our_story_main-banner .our_story_info h2.title,.our_story_main-banner .our_story_info p.comunity-full{color:#fff}}
+@media screen and (max-width:1320px){
+	.capsule-usa-sec .capsule-block {
+    height: 400px;
+}
+.capsule-usa-sec .cap-left img {
+    height: 100%;
+}
+.capsule-usa-sec .cap-left {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100%;
+}
+}
+@media screen and (max-width: 991px){
+main.homepage section.press .images img {
+    object-fit: inherit;
+}
+section.ourStory_new-sec .container .our_story_left_img img {
+    height: auto;
+    max-width: 100%;
+}
+}
+@media screen and (max-width:768px){
+main.homepage .ingredients .effects img.cap {
+    width: 105px;
+}
+.minds-team-section .single-person {
+    margin-bottom: 0px !important;
+}
+.minds-team-section .single-advisory .advisory-img-wrapper, .minds-team-section .single-person .person-img-wrapper {
+    border-radius: 20px !important;
+}
+}
+@media screen and (max-width:767px){
+	main.homepage section.community h3.title {
+         font-size: 28px !important;
+    line-height: 38px;
+    color: #fff;
+    padding-bottom: 10px;
+    }
+    body header .header-bottom nav ul a {
+        font-size: 16px;
+    }
+    main.homepage  .container-fluid .refer .hero-container h3.title.col-xs-12.col-md-12 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+    main.homepage .container-fluid  .refer .hero-container h4.title.col-xs-12.col-md-12 {
+        font-size: 28px;
+    }
+	main.about-page-new .location-section .col-xs-3.col-md-3.single-country {
+         width: 100%;
+    }
+	.caps.cap-one.caps_0 {
+        width: 94px;
+        margin:5px 0 0 0;
+    }
+    .capsule-usa-sec .cap-left img {
+        height: auto;
+    }
+    .caps {
+    height: 53px !important;
+    }
+    .cap-two {
+    width: 103px !important;
+    height: 53px;
+    }
+    .caps.cap-three {
+        width: 107px;
+        height: 53px;
+    }
+    .caps.cap-four {
+    width: 107px;
+    height: 53px;
+    }
+    .caps.cap-five {
+    width: 104px;
+    height: 53px;
+    }
+    .caps.cap-six {
+    width: 107px;
+    height: 53px;
+    }
+    .caps.cap-seven {
+    width: 107px;
+    height: 53px;
+    }
+    .caps.cap-eight {
+    width: 100px;
+    height: 53px;
+
+    }
+    .caps.cap-nine {
+    width: 100%;
+    height: 53px;
+    }
+    .caps.cap-ten {
+    width: 100%;
+    height: 53px;
+    }
+	.capsule-usa-sec .capsule-block{flex:0 0 200px;max-width:200px; height:530px; margin:0 auto} .ingredient_design{display:none}.capsule-usa-sec .cap-detail{flex:0 0 100%;max-width:100%;margin-top:20px}.our_story_main-banner .our_story_info h2.title{font-size:36px;line-height:36px}.our_story_main-banner .our_story_info p.comunity-full{font-size:18px;line-height:28px}.newcura-shop-page .shop-blackfriday-mobile{display:block}.newcura-shop-page .shop-blackfriday-desktop{display:none}.shop-blackfriday-mobile img{width:100%;max-width:230px}.shop-blackfriday-mobile{padding:45px 0 0}.page-template-page-community main.community-page .row.hero-content-wrapper p.text{font-size:18px;line-height:24px}body main.community-page section.hero{height:auto;padding:20px 0 70px}}section.ourStory_new-sec{padding:60px 0 0}section.ourStory_new-sec .our_story_info_about h2{font-weight:600;font-size:55px;line-height:66px;font-family:Poppins,sans-serif;color:var(--color-turquoise)}.our_story_info_about{margin-bottom:15px;padding-top:20px}section.ourStory_new-sec .our_story_info_about p{font-size:18px;line-height:30px;padding:16px 0;color:var(--color-turquoise);font-family:'Open Sans',sans-serif;transition:all .3s ease-in-out}section.ourStory_new-sec .our_story_info a.cura-btn.gold{height:auto!important;margin:16px 0 0;font-size:18px;max-width:300px;width:100%;border-radius:50px;transition:background-color .6s,color .6s;margin-bottom:15px;padding:10px 15px;color:#fff;text-align:center;display:inline-block;line-height:28px;margin-left:0;border:3px solid transparent}section.ourStory_new-sec .row{display:flex;align-items:center;flex-wrap:wrap}section.ourStory_new-sec .container,section.ourStory_new-sec .row{height:100%}section.ourStory_new-sec .our_story_left_img img{width:100%;max-width:401px;margin-bottom:-2px}section.ourStory_new-sec .our_story_info a.cura-btn.gold:hover{background:#cda349}.comuity_info{padding:40px 0}section.curalife_community .comuity_info p:hover i{margin-left:7px;transition:all .3s ease-in-out}section.ourStory_new-sec *{transition:all .3s ease-in-out}section.curalife_community h2.title{font-weight:600;font-size:43px;line-height:53px;font-family:Poppins,sans-serif;color:#649296;display:block}.comuity_info h3{font-size:18px;line-height:30px;padding:16px 0;color:#649296;font-family:'Open Sans',sans-serif;margin:0}section.curalife_community .comuity_info p{font-size:22px;letter-spacing:.4px;margin:5px 0;display:inline-block;font-family:'Open Sans',sans-serif;color:#649296}section.curalife_community h2.title span{display:block;line-height:36px;font-size:25px}section.curalife_community .comuity_info p a i{vertical-align:text-bottom;margin-left:7px;color:#649296}.comuity_info a.comunity_btn{height:auto!important;margin:22px 0 0;font-size:18px;max-width:300px;width:100%;border-radius:50px;transition:background-color .6s,color .6s;margin-bottom:15px;padding:10px 15px;color:#fff;text-align:center;display:block;line-height:28px;margin-left:0;border:3px solid transparent;background-color:var(--color-gold);font-weight:600}section.curalife_community{background:#f6f6f6}section.blogs{background:#fff}section.curalife_community .row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}section.curalife_community .comuity_info p i{color:#fff;font-size:24px;transition:all .3s ease-in-out}section.curalife_community .comuity_info p:hover i{margin-left:16px}section.press-sec{background:#649296;padding:20px 0;margin:40px 0 0}section.press-sec p.title{color:#fff}section.seprater-hr hr{margin-top:0;margin-bottom:0;border-bottom:1px solid #649296}@media screen and (max-width:991px){section.ourStory_new-sec .our_story_left_img img{margin:0 auto;display:block}section.ourStory_new-sec .our_story_info{padding:30px 15px;background:#649296;text-align:center}section.ourStory_new-sec .our_story_info h2,section.ourStory_new-sec .our_story_info p{color:#fff}section.ourStory_new-sec .padding_none{padding:0}}@media screen and (max-width:767px){section.ourStory_new-sec{padding:25px 0 0}section.ourStory_new-sec .our_story_info{background:#fff}section.ourStory_new-sec .our_story_info h2{font-size:45px;color:#649296}section.ourStory_new-sec .our_story_info p{font-size:17px;line-height:27px;color:#649296}.comuity_info h3,section.curalife_community .comuity_info p,section.curalife_community h2.title{text-align:center}section.newsletter{height:auto;padding:25px 0}section.seprater-hr{margin:0 0 50px}main.homepage section.blogs{padding-bottom:0}main.homepage section.blogs{margin:20px 0 20px;padding-top:0;margin-top:0}.comunity_hands{margin-bottom:50px}.comuity_info a.comunity_btn{margin:22px auto;display:block}.comuity_info{padding:60px 0 10px}.our_story_info{margin-bottom:0}section.curalife_community h2.title{font-weight:600;font-size:40px;line-height:45px}section.curalife_community h2.title span{margin:12px 0}section.curalife_community .comuity_info p{display:block}}header .header-bottom nav ul a:hover{color:#cda349}header .header-bottom nav ul a.shop{background:#cda349;border:2px solid #cda349}.ourStory_new-sec-about{margin-top:0;background:url(/wp-content/themes/curalife/assets/img/bg-men-grey.png);background-size:cover}.ourStory_new-sec-about h2.title{font-style:normal;font-weight:600;font-size:39px;line-height:66px;font-family:Poppins,sans-serif;color:#649296}.ourStory_new-sec h2.title{font-style:normal;font-weight:600;font-size:43px;line-height:53px;font-family:Poppins,sans-serif;color:#649296}.ourStory_new-sec-about p{font-size:17px;line-height:25px;padding:0 0 10px;color:#649296;font-family:'Open Sans',sans-serif;transition:all .3s ease-in-out}.ourStory_new-sec p{font-size:18px;line-height:30px;padding:5px 0 10px;color:#649296;transition:all .3s ease-in-out}.our_story_left_img_about{MARGIN-TOP:135px}h2.about-title{color:#649296;text-align:center;margin-bottom:55px}main.about-page-new{margin-top:50px;padding-bottom:50px}.rain-container{display:flex;justify-content:center}.hero-section{display:flex;align-items:center;flex-wrap:wrap;width:100%;padding-bottom:100px;border-bottom:1px solid #649296;margin-bottom:100px}.hero-section p{margin-bottom:50px;color:#649296}.hero-section p:last-child{margin-bottom:0}.minds-team-section{display:flex;flex-direction:column;align-items:center;padding-bottom:50px;border-bottom:1px solid #649296;margin-bottom:100px}.minds-team-section .companies-culture-section{margin:100px 0;display:flex;flex-direction:column;align-items:center}.minds-team-section .companies-culture-section p{color:#649296;text-align:center}.minds-team-section .single-person{display:flex;flex-direction:column;align-items:center;padding:0 50px}.minds-team-section .single-person .person-img-wrapper{border-radius:30px;overflow:hidden;border:4px solid transparent;transition:border-color 1s;margin-bottom:20px;position:relative}.minds-team-section .single-person h4.name{color:#cda349;font-size:25px;margin-bottom:10px}.minds-team-section .single-person .position{color:#cda349;font-size:20px;font-weight:700;margin-bottom:10px;text-align:center}.minds-team-section .single-advisory{display:flex;flex-direction:row;align-items:center;margin-bottom:50px;padding:0 50px}.minds-team-section .single-advisory .advisory-img-wrapper{flex:0 0 30%;max-width:30%}.minds-team-section .single-advisory .advisory-img-wrapper img{width:100%;max-width:100%}.minds-team-section .single-advisory .single_adv_text{flex:0 0 70%;MAX-WIDTH:70%;padding:20px 30px}.minds-team-section .single-advisory .advisory-img-wrapper{border-radius:30px;overflow:hidden;border:4px solid transparent;transition:border-color 1s;margin-bottom:20px;position:relative}.minds-team-section .single-advisory .advisory-img-wrapper::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(360deg,rgba(88,160,150,.65) 0,rgba(100,146,150,.18) 65%);opacity:0;transition:opacity 1s}.minds-team-section .single-advisory h4.name{color:#649296;font-size:25px;margin-bottom:14px}.minds-team-section .single-advisory .position{color:#649296;font-size:20px;font-weight:700;margin-bottom:10px}.single-country{padding:0 30px;display:flex;flex-direction:column;justify-content:center}.single-country *{text-align:center;color:#649296;margin-bottom:15px}.single-country .country{font-weight:700}@media screen and (min-width:768px){.minds-team-section .single-person .person-img-wrapper:hover{border-color:#cda349}.minds-team-section .single-advisory .advisory-img-wrapper:hover{border-color:#649296}.minds-team-section .single-advisory .advisory-img-wrapper:hover::after{opacity:1}}@media screen and (max-width:768px){..ourStory_new-sec-about{margin-top:80px}.our_story_left_img_about{margin-top:30px}main.about-page-new{margin-top:25px;padding-bottom:20px}h2.about-title{margin-bottom:25px}.rain-container{display:none}.hero-section img{margin-bottom:25px}.hero-section p{margin-bottom:20px}.hero-section{padding-bottom:40px;margin-bottom:40px}.minds-team-section .single-advisory,.minds-team-section .single-person{padding:0 10px;margin-bottom:20px}.minds-team-section .single-person:last-child{margin-bottom:0}.minds-team-section .single-advisory .advisory-img-wrapper,.minds-team-section .single-person .person-img-wrapper{margin-bottom:5px}.minds-team-section .single-advisory h4.name,.minds-team-section .single-person h4.name{font-size:18px;margin-bottom:5px}.minds-team-section .single-advisory .position,.minds-team-section .single-person .position{font-size:16px}.minds-team-section .single-advisory p,.minds-team-section .single-person p{text-align:left}.team-container{display:flex;flex-wrap:wrap;justify-content:center}.minds-team-section .companies-culture-section{margin:40px 0}.minds-team-section{padding-bottom:15px;margin-bottom:40px}.single-country{padding:0 10px;margin-bottom:15px}}.our-advisory{display:flex;flex-direction:row;flex-wrap:wrap}.our-advisory h2.about-title{width:100%}section.title{ margin-top:99px; background:#649296;position:relative;padding:20px 0;z-index:9}section.title h1{margin:0;color:#fff;font-weight:700;font-family:Poppins,sans-serif;font-size:40px;text-align:center;width:100%;display:block}.TitleSection h1.titleTab{margin:0;color:#fff;font-weight:700;font-family:Poppins,sans-serif;font-size:40px;text-align:center;width:100%;display:block}main.contact section.branches .branches-container .item{width:25%}main.contact section.contact-form{margin:60px 0}main.contact section.branches{background:#f6f6f6;margin-top:0;padding:40px 0}@media screen and (max-width:1400px){footer{padding:30px 15px}.blog_main.col-xs-12.col-md-2{width:16%}}@media screen and (max-width:1200px){.blog_main.col-xs-12.col-md-2{width:11%}}@media screen and (max-width:1024px){.page-template-template-new-about .minds-team-section .single-person{min-height:335px}.textwidget.custom-html-widget p span{font-size:14px}.textwidget.custom-html-widget p a{font-size:14px}footer p.title{font-size:14px}}@media screen and (max-width:992px){.page-template-Curalife-Contact-Template main.contact section.branches .branches-container .item{width:44%;margin-bottom:30px}.blog_main.col-xs-12.col-md-2{width:100%;text-align:center;padding:8px 0}.team-container .single-person{flex:0 0 50%;max-width:50%;padding:20px 20px}}@media screen and (max-width:767px){.page-template-Curalife-Contact-Template main.contact section.contact-form{margin:15px 0 0 0}.page-template-Curalife-BLOG-Template main.blogs section.blogs .blogs-container .blog p.blog-title{display:block!important}.page-template-Curalife-BLOG-Template main.blogs section.filter nav.categories{width:100%}.page-template-template-new-about .ourStory_new-sec-about h2.title{font-size:30px;line-height:40px}.page-template-template-new-about .minds-team-section .single-person{min-height:260px}.page-template-template-new-about main.about-page-new{margin-top:50px}.blog_main.col-xs-12.col-md-2{width:100%;text-align:center;padding:30px 0;}h2.title.title_yes_mobile{
+		display:block!important;
+		    font-size: 30px;
+    line-height: 36px;
+		}.title_no_mobile{display:none}.minds-team-section .single-advisory{flex-direction:column;display:block;margin:0 0 50px}.minds-team-section .single-advisory .single_adv_text{flex:0 0 100%;MAX-WIDTH:100%;padding:0 0}.minds-team-section .single-advisory .advisory-img-wrapper{flex:0 0 100%;max-width:100%}.minds-team-section .single-advisory .single_adv_text h4.name{font-size:18px}.saying_blog_title{display:block}.team-container .single-person{flex:0 0 100%;max-width:100%;padding:20px 15px}.hamburger.col-xs-2.col-md-2.only-mb{position:fixed;right:10px;z-index:99;background:#fff;width:50px;border:2px solid #649296;padding:0 12px;border-radius:3px}body .TitleSection{margin-top:0}main.partnership-page section.hero,section.title{margin-top:0}
+.TitleSection h1.titleTab {
+    line-height: 40px;
+        font-size: 30px;
+
+}
+section.ingredients .capsule-usa-sec .cap-main .cap-detail {
+    order: 1;
+}
+section.ingredients .capsule-usa-sec .cap-main .capsule-block {
+    order: 2;
+}
+        }@media screen and (max-width:580px){.page-template-Template-partnership main.partnership-page section.hero{height:60vh}.page-template-Curalife-Contact-Template .TitleSection h1.titleTab{font-size:34px}.page-template-Curalife-BLOG-Template main.blogs section.filter nav.categories ul li{margin-right:25px}.page-template-template-new-about .single-country{min-height:135px;justify-content:flex-start}.page-template-template-new-about .minds-team-section .single-person{min-height:220px}}@media screen and (max-width:480px){.page-template-template-new-about .ourStory_new-sec-about h2.title{font-size:24px;line-height:40px}}@media screen and (max-width:414px){.page-template-template-new-about .ourStory_new-sec-about h2.title{font-size:20px;line-height:30px}.page-template-template-new-about .ourStory_new-sec-about p{font-size:15px;line-height:22px}.page-template-template-new-about .minds-team-section h2.title{font-size:22px;line-height:33px;margin-bottom:10px}.minds-team-section .single-advisory h4.name,.page-template-template-new-about .minds-team-section .single-person h4.name{font-size:11px;margin-bottom:5px;text-align:center}.minds-team-section .single-advisory .single_adv_text h4.name{font-size:18px}.page-template-template-new-about .minds-team-section .single-person .position{font-size:11px}.page-template-template-new-about .minds-team-section .single-person{min-height:170px}.page-template-template-new-about .single-country h4.country{font-size:11px}.page-template-template-new-about .single-country p.pos{font-size:11px}.page-template-template-new-about .single-country{min-height:123px}.page-template-template-new-about .minds-team-section .single-advisory p{text-align:left;font-size:11px;word-break:break-all}.page-template-template-new-about .minds-team-section .companies-culture-section{margin:0 0 20px}}@media screen and (max-width:320px){.page-template-Curalife-BLOG-Template main.blogs section.filter nav.categories ul li{margin-right:30px}.page-template-template-new-about .ourStory_new-sec-about h2.title{font-size:18px;line-height:30px}.page-template-template-new-about .minds-team-section h2.title{font-size:18px;line-height:27px}.page-template-template-new-about .minds-team-section .single-person{min-height:150px}.page-template-CuraLife-Home-Template main.homepage .ingredients .effects img.cap{left:114px}}

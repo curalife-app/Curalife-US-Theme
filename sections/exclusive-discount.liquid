@@ -1,0 +1,46 @@
+<div class="discount-text">
+        <div class="discount-size wow fadeIn">
+            <p>{{ section.settings.discount_size }}</p>
+        </div>
+        <div class="container">
+            <div class="text-wrap">
+                <div class="sub-title wow fadeInUp">
+                    <h3>{{ section.settings.title }}</h3>
+                </div>
+                <div class="reason-text wow fadeInUp">
+                    <p>{{ section.settings.reason }}</p>
+                </div>
+                <div class="warning-text wow fadeInUp">
+                    <p>{{ section.settings.warning }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+    {
+    "name": "Exclusive Discount",
+    "settings": [
+    {
+    "type": "textarea",
+    "id": "title",
+    "label": "Title"
+    },
+{
+    "type": "textarea",
+    "id": "reason",
+    "label": "Reason"
+    },
+{
+    "type": "textarea",
+    "id": "warning",
+    "label": "Warning"
+    },
+{
+    "type": "text",
+    "id": "discount_size",
+    "label": "Discount Label"
+    }
+    ]
+    }
+{% endschema %}

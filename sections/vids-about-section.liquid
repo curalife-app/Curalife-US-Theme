@@ -1,0 +1,42 @@
+{% if section.settings.section-heading != blank or section.settings.about_full_content != blank %}
+	<section class="testimonial_top title_change" id="_aBout__cUraLife_d">
+        <div class="container">
+            {% if section.settings.section-heading != blank %}
+              <div class="row">
+                  <div class="col-md-12">
+                      <h2>{{ section.settings.section-heading }}</h2>
+                  </div>
+              </div>
+          	{% endif %}
+          	{% if section.settings.about_full_content != blank %}
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="improvementslider">
+                          <div class="client-info">
+                              {{ section.settings.about_full_content }}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          {% endif %}
+        </div>
+    </section>
+{% endif %}
+{% schema %}
+  {
+    "name": "About Section",
+    "settings": [
+		{
+            "type": "text",
+            "id": "section-heading",
+            "label": "Section Heading"
+        },
+		{
+            "type": "richtext",
+            "id": "about_full_content",
+            "label": "Description"
+        }
+		
+	]
+  }
+{% endschema %}

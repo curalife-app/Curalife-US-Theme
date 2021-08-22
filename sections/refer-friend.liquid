@@ -1,0 +1,179 @@
+<style>
+    .yotpo-header-text {
+    color: #01c6b2;
+    border: 1px solid rgba(1, 198, 178, 0.3);
+    line-height: 1;
+    margin-bottom: 13px;
+    padding: 9px 6px !important;
+    font-size: 13px !important;
+    font-family: 'Poppins', sans-serif !important;
+    width: auto;
+}
+
+.yotpo-title-text {
+    font-weight: 800 !important;
+    text-align: left;
+    line-height: 1.3;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.yotpo-description-text {
+    text-align: left;
+    font-size: 16px !important;
+    line-height: 1.6;
+    margin: 0;
+    color: #222222 !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.yotpo-widget-referral-widget .yotpo-referral-widget-form {
+    margin-top: 26px !important;
+}
+
+
+.yotpo-widget-referral-widget .yotpo-action-button-widget.yotpo-customer-share-button{
+    margin-top: 15px !important;
+}
+button.yotpo-button-style.yotpo-button-standard-size.yotpo-filled-button.yotpo-rectangular-btn-type {
+    width: 100%;
+    background: #deb63a !important;
+    font-size: 12px !important;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+button.yotpo-button-style.yotpo-button-standard-size.yotpo-filled-button.yotpo-rectangular-btn-type:hover{
+    background-color:#01c6b2 !important;
+}
+input {
+    font-size: 13px !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #222;
+}
+span.yopto-widget-button-text {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+}
+main h1:first-child {
+    display: none !important;
+}
+</style>
+<div class="refer-page">
+    <div class="container">
+        <div class="mini-wrap">
+            <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="13430"></div>
+{%comment%}
+            <div class="refer-wrap {{section.settings.refr_imgpos}}">
+                <div class="refer-text">
+                    <div class="refer-label">
+                        <p>{{section.settings.refr_pretitl}}</p>
+                    </div>
+                    <div class="intro-text">
+                        <div class="sub-title">
+                            <h1>{{section.settings.refr_titl}}</h1>
+                            <p>{{section.settings.refr_desc}}</p>
+                        </div>
+                    </div>
+                    <div class="subscribe-form">
+                        
+                        {% form 'customer'%}
+                        {{ form.errors | default_errors }}
+                        {% include 'form-status'%}
+                            <label>
+                                <input type="hidden" name="contact[tags]" value="newsletter">
+                                <input type="email"
+                                name="contact[email]"
+                                id="Email"
+                                class="input-group__field newsletter__input"
+                                value="{% if customer %}{{ customer.email }}{% endif %}"
+                                placeholder="Enter email"
+                                autocorrect="off"
+                                autocapitalize="off">
+                            </label>
+                             
+                            <button type="submit" class="main-btn">NEXT</button>
+                        {% endform %}
+                    </div> 
+                </div>
+                {% if section.settings.refr__img != blank %}
+                <div class="refer-img">
+                    <div class="img-wrap">
+                        <img src="{{ section.settings.refr__img | img_url: '' }}" alt="">
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endcomment %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Refer Friend",
+        "settings": [
+           
+            {
+                "type": "text",
+                "id": "refr_pretitl",
+                "label": "Pre Title",
+                "default": "Enter Pre Title"
+            },    
+            {
+                "type": "text",
+                "id": "refr_titl",
+                "label": "Title",
+                "default": "Enter Title"
+            },
+            {
+                "type": "textarea",
+                "id": "refr_desc",
+                "label": "Description",
+                "default": "Enter Description"
+            },
+            {
+                "type": "image_picker",
+                "id": "refr__img",
+                "label": "Select Image"
+            },
+            {
+                "type":"select",
+                "id": "refr_imgpos",
+                "label": "Select Image Position",
+                "options": [
+                    {
+                        "label": "Right",
+                        "value": ""
+                    },
+                    {
+                        "label": "Left",
+                        "value": "reverse"
+                    }
+                ]
+
+            }
+            
+        ],    
+            
+        "presets":[
+            {
+                "name": "Refer Friend",
+                "category": "image"
+            }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+<style>
+    .contact-form {
+        width: 100%;
+        padding: 0;
+    }
+</style>

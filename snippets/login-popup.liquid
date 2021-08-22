@@ -1,0 +1,56 @@
+  <div class="modal-content account-group" id="login-modal">
+        <div class="modal-bg">
+            <div class="modal-scroll">
+                <div class="login-form">
+                    {% if settings.lgn_img != blank %}
+                    <div class="picture">
+                        <div class="img-wrap">
+                            <img class="lazyload" data-src="{{ settings.lgn_img | img_url: '' }}" alt="">
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="form-wrap">
+                        <div class="main-action">
+                            <div class="sub-title">
+                                <h4>{{settings.lgn_sbtitl}}</h4>
+                            </div>
+                            {% form 'customer_login' %}
+                            {{ form.errors | default_errors }}
+                            <input id="redirect_url" type="hidden" name="return_to" value="/account/">
+                            <div class="form-fields">
+                                <label for="customerEmail" class="full-size">
+                                    <input type="email" placeholder="E-mail" name="customer[email]"
+                                    id="customerEmail"
+                                    autocorrect="off"
+                                    autocapitalize="off"
+                                    autocomplete="email">
+                                </label> 
+                                <label for="customerPassword" class="full-size">
+                                    <input type="password" placeholder="Password"  name="customer[password]" id="customerPassword">
+                                </label>
+                            </div>
+                            <div class="submit-form">
+                                <button type="submit" class="main-btn">Submit</button>
+                                <a href="/account/register" class="main-btn blank">Create Account</a>
+                            </div>
+                        {% endform %}
+                        </div>
+                        <div class="extra-action">
+                            <div class="text">
+                                <p>Forgot your password?</p>
+                            </div>
+                            <div class="btn">
+                                <a href="https://curalife.com/pages/reset-password" class="main-btn blank">Reset your password</a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+           var url =  window.location.href; 
+           $("#redirect_url").val(url);
+        });
+      </script>

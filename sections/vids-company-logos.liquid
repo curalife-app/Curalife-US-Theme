@@ -1,0 +1,65 @@
+ {% if page.handle  == 'product-curalin-glucose-levels-supplement-2020-vidc-g' %}
+ <style>
+   @media only screen and (min-width: 768px){
+   section.company-logos {
+    margin-top: 100px ;
+    }
+   }
+ </style>
+ {% endif %}
+ {% if section.settings.mobile-company-logo %}
+	<section class="offer_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="img-responsive" src="{{ section.settings.mobile-company-logo | img_url: 'master' }}">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% if section.blocks %}
+	<section class="company-logos">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logos-block"> 
+                      {% for block in section.blocks %}
+                 		 {% case block.type %}	
+                      		{% when 'company-logos' %}
+                              <span>
+                                <img src="{{ block.settings.company-logo | img_url: 'master' }}" class="img-responsive">
+                              </span>
+                      		{% endcase %}	
+                      	  {% endfor %}	                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% schema %}
+  {
+    "name": "Company Logos",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "mobile-company-logo",
+          "label": "Mobile Logo Image"
+        }
+	],
+	"blocks": [
+    		{
+    			"type": "company-logos",
+    			"name": "Compony Logo",
+    			"settings": [
+                   {
+                    "type": "image_picker",
+                    "id": "company-logo",
+                    "label": "Company Logo"
+                  }
+    			]
+    		}
+	]
+  }
+{% endschema %}

@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{ page_title }}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta property="og:image" content="{{ 'raf-lp-image.png' | asset_url  }} " />
+    <meta property="og:description" content="Try it for yourself">
+  <meta name="description" content="{{ page_description | escape }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  {%- if settings.favicon != blank -%}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+  <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'common.css' | asset_url }}"></noscript>
+   <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'styles.css' | asset_url }}"></noscript>
+  
+  <!-- {{ 'raf_min.css' | asset_url | stylesheet_tag }} -->
+   <link rel="preload" href="{{ 'raf_custom.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'raf_custom.css' | asset_url }}"></noscript> 
+   <link rel="preload" href="{{ 'raf_ingredients.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'raf_ingredients.css' | asset_url }}"></noscript>
+   <link rel="preload" href="{{ 'raf_bundle.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'raf_bundle.css' | asset_url }}"></noscript> 
+   <link rel="preload" href="{{ 'raf_slick.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'raf_slick.css' | asset_url }}"></noscript>
+<link rel="preload" href="{{ 'raf_flag.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'raf_flag.css' | asset_url }}"></noscript>
+<script  src="{{ 'raf_theme.js' | asset_url }}" async></script>
+<script  src="{{ 'raf_legacy.js' | asset_url }}"></script>
+<script  src="{{ 'raf_custom.js' | asset_url }}" async></script>
+<script  src="{{ 'raf_libs.js' | asset_url }}" async></script>
+<script  src="{{ 'raf_main.js' | asset_url }}" async></script>
+<script  src="{{ 'raf_common.js' | asset_url }}" async></script>
+<script  src="{{ 'raf_sldk.js' | asset_url }}" async></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" defer="defer"></script>
+
+{% if template contains 'customers' %}
+    {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+{% endif %}
+{{ content_for_header }} <!-- Header hook for plugins -->
+
+  <style>
+    body{
+      padding-top: 0;
+    }
+  </style>
+  {% include 'anti-flicker' %}
+</head>
+<body>
+{% include 'google-tag-manager'%}
+{% include 'google-tag-manager-noscript'%}
+{% include 'hot-jar'%}
+
+
+  <main role="main">
+    {{ content_for_layout }}
+    
+     {% section 'footer'%}
+  </main>
+  
+
+  <script>
+     $('.go_tobtn').click(function(e){
+  e.preventDefault();
+
+
+
+  var target = $($(this).attr('href'));
+  
+
+  if(target.length){
+    var scrollTo = target.offset().top;
+    $('body, html').animate({scrollTop: scrollTo+'px'}, 1600);
+  }
+});
+
+      $('.cstmr_stry').click(function(e){
+  e.preventDefault();
+
+
+
+  var target = $($(this).attr('href'));
+  
+
+  if(target.length){
+    var scrollTo = target.offset().top;
+    $('body, html').animate({scrollTop: scrollTo+'px'}, 1600);
+  }
+});
+
+
+ $('.gvtry').click(function(e){
+  e.preventDefault();
+
+
+
+  var target = $($(this).attr('href'));
+  
+
+  if(target.length){
+    var scrollTo = target.offset().top;
+    $('body, html').animate({scrollTop: scrollTo+'px'}, 1600);
+  }
+});
+
+
+       $('#lrn_mor').click(function(e){
+  e.preventDefault();
+
+
+
+  var target = $($(this).attr('href'));
+  
+
+  if(target.length){
+    var scrollTo = target.offset().top;
+    $('body, html').animate({scrollTop: scrollTo+'px'}, 1600);
+  }
+});
+  </script>
+</body>
+</html>

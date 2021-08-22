@@ -1,0 +1,398 @@
+<style>
+.offer-modal {
+    width: 95%;
+    max-width: 800px;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 18.9px;
+    -webkit-box-shadow: 3px 3px 7px 0 rgb(0 0 0 / 20%);
+    box-shadow: 3px 3px 7px 0 rgb(0 0 0 / 20%);
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.offer-modal .offer-time {
+    padding: 9px 15px;
+    position: relative;
+    z-index: 2;
+    background-color: #ff4747;
+}
+.offer-modal .offer-time p {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.03;
+    letter-spacing: 5.24px;
+    text-align: center;
+    color: #ffffff;
+}
+.offer-modal .modal-scroll {
+    position: relative;
+    z-index: 1;
+}
+.offer-modal .modal-scroll {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: auto;
+    width: 100%;
+    max-height: 100%;
+}
+.offer-modal .offer-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.offer-modal .offer-img {
+    width: 48.4%;
+    position: relative;
+}
+.offer-modal .offer-img:before {
+    content: '';
+    display: block;
+    padding-bottom: 130.7%;
+    pointer-events: none;
+}
+.offer-modal .offer-img span {
+    display: block;
+    position: absolute;
+    top: -42px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.offer-modal .offer-img span img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: top right;
+    object-position: top right;
+}
+.offer-modal .offer-content {
+    width: calc(100% - 48.4%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 45px 48px 15px 30px;
+}
+.offer-modal .offer-content .offer-title {
+    margin-right: -18px;
+    padding-bottom: 13px;
+}
+.offer-modal .offer-content .offer-title h3 {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 1.17;
+    color: #333333;
+}
+.offer-modal .offer-content .offer-title p {
+    margin: 0;
+    padding-top: 8px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.66;
+    letter-spacing: 0.72px;
+    color: #333333;
+}
+.offer-modal .offer-content .offer-price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-bottom: 9px;
+}
+.offer-modal .offer-content .offer-price .old-price {
+    margin-top: 8px;
+    padding: 0 8px;
+}
+.offer-modal .offer-content .offer-price .old-price p {
+    margin: 0;
+    padding: 0 7px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.44;
+    letter-spacing: normal;
+    color: #333333;
+    white-space: nowrap;
+    position: relative;
+}
+.offer-modal .offer-content .offer-price .old-price p:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    border-bottom: 2px solid #FF0000;
+    -webkit-transform: translateY(-50%) rotate(
+-12deg
+);
+    -ms-transform: translateY(-50%) rotate(-12deg);
+    transform: translateY(-50%) rotate(
+-12deg
+);
+}
+.offer-modal .offer-content .offer-price .current-price {
+    padding: 0 8px;
+}
+.offer-modal .offer-content .offer-price .current-price p {
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.44;
+    letter-spacing: normal;
+    color: #0396D0;
+}
+.offer-modal .offer-content .upgrade-btn {
+    text-align: center;
+}
+.offer-modal .offer-content .upgrade-btn button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.64px;
+    color: #ffffff;
+    border-radius: 23.1px;
+    background-color: #0396D0;
+    border: 1px solid #0396D0;
+    -webkit-transition: color var(--transition), background-color var(--transition);
+    -o-transition: color var(--transition), background-color var(--transition);
+    transition: color var(--transition), background-color var(--transition);
+}
+.offer-modal .offer-content .guarantee-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 11px;
+}
+.offer-modal .offer-content .guarantee-text p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    color: #f69d1b;
+}
+.offer-modal .offer-content .guarantee-text p span {
+    width: 21px;
+    height: 21px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-right: 7px;
+    font-size: 17px;
+    color: #ffffff;
+    background-color: #f69d1b;
+    border-radius: 50%;
+}
+.icon-refer-friend:before {
+    content: "\e927";
+}
+.offer-modal .offer-content .payment-systems {
+    padding-top: 15px;
+}
+.offer-modal .offer-content .payment-systems p {
+    margin: 0;
+    text-align: center;
+}
+@media screen and (max-width: 991px){
+.offer-modal {
+    max-width: 600px;
+}
+.offer-modal .offer-time p {
+    font-size: 18px;
+}
+.offer-modal .offer-img span {
+    top: -36px;
+}
+.offer-modal .offer-content {
+    padding: 30px 40px 15px 20px;
+}
+.offer-modal .offer-content .offer-title {
+    padding-bottom: 9px;
+}
+.offer-modal .offer-content .offer-title h3 {
+    font-size: 26px;
+}
+.offer-modal .offer-content .offer-title p {
+    font-size: 14px;
+}
+.offer-modal .offer-content .offer-price .old-price p {
+    font-size: 20px;
+}
+.offer-modal .offer-content .offer-price .current-price p {
+    font-size: 35px;
+}
+.offer-modal .offer-content .upgrade-btn button {
+    padding: 12px 30px;
+    font-size: 13px;
+}
+.offer-modal .offer-content .guarantee-text {
+    padding-top: 8px;
+}
+.offer-modal .offer-content .guarantee-text p {
+    font-size: 13px;
+}
+.offer-modal .offer-content .payment-systems {
+    padding-top: 10px;
+}
+}
+@media screen and (max-width: 640px){
+.offer-modal {
+    max-width: 375px;
+    border-radius: 26.7px 26.7px 0 0;
+}
+.offer-modal .offer-time {
+    padding: 14px 15px;
+}
+.offer-modal .offer-time p {
+    font-size: 20px;
+}
+.offer-modal .offer-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+.offer-modal .offer-img {
+    width: 100%;
+}
+.offer-modal .offer-img:before {
+    padding-bottom: 63%;
+}
+.offer-modal .offer-img span {
+    top: 0;
+}
+.offer-modal .offer-img span img {
+    -o-object-position: top center;
+    object-position: top center;
+}
+.offer-modal .offer-content {
+    width: 100%;
+    padding: 28px 40px 0 43px;
+}
+.offer-modal .offer-content .offer-title {
+    padding-bottom: 2px;
+}
+.offer-modal .offer-content .offer-title h3 {
+    font-size: 30px;
+    line-height: 1.1;
+}
+.offer-modal .offer-content .offer-title p {
+    font-size: 14px;
+    line-height: 1.41;
+}
+.offer-modal .offer-content .offer-price {
+    padding-bottom: 0;
+}
+.offer-modal .offer-content .offer-price .old-price p {
+    font-size: 22px;
+}
+.offer-modal .offer-content .offer-price .current-price p {
+    font-size: 38px;
+}
+.offer-modal .offer-content .upgrade-btn button {
+    padding: 12px 40px;
+    font-size: 16px;
+}
+.offer-modal .offer-content .guarantee-text p {
+    font-size: 15px;
+}
+.offer-modal .offer-content .payment-systems p img {
+    max-width: 175px;
+}
+}
+ 
+</style>
+<div class="offer-modal" id="offer-modal">
+        <div class="offer-time">
+            <p>LIMITED TIME OFFER</p>
+        </div>
+        <div class="modal-scroll">
+            <div class="offer-wrap">
+                <div class="offer-img">
+                <span>
+                    <picture>
+                        <source srcset="https://cdn.shopify.com/s/files/1/0495/2621/0723/t/11/assets/offer-01.png?v=1624438782" media="(min-width: 641px)">
+                        <source srcset="https://cdn.shopify.com/s/files/1/0495/2621/0723/t/11/assets/offer-m-01.png">
+                        <img srcset="https://cdn.shopify.com/s/files/1/0495/2621/0723/t/11/assets/offer-m-01.png" alt="">
+                    </picture>
+                </span>
+                </div>
+                <div class="offer-content">
+                    <div class="content-wrap">
+                        <div class="offer-title">
+                            <h3>Upgrade to a<br>
+                                6-Pack & save 30%</h3>
+                            <p>Benefit from a better price with the convenience of not ordering every single month</p>
+                        </div>
+                        <div class="offer-info"> <!-- for blue button add 'blue-wrap' class-->
+                            <div class="offer-price">
+                                <div class="old-price">
+                                    <p>$450</p>
+                                </div>
+                                <div class="current-price">
+                                    <p>$315</p>
+                                </div>
+                            </div>
+                            <div class="upgrade-btn">
+                                <button type="button">UPGRADE TO 6-PACK</button>
+                            </div>
+                            <div class="guarantee-text">
+                                <p><span class="icon-refer-friend"></span>60 Day Money Back Guarantee</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-systems">
+                        <p><img src="https://cdn.shopify.com/s/files/1/0452/2459/1511/t/17/assets/payements-us.png?v=1625042648" alt=""></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

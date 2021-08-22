@@ -1,0 +1,482 @@
+ <style>
+        .openUpsell {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            opacity: 0;
+        }
+        .openUpsell:hover + .btn {
+            background: var(--button-background-hover-color);
+            color: var(--button-text-color);
+
+        }
+        .product-page--submit-action {
+            position:relative;
+            float: left;
+            width: 100%;
+            margin-top: 20px;
+        }
+        a.openUpsell2{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            opacity: 0;
+        }
+        .cart-upgrade-popup_class .continue-cart del {
+            text-decoration: none;
+        }
+        .cart-modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0%;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: #00000075;
+            z-index: 999999;
+        }
+        .cart-modal span.money {
+            padding: 0 !important;
+        }
+
+        .cart-upgrade-popup_class .cart-modal-content {
+            position: absolute;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: .4s;
+            animation-name: animatetop;
+            animation-duration: .4s;
+            max-width: 900px;
+            border-radius: 25px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .cart-upgrade-popup_class .close {
+            color: #ccc;
+            float: right;
+            font-size: 50px;
+            position: relative;
+            left: -30px;
+            top: 5px;
+            z-index: 999;
+            opacity: inherit;
+            font-weight: 600;
+            text-shadow: 0 1px 0 #fff;
+            font-family: open sans, sans-serif;
+        }
+
+        .cart-upgrade-popup_class .modal-body {
+            padding: 50px 15px;
+            position: relative;
+        }
+
+        .cart-upgrade-popup_class .upgrade {
+            text-align: center;
+        }
+
+        .cart-upgrade-popup_class .upgrade h2 {
+            font-size: 40px;
+            color: #333;
+            font-weight: 700;
+            line-height: 52px;
+            margin: 0;
+            padding: 0;
+            font-family: poppins, sans-serif
+        }
+
+        .cart-upgrade-popup_class .upgrade p {
+            color: #333;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 30px;
+            padding: 0;
+            max-width: 500px;
+            margin: 0 auto;
+            font-family: poppins, sans-serif;
+        }
+
+        .cart-upgrade-popup_class .continue-cart {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 20px;
+            align-items: center;
+        }
+
+        .cart-upgrade-popup_class .continue-cart img {
+            max-width: 480px;
+            width: 100%;
+        }
+
+        .cart-upgrade-popup_class .continue-cart span {
+            display: flex;
+            padding: 0 0 30px;
+            font-family: open sans, sans-serif;
+        }
+
+        .cart-upgrade-popup_class .continue-cart h3 {
+            font-size: 60px;
+            line-height: 46px;
+            font-weight: 700;
+            color: #22b073;
+            padding: 0 0 0 30px;
+            margin: 0;
+        }
+
+        .cart-upgrade-popup_class .continue-cart del {
+            color: #333;
+            font-size: 35px;
+            line-height: 50px;
+            font-weight: 700;
+            margin: 5px 0 0 15px;
+            position: relative;
+        }
+
+        .cart-upgrade-popup_class .continue-cart del:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-top: 3px solid red;
+            height: calc(55% - 1px);
+            width: 115%;
+            transform: rotateZ(-16deg);
+        }
+
+        .cart-upgrade-popup_class .continue-cart a {
+            width: 100%;
+            height: 48px;
+            border-radius: 3px;
+            font-size: 15px;
+            line-height: 48px;
+            font-weight: 600;
+            color: #fff;
+            display: inline-block;
+            background: #22b073;
+            text-align: center;
+            border-radius: 100px;
+            -webkit-transition: all .3s ease 0s;
+            -moz-transition: all .3s ease 0s;
+            -o-transition: all .3s ease 0s;
+            transition: all .3s ease 0s;
+            text-decoration: none;
+            margin: 0 auto 15px;
+            text-transform: uppercase;
+            max-width: 300px;
+            border: 1px solid #22b073;
+            font-family: open sans, sans-serif;
+        }
+
+        .cart-upgrade-popup_class .continue-cart a.orderNow {
+            background: 0 0;
+            color: #22b073;
+        }
+
+        .cart-upgrade-popup_class .continue-cart a:hover {
+            background: 0 0;
+            color: #22b073;
+        }
+
+        .cart-upgrade-popup_class .continue-cart a.orderNow:hover {
+            background: #22b073;
+            color: #fff;
+        }
+
+        .pack_btns {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pack_btns button {
+            background: #cda349;
+            margin: 0 5px;
+            border: 2px solid #cda349;
+            color: #fff;
+            padding: 10px;
+            border-radius: 100px;
+            width: 170px;
+            text-align: center;
+            font-weight: 600;
+            font-family: open sans, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 940px) {
+            .cart-upgrade-popup_class .continue-cart {
+                flex-direction: column;
+            }
+
+            .cart-upgrade-popup_class .continue-cart aside {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .cart-upgrade-popup_class .upgrade h2 {
+                color: #333;
+                line-height: 1.4;
+            }
+
+            .cart-upgrade-popup_class .upgrade p {
+                font-size: 20px;
+                line-height: 1.4;
+
+            }
+
+            .cart-upgrade-popup_class .continue-cart h3 {
+                padding: 0;
+                font-size: 40px;
+            }
+
+            .cart-upgrade-popup_class .continue-cart del {
+                font-size: 26px;
+            }
+
+        }
+
+        @media only screen and (max-width: 767px) {
+            #cart-upgrade-popup .upgrade h2 {
+                font-size: 22px;
+                line-height: 32px;
+            }
+
+            #cart-upgrade-popup .upgrade p {
+                font-size: 16px;
+                line-height: 24px;
+                padding: 6px 0;
+            }
+
+            #cart-upgrade-popup .continue-cart {
+                padding: 12px 0 0 0;
+
+            }
+
+            #cart-upgrade-popup .continue-cart {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            #cart-upgrade-popup .continue-cart img {
+                max-width: 170px;
+                margin: 0 auto;
+            }
+
+            #cart-upgrade-popup .continue-cart figure {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            #cart-upgrade-popup .continue-cart aside {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin: 0;
+                text-align: center;
+                padding: 8px 0 0 0;
+            }
+
+            #cart-upgrade-popup .continue-cart span {
+                display: flex;
+                padding: 0 0 18px 0;
+                text-align: center;
+                justify-content: center;
+            }
+
+            #cart-upgrade-popup .selectone {
+                padding: 0 10px;
+            }
+
+            #cart-upgrade-popup .modal-body {
+                padding: 30px 0px;
+            }
+
+            .cart-modal {
+                padding-top: 10px;
+                left: 0;
+                top: 0%;
+                width: 100%;
+                right: 0;
+                margin: 0 auto;
+            }
+
+            #cart-upgrade-popup .cart-modal-content {
+                border: 1px solid #ccc;
+                width: 98%;
+                box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+                width: 100%;
+            }
+
+            #cart-upgrade-popup .cart-modal-content {
+                position: relative;
+                width: 92%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-54.2%, -50%);
+            }
+
+            .cart-modal {
+                padding: 70px 0;
+            }
+
+            #cart-upgrade-popup .cart-modal-content > a {
+                position: absolute;
+                right: -8px;
+                top: -12px;
+                display: block;
+                z-index: 999;
+                width: 40px;
+                height: 40px;
+                background: #22b073;
+                float: left;
+                text-align: center;
+                border-radius: 100%;
+            }
+
+            #cart-upgrade-popup .close {
+                left: 0;
+                top: 0px;
+                font-size: 37px;
+                color: #fff;
+                width: 100%;
+            }
+
+            #cart-upgrade-popup .continue-cart a.orderNow {
+                margin: 0;
+            }
+        }
+
+    </style>
+
+<script>
+        jQuery(document).on("click", ".openUpsell2", function () {
+            jQuery("#cart-upgrade-popup").slideToggle();
+        });
+
+
+        jQuery(document).on("click", "#cart-upgrade-popup .orderUpgrade", function () {
+           jQuery("#productVaraintSelected").val();
+            {% if product.id == all_products["curalin"].id %}
+            jQuery("#productVaraintSelected").val("{{ all_products["curalin-3-pack"].first_available_variant.id }}")
+
+            {% elsif product.id == all_products["curalin-3-pack"].id %}
+            jQuery("#productVaraintSelected").val("{{ all_products["curalin-6-pack"].first_available_variant.id }}")
+            {% endif %}
+            jQuery(".cart-modal").slideToggle();
+          jQuery("#addTocartForm").submit();
+           
+            
+        });
+
+
+        jQuery(document).on("click", "#cart-upgrade-popup .orderNow, #cart-upgrade-popup .close", function () {
+          window.dataLayer  = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
+            'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
+              'currencyCode': 'USD',          // the currency which is currently used by a visitor
+              'add': {                        // name of an action. In this case, always stays as add
+              'actionField': {           
+              'list': 'main'          // optional. name of a list from which the product was added to a cart  
+            },       
+            'products': [{              // list of products added to a cart. Can contain multiple products at the same time
+              'name': '{{ product.title }}',      // name of a product that was added to a cart
+              'id': '{{ product.id }}',       // id of a product
+              'price': '{{ current_variant.price | money_without_currency }}',      // price of a product
+              'category': 'Simple',
+              'variant': '{{ product.first_available_variant.id }}',   // category of a product
+              'quantity': 1
+            }]
+          } 
+                                },
+                                'userId': '{{ customer.id }}',
+                                'email': '{{ customer.email }}',
+                                'country': '{{customer.customer_address.country_code }}',
+                                'city': '{{customer.customer_address.city }}',
+                                'name': '{{ customer.first_name }}',
+                                'surname': '{{ customer.last_name }}',
+                                'phone_number': '{{customer.phone }}',
+                                'state': '{{customer.customer_address.province }}',       //state or province
+                                'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+                                });
+
+          jQuery(".cart-modal").slideToggle();  
+          jQuery("#addTocartForm").submit();
+        });
+</script>
+
+
+    <div id="cart-upgrade-popup" class="cart-modal cart-upgrade-popup_class">
+        <!-- Modal content -->
+        <div class="cart-modal-content">
+            <a href="javascript:void(0)"><span class="close cart_close">×</span></a>
+            <div class="modal-body">
+                <div class="selectone">
+                    <div class="upgrade">
+                        {% if product.id == all_products["curalin"].id %}
+                            <h2>{{ section.settings.first_up_title }}</h2>
+                            <p>{{ section.settings.first_up_text }}</p>
+                        {% elsif product.id == all_products["curalin-3-pack"].id %}
+                            <h2>{{ section.settings.second_up_title }}</h2>
+                            <p>{{ section.settings.second_up_text }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="continue-cart">
+                        {% if product.id == all_products["curalin"].id %}
+                            <figure>
+                                <img class="lazyload" data-src="{{ all_products["curalin-3-pack"].images[0] | product_img_url: 'master' }}"
+                                     class="img-responsive"/>
+                            </figure>
+                            <aside>
+                 <span>
+
+                  <h3 id="pack3_sale">{{ all_products["curalin-3-pack"].first_available_variant.price | money }}</h3>
+                  <del id="pack3_reg">{{ all_products["curalin-3-pack"].first_available_variant.compare_at_price | money }}</del>
+
+
+                 </span>
+                                <a href="javascript:"
+                                   class="orderUpgrade">{{ section.settings.first_btnup_text }}</a>
+                                <a href="javascript:"
+                                   class="orderNow">{{ section.settings.continue_btn_text }}</a>
+                            </aside>
+
+
+                        {% elsif product.id == all_products["curalin-3-pack"].id %}
+                            <figure>
+                                <img class="lazyload" data-src="{{ all_products["curalin-6-pack"].images[0] | product_img_url: 'master' }}"
+                                     class="img-responsive"/>
+                            </figure>
+                            <aside>
+                 <span>
+                  <h3 id="pack6_sale">{{ all_products["curalin-6-pack"].first_available_variant.price | money }}</h3>
+                  <del id="pack6_reg">{{ all_products["curalin-6-pack"].first_available_variant.compare_at_price | money }}</del>
+                 </span>
+                                <a href="javascript:"
+                                   class="orderUpgrade">{{ section.settings.second_btnup_text }}</a>
+                                <a href="javascript:"
+                                   class="orderNow">{{ section.settings.continue_btn_text }}</a>
+                            </aside>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

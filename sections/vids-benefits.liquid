@@ -1,0 +1,95 @@
+{% if section.blocks %}
+	<section class="curaLinBenifits title_change">
+      	<style>
+        	.benifits_row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }  
+          	.sliderVideo .text_options .text_slider.text_seting h1 br {
+                  display: block;
+              }
+          	.benifits_row .benifits_col {
+                flex: 0 0 28%;
+            }
+          	@media screen and (max-width: 991px) {
+             .benifits_row .benifits_col {
+                  flex: 0 0 32%;
+              }
+            }
+            @media screen and (max-width: 767px) {
+             .benifits_row .benifits_col {
+                  flex: 0 0 49%;
+              }
+            }
+      	</style>
+        <div class="container">
+            <div class="row">
+                 {% for block in section.blocks %}
+                  	{% case block.type %}	
+                      {% when 'section-heading' %}
+                        {% if block.settings.title != blank %}
+                            <div class="col-md-12">
+                                <h2>{{ block.settings.title }}</h2>
+                            </div>
+              			 {% endif %}
+              		{% endcase %}	
+              	{% endfor %}	
+                <div class="clearfix"></div>
+              	<div class="benifits_row">
+                  {% for block in section.blocks %}
+                      {% case block.type %}	
+                        {% when 'benefits-item' %}
+                               {% if block.settings.benifits-image and block.settings.description != blank %}
+                                  <div class="benifits_col">
+                                      <div class="benifit-disc">
+                                          <img src="{{ block.settings.benifits-image | img_url: 'master' }}" class="img-responsive advert-img">
+                                          <p>{{ block.settings.description }}</p>
+                                      </div>
+                                  </div>
+                               {% endif %}	
+                      {% endcase %}	
+                  {% endfor %}  
+              	</div>
+            </div>
+           	<p class="text resultVary"><em><ls-static-590405>*Individual results may vary</ls-static-590405></em>
+                </p>
+        </div>
+    </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Benefits",
+    "blocks": [
+    		{
+    			"type": "section-heading",
+    			"name": "Section Heading",
+    			"settings": [
+                   {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading"
+                  }
+    			]
+    		},
+			{
+    			"type": "benefits-item",
+    			"name": "benefits",
+    			"settings": [
+                   {
+                    "type": "text",
+                    "id": "description",
+                    "label": "Description"
+                  },                  
+				  {
+                    "type": "image_picker",
+                    "id": "benifits-image",
+                    "label": "Benefits Icon"
+                  }
+    			]
+    		}
+	]
+  }
+{% endschema %}
+

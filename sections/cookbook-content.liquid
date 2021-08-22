@@ -1,0 +1,92 @@
+<div class="cookbook-page" style="background-image:url('{{ section.settings.background-image | img_url: 'master' }}')">
+    <div class="container">
+
+        <div class="header">
+            <img src="{{ section.settings.spoon-image | img_url: 'master' }}" alt="wooden spoon" class="spoon corner-image" loading="lazy">
+            <div class="title-container">
+                
+                <h1 class="main-title">
+                    <span class="top"><img src="{{ section.settings.chef-icon | img_url: 'master' }}" alt="chef icon" loading="lazy">Diabetes-Friendly</span><br>
+                    <span class="bottom">CookBook</span>
+                </h1>
+            </div>
+            <img src="{{ section.settings.pot-image | img_url: 'master' }}" alt="pink pot" class="pot corner-image" loading="lazy">
+        </div>
+
+        <div class="cookbook-content">
+            <div class="image-container">
+                <img class="cookbook-image" src="{{ section.settings.cookbook-image | img_url: 'master' }}" alt="the curalife cookbook" loading="lazy">
+                <img class="pen" src="{{ section.settings.pen-image | img_url: 'master' }}" alt="pen" loading="lazy">
+            </div>
+            <div class="content">
+                <div class="description">Download our free e-book with 67 amazing diabetic-friendly recipes for you to enjoy!</div>
+                <div class="download-cta"><a class="download-cookbook" href="https://cdn.shopify.com/s/files/1/0452/2459/1511/files/Diabetic-Friendly-Cookbook.pdf" download><p class="download-cookbook">Click Here to Download</p></a></div>
+                <div class="gallery">
+                    <img src="{{ section.settings.gallery-image-1 | img_url: 'master' }}" alt="diabetes image" loading="lazy">
+                    <img src="{{ section.settings.gallery-image-2 | img_url: 'master' }}" alt="diabetes image" loading="lazy">
+                    <img src="{{ section.settings.gallery-image-3 | img_url: 'master' }}" alt="diabetes image" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Page Content",
+    "settings": [
+{
+          "type": "image_picker",
+          "id": "background-image",
+          "label": {"en":"Background Image"}
+		},
+{
+          "type": "image_picker",
+          "id": "spoon-image",
+          "label": {"en":"Spoon Image"}
+		},
+{
+          "type": "image_picker",
+          "id": "pot-image",
+          "label": {"en":"Pot Image"}
+		},
+{
+          "type": "image_picker",
+          "id": "chef-icon",
+          "label": {"en":"Chef Icon"}
+		},
+{
+          "type": "image_picker",
+          "id": "cookbook-image",
+          "label": {"en":"CookBook Image"}
+		},
+{
+          "type": "image_picker",
+          "id": "pen-image",
+          "label": {"en":"Pen Image"}
+		},
+{
+          "type": "image_picker",
+          "id": "gallery-image-1",
+          "label": {"en":"Gallery Image 1"}
+		},
+{
+          "type": "image_picker",
+          "id": "gallery-image-2",
+          "label": {"en":"Gallery Image 2"}
+		},
+{
+          "type": "image_picker",
+          "id": "gallery-image-3",
+          "label": {"en":"Gallery Image 3"}
+		}]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+self.set_header("Content-Type", "application/json")
+self.set_header("Content-Disposition", 'attachment; filename=learned_data.json')
+{% endjavascript %}

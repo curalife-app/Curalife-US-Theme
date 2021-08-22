@@ -1,0 +1,41 @@
+  <div class="guarantee-section">
+        <div class="guarantee-label wow fadeIn">
+            <p>{{ section.settings.guarantee_label }}</p>
+        </div>
+        <div class="container">
+            <div class="data">
+                <div class="guarantee-text wow fadeInUp">
+                    <p>{{ section.settings.text }}</p>
+                </div>
+                <div class="sub-title wow fadeInUp">
+                    <h2>{{ section.settings.title }}</h2>
+                </div>
+                <div class="btn-wrap wow fadeInUp">
+                    <a href="#od_now" class="main-btn gvtry gold big radius" data-goto="prod_0"><ls-static-721511>Give it a try</ls-static-721511></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+    {
+    "name": "Exclusive Discount",
+    "settings": [
+    {
+    "type": "textarea",
+    "id": "title",
+    "label": "Title"
+    },
+{
+    "type": "textarea",
+    "id": "text",
+    "label": "Text"
+    },
+{
+    "type": "text",
+    "id": "guarantee_label",
+    "label": "Guarantee Label"
+    }
+    ]
+    }
+{% endschema %}

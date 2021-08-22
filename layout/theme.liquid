@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{ page_title }}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="{{ page_description | escape }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+   
+  <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'common.css' | asset_url }}"></noscript>
+  <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'styles.css' | asset_url }}"></noscript>
+  <script src="{{ 'jquery-3.4.1.min.js' | asset_url}}" ></script>
+  <script src="{{ 'libs.js' | asset_url }}" async></script>
+  <script src="{{ 'common.js' | asset_url }}" async></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" defer="defer"></script>
+  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
+
+  
+  <!-- SEO Languages Solution -->
+  {% assign _page_path = request.path  | split:'/' %}
+{% assign _page_path_normal = request.path %}
+  
+
+{% if _page_path[1] == blank %}
+  
+<link rel="canonical" href="{{canonical_url}}" />
+<link rel="alternate" href="https://curalife.com" hreflang="en-us" />
+<link rel="alternate" href="https://curalife.com/es/" hreflang="es-us" />
+<link rel="alternate" href="https://global.curalife.com/it" hreflang="it" />
+<link rel="alternate" href="https://global.curalife.com" hreflang="en-gb" />
+  
+{% elsif _page_path[1] == "it" %}
+  
+<link rel="canonical" href="{{canonical_url}}" />
+<link rel="alternate" href="https://curalife.com{{ _page_path_normal | remove_first: '/it' }}" hreflang="en-us" />
+<link rel="alternate" href="https://curalife.com/es{{ _page_path_normal | remove_first: '/it' }}" hreflang="es-us" />
+<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal }}" hreflang="it" />
+<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal | remove_first: '/it' }}" hreflang="en-gb" />
+
+{% elsif _page_path[1] == "es" %}
+
+<link rel="canonical" href="{{canonical_url}}" />
+<link rel="alternate" href="https://curalife.com{{ _page_path_normal | remove_first: '/es' }}" hreflang="en-us" />
+<link rel="alternate" href="https://curalife.com/es{{ _page_path_normal | remove_first: '/es' }}" hreflang="es-us" />
+<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal | replace_first : '/es', '/it' }}" hreflang="it" />
+<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal | remove_first: '/es' }}" hreflang="en-gb" />
+ 
+{% else %}
+
+<link rel="canonical" href="{{canonical_url}}" />
+<link rel="alternate" href="https://curalife.com{{ _page_path_normal }}" hreflang="en-us" />
+<link rel="alternate" href="https://curalife.com/es{{ _page_path_normal }}" hreflang="es-us" />
+<link rel="alternate" href="https://global.curalife.com/it{{ _page_path_normal }}" hreflang="it" />
+<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal }}" hreflang="en-gb" />
+
+{% endif %}
+  <!-- End SEO Languages Solution -->
+  
+{% if template contains 'customers' %}
+    {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+{% endif %}
+{{ content_for_header }} <!-- Header hook for plugins -->
+
+  {% include 'head'%}
+  
+  {% include 'google-tag-manager'%}
+</head>
+<body>
+{% include 'google-tag-manager-noscript'%}
+{% include 'hot-jar'%}
+  {% section 'header'%}
+
+  <main role="main">
+    {{ content_for_layout }}
+    
+     {% section 'footer'%}
+  </main>
+  <script>
+  jQuery(document).on("click", ".remove-item", function () {
+  
+    var variantId =$(this).data("variant");
+    var price =$(this).data("price");
+    var title =$(this).data("title");
+    var id =$(this).data("id");
+
+  
+    window.dataLayer  = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'eec.removeFromCart',  // name of an event. In this case, always stays as eec.removeFromCart
+      'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
+        'currencyCode': 'USD',      // the currency which is currently used by a visitor
+        'remove': {                 // name of an action. In this case, always stays as remove                           
+          'products': [{              // list of products removed from a cart. can include multiple products.
+            'name': title,      // name of a product that is currently viewed. Always include it.
+            'id': id,           // id of a product. Always include it.
+            'price': price.toString(),          // price of a product
+            'category': 'Simple',      // category of a product
+            'variant': variantId         // product variant.
+          }]
+        }
+      },
+      'userId': '{{ customer.id }}',
+      'email': '{{ customer.email }}',
+      'country': '{{customer.customer_address.country_code }}',
+      'city': '{{customer.customer_address.city }}',
+      'name': '{{ customer.first_name }}',
+      'surname': '{{ customer.last_name }}',
+      'phone_number': '{{customer.phone }}',
+      'state': '{{customer.customer_address.province }}',       //state or province
+      'zip': '{{customer.customer_address.zip }}',          //ZIP or Postal code
+    });
+
+  }); 
+  </script> 
+  
+  
+ 
+<!-- Begin Shopify-Afterpay JavaScript Snippet (v1.0.9) -->
+<script type="text/javascript">
+// Overrides:
+// var afterpay_min = 0.04;            // As per your Afterpay contract.
+// var afterpay_max = 2000.00;         // As per your Afterpay contract.
+// var afterpay_cbt_enabled = false;   // As per your Afterpay contract; change to true to display Cross-Border Trade artwork (for AU/NZ).
+// var afterpay_logo_theme = 'colour'; // Can be 'colour', 'black' or 'white'.
+// var afterpay_product_selector = '#product-price-selector';
+// var afterpay_cart_integration_enabled = true;
+// var afterpay_cart_static_selector = '#cart-subtotal-selector';
+
+// Non-editable fields:
+var afterpay_shop_currency = {{ shop.currency | json }};
+var afterpay_cart_currency = {{ cart.currency.iso_code | json }};
+var afterpay_shop_money_format = {{ shop.money_format | json }};
+var afterpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
+var afterpay_theme_name = {{ theme.name | json }};
+var afterpay_product = {{ product | json }};
+var afterpay_current_variant = {{ product.selected_or_first_available_variant | json }};
+var afterpay_cart_total_price = {{ cart.total_price | json }};
+var afterpay_js_snippet_version = '1.0.9';
+</script>
+      {% comment %} START Add Trailing Slash {% endcomment %}
+    <!--
+      <script type="text/javascript">
+        $(function($)
+ {
+          $('a').each(function() {
+            var href = $(this).attr('href');
+            try {
+                href = href.replace(/\/$/, "");
+                $(this).attr('href', href);
+            }
+            catch(err) {console.clear()}
+          });
+        });
+      </script>
+    -->
+      {% comment %} END Add Trailing Slash {% endcomment %}
+    <!-- Temp Fix For window.open -->
+<!--
+    <script type="text/javascript">
+    window.open = function(href){
+      var a = document.createElement('a');
+      a.href = href;
+      document.body.appendChild(a);
+      a.click();
+};
+  </script>
+-->
+<script type="text/javascript" src="https://static.afterpay.com/shopify-afterpay-javascript.js"></script>
+<!-- End Shopify-Afterpay JavaScript Snippet (v1.0.9) -->
+{% include 'salesforce-chat' %}
+  {% include 'wisepops-generated' %}
+</body>
+</html>
+
+
+
+
+
+
+

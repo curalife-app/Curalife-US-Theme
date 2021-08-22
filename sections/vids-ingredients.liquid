@@ -1,0 +1,101 @@
+{% if section.settings.section_heading != blank or section.blocks %}
+	<section class="whats_inside">
+        <div class="container">
+          	{% if section.settings.top-image %}
+                <div class="row">
+                    <div class="ingImg">
+                        <img class="img-responsive lazyload" data-src="{{ section.settings.top-image | img_url : 'master' }}">
+                    </div>
+                </div>
+          	{% endif %}
+          	{% if section.settings.section_heading != blank %}
+              <div class="row">
+                  <h2>{{ section.settings.section_heading }}</h2>
+              </div>
+          	{% endif %}
+          	{% if section.blocks %}
+                <div class="row">
+                    <div class="r_capsule">
+                      	{% if section.settings.left-image %}
+                          <div class="capsule_sec">
+                              <img class="capsule img-responsive lazyload" data-src="{{ section.settings.left-image | img_url : 'master' }}">
+                          </div>
+                        {% endif %}
+                        <div class="ingredient_slider">
+                          	 {% for block in section.blocks %}
+                          		{% case block.type %}	
+                          			{% when 'ingredients' %}
+                          				{% if block.settings.list-title != blank or block.settings.description != blank or block.settings.ingredient-image %}
+                                            <div class="ingredient"> 
+                                              	{% if block.settings.list-title != blank or block.settings.description != blank %}
+                                                    <div class="ingredient_info">
+                                                      {% if block.settings.list-title != blank %} 
+                                                      		<h3>{{ block.settings.list-title }}</h3>
+                                                      {% endif %}
+                                                      {% if block.settings.description != blank %} 
+                                                      		{{ block.settings.description }}
+                                                      {% endif %}                                                       
+                                                    </div>
+                                              	{% endif %}
+                                              	{% if block.settings.ingredient-image %}
+                                                    <div class="ingredient_img">
+                                                        <img class="img-responsive lazyload" data-src="{{ block.settings.ingredient-image | img_url : 'master' }}">
+                                                    </div>
+                                              	{% endif %}
+                                            </div>
+                          				 {% endif %}
+                          			{% endcase %}	
+                          		{% endfor %}                          
+                        </div>
+                    </div>
+                </div>
+          {% endif %}
+        </div>
+    </section>
+{% endif %}
+{% schema %}
+  {
+    "name": "Ingredients",
+    "settings": [
+		{
+          "type": "text",
+          "id": "section_heading",
+          "label": "Heading"
+        },
+		{
+          "type": "image_picker",
+          "id": "top-image",
+          "label": "Section Top Image"
+        },
+		{
+          "type": "image_picker",
+          "id": "left-image",
+          "label": "Slider Left Image"
+        }
+	],
+	"blocks": [
+    		{
+    			"type": "ingredients",
+    			"name": "Ingredient",
+    			"settings": [
+                  {
+                    "type": "text",
+                    "id": "list-title",
+                    "label": "Title"
+                  },
+				  {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                  },	
+				  {
+                    "type": "image_picker",
+                    "id": "ingredient-image",
+                    "label": "Ingredient Image"
+                  }				  	
+    			]
+    		}
+	]
+  }
+{% endschema %}
+

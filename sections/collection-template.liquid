@@ -1,0 +1,124 @@
+<div class="catalog-page">
+    <div class="container">
+        <div class="mini-wrap">
+            <div class="product-list">
+               
+                
+                {% for product in collection.products  -%}
+                <div class="product-card">
+                    <div class="wrap">
+                        <div class="picture">
+                            
+                            {% if section.settings.prdct_bgimg != blank %}
+                            <div class="bg">
+                                <img class="lazyload" data-src="{{section.settings.prdct_bgimg | img_url: ''}}" alt="">
+                            </div>
+                            {% endif %}
+                           
+                            {% if product.featured_image.src != blank %}
+                            <div class="img">
+                                <img class="lazyload" data-src="{{ product.featured_image.src | img_url: '300x300' }}" alt="">
+                            </div>
+                            {% endif %}
+                          <div class="discount">
+                                {% if product.compare_at_price_max > product.price %}
+                        <p>
+                            {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount
+                            
+                        </p>
+                        {% endif %}
+                            </div>
+                            <div class="more">
+                                <a href="{{ product.url }}">SHOW MORE</a>
+                            </div>
+                        </div> 
+                        <div class="info"> 
+                            <div class="main">
+<!--                                 <div class="status">
+                                    <p>STARTER PACK</p>
+                                </div> -->
+                                <div class="name">
+                                    <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+                                </div>
+                                <div class="price">
+                                    {% if product.compare_at_price > product.price %}
+                                    <p>{{ product.price | money }}<strike>{{ product.compare_at_price | money }}</strike></p>
+                                    {% else %}
+                                    <p>{{ product.price | money }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% comment %}
+                             <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+
+                                <div class="btn">
+                                    <button type="submit" class="main-btn"><i class="icon-cart"></i>Add to Cart
+                                    </button>
+
+                                   
+                                </div>
+                            </form>
+                             {% endcomment %}
+                             <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                <input type="hidden" name="return_to" value="/checkout/">
+                                
+
+                                <div class="btn">
+                                    <button type="submit" class="main-btn"><i class="icon-cart"></i> Add To Cart
+                                    </button>
+                                   
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% if section.settings.clcbnr_btmimg != blank %}
+<div class="bottom-banner bottom-line">
+    <div class="container">
+        <div class="white-bg">
+            <div class="banner-section">
+                <img class="lazyload" data-src="{{section.settings.clcbnr_btmimg | img_url: ''}}" alt=""> 
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% schema %}
+    {
+        "name": "Collection Products",
+        "class": "collection-products",
+        "settings": [
+            
+            {
+              "type": "image_picker",
+              "id": "prdct_bgimg",
+              "label": "Select Product Background Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "clcbnr_btmimg",
+              "label": "Select Bottom Banner Image"
+            }    
+           
+            
+        ] 
+        
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,344 @@
+<div class="article-page">
+    <div class="container">
+        <div class="mini-wrap">
+            <div class="article-data">
+                {% if section.settings.singpst_img != blank %}
+                <div class="article-top">
+                    <a class="banner click" id="loyalty_top" href="{{ section.settings.singpst_url}}">
+                        <img class="lazyload" data-src="{{ section.settings.singpst_img | img_url: '' }}" alt="">
+                    </a>
+                </div>
+                {% endif %}
+                <div class="article-wrap">
+                    <div class="title">
+                        <h1>{{ article.title }}</h1>
+                    </div>
+                    <div class="article-author">
+                        {% if article.user.image %}
+                        <div class="photo">
+                            <img class="lazyload" data-src="{{ article.user.image | img_url: 'master' }}" alt="{{ article.author }}">
+                        </div>
+                       {% else %}
+                         <div class="photo">
+                            <img class="lazyload" data-src="{{ section.settings.authr_blgimg | img_url: '' }}" alt="{{ article.author }}">
+                        </div>
+                        {% endif %}
+                        <div class="details">
+                            <h4>{{ article.author }}</h4>
+                            <p>{{ article.user.bio }}</p>
+                        </div>
+                        
+                    </div>
+                    <div class="intro-data introhide">
+                        <div class="content">
+                            <div class="text">
+                                <p>
+                                    {% if article.excerpt.size > 0 %}
+                                        {{ article.excerpt }}
+                                        {% else %}
+                                        {{ article.content | strip_html | truncate: 150 }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="picture">
+                        <div class="img-wrap">
+                            {% if article.image %}
+                        <img class="lazyload" data-src="{{ article.image | img_url: 'original' }}" alt="">
+                        {% endif %}
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="text">
+                            {{ article.content }}
+                        </div>
+                    </div>
+                    {% if section.settings.sidepst_img != blank %}
+                    <div class="sidebar">
+                        <a class="banner click" id="loyalty_sidebar" href="{{ section.settings.sidepst_url}}">
+                            <img class="lazyload" data-src="{{ section.settings.sidepst_img | img_url: '' }}" alt="">
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="share-post">
+                    <div class="container">
+                        <div class="share-wrap">
+                            {% if section.settings.socil_titl != blank %}
+                            <p>{{section.settings.socil_titl}}</p>
+                            {% endif %}
+                            <ul>
+                                {% for block in section.blocks %}
+                                {% if block.type == 'socl_icn' %}
+                                {% if block.settings.blg_icn != blank %}
+                                <li>
+                                    <a href="{{block.settings.blg_icnlink}}">
+                                        <span class="{{block.settings.blg_icn}}"></span>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+				{% comment %}
+                {% if section.settings.sidepst_img != blank %}
+                <div class="article-bottom">
+                    <a href="{{ section.settings.sidepst_url}}">
+                        <img class="lazyload" data-src="{{ section.settings.sidepst_img | img_url: '' }}" alt="">
+                    </a>
+                </div>
+                {% endif %}
+				{% endcomment %}
+				{% if section.settings.mobile_img != blank %}
+                    <div class="article-bottom mobileImg">
+                        <a class="banner click" id="loyalty_bottom" href="{{ section.settings.sidepst_url}}">
+                            <img class="lazyload" data-src="{{ section.settings.mobile_img | img_url: '' }}" alt="">
+                        </a>
+                    </div>
+                    {% endif %}
+                {% capture all_the_tags %}{% for tag in article.tags %}{{ tag }} {% endfor %}{% endcapture %}
+                                {% assign current = article.id %}
+                                {% assign count = 0 %}
+                                <div class="related-posts">
+                                    <div class="container">
+                                        <div class="mini-wrap">
+                                            <div class="posts-wrap">
+                                                <div class="sub-title">
+                                                    <h2>Related Articles</h2>
+                                                </div>
+                                                <div class="posts-list">
+                                                <div class="swiper-container">
+                                                <div class="swiper-wrapper">
+                                                    {% for article in blog.articles %}
+                                                     {% if count <=2 %}
+                                                        {% unless article.id == current %}
+                                                            {% for tag in article.tags %}
+                                                                {% if all_the_tags contains tag %}
+                                                      <div class="swiper-slide">
+                                                    <div class="article-card">
+                                                        <div class="picture">
+                                                            <a href="{{ article.url }}" class="main-link"></a>
+                                                            {% if article.image %}
+                                                            <img class="lazyload" data-src="{{ article.image | img_url: 'original' }}" alt="">
+                                                            {% endif %}
+                                                            {% if article.tags.size > 0 %}
+                                                            {% for tag in article.tags %}
+                                                            <div class="category">
+                                                            <p>{{ tag }}</p>
+                                                            </div>
+                                                            {% endfor %}
+                                                            {% endif %}
+                                                              </div>
+                                                        <div class="info">
+                                                            <div class="main-info">
+                                                                <div class="title">
+                                                                    <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                                                                </div>
+                                                                <div class="offer">
+                                                                    <p>{{settings.offer_desc}}</p>
+                                                                </div>
+                                                                {% if description %}
+                                                                <div class="description">
+                                                                <p>
+                                                                {% if article.excerpt.size > 0 %}
+                                                                {{ article.excerpt }}
+                                                                {% else %}
+                                                                {{ article.content | strip_html | truncate: 150 }}
+                                                                {% endif %}
+                                                                </p>
+                                                                </div>
+                                                                {% endif %}
+
+                                                            </div>
+                                                            <div class="article-author">
+                                                                {% if article.user.image %}
+                                                                <div class="photo">
+                                                                <img class="lazyload" data-src="{{ article.user.image | img_url: 'master' }}" alt="{{ article.author }}">
+                                                                </div>
+                                                                {% else %}
+                                                                <div class="photo">
+                                                                <img class="lazyload" data-src="{{ section.settings.authr_blgimg | img_url: '' }}" alt="{{ article.author }}">
+                                                                </div>
+                                                                {% endif %}
+                                                                <div class="details">
+                                                                {% if article.author %}
+                                                                <h4>{{ article.author}}</h4>
+                                                                {% endif %}
+                                                                {% if article.user.bio %}
+                                                                <p>{{ article.user.bio }}</p>
+                                                                {% endif %}
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    {% assign count = count | plus:1 %}
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                    {% endunless %}
+                                                        {% endif %}
+                                                    {% endfor %}
+                                            </div>
+                                                <div class="slider-control">
+                                                <div class="prev-slide"><span class="icon-arrow"></span></div>
+                                                <div class="next-slide"><span class="icon-arrow"></span></div>
+                                                </div>
+                                                  </div>
+                                                     </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                <div class="posts-categories">
+                    <div class="sub-title">
+                        <h2>Blog Categories</h2>
+                    </div>
+                    <div class="blog-category">
+                        <div class="category-wrap">
+                            <div class="touch-scroll">
+                                <div class="scroll-wrap">
+                                    <ul>
+                                        {% for tag in blog.all_tags %}
+                                        {% assign crTag = tag  %}
+                                        {% if current_tags contains crTag  %}
+                                        {% assign cls="active" %}
+                                        {% else %}
+                                        {% assign cls="" %}
+                                        {% endif %}
+                                        <li class="{{cls}}"  > <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% include 'article-newsletter' %}
+
+
+{% schema %}
+    {
+        "name": {
+            "en": "Article pages",
+            "de": "Artikelseiten",
+            "es": "Páginas de artículos",
+            "fr": "Pages d'articles",
+            "pt-PT": "Páginas de artigos"
+        },
+        "settings": [
+            {
+              "type": "image_picker",
+              "id": "singpst_img",
+              "label": "Select Image"
+            },
+            {
+                "type": "url",
+                "id": "singpst_url",
+                "label": "Link"
+            },
+            {
+              "type": "image_picker",
+              "id": "authr_blgimg",
+              "label": "Select Author Image"
+            },
+			{
+              "type": "image_picker",
+              "id": "mobile_img",
+              "label": "Select Mobile Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "sidepst_img",
+              "label": "Select Sidebar Image"
+            },
+            {
+                "type": "url",
+                "id": "sidepst_url",
+                "label": "Link for sidebar image and (Mobile Image)"
+            },
+            {
+               "type": "header", 
+               "content": "Social Share Section Start" 
+            }, 
+            {
+                "type": "text",
+                "id": "socil_titl",
+                "label": "Title",
+                "default": "Enter Title"
+            },
+            {
+               "type": "header", 
+               "content": "Newsletter Section Start" 
+            }, 
+            {
+                "type": "text",
+                "id": "nwsltr_titl",
+                "label": "Newsletter Title",
+                "default": "Enter Newsletter title"
+            },
+            {
+                "type": "textarea",
+                "id": "nwsltr_desc",
+                "label": "Newsletter Description",
+                "default": "Enter Newsletter Description"
+            }, 
+            {
+              "type": "image_picker",
+              "id": "nwslt_img",
+              "label": "Select image"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "socl_icn",
+                "name": "Social Icons",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "blg_icn",
+                        "label": "Facebook Icone",
+                        "default": "icon-b-fb"
+                    },
+                    {
+                        "type": "url",
+                        "id": "blg_icnlink",
+                        "label": "Facebook Link"
+                       
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+<style>
+    @media screen and (max-width: 760px){
+.related-posts .posts-list .swiper-container .prev-slide.disabled, .related-posts .posts-list .swiper-container .next-slide.disabled {
+    opacity: 0.3;
+}
+
+}
+@media only screen and (min-width: 992px){
+.related-posts .swiper-slide {
+    width: 310px!important;
+}
+}
+</style>

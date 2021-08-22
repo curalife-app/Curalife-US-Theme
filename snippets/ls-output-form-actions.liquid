@@ -1,0 +1,18 @@
+{%- comment -%}
+    Modify form actions output
+{%- endcomment -%}
+
+{%- assign output = input -%}
+
+{%- capture defaultLanguageCode -%}{%- render "ls-default-language" -%}{%- endcapture -%}
+{%- capture languageCode -%}{%- render "ls-language" -%}{%- endcapture -%}
+
+{%- if languageCode != defaultLanguageCode -%}
+    {%- assign checkoutAction = 'action="/' | append: languageCode | append: '/checkout' | append: '"' -%}
+    {%- assign cartAction = 'action="/' | append: languageCode | append: '/cart' | append: '"' -%}
+    {%- assign cartAddAction = 'action="/' | append: languageCode | append: '/cart/add' | append: '"' -%}
+
+    {%- assign output = output | replace: 'action="/checkout"', checkoutAction | replace: 'action="/cart/add"', cartAddAction | replace: 'action="/cart"', cartAction -%}
+{%- endif -%}
+
+{{ output }}

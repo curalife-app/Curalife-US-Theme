@@ -1,0 +1,199 @@
+{% if section.blocks %}
+  <style>
+      div#shopify-section-vids-product-order-section-top #ordernowdesk {
+            background: url({{ section.settings.section-bg-image | img_url: 'master' }}) no-repeat center !important; background-size: cover !important;
+        }  
+        @media only screen and (max-width: 767px){
+          #ordernowdesk {
+              background: url({{ section.settings.section-mobilebg-image | img_url: 'master' }}) no-repeat !important;          
+          }
+      }
+  </style>
+  <section class="banner_section bottom_banner" id="ordernowdesk">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="center-content">
+                        <div class="holiday_offer_block">
+                            <div class="holiday_img ext-content">
+                                <h1>{{ section.settings.Heading }}</h1>
+                            </div>
+                            {% if section.blocks %}                    
+                              <div class="holiday_offer_img desktopOnly">
+                                  <img class="curaLin-Img img-responsive" src="{{ section.settings.curalin-bottal-image | img_url: 'master' }}">
+                              </div>
+                            {% endif %}
+                        </div>
+                        <div class="package-detail" id="packagedivmbl">
+                            <div class="select-one" id="packagetop">
+                                {% for block in section.blocks %}                                 
+                              {% case block.type %} 
+                                {% when 'product-box-heading' %}
+                                        <div class="choose-package ">
+                                            <h6>{{ block.settings.box-title }}</h6>
+                                            <p>{{ block.settings.box-sub-heading }}</p>
+                                        </div>
+                                  {% endcase %} 
+                                {% endfor %}  
+                                <div class="instant">
+                                    <ul class="off-price">
+                                     {% for block in section.blocks %}                                  
+                                          {% case block.type %} 
+                                          {% when 'product' %}
+                                          {% if forloop.index == 3 %}
+                                            {% assign class_ = 'active' %}
+                                          {% else %}
+                                            {% assign class_ = '' %}
+                                          {% endif %}
+                                            <li data-regular-price="{{ block.settings.regular-price }}" data-instant-saving="{{ block.settings.savings }}" data-sale-price="{{ block.settings.sale_price }}" data-pack="{{ block.settings.sub-heading }}" data-link="{{ block.settings.order-link }}" class="{{ class_ }}">
+                                            <a href="#">
+                                            <h3>{{ block.settings.product-title }}</h3>
+                                            {% if block.settings.prodct-discount != blank %}
+                                              <span>{{ block.settings.prodct-discount }}</span>
+                                            {% endif %}  
+                                            </a>
+                                            </li>                                           
+                                        {% endcase %} 
+                                  {% endfor %}
+                                    </ul>
+                                   
+                                     {% for block in section.blocks %}                                  
+                                          {% case block.type %} 
+                                          {% when 'product' %}
+                                            {% if forloop.index == 3 %}
+                                            <div data-detail="" class="details_sec"> <b>{{ block.settings.sub-heading }}</b>
+                                                  <h4><ls-static-802333>Regular Price:</ls-static-802333> <del data-ini-rp>{{ block.settings.regular-price }}</del></h4>
+                                                  <h5 data-ini-is><ls-static-825587>Instant Savings:</ls-static-825587> {{ block.settings.savings }}</h5>
+                                                  <h6 data-ini-sp>{{ block.settings.sale_price }}</h6>
+                                                </div>
+                                                <div class="buy_btn" data-curalin-url > <a href="{{ block.settings.order-link }}"><ls-static-920164>Order Now</ls-static-920164></a>
+                                                </div> 
+                                            {% endif %}  
+                                    {% endcase %} 
+                                  {% endfor %}
+                                   {% for block in section.blocks %}                                  
+                                      {% case block.type %} 
+                                      {% when 'product-box-heading' %}
+                                        <div class="ship">
+                                              <h3>{{ block.settings.box-shipping }}</h3>
+                                            </div>
+                                  {% endcase %} 
+                                  {% endfor %}
+                               </div>                               
+                            </div>
+                        </div>
+                    </div>
+                    {% if section.blocks %}                    
+                      <div class="offer_image mobileonly">
+                            <img class="img-responsive" src="{{ section.settings.curalin-bottal-image | img_url: 'master' }}">
+                        </div>
+                    {% endif %}
+                     
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif  %}
+{% schema %}
+  {
+    "name": "Bottom Order Section",
+    "settings": [
+    {
+            "type": "text",
+            "id": "Heading",
+            "label": "Section Title"
+        },
+    {
+          "type": "image_picker",
+          "id": "section-bg-image",
+          "label": "Background Image"
+        },
+    {
+          "type": "image_picker",
+          "id": "section-mobilebg-image",
+          "label": "Mobile Background Image"
+        },
+    {
+          "type": "image_picker",
+          "id": "curalin-bottal-image",
+          "label": "Curalin Bottol Image"
+        }
+  ],
+  "blocks": [
+        {   
+        "type": "product",
+          "name": "Add Product",
+          "settings": [
+                   {
+                    "type": "text",
+                    "id": "product-title",
+                    "label": "Product Title"
+                  },
+          {
+                    "type": "text",
+                    "id": "prodct-discount",
+                    "label": "Discount"
+                  },  
+                  {
+                    "type": "text",
+                    "id": "sub-heading",
+                    "label": "Sub Heading"
+                  },
+          {
+                    "type": "text",
+                    "id": "regular-price",
+                    "label": "Regular Price"
+                  },
+          {
+                    "type": "text",
+                    "id": "savings",
+                    "label": "Instant Savings"
+                  },
+          {
+                    "type": "text",
+                    "id": "sale_price",
+                    "label": "Price"
+                  },
+          {
+                    "type": "text",
+                    "id": "oreder-label",
+                    "label": "Order Button Label"
+                  },
+          {
+                    "type": "text",
+                    "id": "order-link",
+                    "label": "Order Button Link"
+                  }
+          ]
+        },
+      {   
+        "type": "product-box-heading",
+          "name": "Product Box Setting",
+          "settings": [
+                   {
+                    "type": "text",
+                    "id": "box-title",
+                    "label": "Box Title"
+                  },  
+                  {
+                    "type": "text",
+                    "id": "box-sub-heading",
+                    "label": "Box Sub Heading"
+                  },
+          {
+                    "type": "text",
+                    "id": "box-shipping",
+                    "label": "Shipping"
+                  } 
+          ]
+        }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

@@ -1,0 +1,51 @@
+<section class="policy centered-content">
+    <div class="wrapper">
+        <div class="policy__wrap">
+            {% if section.settings.plcy_image != blank %}
+            <div class="police__img">
+                <img src="{{ section.settings.plcy_image | img_url: '' }}" alt="">
+            </div>
+            {% endif %}
+            <div class="policy__info">
+                {% if section.settings.plcy_titl != blank %}
+                <h2>{{section.settings.plcy_titl}}</h2>
+                {% endif %}
+                {% if section.settings.plcy_descr != blank %}
+                <p>{{section.settings.plcy_descr}}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Policy Section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "plcy_image",
+          "label": "Image"
+        },
+        
+        {
+            "type": "text",
+            "id": "plcy_titl",
+            "label": "Enter Title"
+        },
+        {
+            "type": "textarea",
+            "id": "plcy_descr",
+            "label": "Enter Description"
+        }
+       
+  ]
+  
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

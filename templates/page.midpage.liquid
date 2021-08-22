@@ -1,0 +1,1037 @@
+ {% layout 'theme.midpage' %}
+<style>
+   #main .container {
+      max-width: 100%;
+      padding: 0;
+    }
+
+   
+   button#AddToCart {
+    display: inline-block;
+    width: 100%;
+    max-width: 270px;
+    text-transform: uppercase;
+    background-color: #ff6401;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 24px;
+    text-align: center;
+    letter-spacing: 0.65px;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+     border:none;
+}
+  button#AddToCart:hover{
+    background-color: #01c6b2;
+  }
+  .top__intro{
+    background-image: url({{'top_intro.png' | asset_url }}) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+  }
+  .video-wrap {
+    position: relative;
+    padding-bottom: 100%;
+    padding-top: 0;
+    height: 0;
+}
+  .stockup{
+    top: 100px;
+}
+ .slide-text h4 {
+    padding-top: 25px;
+}
+header:before{
+    background: transparent;
+    box-shadow: none;
+}
+@media screen and (max-width: 1491px){
+.top__intro .top__intro-wrapper .top__intro-img span img
+{
+z-index: 99;
+}
+header {
+    padding: 1.5% 0 2% 0!important;
+}
+.top__intro .top__intro-wrapper .top__intro-description .intro-title h1 {
+    font-size: 24px!important;
+}
+.top__intro .top__intro-wrapper
+{
+padding-top:0px;
+}
+.top__intro .top__intro-wrapper .top__intro-description .order__wrapper {
+    padding-top: 4.5%;
+}
+}
+@media screen and (max-width: 640px){
+
+
+.products .product-card {
+    margin: 0 auto;
+}
+}
+.reviews__slider-button.prev {
+    left: 0;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.reviews__slider-button {
+    width: 32px;
+    height: 32px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNS41OTciIGhlaWdodD0iMzQuMDI4IiB2aWV3Qm94PSIwIDAgMTUuNTk3IDM0LjAyOCI+CiAgPHBhdGggaWQ9ItCa0L7QvdGC0YPRgF80OTIiIGRhdGEtbmFtZT0i0JrQvtC90YLRg9GAIDQ5MiIgZD0iTTEwMjQuMDczLDY2NjcuNGwxMS41MDctMTUuODM4LTExLjUwNy0xNS44MzgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDIyLjQ1NSAtNjYzNC41NDYpIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSI0Ii8+Cjwvc3ZnPgo=);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: calc(42% - 16px);
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+.reviews__slider-button.next {
+    right: 0;
+}
+  
+  
+.reviews .reviews-slider .reviews__clients.swiper-container::before, 
+.reviews .reviews-slider .reviews__clients.swiper-container::after {
+    content: "";
+    width: 35px;
+    background-color: #ffb635;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+  
+@media screen and (max-width: 640px) {
+  .reviews__slider-button,
+  .reviews .reviews-slider .reviews__clients.swiper-container::before, 
+  .reviews .reviews-slider .reviews__clients.swiper-container::after {
+    display: none
+  }
+}
+
+</style>
+
+
+<section class="top__intro">
+    <div class="wrapper">
+        <header>
+    <a href="javascript:void(0)">
+        <img class="lazyload" data-src="{{'logo.svg' | asset_url }}" alt="">
+    </a>
+</header>
+        <div class="top__intro-wrapper">
+            <div class="top__intro-description">
+                <div class="intro-title">
+                    <h1>
+                        CuraLin. <br>
+                        Safe &amp; Powerful <br>
+                        Glucuse Support.
+                    </h1>
+                </div>
+                <div class="order__wrapper">
+                    <div class="order__btn">
+                        <a href="#packagediv" class="cstm-anchor-link">ORDER NOW</a>
+                    </div>
+                    <div class="order__subtitle">
+                        <div class="order__subtitle-item">
+                                <span>
+                                   <img class="lazyload" data-src="{{'order_icon_1.svg' | asset_url }}" alt="">
+                                </span>
+                            <p>Free Shipping</p>
+                        </div>
+                        <div class="order__subtitle-item">
+                                <span>
+                                    <img class="lazyload" data-src="{{'order_icon_2.svg' | asset_url }}" alt="">
+                                </span>
+                            <p>Money Back Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top__intro-img">
+                <span><img class="lazyload" data-src="{{'top-image.png' | asset_url }}" alt=""></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="logo__brands">
+    <div class="wrapper">
+        <ul class="logo__brands-list">
+            <li>
+                <img class="lazyload" data-src="{{'bbc.svg' | asset_url }}" alt="">
+            </li>
+            <li>
+                <img class="lazyload" data-src="{{'msn.svg' | asset_url }}" alt="">
+            </li>
+            <li>
+               <img class="lazyload" data-src="{{'daily.svg' | asset_url }}" alt="">
+            </li>
+            <li>
+                <img class="lazyload" data-src="{{'yahoo.svg' | asset_url }}" alt="">
+            </li>
+            <li>
+                <img class="lazyload" data-src="{{'cnn.svg' | asset_url }}" alt="">
+            </li>
+            <li>
+                <img class="lazyload" data-src="{{'sun.svg' | asset_url }}" alt="">
+            </li>
+            <li>
+                <img class="lazyload" data-src="{{'express.svg' | asset_url }}" alt="">
+            </li>
+            <li>
+                <img class="lazyload" data-src="{{'usa-today.svg' | asset_url }}" alt="">
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="what__is">
+    <div class="wrapper">
+        <div class="what__is-wrap">
+            <div class="what__is-wrap-text">
+                <h2>What is CuraLin?</h2>
+                <p><b>CuraLin is a clinically tested blood sugar support supplement made specifically for people who
+                    need to maintain healthy glucose levels and a powerful glycemic response. Safe, powerful,
+                    100%
+                    natural, and supported by leading diabetes doctors worldwide.</b></p>
+                <p>CuraLin works by blending specific glucose supporting herbs into a synergistic supplement that is
+                    strong enough to make a big difference in a diabetic's lifestyle.<br>
+                    It is a proprietary formula supported with scientific research and strengthened by modern
+                    production processes. You've never seen anything work like CuraLin...we promise you that.
+                </p>
+            </div>
+            <div class="what__is-right-picture">
+                    <span>
+                        <img class="lazyload" data-src="{{'what-is.png' | asset_url }}" alt="">
+                    </span>
+            </div>
+            <div class="order__wrapper">
+                <div class="order__btn">
+                    <a href="#packagediv" class="cstm-anchor-link">ORDER NOW</a>
+                </div>
+                <div class="order__subtitle">
+                    <div class="order__subtitle-item">
+                            <span>
+                                <img class="lazyload" data-src="{{'order_icon_1.svg' | asset_url }}" alt="">
+                            </span>
+                        <p>Free Shipping</p>
+                    </div>
+                    <div class="order__subtitle-item">
+                            <span>
+                                <img class="lazyload" data-src="{{'order_icon_2.svg' | asset_url }}" alt="">
+                            </span>
+                        <p>Money Back Guarantee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="results">
+    <div class="wrapper">
+        <div class="results__wrap">
+            <ul class="results__list">
+                <li>
+                        <span>
+                             <img class="lazyload" data-src="{{'01.svg' | asset_url }}" alt="">
+                        </span>
+                    <p>Promotes healthy pancreatic beta cells function*</p>
+                </li>
+                <li>
+                        <span>
+                            <img class="lazyload" data-src="{{'02.svg' | asset_url }}" alt="">
+                        </span>
+                    <p>Supports weight loss <br> &amp; the metabolism of fats*</p>
+                </li>
+                <li>
+                        <span>
+                           <img class="lazyload" data-src="{{'03.svg' | asset_url }}" alt="">
+                        </span>
+                    <p>Helps the digestion <br> &amp; metabolism of sugars*</p>
+                </li>
+                <li>
+                        <span>
+                            <img class="lazyload" data-src="{{'04.svg' | asset_url }}" alt="">
+                        </span>
+                    <p>Sustains high daily <br> energy levels*</p>
+                </li>
+                <li>
+                        <span>
+                            <img class="lazyload" data-src="{{'05.svg' | asset_url }}" alt="" srcset="">
+                        </span>
+                    <p>Promotes Short &amp; Long <br> Term Healthy &amp; Balanced<br> blood glucose levels*</p>
+                </li>
+                <li>
+                        <span>
+                            <img class="lazyload" data-src="{{'06.svg' | asset_url }}" alt="" srcset="">
+                        </span>
+                    <p>Reduces the craving <br> for sugars &amp; other carbs*</p>
+                </li>
+            </ul>
+            <div class="results__notice">
+                <p>*Individual results may vary</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="reviews">
+    <div class="wrapper">
+        <div class="reviews__wrapper">
+            <div class="reviews__head">
+                <h2>Over 2000 <br> 5 Star Reviews</h2>
+                <div class="reviews__stars">
+                    <span class="star__icon"></span>
+                    <span class="star__icon"></span>
+                    <span class="star__icon"></span>
+                    <span class="star__icon"></span>
+                    <span class="star__icon"></span>
+                </div>
+            </div>
+            <div class="reviews-slider">
+                <div class="swiper-container reviews__clients">
+                    <div class="swiper-wrapper">
+                        <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>“I purchased for my partner. Being very skeptical I encouraged her to give CuraLin a try. Almost immediately we saw a big difference. So well done CuraLin. Look out for my next order.”
+                                      </i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Colin Reader</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>“I have been so impressed that I purchased an additional 6 month supply.”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Jim Huber</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>“I'm amazed by this product. I'll be buying more. Definitely a five star product.”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Glenna Kester</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>“CuraLin works wonders! I have recommend this to others and to my nurse.”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Vicky Mehta</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                       <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>“Outstanding product and results. I cannot thank you enough for making this possible.”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Nancy Barbara</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                       <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>“I'm very suspicious by nature. I ran all the ingredients pass an Ayurvedic Doctor. I gambled & bought three. I now regret not buying the 6 pack. I love this & will buy more. It worked in a week!”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Anita Hobbs</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                      <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>“It started with my manager now 4 of us are on it. My doctor said give it a try.”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Jeff Ogden</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                      <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>"Have been taking CuraLin over the last four months and I'm beyond pleased with the results.”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Michael Edwards</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                      <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>“This product has been excellent and I will not be without it. Thank you for your work in discovering this product and sharing it.”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Sherrie Ahrens</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                      <div class="reviews__content swiper-slide">
+                            <blockquote>
+                                <div class="quote-text">
+                                    <p><i>This is a wonderful product!! It is so wonderful to find something that really works. I feel so much better!!”</i></p>
+                                </div>
+                                <div class="quote-author">
+                                    <p>-Leanne Anderson</p>
+                                </div>
+                            </blockquote>
+                        </div>
+                      
+                    </div>
+                     <div class="reviews__slider-button prev"></div>
+                        <div class="reviews__slider-button next"></div>
+                    <div class="reviews__slider-bullets"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% assign prd_one = all_products['curalin'] %}
+{% assign prd_two= all_products['curalin-3-pack'] %}
+{% assign prd_three = all_products['curalin-6-pack'] %}
+<section class="products">
+    <div class="wrapper">
+        <div class="products__list" id="packagediv">
+
+    <div class="product-card">
+        <div class="wrap">
+            <div class="top_info">
+                <div class="discount">
+                    <div class="discount-wrap">
+                        {% if prd_one.compare_at_price_max > prd_one.price %}
+                            <h4>{{ prd_one.compare_at_price_max | minus: prd_one.price | times: 100.0 | divided_by: prd_one.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% off</h4>
+                          
+                            
+                          {% endif %}
+                        <p>+ FREE SHIPPING</p>
+                    </div>
+                </div>
+                <div class="picture">
+                    <div class="discount-text">
+                        <p></p>
+                    </div>
+                    <div class="img">
+                        <img class="lazyload" data-src="{{'product_01.png' | asset_url }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_info">
+                <div class="price">
+                    <div class="discount-price">
+                       {%if prd_one.compare_at_price != blank %}
+                        <p>{{ prd_one.compare_at_price | money }}</p>
+                      {% endif %}
+                    </div>
+                    <div class="original-price">
+                        <p>{{ prd_one.price | money }}</p>
+                    </div>
+                    <div class="price-offer">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="order__btn">
+                    <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ prd_one.variants.first.id }}" />
+                                <input type="hidden" name="return_to" value="/checkout/">
+                                <button type="submit" name="add" id="AddToCart" class="main-btn">ORDER NOW</button>
+                              </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card most-popular">
+        <div class="wrap">
+            <div class="top_info">
+                <div class="discount">
+                    <div class="discount-wrap">
+                         {% if prd_two.compare_at_price_max > prd_two.price %}
+                            <h4>{{ prd_two.compare_at_price_max | minus: prd_two.price | times: 100.0 | divided_by: prd_two.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% off</h4>
+                          
+                            
+                          {% endif %}
+                        <p>+ FREE SHIPPING</p>
+                    </div>
+                </div>
+                <div class="picture">
+                    <div class="discount-text">
+                        <p>Most Popular</p>
+                    </div>
+                    <div class="img">
+                        <img class="lazyload" data-src="{{'product_02.png' | asset_url }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_info">
+                <div class="price">
+                    <div class="discount-price">
+                       {%if prd_two.compare_at_price != blank %}
+                        <p>{{ prd_two.compare_at_price | money }}</p>
+                      {% endif %}
+                    </div>
+                    <div class="original-price">
+                        <p>{{ prd_two.price | money }}</p>
+                    </div>
+                    <div class="price-offer">
+                        <p>only $67 per bottle</p>
+                    </div>
+                </div>
+                <div class="order__btn">
+                     <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ prd_two.variants.first.id }}" />
+                                <input type="hidden" name="return_to" value="/checkout/">
+                                <button type="submit" name="add" id="AddToCart" class="main-btn">ORDER NOW</button>
+                              </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card big-savings">
+        <div class="wrap">
+            <div class="top_info">
+                <div class="discount">
+                    <div class="discount-wrap">
+                        {% if prd_three.compare_at_price_max > prd_three.price %}
+                            <h4>{{ prd_three.compare_at_price_max | minus: prd_three.price | times: 100.0 | divided_by: prd_three.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% off</h4>
+                          
+                            
+                          {% endif %}
+                        <p>+ FREE SHIPPING</p>
+                    </div>
+                </div>
+                <div class="picture">
+                    <div class="discount-text">
+                        <p>Biggest Savings</p>
+                    </div>
+                    <div class="img">
+                        <img class="lazyload" data-src="{{'product_03.png' | asset_url }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_info">
+                <div class="price">
+                    <div class="discount-price">
+                       {%if prd_three.compare_at_price != blank %}
+                        <p>{{ prd_three.compare_at_price | money }}</p>
+                       {% endif %}
+                    </div>
+                    <div class="original-price">
+                        <p>{{ prd_three.price | money }}</p>
+                    </div>
+                    <div class="price-offer">
+                        <p>only $60 per bottle</p>
+                    </div>
+                </div>
+                <div class="order__btn">
+                     <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ prd_three.variants.first.id }}" />
+                                <input type="hidden" name="return_to" value="/checkout/">
+                                <button type="submit" name="add" id="AddToCart" class="main-btn">ORDER NOW</button>
+                              </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    </div>
+</section> 
+
+<section class="policy">
+    <div class="wrapper">
+        <div class="policy__wrap">
+            <div class="police__img">
+                <img class="lazyload" data-src="{{'005.svg' | asset_url }}" alt="">
+            </div>
+            <div class="policy__info">
+                <h2>Return Policy</h2>
+                <p>
+                    You're covered by a money back guarantee. CuraLin works.
+                    <br>But you can return it for ANY reason and get your money back.
+                    <br>No questions. No hassle.
+                    <br>Yes, even if you opened the bottle.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="interview">
+    <div class="wrapper">
+        <div class="interview-wrap">
+            <div class="interview-text">
+                <div class="interview-title">
+                    <h4>Real Diabetics <br>
+                        Share their <br>
+                        CuraLin Success</h4>
+                </div>
+
+                <div class="interview-link">
+                    <a id="play-video" href="#">Watch Video ></a>
+                </div>
+            </div>
+            <div class="interview-video">
+
+                <div class="video-wrap" data-src="https://player.vimeo.com">
+                          <iframe src="https://player.vimeo.com/video/447474765?api=1&amp;player_id=vimeo_id_0" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="" id="vimeo_id_0" data-ready="true"></iframe>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component">
+    <div class="component-bg">
+        <div class="wrapper">
+            <div class="component-title">
+                <h3>What’s inside CuraLin?</h3>
+                <h2>Nature, Perfected by Science</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="component-slider">
+        <div class="wrapper">
+            <div class="component-slider__wrap">
+                <div class="slider-wrap">
+                    <div class="swiper-container thumbs-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                         <img class="lazyload" data-src="{{'Gymnema.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                        <img class="lazyload" data-src="{{'Desktop_Mobile-05.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                         <img class="lazyload" data-src="{{'Desktop_Mobile-09.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                       <img class="lazyload" data-src="{{'Desktop_Mobile-13.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                        <img class="lazyload" data-src="{{'Desktop_Mobile-04.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                         <img class="lazyload" data-src="{{'Desktop_Mobile-12.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                        <img class="lazyload" data-src="{{'Desktop_Mobile-08.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                        <img class="lazyload" data-src="{{'Desktop_Mobile-07.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                        <img class="lazyload" data-src="{{'Desktop_Mobile-10.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="swiper-slide">
+                                <div class="slide-img">
+                                    <div class="img-wrap">
+                                        <img class="lazyload" data-src="{{'Desktop_Mobile-11.png' | asset_url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                    <div class="swiper-container main-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Gymnema Sylvestre</h4>
+                                    <p>
+                                       Gymnema Sylvestre has many active compounds<br> including Saponin, which is known to<br> help manage cravings for carbohydrate.<br> Metabolically, it encourages the healthy muscle <br>sensitivity to pancreatic hormones. [7-11]
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Turmeric</h4>
+                                    <p>
+                                        Also known as Curcuma Longa, Tumeric has been used in Eastern medicinal systems to for hundreds of years to help people maintain healthy glucose levels though healthy glycemic agent. [13-14]
+                                    </p>
+                                </div>
+                            </div>
+                             <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Bitter Melon</h4>
+                                    <p>
+                                         Also known as Karela or Momordica Charantia, Bitter Melon is traditionally used for glucose support in Eastern medicinal systems. Its mechanism of action promotes healthy physiological function in damaged pancreatic cells, supports<br> glucose absorption, and the sensitivity of the muscle cells to glucose metabolism hormones. [1-6]
+                                    </p>
+                                </div>
+                            </div>
+                           <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Swertia Chirata</h4>
+                                    <p>
+                                         The active components in Swertia Chirata support a healthy release of hormones from the pancreatic cells, glucose absorption from the digestive system, and intracellular metabolism of glucose. [17-19]
+                                    </p>
+                                </div>
+                            </div>
+                           <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Syzygium Cumini</h4>
+                                    <p>
+                                         Promotes healthy insulin tolerance and a <br> 
+                                healthy rate of glucose absorption. <br>
+                                Supports healthy pancreas functionAlso known as Eugenia Jambolana, the active components in Syzygium Cumini supports a healthy physiological function in the liver, creating a reservoir of glucose macromolecules, thereby helping maintain healthy fasting
+                                    </p>
+                                </div>
+                            </div>
+                             <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Amla</h4>
+                                    <p>
+                                       Also known as Indian gooseberry or Emblica Officinalis, the active property in Amla is Tannoid, which helps support the physiological function of pancreatic cells. [15-16]
+                                    </p>
+                                </div>
+                            </div>
+                           <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Fenugreek</h4>
+                                    <p>
+                                        Also known as Trigonella Foenum Graecum, Fenugreek contains fibers that promotes pancreatic hormone production, release & sensitivity. Fenugreek also helps support a healthy rate of carbohydrate absorption in the digestive system.
+                                    </p>
+                                </div>
+                            </div>
+                           <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Melia Azadirachta</h4>
+                                    <p>
+                                        The active properties in Melia Azadirachta – flavonoids, tannins, and saponins – support the healthy transformation of starch into glucose subunits and the absorption speed of carbohydrates in the body. [25-26]
+                                    </p>
+                                </div>
+                            </div>
+                           <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Picrorhiza Kurroa</h4>
+                                    <p>
+                                        The active compounds in Pirorhiza Kurroa act as an anti-oxidant and promotes healthy liver function (protecting it from toxins). This supports healthy glucose tolerance and helps people maintain a healthy weight. [20]
+                                    </p>
+                                </div>
+                            </div>
+                           <div class="swiper-slide">
+                                <div class="slide-text">
+                                    <h4>Tinospora Cordifolia</h4>
+                                    <p>
+                                        Also known as Heart-leaved moonseed, Tinospora Cordifolia contains a mixture of alkaloids, diterpenoid lactones, glycoside, phenols, and aliphatic compounds which promote glucose metabolism at the cellular level for healthy blood glucose levels. [23-24]
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component__slider-button prev"></div>
+                        <div class="component__slider-button next"></div>
+                        <div class="component__slider-bullets"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="wrapper">
+        <div class="products-title">
+            <h2>Stock Up & Save</h2>
+        </div>
+        <div class="products__list">
+
+    <div class="product-card">
+        <div class="wrap">
+            <div class="top_info">
+                <div class="discount">
+                    <div class="discount-wrap">
+                        {% if prd_one.compare_at_price_max > prd_one.price %}
+                            <h4>{{ prd_one.compare_at_price_max | minus: prd_one.price | times: 100.0 | divided_by: prd_one.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% off</h4>
+                          
+                            
+                          {% endif %}
+                        <p>+ FREE SHIPPING</p>
+                    </div>
+                </div>
+                <div class="picture">
+                    <div class="discount-text">
+                        <p></p>
+                    </div>
+                    <div class="img">
+                         <img class="lazyload" data-src="{{'product_01.png' | asset_url }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_info">
+                <div class="price">
+                    <div class="discount-price">
+                      {%if prd_one.compare_at_price != blank %}
+                        <p>{{ prd_one.compare_at_price | money }}</p>
+                      {% endif %}
+                    </div>
+                    <div class="original-price">
+                        <p>{{ prd_one.price | money }}</p>
+                    </div>
+                    <div class="price-offer">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="order__btn">
+                    <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ prd_one.variants.first.id }}" />
+                                <input type="hidden" name="return_to" value="/checkout/">
+                                <button type="submit" name="add" id="AddToCart" class="main-btn">ORDER NOW</button>
+                              </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card most-popular">
+        <div class="wrap">
+            <div class="top_info">
+                <div class="discount">
+                    <div class="discount-wrap">
+                         {% if prd_two.compare_at_price_max > prd_two.price %}
+                            <h4>{{ prd_two.compare_at_price_max | minus: prd_two.price | times: 100.0 | divided_by: prd_two.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% off</h4>
+                          
+                            
+                          {% endif %}
+                        <p>+ FREE SHIPPING</p>
+                    </div>
+                </div>
+                <div class="picture">
+                    <div class="discount-text">
+                        <p>Most Popular</p>
+                    </div>
+                    <div class="img">
+                        <img class="lazyload" data-src="{{'product_02.png' | asset_url }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_info">
+                <div class="price">
+                    <div class="discount-price">
+                      {%if prd_two.compare_at_price != blank %}
+                        <p>{{ prd_two.compare_at_price | money }}</p>
+                      {% endif %}
+                    </div>
+                    <div class="original-price">
+                        <p>{{ prd_two.price | money }}</p>
+                    </div>
+                    <div class="price-offer">
+                        <p>only $67 per bottle</p>
+                    </div>
+                </div>
+                <div class="order__btn">
+                   <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ prd_two.variants.first.id }}" />
+                                <input type="hidden" name="return_to" value="/checkout/">
+                                <button type="submit" name="add" id="AddToCart" class="main-btn">ORDER NOW</button>
+                              </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card big-savings">
+        <div class="wrap">
+            <div class="top_info">
+                <div class="discount">
+                    <div class="discount-wrap">
+                         {% if prd_three.compare_at_price_max > prd_three.price %}
+                            <h4>{{ prd_three.compare_at_price_max | minus: prd_three.price | times: 100.0 | divided_by: prd_three.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% off</h4>
+                          
+                            
+                          {% endif %}
+                        <p>+ FREE SHIPPING</p>
+                    </div>
+                </div>
+                <div class="picture">
+                    <div class="discount-text">
+                        <p>Biggest Savings</p>
+                    </div>
+                    <div class="img">
+                        <img class="lazyload" data-src="{{'product_03.png' | asset_url }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_info">
+                <div class="price">
+                    <div class="discount-price">
+                      {%if prd_three.compare_at_price != blank %}
+                        <p>{{ prd_three.compare_at_price | money }}</p>
+                      {% endif %}
+                    </div>
+                    <div class="original-price">
+                        <p>{{ prd_three.price | money }}</p>
+                    </div>
+                    <div class="price-offer">
+                        <p>only $60 per bottle</p>
+                    </div>
+                </div>
+                <div class="order__btn">
+                    <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ prd_three.variants.first.id }}" />
+                                <input type="hidden" name="return_to" value="/checkout/">
+                                <button type="submit" name="add" id="AddToCart" class="main-btn">ORDER NOW</button>
+                              </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="wrapper">
+        <div class="faq__wrap">
+            <div class="faq__title">
+                <h2>FAQ</h2>
+            </div>
+            <div class="faq__accordion">
+                <ul >
+                    <li>
+                        <div class="accordion_title">
+                            <h3>How do I use CuraLin?</h3>
+                        </div>
+                        <div class="accordion_text">
+                            <p>Our general recommendation is to take 1-2 capsules 30 minutes after each meal (breakfast, lunch and dinner). Max 6 capsules per day.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="accordion_title">
+                            <h3>When can I expect results using CuraLin?</h3>
+
+                        </div>
+                        <div class="accordion_text">
+
+                       <p>Many users report:</p><p>Seeing positive results within the first month of use.</p><p>*Individual results may vary</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="accordion_title">
+                            <h3>How Safe Is CuraLin?</h3>
+
+                        </div>
+                        <div class="accordion_text">
+
+                       <p>CuraLife is recognized by doctors as very safe, and all CuraLin production facilities are GMP &amp; ISO 9001 certified to ensure premium, safe, and high-quality products.<br>  </p>
+                       <p>CuraLin is a 100% natural herbal product.<br></p>
+                       <p>Of course, as with any supplement, you should consult with your doctor before use.</p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="accordion_title">
+                            <h3>How Many Capsules does a CuraLin Bottle contain?</h3>
+                        </div>
+                        <div class="accordion_text">
+                            <p>Each unit of CuraLin contains 180 capsules, a 1-2 months supply of CuraLin (user dependent).</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="accordion_title">
+                            <h3>How many bottles should I order?</h3>
+                        </div>
+                        <div class="accordion_text">
+                          <p>The most popular order for new customers is the CuraLin 3-Pack, as it saves you the hassle of ordering each month. However, regular customers usually opt for the CuraLin 6-Pack option, which gives you an even greater opportunity to save.</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $('.cstm-anchor-link').click(function(e){
+  e.preventDefault();
+  var target = $($(this).attr('href'));
+  if(target.length){
+    var scrollTo = target.offset().top;
+    $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+  }
+});
+  
+  $(document).ready(function() {
+  $('#play-video').on('click', function(ev) {
+ 
+    $("#vimeo_id_0")[0].src += "&autoplay=1";
+    ev.preventDefault();
+ 
+  });
+});
+</script>
+

@@ -1,0 +1,339 @@
+<style>
+    .afterpay-paragraph{
+        display: block!important;
+    }
+</style>
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+<div class="product-data">
+        <div class="container">
+            <div class="product-wrap">
+                <div class="product-slider">
+                    <div class="discount">
+                        {% if product.compare_at_price_max > product.price %}
+                        <p>
+                            {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount
+                            
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="sliders-group">
+                        <div class="thumbs-slider">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    {% for image in product.images %}
+                                    <div class="swiper-slide">
+                                        <div class="thumbs-img">
+                                          
+                                            <div class="img-wrap">
+                                                <img class="lazyload" data-src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-slider">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                   {% for image in product.images %}
+                                    <div class="swiper-slide">
+                                        <div class="product-img"> 
+                                         
+                                            <div class="img-wrap">
+                            <img class="lazyload" data-src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                     {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="additional-info">
+                        <div class="status">
+                            <p>STARTER PACK</p>
+                        </div>
+                        <div class="discount-offer">
+                            <p>10% OFF + FREE SHIPPING</p>
+                        </div> 
+                    </div>-->
+                </div>
+                <div class="product-info">
+                    <div class="sub-title">
+                        <h1>{{ product.title }}</h1>
+                    </div>
+                    <div class="description">
+                        <div class="price">
+                          {% if product.compare_at_price > product.price %}
+                            <p>{{ product.price | money }} <strike>{{ product.compare_at_price | money }}</strike></p>
+                            {% else %}
+                                    <p>{{ product.price | money }}</p>
+                                    {% endif %}
+
+                        </div>
+                        
+                       
+                        <div class="form-wrap">
+                           <form method="post" id="addTocartForm" action="/cart/add">
+                            <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                <div class="qty-data">
+                                    <p>Quantity</p>
+                                    <div class="qty-control">
+                                        <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                                        <label>
+                                            <input type="number" name="quantity" value="1" maxlength="4">
+                                        </label>
+                                        <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 product-page--submit-action"
+                                     data-stock-email-enabled="{{ section.settings.show_out_of_stock_email }}">
+{% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
+
+
+<div class="btn">
+
+{% if pick_an_option or current_variant.available %}
+<button 
+ type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
+ 
+ {% else %}
+ <button 
+ type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
+{{ 'products.product.sold_out' | t }}
+{% endif %}
+
+</div>
+{% else %}
+<div class="btn">
+<button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+</div>
+{% endif %}
+
+</div>
+
+                           
+                            </form>
+
+                            <div class="shipping-label">
+                                <p><span class="{{section.settings.ship_icn}}"></span>{{section.settings.ship_txt}}</p>
+                            </div>
+                        </div>
+                        <div class="extra-info">
+                            
+                                {% for block in section.blocks %}
+                                {% if block.type == 'prdct_tabs' %}
+                                
+                                    <div class="text-wrap">
+                                        <p>{{block.settings.tab_des}}</p>
+                                    </div>
+                               
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
+    
+{% endif %}
+
+
+<script>
+	jQuery(document).on("click", "#AddTCart", function () {
+          window.dataLayer  = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
+            'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
+              'currencyCode': '{{shop.currency }}',          // the currency which is currently used by a visitor
+              'add': {                        // name of an action. In this case, always stays as add
+              'actionField': {           
+              'list': 'main'          // optional. name of a list from which the product was added to a cart  
+            },       
+            'products': [{              // list of products added to a cart. Can contain multiple products at the same time
+              'name': '{{ product.title }}',      // name of a product that was added to a cart
+              'id': '{{ product.id }}',       // id of a product
+              'price': '{{ current_variant.price | money_without_currency }}',      // price of a product
+              'category': 'Simple',
+              'variant': '{{ product.first_available_variant.id }}',   // category of a product
+              'quantity': 1
+            }]
+          } 
+                                },
+                                'userId': '{{ customer.id }}',
+                                'email': '{{ customer.email }}',
+                                'country': '{{customer.customer_address.country_code }}',
+                                'city': '{{customer.customer_address.city }}',
+                                'name': '{{ customer.first_name }}',
+                                'surname': '{{ customer.last_name }}',
+                                'phone_number': '{{customer.phone }}',
+                                'state': '{{customer.customer_address.province }}',       //state or province
+                                'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+                                });
+    });
+</script>
+
+<script>
+        
+        jQuery(document).on("click", "#AddToCart", function (Event) {
+            jQuery("#cart-upgrade-popup").slideToggle();
+            return false;
+    
+
+        });
+window.dataLayer  = window.dataLayer || [];
+window.dataLayer.push({
+    'event': 'eec.productDetail',  // name of an event. In this case, always stays as eec.productDetail
+    'ecommerce': {                      // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
+      'currencyCode': 'USD',           
+        'detail': { // name of an action. In this case, always stays as detail
+          'products': [{
+            'name': '{{product.title}}',      // name of a product that is currently viewed. Always include it.
+            'id': '{{ product.id }}',           // id of a product. Always include it.
+            'price': '{{ product.price | t }}',          // price of a product
+            'category': 'Simple',      // category of a product
+            'variant': '{{ product.selected_variant.id }}'         // product variant.
+           }]
+         }
+    },
+    'userId': '{{ customer.id }}',
+    'email': '{{ customer.email }}',
+    'country': '{{customer.customer_address.country_code | t}}',
+    'city': '{{customer.customer_address.city }}',
+    'name': '{{ customer.first_name }}',
+    'surname': '{{ customer.last_name }}',
+    'phone_number': '{{customer.phone }}',
+    'state': '{{customer.customer_address.province }}',       //state or province
+    'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code         
+});
+</script>
+
+
+{% schema %}
+  {
+    "name": "Proudct",
+    "class": "cart-content",
+    "settings": [ 
+      {
+        "type": "textarea",
+        "id": "prd_descript",
+        "label": "Description",
+        "default": "Add Description "   
+      },
+      {
+        "type": "text",
+        "id": "prd_icn",
+        "label": "Add Icon",
+        "default": "icon-afterpay"   
+      },
+      {
+        "type": "text",
+        "id": "prd_text",
+        "label": "Button Title",
+        "default": "Add Button Title "   
+      },
+       {
+        "type": "url",
+        "id": "prd_url",
+        "label": "Button URL"
+        
+      },
+      {
+        "type": "text",
+        "id": "ship_txt",
+        "label": "Shipping Title",
+        "default": "Add Shipping Title"   
+      },
+      {
+        "type": "text",
+        "id": "ship_icn",
+        "label": "Shipping Icon",
+        "default": "icon-shipping"  
+      },
+      {
+    "type": "header",
+    "content": "Upgrade Popup"
+    },
+
+    {
+    "type": "textarea",
+    "id": "first_up_title",
+    "label": "3-pack Title"
+    },
+    {
+    "type": "textarea",
+    "id": "first_up_text",
+    "label": "3-pack Text"
+    },
+    {
+    "type": "text",
+    "id": "first_btnup_text",
+    "label": "3-pack Btn"
+    },
+    {
+    "type": "textarea",
+    "id": "second_up_title",
+    "label": "6-pack Title"
+    },
+    {
+    "type": "textarea",
+    "id": "second_up_text",
+    "label": "6-pack Text"
+    },
+    {
+    "type": "text",
+    "id": "second_btnup_text",
+    "label": "6-pack Btn"
+    },
+    {
+    "type": "text",
+    "id": "continue_btn_text",
+    "label": "Continue Btn"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "prdct_tabs",
+        "name": "Product Tabs",
+        "settings": [    
+          {
+          "type": "textarea",
+          "id": "tab_des",
+          "label": "Tab Description",
+          "default": "Enter Tab Description"
+          }
+        ]    
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){ 
+    var variantid=$("#productVaraintSelected").val();
+	var newUrlIS='{{product.url}}?variant='+variantid;
+    history.pushState({}, null, newUrlIS);
+    
+    
+    }, 3000);
+  
+  });
+  
+</script>

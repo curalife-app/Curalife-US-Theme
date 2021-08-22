@@ -1,0 +1,199 @@
+<style >
+    @media screen and (max-width: 1430px){
+        .offset-top {
+            margin-top: -57px;
+        }
+    }
+</style>
+<div class="support-page offset-top">
+    <div class="container">
+        <div class="white-bg">
+            <div class="mini-wrap">
+                <div class="advantages-section">
+                    <div class="sub-title">
+                        <h3>{{section.settings.cpwr_titl}}</h3>
+                    </div>
+                    <div class="advantages-wrap">
+                        <ul>
+                            {% assign count = 0 %}
+                            {% for block in section.blocks %}
+                            {% if block.type == 'cura_power' %}
+                            {%if block.settings.cpwr_img != blank %}
+                            <li class="advantage-content-{{ count }}">
+                                <div class="icon-wrap"
+                                     style="background: linear-gradient(118.79deg, rgba(79, 164, 215, 0.2) 0%, rgba(79, 164, 215, 0) 67.73%), #FFFFFF;">
+                                    <span><img class="lazyload" data-src="{{ block.settings.cpwr_img | img_url: '' }}" alt=""></span>
+                                </div>
+                                <div class="name">
+                                    <p style="color: #4FA4D7">{{block.settings.cpwr_desc }}</p>
+                                </div>
+                            </li>
+                            <style>
+                                li.advantage-content-1 .icon-wrap {
+                                    background: linear-gradient(118.79deg, rgba(255, 117, 117, 0.2) 0%, rgba(255, 117, 117, 0) 67.73%), #FFFFFF !important;
+                                }
+                                li.advantage-content-1 p {
+                                    color: #FF7575 !important;
+                                }
+                                li.advantage-content-2 .icon-wrap {
+                                    background: linear-gradient(118.79deg, rgba(246, 170, 59, 0.2) 0%, rgba(246, 170, 59, 0) 67.73%), #FFFFFF !important;
+                                }
+                                li.advantage-content-2 p {
+                                    color: #F4BE5D !important;
+                                }
+                                 li.advantage-content-3 .icon-wrap {
+                                    background: linear-gradient(118.79deg, rgba(255, 123, 165, 0.2) 0%, rgba(255, 123, 165, 0) 67.73%), #FFFFFF !important;
+                                }
+                                li.advantage-content-3 p {
+                                    color: #FF7BA5 !important;
+                                }
+                                 li.advantage-content-4 .icon-wrap {
+                                    background:linear-gradient(118.79deg, rgba(57, 177, 74, 0.2) 0%, rgba(57, 177, 74, 0) 67.73%), #FFFFFF  !important;
+                                }
+                                li.advantage-content-4 p {
+                                    color: #76CF83 !important;
+                                }
+                                 li.advantage-content-5 .icon-wrap {
+                                    background: linear-gradient(118.79deg, rgba(51, 183, 166, 0.2) 0%, rgba(51, 183, 166, 0) 67.73%), #FFFFFF !important;
+                                }
+                                li.advantage-content-5 p {
+                                    color: #6AD7C9 !important;
+                                }
+                                 li.advantage-content-6 .icon-wrap {
+                                    background: linear-gradient(118.79deg, rgba(192, 150, 109, 0.2) 0%, rgba(192, 150, 109, 0) 67.73%), #FFFFFF !important;
+                                }
+                                li.advantage-content-6 p {
+                                    color: #CEA073 !important;
+                                }
+                                 li.advantage-content-7 .icon-wrap {
+                                    background:linear-gradient(118.79deg, rgba(0, 113, 182, 0.2) 0%, rgba(0, 113, 182, 0) 67.73%), #FFFFFF  !important;
+                                }
+                                li.advantage-content-7 p {
+                                    color: #539ECC !important;
+                                }
+                            </style>
+                            {% assign count = count | plus: 1 %}
+                            {% endif %}
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="story-section">
+                    <div class="sub-title">
+                        <h2 class="d-desktop">{{section.settings.wht_titl}}</h2>
+                        <h3 class="d-mobile">{{section.settings.wht_mbltitl}}</h3>
+                    </div>
+                    <div class="story-wrap">
+                        <div class="story-data">
+                            {% if section.settings.wht_desc != blank%}
+                            <div class="text">
+                                <p>{{section.settings.wht_desc}}</p>
+                            </div>
+                            {% endif %}
+                            <div class="badges">
+                                <ul>
+                                    {% for block in section.blocks %}
+                                    {% if block.type == 'what_cura' %}
+                                    {%if block.settings.wht_img != blank %}
+                                    <li>
+                                        <img class="lazyload" data-src="{{ block.settings.wht_img | img_url: '' }}" alt="">
+                                    </li>
+                                    {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+    "name": "CuraLin Powerfully Helps",
+        "settings": [
+            {
+                "type": "header", 
+                "content": "CuraLin Powerfully Section Start" 
+            },
+            {
+                "type": "text",
+                "id": "cpwr_titl",
+                "label": "Title",
+                "default": "Enter title"
+            },
+            {
+                "type": "header", 
+                "content": "What is CuraLin Section Start" 
+            },
+            {
+                "type": "text",
+                "id": "wht_titl",
+                "label": "Title",
+                "default": "Enter title"
+            },
+            {
+                "type": "text",
+                "id": "wht_mbltitl",
+                "label": "Mobile Title",
+                "default": "Enter title"
+            },
+            {
+                "type": "textarea",
+                "id": "wht_desc",
+                "label": "Description",
+                "default": "Enter Description"
+            }
+   
+        ],
+        "blocks": [
+            {
+                "type": "cura_power",
+                "name": "CuraLin Helps Content",
+                "settings": [    
+                    {
+                        "type": "image_picker",
+                        "id": "cpwr_img",
+                        "label": "Select Image"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "cpwr_desc",
+                        "label": "Description",
+                        "default": "Enter Description"
+                    }
+                
+                ]    
+            },
+            {
+                "type": "what_cura",
+                "name": "What CuraLin Images",
+                "settings": [    
+                    {
+                        "type": "image_picker",
+                        "id": "wht_img",
+                        "label": "Select Image"
+                    }
+                    
+                ]    
+            }
+        ],
+        "presets":[
+            {
+                "name": "Banner",
+                "category": "text"
+            }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

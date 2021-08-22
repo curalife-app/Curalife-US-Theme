@@ -1,0 +1,97 @@
+{% if section.settings.Heading != blank and section.settings.video_link != blank %}
+ <script type="text/javascript">
+    var req = new XMLHttpRequest();
+    req.overrideMimeType("application/json");
+    req.open('GET', 'https://geo.curalife.com/', true);
+    req.onload = function() {
+      var json = JSON.parse(req.responseText);
+      var trycuralifeCountries = ['KW', 'SA', 'QA', 'OM', 'BH', 'AE'];
+
+      function whereAmIFrom() {
+        return json.country;
+      }
+
+      window.whereAmIFrom = whereAmIFrom;
+
+      if(!window.location.href.includes("editor") && !window.location.href.includes("checkout-diabetic") && !window.location.href.includes("admin") && !window.location.href.includes("parcelpanel")) {
+        if(whereAmIFrom() != 'US' && whereAmIFrom() != 'PR'){
+          window.location.hostname = 'global.curalife.com';
+        }
+      }
+
+      if(typeof geoRules !== "undefined") geoRules();
+    };
+
+    req.send(null);
+  </script>
+	<section class="newVideoTesti videoWhiteBg uyu">
+        <div class="container">
+            <div class="row">
+                <div class="sliderVideo">
+                    <div class="slider_container">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="text_options">
+                                <div class="text_slider text_seting">
+                                    <h1>{{ section.settings.Heading }}</h1>
+                                </div>
+                                <div class="buy_btns-block holiday_mobile_dv">
+                                    <a href="#packagediv" class="order-buttden scrollto" tabindex="0"><ls-static-979385>ORDER NOW</ls-static-979385></a>
+                                    <a href="#_aBout__cUraLife_d" class="order-buttden curuline scrollto" tabindex="0"><ls-static-330301>LEARN MORE</ls-static-330301></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="VideoVimeo">
+                                <iframe src="{{section.settings.video_link}}" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                            <div class="buy_btns-block holiday_mobile_mv">
+                                {% if section.settings.order_button_label %}
+                              	  <a href="#packagediv" class="order-buttden scrollto" tabindex="0">{{ section.settings.order_button_label }}</a>                               
+                                {% else %}
+                              		 <a href="#packagediv" class="order-buttden scrollto" tabindex="0"><ls-static-230014>ORDER NOW</ls-static-230014></a>
+                                {% endif %}
+                              	{% if section.settings.learn_button_label %}
+                              	  <a href="#_aBout__cUraLife_d" class="order-buttden curuline scrollto" tabindex="0">{{ section.settings.learn_button_label }}</a>                             
+                                {% else %}
+                              		<a href="#_aBout__cUraLife_d" class="order-buttden curuline scrollto" tabindex="0"><ls-static-614128>LEARN MORE</ls-static-614128></a>
+                                {% endif %}
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+{% schema %}
+  {
+    "name": "Video Section",
+    "settings": [
+		{
+            "type": "text",
+            "id": "Heading",
+            "label": "Section Title"
+        },
+		{
+            "type": "text",
+            "id": "order_button_label",
+            "label": "Order Button Label",
+			"default": "Order Now"
+        },
+        {
+          "type": "text",
+          "id": "learn_button_label",
+          "label": "Learn More Button Label",
+		  "default": "LEARN MORE"	
+        },
+        {
+          "type": "text",
+          "id": "video_link",
+          "label": "Video Url"
+        }
+		
+	]
+  }
+{% endschema %}
+

@@ -1,0 +1,151 @@
+<div class="cart-page">
+    <div class="container">
+        <div class="mini-wrap">
+          {% if cart.item_count > 0 %}
+            <div class="page-title">
+                <div class="sub-title">
+                    <h1>{{section.settings.crt_titl}}</h1>
+                </div>
+               
+            </div>
+            <form action="{{ routes.cart_url }}" method="post" novalidate class="cart table-wrap" id="cartform" data-wetheme-section-type="template--cart" data-wetheme-section-id="{{ section.id }}">
+            <div class="cart-list">
+                <table>
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in cart.items %}
+                    <tr>
+                        <td class="img">
+                            <div class="img-wrap">
+                                <span><img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}"></span>
+                            </div>
+                        </td>
+                        <td class="name"><p>{{ item.product.title }}</p>
+                            <div class="remove-item" data-variant="{{item.variant.id}}" data-price ="{{ item.original_price | money }}" data-title="{{ item.product.title }}" data-id="{{ item.product.id }}">
+                                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
+                            </div>
+                        </td>
+                        <td class="price"><p>{{ item.price | money }}</p></td>
+                        <td class="quantity">
+                            <div class="qty-data">
+                                <p>Quantity</p>
+                                <div class="qty-control">
+                                    <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                                    <label>
+                                        <input type="number" name="updates[]" value="{{ item.quantity }}" maxlength="4">
+
+                                    </label>
+                                    <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="total"><p>{{ item.original_line_price | money }} <strike>{{ product.compare_at_price | money }}</strike></p></td>
+                    </tr>
+                     {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="cart-total">
+                <div class="total-wrap">
+                    <div class="price">
+                        <p>Subtotal: <b>{{ cart.total_price | money }}</b></p>
+                    </div>
+                    <div class="btn-wrap">
+                      <input id="cart_submit" type="submit" value="Place your order" name="checkout" class="main-btn" />
+                      <input id="update_quantities" type="submit" value="Update Cart" title="{{ 'cart.general.update' | t }}" name="update" class="main-btn blank" />
+                    </div>
+                   
+                </div>
+            </div>
+          </form>
+          {% else %}
+          <div class="emty_crt">
+              <h2>Your cart is currently empty.</h2>
+              <a href="https://curalife.com/collections/all" class="main-btn">Continue shopping</a>
+          </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cart",
+    "class": "cart-content",
+    "settings": [ 
+      {
+        "type": "text",
+        "id": "crt_titl",
+        "label": "Title",
+        "default": "Add Title "   
+      },
+      {
+        "type": "textarea",
+        "id": "crt_descript",
+        "label": "Description",
+        "default": "Add Description "   
+      },
+      {
+        "type": "text",
+        "id": "crt_icn",
+        "label": "Add Icon",
+        "default": "icon-afterpay"   
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button Title",
+        "default": "Add Button Title "   
+      },
+       {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button URL"
+        
+      }
+    ] 
+        
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+<style>
+    body{
+        overflow-x: hidden;
+    }
+  .emty_crt .main-btn {
+    max-width: 260px;
+}
+.emty_crt{
+    text-align: center;
+   margin-top: 50px;
+}
+p.afterpay-paragraph {
+    position: relative;
+    top: 80px;
+    text-align: left !important;
+}
+
+input#update_quantities {
+    position: relative;
+    bottom: 40px;
+}
+input#cart_submit {
+    width: 100%;
+}
+input#update_quantities {
+    width: 100%;
+}
+</style>

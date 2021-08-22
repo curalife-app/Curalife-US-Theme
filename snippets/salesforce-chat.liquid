@@ -1,0 +1,52 @@
+<style type='text/css'>
+	.slideout-menu {
+		z-index: 999;
+	}
+	.embeddedServiceHelpButton {
+		z-index: 99;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #2B79DC;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #2B79DC;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://curalife.my.salesforce.com',
+			'https://curalifestaging.secure.force.com/liveAgentSetupFlow',
+			gslbBaseURL,
+			'00D5I000003d6uG',
+			'Chat_Team',
+			{
+				baseLiveAgentContentURL: 'https://c.la2-c2-cdg.salesforceliveagent.com/content',
+				deploymentId: '5725I000000kS8a',
+				buttonId: '5735I000000kSF7',
+				baseLiveAgentURL: 'https://d.la2-c2-cdg.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'Chat_Team',
+				isOfflineSupportEnabled: true
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://curalife.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
