@@ -31,32 +31,24 @@
   
 <link rel="canonical" href="{{canonical_url}}" />
 <link rel="alternate" href="https://curalife.com" hreflang="en-us" />
-<link rel="alternate" href="https://curalife.com/es/" hreflang="es-us" />
-<link rel="alternate" href="https://global.curalife.com/it" hreflang="it" />
 <link rel="alternate" href="https://global.curalife.com" hreflang="en-gb" />
   
 {% elsif _page_path[1] == "it" %}
   
 <link rel="canonical" href="{{canonical_url}}" />
 <link rel="alternate" href="https://curalife.com{{ _page_path_normal | remove_first: '/it' }}" hreflang="en-us" />
-<link rel="alternate" href="https://curalife.com/es{{ _page_path_normal | remove_first: '/it' }}" hreflang="es-us" />
-<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal }}" hreflang="it" />
 <link rel="alternate" href="https://global.curalife.com{{ _page_path_normal | remove_first: '/it' }}" hreflang="en-gb" />
 
 {% elsif _page_path[1] == "es" %}
 
 <link rel="canonical" href="{{canonical_url}}" />
 <link rel="alternate" href="https://curalife.com{{ _page_path_normal | remove_first: '/es' }}" hreflang="en-us" />
-<link rel="alternate" href="https://curalife.com/es{{ _page_path_normal | remove_first: '/es' }}" hreflang="es-us" />
-<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal | replace_first : '/es', '/it' }}" hreflang="it" />
 <link rel="alternate" href="https://global.curalife.com{{ _page_path_normal | remove_first: '/es' }}" hreflang="en-gb" />
  
 {% else %}
 
 <link rel="canonical" href="{{canonical_url}}" />
 <link rel="alternate" href="https://curalife.com{{ _page_path_normal }}" hreflang="en-us" />
-<link rel="alternate" href="https://curalife.com/es{{ _page_path_normal }}" hreflang="es-us" />
-<link rel="alternate" href="https://global.curalife.com/it{{ _page_path_normal }}" hreflang="it" />
 <link rel="alternate" href="https://global.curalife.com{{ _page_path_normal }}" hreflang="en-gb" />
 
 {% endif %}
