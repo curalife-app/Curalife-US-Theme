@@ -21,38 +21,11 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" defer="defer"></script>
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 
-  
-  <!-- SEO Languages Solution -->
-  {% assign _page_path = request.path  | split:'/' %}
-{% assign _page_path_normal = request.path %}
-  
 
-{% if _page_path[1] == blank %}
-  
-<link rel="canonical" href="{{canonical_url}}" />
-<link rel="alternate" href="https://curalife.com" hreflang="en-us" />
-<link rel="alternate" href="https://global.curalife.com" hreflang="en-gb" />
-  
-{% elsif _page_path[1] == "it" %}
-  
-<link rel="canonical" href="{{canonical_url}}" />
-<link rel="alternate" href="https://curalife.com{{ _page_path_normal | remove_first: '/it' }}" hreflang="en-us" />
-<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal | remove_first: '/it' }}" hreflang="en-gb" />
-
-{% elsif _page_path[1] == "es" %}
-
-<link rel="canonical" href="{{canonical_url}}" />
-<link rel="alternate" href="https://curalife.com{{ _page_path_normal | remove_first: '/es' }}" hreflang="en-us" />
-<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal | remove_first: '/es' }}" hreflang="en-gb" />
- 
-{% else %}
-
-<link rel="canonical" href="{{canonical_url}}" />
-<link rel="alternate" href="https://curalife.com{{ _page_path_normal }}" hreflang="en-us" />
-<link rel="alternate" href="https://global.curalife.com{{ _page_path_normal }}" hreflang="en-gb" />
-
-{% endif %}
-  <!-- End SEO Languages Solution -->
+  <link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: shop.domain, 'www.curalife.com' }}" />
+<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'global.curalife.com' }}" hreflang="en-GB" />
+<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'www.curalife.com' }}" hreflang="en-US" />
+<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'www.curalife.com' }}" hreflang="en" />
   
 {% if template contains 'customers' %}
     {{ "shopify_common.js" | shopify_asset_url | script_tag }}
