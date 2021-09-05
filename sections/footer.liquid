@@ -51,7 +51,7 @@
                             <ul>
                               {% for block in section.blocks %}
                                 {% if block.type == 'social' %}
-                                <li><a href="{{block.settings.socil_link}}" target="_blank" rel="nofollow">
+                                <li><a href="{{block.settings.socil_link}}" target="_blank">
                                     <i class="{{block.settings.socil_icn}}"></i> {{block.settings.socil_title}}</a></li>
                                     {% endif %}
                                 {% endfor %}
