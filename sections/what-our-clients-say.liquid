@@ -44,41 +44,51 @@
     </div>
 </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="customer-success">
-                    <div class="intro-text">
-                        <div class="sub-title">
-                            <h3>{{section.settings.custm_titl}}</h3>
-                        </div>
-                    </div>
-                    <div class="success-list">
-                        <ul>
-                             {% assign contr = 0 %}
-                            {% for block in section.blocks %}
-                            {% if block.type == 'customer_success' %}
-                            <li class="success-content-{{ contr }}">
-                                <div class="title">
-                                    <h4>{{block.settings.cstmr_sbtitl}}</h4>
-                                </div>
-                                <div class="line">
-                                    <div class="percentage"><p>{{block.settings.cstmr_percen}}</p></div>
-                                    <div class="data">
-                                        <span style=" {{block.settings.percen_color}}"></span>
-                                    </div>
-                                </div>
-                            </li>
-                            
-                            {% assign contr = contr | plus: 1 %}
-                            {% endif %}
-                            {% endfor %}
-                        </ul>
+    <div class="customer-success">
+        <div class="container">
+            <div class="mini-wrap">
+                <div class="intro-text">
+                    <div class="sub-title">
+                        <h3>{{section.settings.custm_titl}}</h3>
                     </div>
                 </div>
+                <div class="success-list">
+                    <ul>
+                        {% assign contr = 0 %}
+                        {% for block in section.blocks %}
+                        {% if block.type == 'customer_success' %}
+                        <li class="success-content-{{ contr }}">
+                            <div class="title">
+                                <h4>{{block.settings.cstmr_sbtitl}}</h4>
+                            </div>
+                            <div class="line">
+                                <div class="percentage"><p>{{block.settings.cstmr_percen}}</p></div>
+                                <div class="data">
+                                    <span style=" {{block.settings.percen_color}}"></span>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        {% assign contr = contr | plus: 1 %}
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
+        <div class="white-bg">
+            <div class="mini-wrap">
                 <div class="feature-info">
                     {% if section.settings.mntain_img != blank %}
                     <div class="img-wrap">
-                        <span><img class="lazyload" data-src="{{ section.settings.mntain_img | img_url: '' }}" alt=""></span>
+                        <span><img data-src="{{ section.settings.mntain_img | img_url: '' }}" alt="" class="lazyload"></span>
                     </div>
                     {% endif %}
                     <div class="intro-text">

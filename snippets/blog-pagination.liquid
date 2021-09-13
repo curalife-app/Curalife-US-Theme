@@ -1,15 +1,3 @@
-{%- capture previous_link_url -%}
-  {%- if paginate.current_page == 2 -%}
-    {%- if template contains "search" -%}
-      {{ paginate.previous.url | replace: 'page=1', '' | replace: '?&', '?' | replace: '&&', '&' }}
-    {%- else -%}
-      {{ paginate.previous.url | replace: '?page=1', '' }}
-    {%- endif -%}
-  {%- else -%}
-    {{ paginate.previous.url }}
-  {%- endif -%}
-{%- endcapture -%}
-
 {%- paginate blog.articles by 10 -%}
   {%- for article in blog.articles -%}
     <!-- show blog article details here -->
@@ -20,7 +8,7 @@
       <ol class="pagination">
         {%- if paginate.previous-%}
           <li>
-            <a class="next prv" href="{{ previous_link_url }}">
+            <a class="next prv" href="{{ paginate.previous.url }}">
              
               Previous <span class="visuallyhidden">page</span>
             </a>
@@ -34,15 +22,9 @@
         {%- for part in paginate.parts -%}
           {%- if part.is_link -%}
             <li>
-              {%- if part.title == 1 -%}
-              	<a href="{{ part.url | replace: '?page=1', ''| replace: '?&', '?' | replace: '&&', '&' }}">
-                	<span class="visuallyhidden">page</span> {{ part.title }}
-              	</a>
-              {%- else -%}
-              	<a href="{{ part.url }}">
-                	<span class="visuallyhidden">page</span> {{ part.title }}
-              	</a>
-              {%- endif -%}
+              <a href="{{ part.url }}">
+                <span class="visuallyhidden">page</span> {{ part.title }}
+              </a>
             </li>
           {%- else -%}
             {%- if part.title == paginate.current_page -%}

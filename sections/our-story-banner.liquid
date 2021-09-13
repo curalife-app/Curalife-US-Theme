@@ -6,14 +6,13 @@
                     <div class="intro-text">
                         <div class="sub-title">
                             <h1>{{section.settings.strbnr_titl}}</h1>
-                            <p>{{section.settings.strbnr_desc}}</p>
                         </div>
                     </div>
                 </div>
                 {% if section.settings.strbnr_img != blank %}
                 <div class="data-wrap">
                     <div class="img-wrap">
-                        <img class="lazyload" data-src="{{ section.settings.strbnr_img | img_url: '' }}" alt="">
+                        <img src="{{ section.settings.strbnr_img | img_url: '' }}" alt="">
                     </div>
                 </div>
                 {% endif %}

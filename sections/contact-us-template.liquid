@@ -6,20 +6,27 @@
                     <div class="info-wrap">
                         <div class="contacts-bar">
                             <div class="sub-title">
-                                <h1>{{section.settings.cstmr_titl}}</h1>
+                                <h1>24/7 Customer Support</h1>
                             </div>
                             <div class="support-contacts">
                                 <ul>
                                     {% for block in section.blocks %}
                                     {% if block.type == 'contact' %}
                                     <li>
+                                    <div class="phone-title">
                                         {% if block.settings.cntphn_img != blank %}
                                         <span>
                                              <img src="{{block.settings.cntphn_img | img_url: ''}}" alt="">
                                         </span>
                                         {% endif %}
-                                        {{block.settings.cntphn_title}} <a href="tel:{{block.settings.cntphn_numbr}}">
-                                            <i class="icon-tel"></i> {{block.settings.cntphn_numbr}}</a>
+                                        {{block.settings.cntphn_title}} 
+                                    </div>
+                                    <div class="show-phone">
+                                        <div class="show-phone-btn"><i class="icon-tel"></i> Show Phone</div>
+                                        <div class="show-phone-content">
+                                            <a href="tel:{{block.settings.cntphn_numbr}}">{{block.settings.cntphn_numbr}}</a>
+                                        </div>
+                                    </div>
                                     </li>
                                     {% endif %}
                                     {% endfor %}
@@ -38,7 +45,7 @@
                                 {% for block in section.blocks %}
                                 {% if block.type == 'social' %}
                                 <li>
-                                    <a href="{{block.settings.cntsocil_link}}" target="_blank">
+                                    <a href="{{block.settings.cntsocil_link}}" target="_blank" rel="nofollow">
                                     <i class="{{block.settings.cntsocil_icn}}"></i> {{block.settings.cntsocil_title}}</a>
                                 </li>
                                  {% endif %}
@@ -50,6 +57,7 @@
                         <div class="sub-title">
                             <h2>{{section.settings.cntnt_titl}}</h2>
                         </div>
+                        
                        <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"; method="POST" id="contact-us-form">
                         <input type=hidden name="orgid" value="00D5I000003d6uG">
                         <input type=hidden name="retURL" value="https://curalife.com/pages/thank-you">
@@ -81,7 +89,7 @@
                                  {% for block in section.blocks %}
                                 {% if block.type == 'social' %}
                                 <li>
-                                    <a href="{{block.settings.cntsocil_link}}" target="_blank">
+                                    <a href="{{block.settings.cntsocil_link}}" target="_blank" rel="nofollow">
                                     <i class="{{block.settings.cntsocil_icn}}"></i> {{block.settings.cntsocil_title}}</a>
                                 </li>
                                 {% endif %}
@@ -102,12 +110,6 @@
         {
             "type": "header", 
             "content": "24/7 Customer Success Section Start" 
-        },
-        {
-            "type": "text",
-            "id": "cstmr_titl",
-            "label": "Title",
-            "default": "Enter Title"
         },
         {
             "type": "text",
@@ -198,8 +200,24 @@
   }
 {% endschema %}
 
-{% stylesheet %}
-{% endstylesheet %}
+{% style %}
+.support-contacts .phone-title {
+    line-height: 2.5;
+  }
+  
+  .support-contacts .show-phone-btn {
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--green);
+    padding: 3px 10px;
+    margin-left: 5px;
+  }
+  
+  .support-contacts .show-phone-content {
+    display: none;
+  }
+{% endstyle %}
 
 {% javascript %}
 {% endjavascript %}

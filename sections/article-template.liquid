@@ -1,3 +1,4 @@
+
 <div class="article-page">
     <div class="container">
         <div class="mini-wrap">
@@ -9,6 +10,7 @@
                     </a>
                 </div>
                 {% endif %}
+
                 <div class="article-wrap">
                     <div class="title">
                         <h1>{{ article.title }}</h1>
@@ -23,12 +25,12 @@
                             <img class="lazyload" data-src="{{ section.settings.authr_blgimg | img_url: '' }}" alt="{{ article.author }}">
                         </div>
                         {% endif %}
-                        <div class="details"> 
+                        <div class="details">
                             <h4>{{ article.author }}</h4>
                             <p>{{ article.user.bio }}</p>
                         </div>
-                        
                     </div>
+
                     <div class="intro-data introhide">
                         <div class="content">
                             <div class="text">
@@ -63,9 +65,6 @@
                     {% endif %}
                 </div>
 
-
-
-
                 <div class="share-post">
                     <div class="container">
                         <div class="share-wrap">
@@ -89,138 +88,142 @@
                     </div>
                 </div>
 
-                {% if section.settings.mobile_img != blank %}
-                <div class="article-bottom mobileImg">
-                    <a class="banner click" id="article_bottom" href="{{ section.settings.sidepst_url}}">
-                        <img class="lazyload" data-src="{{ section.settings.mobile_img | img_url: '' }}" alt="">
-                    </a>
-                </div>
-                {% endif %}
 
-                 {% capture all_the_tags %}{% for tag in article.tags %}{{ tag }} {% endfor %}{% endcapture %}
-                                {% assign current = article.id %}
-                                {% assign count = 0 %}
-                                <div class="related-posts">
-                                    <div class="container">
-                                        <div class="mini-wrap">
-                                            <div class="posts-wrap">
-                                                <div class="sub-title">
-                                                    <h2>Related Articles</h2>
-                                                </div>
-                                                <div class="posts-list">
-                                                <div class="swiper-container">
-                                                <div class="swiper-wrapper">
-                                                    {% for article in blog.articles %}
-                                                     {% if count <=2 %}
-                                                        {% unless article.id == current %}
-                                                            {% for tag in article.tags %}
-                                                                {% if all_the_tags contains tag %}
-                                                      <div class="swiper-slide">
-                                                    <div class="article-card">
-                                                        <div class="picture">
-                                                            <a href="{{ article.url }}" class="main-link"></a>
-                                                            {% if article.image %}
-                                                            <img class="lazyload" data-src="{{ article.image | img_url: 'original' }}" alt="">
-                                                            {% endif %}
-                                                            {% if article.tags.size > 0 %}
-                                                            {% for tag in article.tags %}
-                                                            <div class="category">
-                                                            <p>{{ tag }}</p>
-                                                            </div>
-                                                            {% endfor %}
-                                                            {% endif %}
-                                                              </div>
-                                                        <div class="info">
-                                                            <div class="main-info">
-                                                                <div class="title">
-                                                                    <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-                                                                </div>
-                                                                <div class="offer">
-                                                                    <p>{{settings.offer_desc}}</p>
-                                                                </div>
-                                                                {% if description %}
-                                                                <div class="description">
-                                                                <p>
-                                                                {% if article.excerpt.size > 0 %}
-                                                                {{ article.excerpt }}
-                                                                {% else %}
-                                                                {{ article.content | strip_html | truncate: 150 }}
-                                                                {% endif %}
-                                                                </p>
-                                                                </div>
-                                                                {% endif %}
+                    {% if section.settings.mobile_img != blank %}
+                    <div class="article-bottom mobileImg">
+                        <a class="banner click" id="article_bottom" href="{{ section.settings.sidepst_url}}">
+                            <img class="lazyload" data-src="{{ section.settings.mobile_img | img_url: '' }}" alt="">
+                        </a>
+<!--                       	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" class="lazyload" data-src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=diabetesprodu-20&language=en_US&marketplace=amazon&region=US&placement=B07P28FBB6&asins=B07P28FBB6&linkId=51ec9a4fb9268c0dd1924417795f6567&show_border=true&link_opens_in_new_window=true">
+                      </iframe> -->
+                    </div>
+                    {% endif %}
 
-                                                            </div>
-                                                            <div class="article-author">
-                                                                {% if article.user.image %}
-                                                                <div class="photo">
-                                                                <img class="lazyload" data-src="{{ article.user.image | img_url: 'master' }}" alt="{{ article.author }}">
-                                                                </div>
-                                                                {% else %}
-                                                                <div class="photo">
-                                                                <img class="lazyload" data-src="{{ section.settings.authr_blgimg | img_url: '' }}" alt="{{ article.author }}">
-                                                                </div>
-                                                                {% endif %}
-                                                                <div class="details">
-                                                                {% if article.author %}
-                                                                <h4>{{ article.author}}</h4>
-                                                                {% endif %}
-                                                                {% if article.user.bio %}
-                                                                <p>{{ article.user.bio }}</p>
-                                                                {% endif %}
-                                                                </div>
-                                                            </div>
 
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                					                {% assign count = count | plus:1 %}
-                                                    {% endif %}
-                                                    {% endfor %}
-                                                    {% endunless %}
-                                                        {% endif %}
-                                                    {% endfor %}
+  {% capture all_the_tags %}{% for tag in article.tags %}{{ tag }} {% endfor %}{% endcapture %}
+                {% assign current = article.id %}
+                {% assign count = 0 %}
+                <div class="related-posts">
+                    <div class="container">
+                        <div class="mini-wrap">
+                            <div class="posts-wrap">
+                                <div class="sub-title">
+                                    <h2>Related Articles</h2>
+                                </div>
+                                <div class="posts-list">
+                                    <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+
+                                    {% for article in blog.articles %}
+                                     {% if count <=2 %}
+                                        {% unless article.id == current %}
+                                            {% for tag in article.tags %}
+                                                {% if all_the_tags contains tag %}
+                                               <div class="swiper-slide">
+                                    <div class="article-card">
+                                        <div class="picture">
+                                            <a href="{{ article.url }}" class="main-link"></a>
+                                            {% if article.image %}
+                                            <img class="lazyload" data-src="{{ article.image | img_url: 'original' }}" alt="">
+                                            {% endif %}
+                                            {% if article.tags.size > 0 %}
+                                            {% for tag in article.tags %}
+                                            <div class="category">
+                                            <p>{{ tag }}</p>
                                             </div>
-                                                <div class="slider-control">
-                                                <div class="prev-slide"><span class="icon-arrow"></span></div>
-                                                <div class="next-slide"><span class="icon-arrow"></span></div>
+                                            {% endfor %}
+                                            {% endif %}
+                                              </div>
+                                        <div class="info">
+                                            <div class="main-info">
+                                                <div class="title">
+                                                    <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
                                                 </div>
-                                                  </div>
-                                                     </div>
+                                                <div class="offer">
+                                                    <p>{{settings.offer_desc}}</p>
+                                                </div>
+                                                {% if description %}
+                                                <div class="description">
+                                                <p>
+                                                {% if article.excerpt.size > 0 %}
+                                                {{ article.excerpt }}
+                                                {% else %}
+                                                {{ article.content | strip_html | truncate: 150 }}
+                                                {% endif %}
+                                                </p>
+                                                </div>
+                                                {% endif %}
+
+                                            </div>
+                                            <div class="article-author">
+                                                {% if article.user.image %}
+                                                <div class="photo">
+                                                <img class="lazyload" data-src="{{ article.user.image | img_url: 'master' }}" alt="{{ article.author }}">
+                                                </div>
+                                                {% else %}
+                                                <div class="photo">
+                                                <img class="lazyload" data-src="{{ section.settings.authr_blgimg | img_url: '' }}" alt="{{ article.author }}">
+                                                </div>
+                                                {% endif %}
+                                                <div class="details">
+                                                {% if article.author %}
+                                                <h4>{{ article.author}}</h4>
+                                                {% endif %}
+                                                {% if article.user.bio %}
+                                                <p>{{ article.user.bio }}</p>
+                                                {% endif %}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                <div class="posts-categories">
-                    <div class="sub-title">
-                        <h2>Blog Categories</h2>
-                    </div>
-                    <div class="blog-category">
-                        <div class="category-wrap">
-                            <div class="touch-scroll">
-                                <div class="scroll-wrap">
-                                    <ul>
-                                        {% for tag in blog.all_tags %}
-                                        {% assign crTag = tag  %}
-                                        {% if current_tags contains crTag  %}
-                                        {% assign cls="active" %}
-                                        {% else %}
-                                        {% assign cls="" %}
+					                {% assign count = count | plus:1 %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endunless %}
                                         {% endif %}
-                                        <li class="{{cls}}"  > <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a></li>
-                                        {% endfor %}
-                                    </ul>
+                                    {% endfor %}
                                 </div>
+                              <div class="slider-control">
+                        <div class="prev-slide"><span class="icon-arrow"></span></div>
+                        <div class="next-slide"><span class="icon-arrow"></span></div>
+                    </div>
+                                 </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="posts-categories">
+                <div class="sub-title">
+                    <h2>Blog Categories</h2>
+                </div>
+                 <div class="blog-category">
+                    <div class="category-wrap">
+                        <div class="touch-scroll">
+                            <div class="scroll-wrap">
+                                <ul>
+                                    {% for tag in blog.all_tags %}
+                                    {% assign crTag = tag  %}
+                                    {% if current_tags contains crTag  %}
+                                    {% assign cls="active" %}
+                                    {% else %}
+                                    {% assign cls="" %}
+                                    {% endif %}
+                                    <li class="{{cls}}"  > <a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a></li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            </div>
         </div>
     </div>
 </div>
-
-
 
 
 {% include 'article-newsletter' %}
@@ -256,7 +259,7 @@
               "id": "sidepst_img",
               "label": "Select Sidebar Image"
             },
-             {
+            {
               "type": "image_picker",
               "id": "mobile_img",
               "label": "Select Mobile Image"
@@ -321,19 +324,13 @@
     }
 {% endschema %}
 
-{% stylesheet %}
-{% endstylesheet %}
+{% style %}
+@media screen and (max-width: 760px){
+    .related-posts .posts-list .swiper-container .prev-slide.disabled, .related-posts .posts-list .swiper-container .next-slide.disabled {
+        opacity: 0.5;
+    }
+    }
+{% endstyle %}
+
 {% javascript %}
 {% endjavascript %}
-<style>
-    @media screen and (max-width: 760px){
-.related-posts .posts-list .swiper-container .prev-slide.disabled, .related-posts .posts-list .swiper-container .next-slide.disabled {
-    opacity: 0.3;
-}
-}
-@media only screen and (min-width: 992px){
-.related-posts .swiper-slide {
-    width: 310px!important;
-}
-}
-</style>

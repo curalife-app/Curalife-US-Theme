@@ -209,8 +209,7 @@ footer {
       width: calc(100% - 67.4%);
       padding-top: 17px; }
     footer .top-info .text {
-      padding-top: 45px;
-      max-width: 688px; }
+      padding-top: 45px;}
       footer .top-info .text p {
         margin: 0;
         font-weight: normal;
@@ -219,12 +218,6 @@ footer {
         opacity: .7; }
   footer .mobile-text {
     width: 100%; }
-    footer .mobile-text.d-mobile {
-      display: none; }
-      footer .mobile-text.d-mobile .text {
-        display: block;
-        padding-top: 45px;
-        max-width: 688px; }
         footer .mobile-text.d-mobile .text p {
           margin: 0;
           font-weight: normal;
@@ -440,10 +433,6 @@ footer {
     padding: 9px 0; }
   footer .menu-list ul li a {
     font-size: 18px; }
-  footer .mobile-text.d-mobile .text,
-  footer .top-info .text {
-    padding-top: 40px;
-    max-width: 635px; }
   footer .mobile-text.d-mobile .text p,
   footer .top-info .text p {
     font-size: 13px; }
@@ -513,10 +502,6 @@ footer {
     padding: 7px 0; }
   footer .menu-list ul li a {
     font-size: 16px; }
-  footer .mobile-text.d-mobile .text,
-  footer .top-info .text {
-    padding-top: 35px;
-    max-width: 580px; }
   footer .mobile-text.d-mobile .text p,
   footer .top-info .text p {
     font-size: 12px; }
