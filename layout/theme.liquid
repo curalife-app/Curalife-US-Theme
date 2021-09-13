@@ -10,6 +10,9 @@
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
     {%- endif -%}
+
+  <!-- Redirect By Global Or US -->
+  <script src="{{ 'redirect-by-location.js' | asset_url }}" async></script>
    
   <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ 'common.css' | asset_url }}"></noscript>
