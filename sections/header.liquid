@@ -9,7 +9,7 @@
             </div>
             {% if section.settings.logo != blank %}
             <div class="main-logo">
-                <a href="{{section.settings.lgo_lnk}}"><img src="{{ section.settings.logo | img_url: '' }}" alt="logo" width="120" height="auto"></a>
+                <a href="{{section.settings.lgo_lnk}}"><img src="{{ section.settings.logo | img_url: '' }}" alt="logo"></a>
             </div>
             {% endif %}
             <div class="main-menu">
@@ -18,11 +18,11 @@
                     {% for link in linklists[section.settings.main_linklist].links %}
                        {% if link.links == blank  %}
                        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-  
+
                        {% else %}
-  
+
                         <li class="dropdown"><a href="{{ link.url }}">{{ link.title }}</a>
-  
+           					
                             <div class="dropdown-menu">
                             {% if link.links != blank %}
                                 <ul class="child">
@@ -32,10 +32,10 @@
                                 </ul>
                                  {% endif %}
                             </div>
-  
+                              
                         </li>
                         {% endif %}
-                        {% endfor %}
+                        {% endfor %}   
                     </ul>
                 </div>
             </div>
@@ -56,33 +56,28 @@
                 <ul>
                     {% unless customer%}
                     <li><a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#login-modal">
-                        <i class="icon-user"></i><span>Account</span> </a>
+                        <span>Account</span> <i class="icon-user"></i></a>
                     </li>
                     {% endunless%}
                      {% if customer%}
                         <li><a href="/account">
-                        <i class="icon-user"></i><span>My Account</span></a></li>
+                        <span>My Account</span> <i class="icon-user"></i></a></li>
                         {% endif %}
-                    <li>
-                      <a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#side-cart">
-                        <i class="icon-cart" data-items="{{ cart.item_count }}"></i><span>Cart </span> 
-                        {% if cart.item_count > 0 %}<span class="header_cart_count">{{ cart.item_count }}</span>{% endif %}
-                      </a>
-                  </li>
-                  <li><selector data-type="currencies" data-id="48859440"></selector></li>
-              </ul>
+                    <li><a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#side-cart">
+                        <span>Cart - <span class="header_cart_count">{{ cart.item_count }}</span></span> <i class="icon-cart" data-items="{{ cart.item_count }}"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>
-  </header>
-  {% schema %}
+</header>
+{% schema %}
   {
     "name": "Header",
     "settings": [
-      {
-      "type": "header",
-      "content": "Logo"
-    },
+    	{
+			"type": "header",
+			"content": "Logo"
+		},
         {
           "type": "image_picker",
           "id": "logo",
@@ -93,10 +88,10 @@
           "id": "lgo_lnk",
           "label": "Logo Link"
         },
-      {
-      "type": "header",
-      "content": "Menu"
-    },
+    	{	
+			"type": "header",
+			"content": "Menu"
+		},
         {
           "type": "link_list",
           "id": "main_linklist",
@@ -105,59 +100,40 @@
         }
     ]
   }
-  {% endschema %}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+<script type="text/javascript">
+var req = new XMLHttpRequest();
+req.overrideMimeType("application/json");
+req.open('GET', 'https://geo.curalife.com/', true);
+req.onload = function() {
+  var json = JSON.parse(req.responseText);
+  var trycuralifeCountries = ['KW', 'SA', 'QA', 'OM', 'BH', 'AE'];
   
-  {% style %}
-  
-  .header_cart_count {
-  border-radius: 50px;
-    width: 20px;
-    height: 20px;
-    justify-content: center;
-    align-items: center;
-    display: inline-flex !important;
-    background-color: #00C6B1;
-    color: white;
-    font-weight: bold;
-    margin-left: 10px;
+  function whereAmIFrom() {
+      return json.country;
   }
   
-  @media screen and (max-width: 760px){
-  .header_cart_count {
-      margin-left: 0;
-  }
-  }
-  {% endstyle %}
+  window.whereAmIFrom = whereAmIFrom;
+
+  if(!window.location.href.includes("checkout-diabetic") && !window.location.href.includes("admin") && !window.location.href.includes("parcelpanel")) {
+    if(trycuralifeCountries.includes(whereAmIFrom())){
+      window.location.hostname = 'trycuralife.com';
+    }
+    else if(whereAmIFrom() == 'RO'){
+        window.location.hostname = 'curalife.ro';}
+    else if(whereAmIFrom() != 'US' && whereAmIFrom() != 'PR'){
+        window.location.hostname = 'global.curalife.com';
+    }
+  } 
   
-  {% javascript %}
-  {% endjavascript %}
-  <script type="text/javascript">
-  let queryString = window.location.search;
-  if(queryString.indexOf('test') === -1) {
-    var req = new XMLHttpRequest();
-    req.overrideMimeType("application/json");
-    req.open('GET', 'https://geo.curalife.com/', true);
-    req.onload  = function() {
-      var json = JSON.parse(req.responseText);
-      var trycuralifeCountries = ['KW', 'SA', 'QA', 'OM', 'BH', 'AE'];
-  
-      function whereAmIFrom() {
-        return json.country;
-      }
-  
-  
-      if(!window.location.href.includes("admin") && !window.location.href.includes("/it")) {
-        if(whereAmIFrom() === 'US' || whereAmIFrom() === 'PR') {
-          window.location.hostname = 'curalife.com';
-        }
-        else if(trycuralifeCountries.includes(whereAmIFrom())){
-          window.location.hostname = 'trycuralife.com';
-        }
-        else if(whereAmIFrom() == 'RO'){
-          window.location.hostname = 'curalife.ro';}
-      }
-    };
-  
-    req.send(null);
-  }
-  </script>
+  if(typeof geoRules !== "undefined") geoRules();
+};
+
+req.send(null);
+</script>
