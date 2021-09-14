@@ -170,8 +170,9 @@
           "bnr_desc": "We believe people with chronic<br> conditions deserve BETTER",
           "btn_titl": "shop now",
           "bnr_btnlink": "https:\/\/curalife.com\/collections\/all",
-          "bnr_img": "shopify:\/\/shop_images\/main-intro_aa0e9809-0d5c-46e5-8856-5576062475f3.jpg",
-          "mblbnr_img": "shopify:\/\/shop_images\/main-intro-m.jpg"
+          "bnr_img": "shopify:\/\/shop_images\/homepage_bunner_buttel_1_2.png",
+          "mblbnr_img": "shopify:\/\/shop_images\/X_-_1.png",
+          "shipping_icon": "shopify:\/\/shop_images\/car_icon_1.png"
         }
       },
       "1619071284c9bbcc58": {
@@ -708,7 +709,6 @@
         "settings": {
           "cpwr_titl": "CuraLin Powerfully Helps",
           "wht_titl": "What is CuraLin?",
-          "wht_mbltitl": "Advanced<br> Glucose Support",
           "wht_desc": "CuraLin is a 100% natural glucose support supplement for people looking to maintain\n                                    healthy blood sugar levels and enjoy life's events to the fullest. It works by\n                                    blending\n                                    ancient Ayurveda practices with modern science and technology into a spectacular,\n                                    synergistic glucose support formula.\n                                    <br><br>\n                                    Each CuraLin capsule is manufactured close to the source, using only premium\n                                    ingredients. Secret production processes ensure that each capsule is highly potent\n                                    and\n                                    safe. All facilities are GMP & ISO 9001 certified, independent quality controls\n                                    assures that you get only the safest, highest quality supplements possible.\n                                    <br><br>\n                                    CuraLin comprises of 10 natural ingredients. Scroll down to learn more about the\n                                    formula."
         }
       },
@@ -1110,7 +1110,6 @@
           "26211f07-bd4a-40de-ae92-94735dbb4417"
         ],
         "settings": {
-          "cstmr_titl": "24\/7 Customer<br> Success Team",
           "cstmr_emil": "hello@curalife.com",
           "cntnt_titl": "Contact Us",
           "flow_titl": "Follow us:"
