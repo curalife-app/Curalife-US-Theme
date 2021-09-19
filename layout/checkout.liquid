@@ -35,7 +35,13 @@
     
     <!-- Yotpo Modules Script -->
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
-  
+  <style>
+    @media only screen and (max-width: 600px) {
+  .tc {
+    max-width:180px;
+  }
+}
+    </style>
 </head>
 <body>
     {% for line_item in checkout.line_items %}
@@ -200,7 +206,7 @@
           </header>
           <main class="main__content" role="main">
             {{ content_for_layout }}
-            <div style="display:flex;justify-content:flex-end;"><p style="margin-top:10px;">By clicking the continue button I Agree to CuraLife's <a href="https://curalife.com/policies/terms-of-service">Terms & Conditions</a>.</p></div>
+            <div class="tc" style="display:flex;justify-content:flex-end;"><p style="margin-top:10px;">By clicking the continue button I Agree to CuraLife's <a href="https://curalife.com/policies/terms-of-service">Terms & Conditions</a>.</p></div>
           </main>
           <footer class="main__footer" role="contentinfo">
             {{ content_for_footer }}
