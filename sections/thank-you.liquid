@@ -41,7 +41,7 @@
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
     'event': 'purchase',
-    'transectionID': '{{transaction.id}}',          //order ID
+    'transectionID': '{{order.name}}',          //order ID
     'content_type': 'product_group',
     'content_ids': '[{{ productIds }}]',            //if multiple conttent are purchased add array of all products IDs
      'value': '{{ checkout.total_price | money_without_currency }}',
