@@ -727,7 +727,7 @@
             "type": "natural_ingred",
             "settings": {
               "pwing_sldtitl": "Bitter Melon",
-              "pwing_desc": "Also known as Karela or Momordica Charantia, Bitter Melon is traditionally used by diabetes in Eastern medicinal systems. Its mechanism of action promotes healthy physiological function in damaged pancreatic cells, supports glucose absorption, and the sensitivity of the muscle cells to insulin.",
+              "pwing_desc": "Also known as Karela or Momordica Charantia, Bitter Melon is traditionally used in Eastern medicinal systems to promote healthy physiological function in pancreatic cells, supports glucose absorption, and the sensitivity of the muscle cells to insulin.",
               "pwing_img": "shopify:\/\/shop_images\/bitter_meln.png"
             }
           },
