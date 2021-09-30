@@ -853,7 +853,7 @@
           "e3bbf7ec-9179-4ccd-8c1c-366b5014823d": {
             "type": "customer_success",
             "settings": {
-              "cstmr_sbtitl": "Would recommend Curalin to a friend",
+              "cstmr_sbtitl": "Would recommend CuraLin to a friend",
               "cstmr_percen": "89%",
               "percen_color": "width: 89%;\n    background: linear-gradient(\n90.05deg\n, #ACE5B6 0%, #76CF84 100%);"
             }
