@@ -144,7 +144,7 @@
           window.dataLayer.push(
             {
             'event': 'Purchase',
-            'transaction_id': '{{checkout.order_id}}',      //order ID
+            'transaction_id': '{{checkout.order.name}}',      //order ID
             'content_type': 'product_group',
             'content_ids': '[{{ productIds }}]',      //if multiple conttent are purchased add array of all products IDs
             'value': '{{ checkout.total_price | money_without_currency }}',
@@ -165,7 +165,7 @@
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'Purchase',
-            'transaction_id': '{{checkout.order_id}}',      //order ID
+            'transaction_id': '{{checkout.order.name}}',      //order ID
             'content_type': 'product_group',
             'content_ids': '[{{ productIds }}]',      //if multiple conttent are purchased add array of all products IDs
             'value': '{{ checkout.total_price | money_without_currency }}',
