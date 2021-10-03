@@ -237,10 +237,10 @@
     let utm = location.search.split('utm')
 	window.onload = function () {
       for (let i = 1; i < utm.length; i++) {
-  		text += 'utm' + utm[i];
+  		utm_url += 'utm' + utm[i];
 		}
         $("form").each((form) => {
-        	$(this).attr("action", $(this).attr("action") utm);
+        	$(this).attr("action", $(this).attr("action") + text);
     		});
     }
   </script>
