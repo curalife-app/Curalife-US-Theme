@@ -241,7 +241,7 @@
   		utm_url += 'utm' + utm[i];
 		}
         $("form").each((form) => {
-        	$(this).attr("action", $(this).attr("action") + text);
+        	$(this).attr("action", $(this).attr("action") + utm_url);
     		});
     }
   </script>
