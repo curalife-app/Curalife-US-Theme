@@ -237,7 +237,7 @@
     let utm = location.search.split('utm=')[1]
 
     $("form").each((form) => {
-        $(this).attr("action", $(this).attr("action") + "?utm=" + utm);
+        $(this).attr("action", $(this).attr("action") + "?utm_medium=" + utm);
     });
   </script>
    	<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XWfxAu&module=CONSENT_AT_CHECKOUT"></script>
