@@ -234,6 +234,7 @@
 
     {{ tracking_code }}
   <script>
+    let utm_url = ''
     let utm = location.search.split('utm')
 	window.onload = function () {
       for (let i = 1; i < utm.length; i++) {
