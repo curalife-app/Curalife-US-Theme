@@ -5,3 +5,208 @@
 {% section 'available-through'%}
 {% section 'proudly-partnered'%}
 {% section 'our-team'%}
+<style>
+	.dr-intro {
+    position: relative;
+    z-index: 1;
+    -webkit-box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+    overflow: hidden;
+}
+.container {
+    width: 100%;
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.dr-intro .content-wrap {
+    padding: 5.3% 0;
+}
+.dr-intro .intro-data {
+    width: 54.5%;
+    font-family: 'Poppins', sans-serif;
+}
+.dr-intro .intro-data .title h1 {
+    margin: 0;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1.3;
+    color: #222222;
+}
+.dr-intro .intro-data .title h2 {
+    margin: 0;
+    padding-top: 25px;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 1.33;
+}
+.dr-intro .intro-data .title h2 b {
+    font-weight: 700;
+}
+.dr-intro .intro-data .title p {
+    max-width: 590px;
+    margin: 0;
+    padding-top: 22px;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.6;
+}
+.dr-intro .intro-data .btn-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-top: 16px;
+}
+.dr-intro .intro-data .btn-wrap .main-btn:not(.blank) {
+    font-size: 18px;
+}
+.dr-intro .intro-data .btn-wrap .main-btn {
+    width: 100%;
+    max-width: 477px;
+    margin-top: 14px;
+    min-height: 56px;
+}
+.main-btn.blue {
+    color: #fff;
+    background-color: #123F67;
+    border-color: #123F67;
+}
+.main-btn {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 15px 20px;
+    min-height: 46px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #deb63a;
+    border-radius: 2px;
+    border: 1px solid #deb63a;
+    -webkit-transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+    -o-transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+    transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+}
+.dr-intro .intro-data .btn-wrap .main-btn.blank {
+    color: #123f67;
+    border: 4px solid #ffffff;
+    background: none;
+}
+.main-btn.blank {
+    color: var(--dark);
+    background-color: #FFFFFF;
+    border-color: rgba(51, 51, 51, 0.3);
+}
+.dr-intro .intro-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+.dr-intro .intro-bg:before {
+    content: '';
+    width: 67%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background: url(../images/dr-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.dr-intro .intro-bg img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+@media screen and (max-width: 1270px){
+	.container {
+	    max-width: 942px;
+	}
+	.dr-intro .intro-data {
+	    width: 60%;
+	}
+	.dr-intro .intro-data .title h1 {
+    font-size: 30px;
+}
+	.dr-intro .intro-data .title h2 {
+	    padding-top: 8px;
+	    font-size: 23px;
+	}
+		.dr-intro .intro-data .title p {
+    max-width: 410px;
+    padding-top: 10px;
+    font-size: 14px;
+	}
+	.dr-intro .intro-data .btn-wrap .main-btn {
+	    min-height: 46px;
+	}
+	.dr-intro .intro-bg:before {
+	    width: 72%;
+	}
+
+}
+@media screen and (max-width: 1430px){
+	.container {
+    	max-width: 1172px;
+	}
+	.dr-intro .intro-data .title h1 {
+    font-size: 34px;
+	}
+	.dr-intro .intro-data .title h2 {
+	    padding-top: 15px;
+	    font-size: 26px;
+	}
+	.dr-intro .intro-data .title p {
+	    max-width: 460px;
+	    padding-top: 16px;
+	    font-size: 16px;
+	}
+	.dr-intro .intro-data .btn-wrap .main-btn:not(.blank) {
+	    font-size: 14px;
+	}
+	.dr-intro .intro-data .btn-wrap .main-btn {
+	    width: 100%;
+	    max-width: 400px;
+	    margin-top: 12px;
+	    min-height: 48px;
+	}
+	.main-btn {
+	    padding: 8px 17px;
+	    min-height: 37px;
+	    font-size: 12px;
+	}
+}
+@media screen and (max-width: 1590px){
+	.container {
+	    max-width: 1316px;
+	}
+	.main-btn {
+	    padding: 8px 19px;
+	    min-height: 41px;
+	    font-size: 14px;
+	}
+}
+</style>
