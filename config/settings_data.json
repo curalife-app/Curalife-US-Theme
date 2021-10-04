@@ -4253,6 +4253,286 @@
           "gallery-image-2": "shopify:\/\/shop_images\/gallery-image-3.png",
           "gallery-image-3": "shopify:\/\/shop_images\/gallery-image-2.png"
         }
+      },
+      "your-patients": {
+        "type": "your-patients",
+        "settings": {
+          "main_title": "Your Patients’ Journey to Balanced Glucose Levels Starts Here",
+          "mainsub_title": "Welcome to <b>CuraLife<\/b>",
+          "main_desc": "We work with you to serve your diabetic patients through Therapeutic Supplements, Behavioral\n                        Therapy, and Community Support.",
+          "btn_titleone": "Join our Professional Community",
+          "btn_urlone": "",
+          "btn_titletwo": "Sign In",
+          "btn_urltwo": "",
+          "maindsk_mg": "shopify:\/\/shop_images\/dr-intro.png",
+          "mainmbl_mg": "shopify:\/\/shop_images\/dr-m-intro.png",
+          "pbg_img": "shopify:\/\/shop_images\/dr-m-bg.png",
+          "pbg_mblimg": "shopify:\/\/shop_images\/dr-bg.png"
+        }
+      },
+      "holistic-solutions": {
+        "type": "holistic-solutions",
+        "blocks": {
+          "4449c12b-f8b7-4ead-a00c-4569115fc2c1": {
+            "type": "holistic",
+            "settings": {
+              "slc_img": "shopify:\/\/shop_images\/01_91545f4c-8cce-4454-9722-e698666fdec5.png",
+              "slc_title": "CuraLin",
+              "slc_desc": "Safe & Powerful Glucose Supplement",
+              "btn_slctitle": "Learn More",
+              "btn_slcurl": ""
+            }
+          },
+          "8e6ffe9e-78d5-4b2b-beeb-90f78be7cdbf": {
+            "type": "holistic",
+            "settings": {
+              "slc_img": "shopify:\/\/shop_images\/02_bf4cc2ff-8188-44e8-8c86-7a6403edbb14.png",
+              "slc_title": "Community",
+              "slc_desc": "Diabetes doesn't just affect you physically, it can affect you emotionally too.",
+              "btn_slctitle": "Learn More",
+              "btn_slcurl": ""
+            }
+          },
+          "2a534c94-5be1-44bb-abb1-960fef0b6997": {
+            "type": "holistic",
+            "settings": {
+              "slc_img": "shopify:\/\/shop_images\/03_5810504c-c423-49b3-af11-57cb489dcac9.png",
+              "slc_title": "Education",
+              "slc_desc": "The goals of diabetes education include not only providing knowledge and skills, but also changing the patient’s behavior",
+              "btn_slctitle": "Learn More",
+              "btn_slcurl": ""
+            }
+          }
+        },
+        "block_order": [
+          "4449c12b-f8b7-4ead-a00c-4569115fc2c1",
+          "8e6ffe9e-78d5-4b2b-beeb-90f78be7cdbf",
+          "2a534c94-5be1-44bb-abb1-960fef0b6997"
+        ],
+        "settings": {
+          "holis_titl": "Holistic Solutions"
+        }
+      },
+      "clinical-timeline": {
+        "type": "clinical-timeline",
+        "blocks": {
+          "92317eff-8b34-4791-9293-607742e7133c": {
+            "type": "clinical",
+            "settings": {
+              "clinc_img": "shopify:\/\/shop_images\/01_1da0f303-99d6-481c-88dc-bb04aa30fe96.png",
+              "year": "2020",
+              "month": "May",
+              "clinc_desc": "Dr. Weiss<br>\n                                        clinical review"
+            }
+          },
+          "3a7b3a5d-e839-40eb-adaa-325500548a87": {
+            "type": "clinical",
+            "settings": {
+              "clinc_img": "shopify:\/\/shop_images\/02_fc05ed39-8c17-4440-8e4d-e49761e893f0.png",
+              "year": "2020",
+              "month": "June",
+              "clinc_desc": "Peer reviewed<br>\n                                        Real-world<br>\n                                        data"
+            }
+          },
+          "5e010b0b-52a4-49af-af83-4e901c0a8a8b": {
+            "type": "clinical",
+            "settings": {
+              "clinc_img": "shopify:\/\/shop_images\/02_fc05ed39-8c17-4440-8e4d-e49761e893f0.png",
+              "year": "2021",
+              "month": "June 21 > March 22",
+              "clinc_desc": "June 21 > March 22"
+            }
+          },
+          "c11350c9-385b-418a-bb3e-1c4730d968ad": {
+            "type": "clinical",
+            "settings": {
+              "clinc_img": "shopify:\/\/shop_images\/01_1da0f303-99d6-481c-88dc-bb04aa30fe96.png",
+              "year": "2021",
+              "month": "June",
+              "clinc_desc": "Raz Curve clinical trial<br>\n                                        launch"
+            }
+          },
+          "104f0e07-9a72-4ee0-bd41-24ecc6b0efcb": {
+            "type": "clinical",
+            "settings": {
+              "clinc_img": "shopify:\/\/shop_images\/03_6b588bb1-c3ef-48c5-a36b-c12f007fe3a8.png",
+              "year": "2021",
+              "month": "August",
+              "clinc_desc": "Launch US<br>\n                                        clinical study<br>\n                                        in partnership<br>\n                                        with NUNM & WANP"
+            }
+          },
+          "5d624926-814d-49d7-a8db-ab8e7af144e7": {
+            "type": "clinical",
+            "settings": {
+              "clinc_img": "shopify:\/\/shop_images\/04_7a46d892-ce61-4ace-829e-c1d67d49ebd7.png",
+              "year": "2022",
+              "month": "February",
+              "clinc_desc": "Raz Curve<br>\n                                        clinical trial<br>\n                                        publication"
+            }
+          },
+          "26f1539e-7a4f-4cd5-88fb-5386e57928c6": {
+            "type": "clinical",
+            "settings": {
+              "clinc_img": "shopify:\/\/shop_images\/04_7a46d892-ce61-4ace-829e-c1d67d49ebd7.png",
+              "year": "2022",
+              "month": "March",
+              "clinc_desc": "US Clinical<br>\n                                        study publication"
+            }
+          }
+        },
+        "block_order": [
+          "92317eff-8b34-4791-9293-607742e7133c",
+          "3a7b3a5d-e839-40eb-adaa-325500548a87",
+          "5e010b0b-52a4-49af-af83-4e901c0a8a8b",
+          "c11350c9-385b-418a-bb3e-1c4730d968ad",
+          "104f0e07-9a72-4ee0-bd41-24ecc6b0efcb",
+          "5d624926-814d-49d7-a8db-ab8e7af144e7",
+          "26f1539e-7a4f-4cd5-88fb-5386e57928c6"
+        ],
+        "settings": {
+          "clinc_bgimg": "shopify:\/\/shop_images\/circles-bg.png",
+          "clinic_titl": "Clinical Timeline",
+          "btn_clinctitle": "Join us",
+          "btn_clincurl": ""
+        }
+      },
+      "join-the-revolution": {
+        "type": "join-the-revolution",
+        "blocks": {
+          "e6e234b8-de0c-44a5-85f7-3c92b1b1b15a": {
+            "type": "revolution",
+            "settings": {
+              "rev_titlone": "Wholesale",
+              "rev_desc": "Purchase CuraLin Directly to\nyour Practice",
+              "btn_revtitle": "Create Account",
+              "btn_revurl": ""
+            }
+          },
+          "c7da0907-659c-4617-8f4f-6c03d499d544": {
+            "type": "revolution",
+            "settings": {
+              "rev_titlone": "Virtual Dispensing",
+              "rev_desc": "Eliminate the hassle of managing inventory and build an online dispensary allowing your patients access to CuraLin and personalized educational materials",
+              "btn_revtitle": "Create Account",
+              "btn_revurl": ""
+            }
+          }
+        },
+        "block_order": [
+          "e6e234b8-de0c-44a5-85f7-3c92b1b1b15a",
+          "c7da0907-659c-4617-8f4f-6c03d499d544"
+        ],
+        "settings": {
+          "rev_titl": "Join the revolution",
+          "rev_mg": "shopify:\/\/shop_images\/fda-bottle.jpg"
+        }
+      },
+      "available-through": {
+        "type": "available-through",
+        "blocks": {
+          "ac2574ee-e410-4000-b761-65d17851df03": {
+            "type": "available",
+            "settings": {
+              "avail_img": "shopify:\/\/shop_images\/01_af65d11d-978b-430b-b5f7-2c48f67d88a8.png"
+            }
+          },
+          "194e5b59-8cc3-484e-9b79-07fe389ba6c8": {
+            "type": "available",
+            "settings": {
+              "avail_img": "shopify:\/\/shop_images\/02_fd42110c-e3b2-4c08-b0fb-382ce712e599.png"
+            }
+          }
+        },
+        "block_order": [
+          "ac2574ee-e410-4000-b761-65d17851df03",
+          "194e5b59-8cc3-484e-9b79-07fe389ba6c8"
+        ],
+        "settings": {
+          "avail_titl": "Also Available through"
+        }
+      },
+      "proudly-partnered": {
+        "type": "proudly-partnered",
+        "blocks": {
+          "9882c994-1959-4dd6-8099-c329c331e43b": {
+            "type": "partnered",
+            "settings": {
+              "partner_img": "shopify:\/\/shop_images\/03_3036f7c6-d180-41ab-8c4b-68e3c96d03c9.png"
+            }
+          },
+          "3f8b50b9-126c-4c5b-8d17-40c776dc4dd2": {
+            "type": "partnered",
+            "settings": {
+              "partner_img": "shopify:\/\/shop_images\/04_e5f37a01-b029-4135-a617-872896a97dd5.png"
+            }
+          },
+          "bf72cb7e-8b36-4446-9b8f-6bab435ad84c": {
+            "type": "partnered",
+            "settings": {
+              "partner_img": "shopify:\/\/shop_images\/05_efce597a-48eb-4f1a-99a4-d7ab8be27310.png"
+            }
+          },
+          "16f7bc31-b333-45dc-b68d-de7ec11a619c": {
+            "type": "partnered",
+            "settings": {
+              "partner_img": "shopify:\/\/shop_images\/06_e44c4d92-1bc6-4510-a8cb-0868fc88fb13.png"
+            }
+          },
+          "ffea484e-fbb0-40dc-afe7-7b7246ee7b1a": {
+            "type": "partnered",
+            "settings": {
+              "partner_img": "shopify:\/\/shop_images\/07_0483eaad-98af-4698-90a6-7e0c063ebea3.png"
+            }
+          }
+        },
+        "block_order": [
+          "9882c994-1959-4dd6-8099-c329c331e43b",
+          "3f8b50b9-126c-4c5b-8d17-40c776dc4dd2",
+          "bf72cb7e-8b36-4446-9b8f-6bab435ad84c",
+          "16f7bc31-b333-45dc-b68d-de7ec11a619c",
+          "ffea484e-fbb0-40dc-afe7-7b7246ee7b1a"
+        ],
+        "settings": {
+          "partner_titl": "Proudly Partnered with"
+        }
+      },
+      "our-team": {
+        "type": "our-team",
+        "blocks": {
+          "27e94d11-bc36-4fae-a1ca-88efccddedcc": {
+            "type": "team",
+            "settings": {
+              "team_imgone": "shopify:\/\/shop_images\/01_5077e542-d23f-473e-97d5-3a204a3d6624.jpg",
+              "team_titleone": "Roy Milstein",
+              "team_titletwo": "Partnerships & New Accounts",
+              "team_email": "roym@curalife.com",
+              "team_phone": "617-396-4789",
+              "btn_socialteamurl": "",
+              "btn_teamtitle": "Schedule a Call",
+              "btn_teamurl": ""
+            }
+          },
+          "04a7af0c-f41c-456e-bc47-27dd6c27de05": {
+            "type": "team",
+            "settings": {
+              "team_imgone": "shopify:\/\/shop_images\/02_7d7d5339-1b1d-424d-8c63-2b6a9b1b8a6b.jpg",
+              "team_titleone": "Remy Reinstein",
+              "team_titletwo": "Existing Accounts & Dispensary Accounts",
+              "team_email": "remy@curalife.com",
+              "team_phone": "972-591-8733",
+              "btn_socialteamurl": "",
+              "btn_teamtitle": "Schedule a Call",
+              "btn_teamurl": ""
+            }
+          }
+        },
+        "block_order": [
+          "27e94d11-bc36-4fae-a1ca-88efccddedcc",
+          "04a7af0c-f41c-456e-bc47-27dd6c27de05"
+        ],
+        "settings": {
+          "team_titl": "Our USA Team"
+        }
       }
     },
     "content_for_index": [
