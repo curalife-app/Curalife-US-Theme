@@ -870,7 +870,7 @@ ol, ul {
 	}
 	.dr-intro .intro-data .btn-wrap .main-btn.blank {
 	    background: rgba(255, 255, 255, 0.5);
-	    border: 2px solid var(--main-color);
+	    border: 2px solid #123f67;
 	}
 	.sub-title h3 {
 	    font-size: 26px;
@@ -893,6 +893,100 @@ ol, ul {
 	    min-height: 42px;
 	    font-size: 14px;
 	}
+
+
+}
+
+@media screen and (max-width: 640px){
+	.dr-intro .content-wrap {
+	    padding: 0;
+	}
+	.dr-intro .intro-data {
+	    width: 100%;
+	    padding: 19px 8px 0 8px;
+	    position: relative;
+	    z-index: 1;
+	}
+	.dr-intro .intro-data:before {
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    left: -15px;
+	    right: -15px;
+	    bottom: -41%;
+	    z-index: -1;
+	    background-size: 100% 100%;
+	    pointer-events: none;
+	}
+	.dr-intro .intro-data .title h1 {
+	    font-weight: 700;
+	    font-size: 24px;
+	    line-height: 1.25;
+	}
+	.dr-intro .intro-data .title h2 {
+	    display: none;
+	}
+	.dr-intro .intro-data .title p {
+	    padding-top: 10px;
+	    font-size: 16px;
+	    line-height: 1.37;
+	}
+	.dr-intro .intro-data .btn-wrap {
+	    padding-top: 3px;
+	}
+	.dr-intro .intro-data .btn-wrap .main-btn:not(.blank) {
+	    padding: 8px 5px;
+	    font-weight: normal;
+	    font-size: 14px;
+	}
+	.dr-intro .intro-data .btn-wrap .main-btn {
+	    max-width: 335px;
+	    min-height: 39px;
+	}
+	.dr-intro .intro-data:after {
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    left: -15px;
+	    right: -15px;
+	    bottom: 25px;
+	    z-index: -2;
+	    background: -webkit-gradient(linear, left top, left bottom, from(#F4F7F8), color-stop(77.11%, #E5E9E7), to(rgba(84, 94, 70, 0.12)));
+	    background: -o-linear-gradient(top, #F4F7F8 0%, #E5E9E7 77.11%, rgba(84, 94, 70, 0.12) 100%);
+	    background: linear-gradient(
+	180deg, #F4F7F8 0%, #E5E9E7 77.11%, rgba(84, 94, 70, 0.12) 100%);
+	    pointer-events: none;
+	}
+	.dr-intro .intro-bg {
+	    margin: -30% -15px 0 -15px;
+	    position: relative;
+	}
+	.dr-intro .intro-bg img {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
