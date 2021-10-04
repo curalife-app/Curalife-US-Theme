@@ -111,7 +111,7 @@
     background: none;
 }
 .main-btn.blank {
-    color: var(--dark);
+    color: #222222;
     background-color: #FFFFFF;
     border-color: rgba(51, 51, 51, 0.3);
 }
@@ -456,6 +456,137 @@ ol, ul {
     flex-shrink: 0;
     padding: 0 47px;
 }
+.logos-list .data-wrap {
+    padding: 5.3% 0;
+}
+.usa-team {
+    overflow: hidden;
+}
+.usa-team .data-wrap {
+    padding: 2.7% 0 1% 0;
+}
+.usa-team .team-list {
+    padding: 5% 0;
+}
+.usa-team .team-list ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.usa-team .team-list ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: calc(100% / 2);
+    padding: 20px 4.7%;
+}
+.usa-team .team-list ul li .photo {
+    width: 48.8%;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+}
+.usa-team .team-list ul li .photo:before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+.usa-team .team-list ul li .photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.usa-team .team-list ul li .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 51.2%;
+    padding-left: 35px;
+    position: relative;
+}
+.usa-team .team-list ul li .info .text {
+    padding-right: 35px;
+}
+.usa-team .team-list ul li .info .text h3 {
+    margin: 0;
+    padding-bottom: 3px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.27;
+    color: #222222;
+}
+.usa-team .team-list ul li .info .text h4 {
+    margin: 0;
+    padding-bottom: 4px;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.3;
+}
+.usa-team .team-list ul li .info .text p {
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.9;
+}
+.usa-team .team-list ul li .info .links {
+    padding: 15px 0 6px 0;
+}
+.usa-team .team-list ul li .info .links .media {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.usa-team .team-list ul li .info .links .media .linkedin {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDEuNzY0NzFWMjIuMjM1M0MyNCAyMi43MDMzIDIzLjgxNDEgMjMuMTUyMiAyMy40ODMxIDIzLjQ4MzFDMjMuMTUyMiAyMy44MTQxIDIyLjcwMzMgMjQgMjIuMjM1MyAyNEgxLjc2NDcxQzEuMjk2NjggMjQgMC44NDc4MTcgMjMuODE0MSAwLjUxNjg3IDIzLjQ4MzFDMC4xODU5MjQgMjMuMTUyMiAwIDIyLjcwMzMgMCAyMi4yMzUzTDAgMS43NjQ3MUMwIDEuMjk2NjggMC4xODU5MjQgMC44NDc4MTcgMC41MTY4NyAwLjUxNjg3QzAuODQ3ODE3IDAuMTg1OTI0IDEuMjk2NjggMCAxLjc2NDcxIDBMMjIuMjM1MyAwQzIyLjcwMzMgMCAyMy4xNTIyIDAuMTg1OTI0IDIzLjQ4MzEgMC41MTY4N0MyMy44MTQxIDAuODQ3ODE3IDI0IDEuMjk2NjggMjQgMS43NjQ3MVpNNy4wNTg4MiA5LjE3NjQ3SDMuNTI5NDFWMjAuNDcwNkg3LjA1ODgyVjkuMTc2NDdaTTcuMzc2NDcgNS4yOTQxMkM3LjM3ODMzIDUuMDI3MTUgNy4zMjc1OSA0Ljc2MjQyIDcuMjI3MTQgNC41MTUwNkM3LjEyNjY5IDQuMjY3NyA2Ljk3ODUgNC4wNDI1NSA2Ljc5MTAzIDMuODUyNDZDNi42MDM1NyAzLjY2MjM3IDYuMzgwNDkgMy41MTEwNyA2LjEzNDU1IDMuNDA3MkM1Ljg4ODYxIDMuMzAzMzIgNS42MjQ2MiAzLjI0ODkxIDUuMzU3NjUgMy4yNDcwNkg1LjI5NDEyQzQuNzUxMiAzLjI0NzA2IDQuMjMwNTMgMy40NjI3MyAzLjg0NjYzIDMuODQ2NjNDMy40NjI3MyA0LjIzMDUzIDMuMjQ3MDYgNC43NTEyIDMuMjQ3MDYgNS4yOTQxMkMzLjI0NzA2IDUuODM3MDMgMy40NjI3MyA2LjM1NzcxIDMuODQ2NjMgNi43NDE2MUM0LjIzMDUzIDcuMTI1NSA0Ljc1MTIgNy4zNDExOCA1LjI5NDEyIDcuMzQxMThDNS41NjExMSA3LjM0Nzc0IDUuODI2NzggNy4zMDE2NCA2LjA3NTk0IDcuMjA1NUM2LjMyNTExIDcuMTA5MzYgNi41NTI4OSA2Ljk2NTA2IDYuNzQ2MjcgNi43ODA4NkM2LjkzOTY1IDYuNTk2NjYgNy4wOTQ4NCA2LjM3NjE2IDcuMjAyOTcgNi4xMzE5NkM3LjMxMTEgNS44ODc3NSA3LjM3MDA2IDUuNjI0NjQgNy4zNzY0NyA1LjM1NzY1VjUuMjk0MTJaTTIwLjQ3MDYgMTMuNjA5NEMyMC40NzA2IDEwLjIxNDEgMTguMzEwNiA4Ljg5NDEyIDE2LjE2NDcgOC44OTQxMkMxNS40NjIxIDguODU4OTQgMTQuNzYyNiA5LjAwODU4IDE0LjEzNTggOS4zMjgxNEMxMy41MDkxIDkuNjQ3NjkgMTIuOTc3MSAxMC4xMjYgMTIuNTkyOSAxMC43MTUzSDEyLjQ5NDFWOS4xNzY0N0g5LjE3NjQ3VjIwLjQ3MDZIMTIuNzA1OVYxNC40NjM1QzEyLjY1NDkgMTMuODQ4MyAxMi44NDg3IDEzLjIzNzggMTMuMjQ1MiAxMi43NjQ2QzEzLjY0MTcgMTIuMjkxNSAxNC4yMDg5IDExLjk5MzkgMTQuODIzNSAxMS45MzY1SDE0Ljk1NzZDMTYuMDggMTEuOTM2NSAxNi45MTI5IDEyLjY0MjQgMTYuOTEyOSAxNC40MjEyVjIwLjQ3MDZIMjAuNDQyNEwyMC40NzA2IDEzLjYwOTRaIiBmaWxsPSIjMEE2NkMyIi8+Cjwvc3ZnPg==) no-repeat;
+}
+.usa-team .team-list ul li .info .links .main-btn {
+    width: 100%;
+    max-width: 264px;
+    min-height: 56px;
+    color: #012169;
+    border-color: #012169;
+    letter-spacing: 2px;
+}
+.main-btn i.icon-tel {
+    font-size: 20px;
+    padding-right: 7px;
+}
+.main-btn i {
+    display: block;
+    font-size: 24px;
+    padding-right: 10px;
+}
+.main-btn i.icon-tel:before {
+    display: block;
+    -webkit-transform: rotate(
+-30deg);
+    -ms-transform: rotate(-30deg);
+    transform: rotate(
+-30deg);
+}
+.icon-tel:before {
+    content: "\e912";
+}
+
 
 
 
@@ -477,6 +608,10 @@ ol, ul {
 	}
 	.logos-list .list-wrap ul li {
 	    padding: 0 35px;
+	}
+	.main-btn i {
+	    font-size: 20px;
+	    padding-right: 6px;
 	}
 }
 @media screen and (max-width: 1430px){
@@ -532,6 +667,16 @@ ol, ul {
 	}
 	.join-revolution .revolution-info ul li .btn-wrap {
 	    padding-top: 50px;
+	}
+	.usa-team .team-list ul li {
+	    padding: 20px 3%;
+	}
+	.usa-team .team-list ul li .info {
+	    padding-left: 20px;
+	}
+	.usa-team .team-list ul li .info .links .main-btn {
+	    max-width: 250px;
+	    min-height: 48px;
 	}
 }
 
@@ -589,7 +734,23 @@ ol, ul {
 	.logos-list .list-wrap ul li {
 	    padding: 0 30px;
 	}
-
+	.usa-team .team-list {
+	    margin: 0 -15px;
+	}
+	.usa-team .team-list ul li {
+	    padding: 15px;
+	}
+	.usa-team .team-list ul li .info .links .main-btn {
+	    max-width: 215px;
+	    min-height: 46px;
+	}
+	.main-btn i.icon-tel {
+	    font-size: 18px;
+	    padding-right: 5px;
+	}
+	.main-btn i {
+	    font-size: 17px;
+	}
 
 }
 	
