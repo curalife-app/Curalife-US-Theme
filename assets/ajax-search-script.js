@@ -7,7 +7,7 @@ $(document).ready(function(){
      
 
     /// Live search
-    var preLoadLoadGif = $('<img src="//cdn.shopify.com/s/files/1/0452/2459/1511/t/24/assets/ajax-load.gif?9948" />');
+    var preLoadLoadGif = $('<img src="//cdn.shopify.com/s/files/1/0452/2459/1511/t/24/assets/ajax-load.gif?9963" />');
     var searchTimeoutThrottle = 500;
     var searchTimeoutID = -1;
     var currReqObj = null;
