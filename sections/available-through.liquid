@@ -1,0 +1,69 @@
+<div class="logos-list">
+    <div class="container">
+        <div class="data-wrap">
+            <div class="sub-title decoration-line">
+                <h2>{{section.settings.avail_titl}}</h2>
+            </div>
+            <div class="list-wrap">
+                <div class="touch-scroll">
+                    <div class="scroll-wrap">
+                        <ul>
+                            {% for block in section.blocks %}
+                            {% if block.type == 'available' %}
+                            {% if block.settings.avail_img != blank %}
+                            <li><img src="{{block.settings.avail_img | img_url: ''}}" alt=""></li>
+                            {% endif %}
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Available  Through",
+        "settings": [
+           {
+            "type": "header",
+            "content": "Also Available through Section"
+        },
+        {
+            "type": "text",
+            "id": "avail_titl",
+            "label": "Enter Title",
+            "default": "Also Available through"
+        }
+         
+       ],
+       "blocks": [
+              {
+            "type": "available",
+            "name": "Add Available Content",
+            "settings": [    
+                
+                {
+                    "type": "image_picker",
+                    "id": "avail_img",
+                    "label": "Select Image"
+                }
+
+                
+            ]    
+          }
+
+                
+            ]    
+          }
+            
+    
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

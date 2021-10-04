@@ -1,0 +1,116 @@
+<style>
+    .dr-intro .intro-bg:before{
+        background:url('{{ section.settings.pbg_img | img_url:  '' }}') no-repeat !important;
+            background-size: 100% 100% !important;
+    }
+    @media screen and (max-width: 640px){
+        .dr-intro .intro-data:before{
+             background:url('{{ section.settings.pbg_mblimg | img_url:  '' }}') no-repeat !important;
+        }
+    }
+</style>
+<div class="dr-intro">
+    <div class="container">
+        <div class="content-wrap">
+            <div class="intro-data">
+                <div class="title">
+                    <h1>{{section.settings.main_title}}</h1>
+                    <h2>{{section.settings.mainsub_title}}</h2>
+                    <p>{{section.settings.main_desc}}</p>
+                </div>
+                <div class="btn-wrap">
+                    <a href="{{section.settings.btn_urlone}}" class="main-btn blue">{{section.settings.btn_titleone}}</a>
+                    <a href="{{section.settings.btn_urltwo}}" class="main-btn blank">{{section.settings.btn_titletwo}}</a>
+                </div>
+            </div>
+            <div class="intro-bg">
+                <picture>
+                     {% if section.settings.maindsk_mg != blank %}
+                    <source srcset="{{section.settings.maindsk_mg | img_url: ''}}" media="(min-width: 641px)">
+                        {% endif %} 
+                         {% if section.settings.mainmbl_mg != blank %}
+                    <source srcset="{{section.settings.mainmbl_mg | img_url: ''}}">
+                    <img srcset="{{section.settings.mainmbl_mg | img_url: ''}}" alt="">
+                    {% endif %}
+                </picture>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Doctor Zone",
+    "settings": [
+        {
+            "type": "text",
+            "id": "main_title",
+            "label": "Title",
+            "default": "Enter Title"
+        },
+        {
+            "type": "text",
+            "id": "mainsub_title",
+            "label": "Title",
+            "default": "Enter Sub Title"
+        },
+        {
+            "type": "textarea",
+            "id": "main_desc",
+            "label": "Description",
+            "default": "Enter Description"
+        },
+        {
+            "type": "text",
+            "id": "btn_titleone",
+            "label": "First Button Title",
+            "default": "Enter Button Title"
+        },
+        {
+            "type": "url",
+            "id": "btn_urlone",
+            "label": "First Button Link"
+            
+        },
+        {
+            "type": "text",
+            "id": "btn_titletwo",
+            "label": "Second Button Title",
+            "default": "Enter Button Title"
+        },
+        {
+            "type": "url",
+            "id": "btn_urltwo",
+            "label": "Second Button Link"
+            
+        },                
+        {
+            "type": "image_picker",
+            "id": "maindsk_mg",
+            "label": "Select Desktop Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mainmbl_mg",
+            "label": "Select Mobile Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "pbg_img",
+            "label": "Select Background Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "pbg_mblimg",
+            "label": "Select Mobile Background Image"
+        }
+         
+        
+       ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

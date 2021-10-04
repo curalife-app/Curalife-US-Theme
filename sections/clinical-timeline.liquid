@@ -1,0 +1,118 @@
+<style>
+    .clinical-timeline{
+        background-image: url('{{ section.settings.clinc_bgimg | img_url:  '' }}') !important;
+    }
+</style>
+<div class="clinical-timeline">
+    <div class="container">
+        <div class="data-wrap">
+            <div class="sub-title decoration-line">
+                <h3>{{section.settings.clinic_titl}}</h3>
+            </div>
+            <div class="timeline-list">
+                <div class="touch-scroll">
+                    <div class="scroll-wrap scroll-right">
+                        <ul>
+                            {% for block in section.blocks %}
+                            {% if block.type == 'clinical' %}
+                            <li>
+                                {% if block.settings.clinc_img != blank %}
+                                <div class="img">
+                                    <img src="{{block.settings.clinc_img | img_url: ''}}" alt="">
+                                </div>
+                                 {% endif %}
+                                <div class="text">
+                                    <h3>{{block.settings.year}}</h3>
+                                    <p><b>{{block.settings.month}}</b><br>
+                                        {{block.settings.clinc_desc}}
+                                    </p>
+                                </div>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <a href="{{section.settings.btn_clincurl}}" class="main-btn blue">{{section.settings.btn_clinctitle}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Clinical Timeline",
+        "settings": [
+        {
+            "type": "header",
+            "content": "Clinical Timeline"
+        },
+        {
+            "type": "image_picker",
+            "id": "clinc_bgimg",
+            "label": "Select Background Image"
+        },
+        {
+            "type": "text",
+            "id": "clinic_titl",
+            "label": "Enter Title",
+            "default": "Clinical Timeline Section"
+        },
+        {
+            "type": "text",
+            "id": "btn_clinctitle",
+            "label": "Button Title",
+            "default": "Enter Button Title"
+        },
+        {
+            "type": "url",
+            "id": "btn_clincurl",
+            "label": "Button Link"
+            
+        }
+         
+       ],
+       "blocks": [
+          {
+            "type": "clinical",
+            "name": "Add Clinical Content",
+            "settings": [    
+                {
+                    "type": "image_picker",
+                    "id": "clinc_img",
+                    "label": "Select Image"
+                },
+                {
+                  "type": "text",
+                  "id": "year",
+                  "label": "Year",
+                  "default": " Enter Year "
+                },
+                {
+                  "type": "text",
+                  "id": "month",
+                  "label": "Month",
+                  "default": " Enter Month "
+                },
+                {
+                  "type": "textarea",
+                  "id": "clinc_desc",
+                  "label": "Description",
+                  "default": " Enter Description "
+                }
+                
+
+                
+            ]    
+          }
+            
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

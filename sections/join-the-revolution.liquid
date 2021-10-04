@@ -1,0 +1,96 @@
+<div class="join-revolution">
+    <div class="container">
+        <div class="data-wrap">
+            <div class="sub-title decoration-line">
+                <h2>{{section.settings.rev_titl}}</h2>
+            </div>
+            <div class="revolution-info">
+                <ul>
+                    {% for block in section.blocks %}
+                    {% if block.type == 'revolution' %}
+                    <li>
+                        <div class="text">
+                            <h3>{{block.settings.rev_titlone}}</h3>
+                            <p>{{block.settings.rev_desc}}</p>
+                        </div>
+                        <div class="btn-wrap">
+                            <a href="{{block.settings.btn_revurl}}" class="main-btn blue">{{block.settings.btn_revtitle}}</a>
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% if section.settings.rev_mg != blank %}
+                <div class="info-img">
+                    <img src="{{section.settings.rev_mg | img_url: ''}}" alt="">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Join The Revolution",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Join the revolution Section"
+            },
+            {
+                "type": "text",
+                "id": "rev_titl",
+                "label": "Enter Title",
+                "default": "Join the revolution"
+            },
+            {
+                "type": "image_picker",
+                "id": "rev_mg",
+                "label": "Select Image"
+            }
+         
+       ],
+       "blocks": [
+          {
+            "type": "revolution",
+            "name": "Add Revolution Content",
+            "settings": [    
+                
+                {
+                  "type": "text",
+                  "id": "rev_titlone",
+                  "label": "Title",
+                  "default": " Enter Title "
+                },
+                {
+                  "type": "textarea",
+                  "id": "rev_desc",
+                  "label": "Description",
+                  "default": " Enter Description "
+                },
+                {
+                    "type": "text",
+                    "id": "btn_revtitle",
+                    "label": "Button Title",
+                    "default": "Enter Button Title"
+                },
+                {
+                    "type": "url",
+                    "id": "btn_revurl",
+                    "label": "Button Link"
+            
+                }
+
+                
+            ]    
+          }
+            
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
