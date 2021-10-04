@@ -14,6 +14,9 @@
                             <div class="sub-title">
                                 <h4>{{settings.lgn_sbtitl}}</h4>
                             </div>
+                          
+                          	<div class="one-click-social-login"></div>
+                          
                             {% form 'customer_login' %}
                             {{ form.errors | default_errors }}
                             <input id="redirect_url" type="hidden" name="return_to" value="/account/">
