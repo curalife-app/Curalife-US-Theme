@@ -462,6 +462,9 @@ ol, ul {
 .logos-list .list-wrap ul li:first-child {
     padding-left: 0;
 }
+.logos-list .list-wrap ul li:last-child {
+    padding-right: 0;
+}
 .logos-list .list-wrap ul li {
     -ms-flex-negative: 0;
     flex-shrink: 0;
@@ -777,8 +780,122 @@ ol, ul {
 	}
 
 }
-	
+	@media screen and (max-width: 991px){
+	.dr-intro .intro-data .btn-wrap .main-btn:not(.blank) {
+	    font-size: 13px;
+	}
+	.dr-intro .intro-data .btn-wrap .main-btn {
+	    max-width: 350px;
+	    min-height: 40px;
+	}
+	.dr-intro .intro-data .title h1 {
+	    font-size: 26px;
+	}
+	.dr-intro .intro-data .title h2 {
+	    font-size: 18px;
+	}
+	.dr-intro .intro-bg img {
+	    -o-object-position: 69% 50%;
+	    object-position: 69% 50%;
+	}
+	.holistic-solutions .solutions-list ul li .img {
+	    max-width: 120px;
+	    padding-bottom: 13px;
+	}
+	.holistic-solutions .solutions-list ul li .text p {
+	    font-size: 14px;
+	}
+	.holistic-solutions .solutions-list ul li .btn-wrap .main-btn, .clinical-timeline .btn-wrap .main-btn, .join-revolution .revolution-info ul li .btn-wrap .main-btn {
+	    max-width: 210px;
+	    min-height: 40px;
+	    font-size: 13px;
+	}
+	.clinical-timeline .timeline-list .touch-scroll .scroll-wrap.scroll-right:after, .clinical-timeline .timeline-list .touch-scroll .scroll-wrap.scroll-left:before {
+	    width: 95px;
+	}
+	.clinical-timeline .timeline-list ul li .text h3 {
+	    padding: 0 0 6px 0;
+	    font-size: 20px;
+	}
+	.clinical-timeline .timeline-list ul li .text p {
+	    font-size: 14px;
+	}
+	.join-revolution .revolution-info ul li {
+	    width: 35%;
+	}
+	.join-revolution .revolution-info ul li .text h3 {
+	    font-size: 20px;
+	}
+	.join-revolution .revolution-info ul li .text p {
+	    font-size: 13px;
+	}
+	.logos-list .list-wrap ul li {
+	    padding: 0 20px;
+	    max-width: 215px;
+	}
+	.usa-team .team-list ul li {
+	    -webkit-box-align: start;
+	    -ms-flex-align: start;
+	    align-items: flex-start;
+	    -webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	    justify-content: flex-start;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	}
+	.usa-team .team-list ul li .photo {
+	    width: 100%;
+	}
+	.usa-team .team-list ul li .photo {
+	    width: 100%;
+	}
+	.usa-team .team-list ul li .info {
+	    width: 100%;
+	    padding-left: 0;
+	    margin-top: 20px;
+	    -webkit-box-flex: 1;
+	    -ms-flex: 1;
+	    flex: 1;
+	}
 
+}
+
+
+@media screen and (max-width: 760px){
+	.dr-intro .intro-data .btn-wrap .main-btn.blank:hover {
+	    background: #deb63a;
+	    border-color: #deb63a;
+	}
+	.dr-intro .intro-data .btn-wrap .main-btn.blank {
+	    background: rgba(255, 255, 255, 0.5);
+	    border: 2px solid var(--main-color);
+	}
+	.sub-title h3 {
+	    font-size: 26px;
+	    line-height: 1.38;
+	}
+	.holistic-solutions .solutions-list ul li .img {
+	    max-width: 110px;
+	}
+	.sub-title h3 {
+	    font-size: 26px;
+	    line-height: 1.38;
+	}
+	.sub-title h1, .sub-title h2 {
+	    font-size: 36px;
+	    line-height: 1.28;
+	}
+	.main-btn {
+	    width: 100%;
+	    max-width: 187px;
+	    min-height: 42px;
+	    font-size: 14px;
+	}
+
+
+}
 </style>
 
 
