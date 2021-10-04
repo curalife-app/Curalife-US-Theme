@@ -123,6 +123,9 @@ $(document).ready(function () {
         slidesPerView: 1,
         spaceBetween: 15,
         effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
         watchSlidesVisibility: true,
         grabCursor: false,
         loop: false,
