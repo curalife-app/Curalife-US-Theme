@@ -4403,7 +4403,7 @@
             "type": "revolution",
             "settings": {
               "rev_titlone": "Wholesale",
-              "rev_desc": "Purchase CuraLin Directly to\nyour Practice",
+              "rev_desc": "Purchase CuraLin Directly to<br> your Practice",
               "btn_revtitle": "Create Account",
               "btn_revurl": ""
             }
