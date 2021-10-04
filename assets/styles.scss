@@ -1126,14 +1126,14 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    padding: 55px 0 20px;
+    flex-direction: row-reverse;
 
     .main-slider {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         width: calc(100% - 49.2%);
-        padding: 0 6% 0 0;
+        padding-top: 60px;
     }
 
     .thumbs-slider {
@@ -1309,7 +1309,7 @@
         &:before {
             content: '';
             display: block;
-            padding-bottom: 67.7%;
+            padding-bottom: 80%;
             pointer-events: none;
         }
 
@@ -1321,6 +1321,7 @@
             height: 100%;
             -o-object-fit: cover;
             object-fit: contain;
+            margin-right: 40px;
         }
     }
 }
