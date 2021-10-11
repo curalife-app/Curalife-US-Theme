@@ -478,76 +478,60 @@
               "advsr_desc": "Dr. Uri Eliyahu has a Ph.D in Medical Sciences specializing in Epidemiology. Dr. Eliyahu is a licensed pharmacist and holds a MSc in Physiology and Pharmacology. Dr Elyahu is a prestigious lecturer in top universities. Dr. Elyahu is the pharmacology lead at CuraLife."
             }
           },
-          "b24b5c94-51a6-47df-ba2a-19b173dd754a": {
+          "94a34059-1786-438c-b8d9-30665c6b1aba": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Ukraine",
-              "str_locsubtitl": "Cluster Group Limited",
-              "str_loc_url": "https:\/\/curalife.com.ua\/"
+              "str_loctitl": "Israel",
+              "str_locsubtitl": "CuraLife LTD"
             }
           },
-          "80505e26-0b13-42c8-baeb-4dd95d35debe": {
+          "9a94da2d-1247-4d40-a999-ac131b6d33a2": {
+            "type": "story_locations",
+            "settings": {
+              "str_loctitl": "USA",
+              "str_locsubtitl": "CuraLife USA"
+            }
+          },
+          "02cd38a9-6091-41f1-b498-a7b964cef4c1": {
+            "type": "story_locations",
+            "settings": {
+              "str_loctitl": "Spain",
+              "str_locsubtitl": "CuraLife Spain S.L."
+            }
+          },
+          "11db6981-3beb-4156-834e-843ccd171e33": {
+            "type": "story_locations",
+            "settings": {
+              "str_loctitl": "Latvia",
+              "str_locsubtitl": "CuraLife Commerce SIA"
+            }
+          },
+          "5597046a-22dd-45b5-92b6-a1d8848cd635": {
+            "type": "story_locations",
+            "settings": {
+              "str_loctitl": "Italy",
+              "str_locsubtitl": "CuraLife ITALIA S.R.L"
+            }
+          },
+          "61032ae2-c579-49f2-82d1-7990f2a2cb23": {
             "type": "story_locations",
             "settings": {
               "str_loctitl": "Romania",
-              "str_locsubtitl": "CuraLife Pharma Distribution SRL",
-              "str_loc_url": "https:\/\/curalife.ro\/"
+              "str_locsubtitl": "CuraLife Pharma Distribution"
             }
           },
-          "9cc3b750-8870-46e1-bb66-d4e86260da99": {
-            "type": "story_locations",
-            "settings": {
-              "str_loctitl": "Bosnia",
-              "str_locsubtitl": "Ramino D.O.O.",
-              "str_loc_url": "https:\/\/curalife.ba\/"
-            }
-          },
-          "ed72a16a-e1f7-449b-9019-f993218be0fb": {
-            "type": "story_locations",
-            "settings": {
-              "str_loctitl": "Serbia",
-              "str_locsubtitl": "Ramino D.O.O.",
-              "str_loc_url": "https:\/\/curalife.rs\/"
-            }
-          },
-          "f6c78e85-7280-4b20-9ce7-ae073d6e8182": {
-            "type": "story_locations",
-            "settings": {
-              "str_loctitl": "Montenegro",
-              "str_locsubtitl": "Ramino D.O.O.",
-              "str_loc_url": "https:\/\/curalife.me\/"
-            }
-          },
-          "d4f658e4-8dcf-420c-9a1a-4db7ddc980c8": {
-            "type": "story_locations",
-            "settings": {
-              "str_loctitl": "Slovenia",
-              "str_locsubtitl": "Ramino D.O.O.",
-              "str_loc_url": "http:\/\/curalife.si\/"
-            }
-          },
-          "62e6247d-764f-4e5c-b382-c98f0bdecfa4": {
-            "type": "story_locations",
-            "settings": {
-              "str_loctitl": "Austria",
-              "str_locsubtitl": "CuraLife Austria",
-              "str_loc_url": "https:\/\/curalife.at\/"
-            }
-          },
-          "10e1e29d-5406-496d-a98f-cecc81452ab5": {
-            "type": "story_locations",
-            "settings": {
-              "str_loctitl": "Kuwait",
-              "str_locsubtitl": "Yousef Alroumi Trading LLC",
-              "str_loc_url": "https:\/\/trycuralife.com\/"
-            }
-          },
-          "780ccac2-58c4-4ebc-afba-1b9434be8764": {
+          "c7bfa2f6-7e0d-4e57-b0a5-a8dddb45f2d3": {
             "type": "story_locations",
             "settings": {
               "str_loctitl": "Africa",
-              "str_locsubtitl": "CuraLife Suplementos LDA",
-              "str_loc_url": "https:\/\/curalifeafrica.com\/"
+              "str_locsubtitl": "CuraLife Africa LTD"
+            }
+          },
+          "d7e526c5-0f97-4326-96ff-d3c7b3a820a3": {
+            "type": "story_locations",
+            "settings": {
+              "str_loctitl": "China & HK",
+              "str_locsubtitl": "CureNature Supplements"
             }
           }
         },
@@ -958,76 +942,60 @@
       "store-locator": {
         "type": "store-locator",
         "blocks": {
-          "f4fc23d7-f262-4099-89d6-579592be29e3": {
+          "a5d5c4ab-cc69-4f24-92d4-30cd9f5f5d18": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "Ukraine",
-              "str_locsubtitl": "Cluster Group Limited",
-              "str_loc_url": "https:\/\/curalife.com.ua\/"
+              "str_loctitl": "Israel",
+              "str_locsubtitl": "CuraLife LTD"
             }
           },
-          "7f6ca39b-4de4-40f4-8c0c-296111eb2c27": {
+          "8672fd19-a9c4-4309-ba7d-919124f65eee": {
+            "type": "stor_locator",
+            "settings": {
+              "str_loctitl": "USA",
+              "str_locsubtitl": "CuraLife USA"
+            }
+          },
+          "c6fcf9fe-8129-412a-a0ac-68380de0db19": {
+            "type": "stor_locator",
+            "settings": {
+              "str_loctitl": "Spain",
+              "str_locsubtitl": "CuraLife Spain S.L."
+            }
+          },
+          "67725fd6-3620-4a38-9686-2e216c017c3f": {
+            "type": "stor_locator",
+            "settings": {
+              "str_loctitl": "Latvia",
+              "str_locsubtitl": "CuraLife Commerce SIA"
+            }
+          },
+          "c7c6ae69-59f2-4401-9beb-fcf27f5ca409": {
+            "type": "stor_locator",
+            "settings": {
+              "str_loctitl": "Italy",
+              "str_locsubtitl": "CuraLife ITALIA S.R.L"
+            }
+          },
+          "b815b005-9d39-4b47-9027-6f2d4fecadc0": {
             "type": "stor_locator",
             "settings": {
               "str_loctitl": "Romania",
-              "str_locsubtitl": "CuraLife Pharma Distribution SRL",
-              "str_loc_url": "https:\/\/curalife.ro\/"
+              "str_locsubtitl": "CuraLife Pharma Distribution"
             }
           },
-          "71276a6f-4a90-49a4-ba0e-3a9d7a4fd768": {
-            "type": "stor_locator",
-            "settings": {
-              "str_loctitl": "Bosnia",
-              "str_locsubtitl": "Ramino D.O.O.",
-              "str_loc_url": "https:\/\/curalife.ba\/"
-            }
-          },
-          "d4c32fcc-c19f-478c-a172-087ebeb729d6": {
-            "type": "stor_locator",
-            "settings": {
-              "str_loctitl": "Serbia",
-              "str_locsubtitl": "Ramino D.O.O.",
-              "str_loc_url": "https:\/\/curalife.rs\/"
-            }
-          },
-          "e51344e2-d9f4-459e-82cf-af6c6f30b0c3": {
-            "type": "stor_locator",
-            "settings": {
-              "str_loctitl": "Montenegro",
-              "str_locsubtitl": "Ramino D.O.O.",
-              "str_loc_url": "https:\/\/curalife.me\/"
-            }
-          },
-          "0d66d8a4-abc7-49e3-bf21-92759e72b0a6": {
-            "type": "stor_locator",
-            "settings": {
-              "str_loctitl": "Slovenia",
-              "str_locsubtitl": "Ramino D.O.O.",
-              "str_loc_url": "http:\/\/curalife.si\/"
-            }
-          },
-          "3d15cd76-7a84-4cd6-9cdb-055da22f2a50": {
-            "type": "stor_locator",
-            "settings": {
-              "str_loctitl": "Austria",
-              "str_locsubtitl": "CuraLife Austria",
-              "str_loc_url": "https:\/\/curalife.at\/"
-            }
-          },
-          "f9c277cd-dd4f-49cf-8283-9489d804055e": {
-            "type": "stor_locator",
-            "settings": {
-              "str_loctitl": "Kuwait",
-              "str_locsubtitl": "Yousef Alroumi Trading LLC",
-              "str_loc_url": "https:\/\/trycuralife.com\/"
-            }
-          },
-          "ce9b9dac-1330-4fb9-9e4f-620e3e2d9d7a": {
+          "589903b6-b81e-4f1e-aff7-493bd4a4a38c": {
             "type": "stor_locator",
             "settings": {
               "str_loctitl": "Africa",
-              "str_locsubtitl": "CuraLife Suplementos LDA",
-              "str_loc_url": "https:\/\/curalifeafrica.com\/"
+              "str_locsubtitl": "CuraLife Africa LTD"
+            }
+          },
+          "cb76243a-eb3e-459e-8194-741083ecffd5": {
+            "type": "stor_locator",
+            "settings": {
+              "str_loctitl": "China & HK",
+              "str_locsubtitl": "CureNature Supplements"
             }
           }
         },
