@@ -283,7 +283,7 @@
           "win_titl": "Winning Type 2<br> Diabetes Together",
           "winr_desc": "Every day, people around the world connect in our active community to share advice, get support, and help each other live a healthier fuller life. It’s a movement changing lives across the globe.",
           "win_btntitl": "Join the Community",
-          "win_btnlink": ""
+          "win_btnlink": "https:\/\/www.facebook.com\/groups\/winningtype2diabetestogether"
         }
       },
       "161907184276b20bf1": {
@@ -568,7 +568,7 @@
         ],
         "settings": {
           "dia_titl": "It started with a diagnosis ...",
-          "dia_desc": "When my father was diagnosed with type 2 diabetes, it transformed both our\n                                            lives. I\n                                            experienced\n                                            first-hand the challenges my father faced maintaining a high quality of life\n                                            with all\n                                            the\n                                            constraints of his condition. From that day, my mission became to help my\n                                            father\n                                            maintain\n                                            healthy blood sugar levels and eliminate his lifestyle constraints, without\n                                            any harmful\n                                            negative\n                                            effects.\n                                            <br><br>\n                                            I found the answer in Ayurveda; that’s how CuraLife was born. Since then,\n                                            CuraLife has\n                                            expanded\n                                            its vision to improving the quality of life for everyone living with chronic\n                                            conditions.\n                                            CuraLife creates transformational impact every day for people around the\n                                            world. We do\n                                            this by\n                                            blending modernized ancient Ayurveda principles with modern-day science and\n                                            technology\n                                            and\n                                            creating supportive communities for people on their journeys to health.\n                                            <br><br>\n                                            Join us on our mission to disrupt an industry and help millions of people\n                                            with chronic\n                                            conditions lead higher quality lives.",
+          "dia_desc": "When my father was diagnosed with type 2 diabetes, it transformed both our\n                                            lives. I\n                                            experienced\n                                            first-hand the challenges my father faced maintaining a high quality of life\n                                            with all\n                                            the\n                                            constraints of his condition. From that day, my mission became to help my\n                                            father\n                                            maintain\n                                            healthy blood sugar levels and eliminate his lifestyle constraints, without\n                                            any\n                                            negative\n                                            effects on his lifestyle.\n                                            <br><br>\n                                            I found the answer in Ayurveda; that’s how CuraLife was born. Since then,\n                                            CuraLife has\n                                            expanded\n                                            its vision to improving the quality of life for people around the world.\n                                            We do\n                                            this by\n                                            blending modernized ancient Ayurveda principles with modern-day science and\n                                            technology\n                                            and\n                                            creating supportive communities for people on their journeys to health.\n                                            <br><br>\n                                            Join us on our mission to disrupt an industry and help millions of people\n                                            lead higher quality lives.",
           "dia_img": "shopify:\/\/shop_images\/author.png",
           "dia_authr": "Ron Elul",
           "dia_desig": "CuraLife Founder & CEO",
@@ -576,7 +576,7 @@
           "cmpncltr_titl": "Company Culture",
           "cmpncltr_icnimg": "shopify:\/\/shop_images\/leaf.png",
           "cmpncltr_img": "shopify:\/\/shop_images\/culture-02.jpg",
-          "cmpncltr_desc": "The CuraLife team is driven by one mission – improving the quality of life for people with chronic conditions. And we work incredibly hard to achieve that goal through life-changing products, easily digestible education, and thriving communities. We care deeply, think globally, and work tirelessly to create a happier, healthier world.",
+          "cmpncltr_desc": "The CuraLife team is driven by one mission – improving the quality of life for people around the world. And we work incredibly hard to achieve that goal through life-changing products, easily digestible education, and thriving communities. We care deeply, think globally, and work tirelessly to create a happier, healthier world.",
           "advsr_titl": "Advisory Board",
           "loc_titl": "Locations",
           "loc_img": "shopify:\/\/shop_images\/location_image.png"
@@ -703,7 +703,7 @@
             "type": "natural_ingred",
             "settings": {
               "pwing_sldtitl": "Swertia Chirata",
-              "pwing_desc": "The active ingredients help the pancreatic cells release insulin, reduce absorption of glucose from the digestive system and improve the intracellular metabolism of glucose.",
+              "pwing_desc": "Swertia Chirata is a beautiful purple flower containing active compounds that promote cellular glucose metabolism, support the release of insulin from the pancreas, and keep a healthy rate of glucose absorption in the digestive system.",
               "pwing_img": "shopify:\/\/shop_images\/9.png"
             }
           },
@@ -889,8 +889,8 @@
               "imgpos_style": "",
               "retail_pretitl": "Retail",
               "retail_titl": "International <br>Retail Program",
-              "retail_desc": "CuraLife is on a mission to create a world, where people with chronic conditions can lead great lives. If you share in this vision and have the expertise to bring CuraLife products to your home country, we would love to explore partnership opportunities with you.",
-              "retail_btntitl": "Contact us",
+              "retail_desc": "CuraLife is on a mission to help everyone in the world lead great lives through health. If you share in this vision and have the expertise to bring CuraLife products to your home country, we would love to explore partnership opportunities with you.",
+              "retail_btntitl": "Contact Us",
               "retail_btnlink": "shopify:\/\/pages\/contact-us",
               "retail__btmimg": "shopify:\/\/shop_images\/retail-program.jpg",
               "retail_txtdesc": "CuraLife is unique because our products really work. Testimonial upon testimonial confirms – our products change lives. That’s why we measure our impact, not in bottles sold, but in lives changes. Our loved ones are CuraLife customers too.",
@@ -910,7 +910,8 @@
               "retail_btnlink": "shopify:\/\/pages\/contact-us",
               "retail__btmimg": "shopify:\/\/shop_images\/refer-friend_5e793945-a501-408c-8cd0-e23687fa13df.jpg",
               "retail_txtdesc": "",
-              "retail_txtbtntitl": ""
+              "retail_txtbtntitl": "",
+              "retail_txtbtnlink": ""
             }
           }
         },
@@ -926,7 +927,7 @@
         "settings": {
           "rtlprdct_title": "Curalife Products",
           "rtlprdct_desc": "Recommended for Safe and Powerful Glucose Support",
-          "rtlcollection": "shop",
+          "rtlcollection": "all",
           "rtlprdct_bgimg": "shopify:\/\/shop_images\/bg.jpg",
           "rtlbtm_desc": "If you’re excited by the impact CuraLife products can make in your community, we should discuss partnership opportunities. Simply fill in the contact form to get started."
         }
@@ -934,6 +935,8 @@
       "retail-contact-us": {
         "type": "retail-contact-us",
         "settings": {
+          "privc_link": "",
+          "terms_link": ""
         }
       },
       "store-locator": {
