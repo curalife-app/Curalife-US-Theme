@@ -481,57 +481,73 @@
           "94a34059-1786-438c-b8d9-30665c6b1aba": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Israel",
-              "str_locsubtitl": "CuraLife LTD"
+              "str_loctitl": "Ukraine",
+              "str_locsubtitl": "Cluster Group Limited",
+              "str_loc_url": "https:\/\/curalife.com.ua\/"
             }
           },
           "9a94da2d-1247-4d40-a999-ac131b6d33a2": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "USA",
-              "str_locsubtitl": "CuraLife USA"
+              "str_loctitl": "Romania",
+              "str_locsubtitl": "CuraLife Pharma Distribution SRL",
+              "str_loc_url": "https:\/\/curalife.ro\/"
             }
           },
           "02cd38a9-6091-41f1-b498-a7b964cef4c1": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Spain",
-              "str_locsubtitl": "CuraLife Spain S.L."
+              "str_loctitl": "Bosnia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.ba\/"
             }
           },
           "11db6981-3beb-4156-834e-843ccd171e33": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Latvia",
-              "str_locsubtitl": "CuraLife Commerce SIA"
+              "str_loctitl": "Serbia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.rs\/"
             }
           },
           "5597046a-22dd-45b5-92b6-a1d8848cd635": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Italy",
-              "str_locsubtitl": "CuraLife ITALIA S.R.L"
+              "str_loctitl": "Montenegro",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.me\/"
             }
           },
           "61032ae2-c579-49f2-82d1-7990f2a2cb23": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Romania",
-              "str_locsubtitl": "CuraLife Pharma Distribution"
+              "str_loctitl": "Slovenia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "http:\/\/curalife.si\/"
             }
           },
           "c7bfa2f6-7e0d-4e57-b0a5-a8dddb45f2d3": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Africa",
-              "str_locsubtitl": "CuraLife Africa LTD"
+              "str_loctitl": "Austira",
+              "str_locsubtitl": "CuraLife Austria",
+              "str_loc_url": "https:\/\/curalife.at\/"
             }
           },
           "d7e526c5-0f97-4326-96ff-d3c7b3a820a3": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "China & HK",
-              "str_locsubtitl": "CureNature Supplements"
+              "str_loctitl": "Kuwait",
+              "str_locsubtitl": "Yousef Alroumi Trading LLC",
+              "str_loc_url": "https:\/\/trycuralife.com\/"
+            }
+          },
+          "1f802d78-9bbf-45e0-aa5d-bb7380690e35": {
+            "type": "story_locations",
+            "settings": {
+              "str_loctitl": "Africa",
+              "str_locsubtitl": "CuraLife Suplementos LDA",
+              "str_loc_url": "https:\/\/curalifeafrica.com\/"
             }
           }
         },
@@ -564,7 +580,8 @@
           "5597046a-22dd-45b5-92b6-a1d8848cd635",
           "61032ae2-c579-49f2-82d1-7990f2a2cb23",
           "c7bfa2f6-7e0d-4e57-b0a5-a8dddb45f2d3",
-          "d7e526c5-0f97-4326-96ff-d3c7b3a820a3"
+          "d7e526c5-0f97-4326-96ff-d3c7b3a820a3",
+          "1f802d78-9bbf-45e0-aa5d-bb7380690e35"
         ],
         "settings": {
           "dia_titl": "It started with a diagnosis ...",
@@ -4535,6 +4552,11 @@
         ],
         "settings": {
           "team_titl": "Our USA Team"
+        }
+      },
+      "partnerships-map": {
+        "type": "partnerships-map",
+        "settings": {
         }
       }
     },
