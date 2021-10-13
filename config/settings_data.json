@@ -303,7 +303,7 @@
         "type": "our-story-banner",
         "settings": {
           "strbnr_titl": "Our Story",
-          "strbnr_desc": "It started with a diagnosis ...",
+          "strbnr_desc": "It started with a son and his father...",
           "strbnr_img": "shopify:\/\/shop_images\/intro-03.png"
         }
       },
@@ -481,57 +481,73 @@
           "94a34059-1786-438c-b8d9-30665c6b1aba": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Israel",
-              "str_locsubtitl": "CuraLife LTD"
+              "str_loctitl": "Ukraine",
+              "str_locsubtitl": "Cluster Group Limited",
+              "str_loc_url": "https:\/\/curalife.com.ua\/"
             }
           },
           "9a94da2d-1247-4d40-a999-ac131b6d33a2": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "USA",
-              "str_locsubtitl": "CuraLife USA"
+              "str_loctitl": "Romania",
+              "str_locsubtitl": "CuraLife Pharma Distribution SRL",
+              "str_loc_url": "https:\/\/curalife.ro\/"
             }
           },
           "02cd38a9-6091-41f1-b498-a7b964cef4c1": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Spain",
-              "str_locsubtitl": "CuraLife Spain S.L."
+              "str_loctitl": "Bosnia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.ba\/"
             }
           },
           "11db6981-3beb-4156-834e-843ccd171e33": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Latvia",
-              "str_locsubtitl": "CuraLife Commerce SIA"
+              "str_loctitl": "Serbia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.rs\/"
             }
           },
           "5597046a-22dd-45b5-92b6-a1d8848cd635": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Italy",
-              "str_locsubtitl": "CuraLife ITALIA S.R.L"
+              "str_loctitl": "Montenegro",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.me\/"
             }
           },
           "61032ae2-c579-49f2-82d1-7990f2a2cb23": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Romania",
-              "str_locsubtitl": "CuraLife Pharma Distribution"
+              "str_loctitl": "Slovenia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "http:\/\/curalife.si\/"
             }
           },
           "c7bfa2f6-7e0d-4e57-b0a5-a8dddb45f2d3": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "Africa",
-              "str_locsubtitl": "CuraLife Africa LTD"
+              "str_loctitl": "Austira",
+              "str_locsubtitl": "CuraLife Austria",
+              "str_loc_url": "https:\/\/curalife.at\/"
             }
           },
           "d7e526c5-0f97-4326-96ff-d3c7b3a820a3": {
             "type": "story_locations",
             "settings": {
-              "str_loctitl": "China & HK",
-              "str_locsubtitl": "CureNature Supplements"
+              "str_loctitl": "Kuwait",
+              "str_locsubtitl": "Yousef Alroumi Trading LLC",
+              "str_loc_url": "https:\/\/trycuralife.com\/"
+            }
+          },
+          "1f802d78-9bbf-45e0-aa5d-bb7380690e35": {
+            "type": "story_locations",
+            "settings": {
+              "str_loctitl": "Africa",
+              "str_locsubtitl": "CuraLife Suplementos LDA",
+              "str_loc_url": "https:\/\/curalifeafrica.com\/"
             }
           }
         },
@@ -564,11 +580,12 @@
           "5597046a-22dd-45b5-92b6-a1d8848cd635",
           "61032ae2-c579-49f2-82d1-7990f2a2cb23",
           "c7bfa2f6-7e0d-4e57-b0a5-a8dddb45f2d3",
-          "d7e526c5-0f97-4326-96ff-d3c7b3a820a3"
+          "d7e526c5-0f97-4326-96ff-d3c7b3a820a3",
+          "1f802d78-9bbf-45e0-aa5d-bb7380690e35"
         ],
         "settings": {
-          "dia_titl": "It started with a diagnosis ...",
-          "dia_desc": "When my father was diagnosed with type 2 diabetes, it transformed both our\n                                            lives. I\n                                            experienced\n                                            first-hand the challenges my father faced maintaining a high quality of life\n                                            with all\n                                            the\n                                            constraints of his condition. From that day, my mission became to help my\n                                            father\n                                            maintain\n                                            healthy blood sugar levels and eliminate his lifestyle constraints, without\n                                            any\n                                            negative\n                                            effects on his lifestyle.\n                                            <br><br>\n                                            I found the answer in Ayurveda; that’s how CuraLife was born. Since then,\n                                            CuraLife has\n                                            expanded\n                                            its vision to improving the quality of life for people around the world.\n                                            We do\n                                            this by\n                                            blending modernized ancient Ayurveda principles with modern-day science and\n                                            technology\n                                            and\n                                            creating supportive communities for people on their journeys to health.\n                                            <br><br>\n                                            Join us on our mission to disrupt an industry and help millions of people\n                                            lead higher quality lives.",
+          "dia_titl": "It started with a son and his father...",
+          "dia_desc": "When my father was diagnosed with type 2 diabetes, it transformed both our\n                                            lives. I\n                                            experienced\n                                            first-hand the challenges my father faced maintaining a high quality of life\n                                            with all\n                                            the\n                                            constraints of his condition. From that day, my mission became to help my\n                                            father\n                                            maintain\n                                            healthy blood sugar levels and eliminate his lifestyle constraints, without\n                                            any\n                                            negative\n                                            effects on his lifestyle.\n                                            <br><br>\n                                            I found the answer in Ayurveda; that’s how CuraLife was born. Since then,\n                                            CuraLife has\n                                            expanded\n                                            its vision to improving the quality of life for everyone around the world.\n                                            We do\n                                            this by\n                                            blending modernized ancient Ayurveda principles with modern-day science and\n                                            technology\n                                            and\n                                            creating supportive communities for people on their journeys to health.\n                                            <br><br>\n                                            Join us on our mission to disrupt an industry and help millions of people\n                                            lead higher quality lives.",
           "dia_img": "shopify:\/\/shop_images\/author.png",
           "dia_authr": "Ron Elul",
           "dia_desig": "CuraLife Founder & CEO",
@@ -578,7 +595,7 @@
           "cmpncltr_img": "shopify:\/\/shop_images\/culture-02.jpg",
           "cmpncltr_desc": "The CuraLife team is driven by one mission – improving the quality of life for people around the world. And we work incredibly hard to achieve that goal through life-changing products, easily digestible education, and thriving communities. We care deeply, think globally, and work tirelessly to create a happier, healthier world.",
           "advsr_titl": "Advisory Board",
-          "loc_titl": "Locations",
+          "loc_titl": "Partnerships",
           "loc_img": "shopify:\/\/shop_images\/location_image.png"
         }
       },
@@ -945,57 +962,73 @@
           "a5d5c4ab-cc69-4f24-92d4-30cd9f5f5d18": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "Israel",
-              "str_locsubtitl": "CuraLife LTD"
+              "str_loctitl": "Ukraine",
+              "str_locsubtitl": "Cluster Group Limited",
+              "str_loc_url": "https:\/\/curalife.com.ua\/"
             }
           },
           "8672fd19-a9c4-4309-ba7d-919124f65eee": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "USA",
-              "str_locsubtitl": "CuraLife USA"
+              "str_loctitl": "Romania",
+              "str_locsubtitl": "CuraLife Pharma Distribution SRL",
+              "str_loc_url": "https:\/\/curalife.ro\/"
             }
           },
           "c6fcf9fe-8129-412a-a0ac-68380de0db19": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "Spain",
-              "str_locsubtitl": "CuraLife Spain S.L."
+              "str_loctitl": "Bosnia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.ba\/"
             }
           },
           "67725fd6-3620-4a38-9686-2e216c017c3f": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "Latvia",
-              "str_locsubtitl": "CuraLife Commerce SIA"
+              "str_loctitl": "Serbia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.rs\/"
             }
           },
           "c7c6ae69-59f2-4401-9beb-fcf27f5ca409": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "Italy",
-              "str_locsubtitl": "CuraLife ITALIA S.R.L"
+              "str_loctitl": "Montenegro",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "https:\/\/curalife.me\/"
             }
           },
           "b815b005-9d39-4b47-9027-6f2d4fecadc0": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "Romania",
-              "str_locsubtitl": "CuraLife Pharma Distribution"
+              "str_loctitl": "Slovenia",
+              "str_locsubtitl": "Ramino D.O.O.",
+              "str_loc_url": "http:\/\/curalife.si\/"
             }
           },
           "589903b6-b81e-4f1e-aff7-493bd4a4a38c": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "Africa",
-              "str_locsubtitl": "CuraLife Africa LTD"
+              "str_loctitl": "Austria",
+              "str_locsubtitl": "CuraLife Austria",
+              "str_loc_url": "https:\/\/curalife.at\/"
             }
           },
           "cb76243a-eb3e-459e-8194-741083ecffd5": {
             "type": "stor_locator",
             "settings": {
-              "str_loctitl": "China & HK",
-              "str_locsubtitl": "CureNature Supplements"
+              "str_loctitl": "Kuwait",
+              "str_locsubtitl": "Yousef Alroumi Trading LLC",
+              "str_loc_url": "https:\/\/trycuralife.com\/"
+            }
+          },
+          "96a9c5f5-4645-480d-a4a4-5ab0cd85f067": {
+            "type": "stor_locator",
+            "settings": {
+              "str_loctitl": "Africa",
+              "str_locsubtitl": "CuraLife Suplementos LDA",
+              "str_loc_url": "https:\/\/curalifeafrica.com\/"
             }
           }
         },
@@ -1007,10 +1040,11 @@
           "c7c6ae69-59f2-4401-9beb-fcf27f5ca409",
           "b815b005-9d39-4b47-9027-6f2d4fecadc0",
           "589903b6-b81e-4f1e-aff7-493bd4a4a38c",
-          "cb76243a-eb3e-459e-8194-741083ecffd5"
+          "cb76243a-eb3e-459e-8194-741083ecffd5",
+          "96a9c5f5-4645-480d-a4a4-5ab0cd85f067"
         ],
         "settings": {
-          "strltr_titl": "Store Locator",
+          "strltr_titl": "Partnerships",
           "loc_img": "shopify:\/\/shop_images\/location_image.png"
         }
       },
@@ -4535,6 +4569,11 @@
         ],
         "settings": {
           "team_titl": "Our USA Team"
+        }
+      },
+      "partnerships-map": {
+        "type": "partnerships-map",
+        "settings": {
         }
       }
     },
