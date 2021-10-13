@@ -602,13 +602,11 @@
       "glucose-support-banner": {
         "type": "glucose-support-banner",
         "settings": {
-          "glo_titl": "Advanced Glucose Support",
-          "video_url": "https:\/\/player.vimeo.com\/video\/412001207?api=1&amp;player_id=video",
-          "vid_img": "shopify:\/\/shop_images\/video-preview_08891230-24b1-4b44-b7e2-0f7228ce68c3.jpg",
-          "vid_icon": "icon-play",
-          "gl_img": "shopify:\/\/shop_images\/product-0003.png",
-          "glbtn_titl": "Shop Now",
-          "glbnr_btnlink": "shopify:\/\/collections\/all"
+          "header_image": "shopify:\/\/shop_images\/shutterstock_1152559277_1_2.png",
+          "header_title": "CuraLin",
+          "header_subtitle": "Natural Blood Sugar Support Supplement",
+          "button_title": "shop now",
+          "button_link": "shopify:\/\/collections\/all"
         }
       },
       "glucose-support-white-bg-content": {
