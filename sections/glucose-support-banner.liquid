@@ -1,99 +1,102 @@
-<div class="page-intro">
-    <div class="container">
-        <div class="mini-wrap">
-            <div class="intro-wrap">
-                <div class="title-wrap">
-                    <div class="sub-title">
-                        <h1>{{section.settings.glo_titl}}</h1>
-                    </div>
-                </div>
-                {% if section.settings.video_url != blank %}
-                <div class="data-wrap">
-                    <div class="open-video">
-                        <a data-fancybox href="{{section.settings.video_url}}">
-                             {% if section.settings.vid_img != blank %}
-                            <img class="lazyload" data-src="{{ section.settings.vid_img | img_url: '' }}" alt="">
-                            {% endif %}
-                            <span class="{{section.settings.vid_icon}}"></span>
-                        </a>
-                    </div>
-                </div>
-                {% endif %}
-                <div class="data-wrap">
-                    <div class="prod-shop">
-                        {% if section.settings.gl_img != blank %}
-                        <div class="prod-img">
-                            <img class="lazyload" data-src="{{ section.settings.gl_img | img_url: '' }}" alt="">
-                        </div>
-                        {% endif %}
-                        <div class="btn">
-                            <a href="{{section.settings.glbnr_btnlink}}" class="main-btn">{{section.settings.glbtn_titl}}</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="curalin-page-header">
+    <img class="header-img" src="{{section.settings.header_image | img_url:'master' }}" alt="CuraLin Header Image">
+    <div class="header-content">
+        <h1>
+            <b>{{section.settings.header_title}}</b><br>
+            <span class="header-subtitle">{{section.settings.header_subtitle}}</span>
+        </h1>
+        <div class="btn">
+            <a href="{{section.settings.button_link}}" class="main-btn">{{section.settings.button_title}}</a>
         </div>
     </div>
 </div>
 
 {% schema %}
-  {
+
+{
     "name": "Glucose Support Banner",
     "settings": [
         {
+            "type": "image_picker",
+            "id": "header_image",
+            "label": "Header Image"
+        }, {
             "type": "text",
-            "id": "glo_titl",
+            "id": "header_title",
             "label": "Title",
             "default": "Enter Title"
-        },
-        {
-            "id": "video_url",
-            "type": "video_url",
-            "label": "Video URL ",
-            "accept": ["youtube", "vimeo"],
-            "info": "Supports Youtube and Vimeo",
-            "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
-        },
-        {
-            "type": "image_picker",
-            "id": "vid_img",
-            "label": "Video Image"
-        },
-         {
+        }, {
             "type": "text",
-            "id": "vid_icon",
-            "label": "Video Play Icon",
-            "default": "icon-play"
-        },
-        {
-            "type": "image_picker",
-            "id": "gl_img",
-            "label": "Banner image"
-        },
-        {
+            "id": "header_subtitle",
+            "label": "Sub-Title",
+            "default": "Enter Sub-Title"
+        }, {
             "type": "text",
-            "id": "glbtn_titl",
+            "id": "button_title",
             "label": "Button Title",
             "default": "Enter Button Title"
-        },
-        {
-            "id": "glbnr_btnlink",
+        }, {
+            "id": "button_link",
             "type": "url",
             "label": "Button Link"
         }
-        
     ],
-    "presets":[
-      {
-      "name": "Glucose Support Banner",
-      "category": "image"
-      }
-  ]
-  }
+    "presets": [
+        {
+            "name": "Glucose Support Banner",
+            "category": "image"
+        }
+    ]
+}
+
 {% endschema %}
 
-{% stylesheet %}
-{% endstylesheet %}
+{% style %}
+
+.curalin-page-header {
+    display: flex;
+    align-items: center;
+}
+
+.header-img {
+    width: 50%;
+    position: relative;
+}
+
+.header-content {
+    margin-left: 100px;
+    margin-top: -100px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.header-subtitle {
+    font-weight: normal;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 760px) {
+    .curalin-page-header {
+        flex-wrap: wrap;
+    }
+
+    .header-img {
+        width: 100%;
+    }
+
+    .header-content {
+        text-align: center;
+        margin: auto;
+    }
+  }
+
+{% endstyle %}
 
 {% javascript %}
+
+
+
 {% endjavascript %}

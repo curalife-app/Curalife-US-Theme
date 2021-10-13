@@ -147,15 +147,20 @@ $(document).ready(function () {
         spaceBetween: 15,
         watchSlidesVisibility: true,
         loop: false,
-        slideToClickedSlide: true,
+        slideToClickedSlide: false,
         thumbs: {swiper: ingredientThumbs},
-        // lazy: true
 
         navigation: {
             nextEl: '.next-slide',
             prevEl: '.prev-slide',
             disabledClass: 'disabled'
-        }
+        },
+        pagination: 
+		{
+			el: '.swiper-pagination',
+            clickable: 'true',
+            type: 'bullets',
+		},
     });
 
 
@@ -176,36 +181,38 @@ $(document).ready(function () {
         spaceBetween: 15,
         watchSlidesVisibility: true,
         loop: false,
-        slideToClickedSlide: true,
+        slideToClickedSlide: false,
         thumbs: {swiper: productThumbs},
     });
 
-    $(".related-posts .posts-list .swiper-container")
-        .each(function (index, element) {
-            let $this = $(this);
-            quoteSlider = new Swiper($this, {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                grabCursor: true,
-                loop: false,
-                navigation: {
-                    nextEl: $(".next-slide"),
-                    prevEl: $(".prev-slide"),
-                    disabledClass: 'disabled'
+
+
+ $(".related-posts .posts-list .swiper-container")
+ .each(function (index, element) {
+        let $this = $(this);
+        quoteSlider = new Swiper($this, {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            grabCursor: true,
+            loop: false,
+            navigation: {
+                nextEl: $(".next-slide"),
+                prevEl: $(".prev-slide"),
+                disabledClass: 'disabled'
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
                 },
-                breakpoints: {
-                    0: {
-                        slidesPerView: 1,
-                    },
-                    641: {
-                        slidesPerView: 2,
-                    },
-                    761: {
-                        slidesPerView: 3,
-                    }
+                641: {
+                    slidesPerView: 2,
+                },
+                761: {
+                    slidesPerView: 3,
                 }
-            });
+            }
         });
+    });
 });
 const aosFadeArrDone = [
     '.main-gallery',
@@ -362,8 +369,7 @@ $(document).ready(function () {
             }
         }
     });
-
-     $(document).on("click", ".faq-list ul li .question", function (e) {
+    $(document).on("click", ".faq-list ul li .question", function (e) {
             let parent = $(this).closest("li");
             if (parent.hasClass("open")) {
                 parent.removeClass("open");
@@ -374,7 +380,7 @@ $(document).ready(function () {
 
             }
     });
-    
+
     var move_access = false;
     var scrollLeft;
     $(".touch-scroll").on("mousedown touchstart", function (event) {
@@ -563,3 +569,6 @@ $(document).ready(function () {
     }
 });
 //# sourceMappingURL=maps/common.js.map
+
+
+
