@@ -17,6 +17,8 @@ req.onload = function() {
     }
     else if(whereAmIFrom() == 'RO'){
         window.location.hostname = 'curalife.ro';}
+    else if (whereAmIFrom() == 'AT'){
+    	window.location.hostname = 'curalife.at';}
     else if(whereAmIFrom() != 'US' && whereAmIFrom() != 'PR'){
         window.location.hostname = 'global.curalife.com';
     }
