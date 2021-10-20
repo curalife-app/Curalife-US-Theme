@@ -1,24 +1,4 @@
-const detectRobot = (userAgent) => {
-  const robots = new RegExp([
-      /bot/,/spider/,/crawl/,
-      /APIs-Google/,/AdsBot/,/Googlebot/,
-      /mediapartners/,/Google Favicon/,
-      /FeedFetcher/,/Google-Read-Aloud/,
-      /DuplexWeb-Google/,/googleweblight/,
-      /bing/,/yandex/,/baidu/,/duckduck/,/yahoo/,
-      /ecosia/,/ia_archiver/,
-      /facebook/,/instagram/,/pinterest/,/reddit/,
-      /slack/,/twitter/,/whatsapp/,/youtube/,
-      /semrush/,
-  ].map((r) => r.source).join("|"),"i");
-  return robots.test(userAgent);
-};
-
-const userAgent = navigator.userAgent;
-const isRobot = detectRobot(userAgent);
-
-if(!isRobot) {
-  var req = new XMLHttpRequest();
+var req = new XMLHttpRequest();
 req.overrideMimeType("application/json");
 req.open('GET', 'https://geo.curalife.com/', true);
 req.onload = function() {
@@ -48,5 +28,3 @@ req.onload = function() {
 };
 
 req.send(null);
-}
-
