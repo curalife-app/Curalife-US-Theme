@@ -133,9 +133,9 @@
                        <ul>
                            {% for block in section.blocks %}
                            {% if block.type == 'story_locations' %}
-                           <li>
+                           <li> 
                                <h4>{{block.settings.str_loctitl}}</h4>
-                               <a href="{{block.settings.str_loc_url}}"><p>{{block.settings.str_locsubtitl}}</p></a>
+                               <a href="{{block.settings.str_loc_url}}" target="_blank"><p>{{block.settings.str_locsubtitl}}</p></a>
                            </li>
                            {% endif %}
                            {% endfor %}

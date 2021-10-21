@@ -42,13 +42,13 @@
 }
 
 #brand-hide {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 70px;
-  height: 20px;
-  background-color: white;
-  z-index: 10;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 70px;
+    height: 20px;
+    background-color: white;
+    z-index: 10;
 }
 
 .partnerships-map {
@@ -57,13 +57,13 @@
     position: relative;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and(max-width: 760px) {
     .bottom-line {
         display: none;
     }
 
     .bottom-line {
-      z-index: 0;
+        z-index: 0;
     }
 }
 
@@ -91,7 +91,7 @@ if (window.matchMedia("(min-width: 480px)").matches) {
 
     // Set projection
     chart.projection = new am4maps.projections.NaturalEarth1();
- 
+
     // Start Location
     chart.homeZoomLevel = 4;
     chart.homeGeoPoint = {
@@ -122,7 +122,7 @@ if (window.matchMedia("(min-width: 480px)").matches) {
     imageSeries.mapImages.template.propertyFields.longitude = "longitude";
     imageSeries.mapImages.template.propertyFields.latitude = "latitude";
     imageSeries.mapImages.template.propertyFields.url = "url";
-    imageSeries.mapImages.template.tooltipHTML = '<div style="font-size:20px;"><b>{title}</b><br><a href="{url}" style="color:#33B7A6;margin-top:3px">{company}</a></div>';
+    imageSeries.mapImages.template.tooltipHTML = '<div style="font-size:20px;"><b>{title}</b><br><a href="{url}" target="_blank" style="color:#33B7A6;margin-top:3px">{company}</a></div>';
     imageSeries.tooltip.getFillFromObject = false;
     imageSeries.tooltip.background.strokeOpacity = 0;
     imageSeries.tooltip.background.fill = "#ffffff";
@@ -131,6 +131,7 @@ if (window.matchMedia("(min-width: 480px)").matches) {
     imageSeries.tooltip.autoTextColor = false;
     imageSeries.tooltip.label.fill = am4core.color("#000000");
     imageSeries.tooltip.label.textAlign = "middle";
+    imageSeries.mapImages.template.urlTarget = "_blank";
 
     let shadow = imageSeries.tooltip.background.filters.getIndex(0);
     shadow.dx = 2;
@@ -159,6 +160,7 @@ if (window.matchMedia("(min-width: 480px)").matches) {
     circle.strokeWidth = 0;
     circle.fillOpacity = 0.1;
     circle.zIndex = -1;
+    circle.urlTarget = "_blank";
 
     imageSeries.data = [
         {
