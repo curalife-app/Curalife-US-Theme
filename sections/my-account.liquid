@@ -77,10 +77,10 @@
                                 <li>
                                     <div class="order-head">
                                         <div class="number">
-                                            <p>Order {{ a.order_number }}</p>
+                                            <p>Order {{ order.order_number }}</p>
                                         </div>
                                         <div class="date">
-                                            <p>{{ a.created_at | date: format: 'abbreviated_date' }}</p>
+                                            <p>{{ order.created_at | date: format: 'abbreviated_date' }}</p>
                                         </div>
                                         <div class="more">
                                             <p><a href="javascript:void(0)">Dowload invoice</a></p>
