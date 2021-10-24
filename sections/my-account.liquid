@@ -69,10 +69,10 @@
                         <div class="data-title">
                             <h3>Your Orders</h3>
                         </div>
-                        {% if customer.orders %}
+                        {% if order.attributes  %}
                         <div class="data-list">
                             <ul>
-                                {% for order in customer.orders %}
+                                
                                 {% for a in order.lineItems %}
 
                                 <li>
@@ -120,7 +120,6 @@
                                 </li>
                                 
                                {% endfor %}
-                              {% endfor %}
                              
                             </ul>
                         </div>
