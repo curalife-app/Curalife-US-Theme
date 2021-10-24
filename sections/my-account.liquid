@@ -73,7 +73,7 @@
                         <div class="data-list">
                             <ul>
                                {% for order in customer.orders %}
-                                {% for a in order.lineItems %}
+                                {% for a in order.line_items  %}
                                 <li>
                                     <div class="order-head">
                                         <div class="number">
