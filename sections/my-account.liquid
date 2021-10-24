@@ -72,7 +72,7 @@
                         {% if customer.orders %}
                         <div class="data-list">
                             <ul>
-                                
+                                {% for order in customer.orders %}
                                 {% for a in order.lineItems %}
 
                                 <li>
@@ -120,6 +120,7 @@
                                 </li>
                                 
                                {% endfor %}
+                              {% endfor %}
                              
                             </ul>
                         </div>
