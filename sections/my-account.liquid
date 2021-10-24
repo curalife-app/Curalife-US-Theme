@@ -70,6 +70,7 @@
                             <h3>Your Orders</h3>
                         </div>
                         {% if customer.orders  %}
+                      {{ customer.orders }}
                         <div class="data-list">
                             <ul>
                                {% for order in customer.orders %}
