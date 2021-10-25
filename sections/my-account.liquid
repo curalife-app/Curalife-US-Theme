@@ -245,47 +245,47 @@
                             </div>
                         </div>
                     </div>
-                      <div class="data-wrap" id="e">
-                        <div class="data-title">
-                            <h3>Rewards history</h3>
-                        </div>
-                        <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
-
-                        <script>
-                        $(document).on("swell:setup", function(){
-                            var customerDetails = swellAPI.getCustomerDetails();
-
-                            $("#custom-point-balance-ui").html(customerDetails.pointsBalance);
-                            $("#custom-referral-link-ui").html(customerDetails.referralLink);
-
-                            customerDetails.actionHistoryItems.forEach(function(item) {
-                             $("#custom-history-container").append(
-                              "<tr>" +
-                                "<td>" + item.date   + "</td>" +
-                                "<td>" +item.action + " </td>" +
-                                 "<td>" +item.points + " </td>" +
-                                "<td>" +item.status +
-                              "</td><tr>");
-                          });
-                          })
-                        </script>
-
-                        <div class="rewards-table">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Action</th>
-                                    <th>Points</th>
-                                    <th>Status</th>
-                                </tr>
-                                </thead>
-                                <tbody id="custom-history-container">
-
-                                </tbody>
-                            </table>
-                        </div>
+                  <div class="data-wrap" id="e">
+                    <div class="data-title">
+                      <h3>Rewards history</h3>
                     </div>
+                    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
+
+                    <script>
+                      $(document).on("swell:setup", function(){
+                        var customerDetails = swellAPI.getCustomerDetails();
+
+                        $("#custom-point-balance-ui").html(customerDetails.pointsBalance);
+                        $("#custom-referral-link-ui").html(customerDetails.referralLink);
+
+                        customerDetails.actionHistoryItems.forEach(function(item) {
+                          $("#custom-history-container").append(
+                            "<tr>" +
+                            "<td>" + item.date   + "</td>" +
+                            "<td>" +item.action + " </td>" +
+                            "<td>" +item.points + " </td>" +
+                            "<td>" +item.status +
+                            "</td><tr>");
+                        });
+                      })
+                    </script>
+
+                    <div class="rewards-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Action</th>
+                            <th>Points</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody id="custom-history-container">
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                     <div class="data-wrap with-border" id="f">
                         <div class="data-title">
                             <h3>Change password</h3>
