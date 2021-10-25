@@ -101,7 +101,7 @@
                                                 <p>Quantity: ( {{a.quantity}} )</p>
                                             </div>
                                             <div class="price">
-                                                <p>{{order.total_price}}</p>
+                                                <p>{{order.total_price | money}}</p>
                                             </div>
                                             <div class="status done">
                                                 <p><span>{{ order.fulfillment_status }}</span></p>
