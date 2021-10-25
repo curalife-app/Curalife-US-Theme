@@ -71,7 +71,6 @@
                         <div class="data-list">
                             <ul>
                                {% for order in customer.orders %}
-                                {% for a in order.line_items  %}
                                 <li>
                                     <div class="order-head">
                                         <div class="number">
@@ -84,6 +83,7 @@
                                             <p><a href="javascript:void(0)">Dowload invoice</a></p>
                                         </div>
                                     </div>
+                                  {% for a in order.line_items  %}
                                     <div class="order-body">
                                         <div class="order-item">
                                             <div class="rows-wrap">
