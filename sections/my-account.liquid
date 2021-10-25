@@ -13,12 +13,10 @@
                     <div class="active-item"><p></p></div>
                     <div class="menu-list" >
                         <ul>
-                            <li class=""><a href="#a"><span class="icon-user"></span>My
-                                Profile</a></li>
+                            <li class=""><a href="#a"><span class="icon-user"></span>My Profile</a></li>
                             <li><a href="#b"><span class="icon-orders"></span>Orders</a></li>
                             <!-- <li><a href="#c"><span class="icon-payment"></span>Manage Payments</a></li> -->
-                            <!--  <li><a href="#d"><span class="icon-refer-friend"></span>Refer a Friend</a> -->
-                            </li>
+                            <!--  <li><a href="#d"><span class="icon-refer-friend"></span>Refer a Friend</a></li> -->
                              <li><a href="#e"><span class="icon-loyalty"></span>Loyalty</a></li>
                             <li><a href="#f"><span class="icon-password"></span>Change password</a></li>
                             <a class="lgoutlnk" href="/account/logout" ><span class="icon-logout"></span>Logout</a>
@@ -69,12 +67,10 @@
                         <div class="data-title">
                             <h3>Your Orders</h3>
                         </div>
-                        {% if order.attributes %}
+                        {% if customer.orders  %}
                         <div class="data-list">
                             <ul>
-                                
-                                {% for a in order.lineItems %}
-
+                               {% for order in customer.orders %}
                                 <li>
                                     <div class="order-head">
                                         <div class="number">
@@ -87,24 +83,25 @@
                                             <p><a href="javascript:void(0)">Dowload invoice</a></p>
                                         </div>
                                     </div>
+                                  {% for a in order.line_items  %}
                                     <div class="order-body">
                                         <div class="order-item">
                                             <div class="rows-wrap">
                                                 <div class="img-wrap">
-                                                    <span><img src="images/product/slider/01.1.png" alt=""></span>
+                                                    <span><img src={{a.product.featured_image | img_url}} alt=""></span>
                                                 </div>
                                                 <div class="name">
-                                                    <p>{{ product.title }}</p>
+                                                    <p>{{ a.product.title }}</p>
                                                 </div>
                                             </div>
-                                            <div class="value">
+<!--                                             <div class="value">
                                                 <p>{{a.sku}} -capsule bottle</p>
-                                            </div>
+                                            </div> -->
                                             <div class="quantity">
                                                 <p>Quantity: ( {{a.quantity}} )</p>
                                             </div>
                                             <div class="price">
-                                                <p>{{order.total_price}}</p>
+                                                <p>{{order.total_price | money}}</p>
                                             </div>
                                             <div class="status done">
                                                 <p><span>{{ order.fulfillment_status }}</span></p>
@@ -120,6 +117,7 @@
                                 </li>
                                 
                                {% endfor %}
+                              {% endfor %}
                              
                             </ul>
                         </div>
@@ -206,7 +204,78 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="data-wrap with-border" id="d">
+                  <div class="data-wrap" id="e">
+                    <div class="data-title">
+                      <h3>Rewards history</h3>
+                    </div>
+                    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
+
+                    <script>
+                      $(document).on("swell:setup", function(){
+                        var customerDetails = swellAPI.getCustomerDetails();
+
+                        $("#custom-point-balance-ui").html(customerDetails.pointsBalance);
+                        $("#custom-referral-link-ui").html(customerDetails.referralLink);
+
+                        customerDetails.actionHistoryItems.forEach(function(item) {
+                          $("#custom-history-container").append(
+                            "<tr>" +
+                            "<td>" + item.date   + "</td>" +
+                            "<td>" +item.action + " </td>" +
+                            "<td>" +item.points + " </td>" +
+                            "<td>" +item.status +
+                            "</td><tr>");
+                        });
+                      })
+                    </script>
+
+                    <div class="rewards-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Action</th>
+                            <th>Points</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody id="custom-history-container">
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                    <div class="data-wrap with-border" id="f">
+                        <div class="data-title">
+                            <h3>Change password</h3>
+                        </div>
+                        <div class="data-content">
+                            <div class="form-wrap">
+                                <div class="form-text">
+                                    <span class="icon-password"></span>
+                                </div>
+                                {% form 'reset_customer_password' %}
+                                    <div class="form-fields">
+                                        <label class="full-size">
+                                            <input type="password" placeholder="Old password" name="customer[old_password]">
+                                        </label>
+                                        <label class="full-size">
+                                            <input type="password" placeholder="New password" name="customer[new_password]">
+                                        </label>
+                                        <label class="full-size">
+                                            <input type="password" placeholder="Re-enter new password " name="customer[password_confirmation]">
+                                        </label>
+                                    </div>
+                                    <div class="submit-wrap">
+                                        <div class="submit-form">
+                                            <button type="submit" class="main-btn">Save</button>
+                                        </div>
+                                    </div>
+                                {% endform %}
+                            </div>
+                        </div>
+                    </div>
+                  <div class="data-wrap with-border" id="d">
                         <div class="data-title">
                             <h3>Refer a Partner</h3>
                         </div>
@@ -244,77 +313,6 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
-                        </div>
-                    </div>
-                      <div class="data-wrap" id="e">
-                        <div class="data-title">
-                            <h3>Rewards history</h3>
-                        </div>
-                        <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
-
-                        <script>
-                        $(document).on("swell:setup", function(){
-                            var customerDetails = swellAPI.getCustomerDetails();
-
-                            $("#custom-point-balance-ui").html(customerDetails.pointsBalance);
-                            $("#custom-referral-link-ui").html(customerDetails.referralLink);
-
-                            customerDetails.actionHistoryItems.forEach(function(item) {
-                             $("#custom-history-container").append(
-                              "<tr>" +
-                                "<td>" + item.date   + "</td>" +
-                                "<td>" +item.action + " </td>" +
-                                 "<td>" +item.points + " </td>" +
-                                "<td>" +item.status +
-                              "</td><tr>");
-                          });
-                          })
-                        </script>
-
-                        <div class="rewards-table">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Action</th>
-                                    <th>Points</th>
-                                    <th>Status</th>
-                                </tr>
-                                </thead>
-                                <tbody id="custom-history-container">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="data-wrap with-border" id="f">
-                        <div class="data-title">
-                            <h3>Change password</h3>
-                        </div>
-                        <div class="data-content">
-                            <div class="form-wrap">
-                                <div class="form-text">
-                                    <span class="icon-password"></span>
-                                </div>
-                                {% form 'reset_customer_password' %}
-                                    <div class="form-fields">
-                                        <label class="full-size">
-                                            <input type="password" placeholder="Old password" name="customer[old_password]">
-                                        </label>
-                                        <label class="full-size">
-                                            <input type="password" placeholder="New password" name="customer[new_password]">
-                                        </label>
-                                        <label class="full-size">
-                                            <input type="password" placeholder="Re-enter new password " name="customer[password_confirmation]">
-                                        </label>
-                                    </div>
-                                    <div class="submit-wrap">
-                                        <div class="submit-form">
-                                            <button type="submit" class="main-btn">Save</button>
-                                        </div>
-                                    </div>
-                                {% endform %}
                             </div>
                         </div>
                     </div>

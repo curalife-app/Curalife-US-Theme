@@ -11897,7 +11897,7 @@ footer .bottom-info .info-wrap .text p {
   .data-list ul li .order-item .status {
     width: 100%;
     padding: 7px 0;
-    text-align: right;
+    text-align: left !important;
   }
 
   .data-list ul li .order-item .status p span {
