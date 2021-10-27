@@ -4434,7 +4434,7 @@
 
                         span {
                             display: block;
-                            padding: 16%;
+                            padding: 10%;
                             position: absolute;
                             top: 0;
                             left: 0;
@@ -5919,11 +5919,14 @@
         border-top: 1px solid rgba(34, 34, 34, 0.1);
 
         .summary {
-            padding-bottom: 34px;
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
 
             h4 {
                 margin: 0;
-                padding-bottom: 15px;
                 font-weight: normal;
                 font-size: 20px;
                 line-height: 1;
@@ -6020,7 +6023,7 @@
                 -webkit-box-align: start;
                 -ms-flex-align: start;
                 align-items: flex-start;
-                padding: 10px 30px 30px 10px;
+                padding: 20px;
                 border-bottom: 1px solid rgba(34, 34, 34, 0.1);
 
                 .img-wrap {
@@ -6031,7 +6034,7 @@
                     &:before {
                         content: '';
                         display: block;
-                        padding-bottom: 100%;
+                        padding-bottom: 140px;
                         pointer-events: none;
                     }
 
@@ -6076,10 +6079,12 @@
                     padding-left: 18px;
 
                     .info-card {
-                        -webkit-box-flex: 1;
-                        -ms-flex: 1;
                         flex: 1;
                         padding-right: 15px;
+                        height: 140px;
+                        justify-content: space-between;
+                        display: flex;
+                        flex-direction: column;
                     }
 
                     .name {
@@ -6102,9 +6107,9 @@
                             }
                         }
                     }
-
+ 
                     .price {
-                        padding-top: 25px;
+                        padding-top: 10px;
 
                         p {
                             margin: 0;
@@ -7483,19 +7488,6 @@ html {
                     min-height: 50px;
                 }
             }
-
-            .summary {
-                p {
-                    font-size: 22px;
-                }
-
-                padding-bottom: 28px;
-
-                h4 {
-                    padding-bottom: 15px;
-                    font-size: 18px;
-                }
-            }
         }
 
         .added-products {
@@ -8712,19 +8704,6 @@ html {
                     min-height: 45px;
                 }
             }
-
-            .summary {
-                p {
-                    font-size: 19px;
-                }
-
-                padding-bottom: 25px;
-
-                h4 {
-                    padding-bottom: 12px;
-                    font-size: 16px;
-                }
-            }
         }
 
         .added-products {
@@ -8748,8 +8727,6 @@ html {
                             p {
                                 font-size: 21px;
                             }
-
-                            padding-top: 20px;
                         }
 
                         .qty-control {
@@ -8758,8 +8735,6 @@ html {
                             height: 34px;
                         }
                     }
-
-                    padding: 8px 13px 18px 8px;
 
                     .delete-card {
                         button {
@@ -11646,15 +11621,6 @@ html {
                             }
                         }
 
-                        .price {
-                            p {
-                                font-size: 26px;
-                                text-align: right;
-                            }
-
-                            padding-top: 25px;
-                        }
-
                         .info-card {
                             display: -webkit-box;
                             display: -ms-flexbox;
@@ -11685,13 +11651,12 @@ html {
                             }
                         }
 
-                        padding: 15px;
+                        padding: 25px;
                         position: absolute;
                         left: 0;
                         top: 0;
                     }
 
-                    padding: 10px 30px 30px 10px;
                     position: relative;
                 }
             }
@@ -11700,17 +11665,6 @@ html {
         max-width: 486px;
 
         .bottom-info {
-            .summary {
-                h4 {
-                    padding-bottom: 15px;
-                    font-size: 20px;
-                }
-
-                p {
-                    font-size: 24px;
-                }
-            }
-
             .btn {
                 .main-btn {
                     min-height: 56px;
