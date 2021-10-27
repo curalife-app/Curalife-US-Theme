@@ -1,95 +1,97 @@
- <div class="cart-toolbar" id="side-cart">
-        <div class="top-info">
-            <div class="title">
-                <h3>Cart</h3>
-                <button type="button" class="close-cart" data-fancybox-close><span class="icon-close"></span></button>
-            </div>
+<div class="cart-toolbar" id="side-cart">
+    <div class="top-info">
+        <div class="title">
+            <h3>Cart</h3>
+            <button type="button" class="close-cart" data-fancybox-close><span class="icon-close"></span></button>
         </div>
-        <div class="content">
-            
+    </div>
+    <div class="content">
+        
 
 
-            <div class="added-products">
-              {% if cart.item_count > 0 %}
-                <ul>
-                  {% for item in cart.items %}
-                    <li>
-                        <div class="img-wrap">
-                            <a href="javascript:void(0)">
-                               <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
-                            </a>
-                        </div>
-                        <div class="data">
-                            <div class="info-card">
-                                <div class="name">
-                                    <h4><a href="{{item.product.url}}">{{ item.product.title }}</a></h4>
-                                </div>
+        <div class="added-products">
+          {% if cart.item_count > 0 %}
+            <ul>
+              {% for item in cart.items %}
+                <li>
+                    <div class="img-wrap">
+                        <a href="javascript:void(0)">
+                           <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+                        </a>
+                    </div>
+                    <div class="data">
+                        <div class="info-card">
+                            <div class="name">
+                                <h4><a href="{{item.product.url}}">{{ item.product.title }}</a></h4>
                                 <div class="price">
                                     <p>{{ item.price | money }}</p>
                                 </div>
-                                <div class="qty-control">
-                                    <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
-                                    <label>
-                                        <input type="number" name="quantity[]" value="{{ item.quantity }}" maxlength="4">
+                            </div>
+                            
+                            <div class="qty-control">
+                                <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                                <label>
+                                    <input type="number" name="quantity[]" value="{{ item.quantity }}" maxlength="4">
 
-                                    </label>
-                                    <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
-                                </div>
+                                </label>
+                                <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                             </div>
                             <div class="delete-card">
                                 <button type="button" onclick="removeThis($(this),'{{item.id}}')"><i class="icon-close"></i><span>Remove</span></button>
                             </div>
                         </div>
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </div>
-        </div>
-        <div class="bottom-info">
-            <div class="summary">
-                <h4>Subtotal</h4>
-                <p class="cstm_pric">{{ cart.total_price | money }}</p>
-            </div>
-            <div class="btn">
-                              {% if cart.item_count > 0 %}
-
-                <a href="/checkout/" class="plc_order main-btn orange">Place your order</a>
-                {% else %}
-                <a href="/collections/all" class="main-btn orange">Place your order</a>
-                {% endif %}
-            </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
-    <script>
-        
-         function removeThis(obj, id){   
-       //alert("removeThis"+id);
-   jQuery.post('/cart/update.js', 'updates['+id+']=0');
+    <div class="bottom-info">
+        <div class="summary">
+            <h4>Subtotal</h4>
+            <p class="cstm_pric">{{ cart.total_price | money }}</p>
+        </div>
+        <div class="btn">
+                          {% if cart.item_count > 0 %}
+
+            <a href="/checkout/" class="plc_order main-btn orange">Place your order</a>
+            {% else %}
+            <a href="/collections/all" class="main-btn orange">Place your order</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script>
+    
+     function removeThis(obj, id){   
+   //alert("removeThis"+id);
+jQuery.post('/cart/update.js', 'updates['+id+']=0');
 
 
 var cstm_count = obj.parent().parent().find("input").val();
 var cartToalCount = $('.header_cart_count').text();
 var cartReaminingCount = parseInt(cartToalCount) - parseInt(cstm_count);
 $('.header_cart_count').text(cartReaminingCount);
+var currencySymbol='{{cart.currency.symbol}}'; 
 
-var my_pric =    obj.parent().parent().find('.price').find("p").text().replace("$", "");
+var my_pric =    obj.parent().parent().find('.price').find("p").text().replace(currencySymbol, "");
 
 var totalRemovePrice = cstm_count * my_pric;
 
-var totalSubCount = $(".cstm_pric").text().replace("$", "");
+var totalSubCount = $(".cstm_pric").text().replace(currencySymbol, "");
 
 var totalRemainingCount =parseFloat(totalSubCount)-parseFloat(totalRemovePrice);
 
-$(".cstm_pric").text("$"+totalRemainingCount);
+
+$(".cstm_pric").text(currencySymbol+totalRemainingCount);
 
 obj.parent().parent().parent().remove();
-var totalc = $(".cstm_pric").text().replace("$", "");
-    if(totalc == 0){
-        $(".plc_order").attr("href", "/collections/all");
-    }
-  }
-     
-       
-   
-      </script>
+var totalc = $(".cstm_pric").text().replace(currencySymbol, "");
+if(totalc == 0){
+    $(".plc_order").attr("href", "/collections/all");
+}
+}
+    
+
+  </script>

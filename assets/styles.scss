@@ -7505,11 +7505,11 @@ html {
                             h4 {
                                 font-size: 22px;
                             }
-                        }
 
-                        .price {
-                            p {
-                                font-size: 23px;
+                            .price {
+                                p {
+                                    font-size: 23px;
+                                }
                             }
                         }
 
@@ -8719,11 +8719,11 @@ html {
                             h4 {
                                 font-size: 19px;
                             }
-                        }
 
-                        .price {
-                            p {
-                                font-size: 21px;
+                            .price {
+                                p {
+                                    font-size: 21px;
+                                }
                             }
                         }
 
@@ -11613,9 +11613,10 @@ html {
                         padding-left: 18px;
 
                         .name {
+                            text-align: right;
+                            
                             h4 {
                                 font-size: 24px;
-                                text-align: right;
                             }
                         }
 
@@ -11890,8 +11891,6 @@ html {
                         span {
                             width: 100%;
                             padding: 19px 0 0 0;
-                            width: 100%;
-                            padding: 19px 0 0 0;
                         }
                     }
                 }
@@ -11904,29 +11903,23 @@ html {
                     li {
                         .img-wrap {
                             width: 115px;
-                            width: 115px;
                         }
 
                         .data {
-                            width: calc(100% - 115px);
-                            padding-left: 10px;
                             width: calc(100% - 115px);
                             padding-left: 10px;
 
                             .name {
                                 h4 {
                                     font-size: 22px;
-                                    font-size: 22px;
                                 }
-                            }
 
-                            .price {
-                                padding-top: 15px;
-                                padding-top: 15px;
-
-                                p {
-                                    font-size: 23px;
-                                    font-size: 23px;
+                                .price {
+                                    padding-top: 15px;
+    
+                                    p {
+                                        font-size: 23px;
+                                    }
                                 }
                             }
                         }
