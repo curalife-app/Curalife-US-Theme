@@ -1,30 +1,32 @@
-var req = new XMLHttpRequest();
-req.overrideMimeType("application/json");
-req.open('GET', 'https://geo.curalife.com/', true);
-req.onload = function() {
-  var json = JSON.parse(req.responseText);
-  var trycuralifeCountries = ['KW', 'SA', 'QA', 'OM', 'BH', 'AE'];
-  
-  function whereAmIFrom() {
-      return json.country;
-  }
-  
-  window.whereAmIFrom = whereAmIFrom;
-
-  if(!window.location.href.includes("checkout-diabetic") && !window.location.href.includes("admin") && !window.location.href.includes("parcelpanel")) {
-    if(trycuralifeCountries.includes(whereAmIFrom())){
-      window.location.hostname = 'trycuralife.com';
-    }
-    else if(whereAmIFrom() == 'RO'){
-        window.location.hostname = 'curalife.ro';}
-    else if (whereAmIFrom() == 'AT'){
-    	window.location.hostname = 'curalife.at';}
-    else if(whereAmIFrom() != 'US' && whereAmIFrom() != 'PR'){
-        window.location.hostname = 'global.curalife.com';
-    }
-  } 
-  
-  if(typeof geoRules !== "undefined") geoRules();
+const detectRobot = (userAgent) => {
+    const robots = new RegExp([
+        /bot/, /spider/, /crawl/,
+        /APIs-Google/, /AdsBot/, /Googlebot/,
+        /mediapartners/, /Google Favicon/,
+        /FeedFetcher/, /Google-Read-Aloud/,
+        /DuplexWeb-Google/, /googleweblight/,
+        /bing/, /yandex/, /baidu/, /duckduck/, /yahoo/,
+        /ecosia/, /ia_archiver/,
+        /facebook/, /instagram/, /pinterest/, /reddit/,
+        /slack/, /twitter/, /whatsapp/, /youtube/,
+        /semrush/,
+    ].map((r) => r.source).join("|"), "i");
+    return robots.test(userAgent);
 };
 
-req.send(null);
+const userAgent = navigator.userAgent;
+const isRobot = detectRobot(userAgent);
+
+if (!isRobot) {
+    console.log('REDIRECTING...');
+    var req = new XMLHttpRequest;
+    req.overrideMimeType("application/json"), req.open("GET", "https://geo.curalife.com/", !0), req.onload = function() {
+        var e = JSON.parse(req.responseText);
+        var o = ["KW", "SA", "QA", "OM", "BH", "AE"];
+
+        function n() {
+            return e.country
+        }
+        window.whereAmIFrom = n, window.location.href.includes("checkout-diabetic") || window.location.href.includes("admin") || window.location.href.includes("parcelpanel") || (o.includes(n()) ? window.location.hostname = "trycuralife.com" : "RO" == n() ? window.location.hostname = "curalife.ro" : "AT" == n() ? window.location.hostname = "curalife.at" : "US" != n() && "PR" != n() && (window.location.hostname = "global.curalife.com")), "undefined" != typeof geoRules && geoRules()
+    }, req.send(null);
+}
