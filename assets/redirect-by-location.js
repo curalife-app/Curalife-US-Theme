@@ -1,4 +1,3 @@
-<script>
     const detectRobot = (userAgent) => {
         const robots = new RegExp([
             /bot/,/spider/,/crawl/,
@@ -22,4 +21,3 @@
         console.log('REDIRECTING...');
         var req=new XMLHttpRequest;req.overrideMimeType("application/json"),req.open("GET","https://geo.curalife.com/",!0),req.onload=function(){var e=JSON.parse(req.responseText);var o=["KW","SA","QA","OM","BH","AE"];function n(){return e.country}window.whereAmIFrom=n,window.location.href.includes("checkout-diabetic")||window.location.href.includes("admin")||window.location.href.includes("parcelpanel")||(o.includes(n())?window.location.hostname="trycuralife.com":"RO"==n()?window.location.hostname="curalife.ro":"AT"==n()?window.location.hostname="curalife.at":"US"!=n()&&"PR"!=n()&&(window.location.hostname="global.curalife.com")),"undefined"!=typeof geoRules&&geoRules()},req.send(null);
     }
-</script>
