@@ -36,13 +36,13 @@
                                             <a href="{{ product.url }}">{{ product.title }}</a>
                                         </h3>
                                     </div>
+                                    <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                                     <div class="price">
                                         {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-                                        {% assign original_price = product.metafields.my_fields.original_item.value.price %}
                                         {% if quantity > 1 %}
                                             {% assign item_price = product.price | divided_by: quantity %}
                                             <p id="divided-price">
-                                                <strike>{{ original_price | money_without_trailing_zeros }}</strike>
+                                                <strike>{{ product.metafields.my_fields.original_item.value.price | money_without_trailing_zeros }}</strike>
                                                 {{ item_price | round | money_without_trailing_zeros }} Per Bottle</p>
                                         {% elsif product.compare_at_price > product.price %}
                                             <p id="discounted-price">
@@ -118,6 +118,10 @@
 
 .price p strike {
     color: #01C6B2;
+}
+
+.supply-days {
+    font-size: 16px;
 }
 
 {% endstyle %}
