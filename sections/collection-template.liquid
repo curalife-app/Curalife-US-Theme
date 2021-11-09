@@ -41,7 +41,7 @@
                                     {{ quantity }}
                                     {% if quantity > 1 %}
                                     yey
-                                    <p>{{ product.price | devided_by: quantity | round | money }}<strike>{{ original_price | money }}</strike></p>
+                                    <p>{{ product.price | divided_by: quantity | round | money }}<strike>{{ original_price | money }}</strike></p>
                                     {% elsif product.compare_at_price > product.price %}
                                     <p>{{ product.price | money }}<strike>{{ product.compare_at_price | money }}</strike></p>
                                     {% else %}
