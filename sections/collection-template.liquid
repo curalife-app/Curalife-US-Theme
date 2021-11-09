@@ -26,10 +26,10 @@
                                     {% assign quantity_by_cents = quantity | times: 100 %}
                                     {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                                     {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
-                                    
+
                                     {% if quantity > 1 %}
                                         <p>SAVE {{original_item_price | minus: item_price | money_without_trailing_zeros}}</p>
-                                    {% if product.compare_at_price_max > product.price %}
+                                    {% elsif product.compare_at_price_max > product.price %}
                                         <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                                     {% endif %}
                                 </div>
