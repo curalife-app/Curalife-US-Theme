@@ -43,7 +43,7 @@
                                             {% assign item_price = product.price | divided_by: quantity %}
                                             <p id="divided-price">
                                                 <strike>{{ original_price | money_without_trailing_zeros }}</strike>
-                                                {{ item_price | round | money_without_trailing_zeros }}</p>
+                                                {{ item_price | round | money_without_trailing_zeros }} Per Bottle</p>
                                         {% elsif product.compare_at_price > product.price %}
                                             <p id="discounted-price">
                                                 <strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
