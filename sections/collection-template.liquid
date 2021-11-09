@@ -46,7 +46,7 @@
                                             {{rounded_item_price}}
                                             <p id="divided-price">
                                                 <strike>{{ product.metafields.my_fields.original_item.value.price | money_without_trailing_zeros }}</strike>
-                                                {{ rounded_item_price | round | money_without_trailing_zeros }} Per Bottle</p>
+                                                {{ rounded_item_price | money_without_trailing_zeros }} Per Bottle</p>
                                         {% elsif product.compare_at_price > product.price %}
                                             <p id="discounted-price">
                                                 <strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
