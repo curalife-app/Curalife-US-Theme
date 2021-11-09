@@ -41,7 +41,7 @@
                                         {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                                         {% if quantity > 1 %}
                                             {% assign item_price = product.price | divided_by: quantity %}
-                                            {{ assign item_price = item_price | plus: 0 }}
+                                            {% assign item_price = item_price | plus: 0 %}
                                             {% assign rounded_item_price = item_price | round %}
                                             {{rounded_item_price}}
                                             <p id="divided-price">
