@@ -98,6 +98,7 @@
     function datalayer_push(price, name) {
         window.dataLayer  = window.dataLayer || [];
         window.dataLayer.push({
+          	let price = document.querySelector('.package-detail .details_sec h6').innerText.substring(1);
             'event': 'eec.addToCart', 
             'currencyCode':'USD',          // the currency which is currently used by a visitor
               'add': {                // name of an action. In this case, always stays as add
@@ -107,7 +108,7 @@
             'products': [{              // list of products added to a cart. Can contain multiple products at the same time
               'name': name,      // name of a product that was added to a cart
               'id': '',       // id of a product
-              'price': document.querySelector('.package-detail .details_sec h6').innerText.substring(1),      // price of a product
+              'price': price,
               'category': 'Simple',
               'variant': '',   // category of a product
               'quantity': 1
