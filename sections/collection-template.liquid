@@ -36,7 +36,7 @@
                                     <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
                                 </div>
                                 <div class="price">
-                                    {% product.metafields.my_fields.pack_items_quantity %}
+                                    {{% product.metafields.my_fields.pack_items_quantity %}}
                                     {% if product.metafields.my_fields.pack_items_quantity > 1 %}
                                     <p>{{ product.price | devided_by: product.metafields.my_fields.pack_items_quantity | round | money }}<strike>{{ product.metafields.my_fields.original_item.price | money }}</strike></p>
                                     {% elsif product.compare_at_price > product.price %}
