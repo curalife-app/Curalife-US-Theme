@@ -40,11 +40,11 @@
                                     {% assign original_price = product.metafields.my_fields.original_item.price %}
                                     {% if quantity > 1 %}
                                     {% assign item_price = product.price | divided_by: quantity %}
-                                    <p>{{ item_price | floor | money }}<strike>{{ original_price | money }}</strike></p>
+                                    <p id="divided-price">{{ item_price | floor | money }}<strike>{{ original_price | money }}</strike></p>
                                     {% elsif product.compare_at_price > product.price %}
-                                    <p>{{ product.price | money }}<strike>{{ product.compare_at_price | money }}</strike></p>
+                                    <p id="discounted-price">{{ product.price | money }}<strike>{{ product.compare_at_price | money }}</strike></p>
                                     {% else %}
-                                    <p>{{ product.price | money }}</p>
+                                    <p id="original-price">{{ product.price | money }}</p>
                                     {% endif %}
                                 </div>
                             </div>
