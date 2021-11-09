@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="price">
                                     {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-                                    {% assign original_price = product.metafields.my_fields.original_item.price %}
+                                    {% assign original_price = product.metafields.my_fields.original_item.value.price %}
                                     {% if quantity > 1 %}
                                     {% assign item_price = product.price | divided_by: quantity %}
                                     <p id="divided-price">{{ item_price | round | money_without_trailing_zeros }}<strike>{{ original_price | money_without_trailing_zeros }}</strike></p>
