@@ -41,13 +41,14 @@
                                         {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                                         {% if quantity > 1 %}
                                             {% assign item_price = product.price | divided_by: quantity %}
+                                            {{product.price}}  
                                             {% assign item_price = item_price | plus: 0 %}
                                             {{item_price}}  
                                             {% assign rounded_item_price = item_price | round %}
                                             {{rounded_item_price}}
                                             <p id="divided-price">
                                                 <strike>{{ product.metafields.my_fields.original_item.value.price | money_without_trailing_zeros }}</strike>
-                                                {{ rounded_item_price | money }} Per Bottle</p>
+                                                {{ rounded_item_price | money_without_trailing_zeros }} Per Bottle</p>
                                         {% elsif product.compare_at_price > product.price %}
                                             <p id="discounted-price">
                                                 <strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
