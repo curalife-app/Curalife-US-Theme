@@ -42,8 +42,7 @@
                                         {% if quantity > 1 %}
                                             {% assign quantity_by_cents = quantity | times: 100 %}
                                             {% assign item_price = product.price | divided_by: quantity_by_cents %}
-                                            {{product.price}}  
-                                            {% assign item_price = item_price | plus: 0 %}
+                                            {% assign item_price = item_price | times: 100 %}
                                             {{item_price}}  
                                             {% assign rounded_item_price = item_price | round %}
                                             {{rounded_item_price}}
