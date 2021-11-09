@@ -1,128 +1,129 @@
 <div class="catalog-page">
     <div class="container">
         <div class="mini-wrap">
-        <h1>Choose Your CuraLin Bundle</h1>
-            <div class="product-list">  
+            <h1>Choose Your CuraLin Bundle</h1>
+            <div class="product-list">
                 {% for product in collection.products  -%}
-                <div class="product-card">
-                    <div class="wrap">
-                        <div class="picture">
-                            {% if section.settings.prdct_bgimg != blank %}
-                            <div class="bg">
-                                <img src="{{section.settings.prdct_bgimg | img_url: ''}}" alt="">
-                            </div>
-                            {% endif %}
-                           
-                            {% if product.featured_image.src != blank %}
-                            <a href="{{ product.url }}">
-                            <div class="img">
-                                <img src="{{ product.featured_image.src | img_url: '300x300' }}" alt="">
-                            </div>
-                            </a>
-                            {% endif %}
-                          <div class="discount">
-                      
-                                {% if product.compare_at_price_max > product.price %}
-                        <p>
-                            {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount
-                            
-                        </p>
-                        {% endif %}
-                            </div>
-                        </div> 
-                        <div class="info"> 
-                            <div class="main">
-                                <div class="name">
-                                    <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
-                                </div>
-                                <div class="price">
-                                    {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-                                    {% assign original_price = product.metafields.my_fields.original_item.value.price %}
-                                    {% if quantity > 1 %}
-                                    {% assign item_price = product.price | divided_by: quantity %}
-                                    <p id="divided-price">{{ item_price | round | money_without_trailing_zeros }}<strike>{{ original_price | money_without_trailing_zeros }}</strike></p>
-                                    {% elsif product.compare_at_price > product.price %}
-                                    <p id="discounted-price">{{ product.price | money_without_trailing_zeros }}<strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike></p>
-                                    {% else %}
-                                    <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
+                    <div class="product-card">
+                        <div class="wrap">
+                            <div class="picture">
+                                {% if section.settings.prdct_bgimg != blank %}
+                                    <div class="bg">
+                                        <img src="{{section.settings.prdct_bgimg | img_url: ''}}" alt="">
+                                    </div>
+                                {% endif %}
+
+                                {% if product.featured_image.src != blank %}
+                                    <a href="{{ product.url }}">
+                                        <div class="img">
+                                            <img src="{{ product.featured_image.src | img_url: '300x300' }}" alt="">
+                                        </div>
+                                    </a>
+                                {% endif %}
+                                <div class="discount">
+
+                                    {% if product.compare_at_price_max > product.price %}
+                                        <p>
+                                            {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount
+                                        </p>
                                     {% endif %}
                                 </div>
                             </div>
-                            {% comment %}
-                             <form method="post" action="/cart/add">
-                                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-
-                                <div class="btn">
-                                    <button type="submit" class="main-btn"><i class="icon-cart"></i>Add to Cart
-                                    </button>
-
-                                   
+                            <div class="info">
+                                <div class="main">
+                                    <div class="name">
+                                        <h3>
+                                            <a href="{{ product.url }}">{{ product.title }}</a>
+                                        </h3>
+                                    </div>
+                                    <div class="price">
+                                        {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+                                        {% assign original_price = product.metafields.my_fields.original_item.value.price %}
+                                        {% if quantity > 1 %}
+                                            {% assign item_price = product.price | divided_by: quantity %}
+                                            <p id="divided-price">
+                                                <strike>{{ original_price | money_without_trailing_zeros }}</strike>
+                                                {{ item_price | round | money_without_trailing_zeros }}</p>
+                                        {% elsif product.compare_at_price > product.price %}
+                                            <p id="discounted-price">
+                                                <strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
+                                                {{ product.price | money_without_trailing_zeros }}</p>
+                                        {% else %}
+                                            <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
+                                        {% endif %}
+                                    </div>
                                 </div>
-                            </form>
-                             {% endcomment %}
-                             <form method="post" action="/cart/add">
-                                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                                <input type="hidden" name="return_to" value="/cart/">
-                                
-
-                                <div class="btn">
-                                    <button type="submit" class="main-btn"><i class="icon-cart"></i> Add To Cart
-                                    </button>
-                                   
-                                </div>
-                            </form>
+                                <form action="/cart/add" method="post">
+                                    <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+                                    <input name="return_to" type="hidden" value="/cart/">
 
 
+                                    <div class="btn">
+                                        <button class="main-btn" type="submit">
+                                            <i class="icon-cart"></i>
+                                            Add To Cart
+                                        </button>
+
+                                    </div>
+                                </form>
+
+
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
-                
+
             </div>
         </div>
     </div>
 </div>
 {% if section.settings.clcbnr_btmimg != blank %}
-<div class="bottom-banner bottom-line">
-    <div class="container">
-        <div class="white-bg">
-            <div class="banner-section">
-                <img src="{{section.settings.clcbnr_btmimg | img_url: ''}}" alt="">
+    <div class="bottom-banner bottom-line">
+        <div class="container">
+            <div class="white-bg">
+                <div class="banner-section">
+                    <img src="{{section.settings.clcbnr_btmimg | img_url: ''}}" alt="">
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endif %}
 
 {% schema %}
-    {
-        "name": "Collection Products",
-        "class": "collection-products",
-        "settings": [
-            
-            {
-              "type": "image_picker",
-              "id": "prdct_bgimg",
-              "label": "Select Product Background Image"
-            },
-            {
-              "type": "image_picker",
-              "id": "clcbnr_btmimg",
-              "label": "Select Bottom Banner Image"
-            }    
-           
-            
-        ] 
-        
-    }
+
+{
+    "name": "Collection Products",
+    "class": "collection-products",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "prdct_bgimg",
+            "label": "Select Product Background Image"
+        }, {
+            "type": "image_picker",
+            "id": "clcbnr_btmimg",
+            "label": "Select Bottom Banner Image"
+        }
+    ]
+}
+
 {% endschema %}
 
 {% style %}
+
 .catalog-page h1 {
     text-align: center;
     padding-top: 30px;
 }
+
+.price p strike {
+    color: #01C6B2;
+}
+
 {% endstyle %}
 
 {% javascript %}
+
+
+
 {% endjavascript %}
