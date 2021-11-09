@@ -42,7 +42,8 @@
                                         {% if quantity > 1 %}
                                             {% assign item_price = product.price | divided_by: quantity %}
                                             {% assign item_price = item_price | plus: 0 %}
-                                            {% assign rounded_item_price = item_price | integer | round %}
+                                            {{item_price}}  
+                                            {% assign rounded_item_price = item_price | round %}
                                             {{rounded_item_price}}
                                             <p id="divided-price">
                                                 <strike>{{ product.metafields.my_fields.original_item.value.price | money_without_trailing_zeros }}</strike>
