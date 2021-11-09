@@ -38,6 +38,7 @@
                                 <div class="price">
                                     {{ product.metafields.my_fields.pack_items_quantity }}
                                     {% if product.metafields.my_fields.pack_items_quantity > 1 %}
+                                    yey
                                     <p>{{ product.price | devided_by: product.metafields.my_fields.pack_items_quantity | round | money }}<strike>{{ product.metafields.my_fields.original_item.price | money }}</strike></p>
                                     {% elsif product.compare_at_price > product.price %}
                                     <p>{{ product.price | money }}<strike>{{ product.compare_at_price | money }}</strike></p>
