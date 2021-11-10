@@ -66,7 +66,7 @@
                                                   <h5 data-ini-is><ls-static-825587>Instant Savings:</ls-static-825587> {{ block.settings.savings }}</h5>
                                                   <h6 data-ini-sp>{{ block.settings.sale_price }}</h6>
                                                 </div>
-                                                <div class="buy_btn" data-curalin-url > <a href="{{ block.settings.order-link }}"><ls-static-920164>Order Now</ls-static-920164></a>
+                                                <div class="buy_btn" data-curalin-url > <a href="{{ block.settings.order-link }}" onclick="datalayer_push()"><ls-static-920164>Order Now</ls-static-920164></a>
                                                 </div> 
                                       		  {% endif %}  
                                   	{% endcase %}	
@@ -94,6 +94,46 @@
         </div>
     </section>
 {% endif  %}
+<script>
+    function datalayer_push() {
+        window.dataLayer  = window.dataLayer || [];
+      	price = document.querySelector('.package-detail .details_sec h6').innerText.substring(1);
+          if(price == '360.00'){
+          	name = 'Curalin 6 Pack';
+       	  }else if(price == '202.00'){
+          	name = 'Curalin 3 Pack';
+          }else {	
+            name = 'Curalin';
+          }
+        window.dataLayer.push({
+            'event': 'eec.addToCart', 
+            'currencyCode':'USD',          // the currency which is currently used by a visitor
+              'add': {                // name of an action. In this case, always stays as add
+              'actionField': {           
+              'list': 'main'          // optional. name of a list from which the product was added to a cart  
+            },       
+            'products': [{              // list of products added to a cart. Can contain multiple products at the same time
+              'name': name,      // name of a product that was added to a cart
+              'id': '',       // id of a product
+              'price': price,
+              'category': 'Simple',
+              'variant': '',   // category of a product
+              'quantity': 1
+            }]
+          },
+            'userId': '',
+            'email': '',
+            'country': '',
+            'city': '',
+            'name': '',
+            'surname': '',
+            'phone_number': '',
+            'state': '',       //state or province
+            'zip': ''         //ZIP or Postal code
+            });
+    };
+</script>
+{
 {% schema %}
   {
     "name": "Bottom Order Section",
