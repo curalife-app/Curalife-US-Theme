@@ -106,7 +106,8 @@
             name = 'Curalin';
           }
         window.dataLayer.push({
-            'event': 'eec.addToCart', 
+            'event': 'eec.addToCart',
+          'ecomerce': {
             'currencyCode':'USD',          // the currency which is currently used by a visitor
               'add': {                // name of an action. In this case, always stays as add
               'actionField': {           
@@ -120,6 +121,7 @@
               'variant': '',   // category of a product
               'quantity': 1
             }]
+          }
           },
             'userId': '',
             'email': '',
