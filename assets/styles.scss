@@ -881,43 +881,6 @@
             padding: 32px 25px;
             width: calc(100% / 3);
 
-            .icon-wrap {
-                width: 100%;
-                max-width: 168px;
-                margin: 0 auto;
-                border-radius: 50%;
-                position: relative;
-
-                &:before {
-                    content: "";
-                    display: block;
-                    padding-bottom: 100%;
-                    pointer-events: none;
-                }
-
-                span {
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    -webkit-box-align: center;
-                    -ms-flex-align: center;
-                    align-items: center;
-                    -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                    justify-content: center;
-                    padding: 20px;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-
-                    img {
-                        max-height: 100%;
-                    }
-                }
-            }
-
             .name {
                 padding-top: 28px;
 
