@@ -4,9 +4,9 @@
             <h1>Choose Your CuraLin Bundle</h1>
             <div class="product-list">
                 {% for product in collection.products  -%}
-                    <div class="product-card">
+                    <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
                         <div class="wrap">
-                            <div class="picture">
+                            <div class="picture" {% if collection.products.size>3 %}style="height:180px"{%endif%}>
                                 {% if section.settings.prdct_bgimg != blank %}
                                     <div class="bg">
                                         <img src="{{section.settings.prdct_bgimg | img_url: ''}}" alt="">
@@ -16,81 +16,47 @@
                                 {% if product.featured_image.src != blank %}
                                     <a href="{{ product.url }}">
                                         <div class="img">
-                                            <img src="{{ product.featured_image.src | img_url: '500x500' }}" alt="">
+                                            <img src="{{ product.featured_image.src | img_url: '600x600' }}" alt="">
                                         </div>
                                     </a>
                                 {% endif %}
-                                <div class="discount">
-
-                                    {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-                                    {% assign quantity_by_cents = quantity | times: 100 %}
-                                    {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-                                    {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
-
-                                    {% if quantity > 1 %}
-                                        <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
-                                    {% elsif product.compare_at_price_max > product.price %}
-                                        <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
-                                    {% endif %}
-                                </div>
                             </div>
                             <div class="info">
                                 <div class="main">
                                     <div class="name">
-                                        <h3>
+                                        <h3 {% if collection.products.size>3 %}style="font-size:22px"{%endif%}>
                                             <a href="{{ product.url }}">{{ product.title }}</a>
                                         </h3>
                                     </div>
-                                    <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                                     <div class="price">
-                                        {% if quantity > 1 %}
-                                            <p id="divided-price">
-                                                <strike>{{ original_item_price | money_without_trailing_zeros }}</strike>
-                                                {{ item_price | money_without_trailing_zeros }} Per Bottle</p>
-                                        {% elsif product.compare_at_price > product.price %}
-                                            <p id="discounted-price">
-                                                <strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
-                                                {{ product.price | money_without_trailing_zeros }}</p>
+                                        {% if product.compare_at_price > product.price %}
+                                            <p>{{ product.price | money }}<strike>{{ product.compare_at_price | money }}</strike>
+                                            </p>
                                         {% else %}
-                                            <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
+                                            <p>{{ product.price | money }}</p>
                                         {% endif %}
                                     </div>
                                 </div>
                                 <form action="/cart/add" method="post">
                                     <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
                                     <input name="return_to" type="hidden" value="/cart/">
-
-
                                     <div class="btn">
                                         <button class="main-btn" type="submit">
                                             <i class="icon-cart"></i>
                                             Add To Cart
                                         </button>
-
                                     </div>
                                 </form>
-
-
+                                <p class="discount-notice mobile">Sale discount will be automatically applied at checkout.</p>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
-
             </div>
+            <p class="discount-notice desktop">Sale discount will be automatically applied at checkout.</p>
         </div>
     </div>
 </div>
-{% if section.settings.clcbnr_btmimg != blank %}
-    <div class="bottom-banner bottom-line">
-        <div class="container">
-            <div class="white-bg">
-                <div class="banner-section">
-                    <img src="{{section.settings.clcbnr_btmimg | img_url: ''}}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-{% endif %}
 
 {% schema %}
 
@@ -119,15 +85,42 @@
     padding-top: 30px;
 }
 
-.price p strike {
-    color: #01C6B2;
+p strike {
+    color: #00C6B1;
 }
 
-.supply-days {
-    font-size: 16px;
+.discount-notice {
+    color:#f32e7c;
+    font-weight: bold;
     text-align: center;
-    line-height: 0;
-    font-weight: 200;
+}
+
+.discount-notice.desktop {
+    font-size: 20px;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.discount-notice.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 760px) {
+    .discount-notice.desktop {
+        display: none;
+    }
+
+    .discount-notice.mobile {
+        display: block;
+    }
+
+    .product-card .picture .img img{
+        max-height: unset;
+    }
+
+    .product-card .info .name h3 {
+        font-size: 30px;
+    }
 }
 
 {% endstyle %}

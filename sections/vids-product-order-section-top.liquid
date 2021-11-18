@@ -98,17 +98,16 @@
     function datalayer_push() {
         window.dataLayer  = window.dataLayer || [];
       	price = document.querySelector('.package-detail .details_sec h6').innerText.substring(1);
-          if(price == '360.00'){
+          if(price == '283'){
           	name = 'Curalin 6 Pack';
-       	  }else if(price == '202.00'){
+       	  }else if(price == '159.00'){
           	name = 'Curalin 3 Pack';
           }else {	
             name = 'Curalin';
           }
         window.dataLayer.push({
             'event': 'eec.addToCart', 
-          'ecomerce': {
-          	  'currencyCode':'USD',          // the currency which is currently used by a visitor
+            'currencyCode':'GBP',          // the currency which is currently used by a visitor
               'add': {                // name of an action. In this case, always stays as add
               'actionField': {           
               'list': 'main'          // optional. name of a list from which the product was added to a cart  
@@ -121,7 +120,6 @@
               'variant': '',   // category of a product
               'quantity': 1
             }]
-          }
           },
             'userId': '',
             'email': '',

@@ -10,63 +10,19 @@
                         <ul>
                             {% assign count = 0 %}
                             {% for block in section.blocks %}
-                            {% if block.type == 'cura_power' %}
-                            {%if block.settings.cpwr_img != blank %}
-                            <li class="advantage-content-{{ count }}">
-                                <div class="icon-wrap"
-                                     style="background: linear-gradient(118.79deg, rgba(79, 164, 215, 0.2) 0%, rgba(79, 164, 215, 0) 67.73%), #FFFFFF;">
-                                    <span><img data-src="{{ block.settings.cpwr_img | img_url: '' }}" alt="" class="lazyload" width="63" height="63"></span>
-                                </div>
-                                <div class="name">
-                                    <p style="color: #4FA4D7">{{block.settings.cpwr_desc }}</p>
-                                </div>
-                            </li>
-                            <style> 
-                                li.advantage-content-1 .icon-wrap {
-                                  background: linear-gradient(118.79deg, rgba(51, 183, 166, 0.2) 0%, rgba(51, 183, 166, 0) 67.73%), #FFFFFF !important;
-                                }
-                                li.advantage-content-1 p {
-                                  color: #6AD7C9 !important;
-                                }
-                                li.advantage-content-2 .icon-wrap {
-                                    background: linear-gradient(118.79deg, rgba(255, 117, 117, 0.2) 0%, rgba(255, 117, 117, 0) 67.73%), #FFFFFF !important;
-                                }
-                                li.advantage-content-2 p {
-                                    color: #FF7575 !important;
-                                }
-                                 li.advantage-content-3 .icon-wrap {
-                                    background: linear-gradient(118.79deg, rgba(255, 123, 165, 0.2) 0%, rgba(255, 123, 165, 0) 67.73%), #FFFFFF !important;}
-                                li.advantage-content-3 p {
-                                    color: #FE7DA8 !important;
-                                }
-                                 li.advantage-content-4 .icon-wrap {
-                                    background:linear-gradient(118.79deg, rgba(57, 177, 74, 0.2) 0%, rgba(57, 177, 74, 0) 67.73%), #FFFFFF  !important;
-                                }
-                                li.advantage-content-4 p {
-                                    color: #76CF83 !important;
-                                }
-                                 li.advantage-content-5 .icon-wrap {
-                                    background: linear-gradient(118.79deg, rgba(79, 164, 215, 0.2) 0%, rgba(79, 164, 215, 0) 67.73%), #FFFFFF; !important;
-                                }
-                                li.advantage-content-5 p {
-                                    color: #4FA4D7 !important;
-                                }
-                                 li.advantage-content-6 .icon-wrap {
-                                    background: linear-gradient(118.79deg, rgba(192, 150, 109, 0.2) 0%, rgba(192, 150, 109, 0) 67.73%), #FFFFFF !important;
-                                }
-                                li.advantage-content-6 p {
-                                    color: #CEA073 !important;
-                                }
-                                 li.advantage-content-7 .icon-wrap {
-                                    background:linear-gradient(118.79deg, rgba(0, 113, 182, 0.2) 0%, rgba(0, 113, 182, 0) 67.73%), #FFFFFF  !important;
-                                }
-                                li.advantage-content-7 p {
-                                    color: #539ECC !important;
-                                }
-                            </style>
-                            {% assign count = count | plus: 1 %}
-                            {% endif %}
-                            {% endif %}
+                                {% if block.type == 'cura_power' %}
+                                    {%if block.settings.cpwr_img != blank %}
+                                        <li class="advantage-content-{{ count }}">
+                                            <div class="icon-wrap">
+                                                <img data-src="{{ block.settings.cpwr_img | img_url: '' }}" alt="" class="lazyload">
+                                            </div>
+                                            <div class="name">
+                                                <p>{{block.settings.cpwr_desc }}</p>
+                                            </div>
+                                        </li>
+                                        {% assign count = count | plus: 1 %}
+                                    {% endif %}
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     </div>
@@ -74,7 +30,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="story-section">
         <div class="story-data">
             <div class="container">
@@ -84,20 +40,20 @@
                     </div>
 
                     {% if section.settings.wht_desc != blank %}
-                    <div class="text">
-                        <p>{{section.settings.wht_desc}}</p>
-                    </div>
+                        <div class="text">
+                            <p>{{section.settings.wht_desc}}</p>
+                        </div>
                     {% endif %}
                     <div class="badges">
                         <ul>
                             {% for block in section.blocks %}
-                            {% if block.type == 'what_cura' %}
-                            {% if block.settings.wht_img != blank %}
-                            <li>
-                                <img data-src="{{ block.settings.wht_img | img_url: '' }}" alt="" class="lazyload">
-                            </li>
-                            {% endif %}
-                            {% endif %}
+                                {% if block.type == 'what_cura' %}
+                                    {% if block.settings.wht_img != blank %}
+                                        <li>
+                                            <img data-src="{{ block.settings.wht_img | img_url: '' }}" alt="" class="lazyload">
+                                        </li>
+                                    {% endif %}
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     </div>
@@ -108,84 +64,100 @@
 </div>
 
 {% schema %}
-    {
+
+{
     "name": "CuraLin Powerfully Helps",
-        "settings": [
-            {
-                "type": "header", 
-                "content": "CuraLin Powerfully Section Start" 
-            },
-            {
-                "type": "text",
-                "id": "cpwr_titl",
-                "label": "Title",
-                "default": "Enter title"
-            },
-            {
-                "type": "header", 
-                "content": "What is CuraLin Section Start" 
-            },
-            {
-                "type": "text",
-                "id": "wht_titl",
-                "label": "Title",
-                "default": "Enter title"
-            },
-            {
-                "type": "textarea",
-                "id": "wht_desc",
-                "label": "Description",
-                "default": "Enter Description"
-            }
-   
-        ],
-        "blocks": [
-            {
-                "type": "cura_power",
-                "name": "CuraLin Helps Content",
-                "settings": [    
-                    {
-                        "type": "image_picker",
-                        "id": "cpwr_img",
-                        "label": "Select Image"
-                    },
-                    {
-                        "type": "textarea",
-                        "id": "cpwr_desc",
-                        "label": "Description",
-                        "default": "Enter Description"
-                    }
-                
-                ]    
-            },
-            {
-                "type": "what_cura",
-                "name": "What CuraLin Images",
-                "settings": [    
-                    {
-                        "type": "image_picker",
-                        "id": "wht_img",
-                        "label": "Select Image"
-                    }
-                    
-                ]    
-            }
-        ],
-        "presets":[
-            {
-                "name": "Banner",
-                "category": "text"
-            }
-        ]
-    }
+    "settings": [
+        {
+            "type": "header",
+            "content": "CuraLin Powerfully Section Start"
+        }, {
+            "type": "text",
+            "id": "cpwr_titl",
+            "label": "Title",
+            "default": "Enter title"
+        }, {
+            "type": "header",
+            "content": "What is CuraLin Section Start"
+        }, {
+            "type": "text",
+            "id": "wht_titl",
+            "label": "Title",
+            "default": "Enter title"
+        }, {
+            "type": "textarea",
+            "id": "wht_desc",
+            "label": "Description",
+            "default": "Enter Description"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "cura_power",
+            "name": "CuraLin Helps Content",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "cpwr_img",
+                    "label": "Select Image"
+                }, {
+                    "type": "textarea",
+                    "id": "cpwr_desc",
+                    "label": "Description",
+                    "default": "Enter Description"
+                }
+            ]
+        }, {
+            "type": "what_cura",
+            "name": "What CuraLin Images",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "wht_img",
+                    "label": "Select Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banner",
+            "category": "text"
+        }
+    ]
+}
+
 {% endschema %}
 
 {% style %}
+
+.icon-wrap {
+    background-color: #BBDDD9;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+}
+
+.icon-wrap img {
+    position: relative;
+    top: 40%;
+    left: 40%;
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+}
+
 .story-data .sub-title {
     margin-bottom: 40px;
     margin-top: 20px;
 }
+
 {% endstyle %}
 
 {% javascript %}
+
+
+
 {% endjavascript %}

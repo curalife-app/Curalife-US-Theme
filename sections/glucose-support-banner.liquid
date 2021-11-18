@@ -1,12 +1,64 @@
-<div class="curalin-page-header">
-    <img class="header-img" src="{{section.settings.header_image | img_url:'master' }}" alt="CuraLin Header Image">
-    <div class="header-content">
-        <h1>
-            <b>{{section.settings.header_title}}</b><br>
-            <span class="header-subtitle">{{section.settings.header_subtitle}}</span>
-        </h1>
-        <div class="btn">
-            <a href="{{section.settings.button_link}}" class="main-btn">{{section.settings.button_title}}</a>
+<div class="support-page offset-top">
+    <div class="container">
+        <div class="white-bg">
+            <div class="mini-wrap">
+                <div class="advantages-section">
+                    <div class="sub-title">
+                        <h3>{{section.settings.cpwr_titl}}</h3>
+                    </div>
+                    <div class="advantages-wrap">
+                        <ul>
+                            {% assign count = 0 %}
+                            {% for block in section.blocks %}
+                                {% if block.type == 'cura_power' %}
+                                    {%if block.settings.cpwr_img != blank %}
+                                        <li class="advantage-content-{{ count }}">
+                                            <div class="icon-wrap">
+                                                <img data-src="{{ block.settings.cpwr_img | img_url: '' }}" alt="" class="lazyload">
+                                            </div>
+                                            <div class="name">
+                                                <p>{{block.settings.cpwr_desc }}</p>
+                                            </div>
+                                        </li>
+                                        {% assign count = count | plus: 1 %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-data">
+            <div class="container">
+                <div class="mini-wrap">
+                    <div class="sub-title">
+                        <h2>{{section.settings.wht_titl}}</h2>
+                    </div>
+
+                    {% if section.settings.wht_desc != blank %}
+                        <div class="text">
+                            <p>{{section.settings.wht_desc}}</p>
+                        </div>
+                    {% endif %}
+                    <div class="badges">
+                        <ul>
+                            {% for block in section.blocks %}
+                                {% if block.type == 'what_cura' %}
+                                    {% if block.settings.wht_img != blank %}
+                                        <li>
+                                            <img data-src="{{ block.settings.wht_img | img_url: '' }}" alt="" class="lazyload">
+                                        </li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -14,37 +66,63 @@
 {% schema %}
 
 {
-    "name": "Glucose Support Banner",
+    "name": "CuraLin Powerfully Helps",
     "settings": [
         {
-            "type": "image_picker",
-            "id": "header_image",
-            "label": "Header Image"
+            "type": "header",
+            "content": "CuraLin Powerfully Section Start"
         }, {
             "type": "text",
-            "id": "header_title",
+            "id": "cpwr_titl",
             "label": "Title",
-            "default": "Enter Title"
+            "default": "Enter title"
+        }, {
+            "type": "header",
+            "content": "What is CuraLin Section Start"
         }, {
             "type": "text",
-            "id": "header_subtitle",
-            "label": "Sub-Title",
-            "default": "Enter Sub-Title"
+            "id": "wht_titl",
+            "label": "Title",
+            "default": "Enter title"
         }, {
-            "type": "text",
-            "id": "button_title",
-            "label": "Button Title",
-            "default": "Enter Button Title"
+            "type": "textarea",
+            "id": "wht_desc",
+            "label": "Description",
+            "default": "Enter Description"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "cura_power",
+            "name": "CuraLin Helps Content",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "cpwr_img",
+                    "label": "Select Image"
+                }, {
+                    "type": "textarea",
+                    "id": "cpwr_desc",
+                    "label": "Description",
+                    "default": "Enter Description"
+                }
+            ]
         }, {
-            "id": "button_link",
-            "type": "url",
-            "label": "Button Link"
+            "type": "what_cura",
+            "name": "What CuraLin Images",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "wht_img",
+                    "label": "Select Image"
+                }
+            ]
         }
     ],
     "presets": [
         {
-            "name": "Glucose Support Banner",
-            "category": "image"
+            "name": "Banner",
+            "category": "text"
         }
     ]
 }
@@ -53,45 +131,28 @@
 
 {% style %}
 
-.curalin-page-header {
-    display: flex;
-    align-items: center;
-}
-
-.header-img {
-    width: 50%;
+.icon-wrap {
+    background-color: #BBDDD9;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
     position: relative;
 }
 
-.header-content {
-    margin-left: 100px;
-    margin-top: -100px;
+.icon-wrap img {
+    position: relative;
+    top: 40%;
+    left: 40%;
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
 }
 
-h1 {
-    font-size: 40px;
-}
-
-.header-subtitle {
-    font-weight: normal;
-    font-size: 30px;
+.story-data .sub-title {
+    margin-bottom: 40px;
     margin-top: 20px;
 }
-
-@media screen and (max-width: 760px) {
-    .curalin-page-header {
-        flex-wrap: wrap;
-    }
-
-    .header-img {
-        width: 100%;
-    }
-
-    .header-content {
-        text-align: center;
-        margin: auto;
-    }
-  }
 
 {% endstyle %}
 

@@ -1,0 +1,262 @@
+<div class="cstm_page page-intro with-bg">
+    <img class="banner-background" src="{{ 'bfcm-homepage-banner-background.png' | asset_img_url: 'master' }}" alt="Black Friday Background"/>
+    <div class="cstm_container container">
+        <div class="cstm_miniwrp mini-wrap">
+            <div class="cstm_introwrp intro-wrap">
+                <div class="data-wrap">
+                    <div class="intro-text">
+                        <img class="title-black-friday" src="{{ 'bfcm-homepage-banner-title-black-friday.png' | asset_img_url: 'master' }}" alt="Black Friday"/>
+                        <img class="title-sale" src="{{ 'bfcm-homepage-banner-title-sale-pink.png' | asset_img_url: 'master' }}" alt="Sale"/>
+                    </div>
+                    <div id="countdown">
+                        <ul>
+                          <li><span id="hours"></span>Hours</li>
+                          <li><span id="minutes"></span>Minutes</li>
+                          <li><span id="seconds"></span>Seconds</li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+
+{
+    "name": "Home Banner",
+    "settings": [
+        {
+            "type": "text",
+            "id": "bnr_titl",
+            "label": "Title",
+            "default": "Enter Yor title"
+        }, {
+            "type": "textarea",
+            "id": "bnr_desc",
+            "label": "Description",
+            "default": "Enter Yor Description"
+        }, {
+            "type": "text",
+            "id": "btn_titl",
+            "label": "Button Title",
+            "default": "Enter Button Title"
+        }, {
+            "id": "bnr_btnlink",
+            "type": "url",
+            "label": "Button Link"
+        }, {
+            "type": "image_picker",
+            "id": "bnr_img",
+            "label": "Banner image"
+        }, {
+            "type": "image_picker",
+            "id": "mblbnr_img",
+            "label": "Mobile Banner image"
+        }, {
+            "type": "image_picker",
+            "id": "shipping_icon",
+            "label": "Free Shipping Icon"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Home Banner",
+            "category": "Home"
+        }
+    ]
+}
+
+{% endschema %}
+
+{% style %}
+
+.banner-background {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.title-black-friday {
+    max-width: 50%;
+    width: inherit;
+    height: 100px;
+    object-fit: cover;
+}
+
+.title-sale {
+    margin-left: -5%;
+    z-index: 20;
+    max-width: 30%;
+    height: 70%;
+}
+
+.intro-wrap {
+    padding: 0 !important;
+}
+
+.cstm_page.page-intro.with-bg {
+    background-color: black;
+}
+
+.cstm_page.page-intro.with-bg .cstm_introwrp.intro-wrap .data-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.cstm_page.page-intro.with-bg .intro-wrap .data-wrap .intro-text {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cstm_page.page-intro {
+    background-color: #F0F1F4;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.cstm_container.container {
+    width: 100%;
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: 0 10px;
+    z-index: 40;
+    position: relative;
+}
+
+.cstm_miniwrp.mini-wrap {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.cstm_page.page-intro .cstm_introwrp.intro-wrap .data-wrap {
+    width: 50%;
+    display: flex;
+}
+
+#countdown {
+	position: relative;
+	top: -35px;
+    color: white;
+    display: none; // Temporary
+}
+
+#countdown li {
+  display: inline-block;
+  font-size: 15px;
+  list-style-type: none;
+  text-transform: uppercase;
+  min-width: 110px;
+}
+
+#countdown li span {
+  display: block;
+  font-size: 60px;
+  font-weight: 200;
+}
+
+#countdown li:not(:last-child):before {
+	content: ":";
+    display: block;
+    font-size: 33px;
+    position: relative;
+    top: 50px;
+    left: 90px;
+}
+
+@media screen and (max-width: 760px) {
+    .title-black-friday {
+        max-width: unset;
+        width: 120%;
+    }
+
+    .title-sale {
+        margin-left: 0;
+        margin-top: -30px;
+        margin-bottom: 15px;        
+        max-width: 40%;
+        height: unset;
+    }
+
+    .intro-text {
+        flex-direction: column;
+    }
+
+    .cstm_page.page-intro .intro-wrap {
+        position: unset;
+        padding-top: 10px;
+    }
+
+    .cstm_page.page-intro .intro-wrap .data-wrap {
+        width: 100% !important;
+        padding-bottom: 0 !important;
+        z-index: 2 !important;
+        position: unset;
+    }
+
+    #countdown {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #countdown li {
+      padding: 5px;
+      font-size: 16px;
+        min-width: 70px;
+    }
+    
+    #countdown li span {
+        font-size: 45px;
+    }
+    
+    #countdown li:not(:last-child):before {
+        top: 40px;
+        left: 40px;
+    }
+    
+}
+
+{% endstyle %}
+
+{% javascript %}
+
+Number.prototype.pad = function() {
+    return this < 10 ? '0' + this : this;
+}
+
+// Timer
+	
+const second = 1000,
+minute = second * 60,
+hour = minute * 60;
+
+let birthday = "Nov 19, 2021 16:05:00";
+let countDown = new Date(birthday).getTime();
+let x = setInterval(function() {    
+    var now = new Date().getTime();
+    var distance = countDown - now;
+
+    document.getElementById("hours").innerText = Math.floor(distance / (hour)).pad(),
+    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)).pad(),
+    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second).pad();
+ 
+    // do something later when date is reached
+    if (distance < 0 || distance > 172800) {
+        countdown.style.display = "none";
+        clearInterval(x);
+    }
+//seconds
+}, 0)
+
+{% endjavascript %}
