@@ -24,16 +24,22 @@
                             <div class="info">
                                 <div class="main">
                                     <div class="name">
-                                        <h3 {% if collection.products.size>3 %}style="font-size:22px"{%endif%}>
+                                        <h3>
                                             <a href="{{ product.url }}">{{ product.title }}</a>
                                         </h3>
                                     </div>
+                                    <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                                     <div class="price">
-                                        {% if product.compare_at_price > product.price %}
-                                            <p>{{ product.price | money }}<strike>{{ product.compare_at_price | money }}</strike>
-                                            </p>
+                                        {% if quantity > 1 %}
+                                            <p id="divided-price">
+                                                <strike>{{ original_item_price | money_without_trailing_zeros }}</strike>
+                                                {{ item_price | money_without_trailing_zeros }} Per Bottle</p>
+                                        {% elsif product.compare_at_price > product.price %}
+                                            <p id="discounted-price">
+                                                <strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
+                                                {{ product.price | money_without_trailing_zeros }}</p>
                                         {% else %}
-                                            <p>{{ product.price | money }}</p>
+                                            <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
                                         {% endif %}
                                     </div>
                                 </div>
