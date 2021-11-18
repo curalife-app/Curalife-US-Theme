@@ -602,9 +602,10 @@
       "glucose-support-banner": {
         "type": "glucose-support-banner",
         "settings": {
-          "cpwr_titl": "Enter title",
-          "wht_titl": "Enter title",
-          "wht_desc": "Enter Description"
+          "header_title": "CuraLin",
+          "header_subtitle": "Natural Blood Sugar<br>Support Supplement",
+          "button_title": "Shop now",
+          "button_link": "shopify:\/\/collections\/all"
         }
       },
       "glucose-support-white-bg-content": {
