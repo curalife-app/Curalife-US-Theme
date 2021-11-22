@@ -1193,9 +1193,10 @@
         "type": "cart-template",
         "settings": {
           "crt_titl": "Your Cart",
-          "crt_descript": "or 4 interest-free installments of $18.75",
-          "crt_icn": "icon-afterpay",
-          "btn_text": "More info"
+          "crt_descript": "",
+          "crt_icn": "",
+          "btn_text": "More info",
+          "btn_url": ""
         }
       },
       "create-account": {
