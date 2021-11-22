@@ -49,7 +49,11 @@
             <div class="product-info">
                 <div class="sub-title">
                     <a href="{{ product.url }}" style="display: none !important; pointer-events: none; cursor: default;"></a><!-- a tag added by mlveda -->
+                    {% if product.metafields.my_fields.alternative_title.value %}
+                    <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
+                    {% elseif %}
                     <h1>{{ product.title }}</h1>
+                    {% endif %}
                 </div>
 
                 <div class="description">
