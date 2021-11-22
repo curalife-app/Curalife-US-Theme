@@ -29,7 +29,11 @@
                                     {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
                                     <div class="name">
                                         <h3>
+                                            {% if product.metafields.my_fields.alternative_title.value %}
+                                            <a href="{{ product.url }}">{{ product.metafields.my_fields.alternative_title.value }}</a>
+                                            {% else %}
                                             <a href="{{ product.url }}">{{ product.title }}</a>
+                                            {% endif %}
                                         </h3>
                                     </div>
                                     <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
