@@ -28,7 +28,12 @@
                                 <span><img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}"></span>
                             </div>
                         </td>
-                        <td class="name"><p>{{ item.product.title }}</p>
+                        <td class="name">
+                          {% if item.product.metafields.my_fields.alternative_title.value %}
+                          <p>{{ item.product.metafields.my_fields.alternative_title.value }}</p>
+                          {% else %}
+                          <p>{{ item.product.title }}</p>
+                          {% endif %}
                             <div class="remove-item" data-variant="{{item.variant.id}}" data-price ="{{ item.original_price | money }}" data-title="{{ item.product.title }}" data-id="{{ item.product.id }}">
                                 <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
                             </div>
