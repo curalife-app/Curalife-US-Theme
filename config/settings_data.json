@@ -1162,7 +1162,7 @@
         ],
         "settings": {
           "prd_descript": "or 4 interest-free installments of",
-          "prd_icn": "icon-afterpay",
+          "prd_icn": "",
           "prd_text": "More info",
           "prd_url": "https:\/\/www.afterpay.com\/en-US\/installment-agreement",
           "ship_txt": "Free Shipping",
