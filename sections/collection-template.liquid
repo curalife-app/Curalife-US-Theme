@@ -40,14 +40,14 @@
                                     <div class="price">
                                         {% if quantity > 1 %}
                                             <p id="divided-price">
-                                                <strike>{{ original_item_price | money_without_trailing_zeros }}</strike>
-                                                {{ item_price | money_without_trailing_zeros }} Per Bottle</p>
+                                                <strike>{{ original_item_price | money }}</strike>
+                                                {{ item_price | money }} Per Bottle</p>
                                         {% elsif product.compare_at_price > product.price %}
                                             <p id="discounted-price">
-                                                <strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
-                                                {{ product.price | money_without_trailing_zeros }}</p>
+                                                <strike>{{ product.compare_at_price | money }}</strike>
+                                                {{ product.price | money }}</p>
                                         {% else %}
-                                            <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
+                                            <p id="original-price">{{ product.price | money }}</p>
                                         {% endif %}
                                     </div>
                                 </div>
