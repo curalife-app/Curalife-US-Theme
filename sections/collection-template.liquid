@@ -6,7 +6,7 @@
                 {% for product in collection.products  -%}
                     <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
                         <div class="wrap">
-                            <div class="picture" {% if collection.products.size>3 %}style="height:180px"{%endif%}>
+                            <div class="picture">
                                 {% if section.settings.prdct_bgimg != blank %}
                                     <div class="bg">
                                         <img src="{{section.settings.prdct_bgimg | img_url: ''}}" alt="">
