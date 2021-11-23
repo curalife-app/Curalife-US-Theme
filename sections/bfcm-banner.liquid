@@ -8,6 +8,7 @@
                         <img class="title-black-friday" src="{{ 'bfcm-homepage-banner-title-black-friday.png' | asset_img_url: 'master' }}" alt="Black Friday"/>
                         <img class="title-sale" src="{{ 'bfcm-homepage-banner-title-sale-pink.png' | asset_img_url: 'master' }}" alt="Sale"/>
                     </div>
+                    {% unless request.path contains 'products' %}
                     <div id="countdown">
                         <ul>
                           <li><span id="hours"></span>Hours</li>
@@ -15,6 +16,7 @@
                           <li><span id="seconds"></span>Seconds</li>
                         </ul>
                       </div>
+                      {% endunless %}
                 </div>
             </div>
         </div>
@@ -85,6 +87,7 @@
     width: inherit;
     height: 100px;
     object-fit: cover;
+    margin-left: -70px;
 }
 
 .title-sale {
@@ -145,11 +148,14 @@
     display: flex;
 }
 
+.intro-wrap {
+    max-height: 240px !important;
+}
+
 #countdown {
 	position: relative;
-	top: -35px;
+	top: -65px;
     color: white;
-    display: none; // Temporary
 }
 
 #countdown li {
@@ -179,6 +185,7 @@
     .title-black-friday {
         max-width: unset;
         width: 120%;
+        margin-left: unset;
     }
 
     .title-sale {
@@ -208,6 +215,7 @@
     #countdown {
         width: 100%;
         text-align: center;
+        top: -45px;        
     }
     
     #countdown li {
@@ -241,7 +249,7 @@ const second = 1000,
 minute = second * 60,
 hour = minute * 60;
 
-let birthday = "Nov 19, 2021 16:05:00";
+let birthday = "Nov 27, 2021 07:59:00";
 let countDown = new Date(birthday).getTime();
 let x = setInterval(function() {    
     var now = new Date().getTime();
@@ -252,7 +260,7 @@ let x = setInterval(function() {
     document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second).pad();
  
     // do something later when date is reached
-    if (distance < 0 || distance > 172800) {
+    if (distance < 0) {
         countdown.style.display = "none";
         clearInterval(x);
     }
