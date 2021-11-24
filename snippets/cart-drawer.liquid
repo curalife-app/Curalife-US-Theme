@@ -22,7 +22,12 @@
                     <div class="data">
                         <div class="info-card">
                             <div class="name">
-                                <h4><a href="{{item.product.url}}">{{ item.product.title }}</a></h4>
+                                <h4><a href="{{item.product.url}}">{% if item.product.metafields.my_fields.alternative_title.value %}
+                                    {{ item.product.metafields.my_fields.alternative_title.value }}
+                                    {% else %}
+                                    {{ item.product.title }}
+                                    {% endif %}
+                                </a></h4>
                                 <div class="price">
                                     <p>{{ item.price | money }}</p>
                                 </div>
