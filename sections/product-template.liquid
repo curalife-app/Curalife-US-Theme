@@ -1,4 +1,8 @@
+<script>
+  var variantTitle = '{{product.selected_variant.title }}';
+</script>
 {% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
 
 <div class="product-data">
     <div class="container">
@@ -306,6 +310,19 @@
 
 {% endjavascript %}
 
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){ 
+    var variantid=$("#productVaraintSelected").val();
+	var newUrlIS='{{product.url}}?variant='+variantid;
+    history.pushState({}, null, newUrlIS);
+    window.variantTitle = $('#productSelectedVar option[value="'+variantid+'"]').text();
+
+    }, 3000);
+  
+  });
+  
+</script>
 <style>   
     .slider-sale-title {
         position: absolute;
