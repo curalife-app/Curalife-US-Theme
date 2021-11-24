@@ -310,19 +310,6 @@
 
 {% endjavascript %}
 
-<script>
-  $(document).ready(function(){
-    setTimeout(function(){ 
-    var variantid=$("#productVaraintSelected").val();
-	var newUrlIS='{{product.url}}?variant='+variantid;
-    history.pushState({}, null, newUrlIS);
-    window.variantTitle = $('#productSelectedVar option[value="'+variantid+'"]').text();
-
-    }, 3000);
-  
-  });
-  
-</script>
 <style>   
     .slider-sale-title {
         position: absolute;
