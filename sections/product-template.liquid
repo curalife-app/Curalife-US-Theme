@@ -1,20 +1,12 @@
-<style>
-    .afterpay-paragraph{
-        display: block!important;
-    }
-</style>
 {% assign current_variant = product.selected_or_first_available_variant %}
-{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
 <div class="product-data">
         <div class="container">
             <div class="product-wrap">
                 <div class="product-slider">
                     <div class="discount">
                         {% if product.compare_at_price_max > product.price %}
-                        <p>
-                            {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount
-                            
-                        </p>
+                        <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                         {% endif %}
                     </div>
                     <div class="sliders-group">
@@ -24,11 +16,9 @@
                                     {% for image in product.images %}
                                     <div class="swiper-slide">
                                         <div class="thumbs-img">
-                                          
                                             <div class="img-wrap">
                                                 <img class="lazyload" data-src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}">
                                             </div>
-                                            
                                         </div>
                                     </div>
                                     {% endfor %}
@@ -40,12 +30,10 @@
                                 <div class="swiper-wrapper">
                                    {% for image in product.images %}
                                     <div class="swiper-slide">
-                                        <div class="product-img"> 
-                                         
+                                        <div class="product-img">
                                             <div class="img-wrap">
-                            <img class="lazyload" data-src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}">
+                                                <img class="lazyload" data-src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}">
                                             </div>
-                                            
                                         </div>
                                     </div>
                                      {% endfor %}
@@ -53,14 +41,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="additional-info">
-                        <div class="status">
-                            <p>STARTER PACK</p>
-                        </div>
-                        <div class="discount-offer">
-                            <p>10% OFF + FREE SHIPPING</p>
-                        </div> 
-                    </div>-->
                 </div>
                 <div class="product-info">
                     <div class="sub-title">
@@ -96,31 +76,21 @@
                                 </div>
                                 <div class="col-md-12 product-page--submit-action"
                                      data-stock-email-enabled="{{ section.settings.show_out_of_stock_email }}">
-{% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
-
-
-<div class="btn">
-
-{% if pick_an_option or current_variant.available %}
-<button 
- type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
- 
- {% else %}
- <button 
- type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
-{{ 'products.product.sold_out' | t }}
-{% endif %}
-
-</div>
-{% else %}
-<div class="btn">
-<button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
-</div>
-{% endif %}
-
-</div>
-
-                           
+                                {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
+                                <div class="btn">
+                                    {% if pick_an_option or current_variant.available %}
+                                    <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
+                                    {% else %}
+                                    <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
+                                    {{ 'products.product.sold_out' | t }}
+                                    {% endif %}
+                                </div>
+                                {% else %}
+                                <div class="btn">
+                                    <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+                                </div>
+                                {% endif %}
+                                </div>
                             </form>
 
                             <div class="shipping-label">
@@ -128,14 +98,11 @@
                             </div>
                         </div>
                         <div class="extra-info">
-                            
                                 {% for block in section.blocks %}
                                 {% if block.type == 'prdct_tabs' %}
-                                
                                     <div class="text-wrap">
                                         <p>{{block.settings.tab_des}}</p>
                                     </div>
-                               
                                 {% endif %}
                                 {% endfor %}
                             </ul>
@@ -146,12 +113,7 @@
         </div>
     </div>
 
-
-
-{% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
-    
-{% endif %}
-
+{% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}{% endif %}
 
 <script>
 	jQuery(document).on("click", "#AddTCart", function () {
@@ -173,17 +135,17 @@
               'quantity': 1
             }]
           } 
-                                },
-                                'userId': '{{ customer.id }}',
-                                'email': '{{ customer.email }}',
-                                'country': '{{customer.customer_address.country_code }}',
-                                'city': '{{customer.customer_address.city }}',
-                                'name': '{{ customer.first_name }}',
-                                'surname': '{{ customer.last_name }}',
-                                'phone_number': '{{customer.phone }}',
-                                'state': '{{customer.customer_address.province }}',       //state or province
-                                'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
-                                });
+        },
+        'userId': '{{ customer.id }}',
+        'email': '{{ customer.email }}',
+        'country': '{{customer.customer_address.country_code }}',
+        'city': '{{customer.customer_address.city }}',
+        'name': '{{ customer.first_name }}',
+        'surname': '{{ customer.last_name }}',
+        'phone_number': '{{customer.phone }}',
+        'state': '{{customer.customer_address.province }}',       //state or province
+        'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+        });
     });
 </script>
 
@@ -224,120 +186,99 @@ window.dataLayer.push({
 
 
 {% schema %}
-  {
+
+{
     "name": "Proudct",
     "class": "cart-content",
-    "settings": [ 
-      {
-        "type": "textarea",
-        "id": "prd_descript",
-        "label": "Description",
-        "default": "Add Description "   
-      },
-      {
-        "type": "text",
-        "id": "prd_icn",
-        "label": "Add Icon",
-        "default": "icon-afterpay"   
-      },
-      {
-        "type": "text",
-        "id": "prd_text",
-        "label": "Button Title",
-        "default": "Add Button Title "   
-      },
-       {
-        "type": "url",
-        "id": "prd_url",
-        "label": "Button URL"
-        
-      },
-      {
-        "type": "text",
-        "id": "ship_txt",
-        "label": "Shipping Title",
-        "default": "Add Shipping Title"   
-      },
-      {
-        "type": "text",
-        "id": "ship_icn",
-        "label": "Shipping Icon",
-        "default": "icon-shipping"  
-      },
-      {
-    "type": "header",
-    "content": "Upgrade Popup"
-    },
-
-    {
-    "type": "textarea",
-    "id": "first_up_title",
-    "label": "3-pack Title"
-    },
-    {
-    "type": "textarea",
-    "id": "first_up_text",
-    "label": "3-pack Text"
-    },
-    {
-    "type": "text",
-    "id": "first_btnup_text",
-    "label": "3-pack Btn"
-    },
-    {
-    "type": "textarea",
-    "id": "second_up_title",
-    "label": "6-pack Title"
-    },
-    {
-    "type": "textarea",
-    "id": "second_up_text",
-    "label": "6-pack Text"
-    },
-    {
-    "type": "text",
-    "id": "second_btnup_text",
-    "label": "6-pack Btn"
-    },
-    {
-    "type": "text",
-    "id": "continue_btn_text",
-    "label": "Continue Btn"
-    }
+    "settings": [
+        {
+            "type": "textarea",
+            "id": "prd_descript",
+            "label": "Description",
+            "default": "Add Description "
+        }, {
+            "type": "text",
+            "id": "prd_icn",
+            "label": "Add Icon",
+            "default": "icon-afterpay"
+        }, {
+            "type": "text",
+            "id": "prd_text",
+            "label": "Button Title",
+            "default": "Add Button Title "
+        }, {
+            "type": "url",
+            "id": "prd_url",
+            "label": "Button URL"
+        }, {
+            "type": "text",
+            "id": "ship_txt",
+            "label": "Shipping Title",
+            "default": "Add Shipping Title"
+        }, {
+            "type": "text",
+            "id": "ship_icn",
+            "label": "Shipping Icon",
+            "default": "icon-shipping"
+        }, {
+            "type": "header",
+            "content": "Upgrade Popup"
+        }, {
+            "type": "textarea",
+            "id": "first_up_title",
+            "label": "3-pack Title"
+        }, {
+            "type": "textarea",
+            "id": "first_up_text",
+            "label": "3-pack Text"
+        }, {
+            "type": "text",
+            "id": "first_btnup_text",
+            "label": "3-pack Btn"
+        }, {
+            "type": "textarea",
+            "id": "second_up_title",
+            "label": "6-pack Title"
+        }, {
+            "type": "textarea",
+            "id": "second_up_text",
+            "label": "6-pack Text"
+        }, {
+            "type": "text",
+            "id": "second_btnup_text",
+            "label": "6-pack Btn"
+        }, {
+            "type": "text",
+            "id": "continue_btn_text",
+            "label": "Continue Btn"
+        }
     ],
     "blocks": [
-      {
-        "type": "prdct_tabs",
-        "name": "Product Tabs",
-        "settings": [    
-          {
-          "type": "textarea",
-          "id": "tab_des",
-          "label": "Tab Description",
-          "default": "Enter Tab Description"
-          }
-        ]    
-      }
+        {
+            "type": "prdct_tabs",
+            "name": "Product Tabs",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "tab_des",
+                    "label": "Tab Description",
+                    "default": "Enter Tab Description"
+                }
+            ]
+        }
     ]
-  }
+}
+
 {% endschema %}
 
 {% stylesheet %}
+
+
+
 {% endstylesheet %}
 
 {% javascript %}
-{% endjavascript %}
 
-<script>
-  $(document).ready(function(){
-    setTimeout(function(){ 
-    var variantid=$("#productVaraintSelected").val();
-	var newUrlIS='{{product.url}}?variant='+variantid;
-    history.pushState({}, null, newUrlIS);
-    
-    
-    }, 3000);
-  
-  });
-  
-</script>
+
+
+{% endjavascript %}
