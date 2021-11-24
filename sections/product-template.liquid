@@ -36,7 +36,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                     {% endfor %}
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -45,22 +45,16 @@
                 <div class="product-info">
                     <div class="sub-title">
                         {% if product.metafields.my_fields.alternative_title.value %}
-                    <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
-                    {% else %}
-                    <h1>{{ product.title }}</h1>
-                    {% endif %}
+                        <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
+                        {% else %}
+                        <h1>{{ product.title }}</h1>
+                        {% endif %}
                     </div>
                     <div class="description">
                         <div class="price">
-                          {% if product.compare_at_price > product.price %}
-                            <p>{{ product.price | money }} <strike>{{ product.compare_at_price | money }}</strike></p>
-                            {% else %}
-                                    <p>{{ product.price | money }}</p>
-                                    {% endif %}
-
+                            <p>{{ product.price | money }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money }}</strike></p>{% endif %}
                         </div>
                         
-                       
                         <div class="form-wrap">
                            <form method="post" id="addTocartForm" action="/cart/add">
                             <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
@@ -74,22 +68,21 @@
                                         <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                                     </div>
                                 </div>
-                                <div class="col-md-12 product-page--submit-action"
-                                     data-stock-email-enabled="{{ section.settings.show_out_of_stock_email }}">
-                                {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
-                                <div class="btn">
-                                    {% if pick_an_option or current_variant.available %}
-                                    <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
+                                <div class="col-md-12 product-page--submit-action" data-stock-email-enabled="{{ section.settings.show_out_of_stock_email }}">
+                                    {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
+                                    <div class="btn">
+                                        {% if pick_an_option or current_variant.available %}
+                                        <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
+                                        {% else %}
+                                        <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
+                                        {{ 'products.product.sold_out' | t }}
+                                        {% endif %}
+                                    </div>
                                     {% else %}
-                                    <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
-                                    {{ 'products.product.sold_out' | t }}
+                                    <div class="btn">
+                                        <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+                                    </div>
                                     {% endif %}
-                                </div>
-                                {% else %}
-                                <div class="btn">
-                                    <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
-                                </div>
-                                {% endif %}
                                 </div>
                             </form>
 
@@ -149,14 +142,12 @@
     });
 </script>
 
-<script>
-        
-        jQuery(document).on("click", "#AddToCart", function (Event) {
-            jQuery("#cart-upgrade-popup").slideToggle();
-            return false;
-    
+<script>      
+    jQuery(document).on("click", "#AddToCart", function (Event) {
+        jQuery("#cart-upgrade-popup").slideToggle();
+        return false;
+    });
 
-        });
 window.dataLayer  = window.dataLayer || [];
 window.dataLayer.push({
     'event': 'eec.productDetail',  // name of an event. In this case, always stays as eec.productDetail
@@ -268,17 +259,10 @@ window.dataLayer.push({
         }
     ]
 }
-
 {% endschema %}
 
 {% stylesheet %}
-
-
-
 {% endstylesheet %}
 
 {% javascript %}
-
-
-
 {% endjavascript %}
