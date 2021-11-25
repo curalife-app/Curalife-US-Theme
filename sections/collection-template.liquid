@@ -39,7 +39,7 @@
                                         {% if product.metafields.my_fields.pack_items_quantity > 1 %}
                                             <p id="divided-price">{{ item_price | money_without_trailing_zeros }}<strike>{{ original_item_price | money_without_trailing_zeros }}</strike> Per Bottle</p>
                                         {% elsif product.compare_at_price > product.price %}
-                                            <p id="discounted-price">{{ product.price | money_without_trailing_zeros }}</p><strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
+                                            <p id="discounted-price">{{ product.price | money_without_trailing_zeros }}<strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike></p>
                                         {% else %}
                                             <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
                                         {% endif %}
