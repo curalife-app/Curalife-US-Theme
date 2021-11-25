@@ -24,7 +24,7 @@
                             <div class="info">
                                 <div class="main">
                                     {% assign item_price = product.price | divided_by: product.metafields.my_fields.pack_items_quantity %}
-                                    {% assign original_item_price = product.metafields.my_fields.original_item.compare_at_price %}
+                                    {% assign original_item_price = product.metafields.my_fields.original_item.value.compare_at_price %}
                                     <div class="name">
                                         <h3>
                                             {% if product.metafields.my_fields.alternative_title.value %}
