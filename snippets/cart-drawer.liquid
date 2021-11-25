@@ -73,7 +73,7 @@
    //alert("removeThis"+id);
 jQuery.post('/cart/update.js', 'updates['+id+']=0');
 
-
+obj.parent().parent().parent().parent().remove();
 var cstm_count = obj.parent().parent().find("input").val();
 var cartToalCount = $('.header_cart_count').text();
 var cartReaminingCount = parseInt(cartToalCount) - parseInt(cstm_count);
