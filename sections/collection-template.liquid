@@ -36,7 +36,7 @@
                                     </div>
                                     <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                                     <div class="price">
-                                        {% if quantity > 1 %}
+                                        {% if product.metafields.my_fields.pack_items_quantity > 1 %}
                                             <p id="divided-price">
                                                 <strike>{{ original_item_price | money_without_trailing_zeros }}</strike>
                                                 {{ item_price | money_without_trailing_zeros }} Per Bottle</p>
