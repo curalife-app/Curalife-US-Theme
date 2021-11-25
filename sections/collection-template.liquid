@@ -37,13 +37,9 @@
                                     <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                                     <div class="price">
                                         {% if product.metafields.my_fields.pack_items_quantity > 1 %}
-                                            <p id="divided-price">
-                                                <strike>{{ original_item_price | money_without_trailing_zeros }}</strike>
-                                                {{ item_price | money_without_trailing_zeros }} Per Bottle</p>
+                                            <p id="divided-price">{{ item_price | money_without_trailing_zeros }}<strike>{{ original_item_price | money_without_trailing_zeros }}</strike> Per Bottle</p>
                                         {% elsif product.compare_at_price > product.price %}
-                                            <p id="discounted-price">
-                                                <strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike>
-                                                {{ product.price | money_without_trailing_zeros }}</p>
+                                            <p id="discounted-price">{{ product.price | money_without_trailing_zeros }}<strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike></p>
                                         {% else %}
                                             <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
                                         {% endif %}
