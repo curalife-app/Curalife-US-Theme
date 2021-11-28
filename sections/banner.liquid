@@ -5,8 +5,8 @@
           <div class="cstm_introwrp intro-wrap">
               <div class="data-wrap">
                   <div class="intro-text">
-                      <img class="title-black-friday desktop" src="{{ 'bfcm-homepage-banner-title-black-friday.png' | asset_img_url: 'master' }}" alt="Black Friday"/>
-                      <img class="title-black-friday mobile" src="{{ 'bfcm-homepage-banner-title-black-friday-mobile.png' | asset_img_url: 'master' }}" alt="Black Friday"/>
+                      <img class="title-black-friday desktop" src="{{ 'bfcm-homepage-banner-title-cyber-monday.png' | asset_img_url: 'master' }}" alt="Black Friday"/>
+                      <img class="title-black-friday mobile" src="{{ 'bfcm-homepage-banner-title-cyber-monday-mobile.png' | asset_img_url: 'master' }}" alt="Black Friday"/>
                       <img class="title-sale" src="{{ 'bfcm-homepage-banner-title-sale.png' | asset_img_url: 'master' }}" alt="Sale"/>
                       <div class="cstm_btn btn">
                           <a href="{{section.settings.bnr_btnlink}}" class="main-btn">SHOP NOW</a>
@@ -116,11 +116,11 @@ display: none;
 }
 
 .title-sale {
-  margin-top: -12%;
+  margin-top: -8%;
   position: relative;
   z-index: 20;
   pointer-events: none;
-  max-width: 50%;
+  max-width: 40%;
 }
 
 .title-limited-time {
@@ -335,6 +335,7 @@ content: ":";
 
   .title-black-friday.mobile {
     display: block;
+    top: -20px;      
   }
 
   .title-sale {
@@ -420,7 +421,7 @@ const second = 1000,
 minute = second * 60,
 hour = minute * 60;
 
-let birthday = "Nov 27, 2021 09:59:00";
+let birthday = "Nov 30, 2021 06:59:00";
 let countDown = new Date(birthday).getTime();
 let x = setInterval(function() {    
   var now = new Date().getTime();

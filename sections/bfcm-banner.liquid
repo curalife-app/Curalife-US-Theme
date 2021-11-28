@@ -5,7 +5,7 @@
             <div class="cstm_introwrp intro-wrap">
                 <div class="data-wrap">
                     <div class="intro-text">
-                        <img class="title-black-friday" src="{{ 'bfcm-homepage-banner-title-black-friday.png' | asset_img_url: 'master' }}" alt="Black Friday"/>
+                        <img class="title-black-friday" src="{{ 'bfcm-homepage-banner-title-cyber-monday.png' | asset_img_url: 'master' }}" alt="Black Friday"/>
                         <img class="title-sale" src="{{ 'bfcm-homepage-banner-title-sale-pink.png' | asset_img_url: 'master' }}" alt="Sale"/>
                     </div>
                     {% unless request.path contains 'products' %}
@@ -91,10 +91,11 @@
 }
 
 .title-sale {
-    margin-left: -5%;
+    margin-left: -9%;
     z-index: 20;
     max-width: 30%;
-    height: 70%;
+    height: 50%;
+    margin-top: -15px;    
 }
 
 .intro-wrap {
@@ -250,7 +251,7 @@ const second = 1000,
 minute = second * 60,
 hour = minute * 60;
 
-let birthday = "Nov 27, 2021 07:59:00";
+let birthday = "Nov 30, 2021 06:59:00";
 let countDown = new Date(birthday).getTime();
 let x = setInterval(function() {    
     var now = new Date().getTime();
