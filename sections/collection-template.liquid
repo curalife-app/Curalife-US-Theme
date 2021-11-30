@@ -4,7 +4,7 @@
             <h1>Choose Your CuraLin Bundle</h1>
             <div class="product-list">
                 {% for product in collection.products  -%}
-                    <div class="product-card">
+                <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
                         <div class="wrap">
                             <div class="picture">
                                 {% if section.settings.prdct_bgimg != blank %}
