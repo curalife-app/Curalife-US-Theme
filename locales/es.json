@@ -462,7 +462,111 @@
         "credit_card_name_blank": "Ingrese su nombre exactamente como está escrito en su tarjeta",
         "credit_card_name_invalid": "Ingrese su nombre exactamente como está escrito en su tarjeta",
         "credit_card_number_invalid": "Ingrese un número de tarjeta válido",
-        "credit_card_expiry_invalid": "Ingrese una fecha de vencimiento de la tarjeta válida"
+        "credit_card_expiry_invalid": "Ingrese una fecha de vencimiento de la tarjeta válida",
+        "credit_card_month_invalid": "Ingrese un mes de vencimiento de tarjeta válido",
+        "credit_card_year_invalid": "Ingrese un año de vencimiento de tarjeta válido",
+        "credit_card_start_invalid": "Ingrese una fecha de inicio de tarjeta válida",
+        "credit_card_start_month_invalid": "Ingrese un mes de inicio de tarjeta válido",
+        "credit_card_start_year_invalid": "Ingrese un año de inicio de tarjeta válido",
+        "credit_card_verification_value_blank": "Ingrese el CVV o código de seguridad en su tarjeta",
+        "reduction_code_code_not_found": "Ingrese un código de descuento válido o una tarjeta de regalo",
+        "reduction_code_discount_not_found": "Ingrese un código de descuento válido",
+        "reduction_code_gift_card_code_invalid": "Ingrese una tarjeta de regalo válida",
+        "reduction_code_gift_card_unusable": "No puede usar una tarjeta de regalo para comprar otra tarjeta de regalo",
+        "shipping_line_phone_blank": "Ingrese un número de teléfono para utilizar este método de envío",
+        "shipping_line_phone_invalid": "Ingrese un número de teléfono válido para utilizar este método de envío",
+        "tips_invalid_tip_amount": "Ingrese una propina de no más de %{amount }",
+        "gift_card_already_applied": "Esta tarjeta de regalo ya se ha aplicado a su pedido.",
+        "gift_card_disabled": "Esta tarjeta de regalo ya no está disponible",
+        "gift_card_expired": "Esta tarjeta de regalo ha caducado",
+        "gift_card_depleted": "A esta tarjeta de regalo no le quedan fondos",
+        "gift_card_currency_mismatch": "Solo se pueden usar tarjetas de regalo en %{checkout_currency } con este pedido",
+        "payment_gateway_needs_paid_plan_error": "Esta forma de pago no está disponible en la tienda en este momento",
+        "payment_gateway_not_in_test_mode": "no está configurado para probar pedidos. Esta tienda no puede aceptar pedidos ni pagos reales.",
+        "payment_gateway_incompatible_with_multi_currency": "Para completar este pago en su moneda local, debe pagar con tarjeta de crédito.",
+        "payment_gateway_unsupported_for_subscriptions": "Este método de pago no está disponible para pedidos de suscripción.",
+        "subscription_agreement_blank": "Para continuar con su compra, acepte los términos de suscripción",
+        "physical_gift_card_invalid_quantity": "Las líneas de pedido de tarjetas de regalo físicas deben tener una cantidad que coincida con la cantidad de códigos de tarjetas de regalo.",
+        "physical_gift_card_duplicate_code": "La línea de pedido física de la tarjeta de regalo contiene un código duplicado.",
+        "physical_gift_card_invalid_code": "El código de la tarjeta de regalo física no es válido.",
+        "sms_marketing_phone_invalid": "Ingrese un número de teléfono válido"
+      },
+      "payment_errors": {
+        "generic_error": "Hubo un problema al procesar su pago. Vuelve a intentarlo o utiliza un método de pago diferente.",
+        "rejected_transaction": "Su pago fue rechazado. Vuelve a intentarlo o utiliza un método de pago diferente.",
+        "credit_card_processing": "Su pago no se puede procesar por motivos técnicos. Vuelve a intentarlo en unos minutos o utiliza un método de pago diferente.",
+        "order_total_changed": "No se pudo procesar su pago porque el total de su pedido cambió. Verifique el total de su pedido y vuelva a intentarlo.",
+        "payment_processing": "Su pago no se puede procesar por motivos técnicos. Vuelve a intentarlo o utiliza un método de pago diferente.",
+        "payment_processing_no_retry": "Su pago no se puede procesar por motivos técnicos. Pruebe con otro método de pago.",
+        "paypal_zero_amount": "No puede utilizar PayPal para pedidos de %{amount }. Confirme que su pedido sea correcto y realice el pago sin PayPal.",
+        "paypal_invalid_token": "PayPal no estaba disponible. Vuelva a intentarlo o utilice una opción de pago diferente.",
+        "pay_later_failed": "Hubo un error al procesar su pago con Pagar más tarde. Elija otro método de pago y vuelva a intentarlo.",
+        "three_d_secure_failed": "No se pudo verificar su pago. Vuelve a intentarlo o utiliza un método de pago diferente.",
+        "three_d_secure_failed_duplicate": "La autenticación 3D Secure de la tarjeta de crédito falló porque ya hay otra en curso.",
+        "three_d_secure_throttled": "Demasiados intentos; por favor espere antes de intentarlo de nuevo",
+        "subscription_agreement_blank": "Para comprar una suscripción, es necesario guardar sus datos de pago. Para continuar, confirme que está de acuerdo o elimine los artículos de suscripción de su pedido.",
+        "insufficient_funds": "Su pago fue rechazado debido a fondos insuficientes. Vuelve a intentarlo o utiliza un método de pago diferente.",
+        "fraud_payment_errors": {
+          "transaction_declined": "La transacción ha sido rechazada",
+          "address_mismatch": "La dirección y el código postal no coinciden.",
+          "cannot_process": "Esta operación no se puede procesar.",
+          "no_match": "Sin coincidencia",
+          "card_declined": "Tu tarjeta fue rechazada"
+        }
+      },
+      "shipping_errors": {
+        "shipping_method": "Su carrito se ha actualizado y la tarifa de envío anterior no es válida. Seleccione una nueva tarifa.",
+        "shipping_method_not_available": "Su carrito se ha actualizado y los artículos que agregó no se pueden enviar a su dirección. Retire los artículos para completar su pedido.",
+        "shipping_method_not_available_generic": {
+          "one": "Este pedido no se puede enviar a la dirección que ingresó. Revise su dirección para asegurarse de que todos los campos se hayan ingresado correctamente y vuelva a intentarlo.",
+          "other": "Algunos artículos de su carrito no se pueden enviar a la dirección que ingresó. Revise su dirección para asegurarse de que todos los campos se hayan ingresado correctamente y vuelva a intentarlo."
+        },
+        "shipping_method_not_available_updated": {
+          "one": "El artículo que agregaste no se envía a tu ubicación. Quítelo para pagar o comuníquese con la tienda.",
+          "other": "Uno o más elementos que agregaste no se envían a tu ubicación. Quítelos para pagar o comuníquese con la tienda."
+        }
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "chequeo rápido",
+        "or": "O"
+      },
+      "alternative_payment_method": {
+        "button_html": "Pagar con: %{method }",
+        "button_label": "Pagar con: %{method }"
+      },
+      "paypal": {
+        "button_html": "Pagar con %{logo }"
+      },
+      "apple_pay": {
+        "button_html": "Compre con %{logo }"
+      },
+      "post_purchase": {
+        "page_title": "Compra posterior",
+        "title": "Compra posterior",
+        "escape_confirmation": "Has pagado tu pedido.",
+        "escape_action": "Ver confirmación de pedido ›",
+        "components": {
+          "close": "Cerrar",
+          "expand": "Ver más",
+          "processing": "Procesando…",
+          "submit": "Enviar"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Redirigiendo ...",
+        "redirecting_title": "Redirigiendo ...",
+        "redirecting_notice": "Espera mientras te redireccionamos.",
+        "complete_your_purchase_title": "Completa tu compra",
+        "continue_to_payment_gateway_notice": "Continúe con el pago para agregar su información de pago.",
+        "continue_to_payment_gateway_button_label": "Continuar con el pago",
+        "complete_your_purchase_title_error": "Corrija su información de pago",
+        "continue_to_payment_gateway_notice_error": "No se pudo verificar su información de pago.",
+        "continue_to_payment_gateway_button_label_error": "Actualizar la información de pago",
+        "page_title": "Orden de procesamiento",
+        "title": "Orden de procesamiento",
+        "your_order_has_been_received_title": "Gracias por tu orden",
+        "you_will_receive_confirmation": "Estamos recibiendo muchos pedidos en este momento. Debería recibir la confirmación por correo electrónico o mensaje de texto pronto. Si no lo recibe en la próxima hora, avísenos.",
+        "you_will_not_be_charged": "No se te cobrará todavía"
       }
     }
   },
