@@ -1,1 +1,238 @@
-{"shopify":{"sentence":{"words_connector":","}},"general":{"404":{"title":"Extraviado","subtext_html":"La página que busca no existe"}},"cart":{"general":{"title":"Su cesta","remove":"Eliminar","note":"Añadir una nota para el vendedor","subtotal":"Total parcial","taxes_and_shipping_at_checkout":"Impuestos y gastos de envío calculados en el momento de la compra","taxes_and_shipping_policy_at_checkout_html":"Impuestos y <a href=\"{{ link }}\">gastos de envío<\/a> calculados en el momento de la compra","taxes_included_but_shipping_at_checkout":"Impuestos incluidos y envío calculado en el momento de la compra","taxes_included_and_shipping_policy_html":"Impuesto incluido. <a href=\"{{ link }}\">Los gastos de envío<\/a> se calculan en el momento de la compra.","total":"Total","price":"Precio","quantity":"Cantidad","update":"Carro de la actualización","checkout":"Haga su pedido","checkout_mobile":"Comprobación","empty":"Su cesta está vacía","alt_checkout":"O bien, hacer el pago con","continue_browsing_html":"¡Seguir comprando!","terms_text":"Marque esta casilla para aceptar nuestros términos y condiciones","terms_text_html":"Marque esta casilla para aceptar nuestros <a target=\"_blank\" href=\"#\">términos y condiciones<\/a>","terms_agree":"Debe aceptar los términos y condiciones de venta para poder realizar la compra."}},"contact":{"form":{"name":"Nombre","email":"Envíe un correo electrónico a","phone":"Número de teléfono","message":"Mensaje","send":"Enviar","post_success":"Gracias por contactarnos. Nos comunicaremos con usted lo antes posible."}},"customer":{"account":{"title":"Mi cuenta","details":"Detalles de la cuenta","view_addresses":"Ver direcciones","return":"Volver a los detalles de la cuenta"},"activate_account":{"title":"Activar la cuenta","subtext":"Cree su contraseña para activar su cuenta","password":"Contraseña","password_confirm":"confirmar Contraseña","submit":"Activar la cuenta","cancel":"Rechazar la invitación"},"addresses":{"title":"Sus direcciones","default":"Dirección por defecto","add_new":"Añadir una nueva dirección","edit_address":"Editar dirección","first_name":"Primer nombre","last_name":"Apellido","company":"Empresa","address1":"Dirección 1","address2":"Dirección 2","city":"Ciudad","country":"País","province":"Provincia","zip":"Postal \/ Código postal","phone":"Teléfono","set_default":"Establecer como dirección predeterminada","add":"Añadir dirección","update":"Actualizar la dirección","cancel":"Cancelar","edit":"Editar","delete":"Borrar"},"login":{"title":"Inicio de sesión del cliente","email":"Envíe un correo electrónico a","password":"Contraseña","forgot_password":"¿Ha olvidado su contraseña?","sign_in":"Registrarse","cancel":"Volver a la tienda","guest_title":"Continuar como invitado","guest_continue":"Continuar"},"orders":{"title":"Historial de pedidos","order_number":"Pedido","date":"Fecha","payment_status":"Estado de los pagos","fulfillment_status":"Estado de cumplimiento","total":"Total","none":"Aún no ha realizado ningún pedido."},"order":{"title":"Order {{ name }}","cancelled":"Order Cancelled on {{ date }}","cancelled_reason":"Reason: {{ reason }}","billing_address":"Dirección de Envio","payment_status":"Estado de los pagos","shipping_address":"Dirección de Envío","fulfillment_status":"Estado de cumplimiento","discount":"Descuento","shipping":"Envío","tax":"Impuesto","details":{"product":"Producto","sku":"SKU","price":"Precio","quantity":"Cantidad","total":"Total","fulfilled_at":"Cumplido {{ date }}","subtotal":"Total parcial"}},"recover_password":{"title":"Restablecer la contraseña","email":"Envíe un correo electrónico a","submit":"Enviar","cancel":"Cancelar","subtext":"Le enviaremos un correo electrónico para restablecer su contraseña.","success":"Te hemos enviado un correo electrónico con un enlace para actualizar tu contraseña."},"reset_password":{"title":"Restablecer la contraseña de la cuenta","subtext":"Ingrese una nueva contraseña para {{ email }}","password":"Contraseña","password_confirm":"confirmar Contraseña","submit":"Restablecer la contraseña"},"register":{"title":"Crear una cuenta","first_name":"Primer nombre","last_name":"Apellido","email":"Envíe un correo electrónico a","password":"Contraseña","submit":"Crear","cancel":"Volver a la tienda"}}}
+{
+  "shopify": {
+    "sentence": {
+      "words_connector": ",",
+      "two_words_connector": "y",
+      "last_word_connector": ", y"
+    },
+    "checkout": {
+      "general": {
+        "page_title": "Verificar",
+        "error_page_title": "Error",
+        "skip_to_content": "saltar al contenido",
+        "breadcrumb": "Migaja de pan",
+        "continue_button_label": "Continuar",
+        "complete_purchase_button_label": "Orden completa",
+        "pay_now_button_label": "Pagar ahora",
+        "authenticate_purchase_button_label": "Autenticar pago",
+        "edit_link_label": "Editar",
+        "all_rights_reserved": "Todos los derechos reservados %{shop_name }",
+        "print_policies_link_label": "Impresión",
+        "cart": "Carro",
+        "close_modal_label": "Cerrar",
+        "close_notice_label": "Cerrar",
+        "expand_notice_label": "Ver más",
+        "continue_to_shipping_method": "Continuar con el envío",
+        "continue_to_payment_method": "Continuar con el pago",
+        "continue_to_review": "Revisar orden",
+        "back_to_cart": "Volver al carrito",
+        "back_to_contact_information": "Volver a la información",
+        "back_to_shipping_method": "Volver al envío",
+        "back_to_payment_method": "Regreso al pago",
+        "choose_shipping_method": "Elija un método de envío",
+        "choose_payment_method": "Elija un método de pago",
+        "choose_billing_address": "Elija una dirección de facturación",
+        "contact_us_html": "Contáctenos para más información",
+        "autocomplete_title": "Sugerencias",
+        "autocomplete_single_item": "1 artículo disponible",
+        "autocomplete_multi_item": "{{number }} artículos disponibles",
+        "autocomplete_selection": "{{number }} de {{total }}",
+        "autocomplete_close": "Cerrar sugerencias",
+        "forwarding_indicator": {
+          "new_window": "Se abre en una nueva ventana.",
+          "external": "Abre un sitio web externo.",
+          "external_and_new_window": "Abre un sitio web externo en una nueva ventana."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name } - Pagar"
+        },
+        "tooltip_accessibility_label": "Más información"
+      },
+      "contact": {
+        "title": "Información",
+        "address_title": "Dirección",
+        "shipping_address_title": "Dirección de Envío",
+        "delivery_option_title": "Método de entrega",
+        "contact_method_title": "Información del contacto",
+        "email_label": "Correo electrónico",
+        "email_placeholder": "Correo electrónico",
+        "email_or_phone_label": "Correo electrónico o número de teléfono móvil",
+        "email_or_phone_placeholder": "Correo electrónico o número de teléfono móvil",
+        "stored_addresses_label": "Direcciones guardadas",
+        "new_address_label": "Usa una nueva dirección",
+        "first_name_label": "Nombre de pila",
+        "optional_first_name_label": "Nombre (opcional)",
+        "last_name_label": "Apellido",
+        "company_label": "Empresa",
+        "optional_company_label": "Companía (opcional)",
+        "address1_label": "Dirección",
+        "address2_label": "Apartamento, suite, etc.",
+        "optional_address2_label": "Apartamento, suite, etc. (opcional)",
+        "city_label": "Ciudad",
+        "country_label": "País \/ Región",
+        "country_code": "Código de país \/ región",
+        "province_label": "Provincia",
+        "province_placeholder": "Provincia",
+        "county_label": "condado",
+        "county_placeholder": "condado",
+        "state_label": "Estado",
+        "state_placeholder": "Estado",
+        "region_label": "Región",
+        "region_placeholder": "Región",
+        "region_none": "Ninguna seleccionada",
+        "prefecture_label": "Prefectura",
+        "prefecture_placeholder": "Prefectura",
+        "governorate_label": "Gobernación",
+        "governorate_placeholder": "Gobernación",
+        "emirate_label": "Emirato",
+        "emirate_placeholder": "Emirato",
+        "state_and_territory_label": "Estado \/ territorio",
+        "state_and_territory_placeholder": "Estado \/ territorio",
+        "phone_label": "Teléfono",
+        "optional_phone_label": "Teléfono opcional)"
+      }
+    }
+  },
+  "general": {
+    "404": {
+      "title": "Extraviado",
+      "subtext_html": "La página que busca no existe"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Su cesta",
+      "remove": "Eliminar",
+      "note": "Añadir una nota para el vendedor",
+      "subtotal": "Total parcial",
+      "taxes_and_shipping_at_checkout": "Impuestos y gastos de envío calculados en el momento de la compra",
+      "taxes_and_shipping_policy_at_checkout_html": "Impuestos y <a href=\"{{ link }}\">gastos de envío<\/a> calculados en el momento de la compra",
+      "taxes_included_but_shipping_at_checkout": "Impuestos incluidos y envío calculado en el momento de la compra",
+      "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a href=\"{{ link }}\">Los gastos de envío<\/a> se calculan en el momento de la compra.",
+      "total": "Total",
+      "price": "Precio",
+      "quantity": "Cantidad",
+      "update": "Carro de la actualización",
+      "checkout": "Haga su pedido",
+      "checkout_mobile": "Comprobación",
+      "empty": "Su cesta está vacía",
+      "alt_checkout": "O bien, hacer el pago con",
+      "continue_browsing_html": "¡Seguir comprando!",
+      "terms_text": "Marque esta casilla para aceptar nuestros términos y condiciones",
+      "terms_text_html": "Marque esta casilla para aceptar nuestros <a target=\"_blank\" href=\"#\">términos y condiciones<\/a>",
+      "terms_agree": "Debe aceptar los términos y condiciones de venta para poder realizar la compra."
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nombre",
+      "email": "Envíe un correo electrónico a",
+      "phone": "Número de teléfono",
+      "message": "Mensaje",
+      "send": "Enviar",
+      "post_success": "Gracias por contactarnos. Nos comunicaremos con usted lo antes posible."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Mi cuenta",
+      "details": "Detalles de la cuenta",
+      "view_addresses": "Ver direcciones",
+      "return": "Volver a los detalles de la cuenta"
+    },
+    "activate_account": {
+      "title": "Activar la cuenta",
+      "subtext": "Cree su contraseña para activar su cuenta",
+      "password": "Contraseña",
+      "password_confirm": "confirmar Contraseña",
+      "submit": "Activar la cuenta",
+      "cancel": "Rechazar la invitación"
+    },
+    "addresses": {
+      "title": "Sus direcciones",
+      "default": "Dirección por defecto",
+      "add_new": "Añadir una nueva dirección",
+      "edit_address": "Editar dirección",
+      "first_name": "Primer nombre",
+      "last_name": "Apellido",
+      "company": "Empresa",
+      "address1": "Dirección 1",
+      "address2": "Dirección 2",
+      "city": "Ciudad",
+      "country": "País",
+      "province": "Provincia",
+      "zip": "Postal \/ Código postal",
+      "phone": "Teléfono",
+      "set_default": "Establecer como dirección predeterminada",
+      "add": "Añadir dirección",
+      "update": "Actualizar la dirección",
+      "cancel": "Cancelar",
+      "edit": "Editar",
+      "delete": "Borrar"
+    },
+    "login": {
+      "title": "Inicio de sesión del cliente",
+      "email": "Envíe un correo electrónico a",
+      "password": "Contraseña",
+      "forgot_password": "¿Ha olvidado su contraseña?",
+      "sign_in": "Registrarse",
+      "cancel": "Volver a la tienda",
+      "guest_title": "Continuar como invitado",
+      "guest_continue": "Continuar"
+    },
+    "orders": {
+      "title": "Historial de pedidos",
+      "order_number": "Pedido",
+      "date": "Fecha",
+      "payment_status": "Estado de los pagos",
+      "fulfillment_status": "Estado de cumplimiento",
+      "total": "Total",
+      "none": "Aún no ha realizado ningún pedido."
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "cancelled": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Dirección de Envio",
+      "payment_status": "Estado de los pagos",
+      "shipping_address": "Dirección de Envío",
+      "fulfillment_status": "Estado de cumplimiento",
+      "discount": "Descuento",
+      "shipping": "Envío",
+      "tax": "Impuesto",
+      "details": {
+        "product": "Producto",
+        "sku": "SKU",
+        "price": "Precio",
+        "quantity": "Cantidad",
+        "total": "Total",
+        "fulfilled_at": "Cumplido {{ date }}",
+        "subtotal": "Total parcial"
+      }
+    },
+    "recover_password": {
+      "title": "Restablecer la contraseña",
+      "email": "Envíe un correo electrónico a",
+      "submit": "Enviar",
+      "cancel": "Cancelar",
+      "subtext": "Le enviaremos un correo electrónico para restablecer su contraseña.",
+      "success": "Te hemos enviado un correo electrónico con un enlace para actualizar tu contraseña."
+    },
+    "reset_password": {
+      "title": "Restablecer la contraseña de la cuenta",
+      "subtext": "Ingrese una nueva contraseña para {{ email }}",
+      "password": "Contraseña",
+      "password_confirm": "confirmar Contraseña",
+      "submit": "Restablecer la contraseña"
+    },
+    "register": {
+      "title": "Crear una cuenta",
+      "first_name": "Primer nombre",
+      "last_name": "Apellido",
+      "email": "Envíe un correo electrónico a",
+      "password": "Contraseña",
+      "submit": "Crear",
+      "cancel": "Volver a la tienda"
+    }
+  }
+}
