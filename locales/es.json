@@ -798,9 +798,113 @@
           "first_cycles": {
             "one": "Primer pago %{total_price }",
             "other": "Primeros %{count } pagos %{total_price } cada uno"
+          },
+          "following_cycles": ", luego %{total_price } cada %{interval }"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", luego %{count } pago a %{total_price }",
+            "other": ", luego %{count } pagos a %{total_price } cada uno"
           }
         }
+      },
+      "customer_payment_methods": {
+        "page_title": "Métodos de pago",
+        "title": "Métodos de pago",
+        "update_card_button_label": "Tarjeta de actualización",
+        "delete_customer_mandate": {
+          "generic_error": "Hubo un problema procesando tu petición.",
+          "success_message": "Su método de pago se ha eliminado correctamente."
+        }
       }
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "próximo"
+    },
+    "links": {
+      "powered_by_shopify": "Desarrollado por Shopify",
+      "learn_more": "Aprende más"
+    },
+    "feed": {
+      "more": "Más"
+    },
+    "attributes": {
+      "email": "Email",
+      "password": "contraseña",
+      "password_confirmation": "La confirmación de la contraseña",
+      "first_name": "primer nombre",
+      "last_name": "apellido",
+      "body": "cuerpo",
+      "signature": "Dirección"
+    },
+    "addresses": {
+      "zip_code": "código postal",
+      "postal_code": "Código Postal",
+      "postcode": "Código postal",
+      "pincode": "Código PIN",
+      "region": "Región",
+      "prefecture": "Prefectura",
+      "province": "Provincia",
+      "state": "Estado",
+      "state_and_territory": "Estado \/ territorio",
+      "county": "condado",
+      "emirate": "Emirato",
+      "governorate": "Gobernación",
+      "confirm": "¿Está seguro de que desea eliminar esta dirección?"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Presentado",
+        "best_selling": "Más vendido",
+        "az": "Alfabéticamente, A-Z",
+        "za": "Alfabéticamente, Z-A",
+        "price_ascending": "Precios de barato a caro",
+        "price_descending": "Precio, de mayor a menor",
+        "date_ascending": "Fecha, de viejo a nuevo",
+        "date_descending": "Fecha, nueva a vieja"
+      }
+    },
+    "errors": {
+      "blank": "no puede estar en blanco",
+      "blocked_address": "Esta ubicación no es compatible.",
+      "credit_card_session_expired": "La autorización de la tarjeta de crédito venció, ingrese su información de pago nuevamente. Su tarjeta no ha sido cargada.",
+      "empty": "no puede estar vacío",
+      "invalid_email": "Debe ser una dirección de correo electrónico válida",
+      "discount_disabled": "Este descuento ha sido desactivado",
+      "discount_expired": "Este descuento ya no es válido",
+      "discount_limit_reached": "Este descuento ha alcanzado su límite de uso.",
+      "discount_not_found": "No se puede encontrar un descuento válido que coincida con el código ingresado",
+      "customer_already_used_once_per_customer_discount_notice": "Este descuento ha alcanzado su límite de uso.",
+      "gift_card_already_applied": "El código ya se aplicó a su pago",
+      "gift_card_code_invalid": "El codigo es invalido",
+      "gift_card_currency_mismatch": "%{gift_card_currency } las tarjetas de regalo no se pueden aplicar en pedidos de %{checkout_currency }",
+      "gift_card_depleted": "No quedan fondos en esta tarjeta de regalo",
+      "gift_card_disabled": "La tarjeta de regalo está inhabilitada",
+      "gift_card_expired": "La tarjeta de regalo caducó",
+      "invalid": "no es válido",
+      "bad_domain": "contiene un nombre de dominio no válido",
+      "taken": "ya se ha tomado",
+      "contains_html_tags": "no puede contener etiquetas HTML",
+      "too_short": "es demasiado corto (el mínimo es %{count } caracteres)",
+      "too_long": "es demasiado largo (el máximo es %{count } caracteres)",
+      "password_mismatch": "debe coincidir con la contraseña proporcionada.",
+      "contains_spaces": "comienza o termina con espacios.",
+      "email_domain_invalid": "el proveedor no es compatible",
+      "invalid_for_country": "no es válido para %{country }",
+      "invalid_for_country_and_province": "no es válido para %{province } y %{country }",
+      "invalid_province_in_country": "no es una provincia válida en %{country }",
+      "invalid_state_in_country": "no es un estado válido en %{country }",
+      "invalid_region_in_country": "no es una región válida en %{country }",
+      "less_than_or_equal_to": "debe ser menor o igual que %{count }",
+      "not_supported": "no es apoyado",
+      "full_name_required": "Ingrese un nombre y apellido",
+      "invalid_for_card_type": "no es válido",
+      "invalid_type": "lo siento, no aceptamos tarjetas de este tipo",
+      "invalid_format": "el formato no es válido",
+      "expired": "ha expirado",
+      "invalid_start_date_or_issue_number_for_debit": "Se requiere una fecha de inicio válida o un número de emisión.",
+      "invalid_expiry_year": "no es un año de vencimiento válido"
     }
   },
   "general": {
