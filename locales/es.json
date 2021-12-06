@@ -1022,69 +1022,141 @@
         },
         "updated_policy": {
           "status_html": "<b> Se informa el seguimiento de la apertura de correo electrónico. <\/b>",
-          "visibility": "Hemos actualizado nuestra política y ahora hacemos un seguimiento de los correos electrónicos abiertos. Las tasas de apertura de correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de la tasa total de apertura de correo electrónico."
+          "visibility": "Hemos actualizado nuestra política y ahora hacemos un seguimiento de los correos electrónicos abiertos. Las tasas de apertura de correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de la tasa total de apertura de correo electrónico.",
+          "opt_out_html": "Si no desea compartir esta información, puede <a style='text-decoration:underline;' href='%{link} '> cancelar la suscripción. <\/a>"
         }
+      }
+    },
+    "filters": {
+      "availability": {
+        "label": "Disponibilidad",
+        "value": {
+          "in_stock": "En stock",
+          "out_of_stock": "Agotado"
+        }
+      },
+      "vendor": {
+        "label": "Marca"
+      },
+      "price": {
+        "label": "Precio"
+      },
+      "product_type": {
+        "label": "Tipo de producto"
+      }
+    },
+    "search": {
+      "sorting": {
+        "relevance": "Relevancia",
+        "price_ascending": "Precios de barato a caro",
+        "price_descending": "Precio, de mayor a menor"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Error: %{title }",
+      "products": "Productos",
+      "shopping_cart": "tu carrito de la compra",
+      "account": "Cuenta",
+      "create_account": "Crear una cuenta",
+      "reset_account": "Restablecer cuenta",
+      "addresses": "Direcciones",
+      "order": "Pedido %{name }",
+      "search": "Buscar",
+      "search_results": {
+        "one": "Búsqueda: %{count } resultado encontrado para \"%{terms }\"",
+        "other": "Búsqueda: %{count } resultados encontrados para \"%{terms }\""
+      },
+      "collections": "Colecciones",
+      "not_found": "404 No encontrado",
+      "challenge": "Desafío",
+      "checkpoint": "Control"
+    },
+    "cart": {
+      "discounts_with_count": "Se han aplicado %{count } descuentos"
+    },
+    "challenge": {
+      "message": "Para continuar, háganos saber que no es un robot.",
+      "error": "Tu respuesta no fue correcta, inténtalo de nuevo.",
+      "submit_button_text": "Enviar"
+    },
+    "checkpoint": {
+      "message": "Resuelve Captcha para continuar",
+      "error": "La validación de captcha falló",
+      "submit_button_text": "Enviar"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Suele estar listo en 1 hora",
+        "two_hours": "Normalmente listo en 2 horas",
+        "four_hours": "Suele estar listo en 4 horas",
+        "twenty_four_hours": "Normalmente listo en 24 horas",
+        "two_to_four_days": "Por lo general, listo en 2-4 días.",
+        "five_or_more_days": "Suele estar listo en más de 5 días",
+        "zero_to_two_hours": "Normalmente listo en 2 horas",
+        "two_to_four_hours": "Suele estar listo en 4 horas",
+        "immediately": "Listo para recoger ahora",
+        "next_day": "Listo para recoger al día siguiente"
       }
     }
   },
   "general": {
     "404": {
       "title": "Extraviado",
-      "subtext_html": "La página que busca no existe"
+      "subtext_html": "La página que buscaba no existe"
     }
   },
   "cart": {
     "general": {
-      "title": "Su cesta",
+      "title": "Su carrito",
       "remove": "Eliminar",
-      "note": "Añadir una nota para el vendedor",
+      "note": "Agregar una nota para el vendedor",
       "subtotal": "Total parcial",
-      "taxes_and_shipping_at_checkout": "Impuestos y gastos de envío calculados en el momento de la compra",
-      "taxes_and_shipping_policy_at_checkout_html": "Impuestos y <a href=\"{{ link }}\">gastos de envío<\/a> calculados en el momento de la compra",
-      "taxes_included_but_shipping_at_checkout": "Impuestos incluidos y envío calculado en el momento de la compra",
-      "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a href=\"{{ link }}\">Los gastos de envío<\/a> se calculan en el momento de la compra.",
+      "taxes_and_shipping_at_checkout": "Impuestos y envío calculados al finalizar la compra.",
+      "taxes_and_shipping_policy_at_checkout_html": "Impuestos y <a href=\"{{ link }} \"> envío <\/a> calculados al finalizar la compra",
+      "taxes_included_but_shipping_at_checkout": "Impuestos incluidos y envío calculado al finalizar la compra.",
+      "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a href=\"{{ link }} \"> Envío <\/a> calculado al finalizar la compra.",
       "total": "Total",
       "price": "Precio",
       "quantity": "Cantidad",
-      "update": "Carro de la actualización",
+      "update": "Actualización de la compra",
       "checkout": "Haga su pedido",
-      "checkout_mobile": "Comprobación",
-      "empty": "Su cesta está vacía",
-      "alt_checkout": "O bien, hacer el pago con",
+      "checkout_mobile": "Verificar",
+      "empty": "tu canasta esta vacía",
+      "alt_checkout": "O pagar usando",
       "continue_browsing_html": "¡Seguir comprando!",
-      "terms_text": "Marque esta casilla para aceptar nuestros términos y condiciones",
-      "terms_text_html": "Marque esta casilla para aceptar nuestros <a target=\"_blank\" href=\"#\">términos y condiciones<\/a>",
-      "terms_agree": "Debe aceptar los términos y condiciones de venta para poder realizar la compra."
+      "terms_text": "Marque esta casilla para aceptar nuestros términos y condiciones.",
+      "terms_text_html": "Marque esta casilla para aceptar nuestros <a target=\"_blank\" href=\"#\"> términos y condiciones <\/a>",
+      "terms_agree": "Debe aceptar los términos y condiciones de venta para pagar."
     }
   },
   "contact": {
     "form": {
       "name": "Nombre",
-      "email": "Envíe un correo electrónico a",
+      "email": "Correo electrónico",
       "phone": "Número de teléfono",
       "message": "Mensaje",
       "send": "Enviar",
-      "post_success": "Gracias por contactarnos. Nos comunicaremos con usted lo antes posible."
+      "post_success": "Gracias por contactarnos. Nos comunicaremos contigo lo antes posible."
     }
   },
   "customer": {
     "account": {
       "title": "Mi cuenta",
-      "details": "Detalles de la cuenta",
+      "details": "detalles de la cuenta",
       "view_addresses": "Ver direcciones",
       "return": "Volver a los detalles de la cuenta"
     },
     "activate_account": {
       "title": "Activar la cuenta",
-      "subtext": "Cree su contraseña para activar su cuenta",
+      "subtext": "Crea tu contraseña para activar tu cuenta",
       "password": "Contraseña",
       "password_confirm": "confirmar Contraseña",
       "submit": "Activar la cuenta",
-      "cancel": "Rechazar la invitación"
+      "cancel": "Rechazar invitación"
     },
     "addresses": {
       "title": "Sus direcciones",
-      "default": "Dirección por defecto",
+      "default": "Dirección predeterminada",
       "add_new": "Añadir una nueva dirección",
       "edit_address": "Editar dirección",
       "first_name": "Primer nombre",
@@ -1095,21 +1167,21 @@
       "city": "Ciudad",
       "country": "País",
       "province": "Provincia",
-      "zip": "Postal \/ Código postal",
+      "zip": "Código postal",
       "phone": "Teléfono",
       "set_default": "Establecer como dirección predeterminada",
       "add": "Añadir dirección",
-      "update": "Actualizar la dirección",
+      "update": "Actualizar dirección",
       "cancel": "Cancelar",
       "edit": "Editar",
       "delete": "Borrar"
     },
     "login": {
       "title": "Inicio de sesión del cliente",
-      "email": "Envíe un correo electrónico a",
+      "email": "Correo electrónico",
       "password": "Contraseña",
-      "forgot_password": "¿Ha olvidado su contraseña?",
-      "sign_in": "Registrarse",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "sign_in": "Iniciar sesión",
       "cancel": "Volver a la tienda",
       "guest_title": "Continuar como invitado",
       "guest_continue": "Continuar"
@@ -1118,21 +1190,21 @@
       "title": "Historial de pedidos",
       "order_number": "Pedido",
       "date": "Fecha",
-      "payment_status": "Estado de los pagos",
+      "payment_status": "Estado de pago",
       "fulfillment_status": "Estado de cumplimiento",
       "total": "Total",
       "none": "Aún no ha realizado ningún pedido."
     },
     "order": {
-      "title": "Order {{ name }}",
-      "cancelled": "Order Cancelled on {{ date }}",
-      "cancelled_reason": "Reason: {{ reason }}",
+      "title": "Pedido {{ name  }}",
+      "cancelled": "Pedido cancelado el {{ date  }}",
+      "cancelled_reason": "Razón: {{ reason  }}",
       "billing_address": "Dirección de Envio",
-      "payment_status": "Estado de los pagos",
+      "payment_status": "Estado de pago",
       "shipping_address": "Dirección de Envío",
       "fulfillment_status": "Estado de cumplimiento",
       "discount": "Descuento",
-      "shipping": "Envío",
+      "shipping": "Transporte",
       "tax": "Impuesto",
       "details": {
         "product": "Producto",
@@ -1140,21 +1212,21 @@
         "price": "Precio",
         "quantity": "Cantidad",
         "total": "Total",
-        "fulfilled_at": "Cumplido {{ date }}",
+        "fulfilled_at": "Cumplido {{ date  }}",
         "subtotal": "Total parcial"
       }
     },
     "recover_password": {
-      "title": "Restablecer la contraseña",
-      "email": "Envíe un correo electrónico a",
+      "title": "Restablecer su contraseña",
+      "email": "Correo electrónico",
       "submit": "Enviar",
       "cancel": "Cancelar",
       "subtext": "Le enviaremos un correo electrónico para restablecer su contraseña.",
-      "success": "Te hemos enviado un correo electrónico con un enlace para actualizar tu contraseña."
+      "success": "Le enviamos un correo electrónico con un enlace para actualizar su contraseña."
     },
     "reset_password": {
       "title": "Restablecer la contraseña de la cuenta",
-      "subtext": "Ingrese una nueva contraseña para {{ email }}",
+      "subtext": "Ingrese una nueva contraseña para {{ email  }}",
       "password": "Contraseña",
       "password_confirm": "confirmar Contraseña",
       "submit": "Restablecer la contraseña"
@@ -1163,7 +1235,7 @@
       "title": "Crear una cuenta",
       "first_name": "Primer nombre",
       "last_name": "Apellido",
-      "email": "Envíe un correo electrónico a",
+      "email": "Correo electrónico",
       "password": "Contraseña",
       "submit": "Crear",
       "cancel": "Volver a la tienda"
