@@ -566,7 +566,17 @@
         "title": "Orden de procesamiento",
         "your_order_has_been_received_title": "Gracias por tu orden",
         "you_will_receive_confirmation": "Estamos recibiendo muchos pedidos en este momento. Debería recibir la confirmación por correo electrónico o mensaje de texto pronto. Si no lo recibe en la próxima hora, avísenos.",
-        "you_will_not_be_charged": "No se te cobrará todavía"
+        "you_will_not_be_charged": "No se te cobrará todavía",
+        "wait": {
+          "short": "Se está procesando su pedido.",
+          "medium": {
+            "one": "Se está procesando su pedido. El tiempo de espera estimado es de %{count } minutos.",
+            "other": "Se está procesando su pedido. El tiempo de espera estimado es de %{count } minutos."
+          },
+          "long": "Recibirás un correo electrónico tan pronto como se procese tu pedido. Actualmente hay un gran volumen de pedidos.",
+          "no_auto_refresh_html": "Si no se le redirige automáticamente, %{link }.",
+          "refresh_this_page": "actualizar esta página"
+        }
       },
       "thank_you": {
         "in_transit_description": "Recibirás actualizaciones sobre su progreso.",
@@ -660,7 +670,72 @@
           "sms": {
             "title": "O envía un enlace a tu teléfono"
           }
-        }
+        },
+        "title": "Gracias por su compra!",
+        "confirmation_email_sent_text": "Se envió un correo electrónico de confirmación a %{email }",
+        "return_to_store_link_label": "Seguir comprando",
+        "print_link_label": "Imprima el recibo",
+        "payment_information_title": "Información del pago",
+        "shipping_information_title": "Información de envío",
+        "page_title": "¡Gracias, %{display_name }!",
+        "page_title_no_name": "¡Gracias!",
+        "cancelled_page_title": "Orden cancelada",
+        "customer_information_title": "Información al cliente",
+        "contact_information_title": "Información del contacto",
+        "billing_address_title": "Dirección de Envio",
+        "shipping_address_title": "Dirección de Envío",
+        "shipping_address_map_title": "Mapa de Google que muestra el punto de referencia de la dirección de envío: %{address }",
+        "payment_method_title": "Método de pago",
+        "shipping_method_title": "Método de envío",
+        "tracking_number": "El número de rastreo:",
+        "company_tracking_number": "%{company } número de seguimiento:",
+        "estimated_arrival": "Fecha estimada de entrega:",
+        "re-order": "Reordenar los mismos artículos",
+        "confirmed": "Confirmado",
+        "gift_card_confirmation_by_text": "Las tarjetas de regalo se envían por mensaje de texto. Si no ha recibido los suyos, intente enviarlos de nuevo o contáctenos.",
+        "gift_card_confirmation_by_email": "Las tarjetas de regalo se envían por correo electrónico. Si no ha recibido los suyos, intente enviarlos de nuevo o contáctenos.",
+        "gift_card_title": "Tarjetas regalo",
+        "resend_gift_cards": "Reenviar tarjetas regalo",
+        "thank_you_title": "Tu orden esta confirmada",
+        "thank_you_title_payment": "Tu pago esta confirmado",
+        "thank_you_confirmed_order_with_email": "Recibirá un correo electrónico de confirmación con su número de pedido en breve.",
+        "thank_you_confirmed_order_with_phone": "Recibirá un mensaje de texto de confirmación con su número de pedido en breve.",
+        "thank_you_confirmed_order_with_email_and_phone": "Recibirá un correo electrónico de confirmación y un mensaje de texto con su número de pedido en breve.",
+        "thank_you_confirmed_order_with_email_payment": "Realizó un pago en su pedido %{date }.",
+        "thank_you_confirmed_order_with_phone_payment": "Realizó un pago en su pedido %{date }.",
+        "thank_you_confirmed_order_with_email_and_phone_payment": "Realizó un pago en su pedido %{date }.",
+        "thank_you_confirmed_order_with_email_pick_up": "Recibirás un correo electrónico cuando tu pedido esté listo para ser recogido.",
+        "thank_you_confirmed_order_with_phone_pick_up": "Recibirás un mensaje de texto cuando tu pedido esté listo para ser recogido.",
+        "thank_you_confirmed_order_with_email_and_phone_pick_up": "Recibirás un correo electrónico cuando tu pedido esté listo para ser recogido.",
+        "thank_you_confirmed_order_with_missing": "Contáctenos por correo electrónico o por teléfono para recibir una confirmación de pedido.",
+        "order_status_confirmed_order_with_email": "Recibirás un correo electrónico cuando tu pedido esté listo.",
+        "order_status_confirmed_order_with_phone": "Recibirás un mensaje de texto cuando tu pedido esté listo.",
+        "order_status_confirmed_order_with_email_and_phone": "Recibirás un correo electrónico y un mensaje de texto cuando tu pedido esté listo.",
+        "order_status_confirmed_order_with_email_payment": "Realizó un pago en su pedido %{date }.",
+        "order_status_confirmed_order_with_phone_payment": "Realizó un pago en su pedido %{date }.",
+        "order_status_confirmed_order_with_email_and_phone_payment": "Realizó un pago en su pedido %{date }.",
+        "order_status_confirmed_order_with_email_pick_up": "Recibirás un correo electrónico cuando tu pedido esté listo para ser recogido.",
+        "order_status_confirmed_order_with_phone_pick_up": "Recibirás un mensaje de texto cuando tu pedido esté listo para ser recogido.",
+        "order_status_confirmed_order_with_email_and_phone_pick_up": "Recibirás un correo electrónico y un mensaje de texto cuando tu pedido esté listo para ser recogido.",
+        "order_status_confirmed_order_local": "Estamos preparando su pedido para su entrega.",
+        "order_status_updates_with_email": "Recibirá actualizaciones de envío y entrega por correo electrónico.",
+        "order_status_updates_with_phone": "Recibirá actualizaciones de envío y entrega por mensaje de texto.",
+        "order_status_updates_with_email_and_phone": "Recibirá actualizaciones de envío y entrega por correo electrónico y mensaje de texto.",
+        "order_status_updates_with_missing": "Elija cómo desea recibir actualizaciones de envío.",
+        "confirmed_title": "Tu orden esta confirmada",
+        "confirmed_description": "Hemos aceptado su pedido y lo estamos preparando. Regrese a esta página para obtener actualizaciones sobre el estado de su envío.",
+        "ready_for_pickup_title": "Tu pedido está listo para ser recogido",
+        "ready_for_pickup_description": "Tu pedido está listo para ser recogido. Por favor traiga la confirmación de su pedido cuando recoja su pedido.",
+        "ready_for_delivery_title": "Su pedido está listo para su entrega.",
+        "ready_for_delivery_description": "Hemos preparado tu pedido.",
+        "order_updates_title": "Actualizaciones de pedidos",
+        "shop_phone_description": "Recibirá un mensaje de texto con un enlace a la aplicación de la Tienda para ayudar a rastrear su pedido.",
+        "order_updates_description_html": "Las actualizaciones se enviarán a %{customer_contact }",
+        "order_updates_current_step_prefix": "Paso actual:",
+        "order_updates_past_step_prefix": "Paso pasado:",
+        "order_updates_upcoming_step_prefix": "Próximo paso:",
+        "in_transit": "En su camino",
+        "in_transit_title": "Su pedido está en camino"
       },
       "review": {
         "title": "Revisar",
@@ -816,6 +891,19 @@
           "generic_error": "Hubo un problema procesando tu petición.",
           "success_message": "Su método de pago se ha eliminado correctamente."
         }
+      },
+      "failed_payment": {
+        "page_title": "No se pudo procesar el pago",
+        "title": "No se pudo procesar el pago",
+        "payment_not_processed_title": "No se pudo procesar su pago",
+        "payment_not_processed_text": "No se le ha cobrado. Regrese a su carrito para completar su compra.",
+        "return_to_cart_button_label": "Volver al carrito"
+      },
+      "payment_gateway": {
+        "credit_card_label": "Tarjeta de crédito",
+        "bank_deposit_label": "Deposito bancario",
+        "cash_on_delivery_label": "Contra reembolso (COD)",
+        "money_order_label": "Giro postal"
       }
     },
     "pagination": {
