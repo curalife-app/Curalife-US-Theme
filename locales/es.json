@@ -567,6 +567,109 @@
         "your_order_has_been_received_title": "Gracias por tu orden",
         "you_will_receive_confirmation": "Estamos recibiendo muchos pedidos en este momento. Debería recibir la confirmación por correo electrónico o mensaje de texto pronto. Si no lo recibe en la próxima hora, avísenos.",
         "you_will_not_be_charged": "No se te cobrará todavía"
+      },
+      "thank_you": {
+        "in_transit_description": "Recibirás actualizaciones sobre su progreso.",
+        "in_transit_description_days": "Debería recibir su pedido en los próximos %{number } días.",
+        "in_transit_description_today": "Debería recibir su pedido hoy.",
+        "in_transit_description_tomorrow": "Debería recibir su pedido al día siguiente.",
+        "no_tracking_number": "No hay un número de seguimiento para este pedido.",
+        "out_for_delivery": "Fuera para entrega",
+        "out_for_delivery_title": "Tu pedido está listo para la entrega",
+        "out_for_delivery_description_html": "Tu pedido está en camino y debería llegar hoy. Si no se entrega en los próximos 2 días, %{contact_us }.",
+        "out_for_delivery_local_title": "Tu pedido está listo para la entrega",
+        "out_for_delivery_local_description_html": "Tu pedido llegará pronto.",
+        "attempted_delivery": "Intento de entrega",
+        "attempted_delivery_title": "Se intentó entregar su pedido.",
+        "attempted_delivery_description_html": "Se intentó entregar su pedido, pero no fue exitoso. %{contact_us } para organizar otro intento de entrega.",
+        "attempted_delivery_local_title": "Entrega perdida",
+        "attempted_delivery_local_description_html": "No pudimos entregar su pedido. Para programar otra entrega, %{contact_us }.",
+        "delivered": "Entregado",
+        "delivered_title": "Tu pedido ha sido entregado",
+        "delivered_description_html": "Su pedido ha sido entregado a la dirección que proporcionó. Si no lo ha recibido, o si tiene algún otro problema, %{contact_us }.",
+        "delivered_local_title": "Tu pedido ha sido entregado",
+        "delivered_local_description_html": "¿No ha recibido su pedido? %{let_us_know }.",
+        "picked_up_title": "Su pedido ha sido recogido",
+        "picked_up_description_html": "Su pedido fue recogido en %{location_name } el %{date }.",
+        "contact_us": "Contáctenos",
+        "contact_us_lowercase": "Contáctenos",
+        "contact_us_html": "¿Necesitas ayuda? %{contact_us }",
+        "updated_time": "Actualizado hace %{time_ago }",
+        "failure": "No entregado",
+        "failed_title": "No se pudo entregar tu pedido",
+        "failed_contact_merchant": "Comuníquese con %{company } para organizar la entrega.",
+        "failed_contact_merchant_no_company": "Contáctenos para organizar la entrega.",
+        "non_shippable_title": "Tu orden esta completa",
+        "let_us_know": "Haznos saber",
+        "login_title": "Inicie sesión para ver todos los detalles del pedido",
+        "login_description": "Puede encontrar su número de pedido en el recibo que recibió por correo electrónico.",
+        "login_description_phone": "Puede encontrar su número de pedido en el recibo que recibió por mensaje de texto.",
+        "login_not_customer_html": "¿No es %{name }? Puede %{link }",
+        "login_reorder_link_text": {
+          "one": "compra este producto también",
+          "other": "compra estos productos también"
+        },
+        "customer_information_hidden_fields_message": "Inicie sesión para ver toda la información del cliente.",
+        "cancelled_title": "Tu pedido ha sido cancelado",
+        "cancelled_description": "Su pedido fue cancelado el %{date }. Póngase en contacto con nosotros si tiene alguna pregunta.",
+        "order_number_label": "Número de orden",
+        "customer_validation_error": "Ingrese un correo electrónico válido o un número de pedido.",
+        "customer_validation_error_phone": "Ingrese un teléfono o número de pedido válido.",
+        "login": "Iniciar sesión",
+        "unfulfilled_items_title": "Preparándose para el envío",
+        "unfulfilled_items_description": "Actualmente estamos preparando estos artículos para su envío.",
+        "marker": {
+          "current": "Ubicación actual del envío",
+          "shipping": "Dirección de Envío"
+        },
+        "pick_up_in_store_marker": {
+          "current": "Ubicación actual del envío",
+          "shipping": "Lugar de recogida"
+        },
+        "fulfillment": {
+          "fulfilled_table_title": "Artículos en este envío",
+          "unfulfilled_table_title": "Artículos que se preparan para el envío",
+          "product_image_label": "Imagen del producto",
+          "description_label": "Descripción",
+          "quantity_label": "Cantidad"
+        },
+        "opt_in_message_html": "Su información se guardó correctamente con %{shopify_pay }",
+        "order_updates_description_missing": "No está recibiendo actualizaciones de envío.",
+        "order_updates_subscribe_to_email_notifications": "Reciba actualizaciones de envío por correo electrónico",
+        "order_updates_subscribe_to_email_or_phone_notifications": "Reciba actualizaciones de envío por correo electrónico o mensaje de texto",
+        "order_updates_subscribe_to_phone_notifications": "Recibe actualizaciones de envío por mensaje de texto",
+        "order_updates_submit_subscription": "Enviar",
+        "track_shipment": "Rastrear envio",
+        "shopify_pay": {
+          "order_completed_html": "Pedido completado con %{shopify_pay }",
+          "learn_more_label": "Más información sobre Shop Pay"
+        },
+        "other_options": "Otras opciones",
+        "delivery_information_label": "Información de entrega:",
+        "gift_card_sent_confirmation": "Tarjetas de regalo enviadas",
+        "qr_code": {
+          "send_link_to_phone": "O envía un enlace a tu teléfono",
+          "title": "Seguimiento en su teléfono",
+          "subtitle": "Escanee el código con la cámara de su teléfono para rastrearlo con Shop."
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Escanea con tu teléfono",
+            "description": "La tienda le enviará actualizaciones de entrega en tiempo real una vez que se envíe su pedido."
+          },
+          "sms": {
+            "title": "O envía un enlace a tu teléfono"
+          }
+        }
+      },
+      "review": {
+        "title": "Revisar",
+        "review_title": "Revisar orden",
+        "checkout_as_guest": "Pagar como invitado",
+        "blocks": {
+          "contact_method_title": "Contacto",
+          "billing_address_title": "Facturación"
+        }
       }
     }
   },
