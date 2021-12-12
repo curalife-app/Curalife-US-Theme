@@ -6,6 +6,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="{{ page_description | escape }}">
+  {% if article.image %}
+  <meta itemprop="image" content="{{ article.image | img_url: 'original' }}">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://global.curalife.com{{ page.url }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description | escape }}">
+  <meta property="og:image" content="{{ article.image | img_url: 'original' }}">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://global.curalife.com{{ page.url }}">
+  <meta property="twitter:title" content="{{ page_title }}">
+  <meta property="twitter:description" content="{{ page_description | escape }}">
+  <meta property="twitter:image" content="{{ article.image | img_url: 'original' }}">
+  {% endif %}
+  
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {%- if settings.favicon != blank -%}
