@@ -6006,7 +6006,6 @@ footer {
                 justify-content: center;
         padding-top: 1.4%;
       width: 100%; 
-      min-width: 90vw;
       }
         .goods-list-face .a-labels ul {
           display: -webkit-box;
@@ -10859,7 +10858,8 @@ footer {
           font-size: 29px; 
           padding-bottom: 5px;}
         .goods-list-face .a-labels {
-          padding-top: 0px; }
+          padding-top: 0px; 
+        min-width: 90vw;}
   .goods-list-face .list-wrap-face {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -11712,7 +11712,8 @@ footer {
       .goods-list .list-wrap .sale-card .discount-label {
         display: block; }
       .goods-list.sale .a-labels {
-        padding-top: 0; }
+        padding-top: 0;
+        min-width: 90vw; }
       .goods-list.sale .a-labels ul li {
         width: calc(100% / 3);
         padding: 5px 8px;
