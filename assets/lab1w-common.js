@@ -50,8 +50,8 @@ const doctorsSlider = new Swiper('.doctors-list .list-slider .swiper-container',
     grabCursor: true,
     loop: false,
     navigation: {
-        nextEl: '.next-slide',
-        prevEl: '.prev-slide',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
         disabledClass: 'disabled'
     },
     pagination: {
@@ -79,8 +79,8 @@ const seenSlider = new Swiper('.seen-on .seen-slider .swiper-container', {
     grabCursor: true,
     loop: false,
     navigation: {
-        nextEl: '.next-slide',
-        prevEl: '.prev-slide',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
         disabledClass: 'disabled'
     },
     breakpoints: {
