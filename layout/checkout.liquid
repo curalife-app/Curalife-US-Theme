@@ -72,7 +72,7 @@
 
   {%- if customer -%}
   woopra.identify({
-    id: {{ customer.id | json }},
+    customer_id: {{ customer.id | json }},
     name: {{ customer.name | json }},
     email: {{ customer.email | json }},              
     order_count: {{ customer.orders_count | json }},
