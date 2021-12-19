@@ -41,6 +41,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" defer="defer"></script>
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 
+  {% assign canonical = %}
 {% if request.path | slice: 1,2 == '/es' %}
 <link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: shop.domain, 'curalife.com' | replace: "/es", '' }}" />
 <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'global.curalife.com' | replace: "/es", '' }}" hreflang="en-GB" />
@@ -74,6 +75,7 @@
 {% include 'hot-jar'%}
   {% section 'header'%}
   <p>{{canonical_url}}</p>
+  <p>{{shop.domain}}</p>
   <main role="main">
     {{ content_for_layout }}
     
