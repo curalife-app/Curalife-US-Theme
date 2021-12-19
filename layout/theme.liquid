@@ -47,6 +47,10 @@
 <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="en-US" />
 <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="en" />
 <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com/es' }}" hreflang="es" />
+
+{% if request.path | slice: 1,2 == '/es' %}
+
+{% endif %}
   
 {% if template contains 'customers' %}
     {{ "shopify_common.js" | shopify_asset_url | script_tag }}
@@ -66,7 +70,7 @@
 {% include 'google-tag-manager-noscript'%}
 {% include 'hot-jar'%}
   {% section 'header'%}
-  <p id="test">{{ request.path }}</p>
+  <p>{{canonical_url | replace: shop.domain}}</p>
   <main role="main">
     {{ content_for_layout }}
     
