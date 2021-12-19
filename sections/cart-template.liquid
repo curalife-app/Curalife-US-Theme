@@ -29,11 +29,7 @@
                             </div>
                         </td>
                         <td class="name">
-                            {% if item.product.metafields.my_fields.alternative_title.value %}
-                          <p>{{ item.product.metafields.my_fields.alternative_title.value }}</p>
-                          {% else %}
                           <p>{{ item.product.title }}</p>
-                          {% endif %}
                             <div class="remove-item" data-variant="{{item.variant.id}}" data-price ="{{ item.original_price | money }}" data-title="{{ item.product.title }}" data-id="{{ item.product.id }}">
                                 <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove</a>
                             </div>
@@ -74,13 +70,18 @@
           {% else %}
           <div class="emty_crt">
               <h2>Your cart is currently empty.</h2>
-              <a href="https://curalife.com/collections/all" class="main-btn">Continue shopping</a>
+              <a href="/collections/all" class="main-btn">Continue shopping</a>
           </div>
             {% endif %}
         </div>
     </div>
 </div>
+<style>
+.main-btn{
 
+width:100%;
+}
+</style>
 {% schema %}
   {
     "name": "Cart",
@@ -127,9 +128,9 @@
 {% javascript %}
 {% endjavascript %}
 <style>
-    body{
-        overflow-x: hidden;
-    }
+  body{
+    overflow-x: hidden;
+  }
   .emty_crt .main-btn {
     max-width: 260px;
 }
@@ -137,19 +138,5 @@
     text-align: center;
    margin-top: 50px;
 }
-p.afterpay-paragraph {
-    position: relative;
-    top: 80px;
-    text-align: left !important;
-}
 
-input#update_quantities {
-    bottom: 40px;
-}
-input#cart_submit {
-    width: 100%;
-}
-input#update_quantities {
-    width: 100%;
-}
 </style>

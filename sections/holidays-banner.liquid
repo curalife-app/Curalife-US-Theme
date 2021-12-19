@@ -1,0 +1,454 @@
+<div class="holidays-banner">
+    <div class="banner-slides">
+        <div class="banner-prev-slide nav-slide">
+          <img src="{{ 'icon-left-arrow.svg' | asset_url }}" alt="">
+        </div>
+        <div class="banner-next-slide nav-slide">
+          <img src="{{ 'icon-right-arrow.svg' | asset_url }}" alt="">
+      </div>
+        <div class="main-slider">
+            <div class="swiper-container" data-swiper="{'observer': true}">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide-healthy">
+                      <img src="{{ 'holidays-banner-bg-stars.png' | asset_url }}" alt="" class="bg-stars desktop">
+                      <img src="{{ 'holidays-banner-bg-stars-mobile.png' | asset_url }}" alt="" class="bg-stars mobile">
+                        <div class="container snow-animation-container">
+                          <div class="banner-content">
+                            <div class="titles">
+                              <p class="subtitle">'Tis the seasone to be</p>
+                              <p class="main-title">HEALTHY</p>
+                              <p class="subtitle bottom"></p>
+                            </div>
+                            <a href="/collections/all">
+                                <button class="cta">SHOP NOW</button>
+                            </a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide-energetic">
+                      <img src="{{ 'holidays-banner-bg-stars.png' | asset_url }}" alt="" class="bg-stars desktop">
+                      <img src="{{ 'holidays-banner-bg-stars-mobile.png' | asset_url }}" alt="" class="bg-stars mobile">
+                        <div class="container snow-animation-container">
+                          <div class="banner-content">
+                            <div class="titles">
+                              <p class="subtitle">'Tis the seasone to be</p>
+                              <p class="main-title">ENERGETIC</p>
+                              <p class="subtitle bottom"></p>
+                            </div>
+                            <a href="/collections/all">
+                                <button class="cta">SHOP NOW</button>
+                            </a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide-happy">
+                      <img src="{{ 'holidays-banner-bg-stars.png' | asset_url }}" alt="" class="bg-stars desktop">
+                      <img src="{{ 'holidays-banner-bg-stars-mobile.png' | asset_url }}" alt="" class="bg-stars mobile">
+                        <div class="container snow-animation-container">
+                          <div class="banner-content">
+                            <div class="titles">
+                              <p class="subtitle">'Tis the seasone to be</p>
+                              <p class="main-title">HAPPY</p>
+                              <p class="subtitle bottom"></p>
+                            </div>
+                            <a href="/collections/all">
+                                <button class="cta">SHOP NOW</button>
+                            </a>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide-giving">
+                      <img src="{{ 'holidays-banner-bg-stars.png' | asset_url }}" alt="" class="bg-stars desktop">
+                      <img src="{{ 'holidays-banner-bg-stars-mobile.png' | asset_url }}" alt="" class="bg-stars mobile">
+                        <div class="container snow-animation-container">
+                          <div class="banner-content">
+                            <div class="titles">
+                              <p class="subtitle">'Tis the seasone to be</p>
+                              <p class="main-title">GIVING</p>
+                              <p class="subtitle bottom bg">BUNDLE DEALS YOU DON'T WANT TO MISS THIS SEASON</p>
+                            </div>
+                            <a href="/collections/all">
+                                <button class="cta">SHOP NOW</button>
+                            </a>
+                          </div>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-bottom-line">
+        <span>What can
+        </span><img src="{{ 'logo-white.png' | asset_url }}"><span>
+            do for you?</span>
+    </div>
+</div>
+
+{% schema %}
+
+{
+    "name": "Home Holidays Banner",
+    "settings": [],
+    "presets": [
+        {
+            "name": "Home Banner",
+            "category": "Home"
+        }
+    ]
+}
+
+{% endschema %}
+
+{% style %}
+
+@import url('https://fonts.googleapis.com/css2?family=Pridi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Pridi&display=swap');
+
+.slide-healthy {background-image: url('{{ 'holidays-banner-bg-healthy.png' | asset_url }}')}
+.slide-energetic {background-image: url('{{ 'holidays-banner-bg-energetic.png' | asset_url }}')}
+.slide-happy {background-image: url('{{ 'holidays-banner-bg-happy.png' | asset_url }}')}
+.slide-giving {background-image: url('{{ 'holidays-banner-bg-giving.png' | asset_url }}')}
+
+.swiper-slide {
+  background-size: cover;
+  height: 35vw;
+  background-position: right;
+  max-height: 50vw;
+}
+
+.main-slider {
+  max-height: 50vw;
+}
+
+.bg-stars {
+  position: absolute;
+    right: 0;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 80%;
+}
+
+.bg-stars.mobile {
+  display: none;
+}
+
+.banner-slides {
+  position: relative;
+}
+
+.nav-slide {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  cursor: pointer;
+}
+
+.nav-slide.banner-prev-slide {
+  left: 20px;
+}
+
+.nav-slide.banner-next-slide {
+  right: 20px;
+}
+
+.nav-slide img {
+  height: 50px;
+  filter: invert(1);
+}
+
+.nav-slide.disabled {
+  opacity: 50%;
+}
+
+.banner-content {
+  position: absolute;
+  font-size: 35px;
+  left: calc(60% + 5vw);
+  top: 30%;
+}
+
+.titles {
+  font-family: 'Pridi', serif;
+  color: #E5D377;
+  text-shadow: 0px 2.9px 2.9px rgb(0 0 0 / 25%);
+  max-width: 410px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 2vw;
+}
+
+.subtitle.bottom {
+  font-size: 1.5vw;
+  min-height: 60px;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 5vw;
+}
+
+.banner-bottom-line {
+  font-family: 'Abhaya Libre', serif;
+  background-color: #28824F;
+    color: white;
+    font-size: 34px;
+    padding: 5px;
+    text-align: center;
+}
+
+.banner-bottom-line img {
+  height: 40px;
+  margin-top: -24px;
+  padding: 0 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.holidays-banner button {
+  background-color: white;
+  margin-top: 3vw;
+  color: #28824F;
+  font-weight: bold;
+  border: unset;
+  border-radius: 3px;
+  padding: 10px 40px;
+  box-shadow: 0px 2.9px 2.9px rgba(0, 0, 0, 0.25);
+  font-size: 2vw;
+}
+
+.snow-animation-container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 760px){
+  .slide-healthy {background-image: url('{{ 'holidays-banner-bg-healthy-mobile.png' | asset_url }}')}
+  .slide-energetic {background-image: url('{{ 'holidays-banner-bg-energetic-mobile.png' | asset_url }}')}
+  .slide-happy {background-image: url('{{ 'holidays-banner-bg-happy-mobile.png' | asset_url }}')}
+  .slide-giving {background-image: url('{{ 'holidays-banner-bg-giving-mobile.png' | asset_url }}')}
+
+  .swiper-slide {
+    max-height: unset;
+    height: calc(100vh - 100px);
+    background-position: top;
+  }
+
+  .bg-stars.desktop {
+    display: none;
+  }
+
+  .bg-stars.mobile {
+    display: block;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .main-slider {
+    max-height: unset;
+  }
+
+  .banner-content {
+    left: unset;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    position: static;
+  }
+
+  .banner-content .titles {
+    max-width: unset;
+  }
+
+  .banner-content .titles .main-title {
+    font-size: 17vw;
+  }
+
+  .banner-content .titles .subtitle {
+    font-size: 8vw;
+  }
+
+  .banner-content .titles .subtitle.bottom {
+    font-size: 7vw;
+    padding: 10px;
+    margin-top: -7px;
+  }
+
+  .banner-content .titles .subtitle.bottom.bg {
+    background-color: #C00101;
+  }
+
+  .banner-content button {
+    position: absolute;
+    bottom: 20px;
+    width: 70%;
+    left: 15%;
+    font-size: 7vw;
+  }
+
+  .banner-bottom-line {
+    font-size: 25px;
+  }
+
+  .banner-bottom-line img {
+    height: 30px;
+    margin-top: -20px;
+    padding: 0px 5px;
+  }
+}
+
+{% endstyle %}
+
+{% javascript %}
+$(document).ready(documentReady);
+
+function documentReady()
+{
+	var MAX_SNOW 		= 200;
+
+	var MAX_SNOW_SIZE 	= 7;
+
+	var MAX_SNOW_SPEED 	= 3;
+
+	snowStart();
+
+	function snowStart() {
+
+		console.log("// Snow animation start");
+
+		createSnows();
+	}
+
+	function createSnows() {
+
+		var container = $(".snow-animation-container");
+
+		for (var i = 0; i < MAX_SNOW; i++) {
+
+			var appendItem	= getRandomItem(i);
+			container.append(appendItem);
+
+			var animateItem = $(".snow" + String(i));
+			var randomTime 	= Math.random() * MAX_SNOW_SPEED;
+			goAnimate(animateItem, i, randomTime);
+			goAnimate2(animateItem);
+		};
+
+		console.log("// Create snows");
+	}
+
+	function goAnimate(item, id, randomTime) {
+		TweenMax.to(item, randomTime, {css:{marginTop:"+=100"}, ease:Linear.easeNone, onComplete:function() { 
+
+			var topPosition = item.css("margin-top").replace("px","");
+
+			if (topPosition > $(window).height()) {
+				changePosition(item);
+				randomTime = Math.random() * MAX_SNOW_SPEED;
+				goAnimate(item, id, randomTime);
+			}
+			else {
+				goAnimate(item, id, randomTime);
+			}
+
+		}});
+	}
+
+	function goAnimate2(item) {
+
+		var directionTime 	= 1 + Math.floor( Math.random() * 5 );
+
+		var randomDirection = 1 + Math.floor( Math.random() * 4 );
+
+		var delayTime		= 1 + Math.floor( Math.random() * 3 );
+
+		if (randomDirection == 1){
+
+			TweenMax.to(item, directionTime, {css:{marginLeft:"+=100"}, ease:Linear.easeOut, onComplete:function() {
+
+				TweenMax.to(item, directionTime, {css:{marginLeft:"-=100"}, delay:delayTime, ease:Linear.easeOut, onComplete:function() { 
+
+					goAnimate2(item);
+
+				}});
+			}});
+		}
+		else if(randomDirection == 2)
+		{
+
+			TweenMax.to(item, directionTime, {css:{marginLeft:"-=100"}, ease:Linear.easeOut, onComplete:function() { 
+
+				TweenMax.to(item, directionTime, {css:{marginLeft:"+=100"}, delay:delayTime, ease:Linear.easeOut, onComplete:function() { 
+
+					goAnimate2(item);
+
+				}});
+			}});
+		}
+		else if(randomDirection == 3)
+		{
+
+			TweenMax.to(item, directionTime, {css:{marginLeft:"+=100"}, ease:Linear.easeOut, onComplete:function() { 
+
+				goAnimate2(item);
+
+			}});
+		}
+		else if(randomDirection == 4)
+		{
+
+			TweenMax.to(item, directionTime, {css:{marginLeft:"-=100"}, ease:Linear.easeOut, onComplete:function() { 
+
+				goAnimate2(item);
+
+			}});
+		}
+	}
+
+	function changePosition(item) {
+		var _width 	= Math.floor( Math.random() * MAX_SNOW_SIZE );
+		var _height = _width;
+		var _blur 	= Math.floor( Math.random() * 5+2 );
+		var _left 	= Math.floor( Math.random() * ($(window).width() - _width) );
+		var _top 	= -$(window).height() + Math.floor( Math.random() * ($(window).height() - _height) );
+
+		item.css("width", _width);
+		item.css("height", _height);
+		item.css("margin-left", _left);
+		item.css("margin-top", _top);
+		item.css("-webkit-filter", "blur(" + String(_blur) + "px)");
+		item.css("-moz-filter", "blur(" + String(_blur) + "px)");
+		item.css("-o-filter", "blur(" + String(_blur) + "px)");
+		item.css("-ms-filter", "blur(" + String(_blur) + "px)");
+		item.css("filter", "blur(" + String(_blur) + "px)");
+	}
+
+	function getRandomItem(id) {
+		var _width 	= Math.floor( Math.random() * MAX_SNOW_SIZE );
+		var _height = _width;
+		var _blur 	= Math.floor( Math.random() * 5+2 );
+		var _left 	= Math.floor( Math.random() * ($(window).width() - _width) );
+		var _top 	= -$(window).height() + Math.floor( Math.random() * ($(window).height() - _height) );
+		var _id 	= id;
+
+		return getSmallSnow(_width, _height, _blur, _left, _top, _id);
+	}
+
+	function getSmallSnow(width, height, blur, left, top, id) {
+
+		var item = "<div class='snow" + id + "' style='position:absolute; margin-left: " + left + "px; margin-top: " + top + "px; width: " + width + "px; height: " + height + "px; border-radius: 50%; background-color: white; -webkit-filter: blur(" + blur +"px); -moz-filter: blur(" + blur + "px); -o-filter: blur(" + blur + "px); -ms-filter: blur(" + blur + "px); filter: blur(" + blur + "px);'></div>"
+
+		return item;
+	}
+
+
+}
+
+
+{% endjavascript %}

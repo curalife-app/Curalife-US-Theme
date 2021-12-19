@@ -1,79 +1,57 @@
 <div class="catalog-page">
     <div class="container">
-        <div class="mini-wrap">
-            <h1>Choose Your CuraLin Bundle</h1>
-            <div class="product-list">
+        <h1>Get Free CuraLin + Our Delicious Cookbook!</h1>
+            <div class="product-list">  
                 {% for product in collection.products  -%}
-                <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
-                        <div class="wrap">
-                            <div class="picture">
-                                {% if section.settings.prdct_bgimg != blank %}
-                                    <div class="bg">
-                                        <img src="{{section.settings.prdct_bgimg | img_url: ''}}" alt="">
-                                    </div>
-                                {% endif %}
-
-                                {% if product.featured_image.src != blank %}
-                                    <a href="{{ product.url }}">
-                                        <div class="img">
-                                            <img src="{{ product.featured_image.src | img_url: '500x500' }}" alt="">
-                                        </div>
-                                    </a>
-                                {% endif %}
-                                <div class="discount">
-
-                                    {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-                                    {% assign quantity_by_cents = quantity | times: 100 %}
-                                    {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-                                    {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
-
-                                    {% if quantity > 1 %}
-                                        <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
-                                    {% elsif product.compare_at_price_max > product.price %}
-                                        <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <div class="info">
-                                <div class="main">
-                                    <div class="name">
-                                        <h3>
-                                            {% if product.metafields.my_fields.alternative_title.value %}
+                <div class="product-card" style="width: 50%">
+                    <div class="wrap">
+                        <div class="info"> 
+                            <div class="main">
+                                <div class="name">
+                                    <h3>
+                                      {% if product.metafields.my_fields.alternative_title.value %}
                                             <a href="{{ product.url }}">{{ product.metafields.my_fields.alternative_title.value }}</a>
                                             {% else %}
                                             <a href="{{ product.url }}">{{ product.title }}</a>
                                             {% endif %}
-                                        </h3>
-                                    </div>
-                                    <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
-                                    <div class="price">
-                                        {% if quantity > 1 %}
-                                            <p id="divided-price">{{ item_price | money_without_trailing_zeros }}<strike>{{ original_item_price | money_without_trailing_zeros }}</strike> Per Bottle</p>
-                                        {% elsif product.compare_at_price > product.price %}
-                                            <p id="discounted-price">{{ product.price | money_without_trailing_zeros }}<strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike></p>
-                                        {% else %}
-                                            <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
-                                        {% endif %}
-                                    </div>
+                                  </h3>
                                 </div>
-                                <form action="/cart/add" method="post">
-                                    <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
-                                    <input name="return_to" type="hidden" value="/cart/">
+                                <div class="price">
+                                    <p>{{ product.price | money }}<strike>{{ product.metafields.my_fields.original_price }}</strike></p>
+                                </div>
+                            </div>
+                            <div class="gift"> 
+                                <p class="gift-title">{{ product.metafields.my_fields.gift_title.value }}</p>
+                                <p class="gift-value"><b>Gift Value: {{ product.metafields.my_fields.gift_value.value }}</b></p>
+                            </div>
+                             <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                <input type="hidden" name="return_to" value="/cart/">
+                                
 
-
-                                    <div class="btn">
-                                        <button class="main-btn" id='AddTCart' type="submit">
-                                            <i class="icon-cart"></i>
-                                            Add To Cart
-                                        </button>
-
-                                    </div>
-                                </form>
-
-
+                                <div class="btn">
+                                    <button type="submit" id='AddTCart' class="main-btn"><i class="icon-cart"></i> Add To Cart
+                                    </button>
+                                   
+                                </div>
+                            </form>                        </div>
+                        <div class="picture">
+                            {% if product.featured_image.src != blank %}
+                            <a href="{{ product.url }}">
+                            <div class="img">
+                                <img src="{{ product.featured_image.src | img_url: '300x300' }}" alt="">
+                            </div>
+                            </a>
+                            {% endif %}
+                        </div> 
+                        <div class="badge">
+                            <img src="{{ 'holidays-product-badge.png' | asset_url }}" alt="" class="gift-icon">
+                            <div class="badge-description-wrapper">
+                                <p class="badge-description">{{ product.metafields.my_fields.badge_title.value }}</p>
                             </div>
                         </div>
                     </div>
+                </div>
                 {% endfor %}
               
 	<script>
@@ -108,63 +86,205 @@
       'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
       });
     });
-</script>              
-              
-              
-
+</script>
+                
             </div>
         </div>
-    </div>
 </div>
 
 {% schema %}
-
-{
-    "name": "Collection Products",
-    "class": "collection-products",
-    "settings": [
-        {
-            "type": "image_picker",
-            "id": "prdct_bgimg",
-            "label": "Select Product Background Image"
-        }, {
-            "type": "image_picker",
-            "id": "clcbnr_btmimg",
-            "label": "Select Bottom Banner Image"
-        }
-    ]
-}
-
+    {
+        "name": "Collection Products",
+        "class": "collection-products",
+        "settings": [
+            
+            {
+              "type": "image_picker",
+              "id": "prdct_bgimg",
+              "label": "Select Product Background Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "clcbnr_btmimg",
+              "label": "Select Bottom Banner Image"
+            }    
+           
+            
+        ] 
+        
+    }
 {% endschema %}
 
 {% style %}
-
 .catalog-page h1 {
     text-align: center;
     padding-top: 30px;
 }
 
-.price p strike {
-    color: #01C6B2;
+.product-list {
+    padding: 20px;
+    padding-bottom: 100px;
 }
 
-.supply-days {
+.product-card .wrap {
+    border: unset;
+    border-top: 10px solid #C00101;
+    flex-direction: row;
+    align-items: end;
+    box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
+    position: sticky;
+}
+
+.product-card .picture {
+    background-color: unset;
+    width: 60%;
+    height: 250px;
+}
+
+.product-card .picture .img {
+    display: flex;
+    align-items: end;
+}
+
+.product-card .info {
+    width: 40%;
+}
+
+.product-card .info .name h3 {
+    text-align: left;
+}
+
+.product-card .info .price p {
+    text-align: left;
+}
+
+.product-card .info .btn .main-btn {
+    background-color: #28824F;
+    border-color: #28824F;
+}
+
+.product-card .info .price p strike {
+    color: #C00101;
+}
+
+.product-card .info .main {
+    position: absolute;
+    top: 15px;
+}
+
+.product-card .info .gift {
+    top: 70px;
+    position: absolute;
+    max-width: 50%;
+}
+
+.product-card .info form {
+    margin-top: 160px;
+    margin-bottom: 40px;
+}
+
+.product-card .info .gift .gift-title {
+    color: #C00101;
+    font-size: 20px;
+    line-height: 2rem;
+    margin-bottom: 5px;
+}
+
+.product-card .info .gift .gift-value {
+    margin: 0;
+}
+
+.product-card .badge {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 5;
+}
+
+.product-card .badge img {
+    height: 130px;
+}
+
+.product-card .badge .badge-description-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product-card .badge .badge-description {
+    position: absolute;
+    top: 63px;
+    width: 70%;
     font-size: 16px;
+    font-weight: bold;
+    margin: auto;
     text-align: center;
-    line-height: 0;
-    font-weight: 200;
+    color: #C00101;
 }
 
-@media screen and (max-width: 760px) {
-    .product-card {
-        width: 100% !important;
+.product-card .btn .main-btn {
+    padding: 0px 5px;
+}
+
+@media screen and (max-width: 1400px) {
+    .product-card .info .gift .gift-title {
+        font-size: 16px;
     }
 }
 
+@media screen and (max-width: 760px) {
+    .product-list {
+        padding: 0;
+        padding-bottom: 20px;
+    }
+
+    .product-card .picture .img img {
+        margin-bottom: 10px;
+    }
+
+    .product-card .info .main {
+        top: 0;
+    }
+
+    .product-card .info .gift {
+        top: 90px;
+    }
+
+    .product-card .info .gift .gift-title {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.2rem;
+    }
+
+    .product-card .info .gift .gift-title {
+        font-size: 16px;
+    }
+
+    .product-card {
+        width: 100% !important;
+    }
+
+    .product-card .badge img {
+        height: 120px;
+    }
+
+    .product-card .badge .badge-description {
+        top: 57px;
+        font-size: 15px;
+    }
+
+    .product-card .info .btn .main-btn {
+        font-size: 3vw;
+        line-height: 4vw;
+        padding: 2vw;
+    }
+
+    .product-card .info .btn .main-btn i {
+        display: none;
+    }
+}
 {% endstyle %}
 
 {% javascript %}
-
-
-
 {% endjavascript %}

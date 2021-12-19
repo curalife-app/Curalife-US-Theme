@@ -2,30 +2,25 @@
     <div class="container">
 
         <div class="header">
-            <img src="{{ section.settings.spoon-image | img_url: 'master' }}" alt="wooden spoon" class="spoon corner-image" loading="lazy">
+            <img src="{{ 'holidays-cookbook-stuff.png' | asset_url }}" alt="wooden spoon" class="spoon corner-image" loading="lazy">
             <div class="title-container">
                 
                 <h1 class="main-title">
-                    <span class="top"><img src="{{ section.settings.chef-icon | img_url: 'master' }}" alt="chef icon" loading="lazy">Diabetes-Friendly</span><br>
+                    <span class="top"><img src="{{ 'holidays-logo.png' | asset_url }}" alt="chef icon" loading="lazy"></span><br>
                     <span class="bottom">CookBook</span>
                 </h1>
             </div>
-            <img src="{{ section.settings.pot-image | img_url: 'master' }}" alt="pink pot" class="pot corner-image" loading="lazy">
+            <img src="{{ 'holidays-cookbook-stuff-2.png' | asset_url }}" alt="pink pot" class="pot corner-image" loading="lazy">
         </div>
 
         <div class="cookbook-content">
-            <div class="image-container">
-                <img class="cookbook-image" src="{{ section.settings.cookbook-image | img_url: 'master' }}" alt="the curalife cookbook" loading="lazy">
-                <img class="pen" src="{{ section.settings.pen-image | img_url: 'master' }}" alt="pen" loading="lazy">
-            </div>
             <div class="content">
-                <div class="description">Download our free e-book with 67 amazing diabetic-friendly recipes for you to enjoy!</div>
-                <div class="download-cta"><a class="download-cookbook" href="https://cdn.shopify.com/s/files/1/0452/2459/1511/files/Diabetic-Friendly-Cookbook.pdf" download><p class="download-cookbook">Click Here to Download</p></a></div>
-                <div class="gallery">
-                    <img src="{{ section.settings.gallery-image-1 | img_url: 'master' }}" alt="diabetes image" loading="lazy">
-                    <img src="{{ section.settings.gallery-image-2 | img_url: 'master' }}" alt="diabetes image" loading="lazy">
-                    <img src="{{ section.settings.gallery-image-3 | img_url: 'master' }}" alt="diabetes image" loading="lazy">
-                </div>
+                <div class="description">Download our free e-book for a healthy & delicious blood sugar friendly diet!</div>
+                {% if customer %}
+                <div class="download-cta"><a class="download-cookbook" href="{{ 'curalifes-cookbook.pdf' | asset_url }}" download><p class="download-cookbook">Click Here to Download</p></a></div>
+                <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 400px;" src="https://heyzine.com/flip-book/c0b08e6535.html"></iframe>                {% else %}
+                <div class="download-cta disabled"><p class="download-cookbook">Please Login To Download</p></div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -163,6 +163,27 @@ $(document).ready(function () {
 		},
     });
 
+    bannerSlider = new Swiper('.banner-slides .main-slider .swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        watchSlidesVisibility: true,
+        loop: false,
+        slideToClickedSlide: false,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        autoplay: {
+            delay: 5000,
+          },
+      
+        navigation: {
+            nextEl: '.banner-next-slide',
+            prevEl: '.banner-prev-slide',
+            disabledClass: 'disabled'
+        }
+      });
+
 
 
 

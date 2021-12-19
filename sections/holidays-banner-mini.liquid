@@ -1,0 +1,245 @@
+<div class="holidays-banner snow-animation-container">
+  <img src="{{ 'holidays-banner-bg-stars.png' | asset_url }}" alt="" class="bg-stars">
+  <img src="{{ 'holidays-banner-bg-stars.png' | asset_url }}" alt="" class="bg-stars right">
+    <div class="banner-content">
+      <p class="main-title first">BUNDLE DEALS</p>
+      <p class="main-title second">FOR THE HOLIDAY SEASON</p>
+    </div>
+</div>
+
+
+{% style %}
+
+@import url('https://fonts.googleapis.com/css2?family=Pridi&display=swap');
+
+.holidays-banner {
+  display: flex;
+  justify-content: space-between;
+  background-color: #C00101;
+  position: relative;
+}
+
+.banner-content {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.bg-stars {
+  position: absolute;
+  z-index: 1;
+  opacity: 80%;
+  width: 25%;
+  transform: scaleX(-1);
+}
+
+.bg-stars.right {
+  right: 0;
+  transform: unset;
+}
+
+.main-title {
+  font-family: 'Pridi', serif;
+  color: #E5D377;
+  text-shadow: 0px 2.9px 2.9px rgb(0 0 0 / 25%);
+  margin: 0;
+  font-size: 50px;
+  display: inline-block;
+}
+
+.main-title.first {
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-right: 20px;
+}
+
+.main-title.second {
+  font-size: 40px;
+}
+
+.main-title b {
+  font-size: 70px;
+  letter-spacing: 5px;
+}
+
+.snow-animation-container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 760px){
+  .main-title {
+    padding: 20px 10px;
+    font-size: 35px;
+    display: block;
+  }
+
+  .main-title.first {
+    margin-right: unset;
+    font-size: 12vw;
+    padding-bottom: 0;
+  }
+
+  .main-title.second {
+    font-size: 7vw;
+    padding-top: 0;
+  }
+
+  .bg-stars {
+    width: 50%;
+    height: 200%;
+    object-fit: cover;
+  }
+}
+
+{% endstyle %}
+
+{% javascript %}
+$(document).ready(documentReady);
+
+function documentReady()
+{
+	var MAX_SNOW 		= 200;
+
+	var MAX_SNOW_SIZE 	= 7;
+
+	var MAX_SNOW_SPEED 	= 3;
+
+	snowStart();
+
+	function snowStart() {
+
+		console.log("// Snow animation start");
+
+		createSnows();
+	}
+
+	function createSnows() {
+
+		var container = $(".snow-animation-container");
+
+		for (var i = 0; i < MAX_SNOW; i++) {
+
+			var appendItem	= getRandomItem(i);
+			container.append(appendItem);
+
+			var animateItem = $(".snow" + String(i));
+			var randomTime 	= Math.random() * MAX_SNOW_SPEED;
+			goAnimate(animateItem, i, randomTime);
+			goAnimate2(animateItem);
+		};
+
+		console.log("// Create snows");
+	}
+
+	function goAnimate(item, id, randomTime) {
+		TweenMax.to(item, randomTime, {css:{marginTop:"+=100"}, ease:Linear.easeNone, onComplete:function() { 
+
+			var topPosition = item.css("margin-top").replace("px","");
+
+			if (topPosition > $(window).height()) {
+				changePosition(item);
+				randomTime = Math.random() * MAX_SNOW_SPEED;
+				goAnimate(item, id, randomTime);
+			}
+			else {
+				goAnimate(item, id, randomTime);
+			}
+
+		}});
+	}
+
+	function goAnimate2(item) {
+
+		var directionTime 	= 1 + Math.floor( Math.random() * 5 );
+
+		var randomDirection = 1 + Math.floor( Math.random() * 4 );
+
+		var delayTime		= 1 + Math.floor( Math.random() * 3 );
+
+		if (randomDirection == 1){
+
+			TweenMax.to(item, directionTime, {css:{marginLeft:"+=100"}, ease:Linear.easeOut, onComplete:function() {
+
+				TweenMax.to(item, directionTime, {css:{marginLeft:"-=100"}, delay:delayTime, ease:Linear.easeOut, onComplete:function() { 
+
+					goAnimate2(item);
+
+				}});
+			}});
+		}
+		else if(randomDirection == 2)
+		{
+
+			TweenMax.to(item, directionTime, {css:{marginLeft:"-=100"}, ease:Linear.easeOut, onComplete:function() { 
+
+				TweenMax.to(item, directionTime, {css:{marginLeft:"+=100"}, delay:delayTime, ease:Linear.easeOut, onComplete:function() { 
+
+					goAnimate2(item);
+
+				}});
+			}});
+		}
+		else if(randomDirection == 3)
+		{
+
+			TweenMax.to(item, directionTime, {css:{marginLeft:"+=100"}, ease:Linear.easeOut, onComplete:function() { 
+
+				goAnimate2(item);
+
+			}});
+		}
+		else if(randomDirection == 4)
+		{
+
+			TweenMax.to(item, directionTime, {css:{marginLeft:"-=100"}, ease:Linear.easeOut, onComplete:function() { 
+
+				goAnimate2(item);
+
+			}});
+		}
+	}
+
+	function changePosition(item) {
+		var _width 	= Math.floor( Math.random() * MAX_SNOW_SIZE );
+		var _height = _width;
+		var _blur 	= Math.floor( Math.random() * 5+2 );
+		var _left 	= Math.floor( Math.random() * ($(window).width() - _width) );
+		var _top 	= -$(window).height() + Math.floor( Math.random() * ($(window).height() - _height) );
+
+		item.css("width", _width);
+		item.css("height", _height);
+		item.css("margin-left", _left);
+		item.css("margin-top", _top);
+		item.css("-webkit-filter", "blur(" + String(_blur) + "px)");
+		item.css("-moz-filter", "blur(" + String(_blur) + "px)");
+		item.css("-o-filter", "blur(" + String(_blur) + "px)");
+		item.css("-ms-filter", "blur(" + String(_blur) + "px)");
+		item.css("filter", "blur(" + String(_blur) + "px)");
+	}
+
+	function getRandomItem(id) {
+		var _width 	= Math.floor( Math.random() * MAX_SNOW_SIZE );
+		var _height = _width;
+		var _blur 	= Math.floor( Math.random() * 5+2 );
+		var _left 	= Math.floor( Math.random() * ($(window).width() - _width) );
+		var _top 	= -$(window).height() + Math.floor( Math.random() * ($(window).height() - _height) );
+		var _id 	= id;
+
+		return getSmallSnow(_width, _height, _blur, _left, _top, _id);
+	}
+
+	function getSmallSnow(width, height, blur, left, top, id) {
+
+		var item = "<div class='snow" + id + "' style='position:absolute; margin-left: " + left + "px; margin-top: " + top + "px; width: " + width + "px; height: " + height + "px; border-radius: 50%; background-color: white; -webkit-filter: blur(" + blur +"px); -moz-filter: blur(" + blur + "px); -o-filter: blur(" + blur + "px); -ms-filter: blur(" + blur + "px); filter: blur(" + blur + "px);'></div>"
+
+		return item;
+	}
+
+
+}
+
+
+{% endjavascript %}
