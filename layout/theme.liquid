@@ -66,7 +66,7 @@
 {% include 'google-tag-manager-noscript'%}
 {% include 'hot-jar'%}
   {% section 'header'%}
-
+  {{ request.path | slice: 1,2}}
   <main role="main">
     {{ content_for_layout }}
     
