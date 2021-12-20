@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html>
+<head>
+  <!-- liquid theme global-->
+ <!-- Redirect By Global Or US -->
+<script src="{{ 'redirect-by-location.js' | asset_url }}" async></script>
+  
+  
+  <title>{{ page_title }}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="title" content="{{ page_title }}">
+  <meta name="description" content="{{ page_description | escape }}">
+  {% if article.image %}
+  <meta itemprop="image" content="{{ article.image | img_url: 'original' }}">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://global.curalife.com{{ page.url }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description | escape }}">
+  <meta property="og:image" content="{{ article.image | img_url: 'original' }}">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://global.curalife.com{{ page.url }}">
+  <meta property="twitter:title" content="{{ page_title }}">
+  <meta property="twitter:description" content="{{ page_description | escape }}">
+  <meta property="twitter:image" content="{{ article.image | img_url: 'original' }}">
+  {% endif %}
+  
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+    <link rel="preload" href="{{ 'holidays-bundle.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'holidays-bundle.css' | asset_url }}"></noscript>
+
+   <script src="//cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" defer="defer"></script>
+   
+
+   <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'global.curalife.com' }}" hreflang="en-GB" />
+   {% unless request.path contains 'career-opportunities' %}
+   {% unless request.path contains 'curajob-' %}
+    <link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" />
+    <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="en-US" />
+    <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="en" />
+    {% endunless %}
+    {% endunless %}
+  
+
+{{ content_for_header }} <!-- Header hook for plugins -->
+{% include 'google-tag-manager'%}
+  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/oMYBvmnASlHzmouicgkepg" async></script>
+ </head>
+<body>
+
+ 
+  <script src="{{ 'froogaloop.js' | asset_url}}" defer></script>
+  <script src="{{ 'holidays-libs.js' | asset_url }}" defer></script>
+  <script src="{{ 'holidays-common.js' | asset_url }}" defer></script>
+{% include 'hot-jar'%}
+{% include 'google-tag-manager-noscript'%}
+  <main role="main">
+    {{ content_for_layout }}
+  </main>  
+  <!-- Start of Woopra Code -->
+<script>
+  !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
+
+  woopra.config({
+    domain: "curalife.com",
+    outgoing_tracking: true,
+    download_tracking: true,
+    click_tracking: true
+  });
+
+  {% if customer %}
+  woopra.identify({
+    customer_id: {{ customer.id | json }},
+    name: {{ customer.name | json }},
+    email: {{ customer.email | json }},              
+    order_count: {{ customer.orders_count | json }},
+    total_spent: {{ customer.total_spent | json }}
+  });
+  {% endif %}
+
+  woopra.track();
+</script>
+<!-- End of Woopra Code --> 
+                       
+  </body>
+</html>
+  
+
+
