@@ -261,7 +261,7 @@
           },
           "subscription_delivery_frequency": {
             "day": {
-              "one": "cotidiano",
+              "one": "cada día",
               "other": "cada %{count } días"
             },
             "week": {
