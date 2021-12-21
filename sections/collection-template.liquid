@@ -16,6 +16,9 @@
                                             {% endif %}
                                   </h3>
                                 </div>
+                                {% if product.metafields.my_fields.subtitle.value %}
+                                <p class="subtitle">{{ product.metafields.my_fields.subtitle.value }}</p> 
+                                {% endif %}
                                 <div class="price">
                                     <p>{{ product.price | money }}<strike>{{ product.metafields.my_fields.original_price }}</strike></p>
                                 </div>
@@ -154,6 +157,15 @@
     text-align: left;
 }
 
+.product-card .info .subtitle {
+    margin: 0;
+    color: darkslategray;
+}
+
+.product-card .info .price {
+    padding-top: unset;
+}
+
 .product-card .info .price p {
     text-align: left;
 }
@@ -240,7 +252,7 @@
     }
 
     .product-card .picture .img img {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         object-position: bottom;
     }
 
