@@ -1079,7 +1079,7 @@
     "email_marketing": {
       "subscribed": {
         "confirmation": "Gracias por suscribirse a nuestra lista de correo.",
-        "disclaimer": "Puedes darte de baja en cualquier momento.",
+        "disclaimer": "Puede darse de baja en cualquier momento.",
         "unsubscribe": "Darse de baja"
       },
       "unsubscribed": {
