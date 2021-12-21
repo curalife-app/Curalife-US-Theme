@@ -1048,7 +1048,7 @@
       },
       "cart": {
         "only_n_items_available": "Solo puede agregar %{count } %{name } al carrito.",
-        "too_many_items_in_cart": "No puedes agregar más %{name } al carrito.",
+        "too_many_items_in_cart": "No puede agregar más %{name } al carrito.",
         "all_items_in_cart": "Todas las %{count } %{name } están en su carrito.",
         "empty_update": "no se puede actualizar el carrito vacío",
         "missing_parameters": "sin id o parámetro de línea válido",
@@ -1160,7 +1160,7 @@
       "checkpoint": "Control"
     },
     "cart": {
-      "discounts_with_count": "Se han aplicado %{count } descuentos"
+      "discounts_with_count": "Se han aplicado %{count } descuentos."
     },
     "challenge": {
       "message": "Para continuar, háganos saber que no es un robot.",
