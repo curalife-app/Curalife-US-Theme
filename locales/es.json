@@ -1249,7 +1249,7 @@
       "edit_address": "Editar dirección",
       "first_name": "Primer nombre",
       "last_name": "Apellido",
-      "company": "Empresa",
+      "company": "Compañía",
       "address1": "Dirección 1",
       "address2": "Dirección 2",
       "city": "Ciudad",
@@ -1289,7 +1289,7 @@
       "cancelled_reason": "Razón: {{ reason  }}",
       "billing_address": "Dirección de Envio",
       "payment_status": "Estado de pago",
-      "shipping_address": "Dirección de Envío",
+      "shipping_address": "Dirección de envío",
       "fulfillment_status": "Estado de cumplimiento",
       "discount": "Descuento",
       "shipping": "Transporte",
@@ -1307,7 +1307,7 @@
     "recover_password": {
       "title": "Restablecer su contraseña",
       "email": "Correo electrónico",
-      "submit": "Enviar",
+      "submit": "Entregar",
       "cancel": "Cancelar",
       "subtext": "Le enviaremos un correo electrónico para restablecer su contraseña.",
       "success": "Le enviamos un correo electrónico con un enlace para actualizar su contraseña."
@@ -1316,7 +1316,7 @@
       "title": "Restablecer la contraseña de la cuenta",
       "subtext": "Ingrese una nueva contraseña para {{ email  }}",
       "password": "Contraseña",
-      "password_confirm": "confirmar Contraseña",
+      "password_confirm": "Confirmar contraseña",
       "submit": "Restablecer la contraseña"
     },
     "register": {
