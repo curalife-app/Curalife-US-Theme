@@ -43,17 +43,17 @@
 
   {% assign language = request.path | slice: 1,2 %}
 {% if language == 'es' %}
-<link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: shop.domain, 'curalife.com' | replace: "/es", '' }}" />
+<!-- <link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: shop.domain, 'curalife.com' | replace: "/es", '' }}" />
+<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' | replace: "/es", '' }}" hreflang="en" />
+<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="es" /> -->
 <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'global.curalife.com' | replace: "/es", '' }}" hreflang="en-GB" />
 <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' | replace: "/es", '' }}" hreflang="en-US" />
-<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' | replace: "/es", '' }}" hreflang="en" />
-<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="es" />
 {% else %}
-<link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" />
+<!-- <link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" />
+<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="en" />
+<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com/es' }}" hreflang="es" /> -->
 <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'global.curalife.com' }}" hreflang="en-GB" />
 <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="en-US" />
-<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="en" />
-<link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com/es' }}" hreflang="es" />
 {% endif %}
   
 {% if template contains 'customers' %}
