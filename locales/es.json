@@ -630,7 +630,7 @@
         "unfulfilled_items_description": "Actualmente estamos preparando estos artículos para su envío.",
         "marker": {
           "current": "Ubicación actual del envío",
-          "shipping": "Dirección de Envío"
+          "shipping": "Dirección de envío"
         },
         "pick_up_in_store_marker": {
           "current": "Ubicación actual del envío",
@@ -648,7 +648,7 @@
         "order_updates_subscribe_to_email_notifications": "Reciba actualizaciones de envío por correo electrónico",
         "order_updates_subscribe_to_email_or_phone_notifications": "Reciba actualizaciones de envío por correo electrónico o mensaje de texto",
         "order_updates_subscribe_to_phone_notifications": "Recibe actualizaciones de envío por mensaje de texto",
-        "order_updates_submit_subscription": "Enviar",
+        "order_updates_submit_subscription": "Entregar",
         "track_shipment": "Rastrear envio",
         "shopify_pay": {
           "order_completed_html": "Pedido completado con %{shopify_pay }",
