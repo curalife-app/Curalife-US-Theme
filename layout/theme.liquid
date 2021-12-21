@@ -187,17 +187,61 @@ var afterpay_js_snippet_version = '1.0.9';
     click_tracking: true
   });
 
-  {% if customer %}
+  {%- if customer -%}
   woopra.identify({
-    customer_id: {{ customer.id | json }},
+    id: {{ customer.id | json }},
     name: {{ customer.name | json }},
     email: {{ customer.email | json }},              
     order_count: {{ customer.orders_count | json }},
     total_spent: {{ customer.total_spent | json }}
   });
-  {% endif %}
+  {%- endif -%}
 
   woopra.track();
+   
+  document.addEventListener('submit', function(e) {
+    const form = e.target;
+    const formData = new FormData(form);
+    const entries = formData.entries();
+    const data = Object.fromEntries(entries);
+    
+    for (var key in data) {
+      var fieldEl = form.querySelector(`[name="${key}"]`);
+      if (fieldEl.type === 'password') {
+        delete data[key];
+      }
+    }
+
+    // Newsletter Subscription form
+    if (form.id === 'contact_form') {
+      woopra.identify({
+       'email': data["contact[email]"]
+      });
+
+      woopra.track('newsletter subscribe', {}, {
+        queue: true
+      });
+    }
+    
+    // Contact form
+    if (form.id === 'contact-us-form') {
+      console.log('track contact form', data);
+      woopra.identify({
+         name: data['name'],
+         email: data['email'],
+         phone: data['phone']
+      });
+      
+      woopra.track('submit contact form', data, { queue: true });
+    }
+    
+    if (form.className.indexOf('yotpo-referral-widget-form') !== -1) {
+      woopra.track('refer a friend', {
+        email: data['email']  
+      }, { queue: true });
+    }
+    
+  });
 </script>
 <!-- End of Woopra Code -->
   
