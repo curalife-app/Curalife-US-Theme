@@ -237,9 +237,15 @@ var afterpay_js_snippet_version = '1.0.9';
     }
     
     if (form.className.indexOf('yotpo-referral-widget-form') !== -1) {
-      woopra.track('refer a friend', {
-        email: data['email']  
-      }, { queue: true });
+      // Track signing up for referral program
+      if (form.querySelector('[name="email"]').placeholder === 'Your email address') {
+        woopra.identify({ email: data.email});
+        woopra.track('refer a friend', {
+          email: data.email
+        }, { queue: true });
+      } else {
+        // Track inviting a friend
+        woopra.track('friend referred', { email: data.email }, {queue: true)
     }
     
   });
