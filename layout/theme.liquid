@@ -177,8 +177,8 @@ var afterpay_js_snippet_version = '1.0.9';
   {% include 'wisepops-generated' %}
 {% include 'social-login' %}
   
-<!-- Start of Woopra Code -->
-<script>
+ <!-- Start of Woopra Code -->
+ <script>
   !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
 
   woopra.config({
@@ -226,7 +226,6 @@ var afterpay_js_snippet_version = '1.0.9';
     
     // Contact form
     if (form.id === 'contact-us-form') {
-      console.log('track contact form', data);
       woopra.identify({
          name: data['name'],
          email: data['email'],
@@ -245,7 +244,8 @@ var afterpay_js_snippet_version = '1.0.9';
         }, { queue: true });
       } else {
         // Track inviting a friend
-        woopra.track('friend referred', { email: data.email }, {queue: true)
+        woopra.track('friend referred', { email: data.email }, {queue: true});
+      }
     }
     
   });
