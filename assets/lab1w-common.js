@@ -436,7 +436,7 @@ window.requestAnimFrame = (function () {
     }
     if(lumen_floating_btn) {
         lumen_floating_btn.querySelector('button').addEventListener('click', () => {
-            document.querySelector('.goods-list').scrollIntoView({
+            document.querySelector('.goods-list-face').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
