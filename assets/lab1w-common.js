@@ -428,7 +428,7 @@ window.requestAnimFrame = (function () {
 
     if(document.querySelector('.lumen-intro .intro-content .intro-btn button')) {
         document.querySelector('.lumen-intro .intro-content .intro-btn button').addEventListener('click', () => {
-            document.querySelector('.goods-list').scrollIntoView({
+            document.querySelector('.goods-list-face').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -436,7 +436,7 @@ window.requestAnimFrame = (function () {
     }
     if(lumen_floating_btn) {
         lumen_floating_btn.querySelector('button').addEventListener('click', () => {
-            document.querySelector('.goods-list').scrollIntoView({
+            document.querySelector('.goods-list-face').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
