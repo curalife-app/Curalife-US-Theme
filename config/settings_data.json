@@ -165,6 +165,7 @@
       },
       "16190701775cb6c02f": {
         "type": "banner",
+        "disabled": true,
         "settings": {
           "bnr_titl": "Effective. Safe. Natural.",
           "bnr_desc": "Science based supplements <br> that improve quality of life.",
@@ -4573,9 +4574,21 @@
         "type": "partnerships-map",
         "settings": {
         }
+      },
+      "1640766506aa030779": {
+        "type": "banner-new-year",
+        "settings": {
+          "bnr_titl": "Effective. Safe. Natural",
+          "bnr_desc": "We believe people with chronic<br>\nconditions deserve BETTER",
+          "btn_titl": "shop now",
+          "bnr_btnlink": "shopify:\/\/collections\/all",
+          "bnr_img": "shopify:\/\/shop_images\/Frame_15.png",
+          "mblbnr_img": "shopify:\/\/shop_images\/Frame_16.png"
+        }
       }
     },
     "content_for_index": [
+      "1640766506aa030779",
       "16190701775cb6c02f",
       "1619071284c9bbcc58",
       "16190717353dc6eba6",
