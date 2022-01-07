@@ -220,25 +220,25 @@
         "confirmation_number_label": "Confirmación # %{confirmation_number }"
       },
       "shipping": {
-        "title": "Transporte",
+        "title": "Envío",
         "shipping_method_title": "Método de envío",
         "shipping_method_one_time_purchase_group_title": "Compra única",
         "shipping_method_subscription_group_title": "Suscripción",
-        "subscription_shipping": "Envío de suscripción",
+        "subscription_shipping": "Envío de la suscripción",
         "waiting_on_rate_notice": "Obteniendo tarifas de envío disponibles…",
-        "waiting_on_pickup_location_notice": "Obteniendo lugares de recogida disponibles ...",
+        "waiting_on_pickup_location_notice": "Obteniendo direcciones de recogida disponibles ...",
         "no_rates_for_cart_or_destination_notice": "No hay métodos de envío disponibles para su carrito o dirección.",
         "no_pickup_location_notice": "Al menos uno de sus productos no está disponible para recoger",
         "no_rates_for_country_notice": "No se encontraron tarifas de envío para esta dirección.",
         "no_rates_contact_notice": "Contáctenos para más información",
         "free_rate_label": "Gratis",
-        "cheapest_rate_label": "Lo mas barato",
+        "cheapest_rate_label": "Lo más barato",
         "please_enter_your_shipping_information_notice": "Ingrese su información de envío.",
         "estimated_delivery_date": {
           "one": "%{count } día laborable",
-          "other": "%{count } días laborales"
+          "other": "%{count } días laborables"
         },
-        "estimated_delivery_date_range": "%{ mínimo } a %{ máximo } días laborales",
+        "estimated_delivery_date_range": "%{ mínimo } a %{ máximo } días laborables",
         "estimated_delivery_time": "Entrega estimada %{time }",
         "estimated_delivery_time_range": "Entrega estimada %{min_time } - %{max_time }",
         "shipping_line_phone_label": "Número de teléfono móvil (requerido)",
