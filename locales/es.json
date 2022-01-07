@@ -124,7 +124,7 @@
         "have_an_account_label": "¿Ya tienes una cuenta?",
         "sign_in_link_label": "Iniciar sesión",
         "sign_out_link_label": "Cerrar sesión",
-        "save_my_information_label": "Guarde esta información para la próxima vez"
+        "save_my_information_label": "Guardar esta información para la próxima vez"
       },
       "stock": {
         "page_title": "Problemas de inventario",
@@ -137,13 +137,13 @@
         "removed_from_cart_notice": "Eliminado del carrito",
         "sold_out_label": "Vendido",
         "reduced_label": "Reducido",
-        "reduced_with_quantity_label": "Solo queda %{quantity_available }",
+        "reduced_with_quantity_label": "Solo queda %{quantity_available}",
         "remove_from_cart_button_label": "Quitar del carrito",
         "continue_shopping_button_label": "Continuar",
         "go_back_to_cart_button_label": "Volver a mi carrito"
       },
       "order_summary": {
-        "title": "Resumen de pedido",
+        "title": "Resumen del pedido",
         "order_name_label": "Pedido %{name }",
         "shopping_cart_label": "Carrito de compras",
         "discount_title": "Descuento",
