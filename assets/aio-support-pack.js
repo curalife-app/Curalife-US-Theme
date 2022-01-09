@@ -11,6 +11,14 @@
 //# sourceMappingURL=typed.min.js.map
 (function () {
 
+    const get_utm = window.location.search.substring(1);
+    let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
+    window.onload = function () {
+        for (let i = 0; i < product_link.length; i++) {
+            product_link[i].href = product_link[i].href + "&" + get_utm
+        }
+    }
+    
     let typed = new Typed('.hero-section .brand-welcome-text span', {
         strings: ["sleep well", "eat well", "feel energetic", "stay romantic", "stay healthy"],
         typeSpeed: 50,
