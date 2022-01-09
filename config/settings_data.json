@@ -4297,9 +4297,9 @@
           "mainsub_title": "Welcome to <b>CuraLife<\/b>",
           "main_desc": "We work with you to serve your diabetic patients through Therapeutic Supplements, Behavioral\n                        Therapy, and Community Support.",
           "btn_titleone": "Create an account",
-          "btn_urlone": "",
+          "btn_urlone": "https:\/\/professionals.curalife.com\/pages\/account-registration",
           "btn_titletwo": "Sign In",
-          "btn_urltwo": "",
+          "btn_urltwo": "https:\/\/professionals.curalife.com\/",
           "maindsk_mg": "shopify:\/\/shop_images\/dr-intro.png",
           "mainmbl_mg": "shopify:\/\/shop_images\/dr-m-intro.png",
           "pbg_img": "shopify:\/\/shop_images\/dr-bg.png",
@@ -4326,7 +4326,7 @@
               "slc_title": "Community",
               "slc_desc": "Diabetes doesn't just affect you physically, it can affect you emotionally too.",
               "btn_slctitle": "Learn More",
-              "btn_slcurl": ""
+              "btn_slcurl": "https:\/\/professionals.curalife.com\/pages\/community"
             }
           },
           "2a534c94-5be1-44bb-abb1-960fef0b6997": {
