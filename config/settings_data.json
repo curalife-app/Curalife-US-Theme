@@ -4429,7 +4429,7 @@
           "clinc_bgimg": "shopify:\/\/shop_images\/circles-bg.png",
           "clinic_titl": "Clinical Timeline",
           "btn_clinctitle": "Join us",
-          "btn_clincurl": ""
+          "btn_clincurl": "https:\/\/professionals.curalife.com\/pages\/registration-steps"
         }
       },
       "join-the-revolution": {
@@ -4441,7 +4441,7 @@
               "rev_titlone": "Wholesale",
               "rev_desc": "Purchase CuraLin Directly to<br> your Practice",
               "btn_revtitle": "Create Account",
-              "btn_revurl": ""
+              "btn_revurl": "https:\/\/professionals.curalife.com\/pages\/registration-steps"
             }
           },
           "c7da0907-659c-4617-8f4f-6c03d499d544": {
@@ -4450,7 +4450,7 @@
               "rev_titlone": "Virtual Dispensing",
               "rev_desc": "Eliminate the hassle of managing inventory and build an online dispensary allowing your patients access to CuraLin and personalized educational materials",
               "btn_revtitle": "Create Account",
-              "btn_revurl": ""
+              "btn_revurl": "https:\/\/professionals.curalife.com\/pages\/registration-steps"
             }
           }
         },
@@ -4537,6 +4537,7 @@
         "blocks": {
           "27e94d11-bc36-4fae-a1ca-88efccddedcc": {
             "type": "team",
+            "disabled": true,
             "settings": {
               "team_imgone": "shopify:\/\/shop_images\/01_5077e542-d23f-473e-97d5-3a204a3d6624.jpg",
               "team_titleone": "Roy Milstein",
