@@ -1258,14 +1258,14 @@
       "zip": "Código postal",
       "phone": "Teléfono",
       "set_default": "Establecer como dirección predeterminada",
-      "add": "Añadir dirección",
+      "add": "<transcy>Agregar dirección<\/transcy>",
       "update": "Actualizar dirección",
       "cancel": "Cancelar",
       "edit": "Editar",
-      "delete": "Borrar"
+      "delete": "<transcy>Eliminar<\/transcy>"
     },
     "login": {
-      "title": "Inicio de sesión del cliente",
+      "title": "<transcy>Inicio de sesión del cliente<\/transcy>",
       "email": "Correo electrónico",
       "password": "Contraseña",
       "forgot_password": "¿Olvidaste tu contraseña?",
@@ -1278,21 +1278,21 @@
       "title": "Historial de pedidos",
       "order_number": "Pedido",
       "date": "Fecha",
-      "payment_status": "Estado de pago",
+      "payment_status": "<transcy>Estado del pago<\/transcy>",
       "fulfillment_status": "Estado de cumplimiento",
       "total": "Total",
-      "none": "Aún no ha realizado ningún pedido."
+      "none": "<transcy>Aún no has realizado ningún pedido.<\/transcy>"
     },
     "order": {
       "title": "Pedido {{ name  }}",
       "cancelled": "Pedido cancelado el {{ date  }}",
       "cancelled_reason": "Razón: {{ reason  }}",
-      "billing_address": "Dirección de Envio",
-      "payment_status": "Estado de pago",
-      "shipping_address": "Dirección de Envío",
+      "billing_address": "<transcy>Dirección de facturación<\/transcy>",
+      "payment_status": "<transcy>Estado del pago<\/transcy>",
+      "shipping_address": "<transcy>Dirección de envío<\/transcy>",
       "fulfillment_status": "Estado de cumplimiento",
       "discount": "Descuento",
-      "shipping": "Transporte",
+      "shipping": "<transcy>Envío<\/transcy>",
       "tax": "Impuesto",
       "details": {
         "product": "Producto",
@@ -1305,23 +1305,23 @@
       }
     },
     "recover_password": {
-      "title": "Restablecer su contraseña",
+      "title": "<transcy>Restablecer tu contraseña<\/transcy>",
       "email": "Correo electrónico",
       "submit": "Enviar",
       "cancel": "Cancelar",
-      "subtext": "Le enviaremos un correo electrónico para restablecer su contraseña.",
-      "success": "Le enviamos un correo electrónico con un enlace para actualizar su contraseña."
+      "subtext": "<transcy>Te enviaremos un correo electrónico para restablecer tu contraseña.<\/transcy>",
+      "success": "<transcy>Te enviamos un correo electrónico con un enlace para actualizar tu contraseña.<\/transcy>"
     },
     "reset_password": {
       "title": "Restablecer la contraseña de la cuenta",
       "subtext": "Ingrese una nueva contraseña para {{ email  }}",
       "password": "Contraseña",
-      "password_confirm": "confirmar Contraseña",
+      "password_confirm": "<transcy>Confirmar contraseña<\/transcy>",
       "submit": "Restablecer la contraseña"
     },
     "register": {
       "title": "Crear una cuenta",
-      "first_name": "Primer nombre",
+      "first_name": "<transcy>Nombre<\/transcy>",
       "last_name": "Apellido",
       "email": "Correo electrónico",
       "password": "Contraseña",
