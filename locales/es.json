@@ -947,7 +947,7 @@
         "best_selling": "Más vendido",
         "az": "Alfabéticamente, A-Z",
         "za": "Alfabéticamente, Z-A",
-        "price_ascending": "<transcy>Precios, de barato a caro<\/transcy>",
+        "price_ascending": "<transcy>Precios, de menor a mayor<\/transcy>",
         "price_descending": "Precio, de mayor a menor",
         "date_ascending": "Fecha, de viejo a nuevo",
         "date_descending": "<transcy>Fecha, de nuevo a viejo<\/transcy>"
@@ -1089,28 +1089,28 @@
       },
       "open_tracking": {
         "opt_in": {
-          "opted_in_html": "<transcy><b> Has habilitado el seguimiento de apertura de correo electrónico. <\/b><\/transcy>",
-          "visibility": "Las tasas de apertura de correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de una tasa de apertura de correo electrónico agregada.",
-          "opt_out_html": "Puede <a style='text-decoration:underline;' href='%{link} '> excluirse <\/a> del seguimiento de apertura de correo electrónico si no desea compartir esta información.",
-          "preview_bar": "Está obteniendo una vista previa de lo que los clientes verán cuando opten por el seguimiento de apertura de correo electrónico."
+          "opted_in_html": "<transcy><b> Has habilitado el seguimiento de apertura del correo electrónico. <\/b><\/transcy>",
+          "visibility": "<transcy>Las tasas de apertura del correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de una tasa de apertura de correo electrónico agregada.<\/transcy>",
+          "opt_out_html": "<transcy>Puede <a style=\"text-decoration:underline;\" href=\"%{link} \"> excluirse<\/a>&nbsp;del seguimiento de apertura del correo electrónico si no desea compartir esta información.<\/transcy>",
+          "preview_bar": "<transcy>Está obteniendo una vista previa de lo que los clientes verán cuando opten por el seguimiento de apertura del correo electrónico.<\/transcy>"
         },
         "opt_out": {
-          "opted_out_html": "<b> Ha inhabilitado el seguimiento de apertura de correo electrónico. <\/b>",
+          "opted_out_html": "<transcy><b> Ha inhabilitado el seguimiento de apertura del correo electrónico. <\/b><\/transcy>",
           "visibility": "No veremos si ha abierto sus correos electrónicos.",
-          "opt_in_html": "<a style='text-decoration:underline;' href='%{link} '> Opte por <\/a> para enviar el seguimiento de apertura por correo electrónico.",
-          "preview_bar": "Está obteniendo una vista previa de lo que los clientes verán cuando opten por no recibir seguimiento de apertura de correo electrónico."
+          "opt_in_html": "<transcy><a style=\"text-decoration:underline;\" href=\"%{link} \"> Opte por<\/a>&nbsp;el seguimiento de apertura del correo electrónico.<\/transcy>",
+          "preview_bar": "<transcy>Está obteniendo una vista previa de lo que los clientes verán cuando opten por no recibir seguimiento de apertura del correo electrónico.<\/transcy>"
         },
         "no_longer_track": {
           "status_html": "<b> Ya no realizamos el seguimiento de los correos electrónicos abiertos. <\/b>",
-          "privacy_policy": "Después de que se envió este correo electrónico, actualizamos nuestra política de privacidad y ya no realizamos un seguimiento de las aperturas."
+          "privacy_policy": "<transcy>Después de que se enviara este correo electrónico, actualizamos nuestra política de privacidad y ya no realizamos un seguimiento de las aperturas.<\/transcy>"
         },
         "track": {
           "status_html": "<b> Se informa el seguimiento de la apertura de correo electrónico. <\/b>",
-          "visibility": "Solo veremos si ha abierto el correo electrónico, como parte de la tasa total de apertura de correo electrónico."
+          "visibility": "<transcy>Solo veremos si ha abierto el correo electrónico como parte de la tasa total de apertura del correo electrónico.<\/transcy>"
         },
         "updated_policy": {
-          "status_html": "<b> Se informa el seguimiento de la apertura de correo electrónico. <\/b>",
-          "visibility": "Hemos actualizado nuestra política y ahora hacemos un seguimiento de los correos electrónicos abiertos. Las tasas de apertura de correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de la tasa total de apertura de correo electrónico.",
+          "status_html": "<transcy><b> Se informa el seguimiento de la apertura del correo electrónico. <\/b><\/transcy>",
+          "visibility": "<transcy>Hemos actualizado nuestra política y ahora hacemos un seguimiento de los correos electrónicos abiertos. Las tasas de apertura de correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de la tasa total de apertura del correo electrónico.<\/transcy>",
           "opt_out_html": "Si no desea compartir esta información, puede <a style='text-decoration:underline;' href='%{link} '> cancelar la suscripción. <\/a>"
         }
       }
@@ -1136,23 +1136,23 @@
     "search": {
       "sorting": {
         "relevance": "Relevancia",
-        "price_ascending": "Precios de barato a caro",
-        "price_descending": "Precio, de mayor a menor"
+        "price_ascending": "<transcy>Precio, de menor a mayor<\/transcy>",
+        "price_descending": "<transcy>Precio, de mayor a menor<\/transcy>"
       }
     },
     "page_titles": {
-      "blog_or_article_with_error": "Error: %{title }",
+      "blog_or_article_with_error": "<transcy>Error: %{title}<\/transcy>",
       "products": "Productos",
-      "shopping_cart": "tu carrito de la compra",
+      "shopping_cart": "<transcy>Tu carrito de compra<\/transcy>",
       "account": "Cuenta",
       "create_account": "Crear una cuenta",
       "reset_account": "Restablecer cuenta",
       "addresses": "Direcciones",
-      "order": "Pedido %{name }",
+      "order": "<transcy>Pedido %{name}<\/transcy>",
       "search": "Buscar",
       "search_results": {
-        "one": "Búsqueda: %{count } resultado encontrado para \"%{terms }\"",
-        "other": "Búsqueda: %{count } resultados encontrados para \"%{terms }\""
+        "one": "<transcy>Búsqueda: %{count} resultado encontrado para \"%{terms}\"<\/transcy>",
+        "other": "<transcy>Búsqueda: %{count} resultados encontrados para \"%{terms}\"<\/transcy>"
       },
       "collections": "Colecciones",
       "not_found": "404 No encontrado",
@@ -1160,27 +1160,27 @@
       "checkpoint": "Control"
     },
     "cart": {
-      "discounts_with_count": "Se han aplicado %{count } descuentos"
+      "discounts_with_count": "<transcy>Se han aplicado %{count} descuentos<\/transcy>"
     },
     "challenge": {
       "message": "Para continuar, háganos saber que no es un robot.",
-      "error": "Tu respuesta no fue correcta, inténtalo de nuevo.",
+      "error": "<transcy>Su respuesta no fue correcta, inténtelo de nuevo.<\/transcy>",
       "submit_button_text": "Enviar"
     },
     "checkpoint": {
       "message": "Resuelve Captcha para continuar",
-      "error": "La validación de captcha falló",
+      "error": "<transcy>La validación de Captcha falló<\/transcy>",
       "submit_button_text": "Enviar"
     },
     "store_availability": {
       "pick_up_time": {
         "one_hour": "Suele estar listo en 1 hora",
-        "two_hours": "Normalmente listo en 2 horas",
+        "two_hours": "<transcy>Suele estar listo en 2 horas<\/transcy>",
         "four_hours": "Suele estar listo en 4 horas",
-        "twenty_four_hours": "Normalmente listo en 24 horas",
-        "two_to_four_days": "Por lo general, listo en 2-4 días.",
+        "twenty_four_hours": "<transcy>Suele estar listo en 24 horas<\/transcy>",
+        "two_to_four_days": "<transcy>Suele estar listo en 2-4 días.<\/transcy>",
         "five_or_more_days": "Suele estar listo en más de 5 días",
-        "zero_to_two_hours": "Normalmente listo en 2 horas",
+        "zero_to_two_hours": "<transcy>Suele estar listo en 2 horas<\/transcy>",
         "two_to_four_hours": "Suele estar listo en 4 horas",
         "immediately": "Listo para recoger ahora",
         "next_day": "Listo para recoger al día siguiente"
