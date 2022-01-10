@@ -1001,7 +1001,7 @@
         "password_reset_error": "<transcy>Error al restablecer la contraseña<\/transcy>",
         "no_account_found": "No se encontró ninguna cuenta con ese correo electrónico.",
         "invalid_credentials": "Correo o contraseña incorrectos.",
-        "denylisted_reset_password": "No se pudo acceder a su cuenta porque la contraseña actual no es segura. Recibirás un correo electrónico para actualizar tu contraseña."
+        "denylisted_reset_password": "<transcy>No se pudo acceder a la cuenta porque la contraseña actual no es segura. Recibirás un correo electrónico para actualizar tu contraseña.<\/transcy>"
       },
       "address": {
         "updated": "Dirección actualizada correctamente.",
@@ -1230,24 +1230,24 @@
   "customer": {
     "account": {
       "title": "Mi cuenta",
-      "details": "detalles de la cuenta",
-      "view_addresses": "Ver direcciones",
+      "details": "<transcy>Detalles de la cuenta<\/transcy>",
+      "view_addresses": "<transcy>Ver las direcciones<\/transcy>",
       "return": "Volver a los detalles de la cuenta"
     },
     "activate_account": {
       "title": "Activar la cuenta",
-      "subtext": "Crea tu contraseña para activar tu cuenta",
+      "subtext": "<transcy>Crea tu contraseña para activar la cuenta<\/transcy>",
       "password": "Contraseña",
-      "password_confirm": "confirmar Contraseña",
+      "password_confirm": "<transcy>Confirmar contraseña<\/transcy>",
       "submit": "Activar la cuenta",
       "cancel": "Rechazar invitación"
     },
     "addresses": {
-      "title": "Sus direcciones",
+      "title": "<transcy>Tus direcciones<\/transcy>",
       "default": "Dirección predeterminada",
-      "add_new": "Añadir una nueva dirección",
+      "add_new": "<transcy>Agregar una nueva dirección<\/transcy>",
       "edit_address": "Editar dirección",
-      "first_name": "Primer nombre",
+      "first_name": "<transcy>Nombre<\/transcy>",
       "last_name": "Apellido",
       "company": "Empresa",
       "address1": "Dirección 1",
