@@ -908,7 +908,7 @@
     },
     "pagination": {
       "previous": "Anterior",
-      "next": "próximo"
+      "next": "<transcy>Siguiente<\/transcy>"
     },
     "links": {
       "powered_by_shopify": "Desarrollado por Shopify",
@@ -920,14 +920,14 @@
     "attributes": {
       "email": "Email",
       "password": "contraseña",
-      "password_confirmation": "La confirmación de la contraseña",
+      "password_confirmation": "<transcy>Confirmación de la contraseña<\/transcy>",
       "first_name": "primer nombre",
       "last_name": "apellido",
       "body": "cuerpo",
       "signature": "Dirección"
     },
     "addresses": {
-      "zip_code": "código postal",
+      "zip_code": "<transcy>código ZIP<\/transcy>",
       "postal_code": "Código Postal",
       "postcode": "Código postal",
       "pincode": "Código PIN",
@@ -947,10 +947,10 @@
         "best_selling": "Más vendido",
         "az": "Alfabéticamente, A-Z",
         "za": "Alfabéticamente, Z-A",
-        "price_ascending": "Precios de barato a caro",
+        "price_ascending": "<transcy>Precios, de barato a caro<\/transcy>",
         "price_descending": "Precio, de mayor a menor",
         "date_ascending": "Fecha, de viejo a nuevo",
-        "date_descending": "Fecha, nueva a vieja"
+        "date_descending": "<transcy>Fecha, de nuevo a viejo<\/transcy>"
       }
     },
     "errors": {
@@ -958,7 +958,7 @@
       "blocked_address": "Esta ubicación no es compatible.",
       "credit_card_session_expired": "La autorización de la tarjeta de crédito venció, ingrese su información de pago nuevamente. Su tarjeta no ha sido cargada.",
       "empty": "no puede estar vacío",
-      "invalid_email": "Debe ser una dirección de correo electrónico válida",
+      "invalid_email": "<transcy>La dirección de correo electrónico debe ser válida<\/transcy>",
       "discount_disabled": "Este descuento ha sido desactivado",
       "discount_expired": "Este descuento ya no es válido",
       "discount_limit_reached": "Este descuento ha alcanzado su límite de uso.",
@@ -972,19 +972,19 @@
       "gift_card_expired": "La tarjeta de regalo caducó",
       "invalid": "no es válido",
       "bad_domain": "contiene un nombre de dominio no válido",
-      "taken": "ya se ha tomado",
+      "taken": "<transcy>ya se ha utilizado<\/transcy>",
       "contains_html_tags": "no puede contener etiquetas HTML",
-      "too_short": "es demasiado corto (el mínimo es %{count } caracteres)",
-      "too_long": "es demasiado largo (el máximo es %{count } caracteres)",
+      "too_short": "<transcy>es demasiado corto (el mínimo es %{count} caracteres)<\/transcy>",
+      "too_long": "<transcy>es demasiado largo (el máximo es %{count} caracteres)<\/transcy>",
       "password_mismatch": "debe coincidir con la contraseña proporcionada.",
       "contains_spaces": "comienza o termina con espacios.",
       "email_domain_invalid": "el proveedor no es compatible",
       "invalid_for_country": "no es válido para %{country }",
-      "invalid_for_country_and_province": "no es válido para %{province } y %{country }",
-      "invalid_province_in_country": "no es una provincia válida en %{country }",
-      "invalid_state_in_country": "no es un estado válido en %{country }",
-      "invalid_region_in_country": "no es una región válida en %{country }",
-      "less_than_or_equal_to": "debe ser menor o igual que %{count }",
+      "invalid_for_country_and_province": "<transcy>no es válido para %{province} y %{country}<\/transcy>",
+      "invalid_province_in_country": "<transcy>no es una provincia válida en %{country}<\/transcy>",
+      "invalid_state_in_country": "<transcy>no es un estado válido en %{country}<\/transcy>",
+      "invalid_region_in_country": "<transcy>no es una región válida en %{country}<\/transcy>",
+      "less_than_or_equal_to": "<transcy>debe ser menor o igual que %{count}<\/transcy>",
       "not_supported": "no es apoyado",
       "full_name_required": "Ingrese un nombre y apellido",
       "invalid_for_card_type": "no es válido",
