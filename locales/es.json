@@ -1085,11 +1085,11 @@
       "unsubscribed": {
         "confirmation": "<transcy>Te has dado de baja de nuestra lista de email.<\/transcy>",
         "disclaimer": "<transcy>No recibirás más actualizaciones de marketing de nuestra parte. Puedes suscribirte de nuevo en cualquier momento.<\/transcy>",
-        "preview": "Está obteniendo una vista previa de lo que los clientes verán cuando cancelen la suscripción."
+        "preview": "<transcy>Está obteniendo una vista previa de lo que los clientes verán cuando cancelen la suscripción.<\/transcy>"
       },
       "open_tracking": {
         "opt_in": {
-          "opted_in_html": "<b> Ha habilitado el seguimiento de apertura de correo electrónico. <\/b>",
+          "opted_in_html": "<transcy><b> Has habilitado el seguimiento de apertura de correo electrónico. <\/b><\/transcy>",
           "visibility": "Las tasas de apertura de correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de una tasa de apertura de correo electrónico agregada.",
           "opt_out_html": "Puede <a style='text-decoration:underline;' href='%{link} '> excluirse <\/a> del seguimiento de apertura de correo electrónico si no desea compartir esta información.",
           "preview_bar": "Está obteniendo una vista previa de lo que los clientes verán cuando opten por el seguimiento de apertura de correo electrónico."
