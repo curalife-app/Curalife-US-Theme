@@ -994,11 +994,11 @@
       "invalid_start_date_or_issue_number_for_debit": "Se requiere una fecha de inicio válida o un número de emisión.",
       "invalid_expiry_year": "no es un año de vencimiento válido",
       "reset_password_html": "Esta dirección de correo electrónico ya está asociada a una cuenta. Si esta cuenta es suya, puede <a href=\"\/account\/login#recover\"> restablecer su contraseña <\/a>",
-      "verify_email": "Hemos enviado un correo electrónico a %{customer_email }, haga clic en el enlace incluido para verificar su dirección de correo electrónico."
+      "verify_email": "<transcy>Hemos enviado un correo electrónico a %{customer_email}, haga clic en el enlace incluido para verificar su dirección de correo electrónico.<\/transcy>"
     },
     "notices": {
       "customer": {
-        "password_reset_error": "Error de restablecimiento de contraseña",
+        "password_reset_error": "<transcy>Error al restablecer la contraseña<\/transcy>",
         "no_account_found": "No se encontró ninguna cuenta con ese correo electrónico.",
         "invalid_credentials": "Correo o contraseña incorrectos.",
         "denylisted_reset_password": "No se pudo acceder a su cuenta porque la contraseña actual no es segura. Recibirás un correo electrónico para actualizar tu contraseña."
@@ -1041,25 +1041,25 @@
           "declined": "Pago rechazado",
           "inventory": "Elementos no disponibles",
           "fraud": "Pedido fraudulento",
-          "customer": "Pedido modificado \/ cancelado por el cliente",
+          "customer": "<transcy>Pedido modificado\/cancelado por el cliente<\/transcy>",
           "other": "Otro"
         },
         "cash_on_delivery": "Contra reembolso (COD)"
       },
       "cart": {
-        "only_n_items_available": "Solo puede agregar %{count } %{name } al carrito.",
-        "too_many_items_in_cart": "<transcy>No puedes agregar más %{name } al carrito.<\/transcy>",
-        "all_items_in_cart": "Todas las %{count } %{name } están en su carrito.",
+        "only_n_items_available": "<transcy>Solo puede agregar %{count} %{name} al carrito.<\/transcy>",
+        "too_many_items_in_cart": "<transcy>No puede agregar más %{name} al carrito.<\/transcy>",
+        "all_items_in_cart": "<transcy>Todas las %{count} %{name} están en su carrito.<\/transcy>",
         "empty_update": "no se puede actualizar el carrito vacío",
         "missing_parameters": "sin id o parámetro de línea válido",
         "generic_error": "<transcy>Error del carrito<\/transcy>",
-        "too_many_line_items_error": "Su carrito no puede contener más de %{max } artículos.",
+        "too_many_line_items_error": "<transcy>Su carrito no puede contener más de %{max} artículos.<\/transcy>",
         "link_expired": "Enlace expirado",
         "link_no_longer_exists": "El enlace ya no existe.",
-        "stock_problems_html": "Uno o más elementos ya no están disponibles. Hemos proporcionado un <a href='%{link} '> carrito actualizado <\/a>.",
-        "changed": "Carrito cambiado",
+        "stock_problems_html": "<transcy>Uno o más elementos ya no están disponibles. Hemos proporcionado un <a href=\"%{link} \"> carrito actualizado<\/a>.<\/transcy>",
+        "changed": "<transcy>Carrito modificado<\/transcy>",
         "items_changed": "Uno o más elementos han cambiado.",
-        "product_sold_out": "El producto '%{name }' ya está agotado.",
+        "product_sold_out": "<transcy>El producto '%{name}' está agotado.<\/transcy>",
         "variant_not_found": "No se puede encontrar la variante",
         "variant_requires_selling_plan": "La variante solo se puede comprar con un plan de venta.",
         "selling_plan_not_applicable": "No se puede aplicar el plan de ventas a la variante",
@@ -1070,21 +1070,21 @@
         "invalid_password": "Contraseña incorrecta, inténtelo de nuevo."
       },
       "tags": {
-        "add_articles": "Búsqueda restringida a artículos que también tengan la etiqueta %{tag }",
-        "add_products": "Reducir la selección a productos que coincidan con la etiqueta %{tag }",
-        "remove_articles": "Amplíe la búsqueda a artículos que no están etiquetados como %{tag }",
-        "remove_products": "Eliminar etiqueta %{tag }"
+        "add_articles": "<transcy>Reducir la búsqueda a artículos que también tengan la etiqueta %{tag}<\/transcy>",
+        "add_products": "<transcy>Reducir la selección a productos que coincidan con la etiqueta %{tag}<\/transcy>",
+        "remove_articles": "<transcy>Ampliar la búsqueda a artículos que no esten etiquetados como %{tag}<\/transcy>",
+        "remove_products": "<transcy>Eliminar la etiqueta %{tag}<\/transcy>"
       }
     },
     "email_marketing": {
       "subscribed": {
-        "confirmation": "Gracias por suscribirse a nuestra lista de correo.",
+        "confirmation": "<transcy>Gracias por suscribirse a nuestra lista de email.<\/transcy>",
         "disclaimer": "Puedes darte de baja en cualquier momento.",
         "unsubscribe": "Darse de baja"
       },
       "unsubscribed": {
-        "confirmation": "Te has dado de baja de nuestra lista de distribución.",
-        "disclaimer": "No recibirá más actualizaciones de marketing de nuestra parte. Puedes suscribirte de nuevo en cualquier momento.",
+        "confirmation": "<transcy>Te has dado de baja de nuestra lista de email.<\/transcy>",
+        "disclaimer": "<transcy>No recibirás más actualizaciones de marketing de nuestra parte. Puedes suscribirte de nuevo en cualquier momento.<\/transcy>",
         "preview": "Está obteniendo una vista previa de lo que los clientes verán cuando cancelen la suscripción."
       },
       "open_tracking": {
