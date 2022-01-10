@@ -1189,8 +1189,8 @@
   },
   "general": {
     "404": {
-      "title": "Extraviado",
-      "subtext_html": "La página que buscaba no existe"
+      "title": "<transcy>No encontrado<\/transcy>",
+      "subtext_html": "<transcy>La página que busca no existe<\/transcy>"
     }
   },
   "cart": {
