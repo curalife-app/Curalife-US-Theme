@@ -1383,7 +1383,7 @@ select {
   background-image: url("aio-quote-icon.png");
   background-repeat: no-repeat;
   background-size: contain;
-  z-index: -1;
+  z-index: 1;
 }
 
 .life-changes {
@@ -1670,9 +1670,9 @@ select {
   background: -o-linear-gradient(359.95deg, rgba(238, 208, 195, 0.5) 0%, rgba(208, 125, 91, 0.5) 100%);
   background: linear-gradient(90.05deg, rgba(238, 208, 195, 0.5) 0%, rgba(208, 125, 91, 0.5) 100%);
   border-radius: 0 0.9375rem 0.9375rem 0;
-  -webkit-transition: width 0.1s ease-in-out;
-  -o-transition: width 0.1s ease-in-out;
-  transition: width 0.1s ease-in-out;
+  -webkit-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 
 .faq-list .data-wrap {
@@ -2397,10 +2397,12 @@ font-size:rem(32, 16); // => font-size:2rem;
   .meet-curalin .sub-title h3 b {
     font-size: 1.5rem;
   }
-
+  .curalin-intro .curaline-widget-item {
+    align-items: center;
+  }
   .curaline-widget-icon {
     max-width: 1.75rem;
-    padding-top: 0.9375rem;
+    /* padding-top: 0.9375rem; */
   }
 
   .curalin-intro .curaline-widget-item .curaline-widget-icon {
