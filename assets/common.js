@@ -336,7 +336,9 @@ $(document).ready(function () {
           delay: 1,
         },
         loop: true,
-        slidesPerView:'auto'
+        slidesPerView:'auto',
+        allowTouchMove: false,
+        disableOnInteraction: true
       });
 
  $(".related-posts .posts-list .swiper-container")
