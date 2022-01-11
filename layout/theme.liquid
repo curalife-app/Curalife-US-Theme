@@ -60,7 +60,10 @@
 <body>
 {% include 'google-tag-manager-noscript'%}
 {% include 'hot-jar'%}
-  {% section 'header'%}
+
+{% unless request.path contains 'curalin-pack' %}
+{% section 'header'%}
+{% endunless %}
 
   <main role="main">
     {{ content_for_layout }}
