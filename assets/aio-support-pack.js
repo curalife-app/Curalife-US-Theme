@@ -94,6 +94,7 @@
     /*count-effect*/
 
     window.addEventListener('scroll', (e) => {
+        var btn = $('#wisepops-root');
         let last_known_scroll_position = window.scrollY;
         if (counters && animateCounters && window.innerHeight > document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top && window.innerHeight < document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top + document.querySelector('.satisfaction-survey .survey-button').getBoundingClientRect().top) {
             animateCounters = false;
@@ -121,9 +122,11 @@
             window.innerHeight < document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().top) {
             document.querySelector('.floating-cta').classList.add('show')
         } else if (document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().top < -document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().height && !document.querySelector('.floating-cta').classList.contains("active")) {
-            document.querySelector('.floating-cta').classList.add('show')
+            document.querySelector('.floating-cta').classList.add('show');
+            btn.addClass('hide');
         } else {
-            document.querySelector('.floating-cta').classList.remove('show')
+            document.querySelector('.floating-cta').classList.remove('show');
+            btn.removeClass('hide');
         }
     });
 })();
