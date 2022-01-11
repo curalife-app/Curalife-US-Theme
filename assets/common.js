@@ -328,19 +328,6 @@ $(document).ready(function () {
         }
     });
 
-    brandsTicker = new Swiper('.partners-wrapper #ticker-wrap', {
-        spaceBetween: 0,
-        centeredSlides: true,
-        speed: 6000,
-        autoplay: {
-            delay: 0,
-        },
-        loop: true,
-        slidesPerView:'auto',
-        allowTouchMove: false,
-        disableOnInteraction: true
-      });
-
  $(".related-posts .posts-list .swiper-container")
  .each(function (index, element) {
         let $this = $(this);

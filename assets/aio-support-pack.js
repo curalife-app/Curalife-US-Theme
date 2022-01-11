@@ -11,6 +11,19 @@
 //# sourceMappingURL=typed.min.js.map
 (function () {
 
+    brandsTicker = new Swiper('.partners-wrapper #ticker-wrap', {
+        spaceBetween: 0,
+        centeredSlides: true,
+        speed: 6000,
+        autoplay: {
+            delay: 0,
+        },
+        loop: true,
+        slidesPerView:'auto',
+        allowTouchMove: false,
+        disableOnInteraction: true
+      });
+
     const get_utm = window.location.search.substring(1);
     let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
     window.onload = function () {
