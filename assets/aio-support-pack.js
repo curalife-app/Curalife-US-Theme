@@ -120,7 +120,8 @@
 
         if (document.querySelector('.natural-ingredients .survey-button .btn-cta').getBoundingClientRect().top < -(document.querySelector('.natural-ingredients .survey-button .btn-cta').getBoundingClientRect().height / 2) &&
             window.innerHeight < document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().top) {
-            document.querySelector('.floating-cta').classList.add('show')
+            document.querySelector('.floating-cta').classList.add('show');
+            btn.addClass('hide');
         } else if (document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().top < -document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().height && !document.querySelector('.floating-cta').classList.contains("active")) {
             document.querySelector('.floating-cta').classList.add('show');
             btn.addClass('hide');
