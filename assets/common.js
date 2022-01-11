@@ -331,7 +331,7 @@ $(document).ready(function () {
     brandsTicker = new Swiper('.partners-wrapper #ticker-wrap', {
         spaceBetween: 0,
         centeredSlides: true,
-        speed: 6000,
+        speed: 10000,
         autoplay: {
           delay: 1,
         },
