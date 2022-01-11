@@ -11,20 +11,6 @@
 //# sourceMappingURL=typed.min.js.map
 (function () {
 
-    let brandsTicker = new Swiper('.ricker-col', {
-        slidesPerView: 7,
-        spaceBetween: 0,
-        centeredSlides: true,
-        speed: 6000,
-        autoplay: {
-          delay: 1,
-        },
-        loop: true,
-        slidesPerView:'auto',
-        allowTouchMove: false,
-        disableOnInteraction: true
-      });
-
     const get_utm = window.location.search.substring(1);
     let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
     window.onload = function () {
