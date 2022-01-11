@@ -514,6 +514,7 @@ select {
 .hero-section .brand-welcome-text {
   padding: 11.8125rem 0 5.75rem 0;
   text-align: left;
+  margin-left: 10%;
 }
 .hero-section .brand-welcome-text * {
   font-weight: normal;
