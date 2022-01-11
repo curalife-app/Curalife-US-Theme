@@ -328,7 +328,7 @@ $(document).ready(function () {
         }
     });
 
-    brandsTicker = new Swiper('.partners-wrapper .ticker-wrap', {
+    brandsTicker = new Swiper('.partners-wrapper #ticker-wrap', {
         slidesPerView: 7,
         spaceBetween: 0,
         centeredSlides: true,
