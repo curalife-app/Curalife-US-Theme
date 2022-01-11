@@ -35,8 +35,8 @@
         "contact_us_html": "Contáctenos para más información",
         "autocomplete_title": "Sugerencias",
         "autocomplete_single_item": "1 artículo disponible",
-        "autocomplete_multi_item": "{{number }} artículos disponibles",
-        "autocomplete_selection": "{{number }} de {{total }}",
+        "autocomplete_multi_item": "{{number}} artículos disponibles",
+        "autocomplete_selection": "{{number}} de {{total}}",
         "autocomplete_close": "Cerrar sugerencias",
         "forwarding_indicator": {
           "new_window": "Se abre en una nueva ventana.",
@@ -44,14 +44,14 @@
           "external_and_new_window": "Abre un sitio web externo en una nueva ventana."
         },
         "checkout_context": {
-          "step_one": "%{shop_name } - Pagar"
+          "step_one": "%{shop_name} - Pagar"
         },
         "tooltip_accessibility_label": "Más información"
       },
       "contact": {
         "title": "Información",
         "address_title": "Dirección",
-        "shipping_address_title": "Dirección de Envío",
+        "shipping_address_title": "Dirección de envío",
         "delivery_option_title": "Método de entrega",
         "contact_method_title": "Información de contacto",
         "email_label": "Correo electrónico",
@@ -69,12 +69,12 @@
         "address2_label": "Apartamento, suite, etc.",
         "optional_address2_label": "Apartamento, suite, etc. (opcional)",
         "city_label": "Ciudad",
-        "country_label": "País \/ Región",
-        "country_code": "Código de país \/ región",
+        "country_label": "País\/Región",
+        "country_code": "Código de país\/región",
         "province_label": "Provincia",
         "province_placeholder": "Provincia",
-        "county_label": "condado",
-        "county_placeholder": "condado",
+        "county_label": "Condado",
+        "county_placeholder": "Condado",
         "state_label": "Estado",
         "state_placeholder": "Estado",
         "region_label": "Región",
