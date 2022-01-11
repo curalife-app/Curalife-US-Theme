@@ -2937,3 +2937,7 @@ font-size:rem(32, 16); // => font-size:2rem;
   }
 }
 /*# sourceMappingURL=maps/support-pack.css.map */
+
+.hide {
+  opacity: 0;
+}
