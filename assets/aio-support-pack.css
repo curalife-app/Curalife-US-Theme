@@ -2817,7 +2817,7 @@ font-size:rem(32, 16); // => font-size:2rem;
   }
 
   .satisfaction-survey .satisfaction-survey-bg {
-    padding-bottom: 7.375rem;
+    padding-bottom: 3.375rem;
   }
 
   .satisfaction-survey .satisfaction-survey-bg:before {
