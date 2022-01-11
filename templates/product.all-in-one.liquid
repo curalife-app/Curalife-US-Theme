@@ -636,10 +636,14 @@ var btn = $('#back-to-top-btn');
 $(window).scroll(function() {
   if ($(window).scrollTop() > 600) {
     btn.addClass('show');
-    $('.helpButton').attr('style', 'bottom: 60px !important');
+    if (screen.width < 760) {
+        $('.helpButton').attr('style', 'bottom: 60px !important');
+    }
   } else {
     btn.removeClass('show');
-    $('.helpButton').attr('style', 'bottom: 4px !important');
+    if (screen.width < 760) {
+        $('.helpButton').attr('style', 'bottom: 4px !important');
+    }
   }
 });
 
