@@ -28,9 +28,9 @@
     var btn = $('.wisepops-tab');
       $(window).scroll(function() {
         if ($(window).scrollTop() > 3000) {
-          btn.addClass('hide');
+          btn[0].addClass('hide');
         } else {
-          btn.removeClass('hide');
+          btn[0].removeClass('hide');
         }
       });
 
