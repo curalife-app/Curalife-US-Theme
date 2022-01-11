@@ -336,7 +336,6 @@ $(document).ready(function () {
           delay: 1,
         },
         loop: true,
-        slidesPerView:'auto',
         allowTouchMove: false,
         disableOnInteraction: true
       });
