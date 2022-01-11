@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
- html {
+html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -528,6 +528,9 @@ select {
 }
 .hero-section .brand-welcome-text span.typed-cursor {
   font-weight: 200;
+}
+.hero-section .lottie-welcome-text lottie-player {
+  margin: 0 auto;
 }
 
 .featured-section {
@@ -1786,6 +1789,9 @@ select {
   font-size: 0.875rem;
   line-height: 1.29;
 }
+.toolbar {
+  display: none;
+}
 /*Ussage:
 font-size:rem(32, 16); // => font-size:2rem;
 */
@@ -2338,6 +2344,10 @@ font-size:rem(32, 16); // => font-size:2rem;
   }
   .partners-wrapper .ticker-wrap:before, .partners-wrapper .ticker-wrap:after {
     display: none;
+  }
+  .partners-wrapper .partner-col {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
   }
 
   .real-changes .sub-title {

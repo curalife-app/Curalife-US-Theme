@@ -11,7 +11,7 @@
 //# sourceMappingURL=typed.min.js.map
 (function () {
 
-    const get_utm = window.location.search.substring(1);
+    const get_utm = window.location.search;
     let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
     window.onload = function () {
         for (let i = 0; i < product_link.length; i++) {

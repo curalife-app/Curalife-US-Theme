@@ -480,7 +480,7 @@
         <div class="container">
             <div class="data-wrap">
                 <div class="survey-button">
-                    <a href="https://curalife.com/products/curalin-pack" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
+                    <a href="https://curalife.com/products/curalin-pack" class="btn-cta" onclick="datalayer_push()"><b>Yes,</b> I want to try CuraLin <br>
                         for glucose support</a>
                 </div>
                 <div class="sub-title">
@@ -577,7 +577,7 @@
 
     <div class="floating-cta">
         <div class="container">
-            <a href="https://curalife.com/products/curalin-pack" class="btn-cta">Try CuraLin</a>
+            <a href="https://curalife.com/products/curalin-pack" class="btn-cta" onclick="datalayer_push()">>Try CuraLin</a>
         </div>
     </div>
 
@@ -661,7 +661,7 @@
                                 <lite-vimeo videoid="662208879" videoplay="Mirar"></lite-vimeo>
                             </div>
                             <div class="close-player"></div>
-                            
+
                             <div class="video-headline">
                                 <p>I I thought ‘well, let’s give it a try’. And I did. And I was amazed. My doctor was
                                     totally amazed.</p>
@@ -786,7 +786,7 @@
         <div class="container">
             <div class="data-wrap">
                 <div class="survey-button">
-                    <a href="https://curalife.com/products/curalin-pack" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
+                    <a href="https://curalife.com/products/curalin-pack" class="btn-cta" onclick="datalayer_push()">><b>Yes,</b> I want to try CuraLin <br>
                         for glucose support</a>
                 </div>
             </div>
@@ -1075,7 +1075,35 @@
     </div>
 </div>
 
-
+<script>
+    function datalayer_push() {
+        window.dataLayer  = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'eec.productDetail',  // name of an event. In this case, always stays as eec.productDetail
+            'ecommerce': {                      // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
+            'currencyCode': 'USD',           
+                'detail': { // name of an action. In this case, always stays as detail
+                'products': [{
+                    'name': '{{product.title}}',      // name of a product that is currently viewed. Always include it.
+                    'id': '{{ product.id }}',           // id of a product. Always include it.
+                    'price': '{{ product.price | t }}',          // price of a product
+                    'category': 'Simple',      // category of a product
+                    'variant': '{{ product.selected_variant.id }}'         // product variant.
+                }]
+                }
+            },
+            'userId': '{{ customer.id }}',
+            'email': '{{ customer.email }}',
+            'country': '{{customer.customer_address.country_code | t}}',
+            'city': '{{customer.customer_address.city }}',
+            'name': '{{ customer.first_name }}',
+            'surname': '{{ customer.last_name }}',
+            'phone_number': '{{customer.phone }}',
+            'state': '{{customer.customer_address.province }}',       //state or province
+            'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code         
+        });
+    }
+</script>
 
 <!--<script src="js/jquery-3.4.1.min.js" defer></script>
 <script src="js/libs.js" defer></script>-->
