@@ -24,17 +24,6 @@
         disableOnInteraction: true
       });
 
-      // Wispops Button
-    var btn = $('#wisepops-root');
-    console.log(btn);
-      $(window).scroll(function() {
-        if ($(window).scrollTop() > 1000) {
-          btn.addClass('hide');
-        } else {
-          btn.removeClass('hide');
-        }
-      });
-
     const get_utm = window.location.search.substring(1);
     if (get_utm) {
         let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
