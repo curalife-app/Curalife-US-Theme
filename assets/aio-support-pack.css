@@ -2305,7 +2305,7 @@ font-size:rem(32, 16); // => font-size:2rem;
   }
 
   .hero-section .brand-welcome-text * {
-    font-size: 2rem;
+    font-size: 7vw;
     color: #C78263;
   }
 
