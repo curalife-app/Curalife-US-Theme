@@ -328,7 +328,7 @@ $(document).ready(function () {
         }
     });
 
-    let brandsTicker = new Swiper('.ricker-col', {
+    let brandsTicker = new Swiper('.page-overflow .ticker-wrap', {
         slidesPerView: 7,
         spaceBetween: 0,
         centeredSlides: true,
