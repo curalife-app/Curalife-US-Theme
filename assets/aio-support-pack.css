@@ -2310,6 +2310,7 @@ font-size:rem(32, 16); // => font-size:2rem;
   .hero-section .brand-welcome-text {
     padding: 0.875rem 0;
     margin: 0 -15px;
+    margin-left: 5%;
   }
 
   .hero-section .data-wrap:before {
