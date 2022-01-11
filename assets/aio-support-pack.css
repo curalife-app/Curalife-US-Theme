@@ -558,6 +558,13 @@ select {
           justify-content: center;
   padding-top: 1.1875rem;
 }
+.partners-wrapper .ticker-wrap {
+  margin: 0 -0.9375rem;
+  padding: 0 0.9375rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
 .partners-wrapper .ticker-wrap:before, .partners-wrapper .ticker-wrap:after {
   content: "";
   width: 0.9375rem;
