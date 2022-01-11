@@ -1047,13 +1047,13 @@
         "cash_on_delivery": "Contra reembolso (COD)"
       },
       "cart": {
-        "only_n_items_available": "<transcy>Solo puede agregar %{count} %{name} al carrito.<\/transcy>",
-        "too_many_items_in_cart": "<transcy>No puede agregar más %{name} al carrito.<\/transcy>",
-        "all_items_in_cart": "<transcy>Todas las %{count} %{name} están en su carrito.<\/transcy>",
+        "only_n_items_available": "<transcy>Solo puedes agregar %{count} %{name} al carrito.<\/transcy>",
+        "too_many_items_in_cart": "<transcy>No puedes agregar más %{name} al carrito.<\/transcy>",
+        "all_items_in_cart": "<transcy>Todas las %{count} %{name} están en tu carrito.<\/transcy>",
         "empty_update": "no se puede actualizar el carrito vacío",
         "missing_parameters": "sin id o parámetro de línea válido",
         "generic_error": "<transcy>Error del carrito<\/transcy>",
-        "too_many_line_items_error": "<transcy>Su carrito no puede contener más de %{max} artículos.<\/transcy>",
+        "too_many_line_items_error": "<transcy>Tu carrito no puede contener más de %{max} artículos.<\/transcy>",
         "link_expired": "Enlace expirado",
         "link_no_longer_exists": "El enlace ya no existe.",
         "stock_problems_html": "<transcy>Uno o más elementos ya no están disponibles. Hemos proporcionado un <a href=\"%{link} \"> carrito actualizado<\/a>.<\/transcy>",
