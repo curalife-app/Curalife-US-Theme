@@ -598,6 +598,7 @@ select {
           align-items: center;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+      transition-timing-function:linear;
 }
 .partners-wrapper .partner-col {
   max-width: -webkit-max-content;
