@@ -25,12 +25,12 @@
       });
 
       // Wispops Button
-    var btn = $('.wisepops-tab');
+    var btn = $('#wisepops-root');
       $(window).scroll(function() {
         if ($(window).scrollTop() > 3000) {
-          btn[0].addClass('hide');
+          btn.addClass('hide');
         } else {
-          btn[0].removeClass('hide');
+          btn.removeClass('hide');
         }
       });
 
