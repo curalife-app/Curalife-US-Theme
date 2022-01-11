@@ -2463,6 +2463,7 @@ font-size:rem(32, 16); // => font-size:2rem;
     display: none;
   }
   .body-formula .sub-title h3 b {
+    display: block;
     font-size: 1.5rem;
   }
 
