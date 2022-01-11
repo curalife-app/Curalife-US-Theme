@@ -27,7 +27,7 @@
       // Wispops Button
     var btn = $('.wisepops-tab');
       $(window).scroll(function() {
-        if ($(window).scrollTop() > 600) {
+        if ($(window).scrollTop() > 3000) {
           btn.addClass('hide');
         } else {
           btn.removeClass('hide');
