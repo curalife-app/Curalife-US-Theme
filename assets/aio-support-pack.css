@@ -968,6 +968,9 @@ select {
 .testimonials-video_part.show-video .testimonials_iframe {
   z-index: 10;
 }
+.testimonials-video_part + .close-player {
+  display: none;
+}
 
 .iframe_overlay {
   background-image: url(aio-iframe-overlay.png);
@@ -1321,6 +1324,9 @@ select {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.video-player + .close-player {
+  display: none;
 }
 
 .video-wrapper {
@@ -2883,6 +2889,56 @@ font-size:rem(32, 16); // => font-size:2rem;
 
   .research-sources .data-wrap p {
     font-size: 0.4375rem;
+  }
+  .testimonials-video_part.full-screen .testimonials_iframe,
+  .testimonials-video_part.full-screen .player-wrap,
+  .video-player.full-screen .testimonials_iframe,
+  .video-player.full-screen .player-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+  }
+  .testimonials-video_part.full-screen + .close-player,
+  .video-player.full-screen + .close-player {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    left: unset;
+    cursor: pointer;
+    background: none;
+    width: 1.875rem;
+    height: 1.875rem;
+    padding: 0;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    z-index: 35;
+  }
+  .testimonials-video_part.full-screen + .close-player:before,
+  .video-player.full-screen + .close-player:before {
+    content: "+";
+    font-size: 1.875rem;
+    font-weight: 300;
+    color: #C78263;
+  }
+
+  .testimonials-video_part.show-video:not(.full-screen) .testimonials_iframe,
+  .testimonials-video_part.show-video:not(.full-screen) .player-wrap,
+  .video-player.show-video:not(.full-screen) .testimonials_iframe,
+  .video-player.show-video:not(.full-screen) .player-wrap {
+    pointer-events: none;
   }
 }
 /*# sourceMappingURL=maps/support-pack.css.map */
