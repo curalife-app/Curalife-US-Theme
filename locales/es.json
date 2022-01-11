@@ -1064,7 +1064,7 @@
         "variant_requires_selling_plan": "La variante solo se puede comprar con un plan de venta.",
         "selling_plan_not_applicable": "No se puede aplicar el plan de ventas a la variante",
         "shipping_address_not_required": "Este carrito no requiere envío",
-        "shipping_address_invalid": "Hubo un problema al calcular las tarifas de envío. Continúe con el pago para elegir una tarifa de envío antes de completar su pedido."
+        "shipping_address_invalid": "<transcy>Hubo un problema al calcular las tarifas de envío. Continúe con el pago para elegir una tarifa de envío antes de completar tu pedido.<\/transcy>"
       },
       "storefront": {
         "invalid_password": "Contraseña incorrecta, inténtelo de nuevo."
@@ -1195,26 +1195,26 @@
   },
   "cart": {
     "general": {
-      "title": "Su carrito",
+      "title": "<transcy>Tu carrito<\/transcy>",
       "remove": "Eliminar",
       "note": "Agregar una nota para el vendedor",
       "subtotal": "Total parcial",
       "taxes_and_shipping_at_checkout": "Impuestos y envío calculados al finalizar la compra.",
-      "taxes_and_shipping_policy_at_checkout_html": "Impuestos y <a href=\"{{ link }} \"> envío <\/a> calculados al finalizar la compra",
+      "taxes_and_shipping_policy_at_checkout_html": "<transcy>Impuestos y <a href=\"{{ link }} \"> envío<\/a>&nbsp;calculados al finalizar la compra<\/transcy>",
       "taxes_included_but_shipping_at_checkout": "Impuestos incluidos y envío calculado al finalizar la compra.",
-      "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a href=\"{{ link }} \"> Envío <\/a> calculado al finalizar la compra.",
+      "taxes_included_and_shipping_policy_html": "<transcy>Impuesto incluido. <a href=\"{{ link }} \"> Envío<\/a>&nbsp;calculado al finalizar la compra.<\/transcy>",
       "total": "Total",
       "price": "Precio",
       "quantity": "Cantidad",
       "update": "<transcy>Actualizar el carrito<\/transcy>",
-      "checkout": "Haga su pedido",
+      "checkout": "<transcy>Hacer el pedido<\/transcy>",
       "checkout_mobile": "<transcy>Finalizar la compra<\/transcy>",
       "empty": "tu canasta esta vacía",
       "alt_checkout": "O pagar usando",
       "continue_browsing_html": "¡Seguir comprando!",
       "terms_text": "Marque esta casilla para aceptar nuestros términos y condiciones.",
       "terms_text_html": "Marque esta casilla para aceptar nuestros <a target=\"_blank\" href=\"#\"> términos y condiciones <\/a>",
-      "terms_agree": "Debe aceptar los términos y condiciones de venta para pagar."
+      "terms_agree": "<transcy>Debes aceptar los términos y condiciones de venta para pagar.<\/transcy>"
     }
   },
   "contact": {
