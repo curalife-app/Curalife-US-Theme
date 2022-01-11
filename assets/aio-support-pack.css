@@ -1276,7 +1276,7 @@ select {
 
 .floating-cta {
   position: fixed;
-  left: 0;
+  left: 20px;
   right: 0;
   bottom: 1.25rem;
   z-index: 20;
