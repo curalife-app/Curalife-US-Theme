@@ -1741,7 +1741,6 @@ select {
 }
 .faq-list ul li .answer {
   display: none;
-  max-width: 50.3125rem;
 }
 .faq-list ul li .answer p {
   margin: 0;
