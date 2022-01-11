@@ -1572,7 +1572,7 @@ select {
 .satisfaction-survey .satisfaction-survey-bg {
   position: relative;
   padding-top: 2.0625rem;
-  padding-bottom: 16rem;
+  padding-bottom: 10rem;
   overflow: hidden;
 }
 .satisfaction-survey .satisfaction-survey-bg:before, .satisfaction-survey .satisfaction-survey-bg:after {
