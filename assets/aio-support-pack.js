@@ -25,10 +25,12 @@
       });
 
     const get_utm = window.location.search.substring(1);
-    let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
-    window.onload = function () {
-        for (let i = 0; i < product_link.length; i++) {
-            product_link[i].href = product_link[i].href + "&" + get_utm
+    if (get_utm) {
+        let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
+        window.onload = function () {
+            for (let i = 0; i < product_link.length; i++) {
+                product_link[i].href = product_link[i].href + "&" + get_utm
+            }
         }
     }
     
