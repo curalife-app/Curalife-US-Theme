@@ -2617,7 +2617,7 @@ font-size:rem(32, 16); // => font-size:2rem;
   }
 
   .floating-cta {
-    text-align: right;
+    text-align: left;
   }
 
   .floating-cta .btn-cta {
