@@ -406,7 +406,7 @@ $(window).on('resize', function () {
 function stickyHeader() {
     const element = document.querySelector("header");
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    if (element.classList & winScroll > 0) {
+    if (element.classList && winScroll > 0) {
         element.classList.add("scrolled");
     } else {
         element.classList.remove("scrolled");
