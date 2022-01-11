@@ -257,5 +257,18 @@
 </script>
 <script src="{{ 'aio-support-pack.js' | asset_url }}" defer></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
+
+<script>
+    // Wispops Button
+    var btn = $('#wisepops-root');
+    console.log(btn);
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 1000) {
+          btn.addClass('hide');
+        } else {
+          btn.removeClass('hide');
+        }
+      });
+</script>
 </body>
 </html>
