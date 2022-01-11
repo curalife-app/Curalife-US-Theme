@@ -820,65 +820,65 @@
       },
       "change_currency": {
         "currency_button_label": "%{currency } (%{currency_symbol })",
-        "credit_card_will_be_charged_html": "Su tarjeta de crédito se cargará %{amount }",
+        "credit_card_will_be_charged_html": "A su tarjeta de crédito se le cargará %{amount}",
         "payment_total_label": "Pago total",
-        "conversion_rate": "1 %{from_currency_code } = %{rate } %{to_currency_code }",
-        "change_currency_link": "Cambiar a %{currency_name }",
-        "card_provider_fx_charges_warning": "El proveedor de su tarjeta puede cobrar tarifas por transacciones de %{currency_code }.",
-        "currency_not_supported_by_shop": "La moneda que seleccionaste ya no está disponible. Todos los precios están ahora en %{currency_code }."
+        "conversion_rate": "1 %{from_currency_code} = %{rate} %{to_currency_code}",
+        "change_currency_link": "Cambiar a %{currency_name}",
+        "card_provider_fx_charges_warning": "El proveedor de su tarjeta puede cobrar tarifas por transacciones de %{currency_code}.",
+        "currency_not_supported_by_shop": "La moneda que seleccionaste ya no está disponible. Todos los precios están ahora en %{currency_code}."
       },
       "change_country": {
         "cart_updated_based_on_country": "Su carrito se ha actualizado en función de su país de envío."
       },
       "tips": {
         "title": "Agregar propina",
-        "description": "Muestre su apoyo al equipo en %{shop_name }",
+        "description": "Muestre su apoyo al equipo en %{shop_name}",
         "presets_description": "Seleccione un porcentaje de propina",
-        "custom_label": "Consejo personalizado",
+        "custom_label": "Propina personalizada",
         "add_tip": "Agregar propina",
-        "update_tip": "Consejo de actualización",
+        "update_tip": "Actualizar la propina",
         "message": "Gracias, lo apreciamos",
-        "preset_label": "%{tip_percent }%",
+        "preset_label": "%{tip_percent}%",
         "no_tip_label": "Ninguno"
       },
       "open_graph_meta_tag": {
         "title_with_products": {
-          "zero": "Compra %{product_name }",
-          "one": "Compra %{product_name } y %{count } otro artículo",
-          "other": "Compra %{product_name } y %{count } otros artículos"
+          "zero": "Compra %{product_name}",
+          "one": "Compra %{product_name} y %{count} otro artículo",
+          "other": "Compra %{product_name} y %{count} otros artículos"
         }
       },
       "subscriptions": {
         "recurring_total_intervals": {
           "day": {
             "one": "día",
-            "other": "%{count } días"
+            "other": "%{count} días"
           },
           "week": {
             "one": "semana",
-            "other": "%{count } semanas"
+            "other": "%{count} semanas"
           },
           "month": {
             "one": "mes",
-            "other": "%{count } meses"
+            "other": "%{count} meses"
           },
           "year": {
             "one": "año",
-            "other": "%{count } años"
+            "other": "%{count} años"
           }
         },
-        "recurring_totals": "%{total_price } cada %{interval }",
-        "recurring_totals_with_initial_order_shipping_discount": "Primer pago %{total_price_with_discount }, luego %{recurring_total }",
+        "recurring_totals": "%{total_price} cada %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Primer pago %{total_price_with_discount}, luego %{recurring_total}",
         "recurring_totals_with_policies": {
           "first_cycles": {
-            "one": "Primer pago %{total_price }",
-            "other": "Primeros %{count } pagos %{total_price } cada uno"
+            "one": "Primer pago %{total_price}",
+            "other": "Primeros %{count} pagos %{total_price} cada uno"
           },
-          "following_cycles": ", luego %{total_price } cada %{interval }"
+          "following_cycles": ", luego %{total_price} cada %{interval}"
         },
         "recurring_totals_with_initial_order_shipping_discount_with_policies": {
           "first_cycles": {
-            "one": ", luego %{count } pago a %{total_price }",
+            "one": ", luego %{count} pago a %{total_price}",
             "other": ", luego %{count } pagos a %{total_price } cada uno"
           }
         }
