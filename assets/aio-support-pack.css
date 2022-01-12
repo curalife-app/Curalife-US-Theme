@@ -490,7 +490,7 @@ select {
   display: block;
   position: absolute;
   top: -6.625rem;
-  right: -2.875rem;
+  right: -4.875rem;
   bottom: 0;
   z-index: -1;
 }
@@ -508,7 +508,7 @@ select {
 .hero-section .brand-slogan * {
   margin: 0;
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   line-height: 1.12;
   color: rgba(0, 0, 0, 0.67);
 }
