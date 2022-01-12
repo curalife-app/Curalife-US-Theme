@@ -28,9 +28,9 @@ if (!isRobot) {
             return e.country
         }
 
-        if ("AT" == n()) {window.location.hostname = "curalife.at"}
-        else if (o.includes(n())) {window.location.hostname = "trycuralife.com"}
-        else if ("US" != n() && "PR" != n()) {window.location.hostname = "global.curalife.com"}
+        if ("AT" == n()) {window.location.hostname = "curalife.at"} // If Austria
+        else if (o.includes(n())) {window.location.hostname = "trycuralife.com"} // If UAE Countries
+        else if ("US" != n() && "PR" != n()) {window.location.hostname = "global.curalife.com"} // If not US or PR so Global
         //window.whereAmIFrom = n, window.location.href.includes("checkout-diabetic") || window.location.href.includes("admin") || window.location.href.includes("parcelpanel") || (o.includes(n()) ? window.location.hostname = "trycuralife.com" : "AT" == n() ? window.location.hostname = "curalife.at" : "US" != n() && "PR" != n() && (window.location.hostname = "global.curalife.com")), "undefined" != typeof geoRules && geoRules()
     }, req.send(null);
 }
