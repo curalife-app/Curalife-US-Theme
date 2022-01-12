@@ -32,13 +32,11 @@ if (!isRobot) {
             window.location.hostname = "global.curalife.com";
             //window.whereAmIFrom = n, window.location.href.includes("checkout-diabetic") || window.location.href.includes("admin") || window.location.href.includes("parcelpanel") || (o.includes(n()) ? window.location.hostname = "trycuralife.com" : "AT" == n() ? window.location.hostname = "curalife.at" : "US" != n() && "PR" != n() && (window.location.hostname = "global.curalife.com")), "undefined" != typeof geoRules && geoRules()
         }
-        else if ((location.hostname == "global.curalife.com") && ("US" === o() || "PR" === o())) // If Global and we are on US or PR so go US
+        else if ((location.hostname == "global.curalife.com") && ("US" === n() || "PR" === n())) // If Global and we are on US or PR so go US
         {
             window.location.hostname = "curalife.com";
         }
         else if ("AT" == n()) {window.location.hostname = "curalife.at"} // If Austria
         else if (o.includes(n())) {window.location.hostname = "trycuralife.com"} // If UAE Countries
-
-        
     }, req.send(null);
 }
