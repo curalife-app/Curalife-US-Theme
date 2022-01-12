@@ -29,7 +29,7 @@
         let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
         window.onload = function () {
             for (let i = 0; i < product_link.length; i++) {
-                product_link[i].href = product_link[i].href + "&" + get_utm
+                product_link[i].href = product_link[i].href + "?" + get_utm
             }
         }
     }
