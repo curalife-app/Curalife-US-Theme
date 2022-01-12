@@ -503,6 +503,7 @@ select {
 .hero-section .brand-slogan {
   max-width: 20.75rem;
   padding-left: 0.25rem;
+  margin-top: 50px;
 }
 .hero-section .brand-slogan * {
   margin: 0;
@@ -512,7 +513,7 @@ select {
   color: rgba(0, 0, 0, 0.67);
 }
 .hero-section .brand-welcome-text {
-  padding: 11.8125rem 0 5.75rem 0;
+  padding: 2rem 0 10.75rem 0;
   text-align: left;
   margin-left: 10%;
 }
