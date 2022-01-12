@@ -27,6 +27,10 @@ if (!isRobot) {
         function n() {
             return e.country
         }
-        window.whereAmIFrom = n, window.location.href.includes("checkout-diabetic") || window.location.href.includes("admin") || window.location.href.includes("parcelpanel") || (o.includes(n()) ? window.location.hostname = "trycuralife.com" : "AT" == n() ? window.location.hostname = "curalife.at" : "US" != n() && "PR" != n() && (window.location.hostname = "global.curalife.com")), "undefined" != typeof geoRules && geoRules()
+
+        if ("AT" == n()) {window.location.hostname = "curalife.at"}
+        else if (o.includes(n())) {window.location.hostname = "trycuralife.com"}
+        else if ("US" != n() && "PR" != n()) {window.location.hostname = "global.curalife.com"}
+        //window.whereAmIFrom = n, window.location.href.includes("checkout-diabetic") || window.location.href.includes("admin") || window.location.href.includes("parcelpanel") || (o.includes(n()) ? window.location.hostname = "trycuralife.com" : "AT" == n() ? window.location.hostname = "curalife.at" : "US" != n() && "PR" != n() && (window.location.hostname = "global.curalife.com")), "undefined" != typeof geoRules && geoRules()
     }, req.send(null);
 }
