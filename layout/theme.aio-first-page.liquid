@@ -21,25 +21,7 @@
     <link rel="stylesheet" href="{{ 'aio-support-pack.css' | asset_url }}" type="text/css"/>
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> -->
 
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-    <meta name="application-name" content="&nbsp;"/>
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
-
-
-    <!-- open graph -->
-    <meta property="og:site_name" content="CuraLife">
-    <meta property="og:url" content="http://template/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Support Healthy BS" />
-    <meta property="og:description" content="Natural Ways to Maintain Healthy Glucose Levels" />
-    <meta property="og:image" content="intro-bg.png" />
-    <meta property="og:locale" content="us_EN">
-    <!-- open graph -->
+    {% include 'meta-tags'%}
 
     <style>
       @font-face {
