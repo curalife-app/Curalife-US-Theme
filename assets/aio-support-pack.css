@@ -1537,8 +1537,8 @@ select {
 
 .btn-cta {
   background: #C78263;
-  -webkit-box-shadow: 0.625rem 0.625rem 0.625rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0.625rem 0.625rem 0.625rem rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0.625rem 0.625rem 0.825rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0.625rem 0.625rem 0.825rem rgba(0, 0, 0, 0.3);
   border-radius: 1.25rem;
   padding: 0.875rem;
   max-width: 39.1875rem;
