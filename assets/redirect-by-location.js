@@ -28,6 +28,8 @@ if (!isRobot) {
             return e.country
         }
 
+        console.log(location.hostname)
+
         if ("AT" == n()) {window.location.hostname = "curalife.at"} // If Austria
         else if (o.includes(n())) {window.location.hostname = "trycuralife.com"} // If UAE Countries
         else if ("US" != n() && "PR" != n()) {window.location.hostname = "global.curalife.com"} // If not US or PR so Global
