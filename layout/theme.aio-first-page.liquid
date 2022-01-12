@@ -133,7 +133,7 @@
   </script>
   <!-- End VWO Async SmartCode -->
 
-    {% include 'google-tag-manager'%}
+    
 
     <!-- anti-flicker snippet (recommended)  -->
     <style>.async-hide { opacity: 0 !important} </style>
@@ -147,6 +147,8 @@
 
 {{content_for_header}}
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/oMYBvmnASlHzmouicgkepg" async></script>
+
+  {% include 'google-tag-manager'%}
 </head>
 <body>
  
