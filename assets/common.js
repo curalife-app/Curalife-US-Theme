@@ -241,11 +241,17 @@ $(document).ready(function () {
         $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
       });
 
-    $(".variant-box").click(function() {
-        // Slide to Variant Image
-        let slideIndex = productSliderAllInOne.slides.length - $('input[name=pack]:checked', '#CTAForm').attr('index');
-        productSliderAllInOne.slideTo(slideIndex);
-    });
+      let isFirstClick = true;
+      $(".variant-box").click(function() {
+          if (isFirstClick) {
+              isFirstClick = false;
+          }
+          else {
+              // Slide to Variant Image
+              let slideIndex = productSliderAllInOne.slides.length - $('input[name=pack]:checked', '#CTAForm').attr('index');
+              productSliderAllInOne.slideTo(slideIndex);
+          }
+      });
 
     reviewsSliderAllInOne = new Swiper('.product-template-all-in-one .reviews-section .swiper-container', {
         slidesPerView: 'auto',
