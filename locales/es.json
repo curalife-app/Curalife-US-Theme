@@ -994,7 +994,7 @@
       "invalid_start_date_or_issue_number_for_debit": "Se requiere una fecha de inicio válida o un número de emisión.",
       "invalid_expiry_year": "no es un año de vencimiento válido",
       "reset_password_html": "Esta dirección de correo electrónico ya está asociada a una cuenta. Si esta cuenta es suya, puede <a href=\"\/account\/login#recover\"> restablecer su contraseña <\/a>",
-      "verify_email": "<transcy>Hemos enviado un correo electrónico a %{customer_email}, haga clic en el enlace incluido para verificar su dirección de correo electrónico.<\/transcy>"
+      "verify_email": "<transcy>Hemos enviado un correo electrónico a %{customer_email}, haz clic en el enlace incluido para verificar tu dirección de correo electrónico.<\/transcy>"
     },
     "notices": {
       "customer": {
@@ -1017,7 +1017,7 @@
           "authorized": "Autorizado",
           "pending": "Pendiente",
           "paid": "Pagado",
-          "unpaid": "No pagado",
+          "unpaid": "<transcy>Sin pagar<\/transcy>",
           "voided": "Anulado",
           "partially_paid": "Parcialmente pagado",
           "partially_refunded": "Reintegrado parcialmente",
