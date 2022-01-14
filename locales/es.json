@@ -927,7 +927,7 @@
       "signature": "Dirección"
     },
     "addresses": {
-      "zip_code": "<transcy>código ZIP<\/transcy>",
+      "zip_code": "<transcy>Código ZIP<\/transcy>",
       "postal_code": "Código Postal",
       "postcode": "Código postal",
       "pincode": "Código PIN",
@@ -935,11 +935,11 @@
       "prefecture": "Prefectura",
       "province": "Provincia",
       "state": "Estado",
-      "state_and_territory": "Estado \/ territorio",
-      "county": "condado",
+      "state_and_territory": "<transcy>Estado\/territorio<\/transcy>",
+      "county": "<transcy>Condado<\/transcy>",
       "emirate": "Emirato",
       "governorate": "Gobernación",
-      "confirm": "¿Está seguro de que desea eliminar esta dirección?"
+      "confirm": "<transcy>¿Estás seguro de que deseas eliminar esta dirección?<\/transcy>"
     },
     "collections": {
       "sorting": {
@@ -947,7 +947,7 @@
         "best_selling": "Más vendido",
         "az": "Alfabéticamente, A-Z",
         "za": "Alfabéticamente, Z-A",
-        "price_ascending": "<transcy>Precios, de menor a mayor<\/transcy>",
+        "price_ascending": "<transcy>Precio, de menor a mayor<\/transcy>",
         "price_descending": "Precio, de mayor a menor",
         "date_ascending": "Fecha, de viejo a nuevo",
         "date_descending": "<transcy>Fecha, de nuevo a viejo<\/transcy>"
@@ -956,7 +956,7 @@
     "errors": {
       "blank": "no puede estar en blanco",
       "blocked_address": "Esta ubicación no es compatible.",
-      "credit_card_session_expired": "La autorización de la tarjeta de crédito venció, ingrese su información de pago nuevamente. Su tarjeta no ha sido cargada.",
+      "credit_card_session_expired": "<transcy>La autorización de la tarjeta de crédito venció, ingrese su información de pago nuevamente. Tu tarjeta no ha sido cargada.<\/transcy>",
       "empty": "no puede estar vacío",
       "invalid_email": "<transcy>La dirección de correo electrónico debe ser válida<\/transcy>",
       "discount_disabled": "Este descuento ha sido desactivado",
