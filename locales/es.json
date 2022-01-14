@@ -1106,12 +1106,12 @@
         },
         "track": {
           "status_html": "<transcy><b> Se informa el seguimiento de la apertura de los correos electrónicos. <\/b><\/transcy>",
-          "visibility": "<transcy>Solo veremos si ha abierto el correo electrónico como parte de la tasa total de apertura del correo electrónico.<\/transcy>"
+          "visibility": "<transcy>Solo veremos si has abierto el correo electrónico como parte de la tasa total de apertura de correos electrónicos.<\/transcy>"
         },
         "updated_policy": {
-          "status_html": "<transcy><b> Se informa el seguimiento de la apertura del correo electrónico. <\/b><\/transcy>",
-          "visibility": "<transcy>Hemos actualizado nuestra política y ahora hacemos un seguimiento de los correos electrónicos abiertos. Las tasas de apertura de correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de la tasa total de apertura del correo electrónico.<\/transcy>",
-          "opt_out_html": "Si no desea compartir esta información, puede <a style='text-decoration:underline;' href='%{link} '> cancelar la suscripción. <\/a>"
+          "status_html": "<transcy><b> Se informa el seguimiento de la apertura de los correos electrónicos. <\/b><\/transcy>",
+          "visibility": "<transcy>Hemos actualizado nuestra política y ahora hacemos un seguimiento de los correos electrónicos abiertos. Las tasas de apertura de correo electrónico se informarán de forma anónima. Solo veremos si has abierto un correo electrónico como parte de la tasa total de apertura de correos electrónicos.<\/transcy>",
+          "opt_out_html": "<transcy>Si no deseas compartir esta información, puedes&nbsp;<a style=\"text-decoration:underline;\" href=\"%{link} \">cancelar la suscripción. <\/a><\/transcy>"
         }
       }
     },
@@ -1163,13 +1163,13 @@
       "discounts_with_count": "<transcy>Se han aplicado %{count} descuentos<\/transcy>"
     },
     "challenge": {
-      "message": "Para continuar, háganos saber que no es un robot.",
-      "error": "<transcy>Su respuesta no fue correcta, inténtelo de nuevo.<\/transcy>",
+      "message": "<transcy>Para continuar, confirma que no eres un robot.<\/transcy>",
+      "error": "<transcy>Tu respuesta no fue correcta, inténtalo de nuevo.<\/transcy>",
       "submit_button_text": "Enviar"
     },
     "checkpoint": {
-      "message": "Resuelve Captcha para continuar",
-      "error": "<transcy>La validación de Captcha falló<\/transcy>",
+      "message": "<transcy>Resuelve el Captcha para continuar<\/transcy>",
+      "error": "<transcy>La validación Captcha falló<\/transcy>",
       "submit_button_text": "Enviar"
     },
     "store_availability": {
