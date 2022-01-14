@@ -1090,7 +1090,7 @@
       "open_tracking": {
         "opt_in": {
           "opted_in_html": "<transcy><b> Has habilitado el seguimiento de apertura de los correos electrónicos. <\/b><\/transcy>",
-          "visibility": "<transcy>Las tasas de apertura del correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de una tasa de apertura de correo electrónico agregada.<\/transcy>",
+          "visibility": "<transcy>Las tasas de apertura de los correos electrónicos se informarán de forma anónima. Solo veremos si has abierto un correo electrónico como parte de una tasa de apertura agregada.<\/transcy>",
           "opt_out_html": "<transcy>Puede <a style=\"text-decoration:underline;\" href=\"%{link} \"> excluirse<\/a>&nbsp;del seguimiento de apertura del correo electrónico si no desea compartir esta información.<\/transcy>",
           "preview_bar": "<transcy>Está obteniendo una vista previa de lo que los clientes verán cuando opten por el seguimiento de apertura del correo electrónico.<\/transcy>"
         },
