@@ -1064,7 +1064,7 @@
         "variant_requires_selling_plan": "La variante solo se puede comprar con un plan de venta.",
         "selling_plan_not_applicable": "No se puede aplicar el plan de ventas a la variante",
         "shipping_address_not_required": "Este carrito no requiere envío",
-        "shipping_address_invalid": "<transcy>Hubo un problema al calcular las tarifas de envío. Continúe con el pago para elegir una tarifa de envío antes de completar tu pedido.<\/transcy>"
+        "shipping_address_invalid": "<transcy>Hubo un problema al calcular las tarifas de envío. Continúa con el pago para elegir una tarifa de envío antes de completar tu pedido.<\/transcy>"
       },
       "storefront": {
         "invalid_password": "Contraseña incorrecta, inténtelo de nuevo."
@@ -1072,24 +1072,24 @@
       "tags": {
         "add_articles": "<transcy>Reducir la búsqueda a artículos que también tengan la etiqueta %{tag}<\/transcy>",
         "add_products": "<transcy>Reducir la selección a productos que coincidan con la etiqueta %{tag}<\/transcy>",
-        "remove_articles": "<transcy>Ampliar la búsqueda a artículos que no esten etiquetados como %{tag}<\/transcy>",
+        "remove_articles": "<transcy>Ampliar la búsqueda a artículos que no estén etiquetados como %{tag}<\/transcy>",
         "remove_products": "<transcy>Eliminar la etiqueta %{tag}<\/transcy>"
       }
     },
     "email_marketing": {
       "subscribed": {
-        "confirmation": "<transcy>Gracias por suscribirse a nuestra lista de email.<\/transcy>",
+        "confirmation": "<transcy>Gracias por suscribirte a nuestra lista de email.<\/transcy>",
         "disclaimer": "Puedes darte de baja en cualquier momento.",
         "unsubscribe": "Darse de baja"
       },
       "unsubscribed": {
         "confirmation": "<transcy>Te has dado de baja de nuestra lista de email.<\/transcy>",
         "disclaimer": "<transcy>No recibirás más actualizaciones de marketing de nuestra parte. Puedes suscribirte de nuevo en cualquier momento.<\/transcy>",
-        "preview": "<transcy>Está obteniendo una vista previa de lo que los clientes verán cuando cancelen la suscripción.<\/transcy>"
+        "preview": "<transcy>Estás obteniendo una vista previa de lo que los clientes verán cuando cancelen la suscripción.<\/transcy>"
       },
       "open_tracking": {
         "opt_in": {
-          "opted_in_html": "<transcy><b> Has habilitado el seguimiento de apertura del correo electrónico. <\/b><\/transcy>",
+          "opted_in_html": "<transcy><b> Has habilitado el seguimiento de apertura de los correos electrónicos. <\/b><\/transcy>",
           "visibility": "<transcy>Las tasas de apertura del correo electrónico se informarán de forma anónima. Solo veremos si ha abierto un correo electrónico como parte de una tasa de apertura de correo electrónico agregada.<\/transcy>",
           "opt_out_html": "<transcy>Puede <a style=\"text-decoration:underline;\" href=\"%{link} \"> excluirse<\/a>&nbsp;del seguimiento de apertura del correo electrónico si no desea compartir esta información.<\/transcy>",
           "preview_bar": "<transcy>Está obteniendo una vista previa de lo que los clientes verán cuando opten por el seguimiento de apertura del correo electrónico.<\/transcy>"
