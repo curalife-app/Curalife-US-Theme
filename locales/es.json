@@ -1190,7 +1190,7 @@
   "general": {
     "404": {
       "title": "<transcy>No encontrado<\/transcy>",
-      "subtext_html": "<transcy>La página que busca no existe<\/transcy>"
+      "subtext_html": "<transcy>La página que buscas no existe<\/transcy>"
     }
   },
   "cart": {
