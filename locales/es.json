@@ -680,10 +680,10 @@
         "page_title": "¡Gracias, %{display_name }!",
         "page_title_no_name": "¡Gracias!",
         "cancelled_page_title": "Orden cancelada",
-        "customer_information_title": "Información al cliente",
-        "contact_information_title": "Información del contacto",
-        "billing_address_title": "Dirección de Envio",
-        "shipping_address_title": "Dirección de Envío",
+        "customer_information_title": "Información del cliente",
+        "contact_information_title": "Información de contacto",
+        "billing_address_title": "Dirección de facturación",
+        "shipping_address_title": "Dirección de envío",
         "shipping_address_map_title": "Mapa de Google que muestra el punto de referencia de la dirección de envío: %{address }",
         "payment_method_title": "Método de pago",
         "shipping_method_title": "Método de envío",
@@ -879,17 +879,17 @@
         "recurring_totals_with_initial_order_shipping_discount_with_policies": {
           "first_cycles": {
             "one": ", luego %{count} pago a %{total_price}",
-            "other": ", luego %{count } pagos a %{total_price } cada uno"
+            "other": ", luego %{count} pagos a %{total_price} cada uno"
           }
         }
       },
       "customer_payment_methods": {
         "page_title": "Métodos de pago",
         "title": "Métodos de pago",
-        "update_card_button_label": "Tarjeta de actualización",
+        "update_card_button_label": "Actualizar la tarjeta",
         "delete_customer_mandate": {
           "generic_error": "Hubo un problema procesando tu petición.",
-          "success_message": "Su método de pago se ha eliminado correctamente."
+          "success_message": "Tu método de pago se ha eliminado correctamente."
         }
       },
       "failed_payment": {
