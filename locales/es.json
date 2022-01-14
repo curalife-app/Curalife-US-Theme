@@ -1091,21 +1091,21 @@
         "opt_in": {
           "opted_in_html": "<transcy><b> Has habilitado el seguimiento de apertura de los correos electrónicos. <\/b><\/transcy>",
           "visibility": "<transcy>Las tasas de apertura de los correos electrónicos se informarán de forma anónima. Solo veremos si has abierto un correo electrónico como parte de una tasa de apertura agregada.<\/transcy>",
-          "opt_out_html": "<transcy>Puede <a style=\"text-decoration:underline;\" href=\"%{link} \"> excluirse<\/a>&nbsp;del seguimiento de apertura del correo electrónico si no desea compartir esta información.<\/transcy>",
-          "preview_bar": "<transcy>Está obteniendo una vista previa de lo que los clientes verán cuando opten por el seguimiento de apertura del correo electrónico.<\/transcy>"
+          "opt_out_html": "<transcy>Puedes&nbsp;<a style=\"text-decoration:underline;\" href=\"%{link} \">excluirte<\/a>&nbsp;del seguimiento de apertura de los correos electrónicos si no deseas compartir esta información.<\/transcy>",
+          "preview_bar": "<transcy>Estás obteniendo una vista previa de lo que los clientes verán cuando opten por el seguimiento de apertura de los correos electrónicos.<\/transcy>"
         },
         "opt_out": {
-          "opted_out_html": "<transcy><b> Ha inhabilitado el seguimiento de apertura del correo electrónico. <\/b><\/transcy>",
-          "visibility": "No veremos si ha abierto sus correos electrónicos.",
-          "opt_in_html": "<transcy><a style=\"text-decoration:underline;\" href=\"%{link} \"> Opte por<\/a>&nbsp;el seguimiento de apertura del correo electrónico.<\/transcy>",
-          "preview_bar": "<transcy>Está obteniendo una vista previa de lo que los clientes verán cuando opten por no recibir seguimiento de apertura del correo electrónico.<\/transcy>"
+          "opted_out_html": "<transcy><b> Has inhabilitado el seguimiento de apertura de los correos electrónicos. <\/b><\/transcy>",
+          "visibility": "<transcy>No veremos si abres nuestros correos electrónicos.<\/transcy>",
+          "opt_in_html": "<transcy><a style=\"text-decoration:underline;\" href=\"%{link} \"> Opta por<\/a>&nbsp;el seguimiento de apertura de los correos electrónicos.<\/transcy>",
+          "preview_bar": "<transcy>Estás obteniendo una vista previa de lo que los clientes verán cuando opten por no recibir seguimiento de apertura de los correos electrónicos.<\/transcy>"
         },
         "no_longer_track": {
           "status_html": "<b> Ya no realizamos el seguimiento de los correos electrónicos abiertos. <\/b>",
           "privacy_policy": "<transcy>Después de que se enviara este correo electrónico, actualizamos nuestra política de privacidad y ya no realizamos un seguimiento de las aperturas.<\/transcy>"
         },
         "track": {
-          "status_html": "<b> Se informa el seguimiento de la apertura de correo electrónico. <\/b>",
+          "status_html": "<transcy><b> Se informa el seguimiento de la apertura de los correos electrónicos. <\/b><\/transcy>",
           "visibility": "<transcy>Solo veremos si ha abierto el correo electrónico como parte de la tasa total de apertura del correo electrónico.<\/transcy>"
         },
         "updated_policy": {
