@@ -160,12 +160,12 @@
         "free_shipping_discount_label": "Envío gratis",
         "applied_free_shipping_discount_label": "Solicitado",
         "apply_discount_button_label": "Solicitar",
-        "applied_discount_message": "%{amount } de descuento en el precio total del pedido",
+        "applied_discount_message": "%{amount} de descuento en el precio total del pedido",
         "discount_has_been_applied": "Se aplicó el descuento",
         "discount_has_been_removed": "Se ha eliminado el descuento",
         "gift_card_has_been_applied": "Se aplicó la tarjeta de regalo.",
         "gift_card_has_been_removed": "Se ha eliminado la tarjeta de regalo.",
-        "gift_card_subscriptions_notice": "Las tarjetas de regalo solo se aplicarán a su primer pago",
+        "gift_card_subscriptions_notice": "Las tarjetas de regalo solo se aplicarán a tu primer pago",
         "discount_already_applied": "Se ha aplicado un descuento a este pedido. No puedes agregar otro descuento.",
         "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\"> %{code} <\/strong> el código de descuento no es válido para los artículos de tu carrito",
         "discount_requires_customer_notice": "Ingresa tu información de envío para aplicar el código de descuento <strong style=\"text-transform:uppercase\"> %{code } <\/strong>",
@@ -175,7 +175,7 @@
         "subtotal_label": "Total parcial",
         "shipping_label": "Envío",
         "pickup_label": "Recogida",
-        "no_pickup_location": "Tu pedido no está disponible para su recogida. Ingrese una dirección de envío.",
+        "no_pickup_location": "Tu pedido no está disponible para su recogida. Ingresa una dirección de envío.",
         "tip_label": "Propina",
         "calculating_shipping": "Calculando…",
         "shipping_default_value": "Calculado en el siguiente paso",
@@ -190,10 +190,10 @@
         "free_total_label": "Gratis",
         "paid_label": "Pagado",
         "payment_due_label": "Fecha de pago",
-        "vat_label_html": "Incluyendo %{amount } en impuestos",
-        "discount_and_gift_card_savings_notice": "Después de %{discount_amount } en descuentos y %{gift_card_amount } en tarjetas de regalo",
-        "discount_savings_notice": "Después de %{discount_amount } en descuentos",
-        "gift_card_savings_notice": "Después del %{ monto de la tarjeta de regalo } en tarjetas de regalo",
+        "vat_label_html": "Incluyendo %{amount} en impuestos",
+        "discount_and_gift_card_savings_notice": "Después de %{discount_amount} en descuentos y %{gift_card_amount} en tarjetas de regalo",
+        "discount_savings_notice": "Después de %{discount_amount} en descuentos",
+        "gift_card_savings_notice": "Después del %{monto de la tarjeta de regalo} en tarjetas de regalo",
         "cost_table_title": "Costo total",
         "description_label": "Descripción",
         "price_label": "Precio",
@@ -210,14 +210,14 @@
         "total_already_paid_label": "Ya pagado",
         "unit_price": {
           "accessible_separator": "por",
-          "content_html": "%{price } %{accessible_separator } %{per_unit }"
+          "content_html": "%{price} %{accessible_separator} %{per_unit}"
         },
-        "gift_card_ending": "Tarjeta de regalo que termina en %{last_characters }",
+        "gift_card_ending": "Tarjeta de regalo que termina en %{last_characters}",
         "estimated_tax_label": "Impuesto estimado",
         "multiple_shipping_lines_label": "Total de envío",
         "recurring_total_label": "Total recurrente",
         "recurring_total_tooltip": "No incluye envío, impuestos, aranceles ni ningún descuento aplicable.",
-        "confirmation_number_label": "Confirmación # %{confirmation_number }"
+        "confirmation_number_label": "Confirmación # %{confirmation_number}"
       },
       "shipping": {
         "title": "Envío",
@@ -226,68 +226,68 @@
         "shipping_method_subscription_group_title": "Suscripción",
         "subscription_shipping": "Envío de la suscripción",
         "waiting_on_rate_notice": "Obteniendo tarifas de envío disponibles…",
-        "waiting_on_pickup_location_notice": "Obteniendo direcciones de recogida disponibles ...",
+        "waiting_on_pickup_location_notice": "Obteniendo direcciones de recogida disponibles...",
         "no_rates_for_cart_or_destination_notice": "No hay métodos de envío disponibles para su carrito o dirección.",
         "no_pickup_location_notice": "Al menos uno de sus productos no está disponible para recoger",
         "no_rates_for_country_notice": "No se encontraron tarifas de envío para esta dirección.",
         "no_rates_contact_notice": "Contáctenos para más información",
         "free_rate_label": "Gratis",
         "cheapest_rate_label": "Lo más barato",
-        "please_enter_your_shipping_information_notice": "Ingrese su información de envío.",
+        "please_enter_your_shipping_information_notice": "Ingresa tu información de envío.",
         "estimated_delivery_date": {
-          "one": "%{count } día laborable",
-          "other": "%{count } días laborables"
+          "one": "%{count} día laborable",
+          "other": "%{count} días laborables"
         },
-        "estimated_delivery_date_range": "%{ mínimo } a %{ máximo } días laborables",
-        "estimated_delivery_time": "Entrega estimada %{time }",
-        "estimated_delivery_time_range": "Entrega estimada %{min_time } - %{max_time }",
+        "estimated_delivery_date_range": "%{mínimo} a %{máximo} días laborables",
+        "estimated_delivery_time": "Entrega estimada %{time}",
+        "estimated_delivery_time_range": "Entrega estimada %{min_time} - %{max_time}",
         "shipping_line_phone_label": "Número de teléfono móvil (requerido)",
-        "shipping_line_phone": "Su repartidor puede usar este número para comunicarse con usted.",
+        "shipping_line_phone": "Tu repartidor puede usar este número para comunicarse contigo.",
         "shipping_line_delivery_phone_label": "Número de teléfono móvil",
-        "shipping_line_delivery_phone": "Podremos usar este número para llamarlo o enviarle un mensaje de texto sobre su entrega.",
+        "shipping_line_delivery_phone": "Podremos usar este número para llamarlo o enviarle un mensaje de texto sobre la entrega.",
         "optional_shipping_line_delivery_instructions_label": "Instrucciones de entrega (opcional)",
-        "shipping_line_delivery_instructions": "Ingrese la información necesaria como los códigos de puerta o instrucciones de entrega.",
+        "shipping_line_delivery_instructions": "Ingresa la información necesaria como los códigos de puerta o instrucciones de entrega.",
         "other_method": {
           "zero": "No hay otros métodos disponibles",
-          "one": "%{count } otro método disponible en",
-          "other": "%{count } otros métodos disponibles a partir de"
+          "one": "%{count} otro método disponible en",
+          "other": "%{count} otros métodos disponibles a partir de"
         },
-        "shipping_rate_discounted_amount": "Era: %{original_amount }. Ahora: %{amount }",
+        "shipping_rate_discounted_amount": "Era: %{original_amount}. Ahora: %{amount}",
         "local_delivery": "Entrega local",
         "subscription_delivery_description": {
           "prepaid_delivery_frequency": {
-            "one": "para %{count } entrega",
-            "other": "para %{count } entregas"
+            "one": "para %{count} entrega",
+            "other": "para %{count} entregas"
           },
           "subscription_delivery_frequency": {
             "day": {
               "one": "cotidiano",
-              "other": "cada %{count } días"
+              "other": "cada %{count} días"
             },
             "week": {
               "one": "cada semana",
-              "other": "cada %{count } semanas"
+              "other": "cada %{count} semanas"
             },
             "month": {
               "one": "cada mes",
-              "other": "cada %{count } meses"
+              "other": "cada %{count} meses"
             },
             "year": {
               "one": "todos los años",
-              "other": "cada %{count } años"
+              "other": "cada %{count} años"
             }
           },
-          "multiple_subscriptions_shipping_price_label": "%{shipping_price } por envío",
-          "prepaid_shipping_price_label": "%{shipping_price } por envío x %{delivery_interval_count }",
-          "initial_order_discounted": "Primer costo de envío %{discounted_shipping_cost }, luego %{frequency_description }",
-          "prepaid_initial_order_discounted": "Primer costo de envío %{discounted_shipping_price } %{prepaid_delivery_frequency }",
-          "prepaid_initial_order_discounted_with_per_delivery_price": "Primer costo de envío %{discounted_shipping_price } %{prepaid_delivery_frequency } (%{discounted_cost_per_delivery })",
-          "prepaid_initial_order_discounted_with_renewal": "Primero, el costo de envío es %{discounted_shipping_price } %{prepaid_delivery_frequency }, luego %{shipping_price } %{billing_cycle }",
-          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Primer costo de envío %{discounted_shipping_price } %{prepaid_delivery_frequency } (%{discounted_cost_per_delivery }), luego %{shipping_price } %{billing_cycle }",
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} por envío",
+          "prepaid_shipping_price_label": "%{shipping_price} por envío x %{delivery_interval_count}",
+          "initial_order_discounted": "Primer costo de envío %{discounted_shipping_cost}, luego %{frequency_description}",
+          "prepaid_initial_order_discounted": "Primer costo de envío %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Primer costo de envío %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Primero, el costo de envío es %{discounted_shipping_price} %{prepaid_delivery_frequency}, luego %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Primer costo de envío %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), luego %{shipping_price} %{billing_cycle}",
           "shipping_price_included": "Incluido",
-          "recurring_order_shipping_price": "seguido de %{recurring_order_shipping_price }",
-          "first_order_shipping_price_included": "Se incluye el primer pedido, seguido de %{recurring_order_shipping_price }",
-          "first_order_different_shipping_price": "%{first_order_shipping_price } (%{per_delivery_price } por envío), seguido de %{recurring_order_shipping_price }",
+          "recurring_order_shipping_price": "seguido de %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "Se incluye el primer pedido, seguido de %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} por envío), seguido de %{recurring_order_shipping_price}",
           "first_n_order_free": {
             "one": "Primer pedido gratis",
             "other": "Primeros %{count } pedidos gratis"
