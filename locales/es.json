@@ -290,11 +290,11 @@
           "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} por envío), seguido de %{recurring_order_shipping_price}",
           "first_n_order_free": {
             "one": "Primer pedido gratis",
-            "other": "Primeros %{count } pedidos gratis"
+            "other": "Primeros %{count} pedidos gratis"
           },
           "free_for_first_n_order": {
-            "one": "Por primera orden",
-            "other": "Para los primeros pedidos de %{count }"
+            "one": "Para la primera orden",
+            "other": "Para los primeros pedidos de %{count}"
           }
         },
         "one_time_purchase_shipping": "Envío único"
