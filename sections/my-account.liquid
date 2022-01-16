@@ -16,14 +16,18 @@
                             <ul>
                                 <li class="">
                                     <a href="#a">
-                                        <span class="icon-user"></span>My Profile</a>
+                                        <span class="icon-user"></span>My
+                                                                            Profile</a>
                                 </li>
                                 <li>
                                     <a href="#b">
                                         <span class="icon-orders"></span>Orders</a>
                                 </li>
                                 <!-- <li><a href="#c"><span class="icon-payment"></span>Manage Payments</a></li> -->
-                                                            <!--  <li><a href="#d"><span class="icon-refer-friend"></span>Refer a Friend</a></li> -->
+                                <li style="display:none;">
+                                    <a href="#d">
+                                        <span class="icon-refer-friend"></span>Refer a Friend</a>
+                                </li>
                                 <li>
                                     <a href="#e">
                                         <span class="icon-loyalty"></span>Loyalty</a>
@@ -103,15 +107,14 @@
                                             <li>
                                                 <div class="order-head">
                                                     <div class="number">
-                                                        <p>Order
-                                                            {{ order.order_number }}</p>
+                                                        <p>Order {{ order.name }}</p>
                                                     </div>
                                                     <div class="date">
                                                         <p>{{ order.created_at | date: format: 'abbreviated_date' }}</p>
                                                     </div>
                                                     <div class="more">
                                                         <p>
-                                                            <a href="javascript:void(0)">Dowload invoice</a>
+                                                            <a href="https://curalife-commerce-sia.myshopify.com/apps/download?ids={{ order.id }}&t=invoice&public_key=656f0dbf9392657eed7feefc486781fb&source=shopify_notification_email" target="_blank">Download Invoice</a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -120,26 +123,27 @@
                                                         <div class="order-item">
                                                             <div class="rows-wrap">
                                                                 <div class="img-wrap">
-                                                                    <span><img src={{a.product.featured_image | img_url}} alt=""></span>
+                                                                    <span><img src={% if a.product.featured_image %}{{a.product.featured_image | img_url}}{% else %}"{{ 'favicon-96x96.png' | asset_url }}"{% endif %} alt=""></span>
                                                                 </div>
                                                                 <div class="name">
                                                                     <p>{{ a.product.title }}</p>
                                                                 </div>
                                                             </div>
-                                                            <!--                                             <div class="value">
-                                                <p>{{a.sku}} -capsule bottle</p>
-                                            </div> -->
                                                             <div class="quantity">
-                                                                <p>Quantity: (
-                                                                    {{a.quantity}}
-                                                                    )</p>
+                                                                <p>Quantity: {{a.quantity}}</p>
                                                             </div>
                                                             <div class="price">
-                                                                <p>{{order.total_price | money}}</p>
+                                                                <p>{{order.total_price}}</p>
                                                             </div>
                                                             <div class="status done">
                                                                 <p>
-                                                                    <span>{{ order.fulfillment_status }}</span>
+                                                                    {% if order.fulfillment_status != "fulfilled" %}
+                                                                    <style>
+                                                                    #{{order.name}} { color:#d8ae13; }
+                                                                    #{{order.name}}:before { background:#d8ae13; }
+                                                                    </style>
+                                                                    {% endif %}
+                                                                    <span id="{{order.name}}">{{ order.fulfillment_status }}</span>
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -148,13 +152,12 @@
                                                     <div class="view-details d-mobile">
                                                         <div class="more-btn">
                                                             <p>
-                                                                <a href="javascript:void(0)">Dowload invoice</a>
+                                                                <a href="https://curalife-commerce-sia.myshopify.com/apps/download?ids={{ order.id }}&t=invoice&public_key=656f0dbf9392657eed7feefc486781fb&source=shopify_notification_email" target="_blank">Download Invoice</a>
                                                             </p>
                                                         </div>
                                                     </div>
+                                                    {% endfor %}
                                                 </li>
-
-                                            {% endfor %}
                                         {% endfor %}
 
                                     </ul>
@@ -171,6 +174,78 @@
                                 </div>
                             {% endif %}
                         </div>
+                        <!--  <div class="data-wrap" id="c">
+                        <div class="data-title">
+                            <h3>Manage Payments</h3>
+                        </div>
+                        <div class="data-list">
+                            <ul>
+                                <li>
+                                    <div class="payments-head">
+                                        <div class="number">
+                                            <p># 1 <span><img src="images/visa.svg" alt=""></span></p>
+                                        </div>
+                                        <div class="active-payment">
+                                            <label><input type="radio" name="set-default" checked>
+                                                <span class="label-wrap">
+                                                    <span class="active">Default Card</span><span class="set-active">Set Default</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="payments-body">
+                                        <div class="payments-item">
+                                            <div class="card-number">
+                                                <p><span>1234</span></p>
+                                            </div>
+                                            <div class="exp-date">
+                                                <p>05/23</p>
+                                            </div>
+                                            <div class="name">
+                                                <p>Thomas Jhones</p>
+                                            </div>
+                                            <div class="delete">
+                                                <p><a href="javascript:void(0)">Delete card</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="payments-head">
+                                        <div class="number">
+                                            <p># 2 <span><img src="images/master-card.svg" alt=""></span></p>
+                                        </div>
+                                        <div class="active-payment">
+                                            <label><input type="radio" name="set-default">
+                                                <span class="label-wrap">
+                                                    <span class="active">Default Card</span><span class="set-active">Set Default</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="payments-body">
+                                        <div class="payments-item">
+                                            <div class="card-number">
+                                                <p><span>1451</span></p>
+                                            </div>
+                                            <div class="exp-date">
+                                                <p>07/22</p>
+                                            </div>
+                                            <div class="name">
+                                                <p>Thomas Jhones</p>
+                                            </div>
+                                            <div class="delete">
+                                                <p><a href="javascript:void(0)">Delete card</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="list-btn">
+                                <button type="button" class="main-btn blank">add credit card</button>
+                            </div>
+                        </div>
+                    </div> -->
 
                         <div class="data-wrap" id="e">
                             <div class="data-title">
@@ -179,23 +254,21 @@
                             <script async src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg"></script>
 
                             <script>
-                      $(document).on("swell:setup", function(){
-                        var customerDetails = swellAPI.getCustomerDetails();
-
-                        $("#custom-point-balance-ui").html(customerDetails.pointsBalance);
-                        $("#custom-referral-link-ui").html(customerDetails.referralLink);
-
-                        customerDetails.actionHistoryItems.forEach(function(item) {
-                          $("#custom-history-container").append(
-                            "<tr>" +
-                            "<td>" + item.date   + "</td>" +
-                            "<td>" +item.action + " </td>" +
-                            "<td>" +item.points + " </td>" +
-                            "<td>" +item.status +
-                            "</td><tr>");
-                        });
-                      })
-                    </script>
+                         $(document).on("swell:setup", function(){
+                           var customerDetails = swellAPI.getCustomerDetails();
+                           $("#custom-point-balance-ui").html(customerDetails.pointsBalance);
+                           $("#custom-referral-link-ui").html(customerDetails.referralLink);
+                           customerDetails.actionHistoryItems.forEach(function(item) {
+                             $("#custom-history-container").append(
+                               "<tr>" +
+                               "<td>" + item.date   + "</td>" +
+                               "<td>" +item.action + " </td>" +
+                               "<td>" +item.points + " </td>" +
+                               "<td>" +item.status +
+                               "</td><tr>");
+                           });
+                         })
+                       </script>
 
                             <div class="rewards-table">
                                 <table>
@@ -211,6 +284,7 @@
                                 </table>
                             </div>
                         </div>
+
                         <div class="data-wrap with-border" id="f">
                             <div class="data-title">
                                 <h3>Change password</h3>
