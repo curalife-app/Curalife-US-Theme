@@ -1,114 +1,126 @@
-<style>
-    .yotpo-header-text {
-    color: #01c6b2;
-    border: 1px solid rgba(1, 198, 178, 0.3);
-    line-height: 1;
-    margin-bottom: 13px;
-    padding: 9px 6px !important;
-    font-size: 13px !important;
-    font-family: 'Poppins', sans-serif !important;
-    width: auto;
-}
-
-.yotpo-title-text {
-    font-weight: 800 !important;
-    text-align: left;
-    line-height: 1.3;
-    font-family: 'Poppins', sans-serif !important;
-}
-
-.yotpo-description-text {
-    text-align: left;
-    font-size: 16px !important;
-    line-height: 1.6;
-    margin: 0;
-    color: #222222 !important;
-    font-family: 'Poppins', sans-serif !important;
-}
-
-.yotpo-widget-referral-widget .yotpo-referral-widget-form {
-    margin-top: 26px !important;
-}
-
-
-.yotpo-widget-referral-widget .yotpo-action-button-widget.yotpo-customer-share-button{
-    margin-top: 15px !important;
-}
-button.yotpo-button-style.yotpo-button-standard-size.yotpo-filled-button.yotpo-rectangular-btn-type {
-    width: 100%;
-    background: #deb63a !important;
-    font-size: 12px !important;
-    line-height: 1;
-    letter-spacing: 2px;
-}
-button.yotpo-button-style.yotpo-button-standard-size.yotpo-filled-button.yotpo-rectangular-btn-type:hover{
-    background-color:#01c6b2 !important;
-}
-input {
-    font-size: 13px !important;
-    font-family: 'Poppins', sans-serif !important;
-    color: #222;
-}
-span.yopto-widget-button-text {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 400 !important;
-    font-size: 13px !important;
-}
-main h1:first-child {
-    display: none !important;
-}
-</style>
-<div class="refer-page">
-    <div class="container">
-        <div class="mini-wrap">
-            <h1 style="display:none">Refer A Friend</h1>
-            <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
+<h1 style="display:none">Refer A Friend</h1>
+<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
 <div class="yotpo-widget-instance" data-yotpo-instance-id="13430"></div>
-{%comment%}
-            <div class="refer-wrap {{section.settings.refr_imgpos}}">
-                <div class="refer-text">
-                    <div class="refer-label">
-                        <p>{{section.settings.refr_pretitl}}</p>
-                    </div>
-                    <div class="intro-text">
-                        <div class="sub-title">
-                            <h1>{{section.settings.refr_titl}}</h1>
-                            <p>{{section.settings.refr_desc}}</p>
-                        </div>
-                    </div>
-                    <div class="subscribe-form">
-                        
-                        {% form 'customer'%}
-                        {{ form.errors | default_errors }}
-                        {% include 'form-status'%}
-                            <label>
-                                <input type="hidden" name="contact[tags]" value="newsletter">
-                                <input type="email"
-                                name="contact[email]"
-                                id="Email"
-                                class="input-group__field newsletter__input"
-                                value="{% if customer %}{{ customer.email }}{% endif %}"
-                                placeholder="Enter email"
-                                autocorrect="off"
-                                autocapitalize="off">
-                            </label>
-                             
-                            <button type="submit" class="main-btn">NEXT</button>
-                        {% endform %}
-                    </div> 
-                </div>
-                {% if section.settings.refr__img != blank %}
-                <div class="refer-img">
-                    <div class="img-wrap">
-                        <img src="{{ section.settings.refr__img | img_url: '' }}" alt="">
-                    </div>
-                </div>
-                {% endif %}
-            </div>
-            {% endcomment %}
+<div id="raf-steps">
+    <h2 class="how-title">How It Works</h2>
+    <div class="line"></div>
+    <div class="steps">
+        <div class="step">
+            <img class="step-image" src="{{ 'raf-icon-1.png' | asset_url }}" alt="">
+            <p class="step-title">Tell Your Friend</p>
+            <p class="step-description">About your success with CuraLin</p>
+        </div>
+        <div class="step">
+            <img class="step-image" src="{{ 'raf-icon-2.png' | asset_url }}" alt="">
+            <p class="step-title">Enter Friend's Email</p>
+            <p class="step-description">Below to share your code</p>
+        </div>
+        <div class="step">
+            <img class="step-image" src="{{ 'raf-icon-3.png' | asset_url }}" alt="">
+            <p class="step-title">Add To Cart</p>
+            <p class="step-description">Your friend places their first order</p>
+        </div>
+        <div class="step">
+            <img class="step-image" src="{{ 'raf-icon-4.png' | asset_url }}" alt="">
+            <p class="step-title">Get FREE Bottle</p>
+            <p class="step-description">You get 1 FREE Bottle in Loyalty Points</p>
         </div>
     </div>
 </div>
+<p id="redeem-notice">Simply contact hello@curalife.com in order to redeem your 750 points!</p>
+
+<script>
+    function runAfterElementExists(jquery_selector,callback){
+        var checker = window.setInterval(function() {
+        if ($(jquery_selector).length) {
+            clearInterval(checker);
+            callback();
+        }}, 200);
+    }
+
+    runAfterElementExists("#yotpoReferralDescriptionText", function() {
+        $("#raf-steps").insertAfter("#yotpoReferralDescriptionText");
+        $("#redeem-notice").insertAfter(".yotpo-action-button-widget");
+    });
+</script>
+
+<style>
+.yotpo-header-text {
+    color: rgb(51, 183, 166)!important;
+    font-size: 20px;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contact-form {
+    width: 100%;
+    padding: 0;
+}
+
+.how-title {
+    color: #74B7AE;
+    text-transform: uppercase;
+    font-size: 35px;
+    margin: 20px;
+}
+
+.line {
+    width: 100px;
+    border-bottom: 1px solid black;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+}
+
+.steps .step {
+    width: 20%;
+}
+
+.steps .step img.step-image {
+    height: 120px;
+    object-fit: cover;
+}
+
+.steps .step p.step-title {
+    font-weight: bold;
+    color: #C77E72;
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+.steps .step p.step-description {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.yotpo-button-style {
+    background-color: #C77E72;
+}
+
+.yotpo-widget-referral-widget .yotpo-referral-widget-form {
+    width: 500px;
+    margin: 30px auto;
+}
+
+.yotpo-widget-referral-widget .yotpo-action-button-widget .yotpo-button-standard-size {
+    width: 100%;
+}
+
+.yotpo-widget-referral-widget .yotpo-title-text {
+    font-size: 40px;
+}
+
+.yotpo-widget-referral-widget .yotpo-action-button-widget {
+    margin-top: 20px;
+}
+
+</style>
 
 {% schema %}
     {
@@ -170,11 +182,6 @@ main h1:first-child {
 {% endstylesheet %}
 
 {% javascript %}
-{% endjavascript %}
 
-<style>
-    .contact-form {
-        width: 100%;
-        padding: 0;
-    }
-</style>
+
+{% endjavascript %}
