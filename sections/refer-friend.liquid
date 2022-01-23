@@ -2,7 +2,7 @@
     <h1 style="display:none">Refer A Friend</h1>
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
     <div class="yotpo-widget-instance" data-yotpo-instance-id="13430"></div>
-    <div id="raf-steps">
+    <div id="raf-steps" style="display: none;">
         <h2 class="how-title">How It Works</h2>
         <div class="line"></div>
         <div class="steps">
@@ -42,6 +42,7 @@
 
     runAfterElementExists("#yotpoReferralDescriptionText", function() {
         $("#raf-steps").insertAfter("#yotpoReferralDescriptionText");
+        $("#raf-steps").css('display','block');
         $("#redeem-notice").insertAfter(".yotpo-action-button-widget");
     });
 </script>
