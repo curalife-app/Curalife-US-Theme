@@ -988,7 +988,7 @@
 </div>
 
 <script type="text/javascript">
-    var headersTexts = [
+    var headerTitles = [
         "The Best Way to Keep Your Blood Sugar Healthy",
         "You Keep Your Blood Glucose Healthy!",
         "Natural & Effective A1c Support",
@@ -1013,9 +1013,11 @@
     ]
 
     const urlParams = new URLSearchParams(window.location.search);
-    textVersion = urlParams.get('utm_term');
+    textVersion = urlParams.get('utm_term') - 1;
 
-
+    $('#header-title').html(headerTitles[textVersion]);
+    $('#intro-title').html(introTitles[textVersion]);
+    $('#intro-description').html(introDescriptions[textVersion]);
     
     
     </script>
