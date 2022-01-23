@@ -20,7 +20,7 @@
                         </span>
                 </div>
                 <div class="brand-slogan">
-                    <h1>
+                    <h1 id="header-title">
                         Natural &
                         Effective Blood
                         Sugar Support
@@ -131,8 +131,8 @@
             <div class="intro-wrapper">
                 <img src="{{ 'aio-intro-curalin-bottle.png' | asset_url }}" alt="">
                 <div class="intro-content">
-                    <h2><b>Cura</b>Lin: Made For Your Blood Sugar Health</h2>
-                    <p>Support your body’s blood sugar levels with CuraLin - a clinically tested and doctor approved supplement for blood sugar health.
+                    <h2 id="intro-title"><b>Cura</b>Lin: Made For Your Blood Sugar Health</h2>
+                    <p id="intro-description">Support your body’s blood sugar levels with CuraLin - a clinically tested and doctor approved supplement for blood sugar health.
                         CuraLin’s all-natural formula is built on 10 years of researching the best ways to keep your blood sugar healthy.
                         Read on to discover how this powerful natural supplement is working for people around the world.</p>
                 </div>
@@ -986,6 +986,39 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var headersTexts = [
+        "The Best Way to Keep Your Blood Sugar Healthy",
+        "You Keep Your Blood Glucose Healthy!",
+        "Natural & Effective A1c Support",
+        "Stay In A Healthy Blood Sugar Range 100% Naturally",
+        "Natural & Effective Blood Sugar Supplement"
+    ];
+
+    introTitles = [
+        "CuraLin: Made For Your Blood Sugar Health",
+        "CuraLin: Made For Your Blood Glucose Health",
+        "Meet CuraLin: All Natural A1C Support",
+        "CuraLin: Made For Your Blood Sugar Health",
+        "Meet CuraLin: A Supplement For Your Blood Sugar Health"
+    ]
+
+    introDescriptions = [
+        "Support your body’s blood sugar levels with CuraLin - a clinically tested and doctor approved supplement for blood sugar health. CuraLin’s all-natural formula is built on 10 years of researching the best ways to keep your blood sugar healthy. Read on to discover how this powerful natural supplement is working for people around the world.",
+        "Support your body’s blood glucose levels with CuraLin - a clinically tested and doctor approved supplement for blood sugar health. CuraLin’s all-natural formula is built on 10 years of researching the best ways to keep your blood sugar healthy. Read on to discover how this powerful natural supplement is working for people around the world.",
+        "Support your A1C levels easily, and 100% naturally. CuraLin was developed with 10 years of research as the best natural way to keep your A1c healthy & balanced. Read on to discover how this powerful natural supplement is working for people around the world.",
+        "Support your blood sugar levels with CuraLin - a clinically tested and doctor approved supplement that keeps blood sugar levels inside a healthy range. CuraLin’s all-natural formula is built on 10 years of researching the best ways to keep your blood glucose healthy. Read on to discover how this powerful natural supplement is working for people around the world.",
+        "Support your body’s blood sugar levels with CuraLin - a clinically tested and doctor approved supplement for blood sugar health. CuraLin’s all-natural nutritional formula is built on 10 years of researching the best ways to keep your blood sugar healthy. Read on to discover how this powerful natural supplement is working for people around the world."
+    ]
+
+    const urlParams = new URLSearchParams(window.location.search);
+    textVersion = urlParams.get('utm_term');
+
+
+    
+    
+    </script>
 
 <style>
     body {
