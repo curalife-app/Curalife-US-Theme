@@ -1,33 +1,35 @@
-<h1 style="display:none">Refer A Friend</h1>
-<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
-<div class="yotpo-widget-instance" data-yotpo-instance-id="13430"></div>
-<div id="raf-steps">
-    <h2 class="how-title">How It Works</h2>
-    <div class="line"></div>
-    <div class="steps">
-        <div class="step">
-            <img class="step-image" src="{{ 'raf-icon-1.png' | asset_url }}" alt="">
-            <p class="step-title">Tell Your Friend</p>
-            <p class="step-description">About your success with CuraLin</p>
-        </div>
-        <div class="step">
-            <img class="step-image" src="{{ 'raf-icon-2.png' | asset_url }}" alt="">
-            <p class="step-title">Enter Friend's Email</p>
-            <p class="step-description">Below to share your code</p>
-        </div>
-        <div class="step">
-            <img class="step-image" src="{{ 'raf-icon-3.png' | asset_url }}" alt="">
-            <p class="step-title">Add To Cart</p>
-            <p class="step-description">Your friend places their first order</p>
-        </div>
-        <div class="step">
-            <img class="step-image" src="{{ 'raf-icon-4.png' | asset_url }}" alt="">
-            <p class="step-title">Get FREE Bottle</p>
-            <p class="step-description">You get 1 FREE Bottle in Loyalty Points</p>
+<div class="container">
+    <h1 style="display:none">Refer A Friend</h1>
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="13430"></div>
+    <div id="raf-steps">
+        <h2 class="how-title">How It Works</h2>
+        <div class="line"></div>
+        <div class="steps">
+            <div class="step">
+                <img class="step-image" src="{{ 'raf-icon-1.png' | asset_url }}" alt="">
+                <p class="step-title">Tell Your Friend</p>
+                <p class="step-description">About your success with CuraLin</p>
+            </div>
+            <div class="step">
+                <img class="step-image" src="{{ 'raf-icon-2.png' | asset_url }}" alt="">
+                <p class="step-title">Enter Friend's Email</p>
+                <p class="step-description">Below to share your code</p>
+            </div>
+            <div class="step">
+                <img class="step-image" src="{{ 'raf-icon-3.png' | asset_url }}" alt="">
+                <p class="step-title">Add To Cart</p>
+                <p class="step-description">Your friend places their first order</p>
+            </div>
+            <div class="step">
+                <img class="step-image" src="{{ 'raf-icon-4.png' | asset_url }}" alt="">
+                <p class="step-title">Get FREE Bottle</p>
+                <p class="step-description">You get 1 FREE Bottle in Loyalty Points</p>
+            </div>
         </div>
     </div>
+    <p id="redeem-notice">Simply contact hello@curalife.com in order to redeem your 750 points!</p>    
 </div>
-<p id="redeem-notice">Simply contact hello@curalife.com in order to redeem your 750 points!</p>
 
 <script>
     function runAfterElementExists(jquery_selector,callback){
@@ -118,6 +120,10 @@
 
 .yotpo-widget-referral-widget .yotpo-action-button-widget {
     margin-top: 20px;
+}
+
+.yotpo-widget-referral-widget .yotpo-tile-wrapper {
+    max-width: 100%;
 }
 
 </style>
