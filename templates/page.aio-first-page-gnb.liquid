@@ -1045,6 +1045,15 @@
         position: relative;
     }
 
+    .intro-section .container .intro-image {    
+        position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
     .intro-section .container .intro-image::before {    
       content: "";
       background-image: url('{{ "aio-intro-curalin-bottle-bg.png" | asset_url }}');
@@ -1054,7 +1063,7 @@
       right: 0px;
       bottom: 0px;
       left: 0px;
-      opacity: 0.75;
+      z-index: -1;
 }
 
     .intro-section .container .intro-wrapper .intro-content h2 {
@@ -1087,7 +1096,18 @@
         font-size: 4vw;
         line-height: 5vw;
         margin-top: 23vw;
+        width: 140%;
     }
+
+    .intro-section .container .intro-image{    
+    width: 200%;
+    align-items: end;
+    max-height: 80vw;
+}
+
+    .intro-section .container .intro-image::before {    
+      opacity: 0.5;
+}
     }
 </style>
 
