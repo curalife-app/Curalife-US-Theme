@@ -129,8 +129,7 @@
     <div class="intro-section">
         <div class="container">
             <div class="intro-wrapper">
-                <div class="intro-img-wrapper">
-                    <img src="{{ 'aio-intro-curalin-bottle-bg.png' | asset_url }}" alt="">
+                <div class="intro-image" style="background-image: url('{{ 'aio-intro-curalin-bottle-bg.png' | asset_url }}');">
                     <img src="{{ 'aio-intro-curalin-bottle.png' | asset_url }}" alt="">
                 </div>
                 <div class="intro-content">
@@ -1038,6 +1037,14 @@
         align-items: center;
         justify-content: space-between;
         gap: 50px;
+    }
+
+    .intro-section .container .intro-image {
+        min-width: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
     }
 
     .intro-section .container .intro-wrapper .intro-content h2 {
