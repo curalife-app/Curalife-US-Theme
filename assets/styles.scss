@@ -11,6 +11,10 @@
     opacity: 0;
 }
 
+.grecaptcha-badge { 
+    visibility: hidden;
+}
+
 .swiper-lazy-preloader {
     border: 4px solid var(--swiper-preloader-color, var(--green));
     border-top-color: transparent;
