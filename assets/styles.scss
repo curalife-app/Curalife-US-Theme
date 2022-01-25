@@ -58,9 +58,9 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--white);
-    background: #759450;
+    background: #d07c5b;
     border-radius: 2px;
-    border: 1px solid #759450;
+    border: 1px solid #d07c5b;
     transition: color var(--transition), border-color var(--transition), background-color var(--transition);
 
     i {
@@ -1155,7 +1155,7 @@
             font-weight: 500;
             font-size: 20px;
             line-height: 1.5;
-            color: #759450;
+            color: #d07c5b;
         }
     }
 }
@@ -5384,7 +5384,7 @@ p.form-message.form-message--success {
 input.shopify-challenge__button.btn {
     padding: 14px 35px;
     font-size: 14px;
-    background: #759450;
+    background: #d07c5b;
     border: none;
     color: #fff;
     transition: .3s ease-in-out;
