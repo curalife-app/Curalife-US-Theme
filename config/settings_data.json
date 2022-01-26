@@ -4550,10 +4550,10 @@
             "disabled": true,
             "settings": {
               "team_imgone": "shopify:\/\/shop_images\/01_5077e542-d23f-473e-97d5-3a204a3d6624.jpg",
-              "team_titleone": "Roy Milstein",
-              "team_titletwo": "Partnerships & New Accounts",
-              "team_email": "roym@curalife.com",
-              "team_phone": "617-396-4789",
+              "team_titleone": "Omer Nadiv",
+              "team_titletwo": "Strategic Project Manager",
+              "team_email": "Omer@curalife.com",
+              "team_phone": "",
               "btn_socialteamurl": "",
               "btn_teamtitle": "Schedule a Call",
               "btn_teamurl": ""
@@ -4567,7 +4567,7 @@
               "team_titletwo": "Existing Accounts & Dispensary Accounts",
               "team_email": "remy@curalife.com",
               "team_phone": "972-591-8733",
-              "btn_socialteamurl": "",
+              "btn_socialteamurl": "https:\/\/www.linkedin.com\/in\/remy-reinstein\/",
               "btn_teamtitle": "Schedule a Call",
               "btn_teamurl": ""
             }
