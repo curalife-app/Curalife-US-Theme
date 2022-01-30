@@ -118,7 +118,7 @@
             });
         }
 
-        if (document.querySelector('.natural-ingredients .survey-button .btn-cta').getBoundingClientRect().top < -(document.querySelector('.natural-ingredients .survey-button .btn-cta').getBoundingClientRect().height / 2) &&
+        if (document.querySelector('.real-changes').getBoundingClientRect().top < -(document.querySelector('.life-changes .survey-button .btn-cta').getBoundingClientRect().height / 2) &&
             window.innerHeight < document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().top) {
             document.querySelector('.floating-cta').classList.add('show');
             btn.addClass('hide');
