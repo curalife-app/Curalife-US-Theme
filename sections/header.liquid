@@ -61,16 +61,16 @@
                   	</li> -->
                     {% unless customer%}
                     <li><a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#login-modal">
-                        <i class="icon-user"></i><span>Account</span> </a>
+                        <i class="icofont-ui-user"></i><span>Account</span> </a>
                     </li>
                     {% endunless%}
                      {% if customer%}
                         <li><a href="/account">
-                        <i class="icon-user"></i><span>My Account</span></a></li>
+                        <i class="icofont-ui-user"></i><span>My Account</span></a></li>
                         {% endif %}
                     <li>
                       <a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#side-cart">
-                        <i class="icon-cart" data-items="{{ cart.item_count }}"></i><span>Cart </span> 
+                        <i class="icofont-shopping-cart" data-items="{{ cart.item_count }}"></i><span>Cart </span> 
                         {% if cart.item_count > 0 %}<span class="header_cart_count">{{ cart.item_count }}</span>{% endif %}
                       </a>
                   </li>
