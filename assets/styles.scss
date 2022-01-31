@@ -2209,6 +2209,7 @@
     a {
         display: block;
         padding: 5px;
+        width: 30%;
         font-size: 20px;
         color: var(--dark);
         transition: color var(--transition);
@@ -2221,7 +2222,7 @@
     label {
         display: block;
         flex: auto;
-        min-width: 30%;
+        min-width: 40%;
 
         input {
             width: 100%;
