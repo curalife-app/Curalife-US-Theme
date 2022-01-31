@@ -65,7 +65,7 @@
           "c0ff1370-42fa-4879-8567-6b50a51553ee": {
             "type": "social",
             "settings": {
-              "socil_icn": "icon-fb",
+              "socil_icn": "icofont-facebook",
               "socil_title": "Facebook",
               "socil_link": "https:\/\/www.facebook.com\/curalife\/"
             }
@@ -73,7 +73,7 @@
           "fe0f46b0-854b-4179-8912-3108885bb66a": {
             "type": "social",
             "settings": {
-              "socil_icn": "icon-yt",
+              "socil_icn": "icofont-youtube",
               "socil_title": "Youtube",
               "socil_link": "https:\/\/www.youtube.com\/channel\/UCaiEVA0zN9-Y4bqIkHRAONA"
             }
@@ -81,7 +81,7 @@
           "03f8a7db-5763-4fa8-8f8f-1bf7e627679c": {
             "type": "social",
             "settings": {
-              "socil_icn": "icon-tw",
+              "socil_icn": "icofont-twitter",
               "socil_title": "Twitter",
               "socil_link": "https:\/\/twitter.com\/curalife"
             }
@@ -89,7 +89,7 @@
           "2af0e383-bb4f-448e-950d-77112f775483": {
             "type": "social",
             "settings": {
-              "socil_icn": "icon-in",
+              "socil_icn": "icofont-linkedin",
               "socil_title": "Linkedin",
               "socil_link": "https:\/\/www.linkedin.com\/company\/curalife-ltd"
             }
@@ -105,7 +105,7 @@
           "0618ebb8-3ab8-4dc2-a7aa-6ee2bfeab5b7": {
             "type": "social",
             "settings": {
-              "socil_icn": "icon-vm",
+              "socil_icn": "icofont-vimeo",
               "socil_title": "Vimeo",
               "socil_link": "https:\/\/vimeo.com\/user33358682"
             }
