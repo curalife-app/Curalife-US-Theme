@@ -23,35 +23,36 @@
                           {% endfor %}
                       </div>
                   </div>
-                  <div class="support-contacts footer-column">
-                    <div class="title">
-                        <h3>24/7 CUSTOMER SUPPORT</h3>
-                    </div>
-                    <ul>
-                        {% for block in section.blocks %}
-                        {% if block.type == 'contact' %}
-                        <li>
-                          <div class="phone-title">
-                            {% if block.settings.phn_img != blank %}
-                            <span>
-                              <img src="{{block.settings.phn_img | img_url: ''}}" alt="" width="26" height="26">
-                            </span>
-                            {% endif %}
-                            {{block.settings.phn_title}} 
-                          </div>
-                            <div class="show-phone">
-                              <div class="show-phone-btn"><i class="{{block.settings.phn_icn}}"></i> Show Phone</div>
-                              <div class="show-phone-content">
-                                <a href="tel:{{block.settings.phn_numbr}}">{{block.settings.phn_numbr}}</a>
-                              </div>
+                  <div class="right-column footer-column">
+                    <div class="support-contacts">
+                      <div class="title">
+                          <h3>24/7 CUSTOMER SUPPORT</h3>
+                      </div>
+                      <ul>
+                          {% for block in section.blocks %}
+                          {% if block.type == 'contact' %}
+                          <li>
+                            <div class="phone-title">
+                              {% if block.settings.phn_img != blank %}
+                              <span>
+                                <img src="{{block.settings.phn_img | img_url: ''}}" alt="" width="26" height="26">
+                              </span>
+                              {% endif %}
+                              {{block.settings.phn_title}} 
                             </div>
-                        </li>
-                        {% endif %}
-                        {% endfor %}
-                       
-                    </ul>
-                </div>
-                  <div class="social-bar footer-column">
+                              <div class="show-phone">
+                                <div class="show-phone-btn"><i class="{{block.settings.phn_icn}}"></i> Show Phone</div>
+                                <div class="show-phone-content">
+                                  <a href="tel:{{block.settings.phn_numbr}}">{{block.settings.phn_numbr}}</a>
+                                </div>
+                              </div>
+                          </li>
+                          {% endif %}
+                          {% endfor %}
+                         
+                      </ul>
+                  </div>
+                  <div class="social-bar">
                     <div class="title">
                       <h3>FOLLOW US ON</h3>
                     </div>
@@ -64,6 +65,8 @@
                         {% endfor %}
                     </ul>
                 </div>
+                  </div>
+                  
               </div>
               <div class="text">
                   <p>{{section.settings.ftr_desc}}</p>
