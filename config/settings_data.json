@@ -301,8 +301,8 @@
         "type": "friend-refer",
         "settings": {
           "refr_img": "shopify:\/\/shop_images\/refer-friend_6f838eba-a72f-4d06-b890-f9a191caa82d.jpg",
-          "refr_titl": "Refer a Friend<br> to CuraLin",
-          "refr_desc": "Referring a friend is simple & rewarding!",
+          "refr_titl": "Refer a Friend<br> Program",
+          "refr_desc": "Earn free bottles of CuraLin simply by referring your friends! Thanks to you, they will also get a $25 discount off their first order.",
           "refr_btntitl": "Start Now",
           "refr_btnlink": "shopify:\/\/pages\/refer-a-friend",
           "nwsltr_titl": "The CuraLife Newsletter",
