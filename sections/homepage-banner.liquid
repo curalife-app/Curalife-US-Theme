@@ -10,7 +10,7 @@
             <p>Science based supplements that improve quality of life.</p>
             <div class="cta-button-wrapper">
                 <img class="bottle-img" src="{{ 'product.png' | asset_url }}" alt="Curalin Bottle">
-                <a href="/collections/all"><button class="cta-btn">Shop Now</button></a>
+                <a class="cta-btn" href="/collections/all">Shop Now</a>
                 <div class="free-shipping">
                     <img class="free-shipping-icon" src="{{ 'icon-free-shipping-light-white.png' | asset_url }}" alt="">
                     <p>Free Shipping</p>
@@ -81,9 +81,12 @@
 .homepage-banner .content .cta-button-wrapper .bottle-img {
     width: 200px;
     margin-left: -50px;
+    z-index: 1;
+    position: relative;
+    pointer-events: none;
 }
 
-.homepage-banner .content .cta-button-wrapper button {
+.homepage-banner .content .cta-button-wrapper .cta-btn {
     text-transform: uppercase;
     background: #C78263;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -92,8 +95,6 @@
     padding: 10px 30px;
     font-size: 38px;
     margin-left: -75px;
-    position: relative;
-    z-index: -1;
     border: 0;
 }
 
