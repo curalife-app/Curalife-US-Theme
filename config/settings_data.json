@@ -4588,6 +4588,7 @@
       },
       "1640766506aa030779": {
         "type": "banner-new-year",
+        "disabled": true,
         "settings": {
           "bnr_titl": "Effective. Safe. Natural",
           "bnr_desc": "Science based supplements that improve quality of life.",
@@ -4596,9 +4597,15 @@
           "bnr_img": "shopify:\/\/shop_images\/Frame_15.png",
           "mblbnr_img": "shopify:\/\/shop_images\/Frame_16.png"
         }
+      },
+      "16442424129a03df23": {
+        "type": "homepage-banner",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
+      "16442424129a03df23",
       "1640766506aa030779",
       "16190701775cb6c02f",
       "1619071284c9bbcc58",
