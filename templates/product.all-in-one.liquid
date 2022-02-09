@@ -658,7 +658,7 @@ jQuery(".variant-box").click(function() {
     jQuery("#productVaraintSelected").prop('value', jQuery(this).find('input[type=radio]')[0].value);
 
     // Save Text Change
-    let saveText = "You Save " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
+    let saveText = "You Save " + jQuery('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
     jQuery('#save').animate({'opacity': 0}, 800, function () {
         jQuery(this).text(saveText);
     }).animate({'opacity': 1}, 800);
