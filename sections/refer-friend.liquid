@@ -32,6 +32,8 @@
 </div>
 
 <script>
+    $( document ).ready(function() {
+
     function runAfterElementExists(jquery_selector,callback){
         var checker = window.setInterval(function() {
         if ($(jquery_selector).length) {
@@ -46,6 +48,9 @@
         $("#redeem-notice").insertAfter(".yotpo-action-button-widget");
         $("#redeem-notice").css('display','block');
     });
+
+});
+
 </script>
 
 <style>
