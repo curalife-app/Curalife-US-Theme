@@ -60,9 +60,9 @@
    //Value Retrieval Function
 
   jQuery('.createAccount').click(function(event) {
-    var rr =$("#create_customer").serialize();
+    var rr =jQuery("#create_customer").serialize();
     // Store
-    localStorage.setItem("registerForm", $("form").serialize());
+    localStorage.setItem("registerForm", jQuery("form").serialize());
     
     var str = localStorage.getItem("registerForm");
     
