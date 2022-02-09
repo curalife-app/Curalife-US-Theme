@@ -50,18 +50,18 @@
 </style>
 
 <script>
-    $("#floating-cta").click(function() {
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $("#product-section").offset().top + 130
+    jQuery("#floating-cta").click(function() {
+    jQuery([document.documentElement, document.body]).animate({
+        scrollTop: jQuery("#product-section").offset().top + 130
     }, 2000);
 });
 
-if ($(window).width() < 761) {
-    $(window).scroll(function(){ 
-            if ($(this).scrollTop() > 800 && $(this).scrollTop() < ($("#product-section").offset().top - 1000)) { 
-                $('#floating-cta').fadeIn(); 
+if (jQuery(window).width() < 761) {
+    jQuery(window).scroll(function(){ 
+            if (jQuery(this).scrollTop() > 800 && jQuery(this).scrollTop() < (jQuery("#product-section").offset().top - 1000)) { 
+                jQuery('#floating-cta').fadeIn(); 
             } else { 
-                $('#floating-cta').fadeOut(); 
+                jQuery('#floating-cta').fadeOut(); 
             } 
         });
 }
