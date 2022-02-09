@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
   <head>
+    <script src="{{ 'jquery-3.4.1.min.js' | asset_url}}"></script>
+
     <title>{{ page_title }}</title>
     <!-- Redirect By Global Or US -->
     <script src="{{ 'redirect-by-location.js' | asset_url }}"></script>
@@ -16,7 +18,6 @@
   <noscript><link rel="stylesheet" href="{{ 'styles-product-aio.css' | asset_url }}"></noscript>
 
   <!-- Script Libraries -->
-  <script src="{{ 'jquery-3.4.1.min.js' | asset_url}}"></script>
   <script src="{{ 'libs.js' | asset_url }}" async></script>
   <script src="{{ 'common.js' | asset_url }}" async></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" defer="defer"></script>
