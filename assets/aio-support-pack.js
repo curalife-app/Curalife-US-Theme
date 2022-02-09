@@ -94,7 +94,7 @@
     /*count-effect*/
 
     window.addEventListener('scroll', (e) => {
-        var btn = $('#wisepops-root');
+        var btn = jQuery('#wisepops-root');
         let last_known_scroll_position = window.scrollY;
         if (counters && animateCounters && window.innerHeight > document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top && window.innerHeight < document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top + document.querySelector('.satisfaction-survey .survey-button').getBoundingClientRect().top) {
             animateCounters = false;
