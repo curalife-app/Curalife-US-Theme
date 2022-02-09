@@ -52,7 +52,7 @@
 {{ content_for_header }} Header hook for plugins -->
 
   
-  {% include 'google-tag-manager'%}
+  <!-- {% include 'google-tag-manager'%} -->
 
   {% include "manychat-header" %}
 
@@ -72,7 +72,7 @@
 </head>
 
 <body>
-{% include 'google-tag-manager-noscript'%}
+<!-- {% include 'google-tag-manager-noscript'%} -->
 
 {% unless request.path contains 'curalin-pack' %}
 {% section 'header'%}
