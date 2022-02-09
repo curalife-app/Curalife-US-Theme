@@ -85,7 +85,7 @@
     {{ content_for_layout }}
     {% section 'footer'%}
   </main>
-
+  
 <!-- Begin Shopify-Afterpay JavaScript Snippet (v1.0.9) -->
 <script type="text/javascript">
 // Overrides:
@@ -142,98 +142,6 @@ var afterpay_js_snippet_version = '1.0.9';
 <!-- {% include 'salesforce-chat' %} -->
   {% include 'wisepops-generated' %}
 {% include 'social-login' %}
-  
- <!-- Start of Woopra Code -->
- <script>
-  !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
-
-  woopra.config({
-    domain: "curalife.com",
-    outgoing_tracking: true,
-    download_tracking: true,
-    click_tracking: true
-  });
-
-  {%- if customer -%}
-  woopra.identify({
-    id: {{ customer.id | json }},
-    name: {{ customer.name | json }},
-    email: {{ customer.email | json }},              
-    order_count: {{ customer.orders_count | json }},
-    total_spent: {{ customer.total_spent | json }}
-  });
-  {%- endif -%}
-
-  woopra.track();
-   
-  document.addEventListener('submit', function(e) {
-    const form = e.target;
-    const formData = new FormData(form);
-    const entries = formData.entries();
-    const data = Object.fromEntries(entries);
-    
-    for (var key in data) {
-      var fieldEl = form.querySelector(`[name="${key}"]`);
-      if (fieldEl.type === 'password') {
-        delete data[key];
-      }
-    }
-
-    // Newsletter Subscription form
-    if (form.id === 'contact_form') {
-      woopra.identify({
-       'email': data["contact[email]"]
-      });
-
-      woopra.track('newsletter subscribe', {}, {
-        queue: true
-      });
-    }
-    
-    // Contact form
-    if (form.id === 'contact-us-form') {
-      woopra.identify({
-         name: data['name'],
-         email: data['email'],
-         phone: data['phone']
-      });
-      
-      woopra.track('submit contact form', data, { queue: true });
-    }
-    
-    if (form.className.indexOf('yotpo-referral-widget-form') !== -1) {
-      // Track signing up for referral program
-      if (form.querySelector('[name="email"]').placeholder === 'Your email address') {
-        woopra.identify({ email: data.email});
-        woopra.track('refer a friend', {
-          email: data.email
-        }, { queue: true });
-      } else {
-        // Track inviting a friend
-        woopra.track('friend referred', { email: data.email }, {queue: true});
-      }
-    }
-    
-  });
-</script>
-<!-- End of Woopra Code -->
-
-<!-- Start VWO Async SmartCode -->
- <!-- 
-<script type='text/javascript'>
-  window._vwo_code = window._vwo_code || (function(){
-  var account_id=596099,
-  settings_tolerance=2000,
-  library_tolerance=2500,
-  use_existing_jquery=false,
-  is_spa=1,
-  hide_element='body',
-  
-  /* DO NOT EDIT BELOW THIS LINE */
-  f=false,d=document,code={use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){
-  window.settings_timer=setTimeout(function () {_vwo_code.finish() },settings_tolerance);var a=d.createElement('style'),b=hide_element?hide_element+'{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&f='+(+is_spa)+'&r='+Math.random());return settings_timer; }};window._vwo_settings_timer = code.init(); return code; }());
-  </script>
- End VWO Async SmartCode -->
   
   </body>
 </html>
