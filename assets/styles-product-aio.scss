@@ -218,33 +218,41 @@
                                 padding: 10px;
                                 
                                 input[type='radio'] {
+                                    position: relative;
+                                    left: -3px;
+
+                                    &:before {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        width: 14px;
+                                        height: 14px;
+                                        left: 1px;
+                                        top: 50%;
+                                        margin-top: -7px;
+                                        border: 1px solid black;
+                                        border-radius: 8px;
+                                    }
+                                      
                                     &:after {
-                                        -webkit-appearance: radio;
-                                        width: 15px;
-                                        height: 15px;
-                                        border-radius: 15px;
-                                        top: -2px;
-                                        left: -1px;
-                                        position: relative;
-                                        background-color: #d1d3d1;
-                                        content: '';
-                                        display: inline-block;
-                                        visibility: visible;
-                                        border: 2px solid white;
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        background-color: #01C6B2 !important;
+                                        width: 0;
+                                        height: 0;
+                                        top: 50%;
+                                        left: 8px;
+                                        margin-top: 0;
+                                        border-radius: 4px;
+                                        transition: .2s ease-in-out;
                                     }
                                 
                                     &:checked:after {
-                                        width: 15px;
-                                        height: 15px;
-                                        border-radius: 15px;
-                                        top: -2px;
-                                        left: -1px;
-                                        position: relative;
-                                        background-color: #01C6B2;
-                                        content: '';
-                                        display: inline-block;
-                                        visibility: visible;
-                                        border: 2px solid white;
+                                        height: 8px;
+                                        width: 8px;
+                                        margin-top: -4px;
+                                        left: 4px;
                                     }
                                 }
                             }
@@ -256,6 +264,10 @@
                                 .variant-title {
                                     margin: 0;
                                     font-size: 20px;
+
+                                    b {
+                                        font-weight: 600;
+                                    }
                                 }
                 
                                 .variant-infos {
@@ -273,6 +285,10 @@
                                 min-width: 15px;
                                 margin-right: 20px;
                                 padding-bottom: unset;
+
+                                &.centered {
+                                    margin-top: 18px;
+                                }
                 
                                 .compared-at-price {
                                     margin-right: 5px !important;
@@ -316,7 +332,7 @@
                                     width: 100%;
                                     background-color: #d07c5b;
                                     border-color: #d07c5b;
-                                    font-size: 20px;
+                                    font-size: 24px;
                                     cursor: pointer;
                                     transition: all 0.5s;
                                     height: 100%;
@@ -800,6 +816,85 @@
     }
 }
 
+@media screen and (max-width: 1270px) {
+    .product-template-all-in-one {
+        .container {
+            max-width: unset;
+            padding: 0 20px;
+        }
+
+        .cta-section {
+            .product-container {
+                .product-actions {
+                    .form-wrap {
+                        #CTAForm {
+                            .variant-box {
+                                width: 100%;
+                    
+                                .variant-info {
+                                    padding: 10px;
+                                    width: 95%;
+                                }
+                    
+                                .price {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: -10px;
+                                    width: unset;
+                                    margin-right: unset;
+                                }
+                            }
+
+                            .submit-wrap {
+                                .btn {
+                                    .main-btn {
+                                        max-width: unset;
+                                        display: block;
+    
+                                        .save {
+                                            display: block;
+                                            margin-left: unset;
+                                            margin-top: 5px;
+                                            min-width: unset;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .badges-container {
+                padding: 0 0 20px 0 !important;
+                width: calc(100% - 40px);
+
+                .trust-badges {
+                    margin-top: 20px;
+                    gap: 10vw;
+    
+                    .trust-badge {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        align-items: center;
+                        font-size: 1.5vw;
+                        max-width: 20%;
+                        text-transform: uppercase;
+    
+                        img {
+                            height: 3vw;
+                            width: 10vw;
+                            object-fit: contain;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 760px) {
     .product-template-all-in-one {
         section {
@@ -940,13 +1035,14 @@
                 .trust-badges {
                     gap: unset;
                     justify-content: space-between;
-
+                    
                     .trust-badge {
                         font-size: 3vw;
+                        max-width: 30%;
     
                         img {
-                            height: 20px;
                             width: 40px;
+                            height: 5vw
                         }
                     }
                 }
@@ -1180,85 +1276,6 @@
                             p {
                                 font-size: 4vw;
                             }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1270px) {
-    .product-template-all-in-one {
-        .container {
-            max-width: unset;
-            padding: 0 20px;
-        }
-
-        .cta-section {
-            .product-container {
-                .product-actions {
-                    .form-wrap {
-                        #CTAForm {
-                            .variant-box {
-                                width: 100%;
-                    
-                                .variant-info {
-                                    padding: 10px;
-                                    width: 95%;
-                                }
-                    
-                                .price {
-                                    position: absolute;
-                                    right: 10px;
-                                    top: -10px;
-                                    width: unset;
-                                    margin-right: unset;
-                                }
-                            }
-
-                            .submit-wrap {
-                                .btn {
-                                    .main-btn {
-                                        max-width: unset;
-                                        display: block;
-    
-                                        .save {
-                                            display: block;
-                                            margin-left: unset;
-                                            margin-top: 5px;
-                                            min-width: unset;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            .badges-container {
-                padding: 0 0 20px 0 !important;
-                width: calc(100% - 40px);
-
-                .trust-badges {
-                    margin-top: 20px;
-                    gap: 10vw;
-    
-                    .trust-badge {
-                        display: flex;
-                        flex-direction: column;
-                        text-align: center;
-                        align-items: center;
-                        font-size: 3vw;
-                        max-width: 33%;
-                        text-transform: uppercase;
-    
-                        img {
-                            height: 5vw;
-                            width: 10vw;
-                            object-fit: contain;
-                            margin-bottom: 10px;
                         }
                     }
                 }
