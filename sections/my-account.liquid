@@ -251,12 +251,12 @@
                             <script async src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg"></script>
 
                             <script>
-                         $(document).on("swell:setup", function(){
+                         jQuery(document).on("swell:setup", function(){
                            var customerDetails = swellAPI.getCustomerDetails();
-                           $("#custom-point-balance-ui").html(customerDetails.pointsBalance);
-                           $("#custom-referral-link-ui").html(customerDetails.referralLink);
+                           jQuery("#custom-point-balance-ui").html(customerDetails.pointsBalance);
+                           jQuery("#custom-referral-link-ui").html(customerDetails.referralLink);
                            customerDetails.actionHistoryItems.forEach(function(item) {
-                             $("#custom-history-container").append(
+                             jQuery("#custom-history-container").append(
                                "<tr>" +
                                "<td>" + item.date   + "</td>" +
                                "<td>" +item.action + " </td>" +
@@ -366,7 +366,7 @@
 
 <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 <script>
-    $("#tabs").tabs();
+    jQuery("#tabs").tabs();
 </script>
 <style>
     .icon-logout {
