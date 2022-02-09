@@ -42,7 +42,7 @@
                                 <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                             </div>
                             <div class="delete-card">
-                                <button type="button" onclick="removeThis($(this),'{{item.id}}')"><i class="icon-close"></i><span>Remove</span></button>
+                                <button type="button" onclick="removeThis(jQuery(this),'{{item.id}}')"><i class="icon-close"></i><span>Remove</span></button>
                             </div>
                         </div>
                     </div>
@@ -75,26 +75,26 @@ jQuery.post('/cart/update.js', 'updates['+id+']=0');
 
 
 var cstm_count = obj.parent().parent().find("input").val();
-var cartToalCount = $('.header_cart_count').text();
+var cartToalCount = jQuery('.header_cart_count').text();
 var cartReaminingCount = parseInt(cartToalCount) - parseInt(cstm_count);
-$('.header_cart_count').text(cartReaminingCount);
+jQuery('.header_cart_count').text(cartReaminingCount);
 var currencySymbol='{{cart.currency.symbol}}'; 
 
 var my_pric =    obj.parent().parent().find('.price').find("p").text().replace(currencySymbol, "");
 
 var totalRemovePrice = cstm_count * my_pric;
 
-var totalSubCount = $(".cstm_pric").text().replace(currencySymbol, "");
+var totalSubCount = jQuery(".cstm_pric").text().replace(currencySymbol, "");
 
 var totalRemainingCount =parseFloat(totalSubCount)-parseFloat(totalRemovePrice);
 
 
-$(".cstm_pric").text(currencySymbol+totalRemainingCount);
+jQuery(".cstm_pric").text(currencySymbol+totalRemainingCount);
 
 obj.parent().parent().parent().remove();
-var totalc = $(".cstm_pric").text().replace(currencySymbol, "");
+var totalc = jQuery(".cstm_pric").text().replace(currencySymbol, "");
 if(totalc == 0){
-    $(".plc_order").attr("href", "/collections/all");
+    jQuery(".plc_order").attr("href", "/collections/all");
 }
 }
     
