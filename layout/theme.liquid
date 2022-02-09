@@ -3,7 +3,7 @@
   <head>
     <title>{{ page_title }}</title>
     <!-- Redirect By Global Or US -->
-    <script src="{{ 'redirect-by-location.js' | asset_url }}"></script>
+    <script src="{{ 'redirect-by-location.js' | asset_url }}" async></script>
     
     {% include 'meta-tags'%}
 
@@ -16,7 +16,7 @@
   <noscript><link rel="stylesheet" href="{{ 'styles-product-aio.css' | asset_url }}"></noscript>
 
   <!-- Script Libraries -->
-  <script src="{{ 'jquery-3.4.1.min.js' | asset_url}}"></script>
+  <script src="{{ 'jquery-3.4.1.min.js' | asset_url}}" ></script>
   <script src="{{ 'libs.js' | asset_url }}" async></script>
   <script src="{{ 'common.js' | asset_url }}" async></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" defer="defer"></script>
@@ -52,12 +52,13 @@
 {{ content_for_header }} <!-- Header hook for plugins -->
 
   
-  <!-- {% include 'google-tag-manager'%} -->
+  {% include 'google-tag-manager'%}
 
   {% include "manychat-header" %}
 
 {% include 'fa_translate_core' %} 
-   
+ 
+  {% render 'shogun-head' %}
   <!-- Marker.io QA Tool-->  
 <script>
   window.markerConfig = {
@@ -69,7 +70,6 @@
 <script>
 !function(e,r,a){if(!e.__Marker){e.__Marker={};var t=[],n={__cs:t};["show","hide","isVisible","capture","cancelCapture","unload","reload","isExtensionInstalled","setReporter","setCustomData","on","off"].forEach(function(e){n[e]=function(){var r=Array.prototype.slice.call(arguments);r.unshift(e),t.push(r)}}),e.Marker=n;var s=r.createElement("script");s.async=1,s.src="https://edge.marker.io/latest/shim.js";var i=r.getElementsByTagName("script")[0];i.parentNode.insertBefore(s,i)}}(window,document);
 </script>
-
 </head>
 <body>
 {% include 'google-tag-manager-noscript'%}
@@ -82,7 +82,43 @@
     {{ content_for_layout }}
     {% section 'footer'%}
   </main>
+
+  <script>
+  jQuery(document).on("click", ".remove-item", function () {
+    var variantId =$(this).data("variant");
+    var price =$(this).data("price");
+    var title =$(this).data("title");
+    var id =$(this).data("id");
   
+    window.dataLayer  = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'eec.removeFromCart',  // name of an event. In this case, always stays as eec.removeFromCart
+      'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
+        'currencyCode': 'USD',      // the currency which is currently used by a visitor
+        'remove': {                 // name of an action. In this case, always stays as remove                           
+          'products': [{              // list of products removed from a cart. can include multiple products.
+            'name': title,      // name of a product that is currently viewed. Always include it.
+            'id': id,           // id of a product. Always include it.
+            'price': price.toString(),          // price of a product
+            'category': 'Simple',      // category of a product
+            'variant': variantId         // product variant.
+          }]
+        }
+      },
+      'userId': '{{ customer.id }}',
+      'email': '{{ customer.email }}',
+      'country': '{{customer.customer_address.country_code }}',
+      'city': '{{customer.customer_address.city }}',
+      'name': '{{ customer.first_name }}',
+      'surname': '{{ customer.last_name }}',
+      'phone_number': '{{customer.phone }}',
+      'state': '{{customer.customer_address.province }}',       //state or province
+      'zip': '{{customer.customer_address.zip }}',          //ZIP or Postal code
+    });
+
+  }); 
+  </script> 
+ 
 <!-- Begin Shopify-Afterpay JavaScript Snippet (v1.0.9) -->
 <script type="text/javascript">
 // Overrides:
@@ -230,6 +266,11 @@ var afterpay_js_snippet_version = '1.0.9';
   window.settings_timer=setTimeout(function () {_vwo_code.finish() },settings_tolerance);var a=d.createElement('style'),b=hide_element?hide_element+'{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&f='+(+is_spa)+'&r='+Math.random());return settings_timer; }};window._vwo_settings_timer = code.init(); return code; }());
   </script>
   <!-- End VWO Async SmartCode -->
+
+  <!--  Wisepops -->
+  <!-- <script>
+  (function(W,i,s,e,P,o,p){W['WisePopsObject']=P;W[P]=W[P]||function(){(W[P].q=W[P].q||[]).push(arguments)},W[P].l=1*new Date();o=i.createElement(s),p=i.getElementsByTagName(s)[0];o.defer=1;o.src=e;p.parentNode.insertBefore(o,p)})(window,document,'script','//loader.wisepops.com/get-loader.js?v=1&site=zUtuQdFYsH','wisepops');
+</script> -->
   
   </body>
 </html>
