@@ -86,42 +86,6 @@
     {% section 'footer'%}
   </main>
 
-  <script>
-  jQuery(document).on("click", ".remove-item", function () {
-    var variantId =$(this).data("variant");
-    var price =$(this).data("price");
-    var title =$(this).data("title");
-    var id =$(this).data("id");
-  
-    window.dataLayer  = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'eec.removeFromCart',  // name of an event. In this case, always stays as eec.removeFromCart
-      'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
-        'currencyCode': 'USD',      // the currency which is currently used by a visitor
-        'remove': {                 // name of an action. In this case, always stays as remove                           
-          'products': [{              // list of products removed from a cart. can include multiple products.
-            'name': title,      // name of a product that is currently viewed. Always include it.
-            'id': id,           // id of a product. Always include it.
-            'price': price.toString(),          // price of a product
-            'category': 'Simple',      // category of a product
-            'variant': variantId         // product variant.
-          }]
-        }
-      },
-      'userId': '{{ customer.id }}',
-      'email': '{{ customer.email }}',
-      'country': '{{customer.customer_address.country_code }}',
-      'city': '{{customer.customer_address.city }}',
-      'name': '{{ customer.first_name }}',
-      'surname': '{{ customer.last_name }}',
-      'phone_number': '{{customer.phone }}',
-      'state': '{{customer.customer_address.province }}',       //state or province
-      'zip': '{{customer.customer_address.zip }}',          //ZIP or Postal code
-    });
-
-  }); 
-  </script> 
- 
 <!-- Begin Shopify-Afterpay JavaScript Snippet (v1.0.9) -->
 <script type="text/javascript">
 // Overrides:
@@ -255,6 +219,7 @@ var afterpay_js_snippet_version = '1.0.9';
 <!-- End of Woopra Code -->
 
 <!-- Start VWO Async SmartCode -->
+ <!-- 
 <script type='text/javascript'>
   window._vwo_code = window._vwo_code || (function(){
   var account_id=596099,
@@ -268,7 +233,7 @@ var afterpay_js_snippet_version = '1.0.9';
   f=false,d=document,code={use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){
   window.settings_timer=setTimeout(function () {_vwo_code.finish() },settings_tolerance);var a=d.createElement('style'),b=hide_element?hide_element+'{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&f='+(+is_spa)+'&r='+Math.random());return settings_timer; }};window._vwo_settings_timer = code.init(); return code; }());
   </script>
-  <!-- End VWO Async SmartCode -->
+ End VWO Async SmartCode -->
   
   </body>
 </html>
