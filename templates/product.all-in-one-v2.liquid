@@ -812,7 +812,7 @@ body {
 }
 
 .cta-section .product-container .product-actions .form-wrap #CTAForm .product-option-select::before {
-    content: "best SELLER - £27 discount!";
+    content: "best SELLER - {{ 0 | money | remove: '0' | remove: '.' | strip_html }}{{ last_item_save }} discount!";
     position: absolute;
     z-index: -1;
     left: -10px;
