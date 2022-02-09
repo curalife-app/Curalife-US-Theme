@@ -631,25 +631,25 @@
 
 <script>
 // Back To Top Button
-var btn = $('#back-to-top-btn');
+var btn = jQuery('#back-to-top-btn');
 
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 600) {
+jQuery(window).scroll(function() {
+  if (jQuery(window).scrollTop() > 600) {
     btn.addClass('show');
     if (screen.width < 760) {
-        $('.helpButton').attr('style', 'bottom: 60px !important');
+        jQuery('.helpButton').attr('style', 'bottom: 60px !important');
     }
   } else {
     btn.removeClass('show');
     if (screen.width < 760) {
-        $('.helpButton').attr('style', 'bottom: 4px !important');
+        jQuery('.helpButton').attr('style', 'bottom: 4px !important');
     }
   }
 });
 
 btn.on('click', function(e) {
   e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
+  jQuery('html, body').animate({scrollTop:0}, '300');
 });
 
 // Check Radio Button on Variant Box Click
@@ -669,15 +669,15 @@ jQuery( document ).ready(function() {
 });
 
 // Buy Button Functionality
-$("#buy-button").click(function() {
-    let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
-    let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
+jQuery("#buy-button").click(function() {
+    let checkedPack = jQuery('input[name=pack]:checked', '#CTAForm').val();
+    let checkedQuantity = jQuery('input[name=quantity]', '#CTAForm').val();
     let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity + "?channel=buy_button";
     window.location.href = checkoutLink;
 })
 
 // Fade Quotes
-var quotes = $(".quote");
+var quotes = jQuery(".quote");
 var quoteIndex = -1;
 
 function showNextQuote() {
@@ -689,12 +689,12 @@ function showNextQuote() {
 }
 
 // CTA Button Color Change on Hover
-$(function() {
-  $('.main-btn').hover(function() {
-    $('.qty-control').css('border-color', '#AF5B35');
+jQuery(function() {
+  jQuery('.main-btn').hover(function() {
+    jQuery('.qty-control').css('border-color', '#AF5B35');
   }, function() {
     // on mouseout, reset the background colour
-    $('.qty-control').css('border-color', '#d07c5b');
+    jQuery('.qty-control').css('border-color', '#d07c5b');
   });
 });
 
@@ -740,9 +740,9 @@ showNextQuote();
               'list': 'main'          // optional. name of a list from which the product was added to a cart  
             },       
             'products': [{              // list of products added to a cart. Can contain multiple products at the same time
-              'name': $('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
-              'id': $('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
-              'price': $('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
+              'name': jQuery('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
+              'id': jQuery('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
+              'price': jQuery('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
               'category': 'Simple',
               'variant': '',   // category of a product
               'quantity': 1
