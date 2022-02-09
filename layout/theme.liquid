@@ -105,36 +105,7 @@ var afterpay_current_variant = {{ product.selected_or_first_available_variant | 
 var afterpay_cart_total_price = {{ cart.total_price | json }};
 var afterpay_js_snippet_version = '1.0.9';
 </script>
-      {% comment %} START Add Trailing Slash {% endcomment %}
-    <!--
-      <script type="text/javascript">
-        $(function($)
- {
-          $('a').each(function() {
-            var href = $(this).attr('href');
-            try {
-                href = href.replace(/\/$/, "");
-                $(this).attr('href', href);
-            }
-            catch(err) {console.clear()}
-          });
-        });
-      </script>
-    -->
-      {% comment %} END Add Trailing Slash {% endcomment %}
-    <!-- Temp Fix For window.open -->
-<!--
-    <script type="text/javascript">
-    window.open = function(href){
-      var a = document.createElement('a');
-      a.href = href;
-      document.body.appendChild(a);
-      a.click();
-};
-  </script>
 
-<script type="text/javascript" src="https://static.afterpay.com/shopify-afterpay-javascript.js"></script>
--->
 <!-- End Shopify-Afterpay JavaScript Snippet (v1.0.9) -->
 <!-- {% include 'salesforce-chat' %} -->
   {% include 'wisepops-generated' %}
