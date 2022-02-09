@@ -653,19 +653,19 @@ btn.on('click', function(e) {
 });
 
 // Check Radio Button on Variant Box Click
-$(".variant-box").click(function() {
-    $(this).find('input[type=radio]').prop('checked', true);
-    $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
+jQuery(".variant-box").click(function() {
+    jQuery(this).find('input[type=radio]').prop('checked', true);
+    jQuery("#productVaraintSelected").prop('value', jQuery(this).find('input[type=radio]')[0].value);
 
     // Save Text Change
     let saveText = "You Save " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
-    $('#save').animate({'opacity': 0}, 800, function () {
-        $(this).text(saveText);
+    jQuery('#save').animate({'opacity': 0}, 800, function () {
+        jQuery(this).text(saveText);
     }).animate({'opacity': 1}, 800);
 })
 
-$( document ).ready(function() {
-    $(".variant-box").last().trigger( "click" );
+jQuery( document ).ready(function() {
+    jQuery(".variant-box").last().trigger( "click" );
 });
 
 // Buy Button Functionality
