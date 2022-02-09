@@ -616,9 +616,9 @@ $(document).ready(function () {
         };
     };
 
-    $(window).resize(function () {
-        $(".locations-map .info-box").hide();
-    });
+    // $(window).resize(function () {
+    //     $(".locations-map .info-box").hide();
+    // });
 
 
 });
