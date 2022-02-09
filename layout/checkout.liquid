@@ -271,8 +271,8 @@
       for (let i = 1; i < utm.length; i++) {
   		utm_url += 'utm' + utm[i];
 		}
-      $("form").each((form) => {
-        $(this).attr("action", $(this).attr("action") + utm_url);
+      jQuery("form").each((form) => {
+        jQuery(this).attr("action", jQuery(this).attr("action") + utm_url);
       });
     }
   </script>
