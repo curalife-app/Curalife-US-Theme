@@ -1086,52 +1086,67 @@
               "cntphn_numbr": "+1 888 286 7307"
             }
           },
+          "3cfb3146-d64f-4c4d-aba6-06f10f713e09": {
+            "type": "contact",
+            "settings": {
+              "cntphn_img": "shopify:\/\/shop_images\/icon-flag-au.png",
+              "cntphn_title": "AU-Toll-Free",
+              "cntphn_numbr": "+61 1800 942 961"
+            }
+          },
           "ab12e773-873e-4d0d-8fae-f8ffd1f4994c": {
             "type": "social",
             "settings": {
               "cntsocil_icn": "icon-tw",
-              "cntsocil_title": "Twitter"
+              "cntsocil_title": "Twitter",
+              "cntsocil_link": ""
             }
           },
           "ba4286b7-b139-4a09-a29b-75481d028add": {
             "type": "social",
             "settings": {
               "cntsocil_icn": "icon-yt",
-              "cntsocil_title": "Youtube"
+              "cntsocil_title": "Youtube",
+              "cntsocil_link": ""
             }
           },
           "f174b274-02c8-4025-aff4-655de813aea2": {
             "type": "social",
             "settings": {
               "cntsocil_icn": "icon-inst",
-              "cntsocil_title": "Instagram"
+              "cntsocil_title": "Instagram",
+              "cntsocil_link": ""
             }
           },
           "a9a1bd34-cbe9-468a-8bcd-491c47aa9a6a": {
             "type": "social",
             "settings": {
               "cntsocil_icn": "icon-fb",
-              "cntsocil_title": "Facebook"
+              "cntsocil_title": "Facebook",
+              "cntsocil_link": ""
             }
           },
           "fb1827cd-1fd5-4798-9180-a3ed253de34e": {
             "type": "social",
             "settings": {
               "cntsocil_icn": "icon-in",
-              "cntsocil_title": "Linkedin"
+              "cntsocil_title": "Linkedin",
+              "cntsocil_link": ""
             }
           },
           "26211f07-bd4a-40de-ae92-94735dbb4417": {
             "type": "social",
             "settings": {
               "cntsocil_icn": "icon-vm",
-              "cntsocil_title": "Vimeo"
+              "cntsocil_title": "Vimeo",
+              "cntsocil_link": ""
             }
           }
         },
         "block_order": [
           "cf7e684d-6020-47e8-93b2-21438ee6eaa7",
           "5e0dca07-6695-4ad7-bc9a-2a0403102629",
+          "3cfb3146-d64f-4c4d-aba6-06f10f713e09",
           "ab12e773-873e-4d0d-8fae-f8ffd1f4994c",
           "ba4286b7-b139-4a09-a29b-75481d028add",
           "f174b274-02c8-4025-aff4-655de813aea2",
