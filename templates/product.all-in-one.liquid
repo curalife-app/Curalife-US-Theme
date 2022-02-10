@@ -765,7 +765,7 @@ showNextQuote();
           window.dataLayer  = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'variant-click', 
-            'value': jQuery('input[name=pack]:checked', '#CTAForm').attr('title'),
+            'label': jQuery('input[name=pack]:checked', '#CTAForm').attr('title'),
         'userId': '{{ customer.id }}',
         'email': '{{ customer.email }}',
         'country': '{{customer.customer_address.country_code }}',
