@@ -761,6 +761,14 @@ showNextQuote();
         });
     });
 
+    jQuery(document).on("click", ".variant-box", function () {
+        console.log('variant clicked');
+          window.dataLayer  = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'variant-click', 
+            'value': jQuery('input[name=pack]:checked', '#CTAForm').attr('title')        
+    });
+
     window.dataLayer  = window.dataLayer || [];
     window.dataLayer.push({
     'event': 'eec.productDetail',  // name of an event. In this case, always stays as eec.productDetail
