@@ -20,7 +20,8 @@
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
     {%- endif -%}
     <title>{{ page_title }}</title>
-
+<!-- Curalife Shopify Redirect for checkout.shopify.com -->  
+    {% include 'google-tag-manager-checkout-redirect'%}
     
     
     {{ content_for_header }}
@@ -29,8 +30,7 @@
     {{ checkout_scripts }}
   
   {% render 'shogun-head' %} 
-    <!-- Curalife Shopify Redirect for checkout.shopify.com -->  
-    {% include 'google-tag-manager-checkout-redirect'%}
+    
     <!-- Curalife Shopify Only Google Tag Manager -->  
   {% include 'google-tag-manager'%}
 
