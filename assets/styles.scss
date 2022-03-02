@@ -19,6 +19,12 @@
     top: 100px !important;
 }
 
+@media screen and (max-width:760px) {
+    #one-click-social-google-one-tap {
+        top: 50px !important;
+    }
+}
+
 .swiper-lazy-preloader {
     border: 4px solid var(--swiper-preloader-color, var(--green));
     border-top-color: transparent;
