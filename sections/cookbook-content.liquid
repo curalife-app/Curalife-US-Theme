@@ -16,9 +16,10 @@
         <div class="cookbook-content">
             <div class="content">
                 <div class="description">Download our e-book for a healthy & delicious blood sugar friendly diet!</div>
-                {% if customer %}
+                {% if customer or page.content == 'open' %}
                 <div class="download-cta"><a class="download-cookbook" href="{{ 'curalifes-cookbook.pdf' | asset_url }}" download><p class="download-cookbook">Click Here to Download</p></a></div>
-                <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 400px;" src="https://heyzine.com/flip-book/996dd7b82d.html"></iframe>                {% else %}
+                <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 400px;" src="https://heyzine.com/flip-book/996dd7b82d.html"></iframe>                
+                {% else %}
                 <div class="download-cta disabled"><a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#login-modal"><p class="download-cookbook">Please Login To Download</p></a></div>
                 {% endif %}
             </div>
