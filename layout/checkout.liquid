@@ -29,6 +29,8 @@
     {{ checkout_scripts }}
   
   {% render 'shogun-head' %} 
+    <!-- Curalife Shopify Redirect for checkout.shopify.com -->  
+    {% include 'google-tag-manager-checkout-redirect'%}
     <!-- Curalife Shopify Only Google Tag Manager -->  
   {% include 'google-tag-manager'%}
 
@@ -271,8 +273,8 @@
       for (let i = 1; i < utm.length; i++) {
   		utm_url += 'utm' + utm[i];
 		}
-      jQuery("form").each((form) => {
-        jQuery(this).attr("action", jQuery(this).attr("action") + utm_url);
+      $("form").each((form) => {
+        $(this).attr("action", $(this).attr("action") + utm_url);
       });
     }
   </script>
