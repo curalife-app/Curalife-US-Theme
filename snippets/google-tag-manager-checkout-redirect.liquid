@@ -74,9 +74,9 @@
             
             //Add _ga query string to target query
             if (window.location.search && window.location.search.includes('?')) {
-              gaCheckoutRedirectTarget = gaCheckoutRedirectTargetHostname + window.location.pathname + window.location.search + '&_ga=' + gaCheckoutRedirectConvertCookieToQuery(gaCheckoutRedirectGaCookie)) + window.location.hash;
+              gaCheckoutRedirectTarget = gaCheckoutRedirectTargetHostname + window.location.pathname + window.location.search + '&_ga=' + gaCheckoutRedirectConvertCookieToQuery(gaCheckoutRedirectGaCookie) + window.location.hash;
             } else {
-              gaCheckoutRedirectTarget = gaCheckoutRedirectTargetHostname + window.location.pathname + '?_ga=' + gaCheckoutRedirectConvertCookieToQuery(gaCheckoutRedirectGaCookie)) + window.location.hash;
+              gaCheckoutRedirectTarget = gaCheckoutRedirectTargetHostname + window.location.pathname + '?_ga=' + gaCheckoutRedirectConvertCookieToQuery(gaCheckoutRedirectGaCookie) + window.location.hash;
             }
             
             console.log(gaCheckoutRedirectTarget);
