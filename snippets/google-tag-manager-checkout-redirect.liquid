@@ -17,17 +17,6 @@
       	var gaExp = ga.split('.');
       	return ga + '-' + gaExp[gaExp.length-2] + '.' + gaExp[gaExp.length-1];
     }
-    
-    function updateQueryStringParameter(uri, key, value) {
-  		var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-  		var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-  		if (uri.match(re)) {
-    		return uri.replace(re, '$1' + key + "=" + value + '$2');
-  		}
-  		else {
-    		return uri + separator + key + "=" + value;
-  		}
-	}
 
     //Check if domain is checkout.shopify.com
    	if (window.location.hostname == 'checkout.shopify.com') {
