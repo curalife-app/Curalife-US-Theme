@@ -67,7 +67,7 @@
 
         //Check for hostname to redirect to and that it doesn't match current hostname to avoid potential infinite redirect loop
         console.log(gaCheckoutRedirectTargetHostname);
-        if (gaCheckoutRedirectTargetHostname & gaCheckoutRedirectTargetHostname != window.location.hostname) {
+        if (gaCheckoutRedirectTargetHostname && gaCheckoutRedirectTargetHostname != window.location.hostname) {
                     
           console.log('aa');
           //Redirect to domain with or without cookie
@@ -76,9 +76,21 @@
             
             //Add _ga query string to target query
             if (window.location.search && window.location.search.includes('?')) {
-              gaCheckoutRedirectTarget = gaCheckoutRedirectTargetHostname + window.location.pathname + window.location.search + '&_ga=' + gaCheckoutRedirectConvertCookieToQuery(gaCheckoutRedirectGaCookie) + window.location.hash;
+              gaCheckoutRedirectTarget =
+                window.location.protocol
+              	+ '//' + gaCheckoutRedirectTargetHostname
+              	+ window.location.pathname
+              	+ window.location.search
+              	+ '&_ga=' + gaCheckoutRedirectConvertCookieToQuery(gaCheckoutRedirectGaCookie)
+              	+ window.location.hash;
             } else {
-              gaCheckoutRedirectTarget = gaCheckoutRedirectTargetHostname + window.location.pathname + '?_ga=' + gaCheckoutRedirectConvertCookieToQuery(gaCheckoutRedirectGaCookie) + window.location.hash;
+              gaCheckoutRedirectTarget =
+                window.location.protocol
+              	+ '//'
+              	+ gaCheckoutRedirectTargetHostname
+              	+ window.location.pathname
+              	+ '?_ga=' + gaCheckoutRedirectConvertCookieToQuery(gaCheckoutRedirectGaCookie)
+              	+ window.location.hash;
             }
             
             console.log(gaCheckoutRedirectTarget);
