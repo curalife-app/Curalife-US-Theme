@@ -55,10 +55,8 @@
         }
 
         //Check for hostname to redirect to and that it doesn't match current hostname to avoid potential infinite redirect loop
-        console.log(gaCheckoutRedirectTargetHostname);
         if (gaCheckoutRedirectTargetHostname && gaCheckoutRedirectTargetHostname != window.location.hostname) {
                     
-          console.log('aa');
           //Redirect to domain with or without cookie
           if (gaCheckoutRedirectGaCookie) {
             var gaCheckoutRedirectTarget = gaCheckoutRedirectTargetHostname;
@@ -82,11 +80,11 @@
               	+ window.location.hash;
             }
             
-            console.log(gaCheckoutRedirectTarget);
-          	//window.location = gaCheckoutRedirectTarget;
+            //console.log(gaCheckoutRedirectTarget);
+          	window.location = gaCheckoutRedirectTarget;
           } else {
-            console.log(gaCheckoutRedirectTargetHostname);
-          	//window.location.hostname = gaCheckoutRedirectTargetHostname;
+            //console.log(gaCheckoutRedirectTargetHostname);
+          	window.location.hostname = gaCheckoutRedirectTargetHostname;
           }
           
         }
