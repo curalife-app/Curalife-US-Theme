@@ -61,7 +61,7 @@
       
       	
         //Make sure that we find the domain using the map
-        if (gaCheckoutRedirectDomainMap[gaCheckoutRedirectCurrentShop] {
+        if (gaCheckoutRedirectDomainMap[gaCheckoutRedirectCurrentShop]) {
             gaCheckoutRedirectTargetHostname = gaCheckoutRedirectDomainMap[gaCheckoutRedirectCurrentShop];
         }
 
@@ -80,10 +80,10 @@
             }
             
             console.log(gaCheckoutRedirectTarget);
-          	window.location = gaCheckoutRedirectTarget;
+          	//window.location = gaCheckoutRedirectTarget;
           } else {
             console.log(gaCheckoutRedirectTargetHostname);
-          	window.location.hostname = gaCheckoutRedirectTargetHostname;
+          	//window.location.hostname = gaCheckoutRedirectTargetHostname;
           }
           
         }
