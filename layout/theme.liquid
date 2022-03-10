@@ -85,8 +85,10 @@
 
 <body>
 
-{% unless request.path contains 'curalin-pack' %}
+  {% unless request.path contains 'curalin-pack' %}
+  {% unless request.path contains 'curalin_pack' %}
 {% section 'header'%}
+{% endunless %}
 {% endunless %}
 
   <main role="main">
