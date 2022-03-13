@@ -275,7 +275,7 @@
             ecommerce: {
               currency: '{{ shop.currency }}', 
               value: {{ checkout.total_price | money_without_currency }},
-              shipping: 0.00, 
+              shipping: "0.00", 
               affiliation: '{{ shop.name }}',
               transaction_id: '{{ checkout.order.name }}',
               coupon: '{{ discount.code }}',
