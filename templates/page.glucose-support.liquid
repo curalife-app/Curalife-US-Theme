@@ -2,3 +2,19 @@
  {% section 'glucose-support-white-bg-content'%}
  {% section 'powerful-natural-ingredients'%}
  {% section 'what-our-clients-say'%}
+
+ <script>
+    function runAfterElementExists(jquery_selector,callback) {
+       var checker = window.setInterval(function() {
+       if (jQuery(jquery_selector).length) {
+           clearInterval(checker);
+           callback();
+       }}, 200);
+   }
+
+   jQuery(".yotpo-next-button button").click(function() {
+       runAfterElementExists(".yotpo-copy-code-text", function() {
+           wisepops("event", "ref-code-received");
+       })
+   });
+</script>
