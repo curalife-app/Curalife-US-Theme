@@ -43,12 +43,12 @@
                             <div class="qty-data">
                                 <p>Quantity</p>
                                 <div class="qty-control">
-                                    <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                                    <a class="decrease-quantity" href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
                                     <label>
                                         <input type="number" name="updates[]" value="{{ item.quantity }}" maxlength="4">
 
                                     </label>
-                                    <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
+                                    <a class="increase-quantity" href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                                 </div>
                             </div>
                         </td>
@@ -190,7 +190,7 @@ window.dataLayer.push({
 </script>
 
 <script>
-  jQuery("[data-act='+']").click(function() {
+  jQuery(".increase-quantity").click(function() {
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
 event: 'add_to_cart',    
@@ -220,7 +220,7 @@ user_agent: navigator.userAgent
 });
   })
 
-  jQuery("[data-act='-']").click(function() {
+  jQuery(".decrease-quantity").click(function() {
       window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'remove_from_cart',    
