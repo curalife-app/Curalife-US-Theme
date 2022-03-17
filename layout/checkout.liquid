@@ -38,22 +38,7 @@
     
     <!-- Yotpo Modules Script -->
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
-  <style>
-    @media only screen and (min-width: 760px) {
-  .tc p {
-    max-width:180px;
-  }
-}
-    .btn {
-      min-width: 180px;
-    }
-    
-    #smsbump-consent-message {
-      max-width: 200px;
-      position: absolute;
-    }
-    </style>
-
+  
     <!-- Start of Woopra Code -->
 <script>
   !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
@@ -95,203 +80,6 @@
     {% endfor %}
     
     {% assign product_ids = productIds | split: "," %}
-
-    <script>  
-        
-      items_data = [];
-      {% for line_item in checkout.line_items %}
-          var item = {
-            item_id: '{{ line_item.product.id }}',
-            item_name: '{{ line_item.product.title }}',
-            affiliation: '{{ shop.name }}',
-            price: parseFloat({{ line_item.product.price }} / 100.0).toFixed(2),
-            currency: '{{ shop.currency }}',
-            discount: {% if line_item.product.compare_at_price > 0 %} parseFloat(parseFloat({{ line_item.product.compare_at_price }} / 100.0) - parseFloat({{ line_item.product.price }} / 100.0)).toFixed(2) {% else %} "0.00" {% endif %},
-            item_brand: 'CuraLife',            
-            item_category: 'CuraLin',         
-            quantity: {{ line_item.quantity }}
-          }
-          items_data.push(item);
-      {% endfor %}
-    
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const step = urlParams.get('step');
-    if ((!window.location.href.includes('thank_you') && !window.location.href.includes("processing")) && step == null || step == 'contact_information') {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'event': 'CheckoutStarted',
-            'step': '1',
-            'content_type': 'product_group',    
-            'content_ids': '[{{ productIds }}]',    //if multiple contents are in the cart on the checkout add an array of all products IDs
-            'value': '{{ checkout.total_price | money_without_currency }}',
-            'currency': '{{shop.currency}}',
-            'userId': '{{ checkout.customer.id }}',
-            'email': '{{ checkout.email }}',
-            'city': '{{checkout.shipping_address.city }}',
-            'country': '{{checkout.shipping_address.country_code }}',
-            'name': '{{ checkout.shipping_address.first_name }}',
-            'surname': '{{ checkout.shipping_address.last_name }}',
-            'phone_number': '{{checkout.shipping_address.phone }}',
-            'state': '{{checkout.shipping_address.province }}',       //state or province
-            'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
-            'num_items': '{{ checkout.line_items.size }}'
-           });
-      
-//         
-//   let as = window.location.href.split('?');
-//   let crossDomainParameter = as[as.length-1];
-//   localStorage.setItem("cdp", crossDomainParameter);
-//      
-
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: 'begin_checkout',
-            ecommerce: {                          
-              items: items_data
-            },
-            user_email: '{{ customer.email }}',
-            user_phone: '{{ customer.phone }}',
-            user_first_name: '{{ customer.first_name }}',
-            user_last_name: '{{ customer.last_name }}',
-            user_city: '{{ customer.customer_address.city }}',
-            user_state: '{{ customer.customer_address.province }}',
-            user_zip: '{{ customer.customer_address.zip }}',
-            user_country: '{{customer.customer_address.country_code | t}}',
-            user_agent: navigator.userAgent
-            //user_ip_address: 'insert_ip_address_here',
-          });
-    };
-    
-    if (step == 'shipping_method') {
-      
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'event': 'addShippingDetail',
-        'step': '1',
-        'content_type': 'product_group',    
-        'content_ids': '[{{ productIds }}]',    //if multiple contents are in the cart on the checkout add an array of all products IDs
-        'value': '{{ checkout.total_price | money_without_currency }}',
-        'currency': '{{shop.currency}}',
-        'userId': '{{ checkout.customer.id }}',
-        'email': '{{ checkout.email }}',
-        'city': '{{checkout.shipping_address.city }}',
-        'country': '{{checkout.shipping_address.country_code }}',
-        'name': '{{ checkout.shipping_address.first_name }}',
-        'surname': '{{ checkout.shipping_address.last_name }}',
-        'phone_number': '{{checkout.shipping_address.phone }}',
-        'state': '{{checkout.shipping_address.province }}',       //state or province
-        'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
-        'num_items': '{{ checkout.line_items.size }}'
-   });
-     
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'add_shipping_info',
-    ecommerce: {      
-      shipping_tier: 'Free Shipping',                 
-      items: items_data
-    },
-    user_email: '{{ customer.email }}',
-    user_phone: '{{ customer.phone }}',
-    user_first_name: '{{ customer.first_name }}',
-    user_last_name: '{{ customer.last_name }}',
-    user_city: '{{ customer.customer_address.city }}',
-    user_state: '{{ customer.customer_address.province }}',
-    user_zip: '{{ customer.customer_address.zip }}',
-    user_country: '{{customer.customer_address.country_code | t}}',
-    user_agent: navigator.userAgent
-    //user_ip_address: 'insert_ip_address_here',
-  });
-    };
-
-    if (step == 'payment_method') {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          'event': 'AddPaymentInfo',
-          'step': '2',
-          'content_type': 'product_group',    
-          'content_ids': '[{{ productIds }}]',    //if multiple contents are in the cart on the checkout add an array of all products IDs
-          'value': '{{ checkout.total_price | money_without_currency }}',
-          'currency': '{{shop.currency}}',
-          'userId': '{{ checkout.customer.id}}',
-          'email': '{{ checkout.email }}',
-          'city': '{{checkout.shipping_address.city }}',
-          'country': '{{checkout.shipping_address.country_code}}',
-          'name': '{{ checkout.shipping_address.first_name }}',
-          'surname': '{{ checkout.shipping_address.last_name }}',
-          'phone_number': '{{checkout.shipping_address.phone }}',
-          'state': '{{checkout.shipping_address.province }}',       //state or province
-          'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
-          'num_items': '{{ checkout.line_items.size }}'
-        });
-
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'add_payment_info',
-          ecommerce: {      
-            payment_type: '',                    
-            items: items_data
-          },
-          user_email: '{{ customer.email }}',
-          user_phone: '{{ customer.phone }}',
-          user_first_name: '{{ customer.first_name }}',
-          user_last_name: '{{ customer.last_name }}',
-          user_city: '{{ customer.customer_address.city }}',
-          user_state: '{{ customer.customer_address.province }}',
-          user_zip: '{{ customer.customer_address.zip }}',
-          user_country: '{{customer.customer_address.country_code | t}}',
-          user_agent: navigator.userAgent
-          //user_ip_address: 'insert_ip_address_here',
-        });
-      };
-        
-    if (window.location.href.includes('thank_you')) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          'event': 'Purchase',
-          'transaction_id': '{{checkout.order.name}}',      //order ID
-          'content_type': 'product_group',
-          'content_ids': '[{{ productIds }}]',      //if multiple conttent are purchased add array of all products IDs
-          'value': '{{ checkout.total_price | money_without_currency }}',
-          'currency': '{{shop.currency}}',
-          'userId': '{{ checkout.customer.id }}',
-          'email': '{{ checkout.email }}',
-          'city': '{{checkout.shipping_address.city }}',
-          'country': '{{checkout.shipping_address.country_code }}',
-          'name': '{{ checkout.shipping_address.first_name }}',
-          'surname': '{{ checkout.shipping_address.last_name }}',
-          'phone_number': '{{checkout.shipping_address.phone }}',
-          'state': '{{checkout.shipping_address.province }}',       //state or province
-          'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
-          'num_items': '{{ checkout.line_items.size }}'
-          });
-         
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            event: 'purchase', 
-            ecommerce: {
-              currency: '{{ shop.currency }}', 
-              value: {{ checkout.total_price | money_without_currency }},
-              shipping: "0.00", 
-              affiliation: '{{ shop.name }}',
-              transaction_id: '{{ checkout.order.name }}',
-              coupon: '{{ discount.code }}',
-              items: items_data
-            },
-            user_email: '{{ customer.email }}',
-            user_phone: '{{ customer.phone }}',
-            user_first_name: '{{ customer.first_name }}',
-            user_last_name: '{{ customer.last_name }}',
-            user_city: '{{ customer.customer_address.city }}',
-            user_state: '{{ customer.customer_address.province }}',
-            user_zip: '{{ customer.customer_address.zip }}',
-            user_country: '{{customer.customer_address.country_code | t}}',
-            user_agent: navigator.userAgent
-            //user_ip_address: 'insert_ip_address_here',
-          });
-   }
-  </script>
     
       <!-- Curalife Shopify Only Google Tag Manager (noscript) -->
     {% include 'google-tag-manager-noscript.liquid' %}
@@ -336,6 +124,218 @@
     </div>
 
     {{ tracking_code }}
+
+    <style>
+      @media only screen and (min-width: 760px) {
+    .tc p {
+      max-width:180px;
+    }
+  }
+      .btn {
+        min-width: 180px;
+      }
+      
+      #smsbump-consent-message {
+        max-width: 200px;
+        position: absolute;
+      }
+      </style>  
+
+    <script>  
+      items_data = [];
+      {% for line_item in checkout.line_items %}
+          var item = {
+            item_id: '{{ line_item.product.id }}',
+            item_name: '{{ line_item.product.title }}',
+            affiliation: '{{ shop.name }}',
+            price: parseFloat({{ line_item.product.price }} / 100.0).toFixed(2),
+            currency: '{{ shop.currency }}',
+            discount: {% if line_item.product.compare_at_price > 0 %} parseFloat(parseFloat({{ line_item.product.compare_at_price }} / 100.0) - parseFloat({{ line_item.product.price }} / 100.0)).toFixed(2) {% else %} "0.00" {% endif %},
+            item_brand: 'CuraLife',            
+            item_category: 'CuraLin',         
+            quantity: {{ line_item.quantity }}
+          }
+          items_data.push(item);
+      {% endfor %}
+    
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const step = urlParams.get('step');
+
+    if ((!window.location.href.includes('thank_you') && !window.location.href.includes("processing")) && step == null || step == 'contact_information') {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'CheckoutStarted',
+            'step': '1',
+            'content_type': 'product_group',    
+            'content_ids': '[{{ productIds }}]',    //if multiple contents are in the cart on the checkout add an array of all products IDs
+            'value': '{{ checkout.total_price | money_without_currency }}',
+            'currency': '{{shop.currency}}',
+            'userId': '{{ checkout.customer.id }}',
+            'email': '{{ checkout.email }}',
+            'city': '{{checkout.shipping_address.city }}',
+            'country': '{{checkout.shipping_address.country_code }}',
+            'name': '{{ checkout.shipping_address.first_name }}',
+            'surname': '{{ checkout.shipping_address.last_name }}',
+            'phone_number': '{{checkout.shipping_address.phone }}',
+            'state': '{{checkout.shipping_address.province }}',       //state or province
+            'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
+            'num_items': '{{ checkout.line_items.size }}'
+           });
+
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'begin_checkout',
+            ecommerce: {                          
+              items: items_data
+            },
+            user_email: '{{ customer.email }}',
+            user_phone: '{{ customer.phone }}',
+            user_first_name: '{{ customer.first_name }}',
+            user_last_name: '{{ customer.last_name }}',
+            user_city: '{{ customer.customer_address.city }}',
+            user_state: '{{ customer.customer_address.province }}',
+            user_zip: '{{ customer.customer_address.zip }}',
+            user_country: '{{customer.customer_address.country_code | t}}',
+            user_agent: navigator.userAgent
+            //user_ip_address: 'insert_ip_address_here',
+          });
+
+          woopra.track('Checkout Step - Information', {page_url: window.location.href});
+    }
+    else if (step == 'shipping_method') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'addShippingDetail',
+        'step': '1',
+        'content_type': 'product_group',    
+        'content_ids': '[{{ productIds }}]',    //if multiple contents are in the cart on the checkout add an array of all products IDs
+        'value': '{{ checkout.total_price | money_without_currency }}',
+        'currency': '{{shop.currency}}',
+        'userId': '{{ checkout.customer.id }}',
+        'email': '{{ checkout.email }}',
+        'city': '{{checkout.shipping_address.city }}',
+        'country': '{{checkout.shipping_address.country_code }}',
+        'name': '{{ checkout.shipping_address.first_name }}',
+        'surname': '{{ checkout.shipping_address.last_name }}',
+        'phone_number': '{{checkout.shipping_address.phone }}',
+        'state': '{{checkout.shipping_address.province }}',       //state or province
+        'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
+        'num_items': '{{ checkout.line_items.size }}'
+   });
+     
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'add_shipping_info',
+    ecommerce: {      
+      shipping_tier: 'Free Shipping',                 
+      items: items_data
+    },
+    user_email: '{{ customer.email }}',
+    user_phone: '{{ customer.phone }}',
+    user_first_name: '{{ customer.first_name }}',
+    user_last_name: '{{ customer.last_name }}',
+    user_city: '{{ customer.customer_address.city }}',
+    user_state: '{{ customer.customer_address.province }}',
+    user_zip: '{{ customer.customer_address.zip }}',
+    user_country: '{{customer.customer_address.country_code | t}}',
+    user_agent: navigator.userAgent
+    //user_ip_address: 'insert_ip_address_here',
+  });
+
+  woopra.track('Checkout Step - Shipping', {});
+    }
+    else if (step == 'payment_method') {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'AddPaymentInfo',
+          'step': '2',
+          'content_type': 'product_group',    
+          'content_ids': '[{{ productIds }}]',    //if multiple contents are in the cart on the checkout add an array of all products IDs
+          'value': '{{ checkout.total_price | money_without_currency }}',
+          'currency': '{{shop.currency}}',
+          'userId': '{{ checkout.customer.id}}',
+          'email': '{{ checkout.email }}',
+          'city': '{{checkout.shipping_address.city }}',
+          'country': '{{checkout.shipping_address.country_code}}',
+          'name': '{{ checkout.shipping_address.first_name }}',
+          'surname': '{{ checkout.shipping_address.last_name }}',
+          'phone_number': '{{checkout.shipping_address.phone }}',
+          'state': '{{checkout.shipping_address.province }}',       //state or province
+          'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
+          'num_items': '{{ checkout.line_items.size }}'
+        });
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'add_payment_info',
+          ecommerce: {      
+            payment_type: '',                    
+            items: items_data
+          },
+          user_email: '{{ customer.email }}',
+          user_phone: '{{ customer.phone }}',
+          user_first_name: '{{ customer.first_name }}',
+          user_last_name: '{{ customer.last_name }}',
+          user_city: '{{ customer.customer_address.city }}',
+          user_state: '{{ customer.customer_address.province }}',
+          user_zip: '{{ customer.customer_address.zip }}',
+          user_country: '{{customer.customer_address.country_code | t}}',
+          user_agent: navigator.userAgent
+          //user_ip_address: 'insert_ip_address_here',
+        });
+
+        woopra.track('Checkout Step - Payment', {});
+      }  
+      else if (window.location.href.includes('thank_you')) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'Purchase',
+          'transaction_id': '{{checkout.order.name}}',      //order ID
+          'content_type': 'product_group',
+          'content_ids': '[{{ productIds }}]',      //if multiple conttent are purchased add array of all products IDs
+          'value': '{{ checkout.total_price | money_without_currency }}',
+          'currency': '{{shop.currency}}',
+          'userId': '{{ checkout.customer.id }}',
+          'email': '{{ checkout.email }}',
+          'city': '{{checkout.shipping_address.city }}',
+          'country': '{{checkout.shipping_address.country_code }}',
+          'name': '{{ checkout.shipping_address.first_name }}',
+          'surname': '{{ checkout.shipping_address.last_name }}',
+          'phone_number': '{{checkout.shipping_address.phone }}',
+          'state': '{{checkout.shipping_address.province }}',       //state or province
+          'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
+          'num_items': '{{ checkout.line_items.size }}'
+          });
+         
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'purchase', 
+            ecommerce: {
+              currency: '{{ shop.currency }}', 
+              value: {{ checkout.total_price | money_without_currency }},
+              shipping: 0.00, 
+              affiliation: '{{ shop.name }}',
+              transaction_id: '{{ checkout.order.name }}',
+              coupon: '{{ discount_application.title }}',
+              items: items_data
+            },
+            user_email: '{{ customer.email }}',
+            user_phone: '{{ customer.phone }}',
+            user_first_name: '{{ customer.first_name }}',
+            user_last_name: '{{ customer.last_name }}',
+            user_city: '{{ customer.customer_address.city }}',
+            user_state: '{{ customer.customer_address.province }}',
+            user_zip: '{{ customer.customer_address.zip }}',
+            user_country: '{{customer.customer_address.country_code | t}}',
+            user_agent: navigator.userAgent
+            //user_ip_address: 'insert_ip_address_here',
+          });
+
+          woopra.track('Checkout Step - Thank You', {});
+   };
+  </script>
+   
   <script>
     let utm_url = '&'
     let utm = location.search.split('utm')
