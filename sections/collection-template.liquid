@@ -60,17 +60,10 @@
                                     <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
                                     <input name="return_to" type="hidden" value="/cart/">
 
-
                                     <div class="btn">
-                                        <button class="main-btn" id='AddTCart' type="submit">
-                                            <i class="icon-cart"></i>
-                                            Add To Cart
-                                        </button>
-
+                                        <button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.id}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button>
                                     </div>
                                 </form>
-
-
                             </div>
                         </div>
                     </div>
@@ -108,21 +101,20 @@
       'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
       });
 
-      // New One
       window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'add_to_cart',       
   ecommerce: {                          
     items: [{                           
-        item_name: '{{ product.title }}',      
-        item_id: '{{ product.id }}', 
+        item_name: $(this).attr("title"),
+        item_id: $(this).attr("prod-id"),
         affiliation: '{{ shop.name }}',
-        price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+        price: $(this).attr("price"),
         currency: '{{ shop.currency }}',
-        discount: '{{ discount_amount | money_without_currency }}',
-        item_brand: 'CuraLife',            
-        item_category: 'CuraLin',         
-        quantity: '1'                   
+        discount: $(this).attr("discount"),
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
+        quantity: '1'                 
     }]
   },
   user_email: '{{ customer.email }}',
