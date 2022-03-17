@@ -156,6 +156,7 @@ input#update_quantities {
 <script type="text/javascript">
   cart_data = {{ cart | json}};
   var items_data = cart_data.items.map(function(item){
+    console.log(item.compare_at_price)
       return {
         item_id: item.id,
 		    item_name: item.product_title,
