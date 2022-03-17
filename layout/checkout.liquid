@@ -85,9 +85,7 @@
 </script>
 <!-- End of Woopra Code -->
 </head>
-<body>
-  {% include 'google-tag-manager-noscript'%}
-  
+<body>  
     {% for line_item in checkout.line_items %}
     {%- assign comma_list_append = ',' -%}
     {%- if forloop.last -%}
