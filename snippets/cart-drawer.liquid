@@ -34,12 +34,12 @@
                             </div>
                             
                             <div class="qty-control">
-                                <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                                <a class="decrease-quantity-drawer" href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
                                 <label>
                                     <input type="number" name="quantity[]" value="{{ item.quantity }}" maxlength="4">
 
                                 </label>
-                                <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
+                                <a class="increase-quantity-drawer" href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                             </div>
                             <div class="delete-card">
                                 <button type="button" onclick="removeThis(jQuery(this),'{{item.id}}')"><i class="icon-close"></i><span>Remove</span></button>
@@ -58,8 +58,7 @@
             <p class="cstm_pric">{{ cart.total_price | money }}</p>
         </div>
         <div class="btn">
-                          {% if cart.item_count > 0 %}
-
+            {% if cart.item_count > 0 %}
             <a href="/checkout/" class="plc_order main-btn orange">Place your order</a>
             {% else %}
             <a href="/collections/all" class="main-btn orange">Place your order</a>
@@ -90,7 +89,7 @@
 </script>
 
 <script>
-    jQuery("[data-act='+']").click(function () {
+    jQuery(".increase-quantity-drawer").click(function () {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'add_to_cart',
@@ -120,7 +119,7 @@
         });
     })
 
-    jQuery("[data-act='-']").click(function () {
+    jQuery(".decrease-quantity-drawer").click(function () {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'remove_from_cart',
