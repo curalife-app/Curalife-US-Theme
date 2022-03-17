@@ -336,6 +336,7 @@ woopra.track('Checkout Step - Shipping', {});
         'num_items': '{{ checkout.line_items.size }}'
         });
        
+        {% assign coupon = checkout.discount_applications | first %}
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'purchase', 
@@ -345,7 +346,7 @@ woopra.track('Checkout Step - Shipping', {});
             shipping: 0.00, 
             affiliation: '{{ shop.name }}',
             transaction_id: '{{ checkout.order.name }}',
-            coupon: '{{ discount_application.title }}',
+            coupon: '{{ coupon.title }}',
             items: items_data
           },
           user_email: '{{ customer.email }}',
