@@ -343,6 +343,7 @@ woopra.track('Checkout Step - Shipping', {});
           ecommerce: {
             currency: '{{ shop.currency }}', 
             value: {{ checkout.total_price | money_without_currency }},
+            tax: {{ checkout.tax_price | money_without_currency }},
             shipping: 0.00, 
             affiliation: '{{ shop.name }}',
             transaction_id: '{{ checkout.order.name }}',
