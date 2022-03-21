@@ -4626,7 +4626,15 @@
       "1619071284c9bbcc58",
       "16190717353dc6eba6",
       "161907184276b20bf1"
-    ]
+    ],
+    "blocks": {
+      "7878088468538493966": {
+        "type": "shopify:\/\/apps\/pop-ups-bars-by-wisepops\/blocks\/app-embed\/e7d7a4f7-0df4-4073-9375-5f36db513952",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
