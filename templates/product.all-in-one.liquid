@@ -854,7 +854,7 @@ body {
 
 
 <script>
-	jQuery(document).on("click", "#AddTCart", function () {
+	jQuery(document).on("click", "#buy-button", function () {
     window.dataLayer  = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
@@ -914,4 +914,33 @@ window.dataLayer.push({
   //user_ip_address: 'insert_ip_address_here',
 });
     });
+
+    {% if product.compare_at_price > product.price %} {% assign discount_amount = product.compare_at_price | minus: product.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'view_item',         
+  ecommerce: {                          
+    items: [{        
+      item_name: '{{ product.title }}',      
+      item_id: '{{ product.id }}', 
+      affiliation: '{{ shop.name }}',
+      price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+      currency: '{{ shop.currency }}',
+      discount: '{{ discount_amount | money_without_currency }}',
+      item_brand: 'CuraLife',            
+      item_category: 'CuraLin',         
+      quantity: '1'
+    }]
+  },
+  user_email: '{{ customer.email }}',
+  user_phone: '{{ customer.phone }}',
+  user_first_name: '{{ customer.first_name }}',
+  user_last_name: '{{ customer.last_name }}',
+  user_city: '{{ customer.customer_address.city }}',
+  user_state: '{{ customer.customer_address.province }}',
+  user_zip: '{{ customer.customer_address.zip }}',
+  user_country: '{{customer.customer_address.country_code | t}}',
+  user_agent: navigator.userAgent
+  //user_ip_address: 'insert_ip_address_here',
+});
 </script>
