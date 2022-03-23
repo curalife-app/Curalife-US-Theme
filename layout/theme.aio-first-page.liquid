@@ -136,15 +136,10 @@
   {% render 'shogun-head' %}
 </head>
 <body>
- 
- {% include 'google-tag-manager-noscript'%}
-
- <main role="main">
+  <main role="main">
     {{ content_for_layout }}
-    
   </main>
   
-
   <script>
     jQuery(document).on("click", ".cta-btn-90-caps", function () {
       console.log("add to cart event");
