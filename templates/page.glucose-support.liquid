@@ -12,9 +12,10 @@
        }}, 200);
    }
 
-   jQuery(".yotpo-next-button button").click(function() {
-       runAfterElementExists(".yotpo-copy-code-text", function() {
-           wisepops("event", "ref-code-received");
+   jQuery( document ).ready(function() {
+       runAfterElementExists(".yotpo-copy-code-icon", function() {
+               wisepops("event", "ref-code-received");
        })
-   });
+   }); 
+
 </script>
