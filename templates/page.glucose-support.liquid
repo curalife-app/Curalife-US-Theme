@@ -1,21 +1,21 @@
- {% section 'glucose-support-banner' %}
- {% section 'glucose-support-white-bg-content'%}
- {% section 'powerful-natural-ingredients'%}
- {% section 'what-our-clients-say'%}
+{% section 'glucose-support-banner' %}
+{% section 'glucose-support-white-bg-content'%}
+{% section 'powerful-natural-ingredients'%}
+{% section 'what-our-clients-say'%}
 
- <script>
-    function runAfterElementExists(jquery_selector,callback) {
-       var checker = window.setInterval(function() {
-       if (jQuery(jquery_selector).length) {
-           clearInterval(checker);
-           callback();
-       }}, 200);
-   }
+<script>
+    function runAfterElementExists(jquery_selector, callback) {
+        var checker = window.setInterval(function () {
+            if (jQuery(jquery_selector).length) {
+                clearInterval(checker);
+                callback();
+            }
+        }, 200);
+    }
 
-   jQuery( document ).ready(function() {
-       runAfterElementExists(".yotpo-copy-code-icon", function() {
-               wisepops("event", "ref-code-received");
-       })
-   }); 
-
+    jQuery(document).ready(function () {
+        runAfterElementExists(".yotpo-copy-code-icon", function () {
+            wisepops("event", "ref-code-received");
+        })
+    });
 </script>
