@@ -91,6 +91,13 @@
 {% endunless %}
 {% endunless %}
 
+{% if request.path contains 'quizpage' %}
+<!-- Leadquizzes 3 tracking script -->
+<script src="https://lq3-production01.s3.amazonaws.com/lead_quizzes_3.0/tracking/js/properties/g0h1pbeoesujrg.js"></script>
+<!-- End of Leadquizzes 3 script -->
+{% endif %}
+
+
   <main role="main">
     {{ content_for_layout }}
     {% section 'footer'%}
