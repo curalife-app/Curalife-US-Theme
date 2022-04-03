@@ -146,7 +146,7 @@ window.dataLayer.push({
   ecommerce: {                          
     items: [{                           // an array with a product (or multiple products) that was added to a cart
         item_name: '{{ product.title }}',      
-        item_id: '{{ product.sku }}', 
+        item_id: '{{ product.selected_or_first_available_variant.sku }}', 
         affiliation: '{{ shop.name }}',
         price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
         currency: '{{ shop.currency }}',
