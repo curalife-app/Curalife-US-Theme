@@ -892,7 +892,7 @@ window.dataLayer.push({
   ecommerce: {                          
     items: [{       
         item_name: '{{ product.title }}',      
-        item_id: '{{ product.id }}', 
+        item_id: '{{ product.sku }}', 
         affiliation: '{{ shop.name }}',
         price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
         currency: '{{ shop.currency }}',
@@ -922,7 +922,7 @@ window.dataLayer.push({
   ecommerce: {                          
     items: [{        
       item_name: '{{ product.title }}',      
-      item_id: '{{ product.id }}', 
+      item_id: '{{ product.sku }}', 
       affiliation: '{{ shop.name }}',
       price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
       currency: '{{ shop.currency }}',
