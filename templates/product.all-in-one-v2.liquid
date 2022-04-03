@@ -105,8 +105,8 @@
                             {% for var in product.variants %}
                                 <div class="variant-box">
                                     <div class="radio-box">
-                                        <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price }}" title="{{ var.title }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
-                                    </div>
+                                        {% if var.compare_at_price > var.price %} {% assign discount_amount = var.compare_at_price | minus: var.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
+                                        <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount_amount | money_without_currency }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>                                    </div>
                                     <div class="variant-info">
                                         <p class="variant-title"><b>{% if var.metafields.my_fields.pack_bottles_quantity > 1 %}{{ var.metafields.my_fields.pack_bottles_quantity }}X{% endif %}{{ var.metafields.my_fields.capsules_quantity | divided_by: var.metafields.my_fields.pack_bottles_quantity }}</b> Capsules</p>
                                         <div class="variant-infos">
