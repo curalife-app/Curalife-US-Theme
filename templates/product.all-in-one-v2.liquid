@@ -722,66 +722,6 @@ accordionItemHeaders.forEach(accordionItemHeader => {
 showNextQuote();
 </script>
 
-<script>
-    jQuery(document).on("click", "#buy-button", function () {
-          window.dataLayer  = window.dataLayer || [];
-          window.dataLayer.push({
-            'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
-            'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
-              'currencyCode': '{{shop.currency}}',          // the currency which is currently used by a visitor
-              'add': {                        // name of an action. In this case, always stays as add
-              'actionField': {           
-              'list': 'main'          // optional. name of a list from which the product was added to a cart  
-            },       
-            'products': [{              // list of products added to a cart. Can contain multiple products at the same time
-              'name': jQuery('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
-              'id': jQuery('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
-              'price': jQuery('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
-              'category': 'Simple',
-              'variant': '',   // category of a product
-              'quantity': 1
-            }]
-          } 
-        },
-        'userId': '{{ customer.id }}',
-        'email': '{{ customer.email }}',
-        'country': '{{customer.customer_address.country_code }}',
-        'city': '{{customer.customer_address.city }}',
-        'name': '{{ customer.first_name }}',
-        'surname': '{{ customer.last_name }}',
-        'phone_number': '{{customer.phone }}',
-        'state': '{{customer.customer_address.province }}',       //state or province
-        'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
-        });
-    });
-
-    window.dataLayer  = window.dataLayer || [];
-    window.dataLayer.push({
-    'event': 'eec.productDetail',  // name of an event. In this case, always stays as eec.productDetail
-    'ecommerce': {                      // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
-      'currencyCode': '{{shop.currency}}',           
-        'detail': { // name of an action. In this case, always stays as detail
-          'products': [{
-            'name': '{{product.title}}',      // name of a product that is currently viewed. Always include it.
-            'id': '{{ product.id }}',           // id of a product. Always include it.
-            'price': '{{ product.price | t }}',          // price of a product
-            'category': 'Simple',      // category of a product
-            'variant': '{{ product.selected_variant.id }}'         // product variant.
-           }]
-         }
-    },
-    'userId': '{{ customer.id }}',
-    'email': '{{ customer.email }}',
-    'country': '{{customer.customer_address.country_code | t}}',
-    'city': '{{customer.customer_address.city }}',
-    'name': '{{ customer.first_name }}',
-    'surname': '{{ customer.last_name }}',
-    'phone_number': '{{customer.phone }}',
-    'state': '{{customer.customer_address.province }}',       //state or province
-    'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code         
-});
-</script>
-
 <style>
 body {
     padding-top: 0 !important;
@@ -921,51 +861,70 @@ body {
 }
 </style>
 
+<script>
+    jQuery(document).on("click", "#buy-button", function () {
+          window.dataLayer  = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
+            'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
+              'currencyCode': '{{shop.currency}}',          // the currency which is currently used by a visitor
+              'add': {                        // name of an action. In this case, always stays as add
+              'actionField': {           
+              'list': 'main'          // optional. name of a list from which the product was added to a cart  
+            },       
+            'products': [{              // list of products added to a cart. Can contain multiple products at the same time
+              'name': jQuery('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
+              'id': jQuery('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
+              'price': jQuery('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
+              'category': 'Simple',
+              'variant': '',   // category of a product
+              'quantity': 1
+            }]
+          } 
+        },
+        'userId': '{{ customer.id }}',
+        'email': '{{ customer.email }}',
+        'country': '{{customer.customer_address.country_code }}',
+        'city': '{{customer.customer_address.city }}',
+        'name': '{{ customer.first_name }}',
+        'surname': '{{ customer.last_name }}',
+        'phone_number': '{{customer.phone }}',
+        'state': '{{customer.customer_address.province }}',       //state or province
+        'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+        });
+    });
+
+    jQuery(document).on("click", ".variant-box", function () {
+          window.dataLayer  = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'variant-click', 
+            'label': jQuery('input[name=pack]:checked', '#CTAForm').attr('sku'),
+        'userId': '{{ customer.id }}',
+        'email': '{{ customer.email }}',
+        'country': '{{customer.customer_address.country_code }}',
+        'city': '{{customer.customer_address.city }}',
+        'name': '{{ customer.first_name }}',
+        'surname': '{{ customer.last_name }}',
+        'phone_number': '{{customer.phone }}',
+        'state': '{{customer.customer_address.province }}',       //state or province
+        'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+        });
+    });
+</script>
 
 <script>
-	jQuery(document).on("click", "#buy-button", function () {
-    window.dataLayer  = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
-      'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
-        'currencyCode': '{{shop.currency }}',          // the currency which is currently used by a visitor
-        'add': {                        // name of an action. In this case, always stays as add
-          'actionField': {           
-            'list': 'main'          // optional. name of a list from which the product was added to a cart  
-          },       
-          'products': [{              // list of products added to a cart. Can contain multiple products at the same time
-            'name': '{{ product.title }}',      // name of a product that was added to a cart
-            'id': '{{ product.id }}',       // id of a product
-            'price': '{{ current_variant.price | money_without_currency }}',      // price of a product
-            'category': 'Simple',
-            'variant': '{{ product.first_available_variant.id }}',   // category of a product
-            'quantity': 1
-          }]
-        } 
-      },
-      'userId': '{{ customer.id }}',
-      'email': '{{ customer.email }}',
-      'country': '{{customer.customer_address.country_code }}',
-      'city': '{{customer.customer_address.city }}',
-      'name': '{{ customer.first_name }}',
-      'surname': '{{ customer.last_name }}',
-      'phone_number': '{{customer.phone }}',
-      'state': '{{customer.customer_address.province }}',       //state or province
-      'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
-      });
-
-    // New One
-      window.dataLayer = window.dataLayer || [];
+    	jQuery(document).on("click", "#buy-button", function () {
+     window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'add_to_cart',    
   ecommerce: {                          
     items: [{       
         item_name: '{{ product.title }}',      
-        item_id: '{{ product.id }}', 
+        item_id: jQuery('input[name=pack]:checked', '#CTAForm').attr('sku'), 
         affiliation: '{{ shop.name }}',
-        price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+        price: jQuery('input[name=pack]:checked', '#CTAForm').attr('price'),
         currency: '{{ shop.currency }}',
-        discount: '{{ discount_amount | money_without_currency }}',
+        discount: jQuery('input[name=pack]:checked', '#CTAForm').attr('discount'),
         item_brand: 'CuraLife',            
         item_category: 'CuraLin',         
         quantity: '1'                   
@@ -982,34 +941,33 @@ window.dataLayer.push({
   user_agent: navigator.userAgent
   //user_ip_address: 'insert_ip_address_here',
 });
-    });
+        });
 
-    {% if product.compare_at_price > product.price %} {% assign discount_amount = product.compare_at_price | minus: product.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'view_item',         
-  ecommerce: {                          
-    items: [{        
-      item_name: '{{ product.title }}',      
-      item_id: '{{ product.id }}', 
-      affiliation: '{{ shop.name }}',
-      price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
-      currency: '{{ shop.currency }}',
-      discount: '{{ discount_amount | money_without_currency }}',
-      item_brand: 'CuraLife',            
-      item_category: 'CuraLin',         
-      quantity: '1'
-    }]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
+// window.dataLayer = window.dataLayer || [];
+// window.dataLayer.push({
+//   event: 'view_item',         
+//   ecommerce: {                          
+//     items: [{        
+//       item_name: '{{ product.title }}',      
+//       item_id: '{{ product.title }}', 
+//       affiliation: '{{ shop.name }}',
+//       price: '',
+//       currency: '{{ shop.currency }}',
+//       discount: '',
+//       item_brand: 'CuraLife',            
+//       item_category: 'CuraLin',         
+//       quantity: '1'
+//     }]
+//   },
+//   user_email: '{{ customer.email }}',
+//   user_phone: '{{ customer.phone }}',
+//   user_first_name: '{{ customer.first_name }}',
+//   user_last_name: '{{ customer.last_name }}',
+//   user_city: '{{ customer.customer_address.city }}',
+//   user_state: '{{ customer.customer_address.province }}',
+//   user_zip: '{{ customer.customer_address.zip }}',
+//   user_country: '{{customer.customer_address.country_code | t}}',
+//   user_agent: navigator.userAgent
+//   //user_ip_address: 'insert_ip_address_here',
+// });
 </script>
