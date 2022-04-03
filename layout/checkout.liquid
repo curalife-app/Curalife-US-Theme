@@ -160,7 +160,7 @@
     items_data = [];
     {% for line_item in checkout.line_items %}
         var item = {
-          item_id: '{{ line_item.product.id }}',
+          item_id: '{{ line_item.product.sku }}',
           item_name: '{{ line_item.product.title }}',
           affiliation: '{{ shop.name }}',
           price: parseFloat({{ line_item.product.price }} / 100.0).toFixed(2),
