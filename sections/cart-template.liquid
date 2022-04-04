@@ -43,7 +43,7 @@
                           <div class="qty-data">
                               <p>Quantity</p>
                               <div class="qty-control">
-                                  <a class="decrease-quantity" href="javascript:void(0)" data-act="-" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if item.product.compare_at_price > item.product.price %}{{ item.product.compare_at_price | minus: item.product.price | times: 0.01 }}{% else %}0{% endif %}"><span class="icon-minus"></span></a>
+                                  <a class="decrease-quantity" href="javascript:void(0)" data-act="-" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if item.product.compare_at_price > item.product.price %}{{ item.product.compare_at_price | minus: item.product.price | times: 0.01 }}{% else %}0{% endif %}" item-id="{{item.id}}"><span class="icon-minus"></span></a>
                                   <label>
                                       <input type="number" name="updates[]" value="{{ item.quantity }}" maxlength="4">
                                   </label>
@@ -206,6 +206,11 @@ user_agent: navigator.userAgent
 })
 
 jQuery(".decrease-quantity").click(function() {
+  // If last item, remove object from cart
+  if ($(this).parent().find("input").val() == 1) {
+      removeThis($(this),$(this).attr("item-id"));
+  }
+
     window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
 event: 'remove_from_cart',    
