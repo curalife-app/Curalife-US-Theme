@@ -148,7 +148,7 @@ var items_data = cart_data.items.map(function(item){
       affiliation: '{{ shop.name }}',
       price: parseFloat(item.price / 100.0),
       currency: '{{ shop.currency }}',
-      discount: item.compare_at_price > 0 ? parseFloat(item.compare_at_price / 100.0) - parseFloat(item.price / 100.0) : 0,
+      // discount: item.compare_at_price > 0 ? parseFloat(item.compare_at_price / 100.0) - parseFloat(item.price / 100.0) : 0,
       item_brand: 'CuraLife',            
       item_category: 'CuraLin',         
       quantity: item.quantity 
@@ -186,7 +186,7 @@ item_id: $(this).attr("prod-id"),
 affiliation: '{{ shop.name }}',
 price: $(this).attr("price"),
 currency: '{{ shop.currency }}',
-discount: $(this).attr("discount"),
+// discount: $(this).attr("discount"),
 item_brand: 'CuraLife',            
 item_category: 'CuraLin',         
 quantity: '1'                   
@@ -221,7 +221,7 @@ ecommerce: {
       affiliation: '{{ shop.name }}',
       price: $(this).attr("price"),
       currency: '{{ shop.currency }}',
-      discount: $(this).attr("discount"),
+      // discount: $(this).attr("discount"),
       item_brand: 'CuraLife',            
       item_category: 'CuraLin',         
       quantity: '1'                   
@@ -251,7 +251,7 @@ ecommerce: {
       affiliation: '{{ shop.name }}',
       price: $(this).parent().attr("data-price"),
       currency: '{{ shop.currency }}',
-      discount: $(this).parent().attr("data-discount"),
+      // discount: $(this).parent().attr("data-discount"),
       item_brand: 'CuraLife',            
       item_category: 'CuraLin',         
       quantity: $(this).parent().attr("data-quantity")                  
