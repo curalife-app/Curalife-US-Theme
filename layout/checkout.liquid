@@ -161,9 +161,8 @@
           item_id: '{{ line_item.product.selected_or_first_available_variant.sku }}',
           item_name: '{{ line_item.product.title }}',
           affiliation: '{{ shop.name }}',
-          price: parseFloat({{ line_item.product.price }} / 100.0).toFixed(2),
+          price: parseFloat({{ line_item.product.price }} / 100.0).toFixed(2).toString(),
           currency: '{{ shop.currency }}',
-          // discount: {% if line_item.product.compare_at_price > 0 %} parseFloat(parseFloat({{ line_item.product.compare_at_price }} / 100.0) - parseFloat({{ line_item.product.price }} / 100.0)).toFixed(2) {% else %} "0.00" {% endif %},
           item_brand: 'CuraLife',            
           item_category: 'CuraLin',         
           quantity: {{ line_item.quantity }}
