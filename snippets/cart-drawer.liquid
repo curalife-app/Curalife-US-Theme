@@ -64,7 +64,19 @@
 </div>
 <script>
 function removeThis(obj, id) {
-        jQuery.post('/cart/update.js', 'updates[' + id + ']=0');
+        // jQuery.post('/cart/update.js', 'updates[' + id + ']=0');
+
+        $.ajax({  
+            type:"POST",        
+            url: "/cart/update.js",  // Send the login info to this page
+            data: 'updates[' + id + ']=0', 
+            dataType: "json", 
+            timeout: 200000,
+            success: function(result){ console.log("ajax success")},
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });  
 
         var cstm_count = obj.parent().parent().find("input").val();
         var cartToalCount = $('.header_cart_count').text();
