@@ -158,7 +158,7 @@ window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
 event: 'view_cart',           // name of the event. In this case, it always must be view_cart
 ecommerce: {                          
-  items: items_data
+  items: [items_data]
 },
 user_email: '{{ customer.email }}',
 user_phone: '{{ customer.phone }}',
