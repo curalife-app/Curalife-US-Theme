@@ -124,8 +124,6 @@
     {{ content_for_layout }}
   </main>
 
-  {% include 'wisepops-generated' %}
-  
   <script>
     jQuery(document).on("click", ".cta-btn-90-caps", function () {
       console.log("add to cart event");
@@ -272,6 +270,6 @@
     transition: opacity 0.5s;
   }
 </style>
-
+{% include 'wisepops-generated' %}
 </body>
 </html>
