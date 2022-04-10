@@ -1,5 +1,7 @@
 {% layout 'theme.aio-first-page' %}
 
+{% render 'mini-banner-lp' %}
+
 <div class="page-overflow">
 
     <div class="hero-section">
@@ -7,7 +9,7 @@
             <div class="data-wrap">
                 <div class="brand-logo">
                     <a href="javascript:void(0)">
-                        <img src="{{ 'logo-black.png' | asset_url}}" alt="">
+                        <img src="{{ 'logo-black.png' | asset_url}}" alt="" style="display:none;">
                     </a>
                 </div>
                 <div class="brand-slogan">
@@ -225,11 +227,9 @@
                     </div>
 
                     <div class="curaline-brandmark">
-                        <img src="{{ 'aio-brand-mark.png' | asset_url}}" alt="">
+                        <img src="{{ 'easter-curalin-bottle.png' | asset_url}}" alt="">
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -322,7 +322,7 @@
                     </div>
                 </div>
                 <div class="survey-button">
-                    <a href="https://curalife.com/products/curalin-pack" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
+                    <a href="/products/curalin-pack-easter-2022" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
                         for glucose support</a>
                 </div>
             </div>
@@ -682,7 +682,7 @@
     </div>
 
     <div class="floating-cta">
-            <a href="/products/curalin-pack" class="btn-cta">Try CuraLin</a>
+            <a href="/products/curalin-pack-easter-2022" class="btn-cta">Try CuraLin</a>
     </div>
 
     <div class="why-curaline">
@@ -797,7 +797,7 @@
         <div class="container">
             <div class="data-wrap">
                 <div class="survey-button">
-                    <a href="https://curalife.com/products/curalin-pack" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
+                    <a href="/products/curalin-pack-easter-2022" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
                         for glucose support</a>
                 </div>
             </div>
@@ -1034,6 +1034,17 @@
 </script>
 
 <style>
+    .curaline-widget-item::after {
+        content: none !important;
+    }
+
+    .curaline-brandmark {
+        top: 0 !important;
+    }
+
+    .hero-section {
+        padding-top: 60px;
+    }
 
 .brand-intro-cover-img-mobile {
     display: none !important;
@@ -1108,6 +1119,14 @@
     }
 
     @media screen and (max-width: 760px) {
+        .hero-section .brand-intro-cover span {
+            margin-top: -5vw;
+        }
+        
+        .featured-section {
+            padding-top: 20vw;
+        }
+        
         .brand-intro-cover-img-mobile {
             display: block !important;
             position: absolute !important;
@@ -1149,7 +1168,7 @@
         }
 
         .hero-section .data-wrap:before {
-            min-height: 130vw;
+            min-height: 110vw;
         }
 
         .floating-cta .btn-cta {

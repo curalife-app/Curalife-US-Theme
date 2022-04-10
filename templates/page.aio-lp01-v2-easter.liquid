@@ -1,8 +1,9 @@
 {% layout 'theme.aio-lp01' %}
 
 <div class="page-overflow">
-    {% section 'lps-aio-lp01-header' %}
-    {% section 'lps-aio-lp01-hero' %}
+    <!-- {% section 'lps-aio-lp01-header' %} -->
+    {% section 'homepage-banner' %}
+    {% render 'mini-banner-lp-v2' %}
     {% section 'lps-featured-on' %}
     {% section 'lps-video-reviews' %}
     {% section 'lps-instructions' %}
@@ -19,10 +20,32 @@
     {% section 'lps-contact-us' %}
     {% section 'lps-sources' %}
     
-    <div id="floating-cta">ORDER NOW</div>
+    <!-- <div id="floating-cta">ORDER NOW</div> -->
 </div>
 
 <style>
+    .homepage-banner-easter {
+        margin-top: 80px;
+        overflow: hidden;
+        padding: 30px 0;
+    }
+
+    .homepage-banner-easter .free-shipping {
+        display: block !important;
+    }
+
+    .homepage-banner-easter .container {
+        padding-bottom: 30px;
+    }
+
+    .main-title {
+        display: none;
+    }
+
+    .main-title-alternative {
+        display: block !important;
+    }
+
     .real-changes .sub-title {
         border-top: unset !important;
     }
@@ -47,6 +70,42 @@
     font-size: 40px;
     text-align: center;
 }
+
+@media screen and (max-width:760px) {
+    .homepage-banner-easter {
+        margin-top: 0;
+    }
+
+    .homepage-banner-easter .free-shipping {
+            display: none !important;
+        }
+
+    .homepage-banner-easter .main-logo {
+        display: block !important;
+    }
+
+    .homepage-banner-easter .main-title-alternative p {
+        margin-bottom: 20vw;
+    }
+
+    .cta-wrapper {
+        display: none;
+    }    
+
+    .homepage-banner-easter .bg .bg-egg:nth-child(1) {
+        top: 108px;
+        left: -62px;
+    }
+
+    .homepage-banner-easter .bg .bg-egg:nth-child(2) {
+        right: -24px;
+        top: -19px;
+    }
+
+    .homepage-banner-easter .bg .bg-egg:nth-child(3) {
+        display: none;
+    }
+}
 </style>
 
 <script>
@@ -65,4 +124,9 @@ if ($(window).width() < 761) {
             } 
         });
 }
+</script>
+
+<script>
+    $('.cta-wrapper a button').text('ORDER NOW');
+    $('.cta-wrapper a').attr('href', '#');
 </script>
