@@ -68,10 +68,14 @@
                         </div>
                     </div>
                 {% endfor %}
-              
-	<script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
 	jQuery(document).on("click", "#AddTCart", function () {
-    window.dataLayer  = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
       'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
@@ -128,17 +132,9 @@ window.dataLayer.push({
   //user_ip_address: 'insert_ip_address_here',
 });
     });
-</script>              
-              
-              
-
-            </div>
-        </div>
-    </div>
-</div>
+</script> 
 
 {% schema %}
-
 {
     "name": "Collection Products",
     "class": "collection-products",
@@ -154,7 +150,6 @@ window.dataLayer.push({
         }
     ]
 }
-
 {% endschema %}
 
 {% style %}
