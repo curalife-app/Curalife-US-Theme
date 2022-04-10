@@ -1,0 +1,256 @@
+<div class="easter-header">
+    <div class="bg">
+        <img class="bg-egg" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+        <img class="bg-egg" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+        <img class="bg-egg" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+        <img class="bg-egg" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+        <img class="bg-egg" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+        <img class="bg-egg" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+        <img class="bg-egg" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+    </div>
+    <div class="container">
+        <img class="main-logo" src="{{ 'logo-black.png' | asset_url }}" alt=""> 
+        <div class="offer-wrapper">
+            <img class="offer" src="{{ 'easter-aio-lp01-header-sale-offer.png' | asset_url }}" alt=""> 
+            <a class="scroll-cta-header" href="#"><button>Order Now</button></a>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    .fixed-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%; 
+}
+
+
+    .easter-header button {
+        background: #33B7A6;
+        color: white;
+        box-shadow: 0px 5.01961px 12.549px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        border: 0;
+        font-size: 25px;
+        padding: 10px 30px;
+        text-transform: uppercase;
+    }
+
+    .easter-header .offer-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .easter-header {
+        background-color: #FDD775;
+        height: 80px;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        overflow: hidden;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .easter-header .bg .bg-egg {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .easter-header .bg .bg-egg:nth-child(1) {
+        top: -10px;
+        left: 20vw;
+        transform: rotate(-5deg);
+        width: 60px;
+        animation-delay: 0.3s;
+    }
+
+    .easter-header .bg .bg-egg:nth-child(2) {
+        right: 38vw;
+        top: -14px;
+        transform: rotate(-75deg);
+        width: 63px;
+        animation-delay: 0.6s;
+    }
+
+    .easter-header .bg .bg-egg:nth-child(3) {
+        right: -1vw;
+        bottom: 24px;
+        transform: rotate(-85deg);
+        width: 66px;
+        animation-delay: 1s;
+    }
+
+    .easter-header .bg .bg-egg:nth-child(4) {
+        left: 30vw;
+        bottom: 3px;
+        transform: rotate(-95deg);
+        width: 53px;
+        animation-delay: 1.3s;
+    }
+
+    .easter-header .bg .bg-egg:nth-child(5) {
+        right: 53vw;
+        top: 37px;
+        transform: rotate(-5deg);
+        width: 64px;
+        animation-delay: 1.6s;
+    }
+
+    .easter-header .bg .bg-egg:nth-child(6) {
+        right: 23vw;
+        top: 12px;
+        transform: rotate(-65deg);
+        width: 64px;
+        animation-delay: 2s;
+    }
+
+    .easter-header .bg .bg-egg:nth-child(7) {
+        right: 93vw;
+        top: 13px;
+        transform: rotate(-65deg);
+        width: 64px;
+        animation-delay: 2.3s;
+    }
+
+    .easter-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .easter-header .main-logo {
+        height: 60%;
+        margin-top: -20px;
+    }
+
+    .easter-header .title-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .easter-header .title-wrapper p {
+        font-family: 'Montserrat';
+        font-size: 40px;
+        letter-spacing: 0.3rem;
+        font-weight: 200;
+        margin-right: 15px;
+    }
+
+    .easter-header .title-wrapper img {
+        height: 70px;
+    }
+
+    @media screen and (max-width:760px) {
+        .cta-section {
+            padding-top: 120px !important;
+        }
+
+        .easter-header {
+            position: unset;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0));
+        }
+
+        .easter-header .container {
+            padding: unset;
+            justify-content: center;
+        }
+
+        .product-template-all-in-one .cta-section .product-container .product-actions {
+            max-width: unset !important;
+        }
+
+        .product-template-all-in-one .cta-section .product-container .product-info .sub-title h1 {
+            font-weight: 700;
+            font-size: 7vw;
+        }
+
+        .easter-header .main-logo {
+            max-width: 25vw;
+            object-fit: contain;
+            margin-top: -10px;
+            display: none;
+        }
+
+        .offer-wrapper .offer {
+            max-width: 35vw;
+        }
+
+        .easter-header .title-wrapper p {
+            font-size: 4vw;
+            margin-right: 0;
+        }
+
+        .easter-header button {
+            font-size: 5vw;
+        }
+
+        .easter-header .title-wrapper img {
+            max-width: 15vw;
+            object-fit: contain;
+        }
+
+        .easter-header .bg .bg-egg:nth-child(1) {
+            top: -10px;
+    left: 20vw;
+    width: 30px;
+        }
+
+        .easter-header .bg .bg-egg:nth-child(2) {
+            width: 42px;
+        }
+
+        .easter-header .bg .bg-egg:nth-child(3) {
+            right: -1vw;
+    bottom: 24px;
+    width: 36px;
+        }
+
+        .easter-header .bg .bg-egg:nth-child(4) {
+            left: 31vw;
+    bottom: 3px;
+    width: 33px;
+        }
+
+        .easter-header .bg .bg-egg:nth-child(5) {
+            display: none;
+        }
+
+        .easter-header .bg .bg-egg:nth-child(6) {
+            right: 23vw;
+    top: 42px;
+    width: 34px;
+        }
+
+        .easter-header .bg .bg-egg:nth-child(7) {
+            right: 93vw;
+            top: 13px;
+            width: 64px;
+        }
+    }
+</style>
+
+<script>
+    $(window).scroll(function(){
+    if ($(window).scrollTop() >= $('.hero-banner').outerHeight()) {
+        $('.easter-header').addClass('fixed-header');
+        $('.hero-banner').addClass('fixed-banner');
+    }
+    else {
+        $('.easter-header').removeClass('fixed-header');
+        $('.hero-banner').removeClass('fixed-banner');
+    }
+});
+
+$(".scroll-cta-header, .scroll-cta-header button").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#product-section").offset().top + 130
+    }, 2000);
+});
+</script>

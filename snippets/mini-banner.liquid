@@ -1,0 +1,200 @@
+<div class="curalin-banner-easter">
+    <div class="container">
+        <div class="bg">
+            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-curalin-banner-bg-egg.png' | asset_url }}" alt="">
+        </div>
+        <div class="content">
+            <div class="main-title-wrapper">
+                <p class="animate__animated animate__pulse">EASTER</p>
+                <img class="sale animate__animated animate__zoomInRight" src="{{ 'easter-mini-banner-sale.png' | asset_url }}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    .product-card .picture .discount p {
+        background: #FDD775;
+        border-color: #FDD775;
+        color: black;
+    }
+
+    .product-card .info .btn .main-btn {
+        background: #01C6B2;
+        border-color: #01C6B2;
+    }
+
+    .offset-top {
+        background-color: white;
+    }
+
+    .curalin-banner-easter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FDD775;
+        overflow: hidden;
+        min-height: 85px;
+    }
+
+    .curalin-banner-easter .bg {
+        position: relative;
+    }
+
+    .curalin-banner-easter .bg .bg-egg {
+        position: absolute;
+    }
+
+    .curalin-banner-easter .bg .bg-egg:nth-child(1) {
+        top: 6px;
+        left: 178px;
+        transform: rotate(45deg);
+        width: 61px;
+        animation-delay: 0.3s;
+    }
+
+    .curalin-banner-easter .bg .bg-egg:nth-child(2) {
+        right: -10px;
+        top: 5px;
+        transform: rotate(-35deg);
+        width: 56px;
+        animation-delay: 0.6s;
+    }
+
+    .curalin-banner-easter .bg .bg-egg:nth-child(3) {
+        right: 9vw;
+        bottom: -50px;
+        transform: rotate(35deg);
+        width: 53px;
+        animation-delay: 1s;
+    }
+
+    .curalin-banner-easter .bg .bg-egg:nth-child(4) {
+        left: -5px;
+        bottom: -47px;
+        transform: rotate(-35deg);
+        width: 57px;
+        animation-delay: 1.3s;
+    }
+
+    .curalin-banner-easter .bg .bg-egg:nth-child(5) {
+        right: 60vw;
+        top: -15px;
+        transform: rotate(-45deg);
+        width: 47px;
+        animation-delay: 1.6s;
+    }
+
+    .curalin-banner-easter .bg .bg-egg:nth-child(6) {
+        right: 23vw;
+        top: 0px;
+        transform: rotate(-25deg);
+        width: 50px;
+        animation-delay: 2s;
+    }
+
+    .curalin-banner-easter .bg .bg-egg:nth-child(7) {
+        right: 17vw;
+        top: 0px;
+        width: 23px;
+        animation-delay: 2.3s;
+    }
+
+    .curalin-banner-easter .bg .bg-egg:nth-child(8) {
+        left: 18vw;
+        top: 30px;
+        width: 23px;
+        animation-delay: 2.6s;
+    }
+
+    .curalin-banner-easter .content .main-title-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .curalin-banner-easter .content .main-title-wrapper p {
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 0;
+        margin-right: 250px;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0.3rem;
+    }
+
+    .curalin-banner-easter .content .main-title-wrapper img {
+        position: absolute;
+        margin-left: 250px;
+        z-index: 2;
+    }
+
+    @media screen and (max-width:1590px) {
+        .curalin-banner-easter .content .main-title-wrapper img {
+            max-height: 9vw;
+            margin-left: 17vw;
+        }
+    }
+
+    @media screen and (max-width:760px) {
+        .curalin-banner-easter .content .main-title-wrapper {
+            text-align: center;
+            grid-column: 1/1;
+        }
+
+        .curalin-banner-easter .content .main-title-wrapper p {
+            font-size: 10vw;
+            margin: unset;
+        }
+
+        .curalin-banner-easter .content .main-title-wrapper img {
+            position: relative;
+            margin: unset;
+            max-height: 30vw;
+            padding: 15px;
+        }
+
+        .curalin-banner-easter .bg .bg-egg:nth-child(1) {
+            top: -12px;
+            left: 137px;
+            width: 31px;
+        }
+
+        .curalin-banner-easter .bg .bg-egg:nth-child(2) {
+            right: -30px;
+            transform: rotate(-45deg);
+        }
+
+        .curalin-banner-easter .bg .bg-egg:nth-child(3) {
+            bottom: -146px;
+        }
+
+        .curalin-banner-easter .bg .bg-egg:nth-child(4) {
+            left: -28px;
+            bottom: -165px;
+            transform: rotate(45deg);
+            width: 71px;
+        }
+
+        .curalin-banner-easter .bg .bg-egg:nth-child(5) {
+            right: 65vw;
+            top: 76px;
+            width: 22px;
+        }
+
+        .curalin-banner-easter .bg .bg-egg:nth-child(6) {
+            right: 87vw;
+            top: -18px;
+            width: 42px;
+        }
+    }
+</style>
