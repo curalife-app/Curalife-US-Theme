@@ -1,8 +1,9 @@
 {% layout 'theme.aio-lp01' %}
 
 <div class="page-overflow">
-    {% section 'lps-aio-lp01-header' %}
+    <!-- {% section 'lps-aio-lp01-header' %} -->
     {% section 'lps-aio-lp01-hero' %}
+    {% render 'mini-banner-lp-v2' %}
     {% section 'lps-featured-on' %}
     {% section 'lps-video-reviews' %}
     {% section 'lps-instructions' %}
@@ -19,7 +20,7 @@
     {% section 'lps-contact-us' %}
     {% section 'lps-sources' %}
     
-    <div id="floating-cta">ORDER NOW</div>
+    <!-- <div id="floating-cta">ORDER NOW</div> -->
 </div>
 
 <style>
@@ -50,18 +51,18 @@
 </style>
 
 <script>
-    jQuery("#floating-cta").click(function() {
-    jQuery([document.documentElement, document.body]).animate({
-        scrollTop: jQuery("#product-section").offset().top + 130
+    $("#floating-cta").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#product-section").offset().top + 130
     }, 2000);
 });
 
-if (jQuery(window).width() < 761) {
-    jQuery(window).scroll(function(){ 
-            if (jQuery(this).scrollTop() > 800 && jQuery(this).scrollTop() < (jQuery("#product-section").offset().top - 1000)) { 
-                jQuery('#floating-cta').fadeIn(); 
+if ($(window).width() < 761) {
+    $(window).scroll(function(){ 
+            if ($(this).scrollTop() > 800 && $(this).scrollTop() < ($("#product-section").offset().top - 1000)) { 
+                $('#floating-cta').fadeIn(); 
             } else { 
-                jQuery('#floating-cta').fadeOut(); 
+                $('#floating-cta').fadeOut(); 
             } 
         });
 }
