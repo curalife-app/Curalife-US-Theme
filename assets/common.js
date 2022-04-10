@@ -4,8 +4,8 @@ const isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 const windowWidth = window.innerWidth;
 
-if (isMacLike) jQuery("body, html").addClass("isMacLike");
-if (isSafari) jQuery("body, html").addClass("isSafari");
+if (isMacLike) $("body, html").addClass("isMacLike");
+if (isSafari) $("body, html").addClass("isSafari");
 
 function hold_all_scroll_page(fix = false) {
     if (fix) {
@@ -33,7 +33,7 @@ function hold_scroll_page(fix = false) {
         window.addEventListener('wheel', preventDefault, { passive: false });
         window.addEventListener('DOMMouseScroll', preventDefault, { passive: false });
         document.addEventListener('touchmove', preventDefault, { passive: false });
-        // jQuery(document).on("touchmove", preventDefault)
+        // $(document).on("touchmove", preventDefault)
     } else {
         window.removeEventListener('wheel', preventDefault, { passive: false });
         window.removeEventListener('DOMMouseScroll', preventDefault, { passive: false });
@@ -41,29 +41,29 @@ function hold_scroll_page(fix = false) {
     }
 }
 var ts;
-jQuery(document).on('touchstart', function (e) {
+$(document).on('touchstart', function (e) {
     ts = e.originalEvent.touches[0].clientY;
 });
 
 function preventDefault(e) {
     e = e || window.event;
     var area;
-    if (jQuery(e.target).closest(".fancybox-content .modal-scroll").length) {
-        area = jQuery(e.target).closest(".fancybox-content .modal-scroll");
-    } else if (jQuery(e.target).closest(".main-menu .menu-scroll").length) {
-        area = jQuery(e.target).closest(".main-menu .menu-scroll");
-    }else if (jQuery(e.target).closest(".cart-toolbar .content").length) {
-        area = jQuery(e.target).closest(".cart-toolbar .content");
+    if ($(e.target).closest(".fancybox-content .modal-scroll").length) {
+        area = $(e.target).closest(".fancybox-content .modal-scroll");
+    } else if ($(e.target).closest(".main-menu .menu-scroll").length) {
+        area = $(e.target).closest(".main-menu .menu-scroll");
+    }else if ($(e.target).closest(".cart-toolbar .content").length) {
+        area = $(e.target).closest(".cart-toolbar .content");
     } else {
-        area = jQuery(e.target);
+        area = $(e.target);
     }
-    var parentPopup = jQuery(e.target).closest(".fancybox-content .modal-scroll, .main-menu .menu-scroll, .cart-toolbar .content").length || jQuery(e.target).hasClass('.popupContent');
+    var parentPopup = $(e.target).closest(".fancybox-content .modal-scroll, .main-menu .menu-scroll, .cart-toolbar .content").length || $(e.target).hasClass('.popupContent');
     if (!parentPopup) {
         e.preventDefault();
         e.returnValue = false;
         return false;
     }
-    /*if (jQuery(e.target).closest(".chosen-container").length) {
+    /*if ($(e.target).closest(".chosen-container").length) {
         e.preventDefault();
         e.returnValue = false;
         return false;
@@ -87,17 +87,17 @@ function preventDefault(e) {
 }
 let quoteSlider, ingredientSlider, ingredientThumbs, productSlider, productThumbs;
 
-jQuery(document).ready(function () {
-    jQuery(".quote-slider .swiper-container").each(function (index, element) {
-        let $this = jQuery(this);
+$(document).ready(function () {
+    $(".quote-slider .swiper-container").each(function (index, element) {
+        let $this = $(this);
         quoteSlider = new Swiper($this, {
             slidesPerView: 2,
             spaceBetween: 0,
             grabCursor: true,
             loop: true,
             navigation: {
-                nextEl: jQuery(".next-slide2"),
-                prevEl: jQuery(".prev-slide2"),
+                nextEl: $(".next-slide2"),
+                prevEl: $(".prev-slide2"),
                 disabledClass: 'disabled'
             },
             breakpoints: {
@@ -198,6 +198,9 @@ jQuery(document).ready(function () {
         },
         breakpoints: {
             760: {
+                slidesPerView: 1,
+            },
+            1080: {
                 slidesPerView: 2,
             },
             1200: {
@@ -238,7 +241,7 @@ jQuery(document).ready(function () {
     });
 
     productSliderAllInOne.on('slideChange', function () {
-        jQuery('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
+        $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
       });
 
       let isFirstClick = true;
@@ -334,17 +337,19 @@ jQuery(document).ready(function () {
         }
     });
 
- jQuery(".related-posts .posts-list .swiper-container")
+
+
+ $(".related-posts .posts-list .swiper-container")
  .each(function (index, element) {
-        let $this = jQuery(this);
+        let $this = $(this);
         quoteSlider = new Swiper($this, {
             slidesPerView: 1,
             spaceBetween: 0,
             grabCursor: true,
             loop: false,
             navigation: {
-                nextEl: jQuery(".next-slide"),
-                prevEl: jQuery(".prev-slide"),
+                nextEl: $(".next-slide"),
+                prevEl: $(".prev-slide"),
                 disabledClass: 'disabled'
             },
             breakpoints: {
@@ -378,16 +383,16 @@ const aosFadeArrDone = [
 ];
 
 function setDelayTransform(divs, total_delay = 300) {
-    jQuery(divs).each(function (i) {
-        jQuery(this).css("transition-delay", total_delay + "ms").attr("data-delay", total_delay);
+    $(divs).each(function (i) {
+        $(this).css("transition-delay", total_delay + "ms").attr("data-delay", total_delay);
         total_delay += 100;
     });
     return total_delay;
 }
 
 function aos_init() {
-    jQuery(".aos").attr("data-aos", "fade-up");
-    jQuery(aosFadeArrDone.join(',')).addClass("aos").attr("data-aos", "fade-up");
+    $(".aos").attr("data-aos", "fade-up");
+    $(aosFadeArrDone.join(',')).addClass("aos").attr("data-aos", "fade-up");
     setDelayTransform(".company-partners ol li", 0);
     setDelayTransform(".footer-nav .nav-items ol li a", 0);
     setDelayTransform(".company-social ol li", 0);
@@ -403,7 +408,7 @@ function aos_init() {
 
 let screenWidth = window.innerWidth;
 
-jQuery(window).on('resize', function () {
+$(window).on('resize', function () {
     screenWidth = window.innerWidth;
 });
 
@@ -425,10 +430,10 @@ window.onscroll = function () {
 
 let activeMenu = false;
 
-jQuery(document).ready(function () {
+$(document).ready(function () {
     // aos_init();
 
-    jQuery('.open-modal[data-fancybox]').fancybox({
+    $('.open-modal[data-fancybox]').fancybox({
         closeExisting: true,
         buttons: ['close'],
         afterShow: function () {
@@ -443,44 +448,139 @@ jQuery(document).ready(function () {
         }
     });
 
-    jQuery(document).on("click", ".qty-control a", function (e) {
-        e.preventDefault();
-        let newVal, $button = jQuery(this),
-            oldValue = $button.closest(".qty-control").find("input").val();
-        if ($button.attr('data-act') === "+") {
-            newVal = parseInt(oldValue) + 1;
-        } else {
-            if (oldValue > 1) {
-                newVal = parseInt(oldValue - 1);
-            } else {
-                newVal = 1;
+    // Set Loader on Ajax calls
+    $(document).ajaxSend(function() {
+        $("#overlay").fadeIn(300);　
+    });
+
+    async function updateQuantityOnServer(id, qty) {
+        console.log('Updating Cart...')
+        $.ajax({  
+            type:"POST",        
+            url: "/cart/change.js",  // Send the login info to this page
+            data: JSON.stringify({ id: id, quantity: qty }), 
+            dataType: "json", 
+            async: false,
+            contentType: "application/json",
+            timeout: 200000,
+            success: function(result){ 
+                console.log("Item Quantity Updated");
+                window.UpdateStatus = true;
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log("Error In Updating Item Quantity!", textStatus, errorThrown);
+                window.UpdateStatus = false;
+            },
+            
+        }).done(function() {
+            setTimeout(function(){$("#overlay").fadeOut(300);},500);
+        }); 
+    }
+
+    function updateQuantityOnHeaderIcon(updateValue) {
+        var cartTotalCount = $('.header_cart_count').text();
+        var cartRemainingCount = parseInt(cartTotalCount) + parseInt(updateValue);
+        $('.header_cart_count').text(cartRemainingCount);
+    }
+
+    function updateTotalPrice(inputObject, updateValue) {
+        var currencySymbol =  inputObject.attr("currency");
+
+        if (inputObject.attr("cart-type") == "drawer") {
+            // Cart Drawer Removal
+            var itemPrice = inputObject.parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
+            var changePrice = updateValue * parseFloat(itemPrice);
+
+            // Update Cart Total Price
+            var cartPrice = $(".cstm_pric").text().replace(currencySymbol, "").replace(",", "");
+            var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
+            $(".cstm_pric").text(currencySymbol + finalCartPrice.toFixed(2));
+            if (finalCartPrice == 0) {
+                $(".plc_order").attr("href", "/collections/all");
             }
         }
-        $button.closest(".qty-control").find("input").val(newVal);
+        else {
+            // Cart Template Removal
+            var itemPrice = inputObject.parent().parent().parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
+            var changePrice = updateValue * parseFloat(itemPrice);
+
+            // Update Row Total Price
+            var rowPriceObject = inputObject.parent().parent().parent().parent().parent().find('.total').find("p");
+            var rowPrice = rowPriceObject.text().replace(currencySymbol, "").replace(",", "");
+            var finalRowPrice = parseFloat(rowPrice) + parseFloat(changePrice);
+            rowPriceObject.text(currencySymbol + finalRowPrice.toFixed(2).toString());
+
+            // Update Cart Total Price
+            var cartPriceObject = $(".cart-total .total-wrap .price span");
+            var cartPrice = cartPriceObject.text().replace(currencySymbol, "").replace(",", "");
+            var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
+            cartPriceObject.text(currencySymbol + finalCartPrice.toFixed(2).toString());
+        }
+    }
+
+    GlobalFunctions = {
+        updateQuantity: function(inputObject, updateValue) {
+            var oldValue = inputObject.val();
+            var newValue = parseInt(oldValue) + parseInt(updateValue);
+
+            // Update Server
+            updateQuantityOnServer(inputObject.attr('item-var-id'), updateValue > 1 ? 0 : newValue);
+
+            if (window.UpdateStatus) {
+                // Remove Item If Quantity Is 0
+                if (newValue == 0) {
+                    inputObject.parent().parent().parent().parent().parent().remove();
+                }
+                else {
+                    // Update Input Object Value
+                    inputObject.val(newValue);
+                }
+
+                updateTotalPrice(inputObject, updateValue);
+                updateQuantityOnHeaderIcon(updateValue);
+            }
+        }
+    }
+
+    // Change Quantity Widget On Product Page
+    $(document).on("click", ".product-data .qty-control a", function (e) {
+        e.preventDefault();
+        let newVal, $button = $(this),
+            inputObj = $button.closest(".qty-control").find("input"),
+            oldValue = inputObj.val();
+        if ($button.attr('data-act') === "+") {
+            newVal = parseInt(oldValue) + 1;
+        } 
+        else {
+            newVal = parseInt(oldValue) - 1;
+        }
+
+        inputObj.val(newVal);
+        // GlobalFunctions.updateQuantity($button, inputObj.attr('item-var-id'), newVal);
     });
 
-    jQuery(document).on("click", ".extra-info ul li", function () {
-        jQuery(this).toggleClass('show').siblings().removeClass('show')
+    $(document).on("click", ".extra-info ul li", function () {
+        $(this).toggleClass('show').siblings().removeClass('show')
     });
 
-    jQuery(document).on("click", ".main-links ul li a.open-menu", function () {
-        if (jQuery(this).hasClass("active")) {
+    $(document).on("click", ".main-links ul li a.open-menu", function () {
+        if ($(this).hasClass("active")) {
             activeMenu = false;
             hold_scroll_page(false);
-            jQuery(this).removeClass('active');
-            jQuery(".main-menu").removeClass('active')
+            $(this).removeClass('active');
+            $(".main-menu").removeClass('active')
         } else {
             activeMenu = true;
             hold_scroll_page(true);
-            jQuery(this).addClass('active');
-            jQuery(".main-menu").addClass('active')
+            $(this).addClass('active');
+            $(".main-menu").addClass('active')
         }
     });
 
-    jQuery(document).on("click", ".main-menu ul li.dropdown > a", function (e) {
+    $(document).on("click", ".main-menu ul li.dropdown > a", function (e) {
         if (screenWidth < 992) {
             e.preventDefault();
-            let parent = jQuery(this).closest(".dropdown");
+            let parent = $(this).closest(".dropdown");
             if (parent.hasClass("open")) {
                 parent.removeClass("open");
             } else {
@@ -489,28 +589,28 @@ jQuery(document).ready(function () {
         }
     });
 
-    jQuery(document).on("click", ".main-links ul li a.open-search", function () {
-        if (jQuery(this).hasClass("active")) {
-            jQuery(this).removeClass('active');
-            jQuery(".main-search").removeClass('active')
+    $(document).on("click", ".main-links ul li a.open-search", function () {
+        if ($(this).hasClass("active")) {
+            $(this).removeClass('active');
+            $(".main-search").removeClass('active')
         } else {
-            jQuery(this).addClass('active');
-            jQuery(".main-search").addClass('active')
+            $(this).addClass('active');
+            $(".main-search").addClass('active')
         }
     });
 
-    if (jQuery(".account-menu").length) {
-        jQuery(".account-menu .menu-list ul li").each(function () {
-            if (jQuery(this).hasClass("active")) {
-                let text = jQuery(this).find("a").html();
-                jQuery(this).closest(".account-menu").find(".active-item p").html(text);
+    if ($(".account-menu").length) {
+        $(".account-menu .menu-list ul li").each(function () {
+            if ($(this).hasClass("active")) {
+                let text = $(this).find("a").html();
+                $(this).closest(".account-menu").find(".active-item p").html(text);
             }
         })
     }
 
-    jQuery(document).on("click", ".account-menu .active-item", function (e) {
+    $(document).on("click", ".account-menu .active-item", function (e) {
         if (screenWidth < 761) {
-            let parent = jQuery(this).closest(".account-menu");
+            let parent = $(this).closest(".account-menu");
             if (parent.hasClass("open")) {
                 parent.removeClass("open");
             } else {
@@ -518,82 +618,80 @@ jQuery(document).ready(function () {
             }
         }
     });
-    jQuery(document).on("click", ".faq-list ul li .question", function (e) {
-            let parent = jQuery(this).closest("li");
-            if (parent.hasClass("open")) {
-                parent.removeClass("open");
-                parent.find(".answer").slideUp();
-            } else {
-                parent.addClass("open");
-                parent.find(".answer").slideDown();
 
-            }
+    $(document).on("click", ".faq-list ul li .question", function (e) {
+        let parent = $(this).closest("li");
+        if (parent.hasClass("open")) {
+            parent.removeClass("open");
+            parent.find(".answer").slideUp();
+        } else {
+            parent.addClass("open");
+            parent.find(".answer").slideDown();
+
+        }
     });
 
     var move_access = false;
     var scrollLeft;
-    jQuery(".touch-scroll").on("mousedown touchstart", function (event) {
+    $(".touch-scroll").on("mousedown touchstart", function (event) {
         move_access = true;
         if (event.type == "touchstart") {
             var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
             var offset = touch.clientX;
         } else {
-            //если нажата кнопка мышки:
             var offset = event.clientX;
         }
         touchstart = offset;
-        scrollLeft = jQuery(this).find(".scroll-wrap").scrollLeft();
+        scrollLeft = $(this).find(".scroll-wrap").scrollLeft();
         console.log(scrollLeft);
     });
-    jQuery(document).on("mouseup touchend", function (event) {
+    $(document).on("mouseup touchend", function (event) {
         move_access = false;
         if (event.type == "touchend") {
             var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
             var offset = touch.clientX;
         } else {
-            //если нажата кнопка мышки:
             var offset = event.clientX;
         }
         touchstart = offset;
     });
-    jQuery(".touch-scroll").on("mousemove touchmove", function (event) {
+    $(".touch-scroll").on("mousemove touchmove", function (event) {
         if (move_access) {
             if (event.type == "touchmove") {
                 var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
                 var offset = touch.clientX;
             } else {
-                //если нажата кнопка мышки:
                 var offset = event.clientX;
             }
-            jQuery(this).find(".scroll-wrap").scrollLeft(scrollLeft + (touchstart - offset)); //отменяем "всплытие сообщений", чтобы не вызывался клик на тач-устройствах.
+            $(this).find(".scroll-wrap").scrollLeft(scrollLeft + (touchstart - offset)); //отменяем "всплытие сообщений", чтобы не вызывался клик на тач-устройствах.
             event.stopPropagation();
             event.preventDefault();
         }
     });
 
 
-    jQuery(document).on("click", ".locations-map .map-info", function (e) {
-        let par = jQuery(this).closest(".locations-map");
-        let country = jQuery(this).data("country");
-        let name = jQuery(this).data("name");
+    $(document).on("click", ".locations-map .map-info", function (e) {
+        let par = $(this).closest(".locations-map");
+        let country = $(this).data("country");
+        let name = $(this).data("name");
         let elmW = par.innerWidth();
         let elmH = par.innerHeight();
-        let notice = jQuery(".info-box");
+        let notice = $(".info-box");
         let parTop = par.offset().top;
         let parLeft = par.offset().left;
-        let circlePos = setOffsetPosition(jQuery(this));
+        let circlePos = setOffsetPosition($(this));
         let xPos = ((circlePos.left - notice.innerWidth()) - parLeft) / elmW;
-        let yPos = (circlePos.top + 20 + (jQuery(this).innerHeight() / 2) - parTop) / elmH;
+        let yPos = (circlePos.top + 20 + ($(this).innerHeight() / 2) - parTop) / elmH;
 
-        if (jQuery(this).hasClass("active")) {
-            jQuery(this).removeClass("active");
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
             notice.hide();
         } else {
-            jQuery(this).addClass("active").siblings().removeClass("active");
+            $(this).addClass("active").siblings().removeClass("active");
             notice.find(".country p").html(country);
             notice.find(".name p").html(name);
             if (xPos < 0) {
-                xPos = (circlePos.left + 18 + jQuery(this).innerWidth() - parLeft) / elmW;
+                xPos = (circlePos.left + 18 + $(this).innerWidth() - parLeft) / elmW;
                 notice.addClass("left")
             } else {
                 notice.removeClass("left")
@@ -618,9 +716,9 @@ jQuery(document).ready(function () {
         };
     };
 
-    // jQuery(window).resize(function () {
-    //     jQuery(".locations-map .info-box").hide();
-    // });
+    $(window).resize(function () {
+        $(".locations-map .info-box").hide();
+    });
 
 
 });
@@ -628,20 +726,18 @@ var map;
 var markers_map = [];
 var markers = [];
 
-if (jQuery(".locator-list").length) {
-    locList = jQuery(".locator-list ul li");
+if ($(".locator-list").length) {
+    locList = $(".locator-list ul li");
     locList.each(function () {
-        markers_map.push([jQuery(this).data("title"), jQuery(this).data("lat"), jQuery(this).data("lng")]);
+        markers_map.push([$(this).data("title"), $(this).data("lat"), $(this).data("lng")]);
     });
     console.log(markers_map)
 }
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        // center: {lat: 50.448669, lng: 30.517841},
         zoom: 10,
         disableDefaultUI: true,
-        // zoomControl: false,
 
         styles: [{
             "featureType": "water",
@@ -707,17 +803,15 @@ function initMap() {
         });
         markers.push(marker);
     }
-    // map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds));
     map.setCenter(markersBounds.getCenter());
 }
 
 
-jQuery(document).ready(function () {
-    if (jQuery(".store-locator").length > 0) {
-        jQuery(".store-locator").after('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6sLxnYQ-FWAeI8mmJpv2LNinG0u-H5aw&callback=initMap"></script>');
+$(document).ready(function () {
+    if ($(".store-locator").length > 0) {
+        $(".store-locator").after('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6sLxnYQ-FWAeI8mmJpv2LNinG0u-H5aw&callback=initMap"></script>');
     }
 });
-//# sourceMappingURL=maps/common.js.map
 
 
 
