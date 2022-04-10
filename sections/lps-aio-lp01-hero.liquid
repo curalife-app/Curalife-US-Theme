@@ -1,18 +1,31 @@
 <div class="hero-banner">
     <div class="container">
-        <h1>Long-Term Blood Sugar Support</h1>
-        <p>Keep On Supporting Your Blood Sugar with CuraLin</p>
-        <a id="hero-cta" href="#"><button>Order Now</button></a>
-        <img src="{{ 'lps-aio-lp01-hero-free-shipping.png' | asset_url }}" alt="free shipping">
+        <img class="main-logo" src="{{ 'logo-black.png' | asset_url }}" alt=""> 
+        <div class="title-wrapper">
+            <p>EASTER</p>
+            <img class="sale" src="{{ 'easter-mini-banner-sale.png' | asset_url }}" alt=""> 
+        </div> 
+        <p class="description">Keep On Supporting Your Blood Sugar with CuraLin</p>
+        <a class="scroll-cta" href="#"><button>Order Now</button></a>
+        <img class="free-shipping" src="{{ 'easter-aio-lp01-header-free-shipping.png' | asset_url }}" alt="free shipping">
     </div>
 </div>
 
 <style>
     .hero-banner {
-        background-image: url("{{ 'lps-aio-lp01-hero-bg.png' | asset_url }}");
+        background-image: url("{{ 'easter-aio-lp01-hero-bg.png' | asset_url }}");
         background-size: cover;
         background-position: bottom;
         height: 40vw;
+        margin-top: 80px;
+    }
+
+    .hero-banner.fixed-banner {
+        margin-bottom: 80px;
+    }
+
+    .hero-banner .main-logo {
+        display: none;
     }
 
     .hero-banner .container {
@@ -21,23 +34,37 @@
         position: relative;
     }
 
-    .hero-banner h1 {
-        font-weight: 500;
-        font-size: 70px;
-        line-height: 70px;
-        max-width: 650px;
-        margin: 10px 0;
+    .hero-banner .title-wrapper {
+        display: flex;
+        align-items: center;
+        max-width: 40%;
     }
 
-    .hero-banner p {
+    .hero-banner .title-wrapper p {
+        font-family: 'Montserrat';
+        font-size: 80px;
+        letter-spacing: 0.3rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .hero-banner .title-wrapper .sale {
+        height: 150px;
+        object-fit: contain;
+        margin-top: 0;
+        margin-left: 10px;
+    }
+
+    .hero-banner .description {
         font-size: 30px;
         line-height: 45px;
-        margin: 3vw 0;
+        margin: 2vw 0;
+        margin-top: 0;
         max-width: 400px;
     }
 
     .hero-banner button {
-        background: #C78263;
+        background: #33B7A6;
         color: white;
         box-shadow: 0px 4.625px 4.625px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
@@ -47,10 +74,11 @@
         text-transform: uppercase;
     }
 
-    .hero-banner img {
+    .hero-banner .free-shipping {
         display: block;
         margin-top: 20px;
         width: 355px;
+        display: none;
     }
 
     @media screen and (max-width:1430px) {
@@ -73,32 +101,45 @@
         .hero-banner {
             height: 50vw
         }
-
-        .hero-banner h1 {
-            font-size: 4vw;
-            margin-top: 0vw;
-            margin-bottom: 2vw;
-            line-height: 5vw;
-        }
     }
 
     @media screen and (max-width: 760px) {
         .hero-banner {
-            background-image: url("{{ 'lps-aio-lp01-hero-bg-mobile.png' | asset_url }}");
-            height: 100vh;
+            background-image: url("{{ 'easter-aio-lp01-hero-bg-mobile.png' | asset_url }}");
+            min-height: 600px;
+            margin-top: unset;
         }
 
-        .hero-banner h1 {
+        .hero-banner .main-logo {
+            height: 6vw;
+            top: 10px;
+            position: absolute;
+            display: block !important;
+        }
+
+        .hero-banner .container {
+            padding-top: 10vw;
+        }
+
+        .hero-banner .title-wrapper {
+            max-width: unset;
+        }
+
+        .hero-banner .title-wrapper p {
             font-size: 8vw;
-            line-height: unset;
-            font-weight: bold;
-            margin-bottom: 20px;
         }
 
-        .hero-banner p {
-            font-size: 24px;
-            line-height: unset;
-            max-width: 65%;
+        .hero-banner .description {
+            font-size: 5vw;
+            line-height: 8vw;
+            font-weight: 200;
+            max-width: 62vw;
+            margin-top: 3vw;
+        }
+
+        .hero-banner .title-wrapper .sale {
+            width: 30vw;
+            height: unset;
         }
 
         .hero-banner button {
@@ -107,21 +148,23 @@
             position: absolute;
             bottom: 70px;
             padding: 10px;
+            display: none;
         }
 
-        .hero-banner img {
-            width: calc(100% - 30px);
+        .hero-banner .free-shipping {
+            width: 100%;
+            left: 0;
             position: absolute;
             bottom: 15px;
+            display: block;
         }
-
     }
 </style>
 
 <script>
-    jQuery("#hero-cta").click(function() {
-    jQuery([document.documentElement, document.body]).animate({
-        scrollTop: jQuery("#product-section").offset().top + 130
+    $(".scroll-cta, .scroll-cta button").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#product-section").offset().top + 130
     }, 2000);
 });
 </script>
