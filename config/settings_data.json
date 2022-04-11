@@ -1265,25 +1265,29 @@
           "4857d76d-009f-4c16-bab7-8a6b9a165e2a": {
             "type": "socl_icn",
             "settings": {
-              "blg_icn": "icon-b-fb"
+              "blg_icn": "icon-b-fb",
+              "blg_icnlink": ""
             }
           },
           "25b9b58d-0baa-4c6b-9cbc-a2dae4b5c0a5": {
             "type": "socl_icn",
             "settings": {
-              "blg_icn": "icon-b-tw"
+              "blg_icn": "icon-b-tw",
+              "blg_icnlink": ""
             }
           },
           "c3a472a4-40b7-44e1-80ff-576a537299eb": {
             "type": "socl_icn",
             "settings": {
-              "blg_icn": "icon-b-pi"
+              "blg_icn": "icon-b-pi",
+              "blg_icnlink": ""
             }
           },
           "c1366438-cb9e-494d-b143-c2ee04042ee4": {
             "type": "socl_icn",
             "settings": {
-              "blg_icn": "icon-b-in"
+              "blg_icn": "icon-b-in",
+              "blg_icnlink": ""
             }
           }
         },
@@ -1294,11 +1298,11 @@
           "c1366438-cb9e-494d-b143-c2ee04042ee4"
         ],
         "settings": {
-          "singpst_img": "shopify:\/\/shop_images\/COMMUNITY_Blog_Banners_1000x150-12_copy_5.png",
+          "singpst_img": "shopify:\/\/shop_images\/horizontol_banner_v3_8b426d24-33ae-409b-b44c-fd29ce372c70.webp",
           "singpst_url": "https:\/\/www.facebook.com\/groups\/261568611056436",
           "authr_blgimg": "shopify:\/\/shop_images\/ezgi.png",
-          "sidepst_img": "shopify:\/\/shop_images\/COMMUNITY_Blog_Banners_300x600-6_copy_4.png",
-          "mobile_img": "shopify:\/\/shop_images\/COMMUNITY_Blog_Banners_280x280-21_copy_6.png",
+          "sidepst_img": "shopify:\/\/shop_images\/vertical_banner_v1_0aa7fcce-5d72-4325-9f0a-6fb66a96d0f5.webp",
+          "mobile_img": "shopify:\/\/shop_images\/vertical_banner_v1_0aa7fcce-5d72-4325-9f0a-6fb66a96d0f5.webp",
           "sidepst_url": "https:\/\/www.facebook.com\/groups\/261568611056436",
           "socil_titl": "Like Article ? Share:",
           "nwsltr_titl": "The CuraLife Newsletter",
