@@ -31,12 +31,13 @@
             </div>
             <div class="article-list">
                 {% for article in blog.articles %}
-                        {% if forloop.index <= 2 %}
-                            {% include 'blog-card-grid', description: true %}
-                        {% else %}
-                            {% include 'blog-card-grid', description: false %}
-                        {% endif %}
-                    {% endfor %}
+                    {% if forloop.index <= 2 %}
+                        {% assign desc = true %}
+                    {% else %}
+                        {% assign desc = false %}
+                    {% endif %}
+                    {% include 'blog-card-grid', description: desc %}
+                {% endfor %}
             </div>
             {%- if paginate.pages > 1 -%}
                     {% include 'blog-pagination', paginate: paginate %}
