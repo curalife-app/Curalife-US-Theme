@@ -36,7 +36,7 @@
                     {% else %}
                         {% assign desc = false %}
                     {% endif %}
-                    {% include 'blog-card-grid', description: desc %}
+                    {% render 'blog-card-grid', article: article, description: desc %}
                 {% endfor %}
             </div>
             {%- if paginate.pages > 1 -%}
