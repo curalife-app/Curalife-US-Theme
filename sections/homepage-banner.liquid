@@ -1,335 +1,209 @@
-<div class="homepage-banner-easter hero-banner">
+<div class="homepage-banner">
     <div class="container">
         <div class="bg">
-            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-home-banner-bg-egg.png' | asset_url }}" alt="">
-            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-home-banner-bg-egg.png' | asset_url }}" alt="">
-            <img class="bg-egg animate__animated animate__fadeIn" src="{{ 'easter-home-banner-bg-egg.png' | asset_url }}" alt="">
+            <img class="bg-vector" src="{{ 'homepage-banner-bg-vector.svg' | asset_url }}" alt="">
+            <img class="bg-img" src="{{ 'homepage-banner-bg.png' | asset_url }}" alt="">
+            <img class="bg-img-mobile" src="{{ 'homepage-banner-bg-mobile.png' | asset_url }}" alt="">
         </div>
         <div class="content">
-            <img class="main-logo" src="{{ 'logo-black.png' | asset_url }}" alt=""> 
-            <div class="main-title-wrapper">
-                <img class="main-title" src="{{ 'easter-home-banner-title.png' | asset_url }}" alt="">
-                <div class="main-title-alternative">
-                    <p>EASTER</p>
-                    <img class="sale" src="{{ 'easter-mini-banner-sale-white.png' | asset_url }}" alt=""> 
+            <h1>Effective.<br>Safe.<br>Natural.</h1>
+            <p>Science based supplements that improve quality of life.</p>
+            <div class="cta-button-wrapper">
+                <img class="bottle-img" src="{{ 'product.png' | asset_url }}" alt="Curalin Bottle">
+                <a class="cta-btn" href="/collections/all">Shop Now</a>
+                <div class="free-shipping">
+                    <img class="free-shipping-icon" src="{{ 'icon-free-shipping-light-white.png' | asset_url }}" alt="">
+                    <p>Free Shipping</p>
                 </div>
             </div>
-            <div class="eggs">
-                <img class="egg" src="{{ 'easter-home-banner-family-egg-1-mobile.gif' | asset_url }}" alt="">
-                <img class="egg" src="{{ 'easter-home-banner-family-egg-2-mobile.png' | asset_url }}" alt="">
-                <img class="egg" src="{{ 'easter-home-banner-family-egg-3-mobile.gif' | asset_url }}" alt="">
-                <img class="egg" src="{{ 'easter-home-banner-family-egg-4-mobile.png' | asset_url }}" alt="">
+        </div>
+        <div class="header-mobile-bottom">
+            <div class="free-shipping">
+                <img class="free-shipping-icon" src="{{ 'icon-free-shipping-light-white.png' | asset_url }}" alt="">
+                <p>FREE SHIPPING • 60 day money back guarantee</p>
             </div>
-            <div class="bottle-wrapper">
-                <img class="curalin-bottle" src="{{ 'easter-curalin-bottle.png' | asset_url }}" alt="">
-            </div>
-            <div class="cta-wrapper">
-                <img class="sale-offer" src="{{ 'easter-home-banner-sale-offer.png' | asset_url }}" alt="">
-                <img class="sale-offer-mobile" src="{{ 'easter-home-banner-sale-offer-mobile.png' | asset_url }}" alt="">
-                <a href="/collections/all"><button>SHOP NOW</button></a>
-            </div>
-            <img class="free-shipping" src="{{ 'lps-aio-lp01-hero-free-shipping.png' | asset_url }}" alt="free shipping">
         </div>
     </div>
 </div>
 
 <style>
+.homepage-banner {
+    background-color: #A8BFCB;
+    position: relative;
+} 
 
-.main-btn {
-    background-color: #33B7A6;
-    border-color: #33B7A6;
-}
-
-.main-btn:hover {
-    background-color: #239787;
-    border-color: #239787;
-}
-    .homepage-banner-easter .free-shipping {
-        display: none;
-        position: absolute;
-        bottom: 0;
-    }
-    
-    .homepage-banner-easter .main-logo {
-        display: none;
-        position: absolute;
-        top: -10px;
-        height: 8vw;
-        left: 34vw;
-    }
-
-    .hero-banner.fixed-banner {
-        margin-bottom: 80px;
-    }
-
-    .main-title-alternative {
-        display: none;
-        margin-top: 50px;
-    }
-
-    .homepage-banner-easter .main-title-alternative p {
-        font-family: 'Montserrat';
-        font-size: 60px;
-        letter-spacing: 0.3rem;
-        font-weight: 300;
-        margin: 0;
-    }
-
-    .homepage-banner-easter .main-title-alternative .sale {
-        height: 240px;
-    object-fit: contain;
-    margin-top: 0;
-    margin-left: 10px;
+.homepage-banner .bg .bg-vector {
     position: absolute;
-    top: 80px;
-    left: 200px;
-    z-index: -1;
+    z-index: 2;
+    max-height: 100%;
+}
+
+.homepage-banner .bg .bg-img-mobile {
+    display: none;
+}
+
+.homepage-banner .bg .bg-img {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    width: 70vw;
+    height: 566px;
+    object-fit: cover;
+}
+
+.homepage-banner .content {
+    position: relative;
+    z-index: 10;
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+    padding: 10px 15px;
+}
+
+.homepage-banner .content h1 {
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.homepage-banner .content p {
+    font-size: 30px;
+    max-width: 450px;
+    font-weight: 300;
+}
+
+.homepage-banner .content .cta-button-wrapper {
+    position: relative;
+}
+
+.homepage-banner .content .cta-button-wrapper .bottle-img {
+    width: 200px;
+    margin-left: -50px;
+    z-index: 1;
+    position: relative;
+    pointer-events: none;
+}
+
+.homepage-banner .content .cta-button-wrapper .cta-btn {
+    text-transform: uppercase;
+    background: #C78263;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: white;
+    padding: 10px 30px;
+    font-size: 38px;
+    margin-left: -75px;
+    border: 0;
+    transition: background 0.3s ease-in-out;
+}
+
+.homepage-banner .content .cta-button-wrapper .cta-btn:hover {
+    background: #a96f54;
+}
+
+.homepage-banner .content .cta-button-wrapper .free-shipping {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    left: 105px;
+    top: 150px;
+}
+
+.homepage-banner .content .cta-button-wrapper .free-shipping .free-shipping-icon {
+    height: 25px;
+}
+
+.homepage-banner .content .cta-button-wrapper .free-shipping p {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.homepage-banner .header-mobile-bottom {
+    display: none;
+}
+
+@media screen and (max-width:1270px) {
+    .homepage-banner .bg .bg-vector {
+        margin-left: -150px;
     }
 
-    .homepage-banner-easter {
-        background-color: #F8C6BD;
+    .homepage-banner .bg .bg-img {
+        object-position: left;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .homepage-banner .content .cta-button-wrapper .cta-btn {
+        margin-left: 0;
+        font-size: 8vw;
     }
 
-    .homepage-banner-easter .container {
-        position: relative;
-        z-index: 1;
-    }
+    .homepage-banner .bg .bg-vector {
+    display: none;
+}
 
-    .homepage-banner-easter .bg .bg-egg {
-        position: absolute;
-        z-index: -1;
-    }
+    .homepage-banner .bg .bg-img-mobile {
+    display: block;
+    position: absolute;
+    width: 100%;
+}
 
-    .homepage-banner-easter .bg .bg-egg:nth-child(1) {
-        top: 20px;
-        left: -30px;
-        animation-delay: 0.5s;
-    }
+.homepage-banner .bg .bg-img {
+    display: none;
+}
 
-    .homepage-banner-easter .bg .bg-egg:nth-child(2) {
-        right: -10px;
-        top: 30px;
-        transform: rotate(-75deg);
-        width: 80px;
-        animation-delay: 1s;
-    }
+.homepage-banner .header-mobile-bottom {
+    display: block;
+    position: absolute;
+    bottom: 2vw;
+    width: 100%;
+}
 
-    .homepage-banner-easter .bg .bg-egg:nth-child(3) {
-        right: 0;
-        bottom: -100px;
-        transform: rotate(-75deg);
-        width: 160px;
-        animation-delay: 1.5s;
-    }
+.homepage-banner .header-mobile-bottom .free-shipping {
+    color: white;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    font-weight: bold;
+}
 
-    .homepage-banner-easter .content {
-        display: grid;
-        max-height: 530px;
-    }
+.homepage-banner .content .cta-button-wrapper .free-shipping {
+    display: none;
+}
 
-    .homepage-banner-easter .content .main-title-wrapper {
-        text-align: center;
-        margin-left: 50px;
-        grid-row: 1/2;
-    }
+.homepage-banner .header-mobile-bottom .free-shipping .free-shipping-icon {
+    height: 5vw;
+}
 
-    .homepage-banner-easter .content .main-title-wrapper .main-title {
-        position: relative;
-        top: 80px;
-    }
+    .homepage-banner {
+    height: 180vw;
+}
 
-    .homepage-banner-easter .eggs {
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        position: relative;
-        top: -80px;
-        grid-row: 2/3;
-    }
+.homepage-banner .content .cta-button-wrapper .bottle-img {
+    display: none;
+}
 
-    .homepage-banner-easter .eggs .egg {
-        width: 140px;
-    }
+.homepage-banner .content h1 {
+    font-size: 9vw;
+    margin: 0;
+}
 
-    .bottle-wrapper {
-        grid-column: 2/3;
-        grid-row: 1/3;
-        text-align: center;
-        display: flex;
-        align-items: center;
-    }
+.homepage-banner .content p {
+    font-size: 5vw;
+    margin: 4vw 0;
+}
 
-    .bottle-wrapper .curalin-bottle {
-        position: relative;
-        top: -30px;
-    }
-
-    .cta-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        grid-column: 3/4;
-        grid-row: 1/3;
-        margin-right: 40px;
-    }
-
-    .cta-wrapper .sale-offer-mobile {
-        display: none;
-    }
-
-    .cta-wrapper a {
-        text-align: center;
-    }
-
-    .cta-wrapper button {
-        background-color: #33B7A6;
-        color: white;
-        font-size: 40px;
-        font-weight: 200;
-        border: 0;
-        border-radius: 5px;
-        padding: 5px 20px;
-        margin: 30px;
-    }
-
-    @media screen and (max-width:1270px) {
-        .homepage-banner-easter .main-title-alternative p {
-            font-size: 8vw;
-            margin-left: -40vw;
-            margin-bottom: 30vw;
-        }
-
-        .homepage-banner-easter .main-title-alternative .sale {
-            margin-left: -20vw;
-            margin-top: -8vw;
-            height: 30vw;
-            top: 20vw;
-            left: 50vw;
-        }
-
-        .homepage-banner-easter .content {
-            max-height: unset;
-        }
-
-        .homepage-banner-easter .content .main-title-wrapper {
-            grid-column: 1/3;
-            margin-left: unset;
-        }
-
-        .homepage-banner-easter .eggs {
-            grid-row: 3/4;
-            grid-column: 1/2;
-            padding: 0 30px;
-            position: relative;
-            top: -20px;
-            justify-content: unset;
-            align-items: end;
-        }
-
-        .homepage-banner-easter .eggs .egg {
-            height: 15vw;
-            width: 13vw;
-        }
-
-        .bottle-wrapper {
-            grid-row: 2/4;
-            grid-column: 2/3;
-            width: 40vw;
-            align-items: end;
-        }
-
-        .bottle-wrapper .curalin-bottle {
-            height: 80vw;
-            object-fit: cover;
-            top: unset;
-        }
-
-        .cta-wrapper {
-            grid-row: 2/3;
-            grid-column: 1/2;
-            padding: 30px;
-        }
-
-        .cta-wrapper button {
-            font-size: 5vw;
-            margin: 2vw;
-        }
-
-        .homepage-banner-easter .bg .bg-egg:nth-child(3) {
-            right: -20px;
-        }
-    }
-
-    @media screen and (max-width:760px) {
-        .homepage-banner-easter .content .main-title-wrapper .main-title {
-            height: 40vw;
-            top: 20px;
-        }
-
-        .homepage-banner-easter .eggs {
-            grid-column: 1/3;
-        }
-
-        .homepage-banner-easter .eggs .egg {
-            position: absolute;
-            height: 35vw;
-            width: 35vw;
-        }
-
-        .homepage-banner-easter .eggs .egg:nth-child(1) {
-            top: -30vw;
-            left: -50px;
-            transform: rotate(35deg);
-        }
-
-        .homepage-banner-easter .eggs .egg:nth-child(2) {
-            top: -30vw;
-            right: -50px;
-            transform: rotate(-35deg);
-        }
-
-        .homepage-banner-easter .eggs .egg:nth-child(3) {
-            top: -70vw;
-            right: -50px;
-            transform: rotate(-35deg);
-        }
-
-        .homepage-banner-easter .eggs .egg:nth-child(4) {
-            top: -70vw;
-            left: -50px;
-            transform: rotate(35deg);
-        }
-
-        .bottle-wrapper {
-            justify-content: center;
-            width: unset;
-            grid-column: 1/3;
-            grid-row: 2/3;
-        }
-
-        .bottle-wrapper .curalin-bottle {
-            height: 100vw;
-        }
-
-        .cta-wrapper {
-            grid-row: 3/4;
-            grid-column: 1/3;
-            margin-right: unset;
-        }
-
-        .cta-wrapper .sale-offer {
-            display: none;
-        }
-
-        .cta-wrapper .sale-offer-mobile {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .cta-wrapper button {
-            font-size: 11vw;
-        }
-    }
+.homepage-banner .content .cta-button-wrapper button {
+    margin-left: 0;
+    font-size: 7vw;
+}
+}
 </style>
 
 {% schema %}
