@@ -30,9 +30,9 @@
   
   {% render 'shogun-head' %} 
     <!-- Curalife Shopify Redirect for checkout.shopify.com -->  
-  {% include 'google-tag-manager-checkout-redirect'%}
+  {% render 'google-tag-manager-checkout-redirect'%}
     <!-- Curalife Shopify Only Google Tag Manager -->  
-  {% include 'google-tag-manager'%}
+  {% render 'google-tag-manager'%}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
@@ -51,7 +51,7 @@
     {% assign product_ids = productIds | split: "," %}
     
       <!-- Curalife Shopify Only Google Tag Manager (noscript) -->
-    {% include 'google-tag-manager-noscript.liquid' %}
+    {% render 'google-tag-manager-noscript.liquid' %}
     
     {{ skip_to_content_link }}
 

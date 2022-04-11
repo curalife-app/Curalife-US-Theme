@@ -203,7 +203,7 @@
   </script>
   <!-- End VWO Async SmartCode -->
 
-    {% include 'google-tag-manager'%}
+    {% render 'google-tag-manager'%}
 
     <!-- anti-flicker snippet (recommended)  -->
     <style>.async-hide { opacity: 0 !important} </style>
@@ -223,7 +223,7 @@
 </head>
 <body>
  
- {% include 'google-tag-manager-noscript'%}
+ {% render 'google-tag-manager-noscript'%}
 
   <main role="main">
     {{ content_for_layout }}

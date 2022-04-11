@@ -374,7 +374,7 @@
                     <div class="coupons-form">
                         {% form 'customer' %}
             {{ form.errors | default_errors }}
-            {% include 'form-status'%}
+            {% render 'form-status'%}
                             <label class="frm_hide">
                                 <input type="hidden" name="contact[tags]" value="newsletter">
                                 <input  name="contact[email]"

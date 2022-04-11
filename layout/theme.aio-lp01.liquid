@@ -167,7 +167,7 @@
 
   <!-- <link rel="stylesheet" href="{{ 'aio-support-pack.css' | asset_url }}" type="text/css"/> -->
 
-  {% include 'meta-tags'%}
+  {% render 'meta-tags'%}
 
   <!-- Start VWO Async SmartCode -->
   <script type='text/javascript'>
@@ -233,7 +233,7 @@
   </script>
   <!-- End VWO Async SmartCode -->
 
-  {% include 'google-tag-manager'%}
+  {% render 'google-tag-manager'%}
 
   <!-- anti-flicker snippet (recommended)  -->
   <style>
@@ -268,7 +268,7 @@
 
 <body>
 
-  {% include 'google-tag-manager-noscript'%}
+  {% render 'google-tag-manager-noscript'%}
 
   <main role="main">
     {{ content_for_layout }}

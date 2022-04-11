@@ -5,7 +5,7 @@
     <!-- Redirect By Global Or US -->
     <script src="{{ 'redirect-by-location.js' | asset_url }}" async></script>
     
-    {% include 'meta-tags'%}
+    {% render 'meta-tags'%}
 
   <!-- Stylesheets -->
   <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -52,11 +52,11 @@
 {{ content_for_header }} <!-- Header hook for plugins -->
 
   
-  {% include 'google-tag-manager'%}
+  {% render 'google-tag-manager'%}
 
-  {% include "manychat-header" %}
+  {% render "manychat-header" %}
 
-{% include 'fa_translate_core' %} 
+{% render 'fa_translate_core' %} 
  
   <!-- Marker.io QA Tool-->  
 <script>
@@ -102,9 +102,9 @@
     {% section 'footer'%}
   </main>
 
-<!-- {% include 'salesforce-chat' %} -->
-  {% include 'wisepops-generated' %}
-{% include 'social-login' %}
+<!-- {% render 'salesforce-chat' %} -->
+  {% render 'wisepops-generated' %}
+{% render 'social-login' %}
   
  <!-- Start of Woopra Code -->
  <script>
