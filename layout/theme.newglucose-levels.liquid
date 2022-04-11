@@ -2,9 +2,9 @@
 <html>
 <head>
   {% if template == "page.product-curalin-glucose-levels-supplement-2021-vidc" %}
-  	{% include 'anti-flicker' %}
+  	{% render 'anti-flicker' %}
   {% endif %}
-  {% include 'google-tag-manager'%} 
+  {% render 'google-tag-manager'%} 
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -68,8 +68,8 @@
 </head>
 <body>
 
- {% include 'google-tag-manager-noscript'%}
- {% include 'hot-jar'%}
+ {% render 'google-tag-manager-noscript'%}
+ {% render 'hot-jar'%}
 
   <main role="main">
     {{ content_for_layout }}

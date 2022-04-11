@@ -64,9 +64,9 @@
 </head>
 <body>
 
- {% include 'google-tag-manager'%}
- {% include 'google-tag-manager-noscript'%}
- {% include 'hot-jar'%}
+ {% render 'google-tag-manager'%}
+ {% render 'google-tag-manager-noscript'%}
+ {% render 'hot-jar'%}
 
   <main role="main">
     {{ content_for_layout }}

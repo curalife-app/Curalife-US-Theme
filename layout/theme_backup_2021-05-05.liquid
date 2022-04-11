@@ -56,14 +56,14 @@
 {% endif %}
 {{ content_for_header }} <!-- Header hook for plugins -->
 
-  {% include 'head'%}
+  {% render 'head'%}
 
   {% render 'shogun-head' %}
 </head>
 <body>
-{% include 'google-tag-manager'%}
-{% include 'google-tag-manager-noscript'%}
-{% include 'hot-jar'%}
+{% render 'google-tag-manager'%}
+{% render 'google-tag-manager-noscript'%}
+{% render 'hot-jar'%}
   {% section 'header'%}
 
   <main role="main">
@@ -108,6 +108,6 @@
 
   }); 
   </script> 
-{% include 'salesforce-chat' %}
+{% render 'salesforce-chat' %}
 </body>
 </html>

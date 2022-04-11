@@ -32,20 +32,20 @@
             <div class="article-list">
                 {% for article in blog.articles %}
                         {% if forloop.index <= 2 %}
-                            {% include 'blog-card-grid', description: true %}
+                            {% render 'blog-card-grid', description: true %}
                         {% else %}
-                            {% include 'blog-card-grid', description: false %}
+                            {% render 'blog-card-grid', description: false %}
                         {% endif %}
                     {% endfor %}
             </div>
             {%- if paginate.pages > 1 -%}
-                    {% include 'blog-pagination', paginate: paginate %}
+                    {% render 'blog-pagination', paginate: paginate %}
                 {%- endif -%}
             {% endpaginate %}
         </div>
     </div>
 </div>
- {% include 'blog-newsletter' %}
+ {% render 'blog-newsletter' %}
 
 
 {% schema %}

@@ -37,10 +37,10 @@
 
 {{ content_for_header }} <!-- Header hook for plugins -->
 
-{% include 'meta-tags'%}
+{% render 'meta-tags'%}
 
   
-{% include 'google-tag-manager'%}
+{% render 'google-tag-manager'%}
 
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/oMYBvmnASlHzmouicgkepg" async></script>
 
@@ -48,8 +48,8 @@
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 </head>
 <body>
-{% include 'google-tag-manager-noscript'%}
-{% include 'hot-jar'%}
+{% render 'google-tag-manager-noscript'%}
+{% render 'hot-jar'%}
   {% section 'header'%}
 
   <main role="main">
