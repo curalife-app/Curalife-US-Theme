@@ -32,9 +32,9 @@
             <div class="article-list">
                 {% for article in blog.articles %}
                         {% if forloop.index <= 2 %}
-                            {% render 'blog-card-grid', description: true %}
+                            {% render 'blog-card-grid', article: article, description: true %}
                         {% else %}
-                            {% render 'blog-card-grid', description: false %}
+                            {% render 'blog-card-grid', article: article, description: false %}
                         {% endif %}
                     {% endfor %}
             </div>
