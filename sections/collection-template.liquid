@@ -158,10 +158,9 @@ window.dataLayer.push({
         affiliation: '{{ shop.name }}',
         price: $(this).attr("price"),
         currency: '{{ shop.currency }}',
-        // discount: $(this).attr("discount"),
         item_brand: 'CuraLife',
         item_category: 'CuraLin',
-        quantity: '1'                 
+        quantity: 1
     }]
   },
   user_email: '{{ customer.email }}',
@@ -173,7 +172,6 @@ window.dataLayer.push({
   user_zip: '{{ customer.customer_address.zip }}',
   user_country: '{{customer.customer_address.country_code | t}}',
   user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
 });
     });
 </script>

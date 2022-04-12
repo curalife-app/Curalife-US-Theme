@@ -158,126 +158,132 @@ width:100%;
 </script>
 
 <script type="text/javascript">
-  cart_data = {{ cart | json}};
-  var items_data = cart_data.items.map(function(item){
-      return {
-        item_id: item.id,
-		    item_name: item.product_title,
-        affiliation: '{{ shop.name }}',
-        price: parseFloat(item.price / 100.0),
-        currency: '{{ shop.currency }}',
-        // discount: item.compare_at_price > 0 ? parseFloat(item.compare_at_price / 100.0) - parseFloat(item.price / 100.0) : 0,
-        item_brand: 'CuraLife',            
-        item_category: 'CuraLin',         
-        quantity: item.quantity 
-        }
-      });
+  cart_data = {{ cart | json }};
+  var items_data = cart_data.items.map(function (item) {
+    return {
+      item_id: item.sku,
+      item_name: item.product_title,
+      affiliation: "{{ shop.name }}",
+      price: parseFloat(item.price / 100.0).toFixed(2).toString(),
+      currency: "{{ shop.currency }}",
+      item_brand: "CuraLife",
+      item_category: "CuraLin",
+      quantity: item.quantity
+    }
+  });
 
   window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'view_cart',           // name of the event. In this case, it always must be view_cart
-  ecommerce: {                          
-    items: [items_data]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
-</script>
+  window.dataLayer.push({
+    event: "view_cart", // name of the event. In this case, it always must be view_cart
+    ecommerce: {
+      items: items_data
+    },
+    user_email: "{{ customer.email }}",
+    user_phone: "{{ customer.phone }}",
+    user_first_name: "{{ customer.first_name }}",
+    user_last_name: "{{ customer.last_name }}",
+    user_city: "{{ customer.customer_address.city }}",
+    user_state: "{{ customer.customer_address.province }}",
+    user_zip: "{{ customer.customer_address.zip }}",
+    user_country: "{{ customer.customer_address.country_code | t }}",
+    user_agent: navigator.userAgent
+  });
 
-<script>
-  jQuery(".increase-quantity").click(function() {
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-event: 'add_to_cart',    
-ecommerce: {                          
-items: [{       
-item_name: $(this).attr("title"),      
-item_id: $(this).attr("prod-id"), 
-affiliation: '{{ shop.name }}',
-price: $(this).attr("price"),
-currency: '{{ shop.currency }}',
-item_brand: 'CuraLife',            
-item_category: 'CuraLin',         
-quantity: '1'                   
-}]
-},
-user_email: '{{ customer.email }}',
-user_phone: '{{ customer.phone }}',
-user_first_name: '{{ customer.first_name }}',
-user_last_name: '{{ customer.last_name }}',
-user_city: '{{ customer.customer_address.city }}',
-user_state: '{{ customer.customer_address.province }}',
-user_zip: '{{ customer.customer_address.zip }}',
-user_country: '{{customer.customer_address.country_code | t}}',
-user_agent: navigator.userAgent
-//user_ip_address: 'insert_ip_address_here',
-});
-  })
-
-  jQuery(".decrease-quantity").click(function() {
+  jQuery(".increase-quantity").click(function () {
       window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'remove_from_cart',    
-  ecommerce: {                          
-    items: [{       
-        item_name: $(this).attr("title"),      
-        item_id: $(this).attr("prod-id"), 
-        affiliation: '{{ shop.name }}',
-        price: $(this).attr("price"),
-        currency: '{{ shop.currency }}',
-        item_brand: 'CuraLife',            
-        item_category: 'CuraLin',         
-        quantity: '1'                   
-    }]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
-          })
+      window.dataLayer.push({ecommerce:null});
+      window.dataLayer.push({
+        event: "add_to_cart",
+        ecommerce: {
+          items: [
+            {
+              item_name: $(this).attr("title"),
+              item_id: $(this).attr("prod-id"),
+              affiliation: "{{ shop.name }}",
+              price: $(this).attr("price"),
+              currency: "{{ shop.currency }}",
+              item_brand: "CuraLife",
+              item_category: "CuraLin",
+              quantity: "1"
+            }
+          ]
+        },
+        user_email: "{{ customer.email }}",
+        user_phone: "{{ customer.phone }}",
+        user_first_name: "{{ customer.first_name }}",
+        user_last_name: "{{ customer.last_name }}",
+        user_city: "{{ customer.customer_address.city }}",
+        user_state: "{{ customer.customer_address.province }}",
+        user_zip: "{{ customer.customer_address.zip }}",
+        user_country: "{{ customer.customer_address.country_code | t }}",
+        user_agent: navigator.userAgent
+      });
+    })
 
-          jQuery(".remove-item a").click(function() {
+    jQuery(".decrease-quantity").click(function () { 
+      // If last item, remove object from cart
+      if ($(this).parent().find("input").val() == 1) {
+        removeThis($(this), $(this).attr("item-id"));
+      }
+
       window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'remove_from_cart',    
-  ecommerce: {                          
-    items: [{       
-        item_name: $(this).parent().attr("data-title"),      
-        item_id: $(this).parent().attr("data-id"), 
-        affiliation: '{{ shop.name }}',
-        price: $(this).parent().attr("data-price"),
-        currency: '{{ shop.currency }}',
-        // discount: $(this).parent().attr("data-discount"),
-        item_brand: 'CuraLife',            
-        item_category: 'CuraLin',         
-        quantity: $(this).parent().attr("data-quantity")                  
-    }]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
-          })
+      window.dataLayer.push({ecommerce:null});
+      window.dataLayer.push({
+        event: "remove_from_cart",
+        ecommerce: {
+          items: [
+            {
+              item_name: $(this).attr("title"),
+              item_id: $(this).attr("prod-id"),
+              affiliation: "{{ shop.name }}",
+              price: $(this).attr("price"),
+              currency: "{{ shop.currency }}",
+              item_brand: "CuraLife",
+              item_category: "CuraLin",
+              quantity: "1"
+            }
+          ]
+        },
+        user_email: "{{ customer.email }}",
+        user_phone: "{{ customer.phone }}",
+        user_first_name: "{{ customer.first_name }}",
+        user_last_name: "{{ customer.last_name }}",
+        user_city: "{{ customer.customer_address.city }}",
+        user_state: "{{ customer.customer_address.province }}",
+        user_zip: "{{ customer.customer_address.zip }}",
+        user_country: "{{ customer.customer_address.country_code | t }}",
+        user_agent: navigator.userAgent
+      });
+    })
+
+    jQuery(".remove-item a").click(function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ecommerce:null});
+      window.dataLayer.push({
+        event: "remove_from_cart",
+        ecommerce: {
+          items: [
+            {
+              item_name: $(this).parent().attr("data-title"),
+              item_id: $(this).parent().attr("data-id"),
+              affiliation: "{{ shop.name }}",
+              price: $(this).parent().attr("data-price"),
+              currency: "{{ shop.currency }}",
+              item_brand: "CuraLife",
+              item_category: "CuraLin",
+              quantity: $(this).parent().attr("data-quantity")
+            }
+          ]
+        },
+        user_email: "{{ customer.email }}",
+        user_phone: "{{ customer.phone }}",
+        user_first_name: "{{ customer.first_name }}",
+        user_last_name: "{{ customer.last_name }}",
+        user_city: "{{ customer.customer_address.city }}",
+        user_state: "{{ customer.customer_address.province }}",
+        user_zip: "{{ customer.customer_address.zip }}",
+        user_country: "{{ customer.customer_address.country_code | t }}",
+        user_agent: navigator.userAgent
+      });
+    })
 </script>
