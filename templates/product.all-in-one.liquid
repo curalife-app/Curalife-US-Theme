@@ -793,7 +793,7 @@ window.dataLayer.push({
         currency: '{{ shop.currency }}',
         item_brand: 'CuraLife',            
         item_category: 'CuraLin',         
-        quantity: 1
+        quantity: parseInt($(".qty-control input").val())
     }]
   },
   user_email: '{{ customer.email }}',
