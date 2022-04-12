@@ -174,7 +174,7 @@
   const urlParams = new URLSearchParams(queryString);
   const step = urlParams.get('step');
 
-  if ((!window.location.href.includes('thank_you') && !window.location.href.includes("processing") && !window.location.href.includes("orders")) && step == null || step == 'contact_information') {
+  if (!(window.location.href.includes('thank_you') || window.location.href.includes("processing") || window.location.href.includes("orders")) && step == null || step == 'contact_information') {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'CheckoutStarted',
