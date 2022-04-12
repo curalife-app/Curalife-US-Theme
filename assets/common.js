@@ -511,7 +511,7 @@ function updateTotalPrice(inputObject, updateValue) {
         rowPriceObject.text(currencySymbol + finalRowPrice.toFixed(2).toString());
 
         // Update Cart Total Price
-        var cartPriceObject = $(".cart-total .total-wrap .price span");
+        var cartPriceObject = $(".cart-total .total-wrap .price p b");
         console.log("🚀 | updateTotalPrice | cartPriceObject", cartPriceObject)
         var cartPrice = cartPriceObject.text().replace(currencySymbol, "").replace(",", "");
         console.log("🚀 | updateTotalPrice | cartPrice", cartPrice)
