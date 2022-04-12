@@ -448,116 +448,116 @@ $(document).ready(function () {
         }
     });
 
-    // Set Loader on Ajax calls
-    $(document).ajaxSend(function() {
-        $("#overlay").fadeIn(300);　
-    });
+ // Set Loader on Ajax calls
+  $(document).ajaxSend(function() {
+     $("#overlay").fadeIn(300);　
+ });
 
-    async function updateQuantityOnServer(id, qty) {
-        console.log('Updating Cart...')
-        $.ajax({  
-            type:"POST",        
-            url: "/cart/change.js",  // Send the login info to this page
-            data: JSON.stringify({ id: id, quantity: qty }), 
-            dataType: "json", 
-            async: false,
-            contentType: "application/json",
-            timeout: 200000,
-            success: function(result){ 
-                console.log("Item Quantity Updated");
-                window.UpdateStatus = true;
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                console.log("Error In Updating Item Quantity!", textStatus, errorThrown);
-                window.UpdateStatus = false;
-            },
-            
-        }).done(function() {
-            setTimeout(function(){$("#overlay").fadeOut(300);},500);
-        }); 
-    }
+ async function updateQuantityOnServer(id, qty) {
+     console.log('Updating Cart...')
+     $.ajax({  
+         type:"POST",        
+         url: "/cart/change.js",  // Send the login info to this page
+         data: JSON.stringify({ id: id, quantity: qty }), 
+         dataType: "json", 
+         async: false,
+         contentType: "application/json",
+         timeout: 200000,
+         success: function(result){ 
+             console.log("Item Quantity Updated");
+             window.UpdateStatus = true;
+         },
+         error: function(XMLHttpRequest, textStatus, errorThrown) {
+             console.log("Error In Updating Item Quantity!", textStatus, errorThrown);
+             window.UpdateStatus = false;
+         },
 
-    function updateQuantityOnHeaderIcon(updateValue) {
-        var cartTotalCount = $('.header_cart_count').text();
-        var cartRemainingCount = parseInt(cartTotalCount) + parseInt(updateValue);
-        $('.header_cart_count').text(cartRemainingCount);
-    }
+     }).done(function() {
+         setTimeout(function(){$("#overlay").fadeOut(300);},500);
+     }); 
+ }
 
-    function updateTotalPrice(inputObject, updateValue) {
-        var currencySymbol =  inputObject.attr("currency");
+ function updateQuantityOnHeaderIcon(updateValue) {
+     var cartTotalCount = $('.header_cart_count').text();
+     var cartRemainingCount = parseInt(cartTotalCount) + parseInt(updateValue);
+     $('.header_cart_count').text(cartRemainingCount);
+ }
 
-        if (inputObject.attr("cart-type") == "drawer") {
-            // Cart Drawer Removal
-            var itemPrice = inputObject.parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
-            var changePrice = updateValue * parseFloat(itemPrice);
+ function updateTotalPrice(inputObject, updateValue) {
+     var currencySymbol =  inputObject.attr("currency");
 
-            // Update Cart Total Price
-            var cartPrice = $(".cstm_pric").text().replace(currencySymbol, "").replace(",", "");
-            var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
-            $(".cstm_pric").text(currencySymbol + finalCartPrice.toFixed(2));
-            if (finalCartPrice == 0) {
-                $(".plc_order").attr("href", "/collections/all");
-            }
-        }
-        else {
-            // Cart Template Removal
-            var itemPrice = inputObject.parent().parent().parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
-            var changePrice = updateValue * parseFloat(itemPrice);
+     if (inputObject.attr("cart-type") == "drawer") {
+         // Cart Drawer Removal
+         var itemPrice = inputObject.parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
+         var changePrice = updateValue * parseFloat(itemPrice);
 
-            // Update Row Total Price
-            var rowPriceObject = inputObject.parent().parent().parent().parent().parent().find('.total').find("p");
-            var rowPrice = rowPriceObject.text().replace(currencySymbol, "").replace(",", "");
-            var finalRowPrice = parseFloat(rowPrice) + parseFloat(changePrice);
-            rowPriceObject.text(currencySymbol + finalRowPrice.toFixed(2).toString());
+         // Update Cart Total Price
+         var cartPrice = $(".cstm_pric").text().replace(currencySymbol, "").replace(",", "");
+         var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
+         $(".cstm_pric").text(currencySymbol + finalCartPrice.toFixed(2));
+         if (finalCartPrice == 0) {
+             $(".plc_order").attr("href", "/collections/all");
+         }
+     }
+     else {
+         // Cart Template Removal
+         var itemPrice = inputObject.parent().parent().parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
+         var changePrice = updateValue * parseFloat(itemPrice);
 
-            // Update Cart Total Price
-            var cartPriceObject = $(".cart-total .total-wrap .price span");
-            var cartPrice = cartPriceObject.text().replace(currencySymbol, "").replace(",", "");
-            var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
-            cartPriceObject.text(currencySymbol + finalCartPrice.toFixed(2).toString());
-        }
-    }
+         // Update Row Total Price
+         var rowPriceObject = inputObject.parent().parent().parent().parent().parent().find('.total').find("p");
+         var rowPrice = rowPriceObject.text().replace(currencySymbol, "").replace(",", "");
+         var finalRowPrice = parseFloat(rowPrice) + parseFloat(changePrice);
+         rowPriceObject.text(currencySymbol + finalRowPrice.toFixed(2).toString());
 
-    GlobalFunctions = {
-        updateQuantity: function(inputObject, updateValue) {
-            var oldValue = inputObject.val();
-            var newValue = parseInt(oldValue) + parseInt(updateValue);
+         // Update Cart Total Price
+         var cartPriceObject = $(".cart-total .total-wrap .price span");
+         var cartPrice = cartPriceObject.text().replace(currencySymbol, "").replace(",", "");
+         var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
+         cartPriceObject.text(currencySymbol + finalCartPrice.toFixed(2).toString());
+     }
+ }
 
-            // Update Server
-            updateQuantityOnServer(inputObject.attr('item-var-id'), updateValue > 1 ? 0 : newValue);
+ GlobalFunctions = {
+     updateQuantity: function(inputObject, updateValue) {
+         var oldValue = inputObject.val();
+         var newValue = parseInt(oldValue) + parseInt(updateValue);
 
-            if (window.UpdateStatus) {
-                // Remove Item If Quantity Is 0
-                if (newValue == 0) {
-                    inputObject.parent().parent().parent().parent().parent().remove();
-                }
-                else {
-                    // Update Input Object Value
-                    inputObject.val(newValue);
-                }
+         // Update Server
+         updateQuantityOnServer(inputObject.attr('item-var-id'), updateValue > 1 ? 0 : newValue);
 
-                updateTotalPrice(inputObject, updateValue);
-                updateQuantityOnHeaderIcon(updateValue);
-            }
-        }
-    }
+         if (window.UpdateStatus) {
+             // Remove Item If Quantity Is 0
+             if (newValue == 0) {
+                 inputObject.parent().parent().parent().parent().parent().remove();
+             }
+             else {
+                 // Update Input Object Value
+                 inputObject.val(newValue);
+             }
 
-    // Change Quantity Widget On Product Page
-    $(document).on("click", ".product-data .qty-control a", function (e) {
-        e.preventDefault();
-        let newVal, $button = $(this),
-            inputObj = $button.closest(".qty-control").find("input"),
-            oldValue = inputObj.val();
-        if ($button.attr('data-act') === "+") {
-            newVal = parseInt(oldValue) + 1;
-        } 
-        else {
-            newVal = parseInt(oldValue) - 1;
-        }
+             updateTotalPrice(inputObject, updateValue);
+             updateQuantityOnHeaderIcon(updateValue);
+         }
+     }
+ }
 
-        inputObj.val(newVal);
-        // GlobalFunctions.updateQuantity($button, inputObj.attr('item-var-id'), newVal);
-    });
+ // Change Quantity Widget On Product Page
+ $(document).on("click", ".product-data .qty-control a", function (e) {
+     e.preventDefault();
+     let newVal, $button = $(this),
+         inputObj = $button.closest(".qty-control").find("input"),
+         oldValue = inputObj.val();
+     if ($button.attr('data-act') === "+") {
+         newVal = parseInt(oldValue) + 1;
+     } 
+     else {
+         newVal = parseInt(oldValue) - 1;
+     }
+
+     inputObj.val(newVal);
+     // GlobalFunctions.updateQuantity($button, inputObj.attr('item-var-id'), newVal);
+ });
 
     $(document).on("click", ".extra-info ul li", function () {
         $(this).toggleClass('show').siblings().removeClass('show')
