@@ -210,7 +210,6 @@ if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window
           user_zip: '{{ customer.customer_address.zip }}',
           user_country: '{{customer.customer_address.country_code | t}}',
           user_agent: navigator.userAgent
-          //user_ip_address: 'insert_ip_address_here',
         });
 
         woopra.track('Checkout Step - Information', {page_url: window.location.href});
@@ -252,7 +251,6 @@ window.dataLayer.push({
   user_zip: '{{ customer.customer_address.zip }}',
   user_country: '{{customer.customer_address.country_code | t}}',
   user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
 });
 
 woopra.track('Checkout Step - Shipping', {});
@@ -294,7 +292,6 @@ woopra.track('Checkout Step - Shipping', {});
         user_zip: '{{ customer.customer_address.zip }}',
         user_country: '{{customer.customer_address.country_code | t}}',
         user_agent: navigator.userAgent
-        //user_ip_address: 'insert_ip_address_here',
       });
 
       woopra.track('Checkout Step - Payment', {});
@@ -343,7 +340,6 @@ woopra.track('Checkout Step - Shipping', {});
           user_zip: '{{ customer.customer_address.zip }}',
           user_country: '{{customer.customer_address.country_code | t}}',
           user_agent: navigator.userAgent
-          //user_ip_address: 'insert_ip_address_here',
         });
 
         woopra.track('Checkout Step - Thank You', {});
