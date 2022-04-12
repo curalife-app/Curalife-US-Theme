@@ -107,7 +107,7 @@
     </div>
     
 <script>
-	jQuery(document).on("click", "#AddTCart", function () {
+	$(document).on("click", "#AddTCart", function () {
         // Old One
           window.dataLayer  = window.dataLayer || [];
           window.dataLayer.push({
@@ -170,8 +170,8 @@ window.dataLayer.push({
 </script>
 
 <script>      
-    jQuery(document).on("click", "#AddToCart", function (Event) {
-        jQuery("#cart-upgrade-popup").slideToggle();
+    $(document).on("click", "#AddToCart", function (Event) {
+        $("#cart-upgrade-popup").slideToggle();
         return false;
     });
 

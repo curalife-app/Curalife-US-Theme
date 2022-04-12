@@ -1016,19 +1016,19 @@ padding-top:0px;
 
 
 <script>
-    jQuery('.cstm-anchor-link').click(function(e){
+    $('.cstm-anchor-link').click(function(e){
   e.preventDefault();
-  var target = jQuery(jQuery(this).attr('href'));
+  var target = $($(this).attr('href'));
   if(target.length){
     var scrollTo = target.offset().top;
-    jQuery('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+    $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
   }
 });
   
-  jQuery(document).ready(function() {
-  jQuery('#play-video').on('click', function(ev) {
+  $(document).ready(function() {
+  $('#play-video').on('click', function(ev) {
  
-    jQuery("#vimeo_id_0")[0].src += "&autoplay=1";
+    $("#vimeo_id_0")[0].src += "&autoplay=1";
     ev.preventDefault();
  
   });

@@ -56,13 +56,13 @@
 <script>
 
   
- jQuery(function() {
+ $(function() {
    //Value Retrieval Function
 
-  jQuery('.createAccount').click(function(event) {
-    var rr =jQuery("#create_customer").serialize();
+  $('.createAccount').click(function(event) {
+    var rr =$("#create_customer").serialize();
     // Store
-    localStorage.setItem("registerForm", jQuery("form").serialize());
+    localStorage.setItem("registerForm", $("form").serialize());
     
     var str = localStorage.getItem("registerForm");
     
@@ -86,7 +86,7 @@
       });
 
     
-jQuery('#create_customer').submit();
+$('#create_customer').submit();
 
     event.preventDefault();
   });

@@ -795,7 +795,7 @@
 </footer>
 
 <script>
-    jQuery(document).on("click", ".cta-btn", function () {
+    $(document).on("click", ".cta-btn", function () {
       console.log("add to cart event");
           window.dataLayer  = window.dataLayer || [];
           window.dataLayer.push({
@@ -807,9 +807,9 @@
               'list': 'main'          // optional. name of a list from which the product was added to a cart  
             },       
             'products': [{              // list of products added to a cart. Can contain multiple products at the same time
-              'name': jQuery(this).attr('prod-title'),      // name of a product that was added to a cart
-              'id': jQuery(this).attr('prod-id'),       // id of a product
-              'price': jQuery(this).attr('prod-price').substring(1),      // price of a product
+              'name': $(this).attr('prod-title'),      // name of a product that was added to a cart
+              'id': $(this).attr('prod-id'),       // id of a product
+              'price': $(this).attr('prod-price').substring(1),      // price of a product
               'category': 'Simple',
               'variant': '',   // category of a product
               'quantity': 1

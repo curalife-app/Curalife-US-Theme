@@ -82,17 +82,17 @@ header.page-header .buy-btn .main-btn:hover {
 {% endstyle %}
 
 <script>
-    jQuery(window).scroll(function(){ 
-        if (jQuery(this).scrollTop() < (jQuery("#product-section").offset().top)) { 
-            jQuery('#page-header').fadeIn(); 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() < ($("#product-section").offset().top)) { 
+            $('#page-header').fadeIn(); 
         } else { 
-            jQuery('#page-header').fadeOut(); 
+            $('#page-header').fadeOut(); 
         } 
     });
 
-    jQuery("#main-cta-btn").click(function() {
-    jQuery([document.documentElement, document.body]).animate({
-        scrollTop: jQuery("#product-section").offset().top + 130
+    $("#main-cta-btn").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#product-section").offset().top + 130
     }, 2000);
 });
 </script>

@@ -355,46 +355,46 @@ woopra.track('Checkout Step - Shipping', {});
   }
 
   function checkApplyDiscount() {
-    if (jQuery(".tag .reduction-code .reduction-code__text").length) {
+    if ($(".tag .reduction-code .reduction-code__text").length) {
       woopra.track('Apply Discount Code', {
-        discount_code: jQuery(".tag .reduction-code .reduction-code__text").text()
+        discount_code: $(".tag .reduction-code .reduction-code__text").text()
       });
       clearInterval(checker);
-      jQuery("#checkout_submit").click(trackApplyDiscount);
+      $("#checkout_submit").click(trackApplyDiscount);
     }
-    else if (jQuery("#error-for-reduction_code").length) {
+    else if ($("#error-for-reduction_code").length) {
       woopra.track('Apply Discount Code - Failed', {
-        discount_code: jQuery("#checkout_reduction_code").attr("value"),
-        error_message: jQuery("#error-for-reduction_code").text()
+        discount_code: $("#checkout_reduction_code").attr("value"),
+        error_message: $("#error-for-reduction_code").text()
       });
       clearInterval(checker);
-      jQuery("#checkout_submit").click(trackApplyDiscount);
+      $("#checkout_submit").click(trackApplyDiscount);
     }
-    else if (jQuery("#checkout_submit").hasClass("btn--disabled")) {
+    else if ($("#checkout_submit").hasClass("btn--disabled")) {
       woopra.track('Apply Discount Code - Failed', {
-        discount_code: jQuery("#checkout_reduction_code").attr("value"),
+        discount_code: $("#checkout_reduction_code").attr("value"),
         error_message: "No message displayed (but apply button disabled)"
       });        
       clearInterval(checker);
-      jQuery("#checkout_submit").click(trackApplyDiscount);
+      $("#checkout_submit").click(trackApplyDiscount);
     }
   }
 
-  jQuery("#checkout_submit").click(trackApplyDiscount);
+  $("#checkout_submit").click(trackApplyDiscount);
 
   // Track Login
-  jQuery('a[href*="/account/login"]').click(function() {
+  $('a[href*="/account/login"]').click(function() {
     woopra.track('Checkout Login');
   })
 
   // Track Changing Billing Same/Different as Shipping
-  jQuery('.section--billing-address input').click(function() {
+  $('.section--billing-address input').click(function() {
     woopra.track('Billing Same/Different as Shipping Select', {
       option: $(this).val() == 'true' ? 'Different' : 'Same'
     })
   })
 
-  jQuery('.section--billing-address label').click(function() {
+  $('.section--billing-address label').click(function() {
     woopra.track('Billing Same/Different as Shipping Select', {
       option: $(this).att('for') == 'checkout_different_billing_address_true' ? 'Different' : 'Same'
     })

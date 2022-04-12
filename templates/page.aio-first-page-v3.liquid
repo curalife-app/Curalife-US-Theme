@@ -988,7 +988,7 @@
 
 <script>
     // Fade Quotes
-    var quotes = jQuery(".title-text");
+    var quotes = $(".title-text");
     var quoteIndex = -1;
 
     function showNextQuote() {
@@ -1009,15 +1009,15 @@
 	$fadeTime = 1800;
 	$imgNum = 5;	
  
-	jQuery(document).ready(function(){
-        jQuery('.brand-intro-cover-img img').css({'position':'absolute'});
-		jQuery('.brand-intro-cover-img-mobile img').css({'position':'absolute'});
+	$(document).ready(function(){
+        $('.brand-intro-cover-img img').css({'position':'absolute'});
+		$('.brand-intro-cover-img-mobile img').css({'position':'absolute'});
 		nextFadeIn();
         nextFadeInM();
 	});
  
 	function nextFadeIn(){
-		jQuery('.brand-intro-cover-img img').eq($current).delay($interval).fadeOut($fadeTime)
+		$('.brand-intro-cover-img img').eq($current).delay($interval).fadeOut($fadeTime)
 		.end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
 		    
 		if($next < $imgNum-1){ $next++; } else { $next = 0;}
@@ -1025,7 +1025,7 @@
 	};
 
     function nextFadeInM(){
-		jQuery('.brand-intro-cover-img-mobile img').eq($currentM).delay($interval).fadeOut($fadeTime)
+		$('.brand-intro-cover-img-mobile img').eq($currentM).delay($interval).fadeOut($fadeTime)
 		.end().eq($nextM).delay($interval).hide().fadeIn($fadeTime, nextFadeInM);
 		    
 		if($nextM < $imgNum-1){ $nextM++; } else { $nextM = 0;}

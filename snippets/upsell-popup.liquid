@@ -366,27 +366,27 @@
     </style>
 
 <script>
-        jQuery(document).on("click", ".openUpsell2", function () {
-            jQuery("#cart-upgrade-popup").slideToggle();
+        $(document).on("click", ".openUpsell2", function () {
+            $("#cart-upgrade-popup").slideToggle();
         });
 
 
-        jQuery(document).on("click", "#cart-upgrade-popup .orderUpgrade", function () {
-           jQuery("#productVaraintSelected").val();
+        $(document).on("click", "#cart-upgrade-popup .orderUpgrade", function () {
+           $("#productVaraintSelected").val();
             {% if product.id == all_products["curalin"].id %}
-            jQuery("#productVaraintSelected").val("{{ all_products["curalin-3-pack"].first_available_variant.id }}")
+            $("#productVaraintSelected").val("{{ all_products["curalin-3-pack"].first_available_variant.id }}")
 
             {% elsif product.id == all_products["curalin-3-pack"].id %}
-            jQuery("#productVaraintSelected").val("{{ all_products["curalin-6-pack"].first_available_variant.id }}")
+            $("#productVaraintSelected").val("{{ all_products["curalin-6-pack"].first_available_variant.id }}")
             {% endif %}
-            jQuery(".cart-modal").slideToggle();
-          jQuery("#addTocartForm").submit();
+            $(".cart-modal").slideToggle();
+          $("#addTocartForm").submit();
            
             
         });
 
 
-        jQuery(document).on("click", "#cart-upgrade-popup .orderNow, #cart-upgrade-popup .close", function () {
+        $(document).on("click", "#cart-upgrade-popup .orderNow, #cart-upgrade-popup .close", function () {
           window.dataLayer  = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
@@ -417,8 +417,8 @@
                                 'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
                                 });
 
-          jQuery(".cart-modal").slideToggle();  
-          jQuery("#addTocartForm").submit();
+          $(".cart-modal").slideToggle();  
+          $("#addTocartForm").submit();
         });
 </script>
 

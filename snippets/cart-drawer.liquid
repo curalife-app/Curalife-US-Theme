@@ -110,7 +110,7 @@ function removeThis(obj, id) {
 </script>
 
 <script>
-jQuery(".increase-quantity-drawer").click(function () {
+$(".increase-quantity-drawer").click(function () {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         event: 'add_to_cart',
@@ -139,7 +139,7 @@ jQuery(".increase-quantity-drawer").click(function () {
     });
 })
 
-jQuery(".decrease-quantity-drawer").click(function () {
+$(".decrease-quantity-drawer").click(function () {
     // If last item, remove object from cart
     if ($(this).parent().find("input").val() == 1) {
         removeThis($(this),$(this).attr("item-id"));
@@ -173,7 +173,7 @@ jQuery(".decrease-quantity-drawer").click(function () {
     });
 })
 
-jQuery(".delete-card *").click(function () {
+$(".delete-card *").click(function () {
         var btn = $(this).closest('button');
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({

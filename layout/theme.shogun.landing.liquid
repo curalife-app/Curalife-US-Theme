@@ -79,7 +79,7 @@ This file can be re-written at any time.
   {{ content_for_layout }}
   
   <script>
-  jQuery(document).on("click", ".remove-item", function () {
+  $(document).on("click", ".remove-item", function () {
     var variantId =$(this).data("variant");
     var price =$(this).data("price");
     var title =$(this).data("title");

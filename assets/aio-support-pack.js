@@ -34,7 +34,7 @@
         }
     }
     
-    if (!jQuery(".hero-section .brand-welcome-text .v3").length) {
+    if (!$(".hero-section .brand-welcome-text .v3").length) {
         let typed = new Typed('.hero-section .brand-welcome-text span', {
             strings: ["sleep well", "eat well", "feel energetic", "stay romantic", "stay healthy"],
             typeSpeed: 50,
@@ -96,7 +96,7 @@
     /*count-effect*/
 
     window.addEventListener('scroll', (e) => {
-        // var btn = jQuery('#wisepops-root');
+        // var btn = $('#wisepops-root');
         let last_known_scroll_position = window.scrollY;
         if (counters && animateCounters && window.innerHeight > document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top && window.innerHeight < document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top + document.querySelector('.satisfaction-survey .survey-button').getBoundingClientRect().top) {
             animateCounters = false;
