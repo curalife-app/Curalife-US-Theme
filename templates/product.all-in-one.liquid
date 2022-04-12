@@ -730,7 +730,7 @@ showNextQuote();
 </script>
 
 <script>
-    jQuery(document).on("click", "#buy-button", function () {
+    $(document).on("click", "#buy-button", function () {
           window.dataLayer  = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
@@ -741,9 +741,9 @@ showNextQuote();
               'list': 'main'          // optional. name of a list from which the product was added to a cart  
             },       
             'products': [{              // list of products added to a cart. Can contain multiple products at the same time
-              'name': jQuery('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
-              'id': jQuery('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
-              'price': jQuery('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
+              'name': $('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
+              'id': $('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
+              'price': $('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
               'category': 'Simple',
               'variant': '',   // category of a product
               'quantity': 1
@@ -762,11 +762,11 @@ showNextQuote();
         });
     });
 
-    jQuery(document).on("click", ".variant-box", function () {
+    $(document).on("click", ".variant-box", function () {
           window.dataLayer  = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'variant-click', 
-            'label': jQuery('input[name=pack]:checked', '#CTAForm').attr('title'),
+            'label': $('input[name=pack]:checked', '#CTAForm').attr('title'),
         'userId': '{{ customer.id }}',
         'email': '{{ customer.email }}',
         'country': '{{customer.customer_address.country_code }}',
@@ -807,7 +807,7 @@ showNextQuote();
 </script>
 
 <script>
-    	jQuery(document).on("click", "#buy-button", function () {
+    	$(document).on("click", "#buy-button", function () {
      window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'add_to_cart',    

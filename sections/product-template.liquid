@@ -230,7 +230,7 @@
 </style>
 
 <script>
-  jQuery(document).on("click", "#AddTCart", function () {
+  $(document).on("click", "#AddTCart", function () {
   window.dataLayer  = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
@@ -292,8 +292,8 @@ window.dataLayer.push({
 </script>
 
 <script>
-  jQuery(document).on("click", "#AddToCart", function (Event) {
-    jQuery("#cart-upgrade-popup").slideToggle();
+  $(document).on("click", "#AddToCart", function (Event) {
+    $("#cart-upgrade-popup").slideToggle();
     return false;
   });
 

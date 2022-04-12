@@ -245,13 +245,13 @@ $(document).ready(function () {
       });
 
       let isFirstClick = true;
-      jQuery(".variant-box").click(function() {
+      $(".variant-box").click(function() {
           if (isFirstClick) {
               isFirstClick = false;
           }
           else {
               // Slide to Variant Image
-              let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
+              let slideIndex = productSliderAllInOne.slides.length - $('input[name=pack]:checked', '#CTAForm').attr('index');
               productSliderAllInOne.slideTo(slideIndex);
           }
       });

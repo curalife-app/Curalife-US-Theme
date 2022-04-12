@@ -6,7 +6,7 @@
 <script>
     function runAfterElementExists(jquery_selector, callback) {
         var checker = window.setInterval(function () {
-            if (jQuery(jquery_selector).length) {
+            if ($(jquery_selector).length) {
                 clearInterval(checker);
                 callback();
             }
@@ -14,7 +14,7 @@
     }
 
     // Wisepop Event!
-    jQuery(document).ready(function () {
+    $(document).ready(function () {
         runAfterElementExists(".yotpo-copy-code-icon", function () {
             wisepops("event", "ref-code-received");
         })

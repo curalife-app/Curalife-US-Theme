@@ -189,7 +189,7 @@ width:100%;
     user_agent: navigator.userAgent
   });
 
-  jQuery(".increase-quantity").click(function () {
+  $(".increase-quantity").click(function () {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ecommerce:null});
       window.dataLayer.push({
@@ -220,7 +220,7 @@ width:100%;
       });
     })
 
-    jQuery(".decrease-quantity").click(function () { 
+    $(".decrease-quantity").click(function () { 
       // If last item, remove object from cart
       if ($(this).parent().find("input").val() == 1) {
         removeThis($(this), $(this).attr("item-id"));
@@ -256,7 +256,7 @@ width:100%;
       });
     })
 
-    jQuery(".remove-item a").click(function () {
+    $(".remove-item a").click(function () {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ecommerce:null});
       window.dataLayer.push({

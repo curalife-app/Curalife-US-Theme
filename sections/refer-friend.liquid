@@ -35,7 +35,7 @@
 
     function runAfterElementExists(jquery_selector,callback){
         var checker = window.setInterval(function() {
-        if (jQuery(jquery_selector).length) {
+        if ($(jquery_selector).length) {
             clearInterval(checker);
             callback();
         }}, 200);
@@ -48,89 +48,89 @@
     }
 
     function renderEmailShare() {
-        if (!jQuery("#email-share").length) {
+        if (!$("#email-share").length) {
             var emailShare = '<li id="email-share" role="listitem" style="font-weight: 400; font-style: normal;"><div class="yotpo-widget-copy-link-container"><button class="yotpo-share-button-widget yotpo-share-button yotpo-copy-link" utm-src="c"><div class="yotpo-share-button-icons"><span class="icon-envelope"></span></div><span class="yotpo-share-button-txt" id="email-share-text">Email</span></button></div></li>';
-            jQuery(".yotpo-share-buttons-container").prepend(emailShare);
+            $(".yotpo-share-buttons-container").prepend(emailShare);
 
-            jQuery( "#email-share" ).click(function() {
-                jQuery(".yotpo-referral-widget-form").css('max-height','200px');
-                jQuery("#remind-friends").css('display','block');
+            $( "#email-share" ).click(function() {
+                $(".yotpo-referral-widget-form").css('max-height','200px');
+                $("#remind-friends").css('display','block');
             });
         }
     };
 
     function renderRemindFriend() {
-        if (!jQuery("#remind-friends").length) {
+        if (!$("#remind-friends").length) {
             var remindFriend = '<p id="remind-friends">Remind your friend that they will get a $25 discount by buying through your link</p>'
-            jQuery(".yotpo-referral-widget-form").append(remindFriend);
+            $(".yotpo-referral-widget-form").append(remindFriend);
         }
     }
 
     function renderQuote() {
-        if (!jQuery("#quote").length) {
+        if (!$("#quote").length) {
             var quote = '<div id="quote"><span class="icon-quote"></span><div class="quote-content"><p class="quote-text">My friend mentioned CuraLin and i’m so thankful.</p><p class="quote-author">Delores</p></div></div>'
-            jQuery(".yotpo-friends-emails-view").append(quote);
+            $(".yotpo-friends-emails-view").append(quote);
         }
     }
 
     function renderThankYouImage() {
-        if (!jQuery("#thank-you-image").length) {
-            var thankYouImage = jQuery("#thank-you-image-base").clone();
+        if (!$("#thank-you-image").length) {
+            var thankYouImage = $("#thank-you-image-base").clone();
             thankYouImage.attr('id','thank-you-image')
             thankYouImage.insertAfter(".yotpo-title-text");
-            jQuery("#thank-you-image").css('display','block');
+            $("#thank-you-image").css('display','block');
         }
     }
 
     runAfterElementExists(".yotpo-email-view", function() {
-        jQuery("#raf-steps").insertAfter("#yotpoReferralDescriptionText");
-        jQuery("#raf-steps").css('display','block');
-        jQuery("#terms-agree").insertAfter(".yotpo-action-button-widget");
-        jQuery("#terms-agree").css('display','block');
+        $("#raf-steps").insertAfter("#yotpoReferralDescriptionText");
+        $("#raf-steps").css('display','block');
+        $("#terms-agree").insertAfter(".yotpo-action-button-widget");
+        $("#terms-agree").css('display','block');
     });
 
     runAfterElementExists(".yotpo-friends-emails-view", function() {
-        jQuery("#raf-steps").css('display','none');
-        jQuery("#terms-agree").css('display','none');
+        $("#raf-steps").css('display','none');
+        $("#terms-agree").css('display','none');
         renderRemindFriend();
         renderEmailShare();
         renderQuote() 
-        jQuery(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
+        $(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
         scrollUp();
 
-        jQuery(document).delegate('button', 'click', function() {
+        $(document).delegate('button', 'click', function() {
             runAfterElementExists(".yotpo-screen-final", function() {
                 scrollUp();
                 renderThankYouImage()
 
                 if (confettiIsActivated) {
-                    jQuery(".confetti-container").css('display','block');
+                    $(".confetti-container").css('display','block');
                 }
                 else {
                     for (var i = 0; i < 150; i++) {create(i);}
                     confettiIsActivated = true;
                 }
 
-                jQuery("[aria-label='Go back to previous screen'], .yotpo-lower-line-tab, button").click(function() {
+                $("[aria-label='Go back to previous screen'], .yotpo-lower-line-tab, button").click(function() {
                 runAfterElementExists(".yotpo-friends-emails-view", function() {
-                    jQuery(".confetti-container").css('display','none');
+                    $(".confetti-container").css('display','none');
                     renderEmailShare();
                     renderRemindFriend();
                     renderQuote() 
-                    jQuery(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
+                    $(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
                     });
                     scrollUp();
                 });
             });
 
             runAfterElementExists(".yotpo-final-view", function() {
-                jQuery("[aria-label='Go back to previous screen']").click(function() {
+                $("[aria-label='Go back to previous screen']").click(function() {
                     runAfterElementExists(".yotpo-friends-emails-view", function() {
-                        jQuery(".confetti-container").css('display','none');
+                        $(".confetti-container").css('display','none');
                         renderEmailShare();
                         renderRemindFriend();
                         renderQuote() 
-                        jQuery(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
+                        $(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
                         });
                         scrollUp();
                     });
@@ -154,7 +154,7 @@ function create(i) {
       colour = "red";
   }
 
-  jQuery('<div class="confetti-'+i+' '+colour+'"></div>').css({
+  $('<div class="confetti-'+i+' '+colour+'"></div>').css({
     "width" : width+"px",
     "height" : height+"px",
     "top" : -Math.random()*20+"%",
@@ -167,7 +167,7 @@ function create(i) {
 }
 
 function drop(x) {
-  jQuery('.confetti-'+x).animate({
+  $('.confetti-'+x).animate({
     top: "100%",
     left: "+="+Math.random()*15+"%"
   }, Math.random()*2000 + 2000, function() {
@@ -176,7 +176,7 @@ function drop(x) {
 }
 
 function reset(x) {
-  jQuery('.confetti-'+x).animate({
+  $('.confetti-'+x).animate({
     "top" : -Math.random()*20+"%",
     "left" : "-="+Math.random()*15+"%"
   }, 0, function() {

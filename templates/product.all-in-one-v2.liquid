@@ -626,53 +626,53 @@
 
 <script>
 // Back To Top Button
-var btn = jQuery('#back-to-top-btn');
+var btn = $('#back-to-top-btn');
 
-jQuery(window).scroll(function() {
-  if (jQuery(window).scrollTop() > 600) {
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 600) {
     btn.addClass('show');
     if (screen.width < 760) {
-        jQuery('.helpButton').attr('style', 'bottom: 60px !important');
+        $('.helpButton').attr('style', 'bottom: 60px !important');
     }
   } else {
     btn.removeClass('show');
     if (screen.width < 760) {
-        jQuery('.helpButton').attr('style', 'bottom: 4px !important');
+        $('.helpButton').attr('style', 'bottom: 4px !important');
     }
   }
 });
 
 btn.on('click', function(e) {
   e.preventDefault();
-  jQuery('html, body').animate({scrollTop:0}, '300');
+  $('html, body').animate({scrollTop:0}, '300');
 });
 
 // Check Radio Button on Variant Box Click
-jQuery(".variant-box").click(function() {
-    jQuery(this).find('input[type=radio]').prop('checked', true);
-    jQuery("#productVaraintSelected").prop('value', jQuery(this).find('input[type=radio]')[0].value);
+$(".variant-box").click(function() {
+    $(this).find('input[type=radio]').prop('checked', true);
+    $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
     // Save Text Change
-    let saveText = "You Save " + jQuery('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
-    jQuery('#save').animate({'opacity': 0}, 800, function () {
-        jQuery(this).text(saveText);
+    let saveText = "You Save " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
+    $('#save').animate({'opacity': 0}, 800, function () {
+        $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
 })
 
-jQuery( document ).ready(function() {
-    jQuery(".variant-box").last().trigger( "click" );
+$( document ).ready(function() {
+    $(".variant-box").last().trigger( "click" );
 });
 
 // Buy Button Functionality
-jQuery("#buy-button").click(function() {
-    let checkedPack = jQuery('input[name=pack]:checked', '#CTAForm').val();
-    let checkedQuantity = jQuery('input[name=quantity]', '#CTAForm').val();
+$("#buy-button").click(function() {
+    let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
+    let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
     let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + 1 + "?channel=buy_button";
     window.location.href = checkoutLink;
 })
 
 // Fade Quotes
-var quotes = jQuery(".quote");
+var quotes = $(".quote");
 var quoteIndex = -1;
 
 function showNextQuote() {
@@ -684,12 +684,12 @@ function showNextQuote() {
 }
 
 // CTA Button Color Change on Hover
-jQuery(function() {
-  jQuery('.main-btn').hover(function() {
-    jQuery('.qty-control').css('border-color', '#AF5B35');
+$(function() {
+  $('.main-btn').hover(function() {
+    $('.qty-control').css('border-color', '#AF5B35');
   }, function() {
     // on mouseout, reset the background colour
-    jQuery('.qty-control').css('border-color', '#d07c5b');
+    $('.qty-control').css('border-color', '#d07c5b');
   });
 });
 
@@ -862,7 +862,7 @@ body {
 </style>
 
 <script>
-    jQuery(document).on("click", "#buy-button", function () {
+    $(document).on("click", "#buy-button", function () {
           window.dataLayer  = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
@@ -873,9 +873,9 @@ body {
               'list': 'main'          // optional. name of a list from which the product was added to a cart  
             },       
             'products': [{              // list of products added to a cart. Can contain multiple products at the same time
-              'name': jQuery('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
-              'id': jQuery('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
-              'price': jQuery('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
+              'name': $('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
+              'id': $('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
+              'price': $('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
               'category': 'Simple',
               'variant': '',   // category of a product
               'quantity': 1
@@ -894,11 +894,11 @@ body {
         });
     });
 
-    jQuery(document).on("click", ".variant-box", function () {
+    $(document).on("click", ".variant-box", function () {
           window.dataLayer  = window.dataLayer || [];
           window.dataLayer.push({
             'event': 'variant-click', 
-            'label': jQuery('input[name=pack]:checked', '#CTAForm').attr('sku'),
+            'label': $('input[name=pack]:checked', '#CTAForm').attr('sku'),
         'userId': '{{ customer.id }}',
         'email': '{{ customer.email }}',
         'country': '{{customer.customer_address.country_code }}',
@@ -913,16 +913,16 @@ body {
 </script>
 
 <script>
-    	jQuery(document).on("click", "#buy-button", function () {
+    	$(document).on("click", "#buy-button", function () {
      window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'add_to_cart',    
   ecommerce: {                          
     items: [{       
         item_name: '{{ product.title }}',      
-        item_id: jQuery('input[name=pack]:checked', '#CTAForm').attr('sku'), 
+        item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'), 
         affiliation: '{{ shop.name }}',
-        price: jQuery('input[name=pack]:checked', '#CTAForm').attr('price'),
+        price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
         currency: '{{ shop.currency }}',
         item_brand: 'CuraLife',            
         item_category: 'CuraLin',         

@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+$(document).ready(function($) {
   $("#signupForm").submit(function(event) {
     event.preventDefault();
 

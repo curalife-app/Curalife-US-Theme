@@ -104,10 +104,10 @@
 
 {% javascript %}
 
-jQuery("#login-btn").click(function() {
+$("#login-btn").click(function() {
     // Identify customer
     woopra.identify({
-        email: jQuery("#customerEmail").text()
+        email: $("#customerEmail").text()
     });
   });
 
@@ -123,12 +123,12 @@ jQuery("#login-btn").click(function() {
 <script>
    
    
-      jQuery(document).ready(function() {
+      $(document).ready(function() {
     
      var  x = localStorage.getItem("reset_password");
       if (x=='true') {
        localStorage.setItem("reset_password", false);
-       jQuery("#opn_thanks").click();
+       $("#opn_thanks").click();
 
      }
          
@@ -136,8 +136,8 @@ jQuery("#login-btn").click(function() {
         });
       </script>
 <script>
-      jQuery(document).ready(function() {
+      $(document).ready(function() {
            var url =  window.location.href; 
-           jQuery("#redirect_url").val(url);
+           $("#redirect_url").val(url);
         });
       </script>

@@ -64,7 +64,7 @@
 </div>
 
 <script>
-    jQuery(".increase-quantity-drawer")
+    $(".increase-quantity-drawer")
         .click(function () {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({ecommerce:null});
@@ -97,7 +97,7 @@
             });
         })
 
-        jQuery(".decrease-quantity-drawer")
+        $(".decrease-quantity-drawer")
         .click(function () { // If last item, remove object from cart
             if ($(this)
                     .parent()
@@ -137,7 +137,7 @@
             });
         })
 
-        jQuery(".delete-card *")
+        $(".delete-card *")
         .click(function () {
             var btn = $(this).closest("button");
             window.dataLayer = window.dataLayer || [];

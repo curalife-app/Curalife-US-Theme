@@ -196,10 +196,10 @@
     {% for address in customer.addresses %}
       new Shopify.CountryProvinceSelector('address_country_{{address.id}}', 'address_province_{{address.id}}', {hideElement: 'address_province_container_{{address.id}}'});
 
-	jQuery(document).ready(function(){
-		jQuery('#edit_add_{{address.id}}').click(function(){
-			jQuery("#add_address").hide();
-			jQuery('#edit_address_{{address.id}}').show();
+	$(document).ready(function(){
+		$('#edit_add_{{address.id}}').click(function(){
+			$("#add_address").hide();
+			$('#edit_address_{{address.id}}').show();
 		});
 	});
 
@@ -372,9 +372,9 @@ span.action_delete.btn {
 </style>
 
 <script>
-  jQuery(document).ready(function(){
-      jQuery(".action_edit").click(function(){
-          jQuery("footer").css("margin-top", "350px");
+  $(document).ready(function(){
+      $(".action_edit").click(function(){
+          $("footer").css("margin-top", "350px");
       });
   });
 </script>
