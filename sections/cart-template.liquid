@@ -188,7 +188,7 @@ price: $(this).attr("price"),
 currency: '{{ shop.currency }}',
 item_brand: 'CuraLife',            
 item_category: 'CuraLin',         
-quantity: '1'                   
+quantity: 1
 }]
 },
 user_email: '{{ customer.email }}',
@@ -223,7 +223,7 @@ ecommerce: {
       currency: '{{ shop.currency }}',
       item_brand: 'CuraLife',            
       item_category: 'CuraLin',         
-      quantity: '1'                   
+      quantity: 1                
   }]
 },
 user_email: '{{ customer.email }}',
@@ -253,7 +253,7 @@ ecommerce: {
       currency: '{{ shop.currency }}',
       item_brand: 'CuraLife',            
       item_category: 'CuraLin',         
-      quantity: $(this).parent().attr("data-quantity")                  
+      quantity: parseInt($(this).parent().attr("data-quantity"))               
   }]
 },
 user_email: '{{ customer.email }}',
