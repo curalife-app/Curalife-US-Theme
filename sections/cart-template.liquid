@@ -146,7 +146,7 @@ var items_data = cart_data.items.map(function(item){
       item_id: item.sku,
       item_name: item.product_title,
       affiliation: '{{ shop.name }}',
-      price: parseFloat(item.price / 100.0),
+      price: parseFloat(item.price / 100.0).toFixed(2).toString(),
       currency: '{{ shop.currency }}',
       item_brand: 'CuraLife',            
       item_category: 'CuraLin',         
