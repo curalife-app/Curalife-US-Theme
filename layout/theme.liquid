@@ -102,9 +102,11 @@
     {% section 'footer'%}
   </main>
 
-<!-- {% render 'salesforce-chat' %} -->
+  {% render 'loader-overlay' %}
+  
   {% render 'wisepops-generated' %}
-{% render 'social-login' %}
+  
+  {% render 'social-login' %}
   
  <!-- Start of Woopra Code -->
  <script>
