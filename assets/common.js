@@ -512,11 +512,8 @@ function updateTotalPrice(inputObject, updateValue) {
 
         // Update Cart Total Price
         var cartPriceObject = $(".cart-total .total-wrap .price p b");
-        console.log("🚀 | updateTotalPrice | cartPriceObject", cartPriceObject)
         var cartPrice = cartPriceObject.text().replace(currencySymbol, "").replace(",", "");
-        console.log("🚀 | updateTotalPrice | cartPrice", cartPrice)
         var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
-        console.log("🚀 | updateTotalPrice | finalCartPrice", finalCartPrice)
         cartPriceObject.text(currencySymbol + finalCartPrice.toFixed(2).toString());
     }
 }
