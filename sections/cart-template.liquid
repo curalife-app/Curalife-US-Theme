@@ -158,7 +158,7 @@ window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
 event: 'view_cart',           // name of the event. In this case, it always must be view_cart
 ecommerce: {                          
-  items: [items_data]
+  items: items_data
 },
 user_email: '{{ customer.email }}',
 user_phone: '{{ customer.phone }}',
@@ -176,6 +176,7 @@ user_agent: navigator.userAgent
 <script>
 jQuery(".increase-quantity").click(function() {
 window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ecommerce:null});
 window.dataLayer.push({
 event: 'add_to_cart',    
 ecommerce: {                          
@@ -210,6 +211,7 @@ jQuery(".decrease-quantity").click(function() {
   }
 
     window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ecommerce:null});
 window.dataLayer.push({
 event: 'remove_from_cart',    
 ecommerce: {                          
