@@ -11,11 +11,12 @@
                     {% assign quantity_by_cents = quantity | times: 100 %}
                     {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                     {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+                    {% assign original_item_compare_at_price = product.metafields.my_fields.original_item.value.compare_at_price %}
 
                     {% if quantity > 1 %}
-                        <p style="background:#FDD775;border-color:#FDD775;color:black;font-size:20px;margin-top:-10px;">SAVE {{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
+                        <p style="background:#FDD775;border-color:#FDD775;color:black;font-size:20px;margin-top:-10px;">SAVE {{ original_item_compare_at_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
                     {% elsif product.compare_at_price_max > product.price %}
-                        <p style="background:#FDD775;border-color:#FDD775;color:black;font-size:20px;margin-top:-10px;">{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
+                        <p style="background:#FDD775;border-color:#FDD775;color:black;font-size:20px;margin-top:-10px;">SAVE {{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}</p>
                     {% endif %}
                 </div>
                 <div class="sliders-group">
