@@ -65,7 +65,7 @@
                                 <input type="hidden" name="return_to" value="/cart/">
                                 
                                 <div class="btn">
-                                    <button type="submit" id='AddTCart' class="main-btn" title="{{product.title}}" prod-id="{{product.id}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i> Add To Cart</button>
+                                    <button type="submit" id='AddTCart' class="main-btn" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i> Add To Cart</button>
                                 </div>
                             </form>
                         </div>
