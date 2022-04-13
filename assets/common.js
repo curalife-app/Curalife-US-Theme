@@ -448,23 +448,6 @@ $(document).ready(function () {
         }
     });
 
-    // Change Quantity Widget On Product Page
-    $(document).on("click", ".product-data .qty-control a", function (e) {
-        e.preventDefault();
-        let newVal, $button = $(this),
-            inputObj = $button.closest(".qty-control").find("input"),
-            oldValue = inputObj.val();
-        if ($button.attr('data-act') === "+") {
-            newVal = parseInt(oldValue) + 1;
-        } 
-        else {
-            newVal = parseInt(oldValue) - 1;
-        }
-
-        inputObj.val(newVal);
-        // GlobalFunctions.updateQuantity($button, inputObj.attr('item-var-id'), newVal);
-    });
-
     $(document).on("click", ".extra-info ul li", function () {
         $(this).toggleClass('show').siblings().removeClass('show')
     });
@@ -718,3 +701,6 @@ $(document).ready(function () {
         $(".store-locator").after('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6sLxnYQ-FWAeI8mmJpv2LNinG0u-H5aw&callback=initMap"></script>');
     }
 });
+
+
+
