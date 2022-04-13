@@ -33,7 +33,7 @@
               <div class="qty-control">
                 <a class="decrease-quantity-drawer" href="javascript:void(0)" onclick="updateQuantity($(this).parent().find('input'), -1)" data-act="-" cart-type="drawer"><span class="icon-minus"></span></a>
                 <label>
-                  <input type="number" name="quantity[]" value="{{item.quantity}}" item-var-id="{{item.variant_id}}" currency="{{cart.currency.iso_code}}" cart-type="drawer" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}">
+                  <input type="number" name="quantity[]" value="{{item.quantity}}" item-var-id="{{item.variant_id}}" currency="{{cart.currency.symbol}}" currency-code="{{cart.currency.iso_code}}" cart-type="drawer" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}">
                 </label>
                 <a class="increase-quantity-drawer" href="javascript:void(0)" onclick="updateQuantity($(this).parent().find('input'), 1)" data-act="+"><span class="icon-plus"></span></a>
               </div>
