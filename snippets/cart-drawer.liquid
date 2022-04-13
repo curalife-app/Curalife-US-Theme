@@ -140,11 +140,6 @@ $(".increase-quantity-drawer").click(function () {
 })
 
 $(".decrease-quantity-drawer").click(function () {
-    // If last item, remove object from cart
-    if ($(this).parent().find("input").val() == 1) {
-        removeThis($(this),$(this).attr("item-id"));
-    }
-
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         event: 'remove_from_cart',
@@ -171,6 +166,11 @@ $(".decrease-quantity-drawer").click(function () {
         user_agent: navigator.userAgent
         //user_ip_address: 'insert_ip_address_here',
     });
+
+    // If last item, remove object from cart
+    if ($(this).parent().find("input").val() == 1) {
+        removeThis($(this),$(this).attr("item-id"));
+    }
 })
 
 $(".delete-card *").click(function () {
