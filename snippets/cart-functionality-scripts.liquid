@@ -1,128 +1,126 @@
 <script>
-  $(document).ready(function () {
-    // Set Loader on Ajax calls
-    $(document).ajaxSend(function() {
-      $("#overlay").fadeIn(300);　
-    });
+  // Set Loader on Ajax calls
+  $(document).ajaxSend(function() {
+    $("#overlay").fadeIn(300);　
+  });
 
-    async function updateQuantityOnServer(id, qty) {
-      console.log('Updating Cart...')
-      $.ajax({  
-        type:"POST",        
-        url: "/cart/change.js",  // Send the login info to this page
-        data: JSON.stringify({ id: id, quantity: qty }), 
-        dataType: "json", 
-        async: false,
-        contentType: "application/json",
-        timeout: 200000,
-        success: function(result){ 
-          console.log("Item Quantity Updated");
-          window.UpdateStatus = true;
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) {
-          console.log("Error In Updating Item Quantity!", textStatus, errorThrown);
-          window.UpdateStatus = false;
-        },
+  async function updateQuantityOnServer(id, qty) {
+    console.log('Updating Cart...')
+    $.ajax({  
+      type:"POST",        
+      url: "/cart/change.js",  // Send the login info to this page
+      data: JSON.stringify({ id: id, quantity: qty }), 
+      dataType: "json", 
+      async: false,
+      contentType: "application/json",
+      timeout: 200000,
+      success: function(result){ 
+        console.log("Item Quantity Updated");
+        window.UpdateStatus = true;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        console.log("Error In Updating Item Quantity!", textStatus, errorThrown);
+        window.UpdateStatus = false;
+      },
 
-      }).done(function() {
-        setTimeout(function(){$("#overlay").fadeOut(300);},500);
-      }); 
+    }).done(function() {
+      setTimeout(function(){$("#overlay").fadeOut(300);},500);
+    }); 
+  }
+
+  function updateQuantityOnHeaderIcon(updateValue) {
+    var cartTotalCount = $('.header_cart_count').text();
+    var cartRemainingCount = parseInt(cartTotalCount) + parseInt(updateValue);
+    $('.header_cart_count').text(cartRemainingCount);
+  }
+
+  function updateTotalPrice(inputObject, updateValue) {
+    var currencySymbol =  inputObject.attr("currency");
+
+    if (inputObject.attr("cart-type") == "drawer") {
+      // Cart Drawer Removal
+      var itemPrice = inputObject.parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
+      var changePrice = updateValue * parseFloat(itemPrice);
+
+      // Update Cart Total Price
+      var cartPrice = $(".cstm_pric").text().replace(currencySymbol, "").replace(",", "");
+      var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
+      $(".cstm_pric").text(currencySymbol + finalCartPrice.toFixed(2));
+      if (finalCartPrice == 0) {
+        $(".plc_order").attr("href", "/collections/all");
+      }
     }
+    else {
+      // Cart Template Removal
+      var itemPrice = inputObject.parent().parent().parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
+      var changePrice = updateValue * parseFloat(itemPrice);
 
-    function updateQuantityOnHeaderIcon(updateValue) {
-      var cartTotalCount = $('.header_cart_count').text();
-      var cartRemainingCount = parseInt(cartTotalCount) + parseInt(updateValue);
-      $('.header_cart_count').text(cartRemainingCount);
+      // Update Row Total Price
+      var rowPriceObject = inputObject.parent().parent().parent().parent().parent().find('.total').find("p");
+      var rowPrice = rowPriceObject.text().replace(currencySymbol, "").replace(",", "");
+      var finalRowPrice = parseFloat(rowPrice) + parseFloat(changePrice);
+      rowPriceObject.text(currencySymbol + finalRowPrice.toFixed(2).toString());
+
+      // Update Cart Total Price
+      var cartPriceObject = $(".cart-total .total-wrap .price p b");
+      var cartPrice = cartPriceObject.text().replace(currencySymbol, "").replace(",", "");
+      var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
+      cartPriceObject.text(currencySymbol + finalCartPrice.toFixed(2).toString());
     }
+  }
 
-    function updateTotalPrice(inputObject, updateValue) {
-      var currencySymbol =  inputObject.attr("currency");
+  function updateQuantity(inputObject, updateValue) {
+    var oldValue = inputObject.val();
+    var newValue = parseInt(oldValue) + parseInt(updateValue);
 
-      if (inputObject.attr("cart-type") == "drawer") {
-        // Cart Drawer Removal
-        var itemPrice = inputObject.parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
-        var changePrice = updateValue * parseFloat(itemPrice);
+    // Update Server
+    updateQuantityOnServer(inputObject.attr('item-var-id'), updateValue > 1 ? 0 : newValue);
 
-        // Update Cart Total Price
-        var cartPrice = $(".cstm_pric").text().replace(currencySymbol, "").replace(",", "");
-        var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
-        $(".cstm_pric").text(currencySymbol + finalCartPrice.toFixed(2));
-        if (finalCartPrice == 0) {
-          $(".plc_order").attr("href", "/collections/all");
-        }
+    if (window.UpdateStatus) {
+      triggerAddOrRemoveToCart(inputObject, updateValue);
+
+      // Remove Item If Quantity Is 0
+      if (newValue == 0) {
+        inputObject.parent().parent().parent().parent().parent().remove();
       }
       else {
-        // Cart Template Removal
-        var itemPrice = inputObject.parent().parent().parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
-        var changePrice = updateValue * parseFloat(itemPrice);
-
-        // Update Row Total Price
-        var rowPriceObject = inputObject.parent().parent().parent().parent().parent().find('.total').find("p");
-        var rowPrice = rowPriceObject.text().replace(currencySymbol, "").replace(",", "");
-        var finalRowPrice = parseFloat(rowPrice) + parseFloat(changePrice);
-        rowPriceObject.text(currencySymbol + finalRowPrice.toFixed(2).toString());
-
-        // Update Cart Total Price
-        var cartPriceObject = $(".cart-total .total-wrap .price p b");
-        var cartPrice = cartPriceObject.text().replace(currencySymbol, "").replace(",", "");
-        var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
-        cartPriceObject.text(currencySymbol + finalCartPrice.toFixed(2).toString());
+        // Update Input Object Value
+        inputObject.val(newValue);
       }
+
+      updateTotalPrice(inputObject, updateValue);
+      updateQuantityOnHeaderIcon(updateValue);
     }
+  }
 
-    function updateQuantity(inputObject, updateValue) {
-      var oldValue = inputObject.val();
-      var newValue = parseInt(oldValue) + parseInt(updateValue);
-
-      // Update Server
-      updateQuantityOnServer(inputObject.attr('item-var-id'), updateValue > 1 ? 0 : newValue);
-
-      if (window.UpdateStatus) {
-        triggerAddOrRemoveToCart(inputObject, updateValue);
-
-        // Remove Item If Quantity Is 0
-        if (newValue == 0) {
-          inputObject.parent().parent().parent().parent().parent().remove();
-        }
-        else {
-          // Update Input Object Value
-          inputObject.val(newValue);
-        }
-
-        updateTotalPrice(inputObject, updateValue);
-        updateQuantityOnHeaderIcon(updateValue);
-      }
-    }
-
-    function triggerAddOrRemoveToCart(inputObject, updateValue) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ecommerce:null});
-        window.dataLayer.push({
-          event: updateValue < 0 ? "remove_from_cart" : "add_to_cart",
-          ecommerce: {
-            items: [
-              {
-                item_name: inputObject.attr("title"),
-                item_id: inputObject.attr("prod-id"),
-                affiliation: inputObject.attr("shop-name"),
-                price: inputObject.attr("price"),
-                currency: inputObject.attr("currency"),
-                item_brand: "CuraLife",
-                item_category: "CuraLin",
-                quantity: Math.abs(updateValue)
-              }
-            ]
-          },
-          user_email: "{{ customer.email }}",
-          user_phone: "{{ customer.phone }}",
-          user_first_name: "{{ customer.first_name }}",
-          user_last_name: "{{ customer.last_name }}",
-          user_city: "{{ customer.customer_address.city }}",
-          user_state: "{{ customer.customer_address.province }}",
-          user_zip: "{{ customer.customer_address.zip }}",
-          user_country: "{{ customer.customer_address.country_code | t }}",
-          user_agent: navigator.userAgent
-        });
-    }
-  });
+  function triggerAddOrRemoveToCart(inputObject, updateValue) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ecommerce:null});
+      window.dataLayer.push({
+        event: updateValue < 0 ? "remove_from_cart" : "add_to_cart",
+        ecommerce: {
+          items: [
+            {
+              item_name: inputObject.attr("title"),
+              item_id: inputObject.attr("prod-id"),
+              affiliation: inputObject.attr("shop-name"),
+              price: inputObject.attr("price"),
+              currency: inputObject.attr("currency"),
+              item_brand: "CuraLife",
+              item_category: "CuraLin",
+              quantity: Math.abs(updateValue)
+            }
+          ]
+        },
+        user_email: "{{ customer.email }}",
+        user_phone: "{{ customer.phone }}",
+        user_first_name: "{{ customer.first_name }}",
+        user_last_name: "{{ customer.last_name }}",
+        user_city: "{{ customer.customer_address.city }}",
+        user_state: "{{ customer.customer_address.province }}",
+        user_zip: "{{ customer.customer_address.zip }}",
+        user_country: "{{ customer.customer_address.country_code | t }}",
+        user_agent: navigator.userAgent
+      });
+  }
 </script>
