@@ -1,205 +1,66 @@
 <div class="cart-toolbar" id="side-cart">
-    <div class="top-info">
-        <div class="title">
-            <h3>Cart</h3>
-            <button type="button" class="close-cart" data-fancybox-close><span class="icon-close"></span></button>
-        </div>
+  <div class="top-info">
+    <div class="title">
+      <h3>Cart</h3>
+      <button type="button" class="close-cart" data-fancybox-close><span class="icon-close"></span></button>
     </div>
-    <div class="content">
-        <div class="added-products">
-          {% if cart.item_count > 0 %}
-            <ul>
-              {% for item in cart.items %}
-                <li>
-                    <div class="img-wrap">
-                        <a href="javascript:void(0)">
-                           <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
-                        </a>
-                    </div>
-                    <div class="data">
-                        <div class="info-card">
-                            <div class="name">
-                                <h4><a href="{{item.product.url}}">{% if item.product.metafields.my_fields.alternative_title.value %}
-                                {{ item.product.metafields.my_fields.alternative_title.value }}
-                                {% else %}
-                                {{ item.product.title }}
-                                {% endif %}
-                            </a></h4>
-                                <div class="price">
-                                    <p>{{ item.price | money }}</p>
-                                </div>
-                            </div>
-                            
-                            <div class="qty-control">
-                                <a class="decrease-quantity-drawer" href="javascript:void(0)" data-act="-" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if item.product.compare_at_price > item.product.price %}{{ item.product.compare_at_price | minus: item.product.price | times: 0.01 }}{% else %}0{% endif %}" item-id="{{item.id}}" cart-type="drawer"><span class="icon-minus"></span></a>
-                                <label>
-                                    <input type="number" name="quantity[]" value="{{ item.quantity }}" maxlength="4">
-                                </label>
-                                <a class="increase-quantity-drawer" href="javascript:void(0)" data-act="+" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if item.product.compare_at_price > item.product.price %}{{ item.product.compare_at_price | minus: item.product.price | times: 0.01 }}{% else %}0{% endif %}"><span class="icon-plus"></span></a>
-                            </div>
-                            <div class="delete-card">
-                                <button type="button" onclick="removeThis($(this),'{{item.id}}')" data-price ="{{ item.original_price | money_without_currency }}" data-title="{{ item.product.title }}" data-id="{{ item.product.selected_or_first_available_variant.sku }}" data-quantity="{{ item.quantity }}" data-discount="{% if item.product.compare_at_price > item.product.price %}{{ item.product.compare_at_price | minus: item.product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-close"></i><span>Remove</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </div>
+  </div>
+  <div class="content">
+    <div class="added-products">
+      {% if cart.item_count > 0 %}
+      <ul>
+        {% for item in cart.items %}
+        <li>
+          <div class="img-wrap">
+            <a href="javascript:void(0)">
+              <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+            </a>
+          </div>
+          <div class="data">
+            <div class="info-card">
+              <div class="name">
+                <h4><a href="{{item.product.url}}">{% if item.product.metafields.my_fields.alternative_title.value %}
+                {{ item.product.metafields.my_fields.alternative_title.value }}
+                {% else %}
+                {{ item.product.title }}
+                {% endif %}
+              </a></h4>
+                <div class="price">
+                  <p>{{ item.price | money }}</p>
+                </div>
+              </div>
+
+              <div class="qty-control">
+                <a class="decrease-quantity-drawer" href="javascript:void(0)" onclick="updateQuantity($(this).parent().find('input'), -1)" data-act="-" cart-type="drawer"><span class="icon-minus"></span></a>
+                <label>
+                  <input type="number" name="quantity[]" value="{{item.quantity}}" item-var-id="{{item.variant_id}}" currency="{{cart.currency.symbol}}" cart-type="drawer" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}">
+                </label>
+                <a class="increase-quantity-drawer" href="javascript:void(0)" onclick="updateQuantity($(this).parent().find('input'), 1)" data-act="+"><span class="icon-plus"></span></a>
+              </div>
+              <div class="delete-card">
+                <button type="button" onclick="updateQuantity($(this).parent().parent().find('input'), 0 - $(this).parent().parent().find('input').val())" data-price ="{{ item.original_price | money_without_currency }}" data-title="{{ item.product.title }}" data-id="{{item.product.selected_or_first_available_variant.sku}}" data-quantity="{{ item.quantity }}" data-discount="{% if item.product.compare_at_price > item.product.price %}{{ item.product.compare_at_price | minus: item.product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-close"></i><span>Remove</span></button>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
-    <div class="bottom-info">
-        <div class="summary">
-            <h4>Subtotal</h4>
-            <p class="cstm_pric">{{ cart.total_price | money }}</p>
-        </div>
-        <div class="btn">
-            {% if cart.item_count > 0 %}
-            <a href="/checkout/" class="plc_order main-btn orange">Place your order</a>
-            {% else %}
-            <a href="/collections/all" class="main-btn orange">Place your order</a>
-            {% endif %}
-        </div>
+  </div>
+  <div class="bottom-info">
+    <div class="summary">
+      <h4>Subtotal</h4>
+      <p class="cstm_pric">{{ cart.total_price | money }}</p>
     </div>
+    <div class="btn">
+      {% if cart.item_count > 0 %}
+      <a href="/checkout/" class="plc_order main-btn orange">Place your order</a>
+      {% else %}
+      <a href="/collections/all" class="main-btn orange">Place your order</a>
+      {% endif %}
+    </div>
+  </div>
 </div>
-<script>
-function removeThis(obj, id) {
-        // jQuery.post('/cart/update.js', 'updates[' + id + ']=0');
 
-        $.ajax({  
-            type:"POST",        
-            url: "/cart/update.js",  // Send the login info to this page
-            data: 'updates[' + id + ']=0', 
-            dataType: "json", 
-            timeout: 200000,
-            success: function(result){ console.log("ajax success")},
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                console.log(errorThrown);
-            }
-        });  
-
-        var cstm_count = obj.parent().parent().find("input").val();
-        var cartToalCount = $('.header_cart_count').text();
-        var cartReaminingCount = parseInt(cartToalCount) - parseInt(cstm_count);
-        $('.header_cart_count').text(cartReaminingCount);
-        var currencySymbol = '{{cart.currency.symbol}}';
-
-        if (obj.attr("cart-type") == "drawer") {
-            // Cart Drawer Removal
-            var my_pric = obj.parent().parent().find('.price').find("p").text().replace(currencySymbol, "");
-            var totalRemovePrice = cstm_count * my_pric;
-            var totalSubCount = $(".cstm_pric").text().replace(currencySymbol, "");
-            var totalRemainingCount = parseFloat(totalSubCount) - parseFloat(totalRemovePrice);
-            $(".cstm_pric").text(currencySymbol + totalRemainingCount);
-            var totalc = $(".cstm_pric").text().replace(currencySymbol, "");
-            if (totalc == 0) {
-                $(".plc_order").attr("href", "/collections/all");
-            }
-        }
-        else {
-            // Cart Template Removal
-            var my_pric_cart = obj.parent().parent().parent().parent().find('.price').find("span").text().replace(currencySymbol, "");
-            var totalRemovePrice_cart = cstm_count * my_pric_cart;
-            var totalSubCount_cart = $(".cart-total .total-wrap .price span").text().replace(currencySymbol, "");
-            var totalRemainingCount_cart = parseFloat(totalSubCount_cart) - parseFloat(totalRemovePrice_cart);
-            $(".cart-total .total-wrap .price span").text(currencySymbol + totalRemainingCount_cart);
-        }
-        
-        obj.parent().parent().parent().parent().remove();
-    }
-</script>
-
-<script>
-$(".increase-quantity-drawer").click(function () {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        event: 'add_to_cart',
-        ecommerce: {
-            items: [{
-                item_name: $(this).attr("title"),
-                item_id: $(this).attr("prod-id"),
-                affiliation: '{{ shop.name }}',
-                price: $(this).attr("price"),
-                currency: '{{ shop.currency }}',
-                item_brand: 'CuraLife',
-                item_category: 'CuraLin',
-                quantity: 1
-            }]
-        },
-        user_email: '{{ customer.email }}',
-        user_phone: '{{ customer.phone }}',
-        user_first_name: '{{ customer.first_name }}',
-        user_last_name: '{{ customer.last_name }}',
-        user_city: '{{ customer.customer_address.city }}',
-        user_state: '{{ customer.customer_address.province }}',
-        user_zip: '{{ customer.customer_address.zip }}',
-        user_country: '{{customer.customer_address.country_code | t}}',
-        user_agent: navigator.userAgent
-        //user_ip_address: 'insert_ip_address_here',
-    });
-})
-
-$(".decrease-quantity-drawer").click(function () {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        event: 'remove_from_cart',
-        ecommerce: {
-            items: [{
-                item_name: $(this).attr("title"),
-                item_id: $(this).attr("prod-id"),
-                affiliation: '{{ shop.name }}',
-                price: $(this).attr("price"),
-                currency: '{{ shop.currency }}',
-                item_brand: 'CuraLife',
-                item_category: 'CuraLin',
-                quantity: 1
-            }]
-        },
-        user_email: '{{ customer.email }}',
-        user_phone: '{{ customer.phone }}',
-        user_first_name: '{{ customer.first_name }}',
-        user_last_name: '{{ customer.last_name }}',
-        user_city: '{{ customer.customer_address.city }}',
-        user_state: '{{ customer.customer_address.province }}',
-        user_zip: '{{ customer.customer_address.zip }}',
-        user_country: '{{customer.customer_address.country_code | t}}',
-        user_agent: navigator.userAgent
-        //user_ip_address: 'insert_ip_address_here',
-    });
-
-    // If last item, remove object from cart
-    if ($(this).parent().find("input").val() == 1) {
-        removeThis($(this),$(this).attr("item-id"));
-    }
-})
-
-$(".delete-card *").click(function () {
-        var btn = $(this).closest('button');
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'remove_from_cart',
-            ecommerce: {
-                items: [{
-                    item_name: btn.attr("data-title"),
-                    item_id: btn.attr("data-id"),
-                    affiliation: '{{ shop.name }}',
-                    price: btn.attr("data-price"),
-                    currency: '{{ shop.currency }}',
-                    item_brand: 'CuraLife',
-                    item_category: 'CuraLin',
-                    quantity: parseInt(btn.attr("data-quantity"))
-                }]
-            },
-            user_email: '{{ customer.email }}',
-            user_phone: '{{ customer.phone }}',
-            user_first_name: '{{ customer.first_name }}',
-            user_last_name: '{{ customer.last_name }}',
-            user_city: '{{ customer.customer_address.city }}',
-            user_state: '{{ customer.customer_address.province }}',
-            user_zip: '{{ customer.customer_address.zip }}',
-            user_country: '{{customer.customer_address.country_code | t}}',
-            user_agent: navigator.userAgent
-            //user_ip_address: 'insert_ip_address_here',
-        });
-    })
-</script>
+{% render 'cart-functionality-scripts' %}

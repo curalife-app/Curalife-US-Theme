@@ -198,6 +198,9 @@ $(document).ready(function () {
         },
         breakpoints: {
             760: {
+                slidesPerView: 1,
+            },
+            1080: {
                 slidesPerView: 2,
             },
             1200: {
@@ -242,13 +245,13 @@ $(document).ready(function () {
       });
 
       let isFirstClick = true;
-      $(".variant-box").click(function() {
+      jQuery(".variant-box").click(function() {
           if (isFirstClick) {
               isFirstClick = false;
           }
           else {
               // Slide to Variant Image
-              let slideIndex = productSliderAllInOne.slides.length - $('input[name=pack]:checked', '#CTAForm').attr('index');
+              let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
               productSliderAllInOne.slideTo(slideIndex);
           }
       });
@@ -333,6 +336,8 @@ $(document).ready(function () {
             disabledClass: 'disabled'
         }
     });
+
+
 
  $(".related-posts .posts-list .swiper-container")
  .each(function (index, element) {
@@ -443,22 +448,6 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on("click", ".qty-control a", function (e) {
-        e.preventDefault();
-        let newVal, $button = $(this),
-            oldValue = $button.closest(".qty-control").find("input").val();
-        if ($button.attr('data-act') === "+") {
-            newVal = parseInt(oldValue) + 1;
-        } else {
-            if (oldValue > 1) {
-                newVal = parseInt(oldValue - 1);
-            } else {
-                newVal = 1;
-            }
-        }
-        $button.closest(".qty-control").find("input").val(newVal);
-    });
-
     $(document).on("click", ".extra-info ul li", function () {
         $(this).toggleClass('show').siblings().removeClass('show')
     });
@@ -518,16 +507,17 @@ $(document).ready(function () {
             }
         }
     });
-    $(document).on("click", ".faq-list ul li .question", function (e) {
-            let parent = $(this).closest("li");
-            if (parent.hasClass("open")) {
-                parent.removeClass("open");
-                parent.find(".answer").slideUp();
-            } else {
-                parent.addClass("open");
-                parent.find(".answer").slideDown();
 
-            }
+    $(document).on("click", ".faq-list ul li .question", function (e) {
+        let parent = $(this).closest("li");
+        if (parent.hasClass("open")) {
+            parent.removeClass("open");
+            parent.find(".answer").slideUp();
+        } else {
+            parent.addClass("open");
+            parent.find(".answer").slideDown();
+
+        }
     });
 
     var move_access = false;
@@ -538,7 +528,6 @@ $(document).ready(function () {
             var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
             var offset = touch.clientX;
         } else {
-            //если нажата кнопка мышки:
             var offset = event.clientX;
         }
         touchstart = offset;
@@ -551,7 +540,6 @@ $(document).ready(function () {
             var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
             var offset = touch.clientX;
         } else {
-            //если нажата кнопка мышки:
             var offset = event.clientX;
         }
         touchstart = offset;
@@ -562,7 +550,6 @@ $(document).ready(function () {
                 var touch = event.originalEvent.touches[0] || event.originalEvent.changedTouches[0];
                 var offset = touch.clientX;
             } else {
-                //если нажата кнопка мышки:
                 var offset = event.clientX;
             }
             $(this).find(".scroll-wrap").scrollLeft(scrollLeft + (touchstart - offset)); //отменяем "всплытие сообщений", чтобы не вызывался клик на тач-устройствах.
@@ -618,9 +605,9 @@ $(document).ready(function () {
         };
     };
 
-    // $(window).resize(function () {
-    //     $(".locations-map .info-box").hide();
-    // });
+    $(window).resize(function () {
+        $(".locations-map .info-box").hide();
+    });
 
 
 });
@@ -638,10 +625,8 @@ if ($(".locator-list").length) {
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        // center: {lat: 50.448669, lng: 30.517841},
         zoom: 10,
         disableDefaultUI: true,
-        // zoomControl: false,
 
         styles: [{
             "featureType": "water",
@@ -707,7 +692,6 @@ function initMap() {
         });
         markers.push(marker);
     }
-    // map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds));
     map.setCenter(markersBounds.getCenter());
 }
 
@@ -717,7 +701,6 @@ $(document).ready(function () {
         $(".store-locator").after('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6sLxnYQ-FWAeI8mmJpv2LNinG0u-H5aw&callback=initMap"></script>');
     }
 });
-//# sourceMappingURL=maps/common.js.map
 
 
 
