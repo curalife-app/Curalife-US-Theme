@@ -7,7 +7,7 @@
                 <div class="product-list">
 
                     {% for lp_prod in lp_prods %}
-                    <script>console.log({{lp_prod}})</script>
+                    <script>console.log('{{lp_prod}}')</script>
                         {% assign prod = all_products[lp_prod] %}
                         {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
                         {% assign quantity_by_cents = quantity | times: 100 %}
