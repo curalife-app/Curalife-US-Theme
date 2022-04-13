@@ -70,29 +70,27 @@
       }
     }
 
-    GlobalFunctions = {
-      updateQuantity: function(inputObject, updateValue) {
-        var oldValue = inputObject.val();
-        var newValue = parseInt(oldValue) + parseInt(updateValue);
+    function updateQuantity(inputObject, updateValue) {
+      var oldValue = inputObject.val();
+      var newValue = parseInt(oldValue) + parseInt(updateValue);
 
-        // Update Server
-        updateQuantityOnServer(inputObject.attr('item-var-id'), updateValue > 1 ? 0 : newValue);
+      // Update Server
+      updateQuantityOnServer(inputObject.attr('item-var-id'), updateValue > 1 ? 0 : newValue);
 
-        if (window.UpdateStatus) {
-          triggerAddOrRemoveToCart(inputObject, updateValue);
+      if (window.UpdateStatus) {
+        triggerAddOrRemoveToCart(inputObject, updateValue);
 
-          // Remove Item If Quantity Is 0
-          if (newValue == 0) {
-            inputObject.parent().parent().parent().parent().parent().remove();
-          }
-          else {
-            // Update Input Object Value
-            inputObject.val(newValue);
-          }
-
-          updateTotalPrice(inputObject, updateValue);
-          updateQuantityOnHeaderIcon(updateValue);
+        // Remove Item If Quantity Is 0
+        if (newValue == 0) {
+          inputObject.parent().parent().parent().parent().parent().remove();
         }
+        else {
+          // Update Input Object Value
+          inputObject.val(newValue);
+        }
+
+        updateTotalPrice(inputObject, updateValue);
+        updateQuantityOnHeaderIcon(updateValue);
       }
     }
 
