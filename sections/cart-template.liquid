@@ -271,7 +271,7 @@ width:100%;
               currency: "{{ shop.currency }}",
               item_brand: "CuraLife",
               item_category: "CuraLin",
-              quantity: $(this).parent().attr("data-quantity")
+              quantity: parseInt($(this).parent().attr("data-quantity"))
             }
           ]
         },
