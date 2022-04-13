@@ -36,7 +36,7 @@
                           <p>{{ item.product.title }}</p>
                           {% endif %}
                             <div class="remove-item" data-variant="{{item.variant.id}}" data-price="{{ item.original_price | money_without_currency }}" data-title="{{ item.product.title }}" data-id="{{item.product.selected_or_first_available_variant.sku}}" data-quantity="{{ item.quantity }}" data-discount="{% if item.product.compare_at_price > item.product.price %}{{ item.product.compare_at_price | minus: item.product.price | times: 0.01 }}{% else %}0{% endif %}">
-                                <a onclick="GlobalFunctions.updateQuantity($(this).closest('tr').find('input'), 0 - $(this).closest('tr').find('input').val())" href="#">Remove</a>
+                                <a onclick="updateQuantity($(this).closest('tr').find('input'), 0 - $(this).closest('tr').find('input').val())" href="#">Remove</a>
                             </div>
                         </td>
                         <td class="price"><p>{{ item.price | money }}</p></td>
@@ -44,11 +44,11 @@
                             <div class="qty-data">
                                 <p>Quantity</p>
                                 <div class="qty-control">
-                                    <a class="decrease-quantity" href="javascript:void(0)" onclick="GlobalFunctions.updateQuantity($(this).parent().find('input'), -1)" data-act="-"><span class="icon-minus"></span></a>
+                                    <a class="decrease-quantity" href="javascript:void(0)" onclick="updateQuantity($(this).parent().find('input'), -1)" data-act="-"><span class="icon-minus"></span></a>
                                     <label>
                                         <input type="number" name="updates[]" value="{{ item.quantity }}" item-var-id="{{item.variant_id}}" currency="{{cart.currency.symbol}}" cart-type="cart" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}" shop-name="{{shop.name}}">
                                     </label>
-                                    <a class="increase-quantity" href="javascript:void(0)" onclick="GlobalFunctions.updateQuantity($(this).parent().find('input'), 1)" data-act="+"><span class="icon-plus"></span></a>
+                                    <a class="increase-quantity" href="javascript:void(0)" onclick="updateQuantity($(this).parent().find('input'), 1)" data-act="+"><span class="icon-plus"></span></a>
                                 </div>
                             </div>
                         </td>
