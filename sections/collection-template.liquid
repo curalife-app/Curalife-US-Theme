@@ -28,9 +28,10 @@
                                 {% assign quantity_by_cents = quantity | times: 100 %}
                                 {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                                 {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+                                {% assign original_item_compare_at_price = product.metafields.my_fields.original_item.value.compare_at_price %}
 
                                 {% if quantity > 1 %}
-                                    <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
+                                    <p>SAVE {{ original_item_compare_at_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
                                 {% elsif product.compare_at_price_max > product.price %}
                                     <p>SAVE {{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}</p>
                                 {% endif %}
@@ -50,7 +51,7 @@
                                 <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                                 <div class="price">
                                     {% if quantity > 1 %}
-                                        <p id="divided-price">{{ item_price | money_without_trailing_zeros }}<strike>{{ original_item_price | money_without_trailing_zeros }}</strike> Per Bottle</p>
+                                        <p id="divided-price">{{ item_price | money_without_trailing_zeros }}<strike>{{ original_item_compare_at_price | money_without_trailing_zeros }}</strike> Per Bottle</p>
                                     {% elsif product.compare_at_price > product.price %}
                                         <p id="discounted-price">{{ product.price | money_without_trailing_zeros }}<strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike></p>
                                     {% else %}
