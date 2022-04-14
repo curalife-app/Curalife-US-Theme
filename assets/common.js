@@ -132,24 +132,6 @@ $(document).ready(function () {
 		},
     });
 
-    productThumbs = new Swiper('#shopify-section-product-template .product-slider .thumbs-slider .swiper-container', {
-        spaceBetween: 20,
-        direction: 'vertical',
-        watchSlidesVisibility: true,
-        grabCursor: false,
-        loop: false,
-        touchRatio: 0,
-    });
-
-    productSlider = new Swiper('#shopify-section-product-template .product-slider .main-slider .swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        watchSlidesVisibility: true,
-        loop: false,
-        slideToClickedSlide: false,
-        thumbs: {swiper: productThumbs},
-    });
-
     productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
         slidesPerView: 4,
         spaceBetween: 10,
