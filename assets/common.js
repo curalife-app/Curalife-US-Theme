@@ -133,7 +133,6 @@ $(document).ready(function () {
     });
 
     productThumbs = new Swiper('#shopify-section-product-template .product-slider .thumbs-slider .swiper-container', {
-        slidesPerView: 'auto',
         spaceBetween: 20,
         direction: 'vertical',
         watchSlidesVisibility: true,
