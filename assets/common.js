@@ -88,50 +88,6 @@ function preventDefault(e) {
 let quoteSlider, ingredientSlider, ingredientThumbs, productSlider, productThumbs;
 
 $(document).ready(function () {
-    ingredientThumbs = new Swiper('.ingredients-slider .thumbs-slider .swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        watchSlidesVisibility: true,
-        grabCursor: false,
-        loop: false,
-        touchRatio: 0,
-        pagination: {
-            el: '.pagination',
-            type: 'fraction',
-            currentClass: 'pagination-current',
-            totalClass: 'pagination-total',
-            renderFraction: function (currentClass, totalClass) {
-                return '<p><span class="' + currentClass + '"></span> of <span class="' + totalClass + '"></span></p>';
-            }
-        },
-
-    });
-
-    ingredientSlider = new Swiper('.ingredients-slider .main-slider .swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        watchSlidesVisibility: true,
-        loop: false,
-        slideToClickedSlide: false,
-        thumbs: {swiper: ingredientThumbs},
-
-        navigation: {
-            nextEl: '.next-slide',
-            prevEl: '.prev-slide',
-            disabledClass: 'disabled'
-        },
-        pagination: 
-		{
-			el: '.swiper-pagination',
-            clickable: 'true',
-            type: 'bullets',
-		},
-    });
-
     productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
         slidesPerView: 4,
         spaceBetween: 10,
