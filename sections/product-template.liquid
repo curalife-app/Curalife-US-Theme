@@ -108,12 +108,13 @@
 
     <script>
         productThumbs = new Swiper('#shopify-section-product-template .product-slider .thumbs-slider .swiper-container', {
-            spaceBetween: 20,
-            direction: 'vertical',
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            slidesPerView: 3,
+            watchOverflow: true,
             watchSlidesVisibility: true,
-            grabCursor: false,
-            loop: false,
-            touchRatio: 0,
+            watchSlidesProgress: true,
+            direction: 'vertical'
         });
 
         productSlider = new Swiper('#shopify-section-product-template .product-slider .main-slider .swiper-container', {
