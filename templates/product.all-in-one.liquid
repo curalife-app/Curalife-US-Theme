@@ -9,7 +9,7 @@
                         
                         <div class="main-slider">
                             <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
-                            <div id="product-main-slider-sc" class="swiper-container">
+                            <div id="product-main-slider-sc" class="swiper">
                                 <div class="swiper-wrapper">
                                     {% for i in (1..5) %}
                                         <div class="swiper-slide">
@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="thumbs-slider">
-                            <div id="product-thumbs-slider-sc" class="swiper-container">
+                            <div id="product-thumbs-slider-sc" class="swiper">
                                 <div class="swiper-wrapper">
                                     {% for i in (1..5) %}
                                         <div class="swiper-slide">
@@ -171,7 +171,7 @@
             <h2>Over 3000 5 Star Reviews</h2>
             <img src="{{ 'product-aio-review-stars-5.png' | asset_url }}" alt="" class="reviews-stars" loading="lazy">
             <div class="prev slider-nav swiper-button-prev"></div>
-            <div class="reviews swiper-container">
+            <div class="reviews swiper">
                 <div class="swiper-wrapper">
                     <div class="review swiper-slide">
                         <div class="review-top">
@@ -241,7 +241,7 @@
     <section class="video-reviews-section">
         <div class="container">
             <h2>Customers Reviews Of CuraLin</h2>
-            <div class="video-reviews swiper-container">
+            <div class="video-reviews swiper">
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -301,7 +301,7 @@
         <div class="container no-padding">
         <h2><b>9 Powerful Ingredients </b>Combined Into One Capsule</h2>
         <div class="ingredients-sliders">
-                <div class="ingredients-thumbs-slider swiper-container">
+                <div class="ingredients-thumbs-slider swiper">
                     <div class="ingredients swiper-wrapper">
                         {% for i in (1..9) %}
                         <div class="ingredient swiper-slide">
@@ -311,7 +311,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="ingredients-main-slider swiper-container">
+                <div class="ingredients-main-slider swiper">
                     <div class="swiper-button-prev swiper-nav"></div>
                     <div class="ingredients swiper-wrapper">
                         <div class="swiper-slide">
@@ -471,7 +471,7 @@
                     <div class="question">How does each ingredient work?</div>
                     <div class="answer">
                         <div class="answer-content">Each ingredient does a little something different to promote health in the 18 key body functions needed for glucose support.</div>
-                        <div class="ingredients-main-slider swiper-container">
+                        <div class="ingredients-main-slider swiper">
                     <div class="swiper-button-prev swiper-nav"></div>
                     <div class="ingredients swiper-wrapper">
                         <div class="swiper-slide">

@@ -114,7 +114,7 @@
                                                     <h2>Related Articles</h2>
                                                 </div>
                                                 <div class="posts-list">
-                                                <div class="swiper-container">
+                                                <div class="swiper">
                                                 <div class="swiper-wrapper">
                                                     {% for article in blog.articles %}
                                                      {% if count <=2 %}
@@ -333,7 +333,7 @@
 {% endjavascript %}
 <style>
     @media screen and (max-width: 760px){
-.related-posts .posts-list .swiper-container .prev-slide.disabled, .related-posts .posts-list .swiper-container .next-slide.disabled {
+.related-posts .posts-list .swiper .prev-slide.disabled, .related-posts .posts-list .swiper .next-slide.disabled {
     opacity: 0.3;
 }
 

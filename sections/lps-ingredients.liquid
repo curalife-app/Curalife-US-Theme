@@ -6,7 +6,7 @@
     <div class="ingredients-sliders">
         <h2>CuraLin’s 9 Ingredients</h2>
         <h3>and mechanisms for supporting healthy glucose & A1C:</h3>
-            <div class="ingredients-thumbs-slider swiper-container">
+            <div class="ingredients-thumbs-slider swiper">
                 <div class="ingredients swiper-wrapper">
                     {% for i in (1..9) %}
                     <div class="ingredient swiper-slide">
@@ -16,7 +16,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="ingredients-main-slider swiper-container">
+            <div class="ingredients-main-slider swiper">
                 <div class="swiper-button-prev swiper-nav"></div>
                 <div class="ingredients swiper-wrapper">
                     <div class="swiper-slide">
@@ -235,7 +235,7 @@
 {% endstyle %}
 
 <script>
-ingredientsThumbsSliderAllInOne = new Swiper('.ingredients-section .ingredients-thumbs-slider.swiper-container', {
+ingredientsThumbsSliderAllInOne = new Swiper('.ingredients-section .ingredients-thumbs-slider.swiper', {
     slidesPerView: 5,
     spaceBetween: 10,
     loop: false,
@@ -251,7 +251,7 @@ ingredientsThumbsSliderAllInOne = new Swiper('.ingredients-section .ingredients-
     }
 });
 
-ingredientsMainSliderAllInOne = new Swiper('.ingredients-section .ingredients-main-slider.swiper-container', {
+ingredientsMainSliderAllInOne = new Swiper('.ingredients-section .ingredients-main-slider.swiper', {
     slidesPerView: 1,
     spaceBetween: 15,
     watchSlidesVisibility: false,

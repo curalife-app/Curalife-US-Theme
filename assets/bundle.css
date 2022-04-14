@@ -2418,7 +2418,7 @@ footer .bottom-info .info-wrap .text p {
   position: relative;
 }
 
-.quote-slider .swiper-container {
+.quote-slider .swiper {
   padding: 10px 0;
   position: unset;
 }
@@ -11999,7 +11999,7 @@ footer .bottom-info .info-wrap .text p {
     border-radius: 50%;
   }
 
-  .ingredients-slider .main-slider .swiper-container {
+  .ingredients-slider .main-slider .swiper {
     padding-bottom: 80px;
   }
 

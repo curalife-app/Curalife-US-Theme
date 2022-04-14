@@ -1,4 +1,4 @@
-const reviewsSlider = new Swiper('.real-reviews .swiper-container', {
+const reviewsSlider = new Swiper('.real-reviews .swiper', {
     slidesPerView: 2,
     spaceBetween: 0,
     grabCursor: true,
@@ -27,7 +27,7 @@ const reviewsSlider = new Swiper('.real-reviews .swiper-container', {
     }
 });
 
-const ingredientsSlider = new Swiper('.ingredients-slider .swiper-container', {
+const ingredientsSlider = new Swiper('.ingredients-slider .swiper', {
     slidesPerView: 1,
     spaceBetween: 15,
     // grabCursor: true,
@@ -44,7 +44,7 @@ const ingredientsSlider = new Swiper('.ingredients-slider .swiper-container', {
     },
 });
 
-const doctorsSlider = new Swiper('.doctors-list .list-slider .swiper-container', {
+const doctorsSlider = new Swiper('.doctors-list .list-slider .swiper', {
     slidesPerView: 1,
     spaceBetween: 8,
     grabCursor: true,
@@ -73,7 +73,7 @@ const doctorsSlider = new Swiper('.doctors-list .list-slider .swiper-container',
     }
 });
 
-const seenSlider = new Swiper('.seen-on .seen-slider .swiper-container', {
+const seenSlider = new Swiper('.seen-on .seen-slider .swiper', {
     slidesPerView: 1,
     spaceBetween: 8,
     grabCursor: true,
@@ -106,7 +106,7 @@ const seenSlider = new Swiper('.seen-on .seen-slider .swiper-container', {
     }
 });
 
-const dqSlider = new Swiper('.doctors-quote .dq-slider .swiper-container', {
+const dqSlider = new Swiper('.doctors-quote .dq-slider .swiper', {
     slidesPerView: 1,
     spaceBetween: 8,
     grabCursor: true,

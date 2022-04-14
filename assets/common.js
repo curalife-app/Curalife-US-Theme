@@ -159,7 +159,7 @@ $(document).ready(function () {
           }
       });
 
-    reviewsSliderAllInOne = new Swiper('.product-template-all-in-one .reviews-section .swiper-container', {
+    reviewsSliderAllInOne = new Swiper('.product-template-all-in-one .reviews-section .swiper', {
         slidesPerView: 'auto',
         spaceBetween: 30,
         watchSlidesVisibility: false,
@@ -181,7 +181,7 @@ $(document).ready(function () {
         }
     });
 
-    videoReviewsSliderAllInOne = new Swiper('.product-template-all-in-one .video-reviews-section .swiper-container', {
+    videoReviewsSliderAllInOne = new Swiper('.product-template-all-in-one .video-reviews-section .swiper', {
         slidesPerView: 'auto',
         spaceBetween: 8,
         centeredSlides: true,
@@ -195,7 +195,7 @@ $(document).ready(function () {
         }
     });
 
-    ingredientsThumbsSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-thumbs-slider.swiper-container', {
+    ingredientsThumbsSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-thumbs-slider.swiper', {
         slidesPerView: 5,
         spaceBetween: 10,
         loop: false,
@@ -211,7 +211,7 @@ $(document).ready(function () {
         }
     });
 
-    ingredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-main-slider.swiper-container', {
+    ingredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-main-slider.swiper', {
         slidesPerView: 1,
         spaceBetween: 15,
         watchSlidesVisibility: false,
@@ -226,7 +226,7 @@ $(document).ready(function () {
         thumbs: {swiper: ingredientsThumbsSliderAllInOne}
     });
 
-    faqIngredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .faq-section .ingredients-main-slider.swiper-container', {
+    faqIngredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .faq-section .ingredients-main-slider.swiper', {
         slidesPerView: 1,
         spaceBetween: 15,
         watchSlidesVisibility: false,
@@ -242,7 +242,7 @@ $(document).ready(function () {
 
 
 
- $(".related-posts .posts-list .swiper-container")
+ $(".related-posts .posts-list .swiper")
  .each(function (index, element) {
         let $this = $(this);
         quoteSlider = new Swiper($this, {
@@ -277,7 +277,7 @@ const aosFadeArrDone = [
     '.intro-wrap .intro-pic',
     '.intro-wrap .text-wrap',
     '.card-slider .slider-title',
-    '.card-slider .swiper-container',
+    '.card-slider .swiper',
     '.discuss-project .title',
     '.discuss-project .link',
     '.company-partners ol li',

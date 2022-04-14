@@ -2964,7 +2964,7 @@
         flex-wrap: wrap;
         margin: 0 -10px;
 
-        .swiper-container {
+        .swiper {
             position: relative;
 
             .swiper-slide {
@@ -11022,7 +11022,7 @@ html {
             }
 
             .posts-list {
-                .swiper-container {
+                .swiper {
                     padding-bottom: 73px;
 
                     .slider-control {
