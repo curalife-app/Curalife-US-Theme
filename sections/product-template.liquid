@@ -118,11 +118,18 @@
         });
 
         productSlider = new Swiper('#shopify-section-product-template .product-slider .main-slider .swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 15,
+            watchOverflow: true,
             watchSlidesVisibility: true,
-            loop: false,
-            slideToClickedSlide: false,
+            watchSlidesProgress: true,
+            preventInteractionOnTransition: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+              fadeEffect: {
+              crossFade: true
+            },
             thumbs: {swiper: productThumbs},
         });
     </script>
