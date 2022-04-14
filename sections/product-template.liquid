@@ -11,7 +11,7 @@
                     </div>
                     <div class="sliders-group">
                         <div class="thumbs-slider">
-                            <div class="swiper">
+                            <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                     {% for image in product.images %}
                                     <div class="swiper-slide">
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="main-slider">
-                            <div class="swiper">
+                            <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                    {% for image in product.images %}
                                     <div class="swiper-slide">
@@ -107,7 +107,7 @@
     </div>
 
     <script>
-        productThumbs = new Swiper('#shopify-section-product-template .product-slider .thumbs-slider .swiper', {
+        productThumbs = new Swiper('.thumbs-slider .swiper-container', {
             spaceBetween: 20,
             direction: 'vertical',
             watchSlidesVisibility: true,
@@ -116,7 +116,7 @@
             touchRatio: 0,
         });
 
-        productSlider = new Swiper('#shopify-section-product-template .product-slider .main-slider .swiper', {
+        productSlider = new Swiper('.main-slider .swiper-container', {
             slidesPerView: 1,
             spaceBetween: 15,
             watchSlidesVisibility: true,
