@@ -88,37 +88,6 @@ function preventDefault(e) {
 let quoteSlider, ingredientSlider, ingredientThumbs, productSlider, productThumbs;
 
 $(document).ready(function () {
-    $(".quote-slider .swiper-container").each(function (index, element) {
-        let $this = $(this);
-        quoteSlider = new Swiper($this, {
-            slidesPerView: 2,
-            spaceBetween: 0,
-            grabCursor: true,
-            loop: true,
-            navigation: {
-                nextEl: $(".next-slide2"),
-                prevEl: $(".prev-slide2"),
-                disabledClass: 'disabled'
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                    // spaceBetween: 15,
-                },
-                630: {
-                    slidesPerView: 2,
-                    centeredSlides: false,
-                    // spaceBetween: 15,
-                },
-                992: {
-                    slidesPerView: 3,
-                    centeredSlides: true,
-                    // spaceBetween: 20,
-                },
-            }
-        });
-    });
-
     ingredientThumbs = new Swiper('.ingredients-slider .thumbs-slider .swiper-container', {
         slidesPerView: 1,
         spaceBetween: 15,
@@ -162,9 +131,6 @@ $(document).ready(function () {
             type: 'bullets',
 		},
     });
-
-
-
 
     productThumbs = new Swiper('#shopify-section-product-template .product-slider .thumbs-slider .swiper-container', {
         slidesPerView: 'auto',
@@ -701,6 +667,3 @@ $(document).ready(function () {
         $(".store-locator").after('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6sLxnYQ-FWAeI8mmJpv2LNinG0u-H5aw&callback=initMap"></script>');
     }
 });
-
-
-
