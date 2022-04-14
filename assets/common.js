@@ -240,33 +240,27 @@ $(document).ready(function () {
         }
     });
 
-
-
- $(".related-posts .posts-list .swiper")
- .each(function (index, element) {
-        let $this = $(this);
-        quoteSlider = new Swiper($this, {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            grabCursor: true,
-            loop: false,
-            navigation: {
-                nextEl: $(".next-slide"),
-                prevEl: $(".prev-slide"),
-                disabledClass: 'disabled'
+    quoteSlider = new Swiper(".related-posts .posts-list .swiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        grabCursor: true,
+        loop: false,
+        navigation: {
+            nextEl: ".next-slide",
+            prevEl: ".prev-slide",
+            disabledClass: 'disabled'
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
             },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                641: {
-                    slidesPerView: 2,
-                },
-                761: {
-                    slidesPerView: 3,
-                }
+            641: {
+                slidesPerView: 2,
+            },
+            761: {
+                slidesPerView: 3,
             }
-        });
+        }
     });
 });
 const aosFadeArrDone = [
@@ -334,8 +328,6 @@ window.onscroll = function () {
 let activeMenu = false;
 
 $(document).ready(function () {
-    // aos_init();
-
     $('.open-modal[data-fancybox]').fancybox({
         closeExisting: true,
         buttons: ['close'],
