@@ -1,4 +1,3 @@
-
 <div class="offset-top spgs">
   <div class="container">
     <div class="white-bg">
@@ -109,6 +108,34 @@
     </div>
   </div>
 </div>
+
+<script>
+  quoteSlider = new Swiper(".quote-slider .swiper", {
+    slidesPerView: 2,
+    spaceBetween: 0,
+    grabCursor: true,
+    autoHeight: true,
+    loop: true,
+    navigation: {
+      nextEl: ".next-slide2",
+      prevEl: ".prev-slide2",
+      disabledClass: 'disabled'
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1
+      },
+      630: {
+        slidesPerView: 2,
+        centeredSlides: false
+      },
+      992: {
+        slidesPerView: 3,
+        centeredSlides: true
+      }
+    }
+  });
+</script>
 
 {% schema %}
 {
