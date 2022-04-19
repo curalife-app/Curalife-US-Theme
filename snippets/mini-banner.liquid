@@ -14,13 +14,6 @@
             <div class="main-title-wrapper">
                 <p class="animate__animated animate__pulse">EASTER</p>
                 <img class="sale animate__animated animate__zoomInRight" src="{{ 'easter-mini-banner-sale.png' | asset_url }}" alt="">
-                <div id="countdown">
-                  <ul>
-                    <li><span id="hours"></span>Hours</li>
-                    <li><span id="minutes"></span>Minutes</li>
-                    <li><span id="seconds"></span>Seconds</li>
-                  </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -127,7 +120,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 30px;
     }
 
     .curalin-banner-easter .content .main-title-wrapper p {
@@ -135,53 +127,30 @@
         font-size: 50px;
         font-weight: bold;
         margin: 0;
+        margin-right: 250px;
         font-family: 'Montserrat', sans-serif;
         letter-spacing: 0.3rem;
         z-index: 2;
     }
 
     .curalin-banner-easter .content .main-title-wrapper img {
+        position: absolute;
+        margin-left: 250px;
         z-index: 2;
         object-fit: contain;
-        padding: 10px;
-        height: 120px;
-        margin-left: -40px;
     }
 
-    #countdown {
-    position: relative;
-    top: -20px;
-    }
-
-    #countdown li {
-    display: inline-block;
-    font-size: 15px;
-    list-style-type: none;
-    text-transform: uppercase;
-    min-width: 110px;
-    }
-
-    #countdown li span {
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    }
-
-    #countdown li:not(:last-child):before {
-    content: ":";
-      display: block;
-      font-size: 33px;
-      position: relative;
-      top: 50px;
-      left: 85px;
+    @media screen and (max-width:1590px) {
+        .curalin-banner-easter .content .main-title-wrapper img {
+            max-height: 9vw;
+            margin-left: 17vw;
+        }
     }
 
     @media screen and (max-width:760px) {
         .curalin-banner-easter .content .main-title-wrapper {
             text-align: center;
             grid-column: 1/1;
-            flex-wrap: wrap;
-            gap: unset;
         }
 
         .curalin-banner-easter .content .main-title-wrapper p {
@@ -230,53 +199,5 @@
             top: -18px;
             width: 42px;
         }
-
-        #countdown {
-            width: 100%;
-            text-align: center;
-            top: -40px;        
-        }
-
-        #countdown li {
-          padding: 20px;
-          font-size: 16px;
-            min-width: 70px;
-        }
-
-        #countdown li span {
-            font-size: 70px;
-        }
-
-        #countdown li:not(:last-child):before {
-            top: 60px;
-            left: 60px;
-        }
     }
 </style>
-
-<script>
-    Number.prototype.pad = function() {
-      return this < 10 ? '0' + this : this;
-    }
-
-    const second = 1000,
-    minute = second * 60,
-    hour = minute * 60;
-
-    let birthday = "April 21, 2022 09:59:00";
-    let countDown = new Date(birthday).getTime();
-    let x = setInterval(function() {    
-      var now = new Date().getTime();
-      var distance = countDown - now;
-
-      document.getElementById("hours").innerText = Math.floor(distance / (hour)).pad(),
-      document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)).pad(),
-      document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second).pad();
-
-      // do something later when date is reached
-      if (distance < 0) {
-          clearInterval(x);
-      }
-    //seconds
-    }, 0)
-</script>
