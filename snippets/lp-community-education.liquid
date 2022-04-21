@@ -1,0 +1,168 @@
+<section class="community-education">
+  <img class="section-badge" src="{{ "lp-community-section-badge-education.png" | asset_url }}" alt="community people">
+  <img class="main-image" src="{{ "lp-community-education-main-image.png" | asset_url }}" alt="community mealplans">
+  <div class="container">
+    <h2>Education To help You Along The Way</h2>
+    <div class="content">
+      <p>More than a community, we put together some of the world’s best free resources and tools to help you maintain healthy blood sugar levels.</p>
+      <p class="options-title">Just check what you want us to send you:</p>
+      <div class="klaviyo-form-URe6FJ"></div>
+      <!-- <form class="sign-form" action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST">
+        <input id="infographic_list_id" type="hidden" name="g" value="{% if shop.url contains 'global' %}Se7Urd{% else %}QQHiGK{% endif %}">
+        <div class="checkbox-option">
+          <input type="checkbox" name="course" id="course">
+          <label for="course">
+            <p class="option-title">Diabetes Crash Course</p>
+            <p>Understand diabetes from the ground up. This is the education we wished our loved ones got when they were diagnosed. We answer it all from "What fruit can I eat? Can I eat out?" And a whole lot more.</p>
+          </label>
+        </div>
+        <div class="checkbox-option">
+          <input type="checkbox" name="newsletter" id="newsletter">
+          <label for="newsletter">
+            <p class="option-title">Weekly Wellness Newsletter</p>
+            <p>You're a part of our community, so we'll send you short weekly emails that keep you up to date on the latest research, and the tastiest recipes!</p>
+          </label>
+        </div>
+        <input type="email" placeholder="Email Address">
+        <button type="submit">Sign me up</button>
+      </form> -->
+      <p id="infographic-description">Understand diabetes from the ground up. This is the education we wished our loved ones got when they were diagnosed. We answer it all from "What fruit can I eat? Can I eat out?" And a whole lot more.</p>
+      <p id="newsletter-description">You're a part of our community, so we'll send you short weekly emails that keep you up to date on the latest research, and the tastiest recipes!</p>
+      <p class="unsubscribe">your data is safe and you can unsubscribe at any time</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function runAfterElementExists(jquery_selector,callback){
+      var checker = window.setInterval(function() {
+      if ($(jquery_selector).length) {
+          clearInterval(checker);
+          callback();
+      }}, 200);
+  }
+
+  runAfterElementExists("[data-testid='klaviyo-form-URe6FJ']", function() {
+    let labels = $("[data-testid='klaviyo-form-URe6FJ'] label");
+    labels[0].append(document.getElementById("infographic-description"));
+    labels[1].append(document.getElementById("newsletter-description"));
+  });
+</script>
+
+<style>
+  .kl-private-reset-css-Xuajs1 {
+    display: inline-block;
+  }
+
+  .kl-private-reset-css-Xuajs1 .klaviyo-form {
+    max-width: 600px !important;
+  }
+
+  .kl-private-reset-css-Xuajs1 .klaviyo-form button {
+    max-width: 400px;
+  }
+
+  .kl-private-reset-css-Xuajs1 label {
+    flex-wrap: wrap;
+  }
+
+  .kl-private-reset-css-Xuajs1 label div {
+    font-size: 30px !important;
+    margin-left: 15px;
+    margin-right: unset !important;
+  }
+
+  .kl-private-reset-css-Xuajs1 label p {
+    margin-left: 43px;
+    margin-top: 10px;
+  }
+
+  .kl-private-reset-css-Xuajs1 label svg:nth-of-type(2) {
+    position: relative !important;
+    margin-left: -28px !important;
+  }
+
+  .klaviyo-form {
+    text-align: left;
+  }
+
+  .community-education .main-image {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    object-fit: contain;
+  }
+
+  .community-education .content {
+    text-align: start;
+    width: 50%;
+  }
+
+  .community-education .content .options-title {
+    font-weight: bold;
+  }
+
+  .community-education .checkbox-option .option-title {
+    font-weight: normal;
+  }
+
+  .community-education .checkbox-option {
+    display: flex;
+  }
+
+  .community-education  .checkbox-option label p {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .community-education input[type=checkbox] {
+    all: unset;
+    -webkit-appearance: auto;
+    transform: scale(2);
+    min-width: 70px;
+    margin-top: 13px;
+  }
+
+  .community-education input[type=email], .community-education button {
+    width: 400px;
+  }
+
+  .community-education form.sign-form {
+    width: 700px;
+  }
+
+  .community-education .unsubscribe {
+    color: #A6A2A2;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 991px) { 
+    .kl-private-reset-css-Xuajs1 label div {
+      font-size: 5.5vw !important;
+      font-weight: bold !important;
+      margin-right: unset !important;
+    }
+
+    .community-education .main-image {
+      display: none;
+    }
+
+    .community-education .content {
+      width: unset;
+    }
+
+    .community-education .checkbox-option label p {
+      width: 75vw;
+    }
+
+    .community-education input[type=email], .community-education button, .community-education form.sign-form {
+      width: 100%;
+    }
+
+    .community-education .unsubscribe {
+      text-align: center;
+      font-size: 3vw;
+    }
+  }
+</style>

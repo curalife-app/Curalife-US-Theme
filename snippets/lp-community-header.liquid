@@ -1,0 +1,68 @@
+<header>
+  <div class="container">
+    <div class="main-toolbar">
+      <div class="main-links d-mobile">
+        <ul>
+          <li><a href="javascript:void(0)" class="open-menu"><i class="icon-menu"></i></a></li>
+        </ul>
+      </div>
+      <div class="main-logo">
+        <img src="{{ 'lp-community-header-logo.png' | asset_url }}" alt="logo">
+      </div>
+      <div class="main-menu">
+        <div class="menu-scroll">
+          <ul>
+          <li><a class="scroller" href="#" goto="food">Food Posts</a></li>
+          <li><a class="scroller" href="#" goto="topics">Top Topics</a></li>
+          <li><a class="scroller" href="#" goto="mealplans">Meal Plans</a></li>
+          <li><a class="scroller" href="#" goto="education">Type 2 Education</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    height: 80px;
+  }
+
+  header:before {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  .main-toolbar {
+    padding: 15px 0;
+  }
+
+  .main-logo img {
+    margin-top: -5px;
+  }
+
+  .main-menu ul li a:hover {
+    color: #475993;
+  }
+
+  @media screen and (max-width: 991px) {
+    header {
+      height: unset;
+    }
+
+    .main-logo {
+      margin-right: 20vw;
+    }
+  }
+</style>
+
+<script>
+  $(".scroller").click(function() {
+    let goto = $(this).attr("goto")
+    $('html, body').animate({
+        scrollTop: $(".community-" + goto).offset().top
+    }, 2000);
+
+    $(".open-menu").trigger("click");
+  });
+</script>
