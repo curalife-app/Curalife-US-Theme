@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{ page_title }}</title>
+
+  <!-- Redirect By Global Or US -->
+  <script src="{{ 'redirect-by-location.js' | asset_url }}" async></script>
+
+  {% render 'meta-tags' %}
+
+  <!-- Stylesheets -->
+  <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'common.css' | asset_url }}"></noscript>
+  <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'styles.css' | asset_url }}"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Swiper Import -->
+  <link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <script src="{{ 'swiper.min.js' | asset_url}}"></script>
+
+  <!-- Script Libraries -->
+  <script src="{{ 'jquery-3.6.0.min.js' | asset_url}}" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="{{ 'libs.js' | asset_url }}" async></script>
+  <script src="{{ 'common.js' | asset_url }}" async></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/js/intlTelInput.min.js" integrity="sha512-Po9nSdYOcWIcoADdRjkAbRYPpR8OHjxzA/3RDUERZcDewTLzRTxbG4bUX7Sr7lVEcO3wTCzphdOBWgNFKVmxaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Swiper Import -->
+  <noscript><link rel="stylesheet" href="{{ 'swiper.min.css' | asset_url }}"></noscript>
+  <script src="{{ 'swiper.min.js' | asset_url}}"></script>
+
+  <!-- Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"></noscript>
+  <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
+  <style>@font-face{font-family:IcoFont;font-weight:400;font-style:Regular;src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),url({{ "icoFont.woff" | asset_url }}) format("woff")}</style>
+
+  <!-- Canonicals -->
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'global.curalife.com' }}" hreflang="en-GB" />
+  {% unless request.path contains 'career-opportunities' %}
+  {% unless request.path contains 'curajob-' %}
+  <link rel="alternate" hreflang="x-default" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" />
+  <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com' }}" hreflang="en-US" />
+  <link rel="alternate" href="{{ canonical_url | replace: shop.domain, 'curalife.com/es' }}" hreflang="es-US" />
+  {% endunless %}
+  {% endunless %}
+
+{% if template contains 'customers' %}
+    {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+{% endif %}
+{{ content_for_header }}  <!-- Header hook for plugins -->
+
+{{ 'option_selection.js' | shopify_asset_url | script_tag }}
+
+{% render 'google-tag-manager'%}
+
+{% render 'fa_translate_core' %}
+
+<!-- Market.UI -->
+<script>
+  window.markerConfig = {
+    destination: '620beca71b400a77dedb3cf1',
+    source: 'snippet'
+  };
+</script>
+<script>
+!function(e,r,a){if(!e.__Marker){e.__Marker={};var t=[],n={__cs:t};["show","hide","isVisible","capture","cancelCapture","unload","reload","isExtensionInstalled","setReporter","setCustomData","on","off"].forEach(function(e){n[e]=function(){var r=Array.prototype.slice.call(arguments);r.unshift(e),t.push(r)}}),e.Marker=n;var s=r.createElement("script");s.async=1,s.src="https://edge.marker.io/latest/shim.js";var i=r.getElementsByTagName("script")[0];i.parentNode.insertBefore(s,i)}}(window,document);
+</script>
+<!-- End Market.UI -->
+</head>
+<body>
+  <main role="main">
+    {{ content_for_layout }}
+  </main>
+
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VQWMYQ"></script>
+
+{% render 'social-login' %}
+  
+<!-- Start of Woopra Code -->
+<script>
+  !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
+
+  woopra.config({
+    domain: "curalife.com",
+    outgoing_tracking: true,
+    download_tracking: true,
+    click_tracking: true
+  });
+
+  {%- if customer -%}
+  woopra.identify({
+    id: {{ customer.id | json }},
+    name: {{ customer.name | json }},
+    email: {{ customer.email | json }},              
+    order_count: {{ customer.orders_count | json }},
+    total_spent: {{ customer.total_spent | json }}
+  });
+  {%- endif -%}
+
+  woopra.track();
+</script>
+<!-- End of Woopra Code -->
+
+  <!--Active Campaign Tracking Code-->
+  <script type="text/javascript">
+    (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
+    vgo('setAccount', '225528743');
+    vgo('setTrackByDefault', true);
+    vgo('process');
+    </script>
+
+    {% render 'wisepops-generated' %}
+</body>
+</html>
