@@ -85,32 +85,7 @@ function preventDefault(e) {
         e.preventDefault();
     }
 }
-let quoteSlider, ingredientSlider, ingredientThumbs, productSlider, productThumbs;
 
-$(document).ready(function () {
-    quoteSlider = new Swiper(".related-posts .posts-list .swiper", {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        grabCursor: true,
-        loop: false,
-        navigation: {
-            nextEl: ".next-slide",
-            prevEl: ".prev-slide",
-            disabledClass: 'disabled'
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-            },
-            641: {
-                slidesPerView: 2,
-            },
-            761: {
-                slidesPerView: 3,
-            }
-        }
-    });
-});
 const aosFadeArrDone = [
     '.main-gallery',
     '.main-thumbs',
