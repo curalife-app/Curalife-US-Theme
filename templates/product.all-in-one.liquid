@@ -926,3 +926,157 @@ body {
     }
 }
 </style>
+
+<script>
+    productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        watchSlidesVisibility: true,
+        grabCursor: true,
+        loop: false,
+        navigation: {
+            nextEl: '#product-thumbs-slider-nav-next',
+            prevEl: '#product-thumbs-slider-nav-prev',
+            disabledClass: 'disabled'
+        },
+        breakpoints: {
+            760: {
+                slidesPerView: 1,
+            },
+            1080: {
+                slidesPerView: 2,
+            },
+            1200: {
+                slidesPerView: 3,
+            },
+            1400: {
+                slidesPerView: 4,
+            }
+        }
+    });
+
+    productSliderAllInOne = new Swiper('#product-main-slider-sc', {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        centeredSlides: true,
+        watchSlidesVisibility: false,
+        loop: false,
+        slideToClickedSlide: true,
+        thumbs: {swiper: productThumbsAllInOne},
+        breakpoints: {
+            0: {
+                pagination: {
+                    el: '.product-slider .swiper-pagination',
+                    clickable: 'true',
+                    type: 'bullets',
+                },
+                navigation: {
+                    nextEl: '#product-main-slider-nav-next',
+                    prevEl: '#product-main-slider-nav-prev',
+                    disabledClass: 'disabled'
+                }
+            },
+            760: {
+                pagination: {},
+                navigation: {}
+            }
+        }
+    });
+
+    productSliderAllInOne.on('slideChange', function () {
+        $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
+      });
+
+      let isFirstClick = true;
+      jQuery(".variant-box").click(function() {
+          if (isFirstClick) {
+              isFirstClick = false;
+          }
+          else {
+              // Slide to Variant Image
+              let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
+              productSliderAllInOne.slideTo(slideIndex);
+          }
+      });
+
+    reviewsSliderAllInOne = new Swiper('.product-template-all-in-one .reviews-section .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        watchSlidesVisibility: false,
+        centeredSlides: true,
+        loop: true,
+        slideToClickedSlide: true,
+        navigation: {
+            nextEl: '.reviews-section .swiper-button-next',
+            prevEl: '.reviews-section .swiper-button-prev',
+            disabledClass: 'disabled'
+        },
+        breakpoints: {
+            760: {
+                slidesPerView: 3,
+            },
+            1200: {
+                slidesPerView: 5,
+            }
+        }
+    });
+
+    videoReviewsSliderAllInOne = new Swiper('.product-template-all-in-one .video-reviews-section .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        centeredSlides: true,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        loop: false,
+        navigation: {
+            nextEl: '.video-reviews-section .swiper-button-next',
+            prevEl: '.video-reviews-section .swiper-button-prev',
+            disabledClass: 'disabled'
+        }
+    });
+
+    ingredientsThumbsSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-thumbs-slider.swiper', {
+        slidesPerView: 5,
+        spaceBetween: 10,
+        loop: false,
+        breakpoints: {
+            760: {
+                slidesPerView: 7,
+                centeredSlides: false,
+            },
+            1200: {
+                slidesPerView: 9,
+                centeredSlides: false,
+            }
+        }
+    });
+
+    ingredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-main-slider.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        watchSlidesVisibility: false,
+        loop: false,
+        autoHeight: true,
+        slideToClickedSlide: true,
+        navigation: {
+            nextEl: '.ingredients-section .swiper-button-next',
+            prevEl: '.ingredients-section .swiper-button-prev',
+            disabledClass: 'disabled'
+        },
+        thumbs: {swiper: ingredientsThumbsSliderAllInOne}
+    });
+
+    faqIngredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .faq-section .ingredients-main-slider.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        watchSlidesVisibility: false,
+        loop: false,
+        autoHeight: true,
+        slideToClickedSlide: true,
+        navigation: {
+            nextEl: '.faq-section .swiper-button-next',
+            prevEl: '.faq-section .swiper-button-prev',
+            disabledClass: 'disabled'
+        }
+    });
+</script>
