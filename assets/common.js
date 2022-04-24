@@ -63,11 +63,7 @@ function preventDefault(e) {
         e.returnValue = false;
         return false;
     }
-    /*if ($(e.target).closest(".chosen-container").length) {
-        e.preventDefault();
-        e.returnValue = false;
-        return false;
-    }*/
+    
     var delta = e.deltaY || e.detail || e.wheelDelta;
     if (e.type == "touchmove") {
         var tob = e.changedTouches[0], // reference first touch point for this event
