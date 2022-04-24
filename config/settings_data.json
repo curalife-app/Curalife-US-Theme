@@ -1099,7 +1099,7 @@
             "settings": {
               "cntsocil_icn": "icon-tw",
               "cntsocil_title": "Twitter",
-              "cntsocil_link": ""
+              "cntsocil_link": "https:\/\/twitter.com\/curalife"
             }
           },
           "ba4286b7-b139-4a09-a29b-75481d028add": {
@@ -1107,7 +1107,7 @@
             "settings": {
               "cntsocil_icn": "icon-yt",
               "cntsocil_title": "Youtube",
-              "cntsocil_link": ""
+              "cntsocil_link": "https:\/\/www.youtube.com\/channel\/UCaiEVA0zN9-Y4bqIkHRAONA"
             }
           },
           "f174b274-02c8-4025-aff4-655de813aea2": {
@@ -1115,7 +1115,7 @@
             "settings": {
               "cntsocil_icn": "icon-inst",
               "cntsocil_title": "Instagram",
-              "cntsocil_link": ""
+              "cntsocil_link": "https:\/\/www.instagram.com\/curalife"
             }
           },
           "a9a1bd34-cbe9-468a-8bcd-491c47aa9a6a": {
@@ -1123,7 +1123,7 @@
             "settings": {
               "cntsocil_icn": "icon-fb",
               "cntsocil_title": "Facebook",
-              "cntsocil_link": ""
+              "cntsocil_link": "https:\/\/www.facebook.com\/curalife\/"
             }
           },
           "fb1827cd-1fd5-4798-9180-a3ed253de34e": {
@@ -1131,7 +1131,7 @@
             "settings": {
               "cntsocil_icn": "icon-in",
               "cntsocil_title": "Linkedin",
-              "cntsocil_link": ""
+              "cntsocil_link": "https:\/\/www.linkedin.com\/company\/curalife-ltd"
             }
           },
           "26211f07-bd4a-40de-ae92-94735dbb4417": {
@@ -1139,7 +1139,7 @@
             "settings": {
               "cntsocil_icn": "icon-vm",
               "cntsocil_title": "Vimeo",
-              "cntsocil_link": ""
+              "cntsocil_link": "https:\/\/vimeo.com\/user33358682"
             }
           }
         },
