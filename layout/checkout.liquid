@@ -2,16 +2,6 @@
 
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
   <head>
-    <!-- liquid CO -->
-          <!-- Global site tag (gtag.js) - Google Analytics 4 YOTAM->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0MV256GM0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F0MV256GM0');
-</script-->
-    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
@@ -21,8 +11,6 @@
     {%- endif -%}
     <title>{{ page_title }}</title>
 
-    
-    
     {{ content_for_header }}
 
     {{ checkout_stylesheets }}
@@ -40,7 +28,7 @@
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 </head>
 <body>  
-    {% for line_item in checkout.line_items %}
+    <!-- {% for line_item in checkout.line_items %}
     {%- assign comma_list_append = ',' -%}
     {%- if forloop.last -%}
     {%- assign comma_list_append = '' -%}
@@ -48,7 +36,7 @@
     {%- assign productIds = productIds | append: line_item.product.id | append: comma_list_append -%}
     {% endfor %}
 
-    {% assign product_ids = productIds | split: "," %}
+    {% assign product_ids = productIds | split: "," %} -->
 
     {{ skip_to_content_link }}
 
