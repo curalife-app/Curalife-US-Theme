@@ -4,7 +4,7 @@
           	{% if section.settings.top-image %}
                 <div class="row">
                     <div class="ingImg">
-                        <img class="img-responsive lazyload" data-src="{{ section.settings.top-image | img_url : 'master' }}">
+                        <img class="img-responsive" src="{{ section.settings.top-image | img_url : 'master' }}" loading="lazy">
                     </div>
                 </div>
           	{% endif %}
@@ -18,7 +18,7 @@
                     <div class="r_capsule">
                       	{% if section.settings.left-image %}
                           <div class="capsule_sec">
-                              <img class="capsule img-responsive lazyload" data-src="{{ section.settings.left-image | img_url : 'master' }}">
+                              <img class="capsule img-responsive" src="{{ section.settings.left-image | img_url : 'master' }}" loading="lazy">
                           </div>
                         {% endif %}
                         <div class="ingredient_slider">
@@ -39,7 +39,7 @@
                                               	{% endif %}
                                               	{% if block.settings.ingredient-image %}
                                                     <div class="ingredient_img">
-                                                        <img class="img-responsive lazyload" data-src="{{ block.settings.ingredient-image | img_url : 'master' }}">
+                                                        <img class="img-responsive" src="{{ block.settings.ingredient-image | img_url : 'master' }}" loading="lazy">
                                                     </div>
                                               	{% endif %}
                                             </div>

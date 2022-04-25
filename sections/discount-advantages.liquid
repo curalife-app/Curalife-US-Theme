@@ -8,7 +8,7 @@
                 {% for block in section.blocks %}
                 <li>
                     <div class="icon-wrap">
-                        <span><img class="lazyload" data-src="{{ block.settings.assets | img_url : 'master' }}" alt=""></span>
+                        <span><img src="{{ block.settings.assets | img_url : 'master' }}" alt="" loading="lazy"></span>
                     </div>
                     <div class="name">
                         <p>{{ block.settings.name }}</p>

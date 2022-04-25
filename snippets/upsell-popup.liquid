@@ -441,8 +441,7 @@
                     <div class="continue-cart">
                         {% if product.id == all_products["curalin"].id %}
                             <figure>
-                                <img class="lazyload" data-src="{{ all_products["curalin-3-pack"].images[0] | product_img_url: 'master' }}"
-                                     class="img-responsive"/>
+                                <img src="{{ all_products["curalin-3-pack"].images[0] | product_img_url: 'master' }}" class="img-responsive" loading="lazy">
                             </figure>
                             <aside>
                  <span>
@@ -461,8 +460,7 @@
 
                         {% elsif product.id == all_products["curalin-3-pack"].id %}
                             <figure>
-                                <img class="lazyload" data-src="{{ all_products["curalin-6-pack"].images[0] | product_img_url: 'master' }}"
-                                     class="img-responsive"/>
+                                <img src="{{ all_products["curalin-6-pack"].images[0] | product_img_url: 'master' }}" class="img-responsive" loading="lazy">
                             </figure>
                             <aside>
                  <span>

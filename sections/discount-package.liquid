@@ -27,17 +27,17 @@
                       {% endunless %}
                     </div>
                     <div class="bg">
-                        <img class="lazyload" data-src="{{ section.settings.img_bg | img_url : 'master' }}" alt="">
+                        <img src="{{ section.settings.img_bg | img_url : 'master' }}" alt="" loading="lazy">
                     </div>
                     <div class="img-list">
                         <span {% if section.settings.default_pack == "6_pack" %}class="active"{% endif %}>
-                            <img class="lazyload" data-src="{{ section.settings.img_6p | img_url : 'master' }}" alt="">
+                            <img src="{{ section.settings.img_6p | img_url : 'master' }}" alt="" loading="lazy">
                         </span>
                         <span {% if section.settings.default_pack == "3_pack" %}class="active"{% endif %}>
-                            <img class="lazyload" data-src="{{ section.settings.img_3p | img_url : 'master' }}" alt="">
+                            <img src="{{ section.settings.img_3p | img_url : 'master' }}" alt="" loading="lazy">
                         </span>
                         <span {% if section.settings.default_pack == "1_pack" %}class="active"{% endif %}>
-                            <img class="lazyload" data-src="{{ section.settings.img_1p | img_url : 'master' }}" alt="">
+                            <img src="{{ section.settings.img_1p | img_url : 'master' }}" alt="" loading="lazy">
                         </span>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
                     <div class="picture">
                         <a href="{{ article.url }}" class="main-link"></a>
                         {% if article.image %}
-                        <img class="lazyload" data-src="{{ article.image | img_url: 'original' }}" alt="">
+                        <img src="{{ article.image | img_url: 'original' }}" alt="" loading="lazy">
                         {% endif %}
                         {% if article.tags.size > 0 %}
                         {% for tag in article.tags %}
@@ -35,11 +35,11 @@
                         <div class="article-author">
                             {% if article.user.image %}
                             <div class="photo">
-                                <img class="lazyload" data-src="{{ article.user.image | img_url: 'master' }}" alt="{{ article.author }}">
+                                <img src="{{ article.user.image | img_url: 'master' }}" alt="{{ article.author }}" loading="lazy">
                             </div>
                             {% else %}
                              <div class="photo">
-                               <img class="lazyload" data-src="{{ section.settings.authr_blgimg | img_url: '' }}" alt="{{ article.author }}">
+                               <img src="{{ section.settings.authr_blgimg | img_url: '' }}" alt="{{ article.author }}" loading="lazy">
                             </div>
                             {% endif %}
                             <div class="details">

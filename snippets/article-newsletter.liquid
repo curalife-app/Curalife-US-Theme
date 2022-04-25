@@ -38,7 +38,7 @@
     </div>
     {% if section.settings.nwslt_img != blank %}
     <div class="img-wrap">
-        <span><img class="lazyload" data-src="{{ section.settings.nwslt_img | img_url: '' }}" alt=""></span> 
+        <span><img src="{{ section.settings.nwslt_img | img_url: '' }}" alt="" loading="lazy"></span> 
     </div>
     {% endif %}
 </div>

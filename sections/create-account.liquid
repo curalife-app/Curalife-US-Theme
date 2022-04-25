@@ -10,7 +10,7 @@
                 {% if section.settings.reg_img != blank %}
                 <div class="picture">
                     <div class="img-wrap">
-                        <img class="lazyload" data-src="{{ section.settings.reg_img | img_url: '' }}" alt="">
+                        <img src="{{ section.settings.reg_img | img_url: '' }}" alt="" loading="lazy">
                     </div>
                 </div>
                 {% endif %}

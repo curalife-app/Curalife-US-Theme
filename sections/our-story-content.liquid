@@ -31,7 +31,7 @@
                    <div class="author">
                        {% if section.settings.dia_img != blank %} 
                        <div class="photo">
-                               <img data-src="{{ section.settings.dia_img | img_url: '' }}" alt="" class="lazyload">
+                               <img src="{{ section.settings.dia_img | img_url: '' }}" alt="" loading="lazy">
                        </div>
                        {% endif %}
                        <div class="info">
@@ -56,7 +56,7 @@
                        <div class="team-item">
                            {%if block.settings.tem_img != blank %}
                            <div class="photo">
-                               <img data-src="{{ block.settings.tem_img | img_url: '' }}" alt="" class="lazyload">
+                               <img src="{{ block.settings.tem_img | img_url: '' }}" alt="" loading="lazy">
                            </div>
                            
                            <div class="info">
@@ -78,14 +78,14 @@
                        <div class="culture-item">
                            {% if section.settings.cmpncltr_icnimg != blank %}
                            <div class="icon-wrap">
-                               <img data-src="{{ section.settings.cmpncltr_icnimg | img_url: '' }}" alt="" class="lazyload">
+                               <img src="{{ section.settings.cmpncltr_icnimg | img_url: '' }}" alt="" loading="lazy">
                            </div>
                            {% endif %}
                            {% if section.settings.cmpncltr_img != blank %}
                            <div class="photo">
                                <picture>
                                    <source srcset="{{ section.settings.cmpncltr_img | img_url: '' }}" media="(min-width: 701px)">
-                                   <img data-src="{{ section.settings.cmpncltr_img | img_url: '' }}" alt="" class="lazyload">
+                                   <img src="{{ section.settings.cmpncltr_img | img_url: '' }}" alt="" loading="lazy">
                                </picture>
                            </div>
                            {% endif %}
@@ -107,7 +107,7 @@
                        <div class="advisory-item">
                            <div class="item-wrap">
                                <div class="photo">
-                                    <img data-src="{{ block.settings.advsr_img | img_url: '' }}" alt="" class="lazyload">
+                                    <img src="{{ block.settings.advsr_img | img_url: '' }}" alt="" loading="lazy">
                                </div>
                                <div class="text">
                                    <h4>{{block.settings.advsr_ontitl}}</h4>

@@ -6,7 +6,7 @@
                         <h1>{{ section.settings.title }}</h1>
                     </div>
                     <div class="mobile-img">
-                        <img class="lazyload" data-src="{{ section.settings.image | img_url : 'master'  }}" alt="">
+                        <img src="{{ section.settings.image | img_url : 'master'  }}" alt="" loading="lazy">
                     </div>
                     <div class="btn-wrap">
                         <a id="" href="#od_now" class="main-btn orange big radius go_tobtn" data-goto="prod_0"><ls-static-362931>ORDER NOW</ls-static-362931></a>
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="img wow fadeInUp">
-                    <img class="lazyload" data-src="{{ section.settings.image | img_url : 'master'  }}" alt="">
+                    <img src="{{ section.settings.image | img_url : 'master'  }}" alt="" loading="lazy">
                 </div>
             </div>
         </div>

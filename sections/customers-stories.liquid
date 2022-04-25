@@ -10,7 +10,7 @@
                         <div class="swiper-slide">
                             <div class="stories-video">
                                 <div class="video-img">
-                                    <img class="lazyload" data-src="{{ block.settings.video_bg | img_url : 'master' }}" alt="">
+                                    <img src="{{ block.settings.video_bg | img_url : 'master' }}" alt="" loading="lazy">
                                 </div>
                                 <div class="play-video" data-src="{{ block.settings.link }}">
                                     <button type="button"><i class="icon-play"></i></button>

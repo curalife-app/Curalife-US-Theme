@@ -1,7 +1,7 @@
 <div class="winning-diabetes">
   {% if section.settings.win_img != blank %}
   <div class="bg-wrap">
-     <img data-src="{{ section.settings.win_img | img_url: '' }}" alt="" class="lazyload">
+     <img src="{{ section.settings.win_img | img_url: '' }}" alt="" loading="lazy">
   </div>
    {% endif %}
   <div class="mini-wrap">
