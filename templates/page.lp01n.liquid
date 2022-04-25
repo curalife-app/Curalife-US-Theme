@@ -682,7 +682,7 @@
                         {% assign item_price = prod.price | divided_by: quantity_by_cents | times: 100 %}
                         {% assign original_item_price = prod.metafields.my_fields.original_item.value.price %}
                         {% assign save_price = original_item_price | minus: item_price | times: quantity %}
-                        {% assign buylink = "https://curalife.com/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
+                        {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
 
                         <div class="card">
                             <div class="top">
@@ -770,8 +770,8 @@
             </div>
             <div class="additional">
                 <p>Use of this website signifies your agreement to the
-                    <a href="https://curalife.com/policies/privacy-policy" target="_blank">Privacy &amp; Cookie Policy</a> and
-                    <a href="https://curalife.com/policies/terms-of-service" target="_blank">Terms &amp; Conditions</a>.</p>
+                    <a href="/policies/privacy-policy" target="_blank">Privacy &amp; Cookie Policy</a> and
+                    <a href="/policies/terms-of-service" target="_blank">Terms &amp; Conditions</a>.</p>
                 <p>*Results can vary and there is no guarantee of specific results. We recommend to always monitor blood
                                                             sugar levels closely. This nutritional supplement is designed to enhance the general health,
                                                             however, it cannot be regarded as means to diagnose, treat, cure or prevent any disease or illness.

@@ -12,7 +12,7 @@
                         {% assign item_price = prod.price | divided_by: quantity_by_cents | times: 100 %}
                         {% assign original_item_price = prod.metafields.my_fields.original_item.value.price %}
                         {% assign save_price = original_item_price | minus: item_price | times: quantity %}
-                        {% assign buylink = "https://global.curalife.com/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
+                        {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
 
                         <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
                             {% if forloop.index == 2 %}
