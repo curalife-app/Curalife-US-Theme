@@ -47,12 +47,9 @@
     {%- endif -%}
     {%- assign productIds = productIds | append: line_item.product.id | append: comma_list_append -%}
     {% endfor %}
-    
+
     {% assign product_ids = productIds | split: "," %}
-    
-      <!-- Curalife Shopify Only Google Tag Manager (noscript) -->
-    {% render 'google-tag-manager-noscript.liquid' %}
-    
+
     {{ skip_to_content_link }}
 
     <header class="banner" data-header role="banner">
@@ -65,7 +62,6 @@
     <div class="yotpo-widget-instance" data-yotpo-instance-id="18962"></div>
     <div class="content" data-content>
       <div class="wrap">
-       
         <div class="main">
           <header class="main__header" role="banner">
             {{ content_for_logo }}
@@ -96,22 +92,23 @@
 
     <style>
       @media only screen and (min-width: 760px) {
-    .tc p {
-      max-width:180px;
-    }
-  }
+        .tc p {
+          max-width:180px;
+        }
+      }
+      
       .btn {
         min-width: 180px;
       }
-      </style>  
-   
+    </style>  
+
   <script>
     let utm_url = '&'
     let utm = location.search.split('utm')
-	window.onload = function () {
+    window.onload = function () {
       for (let i = 1; i < utm.length; i++) {
-  		utm_url += 'utm' + utm[i];
-		}
+        utm_url += 'utm' + utm[i];
+      }
       $("form").each((form) => {
         $(this).attr("action", $(this).attr("action") + utm_url);
       });
