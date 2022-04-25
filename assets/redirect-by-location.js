@@ -22,7 +22,7 @@ if (!isRobot) {
     var req = new XMLHttpRequest;
     req.overrideMimeType("application/json"), req.open("GET", "https://geo.curalife.com/", !0), req.onload = function() {
         var e = JSON.parse(req.responseText);
-        var o = ["KW", "SA", "QA", "OM", "BH", "AE"];
+        var o = ["KW"];
 
         function n() {
             return e.country
@@ -37,6 +37,6 @@ if (!isRobot) {
             window.location.hostname = "curalife.com";
         }
         else if ("AT" == n()) {window.location.hostname = "curalife.at"} // If Austria
-        else if (o.includes(n())) {window.location.hostname = "trycuralife.com"} // If UAE Countries
+        else if (o.includes(n())) {window.location.hostname = "trycuralife.com"} // If Kuwait
     }, req.send(null);
 }
