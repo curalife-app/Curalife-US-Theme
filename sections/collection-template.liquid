@@ -83,7 +83,7 @@
           'products': [{              // list of products added to a cart. Can contain multiple products at the same time
             'name': '{{ product.title }}',      // name of a product that was added to a cart
             'id': '{{ product.id }}',       // id of a product
-            'price': '{{ current_variant.price | money_without_currency }}',      // price of a product
+            // 'price': '{{ current_variant.price | money_without_currency }}',      // price of a product
             'category': 'Simple',
             'variant': '{{ product.first_available_variant.id }}',   // category of a product
             'quantity': 1
