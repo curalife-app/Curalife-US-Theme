@@ -246,7 +246,6 @@ window.dataLayer.push({
 });
 
 // New One
-{% if product.compare_at_price > product.price %} {% assign discount_amount = product.compare_at_price | minus: product.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'view_item',         
