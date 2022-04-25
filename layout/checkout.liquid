@@ -28,6 +28,7 @@
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 </head>
 <body>  
+   <!-- Remove product_ids code after removing old tracking -->
     <!-- {% for line_item in checkout.line_items %}
     {%- assign comma_list_append = ',' -%}
     {%- if forloop.last -%}
@@ -35,7 +36,6 @@
     {%- endif -%}
     {%- assign productIds = productIds | append: line_item.product.id | append: comma_list_append -%}
     {% endfor %}
-
     {% assign product_ids = productIds | split: "," %} -->
 
     {{ skip_to_content_link }}
