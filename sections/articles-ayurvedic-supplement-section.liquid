@@ -17,7 +17,7 @@
 {% endif %}
 <div class="supplements__block">
   {% if section.settings.arrow-image != blank %}
- 	 <img class="lazyload" data-src="{{section.settings.arrow-image | img_url: "master"}}" alt="supplements">
+ 	 <img src="{{section.settings.arrow-image | img_url: "master"}}" alt="supplements" loading="lazy">
   {% endif %}
   {% if section.settings.heading != blank or section.settings.subheading %}
     <div class="outer__supplements">
@@ -35,7 +35,7 @@
     <div class="outer__info--supplements">
     	{{section.settings.content}}
       	{% if section.settings.desc-img %}
-      		<img class="lazyload" data-src="{{ section.settings.desc-img | img_url: "master" }}">
+      		<img src="{{ section.settings.desc-img | img_url: "master" }}" loading="lazy">
       	{% endif %}
     </div>
   {% endif %}
@@ -43,7 +43,7 @@
     <div class="supplements__images">
       {%- for block in section.blocks -%}
       	{% if block.type == 'supplements-images' %}
-       		<img data-src="{{block.settings.sup-image | img_url : "master" }}" class="{% if block.settings.sup-class != blank %}{{ block.settings.sup-class }}{% endif %} lazyload">
+       		<img src="{{block.settings.sup-image | img_url : "master" }}" class="{% if block.settings.sup-class != blank %}{{ block.settings.sup-class }}{% endif %}" loading="lazy">
       	{% endif %}
       {%- endfor -%}
     </div>
@@ -63,7 +63,7 @@
           <div class="elem__compound">
             {% if block.settings.compound-list-image != blank %}
               <div class="image__compound">
-                <img class="lazyload" data-src="{{ block.settings.compound-list-image | img_url: "master" }}" alt="compound">
+                <img src="{{ block.settings.compound-list-image | img_url: "master" }}" alt="compound" loading="lazy">
               </div>
             {% endif %}
             <div class="text__compound">

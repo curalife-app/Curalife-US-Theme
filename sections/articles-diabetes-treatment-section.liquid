@@ -3,22 +3,22 @@
   <div class="head__treatments">
     {% if section.settings.treat-img1 != blank %}
       <div class="treat__image first__image">
-        <img class="lazyload" data-src="{{section.settings.treat-img1 | img_url: "master"}}" alt="floatimage">
+        <img src="{{section.settings.treat-img1 | img_url: "master"}}" alt="floatimage" loading="lazy">
       </div>
     {% endif %}
     {% if section.settings.treat-img2 != blank %}
       <div class="treat__image second__image">
-        <img class="lazyload" data-src="{{section.settings.treat-img2 | img_url: "master"}}" alt="floatimage">
+        <img src="{{section.settings.treat-img2 | img_url: "master"}}" alt="floatimage" loading="lazy">
       </div>
     {% endif %}
     {% if section.settings.treat-img3 != blank %}
       <div class="treat__image third__image">
-        <img class="lazyload" data-src="{{section.settings.treat-img3 | img_url: "master"}}" alt="floatimage">
+        <img src="{{section.settings.treat-img3 | img_url: "master"}}" alt="floatimage" loading="lazy">
       </div>
     {% endif %}
     {% if section.settings.treat-img4 != blank %}
       <div class="treat__image fourth__image">
-        <img class="lazyload" data-src="{{section.settings.treat-img4 | img_url: "master"}}" alt="floatimage">
+        <img src="{{section.settings.treat-img4 | img_url: "master"}}" alt="floatimage" loading="lazy">
       </div>
     {% endif %}
     {% if section.settings.heading != blank %}

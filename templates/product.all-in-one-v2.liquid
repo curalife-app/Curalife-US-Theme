@@ -16,7 +16,7 @@
                       <div class="product-img">
                         <div class="img-wrap">
                           {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
-                          <img data-src="{{ imgUrl | asset_url }}" alt="" class="lazyload">
+                          <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy"v>
                         </div>
                       </div>
                     </div>
@@ -30,7 +30,7 @@
                     <div class="swiper-slide">
                       <div class="product-img">
                         <div class="img-wrap">
-                          <img data-src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" class="lazyload">
+                          <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
                         </div>
                       </div>
                     </div>
@@ -50,7 +50,7 @@
                       <div class="thumbs-img">
                         <div class="img-wrap">
                           {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
-                          <img data-src="{{ imgUrl | asset_url }}" alt="" class="lazyload">
+                          <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
                         </div>
                       </div>
                     </div>
@@ -58,7 +58,7 @@
                   <div class="swiper-slide">
                     <div class="thumbs-img video-thumbnail">
                       <div class="img-wrap">
-                        <img data-src="{{ "product-aio-product-video-thumbnail.png" | asset_url }}" alt="" class="lazyload">
+                        <img src="{{ "product-aio-product-video-thumbnail.png" | asset_url }}" alt="" loading="lazy">
                       </div>                                        
                     </div>
                   </div>
@@ -66,7 +66,7 @@
                     <div class="swiper-slide">
                       <div class="thumbs-img">
                         <div class="img-wrap">
-                          <img data-src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" class="lazyload">
+                          <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
                         </div>
                       </div>
                     </div>
