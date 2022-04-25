@@ -185,7 +185,7 @@ if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window
           'state': '{{checkout.shipping_address.province }}',       //state or province
           'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
           'num_items': '{{ checkout.line_items.size }}'
-         });
+        });
 
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
@@ -225,8 +225,8 @@ if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window
       'state': '{{checkout.shipping_address.province }}',       //state or province
       'zip': '{{checkout.shipping_address.zip }}',          //ZIP or Postal code
       'num_items': '{{ checkout.line_items.size }}'
- });
-   
+});
+
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'add_shipping_info',
