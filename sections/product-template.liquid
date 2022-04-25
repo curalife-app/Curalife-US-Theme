@@ -71,7 +71,7 @@
                 <div class="col-md-12 product-page--submit-action" data-stock-email-enabled="{{ section.settings.show_out_of_stock_email }}">
                   {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
                   <div class="btn">
-                    {% if pick_an_option or current_variant.available %}
+                    {% if current_variant.available %}
                     <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
                     {% else %}
                     <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
