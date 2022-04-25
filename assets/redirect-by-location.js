@@ -24,14 +24,18 @@ if (!isRobot) {
         let country = JSON.parse(req.responseText).country;
         let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
 
+        function redirectTo(url) {
+            window.location.hostname = url;
+        }
+
         if ((host == "USA") && (country != "US" && country != "PR")) { // If US and not US or PR so go Global
-            window.location.hostname = "global.curalife.com";
+            redirectTo("global.curalife.com")
         }
         else if ((host == "Global") && (country === "US" || country === "PR")) // If Global and we are on US or PR so go US
         {
-            window.location.hostname = "curalife.com";
+            redirectTo("curalife.com");
         }
-        else if (country == "AT") {window.location.hostname = "curalife.at"} // If Austria
-        else if (country == "KW") {window.location.hostname = "trycuralife.com"} // If Kuwait
+        else if (country == "AT") {redirectTo("curalife.at")} // If Austria
+        else if (country == "KW") {redirectTo("trycuralife.com")} // If Kuwait
     }, req.send(null);
 }
