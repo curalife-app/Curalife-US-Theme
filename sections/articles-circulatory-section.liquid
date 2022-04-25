@@ -21,7 +21,7 @@
   {% endif %}		
   <div class="circulatory__block">
     {% if section.settings.cir-main-image != blank %}
-   		 <img class="lazyload" data-src="{{section.settings.cir-main-image | img_url: "master"}}" alt="syrup">
+   		 <img src="{{section.settings.cir-main-image | img_url: "master"}}" alt="syrup" loading="lazy">
     {% endif %}
       <div class="outer__circulatory">
         <div class="top__circulatory">
@@ -38,14 +38,14 @@
           </div>
           {% if section.settings.image-right != blank %}
          	<div class="image__circulatory">
-            	<img class="lazyload" data-src="{{ section.settings.image-right | img_url: "master" }}" alt="fullbody">
+            	<img src="{{ section.settings.image-right | img_url: "master" }}" alt="fullbody" loading="lazy">
           	</div>
           {% endif %}
         </div>
         <div class="syrup__block">
           {% if section.settings.image-left != blank %}
          	 <div class="syrup__image">
-            	<img class="lazyload" data-src="{{ section.settings.image-left | img_url: "master" }}" alt="syrup">
+            	<img src="{{ section.settings.image-left | img_url: "master" }}" alt="syrup" loading="lazy">
           	</div>
           {% endif %}
   		  {% if section.settings.desc_right != blank %}	

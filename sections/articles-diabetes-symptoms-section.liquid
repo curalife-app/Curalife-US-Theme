@@ -20,7 +20,7 @@
     	<div class="elem__symptom">
           <div class="symptom__image">
             {% if block.settings.symptoms-image != blank %}
-            	<img class="lazyload" data-src="{{ block.settings.symptoms-image | img_url: "master" }}" alt="symptom-image">
+            	<img src="{{ block.settings.symptoms-image | img_url: "master" }}" alt="symptom-image" loading="lazy">
             {% endif %}
           </div>
           <div class="symptom__text">

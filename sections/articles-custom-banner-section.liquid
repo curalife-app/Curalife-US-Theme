@@ -26,7 +26,7 @@
 			</div>
 			{% if section.settings.banner-image != blank %}
           		<div class="image__diabet">
-              		<img class="lazyload" data-src="{{ section.settings.banner-image | img_url: 'master'}}" alt="mainhero">
+              		<img src="{{ section.settings.banner-image | img_url: 'master'}}" alt="mainhero" loading="lazy">
           		</div>
         	{% endif %}
 		</div>
