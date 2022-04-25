@@ -14,6 +14,10 @@ const detectRobot = (userAgent) => {
     return robots.test(userAgent);
 };
 
+function redirectTo(url) {
+    window.location.hostname = url;
+}
+
 const userAgent = navigator.userAgent;
 const isRobot = detectRobot(userAgent);
 
@@ -23,10 +27,6 @@ if (!isRobot) {
     req.overrideMimeType("application/json"), req.open("GET", "https://geo.curalife.com/", !0), req.onload = function() {
         let country = JSON.parse(req.responseText).country;
         let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
-
-        function redirectTo(url) {
-            window.location.hostname = url;
-        }
 
         if ((host == "USA") && (country != "US" && country != "PR")) { // If US and not US or PR so go Global
             redirectTo("global.curalife.com")
