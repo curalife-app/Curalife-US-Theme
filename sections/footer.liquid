@@ -16,8 +16,8 @@
                         {% if linklists[footer_linklist].links.size > 0 %}
                           <ul>
                             {% for link in linklists[footer_linklist].links %}
-                              <li><a href="{{link.url}}">{{link.title}}</a></li>
-                              {% endfor %}
+                              <li><a href="{{link.url}}"{% if link.url contains 'professionals' or link.url contains 'retail' %} rel="nofollow"{% endif %}>{{link.title}}</a></li>
+                            {% endfor %}
                           </ul>
                           {% endif %}
                           {% endfor %}
