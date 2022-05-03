@@ -35,7 +35,7 @@
 <meta property="og:description" content="{{ page_description | escape }}">
 <meta property="og:title" content="{{ page_title | escape }}" />
 {% if template contains 'article' %}
-<meta property="og:image" content="{{ article.image | img_url: 'original' }}">
+<meta property="og:image" content="https:{{ article.image | img_url: 'original' }}">
 {% else %}
 <meta property="og:image" content="{{ 'meta-thumbnail.png' | asset_url }}" />
 {% endif %}
@@ -46,7 +46,7 @@
 <meta property="twitter:title" content="{{ page_title }}">
 <meta property="twitter:description" content="{{ page_description | escape }}">
 {% if template contains 'article' %}
-<meta property="twitter:image" content="{{ article.image | img_url: 'original' }}">
+<meta property="twitter:image" content="https:{{ article.image | img_url: 'original' }}">
 {% else %}
 <meta property="twitter:image" content="{{ 'meta-thumbnail.png' | asset_url }}" />
 {% endif %}
