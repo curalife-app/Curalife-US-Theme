@@ -30,7 +30,7 @@
 
 <!-- open graph -->
 <meta property="og:site_name" content="CuraLife">
-<meta property="og:url" content="https://curalife.com{{ page.url }}" />
+<meta property="og:url" content="https://curalife.com{{ request.path }}" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="{{ page_description | escape }}">
 <meta property="og:title" content="{{ page_title | escape }}" />
@@ -42,7 +42,7 @@
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://curalife.com{{ page.url }}">
+<meta property="twitter:url" content="https://curalife.com{{ request.path }}">
 <meta property="twitter:title" content="{{ page_title }}">
 <meta property="twitter:description" content="{{ page_description | escape }}">
 {% if template contains 'article' %}
