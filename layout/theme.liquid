@@ -164,5 +164,8 @@
       vgo('setTrackByDefault', true);
       vgo('process');
     </script>
-  {% include 'social-login' %}</body>
+  {% include 'social-login' %}
+{% render 'oneclickupsellapp-theme', oneclickupsellapp: oneclickupsellapp %}
+{% assign oneclickupsellapp = true %}
+</body>
 </html>
