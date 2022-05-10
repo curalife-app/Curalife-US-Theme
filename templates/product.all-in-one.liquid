@@ -6,7 +6,6 @@
       <div class="product-thumbnails">
         <div class="product-slider">
           <div class="sliders-group">
-            
             <div class="main-slider">
               <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
               <div id="product-main-slider-sc" class="swiper">
@@ -30,7 +29,7 @@
                     <div class="swiper-slide">
                       <div class="product-img">
                         <div class="img-wrap">
-                          <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
+                          <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
                         </div>
                       </div>
                     </div>
@@ -66,7 +65,7 @@
                     <div class="swiper-slide">
                       <div class="thumbs-img">
                         <div class="img-wrap">
-                          <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
+                          <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
                         </div>
                       </div>
                     </div>
@@ -238,65 +237,9 @@
       <div class="next slider-nav swiper-button-next"></div>
     </div>
   </section>
-  <section class="video-reviews-section">
-    <div class="container">
-      <h2>Customers Reviews Of CuraLin</h2>
-      <div class="video-reviews swiper">
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="video-review">
-              <div class="review-video">
-                <iframe src="https://player.vimeo.com/video/662207384?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
-              </div>
-              <div class="review-quote">
-                <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-                <p class="quote-content">I now feel that I’m being rewarded for my hard work. I am now a permanent customer. Just give it a try. You’ll be delighted.</p>
-                <p class="quote-author">Jo R.</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="video-review">
-              <div class="review-video">
-                <iframe src="https://player.vimeo.com/video/562754760?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
-              </div>
-              <div class="review-quote">
-                <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-                <p class="quote-content">CuraLin sounded too good to be true. But it works. Oh man, it works.</p>
-                <p class="quote-author">D’Gaye</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="video-review">
-              <div class="review-video">
-                <iframe src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
-              </div>
-              <div class="review-quote">
-                <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-                <p class="quote-content">This is the best product I found for glucose support and I tried them all in the past.</p>
-                <p class="quote-author">Carol S.</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="video-review">
-              <div class="review-video">
-                <iframe src="https://player.vimeo.com/video/562754846?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
-              </div>
-              <div class="review-quote">
-                <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-                <p class="quote-content">The biggest thing that CuraLin has done for me is interrupt my mindset of hopelessness. It’s a wonderful tool in my toolbox.</p>
-                <p class="quote-author">Denise R.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </div>
-  </section>
+  
+  {% section 'lps-video-reviews-2' %}
+
   <section class="ingredients-section">
     <div class="container no-padding">
     <h2><b>9 Powerful Ingredients </b>Combined Into One Capsule</h2>
@@ -534,9 +477,9 @@
                 <div class="ingredient-content">
                   <p class="ingredient-title">Syzygium Cumini</p>
                   <p class="ingredient-description">Also known as Eugenia Jambolana, the active components in Syzygium Cumini supports a healthy physiological function in the liver, creating a reservoir of glucose macromolecules, thereby helping maintain healthy fasting blood glucose levels.</p>
-                </div>
-              </div>
-            </div>
+                </div>	
+              </div>	
+            </div>	
             <div class="swiper-slide">
               <div class="ingredient">
                 <img src="{{ "ingredients-8.png" | asset_url }}" alt="" loading="lazy">
@@ -630,216 +573,203 @@
 </div>
 
 <script>
-// Back To Top Button
-var btn = $('#back-to-top-btn');
+  // Back To Top Button
+  var btn = $('#back-to-top-btn');
 
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 600) {
-  btn.addClass('show');
-  if (screen.width < 760) {
-    $('.helpButton').attr('style', 'bottom: 60px !important');
-  }
-  } else {
-  btn.removeClass('show');
-  if (screen.width < 760) {
-    $('.helpButton').attr('style', 'bottom: 4px !important');
-  }
-  }
-});
-
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
-});
-
-// Check Radio Button on Variant Box Click
-$(".variant-box").click(function() {
-  $(this).find('input[type=radio]').prop('checked', true);
-  $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
-
-  // Save Text Change
-  let saveText = "You Save " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
-  $('#save').animate({'opacity': 0}, 800, function () {
-    $(this).text(saveText);
-  }).animate({'opacity': 1}, 800);
-})
-
-$( document ).ready(function() {
-  $(".variant-box").last().trigger( "click" );
-});
-
-// Buy Button Functionality
-$("#buy-button").click(function() {
-  let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
-  let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
-  let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity;
-  window.location.href = checkoutLink;
-})
-
-// Fade Quotes
-var quotes = $(".quote");
-var quoteIndex = -1;
-
-function showNextQuote() {
-  ++quoteIndex;
-  quotes.eq(quoteIndex % quotes.length)
-  .fadeIn(1000)
-  .delay(2000)
-  .fadeOut(1000, showNextQuote);
-}
-
-// CTA Button Color Change on Hover
-$(function() {
-  $('.main-btn').hover(function() {
-  $('.qty-control').css('border-color', '#AF5B35');
-  }, function() {
-  // on mouseout, reset the background colour
-  $('.qty-control').css('border-color', '#d07c5b');
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 600) {
+      btn.addClass('show');
+      if (screen.width < 760) {
+        $('.helpButton').attr('style', 'bottom: 60px !important');
+      }
+    } 
+    else {
+      btn.removeClass('show');
+      if (screen.width < 760) {
+        $('.helpButton').attr('style', 'bottom: 4px !important');
+      }
+    }
   });
-});
 
-// FAQ
-const accordionItemHeaders = document.querySelectorAll(".question");
-
-accordionItemHeaders.forEach(accordionItemHeader => {
-  accordionItemHeader.addEventListener("click", event => {
-  
-  // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-  
-  // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-  // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
-  //   currentlyActiveAccordionItemHeader.classList.toggle("active");
-  //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-  // }
-
-  accordionItemHeader.classList.toggle("active");
-  const accordionItemBody = accordionItemHeader.nextElementSibling;
-  if(accordionItemHeader.classList.contains("active")) {
-    accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-  }
-  else {
-    accordionItemBody.style.maxHeight = 0;
-  }
-  
+  btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
   });
-});
 
-showNextQuote();
+  // Check Radio Button on Variant Box Click
+  $(".variant-box").click(function() {
+    $(this).find('input[type=radio]').prop('checked', true);
+    $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
+
+    // Save Text Change
+    let saveText = "You Save " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
+    $('#save').animate({'opacity': 0}, 800, function () {
+      $(this).text(saveText);
+    }).animate({'opacity': 1}, 800);
+  })
+
+  $( document ).ready(function() {
+    $(".variant-box").last().trigger( "click" );
+  });
+
+  // Buy Button Functionality
+  $("#buy-button").click(function() {
+    let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
+    let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
+    let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity;
+    window.location.href = checkoutLink;
+  })
+
+  // Fade Quotes
+  var quotes = $(".quote");
+  var quoteIndex = -1;
+
+  function showNextQuote() {
+    ++quoteIndex;
+    quotes.eq(quoteIndex % quotes.length).fadeIn(1000).delay(2000).fadeOut(1000, showNextQuote);
+  }
+
+  // CTA Button Color Change on Hover
+  $(function() {
+    $('.main-btn').hover(function() {
+      $('.qty-control').css('border-color', '#AF5B35');
+    }, function() {
+      // on mouseout, reset the background colour
+      $('.qty-control').css('border-color', '#d07c5b');
+    });
+  });
+
+  // FAQ
+  const accordionItemHeaders = document.querySelectorAll(".question");
+
+  accordionItemHeaders.forEach(accordionItemHeader => {
+    accordionItemHeader.addEventListener("click", event => {
+      accordionItemHeader.classList.toggle("active");
+      const accordionItemBody = accordionItemHeader.nextElementSibling;
+      if(accordionItemHeader.classList.contains("active")) {
+        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+      }
+      else {
+        accordionItemBody.style.maxHeight = 0;
+      }
+    });
+  });
+
+  showNextQuote();
 </script>
 
 <script>
   // Change Quantity Widget On Product Page
   $(document).on("click", ".product-data .qty-control a", function (e) {
-    e.preventDefault();
-    let newVal, $button = $(this),
-      inputObj = $button.closest(".qty-control").find("input"),
-      oldValue = inputObj.val();
-    if ($button.attr('data-act') === "+") {
-      newVal = parseInt(oldValue) + 1;
-    } 
-    else {
-      newVal = parseInt(oldValue) - 1;
-    }
+        e.preventDefault();
+        let newVal, $button = $(this),
+            inputObj = $button.closest(".qty-control").find("input"),
+            oldValue = inputObj.val();
+        if ($button.attr('data-act') === "+") {
+            newVal = parseInt(oldValue) + 1;
+        } 
+        else {
+            newVal = parseInt(oldValue) - 1;
+        }
 
-    inputObj.val(newVal);
+        inputObj.val(newVal);
+    });
+</script>
+
+<script>
+  $(document).on("click", "#buy-button", function() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
+      'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
+        'currencyCode': '{{shop.currency}}',          // the currency which is currently used by a visitor
+        'add': {                        // name of an action. In this case, always stays as add
+          'actionField': {           
+            'list': 'main'          // optional. name of a list from which the product was added to a cart  
+          },       
+          'products': [{              // list of products added to a cart. Can contain multiple products at the same time
+            'name': $('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
+            'id': $('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
+            'price': $('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
+            'category': 'Simple',
+            'variant': '',   // category of a product
+            'quantity': 1
+          }]
+        } 
+      },
+      'userId': '{{ customer.id }}',
+      'email': '{{ customer.email }}',
+      'country': '{{customer.customer_address.country_code }}',
+      'city': '{{customer.customer_address.city }}',
+      'name': '{{ customer.first_name }}',
+      'surname': '{{ customer.last_name }}',
+      'phone_number': '{{customer.phone }}',
+      'state': '{{customer.customer_address.province }}',       //state or province
+      'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+    });
+  });
+
+  $(document).on("click", ".variant-box", function () {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'variant-click', 
+      'label': $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+      'userId': '{{ customer.id }}',
+      'email': '{{ customer.email }}',
+      'country': '{{customer.customer_address.country_code }}',
+      'city': '{{customer.customer_address.city }}',
+      'name': '{{ customer.first_name }}',
+      'surname': '{{ customer.last_name }}',
+      'phone_number': '{{customer.phone }}',
+      'state': '{{customer.customer_address.province }}',       //state or province
+      'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+    });
   });
 </script>
 
 <script>
   $(document).on("click", "#buy-button", function () {
-      window.dataLayer  = window.dataLayer || [];
-      window.dataLayer.push({
-      'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
-      'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
-        'currencyCode': '{{shop.currency}}',          // the currency which is currently used by a visitor
-        'add': {                        // name of an action. In this case, always stays as add
-        'actionField': {           
-        'list': 'main'          // optional. name of a list from which the product was added to a cart  
-      },       
-      'products': [{              // list of products added to a cart. Can contain multiple products at the same time
-        'name': $('input[name=pack]:checked', '#CTAForm').attr('title'),      // name of a product that was added to a cart
-        'id': $('input[name=pack]:checked', '#CTAForm').attr('value'),       // id of a product
-        'price': $('input[name=pack]:checked', '#CTAForm').attr('price').substring(1),      // price of a product
-        'category': 'Simple',
-        'variant': '',   // category of a product
-        'quantity': 1
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'add_to_cart',    
+      ecommerce: {                          
+      items: [{       
+        item_name: '{{ product.title }}',      
+        item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'), 
+        affiliation: '{{ shop.name }}',
+        price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',            
+        item_category: 'CuraLin',         
+        quantity: parseInt($(".qty-control input").val())
       }]
-      } 
-    },
-    'userId': '{{ customer.id }}',
-    'email': '{{ customer.email }}',
-    'country': '{{customer.customer_address.country_code }}',
-    'city': '{{customer.customer_address.city }}',
-    'name': '{{ customer.first_name }}',
-    'surname': '{{ customer.last_name }}',
-    'phone_number': '{{customer.phone }}',
-    'state': '{{customer.customer_address.province }}',       //state or province
-    'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+      },
+      user_email: '{{ customer.email }}',
+      user_phone: '{{ customer.phone }}',
+      user_first_name: '{{ customer.first_name }}',
+      user_last_name: '{{ customer.last_name }}',
+      user_city: '{{ customer.customer_address.city }}',
+      user_state: '{{ customer.customer_address.province }}',
+      user_zip: '{{ customer.customer_address.zip }}',
+      user_country: '{{customer.customer_address.country_code | t}}',
+      user_agent: navigator.userAgent
     });
   });
 
-  $(document).on("click", ".variant-box", function () {
-      window.dataLayer  = window.dataLayer || [];
-      window.dataLayer.push({
-      'event': 'variant-click', 
-      'label': $('input[name=pack]:checked', '#CTAForm').attr('sku'),
-    'userId': '{{ customer.id }}',
-    'email': '{{ customer.email }}',
-    'country': '{{customer.customer_address.country_code }}',
-    'city': '{{customer.customer_address.city }}',
-    'name': '{{ customer.first_name }}',
-    'surname': '{{ customer.last_name }}',
-    'phone_number': '{{customer.phone }}',
-    'state': '{{customer.customer_address.province }}',       //state or province
-    'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
-    });
-  });
-</script>
-
-<script>
-    $(document).on("click", "#buy-button", function () {
-   window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'add_to_cart',    
-  ecommerce: {                          
-  items: [{       
-    item_name: '{{ product.title }}',      
-    item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'), 
-    affiliation: '{{ shop.name }}',
-    price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
-    currency: '{{ shop.currency }}',
-    item_brand: 'CuraLife',            
-    item_category: 'CuraLin',         
-    quantity: parseInt($(".qty-control input").val())
-  }]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
-    });
-
-    window.dataLayer  = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
   'event': 'eec.productDetail',  // name of an event. In this case, always stays as eec.productDetail
   'ecommerce': {                      // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
     'currencyCode': '{{shop.currency}}',           
     'detail': { // name of an action. In this case, always stays as detail
       'products': [{
-      'name': '{{product.title}}',      // name of a product that is currently viewed. Always include it.
-      'id': '{{ product.id }}',           // id of a product. Always include it.
-      'price': '{{ product.price | t }}',          // price of a product
-      'category': 'Simple',      // category of a product
-      'variant': '{{ product.selected_variant.id }}'         // product variant.
-       }]
-     }
+        'name': '{{product.title}}',      // name of a product that is currently viewed. Always include it.
+        'id': '{{ product.id }}',           // id of a product. Always include it.
+        'price': '{{ product.price | t }}',          // price of a product
+        'category': 'Simple',      // category of a product
+        'variant': '{{ product.selected_variant.id }}'         // product variant.
+      }]
+    }
   },
   'userId': '{{ customer.id }}',
   'email': '{{ customer.email }}',
@@ -852,38 +782,37 @@ window.dataLayer.push({
   'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code         
 });
 
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'view_item',         
-  ecommerce: {                          
-  items: [{        
-    item_name: '{{ product.title }}',      
-    item_id: '{{ product.title }}', 
-    affiliation: '{{ shop.name }}',
-    price: '',
-    currency: '{{ shop.currency }}',
-    item_brand: 'CuraLife',            
-    item_category: 'CuraLin',         
-    quantity: 1
-  }]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'view_item',         
+    ecommerce: {                          
+      items: [{        
+        item_name: '{{ product.title }}',      
+        item_id: '{{ product.title }}', 
+        affiliation: '{{ shop.name }}',
+        price: '',
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',            
+        item_category: 'CuraLin',         
+        quantity: 1
+      }]
+    },
+    user_email: '{{ customer.email }}',
+    user_phone: '{{ customer.phone }}',
+    user_first_name: '{{ customer.first_name }}',
+    user_last_name: '{{ customer.last_name }}',
+    user_city: '{{ customer.customer_address.city }}',
+    user_state: '{{ customer.customer_address.province }}',
+    user_zip: '{{ customer.customer_address.zip }}',
+    user_country: '{{customer.customer_address.country_code | t}}',
+    user_agent: navigator.userAgent
+  });
 </script>
 
 <style>
-body {
-  padding-top: 0 !important;
-}
+  body {
+    padding-top: 0 !important;
+  }
 
 @media screen and (max-width: 760px) {
   .grecaptcha-badge {
@@ -929,154 +858,140 @@ body {
 
 <script>
   productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
-    slidesPerView: 4,
-    spaceBetween: 10,
-    watchSlidesVisibility: true,
-    grabCursor: true,
-    loop: false,
-    navigation: {
-      nextEl: '#product-thumbs-slider-nav-next',
-      prevEl: '#product-thumbs-slider-nav-prev',
-      disabledClass: 'disabled'
-    },
-    breakpoints: {
-      760: {
-        slidesPerView: 1,
+      slidesPerView: 4,
+      spaceBetween: 10,
+      watchSlidesVisibility: true,
+      grabCursor: true,
+      loop: false,
+      navigation: {
+          nextEl: '#product-thumbs-slider-nav-next',
+          prevEl: '#product-thumbs-slider-nav-prev',
+          disabledClass: 'disabled'
       },
-      1080: {
-        slidesPerView: 2,
-      },
-      1200: {
-        slidesPerView: 3,
-      },
-      1400: {
-        slidesPerView: 4,
+      breakpoints: {
+          760: {
+              slidesPerView: 1,
+          },
+          1080: {
+              slidesPerView: 2,
+          },
+          1200: {
+              slidesPerView: 3,
+          },
+          1400: {
+              slidesPerView: 4,
+          }
       }
-    }
   });
 
   productSliderAllInOne = new Swiper('#product-main-slider-sc', {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    centeredSlides: true,
-    watchSlidesVisibility: false,
-    loop: false,
-    slideToClickedSlide: true,
-    thumbs: {swiper: productThumbsAllInOne},
-    breakpoints: {
-      0: {
-        pagination: {
-          el: '.product-slider .swiper-pagination',
-          clickable: 'true',
-          type: 'bullets',
-        },
-        navigation: {
-          nextEl: '#product-main-slider-nav-next',
-          prevEl: '#product-main-slider-nav-prev',
-          disabledClass: 'disabled'
-        }
-      },
-      760: {
-        pagination: {},
-        navigation: {}
+      slidesPerView: 1,
+      spaceBetween: 15,
+      centeredSlides: true,
+      watchSlidesVisibility: false,
+      loop: false,
+      slideToClickedSlide: true,
+      thumbs: {swiper: productThumbsAllInOne},
+      breakpoints: {
+          0: {
+              pagination: {
+                  el: '.product-slider .swiper-pagination',
+                  clickable: 'true',
+                  type: 'bullets',
+              },
+              navigation: {
+                  nextEl: '#product-main-slider-nav-next',
+                  prevEl: '#product-main-slider-nav-prev',
+                  disabledClass: 'disabled'
+              }
+          },
+          760: {
+              pagination: {},
+              navigation: {}
+          }
       }
-    }
   });
 
   productSliderAllInOne.on('slideChange', function () {
-    $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
+      $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
     });
 
     let isFirstClick = true;
     jQuery(".variant-box").click(function() {
-      if (isFirstClick) {
-        isFirstClick = false;
-      }
-      else {
-        // Slide to Variant Image
-        let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
-        productSliderAllInOne.slideTo(slideIndex);
-      }
+        if (isFirstClick) {
+            isFirstClick = false;
+        }
+        else {
+            // Slide to Variant Image
+            let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
+            productSliderAllInOne.slideTo(slideIndex);
+        }
     });
 
   reviewsSliderAllInOne = new Swiper('.product-template-all-in-one .reviews-section .swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    watchSlidesVisibility: false,
-    centeredSlides: true,
-    loop: true,
-    slideToClickedSlide: true,
-    navigation: {
-      nextEl: '.reviews-section .swiper-button-next',
-      prevEl: '.reviews-section .swiper-button-prev',
-      disabledClass: 'disabled'
-    },
-    breakpoints: {
-      760: {
-        slidesPerView: 3,
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      watchSlidesVisibility: false,
+      centeredSlides: true,
+      loop: true,
+      slideToClickedSlide: true,
+      navigation: {
+          nextEl: '.reviews-section .swiper-button-next',
+          prevEl: '.reviews-section .swiper-button-prev',
+          disabledClass: 'disabled'
       },
-      1200: {
-        slidesPerView: 5,
+      breakpoints: {
+          760: {
+              slidesPerView: 3,
+          },
+          1200: {
+              slidesPerView: 5,
+          }
       }
-    }
-  });
-
-  videoReviewsSliderAllInOne = new Swiper('.product-template-all-in-one .video-reviews-section .swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 8,
-    centeredSlides: true,
-    grabCursor: true,
-    slideToClickedSlide: true,
-    loop: false,
-    navigation: {
-      nextEl: '.video-reviews-section .swiper-button-next',
-      prevEl: '.video-reviews-section .swiper-button-prev',
-      disabledClass: 'disabled'
-    }
   });
 
   ingredientsThumbsSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-thumbs-slider.swiper', {
-    slidesPerView: 5,
-    spaceBetween: 10,
-    loop: false,
-    breakpoints: {
-      760: {
-        slidesPerView: 7,
-        centeredSlides: false,
-      },
-      1200: {
-        slidesPerView: 9,
-        centeredSlides: false,
+      slidesPerView: 5,
+      spaceBetween: 10,
+      loop: false,
+      breakpoints: {
+          760: {
+              slidesPerView: 7,
+              centeredSlides: false,
+          },
+          1200: {
+              slidesPerView: 9,
+              centeredSlides: false,
+          }
       }
-    }
   });
 
   ingredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-main-slider.swiper', {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    watchSlidesVisibility: false,
-    loop: false,
-    autoHeight: true,
-    slideToClickedSlide: true,
-    navigation: {
-      nextEl: '.ingredients-section .swiper-button-next',
-      prevEl: '.ingredients-section .swiper-button-prev',
-      disabledClass: 'disabled'
-    },
-    thumbs: {swiper: ingredientsThumbsSliderAllInOne}
+      slidesPerView: 1,
+      spaceBetween: 15,
+      watchSlidesVisibility: false,
+      loop: false,
+      autoHeight: true,
+      slideToClickedSlide: true,
+      navigation: {
+          nextEl: '.ingredients-section .swiper-button-next',
+          prevEl: '.ingredients-section .swiper-button-prev',
+          disabledClass: 'disabled'
+      },
+      thumbs: {swiper: ingredientsThumbsSliderAllInOne}
   });
 
   faqIngredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .faq-section .ingredients-main-slider.swiper', {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    watchSlidesVisibility: false,
-    loop: false,
-    autoHeight: true,
-    slideToClickedSlide: true,
-    navigation: {
-      nextEl: '.faq-section .swiper-button-next',
-      prevEl: '.faq-section .swiper-button-prev',
-      disabledClass: 'disabled'
-    }
+      slidesPerView: 1,
+      spaceBetween: 15,
+      watchSlidesVisibility: false,
+      loop: false,
+      autoHeight: true,
+      slideToClickedSlide: true,
+      navigation: {
+          nextEl: '.faq-section .swiper-button-next',
+          prevEl: '.faq-section .swiper-button-prev',
+          disabledClass: 'disabled'
+      }
   });
 </script>
