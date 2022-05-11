@@ -237,113 +237,10 @@
       <div class="next slider-nav swiper-button-next"></div>
     </div>
   </section>
-  
-  {% section 'lps-video-reviews-2' %}
 
-  <section class="ingredients-section">
-    <div class="container no-padding">
-    <h2><b>9 Powerful Ingredients </b>Combined Into One Capsule</h2>
-    <div class="ingredients-sliders">
-        <div class="ingredients-thumbs-slider swiper">
-          <div class="ingredients swiper-wrapper">
-            {% for i in (1..9) %}
-            <div class="ingredient swiper-slide">
-              {% assign imgUrl = "ingredients-" | append: i | append: ".png" %}
-              <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-        <div class="ingredients-main-slider swiper">
-          <div class="swiper-button-prev swiper-nav"></div>
-          <div class="ingredients swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-1.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Tumeric</p>
-                  <p class="ingredient-description">Is a widely used traditional root for blood glucose support. It contains curcumin which promotes healthy blood glucose levels and tolerance to pancreas signals. It also supports the immune system.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-2.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Swertia Chirata</p>
-                  <p class="ingredient-description">Is a beautiful, purple flower that contains active compounds that promote cellular glucose metabolism, support the release of secretions from the pancreas, and keep a healthy rate of glucose absorption in the digestive system.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-3.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Bitter Melon</p>
-                  <p class="ingredient-description">Is traditionally used to support glucose metabolic sensitivity and healthy pancreatic function.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-4.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Cinnamomum Zeylanicum</p>
-                  <p class="ingredient-description">Promotes healthy pancreas signal sensitivity & release and helps maintain healthy fasting glucose and A1c levels. Cinnamon also supports healthy weight loss and a healthy feeling nervous system.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-5.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Picrorhiza Kurroa</p>
-                  <p class="ingredient-description">Is a stem from the Himalayas that helps the liver’s management of toxins, and supports proper function, which in turn helps to promote glucose metabolism and natural weight management.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-6.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Amla</p>
-                  <p class="ingredient-description">Is rich in tannins, which support the pancreas and promote the healthy function of damaged cells.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-7.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Syzygium Cumini</p>
-                  <p class="ingredient-description">Is a popular supplement in Ayurveda and traditional Chinese medicine for people seeking glucose support. It contains active compounds that support normal liver function and normal glucose levels.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-8.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Fenugreek</p>
-                  <p class="ingredient-description">Is rich in special fibers that support pancreas signal production, release and usage. It also maintains a healthy rate of carbohydrate absorption in the digestive system!</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-9.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Gymnema Sylvestre</p>
-                  <p class="ingredient-description">Cuts through carb cravings! This plant is also known as “gurmar”, a meaning “sugar destroyer”. It contains molecules similar in shape to glucose, so they fill sugar receptors on the taste buds, reducing cravings and keeping carbohydrate absorption to a healthy rate.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-button-next swiper-nav"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% render 'lps-video-reviews-2', maintitle: 'Customers Reviews Of CuraLin' %}
+  {% render 'lps-ingredients-slider', maintitle: '<b>9 Powerful Ingredients </b>Combined Into One Capsule'%}
+
   <section class="badges-section">
     <div class="container">
       <div class="badges">
@@ -814,6 +711,15 @@
     padding-top: 0 !important;
   }
 
+  .ingredients-section {
+      background-color: #f0f0f0;
+  }
+
+  .ingredients-section h2 {
+      max-width: 600px;
+      font-weight: 400;
+  }
+
 @media screen and (max-width: 760px) {
   .grecaptcha-badge {
     display: none !important;
@@ -852,6 +758,10 @@
 
   .embeddedServiceHelpButton .helpButton .uiButton:focus {
     outline: unset !important;
+  }
+
+  .ingredients-section {
+      background-color: unset;
   }
 }
 </style>
@@ -948,37 +858,6 @@
               slidesPerView: 5,
           }
       }
-  });
-
-  ingredientsThumbsSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-thumbs-slider.swiper', {
-      slidesPerView: 5,
-      spaceBetween: 10,
-      loop: false,
-      breakpoints: {
-          760: {
-              slidesPerView: 7,
-              centeredSlides: false,
-          },
-          1200: {
-              slidesPerView: 9,
-              centeredSlides: false,
-          }
-      }
-  });
-
-  ingredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .ingredients-section .ingredients-main-slider.swiper', {
-      slidesPerView: 1,
-      spaceBetween: 15,
-      watchSlidesVisibility: false,
-      loop: false,
-      autoHeight: true,
-      slideToClickedSlide: true,
-      navigation: {
-          nextEl: '.ingredients-section .swiper-button-next',
-          prevEl: '.ingredients-section .swiper-button-prev',
-          disabledClass: 'disabled'
-      },
-      thumbs: {swiper: ingredientsThumbsSliderAllInOne}
   });
 
   faqIngredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .faq-section .ingredients-main-slider.swiper', {
