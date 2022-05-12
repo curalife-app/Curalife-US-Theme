@@ -4,7 +4,7 @@
     <title>{{ page_title }}</title>
     <!-- Redirect By Global Or US -->
     <script src="{{ 'redirect-by-location.js' | asset_url }}" async></script>
-    
+    {% render 'redirects' %}
     {% render 'meta-tags'%}
     {% render 'canonicals' %}
 
@@ -164,8 +164,5 @@
       vgo('setTrackByDefault', true);
       vgo('process');
     </script>
-  {% include 'social-login' %}
-{% render 'oneclickupsellapp-theme', oneclickupsellapp: oneclickupsellapp %}
-{% assign oneclickupsellapp = true %}
-</body>
+  </body>
 </html>
