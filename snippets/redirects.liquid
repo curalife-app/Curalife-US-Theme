@@ -1,0 +1,9 @@
+<script>
+    function redirectToRelative(relative_path, new_relativePath) {
+        if (window.location.pathname == relative_path) {
+            window.location.replace(new_relativePath);
+        }
+    }
+
+    redirectToRelative("/collections", "/collections/all");
+</script>
