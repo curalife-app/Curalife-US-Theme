@@ -133,6 +133,9 @@
             <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/>
             <div class="submit-wrap">
               <div class="btn">
+                <form action="" method="post" novalidate class="cart table-wrap" id="cartform" data-wetheme-section-type="template--cart" data-wetheme-section-id="{{ section.id }}">
+                  <input id="cart_submit" type="submit" value="Shop Now" name="checkout" class="main-btn">Shop Now</input>
+                </form>
                 <button class="main-btn" id="buy-button">Shop Now</button>
               </div>
             </div>
@@ -667,7 +670,7 @@ $( document ).ready(function() {
 $("#buy-button").click(function() {
   let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
   let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
-  let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + 1 + "?channel=buy_button";
+  let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + 1;
   window.location.href = checkoutLink;
 })
 
