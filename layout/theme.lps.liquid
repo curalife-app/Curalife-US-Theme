@@ -94,43 +94,9 @@
     {{ content_for_layout }}
   </main>
 
-  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XWfxAu"></script>
-
-{% render 'social-login' %}
-  
-<!-- Start of Woopra Code -->
-<script>
-  !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
-
-  woopra.config({
-    domain: "curalife.com",
-    outgoing_tracking: true,
-    download_tracking: true,
-    click_tracking: true
-  });
-
-  {%- if customer -%}
-  woopra.identify({
-    id: {{ customer.id | json }},
-    name: {{ customer.name | json }},
-    email: {{ customer.email | json }},              
-    order_count: {{ customer.orders_count | json }},
-    total_spent: {{ customer.total_spent | json }}
-  });
-  {%- endif -%}
-
-  woopra.track();
-</script>
-<!-- End of Woopra Code -->
-
-  <!--Active Campaign Tracking Code-->
-  <script type="text/javascript">
-    (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
-    vgo('setAccount', '225528743');
-    vgo('setTrackByDefault', true);
-    vgo('process');
-    </script>
-
-    {% render 'wisepops-generated' %}
+  {% render 'layout.footer.pass-url-params-script' %}
+  {% render 'layout.footer.woopra-snippet' %}
+  {% render 'layout.footer.ac-snippet' %}
+  {% render 'wisepops-generated' %}
 </body>
 </html>
