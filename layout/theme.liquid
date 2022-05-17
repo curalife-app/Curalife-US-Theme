@@ -47,7 +47,13 @@
   </head>
 
   <body>
-    {% section 'header'%}
+    <!-- TODO: make another solution for removing header from curalin-pack page -->
+    {% unless request.path contains 'curalin-pack' %}
+    {% unless request.path contains 'curalin_pack' %}
+      {% section 'header'%}
+    {% endunless %}
+    {% endunless %}
+    
     <main role="main">{{ content_for_layout }}</main>
     {% section 'footer'%}
 
