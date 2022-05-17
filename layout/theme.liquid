@@ -47,17 +47,9 @@
   </head>
 
   <body>
-    <!-- TODO: make another solution for removing header from curalin-pack page -->
-    {% unless request.path contains 'curalin-pack' %}
-    {% unless request.path contains 'curalin_pack' %}
-      {% section 'header'%}
-    {% endunless %}
-    {% endunless %}
-
-    <main role="main">
-      {{ content_for_layout }}
-      {% section 'footer'%}
-    </main>
+    {% section 'header'%}
+    <main role="main">{{ content_for_layout }}</main>
+    {% section 'footer'%}
 
     {% render 'layout.footer.cart-functionality-scripts' %}
     {% render 'layout.footer.pass-url-params-script' %}
