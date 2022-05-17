@@ -53,12 +53,11 @@
       {% section 'header'%}
     {% endunless %}
     {% endunless %}
-    
+
     <main role="main">{{ content_for_layout }}</main>
     {% section 'footer'%}
 
     {% render 'layout.footer.cart-functionality-scripts' %}
-    {% render 'layout.footer.pass-url-params-script' %}
     {% render 'layout.footer.woopra-snippet' %}
     {% render 'layout.footer.ac-snippet' %}
     {% render 'wisepops-generated' %}
