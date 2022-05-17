@@ -238,7 +238,7 @@
   </script>
   <!-- End VWO Async SmartCode -->
 
-  {% render 'google-tag-manager'%}
+  {% render 'layout.head.google-tag-manager'%}
 
   <!-- anti-flicker snippet (recommended)  -->
   <style>
@@ -271,9 +271,6 @@
 </head>
 
 <body>
-
-  {% render 'google-tag-manager-noscript'%}
-
   <main role="main">
     {{ content_for_layout }}
   </main>
