@@ -27,14 +27,11 @@
 
   
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
-
-  {% render 'shogun-head' %}
 </head>
 <body>
 
  
-{% render 'google-tag-manager'%}
-{% render 'google-tag-manager-noscript'%}
+{% render 'layout.head.google-tag-manager'%}
 {% render 'hot-jar'%}
   <main role="main">
     {{ content_for_layout }}
