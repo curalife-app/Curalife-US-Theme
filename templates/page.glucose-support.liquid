@@ -16,7 +16,6 @@
     // Wisepop Event!
     $(document).ready(function () {
         runAfterElementExists(".yotpo-copy-code-icon", function () {
-            wisepops("event", "ref-code-received");
             wisepops('properties', {rafCodeReceived: true});
             wisepops("pageview");
         })
