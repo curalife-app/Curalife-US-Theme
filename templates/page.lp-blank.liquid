@@ -1,15 +1,57 @@
 {% layout 'theme.lps' %}
-<div class="big-img">
-  <img src="{{ 'lp-blank-logo-colored.png' | asset_url }}" alt="chef icon" loading="lazy">
-</div>
+<section class="nav">
+  <div class="container">
+    <div class="big-img">
+      <img src="{{ 'logo-black.png' | asset_url }}" alt="chef icon" loading="lazy">
+    </div>
+    <div class="small-img">
+      <img src="{{ 'logo-black-small.png' | asset_url }}" alt="chef icon" loading="lazy">
+    </div>
+  </div>
+</section>
+
+
+
+
 <div style="text-align: center;">{{ page.content }}</div>
 
 
 
 <style>
-  .big-img{
-    justify-content: center;
-    text-align: center;
-    padding: 0 5% 5%;
+  body {
+    padding-top: 0;
   }
+
+
+  .big-img {
+    padding: 25px 0;
+  }
+
+  .small-img {
+    display: none;
+  }
+
+
+
+
+
+  @media (max-width: 1000px) {
+    .container {
+      padding: 0 15px;
+    }
+
+
+    .big-img {
+      display: none;
+    }
+
+    .small-img {
+      display: block;
+      padding: 10px 0;
+    }
+
+   
+  }
+
+  
 </style>
