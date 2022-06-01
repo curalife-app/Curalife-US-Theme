@@ -33,7 +33,7 @@
             }
         }
     }
-    
+
     if (!$(".hero-section .brand-welcome-text .v3").length) {
         let typed = new Typed('.hero-section .brand-welcome-text span', {
             strings: ["sleep well", "eat well", "feel energetic", "stay romantic", "stay healthy"],
@@ -120,7 +120,7 @@
             });
         }
 
-        if (document.querySelector('.real-changes').getBoundingClientRect().top < -(document.querySelector('.life-changes .survey-button .btn-cta').getBoundingClientRect().height / 2) &&
+        if ((document.querySelector('.real-changes').getBoundingClientRect().top < -(document.querySelector('.life-changes .survey-button .btn-cta').getBoundingClientRect().height / 2) || document.querySelector('.body-formula').getBoundingClientRect().top < -(document.querySelector('.life-changes .survey-button .btn-cta').getBoundingClientRect().height / 2)) &&
             window.innerHeight < document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().top) {
             document.querySelector('.floating-cta').classList.add('show');
             // btn.addClass('hide');
