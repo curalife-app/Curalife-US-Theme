@@ -1,143 +1,76 @@
-<div class="gray-bg offset-top bottom-line">
-    <div class="container">
-        <div class="white-bg">
-            <div class="mini-wrap">
-                <div class="refer-friend">
-                    {% if section.settings.refr_img != blank %}
-                    <div class="img-wrap">
-                        <img src="{{ section.settings.refr_img | img_url: '' }}" alt="" loading="lazy"v>
-                    </div>
-                     {% endif %}
-                    <div class="intro-text">
-                        <div class="sub-title">
-                            <h2>{{section.settings.refr_titl}}</h2>
-                            <p>{{section.settings.refr_desc}}</p>
-                        </div>
-                        <div class="btn">
-                            <a href="{{section.settings.refr_btnlink}}" class="main-btn">{{section.settings.refr_btntitl}}</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="white-bg top-border">
-            <div class="mini-wrap">
-                <div class="subscribe-section">
-    <div class="text-wrap">
-        <div class="intro-text">
+<div class="offset-top">
+  <div class="container">
+    <div class="white-bg">
+      <div class="mini-wrap">
+        <div class="refer-friend">
+          {% if section.settings.refr_img != blank %}
+          <div class="img-wrap">
+            <img src="{{ section.settings.refr_img | image_url }}" alt="" width="472" height="auto" loading="lazy">
+          </div>
+            {% endif %}
+          <div class="intro-text">
             <div class="sub-title">
-                <h2>{{section.settings.nwsltr_titl}}</h2>
-                <p>{{section.settings.nwsltr_desc}}</p>
+              <h2>{{section.settings.refr_titl}}</h2>
+              <p>{{section.settings.refr_desc}}</p>
             </div>
+            <div class="btn">
+              <a href="{{section.settings.refr_btnlink}}" class="main-btn">{{section.settings.refr_btntitl}}</a>
+            </div>
+          </div>
         </div>
-        <div class="subscribe-form ">
-           
-              {% form 'customer' %}
-              {% render 'form-status'%}
-              
-                <label class="frm_hide"><input type="email" placeholder="Enter email" name="contact[email]" required=""></label>
-                <button type="submit" class="main-btn frm_hide">subscribe</button>
-                {% if form.posted_successfully? %}
-                <style>
-                    .frm_hide{
-                      display: none !important;
-                    }
-                </style>
-                {% endif %}
-             {% endform %}
-        </div>
+      </div>
     </div>
-    {% if section.settings.nwslt_img != blank %}
-    <div class="img-wrap">
-        <span><img src="{{ section.settings.nwslt_img | img_url: '' }}" alt="" loading="lazy"></span>
-    </div>
-    {% endif %}
+  </div>
 </div>
-            </div> 
-        </div>
-    </div>
-</div>
+
+{% render 'newsletter-form' %}
 
 {% schema %}
   {
     "name": "Friend Refer",
     "settings": [
-        {
-           "type": "header", 
-           "content": "Refer a Friend Section Start" 
-        }, 
-       {
-          "type": "image_picker",
-          "id": "refr_img",
-          "label": "Select image"
-        },
+      {
+        "type": "header", 
+        "content": "Refer a Friend Section Start" 
+      }, 
+      {
+        "type": "image_picker",
+        "id": "refr_img",
+        "label": "Select image"
+      },
       {
         "type": "text",
         "id": "refr_titl",
         "label": "Title",
-        "default": "Enter Yor title"
-       },
-       {
+        "default": "Enter Your title"
+      },
+      {
         "type": "textarea",
         "id": "refr_desc",
         "label": "Description",
-        "default": "Enter Yor Description"
-       },
-       {
+        "default": "Enter Your Description"
+      },
+      {
         "type": "text",
         "id": "refr_btntitl",
         "label": "Button Title",
         "default": "Enter Button Title"
-       },
-       {
-          "id": "refr_btnlink",
-          "type": "url",
-          "label": "Button Link"
-        },
-         {
-           "type": "header", 
-           "content": "Newsletter Section Start" 
-        },
-        {
-        "type": "text",
-        "id": "nwsltr_titl",
-        "label": "Title",
-        "default": "Enter Yor title"
-       },
-       {
-        "type": "textarea",
-        "id": "nwsltr_desc",
-        "label": "Description",
-        "default": "Enter Yor Description"
-       }, 
-       {
-          "type": "image_picker",
-          "id": "nwslt_img",
-          "label": "Select image"
-        }
-       
-    ],
-    "presets":[
+      },
       {
-      "name": "Friend Refer",
-      "category": "Home"
+        "id": "refr_btnlink",
+        "type": "url",
+        "label": "Button Link"
+      },
+      {
+        "type": "header", 
+        "content": "Newsletter Section Start" 
       }
-  ]
+    ],
+    "presets": [
+      {
+        "name": "Friend Refer",
+        "category": "Home"
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
-
-<style>
-    .contact-form {
-        width: 100%;
-        padding: 0;
-    }
-
-</style>
