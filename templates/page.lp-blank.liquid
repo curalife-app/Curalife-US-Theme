@@ -1,12 +1,14 @@
 {% layout 'theme.lps' %}
+
+
+
+{% layout 'theme.lps' %}
 <section class="nav">
   <div class="container">
     <div class="big-img">
       <img src="{{ 'lp-quiz-logo-black.png' | asset_url }}" alt="chef icon" loading="lazy">
     </div>
-    <div class="small-img">
-      <img src="{{ 'lp-quiz-logo-black-small.png' | asset_url }}" alt="chef icon" loading="lazy">
-    </div>
+   
   </div>
 </section>
 
@@ -30,10 +32,7 @@
   .big-img img {
     max-width: 200px;
   }
-  .small-img {
-    display: none;
-  }
-
+ 
 
 
 
@@ -44,13 +43,10 @@
     }
 
 
-    .big-img {
-      display: none;
-    }
 
-    .small-img {
-      display: block;
-      padding: 10px 0;
+    .big-img img {
+        max-width: 100px;
+        padding: 10px 0;
     }
 
    
