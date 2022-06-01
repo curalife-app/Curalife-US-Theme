@@ -41,13 +41,9 @@
 </style>
 
 <script>
-  // Set Loader on Ajax calls
-  $(document).ajaxSend(function() {
-    $("#overlay").fadeIn(300);　
-  });
-
   async function updateQuantityOnServer(id, qty) {
     console.log('Updating Cart...')
+    $("#overlay").fadeIn(300);　
     $.ajax({  
       type:"POST",        
       url: "/cart/change.js",  // Send the login info to this page

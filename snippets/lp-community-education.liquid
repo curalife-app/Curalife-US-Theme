@@ -6,66 +6,37 @@
     <div class="content">
       <p>More than a community, we put together some of the world’s best free resources and tools to help you maintain healthy blood sugar levels.</p>
       <p class="options-title">Just check what you want us to send you:</p>
-      <div class="klaviyo-form-TudMFY"></div>
-      <p id="infographic-description">Understand diabetes from the ground up. This is the education we wished our loved ones got when they were diagnosed. We answer it all from "What fruit can I eat? Can I eat out?" And a whole lot more.</p>
-      <p id="newsletter-description">You're a part of our community, so we'll send you short weekly emails that keep you up to date on the latest research, and the tastiest recipes!</p>
+      
+      <form action="">
+        <div class="option">
+          <input type="checkbox" name="infographic" class="check">
+          <label for="infographic">Understand diabetes from the ground up. This is the education we wished our loved ones got when they were diagnosed. We answer it all from "What fruit can I eat? Can I eat out?" And a whole lot more.</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" name="newsletter" class="check">
+          <label for="newsletter">You're a part of our community, so we'll send you short weekly emails that keep you up to date on the latest research, and the tastiest recipes!</label>
+        </div>
+        <div id="education-form">
+          <input type="email" id="education-input">
+          <button id="education-submit" disabled>Submit</button>
+        </div>
+      </form>
+      <div class="_form_5"></div><script src="https://marketing.curalife.com/f/embed.php?id=5" type="text/javascript" charset="utf-8"></script>
+      <div class="_form_9"></div><script src="https://marketing.curalife.com/f/embed.php?id=9" type="text/javascript" charset="utf-8"></script>      
       <p class="unsubscribe">your data is safe and you can unsubscribe at any time</p>
     </div>
   </div>
 </section>
 
-<script>
-  function runAfterElementExists(jquery_selector,callback){
-      var checker = window.setInterval(function() {
-      if ($(jquery_selector).length) {
-          clearInterval(checker);
-          callback();
-      }}, 200);
-  }
-
-  runAfterElementExists("[data-testid='klaviyo-form-TudMFY']", function() {
-    let labels = $("[data-testid='klaviyo-form-TudMFY'] label");
-    labels[0].append(document.getElementById("infographic-description"));
-    labels[1].append(document.getElementById("newsletter-description"));
-  });
-</script>
-
 <style>
-  .kl-private-reset-css-Xuajs1 {
-    display: inline-block;
-    right: unset !important;
+  label {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 35px;
   }
 
-  .kl-private-reset-css-Xuajs1 .klaviyo-form {
-    max-width: 600px !important;
-  }
-
-  .kl-private-reset-css-Xuajs1 .klaviyo-form button {
-    max-width: 400px;
-  }
-
-  .kl-private-reset-css-Xuajs1 label {
-    flex-wrap: wrap;
-  }
-
-  .kl-private-reset-css-Xuajs1 label div {
-    font-size: 30px !important;
-    margin-left: 15px;
-    margin-right: unset !important;
-  }
-
-  .kl-private-reset-css-Xuajs1 label p {
-    margin-left: 43px;
-    margin-top: 10px;
-  }
-
-  .kl-private-reset-css-Xuajs1 label svg:nth-of-type(2) {
-    position: relative !important;
-    margin-left: -28px !important;
-  }
-
-  .klaviyo-form {
-    text-align: left;
+  .community-education #education-submit:disabled {
+    background-color: gray;
   }
 
   .community-education .main-image {
@@ -74,6 +45,7 @@
     height: 100%;
     width: 50%;
     object-fit: contain;
+    object-position: right;
   }
 
   .community-education .content {
@@ -85,17 +57,13 @@
     font-weight: bold;
   }
 
-  .community-education .checkbox-option .option-title {
+  .community-education .option .option-title {
     font-weight: normal;
   }
 
-  .community-education .checkbox-option {
+  .community-education .option {
     display: flex;
-  }
-
-  .community-education  .checkbox-option label p {
-    margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .community-education input[type=checkbox] {
@@ -120,7 +88,7 @@
   }
 
   @media screen and (max-width: 991px) { 
-    .kl-private-reset-css-Xuajs1 label div {
+    label div {
       font-size: 5.5vw !important;
       font-weight: bold !important;
       margin-right: unset !important;
@@ -134,7 +102,7 @@
       width: unset;
     }
 
-    .community-education .checkbox-option label p {
+    label p {
       width: 75vw;
     }
 
@@ -148,3 +116,39 @@
     }
   }
 </style>
+
+<script>
+  let formsInputs = $(".community-education ._field-wrapper input");
+  let showedThankYou = false;
+  
+  $(".community-education ._form").each(function() {$(this).hide()});
+
+  $('.check').change(function() {
+      if ($('.check:checked').length) {
+          $('#education-submit').removeAttr('disabled');
+      } else {
+          $('#education-submit').attr('disabled', 'disabled');
+      }
+  });
+
+  $("#education-submit").click(function() {
+    event.preventDefault()
+
+    $("#education-form").hide();
+
+    if ($("input[name='infographic']").is(':checked')) {
+      formsInputs.eq(0).val($("#education-input").val());
+      formsInputs.eq(0).closest("._form-content").find("._submit").click();
+      formsInputs.eq(0).closest("._form").delay(5000).show();
+      showedThankYou = true;
+    }
+
+    if ($("input[name='newsletter']").is(':checked')) {
+      formsInputs.eq(1).val($("#education-input").val());
+      formsInputs.eq(1).closest("._form-content").find("._submit").click();
+      if (!showedThankYou) {
+        formsInputs.eq(1).closest("._form").delay(5000).show();
+      }
+    }
+  })
+</script>

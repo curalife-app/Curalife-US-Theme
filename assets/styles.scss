@@ -470,7 +470,7 @@
     right: 0;
     bottom: 0;
     z-index: -2;
-    background: #F0F1F4;
+    background: linear-gradient(0deg, rgba(233,233,233,1) 0%, rgba(255,255,255,1) 100%);
     pointer-events: none;
   }
 }
@@ -2324,7 +2324,7 @@
 }
 
 .blog-page {
-  padding-bottom: 6.3%;
+  padding-bottom: 50px;
 }
 
 .touch-scroll {
@@ -2338,7 +2338,7 @@
 }
 
 .blog-category {
-  padding-top: 60px;
+  padding-top: 15px;
   display: flex;
   justify-content: center;
 
