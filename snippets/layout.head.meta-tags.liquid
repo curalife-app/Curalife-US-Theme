@@ -36,6 +36,8 @@
 <meta property="og:title" content="{{ page_title | escape }}" />
 {% if template contains 'article' %}
 <meta property="og:image" content="https:{{ article.image | img_url: 'original' }}">
+{% elsif page.url contains 'winning-type-2' %}
+<meta property="og:image" content="{{ 'lp-community-thumbnail.png' | file_url }}">
 {% else %}
 <meta property="og:image" content="{{ 'meta-thumbnail.png' | asset_url }}" />
 {% endif %}
@@ -47,6 +49,8 @@
 <meta property="twitter:description" content="{{ page_description | escape }}">
 {% if template contains 'article' %}
 <meta property="twitter:image" content="https:{{ article.image | img_url: 'original' }}">
+{% elsif page.url contains 'winning-type-2' %}
+<meta property="twitter:image" content="{{ 'lp-community-thumbnail.png' | file_url }}">
 {% else %}
 <meta property="twitter:image" content="{{ 'meta-thumbnail.png' | asset_url }}" />
 {% endif %}
