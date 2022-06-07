@@ -43,26 +43,32 @@
           </div>
         </div>
         <div class="product-info">
-          <div class="sub-title">
-            {% if product.metafields.my_fields.alternative_title.value %}
-            <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
-            {% else %}
-            <h1>{{ product.title }}</h1>
+          <div class="title-wrapper">
+            <div class="sub-title">
+              {% if product.metafields.my_fields.alternative_title.value %}
+              <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
+              {% else %}
+              <h1>{{ product.title }}</h1>
+              {% endif %}
+            </div>
+
+            {% capture CFH %}{{ content_for_header }}{% endcapture %}
+
+            {% if CFH contains 'adminBarInjector' %}
+            {% assign admin = true %}
+            {% elsif CFH contains 'admin-bar-iframe' %}
+            {% assign admin = true %}
+            {% elsif CFH contains 'preview_bar_injector-' %}
+            {% assign admin = true %}
+            {% endif %}
+
+            {% if admin %}
+            <div class="edit">
+              <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
+            </div>
             {% endif %}
           </div>
-          {% capture CFH %}{{ content_for_header }}{% endcapture %}
-
-          {% if CFH contains 'admin_bar_iframe' %}
-          {% assign admin = true %}
-          {% elsif CFH contains 'preview_bar_injector-' %}
-          {% assign admin = true %}
-          {% endif %}
-
-          {% if admin %}
-          <div class="edit">
-            <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
-          </div>
-          {% endif %}
+          
           <div class="description">
             <div class="price">
               <p>{{ product.price | money }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money }}</strike></p>{% endif %}
@@ -119,11 +125,22 @@
     </div>
   </div>
 
-  <style>
-    .thumbs-slider .swiper-slide {
-      height: 50px !important;
-    }
-  </style>
+<style>
+  .thumbs-slider .swiper-slide {
+    height: 50px !important;
+  }
+
+  .title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .edit a {
+    margin-left: 15px;
+    font-size: 18px;
+  }
+</style>
 
   <script>
     productThumbs = new Swiper('.thumbs-slider .swiper', {
