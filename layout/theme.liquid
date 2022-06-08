@@ -5,9 +5,10 @@
     
     {% render 'layout.head.geo-redirect-script' %}
     {% render 'layout.head.redirects-script' %}
-    {% render 'layout.head.meta-tags'%}
+    {% render 'layout.head.google-tag-manager'%}
+    {% render 'layout.head.meta-tags' %}
     {% render 'layout.head.canonicals-us' %}
-
+    
     <!-- Stylesheets -->
     <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ 'common.css' | asset_url }}"></noscript>
@@ -41,7 +42,6 @@
     {% endif %}
     {{ content_for_header }} <!-- Header hook for plugins -->
 
-    {% render 'layout.head.google-tag-manager'%}
     {% render 'layout.head.marker-io-snippet' %}
     {% render 'fa_translate_core' %}
   </head>
@@ -62,5 +62,11 @@
     {% render 'layout.footer.ac-snippet' %}
     {% render 'wisepops-generated' %}
     {% render 'social-login' %}
+
+    <style>
+      #admin-bar-iframe {
+        display: none;
+      }
+    </style>
   </body>
 </html>
