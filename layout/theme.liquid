@@ -63,6 +63,15 @@
     {% render 'wisepops-generated' %}
     {% render 'social-login' %}
 
+    {% if localization.country.iso_code == 'CA' || localization.country.iso_code == 'AU' %}
+      {% if request.path contains 'shipping-policy' %}
+        <script>
+          $("us").hide();
+          $("geo").show();
+        </script>
+      {% endif %}
+    {% endif %}
+
     <style>
       #admin-bar-iframe {
         display: none;
