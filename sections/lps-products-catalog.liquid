@@ -1,7 +1,7 @@
 {% assign lp_prods = page.content | split: ',' %}
     <section class="product-section" id="product-section">
         <div class="container">
-            <div class="extra-info"><p><img src="{{ 'icon-free-shipping-light.png' | asset_url }}" alt="free shipping">FREE SHIPPING</p></div>
+            <div class="extra-info"><img src="{{ 'icon-free-shipping-light.png' | asset_url }}" alt="free shipping"><p id="shipping-badge-text">FREE SHIPPING</p></div>
             <h2>Choose Your Package</h2>
             <div class="sl-optimize-03">
                 <div class="product-list">
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="trust-badges">
-                <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">Free Worldwide Shipping</div>
+                <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt=""><div id="shipping-badge-text-2"></div>Free Worldwide Shipping</div>
                 <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
                 <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
             </div>
