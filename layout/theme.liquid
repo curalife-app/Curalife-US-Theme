@@ -63,14 +63,10 @@
     {% render 'wisepops-generated' %}
     {% render 'social-login' %}
 
-    {% if localization.country.iso_code == 'CA' or localization.country.iso_code == 'AU' %}
-      {% if request.path contains 'shipping-policy' %}
-        <script>
-          $(".usa").hide();
-          $(".geo").show();
-        </script>
-      {% endif %}
-    {% endif %}
+    <script>
+      let country = sessionStorage.getItem('country')
+      if (country == 'CA' || country == 'AU') {$(".usa").hide();$(".geo").show();}
+    </script>
 
     <style>
       #admin-bar-iframe {
