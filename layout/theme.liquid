@@ -66,8 +66,8 @@
     {% if localization.country.iso_code == 'CA' or localization.country.iso_code == 'AU' %}
       {% if request.path contains 'shipping-policy' %}
         <script>
-          $("us").hide();
-          $("geo").show();
+          $(".us").hide();
+          $(".geo").show();
         </script>
       {% endif %}
     {% endif %}
