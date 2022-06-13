@@ -66,3 +66,15 @@ if ($(window).width() < 761) {
         });
 }
 </script>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (urlParams.has('shipping')) {
+    console.log("shipping")
+    $("#shipping-badge-text").text("Free Worldwide Shipping Above $99")
+    $("#shipping-badge-text-2").text("Free Worldwide Shipping Above $99")
+    $("#shipping-line").hide();
+    $("#shipping-line-above").show();
+  }
+</script>
