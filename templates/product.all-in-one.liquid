@@ -880,8 +880,9 @@
   const urlParams = new URLSearchParams(queryString);
 
   if (urlParams.has('shipping')) {
+    console.log("shipping")
     $("#shipping-badge").text("Free Worldwide Shipping Above $99")
-    $("shipping-line").hide();
-    $("shipping-line-above").show();
+    $("#shipping-line").hide();
+    $("#shipping-line-above").show();
   }
 </script>
