@@ -115,9 +115,9 @@
                   </div>
                   <div class="price">
                     {% if localization.country.iso_code == 'CA' %}
-                      {% assign cap = var.metafields.my_fields.ca_cap | append: " CAD" %}
+                      {% assign cap = "$" | append: var.metafields.my_fields.ca_cap %}
                     {% elsif localization.country.iso_code == 'AU' %}
-                      {% assign cap = var.metafields.my_fields.au_cap | append: " AUD" %}
+                      {% assign cap = "$" | append: var.metafields.my_fields.au_cap %}
                     {% else %}
                       {% assign cap = var.compare_at_price | money_with_currency | replace: ".00", "" %}
                     {% endif %}
