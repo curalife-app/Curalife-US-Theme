@@ -134,15 +134,23 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    position: relative;
   }
 
   .edit a {
-    position: absolute;
-    right: 0;
     margin-left: 15px;
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .title-wrapper {
+      justify-content: center;
+      position: relative;
+    }
+
+    .edit a {
+      position: absolute;
+      right: 0;
+    }
   }
 </style>
 
