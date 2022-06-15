@@ -114,10 +114,10 @@
                     </div>
                   </div>
                   <div class="price">
-                    {% if localization.country.iso_code == 'CA' | append: " CAD" %}
-                      {% assign cap = var.metafields.my_fields.ca_cap %}
-                    {% elsif localization.country.iso_code == 'AU' | append: " AUD" %}
-                      {% assign cap = var.metafields.my_fields.au_cap %}
+                    {% if localization.country.iso_code == 'CA' %}
+                      {% assign cap = var.metafields.my_fields.ca_cap | append: " CAD" %}
+                    {% elsif localization.country.iso_code == 'AU' %}
+                      {% assign cap = var.metafields.my_fields.au_cap | append: " AUD" %}
                     {% else %}
                       {% assign cap = var.compare_at_price | money_without_trailing_zeros %}
                     {% endif %}
