@@ -2212,7 +2212,6 @@
   align-items: center;
   max-width: 183px;
   height: 56px;
-  padding: 10px 10px;
   border: 1px solid #D2D3D6;
   border-radius: 2px;
 
@@ -6229,11 +6228,6 @@ html {
     }
   }
 
-  .qty-control {
-    max-width: 165px;
-    height: 51px;
-  }
-
   .cart-list {
     table {
       tbody {
@@ -7475,16 +7469,6 @@ html {
     }
 
     padding-right: 16px;
-  }
-
-  .qty-control {
-    max-width: 147px;
-    height: 45px;
-    padding: 8px;
-
-    a {
-      font-size: 18px;
-    }
   }
 
   .cart-list {
