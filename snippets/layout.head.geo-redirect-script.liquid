@@ -30,10 +30,10 @@
       let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
       sessionStorage.setItem('country', country);
 
-      if ((host == "USA") && (country != "US" && country != "PR")) { // If US and not US or PR so go Global
+      if ((host == "USA") && (country != "US" && country != "PR" && country != "CA" && country != "AU")) { // If US and not US or PR so go Global
         redirectTo("global.curalife.com")
       }
-      else if ((host == "Global") && (country === "US" || country === "PR")) // If Global and we are on US or PR so go US
+      else if ((host == "Global") && (country === "US" || country === "PR" || country === "CA" || country === "AU")) // If Global and we are on US or PR so go US
       {
         redirectTo("curalife.com");
       }
