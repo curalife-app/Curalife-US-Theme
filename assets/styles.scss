@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
+.container.no-mobile-padding {
+  padding: 0;
+}
+
 .lazy {
   visibility: hidden;
   opacity: 0;
