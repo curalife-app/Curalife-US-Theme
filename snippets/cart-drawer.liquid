@@ -26,7 +26,7 @@
                 {% endif %}
               </a></h4>
                 <div class="price">
-                  <p>{{ item.price | money }}</p>
+                  <p>{{ item.price | money_with_currency | replace: ".00", "" }}</p>
                 </div>
               </div>
 
@@ -51,7 +51,7 @@
   <div class="bottom-info">
     <div class="summary">
       <h4>Subtotal</h4>
-      <p class="cstm_pric">{{ cart.total_price | money }}</p>
+      <p class="cstm_pric">{{ cart.total_price | money_with_currency | replace: ".00", "" }}</p>
     </div>
     <div class="btn">
       {% if cart.item_count > 0 %}
