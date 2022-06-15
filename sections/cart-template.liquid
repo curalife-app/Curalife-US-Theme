@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="total"><p>{{ item.original_line_price | money }}</p></td>
+                        <td class="total"><p>{{ item.original_line_price | money_with_currency | replace: ".00", "" }}</p></td>
                     </tr>
                     {% endfor %}
                     </tbody>
