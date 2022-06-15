@@ -119,11 +119,11 @@
                     {% elsif localization.country.iso_code == 'AU' %}
                       {% assign cap = "$" | append: var.metafields.my_fields.au_cap %}
                     {% else %}
-                      {% assign cap = var.compare_at_price | money_with_currency | replace: ".00", "" %}
+                      {% assign cap = var.compare_at_price | money_without_trailing_zeros %}
                     {% endif %}
 
                     <p class="compared-at-price"><strike>{{ cap }}</strike></p>
-                    <p class="real-price">{{ var.price | money_with_currency | replace: ".00", "" }}</p>
+                    <p class="real-price">{{ var.price | money_without_trailing_zeros }}</p>
                   </div>
                 </div>
               {% endfor %}
