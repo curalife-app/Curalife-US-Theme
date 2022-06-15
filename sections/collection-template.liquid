@@ -28,7 +28,7 @@
                                     {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
                                     {% if quantity > 1 %}
-                                        <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros | money_with_currency }}</p>
+                                        <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
                                     {% elsif product.compare_at_price_max > product.price %}
                                         <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                                     {% endif %}
@@ -48,11 +48,11 @@
                                     <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                                     <div class="price">
                                         {% if quantity > 1 %}
-                                            <p id="divided-price">{{ item_price | money_without_trailing_zeros | money_with_currency }}<strike>{{ original_item_price | money_without_trailing_zeros | money_with_currency }}</strike> Per Bottle</p>
+                                            <p id="divided-price">{{ item_price | money_without_trailing_zeros }}<strike>{{ original_item_price | money_without_trailing_zeros }}</strike> Per Bottle</p>
                                         {% elsif product.compare_at_price > product.price %}
-                                            <p id="discounted-price">{{ product.price | money_without_trailing_zeros | money_with_currency }}<strike>{{ product.compare_at_price | money_without_trailing_zeros | money_with_currency }}</strike></p>
+                                            <p id="discounted-price">{{ product.price | money_without_trailing_zeros }}<strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike></p>
                                         {% else %}
-                                            <p id="original-price">{{ product.price | money_without_trailing_zeros | money_with_currency }}</p>
+                                            <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
                                         {% endif %}
                                     </div>
                                 </div>
