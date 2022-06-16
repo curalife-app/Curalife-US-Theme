@@ -80,8 +80,11 @@
       var itemPrice = inputObject.parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
       var changePrice = updateValue * parseFloat(itemPrice);
 
+      console.log("change price: " + changePrice);
+      
       // Update Cart Total Price
       var cartPrice = $(".cstm_pric").text().replace(currencySymbol, "").replace(",", "");
+      console.log("cart price: " + cartPrice);
       var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
       $(".cstm_pric").text(currencySymbol + finalCartPrice.toFixed(2));
       if (finalCartPrice == 0) {
