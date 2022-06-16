@@ -30,10 +30,7 @@
                       <div class="product-img">
                         <div class="img-wrap">
                           <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
-                          <!-- {% assign cap = var.compare_at_price | money_without_trailing_zeros %}
-                          {% assign cap = var.compare_at_price | money_without_trailing_zeros %}
-                          {{ var.price | money_without_trailing_zeros }}
-                          <div class="sale-badge">SAVE </div> -->
+
                           <img class="free-shipping usa" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
                           <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
 
