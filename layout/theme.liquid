@@ -67,8 +67,20 @@
     {% render 'social-login' %}
 
     <script>
+      function runAfterElementExists(jquery_selector,callback){
+          var checker = window.setInterval(function() {
+          if ($(jquery_selector).length) {
+              clearInterval(checker);
+              callback();
+          }}, 200);
+      }
+
       let country = sessionStorage.getItem('country')
-      if (country == 'CA' || country == 'AU') {$(".shipscout-banner").hide()}
+      if (country == 'CA' || country == 'AU') {
+        runAfterElementExists(".shipscout-banner", function() {
+          $(".shipscout-banner").hide()
+        }
+      }
     </script>
 
     <script>
