@@ -147,12 +147,28 @@
                   </div>
 
                   {% if forloop.index == 3 %}
-                    <img class="free-shipping-var geo" src="{{ 'product-aio-free-shipping-badge-3.png' | asset_url }}" alt="" style="display:none">
+                    <img class="free-shipping-var desktop geo" src="{{ 'product-aio-free-shipping-badge-3.png' | asset_url }}" alt="" style="display:none">
+                    <img class="free-shipping-var mobile geo" src="{{ 'product-aio-free-shipping-badge-4.png' | asset_url }}" alt="" style="display:none">
                     <style>
                       .free-shipping-var {
                         position: absolute;
                         right: 0;
                         top: -5px;
+                      }
+
+                      .free-shipping-var.mobile {
+                        top: unset;
+                        bottom: 0;
+                      }
+
+                      @media screen and (max-width:760px) {
+                        .free-shipping-var.desktop {
+                          visibility: 0;
+                        }
+
+                        .free-shipping-var.mobile {
+                          visibility: 1;
+                        }
                       }
                     </style>
                   {% endif %}
