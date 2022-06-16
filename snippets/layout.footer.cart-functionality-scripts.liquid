@@ -74,7 +74,7 @@
 
   function updateTotalPrice(inputObject, updateValue) {
     var currencySymbol =  inputObject.attr("currency");
-
+    console.log("cart type: " + inputObject.attr("cart-type"));
     if (inputObject.attr("cart-type") == "drawer") {
       // Cart Drawer Removal
       var itemPrice = inputObject.parent().parent().parent().find('.price').find("p").text().replace(currencySymbol, "").replace(",", "");
@@ -128,7 +128,7 @@
         // Update Input Object Value
         inputObject.val(newValue);
       }
-      console.log("updating total price! " + updateValue)
+
       updateTotalPrice(inputObject, updateValue);
       updateQuantityOnHeaderIcon(updateValue);
     }
