@@ -33,27 +33,27 @@
 
                           <img class="free-shipping usa" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
                           <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
-
-                          <style>
-                            .free-shipping {
-                              position: absolute;
-                              right: 200px;
-                              top: 0;
-                              width: 118px !important;
-                              height: unset !important;
-                            }
-
-                            @media screen (max-width: 760px) {
-                              .free-shipping {
-                                right: 40px;
-                                width: 100px !important;
-                              }
-                            }
-                          </style>
                         </div>
                       </div>
                     </div>
                   {% endfor %}
+
+                  <style>
+                    .free-shipping {
+                      position: absolute;
+                      right: 200px;
+                      top: 0;
+                      width: 118px !important;
+                      height: unset !important;
+                    }
+
+                    @media screen (max-width: 760px) {
+                      .free-shipping {
+                        right: 40px;
+                        width: 100px !important;
+                      }
+                    }
+                  </style>
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
