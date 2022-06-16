@@ -40,6 +40,10 @@
                           <style>
                             .free-shipping {
                               position: absolute;
+                              right: 200px;
+                              top: 0;
+                              width: 118px !important;
+                              height: unset !important;
                             }
                           </style>
                         </div>
@@ -137,6 +141,13 @@
                     <p class="compared-at-price"><strike>{{ cap }}</strike></p>
                     <p class="real-price">{{ var.price | money_without_trailing_zeros }}</p>
                   </div>
+
+                  <img class="free-shipping-var geo" src="{{ 'product-aio-free-shipping-badge-3.png' | asset_url }}" alt="">
+                  <style>
+                    .free-shipping-var {
+                      display: absolute;
+                    }
+                  </style>
                 </div>
               {% endfor %}
             </div>
