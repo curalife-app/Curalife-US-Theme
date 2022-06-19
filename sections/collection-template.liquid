@@ -65,9 +65,8 @@
                       <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
                   </div>
-                  {% unless forloop.index == 1 %}
-                    <img class="free-shipping {% if forloop.index == 1 %}geo{% endif %}" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
-                  {% endunless %}
+
+                  <img class="free-shipping {% if forloop.index == 1 %}geo{% endif %}" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
                 </div>
                 <form action="/cart/add" method="post">
                   <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
