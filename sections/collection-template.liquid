@@ -18,10 +18,6 @@
                     <div class="img">
                       <img src="{{ product.featured_image.src | img_url: '500x500' }}" alt="">
                     </div>
-                    <!-- {% unless forloop.index == 1 %}
-                      <img class="free-shipping usa" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
-                      <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
-                    {% endunless %} -->
                   </a>
                 {% endif %}
 
@@ -69,6 +65,9 @@
                       <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
                   </div>
+                  {% unless forloop.index == 1 %}
+                    <img class="free-shipping" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
+                  {% endunless %}
                 </div>
                 <form action="/cart/add" method="post">
                   <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
