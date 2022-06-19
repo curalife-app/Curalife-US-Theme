@@ -18,10 +18,6 @@
                     <div class="img">
                       <img src="{{ product.featured_image.src | img_url: '500x500' }}" alt="">
                     </div>
-                    {% unless forloop.index == 1 %}
-                      <img class="free-shipping usa" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
-                      <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
-                    {% endunless %}
                   </a>
                 {% endif %}
 
@@ -35,7 +31,11 @@
                   {% elsif localization.country.iso_code == 'AU' %}
                     {% assign cap = product.metafields.my_fields.au_cap %}
                   {% else %}
+<<<<<<< HEAD
                     {% assign cap = product.compare_at_price | money_without_trailing_zeros %}
+=======
+                    {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
+>>>>>>> test-content-change
                   {% endif %}
                   <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
                   {% if quantity > 1 %}
@@ -69,6 +69,9 @@
                       <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
                   </div>
+                  {% unless forloop.index == 1 %}
+                    <img class="free-shipping" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
+                  {% endunless %}
                 </div>
                 <form action="/cart/add" method="post">
                   <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
@@ -105,24 +108,20 @@
 }
 
 .free-shipping {
-  position: absolute;
-  z-index: 10;
-  right: 2px;
-  top: 5px;
-  width: 100px;
+  margin-top: 5px;
 }
 
 .product-card .picture .discount {
-  background-image: url("{{ 'product-aio-sale-badge-bg.png' | asset_url }}");
+  background-image: url({{ 'collection-product-badge.png' | asset_url }});
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  z-index: 5;
-  top: 130px;
-  width: 50%;
-  height: 50px;
+  top: 5px;
+  right: 0;
+  left: auto;
+  width: 100px;
+  height: 100px;
   text-align: center;
-  left: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,9 +129,20 @@
 
 .product-card .picture .discount p {
   background: unset;
+<<<<<<< HEAD
   font-size: 26px;
   font-weight: bold;
   border: 0;
+=======
+  font-size: 22px;
+  font-weight: bold;
+  border: 0;
+  color: black;
+}
+
+.product-card .picture:after {
+  background-image: url({{ 'ellipse.svg' | asset_url }});
+>>>>>>> test-content-change
 }
 
 @media screen and (max-width: 760px) {

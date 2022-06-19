@@ -1525,7 +1525,6 @@
       content: '';
       display: block;
       height: 30%;
-      background-image: url(https://cdn.shopify.com/s/files/1/0495/2621/0723/t/11/assets/ellipse.svg);
       background-position: top;
       background-repeat: no-repeat;
       background-size: cover;
@@ -1645,6 +1644,7 @@
     .main {
       flex: auto;
       padding-bottom: 5px;
+      text-align: center;
     }
 
     .status {
@@ -1701,8 +1701,6 @@
     }
 
     .btn {
-      padding-top: 16px;
-
       .main-btn {
         margin-top: 14px;
         width: 100%;
@@ -5637,8 +5635,6 @@ html {
       }
 
       .btn {
-        padding-top: 11px;
-
         .main-btn {
           min-height: 50px;
         }
@@ -8809,8 +8805,6 @@ html {
           margin-top: 14px;
           font-size: 16px;
         }
-
-        padding-top: 21px;
       }
 
       .status {
@@ -8839,10 +8833,6 @@ html {
             font-size: 14px;
           }
         }
-      }
-
-      .main {
-        padding-bottom: 18px;
       }
     }
 
