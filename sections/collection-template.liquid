@@ -108,13 +108,12 @@
 }
 
 .product-card .picture .discount {
-  background-image: url(//cdn.shopify.com/s/files/1/0452/2459/1511/t/42/assets/collection-product-badge.png?v=1440983…);
+  background-image: url({{ 'collection-product-badge.png' | asset_url }});
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
   top: 5px;
-  right: 0;
-  left: 60%;
+  float: right;
   width: 100px;
   height: 100px;
   text-align: center;
@@ -129,6 +128,10 @@
   font-weight: bold;
   border: 0;
   color: black;
+}
+
+.product-card .picture:after {
+  background-image: url({{ 'ellipse.svg' | asset_url }});
 }
 
 @media screen and (max-width: 760px) {
