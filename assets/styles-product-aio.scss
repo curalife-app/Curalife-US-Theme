@@ -191,7 +191,8 @@
                         .variant-box { 
                             display: flex;
                             justify-content: space-evenly;
-                            height: 65px;
+                            align-items: center;
+                            height: 80px;
                             background: #FFFFFF;
                             border: 1px solid #CBCBCB;
                             box-sizing: border-box;
@@ -284,7 +285,7 @@
                                 display: flex;
                                 align-items: center;
                                 min-width: 15px;
-                                margin-right: 20px;
+                                margin-right: 40px;
                                 padding-bottom: unset;
 
                                 &.centered {
@@ -372,6 +373,7 @@
             .trust-badges {
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 gap: 50px;
                 opacity: 0.5;
                 font-size: 18px;

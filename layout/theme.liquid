@@ -23,6 +23,8 @@
     <script src="{{ 'common.js' | asset_url }}" async></script>
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
     <!-- Swiper Import -->
     <link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <script src="{{ 'swiper.min.js' | asset_url }}"></script>
@@ -44,7 +46,8 @@
 
     {% render 'layout.head.marker-io-snippet' %}
     {% render 'fa_translate_core' %}
-  </head>
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/ZqhNB0cchIBRHAinUxB8AA" async></script>
+</head>
 
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->
@@ -62,6 +65,23 @@
     {% render 'layout.footer.ac-snippet' %}
     {% render 'wisepops-generated' %}
     {% render 'social-login' %}
+
+    {% if localization.country.iso_code == 'CA' or localization.country.iso_code == 'AU' %}
+      <style>
+        .shipscout-banner {
+          display: none;
+        }
+      </style>
+    {% endif %}
+
+    <script>
+      var testVariant = $.cookie("_sc_2");
+
+      if (testVariant == 'B') {
+        $(".usa").hide();
+        $(".geo").show();
+      }
+    </script>
 
     <style>
       #admin-bar-iframe {

@@ -26,14 +26,14 @@
                 {% endif %}
               </a></h4>
                 <div class="price">
-                  <p>{{ item.price | money }}</p>
+                  <p>{{ item.price | money_with_currency | replace: ".00", "" }}</p>
                 </div>
               </div>
 
               <div class="qty-control">
                 <a class="decrease-quantity-drawer" href="javascript:void(0)" onclick="updateQuantity($(this).parent().find('input'), -1)" data-act="-" cart-type="drawer"><span class="icon-minus"></span></a>
                 <label>
-                  <input type="number" name="quantity[]" value="{{item.quantity}}" item-var-id="{{item.variant_id}}" currency="{{cart.currency.symbol}}" currency-code="{{cart.currency.iso_code}}" art-type="drawer" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}">
+                  <input type="number" name="quantity[]" value="{{item.quantity}}" item-var-id="{{item.variant_id}}" currency="{{cart.currency.symbol}}" currency-code="{{cart.currency.iso_code}}" cart-type="drawer" title="{{item.product.title}}" prod-id="{{item.product.selected_or_first_available_variant.sku}}" price="{{item.product.selected_or_first_available_variant.price | money_without_currency}}">
                 </label>
                 <a class="increase-quantity-drawer" href="javascript:void(0)" onclick="updateQuantity($(this).parent().find('input'), 1)" data-act="+"><span class="icon-plus"></span></a>
               </div>
@@ -51,7 +51,7 @@
   <div class="bottom-info">
     <div class="summary">
       <h4>Subtotal</h4>
-      <p class="cstm_pric">{{ cart.total_price | money }}</p>
+      <p class="cstm_pric">{{ cart.total_price | money_with_currency | replace: ".00", "" }}</p>
     </div>
     <div class="btn">
       {% if cart.item_count > 0 %}

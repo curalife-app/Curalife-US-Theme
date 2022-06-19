@@ -28,12 +28,13 @@
     req.overrideMimeType("application/json"), req.open("GET", "https://geo.curalife.com/", !0), req.onload = function() {
       let country = JSON.parse(req.responseText).country;
       let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
+      let countries = ["US", "PR", "CA", "AU"]; // Countries for main domain (USA)
+      sessionStorage.setItem('country', country);
 
-      if ((host == "USA") && (country != "US" && country != "PR")) { // If US and not US or PR so go Global
+      if ((host == "USA") && (!countries.includes(country))) { // If US and not US or PR so go Global
         redirectTo("global.curalife.com")
       }
-      else if ((host == "Global") && (country === "US" || country === "PR")) // If Global and we are on US or PR so go US
-      {
+      else if ((host == "Global") && (countries.includes(country))) { // If Global and we are on US or PR so go US
         redirectTo("curalife.com");
       }
       else if (country == "AT") {redirectTo("curalife.at")} // If Austria

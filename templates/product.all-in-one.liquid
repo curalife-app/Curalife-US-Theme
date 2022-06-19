@@ -30,10 +30,30 @@
                       <div class="product-img">
                         <div class="img-wrap">
                           <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
+
+                          <img class="free-shipping usa" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
+                          <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
                         </div>
                       </div>
                     </div>
                   {% endfor %}
+
+                  <style>
+                    .free-shipping {
+                      position: absolute;
+                      right: 200px;
+                      top: 0;
+                      width: 118px !important;
+                      height: unset !important;
+                    }
+
+                    @media screen and (max-width: 760px) {
+                      .free-shipping {
+                        right: 40px;
+                        width: 100px !important;
+                      }
+                    }
+                  </style>
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
@@ -114,9 +134,45 @@
                     </div>
                   </div>
                   <div class="price">
-                    <p class="compared-at-price"><strike>{{ var.compare_at_price | money_without_trailing_zeros }}</strike></p>
+                    {% if localization.country.iso_code == 'CA' %}
+                      {% assign cap = "$" | append: var.metafields.my_fields.ca_cap %}
+                    {% elsif localization.country.iso_code == 'AU' %}
+                      {% assign cap = "$" | append: var.metafields.my_fields.au_cap %}
+                    {% else %}
+                      {% assign cap = var.compare_at_price | money_without_trailing_zeros %}
+                    {% endif %}
+
+                    <p class="compared-at-price"><strike>{{ cap }}</strike></p>
                     <p class="real-price">{{ var.price | money_without_trailing_zeros }}</p>
                   </div>
+
+                  {% if forloop.index == 3 %}
+                    <img class="free-shipping-var desktop geo" src="{{ 'product-aio-free-shipping-badge-3.png' | asset_url }}" alt="" style="display:none">
+                    <img class="free-shipping-var mobile geo" src="{{ 'product-aio-free-shipping-badge-4.png' | asset_url }}" alt="" style="display:none">
+                    <style>
+                      .free-shipping-var {
+                        position: absolute;
+                        right: 0;
+                        top: -5px;
+                      }
+
+                      .free-shipping-var.mobile {
+                        visibility: hidden;
+                        top: unset;
+                        bottom: 0;
+                      }
+
+                      @media screen and (max-width:760px) {
+                        .free-shipping-var.desktop {
+                          visibility: hidden;
+                        }
+
+                        .free-shipping-var.mobile {
+                          visibility: visible;
+                        }
+                      }
+                    </style>
+                  {% endif %}
                 </div>
               {% endfor %}
             </div>
@@ -147,8 +203,8 @@
     </div>
     <div class="container badges-container">
       <div class="trust-badges">
-        <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">Free Worldwide Shipping</div>
         <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
+        <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt=""><div id="shipping-badge-text" style="display: inline-block">Free Shipping <div class="geo" style="display:none;display: inline-block;">Over 99$</div></div></div>
         <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
       </div>
     </div>
@@ -289,8 +345,9 @@
     </div>
   </section>
   <section class="free-shipping-section">
-    <img src="{{ "product-aio-free-shipping-line.png" | asset_url }}" alt="" class="free-shipping-line" loading="lazy">
-  </section>
+  <img id="shipping-line" src="{{ "product-aio-free-shipping-line.png" | asset_url }}" alt="" class="free-shipping-line" loading="lazy">
+  <img id="shipping-line-above" src="{{ "product-aio-free-shipping-line-above.png" | asset_url }}" alt="" class="free-shipping-line" loading="lazy" style="display:none;">
+</section>
   <section class="faq-section">
     <div class="container">
       <h2>FAQ</h2>
@@ -873,4 +930,15 @@
           disabledClass: 'disabled'
       }
   });
+</script>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (urlParams.has('shipping')) {
+    console.log("shipping")
+    $("#shipping-badge-text").text("Free Worldwide Shipping Above $99")
+    $("#shipping-line").hide();
+    $("#shipping-line-above").show();
+  }
 </script>

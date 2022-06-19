@@ -71,11 +71,11 @@
           
           <div class="description">
             <div class="price">
-              <p>{{ product.price | money }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money }}</strike></p>{% endif %}
+              <p>{{ product.price | money_with_currency | replace: ".00", "" }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" }}</strike></p>{% endif %}
             </div>
             
             <div class="form-wrap">
-               <form method="post" id="addTocartForm" action="/cart/add">
+              <form method="post" id="addTocartForm" action="/cart/add">
               <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
                 <div class="qty-data">
                   <p>Quantity</p>
@@ -106,7 +106,7 @@
               </form>
 
               <div class="shipping-label">
-                <p><span class="{{section.settings.ship_icn}}"></span>{{section.settings.ship_txt}}</p>
+                <p><span class="{{section.settings.ship_icn}}"></span><span class="usa">Free Shipping</span><span class="geo" style="display:none">{% if product.title == 'CuraLin' %}Buy bundle pack and get FREE SHIPPING!{% else %}Free Shipping{% endif %}</span></p>
               </div>
             </div>
             <div class="extra-info">
@@ -139,6 +139,18 @@
   .edit a {
     margin-left: 15px;
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .title-wrapper {
+      justify-content: center;
+      position: relative;
+    }
+
+    .edit a {
+      position: absolute;
+      right: 0;
+    }
   }
 </style>
 
