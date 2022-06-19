@@ -37,7 +37,7 @@
                   {% else %}
                     {% assign cap = product.compare_at_price | money_without_trailing_zeros %}
                   {% endif %}
-                  <script>console.log("cap: "+cap)</script>
+                  <script>console.log("cap: {{cap}}")</script>
                   <!-- {% if quantity > 1 %}
                   <div class="discount">
                     <p>SAVE {{ cap | minus: product.price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
