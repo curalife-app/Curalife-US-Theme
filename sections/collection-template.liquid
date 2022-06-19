@@ -39,11 +39,11 @@
                   {% endif %}
                   <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
                   {% if quantity > 1 %}
-                  <div class="discount" style="display:none">
+                  <div class="discount">
                     <p>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
                   </div>
                   {% elsif product.compare_at_price_max > product.price %}
-                  <div class="discount" style="display:none">
+                  <div class="discount">
                     <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                   </div>
                   {% endif %} 
