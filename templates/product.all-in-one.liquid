@@ -30,9 +30,10 @@
                       <div class="product-img">
                         <div class="img-wrap">
                           <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
-
-                          <img class="free-shipping usa" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
-                          <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
+                          {% unless forloop.index == 1 %}
+                            <img class="free-shipping usa" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
+                            <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
+                          {% endunless %}
                         </div>
                       </div>
                     </div>
