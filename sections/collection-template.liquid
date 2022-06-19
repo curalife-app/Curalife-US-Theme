@@ -18,6 +18,10 @@
                                         <div class="img">
                                             <img src="{{ product.featured_image.src | img_url: '500x500' }}" alt="">
                                         </div>
+                                        {% unless forloop.index == 1 %}
+                                          <img class="free-shipping usa" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
+                                          <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
+                                        {% endunless %}
                                     </a>
                                 {% endif %}
                                 <div class="discount">
