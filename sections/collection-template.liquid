@@ -31,11 +31,11 @@
                   {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
                   {% if localization.country.iso_code == 'CA' %}
-                    {% assign cap = "$" | append: var.metafields.my_fields.ca_cap %}
+                    {% assign cap = "$" | append: product.metafields.my_fields.ca_cap %}
                   {% elsif localization.country.iso_code == 'AU' %}
-                    {% assign cap = "$" | append: var.metafields.my_fields.au_cap %}
+                    {% assign cap = "$" | append: product.metafields.my_fields.au_cap %}
                   {% else %}
-                    {% assign cap = var.compare_at_price | money_without_trailing_zeros %}
+                    {% assign cap = product.compare_at_price | money_without_trailing_zeros %}
                   {% endif %}
 
                   {% if quantity > 1 %}
@@ -62,9 +62,9 @@
                   <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                   <div class="price">
                     {% if quantity > 1 %}
-                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" }}</strike> Per Bottle</p>
+                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
                     {% elsif product.compare_at_price > product.price %}
-                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" }}</strike></p>
+                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                     {% else %}
                       <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
