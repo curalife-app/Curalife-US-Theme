@@ -40,7 +40,7 @@
 
                   {% if quantity > 1 %}
                   <div class="discount">
-                    <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+                    <p>SAVE {{ cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
                   </div>
                   {% elsif product.compare_at_price_max > product.price %}
                   <div class="discount">
