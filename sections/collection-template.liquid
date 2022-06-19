@@ -31,9 +31,9 @@
                   {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
                   {% if localization.country.iso_code == 'CA' %}
-                    {% assign cap = "$" | append: product.metafields.my_fields.ca_cap %}
+                    {% assign cap = product.metafields.my_fields.ca_cap %}
                   {% elsif localization.country.iso_code == 'AU' %}
-                    {% assign cap = "$" | append: product.metafields.my_fields.au_cap %}
+                    {% assign cap = product.metafields.my_fields.au_cap %}
                   {% else %}
                     {% assign cap = product.compare_at_price | money_without_trailing_zeros %}
                   {% endif %}
