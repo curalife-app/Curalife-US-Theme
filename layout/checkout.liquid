@@ -321,7 +321,9 @@ woopra.track('Checkout Step - Shipping', {});
           user_agent: navigator.userAgent
         });
 
-        woopra.track('Checkout Step - Thank You', {});
+        woopra.track('Checkout Step - Thank You', {
+          'test_variant': test_variant: $.cookie("_sc_2")
+        });
  };
 </script>
 
