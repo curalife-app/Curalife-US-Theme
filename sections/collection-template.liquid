@@ -187,7 +187,28 @@ window.dataLayer.push({
 }
 
 .discount {
-    background-image: url("{{ 'product-aio-sale-badge-bg.png' | asset_url }}")
+}
+
+.product-card .picture .discount {
+    background-image: url("{{ 'product-aio-sale-badge-bg.png' | asset_url }}");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: 5;
+    top: 130px;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    left: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card .picture .discount p {
+    background: unset;
+    font-size: 26px;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 760px) {
