@@ -30,15 +30,23 @@
                   {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                   {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
+                  {% if localization.country.iso_code == 'CA' %}
+                    {% assign cap = product.metafields.my_fields.ca_cap %}
+                  {% elsif localization.country.iso_code == 'AU' %}
+                    {% assign cap = product.metafields.my_fields.au_cap %}
+                  {% else %}
+                    {% assign cap = product.compare_at_price | money_without_trailing_zeros %}
+                  {% endif %}
+                  <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
                   {% if quantity > 1 %}
                   <div class="discount">
-                    <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" }}</p>
+                    <p>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
                   </div>
                   {% elsif product.compare_at_price_max > product.price %}
-                  <div class="discount">
+                  <div class="discount" style="display:none">
                     <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                   </div>
-                  {% endif %}
+                  {% endif %} 
               </div>
               <div class="info">
                 <div class="main">
@@ -54,9 +62,9 @@
                   <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                   <div class="price">
                     {% if quantity > 1 %}
-                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" }}</strike> Per Bottle</p>
+                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
                     {% elsif product.compare_at_price > product.price %}
-                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" }}</strike></p>
+                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                     {% else %}
                       <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
@@ -74,8 +82,67 @@
             </div>
           </div>
         {% endfor %}
-        
-  <script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.catalog-page h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.price p strike {
+  color: #01C6B2;
+}
+
+.supply-days {
+  font-size: 16px;
+  text-align: center;
+  line-height: 0;
+  font-weight: 200;
+}
+
+.free-shipping {
+  position: absolute;
+  z-index: 10;
+  right: 2px;
+  top: 5px;
+  width: 100px;
+}
+
+.product-card .picture .discount {
+  background-image: url("{{ 'product-aio-sale-badge-bg.png' | asset_url }}");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: 5;
+  top: 130px;
+  width: 50%;
+  height: 50px;
+  text-align: center;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card .picture .discount p {
+  background: unset;
+  font-size: 26px;
+  font-weight: bold;
+  border: 0;
+}
+
+@media screen and (max-width: 760px) {
+  .product-card {
+    width: 100% !important;
+  }
+}
+</style>
+
+<script>
   $(document).on("click", "#AddTCart", function () {
   window.dataLayer  = window.dataLayer || [];
   window.dataLayer.push({
@@ -108,40 +175,32 @@
     });
 
     window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'add_to_cart',       
-  ecommerce: {                          
-  items: [{                           
-    item_name: $(this).attr("title"),
-    item_id: $(this).attr("prod-id"),
-    affiliation: '{{ shop.name }}',
-    price: $(this).attr("price"),
-    currency: '{{ shop.currency }}',
-    item_brand: 'CuraLife',
-    item_category: 'CuraLin',
-    quantity: 1               
-  }]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
+    window.dataLayer.push({
+      event: 'add_to_cart',       
+      ecommerce: {                          
+      items: [{                           
+        item_name: $(this).attr("title"),
+        item_id: $(this).attr("prod-id"),
+        affiliation: '{{ shop.name }}',
+        price: $(this).attr("price"),
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
+        quantity: 1               
+      }]
+      },
+      user_email: '{{ customer.email }}',
+      user_phone: '{{ customer.phone }}',
+      user_first_name: '{{ customer.first_name }}',
+      user_last_name: '{{ customer.last_name }}',
+      user_city: '{{ customer.customer_address.city }}',
+      user_state: '{{ customer.customer_address.province }}',
+      user_zip: '{{ customer.customer_address.zip }}',
+      user_country: '{{customer.customer_address.country_code | t}}',
+      user_agent: navigator.userAgent
+    });
   });
-</script>              
-        
-        
-
-      </div>
-    </div>
-  </div>
-</div>
+</script> 
 
 {% schema %}
 {
@@ -159,68 +218,4 @@ window.dataLayer.push({
     }
   ]
 }
-
 {% endschema %}
-
-{% style %}
-
-.catalog-page h1 {
-  text-align: center;
-  padding-top: 30px;
-}
-
-.price p strike {
-  color: #01C6B2;
-}
-
-.supply-days {
-  font-size: 16px;
-  text-align: center;
-  line-height: 0;
-  font-weight: 200;
-}
-
-.free-shipping {
-  position: absolute;
-  z-index: 10;
-  right: -10px;
-  top: 5px;
-  width: 120px;
-}
-
-.product-card .picture .discount {
-  background-image: url("{{ 'product-aio-sale-badge-bg.png' | asset_url }}");
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  z-index: 5;
-  top: 130px;
-  width: 50%;
-  height: 50px;
-  text-align: center;
-  left: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-card .picture .discount p {
-  background: unset;
-  font-size: 26px;
-  font-weight: bold;
-  border: 0;
-}
-
-@media screen and (max-width: 760px) {
-  .product-card {
-    width: 100% !important;
-  }
-}
-
-{% endstyle %}
-
-{% javascript %}
-
-
-
-{% endjavascript %}
