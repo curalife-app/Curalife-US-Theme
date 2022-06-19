@@ -43,7 +43,7 @@
                     <p>SAVE {{ cap | minus: product.price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
                   </div>
                   {% elsif product.compare_at_price_max > product.price %}
-                  <div class="discount">
+                  <div class="discount" style="display:none">
                     <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                   </div>
                   {% endif %} 
