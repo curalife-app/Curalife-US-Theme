@@ -24,7 +24,6 @@
                                         {% endunless %}
                                     </a>
                                 {% endif %}
-                                <div class="discount">
 
                                     {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                                     {% assign quantity_by_cents = quantity | times: 100 %}
@@ -32,11 +31,14 @@
                                     {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
                                     {% if quantity > 1 %}
+                                    <div class="discount">
                                         <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" }}</p>
+                                    </div>
                                     {% elsif product.compare_at_price_max > product.price %}
+                                    <div class="discount">
                                         <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
+                                    </div>
                                     {% endif %}
-                                </div>
                             </div>
                             <div class="info">
                                 <div class="main">
