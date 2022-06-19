@@ -31,11 +31,7 @@
                   {% elsif localization.country.iso_code == 'AU' %}
                     {% assign cap = product.metafields.my_fields.au_cap %}
                   {% else %}
-<<<<<<< HEAD
-                    {% assign cap = product.compare_at_price | money_without_trailing_zeros %}
-=======
                     {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
->>>>>>> test-content-change
                   {% endif %}
                   <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
                   {% if quantity > 1 %}
@@ -129,11 +125,6 @@
 
 .product-card .picture .discount p {
   background: unset;
-<<<<<<< HEAD
-  font-size: 26px;
-  font-weight: bold;
-  border: 0;
-=======
   font-size: 22px;
   font-weight: bold;
   border: 0;
@@ -142,7 +133,6 @@
 
 .product-card .picture:after {
   background-image: url({{ 'ellipse.svg' | asset_url }});
->>>>>>> test-content-change
 }
 
 @media screen and (max-width: 760px) {
