@@ -183,14 +183,14 @@ if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window
           ecommerce: {                          
             items: items_data
           },
-          user_email: '{{ customer.email }}',
-          user_phone: '{{ customer.phone }}',
-          user_first_name: '{{ customer.first_name }}',
-          user_last_name: '{{ customer.last_name }}',
-          user_city: '{{ customer.customer_address.city }}',
-          user_state: '{{ customer.customer_address.province }}',
-          user_zip: '{{ customer.customer_address.zip }}',
-          user_country: '{{customer.customer_address.country_code | t}}',
+          email: '{{ checkout.email }}',
+          phone: '{{ checkout.shipping_address.phone }}',
+          name: '{{ checkout.shipping_address.first_name }}',
+          surname: '{{ checkout.shipping_address.last_name }}',
+          city: '{{ checkout.shipping_address.city }}',
+          state: '{{ checkout.shipping_address.province }}',
+          zip: '{{ checkout.shipping_address.zip }}',
+          country: '{{ checkout.shipping_address.country_code }}',
           user_agent: navigator.userAgent
         });
 
@@ -224,14 +224,14 @@ window.dataLayer.push({
     shipping_tier: 'Free Shipping',                 
     items: items_data
   },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
+  email: '{{ checkout.email }}',
+  phone: '{{ checkout.shipping_address.phone }}',
+  name: '{{ checkout.shipping_address.first_name }}',
+  surname: '{{ checkout.shipping_address.last_name }}',
+  city: '{{ checkout.shipping_address.city }}',
+  state: '{{ checkout.shipping_address.province }}',
+  zip: '{{ checkout.shipping_address.zip }}',
+  country: '{{ checkout.shipping_address.country_code }}',
   user_agent: navigator.userAgent
 });
 
@@ -265,14 +265,14 @@ woopra.track('Checkout Step - Shipping', {});
           payment_type: '',                    
           items: items_data
         },
-        user_email: '{{ customer.email }}',
-        user_phone: '{{ customer.phone }}',
-        user_first_name: '{{ customer.first_name }}',
-        user_last_name: '{{ customer.last_name }}',
-        user_city: '{{ customer.customer_address.city }}',
-        user_state: '{{ customer.customer_address.province }}',
-        user_zip: '{{ customer.customer_address.zip }}',
-        user_country: '{{customer.customer_address.country_code | t}}',
+        email: '{{ checkout.email }}',
+        phone: '{{ checkout.shipping_address.phone }}',
+        name: '{{ checkout.shipping_address.first_name }}',
+        surname: '{{ checkout.shipping_address.last_name }}',
+        city: '{{ checkout.shipping_address.city }}',
+        state: '{{ checkout.shipping_address.province }}',
+        zip: '{{ checkout.shipping_address.zip }}',
+        country: '{{ checkout.shipping_address.country_code }}',
         user_agent: navigator.userAgent
       });
 
@@ -313,14 +313,14 @@ woopra.track('Checkout Step - Shipping', {});
             coupon: '{{ coupon.title }}',
             items: items_data
           },
-          user_email: '{{ customer.email }}',
-          user_phone: '{{ customer.phone }}',
-          user_first_name: '{{ customer.first_name }}',
-          user_last_name: '{{ customer.last_name }}',
-          user_city: '{{ customer.customer_address.city }}',
-          user_state: '{{ customer.customer_address.province }}',
-          user_zip: '{{ customer.customer_address.zip }}',
-          user_country: '{{customer.customer_address.country_code | t}}',
+          email: '{{ checkout.email }}',
+          phone: '{{ checkout.shipping_address.phone }}',
+          name: '{{ checkout.shipping_address.first_name }}',
+          surname: '{{ checkout.shipping_address.last_name }}',
+          city: '{{ checkout.shipping_address.city }}',
+          state: '{{ checkout.shipping_address.province }}',
+          zip: '{{ checkout.shipping_address.zip }}',
+          country: '{{ checkout.shipping_address.country_code }}',
           user_agent: navigator.userAgent
         });
 
