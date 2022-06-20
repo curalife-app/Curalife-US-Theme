@@ -173,14 +173,14 @@ width:100%;
     ecommerce: {
       items: items_data
     },
-    user_email: "{{ customer.email }}",
-    user_phone: "{{ customer.phone }}",
-    user_first_name: "{{ customer.first_name }}",
-    user_last_name: "{{ customer.last_name }}",
-    user_city: "{{ customer.customer_address.city }}",
-    user_state: "{{ customer.customer_address.province }}",
-    user_zip: "{{ customer.customer_address.zip }}",
-    user_country: "{{ customer.customer_address.country_code | t }}",
+    email: '{{ customer.email }}',
+    phone: '{{ customer.phone }}',
+    name: '{{ customer.first_name }}',
+    surname: '{{ customer.last_name }}',
+    city: '{{ customer.customer_address.city }}',
+    state: '{{ customer.customer_address.province }}',
+    zip: '{{ customer.customer_address.zip }}',
+    country: '{{customer.customer_address.country_code | t}}',
     user_agent: navigator.userAgent
   });
 </script>
