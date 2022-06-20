@@ -16,9 +16,12 @@
       email: {{ customer.email | json }},              
       order_count: {{ customer.orders_count | json }},
       total_spent: {{ customer.total_spent | json }},
-      test_variant: $.cookie("_sc_3")
     });
   {%- endif -%}
+
+  woopra.identify({
+    test_variant: $.cookie("_sc_3")
+  });
   
     woopra.track();
   </script>
