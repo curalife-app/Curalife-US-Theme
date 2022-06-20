@@ -183,7 +183,7 @@ if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window
             items: items_data
           },
           email: '{{ checkout.email }}',
-          phone: '{{ checkout.shipping_address.phone }}',
+          phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
           name: '{{ checkout.shipping_address.first_name }}',
           surname: '{{ checkout.shipping_address.last_name }}',
           city: '{{ checkout.shipping_address.city }}',
@@ -224,7 +224,7 @@ window.dataLayer.push({
     items: items_data
   },
   email: '{{ checkout.email }}',
-  phone: '{{ checkout.shipping_address.phone }}',
+  phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
   name: '{{ checkout.shipping_address.first_name }}',
   surname: '{{ checkout.shipping_address.last_name }}',
   city: '{{ checkout.shipping_address.city }}',
@@ -265,7 +265,7 @@ woopra.track('Checkout Step - Shipping', {});
           items: items_data
         },
         email: '{{ checkout.email }}',
-        phone: '{{ checkout.shipping_address.phone }}',
+        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
         name: '{{ checkout.shipping_address.first_name }}',
         surname: '{{ checkout.shipping_address.last_name }}',
         city: '{{ checkout.shipping_address.city }}',
@@ -313,7 +313,7 @@ woopra.track('Checkout Step - Shipping', {});
             items: items_data
           },
           email: '{{ checkout.email }}',
-          phone: '{{ checkout.shipping_address.phone }}',
+          phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
           name: '{{ checkout.shipping_address.first_name }}',
           surname: '{{ checkout.shipping_address.last_name }}',
           city: '{{ checkout.shipping_address.city }}',
