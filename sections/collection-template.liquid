@@ -66,7 +66,7 @@
                     {% endif %}
                   </div>
 
-                  <img class="free-shipping{% if forloop.index == 1 %} usa{% endif %}" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
+                  <img class="free-shipping usa" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy">
                 </div>
                 <form action="/cart/add" method="post">
                   <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
