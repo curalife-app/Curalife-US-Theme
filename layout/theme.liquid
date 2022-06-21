@@ -83,7 +83,7 @@
       }
 
       let noTestCountries = ["IL", "AU", "CA"]
-      if (noTestCountries.includes(window.country)) {
+      if (noTestCountries.includes(sessionStorage.getItem('country'))) {
         $("shipscout-banner").hide();
       }
     </script>
