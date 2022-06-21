@@ -81,6 +81,11 @@
         $(".usa").hide();
         $(".geo").show();
       }
+
+      let noTestCountries = ["IL", "AU", "CA"]
+      if (noTestCountries.includes(window.country)) {
+        $("shipscout-banner").hide();
+      }
     </script>
 
     <style>
