@@ -9,7 +9,7 @@
                 {% for lp_prod in lp_prods %}
                     {% assign prod = all_products[lp_prod] %}
                     {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
-                    {% assign quantity_by_cents = quantity | times: 100 | ceil %}
+                    {% assign quantity_by_cents = quantity | times: 100 %}
                     {% assign item_price = prod.price | divided_by: quantity_by_cents %}
                     {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
                     {% if localization.country.iso_code == 'AU' %}
@@ -21,7 +21,7 @@
                     {% endif %}
 
                     <script>console.log("original item price: {{original_item_price}}, item price: {{item_price}}, quantity: {{quantity}}");</script>
-                    {% assign save_price = original_item_price | minus: item_price | times: quantity %}
+                    {% assign save_price = original_item_price | minus: item_price | times: quantity | ceil %}
 
                     <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
                         {% if forloop.index == 2 %}
