@@ -1,51 +1,70 @@
-<div class="curalin-page-header container">
-    <img class="header-img" src="{{section.settings.header_image | img_url:'master' }}" alt="CuraLin Header Image">
-    <div class="header-content">
-        <h1>
-            {{section.settings.header_title}}<br><br>
-            <span class="header-subtitle">{{section.settings.header_subtitle}}</span>
-        </h1>
-        <div class="btn">
-            <a href="{{section.settings.button_link}}" class="main-btn">{{section.settings.button_title}}</a>
+<div class="curalin-page-header">
+    <div class="container">
+        <div class="curalin-desktop-left">
+            <img class="curalin-desktop" src="{{ 'glucose-support-banner-curalin.png' | asset_url }}" alt="">
+            <img class="natural-blood-sugar" src="{{ 'glucose-support-banner-natural-blood-sugar.png' | asset_url }}"
+                alt="">
+            <img class="up-to-off" src="{{ 'glucose-support-banner-up-to-off.png' | asset_url }}" alt="">
+            <a href="/collections/all"><img class="shop-now"
+                    src="{{ 'glucose-support-banner-shop-now.png' | asset_url }}" alt=""></a>
+        </div>
+        <div class="curalin-desktop-right">
+            <img class="chair-with-bottle" src="{{ 'glucose-support-banner-chair-with-bottle.png' | asset_url }}" alt="">
+        </div>
+        <div class="curalin-tablet-left">
+            <img class="curalin-tablet" src="{{ 'glucose-support-banner-curalin.png' | asset_url }}" alt="">
+            <img class="natural-blood-sugar-tablet" src="{{ 'glucose-support-banner-natural-blood-sugar.png' | asset_url }}"
+                alt="">
+            <img class="natural-blood-sugar-mobile"
+                src="{{ 'glucose-support-banner-natural-blood-sugar-mobile.png' | asset_url }}" alt="">
+            <img class="chair-with-bottle" src="{{ 'glucose-support-banner-chair-with-bottle.png' | asset_url }}" alt="">
+            <img class="up-to-off" src="{{ 'glucose-support-banner-up-to-off.png' | asset_url }}" alt="">
+            <div class="shop-now-tablet">
+                <a href="/collections/all"><img
+                        class="shop-now" src="{{ 'glucose-support-banner-shop-now.png' | asset_url }}" alt=""></a>
+            </div>
+    
         </div>
     </div>
 </div>
 
+
+
 {% schema %}
 {
-    "name": "Glucose Support Banner",
-    "settings": [
-        {
-            "type": "image_picker",
-            "id": "header_image",
-            "label": "Header Image"
-        }, {
-            "type": "text",
-            "id": "header_title",
-            "label": "Title",
-            "default": "Enter Title"
-        }, {
-            "type": "text",
-            "id": "header_subtitle",
-            "label": "Sub-Title",
-            "default": "Enter Sub-Title"
-        }, {
-            "type": "text",
-            "id": "button_title",
-            "label": "Button Title",
-            "default": "Enter Button Title"
-        }, {
-            "id": "button_link",
-            "type": "url",
-            "label": "Button Link"
-        }
-    ],
-    "presets": [
-        {
-            "name": "Glucose Support Banner",
-            "category": "image"
-        }
-    ]
+"name": "Glucose Support Banner",
+"settings": [
+{
+"type": "image_picker",
+"id": "header_image",
+"label": "Header Image"
+}, {
+"type": "text",
+"id": "header_title",
+"label": "Title",
+"default": "Enter Title"
+}, {
+"type": "text",
+"id": "header_subtitle",
+"label": "Sub-Title",
+"default": "Enter Sub-Title"
+}, {
+"type": "text",
+"id": "button_title",
+"label": "Button Title",
+"default": "Enter Button Title"
+}, {
+"id": "button_link",
+"type": "url",
+"label": "Button Link"
+}
+],
+"presets": [
+{
+"name": "Glucose Support Banner",
+"category": "image"
+}
+]
 }
 
 {% endschema %}
@@ -53,63 +72,126 @@
 {% style %}
 
 .curalin-page-header {
-    display: inline-flex;
+background: rgb(246,173,58);
+background: linear-gradient(127deg, rgba(246,173,58,1) 0%, rgba(255,214,46,1) 100%);
+padding: 40px;
+}
+
+.curalin-page-header .container {
+    display: flex;
     align-items: center;
-    padding-top: 30px;
     justify-content: center;
 }
 
-.header-img {
-    max-height: 400px;
-    position: relative;
+.curalin-tablet-left {
+display: none;
 }
 
-.header-content {
-    margin-left: 100px;
-    margin-top: -100px;
+.curalin-desktop-left {
+display: flex;
+flex-direction: column;
+margin-top: 30px;
+align-items: flex-start;
 }
 
-.header-content .btn .main-btn {
-    background-color: #d07c5b;
-    border-color: #d07c5b;
-    box-shadow: 0px 1px 2px rgb(0 0 0 / 20%);
-    font-size: 20px;
+.up-to-off {
+margin-top: 30px;
+margin-bottom:30px;
 }
 
-h1 {
-    font-size: 60px;
-    line-height: 0.5em;
-    margin: 20px 0;
+.curalin-desktop-right {
+margin-left: 50px;
+opacity: 0.9;
 }
 
-.header-subtitle {
-    font-weight: normal;
-    font-size: 30px;
+@media screen and (max-width: 768px) {
+
+.sub-title {
+    margin-top: 3vw;
+}
+.curalin-page-header {
+flex-wrap: wrap;
 }
 
-@media screen and (max-width: 760px) {
-    .curalin-page-header {
-        flex-wrap: wrap;
-    }
+.curalin-desktop-left {
+display: none;
+}
 
-    .header-img {
-        width: 100%;
-        margin-right: 25%;
-    }
+.curalin-desktop-right {
+display: none;
+}
 
-    h1 {
-        font-size: 50px;
-    }
+.curalin-tablet-left {
+display: flex;
+flex-direction: column;
 
-    .header-content {
-        text-align: center;
-        margin: 0 10px;
-        width: 100%;
-    }
+}
 
-    .header-subtitle {
-        font-size: 25px;
-    }
-  }
+.curalin-tablet {
+max-width: 447px;
+margin-left: 30px;
+}
+
+.natural-blood-sugar-tablet {
+max-width: 592px;
+
+}
+
+.natural-blood-sugar-mobile {
+display: none;
+}
+
+.chair-with-bottle {
+max-width: 450px;
+margin: 15px auto;
+}
+
+.up-to-off {
+margin: auto;
+max-width: 528px;
+}
+
+.shop-now-tablet {
+    text-align: center;
+    height: 10px;
+}
+
+.shop-now {
+position: relative;
+top: 20px;
+z-index: 5;
+}
+
+}
+
+@media screen and (max-width: 600px) {
+
+.sub-title {
+    margin-top: unset;
+}
+.curalin-tablet {
+max-width: 280px;
+margin: auto;
+}
+
+.natural-blood-sugar-tablet {
+display: none;
+}
+.natural-blood-sugar-mobile {
+display: flex;
+width: 260px;
+margin: 5px auto;
+padding-left: 10px;
+}
+.chair-with-bottle {
+width: 100%;
+margin: 10px auto;
+}
+
+.up-to-off {
+margin: auto;
+max-width: 281px;
+}
+}
 
 {% endstyle %}
