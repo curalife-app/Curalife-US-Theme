@@ -22,7 +22,7 @@
                     {% endif %}
 
                     <script>console.log("original item price: {{original_item_price}}, item price: {{item_price}}, quantity: {{}}");</script>
-                    {% assign save_price = original_item_price | minus: item_price_for_save | times: quantity %}
+                    {% assign save_price = original_item_price | minus: item_price_for_save | times: quantity | ceil %}
 
                     <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
                         {% if forloop.index == 2 %}
