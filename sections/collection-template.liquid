@@ -34,6 +34,9 @@
                     {% assign currency_letters = localization.country.iso_code %}
                   {% endif %}
 
+                  <script>console.log("original item price: {{original_item_price}}, item price: {{item_price}}, quantity: {{quantity}}");</script>
+
+
                   {% if quantity > 0 %}
                     <p>SAVE {{currency_letters}}{{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
                   {% elsif product.compare_at_price_max > product.price %}
