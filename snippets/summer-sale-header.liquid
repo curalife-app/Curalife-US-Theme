@@ -12,6 +12,14 @@
   </div>
 </section>
 
+{% if product.title != 'CuraLin' %}
+  <style>
+    .product-slider .main-slider .product-img .img-wrap {
+      bottom: 10%;
+    }
+  </style>
+{% endif %}
+
 
 
 <style>
@@ -33,7 +41,6 @@
       z-index: 5;
       position: relative;
       top: -20px;
-      max-width: 550px;
     }
 
     .summer-sale-mobile {
@@ -43,7 +50,7 @@
     @media screen and (max-width: 760px) {
         .container-text {
             justify-content: space-around;
-            max-height: 20vw;
+            max-height: 15vw;
         }
 
     .summer-sale {
