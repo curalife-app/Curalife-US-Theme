@@ -34,11 +34,13 @@
                     {% assign currency_letters = localization.country.iso_code %}
                   {% endif %}
 
-                  <script>console.log("original item price: {{original_item_price}}, item price: {{item_price}}, quantity: {{quantity}}");</script>
+                  {% assign save_price = original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros %}
+
+                  <script>console.log("original item price: {{original_item_price}}, item price: {{item_price}}, quantity: {{quantity}}, save: {{save_price}}");</script>
 
 
                   {% if quantity > 0 %}
-                    <p>SAVE {{currency_letters}}{{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
+                    <p>SAVE {{currency_letters}}{{save_price}}</p>
                   {% elsif product.compare_at_price_max > product.price %}
                     <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                   {% endif %}
