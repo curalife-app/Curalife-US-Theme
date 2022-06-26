@@ -52,13 +52,16 @@
                   <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                   <div class="price">
                     {% if quantity > 1 %}
-                      <p id="divided-price">{{ item_price | money_without_trailing_zeros }}<strike>{{ original_item_price | money_without_trailing_zeros }}</strike> Per Bottle</p>
+                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
                     {% elsif product.compare_at_price > product.price %}
-                      <p id="discounted-price">{{ product.price | money_without_trailing_zeros }}<strike>{{ product.compare_at_price | money_without_trailing_zeros }}</strike></p>
+                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                     {% else %}
-                      <p id="original-price">{{ product.price | money_without_trailing_zeros }}</p>
+                      <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
                   </div>
+                  {% unless forloop.index == 1 %}
+                    <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy" style="display:none">
+                  {% endunless %}
                 </div>
 
                 <form method="post" action="/cart/add">
