@@ -20,8 +20,8 @@
                         {% assign original_item_price = prod.metafields.my_fields.original_item.value.price %}
                     {% endif %}
 
-                    <script>console.log("original item price: {{original_item_price}}, item price: {{item_price}}, quantity: {{quantity}}");</script>
                     {% assign save_price = original_item_price | minus: item_price | times: quantity %}
+                    <script>console.log("save price: {{save_price}}");</script>
 
                     <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
                         {% if forloop.index == 2 %}
