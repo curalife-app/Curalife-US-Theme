@@ -10,7 +10,7 @@
                     {% assign prod = all_products[lp_prod] %}
                     {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
                     {% assign quantity_by_cents = quantity | times: 100 %}
-                    {% assign item_price = prod.price | divided_by: quantity_by_cents | times: 100 | ceil %}
+                    {% assign item_price = prod.price | divided_by: quantity_by_cents | ceil %}
                     {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
                     {% if localization.country.iso_code == 'AU' %}
                         {% assign original_item_price = prod.metafields.my_fields.au_cap %}
