@@ -626,7 +626,7 @@ body {
   justify-content: space-between;
 }
 
-/* seperator */
+/* sperator */
 
 body.compensate-for-scrollbar {
   overflow: hidden;
@@ -1733,8 +1733,8 @@ select {
 
 .main-btn:hover {
   color: var(--white);
-  background-color: var(--green);
-  border-color: var(--green);
+  background-color: #d07c5b;
+  border-color: #d07c5b;
 }
 
 header {
@@ -1821,6 +1821,11 @@ header.scrolled:before {
   -webkit-transition: color var(--transition);
   -o-transition: color var(--transition);
   transition: color var(--transition);
+}
+
+@media only screen and (min-width : 767px) {
+  .main-menu ul li.dr_zone>a {
+  	display: none; }
 }
 
 .main-menu ul li a:hover {
@@ -11191,7 +11196,7 @@ footer .bottom-info .info-wrap .text p {
   .data-list ul li .order-item .status {
     width: 100%;
     padding: 7px 0;
-    text-align: left !important;
+    text-align: right;
   }
 
   .data-list ul li .order-item .status p span {
