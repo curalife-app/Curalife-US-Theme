@@ -5,13 +5,13 @@
             <div class="big-img">
                 <img src="{{ 'lp-quiz-logo-black.png' | file_url }}" alt="chef icon" loading="lazy">
             </div>
-            <div class="summer-sale">
+            <div class="summer-sale part">
                 <img src="{{ 'page.aio-first-page-summer-sale.png' | asset_url }}" alt="" loading="lazy">
             </div>
-            <div class="summer-sale-mobile">
+            <div class="summer-sale-mobile part">
                 <img src="{{ 'page.aio-first-page-summer-sale-mobile.png' | asset_url }}" alt="" loading="lazy">
             </div>
-            <div class="twenty-percent-off">
+            <div class="twenty-percent-off part">
                 <div class="up-to">
                     UP TO
                 </div>
@@ -1258,6 +1258,10 @@
     @media screen and (max-width: 760px) {
         .container-text {
             justify-content: space-around;
+        }
+
+        .container-text .part {
+            width: 33%;
         }
 
         .summer-sale {
