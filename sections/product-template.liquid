@@ -47,12 +47,8 @@
                         {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                         {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
-                        {% if localization.country.iso_code == 'CA' or localization.country.iso_code == 'AU' %}
-                          {% assign currency_letters = localization.country.iso_code %}
-                        {% endif %}
-
                         {% if quantity > 0 %}
-                          <p>SAVE {{currency_letters}}{{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
+                          <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
                         {% elsif product.compare_at_price_max > product.price %}
                           <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                         {% endif %}
@@ -149,6 +145,12 @@
     </div>
   </div>
 
+  {% if product.title != 'CuraLin' %}
+    <style>
+
+    </style>
+  {% endif %}
+
 <style>
   .product-info .description .form-wrap form .btn .main-btn {
     background-color: #F66E86;
@@ -186,13 +188,13 @@
       border: 0;
       background-image: url("{{ 'summer-sale-yellow-texture.png' | asset_url }}");
       background-size: cover;
-      width: fit-content;
+      width: 40%;
   }
 
 
   .product-slider .discount-badge {
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
     text-align: center;
     width: 100%;
   }
@@ -251,7 +253,7 @@
 
   .product-slider .discount-badge p {
     font-size: 6vw;
-    padding: 1vw 2vw;
+    padding: 1vw;
   }
   }
 
