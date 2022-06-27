@@ -24,7 +24,7 @@
                   </a>
                 {% endif %}
 
-                <div class="discount">
+                <div class="discount-badge">
                   {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                   {% assign quantity_by_cents = quantity | times: 100 %}
                   {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
@@ -161,7 +161,7 @@
   z-index: -1;
 }
 
-.product-card .picture .discount {
+.product-card .picture .discount-badge {
     display: flex;
     padding: 10px;
     position: absolute;
@@ -172,7 +172,7 @@
     pointer-events: none;
 }
 
-.product-card .picture .discount p {
+.product-card .picture .discount-badge p {
     margin: 80px auto;
     font-family: 'Montserrat';   
     font-weight: 600;
@@ -218,7 +218,7 @@
   }
 
   @media screen and (max-width: 1270px) {
-    .product-card .picture .discount p {
+    .product-card .picture .discount-badge p {
       font-size: 17px;
     }
 
@@ -256,12 +256,12 @@
       margin-top: 10px
     }
 
-    .product-card .picture .discount {
+    .product-card .picture .discount-badge {
       width: 80%;
       left: 10%;
     }
 
-    .product-card .picture .discount p {
+    .product-card .picture .discount-badge p {
         font-size: 7vw;
         padding: 2vw;
     }
