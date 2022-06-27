@@ -86,7 +86,6 @@
                     .main-slider {
                         padding: unset;
                         margin-left: unset;
-                        max-height: 460px;
 
                         .main-slider-vector-bg {
                             position: absolute;
@@ -101,6 +100,11 @@
     
                                 .img-wrap {
                                     padding: unset;
+                                    text-align: center;
+
+                                    img {
+                                        max-height: 460px;
+                                    }
                                 }
                             }
 
