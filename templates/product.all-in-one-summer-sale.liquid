@@ -218,9 +218,9 @@
                 {% assign cap = var.compare_at_price %}
 
                 {% if localization.country.iso_code == 'CA' %}
-                  {% assign cap = var.metafields.my_fields.ca_cap %}
+                  {% assign cap = var.metafields.my_fields.ca_cap | times: 100  %}
                 {% elsif localization.country.iso_code == 'AU' %}
-                  {% assign cap = var.metafields.my_fields.au_cap %}
+                  {% assign cap = var.metafields.my_fields.au_cap | times: 100 %}
                 {% endif %}
 
 
