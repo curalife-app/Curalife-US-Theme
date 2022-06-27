@@ -36,7 +36,7 @@
                     {% assign cap_price = product.metafields.my_fields.ca_cap %}
                   {% elsif localization.country.iso_code == 'AU' %}
                     {% assign currency_letters = localization.country.iso_code %}
-                    {% assign cap_price = product.metafields.my_fields.au_cap %}
+                    {% assign cap_price = product.metafields.my_fields.original_item.value.metafields.au_cap %}
                   {% endif %}
 
 
