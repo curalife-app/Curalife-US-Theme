@@ -15,12 +15,12 @@
                     {% assign cap_price = product.metafields.my_fields.original_item.value.compare_at_price | divided_by: 100 | times: quantity %}
                     {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
 
-                    {% if localization.country.iso_code == 'AU' %}
-                        {% assign original_item_price = prod.metafields.my_fields.au_cap %}
-                    {% elsif localization.country.iso_code == 'CA' %}
-                        {% assign original_item_price = prod.metafields.my_fields.ca_cap %}
-                    {% else %}
-                        {% assign original_item_price = prod.metafields.my_fields.original_item.value.price %}
+                    {% if localization.country.iso_code == 'CA' %}
+                      {% assign currency_letters = localization.country.iso_code %}
+                      {% assign cap_price = product.metafields.my_fields.ca_cap %}
+                    {% elsif localization.country.iso_code == 'AU' %}
+                      {% assign currency_letters = localization.country.iso_code %}
+                      {% assign cap_price = product.metafields.my_fields.au_cap %}
                     {% endif %}
 
                     {% assign item_price_bundle =  item_price_for_save | times: quantity %}
