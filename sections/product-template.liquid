@@ -138,7 +138,7 @@
               </form>
 
               <div class="shipping-label">
-                <p><span class="{{section.settings.ship_icn}}"></span><span class="usa">Free Shipping</span><span class="geo" style="display:none">{% if product.title == 'CuraLin' %}Buy a bundle pack and get FREE SHIPPING!{% else %}Free Shipping{% endif %}</span></p>
+                <p><span class="{{section.settings.ship_icn}}"></span><span class="usa">Free Shipping</span><span class="geo" style="display:none">{% if product.title == 'CuraLin' %}<a href="/collections/all" style="font-size:3.5vw">Buy a bundle pack and get FREE SHIPPING!</a>{% else %}Free Shipping{% endif %}</span></p>
               </div>
             </div>
             <div class="extra-info">
@@ -194,7 +194,7 @@
       border: 0;
       background-image: url("{{ 'summer-sale-yellow-texture.png' | asset_url }}");
       background-size: cover;
-      width: 40%;
+      width: fit-content;
   }
 
 
@@ -259,7 +259,7 @@
 
   .product-slider .discount-badge p {
     font-size: 5vw;
-    padding: 1vw;
+    padding: 1vw 2vw;
   }
   }
 
