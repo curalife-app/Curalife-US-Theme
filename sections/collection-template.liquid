@@ -27,7 +27,8 @@
                 <div class="discount">
                   {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                   {% assign quantity_by_cents = quantity | times: 100 %}
-                  {% assign item_price = product.price | divided_by: quantity_by_cents %}
+                  {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
+                  {% assign item_price_for_save = product.price | divided_by: quantity_by_cents %}
                   {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
                   {% if localization.country.iso_code == 'CA' %}
@@ -38,7 +39,7 @@
                     {% assign original_item_price = product.metafields.my_fields.au_cap %}
                   {% endif %}
 
-                  {% assign save_price = original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros %}
+                  {% assign save_price = original_item_price | minus: item_price_for_save | times: quantity | money_without_trailing_zeros %}
 
                   <script>console.log("original item price: {{original_item_price}}, item price: {{item_price}}, quantity: {{quantity}}, save: {{save_price}}");</script>
 
