@@ -53,7 +53,7 @@
                             <div class="price per-bottle">
                                 {% if quantity > 1 %}
                                     <p {% if forloop.index == 3 %}id="dot5"{% endif %} class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
-                                    <p class="per-bottle-title" {% if forloop.index == 3 %}id="dot5"{% endif %}>Per<br>Bottle</p>
+                                    <p class="per-bottle-title">Per<br>Bottle</p>
                                 {% else %}
                                     <p id="original-price" class="original-price">{{ prod.price | money_without_trailing_zeros }}</p>
                                     <p class="per-bottle-title">Per<br>Bottle</p>
