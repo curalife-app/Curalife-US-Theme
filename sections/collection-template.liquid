@@ -33,10 +33,10 @@
 
                   {% if localization.country.iso_code == 'CA' %}
                     {% assign currency_letters = localization.country.iso_code %}
-                    {% assign original_item_price = product.metafields.my_fields.ca_cap %}
+                    {% assign original_item_price = product.metafields.my_fields.original_item.metafields.my_fields.ca_cap %}
                   {% elsif localization.country.iso_code == 'AU' %}
                     {% assign currency_letters = localization.country.iso_code %}
-                    {% assign original_item_price = product.metafields.my_fields.au_cap %}
+                    {% assign original_item_price = product.metafields.my_fields.original_item.metafields.my_fields.au_cap %}
                   {% endif %}
 
                   {% assign save_price = original_item_price | minus: item_price_for_save | times: quantity | money_without_trailing_zeros %}
