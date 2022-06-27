@@ -75,19 +75,19 @@
     {% endif %}
 
     <script>
-      var testVariant = $.cookie("_sc_4");
+      // var testVariant = $.cookie("_sc_4");
 
       // if (testVariant == 'B') {
         $(".usa").hide();
         $(".geo").show();
       // }
 
-      let noTestCountries = ["AU", "CA"]
-      if (noTestCountries.includes(sessionStorage.getItem('country'))) {
-        var styleSheet = document.createElement("style");
-        styleSheet.innerText = `.shipscout-banner {display: none;}`;
-        document.head.appendChild(styleSheet);
-      }
+      // let noTestCountries = ["AU", "CA"]
+      // if (noTestCountries.includes(sessionStorage.getItem('country'))) {
+      //   var styleSheet = document.createElement("style");
+      //   styleSheet.innerText = `.shipscout-banner {display: none;}`;
+      //   document.head.appendChild(styleSheet);
+      // }
     </script>
 
     <style>
