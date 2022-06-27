@@ -24,7 +24,7 @@
                     {% endif %}
 
                     {% assign item_price_bundle =  item_price_for_save | times: quantity %}
-                    {% assign save_price = cap_price | minus: item_price_bundle | times: 100 | money_without_trailing_zeros %}
+                    {% assign save_price = cap_price | minus: item_price_bundle | times: 100 %}
                     
                     <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
                         {% if forloop.index == 2 %}
@@ -41,7 +41,7 @@
                             <div class="info">
                                 <p style="text-transform: uppercase;">Up To {{ prod.metafields.my_fields.supply_days }} Days Supply</p>
                             </div>
-                            {% if save_price = cap_price | minus: item_price_bundle | times: 100 > 0 %}
+                            {% if cap_price | minus: item_price_bundle | times: 100 > 0 %}
                             <div class="save"><div class="save-bg"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div></div>
                             {% endif %}
                             <div class="img">
