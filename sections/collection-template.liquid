@@ -29,7 +29,7 @@
                   {% assign quantity_by_cents = quantity | times: 100 %}
                   {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                   {% assign item_price_for_save = product.price | divided_by: quantity_by_cents %}
-                  {% assign original_item_price = product.metafields.my_fields.original_item.value.price | divided_by: 100 %}
+                  {% assign original_item_price = product.metafields.my_fields.original_item.value.compare_at_price | divided_by: 100 %}
 
                   {% if localization.country.iso_code == 'CA' %}
                     {% assign currency_letters = localization.country.iso_code %}
