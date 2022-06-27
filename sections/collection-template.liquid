@@ -28,19 +28,26 @@
                   {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                   {% assign quantity_by_cents = quantity | times: 100 %}
                   {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-                  {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+                  {% assign item_price_for_save = product.price | divided_by: quantity_by_cents %}
+                  {% assign cap_price = product.metafields.my_fields.original_item.value.compare_at_price | divided_by: 100 | times: quantity %}
 
-                  {% if localization.country.iso_code == 'CA' or localization.country.iso_code == 'AU' %}
+                  {% if localization.country.iso_code == 'CA' %}
                     {% assign currency_letters = localization.country.iso_code %}
+                    {% assign cap_price = product.metafields.my_fields.ca_cap %}
+                  {% elsif localization.country.iso_code == 'AU' %}
+                    {% assign currency_letters = localization.country.iso_code %}
+                    {% assign cap_price = product.metafields.my_fields.au_cap %}
                   {% endif %}
 
-                  {% assign save_price = original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros %}
 
-                  <script>console.log("original item price: {{original_item_price}}, item price: {{item_price}}, quantity: {{quantity}}, save: {{save_price}}");</script>
+                  {% assign item_price_bundle =  item_price_for_save | times: quantity %}
+                  {% assign save_price = cap_price | minus: item_price_bundle | times: 100 | money_without_trailing_zeros %}
+
+                  <script>console.log("original item price: {{cap_price}}, item price: {{item_price_for_save}}, quantity: {{quantity}}, save: {{save_price}}, bundle: {{item_price_bundle}}");</script>
 
 
                   {% if quantity > 0 %}
-                    <p>SAVE {{currency_letters}}{{save_price}}</p>
+                    <p {% if forloop.index == 3 %}id="dot5save"{% endif %}>SAVE {{currency_letters}}{{save_price}}</p>
                   {% elsif product.compare_at_price_max > product.price %}
                     <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                   {% endif %}
@@ -61,16 +68,20 @@
                   <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                   <div class="price">
                     {% if quantity > 1 %}
-                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
+                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" }}<strike {% if forloop.index == 3 %}id="dot5"{% endif %}>{{ cap_price | divided_by: quantity | times: 100 | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
                     {% elsif product.compare_at_price > product.price %}
                       <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                     {% else %}
                       <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
                   </div>
-                  {% unless forloop.index == 1 %}
+                  {% if request.path contains 'all-2' %}
                     <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy" style="display:none">
-                  {% endunless %}
+                  {% else %}
+                    {% unless forloop.index == 1 %}
+                    <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy" style="display:none">
+                    {% endunless %}
+                  {% endif %}
                 </div>
 
                 <form method="post" action="/cart/add">
@@ -88,6 +99,13 @@
     </div>
   </div>
 </div>
+
+{% if localization.country.iso_code != 'CA' and localization.country.iso_code != 'AU' %}
+  <script>
+    $("#dot5").before(".5");
+    $("#dot5save").text("SAVE $135");
+  </script>
+{% endif %}
 
 <style>
   .summer-sale-header {

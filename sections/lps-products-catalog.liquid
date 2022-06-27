@@ -12,16 +12,22 @@
                     {% assign quantity_by_cents = quantity | times: 100 %}
                     {% assign item_price = prod.price | divided_by: quantity_by_cents | times: 100 %}
                     {% assign item_price_for_save = prod.price | divided_by: quantity_by_cents %}
+                    {% assign cap_price = prod.metafields.my_fields.original_item.value.compare_at_price | divided_by: 100 | times: quantity %}
                     {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
-                    {% if localization.country.iso_code == 'AU' %}
-                        {% assign original_item_price = prod.metafields.my_fields.au_cap %}
-                    {% elsif localization.country.iso_code == 'CA' %}
-                        {% assign original_item_price = prod.metafields.my_fields.ca_cap %}
-                    {% else %}
-                        {% assign original_item_price = prod.metafields.my_fields.original_item.value.price %}
+
+                    {% if localization.country.iso_code == 'CA' %}
+                      {% assign currency_letters = localization.country.iso_code %}
+                      {% assign cap_price = prod.metafields.my_fields.ca_cap %}
+                    {% elsif localization.country.iso_code == 'AU' %}
+                      {% assign currency_letters = localization.country.iso_code %}
+                      {% assign cap_price = prod.metafields.my_fields.au_cap %}
                     {% endif %}
 
-                    {% assign save_price = original_item_price | minus: item_price_for_save | times: quantity | divided_by: 100 | times: 100 %}
+                    {% assign item_price_bundle =  item_price_for_save | times: quantity %}
+                    {% assign save_price = cap_price | minus: item_price_bundle | times: 100 %}
+                    <script>console.log("original item price: {{cap_price}}, item price: {{item_price_for_save}}, quantity: {{quantity}}, save: {{save_price}}, bundle: {{item_price_bundle}}");</script>
+
+                    
 
                     <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
                         {% if forloop.index == 2 %}
@@ -38,15 +44,15 @@
                             <div class="info">
                                 <p style="text-transform: uppercase;">Up To {{ prod.metafields.my_fields.supply_days }} Days Supply</p>
                             </div>
-                            {% if save_price > 0 %}
-                            <div class="save"><div class="save-bg"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div></div>
+                            {% if save_price %}
+                            <div class="save"><div class="save-bg"><p {% if forloop.index == 3 %}id="dot5save"{% endif %}>SAVE {{ save_price | money_without_trailing_zeros }}</p></div></div>
                             {% endif %}
                             <div class="img">
                                 <a class="cta-btn" href="{{ buylink }}" prod-id="{{ prod.id }}" prod-title="{{ prod.title }}" prod-price="{{ prod.price | money_without_trailing_zeros | slice: 26, 4 | replace: "<","" }}"><img src="{{ prod.featured_image.src | img_url: '500x500' }}" alt=""></a>
                             </div>
                             <div class="price per-bottle">
                                 {% if quantity > 1 %}
-                                    <p id="divided-price" class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
+                                    <p {% if forloop.index == 3 %}id="dot5"{% endif %} class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
                                     <p class="per-bottle-title">Per<br>Bottle</p>
                                 {% else %}
                                     <p id="original-price" class="original-price">{{ prod.price | money_without_trailing_zeros }}</p>
@@ -78,6 +84,13 @@
         </div>
     </div>
 </div>
+
+{% if localization.country.iso_code != 'CA' and localization.country.iso_code != 'AU' %}
+  <script>
+    $("#dot5").append(".5");
+    $("#dot5save").text("SAVE $135");
+  </script>
+{% endif %}
 
 {% style %}
 .product-section .extra-info {
@@ -364,6 +377,10 @@
 }
 
 @media screen and (max-width:760px) {
+    .save-bg p {
+        font-size: 5vw;
+    }
+    
     .product-section h2 {
         font-size: 7vw;
         font-weight: 700;

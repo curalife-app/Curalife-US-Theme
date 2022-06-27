@@ -45,10 +45,22 @@
                         {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                         {% assign quantity_by_cents = quantity | times: 100 %}
                         {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-                        {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+                        {% assign item_price_for_save = product.price | divided_by: quantity_by_cents %}
+                        {% assign cap_price = product.metafields.my_fields.original_item.value.compare_at_price | divided_by: 100 | times: quantity %}
 
+                        {% if localization.country.iso_code == 'CA' %}
+                          {% assign currency_letters = localization.country.iso_code %}
+                          {% assign cap_price = product.metafields.my_fields.ca_cap %}
+                        {% elsif localization.country.iso_code == 'AU' %}
+                          {% assign currency_letters = localization.country.iso_code %}
+                          {% assign cap_price = product.metafields.my_fields.au_cap %}
+                        {% endif %}
+
+                        {% assign item_price_bundle =  item_price_for_save | times: quantity %}
+                        {% assign save_price = cap_price | minus: item_price_bundle | times: 100 | money_without_trailing_zeros %}
+                        
                         {% if quantity > 0 %}
-                          <p>SAVE {{ original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros }}</p>
+                          <p>SAVE {{currency_letters}}{{save_price}}</p>
                         {% elsif product.compare_at_price_max > product.price %}
                           <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                         {% endif %}
@@ -126,7 +138,7 @@
               </form>
 
               <div class="shipping-label">
-                <p><span class="{{section.settings.ship_icn}}"></span><span class="usa">Free Shipping</span><span class="geo" style="display:none">{% if product.title == 'CuraLin' %}Buy bundle pack and get FREE SHIPPING!{% else %}Free Shipping{% endif %}</span></p>
+                <p><span class="{{section.settings.ship_icn}}"></span><span class="usa">Free Shipping</span><span class="geo" style="display:none">{% if product.title == 'CuraLin' %}Buy a bundle pack and get FREE SHIPPING!{% else %}Free Shipping{% endif %}</span></p>
               </div>
             </div>
             <div class="extra-info">
@@ -246,7 +258,7 @@
     }
 
   .product-slider .discount-badge p {
-    font-size: 6vw;
+    font-size: 5vw;
     padding: 1vw;
   }
   }
