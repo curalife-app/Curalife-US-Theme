@@ -214,9 +214,18 @@
                     </style>
                   {% endif %}
                 </div>
+
+                {% assign cap = var.compare_at_price %}
+
+                {% if localization.country.iso_code == 'CA' %}
+                  {% assign cap = product.metafields.my_fields.ca_cap %}
+                {% elsif localization.country.iso_code == 'AU' %}
+                  {% assign cap = product.metafields.my_fields.au_cap %}
+                {% endif %}
+
+
                 <div class="price">
-                  <p class="compared-at-price"><strike>{{ var.compare_at_price | money_without_trailing_zeros
-                      }}</strike></p>
+                  <p class="compared-at-price"><strike>{{ cap | money_without_trailing_zeros }}</strike></p>
                   <p class="real-price">{{ var.price | money_without_trailing_zeros }}</p>
                 </div>
               </div>
