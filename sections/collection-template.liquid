@@ -75,9 +75,13 @@
                       <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
                   </div>
-                  {% unless forloop.index == 1 %}
+                  {% if request.path contains 'all-2' %}
                     <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy" style="display:none">
-                  {% endunless %}
+                  {% else %}
+                    {% unless forloop.index == 1 %}
+                    <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy" style="display:none">
+                    {% endunless %}
+                  {% endif %}
                 </div>
 
                 <form method="post" action="/cart/add">
