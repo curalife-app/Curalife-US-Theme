@@ -12,7 +12,7 @@
                     {% assign quantity_by_cents = quantity | times: 100 %}
                     {% assign item_price = prod.price | divided_by: quantity_by_cents | times: 100 %}
                     {% assign item_price_for_save = prod.price | divided_by: quantity_by_cents %}
-                    {% assign cap_price = product.metafields.my_fields.original_item.value.compare_at_price | divided_by: 100 | times: quantity %}
+                    {% assign cap_price = product.metafields.my_fields.original_item.value.compare_at_price %}
                     {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
 
                     {% if localization.country.iso_code == 'CA' %}
