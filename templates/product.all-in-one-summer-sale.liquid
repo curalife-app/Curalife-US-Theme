@@ -46,7 +46,7 @@
                   {% for i in (1..5) %}
                   <div class="swiper-slide">
 
-                    <div class="product-img">
+                    <div class="product-img-aio">
                       <div class="img-wrap">
 
                         {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
@@ -75,7 +75,7 @@
                   {% endif %} -->
                   {% for image in product.images %}
                   <div class="swiper-slide">
-                    <div class="product-img">
+                    <div class="product-img-aio">
                       <div class="img-wrap">
                         <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
                       </div>
