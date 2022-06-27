@@ -33,10 +33,10 @@
 
                   {% if localization.country.iso_code == 'CA' %}
                     {% assign currency_letters = localization.country.iso_code %}
-                    {% assign cap_price = product.metafields.my_fields.ca_cap %}
+                    {% assign cap_price = product.metafields.my_fields.ca_cap | divided_by: quantity %}
                   {% elsif localization.country.iso_code == 'AU' %}
                     {% assign currency_letters = localization.country.iso_code %}
-                    {% assign cap_price = product.metafields.my_fields.au_cap %}
+                    {% assign cap_price = product.metafields.my_fields.au_cap | divided_by: quantity %}
                   {% endif %}
 
 
