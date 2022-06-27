@@ -52,7 +52,7 @@
                             </div>
                             <div class="price per-bottle">
                                 {% if quantity > 1 %}
-                                    <p id="divided-price" class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
+                                    <p {% if forloop.index == 3 %}id="dot5"{% endif %} class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
                                     <p class="per-bottle-title" {% if forloop.index == 3 %}id="dot5"{% endif %}>Per<br>Bottle</p>
                                 {% else %}
                                     <p id="original-price" class="original-price">{{ prod.price | money_without_trailing_zeros }}</p>
@@ -87,7 +87,7 @@
 
 {% if localization.country.iso_code != 'CA' and localization.country.iso_code != 'AU' %}
   <script>
-    $("#divided-price").append(".5");
+    $("#dot5").append(".5");
     $("#dot5save").text("SAVE $135");
   </script>
 {% endif %}
