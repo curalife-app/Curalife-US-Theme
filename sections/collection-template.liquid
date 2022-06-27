@@ -27,7 +27,7 @@
                 <div class="discount">
                   {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                   {% assign quantity_by_cents = quantity | times: 100 %}
-                  {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
+                  {% assign item_price = product.price %}
                   {% assign item_price_for_save = product.price | divided_by: quantity_by_cents %}
                   {% assign cap_price = product.metafields.my_fields.original_item.value.compare_at_price | divided_by: 100 | times: quantity %}
 
