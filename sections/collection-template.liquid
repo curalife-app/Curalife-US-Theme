@@ -30,8 +30,12 @@
                   {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                   {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
-                  {% if localization.country.iso_code == 'CA' or localization.country.iso_code == 'AU' %}
+                  {% if localization.country.iso_code == 'CA' %}
                     {% assign currency_letters = localization.country.iso_code %}
+                    {% assign original_item_price = product.metafields.my_fields.ca_cap %}
+                  {% elsif localization.country.iso_code == 'AU' %}
+                    {% assign currency_letters = localization.country.iso_code %}
+                    {% assign original_item_price = product.metafields.my_fields.au_cap %}
                   {% endif %}
 
                   {% assign save_price = original_item_price | minus: item_price | times: quantity | money_without_trailing_zeros %}
