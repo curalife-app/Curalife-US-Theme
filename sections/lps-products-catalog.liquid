@@ -27,6 +27,13 @@
                     {% assign save_price = cap_price | minus: item_price_bundle | times: 100 %}
                     <script>console.log("original item price: {{cap_price}}, item price: {{item_price_for_save}}, quantity: {{quantity}}, save: {{save_price}}, bundle: {{item_price_bundle}}");</script>
 
+                    {% if localization.country.iso_code != 'CA' and localization.country.iso_code != 'AU' %}
+                      <script>
+                        $("#dot5").before(".5");
+                        $("#dot5save").text("SAVE $135");
+                      </script>
+                    {% endif %}
+
                     <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
                         {% if forloop.index == 2 %}
                         <div class="recommended-text">- Recommended -</div>
@@ -43,7 +50,7 @@
                                 <p style="text-transform: uppercase;">Up To {{ prod.metafields.my_fields.supply_days }} Days Supply</p>
                             </div>
                             {% if save_price %}
-                            <div class="save"><div class="save-bg"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div></div>
+                            <div class="save"><div class="save-bg"><p {% if forloop.index == 3 %}id="dot5save"{% endif %}>SAVE {{ save_price | money_without_trailing_zeros }}</p></div></div>
                             {% endif %}
                             <div class="img">
                                 <a class="cta-btn" href="{{ buylink }}" prod-id="{{ prod.id }}" prod-title="{{ prod.title }}" prod-price="{{ prod.price | money_without_trailing_zeros | slice: 26, 4 | replace: "<","" }}"><img src="{{ prod.featured_image.src | img_url: '500x500' }}" alt=""></a>
@@ -51,7 +58,7 @@
                             <div class="price per-bottle">
                                 {% if quantity > 1 %}
                                     <p id="divided-price" class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
-                                    <p class="per-bottle-title">Per<br>Bottle</p>
+                                    <p class="per-bottle-title" {% if forloop.index == 3 %}id="dot5"{% endif %}>Per<br>Bottle</p>
                                 {% else %}
                                     <p id="original-price" class="original-price">{{ prod.price | money_without_trailing_zeros }}</p>
                                     <p class="per-bottle-title">Per<br>Bottle</p>
