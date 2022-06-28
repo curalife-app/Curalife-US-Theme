@@ -37,7 +37,7 @@
                                 <a onclick="updateQuantity($(this).closest('tr').find('input'), 0 - $(this).closest('tr').find('input').val())" href="#">Remove</a>
                             </div>
                         </td>
-                        <td class="price"><p>{{ item.price | money }}</p></td>
+                        <td class="price"><p>{{ item.price | money_with_currency | replace: ".00", "" }}</p></td>
                         <td class="quantity">
                             <div class="qty-data">
                                 <p>Quantity</p>
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="total"><p>{{ item.original_line_price | money }}</p></td>
+                        <td class="total"><p>{{ item.original_line_price | money_with_currency | replace: ".00", "" }}</p></td>
                     </tr>
                     {% endfor %}
                     </tbody>
@@ -59,7 +59,7 @@
             <div class="cart-total">
                 <div class="total-wrap">
                     <div class="price">
-                        <p>Subtotal: <b>{{ cart.total_price | money }}</b></p>
+                        <p>Subtotal: <b>{{ cart.total_price | money_with_currency | replace: ".00", ""  }}</b></p>
                     </div>
                     <div class="btn-wrap">
                       <input id="cart_submit" type="submit" value="Place your order" name="checkout" class="main-btn" />
@@ -148,8 +148,8 @@ width:100%;
 
 <script>
   // Disable Cart Widget
-  $('.icon-cart').parent().removeAttr('data-src');
-  $('.icon-cart').parent().removeAttr('data-fancybox');
+  $('.icofont-shopping-cart').parent().removeAttr('data-src');
+  $('.icofont-shopping-cart').parent().removeAttr('data-fancybox');
 </script>
 
 <script type="text/javascript">
@@ -173,14 +173,14 @@ width:100%;
     ecommerce: {
       items: items_data
     },
-    user_email: "{{ customer.email }}",
-    user_phone: "{{ customer.phone }}",
-    user_first_name: "{{ customer.first_name }}",
-    user_last_name: "{{ customer.last_name }}",
-    user_city: "{{ customer.customer_address.city }}",
-    user_state: "{{ customer.customer_address.province }}",
-    user_zip: "{{ customer.customer_address.zip }}",
-    user_country: "{{ customer.customer_address.country_code | t }}",
+    email: '{{ customer.email }}',
+    phone: '{{ customer.phone }}',
+    name: '{{ customer.first_name }}',
+    surname: '{{ customer.last_name }}',
+    city: '{{ customer.customer_address.city }}',
+    state: '{{ customer.customer_address.province }}',
+    zip: '{{ customer.customer_address.zip }}',
+    country: '{{customer.customer_address.country_code | t}}',
     user_agent: navigator.userAgent
   });
 </script>

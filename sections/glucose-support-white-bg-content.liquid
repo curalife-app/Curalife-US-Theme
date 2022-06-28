@@ -14,7 +14,7 @@
                                     {%if block.settings.cpwr_img != blank %}
                                         <li class="advantage-content-{{ count }}">
                                             <div class="icon-wrap">
-                                                <img src="{{ block.settings.cpwr_img | img_url: '' }}" alt="" loading="lazy">
+                                                <img src="{{ block.settings.cpwr_img | image_url }}" alt="" loading="lazy">
                                             </div>
                                             <div class="name">
                                                 <p>{{block.settings.cpwr_desc }}</p>
@@ -50,7 +50,7 @@
                             {% if block.type == 'what_cura' %}
                             {% if block.settings.wht_img != blank %}
                             <li>
-                                <img src="{{ block.settings.wht_img | img_url: '' }}" alt="" loading="lazy">
+                                <img src="{{ block.settings.wht_img | image_url }}" alt="" loading="lazy">
                             </li>
                             {% endif %}
                             {% endif %}

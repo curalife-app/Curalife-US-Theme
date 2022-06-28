@@ -43,20 +43,39 @@
           </div>
         </div>
         <div class="product-info">
-          <div class="sub-title">
-            {% if product.metafields.my_fields.alternative_title.value %}
-            <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
-            {% else %}
-            <h1>{{ product.title }}</h1>
+          <div class="title-wrapper">
+            <div class="sub-title">
+              {% if product.metafields.my_fields.alternative_title.value %}
+              <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
+              {% else %}
+              <h1>{{ product.title }}</h1>
+              {% endif %}
+            </div>
+
+            {% capture CFH %}{{ content_for_header }}{% endcapture %}
+
+            {% if CFH contains 'adminBarInjector' %}
+            {% assign admin = true %}
+            {% elsif CFH contains 'admin-bar-iframe' %}
+            {% assign admin = true %}
+            {% elsif CFH contains 'preview_bar_injector-' %}
+            {% assign admin = true %}
+            {% endif %}
+
+            {% if admin %}
+            <div class="edit">
+              <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
+            </div>
             {% endif %}
           </div>
+          
           <div class="description">
             <div class="price">
-              <p>{{ product.price | money }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money }}</strike></p>{% endif %}
+              <p>{{ product.price | money_with_currency | replace: ".00", "" }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" }}</strike></p>{% endif %}
             </div>
             
             <div class="form-wrap">
-               <form method="post" id="addTocartForm" action="/cart/add">
+              <form method="post" id="addTocartForm" action="/cart/add">
               <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
                 <div class="qty-data">
                   <p>Quantity</p>
@@ -87,7 +106,7 @@
               </form>
 
               <div class="shipping-label">
-                <p><span class="{{section.settings.ship_icn}}"></span>{{section.settings.ship_txt}}</p>
+                <p><span class="{{section.settings.ship_icn}}"></span><span class="usa">Free Shipping</span><span class="geo" style="display:none">{% if product.title == 'CuraLin' %}Buy bundle pack and get FREE SHIPPING!{% else %}Free Shipping{% endif %}</span></p>
               </div>
             </div>
             <div class="extra-info">
@@ -106,11 +125,34 @@
     </div>
   </div>
 
-  <style>
-    .thumbs-slider .swiper-slide {
-      height: 50px !important;
+<style>
+  .thumbs-slider .swiper-slide {
+    height: 50px !important;
+  }
+
+  .title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .edit a {
+    margin-left: 15px;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .title-wrapper {
+      justify-content: center;
+      position: relative;
     }
-  </style>
+
+    .edit a {
+      position: absolute;
+      right: 0;
+    }
+  }
+</style>
 
   <script>
     productThumbs = new Swiper('.thumbs-slider .swiper', {
@@ -152,64 +194,31 @@
   
 <script>
   $(document).on("click", "#AddTCart", function () {
-    // Old One
-      window.dataLayer  = window.dataLayer || [];
-      window.dataLayer.push({
-      'event': 'eec.addToCart',       // name of an event. In this case, always stays as eec.addToCart
-      'ecommerce': {                  // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
-        'currencyCode': '{{shop.currency }}',          // the currency which is currently used by a visitor
-        'add': {                        // name of an action. In this case, always stays as add
-        'actionField': {           
-        'list': 'main'          // optional. name of a list from which the product was added to a cart  
-      },       
-      'products': [{              // list of products added to a cart. Can contain multiple products at the same time
-        'name': '{{ product.title }}',      // name of a product that was added to a cart
-        'id': '{{ product.id }}',       // id of a product
-        'price': '{{ current_variant.price | money_without_currency }}',      // price of a product
-        'category': 'Simple',
-        'variant': '{{ product.first_available_variant.id }}',   // category of a product
-        'quantity': 1
-      }]
-      } 
-    },
-    'userId': '{{ customer.id }}',
-    'email': '{{ customer.email }}',
-    'country': '{{customer.customer_address.country_code }}',
-    'city': '{{customer.customer_address.city }}',
-    'name': '{{ customer.first_name }}',
-    'surname': '{{ customer.last_name }}',
-    'phone_number': '{{customer.phone }}',
-    'state': '{{customer.customer_address.province }}',       //state or province
-    'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
-    });
-
-    // New One
     window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'add_to_cart',             // name of the event. In this case, it always must be add_to_cart
-  ecommerce: {                          
-  items: [{                           // an array with a product (or multiple products) that was added to a cart
-    item_name: '{{ product.title }}',      
-    item_id: '{{ product.selected_or_first_available_variant.sku }}', 
-    affiliation: '{{ shop.name }}',
-    price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
-    currency: '{{ shop.currency }}',
-    item_brand: 'CuraLife',            
-    item_category: 'CuraLin',         
-    quantity: parseInt($(".qty-control input").val())
-  }]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
+    window.dataLayer.push({
+      event: 'add_to_cart',             // name of the event. In this case, it always must be add_to_cart
+      ecommerce: {                          
+      items: [{                           // an array with a product (or multiple products) that was added to a cart
+        item_name: '{{ product.title }}',      
+        item_id: '{{ product.selected_or_first_available_variant.sku }}', 
+        affiliation: '{{ shop.name }}',
+        price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',            
+        item_category: 'CuraLin',         
+        quantity: parseInt($(".qty-control input").val())
+      }]
+      },
+      email: '{{ customer.email }}',
+      phone: '{{ customer.phone }}',
+      name: '{{ customer.first_name }}',
+      surname: '{{ customer.last_name }}',
+      city: '{{ customer.customer_address.city }}',
+      state: '{{ customer.customer_address.province }}',
+      zip: '{{ customer.customer_address.zip }}',
+      country: '{{customer.customer_address.country_code | t}}',
+      user_agent: navigator.userAgent
+    });
   });
 </script>
 
@@ -219,59 +228,31 @@ window.dataLayer.push({
     return false;
   });
 
-window.dataLayer  = window.dataLayer || [];
-window.dataLayer.push({
-  'event': 'eec.productDetail',  // name of an event. In this case, always stays as eec.productDetail
-  'ecommerce': {                      // ecommerce object. This is the essential part of tracking. New EE data must always be pushed to this object
-    'currencyCode': 'USD',           
-    'detail': { // name of an action. In this case, always stays as detail
-      'products': [{
-      'name': '{{product.title}}',      // name of a product that is currently viewed. Always include it.
-      'id': '{{ product.id }}',           // id of a product. Always include it.
-      'price': '{{ product.price | t }}',          // price of a product
-      'category': 'Simple',      // category of a product
-      'variant': '{{ product.selected_variant.id }}'         // product variant.
-       }]
-     }
-  },
-  'userId': '{{ customer.id }}',
-  'email': '{{ customer.email }}',
-  'country': '{{customer.customer_address.country_code | t}}',
-  'city': '{{customer.customer_address.city }}',
-  'name': '{{ customer.first_name }}',
-  'surname': '{{ customer.last_name }}',
-  'phone_number': '{{customer.phone }}',
-  'state': '{{customer.customer_address.province }}',       //state or province
-  'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code         
-});
-
-// New One
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'view_item',         
-  ecommerce: {                          
-  items: [{        
-    item_name: '{{ product.title }}',      
-    item_id: '{{ product.selected_or_first_available_variant.sku }}', 
-    affiliation: '{{ shop.name }}',
-    price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
-    currency: '{{ shop.currency }}',
-    item_brand: 'CuraLife',            
-    item_category: 'CuraLin',         
-    quantity: 1
-  }]
-  },
-  user_email: '{{ customer.email }}',
-  user_phone: '{{ customer.phone }}',
-  user_first_name: '{{ customer.first_name }}',
-  user_last_name: '{{ customer.last_name }}',
-  user_city: '{{ customer.customer_address.city }}',
-  user_state: '{{ customer.customer_address.province }}',
-  user_zip: '{{ customer.customer_address.zip }}',
-  user_country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-  //user_ip_address: 'insert_ip_address_here',
-});
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'view_item',         
+    ecommerce: {                          
+    items: [{        
+      item_name: '{{ product.title }}',      
+      item_id: '{{ product.selected_or_first_available_variant.sku }}', 
+      affiliation: '{{ shop.name }}',
+      price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+      currency: '{{ shop.currency }}',
+      item_brand: 'CuraLife',            
+      item_category: 'CuraLin',         
+      quantity: 1
+    }]
+    },
+    email: '{{ customer.email }}',
+    phone: '{{ customer.phone }}',
+    name: '{{ customer.first_name }}',
+    surname: '{{ customer.last_name }}',
+    city: '{{ customer.customer_address.city }}',
+    state: '{{ customer.customer_address.province }}',
+    zip: '{{ customer.customer_address.zip }}',
+    country: '{{customer.customer_address.country_code | t}}',
+    user_agent: navigator.userAgent
+  });
 </script>
 <script>
   var _learnq = _learnq || [];

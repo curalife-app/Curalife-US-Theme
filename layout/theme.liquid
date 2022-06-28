@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>{{ page_title }}</title>
-    <!-- Redirect By Global Or US -->
-    <script src="{{ 'redirect-by-location.js' | asset_url }}" async></script>
-    {% render 'redirects' %}
-    {% render 'meta-tags'%}
-    {% render 'canonicals' %}
-
+    
+    {% render 'layout.head.geo-redirect-script' %}
+    {% render 'layout.head.redirects-script' %}
+    {% render 'layout.head.google-tag-manager'%}
+    {% render 'layout.head.meta-tags' %}
+    {% render 'layout.head.canonicals-us' %}
+    
     <!-- Stylesheets -->
     <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ 'common.css' | asset_url }}"></noscript>
@@ -22,11 +23,16 @@
     <script src="{{ 'common.js' | asset_url }}" async></script>
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
     <!-- Swiper Import -->
     <link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <script src="{{ 'swiper.min.js' | asset_url }}"></script>
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"></noscript>
     <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
@@ -38,27 +44,9 @@
     {% endif %}
     {{ content_for_header }} <!-- Header hook for plugins -->
 
-    {% render 'google-tag-manager'%}
-
-    {% render "manychat-header" %}
-
-    {% render 'fa_translate_core' %} 
-
-    <!-- Marker.io QA Tool-->  
-    <script>
-      window.markerConfig = {
-        destination: '620beca71b400a77dedb3cf1', 
-        source: 'snippet'
-      };
-    </script>
-
-    <script>
-    !function(e,r,a){if(!e.__Marker){e.__Marker={};var t=[],n={__cs:t};["show","hide","isVisible","capture","cancelCapture","unload","reload","isExtensionInstalled","setReporter","setCustomData","on","off"].forEach(function(e){n[e]=function(){var r=Array.prototype.slice.call(arguments);r.unshift(e),t.push(r)}}),e.Marker=n;var s=r.createElement("script");s.async=1,s.src="https://edge.marker.io/latest/shim.js";var i=r.getElementsByTagName("script")[0];i.parentNode.insertBefore(s,i)}}(window,document);
-    </script>
-
-    {% render 'fa_translate_core' %} 
-    
-  </head>
+    {% render 'layout.head.marker-io-snippet' %}
+    {% render 'fa_translate_core' %}
+</head>
 
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->
@@ -68,102 +56,43 @@
     {% endunless %}
     {% endunless %}
 
-    {% if request.path contains 'quizpage' %}
-      <!-- Leadquizzes 3 tracking script -->
-      <script src="https://lq3-production01.s3.amazonaws.com/lead_quizzes_3.0/tracking/js/properties/g0h1pbeoesujrg.js"></script>
-      <!-- End of Leadquizzes 3 script -->
-    {% endif %}
+    <main role="main">{{ content_for_layout }}</main>
+    {% section 'footer'%}
 
-    <main role="main">
-      {{ content_for_layout }}
-      {% section 'footer'%}
-    </main>
-
-    {% render 'cart-functionality-scripts' %}
-
+    {% render 'layout.footer.cart-functionality-scripts' %}
+    {% render 'layout.footer.woopra-snippet' %}
+    {% render 'layout.footer.ac-snippet' %}
     {% render 'wisepops-generated' %}
     {% render 'social-login' %}
-  
-    <!-- Start of Woopra Code -->
+
+    {% if localization.country.iso_code == 'CA' or localization.country.iso_code == 'AU' %}
+      <style>
+        .shipscout-banner {
+          display: none;
+        }
+      </style>
+    {% endif %}
+
     <script>
-      !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
+      var testVariant = $.cookie("_sc_4");
 
-      woopra.config({
-        domain: "curalife.com",
-        outgoing_tracking: true,
-        download_tracking: true,
-        click_tracking: true
-      });
+      if (testVariant == 'B') {
+        $(".usa").hide();
+        $(".geo").show();
+      }
 
-      {%- if customer -%}
-        woopra.identify({
-          id: {{ customer.id | json }},
-          name: {{ customer.name | json }},
-          email: {{ customer.email | json }},              
-          order_count: {{ customer.orders_count | json }},
-          total_spent: {{ customer.total_spent | json }}
-        });
-      {%- endif -%}
-
-      woopra.track();
-
-      document.addEventListener('submit', function(e) {
-        const form = e.target;
-        const formData = new FormData(form);
-        const entries = formData.entries();
-        const data = Object.fromEntries(entries);
-        
-        for (var key in data) {
-          var fieldEl = form.querySelector(`[name="${key}"]`);
-          if (fieldEl.type === 'password') {
-            delete data[key];
-          }
-        }
-
-        // Newsletter Subscription form
-        if (form.id === 'contact_form') {
-          woopra.identify({
-          'email': data["contact[email]"]
-          });
-
-          woopra.track('newsletter subscribe', {}, {
-            queue: true
-          });
-        }
-      
-        // Contact form
-        if (form.id === 'contact-us-form') {
-          woopra.identify({
-            name: data['name'],
-            email: data['email'],
-            phone: data['phone']
-          });
-          
-          woopra.track('submit contact form', data, { queue: true });
-        }
-        
-        if (form.className.indexOf('yotpo-referral-widget-form') !== -1) {
-          // Track signing up for referral program
-          if (form.querySelector('[name="email"]').placeholder === 'Your email address') {
-            woopra.identify({ email: data.email});
-            woopra.track('refer a friend', {
-              email: data.email
-            }, { queue: true });
-          } else {
-            // Track inviting a friend
-            woopra.track('friend referred', { email: data.email }, {queue: true});
-          }
-        }
-      });
+      let noTestCountries = ["AU", "CA"]
+      if (noTestCountries.includes(sessionStorage.getItem('country'))) {
+        var styleSheet = document.createElement("style");
+        styleSheet.innerText = `.shipscout-banner {display: none;}`;
+        document.head.appendChild(styleSheet);
+      }
     </script>
-    <!-- End of Woopra Code -->
 
-    <!-- Active Campaign Tracking Code -->
-    <script type="text/javascript">
-      (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
-      vgo('setAccount', '225528743');
-      vgo('setTrackByDefault', true);
-      vgo('process');
-    </script>
+    <style>
+      #admin-bar-iframe {
+        display: none;
+      }
+    </style>
   </body>
 </html>

@@ -8,29 +8,55 @@
 {% render 'lp-community-advice' %}
 {% render 'lp-community-topics' %}
 {% render 'lp-community-articles' %}
-{% render 'lp-community-mealplans' %}
 {% render 'lp-community-infographic' %}
 {% render 'lp-community-moderators' %}
 {% render 'lp-community-education' %}
 
-<script src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js" type="text/javascript"></script>
-<script type="text/javascript">
-    KlaviyoSubscribe.attachToForms("#infographic_signup", {
-      hide_form_on_success: true,
-        extra_properties: {
-            "Lead Source": "Community LP"
-        }
+<script>
+  function getGeo() {
+    $.get("https://geo.curalife.com/", function(data) {
+      let country = JSON
+        .parse(data)
+        .country;
+      $('[data-name="lead_geo"]').val(country);
     });
-    KlaviyoSubscribe.attachToForms("#mealplans_signup", {
-        extra_properties: {
-            "Lead Source": "Community LP"
-        }
-    });
-    KlaviyoSubscribe.attachToForms("#newsletter_signup", {
-        extra_properties: {
-            "Subscribe To": "Community LP"
-        }
-    });
+  }
+
+  function getOperatingSys() {
+    var os = 'unknown';
+    if (navigator.userAgent.indexOf("Win") != -1) os = "Windows";
+    if (navigator.userAgent.indexOf("Mac") != -1) os = "MacOS";
+    if (navigator.userAgent.indexOf("X11") != -1) os = "UNIX";
+    if (navigator.userAgent.indexOf("Linux") != -1) os = "Linux";
+    return os;
+  }
+
+  const getDeviceType = () => {
+    let ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return "tablet";
+    }
+    if (/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+      return "mobile";
+    }
+    return "desktop";
+  };
+
+  window.onload = function() {
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+    $('[data-name="lead_source"]').each(function() {$(this).val("CommunityLP")});
+    $('[data-name="lead_utm_source"]').each(function() {$(this).val(urlParams.get('utm_source'))});
+    $('[data-name="lead_utm_medium"]').each(function() {$(this).val(urlParams.get('utm_medium'))});
+    $('[data-name="lead_utm_campaign"]').each(function() {$(this).val(urlParams.get('utm_campaign'))});
+    $('[data-name="lead_utm_term"]').each(function() {$(this).val(urlParams.get('utm_term'))});
+    $('[data-name="lead_utm_content"]').each(function() {$(this).val(urlParams.get('utm_content'))});
+    $('[data-name="lead_source_date"]').each(function() {$(this).val(new Date().toUTCString())});
+    $('[data-name="lead_os"]').each(function() {$(this).val(getOperatingSys())});
+    $('[data-name="lead_device"]').each(function() {$(this).val(getDeviceType())});
+    $('[data-name="lead_url"]').each(function() {$(this).val(window.location.href)});
+    getGeo();
+  }
 </script>
 
 <style>
