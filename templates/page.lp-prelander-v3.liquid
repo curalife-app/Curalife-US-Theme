@@ -5,7 +5,7 @@
   <section class="nav">
     <div class="container">
       <div class="big-img">
-        <img src="{{ 'logo-white.png' | asset_url }}" alt="chef icon" loading="lazy">
+        <img src="{{ 'lp-prelander-nav-logo-white.png' | file_url }}" alt="chef icon" loading="lazy">
       </div>
     </div>
   </section>
@@ -21,7 +21,7 @@
         </div>
         <div class="grey-border"></div>
         <div class="blood-cell-img">
-          <img src="{{ 'blood-cell.png' | file_url }}" alt="blood cell img" loading="lazy">
+          <img src="{{ 'lp-prelander-this-incredible-blood-cell.png' | file_url }}" alt="blood cell img" loading="lazy">
         </div>
         <div class="science-behind">
           The Science Behind Fluctuating Blood Sugar Levels:
@@ -53,7 +53,7 @@
 
           Now, how do we do that?
         </div>
-        <div class="nutrition-img"> <img src="{{ 'nutrition-img.png
+        <div class="nutrition-img"> <img src="{{ 'lp-prelander-this-incredible-nutrition-img.png
           ' | file_url }}" alt="nutrition img" loading="lazy"></div>
         <div class="cellular-nutrition">Cellular Nutrition is like an “Energy Shot” for Cells</div>
         <div class="natural-fluctuations">You know that the natural fluctuations in blood sugar are caused by food,
@@ -73,7 +73,7 @@
         </div>
 
         <div class="rectangle-buy-today">
-          <div class="jar"><img src="{{ 'curalife-jar.png' | file_url }}" alt="curalife-jar" loading="lazy"></div>
+          <div class="jar"><img src="{{ 'lp-prelander-this-incredible-curalife-jar.png' | file_url }}" alt="curalife-jar" loading="lazy"></div>
           <div class="buy-today-button">
             <a href="/pages/glucose-support-curalin-pack-v3"><button>Buy Today</button></a>
           </div>
@@ -86,7 +86,7 @@
   <section class="science-section">
     <div class="container">
       <div class="science">
-        <div class="human-image"><img src="{{ 'human-image.png
+        <div class="human-image"><img src="{{ 'lp-prelander-science-section-human-image.png
           ' | file_url }}" alt="human image" loading="lazy"></div>
         <div class="ten-years">10 Years of research identifies formula
           supporting
@@ -119,39 +119,39 @@
         <div class="text-picture">
           <li>
             <div class="img-wrapper">
-              <img src="{{ 'vector-1.png' | file_url }}" alt="vector 1" loading="lazy">
+              <img src="{{ 'lp-prelander-curalin-for-you-vector-1.png' | file_url }}" alt="vector 1" loading="lazy">
             </div>
             <span>Sleep well</span>
           </li>
           <li>
             <div class="img-wrapper">
-              <img src="{{ 'vector-2.png' | file_url }}" alt="vector 2" loading="lazy">
+              <img src="{{ 'lp-prelander-curalin-for-you-vector-2.png' | file_url }}" alt="vector 2" loading="lazy">
             </div>
             <span>Enjoy your favorite foods</span>
           <li>
             <div class="img-wrapper">
-              <img src="{{ 'vector-3.png' | file_url }}" alt="vector 3" loading="lazy">
+              <img src="{{ 'lp-prelander-curalin-for-you-vector-3.png' | file_url }}" alt="vector 3" loading="lazy">
             </div>
             <span>Maintain healthy glucose metabolism</span>
           <li>
             <div class="img-wrapper">
-              <img src="{{ 'vector-4.png' | file_url }}" alt="vector 4" loading="lazy">
+              <img src="{{ 'lp-prelander-curalin-for-you-vector-4.png' | file_url }}" alt="vector 4" loading="lazy">
             </div>
             <span>Support a healthy digestion</span>
           <li>
             <div class="img-wrapper">
-              <img src="{{ 'vector-5.png' | file_url }}" alt="vector 5" loading="lazy">
+              <img src="{{ 'lp-prelander-curalin-for-you-vector-5.png' | file_url }}" alt="vector 5" loading="lazy">
             </div>
             <span>Keep your energy high</span>
           </li>
           <li>
             <div class="img-wrapper">
-              <img src="{{ 'vector-6.png' | file_url }}" alt="vector 6" loading="lazy">
+              <img src="{{ 'lp-prelander-curalin-for-you-vector-6.png' | file_url }}" alt="vector 6" loading="lazy">
             </div>
             <span>Lose weight</span>
           </li>
         </div>
-        <div class="jar-picture"><img src="{{ 'curalin-bottle.png' | file_url }}" alt="bottle" loading="lazy"></div>
+        <div class="jar-picture"><img src="{{ 'lp-prelander-curalin-for-you-curalin-bottle.png' | file_url }}" alt="bottle" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -250,6 +250,8 @@
   }
 
   .rectangle-buy-today {
+    position: fixed;
+    margin-left: 800px;
     margin-top: 35px;
     grid-row: 1/2;
     grid-column: 2/3;
@@ -380,31 +382,31 @@
   .human-image {
     margin-top: 5%;
     grid-row: 1/2;
-    grid-column: 1/2;
+    grid-column: 1/4;
   }
 
 
   .ten-years {
-    margin-top: 5%;
+    margin-top: 8%;
     grid-row: 1/2;
-    grid-column: 2/3;
-    max-width: 582px;
+    grid-column: 3/4;
+    max-width: 400px;
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 30px;
-    line-height: 39px;
+    /* line-height: 39px; */
     color: #0D0D0D;
   }
 
   .good-glucose {
-    margin-top: -55%;
+    margin-top: -45%;
     grid-row: 2/3;
-    grid-column: 2/3;
-    max-width: 521px;
+    grid-column: 3/4;
+    max-width: 380px;
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 17px;
-    line-height: 29px;
+    line-height: 20px;
     color: #0D0D0D;
   }
 
@@ -439,7 +441,12 @@
     margin: 3% 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+  }
+
+
+  .jar-picture img {
+    max-width: 80%;
   }
 
   .text-picture {
@@ -503,6 +510,32 @@
     padding: 15px 0;
     background: #FED602;
     border: 0;
+  }
+
+
+  @media (max-width: 1036px){
+    .rectangle-buy-today {
+      margin-left: 780px;
+    }
+  }
+
+  
+  @media (max-width: 1024px){
+    .rectangle-buy-today {
+      margin-left: 770px;
+    }
+  }
+
+  @media (max-width: 918px){
+    .rectangle-buy-today {
+      margin-left: 680px;
+    }
+  }
+
+  @media (max-width: 848px){
+    .rectangle-buy-today {
+      margin-left: 610px;
+    }
   }
 
   @media (max-width: 1024px) {
