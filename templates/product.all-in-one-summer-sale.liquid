@@ -1,37 +1,11 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,700;0,800;1,600;1,700;1,800&display=swap"
-  rel="stylesheet">
-
+<style>
+  body {
+    padding-top: 0 !important;
+  }
+</style>
+  {% render 'summer-sale-header-twenty' %}
 <div class="product-template-all-in-one">
-  <!-- <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt="">  -->
-  <section class="nav-bar">
-    <div class="container">
-      <div class="container-text">
-        <div class="big-img">
-          <img src="{{ 'lp-quiz-logo-black.png' | file_url }}" alt="chef icon" loading="lazy">
-        </div>
-        <div class="summer-sale">
-          <img src="{{ 'page.aio-first-page-summer-sale.png' | asset_url }}" alt="" loading="lazy">
-        </div>
-        <div class="summer-sale-mobile">
-          <img src="{{ 'page.aio-first-page-summer-sale-mobile.png' | asset_url }}" alt="" loading="lazy">
-        </div>
-        <div class="twenty-percent-off">
-          <div class="up-to">
-            UP TO
-          </div>
-          <div class="off"> 20% OFF</div>
-          <div class="twenty">20</div>
-          <div class="percent-off">
-            <div class="percent">%</div>
-            <div class="off-mobile">OFF</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
   <a id="back-to-top-btn">Try CuraLin</a>
   <section class="cta-section">
@@ -46,12 +20,9 @@
                   {% for i in (1..5) %}
                   <div class="swiper-slide">
 
-                    <div class="product-img">
+                    <div class="product-img-aio">
                       <div class="img-wrap">
-
                         {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
-
-
                         <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
                       </div>
                     </div>
@@ -75,7 +46,7 @@
                   {% endif %} -->
                   {% for image in product.images %}
                   <div class="swiper-slide">
-                    <div class="product-img">
+                    <div class="product-img-aio">
                       <div class="img-wrap">
                         <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
                       </div>
@@ -217,9 +188,18 @@
                     </style>
                   {% endif %}
                 </div>
+
+                {% assign cap = var.compare_at_price %}
+
+                {% if localization.country.iso_code == 'CA' %}
+                  {% assign cap = var.metafields.my_fields.ca_cap | times: 100  %}
+                {% elsif localization.country.iso_code == 'AU' %}
+                  {% assign cap = var.metafields.my_fields.au_cap | times: 100 %}
+                {% endif %}
+
+
                 <div class="price">
-                  <p class="compared-at-price"><strike>{{ var.compare_at_price | money_without_trailing_zeros
-                      }}</strike></p>
+                  <p class="compared-at-price"><strike>{{ cap | money_without_trailing_zeros }}</strike></p>
                   <p class="real-price">{{ var.price | money_without_trailing_zeros }}</p>
                 </div>
               </div>
@@ -252,12 +232,9 @@
     </div>
     <div class="container badges-container">
       <div class="trust-badges">
-        <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">Free Worldwide Shipping
-        </div>
-        <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee
-        </div>
-        <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout
-        </div>
+        <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
+        <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt=""><div id="shipping-badge-text" style="display: inline-block">Free Shipping <div class="geo" style="display:none;display: inline-block;">Over 99$</div></div></div>
+        <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
       </div>
     </div>
   </section>
@@ -890,76 +867,17 @@
     font-weight: 400;
   }
 
-  .nav-bar {
-    background: #FDCB3B;
-
-  }
-
-  .container-text {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-  }
-
-  .big-img {
-    padding: 15px 0;
-  }
-
-  .twenty-percent-off {
-
-    display: flex;
-  }
-
-  .up-to {
-
-    width: 25px;
-    height: 40px;
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-
-  }
-
-  .off {
-
-    margin-left: 10px;
-    width: 256px;
-    height: 40px;
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-
-  }
-
-  .twenty {
-    display: none;
-  }
-
-  .percent-off {
-    display: none;
-  }
+ 
 
 
-  .summer-sale {
-    margin: 0 10px;
-    z-index: 5;
-    position: relative;
-    top: 20px;
-  }
 
-  .summer-sale-mobile {
-    display: none;
-  }
 
-  .product-template-all-in-one section.nav-bar {
-    padding: unset;
-  }
 
+
+  
+
+
+ 
 
   .main-btn {
 
@@ -1036,100 +954,7 @@
 
 
 
-  @media screen and (max-width: 1100px) {
-    .big-img {
-      max-width: 100px;
-      padding-left: 10px;
-    }
-
-    .twenty-percent-off {
-      padding-right: 40px;
-    }
-
-  }
-
-  @media screen and (max-width: 810px) {
-    .twenty-percent-off {
-      margin-right: -60px;
-    }
-
-  }
-
-
   @media screen and (max-width: 760px) {
-    .product-template-all-in-one section.nav-bar {
-      padding: unset;
-    }
-
-    .container-text {
-      justify-content: space-around;
-    }
-
-    .summer-sale {
-      display: none;
-    }
-
-    .summer-sale-mobile {
-      display: flex;
-    }
-
-    .up-to {
-      margin-top: 10px;
-      width: 10px;
-      height: 11px;
-      font-weight: 400;
-      font-size: 5px;
-      line-height: 5px;
-    }
-
-    .off {
-      display: none;
-    }
-
-    .twenty-percent-off {
-      margin-right: unset;
-    }
-
-    .twenty {
-      display: flex;
-
-      width: 64px;
-      height: 47px;
-      font-family: 'Montserrat';
-      font-weight: 400;
-      font-size: 47.0432px;
-      line-height: 47px;
-
-    }
-
-    .percent-off {
-      display: flex;
-      flex-direction: column;
-      margin-left: -5px;
-    }
-
-    .percent {
-      width: 27px;
-      height: 45px;
-      margin-top: -10px;
-
-      font-family: 'Montserrat';
-
-      font-weight: 400;
-      font-size: 32px;
-      line-height: 61px;
-      color: #000000;
-    }
-
-    .off-mobile {
-      width: 22px;
-      height: 13px;
-      font-family: 'Montserrat';
-      font-weight: 400;
-      font-size: 10.4036px;
-      line-height: 13px;
-
-    }
 
     .save-money {
       right: 10px;

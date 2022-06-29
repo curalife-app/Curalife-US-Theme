@@ -30,6 +30,10 @@
     <script src="{{ 'swiper.min.js' | asset_url }}"></script>
 
     <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,700;0,800;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
+    <style>@font-face{font-family:IcoFont;font-weight:400;font-style:Regular;src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),url({{ "icoFont.woff" | asset_url }}) format("woff")}</style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -46,7 +50,9 @@
 
     {% render 'layout.head.marker-io-snippet' %}
     {% render 'fa_translate_core' %}
-</head>
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/ZqhNB0cchIBRHAinUxB8AA" async></script>
+{% include 'fa_translate_core' %} 
+ </head>
 
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->
@@ -74,19 +80,19 @@
     {% endif %}
 
     <script>
-      var testVariant = $.cookie("_sc_4");
+      // var testVariant = $.cookie("_sc_4");
 
-      if (testVariant == 'B') {
+      // if (testVariant == 'B') {
         $(".usa").hide();
         $(".geo").show();
-      }
+      // }
 
-      let noTestCountries = ["AU", "CA"]
-      if (noTestCountries.includes(sessionStorage.getItem('country'))) {
-        var styleSheet = document.createElement("style");
-        styleSheet.innerText = `.shipscout-banner {display: none;}`;
-        document.head.appendChild(styleSheet);
-      }
+      // let noTestCountries = ["AU", "CA"]
+      // if (noTestCountries.includes(sessionStorage.getItem('country'))) {
+      //   var styleSheet = document.createElement("style");
+      //   styleSheet.innerText = `.shipscout-banner {display: none;}`;
+      //   document.head.appendChild(styleSheet);
+      // }
     </script>
 
     <style>

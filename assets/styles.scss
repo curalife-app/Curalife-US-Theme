@@ -80,7 +80,7 @@
   i {
     display: block;
     font-size: 24px;
-    padding-right: 10px;
+    padding-right: 10px; 
   }
 
   i.icon-edit {
@@ -91,8 +91,10 @@
 
   &:hover {
     color: var(--white);
-    background-color: #af5b35;
-    border-color: #af5b35;
+    // background-color: #af5b35;
+    // border-color: #af5b35;
+    background-color: #33B7A6;
+    border-color: #33B7A6;
   }
 }
 
@@ -1927,6 +1929,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  padding-top: 30px;
 }
 
 .product-slider {
@@ -1970,7 +1973,6 @@
 
   .sliders-group {
     position: relative;
-    z-index: 1;
   }
 
   .main-slider {
@@ -1980,22 +1982,24 @@
       &:before {
         content: '';
         display: block;
-        padding-bottom: 88.5%;
+        padding-bottom: 75%;
         pointer-events: none;
       }
 
       .img-wrap {
-        padding: 10.5% 0 0 0;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
+        text-align: center;
 
         img {
           width: 100%;
           height: 100%;
           object-fit: contain;
+          max-width: 80%;
+          object-position: bottom;
         }
       }
     }
@@ -5423,10 +5427,6 @@ html {
 }
 
 @media screen and (max-width: 1590px) {
-  .container {
-    max-width: 1316px;
-  }
-
   .main-btn {
     padding: 8px 19px;
     min-height: 41px;
@@ -6756,10 +6756,6 @@ html {
 }
 
 @media screen and (max-width: 1430px) {
-  .container {
-    max-width: 1172px;
-  }
-
   .main-btn {
     padding: 8px 17px;
     min-height: 37px;
@@ -7942,7 +7938,6 @@ html {
 
 @media screen and (max-width: 1270px) {
   .container {
-    max-width: 942px;
     padding: 0 15px;
   }
 

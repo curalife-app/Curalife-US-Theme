@@ -93,13 +93,18 @@
                         }
 
                         .swiper-slide {
-                            .product-img {
+                            .product-img-aio {
                                 &:before {
                                     padding-bottom: 60%;
                                 }
     
                                 .img-wrap {
                                     padding: unset;
+                                    text-align: center;
+
+                                    img {
+                                        max-height: 460px;
+                                    }
                                 }
                             }
 
@@ -929,7 +934,7 @@
         }
 
         .cta-section {
-            padding-top: 80px;
+            padding-top: 30px;
             padding-bottom: 0;
 
             .product-container {
