@@ -1,32 +1,49 @@
 <div class="curalin-page-header">
     <div class="container">
         <div class="curalin-desktop-left">
-            <img class="curalin-desktop" src="{{ 'glucose-support-banner-curalin.png' | asset_url }}" alt="">
-            <img class="natural-blood-sugar" src="{{ 'glucose-support-banner-natural-blood-sugar.png' | asset_url }}"
-                alt="">
-            <img class="up-to-off" src="{{ 'glucose-support-banner-up-to-off.png' | asset_url }}" alt="">
-            <a href="/collections/all"><img class="shop-now"
-                    src="{{ 'glucose-support-banner-shop-now.png' | asset_url }}" alt=""></a>
-        </div>
-        <div class="curalin-desktop-right">
-            <img class="chair-with-bottle" src="{{ 'glucose-support-banner-chair-with-bottle.png' | asset_url }}" alt="">
-        </div>
-        <div class="curalin-tablet-left">
-            <img class="curalin-tablet" src="{{ 'glucose-support-banner-curalin.png' | asset_url }}" alt="">
-            <img class="natural-blood-sugar-tablet" src="{{ 'glucose-support-banner-natural-blood-sugar.png' | asset_url }}"
-                alt="">
-            <img class="natural-blood-sugar-mobile"
-                src="{{ 'glucose-support-banner-natural-blood-sugar-mobile.png' | asset_url }}" alt="">
-            <img class="chair-with-bottle" src="{{ 'glucose-support-banner-chair-with-bottle.png' | asset_url }}" alt="">
-            <img class="up-to-off" src="{{ 'glucose-support-banner-up-to-off.png' | asset_url }}" alt="">
-            <div class="shop-now-tablet">
-                <a href="/collections/all"><img
-                        class="shop-now" src="{{ 'glucose-support-banner-shop-now.png' | asset_url }}" alt=""></a>
+            <div class="curalin-desktop">
+            <img src="{{ 'glucose-support-banner-curalin-text.png' | asset_url }}" alt=""></div>
+            <div class="natural-blood-sugar">Natural Blood Sugar Support Supplement</div>
+           <div class="up-to-off">
+            <div class="twenty-percent-off part-20">
+                <div class="up-to">
+                    UP TO
+                </div>
+                <div class="off">30% OFF</div>
+                
+               
             </div>
+           </div>
+           <a href="/collections/all">
+           <div class="shop-now">SHOP NOW</div></a>
+           <div class="curalin-desktop-right">
+               <img class="chair-with-bottle" src="{{ 'glucose-support-banner-chair-with-bottle.png' | asset_url }}" alt="">
+           </div>
+        </div>
+        
+        <div class="curalin-tablet-left">
+            <div class="curalin-desktop">
+            <img src="{{ 'glucose-support-banner-curalin-text.png' | asset_url }}" alt=""></div>
+            <div class="natural-blood-sugar">Natural Blood Sugar Support Supplement</div>
+           
+            <img class="chair-with-bottle" src="{{ 'glucose-support-banner-chair-with-bottle.png' | asset_url }}" alt="">
+            <div class="twenty-percent-off part-20">
+                <div class="up-to">
+                    UP TO
+                </div>
+                <div class="off"> 30% OFF</div>
+
+               
+            </div>
+        
+            <a href="/collections/all">
+                <div class="shop-now">SHOP NOW</div></a>
+                
     
         </div>
     </div>
 </div>
+
 
 
 
@@ -78,7 +95,7 @@ padding: 0 40px;
 
 .curalin-page-header .container {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     padding-top: 20px;
 }
 
@@ -91,17 +108,111 @@ display: flex;
 flex-direction: column;
 margin-top: 30px;
 align-items: flex-start;
+position: relative;
+
 }
 
-.up-to-off {
-margin-top: 30px;
-margin-bottom:30px;
+.curalin-desktop {
+    display: flex;
+    justify-content: center;
+    background-color: #8FD9EB;
+    padding: 5px 20px;
+    transform: rotate(-1.85deg);
 }
+
+.curalin-desktop img {
+    transform: rotate(1.85deg);
+}
+
+.natural-blood-sugar {
+    margin-top: 20px;
+    padding: 5px 10px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;  
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    color: #F66E86;
+    transform: rotate(-1.85deg);
+}
+
+
+
+
+
+
+.twenty-percent-off {
+    display: flex;
+    margin: 30px 0;
+}
+
+.up-to {
+    width: 37px;
+    height: 50px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+}
+
+.off {
+    margin-left: 10px;   
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat';
+
+    font-weight: 500;
+    font-size: 120px;
+    line-height: 86px;
+
+}
+
+
 
 .curalin-desktop-right {
 margin-left: 50px;
 opacity: 0.9;
+position: absolute;
+right: -700px;
+top: -70px;
 }
+
+.curalin-desktop-right img {
+    max-height: 500px;
+}
+
+.shop-now {
+position: relative;
+top: 15px;
+z-index: 5;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+font-family: 'Montserrat';
+font-weight: 600;
+font-size: 38px;
+line-height: 46px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+background-color: #F6556F;
+padding: 10px 15px;
+color: #FFFFFF;
+}
+
+.curalin-desktop-left a {
+    height: 120px;
+}
+
+@media screen and (max-width: 1270px) {
+    .curalin-desktop-right {
+    right: -550px;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
 
@@ -123,22 +234,50 @@ display: none;
 .curalin-tablet-left {
 display: flex;
 flex-direction: column;
+align-items: center;
+}
+
+.natural-blood-sugar {
+    margin: 3vw 0;
+    width: unset;
+    line-height: unset;
+    font-size: 5.5vw;
+    text-align: center;
+}
+
+
+.twenty-percent-off {
+
+    margin: unset;
+}
+
+.up-to {
+    width: 20px;
+    height: fit-content;
+    font-size: 10px;
+    line-height: 11px;
+}
+
+.off {
+   margin-left: unset;
+    font-size: 50px;
+    line-height: 38px;
 
 }
 
-.curalin-tablet {
-max-width: 447px;
-margin-left: 30px;
-}
 
-.natural-blood-sugar-tablet {
-max-width: 592px;
+.shop-now {
+
+font-size: 25px;
+line-height: unset;
 
 }
 
-.natural-blood-sugar-mobile {
-display: none;
-}
+
+
+
+
+
 
 .chair-with-bottle {
 width: 100%;
@@ -155,11 +294,6 @@ max-width: 528px;
     height: 50px;
 }
 
-.shop-now {
-position: relative;
-top: 20px;
-z-index: 5;
-}
 
 }
 
@@ -167,10 +301,6 @@ z-index: 5;
 
 .sub-title {
     margin-top: unset;
-}
-.curalin-tablet {
-max-width: 280px;
-margin: auto;
 }
 
 .natural-blood-sugar-tablet {
@@ -183,9 +313,12 @@ margin: 5px auto;
 padding-left: 10px;
 }
 
-.up-to-off {
-margin: auto;
-max-width: 281px;
 }
+
+@media screen and (max-width: 375px){
+    .off {
+        font-size: 40px;
+        line-height: 30px;
+    }
 }
 {% endstyle %}
