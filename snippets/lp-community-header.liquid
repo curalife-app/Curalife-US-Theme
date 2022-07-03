@@ -14,7 +14,7 @@
           <ul>
           <li><a class="scroller" href="#" goto="food">Food Posts</a></li>
           <li><a class="scroller" href="#" goto="topics">Top Topics</a></li>
-          <li><a class="scroller" href="#" goto="mealplans">Meal Plans</a></li>
+          <!-- <li><a class="scroller" href="#" goto="mealplans">Meal Plans</a></li> -->
           <li><a class="scroller" href="#" goto="education">Type 2 Education</a></li>
           </ul>
         </div>
@@ -63,6 +63,8 @@
         scrollTop: $(".community-" + goto).offset().top
     }, 2000);
 
-    $(".open-menu").trigger("click");
+    if (window.matchMedia("only screen and (max-width: 760px)").matches) {
+        $(".open-menu").trigger("click");
+    }
   });
 </script>
