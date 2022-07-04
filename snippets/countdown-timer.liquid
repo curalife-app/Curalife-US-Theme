@@ -1,0 +1,90 @@
+<div id="countdown">
+  <ul>
+    <li><span id="hours"></span>Hours</li>
+    <li><span id="minutes"></span>Minutes</li>
+    <li><span id="seconds"></span>Seconds</li>
+  </ul>
+</div>
+
+<style>
+  #countdown {
+    margin: auto;
+    max-width: fit-content;
+  }
+
+  #countdown li {
+    display: inline-block;
+    font-size: 15px;
+    list-style-type: none;
+    text-transform: uppercase;
+    min-width: 110px;
+    text-align: center;
+  }
+
+  #countdown li span {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+  }
+
+  #countdown li:not(:last-child):before {
+    content: ":";
+      display: block;
+      font-size: 40px;
+      position: relative;
+      top: 57px;
+      left: 57px;
+  }
+
+  @media screen and (max-width: 760px) {
+      #countdown {
+          width: 100%;
+          text-align: center;
+          top: -45px;        
+      }
+
+      #countdown li {
+        padding: 5px;
+        font-size: 16px;
+          min-width: 70px;
+      }
+
+      #countdown li span {
+          font-size: 45px;
+      }
+
+      #countdown li:not(:last-child):before {
+          top: 40px;
+          left: 40px;
+      }
+
+  }
+</style>
+
+<script>
+  // Timer
+  Number.prototype.pad = function() {
+      return this < 10 ? '0' + this : this;
+  }
+
+  const second = 1000,
+  minute = second * 60,
+  hour = minute * 60;
+
+  let birthday = "July 8, 2022 09:59:00"; 
+  let countDown = new Date(birthday).getTime();
+  let x = setInterval(function() {    
+      var now = new Date().getTime();
+      var distance = countDown - now;
+
+      document.getElementById("hours").innerText = Math.floor(distance / (hour)).pad(),
+      document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)).pad(),
+      document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second).pad();
+
+      // do something later when date is reached
+      if (distance < 0) {
+          clearInterval(x);
+      }
+  //seconds
+  }, 0)
+</script>
