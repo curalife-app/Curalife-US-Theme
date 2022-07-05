@@ -766,6 +766,14 @@
       country: '{{customer.customer_address.country_code | t}}',
       user_agent: navigator.userAgent
     });
+
+    woopra.track('add to cart', {
+      product_sku: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+      product_name: '{{ product.title }}',
+      product_price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+      currency: '{{ shop.currency }}',
+      quantity: parseInt($(".qty-control input").val())
+    });
   });
 
   window.dataLayer = window.dataLayer || [];
