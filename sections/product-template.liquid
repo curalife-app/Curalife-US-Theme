@@ -7,6 +7,7 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 {% render 'summer-sale-header' %}
+<!-- {% render 'countdown-timer' %} -->
 
 <div class="product-data">
     <div class="container">
@@ -136,10 +137,6 @@
                   {% endif %}
                 </div>
               </form>
-
-              <div class="shipping-label">
-                <p><span class="{{section.settings.ship_icn}}"></span><span class="usa">Free Shipping</span><span class="geo" style="display:none">{% if product.title == 'CuraLin' %}<a href="/collections/all">Buy a bundle pack and get FREE SHIPPING!</a>{% else %}Free Shipping{% endif %}</span></p>
-              </div>
             </div>
             <div class="extra-info">
                 {% for block in section.blocks %}
@@ -267,10 +264,6 @@
     margin: 80px auto;
     font-size: 5vw;
     padding: 1vw 2vw;
-  }
-
-  .shipping-label a {
-    font-size:3.5vw
   }
   }
 
