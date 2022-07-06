@@ -986,14 +986,23 @@
   </div>
 </div>
 
+<!-- RAF -->
 <script>
   let urlParams = new URLSearchParams(window.location.search);
-  let linksAddition = urlParams.get('add');
+  let linksAddition = urlParams.get('raf');
 
-  if (linksAddition) {
+  if (urlParams.get('raf')) {
     $('a').each(function() {
       var currLink = $(this).attr('href');
-      if (currLink) { $(this).attr('href', currLink + linksAddition) };
+      if (currLink) { $(this).attr('href', currLink + "-raf") };
+    });
+
+    // Wisepop Event!
+    $(document).ready(function () {
+      runAfterElementExists(".yotpo-copy-code-icon", function () {
+        wisepops('properties', {rafCodeReceived: true});
+        wisepops("pageview");
+      })
     });
   }
 </script>
