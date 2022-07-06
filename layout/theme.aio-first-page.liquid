@@ -124,6 +124,42 @@
     {{ content_for_layout }}
   </main>
 
+  <!-- RAF -->
+  <script>
+    let urlParams = new URLSearchParams(window.location.search);
+    let linksAddition = urlParams.get('utm_campaign');
+
+    if (urlParams.get('utm_campaign') == 'referral_program') {
+      function runAfterElementExists(jquery_selector, callback) {
+        var checker = window.setInterval(function () {
+          if ($(jquery_selector).length) {
+            clearInterval(checker);
+            callback();
+          }
+        }, 200);
+      }
+
+      setTimeout(function () {
+        $('a').each(function() {
+          $(this).attr('href', $(this).attr('href').split('?')[0]);
+        });
+      }, 3000);
+
+      // Wisepop Event!
+      $(document).ready(function () {
+        runAfterElementExists(".yotpo-copy-code-icon", function () {
+          wisepops('properties', {rafCodeReceived: true});
+          wisepops("pageview");
+
+          $('a').each(function() {
+            var currLink = $(this).attr('href');
+            if (currLink) { $(this).attr('href', currLink + "-raf") };
+          });
+        })
+      });
+    }
+  </script>
+
   {% render 'layout.footer.woopra-snippet' %}
 
 <style>
