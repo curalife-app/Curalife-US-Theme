@@ -130,6 +130,7 @@
     let linksAddition = urlParams.get('utm_campaign');
 
     if (urlParams.get('utm_campaign') == 'referral_program') {
+      console.log("Referral program");
       function runAfterElementExists(jquery_selector, callback) {
         var checker = window.setInterval(function () {
           if ($(jquery_selector).length) {
@@ -140,10 +141,12 @@
       }
 
       setTimeout(function () {
-        $('a').each(function() {
+        console.log("remove params from links")
+        $('a.btn-cta').each(function() {
+          console.log("remove");
           $(this).attr('href', $(this).attr('href').split('?')[0]);
         });
-      }, 3000);
+      }, 5000);
 
       // Wisepop Event!
       $(document).ready(function () {
