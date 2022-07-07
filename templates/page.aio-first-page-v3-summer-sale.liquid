@@ -1019,27 +1019,6 @@
     </div>
 </div>
 
-<!-- RAF -->
-<script>
-    let urlParams = new URLSearchParams(window.location.search);
-    let linksAddition = urlParams.get('raf');
-  
-    if (urlParams.get('raf')) {
-      $('a').each(function() {
-        var currLink = $(this).attr('href');
-        if (currLink) { $(this).attr('href', currLink + "-raf") };
-      });
-  
-      // Wisepop Event!
-      $(document).ready(function () {
-        runAfterElementExists(".yotpo-copy-code-icon", function () {
-          wisepops('properties', {rafCodeReceived: true});
-          wisepops("pageview");
-        })
-      });
-    }
-  </script>
-
 <script>
     // Fade Quotes
     var quotes = $(".title-text");
