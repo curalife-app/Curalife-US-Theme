@@ -142,7 +142,9 @@
         console.log("remove params from links")
         $('a.btn-cta').each(function() {
           console.log("remove");
-          $(this).attr('href', $(this).attr('href').split('?')[0]);
+          var href = $(this).attr('href');
+          console.log(href);
+          $(this).attr('href', href.split('?')[0]);
         });
       }, 3000);
 
