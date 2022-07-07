@@ -33,18 +33,24 @@
     req.overrideMimeType("application/json"), req.open("GET", "https://geo.curalife.com/", !0), req.onload = function() {
       let country = JSON.parse(req.responseText).country;
       let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
-      let countries = ["US", "PR", "CA", "AU"]; // Countries for main domain (USA)
+      let countriesUS = ["US", "PR", "CA", "AU"]; // Countries for main domain (USA)
+      let otherCountries = ["AT", "KW", "LT", "LV"];
       sessionStorage.setItem('country', country);
 
-      if ((host == "USA") && (!countries.includes(country))) { // If US and not US or PR so go Global
-        redirectTo("global.curalife.com", true)
+      if ((host == "USA") && (!countriesUS.includes(country))) { // If host is US but not on US Countries
+        if (!otherCountries.includes(country)) {
+          redirectTo("global.curalife.com", true)
+        }
+        else {
+          if (["LT", "LV"].includes(country)) {redirectTo("https://curalife.lv", false)} // If Lithuania Or Latvia
+          else if (country == "AT") {redirectTo("https://curalife.at", false)} // If Austria
+          else if (country == "KW") {redirectTo("https://trycuralife.com", false)} // If Kuwait
+        }
       }
-      else if ((host == "Global") && (countries.includes(country))) { // If Global and we are on US or PR so go US
+      else if ((host == "Global") && (countriesUS.includes(country))) { // If Global and we are on US Countries so go US
         redirectTo("curalife.com", true);
       }
-      else if (country == "AT") {redirectTo("https://curalife.at", false)} // If Austria
-      else if (country == "KW") {redirectTo("https://trycuralife.com", false)} // If Kuwait
-      else if (["LT", "LV"].includes(country)) {redirectTo("https://curalife.lv", false)} // If Lithuania Or Latvia
+      
     }, req.send(null);
   }
 </script>
