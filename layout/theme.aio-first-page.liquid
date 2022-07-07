@@ -148,6 +148,7 @@
 
       // Wisepop Event!
       runAfterElementExists(".yotpo-copy-code-icon", function () {
+        console.log("-raf")
         wisepops('properties', {rafCodeReceived: true});
         wisepops("pageview");
 
