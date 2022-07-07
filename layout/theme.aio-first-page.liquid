@@ -147,16 +147,18 @@
       }, 5000);
 
       // Wisepop Event!
-      runAfterElementExists(".yotpo-copy-code-icon", function () {
-        console.log("-raf")
-        wisepops('properties', {rafCodeReceived: true});
-        wisepops("pageview");
+      $(document).ready(function () {
+        runAfterElementExists(".yotpo-copy-code-icon", function () {
+          console.log("-raf")
+          wisepops('properties', {rafCodeReceived: true});
+          wisepops("pageview");
 
-        $('a').each(function() {
-          var currLink = $(this).attr('href');
-          if (currLink) { $(this).attr('href', currLink + "-raf") };
-        });
-      })
+          $('a').each(function() {
+            var currLink = $(this).attr('href');
+            if (currLink) { $(this).attr('href', currLink + "-raf") };
+          });
+        })
+      });
     }
   </script>
 
