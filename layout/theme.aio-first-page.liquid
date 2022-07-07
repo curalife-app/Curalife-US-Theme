@@ -157,7 +157,7 @@
 
           $('a').each(function() {
             var currLink = $(this).attr('href');
-            if (currLink) { $(this).attr('href', currLink + "-raf") };
+            $(this).attr('href', href.split('?')[0] + "-raf");
           });
         })
       });
