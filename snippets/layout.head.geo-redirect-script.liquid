@@ -15,8 +15,13 @@
     return robots.test(userAgent);
   };
 
-  function redirectTo(url) {
-    window.location.hostname = url;
+  function redirectTo(url, slug) {
+    if (slug) {
+      window.location.hostname = url;
+    }
+    else {
+      window.location.href = url;
+    }
   }
 
   const userAgent = navigator.userAgent;
@@ -32,13 +37,14 @@
       sessionStorage.setItem('country', country);
 
       if ((host == "USA") && (!countries.includes(country))) { // If US and not US or PR so go Global
-        redirectTo("global.curalife.com")
+        redirectTo("global.curalife.com", true)
       }
       else if ((host == "Global") && (countries.includes(country))) { // If Global and we are on US or PR so go US
-        redirectTo("curalife.com");
+        redirectTo("curalife.com", true);
       }
-      else if (country == "AT") {redirectTo("curalife.at")} // If Austria
-      else if (country == "KW") {redirectTo("trycuralife.com")} // If Kuwait
+      else if (country == "AT") {redirectTo("https://curalife.at", false)} // If Austria
+      else if (country == "KW") {redirectTo("https://trycuralife.com", false)} // If Kuwait
+      else if (["LT", "LV"].includes(country)) {redirectTo("https://curalife.lv", false)} // If Lithuania Or Latvia
     }, req.send(null);
   }
 </script>
