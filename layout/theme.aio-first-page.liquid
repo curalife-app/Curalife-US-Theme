@@ -125,10 +125,9 @@
 
   <!-- RAF -->
   <script>
-    let urlParams = new URLSearchParams(window.location.search);
-    let linksAddition = urlParams.get('utm_campaign');
+    let utmParam = new URLSearchParams(window.location.search).get('utm_campaign');
 
-    if (urlParams.get('utm_campaign') == 'referral_program') {
+    if (utmParam == 'referral_program') {
       console.log("Referral program");
       function runAfterElementExists(jquery_selector, callback) {
         var checker = window.setInterval(function () {
