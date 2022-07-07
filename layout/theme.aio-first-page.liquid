@@ -143,7 +143,7 @@
         $('a.btn-cta').each(function() {
           console.log("remove");
           var href = $(this).attr('href');
-          console.log(href);
+          console.log(href.split('?'));
           $(this).attr('href', href.split('?')[0]);
         });
       }, 3000);
@@ -157,7 +157,6 @@
 
           $('a').each(function() {
             var currLink = $(this).attr('href');
-            $(this).attr('href', currLink.split('?')[0]);
             if (currLink) { $(this).attr('href', currLink + "-raf") };
           });
         })
