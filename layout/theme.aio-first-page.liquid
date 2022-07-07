@@ -138,13 +138,6 @@
         }, 200);
       }
 
-      setTimeout(function () {
-        $('a.btn-cta').each(function() {
-          var href = $(this).attr('href');
-          $(this).attr('href', href.split('?')[0]);
-        });
-      }, 3000);
-
       // Wisepop Event!
       $(document).ready(function () {
         runAfterElementExists(".yotpo-copy-code-icon", function () {
