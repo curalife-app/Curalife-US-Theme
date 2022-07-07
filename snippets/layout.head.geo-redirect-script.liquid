@@ -43,7 +43,7 @@
         else if (country == "AT") {redirectTo("https://curalife.at", false)} // If Austria
         else if (country == "KW") {redirectTo("https://trycuralife.com", false)} // If Kuwait
       }
-      if ((host == "USA") && (!countriesUS.includes(country))) { // If host is US but not on US Countries
+      else if ((host == "USA") && (!countriesUS.includes(country))) { // If host is US but not on US Countries
         redirectTo("global.curalife.com", true)
       }
       else if ((host == "Global") && (countriesUS.includes(country))) { // If Global and we are on US Countries so go US
