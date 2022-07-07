@@ -36,6 +36,7 @@
       let countriesUS = ["US", "PR", "CA", "AU"]; // Countries for main domain (USA)
       let otherCountries = ["AT", "KW", "LT", "LV"];
       sessionStorage.setItem('country', country);
+      console.log("Country: " + country);
 
       if (otherCountries.includes(country)) {
         if (["LT", "LV"].includes(country)) {redirectTo("https://curalife.lv", false)} // If Lithuania Or Latvia
