@@ -34,21 +34,18 @@
       let country = JSON.parse(req.responseText).country;
       let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
       let countriesUS = ["US", "PR", "CA", "AU"]; // Countries for main domain (USA)
-      let otherCountries = ["AT", "KW", "LT", "LV"];
       sessionStorage.setItem('country', country);
-      console.log("Country: " + country);
 
-      if (otherCountries.includes(country)) {
-        if (["LT", "LV"].includes(country)) {console.log("LVLVLVL");redirectTo("https://curalife.lv", false)} // If Lithuania Or Latvia
-        else if (country == "AT") {redirectTo("https://curalife.at", false)} // If Austria
-        else if (country == "KW") {redirectTo("https://trycuralife.com", false)} // If Kuwait
-      }
+      if (["LT", "LV"].includes(country)) {redirectTo("https://curalife.lv", false)} // If Lithuania Or Latvia
+      else if (country == "AT") {redirectTo("https://curalife.at", false)} // If Austria
+      else if (country == "KW") {redirectTo("https://trycuralife.com", false)} // If Kuwait
       else if ((host == "USA") && (!countriesUS.includes(country))) { // If host is US but not on US Countries
         redirectTo("global.curalife.com", true)
       }
       else if ((host == "Global") && (countriesUS.includes(country))) { // If Global and we are on US Countries so go US
         redirectTo("curalife.com", true);
       }
+      
     }, req.send(null);
   }
 </script>
