@@ -138,20 +138,16 @@
         }, 200);
       }
 
-      setTimeout(function () {
-        console.log("remove params from links")
-        $('a.btn-cta').each(function() {
-          console.log("remove");
-          var href = $(this).attr('href');
-          console.log(href.split('?'));
-          $(this).attr('href', href.split('?')[0]);
-        });
-      }, 3000);
+      // setTimeout(function () {
+      //   $('a.btn-cta').each(function() {
+      //     var href = $(this).attr('href');
+      //     $(this).attr('href', href.split('?')[0]);
+      //   });
+      // }, 3000);
 
       // Wisepop Event!
       $(document).ready(function () {
         runAfterElementExists(".yotpo-copy-code-icon", function () {
-          console.log("-raf");
           wisepops('properties', {rafCodeReceived: true});
           wisepops("pageview");
 
