@@ -169,6 +169,14 @@
       country: '{{customer.customer_address.country_code | t}}',
       user_agent: navigator.userAgent
     });
+
+    woopra.track('add to cart', {
+      product_sku: $(this).attr("prod-id"),
+      product_name: $(this).attr("title"),
+      product_price: $(this).attr("price"),
+      currency: '{{ shop.currency }}',
+      quantity: 1
+    });
   });
 </script> 
 
