@@ -1,33 +1,18 @@
 {% assign lp_prods = page.content | split: ',' %}
 <section class="product-section" id="product-section">
     <div class="container">
-        <div class="extra-info"><p><img src="{{ 'icon-free-shipping-light.png' | asset_url }}" alt="free shipping">WORLDWIDE SHIPPING</p></div>
+        <div class="extra-info"><img src="{{ 'icon-free-shipping-light.png' | asset_url }}" alt="free shipping"><p id="shipping-badge-text">FREE SHIPPING</p></div>
         <h2>Choose Your Package</h2>
         <div class="sl-optimize-03">
             <div class="product-list">
-
                 {% for lp_prod in lp_prods %}
                     {% assign prod = all_products[lp_prod] %}
                     {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
                     {% assign quantity_by_cents = quantity | times: 100 %}
                     {% assign item_price = prod.price | divided_by: quantity_by_cents | times: 100 %}
-                    {% assign item_price_for_save = prod.price | divided_by: quantity_by_cents %}
-                    {% assign cap_price = prod.metafields.my_fields.original_item.value.compare_at_price | divided_by: 100 | times: quantity %}
+                    {% assign original_item_price = prod.metafields.my_fields.original_item.value.price %}
+                    {% assign save_price = original_item_price | minus: item_price | times: quantity %}
                     {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
-
-                    {% if localization.country.iso_code == 'CA' %}
-                      {% assign currency_letters = localization.country.iso_code %}
-                      {% assign cap_price = prod.metafields.my_fields.ca_cap %}
-                    {% elsif localization.country.iso_code == 'AU' %}
-                      {% assign currency_letters = localization.country.iso_code %}
-                      {% assign cap_price = prod.metafields.my_fields.au_cap %}
-                    {% endif %}
-
-                    {% assign item_price_bundle =  item_price_for_save | times: quantity %}
-                    {% assign save_price = cap_price | minus: item_price_bundle | times: 100 %}
-                    <script>console.log("original item price: {{cap_price}}, item price: {{item_price_for_save}}, quantity: {{quantity}}, save: {{save_price}}, bundle: {{item_price_bundle}}");</script>
-
-                    
 
                     <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
                         {% if forloop.index == 2 %}
@@ -44,15 +29,15 @@
                             <div class="info">
                                 <p style="text-transform: uppercase;">Up To {{ prod.metafields.my_fields.supply_days }} Days Supply</p>
                             </div>
-                            {% if save_price %}
-                            <div class="save"><div class="save-bg"><p {% if forloop.index == 3 %}id="dot5save"{% endif %}>SAVE {{ save_price | money_without_trailing_zeros }}</p></div></div>
+                            {% if save_price > 0 %}
+                            <div class="save"><div class="save-bg"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div></div>
                             {% endif %}
                             <div class="img">
                                 <a class="cta-btn" href="{{ buylink }}" prod-id="{{ prod.id }}" prod-title="{{ prod.title }}" prod-price="{{ prod.price | money_without_trailing_zeros | slice: 26, 4 | replace: "<","" }}"><img src="{{ prod.featured_image.src | img_url: '500x500' }}" alt=""></a>
                             </div>
                             <div class="price per-bottle">
                                 {% if quantity > 1 %}
-                                    <p {% if forloop.index == 3 %}id="dot5"{% endif %} class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
+                                    <p id="divided-price" class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
                                     <p class="per-bottle-title">Per<br>Bottle</p>
                                 {% else %}
                                     <p id="original-price" class="original-price">{{ prod.price | money_without_trailing_zeros }}</p>
@@ -78,19 +63,12 @@
             </div>
         </div>
         <div class="trust-badges">
-            <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">Free Worldwide Shipping</div>
+            <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt=""><div id="shipping-badge-text-2">Free Worldwide Shipping</div></div>
             <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
             <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
         </div>
     </div>
 </div>
-
-{% if localization.country.iso_code != 'CA' and localization.country.iso_code != 'AU' %}
-  <script>
-    $("#dot5").append(".5");
-    $("#dot5save").text("SAVE $135");
-  </script>
-{% endif %}
 
 {% style %}
 .product-section .extra-info {
@@ -106,10 +84,9 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 1;
-    margin-left: 15%;
 }
 
-.product-section .extra-info p img {
+.product-section .extra-info img {
     margin-right: 5px;
 }
 
@@ -122,7 +99,7 @@
 }
 
 .product-section .extra-info p:before {
-    right: calc(100% - -9px);
+    right: calc(100% - -60px);
 }
 
 .product-section .extra-info p:after {
@@ -235,8 +212,7 @@
 .product-list .card .save {
     width: 80px;
     height: 80px;
-    background: #F66E86;
-    color: #ffffff;
+    background: #FEC14B;
     border-radius: 50%;
     position: absolute;
     right: 80px;
@@ -244,14 +220,14 @@
     font-size: 20px;
     text-align: center;
     font-weight: 700;
-    border: 3px solid #F66E86;
+    border: 3px solid #FEC14B;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
 }
 
 .product-list .card .save .save-bg {
     border-radius: 50%;
     position: absolute;
-    box-shadow: inset 0px 0px 0px 1px #ffffff;
+    box-shadow: inset 0px 0px 0px 3px #ffdb97;
     width: 100%;
     height: 100%;
     left: 0;
@@ -263,7 +239,7 @@
     font-weight: normal;
     font-size: 24px;
     line-height: 1.33;
-    color: black;
+    color: #000000;
     text-align: center;
     justify-content: center;
 }
@@ -315,14 +291,14 @@
     line-height: 1;
     text-align: center;
     color: white;
-    background: #FDCB3B;
+    background: #C78263;
     box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
     border-radius: 10px;
     transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
 .product-list .card .submit-btn a:hover {
-    background: #FDCB3B;
+    background: #a56447;
 }
 
 .product-list .card .submit-btn p {
@@ -377,10 +353,6 @@
 }
 
 @media screen and (max-width:760px) {
-    .save-bg p {
-        font-size: 5vw;
-    }
-    
     .product-section h2 {
         font-size: 7vw;
         font-weight: 700;
