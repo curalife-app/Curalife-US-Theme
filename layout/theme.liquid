@@ -18,16 +18,16 @@
     <noscript><link rel="stylesheet" href="{{ 'styles-product-aio.css' | asset_url }}"></noscript>
 
     <!-- Script Libraries -->
-    <script src="{{ 'jquery-3.6.0.min.js' | asset_url}}"></script>
+    <script src="{{ 'jquery-3.6.0.min.js' | asset_url}}" async></script>
     <script src="{{ 'libs.js' | asset_url }}" async></script>
     <script src="{{ 'common.js' | asset_url }}" async></script>
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" async></script>
 
     <!-- Swiper Import -->
     <link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <script src="{{ 'swiper.min.js' | asset_url }}"></script>
+    <script src="{{ 'swiper.min.js' | asset_url }}" async></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +39,8 @@
     <style>@font-face{font-family:IcoFont;font-weight:400;font-style:Regular;src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),url({{ "icofont.woff" | asset_url }}) format("woff")}</style>
   
     {% if template contains 'customers' %}
-        {{ "shopify_common.js" | shopify_asset_url | script_tag }}
-        {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+        <script type="text/javascript" src="{{ 'shopify_common.js' | shopify_asset_url }}" async></script>
+        <script type="text/javascript" src="{{ 'customer_area.js'  | shopify_asset_url }}" async></script>
     {% endif %}
     {{ content_for_header }} <!-- Header hook for plugins -->
 
