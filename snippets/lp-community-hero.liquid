@@ -1,58 +1,40 @@
 <section class="community-hero">
   <div class="container">
-    <div class="titles">
-      <h1>Welcome to<br><b>Winning Type 2</b></h1>
-      <p>The world’s biggest diabetes support group</p>
-    </div>
+    <img src="{{ "lp-community-hero-bg-thousand.png" | file_url }}" alt="">
   </div>
 </section>
 
 <style>
   section.community-hero {
-    background-image: url('{{ "lp-community-hero-bg.png" | file_url }}');
-    background-size: cover;
-    background-position: right;
-    min-height: 720px;
-    position: relative;
+    background: linear-gradient(180deg, #E99C18 0%, #E99C18 24.12%, #E69618 51.48%, #E59115 78%, #DE8311 100%);
+    padding-bottom: unset;
   }
 
-  .community-hero .container {
-    min-height: 720px;
-  }
-
-  .community-hero .titles {
-    position: absolute;
-    bottom: 0;
-    color: white;
-    font-size: 40px;
-  }
-
-  .community-hero .titles h1 {
-    text-align: start;
-    font-weight: normal;
-    margin: 0;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
-  }
-
-  .community-hero .titles p {
-    background-color: #475993;
-    padding: 10px 20px;
-    font-size: 30px;
+  .community-hero img {
+    padding-top: 80px;
   }
 
   @media screen and (max-width: 991px) {
-    .community-hero .titles h1 {
-      font-size: 11vw;
-    }
-
-    .community-hero .titles p {
-      font-size: 4vw;
-      padding: 1vw 3vw;
-    }
-
     section.community-hero, .community-hero .container {
       min-height: unset;
-      height: 80vw;
     } 
+    .community-hero img {
+      padding-top: 10vw;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .community-hero img {
+      padding-top: 12vw;
+    }
+  }
+
+  
+    @media screen and (max-width: 500px) {
+
+  .community-hero img {
+    padding-top: 20vw;
+  }
   }
 </style>
