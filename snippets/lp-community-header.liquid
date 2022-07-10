@@ -7,7 +7,7 @@
         </ul>
       </div>
       <div class="main-logo">
-        <img src="{{ 'lp-community-header-logo.png' | file_url }}" alt="logo">
+        <img src="{{ 'lp-community-header-logo-white.png' | file_url }}" alt="logo">
       </div>
       <div class="main-menu">
         <div class="menu-scroll">
@@ -29,8 +29,9 @@
   }
 
   header:before {
-      opacity: 1;
-      visibility: visible;
+    background-color: #475993;
+    opacity: 1;
+    visibility: visible;
   }
 
   .main-toolbar {
@@ -41,17 +42,43 @@
     margin-top: -5px;
   }
 
+  .main-menu ul li a {
+    color: #ffffff;
+  }
+
   .main-menu ul li a:hover {
-    color: #475993;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .main-links ul li a.open-menu i.icon-menu  {
+    color: white;
+  }
+
+  .main-links ul li a:hover {
+      color: #ffffff;
   }
 
   @media screen and (max-width: 991px) {
+    .main-menu .menu-scroll {
+      background-color: #475993;
+    }
+
     header {
       height: unset;
     }
 
-    .main-logo {
-      margin-right: 20vw;
+    .main-logo img {
+      max-height: 10vw;
+    }
+
+    .main-toolbar {
+      justify-content: center;
+    }
+
+    .main-links.d-mobile {
+      position: absolute;
+      left: 0;
     }
   }
 </style>
@@ -60,11 +87,11 @@
   $(".scroller").click(function() {
     let goto = $(this).attr("goto")
     $('html, body').animate({
-        scrollTop: $(".community-" + goto).offset().top
+      scrollTop: $(".community-" + goto).offset().top
     }, 2000);
 
     if (window.matchMedia("only screen and (max-width: 760px)").matches) {
-        $(".open-menu").trigger("click");
+      $(".open-menu").trigger("click");
     }
   });
 </script>
