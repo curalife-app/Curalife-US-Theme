@@ -1485,7 +1485,33 @@
       "loading_shipping_accessibility_message": "Cargando dirección de envío",
       "pagination": {
         "nav_accessibility_label": "paginación de direcciones",
-        "next": "Ir a la siguiente página de direcciones"
+        "next": "Ir a la siguiente página de direcciones",
+        "previous": "Ir a la página anterior de direcciones"
+      },
+      "save_new_address_accessibility_label": "Guardar dirección",
+      "title": "direcciones"
+    },
+    "address_form": {
+      "auto_complete_close_accessibility_label": "Cerrar sugerencias",
+      "auto_complete_title": "Sugerencias",
+      "billing_address": "Usar como dirección de facturación",
+      "cancel": "Cancelar",
+      "cancel_accessibility_label": "Cancelar edición de dirección {{address}}",
+      "creation_success_notification": "Dirección añadida",
+      "default_address": "Esta es mi dirección predeterminada",
+      "default_address_creation_success_notification": "Dirección predeterminada añadida",
+      "default_address_update_success_notification": "Dirección predeterminada actualizada",
+      "loading_add_form_accessibility_message": "Cargando formulario de nueva dirección",
+      "loading_edit_form_accessibility_message": "Cargando formulario de edición de dirección",
+      "loading_finished_accessibility_message": "El formulario ha cargado",
+      "save": "Ahorrar",
+      "save_accessibility_label": "Guardar dirección {{address}}",
+      "section_title_accessibility_label": "Añadir dirección",
+      "update_success_notification": "Dirección actualizada"
+    },
+    "B2B": {
+      "account_information": {
+        "company_card_name_label": "Nombre de empresa"
       }
     }
   }
