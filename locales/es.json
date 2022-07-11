@@ -551,8 +551,8 @@
           "other": "Algunos artículos de su carrito no se pueden enviar a la dirección que ingresó. Revise su dirección para asegurarse de que todos los campos se hayan ingresado correctamente y vuelva a intentarlo."
         },
         "shipping_method_not_available_updated": {
-          "one": "El artículo que agregaste no se envía a tu ubicación. Quítelo para pagar o comuníquese con la tienda.",
-          "other": "Uno o más elementos que agregaste no se envían a tu ubicación. Quítelos para pagar o comuníquese con la tienda."
+          "one": "El artículo que agregó no se envía a su ubicación. Quítelo para pagar o comuníquese con la tienda.",
+          "other": "Uno o más artículos que agregó no se envían a su ubicación. Quítelos para pagar o comuníquese con la tienda."
         }
       },
       "alternative_payment_method_banner": {
@@ -560,14 +560,14 @@
         "or": "O"
       },
       "alternative_payment_method": {
-        "button_html": "Pagar con: %{method }",
-        "button_label": "Pagar con: %{method }"
+        "button_html": "Pagar con: %{method}",
+        "button_label": "Pagar con: %{method}"
       },
       "paypal": {
-        "button_html": "Pagar con %{logo }"
+        "button_html": "Pagar con %{logo}"
       },
       "apple_pay": {
-        "button_html": "Compre con %{logo }"
+        "button_html": "Compra con %{logo}"
       },
       "post_purchase": {
         "page_title": "Compra posterior",
@@ -575,16 +575,16 @@
         "escape_confirmation": "Has pagado tu pedido.",
         "escape_action": "Ver confirmación de pedido ›",
         "components": {
-          "close": "Cerrar",
+          "close": "Cerca",
           "expand": "Ver más",
           "processing": "Procesando…",
           "submit": "Enviar"
         }
       },
       "processing": {
-        "redirecting_page_title": "Redirigiendo ...",
-        "redirecting_title": "Redirigiendo ...",
-        "redirecting_notice": "Espera mientras te redireccionamos.",
+        "redirecting_page_title": "Redireccionando…",
+        "redirecting_title": "Redireccionando…",
+        "redirecting_notice": "Espera mientras te redirigimos.",
         "complete_your_purchase_title": "Completa tu compra",
         "continue_to_payment_gateway_notice": "Continúe con el pago para agregar su información de pago.",
         "continue_to_payment_gateway_button_label": "Continuar con el pago",
@@ -609,14 +609,14 @@
       },
       "thank_you": {
         "in_transit_description": "Recibirás actualizaciones sobre su progreso.",
-        "in_transit_description_days": "Debería recibir su pedido en los próximos %{number } días.",
-        "in_transit_description_today": "Debería recibir su pedido hoy.",
-        "in_transit_description_tomorrow": "Debería recibir su pedido al día siguiente.",
-        "no_tracking_number": "No hay un número de seguimiento para este pedido.",
+        "in_transit_description_days": "Debería recibir su pedido en los próximos %{number} días.",
+        "in_transit_description_today": "Deberías recibir tu pedido hoy.",
+        "in_transit_description_tomorrow": "Deberías recibir tu pedido al día siguiente.",
+        "no_tracking_number": "No hay número de seguimiento para este pedido.",
         "out_for_delivery": "Fuera para entrega",
-        "out_for_delivery_title": "Tu pedido está listo para la entrega",
-        "out_for_delivery_description_html": "Tu pedido está en camino y debería llegar hoy. Si no se entrega en los próximos 2 días, %{contact_us }.",
-        "out_for_delivery_local_title": "Tu pedido está listo para la entrega",
+        "out_for_delivery_title": "Su pedido está fuera para la entrega",
+        "out_for_delivery_description_html": "Tu pedido está en camino y debería llegar hoy. Si no se entrega en los próximos 2 días, %{contact_us}.",
+        "out_for_delivery_local_title": "Su pedido está fuera para la entrega",
         "out_for_delivery_local_description_html": "Tu pedido llegará pronto.",
         "attempted_delivery": "Intento de entrega",
         "attempted_delivery_title": "Se intentó entregar su pedido.",
@@ -637,23 +637,23 @@
         "failure": "No entregado",
         "failed_title": "No se pudo entregar tu pedido",
         "failed_contact_merchant": "Comuníquese con %{company } para organizar la entrega.",
-        "failed_contact_merchant_no_company": "Contáctenos para organizar la entrega.",
-        "non_shippable_title": "Tu orden esta completa",
+        "failed_contact_merchant_no_company": "Contáctenos para coordinar la entrega.",
+        "non_shippable_title": "Tu pedido está completo",
         "let_us_know": "Haznos saber",
         "login_title": "Inicie sesión para ver todos los detalles del pedido",
         "login_description": "Puede encontrar su número de pedido en el recibo que recibió por correo electrónico.",
         "login_description_phone": "Puede encontrar su número de pedido en el recibo que recibió por mensaje de texto.",
-        "login_not_customer_html": "¿No es %{name }? Puede %{link }",
+        "login_not_customer_html": "¿No es %{name}? Puedes %{link}",
         "login_reorder_link_text": {
-          "one": "compra este producto también",
-          "other": "compra estos productos también"
+          "one": "compre este producto también",
+          "other": "Compra estos productos también"
         },
         "customer_information_hidden_fields_message": "Inicie sesión para ver toda la información del cliente.",
-        "cancelled_title": "Tu pedido ha sido cancelado",
-        "cancelled_description": "Su pedido fue cancelado el %{date }. Póngase en contacto con nosotros si tiene alguna pregunta.",
+        "cancelled_title": "Su pedido ha sido cancelado",
+        "cancelled_description": "Su pedido fue cancelado el %{date}. Póngase en contacto con nosotros si tiene alguna pregunta.",
         "order_number_label": "Número de orden",
-        "customer_validation_error": "Ingrese un correo electrónico válido o un número de pedido.",
-        "customer_validation_error_phone": "Ingrese un teléfono o número de pedido válido.",
+        "customer_validation_error": "Introduzca un correo electrónico o número de pedido válido.",
+        "customer_validation_error_phone": "Introduce un número de teléfono o de pedido válido.",
         "login": "Iniciar sesión",
         "unfulfilled_items_title": "Preparándose para el envío",
         "unfulfilled_items_description": "Actualmente estamos preparando estos artículos para su envío.",
@@ -672,7 +672,7 @@
           "description_label": "Descripción",
           "quantity_label": "Cantidad"
         },
-        "opt_in_message_html": "Su información se guardó correctamente con %{shopify_pay }",
+        "opt_in_message_html": "Su información se guardó con éxito con %{shopify_pay}",
         "order_updates_description_missing": "No está recibiendo actualizaciones de envío.",
         "order_updates_subscribe_to_email_notifications": "Reciba actualizaciones de envío por correo electrónico",
         "order_updates_subscribe_to_email_or_phone_notifications": "Reciba actualizaciones de envío por correo electrónico o mensaje de texto",
@@ -680,7 +680,7 @@
         "order_updates_submit_subscription": "Enviar",
         "track_shipment": "Rastrear envio",
         "shopify_pay": {
-          "order_completed_html": "Pedido completado con %{shopify_pay }",
+          "order_completed_html": "Pedido completado con %{shopify_pay}",
           "learn_more_label": "Más información sobre Shop Pay"
         },
         "other_options": "Otras opciones",
@@ -701,18 +701,18 @@
           }
         },
         "title": "Gracias por su compra!",
-        "confirmation_email_sent_text": "Se envió un correo electrónico de confirmación a %{email }",
+        "confirmation_email_sent_text": "Se ha enviado un correo electrónico de confirmación a %{email}",
         "return_to_store_link_label": "Seguir comprando",
-        "print_link_label": "Imprima el recibo",
+        "print_link_label": "Imprimir el recibo",
         "payment_information_title": "Información del pago",
         "shipping_information_title": "Información de envío",
-        "page_title": "¡Gracias, %{display_name }!",
+        "page_title": "¡Gracias %{display_name}!",
         "page_title_no_name": "¡Gracias!",
         "cancelled_page_title": "Orden cancelada",
-        "customer_information_title": "Información del cliente",
-        "contact_information_title": "Información de contacto",
-        "billing_address_title": "Dirección de facturación",
-        "shipping_address_title": "Dirección de envío",
+        "customer_information_title": "Información al cliente",
+        "contact_information_title": "Información del contacto",
+        "billing_address_title": "Dirección de Envio",
+        "shipping_address_title": "Dirección de Envío",
         "shipping_address_map_title": "Mapa de Google que muestra el punto de referencia de la dirección de envío: %{address}",
         "payment_method_title": "Método de pago",
         "shipping_method_title": "Método de envío",
@@ -734,32 +734,32 @@
         "thank_you_confirmed_order_with_phone_payment": "Realizaste un pago en tu pedido %{date}.",
         "thank_you_confirmed_order_with_email_and_phone_payment": "Realizó un pago en su pedido %{date}.",
         "thank_you_confirmed_order_with_email_pick_up": "Recibirás un correo electrónico cuando tu pedido esté listo para ser recogido.",
-        "thank_you_confirmed_order_with_phone_pick_up": "Recibirás un mensaje de texto cuando tu pedido esté listo para ser recogido.",
-        "thank_you_confirmed_order_with_email_and_phone_pick_up": "Recibirás un correo electrónico cuando tu pedido esté listo para ser recogido.",
-        "thank_you_confirmed_order_with_missing": "Contáctenos por correo electrónico o por teléfono para recibir una confirmación de pedido.",
+        "thank_you_confirmed_order_with_phone_pick_up": "Recibirá un mensaje de texto cuando su pedido esté listo para ser recogido.",
+        "thank_you_confirmed_order_with_email_and_phone_pick_up": "Recibirá un correo electrónico cuando su pedido esté listo para ser recogido.",
+        "thank_you_confirmed_order_with_missing": "Póngase en contacto con nosotros por correo electrónico o por teléfono para recibir una confirmación del pedido.",
         "order_status_confirmed_order_with_email": "Recibirás un correo electrónico cuando tu pedido esté listo.",
         "order_status_confirmed_order_with_phone": "Recibirás un mensaje de texto cuando tu pedido esté listo.",
-        "order_status_confirmed_order_with_email_and_phone": "Recibirás un correo electrónico y un mensaje de texto cuando tu pedido esté listo.",
-        "order_status_confirmed_order_with_email_payment": "Realizó un pago en su pedido %{date }.",
-        "order_status_confirmed_order_with_phone_payment": "Realizó un pago en su pedido %{date }.",
-        "order_status_confirmed_order_with_email_and_phone_payment": "Realizó un pago en su pedido %{date }.",
-        "order_status_confirmed_order_with_email_pick_up": "Recibirás un correo electrónico cuando tu pedido esté listo para ser recogido.",
-        "order_status_confirmed_order_with_phone_pick_up": "Recibirás un mensaje de texto cuando tu pedido esté listo para ser recogido.",
-        "order_status_confirmed_order_with_email_and_phone_pick_up": "Recibirás un correo electrónico y un mensaje de texto cuando tu pedido esté listo para ser recogido.",
-        "order_status_confirmed_order_local": "Estamos preparando su pedido para su entrega.",
+        "order_status_confirmed_order_with_email_and_phone": "Recibirá un correo electrónico y un mensaje de texto cuando su pedido esté listo.",
+        "order_status_confirmed_order_with_email_payment": "Realizó un pago en su pedido %{date}.",
+        "order_status_confirmed_order_with_phone_payment": "Realizó un pago en su pedido %{date}.",
+        "order_status_confirmed_order_with_email_and_phone_payment": "Realizó un pago en su pedido %{date}.",
+        "order_status_confirmed_order_with_email_pick_up": "Recibirá un correo electrónico cuando su pedido esté listo para ser recogido.",
+        "order_status_confirmed_order_with_phone_pick_up": "Recibirá un mensaje de texto cuando su pedido esté listo para ser recogido.",
+        "order_status_confirmed_order_with_email_and_phone_pick_up": "Recibirá un correo electrónico y un mensaje de texto cuando su pedido esté listo para ser recogido.",
+        "order_status_confirmed_order_local": "Estamos preparando tu pedido para la entrega.",
         "order_status_updates_with_email": "Recibirá actualizaciones de envío y entrega por correo electrónico.",
         "order_status_updates_with_phone": "Recibirá actualizaciones de envío y entrega por mensaje de texto.",
         "order_status_updates_with_email_and_phone": "Recibirá actualizaciones de envío y entrega por correo electrónico y mensaje de texto.",
         "order_status_updates_with_missing": "Elija cómo desea recibir actualizaciones de envío.",
-        "confirmed_title": "Tu orden esta confirmada",
-        "confirmed_description": "Hemos aceptado su pedido y lo estamos preparando. Regrese a esta página para obtener actualizaciones sobre el estado de su envío.",
+        "confirmed_title": "Tu pedido está confirmado",
+        "confirmed_description": "Hemos aceptado tu pedido y lo estamos preparando. Regrese a esta página para obtener actualizaciones sobre el estado de su envío.",
         "ready_for_pickup_title": "Tu pedido está listo para ser recogido",
-        "ready_for_pickup_description": "Tu pedido está listo para ser recogido. Por favor traiga la confirmación de su pedido cuando recoja su pedido.",
-        "ready_for_delivery_title": "Su pedido está listo para su entrega.",
+        "ready_for_pickup_description": "Tu pedido está listo para ser recogido. Por favor traiga su confirmación de pedido cuando recoja su pedido.",
+        "ready_for_delivery_title": "Su pedido está listo para la entrega.",
         "ready_for_delivery_description": "Hemos preparado tu pedido.",
         "order_updates_title": "Actualizaciones de pedidos",
-        "shop_phone_description": "Recibirá un mensaje de texto con un enlace a la aplicación de la Tienda para ayudar a rastrear su pedido.",
-        "order_updates_description_html": "Las actualizaciones se enviarán a %{customer_contact }",
+        "shop_phone_description": "Recibirá un mensaje de texto con un enlace a la aplicación Shop para ayudarlo a rastrear su pedido.",
+        "order_updates_description_html": "Las actualizaciones se enviarán a %{customer_contact}",
         "order_updates_current_step_prefix": "Paso actual:",
         "order_updates_past_step_prefix": "Paso pasado:",
         "order_updates_upcoming_step_prefix": "Próximo paso:",
@@ -812,27 +812,30 @@
       "remember_me": {
         "shopify_pay_label": "Comprar Pagar",
         "save": "Ahorrar",
-        "title": "Recuérdame",
+        "title": "Acuérdate de mí",
         "label": "Guardar mi información para un pago más rápido",
-        "description_html": "La próxima vez que visite aquí o en otras tiendas impulsadas por Shopify, recibirá un código por mensaje de texto para comprar de forma segura con Shop Pay.",
+        "description_html": "La próxima vez que visites aquí o en otras tiendas con tecnología de Shopify, recibirás un código por mensaje de texto para comprar de forma segura con Shop Pay.",
         "mobile_phone_icon_alt": "Teléfono móvil",
         "mobile_phone_number": "Número de teléfono móvil",
-        "terms_and_privacy_html": "Si continúa, acepta las %{privacy_href } y %{terms_href } de Shop Pay.",
+        "terms_and_privacy_html": "Al continuar, acepta los %{privacy_href} y %{terms_href} de Shop Pay.",
         "privacy_policy": "Política de privacidad",
         "terms_of_service": "Términos de servicio",
         "errors": {
           "optin": "Shop Pay no está disponible"
         },
         "installments": {
-          "paid_in_installments": "Pagado a plazos con Shop Pay.",
+          "paid_in_installments": "Pago a plazos con Shop Pay.",
           "view_schedule": "Ver horario"
-        }
+        },
+        "title_with_logo_html": "Recuérdame con %{shopify_pay}",
+        "label_address_payment_and_faster_checkouts": "Deje que Shop Pay complete mi dirección e información de pago para pagos más rápidos.",
+        "label_faster_checkouts_and_thousand_shops": "Guarde mi información con Shop Pay para pagos más rápidos en más de un millón de tiendas."
       },
       "notifications": {
         "title": "Notificaciones"
       },
       "order_payment_collection": {
-        "custom_line_item_description": "Cantidad a pagar por el pedido %{order_name }",
+        "custom_line_item_description": "Importe a pagar por el pedido %{order_name}",
         "changes_summary": {
           "added": {
             "one": "Adicional",
@@ -907,18 +910,18 @@
         },
         "recurring_totals_with_initial_order_shipping_discount_with_policies": {
           "first_cycles": {
-            "one": ", luego %{count} pago a %{total_price}",
-            "other": ", luego %{count} pagos a %{total_price} cada uno"
+            "one": ", luego %{count} pago en %{total_price}",
+            "other": ", luego %{count} pagos en %{total_price} cada uno"
           }
         }
       },
       "customer_payment_methods": {
         "page_title": "Métodos de pago",
         "title": "Métodos de pago",
-        "update_card_button_label": "Actualizar la tarjeta",
+        "update_card_button_label": "Tarjeta de actualización",
         "delete_customer_mandate": {
           "generic_error": "Hubo un problema procesando tu petición.",
-          "success_message": "Tu método de pago se ha eliminado correctamente."
+          "success_message": "Su método de pago ha sido eliminado con éxito"
         }
       },
       "failed_payment": {
@@ -926,13 +929,16 @@
         "title": "No se pudo procesar el pago",
         "payment_not_processed_title": "No se pudo procesar su pago",
         "payment_not_processed_text": "No se le ha cobrado. Regrese a su carrito para completar su compra.",
-        "return_to_cart_button_label": "Volver al carrito"
+        "return_to_cart_button_label": "volver al carrito"
       },
       "payment_gateway": {
         "credit_card_label": "Tarjeta de crédito",
         "bank_deposit_label": "Deposito bancario",
-        "cash_on_delivery_label": "Contra reembolso (COD)",
+        "cash_on_delivery_label": "Contra Reembolso (COD)",
         "money_order_label": "Giro postal"
+      },
+      "mor_policies": {
+        "privacy_policy": "Política de privacidad del comerciante registrado"
       }
     },
     "pagination": {
