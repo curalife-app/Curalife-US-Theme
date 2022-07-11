@@ -1328,5 +1328,139 @@
       "submit": "Crear",
       "cancel": "Volver a la tienda"
     }
+  },
+  "customer_accounts": {
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Ocultar menú de cuenta",
+        "label": "Cuenta",
+        "show_accessibility_label": "Mostrar el menú de la cuenta"
+      },
+      "action_menu_accessibility_label": "Mas acciones",
+      "close_menu_accessibility_label": "Cerrar navegación principal",
+      "contact_email_subject": "Contacto de la tienda en línea {{shopName}}",
+      "contact_link": "Contáctenos",
+      "delete_confirmation": {
+        "cancel": "Cancelar",
+        "delete": "Borrar"
+      },
+      "dismiss_toast": "Despedir",
+      "document_title": "{{sectionName}} - {{shopName}} - Cuenta",
+      "generic_accessibility_label": "{{label}}: {{value}}",
+      "go_to_store_link": "Ir a la tienda",
+      "loading_message": "Cargando",
+      "log_out_link": "Cerrar sesión",
+      "login_prompt": {
+        "continue": "Continuar",
+        "privacy": "Privacidad",
+        "title": "Continuar para iniciar sesión"
+      },
+      "logout_overlay_label": "Cerrando tu sesión...",
+      "nav_label_accessibility_label": "Navegación Principal"
+    },
+    "orders": {
+      "list_title": "Pedidos",
+      "order_list": {
+        "column_headers": {
+          "delivery_date": "Fecha de entrega",
+          "order_date": "Fecha de orden",
+          "order_number": "Número de orden",
+          "status": "Estado",
+          "total": "Total"
+        },
+        "delivered": "Entregado {{date}}",
+        "empty_state_order_source_description": "Aquí solo se mostrarán los pedidos realizados por {{email}}.",
+        "empty_state_subtitle": "Ir a la tienda para hacer un pedido.",
+        "empty_state_title": "Aún no hay pedidos",
+        "estimated": "Estimado {{date}}",
+        "estimated_delivery": "Entrega estimada {{date}}",
+        "one_images_accessibility_label": "El pedido incluye {{lineItemName1}}",
+        "two_images_accessibility_label": "El pedido incluye {{lineItemName1}}, {{lineItemName2}}",
+        "three_images_accessibility_label": "El pedido incluye {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "El pedido incluye {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "items": {
+          "one": "{{count}} artículo",
+          "other": "{{count}} artículos"
+        },
+        "list_view": "Mostrar vista de lista",
+        "multiple_shipments": "Envíos múltiples",
+        "no_filtered_results_description": "Elimina o ajusta filtros para ver tus pedidos",
+        "no_filtered_results_title": "Sin resultados filtrados",
+        "order_link": "Ver pedido {{name}}",
+        "order_number": "Orden {{name}}",
+        "orders_title": "Confirmado",
+        "pagination": {
+          "nav_accessibility_label": "Botones de navegación de pedidos",
+          "next": "próximo",
+          "next_accessibility_label": "Próximos pedidos",
+          "previous": "Anterior",
+          "previous_accessibility_label": "Órdenes previas"
+        },
+        "sort_by": "Ordenar por: {{option}}",
+        "sort_hide_options_accessibility_label": "Ocultar opciones de clasificación para pedidos confirmados",
+        "sort_show_options_accessibility_label": "Mostrar opciones de clasificación para pedidos confirmados",
+        "sort_title": "Clasificar",
+        "sort": {
+          "date": {
+            "newest": "Más nuevo a más antiguo",
+            "oldest": "De más antiguo a más nuevo"
+          },
+          "location": {
+            "ascending": "Ubicación (A-Z)",
+            "descending": "Ubicación (Z-A)"
+          },
+          "order_number": {
+            "ascending": "Número de orden (menor a mayor)",
+            "descending": "Número de pedido (de mayor a menor)"
+          },
+          "order_total": {
+            "ascending": "Orden total (menor a mayor)",
+            "descending": "Orden total (mayor a menor)"
+          }
+        },
+        "table_view": "Mostrar vista de tabla"
+      },
+      "order_status": {
+        "canceled_description": "Su pedido fue cancelado el {{date}}.",
+        "canceled_label": "Cancelado",
+        "canceled_title": "Su pedido ha sido cancelado",
+        "come_back": "Regrese a esta página para obtener actualizaciones sobre el estado de su envío.",
+        "company_tracking_number": "{{company}} número de seguimiento:",
+        "confirmed_label": "Confirmado",
+        "confirmed_title": "Tu pedido está confirmado",
+        "delivered_description": "Su envío se entregó el {{date}}.",
+        "delivered_label": "Entregado",
+        "delivered_title": "Su envío ha sido entregado",
+        "estimated_delivery": "Entrega estimada {{date}}",
+        "in_review_description": "Te avisaremos si necesitamos más información o cuando se confirme tu pedido.",
+        "in_review_label": "En revisión",
+        "in_review_title": "Tu pedido está siendo revisado",
+        "no_tracking_number": "No hay número de seguimiento para este envío.",
+        "on_its_way_label": "En su camino",
+        "on_its_way_title": "Su envío está en camino",
+        "out_for_delivery_label": "Fuera para entrega",
+        "out_for_delivery_title": "Su envío está fuera para la entrega",
+        "resume_tracking": "reanudar el seguimiento",
+        "submitted_label": "Presentada",
+        "track_shipment": "Rastrear envio"
+      },
+      "status_mark_as_delivered": "marcar como entregado",
+      "status_title": "Estado del pedido"
+    },
+    "order_details": {
+      "addresses_section_title": "facturación y envío",
+      "billing_address": "Dirección de Envio",
+      "card_ending_with": "terminando con {{lastDigits}}",
+      "contact": "Contacto",
+      "fully_refunded_label": "REINTEGRADO",
+      "discount": "Descuento",
+      "hide_items": "Ocultar elementos",
+      "loading": "Cargando detalles del pedido",
+      "loading_finished_accessibility_message": "Se han cargado los detalles del pedido.",
+      "location": "Ubicación",
+      "no_data": "Ninguna",
+      "not_applicable": "N \/ A",
+      "partially_refunded_label": "REINTEGRADO PARCIALMENTE"
+    }
   }
 }
