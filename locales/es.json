@@ -1461,6 +1461,32 @@
       "no_data": "Ninguna",
       "not_applicable": "N \/ A",
       "partially_refunded_label": "REINTEGRADO PARCIALMENTE"
+    },
+    "addresses": {
+      "cancel_adding_address_accessibility_label": "Cancelar agregar dirección",
+      "cancel_deletion_button": "Cancelar",
+      "cancel_deletion_button_accessibility_label": "Cancelar la eliminación de {{address}}",
+      "default_address": {
+        "title": "Dirección predeterminada",
+        "title_accessibility_label": "Dirección predeterminada: {{address}}"
+      },
+      "delete_button": "Borrar",
+      "delete_button_accessibility_label": "Eliminar {{address}}",
+      "delete_confirmation_button": "Eliminar dirección",
+      "delete_confirmation_button_accessibility_label": "Eliminar {{address}}",
+      "delete_confirmation_message": "¿Eliminar dirección? Los pedidos existentes no se ven afectados.",
+      "edit_button": "Editar",
+      "edit_button_accessibility_label": "Editar {{address}}",
+      "edit_section_accessibility_label": "Editar {{address}}",
+      "loading_accessibility_message": "Cargando direccion",
+      "loading_addresses_accessibility_message": "Cargando direcciones",
+      "loading_billing_accessibility_message": "Cargando dirección de facturación",
+      "loading_finished_accessibility_message": "Se ha cargado una nueva página de direcciones",
+      "loading_shipping_accessibility_message": "Cargando dirección de envío",
+      "pagination": {
+        "nav_accessibility_label": "paginación de direcciones",
+        "next": "Ir a la siguiente página de direcciones"
+      }
     }
   }
 }
