@@ -4,7 +4,7 @@
     <div class="header">
       <img src="{{ section.settings.spoon-image | img_url: 'master' }}" alt="wooden spoon" class="spoon corner-image" loading="lazy">
       <div class="title-container">
-        
+
         <h1 class="main-title">
           <span class="top"><img src="{{ 'logo-black.png' | asset_url }}" alt="chef icon" loading="lazy"></span><br>
           <span class="bottom">CookBook</span>
@@ -28,17 +28,13 @@
 </div>
 
 <style>
-  @media(max-width: 720px) {
-    body {
-      margin-top: -50px
-    }
-  }
+
 
   body .cookbook-page {
     padding-bottom: 40px
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page {
       padding-bottom: 0;
     }
@@ -46,27 +42,30 @@
 
   body .cookbook-page .container .header {
     display: flex;
-    justify-content: space-between
+    justify-content: center;
+    max-height: 200px;
+  }
+  .title-container {
+    margin-top: -50px;
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
+    
     body .cookbook-page .container .header {
-      display: block;
-      height: 200px;
+        display: flex;
+        justify-content: flex-start;
+        max-height: 100%;
+        align-items: center;
     }
   }
 
   body .cookbook-page .container .header .title-container .main-title {
     text-align: center;
-    margin-top: 50px;
+   
     margin-bottom: 0
   }
 
-  @media(max-width: 720px) {
-    body .cookbook-page .container .header .title-container .main-title {
-      margin: 0;
-    }
-  }
+
 
   body .cookbook-page .container .header .title-container .main-title .top {
     font-family: Avenir Next Condensed Medium;
@@ -85,7 +84,7 @@
     width: 150px;
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .header .title-container .main-title .top img {
       margin-right: 10px;
       left: 10px;
@@ -100,7 +99,7 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, .25)
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .header .title-container .main-title .bottom {
       font-size: 60px
     }
@@ -113,7 +112,7 @@
     object-position: top;
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .header .corner-image.pot {
       position: absolute;
       top: 60px;
@@ -121,13 +120,13 @@
     }
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .header .corner-image.spoon {
       position: relative
     }
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .cookbook-content {
       flex-direction: column;
       text-align: center;
@@ -159,7 +158,7 @@
     width: 230px
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .cookbook-content .image-container .pen {
       bottom: -10px;
       left: 30px;
@@ -202,7 +201,7 @@
     margin: 0 auto
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .cookbook-content .content .description {
       font-size: 20px;
       padding: 10px;
@@ -231,7 +230,7 @@
     margin: 0;
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .cookbook-content .content .download-cta {
       margin: 0;
       width: 100%;
@@ -251,7 +250,7 @@
     justify-content: space-between
   }
 
-  @media(max-width: 720px) {
+  @media(max-width: 768px) {
     body .cookbook-page .container .cookbook-content .content .gallery {
       margin-top: -120px
     }
@@ -261,6 +260,19 @@
     max-width: 32%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
   }
+
+  @media (max-width: 500px){
+    body .cookbook-page .container .header .title-container .main-title .bottom {
+        font-size: 45px;
+        margin-left: -40px;
+    }
+    body .cookbook-page .container .header .title-container .main-title .top {
+       
+        top: 15px;
+        
+    }
+  }
+  
 </style>
 
 {% schema %}
