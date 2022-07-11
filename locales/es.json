@@ -1224,7 +1224,7 @@
       "phone": "Número de teléfono",
       "message": "Mensaje",
       "send": "Enviar",
-      "post_success": "Gracias por contactarnos. Nos comunicaremos contigo lo antes posible."
+      "post_success": "Gracias por contactarnos. Nos pondremos en contacto contigo lo antes posible."
     }
   },
   "customer": {
@@ -1512,7 +1512,34 @@
     "B2B": {
       "account_information": {
         "company_card_name_label": "Nombre de empresa"
+      },
+      "location_selection": {
+        "list_item_without_address_accessibility_label": "{{name}}: Sin dirección",
+        "list_loading_accessibility_message": "Cargando lista de ubicaciones",
+        "list_loading_address_accessibility_message": "Dirección de carga para {{locationName}}",
+        "list_loading_finished_accessibility_message": "Se ha cargado la lista de ubicaciones",
+        "loading_store_accessibility_message": "ir a la tienda",
+        "no_location_title": "Solo pedidos personales",
+        "no_location_description": "Ya no tiene permiso para realizar pedidos de {{company}}. Todavía puedes hacer pedidos personales.",
+        "selection_cancel_button": "Cancelar",
+        "selection_confirmation_button": "Elegir la ubicación",
+        "title": "¿Para qué ubicación está comprando?"
+      },
+      "addresses": {
+        "add_billing_address_button": "Añadir dirección de facturación",
+        "add_billing_address_section_accessibility_label": "Añadir dirección de facturación",
+        "add_shipping_address_button": "Añadir dirección de envío",
+        "add_shipping_address_section_accessibility_label": "Agregar dirección de envío",
+        "billing_address_card_title": "Dirección de Envio",
+        "cancel_adding_billing_address_accessibility_label": "Cancelar agregar dirección de facturación",
+        "cancel_adding_shipping_address_accessibility_label": "Cancelar agregar dirección de envío",
+        "save_new_billing_address_accessibility_label": "Guardar dirección de facturación",
+        "save_new_shipping_address_accessibility_label": "Guardar dirección de envío",
+        "shipping_address_card_title": "Dirección de Envío"
       }
+    },
+    "shop_policies": {
+      "terms_of_service": "Términos de servicio"
     }
   }
 }
