@@ -374,3 +374,12 @@
   ]
 }
 {% endschema %}
+
+<script>
+  let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+  if (isMobile) {
+    console.log("mobile");
+    $(".prime-day-badge").insertBefore(".form-wrap");
+  }
+</script>
