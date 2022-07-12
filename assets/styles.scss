@@ -9904,12 +9904,14 @@ html {
         form {
           justify-content: center;
 
-          .btn {
-            padding-top: 0;
-
-            .main-btn {
-              height: 56px;
-              max-width: 100%;
+          .product-page--submit-action {
+            .btn {
+              padding-top: 0;
+  
+              .main-btn {
+                height: 56px;
+                max-width: 100%;
+              }
             }
           }
         }
