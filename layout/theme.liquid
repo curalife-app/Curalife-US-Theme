@@ -45,7 +45,6 @@
     {{ content_for_header }} <!-- Header hook for plugins -->
 
     {% render 'layout.head.marker-io-snippet' %}
-    {% render 'fa_translate_core' %}
   </head>
 
   <body>
@@ -94,5 +93,7 @@
         display: none;
       }
     </style>
+        {% include 'fa_translate_core' %}
+
   {% include 'social-login' %}</body>
 </html>
