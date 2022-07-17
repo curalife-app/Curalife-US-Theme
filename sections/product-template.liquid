@@ -1,7 +1,5 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 
-{% render 'prime-day-banner' %}
-
 <div class="product-data">
     <div class="container">
       <div class="product-wrap">
@@ -107,7 +105,6 @@
                 </div>
               </form>
             </div>
-            <img class="prime-day-badge" src="{{ 'prime-day-banner-badge.png' | asset_url }}" alt="prime day" loading="lazy">
             <div class="extra-info">
                 {% for block in section.blocks %}
                 {% if block.type == 'prdct_tabs' %}
@@ -374,12 +371,3 @@
   ]
 }
 {% endschema %}
-
-<!-- Remove after prime sale on both stores -->
-<script>
-  let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-
-  if (isMobile) {
-    $(".prime-day-badge").insertBefore(".form-wrap");
-  }
-</script>
