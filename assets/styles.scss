@@ -2845,7 +2845,7 @@
         counter-reset: list;
 
         li {
-          display: flex;
+          display: -webkit-inline-box;
           position: relative;
           padding-bottom: 10px;
 
