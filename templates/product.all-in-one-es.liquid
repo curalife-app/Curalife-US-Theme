@@ -583,7 +583,7 @@
           properties: {
             "_sc": (typeof window.ShipScoutLineItemProperty !== 'undefined' ? window.ShipScoutLineItemProperty : "")
           }
-        }, function() {window.location = '/checkout'});
+        }, function() {window.location = '/checkout/es'});
       },
       error: function(){
         alert("Error: Could not clear cart.");
@@ -895,15 +895,4 @@
       disabledClass: 'disabled'
     }
   });
-</script>
-
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-
-  if (urlParams.has('shipping')) {
-    console.log("shipping")
-    $("#shipping-badge-text").text("Free Worldwide Shipping Above $99")
-    $("#shipping-line").hide();
-    $("#shipping-line-above").show();
-  }
 </script>
