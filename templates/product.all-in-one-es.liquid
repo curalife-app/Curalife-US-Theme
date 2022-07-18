@@ -976,7 +976,7 @@
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
     // Save Text Change
-    let saveText = "You Save " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
+    let saveText = "Ahorras " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
