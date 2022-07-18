@@ -17,7 +17,7 @@
                     <ul>
                     {% for link in linklists[section.settings.main_linklist].links %}
                        {% if link.links == blank  %}
-                       <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                       <li><a class="notranslate" href="{{ link.url }}">{{ link.title }}</a></li>
   
                        {% else %}
   
@@ -27,7 +27,7 @@
                             {% if link.links != blank %}
                                 <ul class="child">
                                 {% for child_link in link.links %}
-                                    <li><a class="notranslate" href= "{{ child_link.url }}">{{ child_link.title }}</a></li>
+                                    <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a></li>
                                 {% endfor %}
                                 </ul>
                                  {% endif %}
