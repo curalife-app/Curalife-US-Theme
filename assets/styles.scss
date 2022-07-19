@@ -8274,20 +8274,6 @@ html {
     padding: 20px 0 30px 25px;
   }
 
-  .product-slider {
-    padding: 25px;
-
-    .main-slider {
-      margin-left: 0;
-      padding: 0 10px;
-    }
-
-    .additional-info {
-      margin-left: 0;
-      padding: 0 10px;
-    }
-  }
-
   .data-list {
     ul {
       li {
@@ -9853,7 +9839,7 @@ html {
     }
 
     .main-slider {
-      .img-wrap {
+      .product-img {
         min-height: 70vw;
       }
     }
