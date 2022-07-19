@@ -1972,14 +1972,7 @@
 
   .main-slider {
     .product-img {
-      position: relative;
-
-      &:before {
-        content: '';
-        display: block;
-        padding-bottom: 88.5%;
-        pointer-events: none;
-      }
+      min-height: 450px;
 
       .img-wrap {
         position: absolute;
