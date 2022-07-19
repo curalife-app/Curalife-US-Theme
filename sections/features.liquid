@@ -1,24 +1,22 @@
 
 <div class="offset-top spgs">
   <div class="container">
-    <div class="white-bg">
-      <div class="mini-wrap">
-        <div class="feature-info">
-            {% if section.settings.fetr_imgone != blank %}
-            <div class="img-wrap">
-                <span><img src="{{ section.settings.fetr_imgone | img_url: '' }}" alt="" width="391" height="auto"></span> 
-            </div>
-            {% endif %} 
-            <div class="intro-text">
-                <div class="sub-title">
-                    <h1>{{section.settings.fetr_titlone}}</h1>
-                    <p>{{section.settings.fter_descone}}</p>
-                </div>
-                <div class="btn">
-                    <a href="{{section.settings.fterbnr_btnlinkone}}" class="main-btn">{{section.settings.fterbtn_titlone}}</a>
-                </div>
-            </div>
-        </div>
+    <div class="mini-wrap">
+      <div class="feature-info">
+          {% if section.settings.fetr_imgone != blank %}
+          <div class="img-wrap">
+              <span><img src="{{ section.settings.fetr_imgone | img_url: '' }}" alt="" width="391" height="auto"></span> 
+          </div>
+          {% endif %} 
+          <div class="intro-text">
+              <div class="sub-title">
+                  <h1>{{section.settings.fetr_titlone}}</h1>
+                  <p>{{section.settings.fter_descone}}</p>
+              </div>
+              <div class="btn">
+                  <a href="{{section.settings.fterbnr_btnlinkone}}" class="main-btn">{{section.settings.fterbtn_titlone}}</a>
+              </div>
+          </div>
       </div>
     </div>
   </div>
