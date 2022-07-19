@@ -3,84 +3,82 @@
   <div class="container">
     <div class="mini-wrap">
       <div class="feature-info">
-          {% if section.settings.fetr_imgone != blank %}
-          <div class="img-wrap">
-              <span><img src="{{ section.settings.fetr_imgone | img_url: '' }}" alt="" width="391" height="auto"></span> 
+        {% if section.settings.fetr_imgone != blank %}
+        <div class="img-wrap">
+          <span><img src="{{ section.settings.fetr_imgone | img_url: '' }}" alt="" width="391" height="auto"></span> 
+        </div>
+        {% endif %} 
+        <div class="intro-text">
+          <div class="sub-title">
+            <h1>{{section.settings.fetr_titlone}}</h1>
+            <p>{{section.settings.fter_descone}}</p>
           </div>
-          {% endif %} 
-          <div class="intro-text">
-              <div class="sub-title">
-                  <h1>{{section.settings.fetr_titlone}}</h1>
-                  <p>{{section.settings.fter_descone}}</p>
-              </div>
-              <div class="btn">
-                  <a href="{{section.settings.fterbnr_btnlinkone}}" class="main-btn">{{section.settings.fterbtn_titlone}}</a>
-              </div>
+          <div class="btn">
+            <a href="{{section.settings.fterbnr_btnlinkone}}" class="main-btn">{{section.settings.fterbtn_titlone}}</a>
           </div>
+        </div>
       </div>
     </div>
   </div>
 
-    <div class="natural-ingredients">
-      <div class="container">
-        <div class="mini-wrap">
-          <div class="intro-text">
-              <div class="sub-title">
-                  <h3>{{section.settings.fetr_titltwo}}</h3>
-              </div>
-              <div class="btn">
-                  <a href="{{section.settings.fterbnr_btnlinktwo}}" class="main-btn">{{section.settings.fterbtn_titltwo}}</a>
-              </div>
+  <div class="natural-ingredients">
+    <div class="container">
+      <div class="mini-wrap">
+        <div class="intro-text">
+          <div class="sub-title">
+            <h3>{{section.settings.fetr_titltwo}}</h3>
           </div>
-          {% if section.settings.fetr_imgtwo != blank %}
-          <div class="img-wrap">
-              <img src="{{ section.settings.fetr_imgtwo | img_url: '' }}" alt="" width="332" height="auto">
+          <div class="btn">
+            <a href="{{section.settings.fterbnr_btnlinktwo}}" class="main-btn">{{section.settings.fterbtn_titltwo}}</a>
           </div>
-          {% endif %}
         </div>
+        {% if section.settings.fetr_imgtwo != blank %}
+        <div class="img-wrap">
+          <img src="{{ section.settings.fetr_imgtwo | img_url: '' }}" alt="" width="332" height="auto">
+        </div>
+        {% endif %}
       </div>
+    </div>
   </div>
 
   <div class="container">
-    <div class="white-bg">
-      <div class="mini-wrap">
-        <div class="changing-experiences">
-          <div class="sub-title">
-              <h3>{{section.settings.fetr_titlthree}}</h3>
-          </div>
-          <div class="quote-slider">
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                {% for block in section.blocks %}
-                {% if block.type == 'qute' %}
-                <div class="swiper-slide">
-                  <div class="quote-card">
-                    <blockquote>
-                        <p>{{block.settings.quot_descript}}</p>
-                    </blockquote>
-                    <div class="quote-info">
-                      <div class="quote-author">
-                        <p>{{block.settings.authr_name}}</p>
-                      </div>
-                      <div class="quote-rating">
-                        <p>
-                          <span class="{{block.settings.quor_ratingone}}"></span>
-                          <span class="{{block.settings.quor_ratingtwo}}"></span>
-                          <span class="{{block.settings.quor_ratingthree}}"></span> 
-                          <span class="{{block.settings.quor_ratingfoue}}"></span>
-                          <span class="{{block.settings.quor_ratingfive}}"></span>
-                        </p>
-                      </div>
+    <div class="mini-wrap">
+      <div class="changing-experiences">
+        <div class="sub-title">
+          <h3>{{section.settings.fetr_titlthree}}</h3>
+        </div>
+        <div class="quote-slider">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+              {% if block.type == 'qute' %}
+              <div class="swiper-slide">
+                <div class="quote-card">
+                  <blockquote>
+                      <p>{{block.settings.quot_descript}}</p>
+                  </blockquote>
+                  <div class="quote-info">
+                    <div class="quote-author">
+                      <p>{{block.settings.authr_name}}</p>
+                    </div>
+                    <div class="quote-rating">
+                      <p>
+                        <span class="{{block.settings.quor_ratingone}}"></span>
+                        <span class="{{block.settings.quor_ratingtwo}}"></span>
+                        <span class="{{block.settings.quor_ratingthree}}"></span> 
+                        <span class="{{block.settings.quor_ratingfoue}}"></span>
+                        <span class="{{block.settings.quor_ratingfive}}"></span>
+                      </p>
                     </div>
                   </div>
-                </div> 
-                {% endif %}
-                {% endfor %}
-              </div>
-              <div class="slider-control">
-                  <div class="prev-slide2"><span class="icon-arrow"></span></div>
-                  <div class="next-slide2"><span class="icon-arrow"></span></div>
-              </div>
+                </div>
+              </div> 
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="slider-control">
+                <div class="prev-slide2"><span class="icon-arrow"></span></div>
+                <div class="next-slide2"><span class="icon-arrow"></span></div>
             </div>
           </div>
         </div>
