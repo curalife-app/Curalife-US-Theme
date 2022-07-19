@@ -87,22 +87,16 @@
                     <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                   </div>
                 </div>
-                <div class="col-md-12 product-page--submit-action" data-stock-email-enabled="{{ section.settings.show_out_of_stock_email }}">
-                  {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
-                  <div class="btn">
-                    {% if current_variant.available %}
-                    <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
-                    {% else %}
-                    <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
-                    {{ 'products.product.sold_out' | t }}
-                    {% endif %}
-                  </div>
+                {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
+                  {% if current_variant.available %}
+                  <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
                   {% else %}
-                  <div class="btn">
-                    <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
-                  </div>
+                  <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
+                  {{ 'products.product.sold_out' | t }}
                   {% endif %}
-                </div>
+                {% else %}
+                  <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+                {% endif %}
               </form>
             </div>
             <div class="extra-info">
