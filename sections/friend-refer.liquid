@@ -1,21 +1,19 @@
 <div class="offset-top">
   <div class="container">
-    <div class="white-bg">
-      <div class="mini-wrap">
-        <div class="refer-friend">
-          {% if section.settings.refr_img != blank %}
-          <div class="img-wrap">
-            <img src="{{ section.settings.refr_img | image_url }}" alt="" width="472" height="auto" loading="lazy">
+    <div class="mini-wrap">
+      <div class="refer-friend">
+        {% if section.settings.refr_img != blank %}
+        <div class="img-wrap">
+          <img src="{{ section.settings.refr_img | image_url }}" alt="" width="472" height="auto" loading="lazy">
+        </div>
+          {% endif %}
+        <div class="intro-text">
+          <div class="sub-title">
+            <h2>{{section.settings.refr_titl}}</h2>
+            <p>{{section.settings.refr_desc}}</p>
           </div>
-            {% endif %}
-          <div class="intro-text">
-            <div class="sub-title">
-              <h2>{{section.settings.refr_titl}}</h2>
-              <p>{{section.settings.refr_desc}}</p>
-            </div>
-            <div class="btn">
-              <a href="{{section.settings.refr_btnlink}}" class="main-btn">{{section.settings.refr_btntitl}}</a>
-            </div>
+          <div class="btn">
+            <a href="{{section.settings.refr_btnlink}}" class="main-btn">{{section.settings.refr_btntitl}}</a>
           </div>
         </div>
       </div>
