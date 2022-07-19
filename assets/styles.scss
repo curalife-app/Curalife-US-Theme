@@ -1976,6 +1976,7 @@
 
       .img-wrap {
         position: absolute;
+        text-align: center;
         top: 0;
         left: 0;
         right: 0;
@@ -9848,6 +9849,12 @@ html {
 
       top: 18px;
       left: 9px;
+    }
+
+    .main-slider {
+      .img-wrap {
+        min-height: 70vw;
+      }
     }
   }
 
