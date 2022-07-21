@@ -891,6 +891,10 @@
         width: calc(100% / 6);
         padding: 4px;
         text-align: center;
+
+        img {
+          object-fit: contain;
+        }
       }
     }
   }
@@ -1174,10 +1178,6 @@
   }
 }
 
-.culture-wrap {
-  padding-top: 4.5%;
-}
-
 .culture-item {
   padding: 30px;
 
@@ -1281,7 +1281,7 @@
   .item-wrap {
     flex: auto;
     padding: 30px;
-    background: linear-gradient(118.79deg, rgba(112, 215, 201, .1) 0, rgba(112, 215, 201, 0) 67.73%), #fff;
+    background: linear-gradient(118.79deg,rgb(109 109 109 / 10%) 0,rgba(112,215,201,0) 67.73%),#fff;
     box-shadow: 8px 9px 29px -6px rgb(84 84 84 / 10%);
     border-radius: 5px;
   }
@@ -2948,10 +2948,6 @@
   }
 
   .posts-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -10px;
-
     .swiper {
       position: relative;
 

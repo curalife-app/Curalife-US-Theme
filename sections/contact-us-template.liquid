@@ -16,7 +16,7 @@
                   <div class="phone-title">
                     {% if block.settings.cntphn_img != blank %}
                     <span>
-                       <img src="{{block.settings.cntphn_img | img_url: ''}}" alt="">
+                       <img src="{{block.settings.cntphn_img | img_url: width: 20 }}" width="20px" height="20px" alt="">
                     </span>
                     {% endif %}
                     {{block.settings.cntphn_title}} 
