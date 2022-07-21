@@ -14,12 +14,17 @@
                     <div class="swiper-slide">
                       <div class="product-img">
                         <div class="img-wrap">
-                          {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
+                          {% if i == 1 %}
+                            {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: '-es'| append: ".png" %}
+                          {% else %}
+                            {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
+                          {% endif %}
                           <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
                         </div>
                       </div>
                     </div>
                   {% endfor %}
+
                   <div class="swiper-slide">
                     <div class="product-video">
                       <iframe id="product-video-iframe" src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
@@ -149,8 +154,8 @@
                   </div>
 
                   {% if forloop.index == 3 %}
-                    <img class="free-shipping-var desktop geo" src="{{ 'product-aio-free-shipping-badge-3.png' | asset_url }}" alt="" style="display:none">
-                    <img class="free-shipping-var mobile geo" src="{{ 'product-aio-free-shipping-badge-4.png' | asset_url }}" alt="" style="display:none">
+                    <img class="free-shipping-var desktop geo" src="{{ 'product-aio-free-shipping-badge-3-es.png' | asset_url }}" alt="" style="display:none">
+                    <img class="free-shipping-var mobile geo" src="{{ 'product-aio-free-shipping-badge-mobile-3-es.png' | asset_url }}" alt="" style="display:none">
                     <style>
                       .free-shipping-var {
                         position: absolute;
@@ -215,8 +220,8 @@
   <section class="how-to-section" id="how-to">
     <div class="container">
       <h2>Cómo obtener los mejores resultados con CuraLin</h2>
-      <img src="{{ 'product-aio-how-to.png' | asset_url }}" alt="" loading="lazy">
-      <img src="{{ 'product-aio-how-to-mobile.png' | asset_url }}" alt="" class="mobile-version" loading="lazy">
+      <img src="{{ 'product-aio-how-to-es.png' | asset_url }}" alt="" loading="lazy">
+      <img src="{{ 'product-aio-how-to-es.png' | asset_url }}" alt="" class="mobile-version" loading="lazy">
     </div>
   </section>
   <section class="reviews-section">
