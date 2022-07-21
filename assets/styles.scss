@@ -1127,12 +1127,13 @@
 .team-wrap {
   display: flex;
   flex-wrap: wrap;
-  padding: 34px 5.624%;
+  padding: 30px 0;
+  justify-content: center;
 }
 
 .team-item {
-  width: calc(100% / 3);
-  padding: 17px 3.3%;
+  width: 25%;
+  padding: 20px;
 
   .photo {
     border-radius: 14px;
@@ -1276,7 +1277,7 @@
 .advisory-item {
   display: flex;
   flex-direction: column;
-  max-width: 450px;
+  max-width: 400px;
   padding: 10px 20px;
 
   .item-wrap {
@@ -7110,10 +7111,6 @@ html {
     }
   }
 
-  .team-wrap {
-    padding: 27px 5.624%;
-  }
-
   .culture-item {
     .icon-wrap {
       width: 56px;
@@ -9130,10 +9127,6 @@ html {
     padding-top: 48px;
   }
 
-  .team-wrap {
-    padding: 21px 0;
-  }
-
   .team-item {
     width: calc(100% / 2);
     padding: 10px;
@@ -10979,19 +10972,6 @@ html {
 
     .article-page {
       padding-bottom: 24px;
-    }
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  header {
-    .dropdown-menu {
-      ul {
-        li {
-          padding-top: 9px;
-          padding-bottom: 9px;
-        }
-      }
     }
   }
 }

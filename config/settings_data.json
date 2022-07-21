@@ -342,14 +342,6 @@
               "tem_subtitl": "Chief Business Officer"
             }
           },
-          "7808b079-a5ea-4db5-b537-8efe75fe592d": {
-            "type": "our_team",
-            "settings": {
-              "tem_img": "shopify:\/\/shop_images\/04.jpg",
-              "tem_ontitl": "Tomer Binder",
-              "tem_subtitl": "Chief Digital Officer"
-            }
-          },
           "9a229cd3-d79d-4585-b2a0-f8179fff3f8b": {
             "type": "our_team",
             "settings": {
@@ -398,44 +390,12 @@
               "tem_subtitl": "Head of Partnerships"
             }
           },
-          "9f9ab3a1-8e20-4625-bfef-02e22bede349": {
-            "type": "our_team",
-            "settings": {
-              "tem_img": "shopify:\/\/shop_images\/11.jpg",
-              "tem_ontitl": "Roy Milstein",
-              "tem_subtitl": "Partnerships Development Manager"
-            }
-          },
-          "4907a2f3-3ee2-4203-8552-589eeba13b6b": {
-            "type": "our_team",
-            "settings": {
-              "tem_img": "shopify:\/\/shop_images\/12.jpg",
-              "tem_ontitl": "Lorena Sánchez",
-              "tem_subtitl": "Global Sales Manager"
-            }
-          },
           "1ef4abbd-b226-42d3-9f0f-20082c9e8272": {
             "type": "our_team",
             "settings": {
               "tem_img": "shopify:\/\/shop_images\/13.jpg",
               "tem_ontitl": "Lital Lotker-Kolan",
               "tem_subtitl": "VP Finance"
-            }
-          },
-          "31e6cb49-2950-48d8-b628-a23163b8910c": {
-            "type": "our_team",
-            "settings": {
-              "tem_img": "shopify:\/\/shop_images\/14.jpg",
-              "tem_ontitl": "Avi Avraham",
-              "tem_subtitl": "VP Supply Chain"
-            }
-          },
-          "3f6d099e-a3eb-4202-9ae0-0e649230ab17": {
-            "type": "our_team",
-            "settings": {
-              "tem_img": "shopify:\/\/shop_images\/15.jpg",
-              "tem_ontitl": "Daniel Truzman",
-              "tem_subtitl": "Business Development Manager"
             }
           },
           "97cedbb7-f2b6-42e2-aca2-f992f5cd2705": {
@@ -600,7 +560,6 @@
           "tem_titl": "Meet The CuraTeam",
           "cmpncltr_titl": "Company Culture",
           "cmpncltr_icnimg": "shopify:\/\/shop_images\/leaf.png",
-          "cmpncltr_img": "shopify:\/\/shop_images\/culture-02.jpg",
           "cmpncltr_desc": "The CuraLife team is driven by one mission – improving the quality of life for people around the world. And we work incredibly hard to achieve that goal through life-changing products, easily digestible education, and thriving communities. We care deeply, think globally, and work tirelessly to create a happier, healthier world.",
           "advsr_titl": "Advisory Board",
           "loc_titl": "Partnerships",
