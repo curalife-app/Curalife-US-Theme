@@ -891,6 +891,10 @@
         width: calc(100% / 6);
         padding: 4px;
         text-align: center;
+
+        img {
+          object-fit: contain;
+        }
       }
     }
   }
@@ -1174,9 +1178,7 @@
   }
 }
 
-.culture-wrap {
-  padding-top: 4.5%;
-}
+
 
 .culture-item {
   padding: 30px;
