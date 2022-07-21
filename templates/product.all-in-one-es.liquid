@@ -14,12 +14,17 @@
                     <div class="swiper-slide">
                       <div class="product-img">
                         <div class="img-wrap">
-                          {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
+                          {% if i == 1 %}
+                            {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: '-es'| append: ".png" %}
+                          {% else %}
+                            {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
+                          {% endif %}
                           <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
                         </div>
                       </div>
                     </div>
                   {% endfor %}
+
                   <div class="swiper-slide">
                     <div class="product-video">
                       <iframe id="product-video-iframe" src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
