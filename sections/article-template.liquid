@@ -45,10 +45,8 @@
           <div class="content">
             <div class="picture-container">
               <div class="img-wrap">
-                {% if article.image %}
-                  {% unless article.tags contains 'hide-image' %}
+                {% if article.image and article.tags and article.metafields.custom.hide_article_image == "true" %}
                     <img id="featured-image" src="{{ article.image | image_url }}" alt="" loading="lazy">
-                  {% endunless %}
                 {% endif %}
               </div>
             </div>
