@@ -123,4 +123,16 @@
     $('[data-name="lead_url"]').val(window.location.href);
     getGeo();
   }
+
+  // Woopra Subscribe Event Tracking
+  document.addEventListener('submit', function(e) {
+    if (form.className.indexOf('_form_3') !== -1) {
+      woopra.identify({
+      'email': data["email"]
+      });
+      woopra.track('newsletter subscribe', {}, {
+        queue: true
+      });
+    }
+  });
 </script>
