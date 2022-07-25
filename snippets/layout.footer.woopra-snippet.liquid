@@ -25,5 +25,41 @@
   // });
   
     woopra.track();
+
+    document.addEventListener('submit', function(e) {
+      const form = e.target;
+      const formData = new FormData(form);
+      const entries = formData.entries();
+      const data = Object.fromEntries(entries);
+      for (var key in data) {
+        var fieldEl = form.querySelector(`[name="${key}"]`);
+        if (fieldEl.type === 'password') {
+          delete data[key];
+        }
+      }
+
+      // Contact form
+      if (form.id === 'contact-us-form') {
+        woopra.identify({
+          name: data['name'],
+          email: data['email'],
+          phone: data['phone']
+        });
+        woopra.track('submit contact form', data, { queue: true });
+      }
+
+      if (form.className.indexOf('yotpo-referral-widget-form') !== -1) {
+        // Track signing up for referral program
+        if (form.querySelector('[name="email"]').placeholder === 'Your email address') {
+          woopra.identify({ email: data.email});
+          woopra.track('refer a friend', {
+            email: data.email
+          }, { queue: true });
+        } else {
+          // Track inviting a friend
+          woopra.track('friend referred', { email: data.email }, {queue: true});
+        }
+      }
+    });
   </script>
 <!-- End of Woopra Code -->
