@@ -19,9 +19,10 @@
     });
   {%- endif -%}
 
-  woopra.identify({
-    test_variant: $.cookie("_sc_4")
-  });
+  // TODO: Remove after finishing shipping testing
+  // woopra.identify({
+  //   test_variant: $.cookie("_sc_4")
+  // });
   
     woopra.track();
   </script>
