@@ -126,6 +126,17 @@
 
   // Woopra Subscribe Event Tracking
   document.addEventListener('submit', function(e) {
+    const form = e.target;
+    const formData = new FormData(form);
+    const entries = formData.entries();
+    const data = Object.fromEntries(entries);
+    for (var key in data) {
+      var fieldEl = form.querySelector(`[name="${key}"]`);
+      if (fieldEl.type === 'password') {
+        delete data[key];
+      }
+    }
+    
     if (form.className.indexOf('_form_3') !== -1) {
       woopra.identify({
       'email': data["email"]
