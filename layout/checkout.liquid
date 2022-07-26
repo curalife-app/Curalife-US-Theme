@@ -243,9 +243,10 @@ if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window
           user_agent: navigator.userAgent
         });
 
-        woopra.track('Checkout Step - Thank You', {
-          'test_variant': $.cookie("_sc_4")
-        });
+        // TODO: remove after shipping test is done
+        // woopra.track('Checkout Step - Thank You', {
+        //   'test_variant': $.cookie("_sc_4")
+        // });
  };
 </script>
 
