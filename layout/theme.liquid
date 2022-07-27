@@ -2,10 +2,8 @@
 <html>
   <head>
     <title>{{ page_title }}</title>
-    
-    {% unless admin %}
-      {% render 'layout.head.geo-redirect-script' %}
-    {% endunless %}
+
+    {% render 'layout.head.geo-redirect-script' %}
     {% render 'layout.head.redirects-script' %}
     {% render 'layout.head.google-tag-manager'%}
     {% render 'layout.head.meta-tags' %}
