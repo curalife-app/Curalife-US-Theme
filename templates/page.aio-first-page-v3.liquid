@@ -1008,6 +1008,18 @@
 </script>
 
 <script>
+  let urlParams = new URLSearchParams(window.location.search);
+  let linksAddition = urlParams.get('add');
+
+  if (linksAddition) {
+  $('a').each(function() {
+    var currLink = $(this).attr('href');
+    if (currLink) { $(this).attr('href', currLink + linksAddition) };
+  });
+  }
+</script>
+
+<script>
   // Fade Quotes
   var quotes = $(".title-text");
   var quoteIndex = -1;
