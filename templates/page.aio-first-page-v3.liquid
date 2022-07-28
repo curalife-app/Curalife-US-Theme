@@ -1009,13 +1009,13 @@
 
 <script>
   let urlParameters = new URLSearchParams(window.location.search);
-  let linksAddition = urlParameters.get('add');
-  console.log(linksAddition);
-  if (linksAddition) {
-    console.log("add: " + linksAddition);
+  let linksAdd = urlParameters.get('add');
+  console.log(linksAdd);
+  if (linksAdd) {
+    console.log("add: " + linksAdd);
   $('a').each(function() {
     var currLink = $(this).attr('href');
-    if (currLink) { $(this).attr('href', "/products/curalin-pack" + linksAddition) };
+    if (currLink) { $(this).attr('href', "/products/curalin-pack" + linksAdd) };
   });
   }
 </script>
