@@ -99,26 +99,38 @@
 
       // console.log("Experiment ID: " + experimentId);
       // console.log("Variation ID: " + variationId);
-      function useOptimizeAB(experimentId) {
-        const [variant, setVariant] = useState();
-        useEffect(() => {
-          window.dataLayer.push({ event: "optimize.activate" });
-          let interval = setInterval(() => {
-            if (window.google_optimize !== undefined) {
-              const variant = window.google_optimize.get(experimentId);
-              if (typeof variant !== "undefined") setVariant(Number(variant));
-              clearInterval(interval);
-            }
-          }, 100);
-        }, []);
-        return variant;
+      
+      function getCookieValue(cookieName) {
+          var result = document.cookie.match('(^|;)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
+          return result ? result.pop() : '';
       }
 
-      var Var = useOptimizeAB("Wr8ypTf6QyumAMjKVG5WDw");
-      console.log("Variant: " + Var);
+      function getExperimentId() {
+          var cookie = getCookieValue('_gaexp');
+          if (cookie == undefined) {
+              return undefined;
+          } else {
+              var fields = cookie.split('.');
+              return fields[2];
+          }
+      }
+
+      function getVariationId() {
+          var cookie = getCookieValue('_gaexp');
+          if (cookie == undefined) {
+              return undefined;
+          } else {
+              var fields = cookie.split('.');
+              return fields[4];
+          }
+      }
+
+      var experimentId = getExperimentId();
+      var variationId = getVariationId();
 
       woopra.identify({
-        optimize_variant: Var
+        optimize_experimentID: experimentId,
+        optimize_variantID: variationId
       });
     </script>
 
