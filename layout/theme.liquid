@@ -99,29 +99,26 @@
 
       // console.log("Experiment ID: " + experimentId);
       // console.log("Variation ID: " + variationId);
-
-      function implementManyExperiments(value, name) {
-        if (name == '<experiment_id_A>') {
-          // Provide implementation for experiment A
-          if (value ==  '0') {
-            // Provide code for visitors in the original.
-          } else if (value == '1') {
-            // Provide code for visitors in first variant.
-        }
+      export default function useOptimizeAB(experimentId) {
+        const [variant, setVariant] = useState();
+        useEffect(() => {
+          window.dataLayer.push({ event: "optimize.activate" });
+          let interval = setInterval(() => {
+            if (window.google_optimize !== undefined) {
+              const variant = window.google_optimize.get(experimentId);
+              if (typeof variant !== "undefined") setVariant(Number(variant));
+              clearInterval(interval);
+            }
+          }, 100);
+        }, []);
+        return variant;
       }
-    }
 
-      gtag('event', 'optimize.callback', {
-          callback: implementManyExperiments
-       });
-
-       gtag('event', 'optimize.callback', {
-          callback: (value, name) => console.log(
-              'Experiment with ID: ' + name + ' is on variant: ' + value)
-       });
+      var Var = useOptimizeAB("Wr8ypTf6QyumAMjKVG5WDw");
+      console.log("Variant: " + Var);
 
       woopra.identify({
-        optimize_variant: variationId
+        optimize_variant: Var
       });
     </script>
 
