@@ -1008,19 +1008,6 @@
 </script>
 
 <script>
-  let urlParameters = new URLSearchParams(window.location.search);
-  let linksAdd = urlParameters.get('add');
-  console.log(linksAdd);
-  if (linksAdd) {
-    console.log("add: " + linksAdd);
-  $('a').each(function() {
-    var currLink = $(this).attr('href');
-    if (currLink) { $(this).attr('href', "/products/curalin-pack" + linksAdd) };
-  });
-  }
-</script>
-
-<script>
   // Fade Quotes
   var quotes = $(".title-text");
   var quoteIndex = -1;
