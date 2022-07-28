@@ -23,6 +23,14 @@
   // woopra.identify({
   //   test_variant: $.cookie("_sc_4")
   // });
+
+  var propertyId = "UA-57498002-2";
+  var experimentId = Object.keys(gaData[propertyId].experiments)[0];
+  var variationId = gaData[propertyId].experiments[experimentId];
+
+  woopra.identify({
+    optimize_variant: variationId
+  });
   
     woopra.track();
 
