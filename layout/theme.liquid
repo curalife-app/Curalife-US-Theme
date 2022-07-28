@@ -100,41 +100,24 @@
       // console.log("Experiment ID: " + experimentId);
       // console.log("Variation ID: " + variationId);
       
-      function getCookieValue(cookieName) {
-          var result = document.cookie.match('(^|;)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
+      function getOptimizeCookieValue() {
+          var result = document.cookie.match('(^|;)\\s*' + '_gaexp' + '\\s*=\\s*([^;]+)');
           return result ? result.pop() : '';
       }
 
-      function getExperimentId() {
-          var cookie = getCookieValue('_gaexp');
-          if (cookie == undefined) {
-              return undefined;
-          } else {
-              var fields = cookie.split('.');
-              return fields[2];
-          }
+      function trackOptimizeExperiments() {
+        var experiments = getCookieValue().split('!');
+        for (var i = 0; i < experiments.length; i++) {
+          var experiment = experiments[i].split('.');
+
+          woopra.identify({
+            'optimize_experimentID'+i: experiment[2],
+            'optimize_variantID'+i: experiment[5]
+          });
+        }
       }
 
-      function getVariationId() {
-          var cookie = getCookieValue('_gaexp');
-          if (cookie == undefined) {
-              return undefined;
-          } else {
-              var fields = cookie.split('.');
-              return fields[4];
-          }
-      }
 
-      var experimentId = getExperimentId();
-      var variationId = getVariationId();
-
-      console.log("Experiment ID: " + experimentId);
-      console.log("Variation ID: " + variationId);
-
-      woopra.identify({
-        optimize_experimentID: experimentId,
-        optimize_variantID: variationId
-      });
     </script>
 
 
