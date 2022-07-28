@@ -114,11 +114,10 @@
           var fieldName = "optimize_exp_" + experiment[0];
           var varID = experiment[2];
           var trackObj = new Object();
-          trackObj['optimize_exp_' + i] = varID;
+          trackObj[fieldName] = varID;
           console.log(trackObj);
-          woopra.identify({
-            trackObj
-          });
+
+          woopra.identify(trackObj);
         }
       }
       trackOptimizeExperiments();
