@@ -93,12 +93,32 @@
     </style>
 
     <script defer>
-      var propertyId = "UA-57498002-2";
-      var experimentId = Object.keys(gaData[propertyId].experiments)[0];
-      var variationId = gaData[propertyId].experiments[experimentId];
+      // var propertyId = "UA-57498002-2";
+      // var experimentId = Object.keys(gaData[propertyId].experiments)[0];
+      // var variationId = gaData[propertyId].experiments[experimentId];
 
-      console.log("Experiment ID: " + experimentId);
-      console.log("Variation ID: " + variationId);
+      // console.log("Experiment ID: " + experimentId);
+      // console.log("Variation ID: " + variationId);
+
+      function implementManyExperiments(value, name) {
+        if (name == '<experiment_id_A>') {
+          // Provide implementation for experiment A
+          if (value ==  '0') {
+            // Provide code for visitors in the original.
+          } else if (value == '1') {
+            // Provide code for visitors in first variant.
+          ...
+        }
+      }
+
+      gtag('event', 'optimize.callback', {
+          callback: implementManyExperiments
+       });
+
+       gtag('event', 'optimize.callback', {
+          callback: (value, name) => console.log(
+              'Experiment with ID: ' + name + ' is on variant: ' + value)
+       });
 
       woopra.identify({
         optimize_variant: variationId
