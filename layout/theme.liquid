@@ -107,15 +107,13 @@
 
       function trackOptimizeExperiments() {
         var experiments = getOptimizeCookieValue().replace('GAX1.2.','').split('!');
-        console.log(experiments);
+
         for (var i = 0; i < experiments.length; i++) {
           var experiment = experiments[i].split('.');
-          console.log(experiment);
           var fieldName = "optimize_exp_" + experiment[0];
           var varID = experiment[2];
           var trackObj = new Object();
           trackObj[fieldName] = varID;
-          console.log(trackObj);
 
           woopra.identify(trackObj);
         }
