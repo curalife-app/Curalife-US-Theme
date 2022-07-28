@@ -113,7 +113,7 @@
           console.log(experiment);
           woopra.identify({
             'optimize_experimentID': experiment[2],
-            'optimize_variantID': experiment[5]
+            'optimize_variantID': experiment.pop()
           });
         }
       }
