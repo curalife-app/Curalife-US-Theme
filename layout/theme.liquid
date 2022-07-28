@@ -99,7 +99,7 @@
 
       // console.log("Experiment ID: " + experimentId);
       // console.log("Variation ID: " + variationId);
-      export default function useOptimizeAB(experimentId) {
+      function useOptimizeAB(experimentId) {
         const [variant, setVariant] = useState();
         useEffect(() => {
           window.dataLayer.push({ event: "optimize.activate" });
