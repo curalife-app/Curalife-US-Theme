@@ -125,6 +125,8 @@
     {{ content_for_layout }}
   </main>
 
+  
+  <!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter. -->
   <script>
     let urlParameters = new URLSearchParams(window.location.search);
     let productVar = urlParameters.get('prod-var');
