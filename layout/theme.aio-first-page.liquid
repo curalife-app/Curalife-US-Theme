@@ -127,12 +127,12 @@
 
   <script>
     let urlParameters = new URLSearchParams(window.location.search);
-    let linksAdd = urlParameters.get('add');
+    let version = urlParameters.get('version');
 
-    if (linksAdd) {
+    if (version) {
     $('a').each(function() {
       var currLink = $(this).attr('href');
-      if (currLink) { $(this).attr('href', "/products/curalin-pack" + linksAdd) };
+      if (currLink) { $(this).attr('href', "/products/curalin-pack-" + version) };
     });
     }
   </script>
