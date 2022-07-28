@@ -90,7 +90,7 @@
         {% if section.settings.mobile_img != blank %}
           <div class="article-bottom mobileImg">
             <a class="banner click" id="article_bottom" href="{{ section.settings.sidepst_url}}">
-              <img src="{{ section.settings.mobile_img | image_url }}" alt="" loading="lazy">
+              <img src="{{ section.settings.mobile_img | image_url: width: 308 }}" width="260px" height="512px" alt="" loading="lazy">
             </a>
           </div>
         {% endif %}
