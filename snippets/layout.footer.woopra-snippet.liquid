@@ -28,6 +28,9 @@
   var experimentId = Object.keys(gaData[propertyId].experiments)[0];
   var variationId = gaData[propertyId].experiments[experimentId];
 
+  console.log("Experiment ID: " + experimentId);
+  console.log("Variation ID: " + variationId);
+
   woopra.identify({
     optimize_variant: variationId
   });
