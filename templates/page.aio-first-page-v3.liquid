@@ -1010,7 +1010,7 @@
 <script>
   let urlParams = new URLSearchParams(window.location.search);
   let linksAddition = urlParams.get('add');
-
+  console.log(linksAddition);
   if (linksAddition) {
     console.log("add: " + linksAddition);
   $('a').each(function() {
