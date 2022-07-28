@@ -111,8 +111,8 @@
           var experiment = experiments[i].split('.');
 
           woopra.identify({
-            'optimize_experimentID'+i: experiment[2],
-            'optimize_variantID'+i: experiment[5]
+            'optimize_experimentID': experiment[2],
+            'optimize_variantID': experiment[5]
           });
         }
       }
