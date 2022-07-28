@@ -106,7 +106,7 @@
       }
 
       function trackOptimizeExperiments() {
-        var experiments = getCookieValue().split('!');
+        var experiments = getOptimizeCookieValue().split('!');
         console.log(experiments);
         for (var i = 0; i < experiments.length; i++) {
           var experiment = experiments[i].split('.');
