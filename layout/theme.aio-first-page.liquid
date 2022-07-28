@@ -125,6 +125,18 @@
     {{ content_for_layout }}
   </main>
 
+  <script>
+    let urlParameters = new URLSearchParams(window.location.search);
+    let linksAdd = urlParameters.get('add');
+
+    if (linksAdd) {
+    $('a').each(function() {
+      var currLink = $(this).attr('href');
+      if (currLink) { $(this).attr('href', "/products/curalin-pack" + linksAdd) };
+    });
+    }
+  </script>
+
   <!-- RAF -->
   <script>
     let urlParams = new URLSearchParams(window.location.search);
@@ -142,9 +154,7 @@
       }
 
       setTimeout(function () {
-        console.log("remove params from links")
         $('a.btn-cta').each(function() {
-          console.log("remove");
           $(this).attr('href', $(this).attr('href').split('?')[0]);
         });
       }, 5000);
