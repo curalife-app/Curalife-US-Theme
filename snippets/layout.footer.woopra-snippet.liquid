@@ -63,3 +63,27 @@
     });
   </script>
 <!-- End of Woopra Code -->
+
+<!-- Track Optimize Tests on Woopra -->
+<script>
+  function getOptimizeCookieValue() {
+      var result = document.cookie.match('(^|;)\\s*' + '_gaexp' + '\\s*=\\s*([^;]+)');
+      return result ? result.pop() : '';
+  }
+
+  function trackOptimizeExperiments() {
+    var experiments = getOptimizeCookieValue().replace('GAX1.2.','').split('!');
+
+    for (var i = 0; i < experiments.length; i++) {
+      var experiment = experiments[i].split('.');
+      var fieldName = "optimize_exp_" + experiment[0];
+      var varID = experiment[2];
+      var trackObj = new Object();
+      trackObj[fieldName] = varID;
+
+      woopra.identify(trackObj);
+    }
+  }
+
+  trackOptimizeExperiments();
+</script>
