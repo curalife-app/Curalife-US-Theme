@@ -109,7 +109,7 @@
         var experiments = getOptimizeCookieValue().split('!');
         console.log(experiments);
         for (var i = 0; i < experiments.length; i++) {
-          var experiment = experiments[i].split('.');
+          var experiment = experiments[i].slice(-2).split('.');
           console.log(experiment);
           woopra.identify({
             'optimize_experimentID': experiment[2],
