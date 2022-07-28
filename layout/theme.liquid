@@ -106,10 +106,10 @@
       }
 
       function trackOptimizeExperiments() {
-        var experiments = getOptimizeCookieValue().split('!');
+        var experiments = getOptimizeCookieValue().slice(-2).split('!');
         console.log(experiments);
         for (var i = 0; i < experiments.length; i++) {
-          var experiment = experiments[i].slice(-2).split('.');
+          var experiment = experiments[i].split('.');
           console.log(experiment);
           woopra.identify({
             'optimize_experimentID{i}': experiment[2],
