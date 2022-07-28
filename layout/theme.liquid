@@ -106,7 +106,7 @@
       }
 
       function trackOptimizeExperiments() {
-        var experiments = getOptimizeCookieValue().slice(-2).split('!');
+        var experiments = getOptimizeCookieValue().replace('GAX1.2.','').split('!');
         console.log(experiments);
         for (var i = 0; i < experiments.length; i++) {
           var experiment = experiments[i].split('.');
