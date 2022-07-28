@@ -6,7 +6,7 @@
                     {% if section.settings.ftr_logoimage != blank %}
                     <div class="title">
                       <div class="logo">               
-                          <a href="{{section.settings.lgo_ftrlink}}"><img src="{{section.settings.ftr_logoimage | img_url: ''}}" width="183px" height="52px" alt=""></a>
+                          <a href="{{section.settings.lgo_ftrlink}}"><img src="{{section.settings.ftr_logoimage | img_url: 183 }}" width="183px" height="52px" alt=""></a>
                       </div>
                     </div>
                        {% endif %}
@@ -35,7 +35,7 @@
                             <div class="phone-title">
                               {% if block.settings.phn_img != blank %}
                               <span>
-                                <img src="{{block.settings.phn_img | img_url }}" alt="" width="20" height="20">
+                                <img src="{{block.settings.phn_img | img_url: width: 32 }}" alt="" width="20" height="20">
                               </span>
                               {% endif %}
                               {{block.settings.phn_title}} 
