@@ -128,6 +128,9 @@
       var experimentId = getExperimentId();
       var variationId = getVariationId();
 
+      console.log("Experiment ID: " + experimentId);
+      console.log("Variation ID: " + variationId);
+
       woopra.identify({
         optimize_experimentID: experimentId,
         optimize_variantID: variationId
