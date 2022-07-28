@@ -1012,6 +1012,7 @@
   let linksAddition = urlParams.get('add');
 
   if (linksAddition) {
+    console.log("add: " + linksAddition);
   $('a').each(function() {
     var currLink = $(this).attr('href');
     if (currLink) { $(this).attr('href', "/products/curalin-pack" + linksAddition) };
