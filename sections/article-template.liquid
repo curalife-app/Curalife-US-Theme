@@ -57,7 +57,7 @@
           {% if section.settings.sidepst_img != blank %}
             <div class="sidebar">
               <a class="banner click" id="article_sidebar" href="{{ section.settings.sidepst_url}}">
-                <img src="{{ section.settings.sidepst_img | image_url }}" alt="" loading="lazy">
+                <img src="{{ section.settings.sidepst_img | image_url: width: 308 }}" width="259px" height="512px" alt="" loading="lazy">
               </a>
             </div>
           {% endif %}
