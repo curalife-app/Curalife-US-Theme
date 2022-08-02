@@ -32,7 +32,7 @@
                           <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
                           {% if forloop.index == 3 %}
                             <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy" style="display:none">
-                          {% elseif forloop.index == 2 and request.path contains 't90' %}
+                          {% elsif forloop.index == 2 and request.path contains 't90' %}
                             <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge.png" | asset_url }}" alt="" loading="lazy" style="display:none">
                           {% else %}
                             <img class="free-shipping geo" src="{{ "product-aio-free-shipping-badge-2.png" | asset_url }}" alt="" loading="lazy" style="display:none">
