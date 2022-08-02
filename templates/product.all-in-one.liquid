@@ -153,31 +153,34 @@
                   {% if forloop.index == 3 %}
                     <img class="free-shipping-var desktop geo" src="{{ 'product-aio-free-shipping-badge-3.png' | asset_url }}" alt="" style="display:none">
                     <img class="free-shipping-var mobile geo" src="{{ 'product-aio-free-shipping-badge-4.png' | asset_url }}" alt="" style="display:none">
-                    <style>
-                      .free-shipping-var {
-                        position: absolute;
-                        right: 0;
-                        top: -5px;
+                  {% elsif forloop.index == 2 and request.path contains 't90' %}
+                    <img class="free-shipping-var desktop geo" src="{{ 'product-aio-free-shipping-badge-3.png' | asset_url }}" alt="" style="display:none">
+                    <img class="free-shipping-var mobile geo" src="{{ 'product-aio-free-shipping-badge-4.png' | asset_url }}" alt="" style="display:none">
+                  {% endif %}
+                  <style>
+                    .free-shipping-var {
+                      position: absolute;
+                      right: 0;
+                      top: -5px;
+                    }
+
+                    .free-shipping-var.mobile {
+                      visibility: hidden;
+                      top: unset;
+                      bottom: 0;
+                      height: 50px;
+                    }
+
+                    @media screen and (max-width:1270px) {
+                      .free-shipping-var.desktop {
+                        visibility: hidden;
                       }
 
                       .free-shipping-var.mobile {
-                        visibility: hidden;
-                        top: unset;
-                        bottom: 0;
-                        height: 50px;
+                        visibility: visible;
                       }
-
-                      @media screen and (max-width:1270px) {
-                        .free-shipping-var.desktop {
-                          visibility: hidden;
-                        }
-
-                        .free-shipping-var.mobile {
-                          visibility: visible;
-                        }
-                      }
-                    </style>
-                  {% endif %}
+                    }
+                  </style>
                 </div>
               {% endfor %}
             </div>
