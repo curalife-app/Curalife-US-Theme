@@ -274,6 +274,7 @@ if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window
       clearInterval(checker);
       $("#checkout_submit").click(trackApplyDiscount);
       wisepops("event", "discount-failed");
+      console.log("wisepops event fired!")
     }
     else if ($("#checkout_submit").hasClass("btn--disabled")) {
       woopra.track('Apply Discount Code - Failed', {
