@@ -191,7 +191,7 @@
       runAfterElementExists(".video-player", function () {
         console.log("element exist!")
         $(".video-player").click(function() {
-          console.log("play video");
+          console.log("p: " +$(this).closest(".video-headline p").text());
           woopra.track('Play Video', {
             video_id: $(this).find("lite-vimeo").attr("videoid"),
             video_title: $(this).closest(".video-headline p").text()
