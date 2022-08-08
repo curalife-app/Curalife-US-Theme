@@ -175,7 +175,7 @@
       });
     }
   </script>
-
+<script src="https://player.vimeo.com/api/player.js"></script>
   <!-- Woopra Events -->
   <script>
     $(document).ready(function () {
@@ -188,7 +188,7 @@
         }, 200);
       }
        console.log("document loaded!")
-       
+
        const modulus = document.querySelector('module');
        const player = new Vimeo.Player(modulus);
        runAfterElementExists(".player", function () {
