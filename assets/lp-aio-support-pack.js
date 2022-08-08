@@ -69,11 +69,11 @@
                 openAccordion(accordion);
             }
             if (content.style.maxHeight) {
-                 closeAccordion(accordion);
-             } else {
-                 accordions.forEach((accordion) => closeAccordion(accordion));
-                 openAccordion(accordion);
-             }
+                closeAccordion(accordion);
+            } else {
+                accordions.forEach((accordion) => closeAccordion(accordion));
+                openAccordion(accordion);
+            }
         };
     });
 
