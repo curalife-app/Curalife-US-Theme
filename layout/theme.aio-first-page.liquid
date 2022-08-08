@@ -188,9 +188,9 @@
         }, 200);
       }
      console.log("document loaded")
-      runAfterElementExists(".lvo-playbtn", function () {
+      runAfterElementExists(".lite-vimeo.videoid", function () {
         console.log("element exist!")
-        $(".lvo-playbtn").click(function() {
+        $(".lite-vimeo.videoid").click(function() {
           console.log("play video");
           woopra.track('Play Video', {
             video_id: $(this).parents("lite-vimeo").attr("videoid")
