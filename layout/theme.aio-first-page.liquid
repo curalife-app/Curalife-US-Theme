@@ -179,6 +179,15 @@
   <!-- Woopra Events -->
   <script>
     $(document).ready(function () {
+      function runAfterElementExists(jquery_selector, callback) {
+        var checker = window.setInterval(function () {
+          if ($(jquery_selector).length) {
+            clearInterval(checker);
+            callback();
+          }
+        }, 200);
+      }
+      
       console.log("document ready!")
       runAfterElementExists("button.play", function () {
         $("button.play").click(function() {
