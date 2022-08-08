@@ -124,20 +124,6 @@
     {{ content_for_layout }}l
   </main>
 
-  <!-- Pre-existing-player vimeo -->
- 
-  <script>
-      const modulus = document.querySelector('module');
-      const player = new Vimeo.Player(modulus);
-
-      player.on('play', function() {
-          console.log('played the video!');
-      });
-
-      player.getVideoTitle().then(function(title) {
-          console.log('title:', title);
-      });
-  </script>
 
   
   <!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter. -->
