@@ -187,6 +187,12 @@
           });
         })
       })
+      $('.question').click(function() {
+        woopra.track('Open FAQ', {
+          question_display_text: $(this).children("h4").text(),
+          question_order:  $(this).parents("li").index() + 1
+        })
+      });
     })
   </script>
 
