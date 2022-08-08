@@ -115,7 +115,6 @@
 {{content_for_header}}
 
   <script src="{{ 'lp-aio-support-pack.js' | asset_url }}" defer></script>
-  <script src="https://player.vimeo.com/api/player.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script> 
 
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
@@ -188,23 +187,16 @@
           }
         }, 200);
       }
-       console.log("document loaded!")
-
-       const modulus = document.querySelector('module');
-       const player = new Vimeo.Player(modulus);
-       runAfterElementExists(".player", function () {
+     console.log("document loaded")
+      runAfterElementExists(".lvo-playbtn", function () {
         console.log("element exist!")
-
-        
-        $(".player").click(function() {
+        $(".lvo-playbtn").click(function() {
           console.log("play video");
           woopra.track('Play Video', {
             video_id: $(this).parents("lite-vimeo").attr("videoid")
           });
         })
       })
-        
-    
     })
   </script>
 
