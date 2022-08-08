@@ -187,9 +187,10 @@
           }
         }, 200);
       }
-      
+
       console.log("document ready!")
       runAfterElementExists("button.play", function () {
+        console.log("element exist!")
         $("button.play").click(function() {
           console.log("play video");
           woopra.track('Play Video', {
