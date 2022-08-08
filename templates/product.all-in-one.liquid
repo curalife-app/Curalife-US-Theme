@@ -689,16 +689,6 @@
       currency: '{{ shop.currency }}',
       quantity: parseInt($(".qty-control input").val())
     });
-
-    $('.thumbs-img').click(function() {
-      woopra.track('Product_Image_Click', {});
-    });
-   
-    $('.swiper-button-prev, swiper-button-next').click(function() {
-      woopra.track('Product_Arrow_Click', {});
-    });
-
-   
   });
 
   window.dataLayer = window.dataLayer || [];
@@ -725,6 +715,17 @@
     zip: '{{ customer.customer_address.zip }}',
     country: '{{customer.customer_address.country_code | t}}',
     user_agent: navigator.userAgent
+  });
+</script>
+
+<!-- Woopra Tracking -->
+<script>
+  $('.thumbs-img').click(function() {
+    woopra.track('Product_Image_Click', {});
+  });
+
+  $('.swiper-button-prev, swiper-button-next').click(function() {
+    woopra.track('Product_Arrow_Click', {});
   });
 </script>
 
