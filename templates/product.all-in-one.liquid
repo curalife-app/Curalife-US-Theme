@@ -721,11 +721,15 @@
 <!-- Woopra Tracking -->
 <script>
   $('.thumbs-img').click(function() {
-    woopra.track('Product_Image_Click', {});
+    woopra.track('Product Image Click', {});
   });
 
   $('.swiper-button-prev, swiper-button-next').click(function() {
-    woopra.track('Product_Arrow_Click', {});
+    woopra.track('Product Arrow Click', {});
+  });
+
+  $('#back-to-top-btn').click(function() {
+    woopra.track('Scroll To Top Click', {});
   });
 </script>
 
