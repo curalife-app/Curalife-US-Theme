@@ -187,11 +187,11 @@
         }, 200);
       }
 
-      runAfterElementExists(".lvo-playbtn", function () {
+      runAfterElementExists(".vp-target", function () {
         console.log("element exist!")
-        $(".lvo-playbtn").click(function() {
+        $(".vp-target").click(function() {
           console.log("play video");
-          woopra.track('start', {
+          woopra.track('Play Video', {
             video_id: $(this).parents("lite-vimeo").attr("videoid")
           });
         })
