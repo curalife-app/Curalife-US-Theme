@@ -188,9 +188,9 @@
         }, 200);
       }
      console.log("document loaded")
-      runAfterElementExists(".lite-vimeo.videoid", function () {
+      runAfterElementExists(".testimonials_iframe", function () {
         console.log("element exist!")
-        $(".lite-vimeo.videoid").click(function() {
+        $(".testimonials_iframe").click(function() {
           console.log("play video");
           woopra.track('Play Video', {
             video_id: $(this).parents("lite-vimeo").attr("videoid")
