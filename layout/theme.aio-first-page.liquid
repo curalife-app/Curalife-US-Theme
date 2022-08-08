@@ -179,6 +179,7 @@
   <!-- Woopra Events -->
   <script>
     $("button.play").click(function() {
+      console.log("play video");
       woopra.track('Play Video', {
         video_id: $(this).parents("lite-vimeo").attr("videoid")
       });
