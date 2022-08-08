@@ -175,6 +175,15 @@
       });
     }
   </script>
+
+  <!-- Woopra Events -->
+  <script>
+    $("button.play").click(function() {
+      woopra.track('Play Video', {
+        video_id: $(this).parents("lite-vimeo")
+      });
+    })
+  </script>
   
   {% render 'layout.footer.woopra-snippet' %}
 
