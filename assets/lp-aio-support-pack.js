@@ -68,12 +68,12 @@
             } else {
                 openAccordion(accordion);
             }
-            /* if (content.style.maxHeight) {
+            if (content.style.maxHeight) {
                  closeAccordion(accordion);
              } else {
                  accordions.forEach((accordion) => closeAccordion(accordion));
                  openAccordion(accordion);
-             }*/
+             }
         };
     });
 
