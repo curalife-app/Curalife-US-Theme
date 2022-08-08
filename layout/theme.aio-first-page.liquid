@@ -124,6 +124,17 @@
     {{ content_for_layout }}l
   </main>
 
+  <script>
+    function runAfterElementExists(jquery_selector, callback) {
+      var checker = window.setInterval(function () {
+        if ($(jquery_selector).length) {
+          clearInterval(checker);
+          callback();
+        }
+      }, 200);
+    }
+  </script>
+
 
   
   <!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter. -->
@@ -145,16 +156,6 @@
     let linksAddition = urlParams.get('utm_campaign');
 
     if (urlParams.get('utm_campaign') == 'referral_program') {
-      console.log("Referral program");
-      function runAfterElementExists(jquery_selector, callback) {
-        var checker = window.setInterval(function () {
-          if ($(jquery_selector).length) {
-            clearInterval(checker);
-            callback();
-          }
-        }, 200);
-      }
-
       setTimeout(function () {
         $('a.btn-cta').each(function() {
           $(this).attr('href', $(this).attr('href').split('?')[0]);
@@ -179,19 +180,8 @@
   <!-- Woopra Events -->
   <script>
     $(document).ready(function () {
-      function runAfterElementExists(jquery_selector, callback) {
-        var checker = window.setInterval(function () {
-          if ($(jquery_selector).length) {
-            clearInterval(checker);
-            callback();
-          }
-        }, 200);
-      }
-      console.log("document loaded")
       runAfterElementExists(".video-player", function () {
-        console.log("element exist!")
         $(".video-player").click(function() {
-          console.log("p: " + $(this).closest(".video-headline p").text() );
           woopra.track('Play Video', {
             video_id: $(this).find("lite-vimeo").attr("videoid"),
             video_title: $(this).siblings(".video-headline").find("p").text()
