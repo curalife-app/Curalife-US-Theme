@@ -113,7 +113,6 @@
 
 
 {{content_for_header}}
-  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/oMYBvmnASlHzmouicgkepg" async></script>
 
   <script src="{{ 'lp-aio-support-pack.js' | asset_url }}" defer></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script> 
@@ -122,7 +121,7 @@
 </head>
 <body>
  <main role="main">
-    {{ content_for_layout }}
+    {{ content_for_layout }}l
   </main>
 
   
@@ -188,12 +187,11 @@
         }, 200);
       }
 
-      console.log("document ready!")
       runAfterElementExists(".lvo-playbtn", function () {
         console.log("element exist!")
         $(".lvo-playbtn").click(function() {
           console.log("play video");
-          woopra.track('Play Video', {
+          woopra.track('start', {
             video_id: $(this).parents("lite-vimeo").attr("videoid")
           });
         })
