@@ -180,7 +180,7 @@
   <script>
     $("button.play").click(function() {
       woopra.track('Play Video', {
-        video_id: $(this).parents("lite-vimeo")
+        video_id: $(this).parents("lite-vimeo").attr("videoid")
       });
     })
   </script>
