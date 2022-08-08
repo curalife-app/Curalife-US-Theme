@@ -178,6 +178,7 @@
   <!-- Woopra Events -->
   <script>
     $(document).ready(function () {
+      // Play Video
       runAfterElementExists(".video-player", function () {
         $(".video-player").click(function() {
           woopra.track('Play Video', {
@@ -187,12 +188,10 @@
           });
         })
       })
+
+      // Open FAQ
       $('.question').click(function() {
-        var event_name;
-
-        event_name = $(this).parent().hasClass('.active') ? 'Close FAQ' : 'Open FAQ';
-
-        woopra.track(event_name, {
+        woopra.track('Open FAQ', {
           question_display_text: $(this).children("h4").text(),
           question_order:  $(this).parents("li").index() + 1
         })
