@@ -82,10 +82,8 @@
   var player4 = new Vimeo.Player(document.querySelector('#review-video-4'));
 
   let players = [player1, player2, player3, player4];
-  console.log(players);
-
+  
   players.forEach(function(el) {
-    console.log("event")
     el.on('play', function() {
       console.log('Played the video');
       woopra.track('Playing Video Rewievs', {
