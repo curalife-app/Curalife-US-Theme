@@ -83,12 +83,12 @@
 
   let players = [player1, player2, player3, player4];
   
-  players.forEach(function(el) {
+  players.forEach(function(el, index) {
     el.on('play', function() {
       console.log('Played the video');
       woopra.track('Playing Video Rewievs', {
        section: "Customers Reviews Of CuraLin",
-       video_order: el.index() + 1
+       video_order: index + 1
 
       })
     });
