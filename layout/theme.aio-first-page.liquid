@@ -202,7 +202,6 @@
       runAfterElementExists(".btn-cta", function () {
         
         $(".btn-cta").click(function() {
-          console.log("element clicked")
           woopra.track('Click CTA', {
             button_title: $(this).text()
           });
