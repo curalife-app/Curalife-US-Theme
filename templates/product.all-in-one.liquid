@@ -739,7 +739,7 @@
 
     woopra.track('Ing Icon Click', {
       ing_order: ingIndex,
-      ing_title: $(".ingredients-section .ingredients-main-slider .swiper-slide").get().find(".ingredient-title").text()
+      ing_title: $(".ingredients-section .ingredients-main-slider .swiper-slide").get(realIndex).find(".ingredient-title").text()
     });
   })
 
