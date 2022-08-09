@@ -720,13 +720,18 @@
 
 <!-- Woopra Tracking -->
 <script>
+
+  $('.video-review').click(function(){
+    console.log('Clicked video')
+  });
+
   $('.thumbs-img').click(function() {
     woopra.track('Product Image Click', {});
   });
 
   $('.swiper-button-prev, swiper-button-next').click(function() {
     woopra.track('Product Arrow Click', {});
-    
+
   });
 
   $('#back-to-top-btn').click(function() {
