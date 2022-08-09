@@ -738,7 +738,6 @@
 <!-- Woopra Tracking -->
 <script>
 
-
  // Play Video
  runAfterElementExists(".player", function () {
    $(".player").click(function() {
@@ -752,6 +751,14 @@
       phone_number: $(this).find("a").find("p").text() 
     });
   });
+
+  // Open FAQ
+  $('.question').click(function() {
+     woopra.track('Open FAQ', {
+       question_display_text: $(this).children("h4").text(),
+       question_order:  $(this).parents("li").index() + 1
+     })
+   });
 
 
   $('.thumbs-img').click(function() {
