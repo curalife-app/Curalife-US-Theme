@@ -743,9 +743,10 @@
   })
 
   $(".swiper-button-prev, .swiper-nav").click(function(){
-    
+    let ingIndex = $(this).attr("aria-label");
+    let realIndex = ingIndex.charAt(0) - 1;
     woopra.track('Ing Arrow Left Click', {
-    
+      ingTitle:  $(".ingredients-section .ingredients-main-slider .swiper-slide").get(realIndex).querySelectorAll(".ingredient-title")[0].innerHTML
     });
   })
 
