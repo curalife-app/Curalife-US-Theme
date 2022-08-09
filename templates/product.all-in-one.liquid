@@ -756,7 +756,7 @@
   $('.question').click(function() {
      woopra.track('Open FAQ', {
        question_display_text: $(this).text(),
-       question_order:  $(this).parents("li").index() + 1
+       question_order:  $(this).index() + 1
      })
    });
 
