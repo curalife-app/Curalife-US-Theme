@@ -742,11 +742,17 @@
     });
   })
 
-  $(".swiper-nav").click(function(){
-    console.log("clicked")
-    woopra.track('Ing Arrow Click', {
-      button_side_left: $(".swiper-button-prev"),
-      button_side_fight: $(".swiper-button-next"), 
+  $(".swiper-button-prev, .swiper-nav").click(function(){
+    
+    woopra.track('Ing Arrow Left Click', {
+    
+    });
+  })
+
+  $(".swiper-button-next, .swiper-nav").click(function(){
+
+    woopra.track('Ing Arrow Right Click', {
+
     });
   })
 
