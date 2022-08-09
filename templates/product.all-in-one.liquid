@@ -732,10 +732,11 @@
     woopra.track('Scroll To Top Click', {});
   });
 
-  $(".ingredient, .swiper-slide").click(function() {
-   
+  $(".ingredients-thumbs-slider .ingredient").click(function() {
+   let ingIndex = $(this).attr("aria-label");
    woopra.track('Ing Small Icon Click', {
-    icon_order_number: $(this).attr("aria-label"),
+    ing_order: ingIndex,
+    ing_title: $(".ingredients-main-slider .swiper-slide:nth-child("+ingIndex+")").find(".ingredient-title").text()
    });
   })
 
