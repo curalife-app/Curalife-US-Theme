@@ -198,6 +198,15 @@
         })
       })
 
+      //Cta-button
+      runAfterElementExists(".btn-cta", function () {
+        $(".btn-cta").click(function() {
+          woopra.track('Click_CTA', {
+            
+          });
+        })
+      })
+
       // Open FAQ
       $('.question').click(function() {
         woopra.track('Open FAQ', {
