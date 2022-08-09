@@ -199,10 +199,10 @@
       })
 
       //Cta-button
-      runAfterElementExists(".survey-button", function () {
-        $(".survey-button").click(function() {
+      runAfterElementExists(".btn-cta", function () {
+        $(".btn-cta").click(function() {
           woopra.track('Click_CTA', {
-            button_title: $(this).find(".btn-cta").text()
+            button_title: $(this).text()
           });
         })
       })
