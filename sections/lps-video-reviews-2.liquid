@@ -196,10 +196,7 @@
   var player4 = new Vimeo.Player(document.querySelector('#review-video-4'));
 
   let players = [player1, player2, player3, player4];
-
-  player1.on('play', function() {
-    console.log('Played the video');
-  });
+  console.log(players);
 
   players.forEach(function(el) {
     console.log("event")
