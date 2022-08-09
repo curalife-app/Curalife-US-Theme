@@ -189,6 +189,15 @@
         })
       })
 
+      runAfterElementExists(".testimonials_iframe", function () {
+        $(".testimonials_iframe").click(function() {
+          woopra.track('Play Video', {
+            video_id: $(this).find("lite-vimeo").attr("videoid"),
+            video_title: $(this).siblings(".testimonial-headline").find("h2").text(),
+          });
+        })
+      })
+
       // Open FAQ
       $('.question').click(function() {
         woopra.track('Open FAQ', {
