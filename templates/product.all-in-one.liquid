@@ -744,6 +744,10 @@
 
   $(".swiper-nav").click(function(){
     console.log("clicked")
+    woopra.track('Ing Arrow Click', {
+      button_side_left: $(".swiper-button-prev"),
+      button_side_fight: $(".swiper-button-next"), 
+    });
   })
 
 </script>
