@@ -197,6 +197,10 @@
 
   let players = [player1, player2, player3, player4];
 
+  player1.on('play', function() {
+    console.log('Played the video');
+  });
+
   players.forEach(function(el) {
     console.log("event")
     el.on('play', function() {
