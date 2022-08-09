@@ -733,9 +733,15 @@
   });
 
   $(".ingredient, .swiper-slide").click(function() {
-    console.log("ingridient clicked")
+   
    woopra.track('Ing Small Icon Click', {
     icon_order_number: $(this).attr("aria-label"),
+   });
+  })
+  $(".ingredients, .swiper-wrapper").click(function() {
+    console.log("big ingridient clicked")
+   woopra.track('Ing Big Icon Click', {
+    icon_big_order_number: $(this).find(".swiper-slide").attr("aria-label"),
    });
   })
 </script>
