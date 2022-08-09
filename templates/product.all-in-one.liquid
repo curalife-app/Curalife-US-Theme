@@ -790,6 +790,14 @@
 
   });
 
+  
+  $('.ingredients-main-slider').click(function() {
+    woopra.track('Arrow Click', {
+      section: "Ingredients"
+    });
+
+  });
+
   $('#back-to-top-btn').click(function() {
     woopra.track('Scroll To Top Click', {});
   });
