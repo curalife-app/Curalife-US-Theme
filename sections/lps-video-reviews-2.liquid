@@ -58,6 +58,40 @@
   </div>
 </section>
 
+<script>
+  videoReviewsSliderAllInOne = new Swiper('.video-reviews-section .swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      grabCursor: true,
+      slideToClickedSlide: true,
+      loop: false,
+      navigation: {
+          nextEl: '.video-reviews-section .swiper-button-next',
+          prevEl: '.video-reviews-section .swiper-button-prev',
+          disabledClass: 'disabled'
+      }
+  });
+</script>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  var player1 = new Vimeo.Player(document.querySelector('#review-video-1'));
+  var player2 = new Vimeo.Player(document.querySelector('#review-video-2'));
+  var player3 = new Vimeo.Player(document.querySelector('#review-video-3'));
+  var player4 = new Vimeo.Player(document.querySelector('#review-video-4'));
+
+  let players = [player1, player2, player3, player4];
+  console.log(players);
+
+  players.forEach(function(el) {
+    console.log("event")
+    el.on('play', function() {
+      console.log('Played the video');
+    });
+  });
+</script>
+
 <style>
   .video-reviews-section {
     padding: 50px 0;
@@ -171,37 +205,3 @@
     }
   }
 </style>
-
-<script>
-  videoReviewsSliderAllInOne = new Swiper('.video-reviews-section .swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      centeredSlides: true,
-      grabCursor: true,
-      slideToClickedSlide: true,
-      loop: false,
-      navigation: {
-          nextEl: '.video-reviews-section .swiper-button-next',
-          prevEl: '.video-reviews-section .swiper-button-prev',
-          disabledClass: 'disabled'
-      }
-  });
-</script>
-
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script>
-  var player1 = new Vimeo.Player(document.querySelector('#review-video-1'));
-  var player2 = new Vimeo.Player(document.querySelector('#review-video-2'));
-  var player3 = new Vimeo.Player(document.querySelector('#review-video-3'));
-  var player4 = new Vimeo.Player(document.querySelector('#review-video-4'));
-
-  let players = [player1, player2, player3, player4];
-  console.log(players);
-
-  players.forEach(function(el) {
-    console.log("event")
-    el.on('play', function() {
-      console.log('Played the video');
-    });
-  });
-</script>
