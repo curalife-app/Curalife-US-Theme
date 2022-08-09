@@ -734,7 +734,11 @@
 
   $(".ingredient, .swiper-slide").click(function() {
     console.log("ingridient clicked")
-   
+   woopra.track('Ing Small Icon Click', {
+    icon_order_number: $(this).attr("aria-label"),
+    icon_name: $(this).siblings(".ingredient-title").text(),
+
+   });
   })
 </script>
 
