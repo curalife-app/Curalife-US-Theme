@@ -1,13 +1,13 @@
 <section class="video-reviews-section">
   <div class="container">
-    <h2>{{ maintitle }}</h2>
+    <h2>Customers Reviews Of CuraLin</h2>
     <div class="video-reviews swiper">
       <div class="swiper-button-prev"></div>
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="video-review">
             <div class="review-video">
-              <iframe src="https://player.vimeo.com/video/662207384?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+              <iframe id="review-video-1" src="https://player.vimeo.com/video/662207384?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
             </div>
             <div class="review-quote">
               <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
@@ -19,7 +19,7 @@
         <div class="swiper-slide">
           <div class="video-review">
             <div class="review-video">
-              <iframe src="https://player.vimeo.com/video/562754760?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+              <iframe id="review-video-2" src="https://player.vimeo.com/video/562754760?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
             </div>
             <div class="review-quote">
               <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
@@ -31,7 +31,7 @@
         <div class="swiper-slide">
           <div class="video-review">
             <div class="review-video">
-              <iframe src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+              <iframe id="review-video-3" src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
             </div>
             <div class="review-quote">
               <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
@@ -43,7 +43,7 @@
         <div class="swiper-slide">
           <div class="video-review">
             <div class="review-video">
-              <iframe src="https://player.vimeo.com/video/562754846?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+              <iframe id="review-video-4" src="https://player.vimeo.com/video/562754846?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
             </div>
             <div class="review-quote">
               <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
@@ -57,6 +57,40 @@
     </div>
   </div>
 </section>
+
+<script>
+  videoReviewsSliderAllInOne = new Swiper('.video-reviews-section .swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      grabCursor: true,
+      slideToClickedSlide: true,
+      loop: false,
+      navigation: {
+          nextEl: '.video-reviews-section .swiper-button-next',
+          prevEl: '.video-reviews-section .swiper-button-prev',
+          disabledClass: 'disabled'
+      }
+  });
+</script>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  var player1 = new Vimeo.Player(document.querySelector('#review-video-1'));
+  var player2 = new Vimeo.Player(document.querySelector('#review-video-2'));
+  var player3 = new Vimeo.Player(document.querySelector('#review-video-3'));
+  var player4 = new Vimeo.Player(document.querySelector('#review-video-4'));
+
+  let players = [player1, player2, player3, player4];
+  console.log(players);
+
+  players.forEach(function(el) {
+    console.log("event")
+    el.on('play', function() {
+      console.log('Played the video');
+    });
+  });
+</script>
 
 <style>
   .video-reviews-section {
@@ -114,8 +148,7 @@
     opacity: .1;
     width: 70px;
     position: absolute;
-    left: 30px;
-    top: 20px;
+    left: 50px;
   }
 
   .video-reviews-section .video-reviews .video-review .review-quote .quote-author {
@@ -172,19 +205,3 @@
     }
   }
 </style>
-
-<script>
-  videoReviewsSliderAllInOne = new Swiper('.video-reviews-section .swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      centeredSlides: true,
-      grabCursor: true,
-      slideToClickedSlide: true,
-      loop: false,
-      navigation: {
-          nextEl: '.video-reviews-section .swiper-button-next',
-          prevEl: '.video-reviews-section .swiper-button-prev',
-          disabledClass: 'disabled'
-      }
-  });
-</script>
