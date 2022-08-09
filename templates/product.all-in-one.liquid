@@ -718,12 +718,27 @@
   });
 </script>
 
+<script>
+  function runAfterElementExists(jquery_selector, callback) {
+    var checker = window.setInterval(function () {
+      if ($(jquery_selector).length) {
+        clearInterval(checker);
+        callback();
+      }
+    }, 200);
+  }
+</script>
+
 <!-- Woopra Tracking -->
 <script>
 
-  $('.vp-target').click(function(){
-    console.log('Clicked video')
-  });
+$(document).ready(function () {
+ // Play Video
+ runAfterElementExists(".player", function () {
+   $(".player").click(function() {
+    console.log("playing")
+   })
+ })
 
   $('.thumbs-img').click(function() {
     woopra.track('Product Image Click', {});
