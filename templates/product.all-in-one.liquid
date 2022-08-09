@@ -732,13 +732,13 @@
     woopra.track('Scroll To Top Click', {});
   });
 
-  $(".ingredients-thumbs-slider .ingredient").click(function() {
+  $(".ingredients-section .ingredients-thumbs-slider .ingredient").click(function() {
     let ingIndex = $(this).attr("aria-label");
-    console.log($(".ingredients-main-slider .swiper-slide"))
+    console.log($(".ingredients-section .ingredients-main-slider .swiper-slide"))
 
     woopra.track('Ing Icon Click', {
       ing_order: ingIndex,
-      ing_title: $(".ingredients-main-slider .swiper-slide").get(ingIndex - 1).find(".ingredient-title").text()
+      ing_title: $(".ingredients-section .ingredients-main-slider .swiper-slide").get(ingIndex - 1).find(".ingredient-title").text()
     });
   })
 
