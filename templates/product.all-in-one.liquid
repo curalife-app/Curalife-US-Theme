@@ -734,7 +734,7 @@
 
   $(".ingredients-section .ingredients-thumbs-slider .ingredient").click(function() {
     let ingIndex = $(this).attr("aria-label");
-    console.log($(".ingredients-section .ingredients-main-slider .swiper-slide"))
+    console.log($(".ingredients-section .ingredients-main-slider .swiper-slide")[ingIndex])
 
     woopra.track('Ing Icon Click', {
       ing_order: ingIndex,
