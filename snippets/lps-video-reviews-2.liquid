@@ -85,7 +85,7 @@
   
   players.forEach(function(el, index) {
     el.on('play', function() {
-      console.log('Played the video');
+      console.log('Played the video' + index);
       woopra.track('Playing Video Rewievs', {
        section: "Customers Reviews Of CuraLin",
        video_order: index + 1
