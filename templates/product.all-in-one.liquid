@@ -828,6 +828,22 @@
 
 </script>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  var player1 = new Vimeo.Player(document.querySelector('iframe'));
+  var player2 = new Vimeo.Player(document.querySelector('iframe'));
+  var player3 = new Vimeo.Player(document.querySelector('iframe'));
+  var player4 = new Vimeo.Player(document.querySelector('iframe'));
+
+  let players = [player1, player2, player3, player4];
+
+  players.forEach(function(el) {
+    el.on('play', function() {
+      console.log('Played the video');
+    });
+  }
+</script>
+
 <style>
   body {
     padding-top: 0 !important;
