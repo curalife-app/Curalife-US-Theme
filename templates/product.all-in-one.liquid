@@ -835,6 +835,10 @@
   var player3 = new Vimeo.Player(document.querySelector('iframe'));
   var player4 = new Vimeo.Player(document.querySelector('iframe'));
 
+  player1.on('play', function() {
+    console.log('Played the video');
+  });
+
   let players = [player1, player2, player3, player4];
 
   players.forEach(function(el) {
@@ -843,6 +847,8 @@
       console.log('Played the video');
     });
   });
+
+  
 </script>
 
 <style>
