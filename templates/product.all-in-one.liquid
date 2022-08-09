@@ -732,13 +732,21 @@
 <!-- Woopra Tracking -->
 <script>
 
-$(document).ready(function () {
+
  // Play Video
  runAfterElementExists(".player", function () {
    $(".player").click(function() {
     console.log("playing")
    })
  })
+
+ //Phone-click
+
+ 
+ $('.phone-number').click(function() {
+    woopra.track('Phone Click Event', {});
+  });
+
 
   $('.thumbs-img').click(function() {
     woopra.track('Product Image Click', {});
