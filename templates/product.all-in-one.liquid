@@ -782,6 +782,14 @@
 
   });
 
+  
+  $('.next, .prev').click(function() {
+    woopra.track('Arrow Click', {
+      section: "Over 3000 5 Star Reviews"
+    });
+
+  });
+
   $('#back-to-top-btn').click(function() {
     woopra.track('Scroll To Top Click', {});
   });
