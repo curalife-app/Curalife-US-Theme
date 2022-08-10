@@ -198,14 +198,19 @@
         })
       })
 
-      //Cta-button
-          
-        $(".btn-cta").click(function() {
-          woopra.track('Click CTA', {
-            button_title: $(this).text()
-          });
-        })
-   
+      //Cta-button     
+      $(".btn-cta").click(function() {
+        var href = this.href;
+
+        // Don't follow the link
+        event.preventDefault();
+
+        woopra.track('Click CTA', {
+          button_title: $(this).text()
+        });
+
+        window.location = href;
+      })
 
       // Open FAQ
       $('.question').click(function() {
