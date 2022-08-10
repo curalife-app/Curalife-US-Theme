@@ -201,15 +201,15 @@
       //Cta-button     
       $(".btn-cta").click(function() {
         var href = this.href;
-
-        // Don't follow the link
         event.preventDefault();
 
-        woopra.track('Click CTA', {
-          button_title: $(this).text()
+        // Track before directing to link
+        startSomeAsyncThing(function() {
+            woopra.track('Click CTA', {
+              button_title: $(this).text()
+            });
+            window.location = href;
         });
-
-        window.location = href;
       })
 
       // Open FAQ
