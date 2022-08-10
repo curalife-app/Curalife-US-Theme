@@ -198,6 +198,16 @@
         })
       })
 
+      //Cta-button
+      runAfterElementExists(".btn-cta", function () {
+        
+        $(".btn-cta").click(function() {
+          woopra.track('Click CTA', {
+            button_title: $(this).text()
+          });
+        })
+      })
+
       // Open FAQ
       $('.question').click(function() {
         woopra.track('Open FAQ', {
