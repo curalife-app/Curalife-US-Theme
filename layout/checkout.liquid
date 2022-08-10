@@ -163,6 +163,7 @@
         }
 
         function allStages() {
+          jQuery(".breadcrumb li:nth-child(2) .breadcrumb__text").html("Customer");
           jQuery(".product__description__name").html(jQuery(".product__description__variant").html());
           jQuery(".product__description__variant").html(jQuery("#current-variant-capsules").html());
           jQuery(".sidebar-extentions").insertAfter(".order-summary__section--total-lines");
@@ -175,7 +176,6 @@
         }
 
         function informationStage() {
-          jQuery(".breadcrumb li:nth-child(2) .breadcrumb__text").html("Customer");
           jQuery("label[for='smsbump-checkout-messages-subscription'] span").html("Get free SMS order status updates");
           if (jQuery("label[for='smsbump-checkout-messages-subscription']").length) {
             var replacer = jQuery("label[for='smsbump-checkout-messages-subscription']").html().replace("YES - I want Free SMS order updates on my order, shipping status, and exclusive discounts","I want free order status updates by SMS, and to be notified when CuraLin is on sale");
@@ -191,14 +191,12 @@
         }
 
         function shippingStage() {
-          jQuery(".breadcrumb li:nth-child(2) .breadcrumb__link").html("Customer");
           jQuery("#shipping-method").addClass('active');
           jQuery(".tc").hide();
           $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Customer")').attr("href") + '"></a>');
         }
 
         function paymentStage() {
-          jQuery(".breadcrumb li:nth-child(2) .breadcrumb__link").html("Customer");
           jQuery("#shipping-method").addClass('active');
           jQuery("#payment-method").addClass('active');
           jQuery(".tc").hide();
