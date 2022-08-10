@@ -204,13 +204,11 @@
         var href = this.href;
         event.preventDefault();
 
-        // Track before directing to link
-        startSomeAsyncThing(function() {
-            woopra.track('Click CTA', {
-              button_title: $(this).text()
-            });
-            window.location = href;
+        woopra.track('Click CTA', {
+          button_title: $(this).text()
         });
+
+        window.location = href;
       })
 
       // Open FAQ
