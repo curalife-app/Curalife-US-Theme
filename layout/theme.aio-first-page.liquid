@@ -201,7 +201,7 @@
       //Cta-button
       runAfterElementExists(".btn-cta", function () {
         
-        $(".btn-cta, .survey-button").click(function() {
+        $(".btn-cta").click(function() {
           woopra.track('Click CTA', {
             button_title: $(this).text()
           });
