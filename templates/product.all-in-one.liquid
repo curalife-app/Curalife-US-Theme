@@ -749,10 +749,10 @@
   });
 
   // Open FAQ
-  $('.question').click(function() {
+  $('.faq').click(function() {
    woopra.track('Open FAQ', {
-     question_display_text: $(this).text(),
-     question_order:  $(this).index() + 1
+     question_display_text: $(this).children('.question').text(),
+     question_order:  $(this).children('.faq-item').index() + 1
    })
    });
 
