@@ -752,7 +752,7 @@
   $('.question').click(function() {
    woopra.track('Open FAQ', {
      question_display_text: $(this).text(),
-     question_order:  $(this).index() + 1
+     question_order:  $(this).parents('.faq-item').index() + 1
    })
    });
 
@@ -771,7 +771,7 @@
 
   });
 
-  $('.swiper-button-next, .swiper-button-prev').click(function() {
+  $('.video-reviews').click(function() {
   woopra.track('Arrow Click', {
     section: "Video with Curalin Stories"
   });
