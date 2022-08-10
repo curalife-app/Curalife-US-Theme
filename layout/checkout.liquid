@@ -167,16 +167,6 @@
           jQuery(".product__description__variant").html(jQuery("#current-variant-capsules").html());
           jQuery(".sidebar-extentions").insertAfter(".order-summary__section--total-lines");
 
-          if (!/[?&]upgraded=true/.test(location.search)) {
-            jQuery(".upgrade-box").insertAfter("#order-summary__scroll-indicator");
-            jQuery(".upgrade-box").css('display', 'block');
-          }
-
-          // Check Radio Button on Variant Box Click
-          jQuery(".upgrade-choice").click(function() {
-              jQuery(this).find('input[type=radio]').prop('checked', true);
-          })
-
           let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
           if (isMobile) {
