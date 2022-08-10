@@ -135,100 +135,98 @@
     {{ tracking_code }}
 
     <script>
-      if (/[?&]optimized=true/.test(location.search)) {
-        function setUserInfo() {
-          sessionStorage.setItem('user-email', jQuery("#checkout_email").val()); 
-          sessionStorage.setItem('user-fname', jQuery("#checkout_shipping_address_first_name").val()); 
-          sessionStorage.setItem('user-lname', jQuery("#checkout_shipping_address_last_name").val()); 
-          sessionStorage.setItem('user-address1', jQuery("#checkout_shipping_address_address1").val()); 
-          sessionStorage.setItem('user-address2', jQuery("#checkout_shipping_address_address2").val()); 
-          sessionStorage.setItem('user-city', jQuery("#checkout_shipping_address_city").val()); 
-          sessionStorage.setItem('user-zip', jQuery("#checkout_shipping_address_zip").val()); 
-          sessionStorage.setItem('user-country', jQuery("#checkout_shipping_address_country").val()); 
-          sessionStorage.setItem('user-province', jQuery("#checkout_shipping_address_province").val());  
-          sessionStorage.setItem('user-phone', jQuery("#checkout_shipping_address_phone").val());
+      function setUserInfo() {
+        sessionStorage.setItem('user-email', jQuery("#checkout_email").val()); 
+        sessionStorage.setItem('user-fname', jQuery("#checkout_shipping_address_first_name").val()); 
+        sessionStorage.setItem('user-lname', jQuery("#checkout_shipping_address_last_name").val()); 
+        sessionStorage.setItem('user-address1', jQuery("#checkout_shipping_address_address1").val()); 
+        sessionStorage.setItem('user-address2', jQuery("#checkout_shipping_address_address2").val()); 
+        sessionStorage.setItem('user-city', jQuery("#checkout_shipping_address_city").val()); 
+        sessionStorage.setItem('user-zip', jQuery("#checkout_shipping_address_zip").val()); 
+        sessionStorage.setItem('user-country', jQuery("#checkout_shipping_address_country").val()); 
+        sessionStorage.setItem('user-province', jQuery("#checkout_shipping_address_province").val());  
+        sessionStorage.setItem('user-phone', jQuery("#checkout_shipping_address_phone").val());
+      }
+
+      function getUserInfo() {
+        jQuery("#checkout_email").val(sessionStorage.getItem('user-email')); 
+        jQuery("#checkout_shipping_address_first_name").val(sessionStorage.getItem('user-fname')); 
+        jQuery("#checkout_shipping_address_last_name").val(sessionStorage.getItem('user-lname')); 
+        jQuery("#checkout_shipping_address_address1").val(sessionStorage.getItem('user-address1')); 
+        jQuery("#checkout_shipping_address_address2").val(sessionStorage.getItem('user-address2')); 
+        jQuery("#checkout_shipping_address_city").val(sessionStorage.getItem('user-city')); 
+        jQuery("#checkout_shipping_address_zip").val(sessionStorage.getItem('user-zip')); 
+        jQuery("#checkout_shipping_address_country").val(sessionStorage.getItem('user-country')); 
+        jQuery("#checkout_shipping_address_province").val(sessionStorage.getItem('user-province')); 
+        jQuery("#checkout_shipping_address_phone").val(sessionStorage.getItem('user-phone')); 
+      }
+
+      function allStages() {
+        jQuery(".breadcrumb li:nth-child(2) .breadcrumb__text").html("Customer");
+        jQuery(".product__description__name").html(jQuery(".product__description__variant").html());
+        jQuery(".product__description__variant").html(jQuery("#current-variant-capsules").html());
+        jQuery(".sidebar-extentions").insertAfter(".order-summary__section--total-lines");
+
+        let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+        if (isMobile) {
+          jQuery(".reviews").insertAfter("#payment-badges");
         }
+      }
 
-        function getUserInfo() {
-          jQuery("#checkout_email").val(sessionStorage.getItem('user-email')); 
-          jQuery("#checkout_shipping_address_first_name").val(sessionStorage.getItem('user-fname')); 
-          jQuery("#checkout_shipping_address_last_name").val(sessionStorage.getItem('user-lname')); 
-          jQuery("#checkout_shipping_address_address1").val(sessionStorage.getItem('user-address1')); 
-          jQuery("#checkout_shipping_address_address2").val(sessionStorage.getItem('user-address2')); 
-          jQuery("#checkout_shipping_address_city").val(sessionStorage.getItem('user-city')); 
-          jQuery("#checkout_shipping_address_zip").val(sessionStorage.getItem('user-zip')); 
-          jQuery("#checkout_shipping_address_country").val(sessionStorage.getItem('user-country')); 
-          jQuery("#checkout_shipping_address_province").val(sessionStorage.getItem('user-province')); 
-          jQuery("#checkout_shipping_address_phone").val(sessionStorage.getItem('user-phone')); 
+      function informationStage() {
+        jQuery("label[for='smsbump-checkout-messages-subscription'] span").html("Get free SMS order status updates");
+        if (jQuery("label[for='smsbump-checkout-messages-subscription']").length) {
+          var replacer = jQuery("label[for='smsbump-checkout-messages-subscription']").html().replace("YES - I want Free SMS order updates on my order, shipping status, and exclusive discounts","I want free order status updates by SMS, and to be notified when CuraLin is on sale");
+          jQuery("label[for='smsbump-checkout-messages-subscription']").html(replacer);
         }
+        jQuery("label[for='checkout_remember_me']").html("Save my details for a faster shopping experience");
+        jQuery("label[for='checkout_buyer_accepts_marketing']").html("Send me emails about my order status, keep me up to date on discounts and educational content.");
+        getUserInfo();
 
-        function allStages() {
-          jQuery(".breadcrumb li:nth-child(2) .breadcrumb__text").html("Customer");
-          jQuery(".product__description__name").html(jQuery(".product__description__variant").html());
-          jQuery(".product__description__variant").html(jQuery("#current-variant-capsules").html());
-          jQuery(".sidebar-extentions").insertAfter(".order-summary__section--total-lines");
+        jQuery("#continue_button").click(function() {
+          setUserInfo();
+        });
+      }
 
-          let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+      function shippingStage() {
+        jQuery("#shipping-method").addClass('active');
+        jQuery(".tc").hide();
+        $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Customer")').attr("href") + '"></a>');
+      }
 
-          if (isMobile) {
-              jQuery(".reviews").insertAfter("#payment-badges");
-          }
-        }
+      function paymentStage() {
+        jQuery("#shipping-method").addClass('active');
+        jQuery("#payment-method").addClass('active');
+        jQuery(".tc").hide();
+        jQuery(".content-box__row .review-block").last().hide();
+        $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Customer")').attr("href") + '"></a>');
+        $('#shipping-method').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Shipping")').attr("href") + '"></a>');
+      }
 
-        function informationStage() {
-          jQuery("label[for='smsbump-checkout-messages-subscription'] span").html("Get free SMS order status updates");
-          if (jQuery("label[for='smsbump-checkout-messages-subscription']").length) {
-            var replacer = jQuery("label[for='smsbump-checkout-messages-subscription']").html().replace("YES - I want Free SMS order updates on my order, shipping status, and exclusive discounts","I want free order status updates by SMS, and to be notified when CuraLin is on sale");
-            jQuery("label[for='smsbump-checkout-messages-subscription']").html(replacer);
-          }
-          jQuery("label[for='checkout_remember_me']").html("Save my details for a faster shopping experience");
-          jQuery("label[for='checkout_buyer_accepts_marketing']").html("Send me emails about my order status, keep me up to date on discounts and educational content.");
-          getUserInfo();
+      let searchParams = new URLSearchParams(window.location.search);
+      let currentStep = searchParams.get('step') ? searchParams.get('step') : jQuery(".breadcrumb__item--current span").text();
 
-          jQuery("#continue_button").click(function() {
-            setUserInfo();
-          });
-        }
+      allStages();
 
-        function shippingStage() {
-          jQuery("#shipping-method").addClass('active');
-          jQuery(".tc").hide();
-          $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Customer")').attr("href") + '"></a>');
-        }
+      switch (currentStep) {
+        case 'contact_information':
+        case 'Information':
+          informationStage();
+          break;
+        case 'shipping_method':
+        case 'Shipping':
+          shippingStage();
+          break;
+        case 'payment_method':
+        case 'Payment':
+          paymentStage();
+          break;
+      }
 
-        function paymentStage() {
-          jQuery("#shipping-method").addClass('active');
-          jQuery("#payment-method").addClass('active');
-          jQuery(".tc").hide();
-          jQuery(".content-box__row .review-block").last().hide();
-          $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Customer")').attr("href") + '"></a>');
-          $('#shipping-method').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Shipping")').attr("href") + '"></a>');
-        }
-
-        let searchParams = new URLSearchParams(window.location.search);
-        let currentStep = searchParams.get('step') ? searchParams.get('step') : jQuery(".breadcrumb__item--current span").text();
-
-        allStages();
-
-        switch (currentStep) {
-          case 'contact_information':
-          case 'Information':
-            informationStage();
-            break;
-          case 'shipping_method':
-          case 'Shipping':
-            shippingStage();
-            break;
-          case 'payment_method':
-          case 'Payment':
-            paymentStage();
-            break;
-        }
-
-        sessionStorage.setItem('paypal', 'hide');
-        if (sessionStorage.getItem('paypal') == 'hide') {
-          $("[data-alternative-payments]").hide();
-        }
+      sessionStorage.setItem('paypal', 'hide');
+      if (sessionStorage.getItem('paypal') == 'hide') {
+        $("[data-alternative-payments]").hide();
       }
     </script>
 
