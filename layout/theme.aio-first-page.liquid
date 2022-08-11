@@ -211,14 +211,12 @@
   <!-- Cta Buttons -->
   <script>
     console.log("yotam")
-    window.linkToProd = async function(url) {
+    async function LinkToProduct(url) {
       await woopra.track('Click CTA', {
         button_title: $(this).text()
       });
 
       window.location.href = url;
-
-      return true;
     }
   </script>
 
