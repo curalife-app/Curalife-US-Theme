@@ -205,7 +205,7 @@
    let href = event.target.getAttribute('href')
 
    event.preventDefault();
-
+ 
    await woopra.track('Click CTA', {
      button_title: $(this).text()
    });
