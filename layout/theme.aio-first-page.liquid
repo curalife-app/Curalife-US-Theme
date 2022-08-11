@@ -211,7 +211,7 @@
       //   window.location = href;
       // })
 
-      $(".btn-cta").click(async function(){
+      $(".btn-cta").click(async () =>{
         await woopra.track('Click CTA', {
           section: "async cta",
           button_title: $(this).text()
