@@ -221,7 +221,7 @@
 
   <!-- Cta Buttons -->
   <script>
-    function LinkToProduct() {
+    function LinkToProduct(url) {
       await woopra.track('Click CTA', {
         button_title: $(this).text()
       });
