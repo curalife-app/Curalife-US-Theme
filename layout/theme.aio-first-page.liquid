@@ -199,19 +199,14 @@
         })
       })
 
-     
- // Cta Buttons    
-   $(".btn-cta").click(async function(event) {
-     let href = event.target.getAttribute('href')
+      // Cta Buttons    
+      function LinkToProduct(url) {
+        await woopra.track('Click CTA', {
+          button_title: $(this).text()
+        });
 
-    event.preventDefault();
-    
-    await woopra.track('Click CTA', {
-      button_title: $(this).text()
-    });
-
-    window.location.href = href;
- })
+        window.location.href = url;
+      }
 
       // Open FAQ
       $('.question').click(function() {
