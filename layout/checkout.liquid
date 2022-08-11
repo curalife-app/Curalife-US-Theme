@@ -84,10 +84,6 @@
           </div>
           <div class="yotpo-widget-instance" data-yotpo-instance-id="35419"></div>
 
-          {% assign currentVariantBottlesQuantity = currentVariant.metafields.my_fields.pack_bottles_quantity %}
-          {% assign currentVariantCapsulesQuantity = currentVariant.metafields.my_fields.capsules_quantity %}
-          <span id="current-variant-capsules" style="display:none;">{%if currentVariantBottlesQuantity > 1%}{{currentVariantBottlesQuantity}}X{%endif%}{{currentVariantCapsulesQuantity | divided_by: currentVariantBottlesQuantity}} CAPSULES</span>
-
           <div class="sidebar-extentions">
             <div id="trust-badges" class="trust-badges">
               <div class="badge">
@@ -163,8 +159,6 @@
 
       function allStages() {
         jQuery(".breadcrumb li:nth-child(2) .breadcrumb__text").html("Customer");
-        jQuery(".product__description__name").html(jQuery(".product__description__variant").html());
-        jQuery(".product__description__variant").html(jQuery("#current-variant-capsules").html());
         jQuery(".sidebar-extentions").insertAfter(".order-summary__section--total-lines");
 
         let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
