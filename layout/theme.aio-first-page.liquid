@@ -150,10 +150,10 @@
 
   <!-- RAF -->
   <script>
-    let urlParameters = new URLSearchParams(window.location.search);
-    let linksAddition = urlParameters.get('utm_campaign');
+    let urlParameter = new URLSearchParams(window.location.search);
+    let linksAddition = urlParameter.get('utm_campaign');
 
-    if (urlParameters.get('utm_campaign') == 'referral_program') {
+    if (urlParameter.get('utm_campaign') == 'referral_program') {
       setTimeout(function () {
         $('a.btn-cta').each(function() {
           $(this).attr('href', $(this).attr('href').split('?')[0]);
