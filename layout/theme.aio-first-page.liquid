@@ -175,10 +175,20 @@
     }
   </script>
 
+  
+
   <!-- Woopra Events -->
   <script>
+    // Cta Buttons    
+    function LinkToProduct(url) {
+      await woopra.track('Click CTA', {
+        button_title: $(this).text()
+      });
+
+      window.location.href = url;
+    }
+    
     $(document).ready(function () {
-     
       // Play Video
       runAfterElementExists(".video-player", function () {
         $(".video-player").click(function() {
@@ -198,15 +208,6 @@
           });
         })
       })
-
-      // Cta Buttons    
-      function LinkToProduct(url) {
-        await woopra.track('Click CTA', {
-          button_title: $(this).text()
-        });
-
-        window.location.href = url;
-      }
 
       // Open FAQ
       $('.question').click(function() {
