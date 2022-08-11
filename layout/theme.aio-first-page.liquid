@@ -200,15 +200,13 @@
       })
 
       // Cta Buttons    
-      $(".btn-cta").click(async function() {
+      function LinkToProduct(url) {
         await woopra.track('Click CTA', {
           button_title: $(this).text()
         });
 
-        window.location.href = "/products/curalin-pack-3";
-      })
-
-
+        window.location.href = url;
+      }
 
       // Open FAQ
       $('.question').click(function() {
