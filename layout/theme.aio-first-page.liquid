@@ -201,13 +201,15 @@
 
       // Cta Buttons    
       $(".btn-cta").click(async function(event) {
+        let href = event.target.getAttribute('href')
+
         event.preventDefault();
 
-        let woopraEvent = await woopra.track('Click CTA', {
+        await woopra.track('Click CTA', {
           button_title: $(this).text()
         });
 
-        return woopraEvent;
+        window.location.href = href;
       })
 
       // Open FAQ
