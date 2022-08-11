@@ -201,15 +201,13 @@
 
       // Cta Buttons    
       $(".btn-cta").click(async function(event) {
-        let href = event.target.getAttribute('href')
-
         event.preventDefault();
 
         await woopra.track('Click CTA', {
           button_title: $(this).text()
         });
 
-        window.location.href = href;
+        window.location.href = "/products/curalin-pack-3";
       })
 
 
