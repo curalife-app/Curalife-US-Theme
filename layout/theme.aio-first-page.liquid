@@ -208,7 +208,7 @@
         await woopra.track('Click CTA', {
           button_title: $(this).text(),
           
-          parent: $(this).parent().closest('.div')
+          parent: $(this).parent().attr('.div')
         });
 
         window.location.href = href;
