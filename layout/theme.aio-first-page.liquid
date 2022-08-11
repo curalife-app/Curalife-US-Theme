@@ -211,7 +211,7 @@
   <!-- Cta Buttons -->
   <script>
     console.log("yotam")
-    window.linkToProd = function(url) {
+    window.linkToProd = async function(url) {
       await woopra.track('Click CTA', {
         button_title: $(this).text()
       });
