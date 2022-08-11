@@ -200,7 +200,9 @@
       })
 
       // Cta Buttons    
-      $(".btn-cta").click(async function() {
+      $(".btn-cta").click(async function(event) {
+        event.preventDefault;
+
         setTimeout(()=>{
           let woopraEvent = await woopra.track('Click CTA', {
             button_title: $(this).text()
