@@ -219,6 +219,17 @@
     })
   </script>
 
+  <!-- Cta Buttons -->
+  <script>
+    function LinkToProduct() {
+      await woopra.track('Click CTA', {
+        button_title: $(this).text()
+      });
+
+      window.location.href = url;
+    }
+  </script>
+
   {% render 'layout.footer.woopra-snippet' %}
 
 <style>
