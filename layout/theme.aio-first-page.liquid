@@ -205,6 +205,7 @@
         event.preventDefault();
 
         woopra.track('Click CTA', {
+          section: "Cta Button",
           button_title: $(this).text()
         });
 
