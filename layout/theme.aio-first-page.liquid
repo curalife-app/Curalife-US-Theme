@@ -203,10 +203,10 @@
       $(".btn-cta").click(function(event) {
         var href = this.href;
         event.preventDefault();
-
-        woopra.track('Click CTA', {
+        setTimeout(woopra.track('Click CTA', {
           button_title: $(this).text()
-        });
+        }), 5000)
+     ;
 
         window.location = href;
       })
