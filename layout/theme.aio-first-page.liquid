@@ -200,13 +200,27 @@
       })
 
       // Cta Buttons    
-      $(".floating-cta, .survey-button").click(async function(event) {
+      $(".floating-cta").click(async function(event) {
         let href = event.target.getAttribute('href')
 
         event.preventDefault();
 
         await woopra.track('Click CTA', {
-          button_title: $(this).text()
+          button_title: $(this).text(),
+          floating_button: "yes"
+        });
+
+        window.location.href = href;
+      })
+
+      $(".survey-button").click(async function(event) {
+        let href = event.target.getAttribute('href')
+
+        event.preventDefault();
+
+        await woopra.track('Click CTA', {
+          button_title: $(this).text(),
+          floating_button: "no"
         });
 
         window.location.href = href;
