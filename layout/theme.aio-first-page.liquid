@@ -200,25 +200,26 @@
       })
 
       // Cta Buttons    
-      // $(".btn-cta").click(function(event) {
-      //   var href = this.href;
-      //   event.preventDefault();
+      $(".btn-cta").click(async function(event) {
+        var href = this.href;
+        event.preventDefault();
 
-      //   woopra.track('Click CTA', {
-      //     button_title: $(this).text()
-      //   });
-
-      //   window.location = href;
-      // })
-
-      $(".btn-cta").click(async () =>{
-       let cta = await woopra.track('Click CTA', {
-          section: "async cta",
+      let woopraEvent = await  woopra.track('Click CTA', {
           button_title: $(this).text()
         });
-        return cta;
-        
+
+        window.location = href;
+        return woopraEvent;
       })
+
+      // $(".btn-cta").click(async () =>{
+      //  let cta = await woopra.track('Click CTA', {
+      //     section: "async cta",
+      //     button_title: $(this).text()
+      //   });
+      //   return cta;
+        
+      // })
 
 
     
