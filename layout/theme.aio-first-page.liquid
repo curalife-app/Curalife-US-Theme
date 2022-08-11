@@ -200,21 +200,15 @@
       })
 
       // Cta Buttons    
-      $(".btn-cta").click( setTimeout(
-       async function() {
-         let woopraEvent = await woopra.track('Click CTA', {
-           button_title: $(this).text()
-         });
+      $(".btn-cta").click(async function() {
+        setTimeout(()=>{
+          let woopraEvent = await woopra.track('Click CTA', {
+            button_title: $(this).text()
+          });
 
-         return woopraEvent;
-       } 
-      ,10000))
-
-
-
-    
-
-
+          return woopraEvent;
+        },10000)
+      })
 
       // Open FAQ
       $('.question').click(function() {
