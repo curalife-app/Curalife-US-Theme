@@ -200,31 +200,21 @@
       })
 
       // Cta Buttons    
-      $(".floating-cta .btn-cta").click(async function(event) {
+      $(".btn-cta").click(async function(event) {
         let href = event.target.getAttribute('href')
 
         event.preventDefault();
 
         await woopra.track('Click CTA', {
           button_title: $(this).text(),
-          floating_button: "yes"
+          
+          parent: $(this).parents().text()
         });
 
         window.location.href = href;
       })
 
-      $(".survey-button .btn-cta").click(async function(event) {
-        let href = event.target.getAttribute('href')
 
-        event.preventDefault();
-
-        await woopra.track('Click CTA', {
-          button_title: $(this).text(),
-          floating_button: "no"
-        });
-
-        window.location.href = href;
-      })
 
       // Open FAQ
       $('.question').click(function() {
