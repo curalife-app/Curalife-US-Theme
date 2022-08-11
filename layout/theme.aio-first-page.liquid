@@ -180,7 +180,7 @@
     async function LinkToProduct(this, url) {
       console.log(this)
       await woopra.track('Click CTA', {
-        button_title: this.target.innerText
+        button_title: this.innerText
       });
 
       window.location.href = url;
