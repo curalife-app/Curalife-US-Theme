@@ -204,7 +204,6 @@
         var href = this.href;
         event.preventDefault();
         setTimeout(woopra.track('Click CTA', {
-          section: "Cta Button",
           button_title: $(this).text()
         }), 10000)
        ;
