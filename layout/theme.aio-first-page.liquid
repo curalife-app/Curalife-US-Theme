@@ -178,6 +178,7 @@
   <!-- Cta Buttons -->
   <script>
     async function LinkToProduct(url) {
+      console.log(this)
       await woopra.track('Click CTA', {
         button_title: this.target.innerText
       });
