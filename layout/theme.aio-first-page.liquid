@@ -200,16 +200,13 @@
       })
 
       // Cta Buttons    
-      $(".btn-cta").click(function(event) {
-        var href = this.href;
-        event.preventDefault();
+   $(".btn-cta").click(async function() {
+     let woopraEvent = await woopra.track('Click CTA', {
+       button_title: $(this).text()
+     });
 
-        woopra.track('Click CTA', {
-          button_title: $(this).text()
-        });
-
-        window.location = href;
-      })
+     return woopraEvent;
+   })
 
       // Open FAQ
       $('.question').click(function() {
