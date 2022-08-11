@@ -201,8 +201,6 @@
 
       // Cta Buttons    
       $(".btn-cta").click(async function(event) {
-        event.preventDefault();
-
         await woopra.track('Click CTA', {
           button_title: $(this).text()
         });
