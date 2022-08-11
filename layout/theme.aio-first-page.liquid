@@ -201,23 +201,13 @@
 
       // Cta Buttons    
       $(".btn-cta").click(async function() {
-      
-      let woopraEvent = await  woopra.track('Click CTA', {
-          button_title: $(this).text(), 
-          section: "async cta"
+        let woopraEvent = await woopra.track('Click CTA', {
+          button_title: $(this).text()
         });
 
         return woopraEvent;
       })
 
-      // $(".btn-cta").click(async () =>{
-      //  let cta = await woopra.track('Click CTA', {
-      //     section: "async cta",
-      //     button_title: $(this).text()
-      //   });
-      //   return cta;
-        
-      // })
 
 
     
