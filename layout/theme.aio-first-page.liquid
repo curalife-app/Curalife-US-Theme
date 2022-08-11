@@ -212,11 +212,11 @@
       // })
 
       $(".btn-cta").click(async function(){
-        let woopraEvent = await woopra.track('Click CTA', {
+        await woopra.track('Click CTA', {
           section: "async cta",
           button_title: $(this).text()
         });
-        return woopraEvent;
+        
       })
 
 
