@@ -131,32 +131,6 @@
     {{ tracking_code }}
 
     <script>
-      function setUserInfo() {
-        sessionStorage.setItem('user-email', jQuery("#checkout_email").val()); 
-        sessionStorage.setItem('user-fname', jQuery("#checkout_shipping_address_first_name").val()); 
-        sessionStorage.setItem('user-lname', jQuery("#checkout_shipping_address_last_name").val()); 
-        sessionStorage.setItem('user-address1', jQuery("#checkout_shipping_address_address1").val()); 
-        sessionStorage.setItem('user-address2', jQuery("#checkout_shipping_address_address2").val()); 
-        sessionStorage.setItem('user-city', jQuery("#checkout_shipping_address_city").val()); 
-        sessionStorage.setItem('user-zip', jQuery("#checkout_shipping_address_zip").val()); 
-        sessionStorage.setItem('user-country', jQuery("#checkout_shipping_address_country").val()); 
-        sessionStorage.setItem('user-province', jQuery("#checkout_shipping_address_province").val());  
-        sessionStorage.setItem('user-phone', jQuery("#checkout_shipping_address_phone").val());
-      }
-
-      function getUserInfo() {
-        jQuery("#checkout_email").val(sessionStorage.getItem('user-email')); 
-        jQuery("#checkout_shipping_address_first_name").val(sessionStorage.getItem('user-fname')); 
-        jQuery("#checkout_shipping_address_last_name").val(sessionStorage.getItem('user-lname')); 
-        jQuery("#checkout_shipping_address_address1").val(sessionStorage.getItem('user-address1')); 
-        jQuery("#checkout_shipping_address_address2").val(sessionStorage.getItem('user-address2')); 
-        jQuery("#checkout_shipping_address_city").val(sessionStorage.getItem('user-city')); 
-        jQuery("#checkout_shipping_address_zip").val(sessionStorage.getItem('user-zip')); 
-        jQuery("#checkout_shipping_address_country").val(sessionStorage.getItem('user-country')); 
-        jQuery("#checkout_shipping_address_province").val(sessionStorage.getItem('user-province')); 
-        jQuery("#checkout_shipping_address_phone").val(sessionStorage.getItem('user-phone')); 
-      }
-
       function allStages() {
         jQuery(".breadcrumb li:nth-child(2) .breadcrumb__text").html("Customer");
         jQuery(".sidebar-extentions").insertAfter(".order-summary__section--total-lines");
@@ -176,11 +150,6 @@
         }
         jQuery("label[for='checkout_remember_me']").html("Save my details for a faster shopping experience");
         jQuery("label[for='checkout_buyer_accepts_marketing']").html("Send me emails about my order status, keep me up to date on discounts and educational content.");
-        getUserInfo();
-
-        jQuery("#continue_button").click(function() {
-          setUserInfo();
-        });
       }
 
       function shippingStage() {
