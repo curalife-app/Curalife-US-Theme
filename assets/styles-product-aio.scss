@@ -144,7 +144,7 @@
             }
 
             .product-info {
-                padding: 40px 10px;
+                padding: 40px 10px 10px;
                 width: unset;
                 max-width: 450px;
                 grid-area: 1 / 2 / 2 / 3;
@@ -159,7 +159,7 @@
                     margin-bottom: 10px;
                     font-size: 18px;
                     line-height: 1.7rem;
-                    min-height: 70px;
+                    min-height: 50px;
 
                     .quote {
                         display: none;
@@ -616,7 +616,6 @@
             .badges {
                 display: flex;
                 justify-content: center;
-                gap: 20px;
 
                 .badge-wrapper {
                     display: flex;
