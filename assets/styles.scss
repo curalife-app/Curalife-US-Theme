@@ -1488,12 +1488,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1230px;
-  margin: auto;
+  padding: 4% 0;
 }
 
 .product-card {
   width: calc(100% / 3);
+  display: flex;
   padding: 10px;
 
   .wrap {
@@ -1571,6 +1571,27 @@
       }
     }
 
+    .discount {
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+
+      p {
+        margin: 0;
+        padding: 4px 13px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        color: var(--white);
+        background: var(--red);
+        border: 1px solid var(--red);
+        box-sizing: border-box;
+        border-radius: 4px;
+      }
+    }
 
     .more {
       position: absolute;
