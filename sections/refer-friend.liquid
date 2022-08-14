@@ -1,5 +1,5 @@
 <div class="confetti-container"></div>
-<div class="container">
+<div class="container" style="min-height: 500px;">
     <h1 style="display:none">Refer A Friend</h1>
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
     <div class="yotpo-widget-instance" data-yotpo-instance-id="111012"></div>
@@ -49,7 +49,7 @@
 
     function renderEmailShare() {
         if (!$("#email-share").length) {
-            var emailShare = '<li id="email-share" role="listitem" style="font-weight: 400; font-style: normal;"><div class="yotpo-widget-copy-link-container"><button class="yotpo-share-button-widget yotpo-share-button yotpo-copy-link" utm-src="c"><div class="yotpo-share-button-icons"><span class="icon-envelope"></span></div><span class="yotpo-share-button-txt" id="email-share-text">Email</span></button></div></li>';
+            var emailShare = '<li id="email-share" role="listitem" style="font-weight: 400; font-style: normal;"><div class="yotpo-widget-copy-link-container"><button class="yotpo-share-button-widget yotpo-share-button yotpo-copy-link" style="min-height: auto;" utm-src="c"><div class="yotpo-share-button-icons"><span class="icon-envelope"></span></div><span class="yotpo-share-button-txt" id="email-share-text">Email</span></button></div></li>';
             $(".yotpo-share-buttons-container").prepend(emailShare);
 
             $( "#email-share" ).click(function() {
@@ -415,6 +415,7 @@ svg.yotpo-share-button-icon {
 .yotpo-widget-referral-widget .yotpo-share-buttons-container {
     max-width: 700px;
     margin: auto;
+    min-height: 150px;
 }
 
 .yotpo-widget-referral-widget .yotpo-tile {
