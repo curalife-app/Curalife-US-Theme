@@ -16,7 +16,7 @@
                 {% if product.featured_image.src != blank %}
                   <a href="{{ product.url }}">
                     <div class="img">
-                      <img src="{{ product.featured_image.src | img_url: '367x265' }}" width="376px" height="265px" alt="">
+                      <img src="{{ product.featured_image.src | img_url: '367x265' }}" width="386px" height="265px" alt="">
                     </div>
                   </a>
                 {% endif %}
@@ -45,7 +45,7 @@
                   {% endif %} 
               </div>
               <div class="info">
-                <div class="main">
+                <div class="main" style="min-height: 134px;">
                   <div class="name">
                     <h3>
                       {% if product.metafields.my_fields.alternative_title.value %}
