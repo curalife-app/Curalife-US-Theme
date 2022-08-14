@@ -34,7 +34,7 @@
         </div>
         {% if section.settings.fetr_imgtwo != blank %}
         <div class="img-wrap">
-          <img src="{{ section.settings.fetr_imgtwo | img_url: '' }}" alt="" width="332" height="auto">
+          <img src="{{ section.settings.fetr_imgtwo | img_url: '426X240' }}" alt="" width="600px" height="338px">
         </div>
         {% endif %}
       </div>
@@ -96,7 +96,7 @@
               {% for block in section.blocks %}
               {% if block.type == 'partners' %}
               {% if block.settings.fetr_imgfour != blank %}
-              <li><img src="{{ block.settings.fetr_imgfour | img_url: '' }}" alt=""></li>
+              <li><img src="{{ block.settings.fetr_imgfour | img_url }}" width="111px" height="45px" alt=""></li>
               {% endif %}
               {% endif %}
             {% endfor %}
