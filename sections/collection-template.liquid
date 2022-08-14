@@ -4,12 +4,12 @@
       <h1 style="min-height: 100px;">Choose Your CuraLin Bundle</h1>
       <div class="product-list" style="min-height: auto;">
         {% for product in collection.products  -%}
-        <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
+        <div class="product-card" style="width: calc(100% / {{ collection.products.size }}) min-height: auto;">
             <div class="wrap">
               <div class="picture">
                 {% if section.settings.prdct_bgimg != blank %}
                   <div class="bg">
-                    <img src="{{section.settings.prdct_bgimg | img_url: '383x254' }}"  width="376px" height="270px" alt="">
+                    <img src="{{section.settings.prdct_bgimg | img_url: '383x254' }}" width="386px" height="270px" alt="">
                   </div>
                 {% endif %}
 
