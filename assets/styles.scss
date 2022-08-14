@@ -1488,7 +1488,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 4% 0;
+  max-width: 1230px;
+  margin: auto;
 }
 
 .product-card {
