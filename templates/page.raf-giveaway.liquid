@@ -568,11 +568,13 @@
         padding-top: 8px;
     }
 
-    .real-reviews .quote-card .quote-info .quote-rating p {
-        margin: 0;
-        font-size: 12px;
-        color: #FEC14B;
-        text-align: center;
+    .real-reviews .quote-card .quote-info .quote-rating p img {
+      filter: invert(92%) sepia(14%) saturate(4469%) hue-rotate(321deg) brightness(101%) contrast(101%);
+      width: 12px;
+    }
+
+    .real-reviews .quote-card .quote-info .quote-rating p img:not(:last-child) {
+      margin-right: 5px;
     }
 
     .quote-card blockquote:after {
