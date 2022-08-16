@@ -603,10 +603,8 @@
   .floating-cta {
     position: fixed;
     left: 20px;
-    right: 0;
-    bottom: 1.25rem;
+    bottom: 20px;
     z-index: 20;
-    pointer-events: none;
     transition: opacity var(--transition), visibility var(--transition);
   }
 
@@ -616,3 +614,23 @@
     color: black;
   }
 </style>
+
+<script>
+  jQuery(document).ready(function() {
+      var offset = 220;
+      var duration = 500;
+      jQuery(window).scroll(function() {
+          if (jQuery(this).scrollTop() > offset) {
+              jQuery('.floating-cta').fadeIn(duration);
+          } else {
+              jQuery('.floating-cta').fadeOut(duration);
+          }
+      });
+
+      jQuery('.floating-cta').click(function(event) {
+          event.preventDefault();
+          jQuery('html, body').animate({scrollTop: 0}, duration);
+          return false;
+      })
+  });
+</script>
