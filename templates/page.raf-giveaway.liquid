@@ -39,7 +39,6 @@
       </div>
       <img class="bottle" src="{{ 'partnerships-curalin-bottle.png' | asset_url }}" alt="curalife info" loading="lazy">
     </div>
-    <a class="cta" href="#"><button>Learn More</button></a>
   </div>
 </section>
 
@@ -594,3 +593,28 @@
         }
     });
 </script>
+
+<div class="floating-cta">
+  <button class="btn-cta">ENTER NOW</button>
+</div>
+
+<style>
+  .btn-cta {
+    border: none;
+  }
+  .floating-cta {
+    position: fixed;
+    left: 20px;
+    right: 0;
+    bottom: 1.25rem;
+    z-index: 20;
+    pointer-events: none;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+
+  .floating-cta .btn-cta {
+    max-width: 18.375rem;
+    font-size: 2.5rem;
+    pointer-events: auto;
+  }
+</style>
