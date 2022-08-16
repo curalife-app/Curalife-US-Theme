@@ -442,7 +442,7 @@
 </div>
 <style>
     .real-reviews {
-        padding: 54px 0 26px 0;
+        padding: 54px 0 26px;
         overflow: hidden;
     }
 
@@ -457,8 +457,8 @@
         overflow: hidden;
     }
 
-    .real-reviews .reviews-slider:before,
-    .real-reviews .reviews-slider:after {
+    .real-reviews .reviews-slider:after,
+    .real-reviews .reviews-slider:before {
         content: '';
         width: 211px;
         position: absolute;
@@ -504,12 +504,12 @@
 
     .real-reviews .reviews-slider .swiper-button-prev {
         left: 20px;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMzciIHZpZXdCb3g9IjAgMCAxNiAzNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0IDFMMiAxOUwxNCAzNiIgc3Ryb2tlPSIjNThBQTlFIiBzdHJva2Utd2lkdGg9IjMiLz4KPC9zdmc+Cg==);
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMzciIHZpZXdCb3g9IjAgMCAxNiAzNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0IDFMMiAxOUwxNCAzNiIgc3Ryb2tlPSIjNThBQTlFIiBzdHJva2Utd2lkdGg9IjMiLz4KPC9zdmc+Cg==");
     }
 
     .real-reviews .reviews-slider .swiper-button-next {
         right: 20px;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMzciIHZpZXdCb3g9IjAgMCAxNiAzNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgMUwxNCAxOUwyIDM2IiBzdHJva2U9IiM1OEFBOUUiIHN0cm9rZS13aWR0aD0iMyIvPgo8L3N2Zz4K);
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMzciIHZpZXdCb3g9IjAgMCAxNiAzNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgMUwxNCAxOUwyIDM2IiBzdHJva2U9IiM1OEFBOUUiIHN0cm9rZS13aWR0aD0iMyIvPgo8L3N2Zz4K");
     }
 
     .real-reviews .reviews-slider .swiper-slide {
@@ -550,7 +550,7 @@
         height: 28px;
         display: block;
         margin: 0 auto;
-        background-image: url(data:image/png+xml;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAcCAYAAADvANYcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF/SURBVHgB1ZbRcYMwEEQ3qYAOUDqgBJVAB1EJ6QA6sDsgHTipgKQC0oHdgZ0KiM4GjwySfCclH9mZ8+AZ9mlP5oSBf6wCaWpsDRn+6+KdrdHWS6JvzAlS2zo6ILpWDF8xLTo6tYVQBNksIDPoXje+AC2EUrb2CwjtgGb6dwtvD6E0brd/nAIppr/Beve43rOePQAJxHi8LQSqAwG406Cw/glFu0A3Hj2AAXx1Hn/HNdOT7OuASjMZKuCvmX7vGM7TwFWPjCZUwCwJUUUYhgPoIgCq5q8Z6o55Ljp4YifknsGge4zPbJgh5ilRSG8kuCs7IcD3BtRCxirIkADYLEKYBAbV9QAcE6v4hRDnyXtEutgHUETUSEkhTshXDuOJQhyQJnfhD2SIQrwjTQfn+pQR5Is+YsdtqHoPzCRwOhewFZor+NULGKs/yrHX+LJahKUEHBMCvEZMBOeMpUL8FCaOdg0PHkg1LVZO379tvUH+4Glcui2nYPQAfuLS6M1I/wBFB2Q2BYXkuAAAAABJRU5ErkJggg==);
+        background-image: url("data:image/png+xml;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAcCAYAAADvANYcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF/SURBVHgB1ZbRcYMwEEQ3qYAOUDqgBJVAB1EJ6QA6sDsgHTipgKQC0oHdgZ0KiM4GjwySfCclH9mZ8+AZ9mlP5oSBf6wCaWpsDRn+6+KdrdHWS6JvzAlS2zo6ILpWDF8xLTo6tYVQBNksIDPoXje+AC2EUrb2CwjtgGb6dwtvD6E0brd/nAIppr/Beve43rOePQAJxHi8LQSqAwG406Cw/glFu0A3Hj2AAXx1Hn/HNdOT7OuASjMZKuCvmX7vGM7TwFWPjCZUwCwJUUUYhgPoIgCq5q8Z6o55Ljp4YifknsGge4zPbJgh5ilRSG8kuCs7IcD3BtRCxirIkADYLEKYBAbV9QAcE6v4hRDnyXtEutgHUETUSEkhTshXDuOJQhyQJnfhD2SIQrwjTQfn+pQR5Is+YsdtqHoPzCRwOhewFZor+NULGKs/yrHX+LJahKUEHBMCvEZMBOeMpUL8FCaOdg0PHkg1LVZO379tvUH+4Glcui2nYPQAfuLS6M1I/wBFB2Q2BYXkuAAAAABJRU5ErkJggg==");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -590,7 +590,54 @@
         text-align: center;
     }
 
-    style>
+    .reviews-data {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .reviews-data .data-wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 6px 13px;
+        background: #FFFFFF;
+        -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+    .reviews-data .data-wrap p {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0;
+        padding: 0 12px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 1;
+        color: #000000;
+    }
+
+    .reviews-data .data-wrap p span.icon-star {
+        padding: 0 1px;
+        font-size: 34px;
+    }
+
+    .reviews-data .data-wrap p span.icon-star.active {
+        color: #FFD875;
+    }
+</style>
 
 <script>
     const reviewsSlider = new Swiper('.real-reviews .swiper', {
