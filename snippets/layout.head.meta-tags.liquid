@@ -38,6 +38,8 @@
 <meta property="og:image" content="https:{{ article.image | img_url: 'original' }}">
 {% elsif page.url contains 'winning-type-2' %}
 <meta property="og:image" content="{{ 'lp-community-thumbnail.png' | file_url }}">
+{% elsif page.url contains 'raf-giveaway' %}
+<meta property="og:image" content="{{ 'lp-raf-giveaway-meta-thumbnail.png' | asset_url }}">
 {% else %}
 <meta property="og:image" content="{{ 'meta-thumbnail.png' | asset_url }}" />
 {% endif %}
