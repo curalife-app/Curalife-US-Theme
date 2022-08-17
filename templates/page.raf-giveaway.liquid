@@ -9,6 +9,24 @@
 <div class="yotpo-widget-instance" data-yotpo-instance-id="215047"></div>
 <div class="yotpo-widget-instance" data-yotpo-instance-id="215048"></div>
 
+<script>
+  function runAfterElementExists(jquery_selector,callback){
+      var checker = window.setInterval(function() {
+      if ($(jquery_selector).length) {
+          clearInterval(checker);
+          callback();
+      }}, 200);
+  }
+
+  $( document ).ready(function() {
+    runAfterElementExists(".yotpo-referral-widget-form", function() {
+      $("yotpo-referral-widget-form").click(function() {
+        woopra.track("referral-submit", {});
+      })
+    });
+  });
+</script>
+
 <section id="curalin-section">
   <img class="decoration" src="{{ 'partnerships-curalin-decoration.svg' | asset_url }}" alt="curalife info" loading="lazy">
   <div class="container">
