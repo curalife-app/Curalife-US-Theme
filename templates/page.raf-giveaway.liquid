@@ -21,7 +21,11 @@
   $( document ).ready(function() {
     runAfterElementExists(".yotpo-referral-widget-form", function() {
       $("yotpo-referral-widget-form").click(function() {
-        woopra.track("referral-submit", {});
+        // Track in GA
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+        'event': 'referral-submit'
+        });
       })
     });
   });
