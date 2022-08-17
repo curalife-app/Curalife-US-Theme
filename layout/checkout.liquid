@@ -344,6 +344,11 @@
           country: '{{ checkout.shipping_address.country_code }}',
           user_agent: navigator.userAgent
         });
+
+        // TODO: Delete after shipping tests are done
+        woopra.track('Checkout Step - Thank You', {
+          'test_variant': $.cookie("_sc_4")
+        });
       };
     </script>
 
