@@ -165,7 +165,7 @@
             }}, 200);
         }
 
-        runAfterElementExists(".content-box", function() {
+        runAfterElementExists(".section--shipping-method .content-box__row", function() {
           let zone = $('.section--shipping-method .content-box__row').first().find('.radio__label__primary').attr('data-shipping-method-label-title').substring(21);
           console.log(zone);
 
