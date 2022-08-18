@@ -166,7 +166,25 @@
         }
 
         runAfterElementExists(".content-box", function() {
-          console.log($('.section--shipping-method .content-box__row').first().find('.radio__label__primary').attr('data-shipping-method-label-title').substring(21));
+          let zone = $('.section--shipping-method .content-box__row').first().find('.radio__label__primary').attr('data-shipping-method-label-title').substring(21);
+          console.log(zone);
+
+          switch (expr) {
+            case '(South)':
+              console.log('South');
+              break;
+            case '(West)':
+              console.log('West');
+              break;
+            case '(Midwest)':
+              console.log('Midwest');
+              break;
+            case '(Northeast)':
+              console.log('Northeast');
+              break;
+            default:
+              console.log(`Sorry, we are out of ${expr}.`);
+          }
         });
       }
 
