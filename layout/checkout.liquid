@@ -166,7 +166,7 @@
         }
 
         runAfterElementExists(".content-box", function() {
-          console.log($('.section--shipping-method .content-box__row').first());
+          console.log($('.section--shipping-method .content-box__row').first().find('.radio__label__primary').attr('data-shipping-method-label-title').substring(21));
         });
       }
 
