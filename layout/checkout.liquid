@@ -157,6 +157,7 @@
         jQuery(".tc").hide();
         $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Information")').attr("href") + '"></a>');
 
+        // Shipping Test - Remove if not needed
         function runAfterElementExists(jquery_selector,callback){
             var checker = window.setInterval(function() {
             if ($(jquery_selector).length) {
@@ -185,6 +186,7 @@
               console.log(`No Match for Zone ${zone}`);
           }
         });
+        // End Shipping Test
       }
 
       function paymentStage() {
