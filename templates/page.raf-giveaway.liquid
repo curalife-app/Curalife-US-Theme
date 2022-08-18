@@ -6,6 +6,7 @@
   }
 </style>
 
+<div class="spinner"></div>
 <div class="yotpo-widget-instance" data-yotpo-instance-id="215047"></div>
 <div class="yotpo-widget-instance" data-yotpo-instance-id="215048"></div>
 
@@ -28,6 +29,27 @@
         });
       })
     });
+  });
+</script>
+
+<style>
+  @keyframes s1 {to{transform: rotate(.5turn)}}
+
+  .spinner {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #000 #0000;
+    animation: s1 1s infinite;
+  }
+</style>
+
+<script type="text/javascript">
+  runAfterElementExists(".yotpo-widget-referral-widget", function() {
+    $(".yotpo-widget-referral-widget").click(function() {
+      $(".spinner").hide();
+    })
   });
 </script>
 
