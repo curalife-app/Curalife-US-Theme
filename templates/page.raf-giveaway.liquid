@@ -47,7 +47,7 @@
 
     $( document ).ready(function() {
       runAfterElementExists(".yotpo-referral-widget-form", function() {
-        $(".yotpo-referral-widget-form").click(function() {
+        $(".yotpo-action-button-widget button").click(function() {
           // Track in GA
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
@@ -63,7 +63,7 @@
           window.dataLayer.push({
           'event': 'referee-submit'
           });
-          
+
         })
       });
     });
