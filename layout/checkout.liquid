@@ -156,6 +156,7 @@
         jQuery("#shipping-method").addClass('active');
         jQuery(".tc").hide();
         $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Information")').attr("href") + '"></a>');
+        console.log("shipping zone: " + $('.content-box:first .radio__label__primary').val());
       }
 
       function paymentStage() {
