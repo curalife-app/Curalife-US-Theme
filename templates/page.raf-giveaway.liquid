@@ -51,8 +51,19 @@
           // Track in GA
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
-          'event': 'referral-submit'
+          'event': 'referrer-submit'
           });
+        })
+      });
+
+      runAfterElementExists(".yotpo-screen-friends_emails", function() {
+        $(".yotpo-friends-share-button button").click(function() {
+          // Track in GA
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+          'event': 'referee-submit'
+          });
+          console.log("referee-submit");
         })
       });
     });
