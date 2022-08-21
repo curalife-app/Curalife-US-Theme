@@ -89,6 +89,7 @@
 
 <style>
 .catalog-page h1 {
+  margin-bottom: unset;
   text-align: center;
   padding-top: 20px;
 }
@@ -109,27 +110,39 @@
 }
 
 .product-card .picture .discount {
-  background-image: url({{ 'collection-product-badge.png' | asset_url }});
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: 5px;
-  right: 0;
-  left: auto;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  position: relative;
+  padding: 45% 0;
+
 }
 
 .product-card .picture .discount p {
-  background: unset;
-  font-size: 22px;
-  font-weight: bold;
-  border: 0;
-  color: black;
+  padding: unset;
+  border-radius: unset;
+  background: #F1F0EC;
+  border: 1px solid #F1F0EC;
+
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+
+  text-align: center;
+
+
+  color: #D92604;
+}
+
+.product-card .picture .discount p:before {
+  content: '★';
+  color: #0D2D6A;
+  padding-right: 2vw;
+
+}
+.product-card .picture .discount p:after {
+  content: '★';
+  color: #0D2D6A;
+  padding-left: 1vw;
 }
 
 .product-card .picture:after {
@@ -137,12 +150,34 @@
 }
 
 @media screen and (max-width: 760px) {
+  .mini-wrap h1 {
+      font-size: 1.5em;
+  }
+
+  .product-list {
+    padding:  0 0;
+  }
   .product-card {
     width: 100% !important;
   }
+
+  .product-card .picture .discount {
+  padding: 20vw 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+.product-card .picture .discount {
+padding: 28vw 0;
+}
+}
+
+@media screen and (max-width: 350px) {
+.product-card .picture .discount {
+padding: 35vw 0;
+}
 }
 </style>
-
 <script>
   $(document).on("click", "#AddTCart", function () {
     window.dataLayer = window.dataLayer || [];
