@@ -4500,7 +4500,7 @@ footer .bottom-info .info-wrap .text p {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background: #F8F8F8;
+
   pointer-events: none;
 }
 
