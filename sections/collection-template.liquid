@@ -36,9 +36,9 @@
                   {% endif %}
                   <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
                   {% if quantity > 1 %}
-                  <div class="discount">
+                  <!-- <div class="discount">
                     <p>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
-                  </div>
+                  </div> -->
                   {% elsif product.compare_at_price_max > product.price %}
                   <div class="discount" style="display:none">
                     <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
@@ -66,9 +66,9 @@
                       <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
                     {% endif %}
                   </div>
-                  {% unless forloop.index == 1 %}
+                  <!-- {% unless forloop.index == 1 %}
                   <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
-                  {% endunless %}
+                  {% endunless %} -->
                 </div>
                 <form action="/cart/add" method="post">
                   <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
