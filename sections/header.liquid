@@ -1,15 +1,15 @@
 <header>
   <div class="container">
-    <div class="main-toolbar">
-      <div class="main-links d-mobile">
+    <div class="main-toolbar" style="min-height: auto;">
+      <div class="main-links d-mobile" style="min-height: 20px;">
         <ul>
           <li><a href="javascript:void(0)" class="open-menu"><i class="icon-menu"></i></a></li>
           <li><a href="javascript:void(0)" class="open-search"><i class="icon-search"></i></a></li>
         </ul>
       </div>
       {% if section.settings.logo != blank %}
-      <div class="main-logo">
-        <a href="{{section.settings.lgo_lnk}}"><img src="{{ section.settings.logo | img_url }}" alt="logo" width="120" height="34px"></a>
+      <div class="main-logo" style="min-height: 20px;">
+        <a href="{{section.settings.lgo_lnk}}"><img src="{{ section.settings.logo | img_url }}" alt="logo" width="120px" height="34px"></a>
       </div>
       {% endif %}
       <div class="main-menu">
@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <div class="main-links">
+      <div class="main-links" style="min-height: auto;">
         <ul>
           {% unless customer%}
           <li><a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#login-modal">

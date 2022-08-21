@@ -1,22 +1,22 @@
 <div class="catalog-page">
-  <div class="container">
+  <div class="container" style="min-height: auto;">
     <div class="mini-wrap">
-      <h1>Choose Your CuraLin Bundle</h1>
-      <div class="product-list">
+      <h1 style="min-height: 100px;">Choose Your CuraLin Bundle</h1>
+      <div class="product-list" style="min-height: auto;">
         {% for product in collection.products  -%}
-        <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
+        <div class="product-card" style="width: calc(100% / {{ collection.products.size }}) min-height: auto;">
             <div class="wrap">
               <div class="picture">
                 {% if section.settings.prdct_bgimg != blank %}
                   <div class="bg">
-                    <img src="{{section.settings.prdct_bgimg | img_url: '383x254' }}"  width="376px" height="270px" alt="">
+                    <img src="{{section.settings.prdct_bgimg | img_url: '383x254' }}" width="386px" height="270px" alt="">
                   </div>
                 {% endif %}
 
                 {% if product.featured_image.src != blank %}
                   <a href="{{ product.url }}">
                     <div class="img">
-                      <img src="{{ product.featured_image.src | img_url: '367x265' }}" width="376px" height="265px" alt="">
+                      <img src="{{ product.featured_image.src | img_url: '367x265' }}" width="386px" height="265px" alt="">
                     </div>
                   </a>
                 {% endif %}
@@ -45,7 +45,7 @@
                   {% endif %} 
               </div>
               <div class="info">
-                <div class="main">
+                <div class="main" style="min-height: 134px;">
                   <div class="name">
                     <h3>
                       {% if product.metafields.my_fields.alternative_title.value %}
@@ -88,8 +88,9 @@
 
 <style>
 .catalog-page h1 {
+  margin: unset;
   text-align: center;
-  padding-top: 30px;
+  padding: 30px 0;
 }
 
 .price p strike {
@@ -121,6 +122,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  z-index: 3;
 }
 
 .product-card .picture .discount p {
