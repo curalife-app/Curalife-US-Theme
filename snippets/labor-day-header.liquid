@@ -1,0 +1,191 @@
+
+<section class="nav">
+  
+  <div class="container">
+    
+    </div>
+    <div class="labor-day">
+     <div class="labor-day-title"><img src="{{ 'product-template-labor-day-title.png' | asset_url }}" alt=""></div>
+     <div class="sale-title"><img src="{{ 'product-template-sale-title.png' | asset_url }}" alt=""></div>
+     <div class="sitting-men"><img src="{{ 'product-template-sitting-men.png' | asset_url }}" alt=""></div>
+    </div>
+    <div class="labor-day-mobile">
+      <div class="stars"><img src="{{ 'product-template-labor-day-stars-with-back-mobile.png' | asset_url }}" alt=""></div>
+     <div class="labor-day-title"><img src="{{ 'product-template-labor-day-title.png' | asset_url }}" alt=""></div>
+     <div class="sale-title"><img src="{{ 'product-template-sale-title.png' | asset_url }}" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<style>
+    .nav {
+     
+      background-image: url("{{ 'product-template-labor-day-banner.png' | asset_url }}");
+      max-height: 110px;
+    }
+
+
+    .labor-day {
+      padding-top: 0.5%;
+      margin-left: 20%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      min-height: 165px;
+    }
+
+    .labor-day-title {
+      padding: 3vw;
+      margin-top: -4%;
+    }
+
+    .sale-title {
+      margin-top: -4%;
+    }
+
+    .sitting-men {
+      position: absolute;
+      left: 80%;
+      top: -25%
+    }
+
+    .sitting-men img {
+      max-width: unset;
+    }
+
+    .labor-day-mobile {
+      display: none;
+    }
+
+    @media screen and (max-width: 1450px) {
+     
+      .sitting-men {
+
+        top: -27%;
+      }
+    }
+
+
+    @media screen and (max-width: 1270px) {
+      .labor-day {
+        margin-left: 5%;
+      }
+      .sitting-men {
+        
+        left: 80vw;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .labor-day-title {
+        padding-right: 0;
+      }
+      .sitting-men {
+        left: 81vw;
+        top: -1vw;
+      } 
+      .sitting-men img {
+       max-width: 100%;
+      }  
+    }
+
+    @media screen and (max-width: 991px) {
+      .labor-day {
+        margin-left: 1vw;
+      }
+      .sitting-men {
+        top: -3vw;
+      }  
+    }
+
+
+    @media screen and (max-width: 967px) {
+      .sale-title {
+        margin-left: unset;
+      }
+      .sitting-men {
+        left: 83vw;
+        top: -3vw;
+      } 
+  
+    }
+
+    @media screen and (max-width: 950px) {
+      .sitting-men {
+        left: 84vw;
+        top: -2vw
+      }  
+    }
+    
+
+    @media screen and (max-width: 930px) {
+     .sitting-men img {
+       max-width: 100%;
+     }
+      .sitting-men {
+        left: 85vw;
+        top: -1vw;
+      }  
+    }
+
+    
+    @media screen and (max-width: 900px) {
+         .sitting-men {
+            display: none;
+      } 
+    }
+
+
+
+
+    @media screen and (max-width: 680px) {
+     .nav {
+      margin-top: -2vw;
+      max-height: unset;
+      background-image: unset;
+      position: relative;
+      z-index: -5;
+      margin-bottom: -7vw;
+
+     }
+
+
+    .labor-day {
+        display: none;
+    }
+
+    .labor-day-mobile {
+       
+       padding-top: 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        
+    }
+
+    .labor-day-title {
+      width: 60%;
+        z-index: 10;
+    }
+
+    .sale-title {
+      text-align: center;
+      margin-top: -4vw;
+        width: 40%;
+        z-index: 10;
+    }
+    .stars {
+      position: absolute;
+      top: 0;
+      z-index: 5;
+      height: 133%;
+    }
+    .stars img {
+      height: 100%;
+      object-fit: contain;
+      object-position: top;
+    }
+}
+</style>
