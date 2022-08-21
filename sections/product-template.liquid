@@ -1,11 +1,14 @@
 {% render 'labor-day-header' %}
 <br>
-
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 <div class="product-data">
     <div class="container">
+     
       <div class="product-wrap">
+        <!-- <div class="save-discount">
+          <p>SAVE</p>
+        </div> -->
         <div class="product-slider">
           <div class="discount">
             {% if product.compare_at_price_max > product.price %}
@@ -20,7 +23,7 @@
                   <div class="swiper-slide">
                     <div class="thumbs-img">
                       <div class="img-wrap">
-                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" {%if forloop.index == 1%}style="object-fit:cover"{%endif%}>
+                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
                       </div>
                     </div>
                   </div>
@@ -37,8 +40,9 @@
                   {% for image in product.images %}
                   <div class="swiper-slide">
                     <div class="product-img">
+
                       <div class="img-wrap">
-                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
+                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" width="492px" height="355px" loading="lazy" {%if forloop.index == 1%}style="object-fit:cover"{%endif%}>
                       </div>
                     </div>
                   </div>
@@ -77,7 +81,7 @@
           
           <div class="description">
             <div class="price">
-              <p>{{ product.price | money_with_currency | replace: ".00", "" }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" }}</strike></p>{% endif %}
+              <p>{{ product.price | money }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money }}</strike></p>{% endif %}
             </div>
             
             <div class="form-wrap">
@@ -123,7 +127,7 @@
 
 <style>
 
-
+  
 
   .thumbs-slider .swiper-slide {
     height: 50px !important;
@@ -149,7 +153,7 @@
 
    .save-discount {
     display: none;
-
+   
   }
 
     .save-discount p {
@@ -251,11 +255,10 @@
   @media screen and (max-width: 350px) {
     .save-discount {
       top: 132vw;
-
+      
     }
   }
 </style>
-  
 
   <script>
     productThumbs = new Swiper('.thumbs-slider .swiper', {
@@ -297,6 +300,7 @@
   
 <script>
   $(document).on("click", "#AddTCart", function () {
+    // New One
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'add_to_cart',             // name of the event. In this case, it always must be add_to_cart
@@ -365,6 +369,7 @@
     user_agent: navigator.userAgent
   });
 </script>
+
 <script>
   var _learnq = _learnq || [];
     
@@ -396,6 +401,7 @@
   </script>
 
 {% schema %}
+
 {
   "name": "Proudct",
   "class": "cart-content",
