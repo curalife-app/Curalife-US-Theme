@@ -1,14 +1,11 @@
 {% render 'labor-day-header' %}
 <br>
+
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 <div class="product-data">
     <div class="container">
-     
       <div class="product-wrap">
-        <!-- <div class="save-discount">
-          <p>SAVE</p>
-        </div> -->
         <div class="product-slider">
           <div class="discount">
             {% if product.compare_at_price_max > product.price %}
@@ -23,7 +20,7 @@
                   <div class="swiper-slide">
                     <div class="thumbs-img">
                       <div class="img-wrap">
-                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
+                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" {%if forloop.index == 1%}style="object-fit:cover"{%endif%}>
                       </div>
                     </div>
                   </div>
@@ -40,9 +37,8 @@
                   {% for image in product.images %}
                   <div class="swiper-slide">
                     <div class="product-img">
-
                       <div class="img-wrap">
-                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" width="492px" height="355px" loading="lazy" {%if forloop.index == 1%}style="object-fit:cover"{%endif%}>
+                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
                       </div>
                     </div>
                   </div>
@@ -81,7 +77,7 @@
           
           <div class="description">
             <div class="price">
-              <p>{{ product.price | money }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money }}</strike></p>{% endif %}
+              <p>{{ product.price | money_with_currency | replace: ".00", "" }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" }}</strike></p>{% endif %}
             </div>
             
             <div class="form-wrap">
@@ -126,9 +122,6 @@
   </div>
 
 <style>
-
-  
-
   .thumbs-slider .swiper-slide {
     height: 50px !important;
   }
@@ -144,42 +137,6 @@
     font-size: 18px;
   }
 
-
-  .strips {
-    position: absolute;
-    top: 50%;
-    left: 14%;
-  }
-
-   .save-discount {
-    display: none;
-   
-  }
-
-    .save-discount p {
-      padding: 0 20vw;
-      background: #F1F0EC;
-      border: 1px solid #F1F0EC;
-      font-family: 'Poppins';
-      font-weight: 700;
-      font-size: 28px;
-      line-height: 42px;
-      text-align: center;
-      color: #D92604;
-  }
-
-   .save-discount p:before {
-      content: '★';
-      color: #0D2D6A;
-      padding-right: 3vw;
-
-  }
-   .save-discount p:after {
-      content: '★';
-      color: #0D2D6A;
-      padding-left: 3vw;
-  }
-
   @media screen and (max-width: 768px) {
     .title-wrapper {
       justify-content: center;
@@ -189,73 +146,6 @@
     .edit a {
       position: absolute;
       right: 0;
-    }
-
-  }
-
-  @media screen and (max-width: 760px) {
-    .save-discount {
-      display: block;
-      position: absolute;
-      top: 80vw;
-      left: 18vw;
-      z-index: 5;
-    }
-
-    .strips {
-        top: 58%;
-        left: 23%;
-    }
-  }
-
-  @media screen and (max-width: 660px) {
-    .save-discount {
-      top: 90vw;
-      left: 17vw;
-    }
-    .strips {
-      top: 46%;
-      left: 10%;
-    }
-  }
-
-  @media screen and (max-width: 560px) {
-    .save-discount {
-      top: 100vw;
-      left: 15vw;
-    }
-  }
-
-
-
-  @media screen and (max-width: 465px) {
-    .save-discount {
-      top: 107vw;
-      left: 12vw;
-    }
-    .strips {
-      top: 38%;
-      left: 3%;
-    }
-  }
-
-  @media screen and (max-width: 420px) {
-    .save-discount {
-      top: 115vw;
-    }
-  }
-
-  @media screen and (max-width: 376px) {
-    .save-discount {
-      top: 122vw;
-      left: 10vw;
-    }
-  }
-
-  @media screen and (max-width: 350px) {
-    .save-discount {
-      top: 132vw;
-      
     }
   }
 </style>
@@ -300,7 +190,6 @@
   
 <script>
   $(document).on("click", "#AddTCart", function () {
-    // New One
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'add_to_cart',             // name of the event. In this case, it always must be add_to_cart
@@ -369,7 +258,6 @@
     user_agent: navigator.userAgent
   });
 </script>
-
 <script>
   var _learnq = _learnq || [];
     
@@ -401,7 +289,6 @@
   </script>
 
 {% schema %}
-
 {
   "name": "Proudct",
   "class": "cart-content",
