@@ -1,207 +1,273 @@
 <div class="homepage-banner">
+   
+  <div class="bg">   
+      <img class="bg-img" src="{{ 'homepage-grey-banner-stars-bg.png' | asset_url }}"  alt="">
+      <img class="bg-img-mobile" src="{{ 'homepage-grey-banner-stars-bg-mobile.png' | asset_url }}"  alt="">
+  </div>
   <div class="container no-mobile-padding">
-      <div class="bg">
-          <img class="bg-vector" src="{{ 'homepage-banner-bg-vector.svg' | asset_url }}" width="592px" height="570px" alt="">
-          <img class="bg-img" src="{{ 'homepage-banner-bg.png' | asset_url }}" width="1313px" height="566px" alt="">
-          <img class="bg-img-mobile" src="{{ 'homepage-banner-bg-mobile.png' | asset_url }}" width="375px" height="626px" alt="">
+  <div class="labour-day-container">
+      <img src="{{ 'homepage-banner-labour-day.png' | asset_url }}" alt="">
+  </div>
+  <div class="labour-day-container-mobile">
+      <img src="{{ 'homepage-banner-labour-day-mobile.png' | asset_url }}" alt="">
+  </div>
+
+  <div class="save-banner">
+      <div class="save-dollar"><img src="{{ 'homepage-banner-save-dollar.png' | asset_url }}" alt="">
+          <div class="grey-border"></div>
       </div>
-      <div class="content">
-          <h1>Effective.<br>Safe.<br>Natural.</h1>
-          <p>Science based supplements that improve quality of life.</p>
-          <div class="cta-button-wrapper">
-              <img class="bottle-img" src="{{ 'curalin-bottle.png' | asset_url }}" width="200px" height="211px" alt="Curalin Bottle">
-              <a class="cta-btn" href="/collections/all">Shop Now</a>
-              <div class="free-shipping">
-                  <img class="free-shipping-icon" src="{{ 'icon-free-shipping-light-white.png' | asset_url }}" width="44px" height="25px" alt="">
-                  <p>Worldwide Shipping</p>
-              </div>
+      <div class="save-title"><img src="{{ 'homepage-banner-sale.png' | asset_url }}" alt="">
+          <div class="shop-now">
+              <a href="/collections/all" class="cta-btn">SHOP NOW</a>
           </div>
+          <div class="limited-time">Limited Time Only!</div>
       </div>
-      <div class="header-mobile-bottom">
-          <div class="free-shipping">
-              <p>Worldwide Shipping • 60-Day Money Back Guarantee</p>
-          </div>
+      <div class="men-sitting"><img src="{{ 'homepage-banner-men-on-bottle.png' | asset_url }}" alt=""></div>
+  </div>
+  <div class="save-banner-mobile">
+      <div class="sale-mobile">
+      <img src="{{ 'homepage-banner-sale.png' | asset_url }}" alt="">       
+  </div>
+      <div class="men-sitting-mobile">
+          <img src="{{ 'homepage-banner-men-on-bottle-mobile.png' | asset_url }}" alt="">
       </div>
   </div>
+  <div class="save-dollar-mobile">
+      <div class="save-dollar-mobile-img"><img src="{{ 'homepage-banner-save-dollar-mobile.png' | asset_url }}" alt=""></div>
+  </div>
+  <div class="shop-now-mobile">
+      <div class="shop-now">
+          <a href="/collections/all" class="cta-btn">SHOP NOW</a>
+      </div>
+      <div class="limited-time">Limited Time Only!</div>
+  </div>
+ 
+</div>  
 </div>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style>
+
+
+<style>
+
+a, a:focus, a:hover {
+  color: #FFFFFF;
+}
 .homepage-banner {
-  background-color: #A8BFCB;
+  background-color: #F3F1ED;
   position: relative;
+
 } 
 
-.homepage-banner .bg .bg-vector {
-  position: absolute;
-  z-index: 2;
-  max-height: 100%;
-}
+
 
 .homepage-banner .bg .bg-img-mobile {
   display: none;
 }
 
-.homepage-banner .bg .bg-img {
-  position: absolute;
-  z-index: 0;
-  right: 0;
-  width: 70vw;
-  height: 566px;
-  object-fit: cover;
+.homepage-banner .bg .bg-img {  
+width: 100%;
+object-fit: cover;
 }
 
-.homepage-banner .content {
-  position: relative;
-  z-index: 10;
-  color: white;
-  font-size: 50px;
-  font-weight: 600;
-  position: relative;
-  z-index: 10;
-  padding: 10px 15px;
+/* .bg-img img {
+max-width: unset;
+width: 115%;
+} */
+
+.labour-day-container {
+margin-top: -23%;
+display: flex;
+justify-content: center;
 }
 
-.homepage-banner .content h1 {
-  font-size: 50px;
-  font-weight: 600;
-  text-transform: uppercase;
+.labour-day-container img {
+max-width: 80%;
 }
 
-.homepage-banner .content p {
+.labour-day-container-mobile {
+display: none;
+}
+
+.men-sitting img {
+margin-top: -30%;
+margin-left: 30%;
+}
+
+.save-banner {
+display: flex;
+justify-content: space-around;
+padding: 3% 3% 0;
+}
+
+.save-title{
+margin-top: -3%;
+}
+
+.grey-border {
+margin-top: -5px;
+max-width: 60%;
+border-bottom: 2px solid #696565;
+}
+
+.save-dollar-mobile {
+display: none;
+}
+
+
+.shop-now {
+margin-top: 3%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.shop-now-mobile {
+display: none;
+}
+
+
+.cta-btn {
+
+padding: 10px 50px;
+
+background: #FEBB0E;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+
+
+font-family: 'Roboto';
+font-weight: 900;
+font-size: 40px;
+line-height: 49px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.limited-time {
+margin-top: 3%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+font-family: 'Poppins';
+font-weight: 700;
+font-size: 26px;
+line-height: 35px;
+
+
+letter-spacing: 0.15em;
+color: #D92604;
+}
+
+.save-banner-mobile {
+display: none;
+}
+
+
+
+@media screen and (max-width: 882px){
+.cta-btn {
   font-size: 30px;
-  max-width: 450px;
-  font-weight: 300;
+  line-height: 35px;
 }
 
-.homepage-banner .content .cta-button-wrapper {
-  position: relative;
-}
-
-.homepage-banner .content .cta-button-wrapper .bottle-img {
-  width: 200px;
-  margin-left: -50px;
-  z-index: 1;
-  position: relative;
-  pointer-events: none;
-}
-
-.homepage-banner .content .cta-button-wrapper .cta-btn {
-  text-transform: uppercase;
-  background: #C78263;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  color: white;
-  padding: 10px 30px;
-  font-size: 38px;
-  margin-left: -75px;
-  border: 0;
-  transition: background 0.3s ease-in-out;
-}
-
-.homepage-banner .content .cta-button-wrapper .cta-btn:hover {
-  background: #a96f54;
-}
-
-.homepage-banner .content .cta-button-wrapper .free-shipping {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: absolute;
-  left: 105px;
-  top: 150px;
-}
-
-.homepage-banner .content .cta-button-wrapper .free-shipping .free-shipping-icon {
-  height: 25px;
-}
-
-.homepage-banner .content .cta-button-wrapper .free-shipping p {
-  font-weight: bold;
+.limited-time {
   font-size: 20px;
-  margin: 0;
 }
 
-.homepage-banner .header-mobile-bottom {
-  display: none;
 }
 
-@media screen and (max-width:1270px) {
-  .homepage-banner .bg .bg-vector {
-      margin-left: -150px;
-  }
 
-  .homepage-banner .bg .bg-img {
-      object-position: left;
-  }
-}
+
+
+
+
 
 @media screen and (max-width:760px) {
-  .homepage-banner .content .cta-button-wrapper .cta-btn {
-      margin-left: 0;
-      font-size: 8vw;
-  }
-
-  .homepage-banner .bg .bg-vector {
-  display: none;
-}
 
   .homepage-banner .bg .bg-img-mobile {
-  display: block;
-  position: absolute;
+  display: flex;
   width: 100%;
 }
 
 .homepage-banner .bg .bg-img {
   display: none;
+}  
+
+
+.labour-day-container {
+  display: none;
 }
 
-.homepage-banner .header-mobile-bottom {
-  display: block;
-  position: absolute;
-  bottom: 2vw;
-  width: 100%;
+.labour-day-container-mobile {
+margin-top: -85vw;
+display: flex;
+justify-content: center;
 }
 
-.homepage-banner .header-mobile-bottom .free-shipping {
-  color: white;
+.labour-day-container-mobile img {
+  max-width: 80%;
+}
+
+.save-banner {
+  display: none;
+}
+
+.save-banner-mobile {
   display: flex;
-  gap: 10px;
-  align-items: center;
   justify-content: center;
-  font-size: 3vw;
-  font-weight: bold;
 }
 
-.homepage-banner .content .cta-button-wrapper .free-shipping {
-  display: none;
+.sale-mobile {
+  margin-left: 12vw;
+  max-width: 50%;
 }
 
-.homepage-banner .header-mobile-bottom .free-shipping .free-shipping-icon {
-  height: 5vw;
+.men-sitting-mobile {
+  margin-left: -12vw;
 }
 
-  .homepage-banner {
-  height: 180vw;
+.save-dollar-mobile {
+  display: flex;
 }
 
-.homepage-banner .content .cta-button-wrapper .bottle-img {
-  display: none;
+.save-dollar-mobile-img {
+  margin-top: -40vw;
+  margin-left: 6vw;
 }
 
-.homepage-banner .content h1 {
-  font-size: 9vw;
-  margin: 0;
+.shop-now-mobile {
+  display: block;
 }
 
-.homepage-banner .content p {
-  font-size: 5vw;
-  margin: 4vw 0;
+.shop-now {
+  margin-top: unset;
 }
 
-.homepage-banner .content .cta-button-wrapper button {
-  margin-left: 0;
-  font-size: 7vw;
+.cta-btn {    
+  font-size: 25px;
+  line-height: 30px;
 }
+
+.limited-time {
+  margin-top: unset;
+  padding: 2vw;
+  font-size: 17px;
+  line-height: 21px;
 }
+
+}
+
+
 </style>
 
 {% schema %}
