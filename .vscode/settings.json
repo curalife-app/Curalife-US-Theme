@@ -10,7 +10,8 @@
         "titleBar.activeBackground": "#005fd3",
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveBackground": "#005fd399",
-        "titleBar.inactiveForeground": "#e7e7e799"
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "commandCenter.border": "#e7e7e799"
     },
     "peacock.color": "#005fd3",
     "docwriter.style": "JSDoc"
