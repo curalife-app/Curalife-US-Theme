@@ -374,7 +374,7 @@
           country: '{{ checkout.shipping_address.country_code }}',
           user_agent: navigator.userAgent
         });
-
+        
         {{ assign shippingPrice = checkout.shipping_price | money_without_currency }}
         // TODO: Delete after shipping tests are done
         woopra.track('Checkout Step - Thank You', {
