@@ -375,10 +375,11 @@
           user_agent: navigator.userAgent
         });
 
+        {{ assign shippingPrice = checkout.shipping_price | money_without_currency }}
         // TODO: Delete after shipping tests are done
         woopra.track('Checkout Step - Thank You', {
           'test_variant': $.cookie("_sc_7"),
-          'shipping_price': '{{ checkout.shipping_price | money_without_currency }}'
+          'shipping_price': {% if shippingPrice == '0.00' %}'Free'{% else %}'Paid'{% endif %}
         });
       };
     </script>
