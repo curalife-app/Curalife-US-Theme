@@ -358,7 +358,7 @@
             currency: '{{ shop.currency }}', 
             value: '{{ checkout.total_price | money_without_currency }}',
             tax: '{{ checkout.tax_price | money_without_currency }}',
-            shipping: '0.00', 
+            shipping: '{{ checkout.shipping_price | money_without_currency }}', 
             affiliation: '{{ shop.name }}',
             transaction_id: '{{ checkout.order.name }}',
             coupon: '{{ coupon.title }}',
@@ -377,7 +377,8 @@
 
         // TODO: Delete after shipping tests are done
         woopra.track('Checkout Step - Thank You', {
-          'test_variant': $.cookie("_sc_7")
+          'test_variant': $.cookie("_sc_7"),
+          'shipping_price': '{{ checkout.shipping_price | money_without_currency }}'
         });
       };
     </script>
