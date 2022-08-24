@@ -1,0 +1,224 @@
+<header class="page-header" id="page-header">
+    <div class="container">
+        <div class="main-logo">
+            <a href="https://curalife.com/"><img src="{{ 'lps-aio-logo-white.png' | asset_url }}" alt="logo"></a>
+        </div>
+        <div class="labor-day-sale">
+          <div class="labor-day"><img src="{{ 'lps-aio-labor-day.png' | asset_url }}" alt="logo"></div>
+          <div class="sale"><img src="{{ 'lps-aio-sale.png' | asset_url }}" alt="logo"></div>
+        </div>
+        <!-- <div class="buy-btn">
+            <a class="main-btn" id='main-cta-btn' href="#">SAVE UP TO 20%</a>
+        </div> -->
+    </div>
+</header>
+
+{% style %}
+header.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #0D2D6A;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    border: 0;
+}
+
+header.page-header .main-logo {
+    padding: 15px 0 10px 0;
+}
+
+header.page-header .main-logo a {
+    display: inline-block;
+    padding: 4px 0;
+    max-width: 181px;
+}
+
+header.page-header .main-logo a img {
+    width: 150px;
+}
+
+header.page-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header.page-header .buy-btn .main-btn {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #FAFFFF;
+    border: none;
+    height: 40px;
+    width: 260px;
+    background-color: #CD2204;
+    box-shadow: 0 4px 4px rgb(34 34 34 / 45%);
+    border-radius: 10px;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    padding: 10px;
+    min-height: unset;
+}
+
+header.page-header .buy-btn .main-btn:hover {
+    background-color: #CD2204;
+}
+
+.labor-day-sale {  
+    margin-left: 28%;
+    display: flex;
+    align-items: center;
+}
+
+
+.buy-btn {
+    margin-left: 1%
+}
+
+
+
+@media screen and (max-width: 760px) {
+    header.page-header .container {
+
+        justify-content: space-between;
+    }
+ 
+    header.page-header .buy-btn {
+        display: none;
+    }
+
+    header.page-header .main-logo a img {
+        width: unset;
+        max-width: 50%;
+    }
+
+    .labor-day-sale {
+        position: absolute;
+        top: 1vw;
+        left: 41vw;
+        margin-left: unset;
+        flex-direction: column;
+    }
+
+    .labor-day img {
+        max-width: 50%;
+    }
+
+    .sale img {
+        max-width: 160%;
+        margin-left: -10vw;
+    }
+}
+
+@media screen and (max-width: 708px) {
+  
+    .labor-day img {
+        max-width: 46%;
+    }
+
+    .sale img {
+        max-width: 200%;
+        margin-left: -12vw;
+    }
+}
+
+@media screen and (max-width: 680px) {
+  
+    .labor-day img {
+        max-width: 45%;
+    }
+
+    .sale img {
+       
+        margin-left: -13vw;
+    }
+}
+
+
+@media screen and (max-width: 611px) {
+  
+
+    .sale img {
+        
+        margin-left: -15vw;
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+  
+
+    .sale img {
+        max-width: 213%;
+        margin-left: -17vw;
+    }
+}
+@media screen and (max-width: 480px) {
+  
+
+    .sale img {
+        max-width: 215%;
+        margin-left: -18vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+  
+
+    .sale img {
+        
+        margin-left: -20vw;
+    }
+}
+
+
+
+@media screen and (max-width: 425px) {
+    .labor-day-sale {
+        left: 38vw;
+    }
+
+    .labor-day img {
+        max-width: 48%;
+    }
+
+    .sale img {
+        max-width: 180%;
+        margin-left: -20vw;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .labor-day-sale {
+        left: 39vw;
+    }
+
+    .labor-day img {
+        max-width: 46%;
+    }
+
+    .sale img {
+        margin-left: -23vw;
+    }
+}
+
+{% endstyle %}
+
+<script>
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() < ($("#product-section").offset().top)) { 
+            $('#page-header').fadeIn(); 
+        } else { 
+            $('#page-header').fadeOut(); 
+        } 
+    });
+
+    $("#main-cta-btn").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#product-section").offset().top + 130
+    }, 2000);
+});
+</script>
