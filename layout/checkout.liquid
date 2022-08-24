@@ -379,7 +379,7 @@
         // TODO: Delete after shipping tests are done
         woopra.track('Checkout Step - Thank You', {
           'test_variant': $.cookie("_sc_7"),
-          'shipping_price': {% if shippingPrice == '0.00' %}'Free'{% else %}'Paid'{% endif %}
+          'shipping_price': {% if shippingPrice == '0.00' %}'Free'{% else %}'Paid: ${{shippingPrice}}'{% endif %}
         });
       };
     </script>
