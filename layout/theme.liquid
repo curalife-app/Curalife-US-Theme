@@ -12,9 +12,9 @@
     <!-- Stylesheets -->
     <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    {% unless request.path contains 'curalin-pack' %}
+    {% if request.path contains 'curalin-pack' %}
     <link rel="preload" href="{{ 'styles-product-aio.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    {% endunless %}
+    {% endif %}
 
     <!-- Script Libraries -->
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url}}"></script>
