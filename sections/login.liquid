@@ -22,9 +22,8 @@
                             <h4>{{section.settings.lgn_sbtitl}}</h4>
                         </div>
                         {% form 'customer_login' %}
-                         {{ form.errors | default_errors }}
-                             
-                             <input id="redirect_url" type="hidden" name="return_to" value="/account/">
+                            {{ form.errors | default_errors }}
+                            <input id="redirect_url" type="hidden" name="return_to" value="/">
                             <div class="form-fields">
                                 <label for="customerEmail" class="full-size">
                                     <input type="email" placeholder="E-mail" name="customer[email]"
