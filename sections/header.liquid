@@ -43,9 +43,9 @@
             <i class="icofont-ui-user"></i><span>Account</span> </a>
           </li>
           {% endunless%}
-          {% if customer%}
+          {% if customer %}
             <li><a href="/account">
-            <i class="icofont-ui-user"></i><span>My Account</span></a></li>
+            <i class="icon-user"></i><span>{% if customer.first_name %}Welcome {{customer.first_name | capitalize}}!{% else %}My Account{% endif %}</span></a></li>
           {% endif %}
           <li>
             <a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#side-cart">
