@@ -70,24 +70,31 @@
                     </ul>
                   </div>
                   <div class="data-btn">
-                    <a class="main-btn blank" href="/account/addresses">Edit
-                      <i class="icon-edit"></i>
-                    </a>
+                    <a class="main-btn blank" href="/account/addresses">Edit</a>
                   </div>
                 </div>
               </div>
               <div class="data-wrap with-border">
                 <div class="data-title">
-                  <h3>Shipping Addresses</h3>
+                  <h3>Shipping Address</h3>
                 </div>
                 <div class="data-content">
                   <div class="shipping-addresses">
+                    {% assign address = customer.default_address %}
+                    {% if address %}
+                      <div class="view_address">
+                        <p>{{ address.first_name }} {{address.last_name }}
+                        {% if address.company != blank %}<br />{{ address.company }}{% endif %}
+                        {% if address.street != blank %}<br />{{ address.street }}{% endif %}
+                        <br />{{ address.city }} {% if address.province_code != blank %}, {{ address.province_code }}{% endif %}
+                        <br />{{ address.country }} {{ address.zip }}
+                        {% if address.phone != blank %}<br />{{ address.phone }}</p>{% endif %}
+                      </div>
+                    {% else %}
                     <div class="empty-text">
-                      <p>
-                        <span class="icon-shipping"></span>You don't have a<br>
-                        shipping address yet.
-                      </p>
+                      <p><span class="icon-shipping"></span>You don't have a shipping address yet.</p>
                     </div>
+                    {% endif %}
                   </div>
                   <div class="data-btn">
                     <a class="main-btn blank" href="/account/addresses">add address</a>

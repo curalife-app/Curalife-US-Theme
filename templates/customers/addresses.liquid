@@ -13,7 +13,7 @@
   {% for address in customer.addresses %}
   <div class="address_table">
     <div id="view_address_{{address.id}}" class="customer_address{% if address == customer.default_address %} default_address_container{% endif %}">
-{% if address == customer.default_address %}<span class="default_address">{{ 'customer.addresses.default' | t }}</span>{% endif %}
+      {% if address == customer.default_address %}<span class="default_address">{{ 'customer.addresses.default' | t }}</span>{% endif %}
       <h4 class="type-subheading type-subheading--1 address_title">
         {{ address.street }}
       </h4> 
