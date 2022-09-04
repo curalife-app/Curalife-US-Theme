@@ -1,15 +1,15 @@
 {% layout 'theme.aio-first-page' %}
-
+{% render 'header-flash' %}
 <div class="page-overflow">
 
   <div class="hero-section">
     <div class="container">
       <div class="data-wrap">
-        <div class="brand-logo">
+        <!-- <div class="brand-logo">
           <a href="javascript:void(0)">
             <img src="{{ 'logo-black.png' | asset_url }}" alt="">
           </a>
-        </div>
+        </div> -->
         <div class="brand-slogan">
           <h1>
             Natural &
@@ -1056,6 +1056,11 @@
 
 <style>
 
+.hero-section .data-wrap {
+  padding-top: 17rem !important;
+}
+
+
 .brand-intro-cover-img-mobile {
   display: none !important;
 }
@@ -1129,7 +1134,11 @@
     border-bottom: 1px solid #DCD9D9;
   }
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
+    .hero-section .data-wrap {
+      padding-top: 11vw !important;
+    }
+
     .brand-intro-cover-img-mobile {
       display: block !important;
       position: absolute !important;
@@ -1181,6 +1190,12 @@
     .life-changes .survey-button {
       margin-bottom: 30px;
       margin-top: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 590px){
+    .hero-section .data-wrap {
+      padding-top: 17vw !important;
     }
   }
 </style>
