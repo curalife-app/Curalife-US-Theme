@@ -1,4 +1,4 @@
-<section id="partnership-footer">
+<footer>
     <div class="container">
   <div class="footer-main-menu">
     <div class="part"> <h2>Navigation</h2>
@@ -32,35 +32,33 @@
     </div>
     </div>
 </div>
-</section>
+</footer>
 
 <style>
-    #partnership-footer {
+    footer {
         width: 100%;
         min-height: 30vw;
         background-color: var(--green-dark);
     }
 
-    .footer-main-menu {
+    footer .footer-main-menu {
         padding-top: 6vw;
-    display: flex; 
-    justify-content: space-between;
+        display: flex; 
+        justify-content: space-between;
     }
 
-    .part h2 {
+    footer .part h2 {
         font-size: 30px;
         line-height: 36px;
         color: #FFFFFF;
     }
 
-
     .part p span {
         color: var(--orange);
         font-weight: 800;
-        
     }
 
-    .part a p {
+    footer .part a p {
         font-family: 'Poppins';
         font-weight: 400;
         font-size: 17px;
@@ -68,29 +66,27 @@
         color: #FFFFFF;
     }
 
-    .icons {
+    footer .icons {
         margin-left: -1vw;
         display: flex;
         gap: 3vw
     }
 
-    .icon {
+    footer .icon {
         font-size: 30px;
     }
 
-    .divider {
+    footer .divider {
         margin-top: 12vw;
         border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-
-    .copyright-etc {
+    footer .copyright-etc {
         display: flex;
         justify-content: space-between;
     }
 
-
-    .copy {
+    footer .copy {
         font-family: 'DM Sans';
         font-weight: 400;
         font-size: 18px;
@@ -99,25 +95,25 @@
         padding: 15px;
     }
 
-    .privacy-terms {
+    footer .privacy-terms {
         display: flex;
     }
 
     @media screen and (max-width: 768px){
-        .footer-main-menu {
+        footer .footer-main-menu {
             flex-direction: column;
         }
 
-        .privacy-terms {
+        footer .privacy-terms {
             gap: 5px;
         }
 
-        #copy-1:before {
+        footer #copy-1:before {
             content: " • ";
             color:#FFFFFF;
         }
 
-        .copy {
+        footer .copy {
             font-size: 11px;
             line-height: 24px;
             padding: 15px 0;
