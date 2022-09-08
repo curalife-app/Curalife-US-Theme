@@ -82,7 +82,7 @@
         this.classList.add('show-video');
     }
 
-    document.querySelector('.iframe_overlay').closest(".testimonials-video_part").addEventListener('click', showvideo)
+    document.querySelector(".testimonials-video_part").addEventListener('click', showvideo)
 
 
     /*count-effect*/
