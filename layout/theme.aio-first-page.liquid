@@ -150,15 +150,18 @@
 
   <!-- RAF -->
   <script>
-    let urlParameter = new URLSearchParams(window.location.search);
-    let linksAddition = urlParameter.get('utm_campaign');
+    let utmParam = new URLSearchParams(window.location.search).get('utm_campaign');
 
-    if (urlParameter.get('utm_campaign') == 'referral_program') {
-      setTimeout(function () {
-        $('a.btn-cta').each(function() {
-          $(this).attr('href', $(this).attr('href').split('?')[0]);
-        });
-      }, 5000);
+    if (utmParam == 'referral_program') {
+      console.log("Referral program");
+      function runAfterElementExists(jquery_selector, callback) {
+        var checker = window.setInterval(function () {
+          if ($(jquery_selector).length) {
+            clearInterval(checker);
+            callback();
+          }
+        }, 200);
+      }
 
       // Wisepop Event!
       $(document).ready(function () {
@@ -168,7 +171,7 @@
 
           $('a').each(function() {
             var currLink = $(this).attr('href');
-            if (currLink) { $(this).attr('href', currLink + "-raf") };
+            $(this).attr('href', currLink.split('?')[0] + "-raf");
           });
         })
       });
