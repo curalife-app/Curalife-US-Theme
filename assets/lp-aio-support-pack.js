@@ -77,22 +77,10 @@
         };
     });
 
-
-    function showvideo() {
-        this.classList.add('show-video');
-    }
-
-    document.querySelector(".testimonials-video_part").addEventListener('click', showvideo)
-
-
     /*count-effect*/
-
-
     const counters = document.querySelectorAll('.satisfaction-survey .success-list ul li .percentage p span');
     const countingSpeed = 6000;
     let animateCounters = true;
-
-
     /*count-effect*/
 
     window.addEventListener('scroll', (e) => {
