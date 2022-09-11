@@ -1,8 +1,8 @@
 <div class="catalog-page">
-  <div class="container">
+  <div class="container" style="min-height: 738px;">
     <div class="mini-wrap">
       <h1 style="min-height: 100px;">Choose Your CuraLin Bundle</h1>
-      <div class="product-list">
+      <div class="product-list" style="min-height: auto;">
         {% for product in collection.products  -%}
         <div class="product-card" style="width: calc(100% / {{ collection.products.size }}); min-height: auto;">
             <div class="wrap">
