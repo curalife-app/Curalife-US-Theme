@@ -1,5 +1,5 @@
 <div class="confetti-container"></div>
-<div class="container">
+<div class="container"style="min-height: 500px">
     <h1 style="display:none">Refer A Friend</h1>
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
     <div class="yotpo-widget-instance" data-yotpo-instance-id="111012"></div>
@@ -7,19 +7,19 @@
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <img class="step-image" src="{{ 'raf-icon-1.png' | asset_url }}" alt="">
+                <img class="step-image" src="{{ 'raf-icon-1.png' | asset_url }}" width="88px" height="70px" alt="">
                 <p class="step-title">Tell Your Friend</p>
                 <p class="step-description">Tell you friends about CuraLin and the difference it can make in their lives. When you refer, your friend will also get a $25 discount!</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
-                <img class="step-image" src="{{ 'raf-icon-2.png' | asset_url }}" width="69px" height="70px" alt="">
+                <img class="step-image" src="{{ 'raf-icon-2.png' | asset_url }}" width="71px" height="72px" alt="">
                 <p class="step-title">Share Your Link</p>
                 <p class="step-description">Share you personal referral code with friends. You can send the link directly, or through Email, SMS, Facebook, Whatsapp, or Twitter.</p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
-                <img class="step-image" src="{{ 'raf-icon-3.png' | asset_url }}" alt="">
+                <img class="step-image" src="{{ 'raf-icon-3.png' | asset_url }}" width="80px" height="74px" alt="">
                 <p class="step-title">Redeem Your Reward</p>
                 <p class="step-description">When your friend make their first order, we’ll credit your account with 750 Loyalty Points. That is already enough for a free bottle of CuraLin!</p>
             </div>
@@ -49,7 +49,7 @@
 
     function renderEmailShare() {
         if (!$("#email-share").length) {
-            var emailShare = '<li id="email-share" role="listitem" style="font-weight: 400; font-style: normal;"><div class="yotpo-widget-copy-link-container"><button class="yotpo-share-button-widget yotpo-share-button yotpo-copy-link" utm-src="c"><div class="yotpo-share-button-icons"><span class="icon-envelope"></span></div><span class="yotpo-share-button-txt" id="email-share-text">Email</span></button></div></li>';
+            var emailShare = '<li id="email-share" role="listitem" style="font-weight: 400; font-style: normal;"><div class="yotpo-widget-copy-link-container"><button class="yotpo-share-button-widget yotpo-share-button yotpo-copy-link"  utm-src="c"><div class="yotpo-share-button-icons"><span class="icon-envelope"></span></div><span class="yotpo-share-button-txt" id="email-share-text">Email</span></button></div></li>';
             $(".yotpo-share-buttons-container").prepend(emailShare);
 
             $( "#email-share" ).click(function() {
@@ -415,6 +415,7 @@ svg.yotpo-share-button-icon {
 .yotpo-widget-referral-widget .yotpo-share-buttons-container {
     max-width: 700px;
     margin: auto;
+    min-height: 150px;
 }
 
 .yotpo-widget-referral-widget .yotpo-tile {
@@ -450,6 +451,7 @@ svg.yotpo-share-button-icon {
     .steps .step {
         width: 100%;
         margin-bottom: 20px;
+       
     }
 
     .yotpo-widget-referral-widget .yotpo-tile-box {
