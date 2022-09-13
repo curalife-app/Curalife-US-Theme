@@ -130,7 +130,7 @@
               {% endfor %}
             </div>
 
-            <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+            <input id="productVaraintSelected" type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.variants.first.id }}"/>
             <div class="submit-wrap">
               <div class="btn">
                 <form action="" method="post" novalidate class="cart table-wrap" id="cartform" data-wetheme-section-type="template--cart" data-wetheme-section-id="{{ section.id }}">

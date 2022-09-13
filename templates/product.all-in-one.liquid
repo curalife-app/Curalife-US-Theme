@@ -185,7 +185,7 @@
         {% endfor %}
       </div>
 
-      <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+      <input id="productVaraintSelected" type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.variants.first.id }}"/>
       <div class="submit-wrap">
         <div class="qty-data">
         <div class="qty-control">

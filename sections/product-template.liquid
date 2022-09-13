@@ -75,8 +75,8 @@
             </div>
             
             <div class="form-wrap">
-              <form method="post" id="addTocartForm" action="/cart/add">
-              <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <form method="post" id="addTocartForm" action="/cart/add" data-productid="{{ product.id }}">
+              <input id="productVaraintSelected" type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.variants.first.id }}" />
                 <div class="qty-data">
                   <p>Quantity</p>
                   <div class="qty-control">
