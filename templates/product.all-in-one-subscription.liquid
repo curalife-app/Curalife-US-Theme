@@ -123,8 +123,8 @@
     <div class="product-actions">
     <div class="form-wrap">
       {% form 'product', product, class: productClasses %}
-      {% if product.available %}{% include 'subscription-product' %}{% endif %} 
-      
+      {% if product.available %}{% render 'subscription-product' %}{% endif %} 
+
       <div id="CTAForm">
       <p class="cta-title">Select Your Pack</p>
       <div class="input-field product-option-select">
