@@ -185,6 +185,10 @@
         {% endfor %}
       </div>
 
+      {% form 'product', product, class: productClasses %}
+      {% if product.available %}{% include 'subscription-product' %}{% endif %} 
+
+
       <input id="productVaraintSelected" type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.variants.first.id }}"/>
       <div class="submit-wrap">
         <div class="qty-data">
