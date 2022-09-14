@@ -122,7 +122,7 @@
     </div>
     <div class="product-actions">
     <div class="form-wrap">
-      {% form 'product', product, class: productClasses %}
+      {% form 'product', product, data-productid: product.id, class: productClasses %}
       {% if product.available %}{% render 'subscription-product' %}{% endif %} 
 
       <div id="CTAForm">
