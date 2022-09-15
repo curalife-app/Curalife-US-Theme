@@ -122,13 +122,13 @@
     </div>
     <div class="product-actions">
     <div class="form-wrap">
-      {% form 'product', product, data-productid: product.id, class: productClasses %}
-
       
-
+      
+      
       <div id="CTAForm">
-      <p class="cta-title">Select Your Pack</p>
-      <div class="input-field product-option-select">
+        <p class="cta-title">Select Your Pack</p>
+        <div class="input-field product-option-select">
+        {% form 'product', product, data-productid: product.id, class: productClasses %}
         {% for var in product.variants %}
         <div class="variant-box">
           <div class="radio-box">
@@ -187,6 +187,8 @@
           </style>
         </div>
         {% endfor %}
+        {{ form | payment_button }}
+        {% endform %} 
       </div>
 
       <input id="productVaraintSelected" type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.variants.first.id }}"/>
@@ -210,8 +212,6 @@
         </div>
       </div>
       </div> 
-      {{ form | payment_button }}
-      {% endform %}                
     </div>
     </div>
   </div>
