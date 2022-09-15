@@ -123,9 +123,9 @@
     <div class="product-actions">
     <div class="form-wrap">
       {% form 'product', product, data-productid: product.id, class: productClasses %}
-      {% if product.available %}{% render 'subscription-product' %}{% endif %} 
-      {% endform %}
+
       
+
       <div id="CTAForm">
       <p class="cta-title">Select Your Pack</p>
       <div class="input-field product-option-select">
@@ -209,7 +209,8 @@
         <button class="main-btn" id="buy-button">Shop Now <span class="save" id="save"></span></button>
         </div>
       </div>
-      </div>                 
+      </div> 
+      {% endform %}                
     </div>
     </div>
   </div>
