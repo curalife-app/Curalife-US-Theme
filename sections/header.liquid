@@ -24,7 +24,7 @@
                     {% if link.links != blank %}
                       <ul class="child">
                         {% for child_link in link.links %}
-                          <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a></li>
+                          <li><a href="{{ child_link.url }}">{{ child_link.title }}</a></li>
                         {% endfor %}
                       </ul>
                     {% endif %}
