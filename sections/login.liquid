@@ -1,23 +1,23 @@
-<a id="opn_thanks" href="javascript:void(0)" class="open-modal" data-fancybox="" data-src="#thanks-modal">
-                        <span>thanks</span></i></a>
+<a id="opn_thanks" href="javascript:void(0)" class="open-modal" data-fancybox="" data-src="#thanks-modal"><span>thanks</span></i></a>
+
 <div class="login-page">
     <div class="container">
         <div class="mini-wrap">
-            <div id="customer">
-                <div class="page-title">
-                    <div class="sub-title">
-                        <h1>{{section.settings.lgn_titl}}</h1>
+            <div class="page-title">
+                <div class="sub-title">
+                    <h1>{{section.settings.lgn_titl}}</h1>
+                </div>
+            </div>
+            <div class="login-form">
+                {% if section.settings.lgn_img != blank %}
+                <div class="picture">
+                    <div class="img-wrap">
+                        <img src="{{ section.settings.lgn_img | image_url: width: 610 }}" width="600px" height="750px" alt="" loading="lazy">
                     </div>
                 </div>
-                <div class="login-form">
-                    {% if section.settings.lgn_img != blank %}
-                    <div class="picture">
-                        <div class="img-wrap">
-                            <img src="{{ section.settings.lgn_img | image_url: width: 610 }}" width="600px" height="750px" alt="" loading="lazy">
-                        </div>
-                    </div>
-                    {% endif %}
-                    <div class="form-wrap">
+                {% endif %}
+                <div class="form-wrap">
+                    <div id="customer">
                         <div class="main-action">
                             <div class="sub-title">
                                 <h4>{{section.settings.lgn_sbtitl}}</h4>
@@ -52,29 +52,57 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div id="recover-password" style='display:none'>
+                        <div class="main-action">
+                            <h2>Reset Password</h2>
+                            <p>We will send you an email to reset your password.</p>
+
+                            {% form 'recover_customer_password', id:'rst_popup' %}
+                            {{ form.errors | default_errors }}
+
+                                <div class="form-fields">
+                                    <label class="full-size">
+                                        <input type="email" placeholder="E-mail" name="email" id="recover-email"
+                                        autocorrect="off"
+                                        autocapitalize="off"
+                                        autocomplete="email">
+                                    </label>
+                                </div>
+                                <div class="submit-form">
+                                    <button id="submit_reset_btn" type="submit" class="main-btn">Submit</button>
+                                    <span class="note">or <a href="" onclick="hideRecoverPasswordForm();return false;">Cancel</a></span>
+                                </div>
+                            {% endform %} 
+                        </div>
+                        <div class="extra-action">
+                            <div class="text">
+                                <p>Do you want to login?</p>
+                            </div>
+                            <div class="btn">
+                                <a href="/account/login" class="main-btn blank">Login</a>
+                            </div>
+                        </div>
+                        <div class="template_header">
+                        <h2 class="title">Reset Password</h2>
+                        <p class="note">We will send you an email to reset your password.</p>
+                        </div>
+
+                        {% form 'recover_customer_password' %}
+                        {{ form.errors | default_errors }}
+
+                        <div id="recover_email" class="clearfix large_form">
+                            <label for="email" class="large">Email</label>
+                            <input type="email" value="" size="30" name="email" id="recover-email" class="large" />
+                        </div>
+                        <div class="action_bottom">
+                            <input class="btn" type="submit" value="Submit" />
+                            <span class="note">or <a href="pages/thank-you" onclick="hideRecoverPasswordForm();return false;">Cancel</a></span>
+                        </div>
+                        {% endform %}
+                    </div>
                 </div>
             </div>
-
-            
-            <div id="recover-password" style='display:none'>
-                <div class="template_header">
-                  <h2 class="title">Reset Password</h2>
-                  <p class="note">We will send you an email to reset your password.</p>
-                </div>
-
-                {% form 'recover_customer_password' %}
-                  {{ form.errors | default_errors }}
-
-                  <div id="recover_email" class="clearfix large_form">
-                    <label for="email" class="large">Email</label>
-                    <input type="email" value="" size="30" name="email" id="recover-email" class="large" />
-                  </div>
-                  <div class="action_bottom">
-                    <input class="btn" type="submit" value="Submit" />
-                    <span class="note">or <a href="#" onclick="hideRecoverPasswordForm();return false;">Cancel</a></span>
-                  </div>
-                {% endform %}
-              </div>
         </div>
     </div>
 </div>
