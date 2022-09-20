@@ -56,18 +56,25 @@
     </div>
 </div>
 
-{% form 'recover_customer_password' %}
-  {{ form.errors | default_errors }}
+<div id="recover-password" style='display:none'>
+  <div class="template_header">
+    <h2 class="title">Reset Password</h2>
+    <p class="note">We will send you an email to reset your password.</p>
+  </div>
 
-  <div id="recover_email" class="clearfix large_form">
-    <label for="email" class="large">Email</label>
-    <input type="email" value="" size="30" name="email" id="recover-email" class="large" />
-  </div>
-  <div class="action_bottom">
-    <input class="btn" type="submit" value="Submit" />
-    <span class="note">or <a href="#" onclick="hideRecoverPasswordForm();return false;">Cancel</a></span>
-  </div>
-{% endform %}
+  {% form 'recover_customer_password' %}
+    {{ form.errors | default_errors }}
+
+    <div id="recover_email" class="clearfix large_form">
+      <label for="email" class="large">Email</label>
+      <input type="email" value="" size="30" name="email" id="recover-email" class="large" />
+    </div>
+    <div class="action_bottom">
+      <input class="btn" type="submit" value="Submit" />
+      <span class="note">or <a href="#" onclick="hideRecoverPasswordForm();return false;">Cancel</a></span>
+    </div>
+  {% endform %}
+</div>
 
 {% schema %}
     {
