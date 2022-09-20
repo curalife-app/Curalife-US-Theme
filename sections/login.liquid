@@ -55,6 +55,34 @@
         </div>
     </div>
 </div>
+
+<!-- Use JavaScript to show/hide this form -->
+{%- form 'recover_customer_password' -%}
+
+  {%- if form.posted_successfully? -%}
+    <div role="status">
+      <p>We've sent you an email with a link to update your password.</p>
+    </div>
+  {%- endif -%}
+
+  <div id="recover"{% unless form.errors %} style="display: none;"{% endunless %}>
+    <p>We will send you an email to reset your password.</p>
+
+    {{ form.errors | default_errors }}
+
+    <label for="customerEmail">Email Address</label>
+    <input type="email"
+      name="email"
+      id="customerEmail"
+      autocorrect="off"
+      autocapitalize="off"
+      autocomplete="email">
+
+    <input type="submit" value="Submit">
+  </div>
+
+{%- endform -%}
+
 {% schema %}
     {
         "name": "Login",
