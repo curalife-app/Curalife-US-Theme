@@ -23,7 +23,7 @@
               </div>
               {% form 'customer_login' %}
                 {{ form.errors | default_errors }}
-                <input id="redirect_url" type="hidden" name="return_to" value="/">
+                <input id="redirect_url" type="hidden" name="return_to" value="/account">
                 <div class="form-fields">
                   <label for="customerEmail" class="full-size">
                     <input type="email" placeholder="E-mail" name="customer[email]"
