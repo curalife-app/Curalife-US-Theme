@@ -133,47 +133,29 @@
   }
 {% endschema %}
 
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-
-$("#login-btn").click(function() {
-  // Identify customer
-  woopra.identify({
-    email: $("#customerEmail").text()
-  });
-  });
-
-
-
-{% endjavascript %}
-<style>
-   #opn_thanks{
-  opacity: 0;
-   }
-   
-</style>
 <script>
-   
-   
-    $(document).ready(function() {
-  
-   var  x = localStorage.getItem("reset_password");
-    if (x=='true') {
-     localStorage.setItem("reset_password", false);
-     $("#opn_thanks").click();
-
-   }
-     
-  
+  $("#login-btn").click(function() {
+    // Identify customer
+    woopra.identify({
+      email: $("#customerEmail").text()
     });
-    </script>
-<script>
-  $(document).ready(function() {
-    var url =  window.location.href; 
-    $("#redirect_url").val(url);
   });
+</script>
+
+<style>
+  #opn_thanks{
+    opacity: 0;
+  }
+</style>
+
+<script>
+    $(document).ready(function() {
+      var  x = localStorage.getItem("reset_password");
+        if (x=='true') {
+        localStorage.setItem("reset_password", false);
+        $("#opn_thanks").click();
+      }
+    });
 </script>
 
 <script type="text/javascript">
