@@ -91,6 +91,45 @@
   </div>
 </div>
 
+<script>
+  $("#login-btn").click(function() {
+    // Identify customer
+    woopra.identify({
+      email: $("#customerEmail").text()
+    });
+  });
+</script>
+
+<style>
+  #opn_thanks{
+    opacity: 0;
+  }
+</style>
+
+<script>
+    $(document).ready(function() {
+      var  x = localStorage.getItem("reset_password");
+        if (x=='true') {
+        localStorage.setItem("reset_password", false);
+        $("#opn_thanks").click();
+      }
+    });
+</script>
+
+<script type="text/javascript">
+  function showRecoverPasswordForm() {
+    document.getElementById('recover-password').style.display = 'inline-block';
+    document.getElementById('customer').style.display='none';
+  }
+
+  function hideRecoverPasswordForm() {
+    document.getElementById('recover-password').style.display = 'none';
+    document.getElementById('customer').style.display = 'inline-block';
+  }
+
+  if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+</script>
+
 {% schema %}
   {
     "name": "Login",
@@ -132,42 +171,3 @@
     ]
   }
 {% endschema %}
-
-<script>
-  $("#login-btn").click(function() {
-    // Identify customer
-    woopra.identify({
-      email: $("#customerEmail").text()
-    });
-  });
-</script>
-
-<style>
-  #opn_thanks{
-    opacity: 0;
-  }
-</style>
-
-<script>
-    $(document).ready(function() {
-      var  x = localStorage.getItem("reset_password");
-        if (x=='true') {
-        localStorage.setItem("reset_password", false);
-        $("#opn_thanks").click();
-      }
-    });
-</script>
-
-<script type="text/javascript">
-    function showRecoverPasswordForm() {
-      document.getElementById('recover-password').style.display = 'inline-block';
-      document.getElementById('customer').style.display='none';
-    }
-
-    function hideRecoverPasswordForm() {
-      document.getElementById('recover-password').style.display = 'none';
-      document.getElementById('customer').style.display = 'inline-block';
-    }
-
-    if (window.location.hash == '#recover') { showRecoverPasswordForm() }
-    </script>
