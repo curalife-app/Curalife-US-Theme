@@ -8,7 +8,9 @@
 {% assign admin = true %}
 {% endif %}
 
-{% unless admin %}
+{% if admin %}
+  <script>console.log("Logged as Admin!")</script>
+{% elsif %}
   <script>
     const detectRobot = (userAgent) => {
       const robots = new RegExp([
@@ -56,8 +58,8 @@
         else if ((host == "Global") && (countriesUS.includes(country))) { // If Global and we are on US Countries so go US
           redirectTo("curalife.com", true);
         }
-        
+
       }, req.send(null);
     }
   </script>
-{% endunless %}
+{% endif %}
