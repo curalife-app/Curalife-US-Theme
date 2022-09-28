@@ -3,18 +3,17 @@
 {% capture CFH %}{{ content_for_header }}{% endcapture %}
 
 {% if CFH contains 'adminBarInjector' %}
-{% assign admin = true %}
+  {% assign admin = true %}
 {% elsif CFH contains 'admin-bar-iframe' %}
-{% assign admin = true %}
+  {% assign admin = true %}
 {% elsif CFH contains 'preview_bar_injector-' %}
-{% assign admin = true %}
+  {% assign admin = true %}
 {% elsif CFH contains "redirect=false" %}
-{% assign admin = true %}
+  {% assign admin = true %}
+  <script>console.log("Redirect Disabled Through URL Parameter")</script>
 {% endif %}
 
-{% if admin %}
-  <script>console.log("Logged as Admin or URL redirect disable! No Redirect.")</script>
-{% else %}
+{% unless admin %}
   <script>
     const detectRobot = (userAgent) => {
       const robots = new RegExp([
@@ -66,4 +65,4 @@
       }, req.send(null);
     }
   </script>
-{% endif %}
+{% endunless %}
