@@ -10,7 +10,7 @@
 {% assign admin = true %}
 {% endif %}
 
-{% if admin or page_url contains "redirect=false" %}
+{% if admin or CFH contains "redirect=false" %}
   <script>console.log("Logged as Admin or URL redirect disable! No Redirect.")</script>
 {% else %}
   <script>
