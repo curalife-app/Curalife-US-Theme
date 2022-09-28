@@ -8,9 +8,11 @@
 {% assign admin = true %}
 {% elsif CFH contains 'preview_bar_injector-' %}
 {% assign admin = true %}
+{% elsif CFH contains "redirect=false" %}
+{% assign admin = true %}
 {% endif %}
 
-{% if admin or CFH contains "redirect=false" %}
+{% if admin %}
   <script>console.log("Logged as Admin or URL redirect disable! No Redirect.")</script>
 {% else %}
   <script>
