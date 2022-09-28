@@ -1,5 +1,3 @@
-{% assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&' %}
-
 {% capture CFH %}{{ content_for_header }}{% endcapture %}
 
 {% if CFH contains 'adminBarInjector' %}
