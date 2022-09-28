@@ -8,7 +8,7 @@
 {% assign admin = true %}
 {% elsif CFH contains 'preview_bar_injector-' %}
 {% assign admin = true %}
-{% elsif CFH contains "redirect=false" %}
+{% elsif page_url contains "redirect=false" %}
 {% assign admin = true %}
 {% endif %}
 
