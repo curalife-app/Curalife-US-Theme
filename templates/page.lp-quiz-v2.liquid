@@ -38,7 +38,6 @@
     src: local(''), url('{{ "OpenSans-Bold.ttf" | asset_url }}') format('ttf'), }
 
 
-
     @font-face {
       font-family: 'DM Sans';
       font-style: normal;
@@ -52,8 +51,6 @@
       font-weight: 700;
       src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
       src: local(''), url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'), }
-
-    
 </style>
 <main class="lp-quiz">
   <section class="nav">
@@ -77,14 +74,11 @@
       <div class="paragraph-approach">Your struggles can end by playing to YOUR strengths, your personality, your lifestyle.</div>
       <div class="approach-btn"><a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a></div> 
     </div>
-      <div class="approach-images">
-        <img class="approach-image" src="{{ 'image01.gif' | asset_url }}" alt="keep your blood text" loading="lazy">
-        
-        <img class="approach-image" src="{{ 'image02.gif' | asset_url }}" alt="keep your blood text" loading="lazy">
-       
-        <img class="approach-image" src="{{ 'image03.gif' | asset_url }}" alt="keep your blood text" loading="lazy">
-       
-        <img class="approach-image" src="{{ 'image04.gif' | asset_url }}" alt="keep your blood text" loading="lazy">
+      <div class="approach-images">  
+        <img class="approach-image" src="{{ 'lp-quiz2-img1.gif' | asset_url }}" alt="keep your blood text" loading="lazy">     
+        <img class="approach-image" src="{{ 'lp-quiz2-img2.gif' | asset_url }}" alt="keep your blood text" loading="lazy">    
+        <img class="approach-image" src="{{ 'lp-quiz2-img3.gif' | asset_url }}" alt="keep your blood text" loading="lazy">     
+        <img class="approach-image" src="{{ 'lp-quiz2-img4.gif' | asset_url }}" alt="keep your blood text" loading="lazy">
          
     </div>
     
@@ -269,20 +263,19 @@
 
 
   .approach-image {
+    position: relative;
     width: 47.5%;
     padding-bottom: 5%;
+    
   }
 
   .quiz-button {
     top: 241px;
   }
-
   .hero-body {
     max-width: 100%;
     height: 100%;
   }
-
-
 
 .green-rectangle-with-text {
   width: 100%;
@@ -520,12 +513,11 @@
       line-height: 32px;
     }
 
-    
+
     .diet-maintain {
       margin-top: unset;
-
+     
     }
-
     
 
     .diet-maintain-text {
