@@ -1,0 +1,595 @@
+{% layout 'theme.lps' %}
+
+<style>
+  @font-face {
+    font-family: 'PP Radio Grotesk';
+    font-style: normal;
+    font-weight: 300;
+    src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
+    src: local(''), url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'), }
+
+  @font-face {
+    font-family: 'PP Radio Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
+    src: local(''), url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'), }
+
+  @font-face {
+    font-family: 'PP Radio Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
+    src: local(''), url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'), }
+
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ "OpenSans-Regular.ttf" | asset_url }}');
+    src: local(''), url('{{ "OpenSans-Regular.otf" | asset_url }}') format('ttf'), }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ "OpenSans-Bold.ttf" | asset_url }}');
+    src: local(''), url('{{ "OpenSans-Bold.ttf" | asset_url }}') format('ttf'), }
+
+
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
+      src: local(''), url('{{ "DMSans-Regular.otf" | asset_url }}') format('ttf'), }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
+      src: local(''), url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'), }
+</style>
+<main class="lp-quiz">
+  <section class="nav">
+    <div class="container">
+      <div class="big-img">
+        <img src="{{ 'lp-quiz2-logo-white.png' | asset_url }}" alt="chef icon" loading="lazy">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="hero-banner">
+    <div class="banner-back">
+      <img src="{{ 'lp-quiz2-hero-bg.svg' | asset_url }}" alt=""
+      loading="lazy">
+      
+    </div>
+    <div class="approach">
+      <div class="text-approach">
+      <div class="title-approach">Which approach will most easily maintain YOUR blood sugar?</div>
+      <div class="paragraph-approach">Your struggles can end by playing to YOUR strengths, your personality, your lifestyle.</div>
+      <div class="approach-btn"><a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a></div> 
+    </div>
+      <div class="approach-images">  
+        <img class="approach-image" src="{{ 'lp-quiz2-img1.gif' | asset_url }}" alt="keep your blood text" loading="lazy">     
+        <img class="approach-image" src="{{ 'lp-quiz2-img2.gif' | asset_url }}" alt="keep your blood text" loading="lazy">    
+        <img class="approach-image" src="{{ 'lp-quiz2-img3.gif' | asset_url }}" alt="keep your blood text" loading="lazy">     
+        <img class="approach-image" src="{{ 'lp-quiz2-img4.gif' | asset_url }}" alt="keep your blood text" loading="lazy">
+         
+    </div>
+    
+       
+   
+      <div class="approach-btn-mobile"><a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a></div> 
+    </div>
+    <div class="container">
+     
+      
+    </div>
+  </section>
+
+  {% render 'featured-on-quiz2' %}
+
+  <section class="green-rectangle-with-text">
+    <div class="container">
+      <div class="text-blood-sugar">
+        <div class="paragraph-1">Stop asking yourself why blood sugar maintenence is hard.
+        It won’t be once you’re using the best approach for YOU.</div>
+        <div class="paragraph-2">Do you know which approach will work for YOU?</div>
+       
+      </div>
+    </div>
+  </section>
+
+  <section class="hero-body">
+    <div class="container">
+      <div class="diet-maintain">
+        <div class="diet-maintin-small-text">
+          <p> There are many approaches to maintaining healthy blood sugar.</p> <br>
+          <p>Learning which one is right for YOU is important because playing to YOUR strengths will help make your habits healthy and stress-free.</p> <br>
+          <p class="benefits">
+            We’ll help you find your best approach for YOUR body so that you can:</p> <br>
+          <img src="{{ 'lp-quiz2-keep-your-blood-small.png' | asset_url }}" alt="keep your blood text small"
+            loading="lazy"><br>
+        </div>
+        <div class="diet-maintain-text">
+          <p class="diets-key">There are many approaches to maintaining healthy blood sugar.
+          Learning which one is right for YOU is important because playing to YOUR strengths will help make your habits healthy and stress-free.  
+          We’ll help you find your best approach for YOUR body so that you can:</p>
+          <img src="{{ 'lp-quiz2-keep-your-blood.png' | asset_url }}" alt="keep your blood text" loading="lazy">
+        </div>
+        <div class="diet-maintain-picture">
+          <img src="{{ 'lp-quiz-diet-food.png' | asset_url }}" alt="diet girl" loading="lazy">
+        </div>
+      </div>
+      <div class="people-saying">What people are saying:</div>
+      <div class="people-that-saying">
+       
+        <div class="people"><img src="{{ 'lp-quiz-people-1.png' | file_url }}" alt="people 1" loading="lazy"> 
+        <p class="what-found">Found a great excercise routine</p>
+      </div>
+        <div class="people"><img src="{{ 'lp-quiz-people-2.png' | file_url }}" alt="people 2" loading="lazy">
+        <p class="what-found">Found the right diet</p>
+      </div>
+        <div class="people"><img src="{{ 'lp-quiz-people-3.png' | file_url }}" alt="people 3" loading="lazy">
+        <p class="what-found">Found the right diet</p>
+      </div>
+        <div class="people"><img src="{{ 'lp-quiz-people-4.png' | file_url }}" alt="people 4" loading="lazy">
+        <p class="what-found">Discovered helpful supplements</p>
+      </div>
+      </div>
+      
+    </div>
+    </div>
+   
+  </section>
+
+
+  <section class="pastel-rectangle-with-text">
+    <div class="container">
+      <div class="text-blood-sugar">
+        <div class="paragraph-3">Take this quiz to find out more about which blood sugar approach is right for you. When you listen to your body, it works WITH you, not against you and makes everything easier. 
+        <p class="start-learning"> Start learning about what your body wants so YOU can succeed today!</p> </div>
+        
+        <a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="container">
+      <p class="copyright">
+        Copyright © 2018 CuraLife Commerce SIA. All rights reserved.</p>
+      <p class="use">
+        Use of this website signifies your agreement to the <a href="/policies/privacy-policy">Privacy & Cookie
+          Policy</a> and <a href="/policies/terms-of-service">Terms
+          & Conditions</a></p>
+    </div>
+  </section>
+</main>
+
+<style>
+  body {
+    padding-top: 0;
+  }
+  
+  .nav {
+    background-color: #424733;
+  }
+  .lp-quiz .featured-section {
+    border: none;
+  }
+
+  .lp-quiz .featured-section .sub-title h4 {
+    display: none;
+  }
+
+  .lp-quiz p {
+    margin: 0;
+  }
+
+  .lp-quiz button {
+    padding: 5px 50px;  
+    background: #FFB22D;
+    border-radius: 4px;
+    border: 0;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 51px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .big-img {
+    padding: 25px 0;
+    
+  }
+
+
+
+  .hero-banner {
+    
+    padding: 5% 0;
+  }
+
+  .banner-back {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+  }
+
+  .approach {
+    display: flex;
+    padding: 5%;
+    gap: 5%;
+  }
+
+  .text-approach {
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+  }
+  .title-approach {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    color: #424733;
+  }
+
+  .paragraph-approach {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400;
+    font-size: 36.5px;
+    line-height: 51px;  
+    color: #424733;
+  }
+
+  .approach-btn-mobile {
+    display: none;
+  }
+
+  .approach-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
+
+
+  .approach-image {
+    position: relative;
+    width: 47.5%;
+    padding-bottom: 5%;
+    
+  }
+
+  .quiz-button {
+    top: 241px;
+  }
+  .hero-body {
+    max-width: 100%;
+    height: 100%;
+  }
+
+.green-rectangle-with-text {
+  width: 100%;
+  background: #D5DCB9;
+}
+
+.text-blood-sugar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vw;
+  padding: 6vw 0;
+}
+
+.paragraph-1 {
+  font-family: 'PP Radio Grotesk';
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 51px; 
+  text-align: center;
+  color: #424733;
+}
+.paragraph-2 {
+  font-family: 'PP Radio Grotesk';  
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 51px; 
+  text-align: center;
+  color: #424733;
+}
+
+
+
+  .diet-maintain {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .diet-maintin-small-text {
+    display: none;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+  }
+
+  .diets-key {
+    max-width: 698px;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 45px;
+    color: #000000;
+  }
+
+  .people-saying {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: center;
+    color: #434733;
+  }
+
+  .people-that-saying {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 4%;
+  }
+
+  .people-that-saying img {
+    margin-bottom: 5%;
+  }
+
+  .what-found {
+    font-family: 'PP Radio Grotesk';   
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;  
+    color: #000000;
+    background-color: #FFDEAC;
+    width: fit-content;
+  }
+
+  .benefits {
+    font-weight: 700;
+  }
+
+  .pastel-rectangle-with-text {
+    width: 100%;
+    background-color: #FAF5E9;
+  }
+
+  .paragraph-3 {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 45px;
+    text-align: center;
+    color: #333333;
+  }
+
+  .paragraph-3 .start-learning {
+    font-size: 25px;
+    line-height: 46px;
+    color: #000000;
+  }
+
+  .footer {
+    padding: 10% 1%;
+    background: #424733;
+    
+  }
+
+  .footer p {
+    padding: 1%;
+    font-family: 'Open Sans';
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .footer p .copyright {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .use {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17px;  
+    text-align: center;
+    color: #FFFFFF;
+
+  }
+
+  .use a {
+    text-decoration: none;
+    color: #FFFFFF;
+    
+  }
+
+  @media (max-width: 1024px) {
+
+    .people-that-saying { 
+      margin-top: 2%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5vw;
+
+  }
+
+ 
+  @media (max-width: 1000px) {
+    .big-img {
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      padding: 0 15px;
+    }
+
+    .hero-banner {
+      padding: 3vw 0;
+    }
+
+    .banner-back {
+      top: 14vw;
+    }
+
+
+    .approach {
+      flex-direction: column;
+      gap: 5vw;
+    }
+
+   .title-approach {  
+      font-size: 24px;
+      line-height: 29px;
+    }
+    .paragraph-approach {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .approach-btn {
+      display: none;
+    }
+
+    .approach-btn-mobile {
+      display: flex;
+      justify-content: center;
+    }
+
+    .approach-images {
+      justify-content: center;
+    }
+  
+    .big-img img { 
+      padding: 0vw 30vw;
+    }
+
+    .lp-quiz button {
+
+      font-size: 24px;
+      line-height: 31px;
+      
+    }
+
+    .quiz-button {
+      margin-left: 10px;
+    }
+
+
+    .paragraph-1 {  
+      font-size: 18px;
+      line-height: 22px;
+    }
+    
+    .paragraph-2 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+
+    .diet-maintain {
+      margin-top: unset;
+     
+    }
+    
+
+    .diet-maintain-text {
+      display: none;
+    }
+
+    .diet-maintain-picture {
+      display: none;
+    }
+
+    .diet-maintin-small-text {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .people-saying {
+      margin-top: 20px;
+      font-size: 24px;
+      line-height: 45px;
+    }
+
+ 
+    .paragraph-3 {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      color: #424733;
+    }
+
+    .paragraph-3 .start-learning {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      color: #424733;
+    }
+
+    .footer p {
+      margin: 0 auto;
+      
+    }
+
+    .footer p.copyright {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .use {
+      
+      font-size: 12px;
+      line-height: 18px;
+     
+    }
+  }
+
+  @media (max-width: 350px) {
+  
+    .diet-maintin-small-text {
+      width: 300px;
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .people-saying {
+      margin-top: 0;
+    }
+
+   
+  }
+</style>
