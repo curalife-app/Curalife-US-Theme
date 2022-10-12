@@ -75,19 +75,19 @@
       <div class="approach-btn"><a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a></div> 
     </div>
       <div class="approach-images">  
-      <div class="brand-intro-cover-img">
+      <div class="approach-img">
         <img class="cover-img" src="{{ 'lp-quiz2-image1-full.png' | asset_url}}" alt="">
         <img class="cover-img" src="{{ 'lp-quiz2-image1-opasity.png' | asset_url}}" alt="" style="display: none;">
       </div>
-      <div class="brand-intro-cover-img">
+      <div class="approach-img">
         <img class="cover-img" src="{{ 'lp-quiz2-image2-full.png' | asset_url}}" alt="">
         <img class="cover-img" src="{{ 'lp-quiz2-image2-opasity.png' | asset_url}}" alt="" style="display: none;">
       </div>
-      <div class="brand-intro-cover-img">
+      <div class="approach-img">
         <img class="cover-img" src="{{ 'lp-quiz2-image3-full.png' | asset_url}}" alt="">
         <img class="cover-img" src="{{ 'lp-quiz2-image3-opasity.png' | asset_url}}" alt="" style="display: none;">
       </div>
-      <div class="brand-intro-cover-img">
+      <div class="approach-img">
         <img class="cover-img" src="{{ 'lp-quiz2-image4-full.png' | asset_url}}" alt="">
         <img class="cover-img" src="{{ 'lp-quiz2-image4-opasity.png' | asset_url}}" alt="" style="display: none;">
       </div>
@@ -193,17 +193,17 @@
   $current = 0;	
   $interval = 400;
   $fadeTime = 600;
-  $imgNum = 6;	
+  $imgNum = 8;	
  
   $(document).ready(function(){
-    $('.brand-intro-cover-img img').css({'position':'relative'});
+    $('.approach-img img').css({'position':'relative'});
     
     nextFadeIn();
     nextFadeInM();
   });
  
   function nextFadeIn(){
-    $('.brand-intro-cover-img img').eq($current).delay($interval).fadeOut($fadeTime)
+    $('.approach-img img').eq($current).delay($interval).fadeOut($fadeTime)
     .end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
       
     if($next < $imgNum-1){ $next++; } else { $next = 0;}
@@ -303,7 +303,7 @@
   }
 
 
-  .brand-intro-cover-img {
+  .approach-img {
     position: relative;
     width: 47.5%;
     padding-bottom: 5%;
