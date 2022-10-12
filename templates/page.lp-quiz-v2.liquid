@@ -375,9 +375,10 @@
   .approach-images {
     display: flex;
     flex-wrap: wrap;
+    align-self: flex-start;
     gap: 5%;
-    width: 500px;
-    height: 500px;
+    min-width: 30vw;
+    min-height: 30vw;
     position: relative;
   }
 
@@ -598,6 +599,10 @@
     .approach {
       flex-direction: column;
       gap: 5vw;
+    }
+
+    .approach-images {
+      align-self: unset;
     }
 
    .title-approach {  
