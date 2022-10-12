@@ -195,21 +195,12 @@
   $imgNum = 8;	
  
   $(document).ready(function(){
-    $('.approach-img img').css({'position':'relative'});
-    
-    nextFadeIn();
-   
-  });
-
-  function nextFadeInM(){
     $('.approach-img img').eq($currentM).delay($interval).fadeOut($fadeTime)
     .end().eq($nextM).delay($interval).hide().fadeIn($fadeTime, nextFadeInM);
 
     if($nextM < $imgNum-1){ $nextM++; } else { $nextM = 0;}
     if($currentM < $imgNum-1){ $currentM++; } else { $currentM =0; }
-  };
-
- 
+  });
 </script>
 
 <style>
