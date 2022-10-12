@@ -206,8 +206,7 @@
     $('.approach-img img').eq($current).delay($interval).fadeOut($fadeTime)
     .end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
       
-    if($next < $imgNum-1){ $next++; } else { $next = 0;}
-    if($current < $imgNum-1){ $current++; } else { $current =0; }
+  
   };
 
  
