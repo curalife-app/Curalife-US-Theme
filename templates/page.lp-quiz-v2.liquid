@@ -75,6 +75,10 @@
       <div class="approach-btn"><a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a></div> 
     </div>
       <div class="approach-images">  
+      <span class="brand-intro-cover-img">
+        <img class="cover-img" src="{{ 'lp-quiz2-image1-full.png' | asset_url}}" alt="">
+        <img class="cover-img" src="{{ 'lp-quiz2-image1-opasity.png' | asset_url}}" alt="" style="display: none;">
+      </span>
         <img class="approach-image" src="{{ 'lp-quiz2-img1.gif' | asset_url }}" alt="keep your blood text" loading="lazy">     
         <img class="approach-image" src="{{ 'lp-quiz2-img2.gif' | asset_url }}" alt="keep your blood text" loading="lazy">    
         <img class="approach-image" src="{{ 'lp-quiz2-img3.gif' | asset_url }}" alt="keep your blood text" loading="lazy">     
@@ -172,6 +176,35 @@
     </div>
   </section>
 </main>
+
+<script>
+ 
+
+  $next = 1;			
+  $current = 0;
+  $nextM = 1;			
+  $currentM = 0;		
+  $interval = 1500;
+  $fadeTime = 1800;
+  $imgNum = 5;	
+ 
+  $(document).ready(function(){
+    $('.brand-intro-cover-img img').css({'position':'absolute'});
+    
+    nextFadeIn();
+    nextFadeInM();
+  });
+ 
+  function nextFadeIn(){
+    $('.brand-intro-cover-img img').eq($current).delay($interval).fadeOut($fadeTime)
+    .end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
+      
+    if($next < $imgNum-1){ $next++; } else { $next = 0;}
+    if($current < $imgNum-1){ $current++; } else { $current =0; }
+  };
+
+ 
+</script>
 
 <style>
   body {
