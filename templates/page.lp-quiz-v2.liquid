@@ -204,7 +204,7 @@
   function nextFadeIn(){
     $('.approach-img img').eq($current).delay($interval).end().eq($next).delay($interval).hide();
     if($next < $imgNum-1){ $next++; } else { $next = 0;}
-     if($current < $imgNum-1){ $current++; } else { $current =0; } 
+    if($current < $imgNum-1){ $current++; } else { $current =0; } 
   
   };
 
@@ -300,6 +300,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5%;
+    width: 500px;
+    height: 500px;
+    position: relative;
   }
 
 
@@ -307,7 +310,10 @@
     position: relative;
     width: 47.5%;
     padding-bottom: 5%;
-    
+  }
+
+  .approach-img img {
+    position: absolute;
   }
 
   .quiz-button {
