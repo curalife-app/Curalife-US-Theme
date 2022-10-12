@@ -76,23 +76,21 @@
     </div>
       <div class="approach-images">  
       <div class="approach-img">
-        <img  src="{{ 'lp-quiz2-image1-full.png' | asset_url}}" alt="">
-        <img  src="{{ 'lp-quiz2-image1-opasity.png' | asset_url}}" alt="" style="display: none;">
+        <img id="img1" src="{{ 'lp-quiz2-image1-full.png' | asset_url}}" alt="">
+        <img id="img1-overlay" src="{{ 'lp-quiz2-image1-opasity.png' | asset_url}}" alt="" style="display: none;">
       </div>
       <div class="approach-img">
-        <img  src="{{ 'lp-quiz2-image2-full.png' | asset_url}}" alt="">
-        <img  src="{{ 'lp-quiz2-image2-opasity.png' | asset_url}}" alt="" style="display: none;">
+        <img id="img2" src="{{ 'lp-quiz2-image2-full.png' | asset_url}}" alt="">
+        <img id="img2-overlay" src="{{ 'lp-quiz2-image2-opasity.png' | asset_url}}" alt="" style="display: none;">
       </div>
       <div class="approach-img">
-        <img  src="{{ 'lp-quiz2-image3-full.png' | asset_url}}" alt="">
-        <img  src="{{ 'lp-quiz2-image3-opasity.png' | asset_url}}" alt="" style="display: none;">
+        <img id="img3" src="{{ 'lp-quiz2-image3-full.png' | asset_url}}" alt="">
+        <img id="img3-overlay" src="{{ 'lp-quiz2-image3-opasity.png' | asset_url}}" alt="" style="display: none;">
       </div>
       <div class="approach-img">
-        <img  src="{{ 'lp-quiz2-image4-full.png' | asset_url}}" alt="">
-        <img src="{{ 'lp-quiz2-image4-opasity.png' | asset_url}}" alt="" style="display: none;">
+        <img id="img4" src="{{ 'lp-quiz2-image4-full.png' | asset_url}}" alt="">
+        <img id="img4-overlay" src="{{ 'lp-quiz2-image4-opasity.png' | asset_url}}" alt="" style="display: none;">
       </div>
-       
-         
     </div>
     
        
@@ -186,29 +184,108 @@
   </section>
 </main>
 
-<script>
- 
-
-  $next = 1;			
-  $current = 0;	
-  $interval = 800;
-  $fadeTime = 1000;
-  $imgNum = 8;	
- 
-  $(document).ready(function(){
-    nextFadeIn();
-  });
-
-  function nextFadeIn() {
-    $('.approach-img img').eq($current).delay($interval).fadeOut($fadeTime)
-    .end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
-
-    if($next < $imgNum-1){ $next++; } else { $next = 0;}
-    if($current < $imgNum-1){ $current++; } else { $current =0; }
-  }
-</script>
-
 <style>
+  #img1 {
+    animation-name: img1-animation;
+    animation-duration: 4s;
+  }
+
+  #img1-overlay {
+    animation-name: img1-overlay-animation;
+    animation-duration: 4s;
+  }
+
+  #img2 {
+    animation-name: img2-animation;
+    animation-duration: 4s;
+  }
+
+  #img2-overlay {
+    animation-name: img2-overlay-animation;
+    animation-duration: 4s;
+  }
+
+  #img3 {
+    animation-name: img3-animation;
+    animation-duration: 4s;
+  }
+
+  #img3-overlay {
+    animation-name: img3-overlay-animation;
+    animation-duration: 4s;
+  }
+
+  #img4 {
+    animation-name: img4-animation;
+    animation-duration: 4s;
+  }
+
+  #img4-overlay {
+    animation-name: img4-overlay-animation;
+    animation-duration: 4s;
+  }
+
+
+  @keyframes img1-animation {
+      0%   {opacity: opacity: 1;}
+      20%  {opacity: opacity: 1;}
+      40%  {opacity: opacity: 0;}
+      60%  {opacity: opacity: 0;}
+      80%  {opacity: opacity: 1;}
+      100% {opacity: opacity: 0;}
+  }
+
+  @keyframes img1-overlay-animation {
+    0%   {opacity: opacity: 0;}
+    20%  {opacity: opacity: 0;}
+    40%  {opacity: opacity: 1;}
+    60%  {opacity: opacity: 1;}
+    80%  {opacity: opacity: 0;}
+    100% {opacity: opacity: 1;}
+  }
+
+  @keyframes img2-animation {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
+
+  @keyframes img2-overlay-animation {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
+
+  @keyframes img3-animation {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
+
+  @keyframes img3-overlay-animation {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
+
+  @keyframes img4-animation {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
+
+  @keyframes img4-overlay-animation {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
+
   body {
     padding-top: 0;
   }
