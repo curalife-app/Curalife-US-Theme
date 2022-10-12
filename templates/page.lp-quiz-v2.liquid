@@ -200,12 +200,13 @@
     nextFadeIn();
    
   });
- 
-  function nextFadeIn(){
-    $('.approach-img img').eq($current).delay($interval).end().eq($next).delay($interval).hide();
-    if($next < $imgNum-1){ $next++; } else { $next = 0;}
-    if($current < $imgNum-1){ $current++; } else { $current =0; } 
-  
+
+  function nextFadeInM(){
+    $('.approach-img img').eq($currentM).delay($interval).fadeOut($fadeTime)
+    .end().eq($nextM).delay($interval).hide().fadeIn($fadeTime, nextFadeInM);
+
+    if($nextM < $imgNum-1){ $nextM++; } else { $nextM = 0;}
+    if($currentM < $imgNum-1){ $currentM++; } else { $currentM =0; }
   };
 
  
