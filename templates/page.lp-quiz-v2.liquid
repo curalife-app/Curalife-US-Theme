@@ -189,8 +189,8 @@
 <script>
  
 
-  $next = 2;			
-  $current = 1;	
+  $next = 1;			
+  $current = 0;	
   $interval = 550;
   $fadeTime = 600;
   $imgNum = 8;	
@@ -206,8 +206,8 @@
     $('.brand-intro-cover-img img').eq($current).delay($interval).fadeOut($fadeTime)
     .end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
       
-    if($next < $imgNum-1){ $next++; } else { $next = 1;}
-    if($current < $imgNum-1){ $current++; } else { $current =1; }
+    if($next < $imgNum-1){ $next++; } else { $next = 0;}
+    if($current < $imgNum-1){ $current++; } else { $current =0; }
   };
 
  
