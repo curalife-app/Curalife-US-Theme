@@ -75,10 +75,10 @@
       <div class="approach-btn"><a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a></div> 
     </div>
       <div class="approach-images">  
-      <span class="brand-intro-cover-img">
+      <div class="brand-intro-cover-img">
         <img class="cover-img" src="{{ 'lp-quiz2-image1-full.png' | asset_url}}" alt="">
         <img class="cover-img" src="{{ 'lp-quiz2-image1-opasity.png' | asset_url}}" alt="" style="display: none;">
-      </span>
+      </div>
       <div class="brand-intro-cover-img">
         <img class="cover-img" src="{{ 'lp-quiz2-image2-full.png' | asset_url}}" alt="">
         <img class="cover-img" src="{{ 'lp-quiz2-image2-opasity.png' | asset_url}}" alt="" style="display: none;">
@@ -196,7 +196,7 @@
   $imgNum = 2;	
  
   $(document).ready(function(){
-    $('.brand-intro-cover-img img');
+    $('.brand-intro-cover-img img').css({'position':'relative'});
     
     nextFadeIn();
     nextFadeInM();
