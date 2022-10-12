@@ -196,11 +196,11 @@
   $imgNum = 8;	
  
   $(document).ready(function(){
-    $('.approach-img img').eq($currentM).delay($interval).fadeOut($fadeTime)
-    .end().eq($nextM).delay($interval).hide().fadeIn($fadeTime, nextFadeInM);
+    $('.approach-img img').eq($current).delay($interval).fadeOut($fadeTime)
+    .end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeInM);
 
-    if($nextM < $imgNum-1){ $nextM++; } else { $nextM = 0;}
-    if($currentM < $imgNum-1){ $currentM++; } else { $currentM =0; }
+    if($nextM < $imgNum-1){ $next++; } else { $next = 0;}
+    if($currentM < $imgNum-1){ $current++; } else { $current =0; }
   });
 </script>
 
