@@ -72,19 +72,30 @@
       <div class="text-approach">
       <div class="title-approach">Which approach will most easily maintain YOUR blood sugar?</div>
       <div class="paragraph-approach">Your struggles can end by playing to YOUR strengths, your personality, your lifestyle.</div>
-      <div class="approach-btn"><a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a></div> 
+      <div class="approach-btn"><a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a></div> 
     </div>
       <div class="approach-images">  
-        <img class="approach-image" src="{{ 'lp-quiz2-img1.gif' | asset_url }}" alt="keep your blood text" loading="lazy">     
-        <img class="approach-image" src="{{ 'lp-quiz2-img2.gif' | asset_url }}" alt="keep your blood text" loading="lazy">    
-        <img class="approach-image" src="{{ 'lp-quiz2-img3.gif' | asset_url }}" alt="keep your blood text" loading="lazy">     
-        <img class="approach-image" src="{{ 'lp-quiz2-img4.gif' | asset_url }}" alt="keep your blood text" loading="lazy">
-         
+      <div class="approach-img">
+        <img id="img1" src="{{ 'lp-quiz2-image1-full.png' | asset_url}}" alt="">
+        <img id="img1-overlay" src="{{ 'lp-quiz2-image1-opasity.png' | asset_url}}" alt="">
+      </div>
+      <div class="approach-img">
+        <img id="img2" src="{{ 'lp-quiz2-image2-full.png' | asset_url}}" alt="">
+        <img id="img2-overlay" src="{{ 'lp-quiz2-image2-opasity.png' | asset_url}}" alt="">
+      </div>
+      <div class="approach-img">
+        <img id="img3" src="{{ 'lp-quiz2-image3-full.png' | asset_url}}" alt="">
+        <img id="img3-overlay" src="{{ 'lp-quiz2-image3-opasity.png' | asset_url}}" alt="">
+      </div>
+      <div class="approach-img">
+        <img id="img4" src="{{ 'lp-quiz2-image4-full.png' | asset_url}}" alt="">
+        <img id="img4-overlay" src="{{ 'lp-quiz2-image4-opasity.png' | asset_url}}" alt="">
+      </div>
     </div>
     
        
    
-      <div class="approach-btn-mobile"><a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a></div> 
+      <div class="approach-btn-mobile"><a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a></div> 
     </div>
     <div class="container">
      
@@ -97,10 +108,10 @@
   <section class="green-rectangle-with-text">
     <div class="container">
       <div class="text-blood-sugar">
-        <div class="paragraph-1">Stop asking yourself why blood sugar maintenence is hard.
+        <div class="paragraph-1">Stop asking yourself why blood sugar maintenence is hard. <br/>
         It won’t be once you’re using the best approach for YOU.</div>
         <div class="paragraph-2">Do you know which approach will work for YOU?</div>
-       
+        <a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a>
       </div>
     </div>
   </section>
@@ -109,36 +120,37 @@
     <div class="container">
       <div class="diet-maintain">
         <div class="diet-maintin-small-text">
-          <p> There are many approaches to maintaining healthy blood sugar.</p> <br>
+          <p> There are many approaches to maintaining healthy blood sugar.</p> <br/>
           <p>Learning which one is right for YOU is important because playing to YOUR strengths will help make your habits healthy and stress-free.</p> <br>
-          <p class="benefits">
+          <p>
             We’ll help you find your best approach for YOUR body so that you can:</p> <br>
           <img src="{{ 'lp-quiz2-keep-your-blood-small.png' | asset_url }}" alt="keep your blood text small"
             loading="lazy"><br>
         </div>
         <div class="diet-maintain-text">
-          <p class="diets-key">There are many approaches to maintaining healthy blood sugar.
-          Learning which one is right for YOU is important because playing to YOUR strengths will help make your habits healthy and stress-free.  
-          We’ll help you find your best approach for YOUR body so that you can:</p>
+          <p class="diets-key">There are many approaches to maintaining healthy blood sugar. <br/>
+          Learning which one is right for YOU is important because playing to YOUR strengths will help make your habits healthy and stress-free. <br/>
+          We’ll help you find your best approach for YOUR body so that you can:</p><br/>
           <img src="{{ 'lp-quiz2-keep-your-blood.png' | asset_url }}" alt="keep your blood text" loading="lazy">
         </div>
         <div class="diet-maintain-picture">
           <img src="{{ 'lp-quiz-diet-food.png' | asset_url }}" alt="diet girl" loading="lazy">
         </div>
       </div>
+      <div class="yellow-rectangle"></div>
       <div class="people-saying">What people are saying:</div>
       <div class="people-that-saying">
        
-        <div class="people"><img src="{{ 'lp-quiz-people-1.png' | file_url }}" alt="people 1" loading="lazy"> 
+        <div class="people"><img src="{{ 'lp-quiz-people-1-radius.png' | asset_url }}" alt="people 1" loading="lazy"> 
         <p class="what-found">Found a great excercise routine</p>
       </div>
-        <div class="people"><img src="{{ 'lp-quiz-people-2.png' | file_url }}" alt="people 2" loading="lazy">
+        <div class="people"><img src="{{ 'lp-quiz-people-2-radius.png' | asset_url }}" alt="people 2" loading="lazy">
         <p class="what-found">Found the right diet</p>
       </div>
-        <div class="people"><img src="{{ 'lp-quiz-people-3.png' | file_url }}" alt="people 3" loading="lazy">
+        <div class="people"><img src="{{ 'lp-quiz-people-3-radius.png' | asset_url }}" alt="people 3" loading="lazy">
         <p class="what-found">Found the right diet</p>
       </div>
-        <div class="people"><img src="{{ 'lp-quiz-people-4.png' | file_url }}" alt="people 4" loading="lazy">
+        <div class="people"><img src="{{ 'lp-quiz-people-4-radius.png' | asset_url }}" alt="people 4" loading="lazy">
         <p class="what-found">Discovered helpful supplements</p>
       </div>
       </div>
@@ -152,10 +164,10 @@
   <section class="pastel-rectangle-with-text">
     <div class="container">
       <div class="text-blood-sugar">
-        <div class="paragraph-3">Take this quiz to find out more about which blood sugar approach is right for you. When you listen to your body, it works WITH you, not against you and makes everything easier. 
+        <div class="paragraph-3">Take this quiz to find out more about which blood sugar approach is right for you. When you listen to your body, <br/> it works WITH you, not against you and makes everything easier. 
         <p class="start-learning"> Start learning about what your body wants so YOU can succeed today!</p> </div>
         
-        <a href="/pages/v1-quiz"><button class="quiz-button">Take Quiz</button></a>
+        <a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a>
       </div>
     </div>
   </section>
@@ -173,10 +185,115 @@
 </main>
 
 <style>
+  #img1 {
+    animation-name: img1-animation;
+  }
+
+  #img1-overlay {
+    animation-name: img1-overlay-animation;
+  }
+
+  #img2 {
+    animation-name: img2-animation;
+  }
+
+  #img2-overlay {
+    animation-name: img2-overlay-animation;
+  }
+
+  #img3 {
+    animation-name: img3-animation;
+  }
+
+  #img3-overlay {
+    animation-name: img3-overlay-animation;
+  }
+
+  #img4 {
+    animation-name: img4-animation;
+  }
+
+  #img4-overlay {
+    animation-name: img4-overlay-animation;
+  }
+
+
+  @keyframes img1-animation {
+    10%  {opacity: 1;}
+    25%  {opacity: 1;}
+    40%  {opacity: 0;}
+    55%  {opacity: 0;}
+    70%  {opacity: 1;}
+    85%  {opacity: 0;}
+  }
+
+  @keyframes img1-overlay-animation {
+    10%  {opacity: 0;}
+    25%  {opacity: 0;}
+    40%  {opacity: 1;}
+    55%  {opacity: 1;}
+    70%  {opacity: 0;}
+    85%  {opacity: 1;}
+  }
+
+  @keyframes img2-animation {
+    10%  {opacity: 0;}
+    25%  {opacity: 0;}
+    40%  {opacity: 1;}
+    55%  {opacity: 0;}
+    70%  {opacity: 0;}
+    85%  {opacity: 1;}
+  }
+
+  @keyframes img2-overlay-animation {
+    10%  {opacity: 1;}
+    25%  {opacity: 1;}
+    40%  {opacity: 0;}
+    55%  {opacity: 1;}
+    70%  {opacity: 1;}
+    85%  {opacity: 0;}
+  }
+
+  @keyframes img3-animation {
+    10%  {opacity: 0;}
+    25%  {opacity: 0;}
+    40%  {opacity: 0;}
+    55%  {opacity: 1;}
+    70%  {opacity: 1;}
+    85%  {opacity: 1;}
+  }
+
+  @keyframes img3-overlay-animation {
+    10%  {opacity: 1;}
+    25%  {opacity: 1;}
+    40%  {opacity: 1;}
+    55%  {opacity: 0;}
+    70%  {opacity: 0;}
+    85%  {opacity: 0;}
+  }
+
+  @keyframes img4-animation {
+    10%  {opacity: 0;}
+    25%  {opacity: 1;}
+    40%  {opacity: 0;}
+    55%  {opacity: 0;}
+    70%  {opacity: 0;}
+    85%  {opacity: 0;}
+  }
+
+  @keyframes img4-overlay-animation {
+    10%  {opacity: 1;}
+    25%  {opacity: 0;}
+    40%  {opacity: 1;}
+    55%  {opacity: 1;}
+    70%  {opacity: 1;}
+    85%  {opacity: 1;}
+  }
+
   body {
     padding-top: 0;
   }
-  
+
   .nav {
     background-color: #424733;
   }
@@ -226,7 +343,7 @@
 
   .approach {
     display: flex;
-    padding: 5%;
+    padding: 5% 5% 0;
     gap: 5%;
   }
 
@@ -258,15 +375,25 @@
   .approach-images {
     display: flex;
     flex-wrap: wrap;
+    align-self: flex-start;
     gap: 5%;
+    min-width: 40vw;
+    min-height: 40vw;
+    position: relative;
   }
 
 
-  .approach-image {
+  .approach-img {
     position: relative;
     width: 47.5%;
     padding-bottom: 5%;
-    
+  }
+
+  .approach-img img {
+    position: absolute;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
   }
 
   .quiz-button {
@@ -286,7 +413,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5vw;
+  gap: 3vw;
   padding: 6vw 0;
 }
 
@@ -335,12 +462,21 @@
     color: #000000;
   }
 
+  .yellow-rectangle {
+    margin: 5% auto;
+    height: 2px;
+    background: #FFC10E;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
+
+
   .people-saying {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
     font-size: 40px;
     line-height: 45px;
-    text-align: center;
+    padding-left: 2%;
+    padding-bottom: 2%;
     color: #434733;
   }
 
@@ -367,10 +503,6 @@
     width: fit-content;
   }
 
-  .benefits {
-    font-weight: 700;
-  }
-
   .pastel-rectangle-with-text {
     width: 100%;
     background-color: #FAF5E9;
@@ -392,7 +524,7 @@
   }
 
   .footer {
-    padding: 10% 1%;
+    padding: 4% 1%;
     background: #424733;
     
   }
@@ -465,6 +597,15 @@
       gap: 5vw;
     }
 
+    .approach-images {
+      align-self: center;
+      gap: 5%;
+      min-width: 100%;
+      min-height: 93vw;
+
+}
+    }
+
    .title-approach {  
       font-size: 24px;
       line-height: 29px;
@@ -483,10 +624,7 @@
       justify-content: center;
     }
 
-    .approach-images {
-      justify-content: center;
-    }
-  
+
     .big-img img { 
       padding: 0vw 30vw;
     }
@@ -536,6 +674,7 @@
       align-items: center;
       margin-top: 50px;
       margin-bottom: 50px;
+      padding: 2vw;
     }
 
     .people-saying {
@@ -577,6 +716,19 @@
     }
   }
 
+
+  @media (max-width: 600px){
+    .banner-back {
+      top: 50vw;
+    }
+  }
+
+  @media (max-width: 425px){
+    .banner-back {
+      top: 68vw;
+    }
+  }
+
   @media (max-width: 350px) {
   
     .diet-maintin-small-text {
@@ -588,6 +740,10 @@
 
     .people-saying {
       margin-top: 0;
+    }
+
+    .banner-back {
+      top: 77vw;
     }
 
    
