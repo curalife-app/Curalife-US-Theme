@@ -1,6 +1,12 @@
 {% capture CFH %}{{ content_for_header }}{% endcapture %}
 
-{% if CFH contains 'adminBarInjector' or CFH contains 'admin-bar-iframe' or CFH contains 'preview_bar_injector-' %}
+{% if CFH contains 'adminBarInjector' %}
+  {% assign admin = true %}
+  <script>console.log("Redirect Disabled Cause User Is Admin.")</script>
+{% elsif CFH contains 'admin-bar-iframe' %}
+  {% assign admin = true %}
+  <script>console.log("Redirect Disabled Cause User Is Admin.")</script>
+{% elsif CFH contains 'preview_bar_injector-' %}
   {% assign admin = true %}
   <script>console.log("Redirect Disabled Cause User Is Admin.")</script>
 {% elsif CFH contains "redirect=false" %}
