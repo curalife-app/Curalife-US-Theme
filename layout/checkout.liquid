@@ -171,9 +171,10 @@
           checkedRadio.change(function () {
             console.log("radio changed");
             woopra.track('shipping method selection change', { selection: checkedRadio.val() });
+          });
         });
         // End Track Shipping
-      })
+      };
 
       function paymentStage() {
         jQuery("#shipping-method").addClass('active');
