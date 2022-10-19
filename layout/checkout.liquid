@@ -167,6 +167,7 @@
         let checkedRadio = $('.section--shipping-method .content-box__row input:radio[name=checkout[shipping_rate][id]]:checked');
 
         runAfterElementExists(".section--shipping-method .content-box__row", function() {
+          console.log("Shipping Method Exists");
           checkedRadio.change(function () {
             console.log("radio changed");
             woopra.track('shipping method selection change', { selection: checkedRadio.val() });
