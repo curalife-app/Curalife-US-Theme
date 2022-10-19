@@ -164,13 +164,11 @@
             }}, 200);
         }
 
-        let checkedRadio = $('.section--shipping-method .content-box__row .input-radio:checked');
-
         runAfterElementExists(".section--shipping-method .content-box__row", function() {
           console.log("Shipping Method Exists");
-          checkedRadio.on('change', function() {
+          $('.section--shipping-method .content-box__row .input-radio').on('change', function() {
             console.log("radio changed");
-            woopra.track('shipping method selection change', { selection: checkedRadio.val() });
+            woopra.track('shipping method selection change', { selection: $('.section--shipping-method .content-box__row .input-radio:checked').val() });
           });
         });
         // End Track Shipping
