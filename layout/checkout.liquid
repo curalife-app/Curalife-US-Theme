@@ -15,10 +15,10 @@
 
     {{ checkout_stylesheets }}
     {{ checkout_scripts }}
-  
-    <!-- Curalife Shopify Redirect for checkout.shopify.com -->  
+
+    <!-- Curalife Shopify Redirect for checkout.shopify.com -->
   {% render 'layout.head.google-tag-manager-checkout-redirect'%}
-    <!-- Curalife Shopify Only Google Tag Manager -->  
+    <!-- Curalife Shopify Only Google Tag Manager -->
   {% render 'layout.head.google-tag-manager'%}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -76,9 +76,9 @@
             {{ content_for_logo }}
           </div>
           <div class="sidebar__content">
-            {{ content_for_order_summary }}      
+            {{ content_for_order_summary }}
           </div>
-          
+
           <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
           <div class="yotpo-widget-instance" data-yotpo-instance-id="18962"></div>
 
@@ -155,7 +155,7 @@
         jQuery(".tc").hide();
         $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Information")').attr("href") + '"></a>');
 
-        // Shipping Test - Remove if not needed
+        // Track Changing Shipping Method
         function runAfterElementExists(jquery_selector,callback){
             var checker = window.setInterval(function() {
             if ($(jquery_selector).length) {
@@ -164,26 +164,14 @@
             }}, 200);
         }
 
-        runAfterElementExists(".section--shipping-method .content-box__row", function() {
-          let zone = $('.section--shipping-method .content-box__row').first().find('.radio__label__primary').attr('data-shipping-method-label-title').substring(21);
+        let checkedRadio = $('.section--shipping-method .content-box__row input:radio[name=checkout[shipping_rate][id]]:checked');
 
-          switch (zone) {
-            case '(West)':
-              break;
-            case '(South)':
-              $('.section--shipping-method .content-box__row').eq(1).find('.radio__label__primary').text("Guaranteed 8 Day Delivery");
-              break;
-            case '(Midwest)':
-              $('.section--shipping-method .content-box__row').eq(1).find('.radio__label__primary').text("Guaranteed 7 Day Delivery");
-              break;
-            case '(Northeast)':
-              $('.section--shipping-method .content-box__row').eq(1).find('.radio__label__primary').text("Guaranteed 5 Day Delivery");
-              break;
-            default:
-              console.log(`No Match for Zone ${zone}`);
-          }
+        runAfterElementExists(".section--shipping-method .content-box__row", function() {
+          checkedRadio.change(function () {
+            console.log("radio changed");
+            woopra.track('shipping method selection change', { selection: checkedRadio.val() });
         });
-        // End Shipping Test
+        // End Track Shipping
       }
 
       function paymentStage() {
@@ -236,7 +224,7 @@
         });
       }
     </script>
-  
+
     <!-- Start of Woopra Code -->
     <script>
       !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
@@ -258,7 +246,7 @@
         woopra.identify({
           customer_id: {{ customer.id | json }},
           name: {{ customer.name | json }},
-          email: {{ customer.email | json }},              
+          email: {{ customer.email | json }},
           order_count: {{ customer.orders_count | json }},
           total_spent: {{ customer.total_spent | json }}
         });
@@ -267,8 +255,8 @@
       woopra.track();
     </script>
     <!-- End of Woopra Code -->
-  
-    <script>  
+
+    <script>
       items_data = [];
       {% for line_item in checkout.line_items %}
         var item = {
@@ -277,13 +265,13 @@
           affiliation: '{{ shop.name }}',
           price: parseFloat({{ line_item.product.price }} / 100.0).toFixed(2).toString(),
           currency: '{{ shop.currency }}',
-          item_brand: 'CuraLife',            
-          item_category: 'CuraLin',         
+          item_brand: 'CuraLife',
+          item_category: 'CuraLin',
           quantity: {{ line_item.quantity }}
         }
         items_data.push(item);
       {% endfor %}
-    
+
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
       const step = urlParams.get('step');
@@ -292,7 +280,7 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'begin_checkout',
-          ecommerce: {                          
+          ecommerce: {
             items: items_data
           },
           email: '{{ checkout.email }}',
@@ -312,8 +300,8 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'add_shipping_info',
-          ecommerce: {      
-            shipping_tier: 'Free Shipping',                 
+          ecommerce: {
+            shipping_tier: 'Free Shipping',
             items: items_data
           },
           email: '{{ checkout.email }}',
@@ -333,8 +321,8 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'add_payment_info',
-          ecommerce: {      
-            payment_type: '',                    
+          ecommerce: {
+            payment_type: '',
             items: items_data
           },
           email: '{{ checkout.email }}',
@@ -349,17 +337,17 @@
         });
 
         woopra.track('Checkout Step - Payment', {});
-      }  
+      }
       else if (window.location.href.includes('thank_you')) {
         {% assign coupon = checkout.discount_applications | first %}
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: 'purchase', 
+          event: 'purchase',
           ecommerce: {
-            currency: '{{ shop.currency }}', 
+            currency: '{{ shop.currency }}',
             value: '{{ checkout.total_price | money_without_currency }}',
             tax: '{{ checkout.tax_price | money_without_currency }}',
-            shipping: '{{ checkout.shipping_price | money_without_currency }}', 
+            shipping: '{{ checkout.shipping_price | money_without_currency }}',
             affiliation: '{{ shop.name }}',
             transaction_id: '{{ checkout.order.name }}',
             coupon: '{{ coupon.title }}',
@@ -375,7 +363,7 @@
           country: '{{ checkout.shipping_address.country_code }}',
           user_agent: navigator.userAgent
         });
-        
+
         {% assign shippingPrice = checkout.shipping_price | money_without_currency %}
         // TODO: Delete after shipping tests are done
         woopra.track('Checkout Step - Thank You', {
@@ -385,9 +373,9 @@
       };
     </script>
 
-    <script> 
+    <script>
       // Track Discount Code
-      var checker;  
+      var checker;
 
       function trackApplyDiscount() {
         checker = setInterval(checkApplyDiscount, 200);
@@ -413,7 +401,7 @@
           woopra.track('Apply Discount Code - Failed', {
             discount_code: $("#checkout_reduction_code").attr("value"),
             error_message: "No message displayed (but apply button disabled)"
-          });        
+          });
           clearInterval(checker);
           $("#checkout_submit").click(trackApplyDiscount);
         }
