@@ -168,7 +168,7 @@
           console.log("Shipping Method Exists");
           $('.section--shipping-method .content-box__row .input-radio').on('change', function() {
             console.log("radio changed");
-            woopra.track('shipping method selection change', { selection: $('.section--shipping-method .content-box__row .input-radio:checked').val() });
+            woopra.track('shipping method selection change', { selection: $('.section--shipping-method .content-box__row .input-radio:checked').closest(".radio__label__primary").attr("data-shipping-method-label-title") });
           });
         });
         // End Track Shipping
