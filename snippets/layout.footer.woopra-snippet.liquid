@@ -75,10 +75,10 @@
   }
 
   function trackOptimizeExperiments() {
-    var optCookie = getOptimizeCookieValue();
+    var cookie_regx = '(^|;)\\s*' + '_gaexp' + '\\s*=\\s*([^;]+)';
 
-    runAfterCookieExists('(^|;)\\s*' + '_gaexp' + '\\s*=\\s*([^;]+)', function() {
-      var experiments = optCookie.replace('GAX1.2.','').split('!');
+    runAfterCookieExists(cookie_regx, function() {
+      var experiments = document.cookie.match(cookie_regx).replace('GAX1.2.','').split('!');
 
       for (var i = 0; i < experiments.length; i++) {
         var experiment = experiments[i].split('.');
