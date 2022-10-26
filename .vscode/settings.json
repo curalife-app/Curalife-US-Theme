@@ -14,5 +14,6 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#005fd3",
-    "docwriter.style": "JSDoc"
+    "docwriter.style": "JSDoc",
+    "liquid.format.enable": true
 }
