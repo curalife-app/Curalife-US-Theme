@@ -126,12 +126,13 @@
             </div>
 
             {% for item in order.line_items %}
-              {% if line.product.title contains 'CuraEats' %}
+              {% if item.product.title contains 'CuraEats' %}
                 <div class="curaets-content">
                   {% render 'curaeats-download-section' %}
                   {% render 'curaeats-upgrade-section' %}
                   {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true %}
                 </div>
+                <script>console.log("Order Contains CuraEats")</script>
               {% endif %}
             {% endfor %}
 
