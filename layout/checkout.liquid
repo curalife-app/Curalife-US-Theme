@@ -1,3 +1,9 @@
+{% for item in order.line_items %}
+  {% if item.product.title contains 'CuraEats' %}
+    {% assign curaeats_exist = true %}
+  {% endif %}
+{% endfor %}
+
 <!DOCTYPE html>
 
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
@@ -125,32 +131,30 @@
               </div>
             </div>
 
-            {% for item in order.line_items %}
-              {% if item.product.title contains 'CuraEats' %}
-                <div class="curaets-content">
-                  {% render 'curaeats-download-section' %}
-                  {% render 'curaeats-upgrade-section' %}
-                  {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true %}
-                </div>
-                <script>console.log("Order Contains CuraEats")</script>
+            {% if curaeats_exist %}
+              <div class="curaets-content">
+                {% render 'curaeats-download-section' %}
+                {% render 'curaeats-upgrade-section' %}
+                {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true %}
+              </div>
+              <script>console.log("Order Contains CuraEats")</script>
 
-                <style>
-                  #curaeats-content {
-                    display: none;
-                  }
+              <style>
+                #curaeats-content {
+                  display: none;
+                }
 
-                  aside.sidebar.onboarding {
-                    width: unset;
-                    float: unset;
-                  }
+                aside.sidebar.onboarding {
+                  width: unset;
+                  float: unset;
+                }
 
-                  aside.sidebar.onboarding:after {
-                    background: unset;
-                    box-shadow: unset;
-                  }
-                </style>
-              {% endif %}
-            {% endfor %}
+                aside.sidebar.onboarding:after {
+                  background: unset;
+                  box-shadow: unset;
+                }
+              </style>
+            {% endif %}
 
           </div>
         </aside>
@@ -215,6 +219,7 @@
       }
 
       function thankyouStage() {
+
         jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
         jQuery(".sidebar").insertAfter("#curaeats-content");
         jQuery("#curaeats-content").show();
