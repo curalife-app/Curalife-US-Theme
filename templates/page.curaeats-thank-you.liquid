@@ -2,7 +2,7 @@
 
 <section id="curaeats-download-section">
   <div class="container">
-    <div class="content">
+    <div class="content-wrapper">
       <h2>CuraEats is ready for download!</h2>
       <a src=""><img src="{{ 'curaeats-download-button-google-play.png' | asset_url }}" alt="curaeats app download google play" loading="lazy"></a>
       <a src=""><img src="{{ 'curaeats-download-button-apple-store.png' | asset_url }}" alt="curaeats app download apple store" loading="lazy"></a>
@@ -27,7 +27,7 @@
     grid-template-columns: 40% 60%;
   }
 
-  #curaeats-download-section .container .content {
+  #curaeats-download-section .container .content-wrapper {
     grid-column: 1/2;
     grid-row: 1/2;
     display: flex;
@@ -35,13 +35,13 @@
     justify-content: space-between;
   }
 
-  #curaeats-download-section .container .content h2 {
+  #curaeats-download-section .container .content-wrapper h2 {
     font-family: 'RadioGrotesk';
     font-size: 60px;
     color: #424733;
   }
 
-  #curaeats-download-section .container p {
+  #curaeats-download-section .container .notice-wrapper {
     grid-column: 1/2;
     grid-row: 2/3;
     font-family: 'DMSans';
@@ -49,7 +49,7 @@
     font-weight: bold;
   }
 
-  #curaeats-download-section .container .content img {
+  #curaeats-download-section .container .content-wrapper img {
     width: 296px;
   }
 
@@ -74,11 +74,11 @@
       grid-template-columns: 50% 50%;
     }
 
-    #curaeats-download-section .container .content h2 {
+    #curaeats-download-section .container .content-wrapper h2 {
       font-size: 8vw;
     }
 
-    #curaeats-download-section .container .content img {
+    #curaeats-download-section .container .content-wrapper img {
       width: 40vw;
     }
 
