@@ -1,4 +1,4 @@
-<section class="contact-us-section">
+<section id="contact-us-section">
   <div class="container">
     <h2>{{ title }}</h2>
     <div class="contact-options">
@@ -29,23 +29,33 @@
 </section>
 
 <style>
-  .contact-us-section .container h2 {
+  #contact-us-section {
+    margin-bottom: 50px;
+  }
+
+  #contact-us-section .container {
+    border: 1px solid;
+    padding: 40px;
+    max-width: 1130px;
+  }
+
+  #contact-us-section .container h2 {
     text-align: center;
     font-size: 40px;
     max-width: 920px;
     margin: auto;
   }
-  .contact-us-section .container .contact-options {
+  #contact-us-section .container .contact-options {
     display: flex;
     justify-content: center;
     gap: 100px;
     margin-top: 80px;
   }
-  .contact-us-section .container .contact-options .contact-option {
+  #contact-us-section .container .contact-options .contact-option {
     text-align: center;
     font-size: 18px;
   }
-  .contact-us-section .container .contact-options .contact-option .img-wrapper {
+  #contact-us-section .container .contact-options .contact-option .img-wrapper {
     border-radius: 50%;
     background-color: {{icons-background-color}};
     padding: 20px;
@@ -55,40 +65,40 @@
     align-items: center;
     margin: auto;
   }
-  .contact-us-section .container .contact-options .contact-option .img-wrapper img {
+  #contact-us-section .container .contact-options .contact-option .img-wrapper img {
     object-fit: contain;
   }
-  .contact-us-section .container .phone-numbers {
+  #contact-us-section .container .phone-numbers {
     display: flex;
     flex-direction: column;
     max-width: 340px;
     margin: auto;
     margin-top: 30px;
   }
-  .contact-us-section .container .phone-numbers .phone-number {
+  #contact-us-section .container .phone-numbers .phone-number {
     display: flex;
     align-items: center;
     margin: auto;
   }
-  .contact-us-section .container .phone-numbers .phone-number img {
+  #contact-us-section .container .phone-numbers .phone-number img {
     width: 25px;
   }
-  .contact-us-section .container .phone-numbers .phone-number p {
+  #contact-us-section .container .phone-numbers .phone-number p {
     font-size: 18px;
     margin-left: 10px;
   }
 
 @media screen and (max-width: 760px) {
-  .contact-us-section .container .contact-options {
+  #contact-us-section .container .contact-options {
     gap: 10vw;
     margin-top: 40px;
   }
-  .contact-us-section .container .contact-options .contact-option .img-wrapper {
+  #contact-us-section .container .contact-options .contact-option .img-wrapper {
     width: 20vw;
     height: 20vw;
     padding: 15px;
   }
-  .contact-us-section .container .phone-numbers .phone-number a p {
+  #contact-us-section .container .phone-numbers .phone-number a p {
     font-size: 4vw;
   }
 }
