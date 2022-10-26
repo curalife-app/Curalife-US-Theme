@@ -2,8 +2,8 @@
   <div class="container">
     <div class="content">
       <h2>CuraEats is ready for download!</h2>
-      <img src="{{ 'curaeats-app.png' | asset_url }}" alt="curaeats" loading="lazy">
-      <img src="{{ 'icon-money-back.png' | asset_url }}" alt="curaeats" loading="lazy">
+      <img src="{{ 'curaeats-app-download-google-play.png' | asset_url }}" alt="curaeats" loading="lazy">
+      <img src="{{ 'curaeats-app-download-apple-store.png' | asset_url }}" alt="curaeats" loading="lazy">
       <p>*Please use the same email address from your Curalife account when registering for the CuraEats app. The plan may take few minutes to update.</p>
     </div>
     <div class="main-img">
@@ -15,6 +15,17 @@
 <style>
   #app-download-section {
     background: #FBF7F4;
-    padding: 30px 0;
+  }
+
+  #app-download-section .container {
+    display: flex;
+  }
+
+  #app-download-section .container .content {
+    width: 40%;
+  }
+
+  #app-download-section h2 {
+    font-size: 60px;
   }
 </style>
