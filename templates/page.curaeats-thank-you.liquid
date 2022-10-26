@@ -21,11 +21,11 @@
   }
 
   #curaeats-download-section .container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
   }
 
   #curaeats-download-section .container .content {
+    grid-column: 1/2;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -48,8 +48,16 @@
     width: 296px;
   }
 
-  #curaeats-download-section .container img.main-img {
+  #curaeats-download-section .container .main-img-wrapper {
     max-height: 550px;
+  }
+
+  #curaeats-download-section .container .main-img-wrapper img.main-img {
+    max-height: 550px;
+  }
+
+  #curaeats-download-section .container .main-img-wrapper img.main-img-mobile {
+    display: block;
   }
 </style>
 
