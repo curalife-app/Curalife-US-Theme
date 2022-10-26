@@ -6,10 +6,10 @@
       <h2>CuraEats is ready for download!</h2>
       <a src=""><img src="{{ 'curaeats-download-button-google-play.png' | asset_url }}" alt="curaeats app download google play" loading="lazy"></a>
       <a src=""><img src="{{ 'curaeats-download-button-apple-store.png' | asset_url }}" alt="curaeats app download apple store" loading="lazy"></a>
-      <p>*Please use the same email address from your Curalife account when registering for the CuraEats app. The plan may take few minutes to update.</p>
     </div>
+    <p>*Please use the same email address from your Curalife account when registering for the CuraEats app. The plan may take few minutes to update.</p>
     <div class="main-img-wrapper">
-      <img src="{{ 'curaeats-thank-you-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
+      <img class="desktop" src="{{ 'curaeats-thank-you-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
       <img class="mobile" src="{{ 'curaeats-thank-you-main-img-mobile.png' | asset_url }}" alt="curaeats" loading="lazy">
     </div>
   </div>
@@ -22,10 +22,12 @@
 
   #curaeats-download-section .container {
     display: grid;
+    grid-template-columns: 40% 60%;
   }
 
   #curaeats-download-section .container .content {
     grid-column: 1/2;
+    grid-row: 1/2;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -38,7 +40,9 @@
     color: #424733;
   }
 
-  #curaeats-download-section .container .content p {
+  #curaeats-download-section .container p {
+    grid-column: 1/2;
+    grid-row: 2/3;
     font-family: 'DMSans';
     font-size: 20px;
     font-weight: bold;
@@ -50,7 +54,7 @@
 
   #curaeats-download-section .container .main-img-wrapper {
     grid-column: 2/3;
-    max-height: 550px;
+    text-align: right;
   }
 
   #curaeats-download-section .container .main-img-wrapper img {
@@ -59,6 +63,16 @@
 
   #curaeats-download-section .container .main-img-wrapper img.mobile {
     display: none;
+  }
+
+  @media screen and (max-width: 760px) {
+    #curaeats-download-section .container .main-img-wrapper img.desktop {
+      display: none;
+    }
+
+    #curaeats-download-section .container .main-img-wrapper img.mobile {
+      display: block;
+    }
   }
 </style>
 
