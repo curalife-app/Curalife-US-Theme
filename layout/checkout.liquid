@@ -214,6 +214,10 @@
         $('#shipping-method').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Shipping")').attr("href") + '"></a>');
       }
 
+      function thankyouStage() {
+
+      }
+
       let searchParams = new URLSearchParams(window.location.search);
       let currentStep = searchParams.get('step') ? searchParams.get('step') : jQuery(".breadcrumb__item--current span").text();
 
