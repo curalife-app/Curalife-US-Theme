@@ -1,0 +1,99 @@
+<section id="curaeats-download-section">
+  <div class="container">
+    <div class="content-wrapper">
+      <h2>CuraEats is ready for download!</h2>
+      <a src=""><img src="{{ 'curaeats-download-button-google-play.png' | asset_url }}" alt="curaeats app download google play" loading="lazy"></a>
+      <a src=""><img src="{{ 'curaeats-download-button-apple-store.png' | asset_url }}" alt="curaeats app download apple store" loading="lazy"></a>
+    </div>
+    <div class="notice-wrapper">
+      <p>*Please use the same email address from your Curalife account when registering for the CuraEats app. The plan may take few minutes to update.</p>
+    </div>
+    <div class="main-img-wrapper">
+      <img class="desktop" src="{{ 'curaeats-thank-you-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
+      <img class="mobile" src="{{ 'curaeats-thank-you-main-img-mobile.png' | asset_url }}" alt="curaeats" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<style>
+  #curaeats-download-section {
+    background: #FBF7F4;
+  }
+
+  #curaeats-download-section .container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+
+  #curaeats-download-section .container .content-wrapper {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #curaeats-download-section .container .content-wrapper h2 {
+    font-family: 'RadioGrotesk';
+    font-size: 60px;
+    color: #424733;
+  }
+
+  #curaeats-download-section .container .notice-wrapper {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-family: 'DMSans';
+    font-size: 20px;
+    font-weight: bold;
+    align-self: end;
+  }
+
+  #curaeats-download-section .container .content-wrapper img {
+    width: 296px;
+  }
+
+  #curaeats-download-section .container .main-img-wrapper {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    text-align: right;
+  }
+
+  #curaeats-download-section .container .main-img-wrapper img {
+    object-fit: cover;
+    object-position: left;
+    height: 100%;
+  }
+
+  #curaeats-download-section .container .main-img-wrapper img.mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 760px) {
+    #curaeats-download-section .container {
+      grid-template-columns: 50% 50%;
+    }
+
+    #curaeats-download-section .container .content-wrapper h2 {
+      font-size: 8vw;
+    }
+
+    #curaeats-download-section .container .content-wrapper img {
+      width: 40vw;
+    }
+
+    #curaeats-download-section .container .notice-wrapper {
+      grid-column: 1/3;
+      font-size: 4vw;
+    }
+
+    #curaeats-download-section .container .main-img-wrapper img.desktop {
+      display: none;
+    }
+
+    #curaeats-download-section .container .main-img-wrapper img.mobile {
+      display: block;
+      margin-top: -22vw;
+      height: 100%;
+    }
+  }
+</style>
