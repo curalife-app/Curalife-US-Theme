@@ -133,6 +133,22 @@
                   {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true %}
                 </div>
                 <script>console.log("Order Contains CuraEats")</script>
+
+                <style>
+                  #thank-you-onboarding {
+                    display: none;
+                  }
+
+                  aside.sidebar.onboarding {
+                    width: unset;
+                    float: unset;
+                  }
+
+                  aside.sidebar.onboarding:after {
+                    background: unset;
+                    box-shadow: unset;
+                  }
+                </style>
               {% endif %}
             {% endfor %}
 
@@ -206,19 +222,21 @@
       switch (currentStep) {
         case 'contact_information':
         case 'Information':
-        case 'Información':
           informationStage();
           break;
         case 'shipping_method':
         case 'Shipping':
-        case 'Envío':
           shippingStage();
           break;
         case 'payment_method':
         case 'Payment':
-        case 'Pago':
           paymentStage();
           break;
+        default:
+          if (window.location.pathname.includes("/thank_you")) {
+            console.log("Thank you");
+            thankyouStage();
+          }
       }
 
       sessionStorage.setItem('paypal', 'hide');
