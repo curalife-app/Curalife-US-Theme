@@ -219,18 +219,19 @@
       }
 
       function thankyouStage() {
-
-        jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
-        jQuery(".sidebar").insertAfter("#curaeats-content");
-        jQuery("#curaeats-content").show();
-        jQuery(".anyflexbox .content .wrap").css("flex-direction","column");
-        jQuery(".anyflexbox .content .wrap .main").css("width","unset");
-        jQuery(".anyflexbox .content .wrap .main").css("padding-right","unset");
-        jQuery(".anyflexbox .content .wrap .main").css("padding-top","50px");
-        jQuery(".anyflexbox .content .wrap .main .step .step__sections .section[data-order-update-options]").hide();
-        jQuery(".upper-extentions").hide();
-        jQuery(".sidebar-extentions").hide();
-        jQuery("aside.sidebar").toggleClass("onboarding");
+        {% if curaeats_exist %}
+          jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
+          jQuery(".sidebar").insertAfter("#curaeats-content");
+          jQuery("#curaeats-content").show();
+          jQuery(".anyflexbox .content .wrap").css("flex-direction","column");
+          jQuery(".anyflexbox .content .wrap .main").css("width","unset");
+          jQuery(".anyflexbox .content .wrap .main").css("padding-right","unset");
+          jQuery(".anyflexbox .content .wrap .main").css("padding-top","50px");
+          jQuery(".anyflexbox .content .wrap .main .step .step__sections .section[data-order-update-options]").hide();
+          jQuery(".upper-extentions").hide();
+          jQuery(".sidebar-extentions").hide();
+          jQuery("aside.sidebar").toggleClass("onboarding");
+        {% endif %}
       }
 
       let searchParams = new URLSearchParams(window.location.search);
