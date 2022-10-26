@@ -707,55 +707,43 @@
 
 <!-- Woopra Tracking -->
 <script>
-
- // Play Video
-
-
- //Phone-click
- $('.phone-number').click(function() {
-  woopra.track('Phone Click Event', {
-    phone_number: $(this).find("a").find("p").text()
-  });
+  //Phone-click
+  $('.phone-number').click(function() {
+    woopra.track('Phone Click Event', {
+      phone_number: $(this).find("a").find("p").text()
+    });
   });
 
   // Open FAQ
   $('.question').click(function() {
-   woopra.track('Open FAQ', {
-     question_display_text: $(this).text(),
-     question_order:  $(this).parents('.faq-item').index() + 1
-   })
-   });
-
+    woopra.track('Open FAQ', {
+      question_display_text: $(this).text(),
+      question_order:  $(this).parents('.faq-item').index() + 1
+    })
+  });
 
   $('.thumbs-img').click(function() {
   woopra.track('Product Image Click', {});
   });
 
-
   //Product Arrow Click
-
   $('#product-thumbs-slider-nav-next, #product-thumbs-slider-nav-prev').click(function() {
-  woopra.track('Arrow Click', {
-    section: "Product"
-  });
-
+    woopra.track('Arrow Click', {
+      section: "Product"
+    });
   });
 
   $('.video-reviews').click(function() {
-  woopra.track('Arrow Click', {
-    section: "Video with Curalin Stories"
+    woopra.track('Arrow Click', {
+      section: "Video with Curalin Stories"
+    });
   });
-
-  });
-
 
   $('.slider-nav').click(function() {
-  woopra.track('Arrow Click', {
-    section: "Over 3000 5 Star Reviews"
+    woopra.track('Arrow Click', {
+      section: "Over 3000 5 Star Reviews"
+    });
   });
-
-  });
-
 
   $('.ingredients-main-slider').click(function() {
   woopra.track('Arrow Click', {
@@ -765,33 +753,18 @@
   });
 
   $('#back-to-top-btn').click(function() {
-  woopra.track('Scroll To Top Click', {});
+    woopra.track('Scroll To Top Click', {});
   });
 
   $(".ingredients-section .ingredients-thumbs-slider .ingredient").click(function() {
-  let ingIndex = $(this).attr("aria-label");
-  let realIndex = ingIndex.charAt(0) - 1;
+    let ingIndex = $(this).attr("aria-label");
+    let realIndex = ingIndex.charAt(0) - 1;
 
-  woopra.track('Ing Icon Click', {
-    ing_order: ingIndex,
-    ing_title: $(".ingredients-section .ingredients-main-slider .swiper-slide").get(realIndex).querySelectorAll(".ingredient-title")[0].innerHTML
-  });
+    woopra.track('Ing Icon Click', {
+      ing_order: ingIndex,
+      ing_title: $(".ingredients-section .ingredients-main-slider .swiper-slide").get(realIndex).querySelectorAll(".ingredient-title")[0].innerHTML
+    });
   })
-
-  // $(".swiper-button-prev, .swiper-nav").click(function(){
-
-  //   woopra.track('Ing Arrow Left Click', {
-
-  //   });
-  // })
-
-  // $(".swiper-button-next, .swiper-nav").click(function(){
-
-  //   woopra.track('Ing Arrow Right Click', {
-
-  //   });
-  // })
-
 </script>
 
 <style>
