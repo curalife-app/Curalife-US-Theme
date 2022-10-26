@@ -1,9 +1,9 @@
-<section id="app-download-section">
+<section id="curaeats-download-section">
   <div class="container">
     <div class="content">
       <h2>CuraEats is ready for download!</h2>
-      <img src="{{ 'curaeats-download-button-google-play.png' | asset_url }}" alt="curaeats app download google play" loading="lazy">
-      <img src="{{ 'curaeats-download-button-apple-store.png' | asset_url }}" alt="curaeats app download apple store" loading="lazy">
+      <a src=""><img src="{{ 'curaeats-download-button-google-play.png' | asset_url }}" alt="curaeats app download google play" loading="lazy"></a>
+      <a src=""><img src="{{ 'curaeats-download-button-apple-store.png' | asset_url }}" alt="curaeats app download apple store" loading="lazy"></a>
       <p>*Please use the same email address from your Curalife account when registering for the CuraEats app. The plan may take few minutes to update.</p>
     </div>
     <img class="main-img" src="{{ 'curaeats-thank-you-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
@@ -11,37 +11,71 @@
 </section>
 
 <style>
-  #app-download-section {
+  #curaeats-download-section {
     background: #FBF7F4;
   }
 
-  #app-download-section .container {
+  #curaeats-download-section .container {
     display: flex;
     justify-content: space-between;
   }
 
-  #app-download-section .container .content {
+  #curaeats-download-section .container .content {
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  #app-download-section .container .content h2 {
+  #curaeats-download-section .container .content h2 {
     font-size: 60px;
     color: #424733;
   }
 
-  #app-download-section .container .content p {
+  #curaeats-download-section .container .content p {
     font-size: 20px;
     font-weight: bold;
   }
 
-  #app-download-section .container .content img {
+  #curaeats-download-section .container .content img {
     width: inherit;
   }
 
-  #app-download-section .container img.main-img {
+  #curaeats-download-section .container img.main-img {
     max-height: 550px;
+  }
+</style>
+
+<section id="curaeats-upgrade-section">
+  <div class="container">
+    <h2>Upgrade to get access to 14 or 28 days of recipes and a complete grocery list.</h2>
+    <a href="#"><button>Upgrade Now</button></a>
+  </div>
+</section>
+
+<style>
+  #curaeats-upgrade-section {
+    background: #F2F2F2;
+  }
+
+  #curaeats-upgrade-section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #curaeats-upgrade-section .container h2 {
+    font-size: 40px;
+    color: #424733;
+  }
+
+  #curaeats-upgrade-section .container button {
+    background: #424733;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
   }
 </style>
