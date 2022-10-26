@@ -124,6 +124,17 @@
                 <p class="review-content">“CuraLin sounded too good to be true. But it works. Oh man, it works.”</p>
               </div>
             </div>
+
+            {% for item in order.line_items %}
+              {% if line.product.title contains 'CuraEats' %}
+                <div class="curaets-content">
+                  {% render 'curaeats-download-section' %}
+                  {% render 'curaeats-upgrade-section' %}
+                  {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true %}
+                </div>
+              {% endif %}
+            {% endfor %}
+
           </div>
         </aside>
       </div>
