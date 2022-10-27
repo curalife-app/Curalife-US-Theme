@@ -1,9 +1,7 @@
 <section id="main-title-section">
   <div class="container">
-    <img src="{{ 'thank-you-deliver-icon.png' | asset_url }}" width="76" height="79" alt="" loading="lazy">
-    
-    <h1>Curalin has been delivered - lets start!
-      </h1>
+    <img src="{{ '{{icon_file}}' | asset_url }}" width="76" height="79" alt="" loading="lazy">
+    <h1>{{title}}</h1>
   </div>
 </section>
 
@@ -12,11 +10,9 @@
     text-align: center;
   }
 
-  
   #main-title-section .container img {
     object-fit: contain;
     padding: 2% 0;
-
   }
 
   #main-title-section h1 {
