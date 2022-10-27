@@ -37,6 +37,10 @@
     <!-- Curalife Shopify Only Google Tag Manager -->
   {% render 'layout.head.google-tag-manager'%}
 
+  <!-- Swiper Import -->
+  <link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <script src="{{ 'swiper.min.js' | asset_url}}"></script>
+
   <style>
     @font-face {
       font-family: 'DM Sans';
