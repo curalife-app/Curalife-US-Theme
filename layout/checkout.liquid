@@ -1,8 +1,19 @@
+<!-- If the customer bought curaeats app -->
 {% for item in order.line_items %}
   {% if item.product.title contains 'CuraEats' %}
     {% assign curaeats_exist = true %}
   {% endif %}
 {% endfor %}
+
+<!-- If the customer bought first time - Onboarding -->
+{% assign order_count = 0 %}
+{% for order in customer.orders %}
+  {% assign order_count = order_count | plus: 1 %}
+{% endfor %}
+
+{% if order_count == 1 %}
+  {% assign onboarding_exist = true %}
+{% endif %}
 
 <!DOCTYPE html>
 
@@ -27,8 +38,52 @@
     <!-- Curalife Shopify Only Google Tag Manager -->
   {% render 'layout.head.google-tag-manager'%}
 
-  <style>@font-face{font-family:RadioGrotesk;font-weight:400;src:url({{ "PPRadioGrotesk-Regular.otf" | asset_url }})};@font-face{font-family:RadioGrotesk;font-weight:700;src:url({{ "PPRadioGrotesk-Bold.otf" | asset_url }});}@font-face{font-family:RadioGrotesk;font-weight:100;src:url({{ "PPRadioGrotesk-Light.otf" | asset_url }});}</style>
-  <style>@font-face{font-family:DMSans;font-weight:400;src:url({{ "DMSans-Regular.ttf" | asset_url }});}@font-face{font-family:DMSans;font-weight:700;src:url({{ "DMSans-Bold.ttf" | asset_url }});}@font-face{font-family:DMSans;font-weight:500;src:url({{ "DMSans-Medium.ttf" | asset_url }});}</style>
+  <style>
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400;
+      src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
+      src: local(''), url('{{ "DMSans-Regular.ttf" | asset_url }}') format('ttf'),
+    }
+
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 500;
+      src: url('{{ "DMSans-Medium.ttf" | asset_url }}');
+      src: local(''), url('{{ "DMSans-Medium.ttf" | asset_url }}') format('ttf'),
+    }
+
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
+      src: local(''), url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
+    }
+
+    @font-face {
+      font-family: 'PP Radio Grotesk';
+      font-style: normal;
+      font-weight: 300;
+      src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
+      src: local(''), url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'), }
+
+    @font-face {
+      font-family: 'PP Radio Grotesk';
+      font-style: normal;
+      font-weight: 400;
+      src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
+      src: local(''), url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'), }
+
+    @font-face {
+      font-family: 'PP Radio Grotesk';
+      font-style: normal;
+      font-weight: 700;
+      src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
+      src: local(''), url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'), }
+  </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -139,52 +194,51 @@
               </div>
 
               <style>
-                @font-face {
-                  font-family: 'DM Sans';
-                  font-style: normal;
-                  font-weight: 400;
-                  src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
-                  src: local(''), url('{{ "DMSans-Regular.ttf" | asset_url }}') format('ttf'),
-                }
-
-                @font-face {
-                  font-family: 'DM Sans';
-                  font-style: normal;
-                  font-weight: 500;
-                  src: url('{{ "DMSans-Medium.ttf" | asset_url }}');
-                  src: local(''), url('{{ "DMSans-Medium.ttf" | asset_url }}') format('ttf'),
-                }
-
-                @font-face {
-                  font-family: 'DM Sans';
-                  font-style: normal;
-                  font-weight: 700;
-                  src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
-                  src: local(''), url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
-                }
-
-                @font-face {
-                  font-family: 'PP Radio Grotesk';
-                  font-style: normal;
-                  font-weight: 300;
-                  src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
-                  src: local(''), url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'), }
-
-                @font-face {
-                  font-family: 'PP Radio Grotesk';
-                  font-style: normal;
-                  font-weight: 400;
-                  src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
-                  src: local(''), url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'), }
-
-                @font-face {
-                  font-family: 'PP Radio Grotesk';
-                  font-style: normal;
-                  font-weight: 700;
-                  src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
-                  src: local(''), url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'), }
-
                 #curaeats-content {
+                  display: none;
+                }
+
+                .logo {
+                  position: relative;
+                  top: -30px;
+                }
+
+                aside.sidebar.onboarding {
+                  width: unset;
+                  float: unset;
+                }
+
+                aside.sidebar.onboarding:after {
+                  background: unset;
+                  box-shadow: unset;
+                }
+
+                #contact-us-section {
+                  margin-bottom: unset;
+                }
+              </style>
+            {% endif %}
+
+            {% if onboarding_exist %}
+              <div id="onboarding-content">
+                {% assign progress_steps =  "Daily Tip
+                |How To Use
+                |Reviews
+                |Support
+                |FAQ
+                |Order Info"
+                | split: '|' %}
+                {% render 'onboarding-main-title' %}
+                {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
+                {% render 'onboarding-quiz' %}
+                {% render 'onboarding-curalin-consumers' %}
+                {% render 'onboarding-curalin-best-results' %}
+                {% render 'onboarding-curalin-call-expert' %}
+                {% render 'onboarding-faq' %}
+              </div>
+
+              <style>
+                #thank-you-onboarding {
                   display: none;
                 }
 
@@ -272,10 +326,26 @@
       }
 
       function thankyouStage() {
+        jQuery("#progressbar").hide();
+
         {% if curaeats_exist %}
           jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
           jQuery(".sidebar").insertAfter("#curaeats-content");
           jQuery("#curaeats-content").show();
+          jQuery(".anyflexbox .content .wrap").css("flex-direction","column");
+          jQuery(".anyflexbox .content .wrap .main").css("width","unset");
+          jQuery(".anyflexbox .content .wrap .main").css("padding-right","unset");
+          jQuery(".anyflexbox .content .wrap .main").css("padding-top","50px");
+          jQuery(".anyflexbox .content .wrap .main .step .step__sections .section[data-order-update-options]").hide();
+          jQuery(".upper-extentions").hide();
+          jQuery(".sidebar-extentions").hide();
+          jQuery("aside.sidebar").toggleClass("onboarding");
+        {% endif %}
+
+        {% if onboarding_exist %}
+          jQuery("#thank-you-onboarding").insertAfter(".thank-you__additional-content");
+          jQuery(".sidebar").insertAfter("#thank-you-onboarding");
+          jQuery("#thank-you-onboarding").show();
           jQuery(".anyflexbox .content .wrap").css("flex-direction","column");
           jQuery(".anyflexbox .content .wrap .main").css("width","unset");
           jQuery(".anyflexbox .content .wrap .main").css("padding-right","unset");
