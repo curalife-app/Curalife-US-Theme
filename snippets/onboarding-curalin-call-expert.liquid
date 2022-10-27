@@ -1,0 +1,128 @@
+<section id="call-expert-section">
+  <div class="container">
+    <div class="call-background">
+      <div class="schedule-call">
+        <div class="img-calling"><img src="{{ 'thank-you-calling-woman.png' | asset_url }}" width="209" height="209" alt="" loading="lazy"></div>
+        <div class="text-calling">
+          <div class="title">Schedule a call with our customer success experts!</div>
+          <div class="grey-border"></div>
+          <p>With your purchase of Curalin, schedule a free 15 minute call with a customer success expert to answer all your questions about Curalin! They will help guide your first 5 days on Curalin so you can go into it with confidence!</p>
+          <div class="call">
+            <a href="https://calendly.com/hellocuralife">
+              <button>
+                <span class="call-text">Schedule a call
+                  <img src="{{ 'thank-you-call-sign.png' | asset_url }}" width="33" height="35" alt="" loading="lazy"></span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #call-expert-section {
+    background-color: {{background_color}};
+  }
+
+  #call-expert-section .call-background {
+    {% if border %}border: 2px solid #E1E8CF;{% endif %}
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  #call-expert-section .schedule-call {
+    margin: 5%;
+    display: flex;
+    gap: 5%;
+  }
+
+  #call-expert-section .text-calling {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #call-expert-section .text-calling .title {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    color: #000000;
+  }
+
+  #call-expert-section .img-calling img {
+    object-fit: contain;
+    object-position: top;
+  }
+
+  #call-expert-section .grey-border {
+    width: 98px;
+    border: 2px solid #333333;
+    position: relative;
+    top: 15%;
+    margin-bottom: 10%;
+  }
+
+  #call-expert-section .text-calling p {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #000000;
+    margin-top: 2%;
+  }
+
+  #call-expert-section .call button {
+    margin-top: 5%;
+    padding: 15px 30px;
+    background: #FFB22D;
+    border: 0;
+    border-radius: 3.2px;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 768px) {
+    #call-expert-section .schedule-call {
+      flex-direction: column;
+      align-items: center;
+      gap: 7vw;
+    }
+
+    #call-expert-section .text-calling .title {
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    #call-expert-section .grey-border {
+      width: 98px;
+      border: 2px solid #333333;
+      top: 5vw;
+      margin-bottom: 10%;
+    }
+
+    #call-expert-section .text-calling p {
+      font-size: 18px;
+      line-height: 23px;
+      margin-top: 15vw;
+    }
+
+    #call-expert-section .call button {
+      width: 100%;
+    }
+
+    #call-expert-section .call button {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    #call-expert-section .call button {
+      font-size: 21px;
+    }
+  }
+</style>

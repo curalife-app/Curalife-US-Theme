@@ -58,7 +58,7 @@
   {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
   {% render 'onboarding-curalin-consumers-started' %}
   {% render 'thank-you-curalin-best-results' %}
-  {% render 'thank-you-curalin-call-expert' %}
+  {% render 'onboarding-curalin-call-expert', background_color: '#E1E8CF', border: false %}
   {% render 'thank-you-faq' %}
 {% else %}
   {% assign progress_steps =  "Support
@@ -69,7 +69,7 @@
 
   {% render 'onboarding-order-delivered-hero', title: "Curalin has been delivered - lets start!", icon_file: "thank-you-deliver-icon.png"%}
   {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
-  {% render 'thank-you-curalin-call-expert-delivered' %}
-  {% render 'onboarding-curalin-consumers-not-started' %}
+  {% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
+  {% render 'onboarding-curalin-consumers-not-started'%}
   {% render 'thank-you-faq' %}
 {% endif %}
