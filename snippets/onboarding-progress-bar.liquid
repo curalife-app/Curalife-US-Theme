@@ -192,7 +192,7 @@
       let scrollBar = document.getElementById("progressBar").style.width = scrolled + "%";
 
       {% for step in progress_steps %}
-        scrolled >{% if progress_steps.size == forloop.index + 1 %}={% endif %} 100/{{ progress_steps.size + 1 }}*{{ forloop.index }} ? document.querySelectorAll('#progress-bar-section .step')[{{ forloop.index }} - 1].classList.add("active") : document.querySelectorAll('#progress-bar-section .step')[{{ forloop.index }} - 1].classList.remove("active");
+        scrolled >{% if progress_steps.size == forloop.index %}={% endif %} 100/{{ progress_steps.size }}*{{ forloop.index }} ? document.querySelectorAll('#progress-bar-section .step')[{{ forloop.index }} - 1].classList.add("active") : document.querySelectorAll('#progress-bar-section .step')[{{ forloop.index }} - 1].classList.remove("active");
       {% endfor %}
 
       if (window.pageYOffset > window.stickyStart - headerHeight) {
