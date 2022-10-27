@@ -349,7 +349,11 @@
 
         {% if onboarding_exist %}
           jQuery("#onboarding-content").insertAfter(".thank-you__additional-content");
-          jQuery(".sidebar").insertAfter("#onboarding-content");
+          if (jQuery("#curaeats-content")) {
+            jQuery(".sidebar").insertAfter("#curaeats-content");
+          } else {
+            jQuery(".sidebar").insertAfter("#onboarding-content");
+          }
           jQuery("#onboarding-content").show();
           jQuery(".anyflexbox .content .wrap").css("flex-direction","column");
           jQuery(".anyflexbox .content .wrap .main").css("width","unset");
