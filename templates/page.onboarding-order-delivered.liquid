@@ -45,7 +45,7 @@
     src: local(''), url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'), }
 </style>
 
-{% capture CFH %}{{ content_for_header }}{% endcapture %}
+{% capture CFH %}{{ content_for_header }}{% endcapture %}{{CFH}}
 
 {% if CFH contains "started=true" %}
   {% assign progress_steps =  "How To Use
