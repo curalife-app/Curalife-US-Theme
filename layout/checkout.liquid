@@ -116,84 +116,84 @@
                 <li id="shipping-method" style="--step-content: 'Shipping';z-index:2;"></li>
                 <li id="payment-method" style="--step-content: 'Payment';z-index:1;"></li>
               </ul>
-
-              {% if curaeats_exist %}
-                <div id="curaeats-content">
-                  {% render 'curaeats-download-section' %}
-                  {% render 'curaeats-upgrade-section' %}
-                  {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true %}
-                </div>
-
-                <style>
-                  #curaeats-content {
-                    display: none;
-                  }
-
-                  .logo {
-                    position: relative;
-                    top: -30px;
-                  }
-
-                  aside.sidebar.onboarding {
-                    width: unset;
-                    float: unset;
-                  }
-
-                  aside.sidebar.onboarding:after {
-                    background: unset;
-                    box-shadow: unset;
-                  }
-
-                  #contact-us-section {
-                    margin-bottom: unset;
-                  }
-                </style>
-              {% endif %}
-
-              {% if onboarding_exist %}
-                <div id="onboarding-content">
-                  {% assign progress_steps =  "Daily Tip
-                                              |How To Use
-                                              |Reviews
-                                              |Support
-                                              |FAQ
-                                              |Order Info"
-                                              | split: '|' %}
-                  {% render 'onboarding-hero', title: "Your order is confirmed!", icon_file: "onboarding-order-icon.png" %}
-                  {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
-                  {% render 'onboarding-quiz' %}
-                  {% render 'onboarding-curalin-consumers-not-started' %}
-                  {% render 'onboarding-curalin-best-results' %}
-                  {% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
-                  {% render 'onboarding-faq' %}
-                </div>
-
-                <style>
-                  #thank-you-onboarding {
-                    display: none;
-                  }
-
-                  .logo {
-                    position: relative;
-                    top: -30px;
-                  }
-
-                  aside.sidebar.onboarding {
-                    width: unset;
-                    float: unset;
-                  }
-
-                  aside.sidebar.onboarding:after {
-                    background: unset;
-                    box-shadow: unset;
-                  }
-
-                  #contact-us-section {
-                    margin-bottom: unset;
-                  }
-                </style>
-              {% endif %}
             </div>
+
+            {% if curaeats_exist %}
+              <div id="curaeats-content">
+                {% render 'curaeats-download-section' %}
+                {% render 'curaeats-upgrade-section' %}
+                {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true %}
+              </div>
+
+              <style>
+                #curaeats-content {
+                  display: none;
+                }
+
+                .logo {
+                  position: relative;
+                  top: -30px;
+                }
+
+                aside.sidebar.onboarding {
+                  width: unset;
+                  float: unset;
+                }
+
+                aside.sidebar.onboarding:after {
+                  background: unset;
+                  box-shadow: unset;
+                }
+
+                #contact-us-section {
+                  margin-bottom: unset;
+                }
+              </style>
+            {% endif %}
+
+            {% if onboarding_exist %}
+              <div id="onboarding-content">
+                {% assign progress_steps =  "Daily Tip
+                                            |How To Use
+                                            |Reviews
+                                            |Support
+                                            |FAQ
+                                            |Order Info"
+                                            | split: '|' %}
+                {% render 'onboarding-hero', title: "Your order is confirmed!", icon_file: "onboarding-order-icon.png" %}
+                {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
+                {% render 'onboarding-quiz' %}
+                {% render 'onboarding-curalin-consumers-not-started' %}
+                {% render 'onboarding-curalin-best-results' %}
+                {% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
+                {% render 'onboarding-faq' %}
+              </div>
+
+              <style>
+                #thank-you-onboarding {
+                  display: none;
+                }
+
+                .logo {
+                  position: relative;
+                  top: -30px;
+                }
+
+                aside.sidebar.onboarding {
+                  width: unset;
+                  float: unset;
+                }
+
+                aside.sidebar.onboarding:after {
+                  background: unset;
+                  box-shadow: unset;
+                }
+
+                #contact-us-section {
+                  margin-bottom: unset;
+                }
+              </style>
+            {% endif %}
 
             {{ alternative_payment_methods }}
           </header>
