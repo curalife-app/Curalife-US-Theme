@@ -6,21 +6,27 @@
     font-style: normal;
     font-weight: 300;
     src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
-    src: local(''), url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'), }
+    src: local(''),
+    url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'),
+  }
 
   @font-face {
     font-family: 'PP Radio Grotesk';
     font-style: normal;
     font-weight: 400;
     src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
-    src: local(''), url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'), }
+    src: local(''),
+    url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'),
+  }
 
   @font-face {
     font-family: 'PP Radio Grotesk';
     font-style: normal;
     font-weight: 700;
     src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
-    src: local(''), url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'), }
+    src: local(''),
+    url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'),
+  }
 
 
   @font-face {
@@ -28,29 +34,37 @@
     font-style: normal;
     font-weight: 400;
     src: url('{{ "OpenSans-Regular.ttf" | asset_url }}');
-    src: local(''), url('{{ "OpenSans-Regular.otf" | asset_url }}') format('ttf'), }
+    src: local(''),
+    url('{{ "OpenSans-Regular.otf" | asset_url }}') format('ttf'),
+  }
 
   @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
     src: url('{{ "OpenSans-Bold.ttf" | asset_url }}');
-    src: local(''), url('{{ "OpenSans-Bold.ttf" | asset_url }}') format('ttf'), }
+    src: local(''),
+    url('{{ "OpenSans-Bold.ttf" | asset_url }}') format('ttf'),
+  }
 
 
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 400;
-      src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
-      src: local(''), url('{{ "DMSans-Regular.otf" | asset_url }}') format('ttf'), }
+  @font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
+    src: local(''),
+    url('{{ "DMSans-Regular.otf" | asset_url }}') format('ttf'),
+  }
 
-    @font-face {
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: 700;
-      src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
-      src: local(''), url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'), }
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
+    src: local(''),
+    url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
+  }
 </style>
 <main class="lp-quiz">
   <section class="nav">
@@ -64,42 +78,43 @@
 
   <section class="hero-banner">
     <div class="banner-back">
-      <img src="{{ 'lp-quiz2-hero-bg.svg' | asset_url }}" alt=""
-      loading="lazy">
-      
+      <img src="{{ 'lp-quiz2-hero-bg.svg' | asset_url }}" alt="" loading="lazy">
+
     </div>
     <div class="approach">
       <div class="text-approach">
-      <div class="title-approach">Which approach will most easily maintain YOUR blood sugar?</div>
-      <div class="paragraph-approach">Your struggles can end by playing to YOUR strengths, your personality, your lifestyle.</div>
-      <div class="approach-btn"><a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a></div> 
-    </div>
-      <div class="approach-images">  
-      <div class="approach-img">
-        <img id="img1" src="{{ 'lp-quiz2-image1-full.png' | asset_url}}" alt="">
-        <img id="img1-overlay" src="{{ 'lp-quiz2-image1-opasity.png' | asset_url}}" alt="">
+        <div class="title-approach">Which approach will most easily maintain YOUR blood sugar?</div>
+        <div class="paragraph-approach">Your struggles can end by playing to YOUR strengths, your personality, your
+          lifestyle.</div>
+        <div class="approach-btn"><a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a></div>
       </div>
-      <div class="approach-img">
-        <img id="img2" src="{{ 'lp-quiz2-image2-full.png' | asset_url}}" alt="">
-        <img id="img2-overlay" src="{{ 'lp-quiz2-image2-opasity.png' | asset_url}}" alt="">
+      <div class="approach-images">
+        <div class="approach-img">
+          <img id="img1" src="{{ 'lp-quiz2-image1-full.png' | asset_url}}" alt="">
+          <img id="img1-overlay" src="{{ 'lp-quiz2-image1-opasity.png' | asset_url}}" alt="">
+        </div>
+        <div class="approach-img">
+          <img id="img2" src="{{ 'lp-quiz2-image2-full.png' | asset_url}}" alt="">
+          <img id="img2-overlay" src="{{ 'lp-quiz2-image2-opasity.png' | asset_url}}" alt="">
+        </div>
+        <div class="approach-img">
+          <img id="img3" src="{{ 'lp-quiz2-image3-full.png' | asset_url}}" alt="">
+          <img id="img3-overlay" src="{{ 'lp-quiz2-image3-opasity.png' | asset_url}}" alt="">
+        </div>
+        <div class="approach-img">
+          <img id="img4" src="{{ 'lp-quiz2-image4-full.png' | asset_url}}" alt="">
+          <img id="img4-overlay" src="{{ 'lp-quiz2-image4-opasity.png' | asset_url}}" alt="">
+        </div>
       </div>
-      <div class="approach-img">
-        <img id="img3" src="{{ 'lp-quiz2-image3-full.png' | asset_url}}" alt="">
-        <img id="img3-overlay" src="{{ 'lp-quiz2-image3-opasity.png' | asset_url}}" alt="">
+
+
+
+      <div class="approach-btn-mobile"><a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a>
       </div>
-      <div class="approach-img">
-        <img id="img4" src="{{ 'lp-quiz2-image4-full.png' | asset_url}}" alt="">
-        <img id="img4-overlay" src="{{ 'lp-quiz2-image4-opasity.png' | asset_url}}" alt="">
-      </div>
-    </div>
-    
-       
-   
-      <div class="approach-btn-mobile"><a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a></div> 
     </div>
     <div class="container">
-     
-      
+
+
     </div>
   </section>
 
@@ -108,8 +123,8 @@
   <section class="green-rectangle-with-text">
     <div class="container">
       <div class="text-blood-sugar">
-        <div class="paragraph-1">Stop asking yourself why blood sugar maintenence is hard. <br/>
-        It won’t be once you’re using the best approach for YOU.</div>
+        <div class="paragraph-1">Stop asking yourself why blood sugar maintenence is hard. <br />
+          It won’t be once you’re using the best approach for YOU.</div>
         <div class="paragraph-2">Do you know which approach will work for YOU?</div>
         <a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a>
       </div>
@@ -120,17 +135,19 @@
     <div class="container">
       <div class="diet-maintain">
         <div class="diet-maintin-small-text">
-          <p> There are many approaches to maintaining healthy blood sugar.</p> <br/>
-          <p>Learning which one is right for YOU is important because playing to YOUR strengths will help make your habits healthy and stress-free.</p> <br>
+          <p> There are many approaches to maintaining healthy blood sugar.</p> <br />
+          <p>Learning which one is right for YOU is important because playing to YOUR strengths will help make your
+            habits healthy and stress-free.</p> <br>
           <p>
             We’ll help you find your best approach for YOUR body so that you can:</p> <br>
           <img src="{{ 'lp-quiz2-keep-your-blood-small.png' | asset_url }}" alt="keep your blood text small"
             loading="lazy"><br>
         </div>
         <div class="diet-maintain-text">
-          <p class="diets-key">There are many approaches to maintaining healthy blood sugar. <br/>
-          Learning which one is right for YOU is important because playing to YOUR strengths will help make your habits healthy and stress-free. <br/>
-          We’ll help you find your best approach for YOUR body so that you can:</p><br/>
+          <p class="diets-key">There are many approaches to maintaining healthy blood sugar. <br />
+            Learning which one is right for YOU is important because playing to YOUR strengths will help make your
+            habits healthy and stress-free. <br />
+            We’ll help you find your best approach for YOUR body so that you can:</p><br />
           <img src="{{ 'lp-quiz2-keep-your-blood.png' | asset_url }}" alt="keep your blood text" loading="lazy">
         </div>
         <div class="diet-maintain-picture">
@@ -140,33 +157,35 @@
       <div class="yellow-rectangle"></div>
       <div class="people-saying">What people are saying:</div>
       <div class="people-that-saying">
-       
-        <div class="people"><img src="{{ 'lp-quiz-people-1-radius.png' | asset_url }}" alt="people 1" loading="lazy"> 
-        <p class="what-found">Found a great excercise routine</p>
-      </div>
+
+        <div class="people"><img src="{{ 'lp-quiz-people-1-radius.png' | asset_url }}" alt="people 1" loading="lazy">
+          <p class="what-found">Found a great excercise routine</p>
+        </div>
         <div class="people"><img src="{{ 'lp-quiz-people-2-radius.png' | asset_url }}" alt="people 2" loading="lazy">
-        <p class="what-found">Found the right diet</p>
-      </div>
+          <p class="what-found">Found the right diet</p>
+        </div>
         <div class="people"><img src="{{ 'lp-quiz-people-3-radius.png' | asset_url }}" alt="people 3" loading="lazy">
-        <p class="what-found">Found the right diet</p>
-      </div>
+          <p class="what-found">Found the right diet</p>
+        </div>
         <div class="people"><img src="{{ 'lp-quiz-people-4-radius.png' | asset_url }}" alt="people 4" loading="lazy">
-        <p class="what-found">Discovered helpful supplements</p>
+          <p class="what-found">Discovered helpful supplements</p>
+        </div>
       </div>
-      </div>
-      
+
     </div>
     </div>
-   
+
   </section>
 
 
   <section class="pastel-rectangle-with-text">
     <div class="container">
       <div class="text-blood-sugar">
-        <div class="paragraph-3">Take this quiz to find out more about which blood sugar approach is right for you. When you listen to your body, <br/> it works WITH you, not against you and makes everything easier. 
-        <p class="start-learning"> Start learning about what your body wants so YOU can succeed today!</p> </div>
-        
+        <div class="paragraph-3">Take this quiz to find out more about which blood sugar approach is right for you. When
+          you listen to your body, <br /> it works WITH you, not against you and makes everything easier.
+          <p class="start-learning"> Start learning about what your body wants so YOU can succeed today!</p>
+        </div>
+
         <a href="/pages/lp-quiz-v2"><button class="quiz-button">Take Quiz</button></a>
       </div>
     </div>
@@ -219,75 +238,211 @@
 
 
   @keyframes img1-animation {
-    10%  {opacity: 1;}
-    25%  {opacity: 1;}
-    40%  {opacity: 0;}
-    55%  {opacity: 0;}
-    70%  {opacity: 1;}
-    85%  {opacity: 0;}
+    10% {
+      opacity: 1;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    40% {
+      opacity: 0;
+    }
+
+    55% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    85% {
+      opacity: 0;
+    }
   }
 
   @keyframes img1-overlay-animation {
-    10%  {opacity: 0;}
-    25%  {opacity: 0;}
-    40%  {opacity: 1;}
-    55%  {opacity: 1;}
-    70%  {opacity: 0;}
-    85%  {opacity: 1;}
+    10% {
+      opacity: 0;
+    }
+
+    25% {
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 1;
+    }
+
+    55% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 0;
+    }
+
+    85% {
+      opacity: 1;
+    }
   }
 
   @keyframes img2-animation {
-    10%  {opacity: 0;}
-    25%  {opacity: 0;}
-    40%  {opacity: 1;}
-    55%  {opacity: 0;}
-    70%  {opacity: 0;}
-    85%  {opacity: 1;}
+    10% {
+      opacity: 0;
+    }
+
+    25% {
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 1;
+    }
+
+    55% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 0;
+    }
+
+    85% {
+      opacity: 1;
+    }
   }
 
   @keyframes img2-overlay-animation {
-    10%  {opacity: 1;}
-    25%  {opacity: 1;}
-    40%  {opacity: 0;}
-    55%  {opacity: 1;}
-    70%  {opacity: 1;}
-    85%  {opacity: 0;}
+    10% {
+      opacity: 1;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    40% {
+      opacity: 0;
+    }
+
+    55% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    85% {
+      opacity: 0;
+    }
   }
 
   @keyframes img3-animation {
-    10%  {opacity: 0;}
-    25%  {opacity: 0;}
-    40%  {opacity: 0;}
-    55%  {opacity: 1;}
-    70%  {opacity: 1;}
-    85%  {opacity: 1;}
+    10% {
+      opacity: 0;
+    }
+
+    25% {
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 0;
+    }
+
+    55% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    85% {
+      opacity: 1;
+    }
   }
 
   @keyframes img3-overlay-animation {
-    10%  {opacity: 1;}
-    25%  {opacity: 1;}
-    40%  {opacity: 1;}
-    55%  {opacity: 0;}
-    70%  {opacity: 0;}
-    85%  {opacity: 0;}
+    10% {
+      opacity: 1;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    40% {
+      opacity: 1;
+    }
+
+    55% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 0;
+    }
+
+    85% {
+      opacity: 0;
+    }
   }
 
   @keyframes img4-animation {
-    10%  {opacity: 0;}
-    25%  {opacity: 1;}
-    40%  {opacity: 0;}
-    55%  {opacity: 0;}
-    70%  {opacity: 0;}
-    85%  {opacity: 0;}
+    10% {
+      opacity: 0;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    40% {
+      opacity: 0;
+    }
+
+    55% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 0;
+    }
+
+    85% {
+      opacity: 0;
+    }
   }
 
   @keyframes img4-overlay-animation {
-    10%  {opacity: 1;}
-    25%  {opacity: 0;}
-    40%  {opacity: 1;}
-    55%  {opacity: 1;}
-    70%  {opacity: 1;}
-    85%  {opacity: 1;}
+    10% {
+      opacity: 1;
+    }
+
+    25% {
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 1;
+    }
+
+    55% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    85% {
+      opacity: 1;
+    }
   }
 
   body {
@@ -297,6 +452,7 @@
   .nav {
     background-color: #424733;
   }
+
   .lp-quiz .featured-section {
     border: none;
   }
@@ -310,7 +466,7 @@
   }
 
   .lp-quiz button {
-    padding: 5px 50px;  
+    padding: 5px 50px;
     background: #FFB22D;
     border-radius: 4px;
     border: 0;
@@ -324,13 +480,13 @@
 
   .big-img {
     padding: 25px 0;
-    
+
   }
 
 
 
   .hero-banner {
-    
+
     padding: 5% 0;
   }
 
@@ -352,6 +508,7 @@
     flex-direction: column;
     gap: 4vw;
   }
+
   .title-approach {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
@@ -364,7 +521,7 @@
     font-family: 'PP Radio Grotesk';
     font-weight: 400;
     font-size: 36.5px;
-    line-height: 51px;  
+    line-height: 51px;
     color: #424733;
   }
 
@@ -399,40 +556,42 @@
   .quiz-button {
     top: 241px;
   }
+
   .hero-body {
     max-width: 100%;
     height: 100%;
   }
 
-.green-rectangle-with-text {
-  width: 100%;
-  background: #D5DCB9;
-}
+  .green-rectangle-with-text {
+    width: 100%;
+    background: #D5DCB9;
+  }
 
-.text-blood-sugar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3vw;
-  padding: 6vw 0;
-}
+  .text-blood-sugar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vw;
+    padding: 6vw 0;
+  }
 
-.paragraph-1 {
-  font-family: 'PP Radio Grotesk';
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 51px; 
-  text-align: center;
-  color: #424733;
-}
-.paragraph-2 {
-  font-family: 'PP Radio Grotesk';  
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 51px; 
-  text-align: center;
-  color: #424733;
-}
+  .paragraph-1 {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 51px;
+    text-align: center;
+    color: #424733;
+  }
+
+  .paragraph-2 {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+    text-align: center;
+    color: #424733;
+  }
 
 
 
@@ -494,10 +653,10 @@
   }
 
   .what-found {
-    font-family: 'PP Radio Grotesk';   
+    font-family: 'PP Radio Grotesk';
     font-weight: 400;
     font-size: 20px;
-    line-height: 24px;  
+    line-height: 24px;
     color: #000000;
     background-color: #FFDEAC;
     width: fit-content;
@@ -526,7 +685,7 @@
   .footer {
     padding: 4% 1%;
     background: #424733;
-    
+
   }
 
   .footer p {
@@ -549,7 +708,7 @@
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 13px;
-    line-height: 17px;  
+    line-height: 17px;
     text-align: center;
     color: #FFFFFF;
 
@@ -558,12 +717,12 @@
   .use a {
     text-decoration: none;
     color: #FFFFFF;
-    
+
   }
 
   @media (max-width: 1024px) {
 
-    .people-that-saying { 
+    .people-that-saying {
       margin-top: 2%;
       display: flex;
       flex-direction: row;
@@ -571,45 +730,47 @@
       justify-content: center;
       gap: 5vw;
 
-  }
-
- 
-  @media (max-width: 1000px) {
-    .big-img {
-      display: flex;
-      justify-content: center;
-    }
-    .container {
-      padding: 0 15px;
-    }
-
-    .hero-banner {
-      padding: 3vw 0;
-    }
-
-    .banner-back {
-      top: 14vw;
     }
 
 
-    .approach {
-      flex-direction: column;
-      gap: 5vw;
+    @media (max-width: 1000px) {
+      .big-img {
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        padding: 0 15px;
+      }
+
+      .hero-banner {
+        padding: 3vw 0;
+      }
+
+      .banner-back {
+        top: 14vw;
+      }
+
+
+      .approach {
+        flex-direction: column;
+        gap: 5vw;
+      }
+
+      .approach-images {
+        align-self: center;
+        gap: 5%;
+        min-width: 100%;
+        min-height: 93vw;
+
+      }
     }
 
-    .approach-images {
-      align-self: center;
-      gap: 5%;
-      min-width: 100%;
-      min-height: 93vw;
-
-}
-    }
-
-   .title-approach {  
+    .title-approach {
       font-size: 24px;
       line-height: 29px;
     }
+
     .paragraph-approach {
       font-size: 20px;
       line-height: 24px;
@@ -625,7 +786,7 @@
     }
 
 
-    .big-img img { 
+    .big-img img {
       padding: 0vw 30vw;
     }
 
@@ -633,7 +794,7 @@
 
       font-size: 24px;
       line-height: 31px;
-      
+
     }
 
     .quiz-button {
@@ -641,11 +802,11 @@
     }
 
 
-    .paragraph-1 {  
+    .paragraph-1 {
       font-size: 18px;
       line-height: 22px;
     }
-    
+
     .paragraph-2 {
       font-size: 24px;
       line-height: 32px;
@@ -654,9 +815,9 @@
 
     .diet-maintain {
       margin-top: unset;
-     
+
     }
-    
+
 
     .diet-maintain-text {
       display: none;
@@ -683,7 +844,7 @@
       line-height: 45px;
     }
 
- 
+
     .paragraph-3 {
       font-weight: 400;
       font-size: 20px;
@@ -700,7 +861,7 @@
 
     .footer p {
       margin: 0 auto;
-      
+
     }
 
     .footer p.copyright {
@@ -709,28 +870,28 @@
     }
 
     .use {
-      
+
       font-size: 12px;
       line-height: 18px;
-     
+
     }
   }
 
 
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     .banner-back {
       top: 50vw;
     }
   }
 
-  @media (max-width: 425px){
+  @media (max-width: 425px) {
     .banner-back {
       top: 68vw;
     }
   }
 
   @media (max-width: 350px) {
-  
+
     .diet-maintin-small-text {
       width: 300px;
       margin-top: 20px;
@@ -746,6 +907,6 @@
       top: 77vw;
     }
 
-   
+
   }
 </style>
