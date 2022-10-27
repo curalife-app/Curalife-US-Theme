@@ -11,7 +11,7 @@
   {% assign order_count = order_count | plus: 1 %}
 {% endfor %}
 
-{% if order_count == 1 %}
+{% if order_count == 1 or customer.email == 'yotam@curalife.com' %}
   {% assign onboarding_exist = true %}
 {% endif %}
 
