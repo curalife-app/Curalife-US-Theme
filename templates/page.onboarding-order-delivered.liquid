@@ -1,0 +1,75 @@
+<style>
+  @font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
+    src: local(''), url('{{ "DMSans-Regular.ttf" | asset_url }}') format('ttf'),
+  }
+
+  @font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('{{ "DMSans-Medium.ttf" | asset_url }}');
+    src: local(''), url('{{ "DMSans-Medium.ttf" | asset_url }}') format('ttf'),
+  }
+
+  @font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
+    src: local(''), url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
+  }
+
+  @font-face {
+    font-family: 'PP Radio Grotesk';
+    font-style: normal;
+    font-weight: 300;
+    src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
+    src: local(''), url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'), }
+
+  @font-face {
+    font-family: 'PP Radio Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
+    src: local(''), url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'), }
+
+  @font-face {
+    font-family: 'PP Radio Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
+    src: local(''), url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'), }
+</style>
+
+{% capture CFH %}{{ content_for_header }}{% endcapture %}
+
+{% if CFH contains "started=true" %}
+  {% assign progress_steps =  "How To Use
+                              |Reviews
+                              |Support
+                              |FAQ"
+                              | split: '|' %}
+
+  {% render 'thank-you-delivered-already-started-hero', title: "Curalin has been delivered - lets start!", icon_file: "thank-you-deliver-icon.png" %}
+  {% render 'thank-you-progress-bar', progress_steps: progress_steps %}
+  {% render 'thank-you-curalin-consumers' %}
+  {% render 'thank-you-curalin-best-results' %}
+  {% render 'thank-you-curalin-call-expert' %}
+  {% render 'thank-you-faq' %}
+{% else %}
+  {% assign progress_steps =  "Support
+                                |How To Use
+                                |Reviews
+                                |FAQ"
+                                | split: '|' %}
+
+  {% render 'thank-you-delivered-not-started-hero', title: "Curalin has been delivered - lets start!", icon_file: "thank-you-deliver-icon.png"%}
+  {% render 'thank-you-progress-bar', progress_steps: progress_steps %}
+  {% render 'thank-you-curalin-call-expert-delivered' %}
+  {% render 'thank-you-curalin-consumers-not-started' %}
+  {% render 'thank-you-faq' %}
+{% endif %}
