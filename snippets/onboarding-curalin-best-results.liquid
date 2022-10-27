@@ -1,0 +1,108 @@
+<section id="best-results-section">
+  <div class="container">
+    <h2>How to get the best results with Curalin after Day 5+</h2>
+    <div class="daily-routine">
+      <div class="routine">
+        <div class="img-icon"><img src="{{ 'thank-you-two-capsules.png' | asset_url }}" alt="" width="118" height="95" loading="lazy"></div>
+        <div class="title-capsules">
+          <b>Take 2 Capsules</b>
+          <br/>
+          <p>Take 2 capsules 30 minutes after every meal</p>        
+        </div>
+      </div>
+      <div class="routine">
+        <div class="img-icon"><img src="{{ 'thank-you-two-watch.png' | asset_url }}" alt="" width="118" height="95" loading="lazy"></div>
+        <div class="title-capsules">
+          <b>Routine</b>
+          <br/>
+          <p>Be sure to take your Curalin consistently for the best results</p>         
+        </div>
+      </div>
+      <div class="routine">
+        <div class="img-icon"><img src="{{ 'thank-you-two-paper.png' | asset_url }}" alt="" width="118" height="95" loading="lazy"></div>
+        <div class="title-capsules">
+          <b>Track</b>
+          <br/>
+          <p>Track and adjust your progress to find the daily amount that works for you</p>         
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+
+  #best-results-section {
+    margin-bottom: 3%;
+  }
+  #best-results-section .container h2 {
+    margin: unset;
+    padding: 1% 0 5%;
+    text-align: center;
+    font-family: 'PP Radio Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    color: #424733;
+  }
+
+  #best-results-section .daily-routine {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #best-results-section .routine {
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #best-results-section .title-capsules {
+    margin-top: 4%;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+  }
+
+  @media screen and (max-width: 999px) {
+    #best-results-section .container h2 { 
+    padding: 5vw 0;
+  }
+  }
+
+  @media screen and (max-width: 768px) {
+    #best-results-section .container h2 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    #best-results-section .daily-routine {
+      flex-direction: column;
+      align-items: center;
+      gap: 2vw;
+    }
+
+    #best-results-section .routine {
+      max-width: 100%;
+    }
+
+    
+   
+    #best-results-section .img-icon img {  
+      max-width: 75%;
+      object-fit: contain;
+    }
+
+    #best-results-section .title-capsules {
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+</style>

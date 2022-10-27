@@ -57,9 +57,9 @@
   {% render 'onboarding-order-delivered-hero', title: "Congrats on starting your journey with Curalin!", icon_file: "thank-you-applause-icon.png" %}
   {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
   {% render 'onboarding-curalin-consumers-started' %}
-  {% render 'thank-you-curalin-best-results' %}
+  {% render 'onboarding-curalin-best-results' %}
   {% render 'onboarding-curalin-call-expert', background_color: '#FAF5E9', border: false %}
-  {% render 'thank-you-faq' %}
+  {% render 'onboarding-faq' %}
 {% else %}
   {% assign progress_steps =  "Support
                                 |How To Use
@@ -71,5 +71,5 @@
   {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
   {% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
   {% render 'onboarding-curalin-consumers-not-started'%}
-  {% render 'thank-you-faq' %}
+  {% render 'onboarding-faq' %}
 {% endif %}
