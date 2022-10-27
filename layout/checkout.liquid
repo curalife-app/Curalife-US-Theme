@@ -221,12 +221,12 @@
             {% if onboarding_exist %}
               <div id="onboarding-content">
                 {% assign progress_steps =  "Daily Tip
-                |How To Use
-                |Reviews
-                |Support
-                |FAQ
-                |Order Info"
-                | split: '|' %}
+                                            |How To Use
+                                            |Reviews
+                                            |Support
+                                            |FAQ
+                                            |Order Info"
+                                            | split: '|' %}
                 {% render 'onboarding-main-title' %}
                 {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
                 {% render 'onboarding-quiz' %}
