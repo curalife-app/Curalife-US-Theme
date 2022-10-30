@@ -11,11 +11,11 @@
     {% render 'layout.head.canonicals-us' %}
 
     <!-- Stylesheets -->
-    <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     {% if request.path contains 'curalin-pack' %}
-    <link rel="preload" href="{{ 'styles-product-aio.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
     {% endif %}
+    {{ 'common.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'styles.css' | asset_url | stylesheet_tag: preload: true }}
 
     <!-- Script Libraries -->
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url}}"></script>
