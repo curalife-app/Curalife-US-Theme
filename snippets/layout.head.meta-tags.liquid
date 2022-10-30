@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="title" content={{ page_title }}">
+<meta name="title" content="{{ page_title }}">
 <meta name="description" content="{{ page_description | escape }}">
 <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name="format-detection" content="telephone=no">
@@ -35,7 +35,7 @@
 <meta property="og:description" content="{{ page_description | escape }}">
 <meta property="og:title" content="{{ page_title | escape }}" />
 {% if template contains 'article' %}
-<meta property="og:image" content="https:{{ article.image | img_url: 'original' }}">
+<meta property="og:image" content="https:{{ article.image | image_url }}">
 {% elsif page.url contains 'winning-type-2' %}
 <meta property="og:image" content="{{ 'lp-community-thumbnail.png' | file_url }}">
 {% elsif page.url contains 'raf-giveaway' %}
@@ -50,7 +50,7 @@
 <meta property="twitter:title" content="{{ page_title }}">
 <meta property="twitter:description" content="{{ page_description | escape }}">
 {% if template contains 'article' %}
-<meta property="twitter:image" content="https:{{ article.image | img_url: 'original' }}">
+<meta property="twitter:image" content="https:{{ article.image | image_url }}">
 {% elsif page.url contains 'winning-type-2' %}
 <meta property="twitter:image" content="{{ 'lp-community-thumbnail.png' | file_url }}">
 {% else %}
