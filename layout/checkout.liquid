@@ -21,13 +21,13 @@
 {% elsif customer.email=='svetlana@curalife.com' %}
 {% assign onboarding_exist = true %}
 {% endif %}
-<script>console.log("{{customer.email}}")</script>
 
 
 <!DOCTYPE html>
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
 
 <head>
+  <script>console.log("{{customer.email}}")</script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport"
