@@ -478,7 +478,7 @@
     woopra.identify({
       email: {{ checkout.email | json }}
         });
-    {% - endif -%}
+    {% endif %}
 
     {% if customer %}
     woopra.identify({
