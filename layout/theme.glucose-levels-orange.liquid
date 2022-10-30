@@ -8,9 +8,9 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {%- if settings.favicon != blank -%}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32 }}" type="image/png">
     {%- endif -%}
-  
+
  <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
 <link rel="preload" href="{{ 'bootstrap.min.vidc.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -38,11 +38,11 @@
 {{ content_for_header }} <!-- Header hook for plugins -->
 
   <style>
-   
+
     body{
       padding-top: 0;
     }
-    div#shopify-section-vids-video-section .container, 
+    div#shopify-section-vids-video-section .container,
     div#shopify-section-vids-product-order-section-top .container,
     div#shopify-section-vids-benefits .container,
     div#shopify-section-vids-healthy-banner .container,
@@ -67,7 +67,7 @@
 
   <main role="main">
     {{ content_for_layout }}
-    
+
      {% section 'footer'%}
   </main>
 
