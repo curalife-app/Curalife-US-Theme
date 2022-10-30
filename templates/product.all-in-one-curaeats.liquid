@@ -13,22 +13,13 @@
     </div>
     </div>
     <div class="product-info">
-    <div class="sub-title">
-      {% if product.metafields.my_fields.alternative_title.value %}
-      <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
-      {% else %}
-      <h1>{{ product.title }}</h1>
-      {% endif %}
-    </div>
-    <div class="rating-stars">
-      <img class="rating-stars-img" src="{{ 'product-aio-rating-stars.png' | asset_url }}" alt="">
-      <span class="reviews-quantity">3000+ Reviews</span>
-    </div>
-    <div class="quotes">
-      <p class="quote">“It’s completely changed my life” - Paul M.</p>
-      <p class="quote">“I’m healthier now than I’ve been in years” - D’Gay F.</p>
-      <p class="quote">“Here’s my proof - my MD is thrilled. I’m a believer!” - Ilyssa E.</p>
-    </div>
+      <div class="sub-title">
+        {% if product.metafields.my_fields.alternative_title.value %}
+        <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
+        {% else %}
+        <h1>{{ product.title }}</h1>
+        {% endif %}
+      </div>
     </div>
     <div class="product-actions">
     <div class="form-wrap">
