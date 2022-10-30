@@ -18,7 +18,7 @@
     {{ 'styles.css' | asset_url | stylesheet_tag: preload: true }}
 
     <!-- Script Libraries -->
-    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     {{ 'libs.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'common.js' | asset_url | preload_tag: as: 'script' }}
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
