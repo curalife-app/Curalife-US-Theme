@@ -14,6 +14,12 @@
   <script>console.log("Redirect Disabled Through URL Parameter.")</script>
 {% endif %}
 
+{%- comment -%} Temp: remove redirect for curaeats product page {%- endcomment -%}
+{% if request.path contains 'products/curaeats' %}
+  {% assign admin = true %}
+  <script>console.log("Redirect Disabled For CuraEats")</script>
+{% endif %}
+
 {% unless admin %}
   <script>
     const detectRobot = (userAgent) => {
