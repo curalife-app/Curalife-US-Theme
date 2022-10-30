@@ -11,7 +11,7 @@
 {% assign order_count = order_count | plus: 1 %}
 {% endfor %}
 
-{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com' %}
+{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com' %}
 
 {% if users contains customer.email %}
 {% assign onboarding_exist = true %}
@@ -42,10 +42,15 @@
   {% render 'layout.head.google-tag-manager'%}
 
   <!-- Swiper Import -->
+<<<<<<< HEAD
   {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
+=======
+  <link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+>>>>>>> ac5e8e69d8d0802ce57fea7c46399273f527e16c
   <script src="{{ 'swiper.min.js' | asset_url}}"></script>
 
-  <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
+  <link rel="stylesheet" href="{{ " icofont.min.css" | asset_url }}">
   <style>
     @font-face {
       font-family: IcoFont;
@@ -114,7 +119,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 </head>
 
 <body>
@@ -154,12 +160,18 @@
         </main>
 
         <div id="payment-badges" class="payment-badges">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-visa.png' | asset_url }}" alt="payment provider visa" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-mastercard.png' | asset_url }}" alt="payment provider mastercard" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-amex.png' | asset_url }}" alt="payment provider amex" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-discover.png' | asset_url }}" alt="payment provider discover" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-jcb.png' | asset_url }}" alt="payment provider jcb" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-diners.png' | asset_url }}" alt="payment provider diners" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-visa.png' | asset_url }}"
+            alt="payment provider visa" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-mastercard.png' | asset_url }}"
+            alt="payment provider mastercard" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-amex.png' | asset_url }}"
+            alt="payment provider amex" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-discover.png' | asset_url }}"
+            alt="payment provider discover" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-jcb.png' | asset_url }}"
+            alt="payment provider jcb" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-diners.png' | asset_url }}"
+            alt="payment provider diners" loading="lazy">
         </div>
 
         <footer class="main__footer" role="contentinfo">
