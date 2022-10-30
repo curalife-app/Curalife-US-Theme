@@ -237,7 +237,7 @@ noa@curalife.com, dovi@curalife.com' %}
   {% if curaeats_exist %}
   <div id="curaeats-content">
     {% render 'curaeats-download-section' %}
-    {% render 'curaeats-upgrade-section' %}
+    {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
     {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach
     our customer support.', icons-background-color: 'white', border: true %}
   </div>
