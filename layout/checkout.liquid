@@ -587,8 +587,6 @@
         user_agent: navigator.userAgent
       });
 
-      {% assign shippingPrice = checkout.shipping_price | money_without_currency %}
-
       woopra.track('Checkout Step - Thank You', {});
     };
   </script>
