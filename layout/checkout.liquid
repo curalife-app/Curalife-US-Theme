@@ -12,7 +12,7 @@
 {% assign users = 'yotam@curalife.com ana@curalife.com ofirv92@yahoo.com svetlana@curalife.com'}
 {% endfor %}
 
-{% if order_count == 1 or if users contains customer.email %}
+{% if users contains customer.email %}
 {% assign onboarding_exist = true %}
 {% endif %}
 
