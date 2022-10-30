@@ -9,7 +9,7 @@
 {% assign order_count = 0 %}
 {% for order in customer.orders %}
 {% assign order_count = order_count | plus: 1 %}
-{% assign users = 'yotam@curalife.com ana@curalife.com ofirv92@yahoo.com svetlana@curalife.com'}
+{% assign users = 'yotam@curalife.com ana@curalife.com ofirv92@yahoo.com svetlana@curalife.com' %}
 {% endfor %}
 
 {% if users contains customer.email %}
