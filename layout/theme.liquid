@@ -11,7 +11,7 @@
     {% render 'layout.head.canonicals-us' %}
 
     <!-- Stylesheets -->
-    {% if request.path contains 'curalin-pack' %}
+    {% if request.path contains 'curalin-pack' or request.path contains 'curaeats' %}
     {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
     {% endif %}
     {{ 'common.css' | asset_url | stylesheet_tag: preload: true }}
