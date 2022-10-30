@@ -474,13 +474,13 @@
       click_tracking: true
     });
 
-    {% - if checkout.email -%}
+    {% if checkout.email %}
     woopra.identify({
       email: {{ checkout.email | json }}
         });
     {% - endif -%}
 
-    {% - if customer -%}
+    {% if customer %}
     woopra.identify({
       customer_id: {{ customer.id | json }},
       name: {{ customer.name | json }},
@@ -488,7 +488,7 @@
       order_count: {{ customer.orders_count | json }},
       total_spent: {{ customer.total_spent | json }}
         });
-    {% - endif -%}
+    {% endif %}
 
     woopra.track();
   </script>
