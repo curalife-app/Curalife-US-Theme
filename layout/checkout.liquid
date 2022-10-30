@@ -9,12 +9,19 @@
 {% assign order_count = 0 %}
 {% for order in customer.orders %}
 {% assign order_count = order_count | plus: 1 %}
-{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com' %}
 {% endfor %}
 
-{% if users contains customer.email %}
+
+{% if customer.email=='yotam@curalife.com' %}
+{% assign onboarding_exist = true %}
+{% elsif customer.email=='ana@curalife.com' %}
+{% assign onboarding_exist = true %}
+{% elsif customer.email=='ofirv92@yahoo.com' %}
+{% assign onboarding_exist = true %}
+{% elsif customer.email=='svetlana@curalife.com' %}
 {% assign onboarding_exist = true %}
 {% endif %}
+
 
 <!DOCTYPE html>
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
