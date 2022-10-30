@@ -25,7 +25,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
   <meta name="referrer" content="origin">
   {%- if settings.favicon != blank -%}
-  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32 }}" type="image/png">
   {%- endif -%}
   <title>{{ page_title }}</title>
 
