@@ -13,15 +13,7 @@
 
 {% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com' %}
 
-{%- comment -%} {% if customer.email == 'yotam@curalife.com' %}
-{% assign onboarding_exist = true %}
-{% elsif customer.email == 'ana@curalife.com' %}
-{% assign onboarding_exist = true %}
-{% elsif customer.email == 'ofirv92@yahoo.com' %}
-{% assign onboarding_exist = true %}
-{% elsif customer.email == 'svetlana@curalife.com' %}
-{% assign onboarding_exist = true %}
-{% endif %} {%- endcomment -%}
+
 
 {% if users contains customer.email %}
 {% assign onboarding_exist = true %}
@@ -32,9 +24,6 @@
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
 
 <head>
-  {% if users contains customer.email %}
-  <script>console.log("yes!")</script>
-  {% endif %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport"
