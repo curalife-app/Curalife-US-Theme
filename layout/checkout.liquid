@@ -42,7 +42,7 @@
   {% render 'layout.head.google-tag-manager'%}
 
   <!-- Swiper Import -->
-  <link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
   <script src="{{ 'swiper.min.js' | asset_url}}"></script>
 
   <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
