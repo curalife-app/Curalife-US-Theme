@@ -11,7 +11,7 @@
     {% render 'layout.head.canonicals-us' %}
 
     <!-- Stylesheets -->
-    {% if request.path contains 'curalin-pack' %}
+    {% if request.path contains 'curalin-pack' or request.path contains 'curaeats' %}
     {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
     {% endif %}
     {{ 'common.css' | asset_url | stylesheet_tag: preload: true }}
@@ -19,8 +19,8 @@
 
     <!-- Script Libraries -->
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
-    {{ 'libs.js' | asset_url | preload_tag: as: 'script' }}
-    {{ 'common.js' | asset_url | preload_tag: as: 'script' }}
+    <script src="{{ 'libs.js' | asset_url }}" async></script>
+    <script src="{{ 'common.js' | asset_url }}" async></script>
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" async></script>
@@ -51,7 +51,11 @@
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->
     {% unless request.path contains 'curalin-pack' %}
-      {% section 'header'%}
+      {% unless request.path contains 'curalin_pack' %}
+        {% unless request.path contains 'curaeats' %}
+          {% section 'header' %}
+        {% endunless %}
+      {% endunless %}
     {% endunless %}
 
     <main role="main">{{ content_for_layout }}</main>
