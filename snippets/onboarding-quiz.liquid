@@ -1,10 +1,19 @@
 <section class="quiz-section" id="quiz-section">
-  <div data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{customer.email}}" style="width:100%;height:400px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
+  <div data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100"
+    data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{customer.email}}"
+    style="width:100%;height:100%;"></div>
+  <script src="//embed.typeform.com/next/embed.js"></script>
 </section>
+
+<style>
+  .fQvGaO {
+    margin: unset;
+  }
+</style>
 
 <script>
   function submit(event) {
-    $(".quiz-section" ).css( "visibility", "hidden" ).animate({opacity: 0.0}, 1000);
+    $(".quiz-section").css("visibility", "hidden").animate({ opacity: 0.0 }, 1000);
     $(".quiz-section").height(0);
   }
 </script>
