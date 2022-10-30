@@ -51,7 +51,11 @@
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->
     {% unless request.path contains 'curalin-pack' %}
-      {% section 'header'%}
+      {% unless request.path contains 'curalin_pack' %}
+        {% unless request.path contains 'curaeats' %}
+          {% section 'header' %}
+        {% endunless %}
+      {% endunless %}
     {% endunless %}
 
     <main role="main">{{ content_for_layout }}</main>
