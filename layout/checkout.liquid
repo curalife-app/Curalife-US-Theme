@@ -19,12 +19,10 @@
 
 <!DOCTYPE html>
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
   <meta name="referrer" content="origin">
   {%- if settings.favicon != blank -%}
   <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
@@ -32,7 +30,6 @@
   <title>{{ page_title }}</title>
 
   {{ content_for_header }}
-
   {{ checkout_stylesheets }}
   {{ checkout_scripts }}
 
@@ -45,7 +42,7 @@
   {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
   <script src="{{ 'swiper.min.js' | asset_url}}"></script>
 
-  <link rel="stylesheet" href="{{ " icofont.min.css" | asset_url }}">
+  <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
   <style>
     @font-face {
       font-family: IcoFont;
@@ -185,13 +182,11 @@
         <div class="sidebar-extentions">
           <div id="trust-badges" class="trust-badges">
             <div class="badge">
-              <img class="badge-icon" src="{{ 'icon-money-back.png' | asset_url }}"
-                alt="60 Days Money Back Guarantee Icon" loading="lazy">
+              <img class="badge-icon" src="{{ 'icon-money-back.png' | asset_url }}" alt="60 Days Money Back Guarantee Icon" loading="lazy">
               <p class="badge-title">60 DAYS GUARANTEE</p>
             </div>
             <div class="badge">
-              <img class="badge-icon" src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="Secure Checkout Icon"
-                loading="lazy">
+              <img class="badge-icon" src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="Secure Checkout Icon" loading="lazy">
               <p class="badge-title">100% SECURE CHECKOUT</p>
             </div>
           </div>
@@ -593,11 +588,8 @@
       });
 
       {% assign shippingPrice = checkout.shipping_price | money_without_currency %}
-      // TODO: Delete after shipping tests are done
-      woopra.track('Checkout Step - Thank You', {
-        // 'test_variant': $.cookie("_sc_7"),
-        // 'shipping_price': {% if shippingPrice == '0.00' %}'Free'{% else %}'Paid: ${{shippingPrice}}'{% endif %}
-      });
+
+      woopra.track('Checkout Step - Thank You', {});
     };
   </script>
 
