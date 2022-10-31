@@ -11,8 +11,7 @@
 {% assign order_count = order_count | plus: 1 %}
 {% endfor %}
 
-{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com,
-noa@curalife.com, dovi@curalife.com' %}
+{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com, noa@curalife.com, dovi@curalife.com' %}
 
 {% if users contains customer.email %}
 {% assign onboarding_exist = true %}
@@ -41,7 +40,7 @@ noa@curalife.com, dovi@curalife.com' %}
 
   <!-- Swiper Import -->
   {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
-  <script src="{{ 'swiper.min.js' | asset_url}}"></script>
+  <script src="{{ 'swiper.min.js' | asset_url }}"></script>
 
   <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
   <style>
@@ -145,24 +144,17 @@ noa@curalife.com, dovi@curalife.com' %}
         <main class="main__content" role="main">
           {{ content_for_layout }}
           <div class="tc" style="display:flex;justify-content:flex-end;">
-            <p style="margin-top:10px;">By clicking the continue button I Agree to CuraLife's <a
-                href="/policies/terms-of-service">Terms & Conditions</a>.</p>
+            <p style="margin-top:10px;">By clicking the continue button I Agree to CuraLife's <a href="/policies/terms-of-service">Terms & Conditions</a>.</p>
           </div>
         </main>
 
         <div id="payment-badges" class="payment-badges">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-visa.png' | asset_url }}"
-            alt="payment provider visa" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-mastercard.png' | asset_url }}"
-            alt="payment provider mastercard" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-amex.png' | asset_url }}"
-            alt="payment provider amex" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-discover.png' | asset_url }}"
-            alt="payment provider discover" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-jcb.png' | asset_url }}"
-            alt="payment provider jcb" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-diners.png' | asset_url }}"
-            alt="payment provider diners" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-visa.png' | asset_url }}" alt="payment provider visa" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-mastercard.png' | asset_url }}" alt="payment provider mastercard" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-amex.png' | asset_url }}" alt="payment provider amex" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-discover.png' | asset_url }}" alt="payment provider discover" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-jcb.png' | asset_url }}" alt="payment provider jcb" loading="lazy">
+          <img class="payment-badge" src="{{ 'checkout-payment-badges-diners.png' | asset_url }}" alt="payment provider diners" loading="lazy">
         </div>
 
         <footer class="main__footer" role="contentinfo">
@@ -238,8 +230,7 @@ noa@curalife.com, dovi@curalife.com' %}
   <div id="curaeats-content">
     {% render 'curaeats-download-section' %}
     {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
-    {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach
-    our customer support.', icons-background-color: 'white', border: true %}
+    {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true %}
   </div>
 
   <style>
@@ -491,7 +482,7 @@ noa@curalife.com, dovi@curalife.com' %}
         currency: '{{ shop.currency }}',
           item_brand: 'CuraLife',
             item_category: 'CuraLin',
-              quantity: { { line_item.quantity } }
+              quantity: {{ line_item.quantity }}
         }
     items_data.push(item);
     {% endfor %}
