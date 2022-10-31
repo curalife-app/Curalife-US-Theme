@@ -11,8 +11,7 @@
 {% assign order_count = order_count | plus: 1 %}
 {% endfor %}
 
-{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com,
-noa@curalife.com, dovi@curalife.com' %}
+{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com, noa@curalife.com, dovi@curalife.com' %}
 
 {% if users contains customer.email %}
 {% assign onboarding_exist = true %}
