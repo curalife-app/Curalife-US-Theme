@@ -1,7 +1,7 @@
 <section id="video-reviews-section">
   <div class="container">
+    <div class="swiper-button swiper-button-prev"></div>
     <div class="video-reviews swiper">
-      <div class="swiper-button-prev"></div>
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="video-review">
@@ -52,8 +52,8 @@
           </div>
         </div>
       </div>
-      <div class="swiper-button-next"></div>
     </div>
+    <div class="swiper-button swiper-button-next"></div>
   </div>
 </section>
 
@@ -99,10 +99,13 @@
     max-width: 100%;
   }
 
-  #video-reviews-section .swiper-button-prev,
-  #video-reviews-section .swiper-button-next {
-    color: #424733;
+  #video-reviews-section .swiper-button {
     transition: opacity 0.5s;
+    background: #424733;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
   }
 
   #video-reviews-section .swiper-button-prev.disabled,
