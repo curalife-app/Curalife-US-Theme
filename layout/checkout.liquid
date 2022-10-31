@@ -634,7 +634,7 @@
 
     $('.section--billing-address label').click(function () {
       woopra.track('Billing Same/Different as Shipping Select', {
-        option: $(this).att('for') == 'checkout_different_billing_address_true' ? 'Different' : 'Same'
+        option: $(this).attr('for') == 'checkout_different_billing_address_true' ? 'Different' : 'Same'
       })
     })
   </script>
