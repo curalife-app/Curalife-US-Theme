@@ -4,147 +4,22 @@
     <h2>
       <b>Popular Questions</b>
     </h2>
+
+    {% assign faqs = 'When should I take Curalin?:For the best results, we recommend taking CuraLin 30 minutes after meals.
+                      |How to determine how much Curalin I should take?:First 2 days, start with 1 capsule with every meal. The next 2 days, start with 1 capsule after every meal. On day 5+, 2 capsules after every meal, which is the full daily intake. Do not succeed more than 6 capsules daily.
+                      |Is it normal to see results in less than 3 days?:The average time to see results with Curalin is 5-7 days. But it’s perfectly normal to see results from the very first day, or as much as 14 days.
+                      |Can I take Curalin alongside my medications?:Yes! Curalin is considered very safe to use, even alongside medications. But of course we recommend that you speak with your doctor before taking Curalin.
+                      |Where is CuraLin made?:Curalin uses ingredients grown and powdered in India. Capsuling and bottling is done by 3rd party labs in the USA or EU.'
+                      | split: '|' %}
     <div class="faq">
-      <div class="faq-item">
-        <div class="question">How much CuraLin do I need to take?</div>
-        <div class="answer">
-          <div class="answer-content">The recommended usage of CuraLin is to take 1-2 capsules 30 minutes after each meal. Maximum 6 capsules per day. CuraLin is easy to take.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="question">When should I be taking CuraLin?</div>
-        <div class="answer">
-          <div class="answer-content">For the best results, the recommended usage is to take 1-2 capsules of CuraLin 30 minutes after your meals (maximus 6 capsules per day).</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="question">How does each ingredient work?</div>
-        <div class="answer">
-          <div class="answer-content">Each ingredient does a little something different to promote health in the 18 key body functions needed for glucose support.</div>
-          <div class="ingredients-main-slider swiper">
-            <div class="swiper-button-prev swiper-nav"></div>
-            <div class="ingredients swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-1.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Tumeric</p>
-                    <p class="ingredient-description">Also known as Curcuma Longa, Turmeric has been used in Eastern medicinal systems for hundreds of years to help people maintain healthy glucose levels though healthy insulin tolerance.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-2.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Swertia Chirata</p>
-                    <p class="ingredient-description">The active ingredients help the pancreatic cells release insulin, reduce absorption of glucose from the digestive system and improve the intracellular metabolism of glucose.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-3.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Bitter Melon</p>
-                    <p class="ingredient-description">Also known as Karela or Momordica Charantia, Bitter Melon is traditionally used by diabetes in Eastern medicinal systems. Its mechanism of action promotes healthy physiological function in damaged pancreatic cells, supports glucose absorption, and the sensitivity of the muscle cells to insulin.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-4.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Cinnamomum Zeylanicum</p>
-                    <p class="ingredient-description">Cinnamon has many benefits, including supporting healthy glucose absorption & metabolism, promoting healthy insulin release, circulation & sensitivity, and maintaining healthy levels of gluconeogenesis. It also supports healthy weight loss, promotes healthy HbA1c and fasting blood sugar, healthy cholesterol levels, and promotes a healthy nervous system.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-5.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Picrorhiza Kurroa</p>
-                    <p class="ingredient-description">The active compounds in Pirorhiza Kurroa act as an anti-oxidant and promotes healthy liver function (protecting it from toxins). This supports healthy glucose tolerance and helps people maintain a healthy weight.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-6.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Amla</p>
-                    <p class="ingredient-description">Also known as Indian gooseberry or Emblica Officinalis, the active property in Amla is Tannoid, which helps support the physiological function of pancreatic cells.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-7.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Syzygium Cumini</p>
-                    <p class="ingredient-description">Also known as Eugenia Jambolana, the active components in Syzygium Cumini supports a healthy physiological function in the liver, creating a reservoir of glucose macromolecules, thereby helping maintain healthy fasting blood glucose levels.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-8.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Fenugreek</p>
-                    <p class="ingredient-description">Also known as Trigonella Foenum Graecum, Fenugreek contains fibers that promotes insulin production, release & sensitivity. Fenugreek also helps support a healthy rate of carbohydrate absorption in the digestive system.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="ingredient">
-                  <img src="{{ "ingredients-9.png" | asset_url }}" alt="" loading="lazy">
-                  <div class="ingredient-content">
-                    <p class="ingredient-title">Gymnema Sylvestre</p>
-                    <p class="ingredient-description">Gymnema Sylvestre has many active compounds including Saponin, which is known to help manage cravings for carbohydrate. Metabolically, it encourages healthy insulin release.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-button-next swiper-nav"></div>
+      {% for faq in faqs %}
+        <div class="faq-item">
+          <div class="question">{{ faq | split: ":" | first }}</div>
+          <div class="answer">
+            <div class="answer-content">{{ doctor | split: ":" | last }}</div>
           </div>
         </div>
-      </div>
-      <div class="faq-item">
-        <div class="question">Is there a discount if I order more than one bottle?</div>
-        <div class="answer">
-          <div class="answer-content">Yes! You can save substantially by ordering a 3 pack of CuraLin. Check out the pricing section of this page for more information.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="question">How do I get my money back in line with your return policy?</div>
-        <div class="answer">
-          <div class="answer-content">Easy! We have a no questions asked policy. Just shoot us a message at hello@curalife.com, or call our 24/7 phone support and we’ll take care of your request:
-            <br>UK-Toll-Free: +44 800 086 9122
-            <br>US-Toll-Free: +1 888 286 7307
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="question">How long does shipping take?</div>
-        <div class="answer">
-          <div class="answer-content">You will get a tracking number as soon as your order ships so that you can see exactly where your package is. Most orders in the continental USA arrive between 2-5 days after placing the order (depending on where in the US you live). Orders from the UK take an average of 7-8 days to arrive. Orders from Australia and the Asia Pacific Region can take a bit longer. Our official policy is that shipping can take 7-28 business days, but that’s just because of the uncertainty of shipping times these days. Your order will almost always arrive much faster than that, and your tracking number will always keep you up to date.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="question">Will I be able to track my order?</div>
-        <div class="answer">
-          <div class="answer-content">Yes! Every CuraLin order comes with a tracking number. You will be able to see where your package is any time you want – from the moment it ships, until the moment it reaches your home.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="question">Can I buy CuraLin in pharmacies and grocery stores?</div>
-        <div class="answer">
-          <div class="answer-content">We’re still working on getting CuraLin on the shelves of all the major US pharmacies. That’s part of our 2022 plan. For now, the best place to order CuraLin is online, though this page!
-            <br>Internationally, CuraLin is already sold through channels is over 50 countries, including the UK, Italy, Austria, and other EU member states.
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
