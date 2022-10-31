@@ -11,7 +11,8 @@
 {% assign order_count = order_count | plus: 1 %}
 {% endfor %}
 
-{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com, noa@curalife.com, dovi@curalife.com' %}
+{% assign users = 'yotam@curalife.com, ana@curalife.com, svetlana@curalife.com, sagi@curalife.com,
+noa@curalife.com, dovi@curalife.com' %}
 
 {% if users contains customer.email %}
 {% assign onboarding_exist = true %}
@@ -20,6 +21,7 @@
 <!DOCTYPE html>
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
 <head>
+  <script>console.log(customer.email)</script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
