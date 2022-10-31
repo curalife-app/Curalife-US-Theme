@@ -16,7 +16,7 @@
         <div class="faq-item">
           <div class="question">{{ faq | split: ":" | first }}</div>
           <div class="answer">
-            <div class="answer-content">{{ doctor | split: ":" | last }}</div>
+            <div class="answer-content">{{ faq | split: ":" | last }}</div>
           </div>
         </div>
       {% endfor %}
