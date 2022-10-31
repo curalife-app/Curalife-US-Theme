@@ -191,13 +191,12 @@
       let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       let scrolled = (winScroll / height) * 100;
       let scrollBar = document.getElementById("progressBar").style.width = scrolled + "%";
-      let
 
       {% for step in progress_steps %}
         scrolled >{% if progress_steps.size == forloop.index %}={% endif %} 100/{{ progress_steps.size | minus: 1 }}*{{ forloop.index | minus: 1}} ? document.querySelectorAll('#progress-bar-section .step')[{{ forloop.index | minus: 1 }}].classList.add("active") : document.querySelectorAll('#progress-bar-section .step')[{{ forloop.index | minus: 1 }}].classList.remove("active");
       {% endfor %}
 
-      if (window.pageYOffset > window.stickyStart) {
+      if (window.pageYOffset > window.stickyStart - headerHeight) {
         progressBar.classList.add("sticky");
         document.querySelector('#progress-bar-section ~ section').style.paddingTop = $("#progress-bar-section").height() + 50 + "px";
         progressBar.style.top = headerHeight + "px";
