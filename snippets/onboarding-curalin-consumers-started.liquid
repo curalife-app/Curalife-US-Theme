@@ -44,13 +44,16 @@
     display: flex;
   }
 
+  #how-to-section .best-results-mobile {
+    display: none;
+  }
+
   #how-to-section .curalin-first-timers {
     width: 40%;
     padding: 3% 0;
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
     font-size: 34px;
-    line-height: 40px;
     color: #424733;
   }
 
@@ -61,7 +64,6 @@
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
     font-size: 34px;
-    line-height: 40px;
     color: #424733;
     max-height: 540px;
   }
@@ -87,9 +89,9 @@
 
   #how-to-section .day {
     font-family: 'Open Sans';
-    font-size: 30px;
+    font-size: 26px;
     color: rgba(0, 0, 0, 0.8);
-    padding-bottom: 50px;
+    padding-bottom: 30px;
   }
 
   #how-to-section .day p {
@@ -97,13 +99,28 @@
     font-weight: 400;
     font-size: 19px;
     color: rgba(0, 0, 0, 0.8);
-    margin: 5px 0;
   }
 
   @media screen and (max-width: 999px) {
     #how-to-section {
-      flex-direction: column-reverse;
-      padding: 0vw;
+      padding: 5vw 0;
+    }
+
+    #how-to-section .container {
+      flex-direction: column;
+    }
+
+    .best-results-desktop {
+      display: none;
+    }
+
+    #how-to-section .best-results-mobile {
+      display: block;
+    }
+
+    #how-to-section .curalin-reviews h3 {
+      font-size: 6vw;
+      margin-top: 6vw;
     }
 
     #how-to-section .curalin-reviews {
@@ -118,10 +135,8 @@
     }
 
     #how-to-section .curalin-first-timers {
-      padding: 2% 5%;
       width: 100%;
-      font-size: 24px;
-      line-height: 32px
+      font-size: 7vw;
     }
 
     #how-to-section .curalin-reviews {
@@ -132,18 +147,19 @@
       text-align: center;
     }
 
-    #how-to-section .day {
-      font-size: 24px;
+    #how-to-section .days {
+      padding-top: 5vw;
     }
 
     #how-to-section .day-title {
       background-color: #EFBC73;
       padding: 0 1vw;
+      font-size: 7vw;
     }
 
     #how-to-section .day p {
       margin: unset;
-      font-size: 15px;
+      font-size: 4.5vw;
     }
   }
 </style>
