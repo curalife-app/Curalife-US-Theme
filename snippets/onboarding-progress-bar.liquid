@@ -183,7 +183,7 @@
 <script>
   $(document).ready(function() {
     var progressBar = document.getElementById("progress-bar-section");
-    window.stickyStart = progressBar.offsetTop;
+    window.stickyStart = progressBar.offsetTop - 50;
 
     document.addEventListener('scroll', () => {
       let headerHeight = $("#shopify-section-header header").length ? $("#shopify-section-header header").height() : 0;
