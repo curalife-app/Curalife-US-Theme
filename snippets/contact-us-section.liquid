@@ -1,4 +1,5 @@
 <section id="contact-us-section">
+  {% if box_link %}<a href="{{ box_link }}">{% endif %}
   <div class="container">
     <h2>{{ title }}</h2>
     <div class="contact-options">
@@ -26,6 +27,7 @@
       </div>
     </div>
   </div>
+  {% if box_link %}</a>{% endif %}
 </section>
 
 <style>
