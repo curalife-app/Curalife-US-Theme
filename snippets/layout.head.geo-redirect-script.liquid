@@ -1,4 +1,4 @@
-{% capture CFH %}{{ content_for_header }}{% endcapture %}
+{% capture CFH %}{{ content_for_header }}{% endcapture %}{{CFH}}
 
 {% if CFH contains 'adminBarInjector' %}
   {% assign admin = true %}
