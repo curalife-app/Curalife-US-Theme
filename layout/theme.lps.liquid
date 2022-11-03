@@ -7,6 +7,7 @@
   {% render 'layout.head.redirects-script' %}
   {% render 'layout.head.meta-tags'%}
   {% render 'layout.head.canonicals-us' %}
+  {% render 'layout.head.google-tag-manager'%}
 
   <!-- Stylesheets -->
   <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -53,7 +54,7 @@
 
   {{ 'option_selection.js' | shopify_asset_url | script_tag }}
 
-  {% render 'layout.head.google-tag-manager'%}
+
   {% render 'layout.head.marker-io-snippet' %}
   {% render 'fa_translate_core' %}
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
