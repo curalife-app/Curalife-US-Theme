@@ -1,5 +1,4 @@
 <!-- Exclude Specific Pages -->
-{% unless request.path contains 'lp-quiz' %}
 <script>console.log("{{request.path}}")</script>
   <!-- Google Tag Manager with eventID setup -->
   <script>
@@ -15,5 +14,3 @@
       'https://tracking.curalife.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-TR9676S');
   </script>
-
-{% endunless %}
