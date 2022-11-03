@@ -63,7 +63,7 @@ function preventDefault(e) {
         e.returnValue = false;
         return false;
     }
-    
+
     var delta = e.deltaY || e.detail || e.wheelDelta;
     if (e.type == "touchmove") {
         var tob = e.changedTouches[0], // reference first touch point for this event
@@ -147,20 +147,20 @@ window.onscroll = function () {
 let activeMenu = false;
 
 $(document).ready(function () {
-    $('.open-modal[data-fancybox]').fancybox({
-        closeExisting: true,
-        buttons: ['close'],
-        afterShow: function () {
-            if (!activeMenu) {
-                hold_scroll_page(true);
-            }
-        },
-        afterClose: function () {
-            if (!activeMenu) {
-                hold_scroll_page(false);
-            }
-        }
-    });
+    // $('.open-modal[data-fancybox]').fancybox({
+    //     closeExisting: true,
+    //     buttons: ['close'],
+    //     afterShow: function () {
+    //         if (!activeMenu) {
+    //             hold_scroll_page(true);
+    //         }
+    //     },
+    //     afterClose: function () {
+    //         if (!activeMenu) {
+    //             hold_scroll_page(false);
+    //         }
+    //     }
+    // });
 
     $(document).on("click", ".extra-info ul li", function () {
         $(this).toggleClass('show').siblings().removeClass('show')
