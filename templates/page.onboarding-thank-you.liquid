@@ -113,7 +113,7 @@
 
     const options = {
       method: 'POST',
-      body: JSON.stringify({customer: urlParams.get("customer"), customer_id: urlParams.get("customer_id"), field: urlParams.get("field"), value: urlParams.get("value")})
+      body: JSON.stringify({customer: urlParams.get("customer"), field: urlParams.get("field"), value: urlParams.get("value")})
     };
 
     fetch(zapierURL, options)
