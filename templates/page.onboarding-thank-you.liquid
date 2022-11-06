@@ -1,4 +1,3 @@
-
 <style>
   @font-face {
     font-family: 'DM Sans';
@@ -45,10 +44,6 @@
     src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
     src: local(''), url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'), }
 </style>
-
-
-
-
 
 <section id="main-title-section">
   <div class="container">
@@ -112,7 +107,7 @@
 <script>
   const urlParams = new URLSearchParams(window.location.search);
 
-  if (urlParams.get('customer') && urlParams.get('field') && urlParams.get('value')) {
+  if ((urlParams.get('customer') || urlParams.get('customer_id')) && urlParams.get('field') && urlParams.get('value')) {
     const options = {
       method: 'POST',
       body: JSON.stringify({customer: urlParams.get("customer"), customer_id: urlParams.get("customer_id"), field: urlParams.get("field"), value: urlParams.get("value")})
