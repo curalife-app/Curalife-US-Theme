@@ -1,0 +1,98 @@
+<section id="curaeats-section">
+  <div class="container">
+    <h2>Your CuraEats Meal Plan</h2>
+    <p>You will LOVE CuraEats, a customized meal plan app that keeps you on track with healthy food, without compromising on flavor!</p>
+    <div class="features">
+      <div class="feature">
+        <img src="{{ "collection-curaeats-feature-1.png" | asset_img_url: 'compact' }}" alt="" loading="lazy">
+        <h3>Recipes</h3>
+        <p>A library of 84 nutritious and delicious recipes you’ll love</p>
+      </div>
+      <div class="feature">
+        <img src="{{ "collection-curaeats-feature-2.png" | asset_img_url: 'compact' }}" alt="" loading="lazy">
+        <h3>Grocery list</h3>
+        <p>A complete grocery list with all ingredients for the 28 days</p>
+      </div>
+      <div class="feature">
+        <img src="{{ "collection-curaeats-feature-3.png" | asset_img_url: 'compact' }}" alt="" loading="lazy">
+        <h3>Education</h3>
+        <p>Education on healthy blood sugar levels and what to eat</p>
+      </div>
+    </div>
+
+    <p class="price">Now only <b>$29.99</b> for lifetime subscription!</p>
+    <div class="btn">
+      <a href="/products/curaeats" target="_blank" class="main-btn">Get The App</a>
+    </div>
+  </div>
+  <div class="background"></div>
+</section>
+
+<style>
+  #curaeats-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  #curaeats-section .background {
+    background: #99B182;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+  }
+
+  #curaeats-section h2 {
+    color: #99B182;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #curaeats-section p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 825px;
+    margin-bottom: 30px;
+  }
+
+  #curaeats-section .features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  #curaeats-section .feature {
+    max-width: 350px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+
+  #curaeats-section .feature img {
+    width: 230px;
+  }
+
+  #curaeats-section .feature h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: unset;
+  }
+
+  #curaeats-section p.price {
+    color: white;
+    font-size: 24px;
+  }
+
+  #curaeats-section .btn .main-btn {
+    font-size: 36px;
+    font-weight: bold;
+  }
+</style>
