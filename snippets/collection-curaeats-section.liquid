@@ -27,11 +27,11 @@
         </div>
       </div>
     </div>
-
+{%- comment -%}
     <p class="price">Now only <b>$29.99</b> for lifetime subscription!</p>
     <div class="btn">
       <a href="/products/curaeats" target="_blank" class="main-btn">Get The App</a>
-    </div>
+    </div> {%- endcomment -%}
   </div>
   <div class="background"></div>
 </section>
@@ -96,7 +96,7 @@
     margin: 10px 0;
   }
 
-  #curaeats-section p.price {
+  {%- comment -%} #curaeats-section p.price {
     color: white;
     font-size: 24px;
   }
@@ -104,7 +104,7 @@
   #curaeats-section .btn .main-btn {
     font-size: 36px;
     font-weight: bold;
-  }
+  } {%- endcomment -%}
 
   @media screen and (max-width: 768px) {
     #curaeats-section {
