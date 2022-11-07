@@ -1,7 +1,9 @@
 <section id="curaeats-section">
   <div class="container">
-    <h2>Your CuraEats Meal Plan</h2>
-    <p>You will LOVE CuraEats, a customized meal plan app that keeps you on track with healthy food, without compromising on flavor!</p>
+    <div class="section-titles">
+      <h2>Your CuraEats Meal Plan</h2>
+      <p>You will LOVE CuraEats, a customized meal plan app that keeps you on track with healthy food, without compromising on flavor!</p>
+    </div>
     <div class="features">
       <div class="feature">
         <img src="{{ "collection-curaeats-feature-1.png" | asset_url }}" alt="" loading="lazy">
@@ -37,7 +39,6 @@
 <style>
   #curaeats-section {
     padding: 50px 0;
-    text-align: center;
     position: relative;
   }
 
@@ -50,15 +51,18 @@
     bottom: 0;
   }
 
-  #curaeats-section h2 {
+  #curaeats-section .section-titles {
+    text-align: center;
+  }
+
+  #curaeats-section .section-titles h2 {
     color: #99B182;
     font-size: 30px;
     font-weight: 700;
-    text-align: center;
     margin-bottom: 20px;
   }
 
-  #curaeats-section p {
+  #curaeats-section .section-titles p {
     font-size: 18px;
     font-weight: 400;
     max-width: 825px;
@@ -108,7 +112,11 @@
       color: white;
     }
 
-    #curaeats-section h2 {
+    #curaeats-section .section-titles {
+      text-align: start;
+    }
+
+    #curaeats-section .section-titles h2 {
       color: white;
     }
 
