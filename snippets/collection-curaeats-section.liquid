@@ -4,18 +4,27 @@
       <h2>Your CuraEats Meal Plan</h2>
       <p>You will LOVE CuraEats, a customized meal plan app that keeps you on track with healthy food, without compromising on flavor!</p>
     </div>
+
+    {% assign features = "Recipes:A library of 84 nutritious and delicious recipes you’ll love
+      |Grocery List:A complete grocery list with all ingredients for the 28 days
+      |Education:Education on healthy blood sugar levels and what to eat"
+      | split: '|'%}
+
     <div class="features">
-      <div class="feature">
-        <img src="{{ "collection-curaeats-feature-1.png" | asset_url }}" alt="" loading="lazy">
-        <div class="feature-titles">
-          <h3>Recipes</h3>
-          <p>A library of 84 nutritious and delicious recipes you’ll love</p>
+      {% for feature in features %}
+        <div class="feature">
+          <img src="{{ "collection-curaeats-feature-{{forloop.index}}.png" | asset_url }}" alt="" loading="lazy">
+          <div class="feature-titles">
+            <h3>{{ feature | split: ":" | first }}</h3>
+            <p>{{ feature | split: ":" | last }}</p>
+          </div>
         </div>
-      </div>
+      {% endfor %}
+
       <div class="feature">
         <img src="{{ "collection-curaeats-feature-2.png" | asset_url }}" alt="" loading="lazy">
         <div class="feature-titles">
-          <h3>Grocery list</h3>
+          <h3>Grocery List</h3>
           <p>A complete grocery list with all ingredients for the 28 days</p>
         </div>
       </div>
@@ -125,6 +134,7 @@
 
     #curaeats-section .section-titles h2 {
       color: white;
+      font-size: 7vw;
     }
 
     #curaeats-section .background {
