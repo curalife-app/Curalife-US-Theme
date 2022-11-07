@@ -42,7 +42,7 @@
                   <div class="discount" style="display:none">
                     <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
                   </div>
-                  {% endif %} 
+                  {% endif %}
               </div>
               <div class="info">
                 <div class="main">
@@ -84,6 +84,35 @@
       </div>
     </div>
   </div>
+
+  <section id="curaeats-section">
+    <div class="container">
+      <h2>Your CuraEats Meal Plan</h2>
+      <p>You will LOVE CuraEats, a customized meal plan app that keeps you on track with healthy food, without compromising on flavor!</p>
+      <div class="features">
+        <div class="feature">
+          <img src="{{ "collection-curaeats-feature-1.png" | asset_img_url: 'compact' }}" width="100px" height="100px" alt="" loading="lazy">
+          <h3>Recipes</h3>
+          <p>A library of 84 nutritious and delicious recipes you’ll love</p>
+        </div>
+        <div class="feature">
+          <img src="{{ "collection-curaeats-feature-2.png" | asset_img_url: 'compact' }}" width="100px" height="100px" alt="" loading="lazy">
+          <h3>Grocery list</h3>
+          <p>A complete grocery list with all ingredients for the 28 days</p>
+        </div>
+        <div class="feature">
+          <img src="{{ "collection-curaeats-feature-3.png" | asset_img_url: 'compact' }}" width="100px" height="100px" alt="" loading="lazy">
+          <h3>Education</h3>
+          <p>Education on healthy blood sugar levels and what to eat</p>
+        </div>
+      </div>
+
+      <p>Only for $29.99!</p>
+      <div class="btn">
+        <a href="/products/curaeats" target="_blank" class="main-btn">Get CuraEats</a>
+      </div>
+    </div>
+  </section>
 </div>
 
 <style>
@@ -146,9 +175,9 @@
   $(document).on("click", "#AddTCart", function () {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'add_to_cart',       
-      ecommerce: {                          
-      items: [{                           
+      event: 'add_to_cart',
+      ecommerce: {
+      items: [{
         item_name: $(this).attr("title"),
         item_id: $(this).attr("prod-id"),
         affiliation: '{{ shop.name }}',
@@ -156,7 +185,7 @@
         currency: '{{ shop.currency }}',
         item_brand: 'CuraLife',
         item_category: 'CuraLin',
-        quantity: 1               
+        quantity: 1
       }]
       },
       email: '{{ customer.email }}',
@@ -178,7 +207,7 @@
       quantity: 1
     });
   });
-</script> 
+</script>
 
 {% schema %}
 {
