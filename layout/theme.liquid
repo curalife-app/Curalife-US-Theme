@@ -9,6 +9,7 @@
     {% render 'layout.head.google-tag-manager'%}
     {% render 'layout.head.meta-tags' %}
     {% render 'layout.head.canonicals-us' %}
+    {% render 'layout.head.fonts' %}
 
     <!-- Stylesheets -->
     {% if request.path contains 'curalin-pack' or request.path contains 'curaeats' %}
@@ -24,15 +25,6 @@
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" async></script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,700;0,800;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    {{ 'icofont.min.css' | asset_url | stylesheet_tag: preload: true }}
-    <style>@font-face{font-family:IcoFont;font-weight:400;font-style:Regular;src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),url({{ "icofont.woff" | asset_url }}) format("woff")}</style>
 
     <!-- Swiper Import -->
     {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
