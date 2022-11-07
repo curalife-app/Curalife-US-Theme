@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     {% render 'layout.head.geo-redirect-script' %}
+    {% render 'layout.head.fonts' %}
     <title>Support Healthy Blood Sugar</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
@@ -11,12 +12,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
     <style>@font-face{font-family:IcoFont;font-weight:400;font-style:Regular;src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),url({{ "icoFont.woff" | asset_url }}) format("woff")}</style>
+
+
 
     <link rel="preload" as="font" href="{{ 'lp-lab1w-Samantha-Regular.woff' | file_url }}" type="font/woff" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -41,7 +44,7 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap; }
-  
+
   @font-face {
     font-family: 'Autography';
     src: url("../fonts/Autography/Autography.eot");
@@ -49,7 +52,7 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap; }
-  
+
   @font-face {
     font-family: 'Samantha';
     src: url("../fonts/Samantha/Samantha-Regular.eot");
@@ -57,49 +60,49 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap; }
-  
+
   @font-face {
     font-family: 'Segoe UI';
     src: url("../fonts/SegoeUI/SegoeUI-Light.eot");
     src: local("Segoe UI Light"), local("SegoeUI-Light"), url("../fonts/SegoeUI/SegoeUI-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUI/SegoeUI-Light.woff") format("woff"), url("../fonts/SegoeUI/SegoeUI-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal; }
-  
+
   @font-face {
     font-family: 'Segoe UI';
     src: url("../fonts/SegoeUI/SegoeUI-BoldItalic.eot");
     src: local("Segoe UI Bold Italic"), local("SegoeUI-BoldItalic"), url("../fonts/SegoeUI/SegoeUI-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUI/SegoeUI-BoldItalic.woff") format("woff"), url("../fonts/SegoeUI/SegoeUI-BoldItalic.ttf") format("truetype");
     font-weight: bold;
     font-style: italic; }
-  
+
   @font-face {
     font-family: 'Segoe UI';
     src: url("../fonts/SegoeUI/SegoeUI-SemiBold.eot");
     src: local("Segoe UI Semibold"), local("SegoeUI-SemiBold"), url("../fonts/SegoeUI/SegoeUI-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUI/SegoeUI-SemiBold.woff") format("woff"), url("../fonts/SegoeUI/SegoeUI-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal; }
-  
+
   @font-face {
     font-family: 'Segoe UI';
     src: url("{{ 'SegoeUI.eot' | asset_url }}");
     src: local("Segoe UI"), local("SegoeUI"), url("{{ 'SegoeUI.eot' | asset_url }}?#iefix") format("embedded-opentype"), url("{{ 'SegoeUI.woff' | asset_url }}") format("woff"), url("{{ 'SegoeUI.ttf' | asset_url }}") format("truetype");
     font-weight: normal;
     font-style: normal; }
-  
+
   @font-face {
     font-family: 'Segoe UI';
     src: url("../fonts/SegoeUI/SegoeUI-Bold.eot");
     src: local("Segoe UI Bold"), local("SegoeUI-Bold"), url("../fonts/SegoeUI/SegoeUI-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUI/SegoeUI-Bold.woff") format("woff"), url("../fonts/SegoeUI/SegoeUI-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: normal; }
-  
+
   @font-face {
     font-family: 'Segoe UI';
     src: url("../fonts/SegoeUI/SegoeUI-Italic.eot");
     src: local("Segoe UI Italic"), local("SegoeUI-Italic"), url("../fonts/SegoeUI/SegoeUI-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUI/SegoeUI-Italic.woff") format("woff"), url("../fonts/SegoeUI/SegoeUI-Italic.ttf") format("truetype");
     font-weight: normal;
     font-style: italic; }
-  
+
   @font-face {
     font-family: 'icoFont';
     src: url("{{ 'icoFont.eot' | asset_url }}");
@@ -115,7 +118,7 @@
 {{content_for_header}}
 
   <script src="{{ 'lp-aio-support-pack.js' | asset_url }}" defer></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script> 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
 
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
 </head>
