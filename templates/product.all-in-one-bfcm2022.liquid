@@ -105,6 +105,11 @@
             <div class="input-field product-option-select">
               {% for var in product.variants %}
                 <div class="variant-box">
+                  {% if forloop.index == 3 %}
+                    <div class="variant-notice">
+                      <p>FREE GIFT! - Meal Plan App ($29 value)</p>
+                    </div>
+                  {% endif %}
                   <div class="radio-box">
                     {% if var.compare_at_price > var.price %} {% assign discount_amount = var.compare_at_price | minus: var.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
                     <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount_amount | money_without_currency }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
