@@ -5,20 +5,20 @@
     <div class="mini-wrap">
       <h1>Choose Your CuraLin Bundle</h1>
       <div class="product-list">
-        {% for product in collection.products  -%}
+        {% for product in collection.products %}
         <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
             <div class="wrap">
               <div class="picture">
-                {% if section.settings.prdct_bgimg != blank %}
+                {%- comment -%} {% if section.settings.prdct_bgimg != blank %}
                   <div class="bg">
-                    <img src="{{section.settings.prdct_bgimg | img_url: '383x254' }}"  width="376px" height="270px" alt="">
+                    <img src="{{section.settings.prdct_bgimg | img_url: '383x254' }}"  alt="">
                   </div>
-                {% endif %}
+                {% endif %} {%- endcomment -%}
 
                 {% if product.featured_image.src != blank %}
                   <a href="{{ product.url }}">
                     <div class="img">
-                      <img src="{{ product.featured_image.src | img_url: '367x265' }}" width="376px" height="265px" alt="">
+                      <img src="{{ product.featured_image.src | img_url: '367x265' }}"  alt="">
                     </div>
                   </a>
                 {% endif %}
@@ -38,7 +38,7 @@
                   <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
                   {% if quantity > 1 %}
                   <div class="discount">
-                    <p>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+                    <p> <i class="icofont-star"></i>SAVE{{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
                   </div>
                   {% elsif product.compare_at_price_max > product.price %}
                   <div class="discount" style="display:none">
@@ -60,17 +60,17 @@
                   <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                   <div class="price">
                     {% if quantity > 1 %}
-                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
+                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</strike> Per Bottle</p>
                     {% elsif product.compare_at_price > product.price %}
-                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
+                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                     {% else %}
-                      <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" }}</p>
+                      <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}</p>
                     {% endif %}
                   </div>
-                  {% unless forloop.index == 1 %}
+
+                {% unless forloop.index == 1 %}
                   <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
-                  {% endunless %}
-                </div>
+                {% endunless %}                </div>
                 <form action="/cart/add" method="post">
                   <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
                   <input name="return_to" type="hidden" value="/cart/">
@@ -86,11 +86,16 @@
       </div>
     </div>
   </div>
-
   {% render 'collection-curaeats-section' %}
 </div>
 
 <style>
+  .main-btn {
+    color: #FFE746 !important;
+    background: #222222 !important;
+    border: 1px solid #222222 !important;
+}
+
 .catalog-page h1 {
   text-align: center;
   padding-top: 30px;
@@ -111,28 +116,30 @@
   margin-top: 5px;
 }
 
+.product-card .picture {
+  background: #222222 !important;
+}
+
 .product-card .picture .discount {
-  background-image: url({{ 'collection-product-badge.png' | asset_url }});
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: 5px;
-  right: 0;
-  left: auto;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: unset;
+  width: 100%;
+  top: 120px;
+  transform: rotate(-8.48deg);
 }
 
 .product-card .picture .discount p {
-  background: unset;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: #FFE746;
+  box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
   font-size: 22px;
   font-weight: bold;
   border: 0;
   color: black;
+  border-radius: 0;
+  margin: 0 -2vw;
+  gap: 10px;
 }
 
 .product-card .picture:after {
@@ -143,6 +150,7 @@
   .product-card {
     width: 100% !important;
   }
+
 }
 </style>
 
