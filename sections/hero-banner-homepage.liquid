@@ -1,0 +1,255 @@
+<div class="hero-banner">
+    <div class="ribbons">
+        {% for i in (1..4) %}
+        <div class="ribbon swiper {% cycle 'left', 'right' %}">
+            <div class="titles swiper-wrapper">
+                {% for i in (1..20) %}
+                <div class="title swiper-slide">
+                    <p>BLACK FRIDAY</p>
+                    <i class="icofont-star"></i>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="container">
+        <div class="black-friday">
+        
+                <div class="titles">
+                    <p class="main-title bigger blink_text">BLACK</p>
+                    <div class="shop-now-hero">
+                        <p class="up-to">UP TO 30% OFF</p>
+                        <a class="main-btn" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
+                        </div>
+                    <p class="main-title blink_text">FRIDAY</p>
+                </div>
+            
+            <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
+        </div>
+    </div>
+</div>
+
+<style>
+    
+</style>
+
+<script>
+            brandsTicker = new Swiper('.hero-banner .ribbon.right', {
+        speed: 5000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false
+        },
+        loop: true,
+        slidesPerView: '4',
+        allowTouchMove: false,
+        disableOnInteraction: true
+    });
+
+            brandsTicker = new Swiper('.hero-banner .ribbon.left', {
+        speed: 5000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true
+        },
+        loop: true,
+        slidesPerView: '4',
+        allowTouchMove: false,
+            disableOnInteraction: true
+    });
+</script>
+
+<style>
+    .hero-banner {
+          position: relative;
+          background-image: url("{{ 'lps-aio-lp01-hero-bf-bg.png' | asset_url }}");
+          background-size: cover;
+          background-position: bottom;
+          overflow: hidden;
+      }
+    .hero-banner .container {
+          padding-top: 65px;
+          height: 100%;
+          position: relative;
+          z-index: 5;
+          padding-left: 60px;
+      } 
+    .ribbon {
+        background: white;
+        width: 700px;
+        position: absolute;
+        overflow: hidden;
+    }
+    .ribbon .titles {
+        display: flex;
+        align-items: center;
+    }
+
+    .ribbon .titles .title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .ribbon .titles .title p {
+        margin: unset;
+        font-weight: bold;
+        font-size: clamp(20px, 2vw, 28px);
+    }
+    .ribbon:nth-child(1) {
+        bottom: 0;
+        right: -40px;
+        transform: rotate(350deg);
+        z-index: 10;
+    }
+
+    .ribbon:nth-child(2) {
+        top: 50px;
+        right: -40px;
+        transform: rotate(15deg);
+        opacity: 0.3;
+        filter: blur(2px);
+    }
+    .ribbon:nth-child(3) {
+        bottom: 0;
+        left: -200px;
+        transform: rotate(10deg);
+        opacity: 0.5;
+    }
+    .ribbon:nth-child(4) {
+        top: 50px;
+        left: -200px;
+        transform: rotate(345deg);
+        }
+    .blink_text {
+        animation-name: blinker;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: 2;
+    }
+
+    @keyframes blinker {  
+        0% { opacity: 1.0; }
+        50% { opacity: 0.0; }
+        100% { opacity: 1.0; }
+    }
+    .hero-banner .container .black-friday {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hero-banner .container .black-friday .titles {
+        display: flex;
+        flex-direction: column;  
+    }
+
+    .container .black-friday .titles .main-title {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 4px 	hsl(52, 100%, 64%);
+        filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
+        color: #FFE746;
+        font-weight: 900;
+        font-family: 'PP Radio Grotesk';
+        letter-spacing: 15px;
+        margin: unset;
+        text-align: center;
+        font-size: clamp(50px, 14vw, 180px);
+    }
+
+    .container .black-friday .titles .main-title.bigger {
+        letter-spacing: 20px;
+}
+
+    .container .black-friday .titles .shop-now-hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 3px solid #ffffff8f;
+        border-bottom: 3px solid #ffffff8f;
+        padding: 10px 0;
+    }
+    .container .black-friday .titles .shop-now-hero .up-to {      
+        font-family: 'PP Radio Grotesk';
+        font-weight: 700;
+        display: flex;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+        margin: unset;
+        font-size: min(4vw, 50px);
+    }
+
+    .container .black-friday .titles .shop-now-hero .main-btn {
+        font-family: 'PP Radio Grotesk';
+        font-weight: 700;
+        font-size: min(3vw, 30px);
+        background: #FFFFFF;
+        text-align: center;
+        color: #222222;
+        border: none;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        padding: 12px 17px;
+    }
+
+    .container .black-friday .main-img {
+        width: 40vw;
+        margin-top: 25px;
+    }
+
+    @media screen and (max-width: 760px) {
+        .hero-banner {
+            background-image: url("{{ 'lps-aio-lp01-hero-bf-bg-mobile.png' | asset_url }}");
+            height: calc(100vh - 15vw);
+        }
+
+        .hero-banner .container {
+            padding: unset;  
+        }
+
+        .ribbon:nth-child(1) {
+            bottom: 70px;
+            transform: rotate(350deg);
+        }
+
+        .ribbon:nth-child(2) {
+            transform: rotate(5deg);
+            top: 370px;
+        }
+
+        .ribbon:nth-child(3) {
+            transform: rotate(60deg);
+        }
+
+        .ribbon:nth-child(4) {
+            display: none;
+        }
+
+        .container .black-friday .titles .shop-now-hero {
+            display: none;
+        }
+
+        .container .black-friday {
+            flex-direction: column;
+            height: 100%;
+            padding: 10vw 0;
+        }
+
+        .container .black-friday .main-img {
+            width: unset;
+            min-height: 500px;
+            object-fit: cover;
+            margin: unset;
+        }
+    }
+</style>
+
+
+<script>
+        $("#hero-cta").click(function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#product-section").offset().top + 130
+            }, 2000);
+        });
+</script>
