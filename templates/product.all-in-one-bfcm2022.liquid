@@ -53,7 +53,7 @@
     url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'),
   }
 </style>
-{% render 'lps-aio-header-black-friday' %}
+{% render 'lps-aio-header-bfcm2022' %}
 
 <div class="product-template-all-in-one">
   {%- comment -%} <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt=""> {%- endcomment -%}
@@ -115,7 +115,7 @@
                     <div class="thumbs-img video-thumbnail">
                       <div class="img-wrap">
                         <img src="{{ "product-aio-product-video-thumbnail.png" | asset_url }}" alt="" loading="lazy">
-                      </div>                                        
+                      </div>
                     </div>
                   </div>
                   {% for image in product.images %}
@@ -198,7 +198,7 @@
                 <button class="main-btn" id="buy-button">Shop Now <span class="save" id="save"></span></button>
               </div>
             </div>
-          </div>                 
+          </div>
         </div>
       </div>
     </div>
@@ -431,9 +431,9 @@
                 <div class="ingredient-content">
                   <p class="ingredient-title">Syzygium Cumini</p>
                   <p class="ingredient-description">Also known as Eugenia Jambolana, the active components in Syzygium Cumini supports a healthy physiological function in the liver, creating a reservoir of glucose macromolecules, thereby helping maintain healthy fasting blood glucose levels.</p>
-                </div>	
-              </div>	
-            </div>	
+                </div>
+              </div>
+            </div>
             <div class="swiper-slide">
               <div class="ingredient">
                 <img src="{{ "ingredients-8.png" | asset_url }}" alt="" loading="lazy">
@@ -536,7 +536,7 @@
       if (screen.width < 760) {
         $('.helpButton').attr('style', 'bottom: 60px !important');
       }
-    } 
+    }
     else {
       btn.removeClass('show');
       if (screen.width < 760) {
@@ -627,7 +627,7 @@
             oldValue = inputObj.val();
         if ($button.attr('data-act') === "+") {
             newVal = parseInt(oldValue) + 1;
-        } 
+        }
         else {
             newVal = parseInt(oldValue) - 1;
         }
@@ -642,16 +642,16 @@
   $(document).on("click", "#buy-button", function () {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'add_to_cart',    
-      ecommerce: {                          
-      items: [{       
-        item_name: '{{ product.title }}',      
-        item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'), 
+      event: 'add_to_cart',
+      ecommerce: {
+      items: [{
+        item_name: '{{ product.title }}',
+        item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
         affiliation: '{{ shop.name }}',
         price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
         currency: '{{ shop.currency }}',
-        item_brand: 'CuraLife',            
-        item_category: 'CuraLin',         
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
         quantity: parseInt($(".qty-control input").val())
       }]
       },
@@ -677,16 +677,16 @@
 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    event: 'view_item',         
-    ecommerce: {                          
-      items: [{        
-        item_name: '{{ product.title }}',      
-        item_id: '{{ product.title }}', 
+    event: 'view_item',
+    ecommerce: {
+      items: [{
+        item_name: '{{ product.title }}',
+        item_id: '{{ product.title }}',
         affiliation: '{{ shop.name }}',
         price: '',
         currency: '{{ shop.currency }}',
-        item_brand: 'CuraLife',            
-        item_category: 'CuraLin',         
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
         quantity: 1
       }]
     },
@@ -705,15 +705,15 @@
 <script>
 
   // Play Video
- 
- 
+
+
   //Phone-click
   $('.phone-number').click(function() {
    woopra.track('Phone Click Event', {
-     phone_number: $(this).find("a").find("p").text() 
+     phone_number: $(this).find("a").find("p").text()
    });
    });
- 
+
    // Open FAQ
    $('.question').click(function() {
     woopra.track('Open FAQ', {
@@ -721,59 +721,59 @@
       question_order:  $(this).parents('.faq-item').index() + 1
     })
     });
- 
- 
+
+
    $('.thumbs-img').click(function() {
    woopra.track('Product Image Click', {});
    });
- 
- 
+
+
    //Product Arrow Click
- 
+
    $('#product-thumbs-slider-nav-next, #product-thumbs-slider-nav-prev').click(function() {
    woopra.track('Arrow Click', {
      section: "Product"
    });
- 
+
    });
- 
+
    $('.video-reviews').click(function() {
    woopra.track('Arrow Click', {
      section: "Video with Curalin Stories"
    });
- 
+
    });
- 
-   
+
+
    $('.slider-nav').click(function() {
    woopra.track('Arrow Click', {
      section: "Over 3000 5 Star Reviews"
    });
- 
+
    });
- 
-   
+
+
    $('.ingredients-main-slider').click(function() {
    woopra.track('Arrow Click', {
      section: "Ingredients"
    });
- 
+
    });
- 
+
    $('#back-to-top-btn').click(function() {
    woopra.track('Scroll To Top Click', {});
    });
- 
+
    $(".ingredients-section .ingredients-thumbs-slider .ingredient").click(function() {
    let ingIndex = $(this).attr("aria-label");
    let realIndex = ingIndex.charAt(0) - 1;
- 
+
    woopra.track('Ing Icon Click', {
      ing_order: ingIndex,
      ing_title: $(".ingredients-section .ingredients-main-slider .swiper-slide").get(realIndex).querySelectorAll(".ingredient-title")[0].innerHTML
    });
    })
- 
+
  </script>
 <style>
    body {
@@ -784,7 +784,7 @@
     background: unset !important;
    }
 
- 
+
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn {
     background-color: #FFE746 !important;
     border-color: #FFE746 !important;
@@ -819,7 +819,7 @@
   .grecaptcha-badge {
     display: none !important;
   }
-  
+
   .transcy-switcher-container {
     bottom: 65px !important;
     transition: bottom 0.5s;
@@ -936,7 +936,7 @@
             // Track in GA
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-              'event': 'variant-click', 
+              'event': 'variant-click',
               'label': $('input[name=pack]:checked', '#CTAForm').attr('sku'),
               'userId': '{{ customer.id }}',
               'email': '{{ customer.email }}',
