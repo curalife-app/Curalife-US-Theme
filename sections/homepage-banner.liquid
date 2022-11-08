@@ -1,208 +1,327 @@
-<div class="homepage-banner">
-  <div class="container no-mobile-padding">
-      <div class="bg">
-          <img class="bg-vector" src="{{ 'homepage-banner-bg-vector.svg' | asset_url }}" width="592px" height="570px" alt="">
-          <img class="bg-img" src="{{ 'homepage-banner-bg.png' | asset_url }}" width="1313px" height="566px" alt="">
-          <img class="bg-img-mobile" src="{{ 'homepage-banner-bg-mobile.png' | asset_url }}" width="375px" height="626px" alt="">
-      </div>
-      <div class="content">
-          <h1>Effective.<br>Safe.<br>Natural.</h1>
-          <p>Science based supplements that improve quality of life.</p>
-          <div class="cta-button-wrapper">
-              <img class="bottle-img" src="{{ 'curalin-bottle.png' | asset_url }}" width="200px" height="211px" alt="Curalin Bottle">
-              <a class="cta-btn" href="/collections/all">Shop Now</a>
-              <div class="free-shipping">
-                  <img class="free-shipping-icon" src="{{ 'icon-free-shipping-light-white.png' | asset_url }}" width="44px" height="25px" alt="">
-                  <p>Worldwide Shipping</p>
+<div class="hero-banner">
+  <div class="ribbons">
+      {% for i in (1..4) %}
+      <div class="ribbon swiper {% cycle 'left', 'right' %}">
+          <div class="titles swiper-wrapper">
+              {% for i in (1..20) %}
+              <div class="title swiper-slide">
+                  <p>BLACK FRIDAY</p>
+                  <i class="icofont-star"></i>
               </div>
+              {% endfor %}
           </div>
       </div>
-      <div class="header-mobile-bottom">
-          <div class="free-shipping">
-              <p>Worldwide Shipping • 60-Day Money Back Guarantee</p>
+      {% endfor %}
+  </div>
+  <div class="container">
+      <div class="black-friday">
+          <div class="titles">
+              <p class="main-title bigger blink_text">BLACK</p>
+              <div class="shop-now-hero">
+                  <p class="up-to">UP TO <b>30% OFF</b></p>
+                  <a class="main-btn" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
+              </div>
+              <p class="main-title blink_text">FRIDAY</p>
+</div>
+
+          <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
+
+          <div class="shop-now-hero-mobile">
+              <a class="main-btn-mobile" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
           </div>
       </div>
   </div>
 </div>
+
+
+
+<script>
+      brandsTicker = new Swiper('.hero-banner .ribbon.right', {
+      speed: 5000,
+      autoplay: {
+          delay: 0,
+          disableOnInteraction: false
+      },
+      loop: true,
+      slidesPerView: '4',
+      allowTouchMove: false,
+      disableOnInteraction: true
+  });
+
+      brandsTicker = new Swiper('.hero-banner .ribbon.left', {
+      speed: 5000,
+      autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+          reverseDirection: true
+      },
+      loop: true,
+      slidesPerView: '4',
+      allowTouchMove: false,
+      disableOnInteraction: true
+  });
+</script>
+
 <style>
-.homepage-banner {
-  background-color: #A8BFCB;
-  position: relative;
-} 
-
-.homepage-banner .bg .bg-vector {
-  position: absolute;
-  z-index: 2;
-  max-height: 100%;
-}
-
-.homepage-banner .bg .bg-img-mobile {
-  display: none;
-}
-
-.homepage-banner .bg .bg-img {
-  position: absolute;
-  z-index: 0;
-  right: 0;
-  width: 70vw;
-  height: 566px;
-  object-fit: cover;
-}
-
-.homepage-banner .content {
-  position: relative;
-  z-index: 10;
-  color: white;
-  font-size: 50px;
-  font-weight: 600;
-  position: relative;
-  z-index: 10;
-  padding: 10px 15px;
-}
-
-.homepage-banner .content h1 {
-  font-size: 50px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.homepage-banner .content p {
-  font-size: 30px;
-  max-width: 450px;
-  font-weight: 300;
-}
-
-.homepage-banner .content .cta-button-wrapper {
-  position: relative;
-}
-
-.homepage-banner .content .cta-button-wrapper .bottle-img {
-  width: 200px;
-  margin-left: -50px;
-  z-index: 1;
-  position: relative;
-  pointer-events: none;
-}
-
-.homepage-banner .content .cta-button-wrapper .cta-btn {
-  text-transform: uppercase;
-  background: #C78263;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  color: white;
-  padding: 10px 30px;
-  font-size: 38px;
-  margin-left: -75px;
-  border: 0;
-  transition: background 0.3s ease-in-out;
-}
-
-.homepage-banner .content .cta-button-wrapper .cta-btn:hover {
-  background: #a96f54;
-}
-
-.homepage-banner .content .cta-button-wrapper .free-shipping {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: absolute;
-  left: 105px;
-  top: 150px;
-}
-
-.homepage-banner .content .cta-button-wrapper .free-shipping .free-shipping-icon {
-  height: 25px;
-}
-
-.homepage-banner .content .cta-button-wrapper .free-shipping p {
-  font-weight: bold;
-  font-size: 20px;
-  margin: 0;
-}
-
-.homepage-banner .header-mobile-bottom {
-  display: none;
-}
-
-@media screen and (max-width:1270px) {
-  .homepage-banner .bg .bg-vector {
-      margin-left: -150px;
+  .hero-banner {
+      position: relative;
+      background-image: url("{{ 'lps-aio-lp01-hero-bf-bg.png' | asset_url }}");
+      background-size: cover;
+      background-position: bottom;
+      overflow: hidden;
   }
 
-  .homepage-banner .bg .bg-img {
-      object-position: left;
-  }
-}
-
-@media screen and (max-width:760px) {
-  .homepage-banner .content .cta-button-wrapper .cta-btn {
-      margin-left: 0;
-      font-size: 8vw;
+  .hero-banner .container {
+      height: 100%;
+      position: relative;
+      z-index: 5;
   }
 
-  .homepage-banner .bg .bg-vector {
-  display: none;
-}
+  .ribbon {
+      background: white;
+      width: 1000px;
+      position: absolute;
+      overflow: hidden;
+  }
 
-  .homepage-banner .bg .bg-img-mobile {
-  display: block;
-  position: absolute;
-  width: 100%;
-}
+  .ribbon .titles {
+      display: flex;
+      align-items: center;
+  }
 
-.homepage-banner .bg .bg-img {
-  display: none;
-}
+  .ribbon .titles .title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  }
 
-.homepage-banner .header-mobile-bottom {
-  display: block;
-  position: absolute;
-  bottom: 2vw;
-  width: 100%;
-}
+  .ribbon .titles .title p {
+      margin: unset;
+      font-weight: bold;
+      font-size: clamp(20px, 2vw, 28px);
+  }
 
-.homepage-banner .header-mobile-bottom .free-shipping {
-  color: white;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  font-size: 3vw;
-  font-weight: bold;
-}
+  .ribbon:nth-child(1) {
+      bottom: 0;
+      right: -40px;
+      transform: rotate(350deg);
+      z-index: 10;
+  }
 
-.homepage-banner .content .cta-button-wrapper .free-shipping {
-  display: none;
-}
+  .ribbon:nth-child(2) {
+      top: 50px;
+      right: -40px;
+      transform: rotate(15deg);
+      opacity: 0.3;
+      filter: blur(2px);
+  }
 
-.homepage-banner .header-mobile-bottom .free-shipping .free-shipping-icon {
-  height: 5vw;
-}
+  .ribbon:nth-child(3) {
+      bottom: 0;
+      left: -200px;
+      transform: rotate(10deg);
+      opacity: 0.5;
+  }
 
-  .homepage-banner {
-  height: 180vw;
-}
+  .ribbon:nth-child(4) {
+      top: 50px;
+      transform: rotate(345deg);
+      right: 65vw;
+  }
 
-.homepage-banner .content .cta-button-wrapper .bottle-img {
-  display: none;
-}
+  .blink_text {
+      animation-name: blinker;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: 2;
+  }
 
-.homepage-banner .content h1 {
-  font-size: 9vw;
-  margin: 0;
-}
+  @keyframes blinker {
+      0% {
+          opacity: 1.0;
+      }
 
-.homepage-banner .content p {
-  font-size: 5vw;
-  margin: 4vw 0;
-}
+      50% {
+          opacity: 0.0;
+      }
 
-.homepage-banner .content .cta-button-wrapper button {
-  margin-left: 0;
-  font-size: 7vw;
-}
-}
+      100% {
+          opacity: 1.0;
+      }
+  }
+
+  .hero-banner .container .black-friday {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+  }
+
+  .hero-banner .container .black-friday .titles {
+      display: flex;
+      flex-direction: column;
+      transition-timing-function: linear !important;
+  }
+
+  .container .black-friday .titles .main-title {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 4px hsl(52, 100%, 64%);
+      filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
+      color: #FFE746;
+      font-weight: 900;
+      font-family: 'PP Radio Grotesk';
+      letter-spacing: 15px;
+      margin: unset;
+      text-align: center;
+      font-size: clamp(50px, 10vw, 200px);
+  }
+
+  .container .black-friday .titles .main-title.bigger {
+      letter-spacing: 20px;
+  }
+
+  .container .black-friday .titles .shop-now-hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 3px solid #ffffff8f;
+      border-bottom: 3px solid #ffffff8f;
+      padding: 10px 0;
+      gap: 20px;
+  }
+
+  .container .black-friday .shop-now-hero-mobile {
+      display: none;
+
+  }
+
+  .container .black-friday .titles .shop-now-hero .up-to {
+      font-family: 'PP Radio Grotesk';
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      margin: unset;
+      font-size: clamp(30px, 2.5vw, 50px);
+  }
+
+  .container .black-friday .titles .shop-now-hero .main-btn {
+      font-family: 'PP Radio Grotesk';
+      font-weight: 700;
+      background: #FFFFFF;
+      text-align: center;
+      color: #222222;
+      border: none;
+      text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+      padding: 12px 17px;
+      box-shadow: 0px 0px 42px 0px rgb(255 255 255 / 80%);
+      border-bottom: 2px solid #0000008f;
+      font-size: clamp(0px, 2vw, 33px);
+  }
+
+  .container .black-friday .main-img {
+      width: 30vw;
+      margin-top: 25px;
+      max-width: 450px;
+  }
+
+
+  @media screen and (max-width: 760px) {
+      .hero-banner {
+          background-image: url("{{ 'lps-aio-lp01-hero-bf-bg-mobile.png' | asset_url }}");
+          height: 165vw;
+      }
+
+      .hero-banner .container {
+          padding: unset;
+      }
+
+      .ribbon:nth-child(1) {
+          bottom: 70px;
+          transform: rotate(350deg);
+      }
+
+      .ribbon:nth-child(2) {
+          transform: rotate(5deg);
+          top: 370px;
+      }
+
+      .ribbon:nth-child(3) {
+          transform: rotate(60deg);
+          left: -96vw;
+      }
+
+      .ribbon:nth-child(4) {
+          display: none;
+      }
+
+      .container .black-friday .titles .shop-now-hero {
+          justify-content: center;
+          padding: 0;
+          border-width: 1px;
+      }
+
+      .container .black-friday .titles .main-title {
+          font-size: clamp(50px, 14vw, 200px);
+      }
+
+      .container .black-friday .titles .shop-now-hero .main-btn {
+              display: none;
+      }
+
+      .container .black-friday  .shop-now-hero-mobile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .container .black-friday .titles .main-title {
+          -webkit-text-stroke: 1px hsl(52, 100%, 64%);
+      }
+
+      .container .black-friday  .shop-now-hero-mobile .main-btn-mobile {
+          position: absolute;
+          font-family: 'PP Radio Grotesk';
+          font-weight: 700;
+          font-size: min(7vw, 35px);
+          background: #FFFFFF;
+          text-align: center;
+          color: #222222;
+          border: none;
+          padding: 2vw 7vw;
+          text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
+      }
+
+      .container .black-friday .titles .shop-now-hero .up-to {
+          font-weight: 300;
+          letter-spacing: 1.3vw;
+      }
+
+      .hero-banner .container .black-friday {
+          justify-content: space-between;
+          flex-direction: column;
+          height: 100%;
+          padding: 10vw 0;
+      }
+
+      .container .black-friday .main-img {
+          top: 40vw;
+          position: absolute;
+          width: unset;
+          object-fit: cover;
+          max-width: 100vw;
+      }
+  }
 </style>
+
+
+<script>
+      $("#hero-cta").click(function () {
+          $([document.documentElement, document.body]).animate({
+              scrollTop: $("#product-section").offset().top + 130
+          }, 2000);
+      });
+</script>
 
 {% schema %}
 {
