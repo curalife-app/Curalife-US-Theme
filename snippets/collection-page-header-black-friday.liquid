@@ -1,0 +1,146 @@
+<div class="page-header" id="page-header-collection">
+  <div class="animated-container swiper">
+    <div class="animated-yellow-desk swiper-wrapper">
+      {% for i in (1..2) %}
+        <div class="title swiper-slide">
+          <i class="icofont-star"></i>
+          <span class="black-friday-span">BLACK FRIDAY</span>
+        </div>
+        
+        <div class="title swiper-slide">
+          <i class="icofont-star"></i>
+          <span class="off-container-collection">UP TO 30% OFF</span>
+        </div>
+
+        <div class="title desktop swiper-slide">
+          {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
+          {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
+        </div>
+
+        <div class="title desktop swiper-slide">
+          <span class="off-container-collection">UP TO 30% OFF</span>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+<div class="countdown-mobile">
+{% render 'countdown-timer', timerAlreadyRun: true %}
+</div>
+
+<style>
+  .target {
+    animation-name: rightToLeft;
+    animation-duration: 4.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .animated-yellow-desk:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes rightToLeft {
+    0% {
+      transform: translateX(200px);
+    }
+    100% {
+      transform: translateX(-160px);
+    }
+  }
+
+  .countdown-mobile {
+    display: none;
+  }
+
+  #page-header-collection.page-header {
+    background-color: #222222;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  #page-header-collection.page-header .animated-container {
+    max-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vw;
+  }
+
+  #page-header-collection.page-header .animated-container .animated-yellow-desk {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: #FFE746;
+    height: 100%;
+    transition-timing-function: linear !important;
+  }
+
+  #page-header-collection.page-header .animated-container .animated-yellow-desk .title {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    font-size: 40px;
+  }
+
+  #page-header-collection.page-header .animated-container .animated-yellow-desk .black-friday-span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px hsl(52, 100%, 64%);
+    filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
+    color: #FFE746;
+    font-weight: 700;
+    font-family: 'PP Radio Grotesk';   
+    letter-spacing: 0.2rem;
+  }
+
+  #page-header-collection.page-header .animated-container .animated-yellow-desk .off-container-collection {
+    -webkit-text-fill-color: unset;
+    -webkit-text-stroke: unset;
+    filter: unset;
+    color: #FFFFFF !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    #page-header-collection.page-header {
+      padding: 3vw 0;
+    }
+
+    .countdown-mobile {
+      display: flex;
+      justify-content: center;
+    }
+
+    #page-header-collection.page-header .animated-container .animated-yellow-desk .title.desktop {
+      display: none;
+    }
+
+    #page-header-collection.page-header .animated-container .animated-yellow-desk .title {
+      width: 65vw;
+      gap: 5vw;
+      font-size: 7vw;
+    }
+
+    #page-header-collection.page-header .animated-container .animated-yellow-desk .title i {
+      font-size: 4vw;
+    }
+  }
+}
+</style>
+<script>
+      swiper = new Swiper('.page-header .animated-container', {
+        speed: 5000,
+        autoplay: {
+          delay: 0
+        },
+    loop: true,
+    slidesPerView: 'auto',
+    allowTouchMove: false,
+    disableOnInteraction: true
+  });
+
+</script>
