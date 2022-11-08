@@ -1,27 +1,46 @@
+{% render 'collection-page-header-black-friday' %}
+
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 <div class="product-data">
     <div class="container">
       <div class="product-wrap">
         <div class="product-slider">
+          <div class="bg"></div>
+          {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+          {% assign quantity_by_cents = quantity | times: 100 %}
+          {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
+          {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+
+          {% if localization.country.iso_code == 'CA' %}
+          {% assign cap = product.metafields.my_fields.ca_cap %}
+          {% elsif localization.country.iso_code == 'AU' %}
+          {% assign cap = product.metafields.my_fields.au_cap %}
+          {% else %}
+          {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
+          {% endif %}
+
+          <script>console.log("cap: {{cap}}");</script>
+
+          {% if quantity > 1 %}
           <div class="discount">
-            {% if product.compare_at_price_max > product.price %}
-            <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
-            {% endif %}
+            <p> <i class="icofont-star"></i>SAVE{{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
           </div>
+        {% endif %}
+
           <div class="sliders-group">
             <div class="thumbs-slider">
               <div class="swiper">
                 <div class="swiper-wrapper">
-                  {% for image in product.images %}
+                  {%- comment -%} {% for image in product.images %}
                   <div class="swiper-slide">
                     <div class="thumbs-img">
                       <div class="img-wrap">
-                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" {%if forloop.index == 1%}style="object-fit:cover"{%endif%}>
+                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
                       </div>
                     </div>
                   </div>
-                  {% endfor %}
+                  {% endfor %} {%- endcomment -%}
                 </div>
               </div>
             </div>
@@ -32,7 +51,7 @@
                   <div class="swiper-slide">
                     <div class="product-img">
                       <div class="img-wrap">
-                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
+                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" {%if forloop.index == 1%}style="object-fit:cover"{%endif%}>
                       </div>
                     </div>
                   </div>
@@ -64,19 +83,19 @@
 
             {% if admin %}
             <div class="edit">
-              <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit" style="position:relative;top:10px;left:20px;font-size: 20px;"></i></a>
+              <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
             </div>
             {% endif %}
           </div>
-          
+
           <div class="description">
             <div class="price">
-              <p>{{ product.price | money_with_currency | replace: ".00", "" }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" }}</strike></p>{% endif %}
+              <p>{{ product.price | money }} {% if product.compare_at_price > product.price %}<strike>{{ product.compare_at_price | money }}</strike></p>{% endif %}
             </div>
-            
+
             <div class="form-wrap">
-              <form method="post" id="addTocartForm" action="/cart/add" data-productid="{{ product.id }}">
-              <input id="productVaraintSelected" type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.variants.first.id }}" />
+              <form method="post" id="addTocartForm" action="/cart/add">
+              <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
                 <div class="qty-data">
                   <p>Quantity</p>
                   <div class="qty-control">
@@ -116,6 +135,69 @@
   </div>
 
 <style>
+  .product-wrap {
+    justify-content: center;
+  }
+
+  .product-slider {
+    overflow: hidden;
+    padding: unset;
+    padding-top: 40px;
+    width: 460px;
+  }
+
+  .product-slider:before {
+    background: unset;
+  }
+
+  .product-slider .sliders-group:before {
+    background: unset;
+  }
+
+  .product-slider .bg {
+    position: absolute;
+    z-index: -1;
+    background: #222222;
+    height: 80%;
+    width: 100%;
+  }
+
+  .product-slider .discount {
+    left: 0;
+    padding: unset;
+    width: 100%;
+    top: 190px;
+    transform: rotate(-8.48deg);
+  }
+
+  .product-slider .discount p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: #FFE746;
+    box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
+    font-size: 22px;
+    font-weight: bold;
+    border: 0;
+    color: black;
+    border-radius: 0;
+    margin: 0 -2vw;
+    gap: 10px;
+  }
+
+  .main-btn {
+    background: #FFE746 !important;
+    border-color: #FFE746 !important;
+    color: black !important;
+  }
+
+  .wisepops-root {
+    display: none;
+  }
+
+  .product-data {
+    padding-top: 0 !important;
+  }
   .thumbs-slider .swiper-slide {
     height: 50px !important;
   }
@@ -131,7 +213,28 @@
     font-size: 18px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 760px) {
+    .product-data {
+      padding-top: 15px;
+    }
+
+    .product-slider {
+      padding-top: 15px;
+      width: 100%;
+    }
+
+    .product-slider .discount {
+      top: 40vw;
+    }
+
+    .product-slider .discount {
+      padding: 0.5vw;
+    }
+
+    .product-slider .discount p {
+      font-size: 6vw;
+    }
+
     .title-wrapper {
       justify-content: center;
       position: relative;
@@ -144,15 +247,15 @@
   }
 </style>
 
-  <script>
-    productThumbs = new Swiper('.thumbs-slider .swiper', {
-      spaceBetween: 20,
-      direction: 'vertical',
-      watchSlidesVisibility: true,
-      grabCursor: false,
-      loop: false,
-      touchRatio: 0,
-    });
+<script>
+  productThumbs = new Swiper('.thumbs-slider .swiper', {
+    spaceBetween: 20,
+    direction: 'vertical',
+    watchSlidesVisibility: true,
+    grabCursor: false,
+    loop: false,
+    touchRatio: 0,
+  });
 
     productSlider = new Swiper('.main-slider .swiper', {
       slidesPerView: 1,
@@ -160,42 +263,43 @@
       watchSlidesVisibility: true,
       loop: false,
       slideToClickedSlide: false,
-      thumbs: {swiper: productThumbs},
+      thumbs: { swiper: productThumbs },
     });
   </script>
 
-  <script>
-    // Change Quantity Widget On Product Page
-    $(document).on("click", ".product-data .qty-control a", function (e) {
-      e.preventDefault();
-      let newVal, $button = $(this),
-        inputObj = $button.closest(".qty-control").find("input"),
-        oldValue = inputObj.val();
-      if ($button.attr('data-act') === "+") {
-        newVal = parseInt(oldValue) + 1;
-      } 
-      else {
-        newVal = parseInt(oldValue) - 1;
-      }
+<script>
+  // Change Quantity Widget On Product Page
+  $(document).on("click", ".product-data .qty-control a", function (e) {
+    e.preventDefault();
+    let newVal, $button = $(this),
+      inputObj = $button.closest(".qty-control").find("input"),
+      oldValue = inputObj.val();
+    if ($button.attr('data-act') === "+") {
+      newVal = parseInt(oldValue) + 1;
+    }
+    else {
+      newVal = parseInt(oldValue) - 1;
+    }
 
-      inputObj.val(newVal);
-    });
-  </script>
-  
+    inputObj.val(newVal);
+  });
+    </script>
+
 <script>
   $(document).on("click", "#AddTCart", function () {
+    // New One
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'add_to_cart',             // name of the event. In this case, it always must be add_to_cart
-      ecommerce: {                          
+      ecommerce: {
       items: [{                           // an array with a product (or multiple products) that was added to a cart
-        item_name: '{{ product.title }}',      
-        item_id: '{{ product.selected_or_first_available_variant.sku }}', 
+        item_name: '{{ product.title }}',
+        item_id: '{{ product.selected_or_first_available_variant.sku }}',
         affiliation: '{{ shop.name }}',
         price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
         currency: '{{ shop.currency }}',
-        item_brand: 'CuraLife',            
-        item_category: 'CuraLin',         
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
         quantity: parseInt($(".qty-control input").val())
       }]
       },
@@ -220,7 +324,7 @@
   });
 </script>
 
-<script>      
+<script>
   $(document).on("click", "#AddToCart", function (Event) {
     $("#cart-upgrade-popup").slideToggle();
     return false;
@@ -228,16 +332,16 @@
 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    event: 'view_item',         
-    ecommerce: {                          
-    items: [{        
-      item_name: '{{ product.title }}',      
-      item_id: '{{ product.selected_or_first_available_variant.sku }}', 
+    event: 'view_item',
+    ecommerce: {
+    items: [{
+      item_name: '{{ product.title }}',
+      item_id: '{{ product.selected_or_first_available_variant.sku }}',
       affiliation: '{{ shop.name }}',
       price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
       currency: '{{ shop.currency }}',
-      item_brand: 'CuraLife',            
-      item_category: 'CuraLin',         
+      item_brand: 'CuraLife',
+      item_category: 'CuraLin',
       quantity: 1
     }]
     },
@@ -252,20 +356,21 @@
     user_agent: navigator.userAgent
   });
 </script>
+
 <script>
   var _learnq = _learnq || [];
-    
+
     var item = {
     Name: {{ product.title|json }},
     ProductID: {{ product.id|json }},
     Categories: {{ product.collections|map:'title'|json }},
     ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
-    URL: "{{ shop.secure_url }}{{ product.url }}",
+    URL: "{{ shop.secure_url | remove: '/en-au' | remove: '/en-ca' }}{{ product.url }}",
     Brand: {{ product.vendor|json }},
     Price: {{ product.price|money|json }},
     CompareAtPrice: {{ product.compare_at_price_max|money|json }}
     };
-  
+
     _learnq.push(['track', 'Viewed Product', item]);
     _learnq.push(['trackViewedItem', {
     Title: item.Name,
@@ -279,10 +384,11 @@
       CompareAtPrice: item.CompareAtPrice
     }
     }]);
-  
+
   </script>
 
 {% schema %}
+
 {
   "name": "Proudct",
   "class": "cart-content",
