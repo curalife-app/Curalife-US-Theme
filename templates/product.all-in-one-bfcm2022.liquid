@@ -104,11 +104,28 @@
             <p class="cta-title">Select Your Pack</p>
             <div class="input-field product-option-select">
               {% for var in product.variants %}
-                <div class="variant-box" {% if forloop.index == 3 %}style="height:100px"{% endif %}>
+                <div class="variant-box">
                   {% if forloop.index == 3 %}
                     <div class="variant-notice">
                       <p>FREE GIFT! - Meal Plan App ($29 value)</p>
                     </div>
+
+                    <style>
+                      .variant-notice p {
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        text-align: center;
+                        background: #4B643D;
+                        color: white;
+                        font-weight: bold;
+                        padding: 2px;
+                      }
+
+                      .variant-box:nth-child(3) {
+                        height: 100px;
+                      }
+                    </style>
                   {% endif %}
                   <div class="radio-box">
                     {% if var.compare_at_price > var.price %} {% assign discount_amount = var.compare_at_price | minus: var.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
