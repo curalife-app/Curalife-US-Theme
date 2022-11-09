@@ -18,13 +18,13 @@
             <div class="titles">
                 <div class="curalin-title">
                     <div class="main-title blink_text">curalin</div>
-                    <div class="natural-title">Natural Blood<br>Sugar Support<br>Supplement</div>
+                    <div class="natural-title">Natural Blood <br>Sugar Support <br>Supplement</div>
                 </div>
                 <div class="shop-now-hero">
                     <p class="up-to">UP TO <b>30% OFF</b></p>
                     <a class="main-btn" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
                 </div>
-
+                
 </div>
             <div class="img-upto">
                 <div class="upto-mobile">
@@ -74,7 +74,7 @@
 <style>
     .hero-banner {
         position: relative;
-        background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
+        background-image: url("{{ 'lps-aio-lp01-hero-bf-bg.png' | asset_url }}");
         background-size: cover;
         background-position: bottom;
         overflow: hidden;
@@ -170,7 +170,7 @@
     .hero-banner .container .black-friday .titles {
         display: flex;
         flex-direction: column;
-        max-width: 780px;
+        max-width: clamp(46px, 52vw, 780px);
     }
 
     .container .black-friday .titles .curalin-title {
@@ -182,25 +182,25 @@
     }
 
     .container .black-friday .titles .curalin-title .natural-title {
-       font-family: 'PP Radio Grotesk';
-       font-weight: 400;
-       font-size: clamp(30px, 1.5vw, 38px);
-       color: #FFFFFF;
+        font-family: 'PP Radio Grotesk';
+        font-weight: 400;
+        font-size: clamp(21px, 1.3vw, 32px);
+        letter-spacing: clamp(3px, 0.1vw, 8px);
+        color: #FFFFFF;
     }
 
     .container .black-friday .titles .curalin-title .main-title {
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 4px hsl(52, 100%, 64%);
+        -webkit-text-stroke: 2px hsl(52, 100%, 64%);
         filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 40% / 1));
         color: #FFE746;
         font-weight: 900;
         font-family: 'PP Radio Grotesk';
         margin: unset;
         text-align: center;
-        font-size: clamp(48px, 11vw, 177px);
+        font-size: clamp(46px, 7vw, 170px);
         line-height: 0.8em;
     }
-
 
     .container .black-friday .titles .shop-now-hero {
         display: flex;
@@ -215,7 +215,7 @@
 
     .container .black-friday .shop-now-hero-mobile {
         display: none;
-
+        
     }
 
     .container .black-friday .titles .shop-now-hero .up-to {
@@ -248,7 +248,7 @@
     .container .black-friday .img-upto .main-img {
         width: 30vw;
         margin-top: 25px;
-        max-width: 450px;
+        max-width: 400px;
     }
 
     .container .black-friday .img-upto .upto-mobile {
@@ -258,7 +258,7 @@
 
     @media screen and (max-width: 760px) {
         .hero-banner {
-            background-image: url("{{ 'bfcm-homepage-mobile.png' | asset_url }}");
+            background-image: url("{{ 'lps-aio-lp01-hero-bf-bg-mobile.png' | asset_url }}");
             height: 140vw;
         }
 
@@ -289,14 +289,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            max-width: 80%;
         }
 
         .container .black-friday .titles .shop-now-hero {
             display: none;
-        }
-
-        .container .black-friday .titles .curalin-title .main-title {
-            font-size: clamp(50px, 14vw, 200px);
         }
 
         .container .black-friday .titles .shop-now-hero .main-btn {
@@ -309,13 +306,24 @@
             justify-content: center;
         }
 
+        .container .black-friday .titles {
+            max-width: unset;
+        }
+
         .container .black-friday .titles .curalin-title .main-title {
             -webkit-text-stroke: 1px hsl(52, 100%, 64%);
+            font-size: 24vw;
         }
 
         .container .black-friday .titles .curalin-title .natural-title {
             line-height: unset;
             text-align: center;
+            font-size: 6vw;
+            font-weight: 100;
+        }
+
+        .container .black-friday .titles .curalin-title .natural-title br {
+            display: none;
         }
 
         .container .black-friday  .shop-now-hero-mobile .main-btn-mobile {
@@ -328,7 +336,7 @@
             color: #222222;
             border: none;
             padding: 2vw 7vw;
-            text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
+            text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
             box-shadow: 0px 0px 42px 0px rgb(255 255 255 / 80%);
         }
 
@@ -375,11 +383,11 @@
 
         }
 
-
+      
 
         .container .black-friday .img-upto .main-img {
             margin-top: unset;
-            width: unset;
+            width: unset;  
             object-fit: cover;
             max-width: 80vw;
         }
@@ -394,42 +402,3 @@
             }, 2000);
         });
 </script>
-
-{% schema %}
-{
-    "name": "Glucose Support Banner",
-    "settings": [
-        {
-            "type": "image_picker",
-            "id": "header_image",
-            "label": "Header Image"
-        }, {
-            "type": "text",
-            "id": "header_title",
-            "label": "Title",
-            "default": "Enter Title"
-        }, {
-            "type": "text",
-            "id": "header_subtitle",
-            "label": "Sub-Title",
-            "default": "Enter Sub-Title"
-        }, {
-            "type": "text",
-            "id": "button_title",
-            "label": "Button Title",
-            "default": "Enter Button Title"
-        }, {
-            "id": "button_link",
-            "type": "url",
-            "label": "Button Link"
-        }
-    ],
-    "presets": [
-        {
-            "name": "Glucose Support Banner",
-            "category": "image"
-        }
-    ]
-}
-
-{% endschema %}
