@@ -1,58 +1,3 @@
-<style>
-  @font-face {
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
-    src: local(''),
-    url('{{ "DMSans-Regular.ttf" | asset_url }}') format('ttf'),
-  }
-
-  @font-face {
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 500;
-    src: url('{{ "DMSans-Medium.ttf" | asset_url }}');
-    src: local(''),
-    url('{{ "DMSans-Medium.ttf" | asset_url }}') format('ttf'),
-  }
-
-  @font-face {
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
-    src: local(''),
-    url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
-  }
-
-  @font-face {
-    font-family: 'PP Radio Grotesk';
-    font-style: normal;
-    font-weight: 300;
-    src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
-    src: local(''),
-    url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'),
-  }
-
-  @font-face {
-    font-family: 'PP Radio Grotesk';
-    font-style: normal;
-    font-weight: 400;
-    src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
-    src: local(''),
-    url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'),
-  }
-
-  @font-face {
-    font-family: 'PP Radio Grotesk';
-    font-style: normal;
-    font-weight: 700;
-    src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
-    src: local(''),
-    url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'),
-  }
-</style>
 {% render 'lps-aio-header-bfcm2022' %}
 
 <div class="product-template-all-in-one">
@@ -180,7 +125,7 @@
 
             <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/>
             <div class="submit-wrap">
-              <div class="qty-data">
+              <div class="qty-data" style="display:none">
                 <div class="qty-control">
                   <a data-act="-" href="javascript:void(0)">
                     <span class="icon-minus"></span>
@@ -195,7 +140,7 @@
               </div>
 
               <div class="btn">
-                <button class="main-btn" id="buy-button">Shop Now <span class="save" id="save"></span></button>
+                <button class="main-btn" id="buy-button">Shop Now</button>
               </div>
             </div>
           </div>
@@ -495,35 +440,7 @@
       </div>
     </div>
   </section>
-  <section class="contact-us-section">
-    <div class="container">
-      <h2>We’re here for you 24/7. <br>Get in touch any time.</h2>
-      <div class="contact-options">
-        <div class="contact-option">
-          <div class="img-wrapper"><img src="{{ "icon-live-chat.png" | asset_url }}" alt="" loading="lazy"></div>
-          <p>Live Chat</p>
-        </div>
-        <div class="contact-option">
-          <div class="img-wrapper"><img src="{{ "icon-phone-support.png" | asset_url }}" alt="" loading="lazy"></div>
-          <p>Phone Support</p>
-        </div>
-        <div class="contact-option">
-          <div class="img-wrapper"><img src="{{ "icon-email.png" | asset_url }}" alt="" loading="lazy"></div>
-          <p>Email</p>
-        </div>
-      </div>
-      <div class="phone-numbers">
-        <div class="phone-number">
-          <img src="{{ "icon-flag-uk.png" | asset_url }}" alt="" loading="lazy">
-          <a href="tel:+448000869122"><p>UK-Toll-Free: +44 800 086 9122</p></a>
-        </div>
-        <div class="phone-number">
-          <img src="{{ "icon-flag-us.png" | asset_url }}" alt="" loading="lazy">
-          <a href="tel:+18882867307"><p>US-Toll-Free: +1 888 286 7307</p></a>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: '#c1dad8', border: false %}
 </div>
 
 <script>
@@ -582,16 +499,6 @@
     ++quoteIndex;
     quotes.eq(quoteIndex % quotes.length).fadeIn(1000).delay(2000).fadeOut(1000, showNextQuote);
   }
-
-  // CTA Button Color Change on Hover
-  $(function() {
-    $('.main-btn').hover(function() {
-      $('.qty-control').css('border-color', '#AF5B35');
-    }, function() {
-      // on mouseout, reset the background colour
-      $('.qty-control').css('border-color', '#d07c5b');
-    });
-  });
 
  // FAQ
  const accordionItemHeaders = document.querySelectorAll(".question");

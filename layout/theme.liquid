@@ -12,7 +12,10 @@
     {% render 'layout.head.fonts' %}
 
     <!-- Stylesheets -->
-    {% if request.path contains 'curalin-pack' or request.path contains 'curaeats' %}
+    {% if request.path contains 'curalin-pack' %}
+    {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
+    {% endif %}
+    {% if request.path contains 'curaeats' %}
     {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
     {% endif %}
     {{ 'common.css' | asset_url | stylesheet_tag: preload: true }}
