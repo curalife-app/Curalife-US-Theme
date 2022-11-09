@@ -104,7 +104,7 @@
             <p class="cta-title">Select Your Pack</p>
             <div class="input-field product-option-select">
               {% for var in product.variants %}
-                <div class="variant-box">
+                <div class="variant-box" {% if forloop.index == 3 %}style="height:100px"{% endif %}>
                   {% if forloop.index == 3 %}
                     <div class="variant-notice">
                       <p>FREE GIFT! - Meal Plan App ($29 value)</p>
