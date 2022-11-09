@@ -9,16 +9,10 @@
         <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
             <div class="wrap">
               <div class="picture">
-                {%- comment -%} {% if section.settings.prdct_bgimg != blank %}
-                  <div class="bg">
-                    <img src="{{section.settings.prdct_bgimg | img_url: '383x254' }}"  alt="">
-                  </div>
-                {% endif %} {%- endcomment -%}
-
                 {% if product.featured_image.src != blank %}
                   <a href="{{ product.url }}">
                     <div class="img">
-                      <img src="{{ product.featured_image.src | img_url: '367x265' }}"  alt="">
+                      <img src="{{ product.featured_image.src | img_url: 'original' }}"  alt="">
                     </div>
                   </a>
                 {% endif %}
@@ -100,60 +94,63 @@
   .catalog-page h1 {
     text-align: center;
     padding-top: 30px;
-}
-
-.price p strike {
-  color: #01C6B2;
-}
-
-.supply-days {
-  font-size: 16px;
-  text-align: center;
-  line-height: 0;
-  font-weight: 200;
-}
-
-.free-shipping {
-  margin-top: 5px;
-}
-
-.product-card .picture {
-  background: #222222 !important;
-  height: 220px !important;
-}
-
-.product-card .picture .discount {
-  padding: unset;
-  width: 100%;
-  top: 120px;
-  transform: rotate(-8.48deg);
-}
-
-.product-card .picture .discount p {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  background: #FFE746;
-  box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
-  font-size: 22px;
-  font-weight: bold;
-  border: 0;
-  color: black;
-  border-radius: 0;
-  margin: 0 -2vw;
-  gap: 10px;
-}
-
-.product-card .picture:after {
-  background-image: url({{ 'ellipse.svg' | asset_url }});
-}
-
-@media screen and (max-width: 760px) {
-  .product-card {
-    width: 100% !important;
   }
 
-}
+  .product-list {
+    padding: unset;
+  }
+
+  .price p strike {
+    color: #01C6B2;
+  }
+
+  .supply-days {
+    font-size: 16px;
+    text-align: center;
+    line-height: 0;
+    font-weight: 200;
+  }
+
+  .free-shipping {
+    margin-top: 5px;
+  }
+
+  .product-card .picture {
+    background: #222222 !important;
+    height: 370px !important;
+  }
+
+  .product-card .picture .discount {
+    padding: unset;
+    width: 100%;
+    top: 200px;
+    transform: rotate(-8.4deg);
+  }
+
+  .product-card .picture .discount p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: #FFE746;
+    box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
+    font-size: 22px;
+    font-weight: bold;
+    border: 0;
+    color: black;
+    border-radius: 0;
+    margin: 0 -2vw;
+    gap: 10px;
+  }
+
+  .product-card .picture:after {
+    background-image: url({{ 'ellipse.svg' | asset_url }});
+  }
+
+  @media screen and (max-width: 760px) {
+    .product-card {
+      width: 100% !important;
+    }
+  }
 </style>
 
 <script>
