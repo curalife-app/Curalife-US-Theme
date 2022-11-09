@@ -18,7 +18,7 @@
                 {% if product.featured_image.src != blank %}
                   <a href="{{ product.url }}">
                     <div class="img">
-                      <img src="{{ product.featured_image.src | img_url: '367x265' }}"  alt="">
+                      <img src="{{ product.featured_image.src | img_url: 'original' }}"  alt="">
                     </div>
                   </a>
                 {% endif %}
