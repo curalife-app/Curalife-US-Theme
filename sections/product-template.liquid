@@ -20,8 +20,6 @@
           {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
           {% endif %}
 
-          <script>console.log("cap: {{cap}}");</script>
-
           {% if quantity > 1 %}
           <div class="discount">
             <p> <i class="icofont-star"></i>SAVE{{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
@@ -174,13 +172,17 @@
     transform: rotate(-8.5deg);
   }
 
+  .text-wrap p {
+    font-size: 17px;
+  }
+
   .product-slider .discount p {
     display: flex;
     justify-content: center;
     text-align: center;
     background: #FFE746;
     box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold;
     border: 0;
     color: black;
