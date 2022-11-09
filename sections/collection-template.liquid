@@ -9,12 +9,6 @@
         <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
             <div class="wrap">
               <div class="picture">
-                {%- comment -%} {% if section.settings.prdct_bgimg != blank %}
-                  <div class="bg">
-                    <img src="{{section.settings.prdct_bgimg | img_url: '383x254' }}"  alt="">
-                  </div>
-                {% endif %} {%- endcomment -%}
-
                 {% if product.featured_image.src != blank %}
                   <a href="{{ product.url }}">
                     <div class="img">
