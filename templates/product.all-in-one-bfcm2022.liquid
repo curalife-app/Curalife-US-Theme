@@ -583,16 +583,6 @@
     quotes.eq(quoteIndex % quotes.length).fadeIn(1000).delay(2000).fadeOut(1000, showNextQuote);
   }
 
-  // CTA Button Color Change on Hover
-  $(function() {
-    $('.main-btn').hover(function() {
-      $('.qty-control').css('border-color', '#AF5B35');
-    }, function() {
-      // on mouseout, reset the background colour
-      $('.qty-control').css('border-color', '#d07c5b');
-    });
-  });
-
  // FAQ
  const accordionItemHeaders = document.querySelectorAll(".question");
 
