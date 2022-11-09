@@ -1,12 +1,13 @@
 {% assign lp_prods = page.content | split: ',' %}
 <section class="product-section" id="product-section">
+    <div class="green-strip">Limited Offer! Choose a bundle and get a FREE CuraEats meal plan</div>
     <div class="container">
         
     <div class="extra-info">
         <p><img src="{{ 'icon-free-shipping-light.png' | asset_url }}" alt="free shipping">FREE SHIPPING</p>
     </div>
-    <div class="black-friday-bg">BLACK FRIDAY</div>
-    
+    {%- comment -%} <div class="black-friday-bg">BLACK FRIDAY</div> {%- endcomment -%}
+
         <h2>Choose Your Package</h2>
         <div class="sl-optimize-03">
             <div class="product-list">
@@ -75,8 +76,27 @@
         </div>
     </div>
 </div>
+{% render 'collection-curaeats-section', invertSectionBack: true %}
 
 {% style %}
+.product-section {
+position: relative;
+}
+.product-section .green-strip {
+position: absolute;
+top: 100px;
+width: 100%;
+background: #99B182;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+font-family: 'Poppins';
+font-weight: 600;
+font-size: clamp(18px, 4vw, 25px); !important;
+line-height: 24px;
+text-align: center;
+letter-spacing: -0.02em;
+color: #FFFFFF;
+padding: 20px;
+}
 .product-section .container .black-friday-bg {
         position: absolute;
         width: 100%;
@@ -139,6 +159,7 @@
 }
 
 .product-section h2 {
+    margin-top: 150px;
     text-align: center;
     color: #222222 !important;
     font-weight: 600;
@@ -380,6 +401,7 @@
 display: none;
     }
     .product-section h2 {
+        margin-top: 125px;
         font-size: 7vw;
         font-weight: 700;
         margin-bottom: 0;
