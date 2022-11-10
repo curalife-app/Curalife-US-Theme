@@ -6728,7 +6728,7 @@ footer {
             font-size: 20px;
             -webkit-text-decoration-line: line-through;
                     text-decoration-line: line-through;
-            color: #33B7A6; }
+            color: #4B643D; }
         .goods-list .list-wrap .sale-card .price p {
           margin: 0;
           padding: 0 6px;
@@ -6943,7 +6943,7 @@ footer {
       font-family: "Poppins", sans-serif;
       font-weight: normal;
       text-decoration: line-through;
-      color: #33B7A6;}
+      color: #4B643D;}
 
     .goods-list.sale .list-wrap .card .discount-label {
       width: 78px;
