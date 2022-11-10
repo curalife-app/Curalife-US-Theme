@@ -9,7 +9,7 @@
       </div>
       {% if section.settings.logo != blank %}
       <div class="main-logo">
-        <a href="{{section.settings.lgo_lnk}}"><img src="{{ section.settings.logo | img_url }}" alt="logo" width="120" height="34px"></a>
+        <a href="{{section.settings.lgo_lnk}}"><img src="{{ "logo-new.svg" | asset_url }}" alt="logo"></a>
       </div>
       {% endif %}
       <div class="main-menu">
@@ -46,7 +46,7 @@
           {% endif %}
           <li>
             <a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#side-cart">
-            <i class="icofont-shopping-cart" data-items="{{ cart.item_count }}"></i><span>Cart </span> 
+            <i class="icofont-shopping-cart" data-items="{{ cart.item_count }}"></i><span>Cart </span>
             {% if cart.item_count > 0 %}<span class="header_cart_count">{{ cart.item_count }}</span>{% endif %}
             </a>
           </li>
@@ -62,7 +62,7 @@
     woopra.track('Clicked on Header Link', { link_to: $(this).find("a").attr("href") });
   })
 </script>
-  
+
 {% schema %}
   {
   "name": "Header",
@@ -94,7 +94,7 @@
   ]
   }
 {% endschema %}
-  
+
 {% style %}
   .header_cart_count {
     border-radius: 50px;
@@ -108,7 +108,7 @@
     font-weight: bold;
     margin-left: 10px;
   }
-  
+
   @media screen and (max-width: 760px){
     .header_cart_count {
       margin-left: 0;
