@@ -1,8 +1,13 @@
 <!-- If the customer bought curaeats app -->
 {% for item in order.line_items %}
-{% if item.product.title contains 'CuraEats' %}
-{% assign curaeats_exist = true %}
-{% endif %}
+  {% assign productTags = item.product.tags | join: ', ' %}
+  {% if item.product.title contains 'CuraEats' %}
+    {% assign curaeats_exist = true %}
+  {% elsif productTags contains 'CuraEats' %}
+    {% assign curaeats_exist = true %}
+  {% elsif item.variant.title contains 'CuraEats' %}
+    {% assign curaeats_exist = true %}
+  {% endif %}
 {% endfor %}
 
 <!-- If the customer bought first time - Onboarding -->
