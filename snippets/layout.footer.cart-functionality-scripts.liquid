@@ -26,7 +26,7 @@
       width: 40px;
       height: 40px;
       border: 4px rgb(255, 255, 255) solid;
-      border-top: 4px #01C6B2 solid;
+      border-top: 4px #4B643D solid;
       border-radius: 50%;
       animation: sp-anime 0.8s infinite linear;
   }
@@ -44,15 +44,15 @@
   async function updateQuantityOnServer(id, qty) {
     console.log('Updating Cart...')
     $("#overlay").fadeIn(300);　
-    $.ajax({  
-      type:"POST",        
+    $.ajax({
+      type:"POST",
       url: "/cart/change.js",  // Send the login info to this page
-      data: JSON.stringify({ id: id, quantity: qty }), 
-      dataType: "json", 
+      data: JSON.stringify({ id: id, quantity: qty }),
+      dataType: "json",
       async: false,
       contentType: "application/json",
       timeout: 200000,
-      success: function(result){ 
+      success: function(result){
         console.log("Item Quantity Updated");
         window.UpdateStatus = true;
       },
@@ -63,7 +63,7 @@
 
     }).done(function() {
       setTimeout(function(){$("#overlay").fadeOut(300);},500);
-    }); 
+    });
   }
 
   function updateQuantityOnHeaderIcon(updateValue) {
