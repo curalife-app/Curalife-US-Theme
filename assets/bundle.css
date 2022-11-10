@@ -3692,8 +3692,8 @@ footer .bottom-info .info-wrap .text p {
   position: absolute;
   top: -36px;
   left: calc(50% - 34px);
-  background: -o-linear-gradient(359.87deg, #33B7A6 19.08%, #3CBCAB 27.85%, #70D7C9 81.04%);
-  background: linear-gradient(90.13deg, #33B7A6 19.08%, #3CBCAB 27.85%, #70D7C9 81.04%);
+  background: -o-linear-gradient(359.87deg, #4B643D 19.08%, #3CBCAB 27.85%, #70D7C9 81.04%);
+  background: linear-gradient(90.13deg, #4B643D 19.08%, #3CBCAB 27.85%, #70D7C9 81.04%);
   border-radius: 50%;
   z-index: 1;
 }
@@ -3886,7 +3886,7 @@ footer .bottom-info .info-wrap .text p {
   font-weight: 300;
   font-size: 20px;
   line-height: 1;
-  color: #33B7A6;
+  color: #4B643D;
 }
 
 .locations-map {
@@ -3965,7 +3965,7 @@ footer .bottom-info .info-wrap .text p {
   font-size: 16px;
   line-height: 1.12;
   text-align: center;
-  color: #33B7A6;
+  color: #4B643D;
 }
 
 .page-title {
@@ -4215,7 +4215,7 @@ footer .bottom-info .info-wrap .text p {
   font-size: 16px;
   line-height: 1;
   text-align: center;
-  color: #33B7A6;
+  color: #4B643D;
   text-transform: uppercase;
 }
 
@@ -5196,7 +5196,7 @@ footer .bottom-info .info-wrap .text p {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.43;
-  color: #33B7A6;
+  color: #4B643D;
 }
 
 .article-card .info .main-info .title h3 a {
@@ -5516,7 +5516,7 @@ footer .bottom-info .info-wrap .text p {
   height: 18px;
   display: block;
   border-radius: 50%;
-  background: #33B7A6;
+  background: #4B643D;
   position: absolute;
   top: 4px;
   left: 0;
@@ -5532,7 +5532,7 @@ footer .bottom-info .info-wrap .text p {
   counter-increment: list;
   content: counter(list) ".";
   padding-right: 5px;
-  color: #33B7A6;
+  color: #4B643D;
 }
 
 .article-wrap .sidebar {
@@ -5612,7 +5612,7 @@ footer .bottom-info .info-wrap .text p {
   height: 40px;
   border-radius: 50%;
   font-size: 22px;
-  color: #33B7A6;
+  color: #4B643D;
   border: 1px solid rgba(51, 183, 166, 0.4);
   -webkit-transition: color var(--transition), border-color var(--transition);
   -o-transition: color var(--transition), border-color var(--transition);
@@ -7032,7 +7032,7 @@ footer .bottom-info .info-wrap .text p {
 }
 
 .account-data .rewards-table table tbody tr td span.approved {
-  color: #33B7A6;
+  color: #4B643D;
 }
 
 .account-data .rewards-table table tbody tr td span.refunded {
@@ -7246,11 +7246,11 @@ footer .bottom-info .info-wrap .text p {
 }
 
 .data-list ul li .order-item .status.done p span {
-  color: #33B7A6;
+  color: #4B643D;
 }
 
 .data-list ul li .order-item .status.done p span:before {
-  background: #33B7A6;
+  background: #4B643D;
 }
 
 .data-list ul li .order-item .status.transit p span {
