@@ -14,8 +14,9 @@
         {% endfor %}
     </div>
     <div class="container">
+        <div class="curlife-img"><img src="{{ 'curalife-white-logo-lp01.png' | asset_url }}" alt="logo" loading="lazy">
+        </div>
         <div class="black-friday">
-
                 <div class="titles">
                     <p class="main-title bigger blink_text">BLACK</p>
                     <div class="shop-now-hero">
@@ -24,14 +25,29 @@
                         </div>
                     <p class="main-title blink_text">FRIDAY</p>
                 </div>
-
+            
             <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
         </div>
     </div>
 </div>
 
 <style>
+    .curlife-img {
+        display: none;
+    }
 
+
+    @media screen and (max-width: 760px) {
+        .curlife-img {
+            display: flex;
+            justify-content: center;
+        }
+
+        .curlife-img img {
+            max-width: 40% !important;
+        }
+    }
+   
 </style>
 
 <script>
@@ -64,11 +80,13 @@
 
 <style>
     .hero-banner {
+        margin-top: 60px;
         position: relative;
         background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
         background-size: cover;
         background-position: bottom;
         overflow: hidden;
+
     }
 
     .hero-banner .container {
@@ -238,6 +256,12 @@
             padding: unset;
         }
 
+        .ribbon .titles .title {
+            display: flex;
+            align-items: center;
+            gap: 11vw;
+        }
+
         .ribbon:nth-child(1) {
             bottom: 25vw;
             transform: rotate(350deg);
@@ -257,13 +281,6 @@
             display: none;
         }
 
-        .ribbon .titles .title {
-            display: flex;
-            align-items: center;
-            gap: 11vw;
-        }
-
-
         .container .black-friday .titles .shop-now-hero {
             justify-content: center;
             padding: 0;
@@ -280,17 +297,18 @@
 
 
 
-  .container .black-friday .titles .main-title {
-          font-size: 20vw;
-          -webkit-text-stroke: 2px hsl(52, 100%, 64%);
-          letter-spacing: 2vw;
+      .container .black-friday .titles .main-title {
+              font-size: 20vw;
+              -webkit-text-stroke: 2px hsl(52, 100%, 64%);
+              letter-spacing: 2vw;
+          }
+
+          .container .black-friday .titles .main-title.bigger {
+              letter-spacing: 2vw;
+              font-size: 22vw;
+
       }
-
-      .container .black-friday .titles .main-title.bigger {
-          letter-spacing: 2vw;
-          font-size: 22vw;
-
-  }
+  
 
 
         .hero-banner .container .black-friday {
@@ -302,7 +320,7 @@
         }
 
         .container .black-friday .main-img {
-            top: 43vw;
+            top: 55vw;
             position: absolute;
             width: unset;
             object-fit: cover;
