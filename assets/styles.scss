@@ -3794,22 +3794,20 @@
         }
 
         td.img {
-          width: 183px;
+          width: 150px;
 
           .img-wrap {
             position: relative;
-            background: #F8F8F8;
 
             &:before {
               content: '';
               display: block;
-              padding-bottom: 100%;
+              padding-bottom: 60%;
               pointer-events: none;
             }
 
             span {
               display: block;
-              padding: 10%;
               position: absolute;
               top: 0;
               left: 0;
