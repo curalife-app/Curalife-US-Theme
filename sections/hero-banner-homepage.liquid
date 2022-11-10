@@ -20,42 +20,44 @@
             <div class="shop-now-hero">
                 <p class="up-to">UP TO <b>30% OFF</b></p>
                 <a class="main-btn" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
-                </div>
-                <p class="main-title blink_text">FRIDAY</p>
-                </div>
-                <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
-<div class="shop-now-hero-mobile">
-    <a class="main-btn-mobile" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
-</div>
-    </div>
-    </div>
+            </div>
+            <p class="main-title blink_text">FRIDAY</p>
+            </div>
+
+        <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
+
+        <div class="shop-now-hero-mobile">
+            <a class="main-btn-mobile" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
+        </div>
+        </div>
+        </div>
 </div>
 
 
 
 <script>
-            brandsTicker = new Swiper('.hero-banner .ribbon.right', {
-                speed: 5000,
-                autoplay: {
-                    delay: 0,
-                    disableOnInteraction: false
-                },
-                loop: true,
-                slidesPerView: '4',
-                allowTouchMove: false,
-                disableOnInteraction: true
-            });
+        brandsTicker = new Swiper('.hero-banner .ribbon.right', {
+            speed: 5000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false
+            },
+            loop: true,
+            slidesPerView: '4',
+            allowTouchMove: false,
+            disableOnInteraction: true
+        });
 
-            brandsTicker = new Swiper('.hero-banner .ribbon.left', {
-                speed: 5000,
-                autoplay: {
-                    delay: 0,
-                    disableOnInteraction: false,
-                    reverseDirection: true
-                },
-                loop: true,
-                slidesPerView: '4',
-                allowTouchMove: false,
+        brandsTicker = new Swiper('.hero-banner .ribbon.left', {
+            speed: 5000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+                reverseDirection: true
+            },
+            loop: true,
+            slidesPerView: '4',
+            allowTouchMove: false,
             disableOnInteraction: true
         });
 </script>
@@ -63,7 +65,7 @@
 <style>
   .hero-banner {
       position: relative;
-      background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
+      background-image: url("{{ 'lps-aio-lp01-hero-bf-bg.png' | asset_url }}");
       background-size: cover;
       background-position: bottom;
       overflow: hidden;
@@ -226,7 +228,7 @@
 
   @media screen and (max-width: 760px) {
       .hero-banner {
-          background-image: url("{{ 'bfcm-homepage-mobile.png' | asset_url }}");
+          background-image: url("{{ 'lps-aio-lp01-hero-bf-bg-mobile.png' | asset_url }}");
           height: 165vw;
       }
 
