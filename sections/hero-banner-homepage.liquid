@@ -1,269 +1,332 @@
 <div class="hero-banner">
-    <div class="ribbons">
-        {% for i in (1..4) %}
-        <div class="ribbon swiper {% cycle 'left', 'right' %}">
-            <div class="titles swiper-wrapper">
-                {% for i in (1..20) %}
-                <div class="title swiper-slide">
-                    <p>BLACK FRIDAY</p>
-                    <i class="icofont-star"></i>
-                </div>
-                {% endfor %}
+<div class="ribbons">
+    {% for i in (1..4) %}
+    <div class="ribbon swiper {% cycle 'left', 'right' %}">
+        <div class="titles swiper-wrapper">
+            {% for i in (1..20) %}
+            <div class="title swiper-slide">
+                <p>BLACK FRIDAY</p>
+                <i class="icofont-star"></i>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-    <div class="container">
-        <div class="black-friday">
-        
-                <div class="titles">
-                    <p class="main-title bigger blink_text">BLACK</p>
-                    <div class="shop-now-hero">
-                        <p class="up-to">UP TO 30% OFF</p>
-                        <a class="main-btn" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
-                        </div>
-                    <p class="main-title blink_text">FRIDAY</p>
+    {% endfor %}
+</div>
+<div class="container">
+    <div class="black-friday">
+        <div class="titles">
+            <p class="main-title bigger blink_text">BLACK</p>
+            <div class="shop-now-hero">
+                <p class="up-to">UP TO <b>30% OFF</b></p>
+                <a class="main-btn" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
                 </div>
-            
-            <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
-        </div>
+                <p class="main-title blink_text">FRIDAY</p>
+                </div>
+                <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
+<div class="shop-now-hero-mobile">
+    <a class="main-btn-mobile" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
+</div>
+    </div>
     </div>
 </div>
 
-<style>
-    
-</style>
+
 
 <script>
             brandsTicker = new Swiper('.hero-banner .ribbon.right', {
-        speed: 5000,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false
-        },
-        loop: true,
-        slidesPerView: '4',
-        allowTouchMove: false,
-        disableOnInteraction: true
-    });
+                speed: 5000,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false
+                },
+                loop: true,
+                slidesPerView: '4',
+                allowTouchMove: false,
+                disableOnInteraction: true
+            });
 
             brandsTicker = new Swiper('.hero-banner .ribbon.left', {
-        speed: 5000,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            reverseDirection: true
-        },
-        loop: true,
-        slidesPerView: '4',
-        allowTouchMove: false,
+                speed: 5000,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    reverseDirection: true
+                },
+                loop: true,
+                slidesPerView: '4',
+                allowTouchMove: false,
             disableOnInteraction: true
-    });
+        });
 </script>
 
 <style>
-    .hero-banner {
-          position: relative;
-          background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
-          background-size: cover;
-          background-position: bottom;
-          overflow: hidden;
+  .hero-banner {
+      position: relative;
+      background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
+      background-size: cover;
+      background-position: bottom;
+      overflow: hidden;
+  }
+
+  .hero-banner .container {
+      height: 100%;
+      position: relative;
+      z-index: 5;
+  }
+
+  .ribbon {
+      background: white;
+      width: 1000px;
+      position: absolute;
+      overflow: hidden;
+  }
+
+  .ribbon .titles {
+      display: flex;
+      align-items: center;
+  }
+
+  .ribbon .titles .title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .ribbon .titles .title p {
+      margin: unset;
+      font-weight: bold;
+      font-size: clamp(20px, 2vw, 28px);
+  }
+
+  .ribbon:nth-child(1) {
+      bottom: 0;
+      right: -40px;
+      transform: rotate(350deg);
+      z-index: 10;
+  }
+
+  .ribbon:nth-child(2) {
+      top: 50px;
+      right: -40px;
+      transform: rotate(15deg);
+      opacity: 0.3;
+      filter: blur(2px);
+  }
+
+  .ribbon:nth-child(3) {
+      bottom: 0;
+      left: -200px;
+      transform: rotate(10deg);
+      opacity: 0.5;
+  }
+
+  .ribbon:nth-child(4) {
+      top: 50px;
+      transform: rotate(345deg);
+      right: 65vw;
+  }
+
+  .blink_text {
+      animation-name: blinker;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: 2;
+  }
+
+  @keyframes blinker {
+      0% {
+          opacity: 1.0;
       }
-    .hero-banner .container {
-          padding-top: 65px;
+
+      50% {
+          opacity: 0.0;
+      }
+
+      100% {
+          opacity: 1.0;
+      }
+  }
+
+  .hero-banner .container .black-friday {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+  }
+
+  .hero-banner .container .black-friday .titles {
+      display: flex;
+      flex-direction: column;
+      transition-timing-function: linear !important;
+  }
+
+  .container .black-friday .titles .main-title {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 4px hsl(52, 100%, 64%);
+      filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
+      color: #FFE746;
+      font-weight: 900;
+      font-family: 'PP Radio Grotesk';
+      letter-spacing: 15px;
+      margin: unset;
+      text-align: center;
+      font-size: clamp(50px, 10vw, 200px);
+  }
+
+  .container .black-friday .titles .main-title.bigger {
+      letter-spacing: 20px;
+  }
+
+  .container .black-friday .titles .shop-now-hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 3px solid #ffffff8f;
+      border-bottom: 3px solid #ffffff8f;
+      padding: 10px 0;
+      gap: 20px;
+  }
+
+  .container .black-friday .shop-now-hero-mobile {
+      display: none;
+
+  }
+
+  .container .black-friday .titles .shop-now-hero .up-to {
+      font-family: 'PP Radio Grotesk';
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      margin: unset;
+      font-size: clamp(30px, 3vw, 50px);
+  }
+
+  .container .black-friday .titles .shop-now-hero .main-btn {
+      font-family: 'PP Radio Grotesk';
+      font-weight: 700;
+      background: #FFFFFF;
+      text-align: center;
+      color: #222222;
+      border: none;
+      text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+      padding: 12px 17px;
+      box-shadow: 0px 0px 42px 0px rgb(255 255 255 / 80%);
+      border-bottom: 2px solid #0000008f;
+      font-size: clamp(0px, 2vw, 33px);
+  }
+
+  .container .black-friday .main-img {
+      width: 30vw;
+      margin-top: 25px;
+      max-width: 450px;
+  }
+
+
+  @media screen and (max-width: 760px) {
+      .hero-banner {
+          background-image: url("{{ 'bfcm-homepage-mobile.png' | asset_url }}");
+          height: 165vw;
+      }
+
+      .hero-banner .container {
+          padding: unset;
+      }
+
+      .ribbon .titles .title {
+          display: flex;
+          align-items: center;
+          gap: 11vw;
+      }
+
+      .ribbon:nth-child(1) {
+          bottom: 22vw;
+          transform: rotate(350deg);
+      }
+
+      .ribbon:nth-child(2) {
+          transform: rotate(5deg);
+          top: 70vw;
+      }
+
+      .ribbon:nth-child(3) {
+          transform: rotate(60deg);
+          left: -96vw;
+      }
+
+      .ribbon:nth-child(4) {
+          display: none;
+      }
+
+      .container .black-friday .titles .shop-now-hero {
+          justify-content: center;
+          padding: 0;
+          border-width: 1px;
+      }
+
+      .container .black-friday .titles .main-title {
+          font-size: clamp(50px, 14vw, 200px);
+      }
+
+      .container .black-friday .titles .shop-now-hero .main-btn {
+              display: none;
+      }
+
+      .container .black-friday  .shop-now-hero-mobile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+     .container .black-friday .titles .main-title {
+             font-size: 20vw;
+             -webkit-text-stroke: 2px hsl(52, 100%, 64%);
+             letter-spacing: 2vw;
+         }
+
+         .container .black-friday .titles .main-title.bigger {
+             letter-spacing: 2vw;
+             font-size: 22vw;
+
+     }
+
+      .container .black-friday  .shop-now-hero-mobile .main-btn-mobile {
+          position: absolute;
+          font-family: 'PP Radio Grotesk';
+          font-weight: 700;
+          font-size: min(7vw, 35px);
+          background: #FFFFFF;
+          text-align: center;
+          color: #222222;
+          border: none;
+          padding: 2vw 7vw;
+          text-shadow: 0px 4px 8px rgb(0 0 0 / 25%);
+          box-shadow: 0px 0px 42px 0px rgb(255 255 255 / 80%);
+          border-bottom: 2px solid #0000008f;
+      }
+
+      .container .black-friday .titles .shop-now-hero .up-to {
+          font-weight: 300;
+          letter-spacing: 1.3vw;
+      }
+
+      .hero-banner .container .black-friday {
+          justify-content: space-between;
+          flex-direction: column;
           height: 100%;
-          position: relative;
-          z-index: 5;
-          padding-left: 60px;
-      } 
-    .ribbon {
-        background: white;
-        width: 700px;
-        position: absolute;
-        overflow: hidden;
-    }
-    .ribbon .titles {
-        display: flex;
-        align-items: center;
-    }
+          padding: 10vw 0;
+          padding-top: 2vw;
+      }
 
-    .ribbon .titles .title {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .ribbon .titles .title p {
-        margin: unset;
-        font-weight: bold;
-        font-size: clamp(20px, 2vw, 28px);
-    }
-    .ribbon:nth-child(1) {
-        bottom: 0;
-        right: -40px;
-        transform: rotate(350deg);
-        z-index: 10;
-    }
-
-    .ribbon:nth-child(2) {
-        top: 50px;
-        right: -40px;
-        transform: rotate(15deg);
-        opacity: 0.3;
-        filter: blur(2px);
-    }
-    .ribbon:nth-child(3) {
-        bottom: 0;
-        left: -200px;
-        transform: rotate(10deg);
-        opacity: 0.5;
-    }
-    .ribbon:nth-child(4) {
-        top: 50px;
-        left: -200px;
-        transform: rotate(345deg);
-        }
-    .blink_text {
-        animation-name: blinker;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: 2;
-    }
-
-    @keyframes blinker {  
-        0% { opacity: 1.0; }
-        50% { opacity: 0.0; }
-        100% { opacity: 1.0; }
-    }
-    .hero-banner .container .black-friday {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .hero-banner .container .black-friday .titles {
-        display: flex;
-        flex-direction: column;  
-    }
-
-    .container .black-friday .titles .main-title {
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 4px 	hsl(52, 100%, 64%);
-        filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
-        color: #FFE746;
-        font-weight: 900;
-        font-family: 'PP Radio Grotesk';
-        letter-spacing: 15px;
-        margin: unset;
-        text-align: center;
-        font-size: clamp(50px, 14vw, 180px);
-    }
-
-    .container .black-friday .titles .main-title.bigger {
-        letter-spacing: 20px;
-    }
-
- 
-
-    .container .black-friday .titles .shop-now-hero {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        align-items: center;
-        border-top: 3px solid #ffffff8f;
-        border-bottom: 3px solid #ffffff8f;
-        padding: 10px 0;
-    }
-    .container .black-friday .titles .shop-now-hero .up-to {      
-         font-family: 'PP Radio Grotesk';
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #FFFFFF;
-            margin: unset;
-            font-size: clamp(30px, 3vw, 50px);
-        
-    }
-
-    .container .black-friday .titles .shop-now-hero .main-btn {
-        font-family: 'PP Radio Grotesk';
-        font-weight: 700;
-        font-size: min(3vw, 30px);
-        background: #FFFFFF;
-        text-align: center;
-        color: #222222;
-        border: none;
-        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-        padding: 12px 17px;
-    }
-
-    .container .black-friday .main-img {
-        width: 40vw;
-        margin-top: 25px;
-    }
-
-    @media screen and (max-width: 760px) {
-        .hero-banner {
-            background-image: url("{{ 'bfcm-homepage-mobile.png' | asset_url }}");
-            height: calc(100vh - 15vw);
-        }
-
-        .hero-banner .container {
-            padding: unset;  
-        }
-
-        .ribbon:nth-child(1) {
-            bottom: 25vw;
-            transform: rotate(350deg);
-        }
-
-        .ribbon:nth-child(2) {
-            transform: rotate(5deg);
-            top: 70vw;
-        }
-
-        .ribbon:nth-child(3) {
-            transform: rotate(60deg);
-        }
-
-        .ribbon:nth-child(4) {
-            display: none;
-        }
-
-        .ribbon .titles .title {
-            display: flex;
-            align-items: center;
-            gap: 11vw;
-        }
-
-
-        .container .black-friday .titles .shop-now-hero {
-            display: none;
-        }
-
-        .container .black-friday {
-            flex-direction: column;
-            height: 100%;
-            padding: 10vw 0;
-        }
-
-        .container .black-friday .titles .main-title {
-                font-size: 20vw;
-                -webkit-text-stroke: 2px hsl(52, 100%, 64%);
-                letter-spacing: 2vw;
-            }
-
-            .container .black-friday .titles .main-title.bigger {
-                letter-spacing: 2vw;
-                font-size: 22vw;
-
-        }
-
-        .container .black-friday .main-img {
-            width: unset;
-            min-height: 500px;
-            object-fit: cover;
-            margin: unset;
-        }
-    }
+      .container .black-friday .main-img {
+          top: 43vw;
+          position: absolute;
+          width: unset;
+          object-fit: cover;
+          max-width: 100vw;
+      }
+  }
 </style>
 
 
