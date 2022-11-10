@@ -12,7 +12,7 @@
           <span class="off-container-collection">UP TO 30% OFF</span>
         </div>
 
-        <div class="title desktop swiper-slide">
+        <div class="title desktop swiper-slide" style="display: none;">
           {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
           {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
         </div>
@@ -25,7 +25,7 @@
 
   </div>
 </div>
-<div class="countdown-mobile">
+<div class="countdown-mobile" style="display: none;">
 {% render 'countdown-timer', timerAlreadyRun: true %}
 </div>
 
