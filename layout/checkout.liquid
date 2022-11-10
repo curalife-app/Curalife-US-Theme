@@ -406,24 +406,30 @@
 
     allStages();
 
-    switch (currentStep) {
-      case 'contact_information':
-      case 'Information':
-        informationStage();
-        break;
-      case 'shipping_method':
-      case 'Shipping':
-        shippingStage();
-        break;
-      case 'payment_method':
-      case 'Payment':
-        paymentStage();
-        break;
-      default:
-        if (window.location.pathname.includes("/thank_you")) {
+    console.log("currentStep: " + currentStep);
+
+    if (currentStep) {
+      switch (currentStep) {
+        case 'contact_information':
+        case 'Information':
+          informationStage();
+          break;
+        case 'shipping_method':
+        case 'Shipping':
+          shippingStage();
+          break;
+        case 'payment_method':
+        case 'Payment':
+          paymentStage();
+          break;
+        case 'thank_you':
           console.log("Thank you");
           thankyouStage();
-        }
+          break;
+      }
+    }
+    else {
+      window.location.href.includes("thank_you") ? thankyouStage() : console.log("Error: can't find current step");
     }
 
     sessionStorage.setItem('paypal', 'hide');
