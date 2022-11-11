@@ -17,7 +17,7 @@
         <div class="black-friday">
             <div class="titles">
                 <div class="curalin-title">
-                    <div class="main-title blink_text">curalin</div>
+                    <div class="main-title blink_text4">curalin</div>
                     <div class="natural-title">Natural Blood <br>Sugar Support <br>Supplement</div>
                 </div>
                 <div class="shop-now-hero">
@@ -139,7 +139,7 @@
         right: 65vw;
     }
 
-    .blink_text {
+    .blink_text4 {
         animation-name: blinker;
         animation-duration: 1s;
         animation-timing-function: linear;
@@ -148,7 +148,9 @@
 
     @keyframes blinker {
         0% {
+            color: #D9D9D9;
             opacity: 1.0;
+            filter: blur(5px);
         }
 
         50% {
@@ -157,6 +159,9 @@
 
         100% {
             opacity: 1.0;
+            color: #FFE746;
+            filter: unset;
+
         }
     }
 
