@@ -16,12 +16,12 @@
   <div class="container">
       <div class="black-friday">
           <div class="titles">
-              <p class="main-title bigger blink_text">BLACK</p>
+            <p class="main-title bigger blink_text5">BLACK</p>
               <div class="shop-now-hero">
                   <p class="up-to">UP TO <b>30% OFF</b></p>
                   <a class="main-btn" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
               </div>
-              <p class="main-title blink_text">FRIDAY</p>
+            <p class="main-title blink_text6">FRIDAY</p>
 </div>
 
           <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
@@ -129,16 +129,25 @@
       right: 65vw;
   }
 
-  .blink_text {
+  .blink_text5 {
       animation-name: blinker;
-      animation-duration: 1s;
+      animation-duration: 0.6s;
       animation-timing-function: linear;
-      animation-iteration-count: 2;
+      animation-iteration-count: 1;
+  }
+
+  .blink_text6 {
+      animation-name: blinker;
+      animation-duration: 1.6s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
   }
 
   @keyframes blinker {
       0% {
+          color: #D9D9D9;
           opacity: 1.0;
+          filter: blur(5px);
       }
 
       50% {
@@ -147,6 +156,9 @@
 
       100% {
           opacity: 1.0;
+          color: #FFE746;
+          filter: unset;
+
       }
   }
 
