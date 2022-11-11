@@ -16,7 +16,7 @@
       {% if address == customer.default_address %}<span class="default_address">{{ 'customer.addresses.default' | t }}</span>{% endif %}
       <h4 class="type-subheading type-subheading--1 address_title">
         {{ address.street }}
-      </h4> 
+      </h4>
       <div class="view_address">
         <p>{{ address.first_name }} {{address.last_name }}
         {% if address.company != blank %}<br />{{ address.company }}{% endif %}
@@ -30,7 +30,7 @@
         	<a href="#" id="edit_add_{{address.id}}" >Edit</a>
         </span>
         <span class="action_delete btn">
-        	<a href="javascript:" onclick='Shopify.CustomerAddress.destroy({{address.id}}, "Are you sure you wish to delete this address?"); return false' 
+        	<a href="javascript:" onclick='Shopify.CustomerAddress.destroy({{address.id}}, "Are you sure you wish to delete this address?"); return false'
         	id="view_address_{{address.id}}" >Delete</a>
         </span>
       </div>
@@ -110,70 +110,70 @@
 		<h4 class="nwadd">{{ 'customer.addresses.add_new' | t }}</h4>
 	</div>
 	<div class="form-fields">
-	
+
     <label class="half-size" for="address--first-name">
-		
+
 			<input type="text" class="form-control" id="address--first-name" name="address[first_name]" value="{{ form.first_name }}" placeholder="{{ 'customer.addresses.first_name' | t }}" />
 		</label>
-  
 
-	
+
+
 		<label class="half-size" for="address--last-name">
-		
+
 			<input type="text" class="form-control" id="address--last-name" name="address[last_name]" value="{{ form.last_name }}" placeholder="{{ 'customer.addresses.last_name' | t }}" />
 		</label>
 
-	
+
 		<label class="half-size" for="address--company">
-		
+
 			<input type="text" class="form-control" id="address--company" name="address[company]" value="{{ form.company }}" placeholder="{{ 'customer.addresses.company' | t }}" />
 		</label>
 
-	
+
 		<label class="half-size" for="address--address-1">
-		
+
 			<input type="text" class="form-control" id="address--address-1" name="address[address1]" value="{{ form.address1 }}" placeholder="{{ 'customer.addresses.address1' | t }}" />
-		
+
 		</label>
-	
+
 		<label class="half-size" for="address--address-1">
-		
+
 			<input type="text" class="form-control" id="address--address-2" name="address[address2]" value="{{ form.address2 }}" placeholder="{{ 'customer.addresses.address2' | t }}" />
-		
+
 			</label>
-	
+
 		<label class="half-size" for="address--city">
-		
+
 			<input type="text" class="form-control" id="address--city" name="address[city]" value="{{ form.city }}" placeholder="{{ 'customer.addresses.city' | t }}" />
-		
+
 			</label>
-	
+
 		<label class="half-size" for="address--country">
-		
+
 			<select id="address_country_new" name="address[country]" data-default="{{form.country}}" class="form-control" placeholder="{{ 'customer.addresses.country' | t }}">{{ country_option_tags }}</select>
 		</label>
 
 	<div  id="address_province_container_new" class=""  style="display:none">
 		<label class="half-size" for="address--province">{{ 'customer.addresses.province' | t }}
-		
+
 			<select id="address_province_new" class="address_form form-control" name="address[province]" data-default="{{form.province}}"></select>
 		</label>
 	</div>
 
-	
+
 		<label class="half-size" for="address--zipcode">
-		
+
 			<input type="text" class="form-control" id="address--zipcode" name="address[zipcode]" value="{{ form.zip }}" placeholder="{{ 'customer.addresses.zip' | t }}" />
-		
+
 	</label>
 
-	
+
 		<label class="half-size" for="address--phone">
-	
+
 			<input type="text" class="form-control" id="address--phone" name="address[phone]" value="{{ form.phone }}" placeholder="{{ 'customer.addresses.phone' | t }}" />
-	
+
 			</label>
-	
+
 		<label class="half-size">{{ 'customer.addresses.set_default' | t }}
 		<div class="">
 			{{ form.set_as_default_checkbox }}
@@ -217,7 +217,7 @@
 
 <style>
 	.content{
-		
+
 		padding-bottom: 50px;
 	}
 	.main_frm {
@@ -260,11 +260,11 @@
     padding: 14px 30px;
 }
 .edit_address input.btn:hover{
-	background-color: #33b7a6;
+	background-color: #4B643D;
 	clear: #fff;
 }
 a.btn.btn-danger:hover{
-	background-color: #33b7a6;
+	background-color: #4B643D;
 	clear: #fff;
 }
 a.btn.btn-danger {
@@ -308,7 +308,7 @@ a.btn.btn-danger {
 	color: #fff;
 }
 .btn:hover{
-	background-color: #33b7a6;
+	background-color: #4B643D;
 }
 .address_actions {
     margin-top: 30px;
@@ -360,7 +360,7 @@ span.action_delete.btn {
     position: absolute !important;
       right: 0px !important;
       top: 0px !important;
-  }  
+  }
 }
 	@media only screen and (max-width: 767px){
 		.nwadd {

@@ -495,7 +495,7 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background: var(--green);
+    background: #404733;
     pointer-events: none;
   }
 }
@@ -1191,7 +1191,7 @@
     position: absolute;
     top: -36px;
     left: calc(50% - 34px);
-    background: linear-gradient(90.13deg, #33B7A6 19.08%, #3CBCAB 27.85%, #70D7C9 81.04%);
+    background: linear-gradient(90.13deg, #4B643D 19.08%, #3CBCAB 27.85%, #70D7C9 81.04%);
     border-radius: 50%;
     z-index: 1;
   }
@@ -1364,7 +1364,7 @@
         font-weight: 300;
         font-size: 20px;
         line-height: 1;
-        color: #33B7A6;
+        color: #4B643D;
       }
     }
   }
@@ -1434,7 +1434,7 @@
         font-size: 16px;
         line-height: 1.12;
         text-align: center;
-        color: #33B7A6;
+        color: #4B643D;
       }
     }
   }
@@ -1655,7 +1655,7 @@
         font-size: 16px;
         line-height: 1;
         text-align: center;
-        color: #33B7A6;
+        color: #4B643D;
         text-transform: uppercase;
       }
     }
@@ -2550,7 +2550,7 @@
           font-weight: 600;
           font-size: 16px;
           line-height: 1.43;
-          color: #33B7A6;
+          color: #4B643D;
 
           a {
             color: inherit;
@@ -2818,7 +2818,7 @@
             height: 18px;
             display: block;
             border-radius: 50%;
-            background: #33B7A6;
+            background: #4B643D;
             position: absolute;
             top: 4px;
             left: 0;
@@ -2845,7 +2845,7 @@
             counter-increment: list;
             content: counter(list) ".";
             padding-right: 5px;
-            color: #33B7A6;
+            color: #4B643D;
           }
         }
       }
@@ -2906,7 +2906,7 @@
         height: 40px;
         border-radius: 50%;
         font-size: 22px;
-        color: #33B7A6;
+        color: #4B643D;
         border: 1px solid rgba(51, 183, 166, 0.4);
         transition: color var(--transition), border-color var(--transition);
 
@@ -3710,7 +3710,7 @@
         th {
           padding: 20px 5px;
           font-weight: normal;
-          font-size: 14px;
+          font-size: 16px;
           line-height: 1;
           text-align: center;
           color: var(--dark);
@@ -3749,7 +3749,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 20px;
+            bottom: 10px;
             z-index: 6;
 
             a {
@@ -3794,22 +3794,20 @@
         }
 
         td.img {
-          width: 183px;
+          width: 150px;
 
           .img-wrap {
             position: relative;
-            background: #F8F8F8;
 
             &:before {
               content: '';
               display: block;
-              padding-bottom: 100%;
+              padding-bottom: 60%;
               pointer-events: none;
             }
 
             span {
               display: block;
-              padding: 10%;
               position: absolute;
               top: 0;
               left: 0;
@@ -4382,7 +4380,7 @@
 
           td {
             span.approved {
-              color: #33B7A6;
+              color: #4B643D;
             }
 
             span.refunded {
@@ -4701,10 +4699,10 @@
         .status.done {
           p {
             span {
-              color: #33B7A6;
+              color: #4B643D;
 
               &:before {
-                background: #33B7A6;
+                background: #4B643D;
               }
             }
           }
@@ -5365,7 +5363,7 @@ a.lgoutlnk {
 }
 
 p.form-message.form-message--success {
-  color: #01c6b2;
+  color: #4B643D;
   padding: 20px;
   border-radius: 4px;
   border: 4px solid;
@@ -5381,7 +5379,7 @@ input.shopify-challenge__button.btn {
   font-family: 'Poppins', sans-serif !important;
 
   &:hover {
-    background: #01c6b2;
+    background: #4B643D;
   }
 }
 

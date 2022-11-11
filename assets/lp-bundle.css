@@ -1,5 +1,5 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document 
+/* Document
    ========================================================================== */
 /**
  * 1. Correct the line height in all browsers.
@@ -2324,7 +2324,7 @@ header {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
       flex-direction: row-reverse;}
     .product-list-lumen h1{
       font-size: 45px;
@@ -2392,7 +2392,7 @@ header {
           font-size: 40px;
           font-weight: 700;
           color: #fff;
-          letter-spacing: 0em; 
+          letter-spacing: 0em;
           background: #EAAE79;
           -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
                   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -2409,7 +2409,7 @@ header {
           font-size: 40px;
           font-weight: 700;
           color: #000000;
-          letter-spacing: 0em; 
+          letter-spacing: 0em;
           background: #ffffff;
           -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
                   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -3455,7 +3455,7 @@ footer {
     right: 0;
     bottom: 0;
     z-index: -2;
-    background-color: #01C6B2;
+    background-color: #4B643D;
     pointer-events: none; }
   .tested-ingredients .wrap {
     padding: 14.2% 0 5.8% 0; }
@@ -3467,7 +3467,7 @@ footer {
     padding-top: 23px;
     text-align: center; }
   .tested-ingredients + .safe-work:before {
-    background-color: #01c6b2; }
+    background-color: #4B643D; }
   .tested-ingredients.no-image {
     margin-top: 55px; }
     .tested-ingredients.no-image .wrap {
@@ -3486,7 +3486,7 @@ footer {
     left: 0;
     right: 0;
     z-index: -1;
-    background-color: #01c6b2;
+    background-color: #4B643D;
     background-image: url(../images/safe-bg.png);
     background-size: auto 100%;
     background-repeat: repeat-x;
@@ -3499,9 +3499,9 @@ footer {
     right: 0;
     bottom: 0;
     z-index: -2;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(69%, #01c6b2), color-stop(31%, #0472cd));
-    background: -o-linear-gradient(top, #01c6b2 69%, #0472cd 31%);
-    background: linear-gradient(to bottom, #01c6b2 69%, #0472cd 31%); }
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(69%, #4B643D), color-stop(31%, #0472cd));
+    background: -o-linear-gradient(top, #4B643D 69%, #0472cd 31%);
+    background: linear-gradient(to bottom, #4B643D 69%, #0472cd 31%); }
   .clinically-proven + .safe-work:before {
     background-color: #0472cd; }
   .clinically-proven + .safe-work .wrap {
@@ -3735,7 +3735,7 @@ footer {
 
 .extra-labels {
   padding: 40px 0;
-  background: #01C6B2; }
+  background: #4B643D; }
   .extra-labels ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4690,7 +4690,7 @@ footer {
     line-height: 1.44; }
   .lumen-page .sub-title h4.video {
     font-size: 40px;
-    line-height: 1.44; 
+    line-height: 1.44;
     max-width: 1054px;
     margin: 0 auto;}
   .lumen-page .sub-title p {
@@ -5016,7 +5016,7 @@ footer {
       background: linear-gradient(90deg, #FFFFFF -63.3%, rgba(255, 255, 255, 0) 89.52%); }
     .seen-on .seen-slider .swiper-button-next:after,
     .seen-on .seen-slider .swiper-button-prev:after {
-      font-size: 54px; 
+      font-size: 54px;
       font-weight: 600;}
     .seen-on .seen-slider .swiper-button-next.disabled,
     .seen-on .seen-slider .swiper-button-prev.disabled {
@@ -5189,7 +5189,7 @@ footer {
           background: #4E7D32; }
     .doctors-list .list-slider .swiper-button-next:after,
     .doctors-list .list-slider .swiper-button-prev:after {
-      font-size: 54px; 
+      font-size: 54px;
       font-weight: 600;}
     .doctors-list .list-slider .swiper-button-next.disabled,
     .doctors-list .list-slider .swiper-button-prev.disabled {
@@ -5563,7 +5563,7 @@ footer {
           opacity: 1; }
     .doctors-quote .dq-slider .swiper-button-next:after,
     .doctors-quote .dq-slider .swiper-button-prev:after {
-      font-size: 54px; 
+      font-size: 54px;
       font-weight: 600;}
     .doctors-quote .dq-slider .swiper-button-next.disabled,
     .doctors-quote .dq-slider .swiper-button-prev.disabled {
@@ -5957,7 +5957,7 @@ footer {
       .goods-list-face .list-wrap .face-card .price p {
         font-size: 50px;
         font-weight: 700;
-        text-align: center; 
+        text-align: center;
         margin: 0;}
       .goods-list-face .list-wrap .face-card .price span{
         width: 73px;
@@ -5992,7 +5992,7 @@ footer {
           .goods-list-face .list-wrap .face-card .submit-btn a:hover {
             background: #D68843;
             ; }
-          .goods-list-face .list-wrap .face-card .submit-btn span { 
+          .goods-list-face .list-wrap .face-card .submit-btn span {
             font-size: 40px;
             font-weight: 700; }
       .goods-list-face .list-wrap .face-card .free-mobile {
@@ -6005,12 +6005,12 @@ footer {
             -ms-flex-pack: center;
                 justify-content: center;
         padding-top: 1.4%;
-      width: 100%; 
+      width: 100%;
       }
         .goods-list-face .a-labels ul {
           display: -webkit-box;
           display: -ms-flexbox;
-          display: flex; 
+          display: flex;
           justify-content: space-between;
           width: 100%;}
           .goods-list-face .a-labels ul li {
@@ -6104,7 +6104,7 @@ footer {
       .goods-list-face .list-wrap-face .face-card-2 .price p {
         font-size: 50px;
         font-weight: 700;
-        text-align: center; 
+        text-align: center;
         margin: 0;}
       .goods-list-face .list-wrap-face .face-card-2 .price span{
         width: 73px;
@@ -6149,7 +6149,7 @@ footer {
           .goods-list-face .list-wrap-face .face-card-2 .submit-btn a:hover {
             background: #D68843;
             ; }
-          .goods-list-face .list-wrap-face .face-card-2 .submit-btn span { 
+          .goods-list-face .list-wrap-face .face-card-2 .submit-btn span {
             font-size: 40px;
             font-weight: 700; }
       .goods-list-face .list-wrap-face .face-card-2 .free-mobile {
@@ -6287,7 +6287,7 @@ footer {
           .goods-list .list-wrap .card .submit-btn a span.mobile-only {
             display: none; }
           .goods-list .list-wrap .card .submit-btn a:hover {
-            background: #01C6B2; }
+            background: #4B643D; }
   .goods-list .a-labels {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6420,7 +6420,7 @@ footer {
           color: #FFFFFF; }
           .lumen-page .lumen-intro .labor-countdown ul li p span {
             font-size: 80px; }
-    
+
     .lumen-page .lumen-intro .countdown-sale-line {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -6468,7 +6468,7 @@ footer {
           max-width: 390px;
           padding-right: 0 15px;
           animation: ticker 60s infinite linear; }
-    
+
     .lumen-page .lumen-intro .black-sale-line {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -6483,10 +6483,10 @@ footer {
             flex-shrink: 0;
         text-align: center;
         animation: ticker 5.75s infinite linear; }
-    
+
     .lumen-page.black-sale .lumen-intro .intro-content .intro-btn button {
       font-weight: bold; }
-    
+
     .lumen-page.black-sale .lumen-intro .intro-content .intro-btn p {
       margin: 0;
       padding-top: 27px;
@@ -6494,7 +6494,7 @@ footer {
       font-size: 22px;
       line-height: 1.64;
       color: #FFFFFF; }
-    
+
     .lumen-page.black-sale .seen-on .seen-slider .prev-slide, .lumen-page.black-sale .seen-on .seen-slider .next-slide {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -6513,21 +6513,21 @@ footer {
       .lumen-page.black-sale .seen-on .seen-slider .prev-slide:not(.disabled):before, .lumen-page.black-sale .seen-on .seen-slider .next-slide:not(.disabled):before {
         pointer-events: auto;
         cursor: pointer; }
-    
+
     .lumen-page.black-sale .seen-on .seen-slider .prev-slide {
       -webkit-box-pack: start;
           -ms-flex-pack: start;
               justify-content: flex-start; }
       .lumen-page.black-sale .seen-on .seen-slider .prev-slide:before {
         content: 'prev'; }
-    
+
     .lumen-page.black-sale .seen-on .seen-slider .next-slide {
       -webkit-box-pack: end;
           -ms-flex-pack: end;
               justify-content: flex-end; }
       .lumen-page.black-sale .seen-on .seen-slider .next-slide:before {
         content: 'next'; }
-    
+
     .lumen-page.black-sale .ingredients-slider .ingredients-bullets .swiper-pagination-bullet {
       width: 24px;
       height: 24px;
@@ -6541,32 +6541,32 @@ footer {
       opacity: 1; }
       .lumen-page.black-sale .ingredients-slider .ingredients-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
         background: #4E7D32; }
-    
+
     .lumen-page.black-sale .missing-piece .text .sub-title p span,
     .lumen-page.black-sale .safety-info.big-img .data-wrap .text .sub-title p span,
     .lumen-page.black-sale .real-change .sub-title span,
     .lumen-page.black-sale .good-company .sub-title span,
     .lumen-page.black-sale .faq-list ul li .answer p span {
       color: #ff0101; }
-    
+
     .lumen-page.black-sale .doctors-list .sub-title {
       max-width: 980px; }
-    
+
     .lumen-page.black-sale .bottle-quality .sub-title {
       max-width: 1015px; }
-    
+
     .lumen-page.black-sale .bottle-quality .sub-title p {
       font-family: "Poppins", sans-serif; }
-    
+
     .lumen-page.black-sale .safety-info .data-wrap .text .sub-title p {
       padding: 3% 8% 0 0; }
-    
+
     .lumen-page.black-sale .real-change .change-list ul li .text {
       font-family: "Poppins", sans-serif; }
-    
+
     .lumen-page.black-sale .real-change {
       overflow: hidden; }
-    
+
     .lumen-page.black-sale .doctors-list .list-slider .next-slide,
     .lumen-page.black-sale .doctors-list .list-slider .prev-slide {
       display: -webkit-box;
@@ -6590,7 +6590,7 @@ footer {
       .lumen-page.black-sale .doctors-list .list-slider .prev-slide:not(.disabled):before {
         pointer-events: auto;
         cursor: pointer; }
-    
+
     .lumen-page.black-sale .doctors-list .list-slider .next-slide {
       padding: 0 5% 15% 0;
       -webkit-box-pack: end;
@@ -6598,7 +6598,7 @@ footer {
               justify-content: flex-end; }
       .lumen-page.black-sale .doctors-list .list-slider .next-slide:before {
         content: 'next'; }
-    
+
     .lumen-page.black-sale .doctors-list .list-slider .prev-slide {
       padding: 0 0 15% 5%;
       -webkit-box-pack: start;
@@ -6606,13 +6606,13 @@ footer {
               justify-content: flex-start; }
       .lumen-page.black-sale .doctors-list .list-slider .prev-slide:before {
         content: 'prev'; }
-    
+
     .goods-list.sale .sub-title h4 {
       font-family: "Poppins", sans-serif; }
-    
+
     .goods-list.sale .list-wrap {
       margin: 0; }
-    
+
     .goods-list .list-wrap .sale-card {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -6714,7 +6714,7 @@ footer {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center; }
-        .goods-list .list-wrap .sale-card .price h4.mobile {  
+        .goods-list .list-wrap .sale-card .price h4.mobile {
           display: none; }
         .goods-list .list-wrap .sale-card .price h4 {
           margin: 0;
@@ -6728,7 +6728,7 @@ footer {
             font-size: 20px;
             -webkit-text-decoration-line: line-through;
                     text-decoration-line: line-through;
-            color: #33B7A6; }
+            color: #4B643D; }
         .goods-list .list-wrap .sale-card .price p {
           margin: 0;
           padding: 0 6px;
@@ -6774,7 +6774,7 @@ footer {
           transition: color 0.3s ease-in-out, background 0.3s ease-in-out; }
           .goods-list .list-wrap .sale-card .submit-btn a:hover {
             background: #000000; }
-    
+
     .doctors-quote .dq-slider .nav-wrap {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -6798,7 +6798,7 @@ footer {
           font-size: 55px; }
       .doctors-quote .dq-slider .nav-wrap .slider-bullets {
         padding: 0; }
-    
+
     .sale-line {
       position: relative;
       z-index: 1; }
@@ -6816,51 +6816,51 @@ footer {
         display: block;
         margin-top: 11.3%;
         text-align: center; }
-    
+
     .about-intro.black-sale header .buy-btn .main-btn {
       background: #F32E7C;
       -webkit-box-shadow: 0 4px 4px rgba(34, 34, 34, 0.45);
               box-shadow: 0 4px 4px rgba(34, 34, 34, 0.45); }
       .about-intro.black-sale header .buy-btn .main-btn:hover {
         background: #000000; }
-    
+
     .about-content.black-sale .guarantee-section .guarantee-text {
       padding-bottom: 3.8%; }
-    
+
     .about-content.black-sale .sale-line span {
       margin-top: 1.5%; }
-    
+
     .about-content.black-sale .floating-btn .main-btn {
-      background: #F32E7C; 
+      background: #F32E7C;
       width: 300px}
       .about-content.black-sale .floating-btn .main-btn:hover {
         background: #000000; }
-    
+
     .about-intro.black-sale .container {
       max-width: 1272px; }
-    
+
     .about-intro.black-sale .intro-wrap {
       padding: 7px 0 13px 0; }
-    
+
     .about-intro.black-sale .bg-wrap:before {
       display: none; }
-    
+
     .about-intro.black-sale .bg-wrap img {
       width: 100%;
       height: 100%;
       -o-object-fit: cover;
          object-fit: cover; }
-    
+
     .about-intro.black-sale .btn-wrap .img {
       max-width: 320px;
       right: 6.5%;
       bottom: -48px; }
-    
+
     .about-intro.black-sale .title-img {
       margin-left: -4.7%;
       position: relative;
       z-index: 3; }
-    
+
     .about-intro.black-sale .title {
       padding: 0; }
       .about-intro.black-sale .title h1 {
@@ -6868,7 +6868,7 @@ footer {
         color: #ffffff; }
       .about-intro.black-sale .title p {
         color: #ffffff; }
-    
+
     .about-intro.black-sale .btn-wrap {
       padding-top: 49px;
       padding-bottom: 50px; }
@@ -6888,7 +6888,7 @@ footer {
           border-radius: 10px; }
           .about-intro.black-sale .btn-wrap .buy-btn .main-btn span.mobile-only {
             display: none; }
-    
+
     .about-intro.black-sale .a-labels {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -6922,29 +6922,29 @@ footer {
             display: block;
             padding-right: 10px;
             font-size: 34px; }
-    
+
     .goods-list.sale .a-labels ul li.mobile-only {
       display: none; }
-    
+
     .goods-list.sale .list-wrap .card {
       padding: 15px 10px; }
-    
+
     .goods-list.sale .list-wrap .card .info .off-price p {
       text-align: center; }
-    
+
     .goods-list.sale .list-wrap .card .info .off-price {
       background: #000000; }
-    
+
     .goods-list.sale .list-wrap .card .price p {
       font-family: "Poppins", sans-serif; }
-    
+
     .goods-list.sale .list-wrap .card .price p span {
       display: inline;
       font-family: "Poppins", sans-serif;
       font-weight: normal;
-      text-decoration: line-through; 
-      color: #33B7A6;}
-    
+      text-decoration: line-through;
+      color: #4B643D;}
+
     .goods-list.sale .list-wrap .card .discount-label {
       width: 78px;
       height: 114px;
@@ -6966,7 +6966,7 @@ footer {
         text-align: right;
         letter-spacing: 1px;
         color: #FFFFFF; }
-    
+
     .goods-list.sale .list-wrap .card .m-name {
       display: none;
       padding-bottom: 12px; }
@@ -6977,7 +6977,7 @@ footer {
         font-size: 20px;
         line-height: 1;
         color: #000000; }
-    
+
     .goods-list.sale .list-wrap .card .price {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -6994,7 +6994,7 @@ footer {
         padding: 0 5px;
         font-weight: bold;
         font-size: 20px; }
-    
+
     .goods-list.sale .list-wrap .card .size {
       padding-top: 16px; }
     .goods-list.sale .list-wrap .card .size-mobile p {
@@ -7006,7 +7006,7 @@ footer {
         font-size: 18px;
         line-height: 1.11;
         text-align: center; }
-    
+
     .goods-list.sale .list-wrap .card .submit-btn a {
       color: #ffffff;
       background: #F32E7C;
@@ -7014,13 +7014,13 @@ footer {
               box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); }
       .goods-list.sale .list-wrap .card .submit-btn a:hover {
         background: #000000; }
-    
+
     .about-content .goods-list.sale .sub-title h4 {
       font-weight: 400;
       font-size: 40px;
       line-height: 1.44;
       color: #000000; }
-    
+
     .citations {
       padding: 42px 0;
       background: #F5F5F5; }
@@ -7694,7 +7694,7 @@ footer {
     font-size: 16px;}
     .goods-list-face .list-wrap .face-card .submit-btn a {
       font-size: 32px;}
-      .goods-list-face .list-wrap .face-card .submit-btn span { 
+      .goods-list-face .list-wrap .face-card .submit-btn span {
         font-size: 36px;}
       .goods-list-face .a-labels ul li {
         font-size: 20px;}
@@ -7715,7 +7715,7 @@ footer {
       font-size: 18px;}
     .goods-list-face .list-wrap-face .face-card-2 .submit-btn a {
       font-size: 32px;}
-      .goods-list-face .list-wrap-face .face-card-2 .submit-btn span { 
+      .goods-list-face .list-wrap-face .face-card-2 .submit-btn span {
         font-size: 36px;}
   .goods-list .list-wrap .card .info .name h3 {
     font-size: 30px; }
@@ -8044,8 +8044,8 @@ footer {
   .lumen-page .sub-title h4 {
     font-size: 36px; }
   .lumen-page .sub-title h4.video {
-    font-size: 28px; 
-    max-width: 700px;} 
+    font-size: 28px;
+    max-width: 700px;}
   .lumen-intro .intro-content .title h1 {
     font-size: 60px; }
   .lumen-intro .intro-content .title h1 span {
@@ -8135,7 +8135,7 @@ footer {
     font-size: 14px;}
     .goods-list-face .list-wrap .face-card .submit-btn a {
       font-size: 29px;}
-      .goods-list-face .list-wrap .face-card .submit-btn span { 
+      .goods-list-face .list-wrap .face-card .submit-btn span {
         font-size: 32px;}
       .goods-list-face .a-labels ul li {
         font-size: 18px;}
@@ -8156,7 +8156,7 @@ footer {
       font-size: 16px;}
     .goods-list-face .list-wrap-face .face-card-2 .submit-btn a {
       font-size: 29px;}
-      .goods-list-face .list-wrap-face .face-card-2 .submit-btn span { 
+      .goods-list-face .list-wrap-face .face-card-2 .submit-btn span {
         font-size: 32px;}
   .goods-list .list-wrap .card .info .name h3 span {
     font-size: 50px;
@@ -8413,7 +8413,7 @@ footer {
     font-size: 30px; }
   .ingredients-slider .item-wrap .img span img{
     width: 230px; }
-  .ingredients-slider .swiper .swiper-button-next, 
+  .ingredients-slider .swiper .swiper-button-next,
   .ingredients-slider .swiper .swiper-button-prev{
     top: 36%}
   .ingredients-slider .item-wrap .text p {
@@ -8523,7 +8523,7 @@ footer {
     top: -70px; }
   .doctors-quote .dq-slider .swiper-button-next,
   .doctors-quote .dq-slider .swiper-button-prev {
-    top: 86.5%;} 
+    top: 86.5%;}
   .doctors-quote .labels ul li .text p {
     font-size: 16px; }
   .doctors-quote .labels ul li .img {
@@ -8542,7 +8542,7 @@ footer {
     bottom: 22px; }
   .good-list-title h4{
     font-size: 28px;}
-  /* .goods-list-face .list-wrap .face-card .face-wrap { 
+  /* .goods-list-face .list-wrap .face-card .face-wrap {
     padding: 13px 55px; } */
   .goods-list-face .list-wrap .face-card .title h3 {
     font-size: 24px;
@@ -8560,7 +8560,7 @@ footer {
     padding-top: 0px;}
     .goods-list-face .list-wrap .face-card .submit-btn a {
       font-size: 22px;}
-      .goods-list-face .list-wrap .face-card .submit-btn span { 
+      .goods-list-face .list-wrap .face-card .submit-btn span {
         font-size: 24px;}
       .goods-list-face .a-labels ul li {
         font-size: 14px;}
@@ -8581,7 +8581,7 @@ footer {
       font-size: 12px;}
     .goods-list-face .list-wrap-face .face-card-2 .submit-btn a {
       font-size: 22px;}
-      .goods-list-face .list-wrap-face .face-card-2 .submit-btn span { 
+      .goods-list-face .list-wrap-face .face-card-2 .submit-btn span {
         font-size: 24px;}
   .goods-list .list-wrap .card .info .name h3 {
     font-size: 18px; }
@@ -8617,11 +8617,11 @@ footer {
   .goods-list .pack-img {
     width: 50%; }
   .goods-list .chose-pack {
-    width: 50%; } 
+    width: 50%; }
   .about-intro.count-title.black-sale .title-img {
       margin: 0; }
   .about-intro.count-title.black-sale .btn-wrap .labor-countdown ul li p span {
-      font-size: 75px; } 
+      font-size: 75px; }
       .about-intro.count-title.black-sale .btn-wrap .labor-countdown .end-countdown p {
         font-size: 75px; } }
 
@@ -8671,12 +8671,12 @@ footer {
   .goods-list .chose-pack .pack-link .link .main-btn {
     padding: 16px 15px;
     font-size: 26px;
-    letter-spacing: 0.1em; } 
+    letter-spacing: 0.1em; }
 .about-intro.count-title.black-sale .a-labels ul li {
   padding: 10px 10px;
-  font-size: 16px; } 
+  font-size: 16px; }
   .about-intro.count-title.black-sale .a-labels:before {
-    min-width: 1020px; } 
+    min-width: 1020px; }
   .about-intro.count-title.black-sale + .seen-on {
     padding-top: 0; } }
 
@@ -9819,7 +9819,7 @@ footer {
   .product-list-lumen .single-card .main-info .btn-wrap .main-btn,
   .more-space.v3 .product-list-lumen .single-card .main-info .btn-wrap .main-btn {
     padding: 9px 25px;
-    font-size: 35px; 
+    font-size: 35px;
     font-weight: 500;}
   .product-list-lumen .single-card .main-info .name-b h3 {
     font-weight: 500;
@@ -9833,7 +9833,7 @@ footer {
   .product-list-lumen .single-card .main-info .btn-wrap-b .main-btn,
   .more-space.v3 .product-list-lumen .single-card .main-info .btn-wrap-b .main-btn {
     padding: 9px 31px;
-    font-size: 35px; 
+    font-size: 35px;
     font-weight: 500;}
   .product-list .single-card .extra-info {
     padding: 38px 0 0 0;
@@ -10355,7 +10355,7 @@ footer {
     padding: 28px 15px 0 15px;
     font-size: 20px;
     line-height: 1.5;
-    text-align: center; 
+    text-align: center;
     max-width: 300px;
     margin: 0 auto;}
   .lumen-intro .intro-content .title p.mobile{
@@ -10363,7 +10363,7 @@ footer {
     padding: 28px 15px 0 15px;
     font-size: 20px;
     line-height: 1.5;
-    text-align: center; 
+    text-align: center;
     max-width: 300px;
     margin: 0 auto; }
   .lumen-page.black-sale .lumen-intro .intro-content .title p,
@@ -10543,7 +10543,7 @@ footer {
   .doctors-list .list-slider .text {
     padding: 2px 0 0 0; }
   .doctors-list .list-slider .slider-bullets {
-    padding-top: 28px; 
+    padding-top: 28px;
     margin-left: -9px;}
   .doctors-list .list-slider .slider-bullets span.bullet,
   .doctors-quote .dq-slider .slider-bullets span.bullet,
@@ -10719,12 +10719,12 @@ footer {
   .good-list-title-mobile {
     display: block;
     font-family: 'Poppins';}
-  .good-list-title-mobile h4 { 
+  .good-list-title-mobile h4 {
     font-size: 16px;
     font-weight: 400;
     text-align: center;
     margin: 5px auto 15px}
-  .good-list-title-mobile h3 { 
+  .good-list-title-mobile h3 {
     font-size: 32px;
     font-weight: 800;
     text-align: center;
@@ -10739,14 +10739,14 @@ footer {
         -ms-flex-pack: center;
             justify-content: space-between;
     margin: 0 auto;
-    align-content: center; 
+    align-content: center;
     flex-direction: column;}
     .goods-list-face .list-wrap .face-card {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       width: 340px;
-      font-family: "Roboto", sans-serif; 
+      font-family: "Roboto", sans-serif;
       margin-bottom: 15px;}
       .goods-list-face .list-wrap .face-card .face-wrap {
         width: 100%;
@@ -10827,12 +10827,12 @@ footer {
           .goods-list-face .list-wrap .face-card .submit-btn a:hover {
             background: #D68843;
             ; }
-          .goods-list-face .list-wrap .face-card .submit-btn span { 
+          .goods-list-face .list-wrap .face-card .submit-btn span {
             font-size: 20px;
             font-weight: 700; }
       .goods-list-face .list-wrap .face-card .free-mobile {
         display: block;}
-      .goods-list-face .list-wrap .face-card .free-mobile p { 
+      .goods-list-face .list-wrap .face-card .free-mobile p {
         text-align: center;
         font-family: 'Roboto';
         font-size: 14px;
@@ -10845,20 +10845,20 @@ footer {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center;
-        padding-top: 1.4%; 
+        padding-top: 1.4%;
         width: 100%;}
         .goods-list-face .a-labels ul li {
           padding: 5px 7px;
           font-size: 10px;
-          text-align: center; 
+          text-align: center;
           flex-direction: column;}
         .goods-list-face .a-labels ul {
           padding-right: 0px; }
         .goods-list-face .a-labels ul li span {
-          font-size: 29px; 
+          font-size: 29px;
           padding-bottom: 5px;}
         .goods-list-face .a-labels {
-          padding-top: 0px; 
+          padding-top: 0px;
         min-width: 90vw;}
   .goods-list-face .list-wrap-face {
     display: -webkit-box;
@@ -10869,19 +10869,19 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: space-between;
-    align-content: center; 
+    align-content: center;
     flex-direction: column;}
     .goods-list-face .list-wrap-face .face-card-2 {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       width: 340px;
-      font-family: "Roboto", sans-serif; 
+      font-family: "Roboto", sans-serif;
       margin-bottom: 15px;}
     .goods-list-face .list-wrap-face .face-card-2 .face-wrap:before{
       border-radius: 0px;
       border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px; 
+      border-bottom-right-radius: 5px;
     }
       .goods-list-face .list-wrap-face .face-card-2 .face-wrap {
         width: 100%;
@@ -10964,7 +10964,7 @@ footer {
       .goods-list-face .list-wrap-face .face-card-2 .b-wrap p.mobile-supply {
         display: block;
         font-size: 8px;
-        font-weight: 300; 
+        font-weight: 300;
         color: #00000066;
         text-align: center;
         margin: 0 0 5px;}
@@ -11005,12 +11005,12 @@ footer {
             display: none; }
           .goods-list-face .list-wrap-face .face-card-2 .submit-btn a:hover {
             background: #D68843;}
-          .goods-list-face .list-wrap-face .face-card-2 .submit-btn span { 
+          .goods-list-face .list-wrap-face .face-card-2 .submit-btn span {
             font-size: 20px;
             font-weight: 700; }
       .goods-list-face .list-wrap-face .face-card-2 .free-mobile {
         display: block;}
-      .goods-list-face .list-wrap-face .face-card-2 .free-mobile p { 
+      .goods-list-face .list-wrap-face .face-card-2 .free-mobile p {
         text-align: center;
         font-family: 'Roboto';
         font-size: 14px;
@@ -11027,7 +11027,7 @@ footer {
     font-family: "Poppins", sans-serif;
     font-size: 32px; }
   .goods-list .sub-title.mobile-only {
-    display: block; 
+    display: block;
     padding: 0;}
   .goods-list .sub-title.desktop-only {
     display: none; }
@@ -11116,12 +11116,12 @@ footer {
   .goods-list .a-labels-single ul li {
     padding: 5px 7px;
     font-size: 10px;
-    text-align: center; 
+    text-align: center;
     flex-direction: column;}
   .goods-list .a-labels-single ul {
     padding-right: 0px; }
   .goods-list .a-labels-single ul li span {
-    font-size: 29px; 
+    font-size: 29px;
     padding-bottom: 5px;}
   .goods-list .a-labels-single {
     padding-top: 0px; }
@@ -11131,7 +11131,7 @@ footer {
     padding: 15px 0 30px 0; }
   .faq-list ul li .question h4 {
     padding-right: 17px;
-    font-size: 14px; 
+    font-size: 14px;
     font-weight: 600;}
   .faq-list ul li {
     padding: 11px 0; }
@@ -11248,7 +11248,7 @@ footer {
   .lumen-page .floating-btn {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; } 
+    display: flex; }
   .about-intro.count-title.black-sale .title-img {
     margin: 0 -11px;
   }
@@ -11302,7 +11302,7 @@ footer {
 .about-intro.count-title.black-sale + .seen-on .data-wrap {
   padding-top: 25px;
 }
-  
+
   }
 
 @media screen and (max-width: 400px) {
@@ -11326,7 +11326,7 @@ footer {
         padding-bottom: 10px; }
       .goods-list.sale .a-labels {
         padding-top: 5px; } }
-    
+
     @media screen and (min-width: 992px) {
       .lumen-page.black-sale .lumen-intro {
         padding-bottom: 0; }
@@ -11373,7 +11373,7 @@ footer {
         font-size: 30px; }
       .about-content.black-sale .more-about .sub-title p {
         text-align: center; } }
-    
+
     @media screen and (min-width: 1271px) {
       .lumen-page.black-sale .fda-video .sub-title h4 {
         font-size: 40px; }
@@ -11387,7 +11387,7 @@ footer {
         font-size: 34px; }
       .goods-list.sale .list-wrap .card .price p:nth-child(2) {
         font-size: 20px; } }
-    
+
     @media screen and (min-width: 1391px) {
       .lumen-page.black-sale .lumen-intro .intro-content .title p {
         font-size: 35px; }
@@ -11407,7 +11407,7 @@ footer {
         font-size: 60px; }
       .about-intro.black-sale .title p {
         font-size: 40px; } }
-    
+
     @media screen and (max-width: 1390px) {
       .about-content .goods-list.sale .sub-title h4 {
         font-size: 38px; }
@@ -11419,7 +11419,7 @@ footer {
       .about-intro.black-sale .btn-wrap .buy-btn .main-btn {
         padding: 8px 45px;
         font-size: 47px; } }
-    
+
     @media screen and (max-width: 1270px) {
       .lumen-page .lumen-intro .labor-countdown ul li p span {
         font-size: 60px; }
@@ -11457,7 +11457,7 @@ footer {
       .about-intro.black-sale .btn-wrap .buy-btn .main-btn {
         padding: 8px 38px;
         font-size: 40px; } }
-    
+
     @media screen and (max-width: 991px) {
       .lumen-page .lumen-intro .countdown-sale-line {
         padding: 20px 0; }
@@ -11517,12 +11517,12 @@ footer {
         -webkit-box-align: end;
             -ms-flex-align: end;
                 align-items: flex-end; } }
-    
+
     @media screen and (max-width: 810px) {
       .lumen-page .lumen-intro .black-sale-line span {
         max-width: 375px;
         padding: 0 15px; } }
-    
+
     @media screen and (max-width: 760px) {
       .goods-list .list-wrap .sale-card {
         width: calc(100% / 2); }
@@ -11564,7 +11564,7 @@ footer {
         max-width: 270px;
         right: -28px;
         bottom: -38px; } }
-    
+
     @media screen and (max-width: 640px) {
       .lumen-page .lumen-intro .labor-countdown ul li p {
         color: #ffffff; }
@@ -11667,7 +11667,7 @@ footer {
               -ms-flex-pack: end;
                   justify-content: flex-end;
           padding-left: 13px; }
-      .goods-list .list-wrap .sale-card .price h4.mobile {  
+      .goods-list .list-wrap .sale-card .price h4.mobile {
         display: block;
         font-size: 30px;
         text-align: center; }
