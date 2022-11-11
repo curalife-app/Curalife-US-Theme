@@ -16,7 +16,6 @@
     #page-header-mobile.page-header-mobile {
         position: -webkit-sticky;
         position: sticky;
-        display: none !important;
     }
     #page-header-mobile.page-header-mobile {
         background-color: #FFE746;
@@ -48,19 +47,20 @@
 
     @media screen and (max-width: 760px) {
         #page-header-mobile.page-header-mobile { 
+            
+        }
+
+        #page-header-mobile.page-header-mobile.order-menu {
             top: 0;
             display: block !important;
             padding: unset;
             height: 15vw;
-        }
-
-        .order-menu {
             width: 100%;
             z-index: 99;
             position: static;
         }
 
-        .order-menu.sticky {
+        #page-header-mobile.page-header-mobile.order-menu.sticky {
             position: fixed;
             top: 0;
         }
