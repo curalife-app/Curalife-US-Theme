@@ -6,7 +6,7 @@
                 <div class="thirty-off"> 30% OFF</div>
             </div>
             <div class="buy-btn">
-                <a class="main-btn" id='main-cta-btn' href="#product-section">ORDER NOW</a>
+                <a class="main-btn" id='main-cta-btn-mob' href="#">ORDER NOW</a>
             </div>
         </div>
     </div>
@@ -16,6 +16,7 @@
     #page-header-mobile.page-header-mobile {
         position: -webkit-sticky;
         position: sticky;
+        display: none !important;
     }
     #page-header-mobile.page-header-mobile {
         background-color: #FFE746;
@@ -47,13 +48,12 @@
 
     @media screen and (max-width: 760px) {
         #page-header-mobile.page-header-mobile { 
-            
+           display: block !important;
+           padding: unset; 
         }
 
         #page-header-mobile.page-header-mobile.order-menu {
             top: 0;
-            display: block !important;
-            padding: unset;
             height: 15vw;
             width: 100%;
             z-index: 99;
@@ -110,9 +110,9 @@
 </style>
 
 <script>
-    var div_top = $('.order-menu').offset().top;
+            var div_top = $('.order-menu').offset().top;
 
-    $(window).scroll(function () {
+            $(window).scroll(function () {
         var window_top = $(window).scrollTop();
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         if (window_top >= div_top) {
@@ -127,25 +127,16 @@
     });
 </script>
 
+
+
 <script>
-    $(document).ready(function () {
-        let productsOffset = $("#product-section").offset();
-
-        $(window).scroll(function () {
-            if ($(this).scrollTop() < productsOffset.top) {
-                $('#page-header-mobile').fadeIn();
-            } else {
-                $('#page-header-mobile').fadeOut();
-            }
-        });
-
-        $("#main-cta-btn").click(function () {
+    $("#hero-cta").click(function () {
             $([document.documentElement, document.body]).animate({
-                scrollTop: productsOffset.top + 130
+                scrollTop: $("#product-section").offset().top + 130
             }, 2000);
         });
-    })
 </script>
+
 
 
 
