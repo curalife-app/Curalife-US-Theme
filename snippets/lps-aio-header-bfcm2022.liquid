@@ -19,19 +19,29 @@
 
 <style>
   @-webkit-keyframes blinker {
-    from {
-      opacity: 1.0;
-    }
-    to {
-      opacity: 0.0;
-    }
+   0% {
+       color: #D9D9D9;
+       opacity: 1.0;
+       filter: blur(5px);
+   }
+
+   50% {
+       opacity: 0.0;
+   }
+
+   100% {
+       opacity: 1.0;
+       color: #FFE746;
+       filter: unset;
+
+   }
   }
 
   .blink {
     text-decoration: blink;
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 0.6s;
-    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: 2;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-direction: alternate;
   }
