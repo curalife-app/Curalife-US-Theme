@@ -1,5 +1,5 @@
 {% assign Prods = page.content | split: ',' %}
-<script>console.log("{{prods}}")</script>
+<script>console.log("prods: {{prods}}")</script>
 <div class="product-list">
   {% for product in Prods %}
   <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
