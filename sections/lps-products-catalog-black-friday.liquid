@@ -329,4 +329,22 @@
         max-width: 40px;
         max-height: 30px;
     }
+
+    @media screen and (max-width:760px) {
+        .trust-badges {
+            gap: unset;
+            justify-content: space-between;
+            display: none;
+        }
+
+        .trust-badges .trust-badge {
+            font-size: 3vw;
+            flex-direction: column;
+        }
+
+        .trust-badges .trust-badge img {
+            height: 20px;
+            width: 40px;
+        }
+    }
 </style>
