@@ -148,35 +148,36 @@
 
     .blink_text2 {
         animation-name: blinker;
-        animation-duration: 0.9s;
-        animation-timing-function: linear;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
         animation-iteration-count: 1;
     }
 
     .blink_text3 {
         animation-name: blinker;
-        animation-duration: 1.9s;
-        animation-timing-function: linear;
+        animation-duration: 2s;
+        animation-timing-function: ease-in;
         animation-iteration-count: 1;
     }
 
     @keyframes blinker {
-        0% {
-            color: #D9D9D9;
-            opacity: 1.0;
-            filter: blur(5px);
-        }
+      0%{
+          color: #D9D9D9;
+          opacity: 1;
+          filter:blur(5px);
 
-        50% {
-            opacity: 0.0;
-        }
+      }
 
-        100% {
-            opacity: 1.0;
-            color: #FFE746;
-            filter: unset;
+      50% {
+          color: #D9D9D9
+          opacity: 0.0;
+      }
 
-        }
+      100% {
+          opacity: 1.0;
+          color: #FFE746;
+
+      }
     }
 
     .hero-banner .container .black-friday {
