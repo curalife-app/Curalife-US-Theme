@@ -12,9 +12,14 @@
           <span class="off-container-collection">UP TO 30% OFF</span>
         </div>
 
-        <div class="title desktop swiper-slide" style="display: none;">
+        <div class="title desktop swiper-slide">
+          {% assign ifTimer = false %}
+          {% if ifTimer %}
           {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
-          {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
+          {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %} {% else %}
+          <i class="icofont-star"></i>
+          <span class="black-friday-span">BLACK FRIDAY</span>
+          {% endif %}
         </div>
 
         <div class="title desktop swiper-slide">
