@@ -13,7 +13,7 @@
         </div>
 
         <div class="title desktop swiper-slide">
-          {% assign ifTimer = true %}
+          {% assign ifTimer = false %}
           {% if ifTimer %}
           {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
           {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %} {% else %}
