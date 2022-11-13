@@ -1,22 +1,20 @@
-<section id="product-catalog-section">
-    <h3>Choose Your CuraLin Bundle</h3>
-
-    {% assign Prods = page.content | split: ',' %}
-    <div class="product-list">
-        {% for prod in Prods %}
-            {% assign product = all_products[prod] %}
-      <div class="product-card">
-          <div class="wrap">
-            <div class="picture">
-                <a href="{{ product.url }}">
-                  <div class="img">
-                    <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
-                  </div>
-                </a>
-                {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-                {% assign quantity_by_cents = quantity | times: 100 %}
-                {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-                {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+{% assign Prods = page.content | split: ',' %}
+<div class="product-list">
+    {% for prod in Prods %}
+        {% assign product = all_products[prod] %}
+        <script>console.log("prods: {{product.title}}")</script>
+  <div class="product-card">
+      <div class="wrap">
+        <div class="picture">
+            <a href="{{ product.url }}">
+              <div class="img">
+                <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
+              </div>
+            </a>
+            {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+            {% assign quantity_by_cents = quantity | times: 100 %}
+            {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
+            {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
                 {% if localization.country.iso_code == 'CA' %}
                   {% assign cap = product.metafields.my_fields.ca_cap %}
