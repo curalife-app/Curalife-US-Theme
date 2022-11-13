@@ -1,7 +1,7 @@
 {% assign Prods = page.content | split: ',' %}
 <div class="product-list">
     {% for prod in Prods %}
-        {% assign product = all_products[lp_prod] %}
+        {% assign product = all_products[prod] %}
         <script>console.log("prods: {{product.title}}")</script>
   <div class="product-card">
       <div class="wrap">
