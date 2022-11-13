@@ -1,494 +1,239 @@
-{% assign lp_prods = page.content | split: ',' %}
-<section class="product-section" id="product-section">
-    <div class="green-strip">Limited Offer! Choose a bundle and get a FREE CuraEats meal plan</div>
-    <div class="container">
-        
-    <div class="extra-info">
-        <p><img src="{{ 'icon-free-shipping-light.png' | asset_url }}" alt="free shipping">FREE SHIPPING</p>
-    </div>
-    {%- comment -%} <div class="black-friday-bg">BLACK FRIDAY</div> {%- endcomment -%}
+<div class="product-list">
+  {% for product in collection.products %}
+  <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
+      <div class="wrap">
+        <div class="picture">
+          {% if product.featured_image.src != blank %}
+            <a href="{{ product.url }}">
+              <div class="img">
+                <img src="{{ product.featured_image.src | img_url: 'original' }}"  alt="">
+              </div>
+            </a>
+          {% endif %}
+            {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+            {% assign quantity_by_cents = quantity | times: 100 %}
+            {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
+            {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
-        <h2>Choose Your Package</h2>
-        <div class="sl-optimize-03">
-            <div class="product-list">
-
-                {% for lp_prod in lp_prods %}
-                    {% assign prod = all_products[lp_prod] %}
-                    {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
-                    {% assign quantity_by_cents = quantity | times: 100 %}
-                    {% assign item_price = prod.price | divided_by: quantity_by_cents | times: 100 %}
-                    {% assign original_item_price = prod.metafields.my_fields.original_item.value.price %}
-                    {% assign save_price = original_item_price | minus: item_price | times: quantity %}
-                    {% assign buylink = "/cart/" | append: prod.first_available_variant.id | append: ":1?channel=buy_button" %}
-
-                    <div class="card {% if forloop.index == 2 %}recommended{% endif %}">
-                        {% if forloop.index == 2 %}
-                        <div class="recommended-text">- Recommended -</div>
-                        {% endif %}
-                        <div class="top">
-                            <div class="name">
-                                {% if prod.metafields.my_fields.alternative_title.value %}
-                                <h3>{{ prod.metafields.my_fields.alternative_title.value }}</h3>
-                                {% else %}
-                                <h3>{{ prod.title }}</h3>
-                                {% endif %}
-                            </div>
-                            <div class="info">
-                                <p style="text-transform: uppercase;">Up To {{ prod.metafields.my_fields.supply_days }} Days Supply</p>
-                            </div>
-                            {% if save_price > 0 %}
-                            <div class="save"><div class="save-bg"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div></div>
-                            {% endif %}
-                            <div class="img">
-                                <a class="cta-btn" href="{{ buylink }}" prod-id="{{ prod.id }}" prod-title="{{ prod.title }}" prod-price="{{ prod.price | money_without_trailing_zeros | slice: 26, 4 | replace: "<","" }}"><img src="{{ prod.featured_image.src | img_url: '500x500' }}" alt=""></a>
-                            </div>
-                            <div class="price per-bottle">
-                                {% if quantity > 1 %}
-                                    <p id="divided-price" class="divided-price">{{ item_price | money_without_trailing_zeros }}</p>
-                                    <p class="per-bottle-title">Per<br>Bottle</p>
-                                {% else %}
-                                    <p id="original-price" class="original-price">{{ prod.price | money_without_trailing_zeros }}</p>
-                                    <p class="per-bottle-title">Per<br>Bottle</p>
-                                {% endif %}
-                            </div>
-                            <div class="discount">
-                                {% if prod.compare_at_price > prod.price %}
-                                    <p id="discounted-price">
-                                        Total Price {{ prod.price | money_without_trailing_zeros }}
-                                        <strike>{{ prod.compare_at_price | money_without_trailing_zeros }}</strike></p>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="bottom">
-                            <div class="submit-btn">
-                                <a class="cta-btn" href="{{ buylink }}" prod-id="{{ prod.id }}" prod-title="{{ prod.title }}" prod-price="{{ prod.price | money_without_trailing_zeros | slice: 26, 4 | replace: "<","" }}">ADD TO CART</a>
-                                <!-- <p>60-Day Money-Back Guarantee</p> -->
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+            {% if localization.country.iso_code == 'CA' %}
+              {% assign cap = product.metafields.my_fields.ca_cap %}
+            {% elsif localization.country.iso_code == 'AU' %}
+              {% assign cap = product.metafields.my_fields.au_cap %}
+            {% else %}
+              {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
+            {% endif %}
+            <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
+            {% if quantity > 1 %}
+            <div class="discount">
+              <p> <i class="icofont-star"></i>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
             </div>
+            {% elsif product.compare_at_price_max > product.price %}
+            <div class="discount" style="display:none">
+              <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
+            </div>
+            {% endif %}
         </div>
-        <div class="trust-badges">
-            <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">Free Worldwide Shipping</div>
-            <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
-            <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
+        <div class="info">
+          <div class="main">
+            <div class="name">
+              <h3>
+                {% if product.metafields.my_fields.alternative_title.value %}
+                <a href="{{ product.url }}">{{ product.metafields.my_fields.alternative_title.value }}</a>
+                {% else %}
+                <a href="{{ product.url }}">{{ product.title }}</a>
+                {% endif %}
+              </h3>
+            </div>
+            <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+            <div class="price">
+              {% if quantity > 1 %}
+                <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</strike> Per Bottle</p>
+              {% elsif product.compare_at_price > product.price %}
+                <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
+              {% else %}
+                <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}</p>
+              {% endif %}
+            </div>
+
+          {% unless forloop.index == 1 %}
+            <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - $29 value</p>
+            <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
+          {% endunless %}                </div>
+          <form action="/cart/add" method="post">
+            <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+            <input name="return_to" type="hidden" value="/cart/">
+
+            <div class="btn">
+              <button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
+  {% endfor %}
 </div>
-{% render 'collection-curaeats-section', invertSectionBack: true %}
 
-{% style %}
-.product-section {
-position: relative;
-}
-.product-section .green-strip {
-position: absolute;
-top: 100px;
-width: 100%;
-background: #99B182;
-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-font-family: 'Poppins';
-font-weight: 600;
-font-size: clamp(18px, 4vw, 25px); !important;
-line-height: 24px;
-text-align: center;
-letter-spacing: -0.02em;
-color: #FFFFFF;
-padding: 20px;
-}
-.product-section .container .black-friday-bg {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        z-index: -1;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 4px hsl(0deg 0% 84%);
-        color: #898989;
-        font-weight: 700;
-        font-family: 'PP Radio Grotesk';
-        letter-spacing: 0.09em;
-        text-align: center;
-        font-size: clamp(96px, 10vw, 153px);
-        filter: blur(3.12139px);
-}
-.product-section .extra-info {
-    display: flex;
-    margin-bottom: 50px;
-}
-
-.product-section .extra-info p {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    position: relative;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 1;
-    margin-left: 15%;
-}
-
-.product-section .extra-info p img {
-    margin-right: 5px;
-}
-
-.product-section .extra-info p:before, .extra-info p:after {
-    content: '';
-    width: 100vw;
-    position: absolute;
-    bottom: 16px;
-    border-bottom: 2px dotted black;
-}
-
-.product-section .extra-info p:before {
-    right: calc(100% - -9px);
-}
-
-.product-section .extra-info p:after {
-    left: calc(100% - -9px);
-}
-
-.product-section .extra-info p span {
-    padding-right: 5px;
-    font-size: 35px;
-}
-
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.product-section h2 {
-    margin-top: 150px;
-    text-align: center;
-    color: #222222 !important;
-    font-weight: 600;
-}
-
-.product-list .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: calc(100% / 3);
-    padding: 40px;
-    position: relative;
-    z-index: 1;
-}
-
-.product-list .card.recommended {
-    box-shadow: 8px 8px 10px rgb(0 0 0 / 20%);
-    border: 1px solid #222222;
-}
-
-.product-list .card .recommended-text {
-    color: #FFE746;
-    background: #222222;
-    height: 40px;
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 6px;
-}
-
-.product-list .card .info h4 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 1.33;
-    color: #000000;
-    text-align: center;
-}
-
-.product-list .card .info p {
-    margin: 0;
-    padding-top: 2px;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 1.5;
-    color: #000000;
-    text-align: center;
-}
-
-.product-list .card .img {
-    position: relative;
-}
-
-.product-list .card .img:before {
-    content: '';
-    display: block;
-    padding-bottom: 60%;
-    pointer-events: none;
-}
-
-.product-list .card .img img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.product-list .card .name {
-    padding-top: 30px;
-}
-
-.product-list .card .name h3 {
-    margin: 0;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 1.07;
-    color: #000000;
-    text-align: center;
-}
-
-.product-list .card .price {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-
-.product-list .card .save {
-    width: 80px;
-    height: 80px;
-    background: #FFE746;
-    border-radius: 50%;
-    position: absolute;
-    right: 80px;
-    z-index: 1;
-    font-size: 20px;
-    text-align: center;
-    font-weight: 700;
-    border: 3px solid #FFE746;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
-}
-
-.product-list .card .save .save-bg {
-    border-radius: 50%;
-    position: absolute;
-    box-shadow: inset 0px 0px 0px 1px #222222;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-}
-
-.product-list .card .price p {
-    margin: 0;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 1.33;
-    color: #000000;
-    text-align: center;
-    justify-content: center;
-}
-
-.product-list .card .price .divided-price, .product-list .card .price .original-price {
-    font-size: 50px;
-    font-weight: 600;
-}
-
-.product-list .card .price.per-bottle .per-bottle-title {
-    text-align: start;
-    font-size: 20px;
-    font-weight: 200;
-    line-height: 1.5rem;
-    margin-top: 10px;
-}
-
-.product-list .card .price.per-bottle + .discount p {
-    font-size: 18px;
-    color: #000000;
-}
-
-.product-list .card .discount p {
-    margin: 0;
-    font-family: "Open Sans", sans-serif;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 1.6;
-    color: #6dcbbf;
-    text-align: center;
-}
-
-.product-list .card .price.per-bottle + .discount p strike {
-    color: #FF0000;
-}
-
-.product-list .card .submit-btn {
-    padding-top: 10px;
-}
-
-.product-list .card .submit-btn a {
-    display: block;
-    max-width: 271px;
-    padding: 13px 22px;
-    margin: 0 auto;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 1;
-    text-align: center;
-    color: #FFE746;
-    background: #222222;
-    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-    border-radius: 10px;
-    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-}
-
-.product-list .card .submit-btn a:hover {
-    background: #a56447;
-}
-
-.product-list .card .submit-btn p {
-    display: none;
-    margin: 0;
-    padding-top: 12px;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 1;
-    text-align: center;
-    color: #00595B;
-}
-
-.product-section .trust-badges {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    font-size: 18px;
-}
-
-.product-section .trust-badges .trust-badge {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    text-align: center;
-    align-items: center;
-    max-width: 33%;
-    text-transform: uppercase;
-}
-
-.product-section .trust-badges .trust-badge img {
-    margin-right: 10px;
-    height: 5vw;
-    width: 10vw;
-    object-fit: contain;
-    max-width: 40px;
-    max-height: 30px;
-}
-
-@media screen and (max-width: 1270px) {
-    .product-list .card .save {
-        width: 6vw;
-        height: 6vw;
-        font-size: 1.3vw;
-        padding: 0.4vw;
-        right: 4vw;
-    }
-
-    .product-list .card .name h3 {
-        font-size: 2.2vw;
-    }
-}
-
-@media screen and (max-width:760px) {
-
-.product-section .container .black-friday-bg {
-display: none;
-    }
-    .product-section h2 {
-        margin-top: 125px;
-        font-size: 7vw;
-        font-weight: 700;
-        margin-bottom: 0;
-    }
-
+<style>
     .product-list {
-        flex-direction: column-reverse;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1230px;
+        margin: 0 auto;
     }
 
-    .product-list .card {
+    .product-card {
+        display: flex;
+        padding: 10px;
+        width: calc(100% / 3);
+    }
+
+    .product-card .wrap {
         width: 100%;
-        padding: 22px 10px;
-    }
-
-    .product-list .card .info h4 {
-        font-size: 25px;
-    }
-
-    .product-list .card .info p {
-        font-size: 16px;
-    }
-
-    .product-list .card .img {
-        margin-top: 15px;
-    }
-
-    .product-list .card .price {
-        padding-top: 8px;
-    }
-
-    .product-list .card .name h3 {
-        font-size: 8vw;
-    }
-
-    .product-list .card .price p {
-        font-size: 19px;
-    }
-
-    .product-list .card .discount {
-        padding-top: 6px;
-    }
-
-    .product-list .card .price.per-bottle + .discount p {
-        font-weight: normal;
-        font-size: 19px;
-    }
-
-    .product-list .card .discount p {
-        font-size: 13px;
-        font-weight: 600;
-    }
-
-    .product-list .card .submit-btn {
-        padding-top: 5px;
-    }
-
-    .product-list .card .submit-btn a {
-        padding: 11px 22px;
-        font-size: 5vw;
-    }
-
-    .product-list .card .submit-btn p {
-        display: block;
-    }
-
-    .product-section .trust-badges {
-        gap: unset;
-        justify-content: space-between;
-        display: none;
-    }
-
-    .product-section .trust-badges .trust-badge {
-        font-size: 3vw;
+        display: flex;
         flex-direction: column;
+        border: 2px solid #f5f5f5;
+        border-radius: 6px;
+        overflow: hidden;
     }
 
-    .product-section .trust-badges .trust-badge img {
-        height: 20px;
-        width: 40px;
+    .product-card .picture {
+        background: #f5f5f5;
+        background: #222222;
+        height: 270px;
+        height: 370px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
     }
 
-    .product-list .card .save {
-        width: 20vw;
-        height: 20vw;
-        font-size: 4.3vw;
-        padding: 0.4vw;
-        right: 10vw;
+    .product-card .picture .img {
+        padding: 5px 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
     }
-}
-{% endstyle %}
+
+    .product-card .picture .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .product-card .picture:after {
+        content: "";
+        display: block;
+        height: 30%;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .product-card .picture:after {
+        content: "";
+        display: block;
+        height: 30%;
+        background-image: url({{ 'ellipse.svg' | asset_url }});
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .product-card .info {
+        display: flex;
+        flex: auto;
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .product-card .info .main {
+        flex: auto;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+
+    .product-card .info .name h3 {
+        margin: 0;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 1.08;
+        text-align: center;
+        color: var(--dark);
+    }
+
+    .product-card .info .name h3 a {
+        color: inherit;
+        transition: color var(--transition);
+    }
+
+    .supply-days {
+        font-size: 16px;
+        text-align: center;
+        line-height: 0;
+        font-weight: 200;
+    }
+
+    .product-card .info .price {
+        padding-top: 14px;
+    }
+
+
+    element.style {
+    }
+
+    .product-card .info .price p {
+        margin: 0;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 1;
+        text-align: center;
+        color: var(--dark);
+        white-space: nowrap;
+    }
+
+    .product-card .info .btn .main-btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 20px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #fff;
+        background: #d07c5b;
+        border-radius: 2px;
+        border: 1px solid #d07c5b;
+        transition: color var(--transition),border-color var(--transition),background-color var(--transition);
+        width: 100%;
+        color: #FFE746 !important;
+        background: #222222 !important;
+        border: 1px solid #222222 !important;
+    }
+
+    .main-btn i {
+        display: block;
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    .icon-cart:before {
+        content: "\efe7";
+    }
+</style>
