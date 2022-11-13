@@ -4,13 +4,11 @@
   <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
       <div class="wrap">
         <div class="picture">
-          {% if product.featured_image.src != blank %}
             <a href="{{ product.url }}">
               <div class="img">
                 <img src="{{ product.featured_image.src | img_url: 'original' }}"  alt="">
               </div>
             </a>
-          {% endif %}
             {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
             {% assign quantity_by_cents = quantity | times: 100 %}
             {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
