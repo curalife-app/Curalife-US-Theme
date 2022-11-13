@@ -1,7 +1,7 @@
-<h3>Choose Your CuraLin Bundle</h3>
 
 {% assign Prods = page.content | split: ',' %}
 <div class="product-list">
+    <h3>Choose Your CuraLin Bundle</h3>
     {% for prod in Prods %}
         {% assign product = all_products[prod] %}
         <script>console.log("prods: {{product.title}}")</script>
@@ -78,7 +78,7 @@
 </div>
 
 <style>
-    .catalog-page h3 {
+    .product-list h3 {
         text-align: center;
         padding-top: 30px;
     }
