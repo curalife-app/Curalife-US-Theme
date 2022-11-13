@@ -2,7 +2,7 @@
 <header class="page-header" id="page-header">
     <div class="container">
         <div class="main-logo">
-            <a href="https://curalife.com/"><img src="{{ 'logo-black.png' | asset_url }}" width="308" height="92" alt="logo"></a>
+            <a href="https://curalife.com/"><img src="{{ 'logo-black-friday.svg' | asset_url }}" width="308" height="92" alt="logo"></a>
         </div>
         <div class="buttons-container">
             <div class="off-container">
@@ -36,6 +36,10 @@
         display: inline-block;
         padding: 4px 0;
         max-width: 181px;
+    }
+
+    header.page-header .main-logo img {
+        margin-top: unset !important;
     }
 
     header.page-header .main-logo a img {
