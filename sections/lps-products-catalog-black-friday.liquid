@@ -1,3 +1,5 @@
+<h3>Choose Your CuraLin Bundle</h3>
+
 {% assign Prods = page.content | split: ',' %}
 <div class="product-list">
     {% for prod in Prods %}
@@ -76,6 +78,11 @@
 </div>
 
 <style>
+    .catalog-page h1 {
+        text-align: center;
+        padding-top: 30px;
+    }
+
     .product-list {
         display: flex;
         flex-wrap: wrap;
