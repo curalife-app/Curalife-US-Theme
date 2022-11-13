@@ -1,91 +1,87 @@
-
-{% assign Prods = page.content | split: ',' %}
-<div class="product-list">
+<section id="product-catalog-section">
     <h3>Choose Your CuraLin Bundle</h3>
-    {% for prod in Prods %}
-        {% assign product = all_products[prod] %}
-        <script>console.log("prods: {{product.title}}")</script>
-  <div class="product-card">
-      <div class="wrap">
-        <div class="picture">
-            <a href="{{ product.url }}">
-              <div class="img">
-                <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
-              </div>
-            </a>
-            {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-            {% assign quantity_by_cents = quantity | times: 100 %}
-            {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-            {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
 
-            {% if localization.country.iso_code == 'CA' %}
-              {% assign cap = product.metafields.my_fields.ca_cap %}
-            {% elsif localization.country.iso_code == 'AU' %}
-              {% assign cap = product.metafields.my_fields.au_cap %}
-            {% else %}
-              {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
-            {% endif %}
-            {% if product.compare_at_price > product.price %}
-            <div class="discount">
-              <p> <i class="icofont-star"></i>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
-            </div>
-            {% endif %}
-        </div>
-        <div class="info">
-          <div class="main">
-            <div class="name">
-              <h3>
-                {% if product.metafields.my_fields.alternative_title.value %}
-                <a href="{{ product.url }}">{{ product.metafields.my_fields.alternative_title.value }}</a>
+    {% assign Prods = page.content | split: ',' %}
+    <div class="product-list">
+        {% for prod in Prods %}
+            {% assign product = all_products[prod] %}
+      <div class="product-card">
+          <div class="wrap">
+            <div class="picture">
+                <a href="{{ product.url }}">
+                  <div class="img">
+                    <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
+                  </div>
+                </a>
+                {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+                {% assign quantity_by_cents = quantity | times: 100 %}
+                {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
+                {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+
+                {% if localization.country.iso_code == 'CA' %}
+                  {% assign cap = product.metafields.my_fields.ca_cap %}
+                {% elsif localization.country.iso_code == 'AU' %}
+                  {% assign cap = product.metafields.my_fields.au_cap %}
                 {% else %}
-                <a href="{{ product.url }}">{{ product.title }}</a>
+                  {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
                 {% endif %}
-              </h3>
             </div>
-            <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
-            <div class="price">
-              {% if quantity > 1 %}
-                <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</strike> Per Bottle</p>
-              {% elsif product.compare_at_price > product.price %}
-                <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
-              {% else %}
-                <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}</p>
-              {% endif %}
-            </div>
+            <div class="info">
+              <div class="main">
+                <div class="name">
+                  <h3>
+                    {% if product.metafields.my_fields.alternative_title.value %}
+                    <a href="{{ product.url }}">{{ product.metafields.my_fields.alternative_title.value }}</a>
+                    {% else %}
+                    <a href="{{ product.url }}">{{ product.title }}</a>
+                    {% endif %}
+                  </h3>
+                </div>
+                <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+                <div class="price">
+                  {% if quantity > 1 %}
+                    <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</strike> Per Bottle</p>
+                  {% elsif product.compare_at_price > product.price %}
+                    <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
+                  {% else %}
+                    <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}</p>
+                  {% endif %}
+                </div>
 
-          {% unless forloop.index == 1 %}
-            <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - $29 value</p>
-            <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
-          {% endunless %}                </div>
-          <form action="/cart/add" method="post">
-            <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
-            <input name="return_to" type="hidden" value="/cart/">
+              {% unless forloop.index == 1 %}
+                <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - $16.9 value</p>
+                <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
+              {% endunless %}                </div>
+              <form action="/cart/add" method="post">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+                <input name="return_to" type="hidden" value="/cart/">
 
-            <div class="btn">
-              <button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button>
+                <div class="btn">
+                  <button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button>
+                </div>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
+      {% endfor %}
+
+      <div class="trust-badges">
+          <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="" loading="lazy">Free Worldwide Shipping</div>
+          <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="" loading="lazy">60 Day Money Back Guarantee</div>
+          <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="" loading="lazy">100% Secure Checkout</div>
       </div>
     </div>
-  {% endfor %}
-
-  <div class="trust-badges">
-      <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="" loading="lazy">Free Worldwide Shipping</div>
-      <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="" loading="lazy">60 Day Money Back Guarantee</div>
-      <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="" loading="lazy">100% Secure Checkout</div>
-  </div>
-</div>
+</section>
 
 <style>
-    .product-list h3 {
+    #product-catalog-section h3 {
         text-align: center;
         padding-top: 30px;
         font-size: 30px;
         font-weight: bold;
     }
 
-    .product-list {
+    #product-catalog-section .product-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -93,13 +89,13 @@
         margin: 0 auto;
     }
 
-    .product-card {
+    #product-catalog-section #product-catalog-section .product-card {
         display: flex;
         padding: 10px;
         width: calc(100% / 3);
     }
 
-    .product-card .wrap {
+    #product-catalog-section .product-card .wrap {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -108,7 +104,7 @@
         overflow: hidden;
     }
 
-    .product-card .picture {
+    #product-catalog-section .product-card .picture {
         background: #f5f5f5;
         background: #222222;
         height: 270px;
@@ -118,7 +114,7 @@
         cursor: pointer;
     }
 
-    .product-card .picture .img {
+    #product-catalog-section .product-card .picture .img {
         padding: 5px 0 0;
         position: absolute;
         top: 0;
@@ -128,13 +124,13 @@
         z-index: 3;
     }
 
-    .product-card .picture .img img {
+    #product-catalog-section .product-card .picture .img img {
         width: 100%;
         height: 100%;
         object-fit: contain;
     }
 
-    .product-card .picture:after {
+    #product-catalog-section .product-card .picture:after {
         content: "";
         display: block;
         height: 30%;
@@ -149,7 +145,7 @@
         pointer-events: none;
     }
 
-    .product-card .picture:after {
+    #product-catalog-section .product-card .picture:after {
         content: "";
         display: block;
         height: 30%;
@@ -165,20 +161,20 @@
         pointer-events: none;
     }
 
-    .product-card .info {
+    #product-catalog-section .product-card .info {
         display: flex;
         flex: auto;
         flex-direction: column;
         padding: 16px;
     }
 
-    .product-card .info .main {
+    #product-catalog-section .product-card .info .main {
         flex: auto;
         padding-bottom: 10px;
         text-align: center;
     }
 
-    .product-card .info .name h3 {
+    #product-catalog-section .product-card .info .name h3 {
         margin: 0;
         font-weight: 800;
         font-size: 22px;
@@ -187,23 +183,23 @@
         color: var(--dark);
     }
 
-    .product-card .info .name h3 a {
+    #product-catalog-section .product-card .info .name h3 a {
         color: inherit;
         transition: color var(--transition);
     }
 
-    .supply-days {
+    #product-catalog-section .supply-days {
         font-size: 16px;
         text-align: center;
         line-height: 0;
         font-weight: 200;
     }
 
-    .product-card .info .price {
+    #product-catalog-section .product-card .info .price {
         padding-top: 14px;
     }
 
-    .product-card .info .price p {
+    #product-catalog-section .product-card .info .price p {
         margin: 0;
         font-weight: 400;
         font-size: 26px;
@@ -213,7 +209,7 @@
         white-space: nowrap;
     }
 
-    .product-card .info .btn .main-btn {
+    #product-catalog-section .product-card .info .btn .main-btn {
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -234,17 +230,17 @@
         border: 1px solid #222222 !important;
     }
 
-    .main-btn i {
+    #product-catalog-section .main-btn i {
         display: block;
         font-size: 24px;
         padding-right: 10px;
     }
 
-    .icon-cart:before {
+    #product-catalog-section .icon-cart:before {
         content: "\efe7";
     }
 
-    .product-card .picture .discount {
+    #product-catalog-section .product-card .picture .discount {
         padding: 10px;
         position: absolute;
         padding: unset;
@@ -256,7 +252,7 @@
         transform: rotate(-8.4deg);
     }
 
-    .product-card .picture .discount p {
+    #product-catalog-section .product-card .picture .discount p {
         margin: 0;
         padding: 4px 13px;
         font-weight: 400;
@@ -282,11 +278,11 @@
         gap: 10px;
     }
 
-    .icofont-star:before {
+    #product-catalog-section .icofont-star:before {
         content: "\f000";
     }
 
-    .trust-badges {
+    #product-catalog-section .trust-badges {
         display: flex;
         justify-content: center;
         gap: 50px;
@@ -294,7 +290,7 @@
         margin-top: 30px;
     }
 
-    .trust-badges .trust-badge {
+    #product-catalog-section .trust-badges .trust-badge {
         display: flex;
         flex-direction: row;
         gap: 10px;
@@ -303,7 +299,7 @@
         text-transform: uppercase;
     }
 
-    .trust-badges .trust-badge img {
+    #product-catalog-section .trust-badges .trust-badge img {
         margin-right: 10px;
         height: 5vw;
         width: 10vw;
@@ -313,47 +309,47 @@
     }
 
     @media screen and (max-width:760px) {
-        .product-card {
+        #product-catalog-section .product-card {
             width: 100%;
             padding: 10px;
         }
 
-        .product-card .picture {
+        #product-catalog-section .product-card .picture {
             height: 240px;
         }
 
-        .product-card .picture .discount {
+        #product-catalog-section .product-card .picture .discount {
             top: 35vw;
         }
 
-        .product-card .info .name h3 {
+        #product-catalog-section .product-card .info .name h3 {
             font-size: 7vw;
         }
 
-        .product-card .info .price {
+        #product-catalog-section .product-card .info .price {
             padding-top: 4vw;
         }
 
-        .product-card .info .price p {
+        #product-catalog-section .product-card .info .price p {
             font-size: 6vw;
         }
 
-        .product-card .info .btn .main-btn {
+        #product-catalog-section .product-card .info .btn .main-btn {
             font-size: 5vw;
         }
 
-        .trust-badges {
+        #product-catalog-section .trust-badges {
             gap: unset;
             justify-content: space-between;
             display: none;
         }
 
-        .trust-badges .trust-badge {
+        #product-catalog-section .trust-badges .trust-badge {
             font-size: 3vw;
             flex-direction: column;
         }
 
-        .trust-badges .trust-badge img {
+        #product-catalog-section .trust-badges .trust-badge img {
             height: 20px;
             width: 40px;
         }
