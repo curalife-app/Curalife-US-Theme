@@ -46,7 +46,7 @@
             <div class="thumbs-slider">
               <div id="product-thumbs-slider-sc" class="swiper">
                 <div class="swiper-wrapper">
-                  {% for i in (1..5) %}
+                  {% for i in (1..4) %}
                     <div class="swiper-slide">
                       <div class="thumbs-img">
                         <div class="img-wrap">
@@ -56,13 +56,13 @@
                       </div>
                     </div>
                   {% endfor %}
-                  <div class="swiper-slide">
+                  {%- comment -%} <div class="swiper-slide">
                     <div class="thumbs-img video-thumbnail">
                       <div class="img-wrap">
                         <img src="{{ "product-aio-product-video-thumbnail.png" | asset_url }}" alt="" loading="lazy">
                       </div>
                     </div>
-                  </div>
+                  </div> {%- endcomment -%}
                   {% for image in product.images %}
                     <div class="swiper-slide">
                       <div class="thumbs-img">
