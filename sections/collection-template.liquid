@@ -31,7 +31,7 @@
                   {% if product.compare_at_price > product.price %}
                   <div class="discount">
                     {% assign save = cap | times: 100.0 | minus: product.price %}
-                    <p> <i class="icofont-star"></i>SAVE {{ save | money_with_currency }}<i class="icofont-star"></i></p>
+                    <p> <i class="icofont-star"></i>SAVE {{ save | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
                   </div>
                   {% endif %}
               </div>
