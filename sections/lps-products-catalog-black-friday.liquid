@@ -56,7 +56,7 @@
 
           {% unless forloop.index == 1 %}
             <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - $29 value</p>
-            <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
+            <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
           {% endunless %}                </div>
           <form action="/cart/add" method="post">
             <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
