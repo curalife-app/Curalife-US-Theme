@@ -1,8 +1,11 @@
+<div class="green-strip">Limited Offer! Choose a bundle and get a FREE CuraEats meal plan</div>
+
 {% assign Prods = page.content | split: ',' %}
-<script>console.log("prods: {{page.content}}")</script>
 <div class="product-list">
-  {% for product in Prods %}
-  <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
+    {% for prod in Prods %}
+        {% assign product = all_products[prod] %}
+        <script>console.log("prods: {{product.title}}")</script>
+  <div class="product-card">
       <div class="wrap">
         <div class="picture">
             <a href="{{ product.url }}">
@@ -71,9 +74,30 @@
       </div>
     </div>
   {% endfor %}
+
+  <div class="trust-badges">
+      <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">Free Worldwide Shipping</div>
+      <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
+      <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
+  </div>
 </div>
 
 <style>
+    .green-strip {
+        top: 100px;
+        width: 100%;
+        background: #99B182;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        font-family: 'DM Sans';
+        font-weight: 600;
+        font-size: clamp(18px, 4vw, 25px); !important;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+        padding: 20px;
+    }
+
     .product-list {
         display: flex;
         flex-wrap: wrap;
@@ -192,10 +216,6 @@
         padding-top: 14px;
     }
 
-
-    element.style {
-    }
-
     .product-card .info .price p {
         margin: 0;
         font-weight: 400;
@@ -235,5 +255,91 @@
 
     .icon-cart:before {
         content: "\efe7";
+    }
+
+    .product-card .picture .discount {
+        padding: 10px;
+        position: absolute;
+        padding: unset;
+        top: 0;
+        top: 200px;
+        left: 0;
+        z-index: 5;
+        width: 100%;
+        transform: rotate(-8.4deg);
+    }
+
+    .product-card .picture .discount p {
+        margin: 0;
+        padding: 4px 13px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: .02em;
+        color: var(--white);
+        background: var(--red);
+        border: 1px solid var(--red);
+        box-sizing: border-box;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background: #FFE746;
+        box-shadow: 0px 3.6px 3.6px rgb(0 0 0 / 25%);
+        font-size: 22px;
+        font-weight: bold;
+        border: 0;
+        color: black;
+        border-radius: 0;
+        margin: 0 -2vw;
+        gap: 10px;
+    }
+
+    .icofont-star:before {
+        content: "\f000";
+    }
+
+    .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        font-size: 18px;
+        margin-top: 30px;
+    }
+
+    .trust-badges .trust-badge {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        text-align: center;
+        align-items: center;
+        text-transform: uppercase;
+    }
+
+    .trust-badges .trust-badge img {
+        margin-right: 10px;
+        height: 5vw;
+        width: 10vw;
+        object-fit: contain;
+        max-width: 40px;
+        max-height: 30px;
+    }
+
+    @media screen and (max-width:760px) {
+        .trust-badges {
+            gap: unset;
+            justify-content: space-between;
+            display: none;
+        }
+
+        .trust-badges .trust-badge {
+            font-size: 3vw;
+            flex-direction: column;
+        }
+
+        .trust-badges .trust-badge img {
+            height: 20px;
+            width: 40px;
+        }
     }
 </style>
