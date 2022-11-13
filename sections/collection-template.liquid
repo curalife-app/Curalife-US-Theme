@@ -29,7 +29,7 @@
                     {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
                   {% endif %}
                   <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
-                  {% if product.compare_at_price_max > product.price %}
+                  {% if product.compare_at_price > product.price %}
                   <div class="discount" style="display:none">
                     <p> <i class="icofont-star"></i>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
                   </div>
