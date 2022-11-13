@@ -29,13 +29,9 @@
                     {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
                   {% endif %}
                   <script>console.log("cap: {{cap}}");console.log("prod: {{product.price}}");</script>
-                  {% if quantity > 1 %}
-                  <div class="discount">
-                    <p> <i class="icofont-star"></i>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
-                  </div>
-                  {% elsif product.compare_at_price_max > product.price %}
+                  {% if product.compare_at_price_max > product.price %}
                   <div class="discount" style="display:none">
-                    <p>{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}% discount</p>
+                    <p> <i class="icofont-star"></i>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
                   </div>
                   {% endif %}
               </div>
