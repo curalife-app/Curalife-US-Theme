@@ -16,7 +16,6 @@
                     </div>
                   </a>
                 {% endif %}
-
                   {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                   {% assign quantity_by_cents = quantity | times: 100 %}
                   {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
