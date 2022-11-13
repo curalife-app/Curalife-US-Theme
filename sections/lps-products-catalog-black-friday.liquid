@@ -187,7 +187,7 @@
 
     .product-card .info .main {
         flex: auto;
-        padding-bottom: 5px;
+        padding-bottom: 10px;
         text-align: center;
     }
 
@@ -326,6 +326,27 @@
     }
 
     @media screen and (max-width:760px) {
+        .product-card {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .product-card .info .name h3 {
+            font-size: 7vw;
+        }
+
+        .product-card .info .price {
+            padding-top: 4vw;
+        }
+
+        .product-card .info .price p {
+            font-size: 6vw;
+        }
+
+        .product-card .info .btn .main-btn {
+            font-size: 5vw;
+        }
+
         .trust-badges {
             gap: unset;
             justify-content: space-between;
