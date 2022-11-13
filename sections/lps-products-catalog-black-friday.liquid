@@ -74,6 +74,12 @@
       </div>
     </div>
   {% endfor %}
+
+  <div class="trust-badges">
+      <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">Free Worldwide Shipping</div>
+      <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
+      <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
+  </div>
 </div>
 
 <style>
@@ -296,5 +302,31 @@
 
     .icofont-star:before {
         content: "\f000";
+    }
+
+    .product-section .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        font-size: 18px;
+    }
+
+    .product-section .trust-badges .trust-badge {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        text-align: center;
+        align-items: center;
+        max-width: 33%;
+        text-transform: uppercase;
+    }
+
+    .product-section .trust-badges .trust-badge img {
+        margin-right: 10px;
+        height: 5vw;
+        width: 10vw;
+        object-fit: contain;
+        max-width: 40px;
+        max-height: 30px;
     }
 </style>
