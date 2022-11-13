@@ -2,7 +2,7 @@
 <div class="product-list">
     {% for prod in Prods %}
         {% assign product = all_products[lp_prod] %}
-        <script>console.log("prods: {{prod}}")</script>
+        <script>console.log("prods: {{product.title}}")</script>
   <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
       <div class="wrap">
         <div class="picture">
