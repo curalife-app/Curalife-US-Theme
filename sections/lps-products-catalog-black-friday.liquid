@@ -1,6 +1,6 @@
-{% assign Products = page.content | split: ',' %}
+{% assign Prods = page.content | split: ',' %}
 <div class="product-list">
-  {% for product in Products %}
+  {% for product in Prods %}
   <div class="product-card" style="width: calc(100% / {{ collection.products.size }})">
       <div class="wrap">
         <div class="picture">
