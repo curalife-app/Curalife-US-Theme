@@ -1,5 +1,4 @@
 {% render 'collection-page-header-black-friday' %}
-
 <div class="catalog-page">
   <div class="container">
     <div class="mini-wrap">
@@ -16,6 +15,7 @@
                     </div>
                   </a>
                 {% endif %}
+
                   {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                   {% assign quantity_by_cents = quantity | times: 100 %}
                   {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
@@ -29,9 +29,7 @@
                     {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
                   {% endif %}
                   {% if product.compare_at_price > product.price %}
-                  <div class="discount">
-                    <i class="icofont-star"></i><p>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p><i class="icofont-star"></i>
-                  </div>
+                  <div class="discount"><i class="icofont-star"></i><p>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p><i class="icofont-star"></i></div>
                   {% endif %}
               </div>
               <div class="info">
@@ -48,18 +46,18 @@
                   <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                   <div class="price">
                     {% if quantity > 1 %}
-                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</strike> Per Bottle</p>
+                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</strike> Per Bottle</p>
                     {% elsif product.compare_at_price > product.price %}
-                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
+                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                     {% else %}
-                      <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}</p>
+                      <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
                     {% endif %}
                   </div>
 
                 {% if product.tags contains 'CuraEats' %}
                   <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - $29 value</p>
                   <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
-                {% endif %}                </div>
+                {% endif %}               </div>
                 <form action="/cart/add" method="post">
                   <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
                   <input name="return_to" type="hidden" value="/cart/">
@@ -85,70 +83,67 @@
     border: 1px solid #222222 !important;
 }
 
-  .catalog-page h1 {
-    text-align: center;
-    padding-top: 30px;
+.catalog-page h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.product-list {
+  padding: unset;
+}
+
+.price p strike {
+  color: #4B643D;
+}
+
+.supply-days {
+  font-size: 16px;
+  text-align: center;
+  line-height: 0;
+  font-weight: 200;
+}
+
+.free-shipping {
+  margin-top: 5px;
+}
+
+.product-card .picture {
+  background: #222222 !important;
+  height: 370px !important;
+}
+
+.product-card .picture .discount {
+  padding: unset;
+  width: 110%;
+  top: 200px;
+  left: -5%;
+  transform: rotate(-8.4deg);
+  padding: 3px;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  background: #FFE746;
+  box-shadow: 0px 3.6px 3.6px rgb(0 0 0 / 25%);
+  font-size: 20px;
+  font-weight: bold;
+  gap: 10px;
+}
+
+.product-card .picture .discount p {
+  margin: 0;
+}
+
+.product-card .picture:after {
+  background-image: url({{ 'ellipse.svg' | asset_url }});
+}
+
+@media screen and (max-width: 760px) {
+  .product-card {
+    width: 100% !important;
   }
 
-  .product-list {
-    padding: unset;
-  }
-
-  .price p strike {
-    color: #4B643D;
-  }
-
-  .supply-days {
-    font-size: 16px;
-    text-align: center;
-    line-height: 0;
-    font-weight: 200;
-  }
-
-  .free-shipping {
-    margin-top: 5px;
-  }
-
-  .product-card .picture {
-    background: #222222 !important;
-    height: 370px !important;
-  }
-
-  .product-card .info .price {
-      padding:  15px 0;
-  }
-
-  .product-card .picture .discount {
-    padding: unset;
-    width: 100%;
-    top: 200px;
-    transform: rotate(-8.4deg);
-  }
-
-  .product-card .picture .discount p {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background: #FFE746;
-    box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
-    font-size: 22px;
-    font-weight: bold;
-    border: 0;
-    color: black;
-    border-radius: 0;
-    margin: 0 -2vw;
-    gap: 10px;
-  }
-
-  .product-card .picture:after {
-    background-image: url({{ 'ellipse.svg' | asset_url }});
-  }
-
-  @media screen and (max-width: 760px) {
-    .product-card {
-      width: 100% !important;
-    }
-  }
+}
 </style>
 
 <script>
