@@ -12,6 +12,13 @@
               <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
               <div id="product-main-slider-sc" class="swiper">
                 <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="product-img">
+                      <div class="img-wrap">
+                        <img src="{{ "product-aio-product-thumbnail-0.png" | asset_url }}" alt="" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
                   {% for i in (1..5) %}
                     <div class="swiper-slide">
                       <div class="product-img">
@@ -46,6 +53,13 @@
             <div class="thumbs-slider">
               <div id="product-thumbs-slider-sc" class="swiper">
                 <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="thumbs-img">
+                      <div class="img-wrap">
+                        <img src="{{ "product-aio-product-thumbnail-0.png" | asset_url }}" alt="" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
                   {% for i in (1..4) %}
                     <div class="swiper-slide">
                       <div class="thumbs-img">
@@ -56,13 +70,13 @@
                       </div>
                     </div>
                   {% endfor %}
-                  {%- comment -%} <div class="swiper-slide">
+                  <div class="swiper-slide">
                     <div class="thumbs-img video-thumbnail">
                       <div class="img-wrap">
                         <img src="{{ "product-aio-product-video-thumbnail.png" | asset_url }}" alt="" loading="lazy">
                       </div>
                     </div>
-                  </div> {%- endcomment -%}
+                  </div>
                   {% for image in product.images %}
                     <div class="swiper-slide">
                       <div class="thumbs-img">
