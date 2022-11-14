@@ -15,10 +15,11 @@
         <div class="title desktop swiper-slide">
           {% assign ifTimer = false %}
           {% if ifTimer %}
-          {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
-          {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %} {% else %}
-          <i class="icofont-star"></i>
-          <span class="black-friday-span">BLACK FRIDAY</span>
+            {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
+            {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
+          {% else %}
+            <i class="icofont-star"></i>
+            <span class="black-friday-span">BLACK FRIDAY</span>
           {% endif %}
         </div>
 
