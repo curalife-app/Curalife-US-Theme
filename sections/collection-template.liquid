@@ -1,77 +1,7 @@
 {% render 'collection-page-header-black-friday' %}
 <div class="catalog-page">
   <div class="container">
-    <div class="mini-wrap">
-      <h1>Choose Your CuraLin Bundle</h1>
-      <div class="product-list">
-        {% for product in collection.products %}
-        <div class="product-card">
-            <div class="wrap">
-              <div class="picture">
-                {% if product.featured_image.src != blank %}
-                  <a href="{{ product.url }}">
-                    <div class="img">
-                      <img src="{{ product.featured_image.src | img_url: 'original' }}"  alt="">
-                    </div>
-                  </a>
-                {% endif %}
-
-                  {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-                  {% assign quantity_by_cents = quantity | times: 100 %}
-                  {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-                  {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
-
-                  {% if localization.country.iso_code == 'CA' %}
-                    {% assign cap = product.metafields.my_fields.ca_cap %}
-                  {% elsif localization.country.iso_code == 'AU' %}
-                    {% assign cap = product.metafields.my_fields.au_cap %}
-                  {% else %}
-                    {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
-                  {% endif %}
-                  {% if product.compare_at_price > product.price %}
-                  <div class="discount"><i class="icofont-star"></i><p>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p><i class="icofont-star"></i></div>
-                  {% endif %}
-              </div>
-              <div class="info">
-                <div class="main">
-                  <div class="name">
-                    <h3>
-                      {% if product.metafields.my_fields.alternative_title.value %}
-                      <a href="{{ product.url }}">{{ product.metafields.my_fields.alternative_title.value }}</a>
-                      {% else %}
-                      <a href="{{ product.url }}">{{ product.title }}</a>
-                      {% endif %}
-                    </h3>
-                  </div>
-                  <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
-                  <div class="price">
-                    {% if quantity > 1 %}
-                      <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</strike> Per Bottle</p>
-                    {% elsif product.compare_at_price > product.price %}
-                      <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
-                    {% else %}
-                      <p id="original-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
-                    {% endif %}
-                  </div>
-
-                {% if product.tags contains 'CuraEats' %}
-                  <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - $29 value</p>
-                  <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
-                {% endif %}               </div>
-                <form action="/cart/add" method="post">
-                  <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
-                  <input name="return_to" type="hidden" value="/cart/">
-
-                  <div class="btn">
-                    <button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
+    {% render 'lps-products-catalog-black-friday' %}
   </div>
   {% render 'collection-curaeats-section', invertSectionBack: false %}
 </div>
