@@ -409,7 +409,7 @@
 <script>
   $( document ).ready(function() {
     $(".rounded").each(function() {
-      console.log($(this).text());
+      console.log(Number($(this).text().replace(/[^0-9\.-]+/g,"")));
       $(this).text(Math.ceil(parseInt($(this).text())));
     });
   });
