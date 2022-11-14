@@ -104,11 +104,7 @@
     </div>
     <div class="product-info">
     <div class="sub-title">
-      {% if product.metafields.my_fields.alternative_title.value %}
-      <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
-      {% else %}
-      <h1>{{ product.title }}</h1>
-      {% endif %}
+      <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
     </div>
     <div class="rating-stars">
       <img class="rating-stars-img" src="{{ 'product-aio-rating-stars.png' | asset_url }}" alt="">

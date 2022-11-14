@@ -1,3 +1,5 @@
+{% render 'script.round-converted-currency' %}
+
 <section id="product-catalog-section">
     <h3>Choose Your CuraLin Bundle</h3>
 
@@ -22,7 +24,7 @@
                 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 
                 {% if product.compare_at_price > product.price %}
-                <div class="discount"><i class="icofont-star"></i><p class="transcy-money">SAVE <span class="rounded">{{ product.compare_at_price | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
+                <div class="discount"><i class="icofont-star"></i><p>SAVE <span class="rounded">{{ original_item_cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
                 {% endif %}
             </div>
             <div class="info">
@@ -33,9 +35,9 @@
                 <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                 <div class="price">
                   {% if quantity > 1 %}
-                    <p id="divided-price"><span class="rounded">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
+                    <p id="divided-price"><span class="rounded">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
                   {% elsif product.compare_at_price > product.price %}
-                    <p id="discounted-price"><span class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
+                    <p id="discounted-price"><span class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                   {% else %}
                     <p id="original-price" class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
                   {% endif %}
@@ -45,7 +47,7 @@
                 {% assign curaeats_premium_price = curaeats_premium_variant.price %}
 
                 {% if product.tags contains 'CuraEats' %}
-                    <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - <span class="rounded">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value</p>
+                    <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - <span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value</p>
                     <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
                 {% endif %}
                 </div>
@@ -73,7 +75,6 @@
 <style>
   #product-catalog-section h3 {
       text-align: center;
-      padding-top: 30px;
       font-size: 30px;
       font-weight: bold;
   }
@@ -402,20 +403,6 @@
       product_price: $(this).attr("price"),
       currency: '{{ shop.currency }}',
       quantity: 1
-    });
-  });
-</script>
-
-<style>
-  .rounded {
-    display: none;
-  }
-</style>
-<script>
-  $( document ).ready(function() {
-    $(".rounded").each(function() {
-      $(this).text("{{ cart.currency.symbol }}" + Math.ceil(Number($(this).text().replace(/[^0-9\.-]+/g,""))));
-      $(this).show();
     });
   });
 </script>

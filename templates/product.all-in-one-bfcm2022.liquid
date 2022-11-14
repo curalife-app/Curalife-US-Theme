@@ -1,3 +1,4 @@
+{% render 'script.round-converted-currency' %}
 {% render 'lps-aio-header-bfcm2022' %}
 
 <div class="product-template-all-in-one">
@@ -60,7 +61,7 @@
                       </div>
                     </div>
                   </div>
-                  {% for i in (1..4) %}
+                  {% for i in (1..5) %}
                     <div class="swiper-slide">
                       <div class="thumbs-img">
                         <div class="img-wrap">
@@ -96,11 +97,7 @@
       </div>
       <div class="product-info">
         <div class="sub-title">
-          {% if product.metafields.my_fields.alternative_title.value %}
-          <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
-          {% else %}
-          <h1>{{ product.title }}</h1>
-          {% endif %}
+          <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
         </div>
         <div class="rating-stars">
           <img class="rating-stars-img" src="{{ 'product-aio-rating-stars.png' | asset_url }}" alt="">
@@ -123,7 +120,7 @@
                     <div class="variant-notice">
                       {% assign curaeats_premium_variant = all_products['curaeats'].variants | last %}
                       {% assign curaeats_premium_price = curaeats_premium_variant.price %}
-                      <p>FREE GIFT! - Meal Plan App (<span>{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }} value)</p>
+                      <p>FREE GIFT! - Meal Plan App (<span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
                     </div>
 
                     <style>
@@ -154,8 +151,8 @@
                     </div>
                   </div>
                   <div class="price">
-                    <p class="compared-at-price"><strike>{{ var.compare_at_price | money_without_trailing_zeros }}</strike></p>
-                    <p class="real-price">{{ var.price | money_without_trailing_zeros }}</p>
+                    <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | money_without_trailing_zeros }}</strike></p>
+                    <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
                   </div>
                 </div>
               {% endfor %}
