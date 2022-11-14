@@ -10,21 +10,11 @@
           {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
           {% assign quantity_by_cents = quantity | times: 100 %}
           {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-          {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+          {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 
-          {% if localization.country.iso_code == 'CA' %}
-          {% assign cap = product.metafields.my_fields.ca_cap %}
-          {% elsif localization.country.iso_code == 'AU' %}
-          {% assign cap = product.metafields.my_fields.au_cap %}
-          {% else %}
-          {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
+          {% if product.compare_at_price > product.price %}
+          <div class="discount"><i class="icofont-star"></i><p class="transcy-money">SAVE <span class="rounded">{{ original_item_cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
           {% endif %}
-
-          {% if quantity > 1 %}
-          <div class="discount">
-            <p> <i class="icofont-star"></i>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
-          </div>
-        {% endif %}
 
           <div class="sliders-group">
             <div class="thumbs-slider">
@@ -394,6 +384,28 @@
     }]);
 
   </script>
+
+  {% if localization.country.iso_code == 'CA' %}
+  {% assign currency_letters = "CAD" %}
+  {% elsif localization.country.iso_code == 'AU' %}
+  {% assign currency_letters = "AUD" %}
+  {% endif %}
+
+  {% if currency_letters %}
+    <style>
+      .rounded {
+        display: none;
+      }
+    </style>
+    <script>
+      $( document ).ready(function() {
+        $(".rounded").each(function() {
+          $(this).text("{{ cart.currency.symbol }}" + Math.round(Number($(this).text().replace(/[^0-9\.-]+/g,""))) + " {{ currency_letters }}");
+          $(this).show();
+        });
+      });
+    </script>
+  {% endif %}
 
 {% schema %}
 
