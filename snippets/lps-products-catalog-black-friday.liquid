@@ -3,7 +3,11 @@
 
     <div class="product-list">
         {% for prod in Prods %}
-            {% assign product = all_products[prod] %}
+            {% if request.page_type == 'collection' %}
+                {% assign product = all_products[prod] %}
+            {% else %}
+                {% assign product = prod %}
+            {% endif %}
       <div class="product-card">
           <div class="wrap">
             <div class="picture">
