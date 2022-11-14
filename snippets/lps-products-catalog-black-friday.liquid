@@ -1,7 +1,6 @@
 <section id="product-catalog-section">
     <h3>Choose Your CuraLin Bundle</h3>
 
-    {% assign Prods = page.content | split: ',' %}
     <div class="product-list">
         {% for prod in Prods %}
             {% assign product = all_products[prod] %}

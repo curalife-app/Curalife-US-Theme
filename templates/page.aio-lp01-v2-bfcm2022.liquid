@@ -22,7 +22,8 @@
   {% section 'lps-ingredients' %}
   {% section 'lps-supported-community' %}
   <div class="green-strip">Limited Offer! Choose a bundle and get a FREE CuraEats meal plan</div>
-  {% render 'lps-products-catalog-black-friday' %}
+  {% assign Prods = page.content | split: ',' %}
+  {% render 'lps-products-catalog-black-friday', Prods: Prods %}
   {% render 'collection-curaeats-section', invertSectionBack: true %}
   {% section 'lps-return-policy' %}
   {% section 'lps-badges' %}
