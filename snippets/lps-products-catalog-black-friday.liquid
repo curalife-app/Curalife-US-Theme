@@ -21,7 +21,7 @@
                 {% if localization.country.iso_code == 'CA' %}
                   {% assign cap = product.metafields.my_fields.ca_cap %}
                 {% elsif localization.country.iso_code == 'AU' %}
-                  {% assign cap = product.metafields.my_fields.au_cap %}
+                  {% assign cap = product.metafields.my_fields.au_cap | times: 100.0 %}
                 {% else %}
                   {% assign cap = product.compare_at_price | times: 100.0 | money_without_currency | replace: ".00", "" %}
                 {% endif %}
