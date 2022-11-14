@@ -5,7 +5,7 @@
         {% for prod in Prods %}
             {% if request.page_type == 'collection' %}
                 {% assign product = prod %}
-                {% else %}
+            {% else %}
                 {% assign product = all_products[prod] %}
             {% endif %}
       <div class="product-card">
