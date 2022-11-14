@@ -4,7 +4,7 @@
         <div class="extra-info"><img src="{{ 'icon-free-shipping-light.png' | asset_url }}" alt="free shipping"><p id="shipping-badge-text">FREE SHIPPING</p></div>
         <h2>Choose Your Package</h2>
         <div class="sl-optimize-03">
-            <div class="product-list">
+            <div class="product-list 3">
                 {% for lp_prod in lp_prods %}
                     {% assign prod = all_products[lp_prod] %}
                     {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
