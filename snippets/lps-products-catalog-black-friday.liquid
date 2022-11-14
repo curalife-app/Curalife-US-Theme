@@ -17,7 +17,7 @@
                 {% assign quantity_by_cents = quantity | times: 100 %}
                 {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                 {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
-                {% assign original_item_cap = product.metafields.my_fields.original_item.value.compared_at_price %}
+                {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 
                 {% if localization.country.iso_code == 'CA' %}
                   {% assign cap = product.metafields.my_fields.ca_cap %}
