@@ -1,14 +1,14 @@
 <section id="product-catalog-section">
     <h3>Choose Your CuraLin Bundle</h3>
 
-    <div class="product-list">
+    <div class="product-list" id="product-list-section">
         {% for prod in Prods %}
             {% if request.page_type == 'collection' %}
                 {% assign product = prod %}
             {% else %}
                 {% assign product = all_products[prod] %}
             {% endif %}
-      <div class="product-card">
+      <div class="product-card" id="product-card-section">
           <div class="wrap">
             <div class="picture">
                 <a href="{{ product.url }}">
