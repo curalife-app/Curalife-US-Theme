@@ -26,9 +26,7 @@
                   {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
                 {% endif %}
                 {% if product.compare_at_price > product.price %}
-                <div class="discount">
-                  <p> <i class="icofont-star"></i>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}<i class="icofont-star"></i></p>
-                </div>
+                <div class="discount"><i class="icofont-star"></i><p>SAVE {{ cap | times: 100.0 | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p><i class="icofont-star"></i></div>
                 {% endif %}
             </div>
             <div class="info">
@@ -53,10 +51,10 @@
                   {% endif %}
                 </div>
 
-              {% if product.tags contains 'CuraEats' %}
-                <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - $29 value</p>
-                <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
-              {% endif %}                </div>
+              {% unless forloop.index == 1 %}
+                <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - &pound;16.9 value</p>
+                <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
+              {% endunless %}                </div>
               <form action="/cart/add" method="post">
                 <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
                 <input name="return_to" type="hidden" value="/cart/">
@@ -71,7 +69,7 @@
       {% endfor %}
 
       <div class="trust-badges">
-          <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="" loading="lazy">Free Worldwide Shipping</div>
+        <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="" loading="lazy">Free Shipping</div>
           <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="" loading="lazy">60 Day Money Back Guarantee</div>
           <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="" loading="lazy">100% Secure Checkout</div>
       </div>
@@ -174,6 +172,10 @@
         padding: 16px;
     }
 
+    #product-catalog-section .product-card .info .price {
+        padding:  15px 0;
+    }
+
     #product-catalog-section .product-card .info .main {
         flex: auto;
         padding-bottom: 10px;
@@ -192,10 +194,6 @@
     #product-catalog-section .product-card .info .name h3 a {
         color: inherit;
         transition: color var(--transition);
-    }
-
-    #product-catalog-section .product-card .info .price {
-        padding:  15px 0;
     }
 
     #product-catalog-section .supply-days {
@@ -251,41 +249,25 @@
     }
 
     #product-catalog-section .product-card .picture .discount {
-        padding: 10px;
-        position: absolute;
-        padding: unset;
-        top: 0;
+      padding: unset;
+        width: 110%;
         top: 200px;
-        left: 0;
-        z-index: 5;
-        width: 100%;
+        left: -5%;
         transform: rotate(-8.4deg);
+        padding: 3px;
+        position: relative;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        background: #FFE746;
+        box-shadow: 0px 3.6px 3.6px rgb(0 0 0 / 25%);
+        font-size: 20px;
+        font-weight: bold;
+        gap: 10px;
     }
 
     #product-catalog-section .product-card .picture .discount p {
         margin: 0;
-        padding: 4px 13px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 1;
-        letter-spacing: .02em;
-        color: var(--white);
-        background: var(--red);
-        border: 1px solid var(--red);
-        box-sizing: border-box;
-        border-radius: 4px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        background: #FFE746;
-        box-shadow: 0px 3.6px 3.6px rgb(0 0 0 / 25%);
-        font-size: 22px;
-        font-weight: bold;
-        border: 0;
-        color: black;
-        border-radius: 0;
-        margin: 0 -2vw;
-        gap: 10px;
     }
 
     #product-catalog-section .icofont-star:before {
