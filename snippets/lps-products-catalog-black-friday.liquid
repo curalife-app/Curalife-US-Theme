@@ -405,3 +405,11 @@
     });
   });
 </script>
+
+<script>
+  $( document ).ready(function() {
+    $(".number").foreach(function() {
+      $(this).text(Math.ceil($(this).text()));
+    });
+  });
+</script>
