@@ -121,7 +121,9 @@
                 <div class="variant-box">
                   {% if forloop.index == 3 %}
                     <div class="variant-notice">
-                      <p>FREE GIFT! - Meal Plan App ($29 value)</p>
+                      {% assign curaeats_premium_variant = all_products['curaeats'].variants | last %}
+                      {% assign curaeats_premium_price = curaeats_premium_variant.price %}
+                      <p>FREE GIFT! - Meal Plan App (<span>{{ curaeats_premium_price }}</span> value)</p>
                     </div>
 
                     <style>
