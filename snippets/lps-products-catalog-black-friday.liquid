@@ -409,7 +409,7 @@
 <script>
   $( document ).ready(function() {
     $(".rounded").each(function() {
-      $(this).text(Math.ceil($(this).text()));
+      $(this).text(Math.ceil(parseInt($(this).text())));
     });
   });
 </script>
