@@ -49,20 +49,16 @@
         });
 
         brandsTicker = new Swiper('.hero-banner .ribbon.left', {
-            loop: true,
-            freeMode: true,
-            spaceBetween: 0,
-            grabCursor: true,
-            slidesPerView: 4,
-            loop: true,
+            speed: 5000,
             autoplay: {
                 delay: 0,
-                disableOnInteraction: true,
+                disableOnInteraction: false,
                 reverseDirection: true
             },
-            freeMode: true,
-            speed: 5000,
-            freeModeMomentum: false
+            loop: true,
+            slidesPerView: '4',
+            allowTouchMove: false,
+            disableOnInteraction: true
         });
 </script>
 
