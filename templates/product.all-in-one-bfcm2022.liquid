@@ -12,6 +12,15 @@
               <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
               <div id="product-main-slider-sc" class="swiper">
                 <div class="swiper-wrapper">
+                  {% for image in product.images %}
+                    <div class="swiper-slide">
+                      <div class="product-img">
+                        <div class="img-wrap">
+                          <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
                   {% for i in (1..5) %}
                     <div class="swiper-slide">
                       <div class="product-img">
@@ -27,15 +36,6 @@
                       <iframe id="product-video-iframe" src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
                     </div>
                   </div>
-                  {% for image in product.images %}
-                    <div class="swiper-slide">
-                      <div class="product-img">
-                        <div class="img-wrap">
-                          <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
-                        </div>
-                      </div>
-                    </div>
-                  {% endfor %}
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
