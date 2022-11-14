@@ -13,7 +13,8 @@
   <script>
     $( document ).ready(function() {
       $(".rounded").each(function() {
-        $(this).text("{{ cart.currency.symbol }}" + Math.round(Number($(this).text().replace(/[^0-9\.-]+/g,""))) + " {{ currency_letters }}");
+        $(this).text("{{ cart.currency.symbol }}" + Math.round(Number($(this).text().replace(/[^0-9\.-]+/g,""))));
+        !$(this).hasClass("no-letters") ? $(this).text($(this).text() + " {{ currency_letters }}";
         $(this).show();
       });
     });
