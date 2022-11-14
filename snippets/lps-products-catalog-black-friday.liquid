@@ -16,17 +16,8 @@
                 {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                 {% assign quantity_by_cents = quantity | times: 100 %}
                 {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-                {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
                 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 
-                {% if localization.country.iso_code == 'CA' %}
-                  {% assign cap = product.metafields.my_fields.ca_cap %}
-                {% elsif localization.country.iso_code == 'AU' %}
-                  {% assign cap = product.metafields.my_fields.au_cap %}
-                {% else %}
-                  {% assign cap = product.compare_at_price | money_without_currency | replace: ".00", "" %}
-                {% endif %}
-                <script>console.log("cap: {{cap}}")</script>
                 {% if product.compare_at_price > product.price %}
                 <div class="discount"><i class="icofont-star"></i><p>SAVE {{ product.compare_at_price | minus: product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p><i class="icofont-star"></i></div>
                 {% endif %}
@@ -34,13 +25,7 @@
             <div class="info">
               <div class="main">
                 <div class="name">
-                  <h3>
-                    {% if product.metafields.my_fields.alternative_title.value %}
-                    <a href="{{ product.url }}">{{ product.metafields.my_fields.alternative_title.value }}</a>
-                    {% else %}
-                    <a href="{{ product.url }}">{{ product.title }}</a>
-                    {% endif %}
-                  </h3>
+                  <h3><a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a></h3>
                 </div>
                 <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                 <div class="price">
