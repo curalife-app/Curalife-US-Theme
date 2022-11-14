@@ -45,7 +45,7 @@
                 {% assign curaeats_premium_price = curaeats_premium_variant.price %}
 
                 {% if product.tags contains 'CuraEats' %}
-                    <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - <span>{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value</p>
+                    <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - <span class="rounded">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value</p>
                     <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
                 {% endif %}
                 </div>
@@ -408,7 +408,7 @@
 
 <script>
   $( document ).ready(function() {
-    $(".number").foreach(function() {
+    $(".rounded").foreach(function() {
       $(this).text(Math.ceil($(this).text()));
     });
   });
