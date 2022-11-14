@@ -4,9 +4,9 @@
     <div class="product-list">
         {% for prod in Prods %}
             {% if request.page_type == 'collection' %}
-                {% assign product = all_products[prod] %}
-            {% else %}
                 {% assign product = prod %}
+                {% else %}
+                {% assign product = all_products[prod] %}
             {% endif %}
       <div class="product-card">
           <div class="wrap">
