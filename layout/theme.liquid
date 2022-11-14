@@ -68,28 +68,5 @@
 
     {% render 'social-login' %}
   </body>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        function transcyAddClassMoney() {
-            [].forEach.call(document.querySelectorAll('.discount'), function (e) {
-                e.classList.add('transcy-price-item');
-            });
-        };
 
-        setTimeout(() => {
-            var transcyCount = 0;
-            var transcyCustomInterval = setInterval(() => {
-                if (transcyCount > 5) {
-                    clearInterval(transcyCustomInterval);
-                }
-                transcyCount++;
-                if (document.getElementsByClassName('discount').length > 0) {
-                    transcyAddClassMoney();
-                    clearInterval(transcyCustomInterval);
-                    _transcy.methods.convertCurrency();
-                }
-            }, 500);
-        }, 3000);
-    });
-</script>
 </html>
