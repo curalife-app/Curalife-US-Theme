@@ -17,6 +17,7 @@
                 {% assign quantity_by_cents = quantity | times: 100 %}
                 {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                 {% assign original_item_price = product.metafields.my_fields.original_item.value.price %}
+                {% assign original_item_cap = product.metafields.my_fields.original_item.value.compared_at_price %}
 
                 {% if localization.country.iso_code == 'CA' %}
                   {% assign cap = product.metafields.my_fields.ca_cap %}
@@ -44,7 +45,7 @@
                 <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                 <div class="price">
                   {% if quantity > 1 %}
-                    <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ original_item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
+                    <p id="divided-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
                   {% elsif product.compare_at_price > product.price %}
                     <p id="discounted-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", ""  }}<strike>{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                   {% else %}
