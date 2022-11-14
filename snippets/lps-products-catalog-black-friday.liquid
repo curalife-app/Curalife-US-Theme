@@ -414,7 +414,7 @@
   $( document ).ready(function() {
     $(".rounded").each(function() {
       $(this).text("{{ cart.currency.symbol }}" + Math.ceil(Number($(this).text().replace(/[^0-9\.-]+/g,""))));
-      $(this).style.display = "block";
+      $(this).show();
     });
   });
 </script>
