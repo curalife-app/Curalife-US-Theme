@@ -120,7 +120,7 @@
                     <div class="variant-notice">
                       {% assign curaeats_premium_variant = all_products['curaeats'].variants | last %}
                       {% assign curaeats_premium_price = curaeats_premium_variant.price %}
-                      <p>FREE GIFT! - Meal Plan App (<span>{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }} value)</p>
+                      <p>FREE GIFT! - Meal Plan App (<span class="rounded">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }} value)</span></p>
                     </div>
 
                     <style>
@@ -151,8 +151,8 @@
                     </div>
                   </div>
                   <div class="price">
-                    <p class="compared-at-price"><strike>{{ var.compare_at_price | money_without_trailing_zeros }}</strike></p>
-                    <p class="real-price">{{ var.price | money_without_trailing_zeros }}</p>
+                    <p class="compared-at-price"><strike class="rounded">{{ var.compare_at_price | money_without_trailing_zeros }}</strike></p>
+                    <p class="real-price rounded">{{ var.price | money_without_trailing_zeros }}</p>
                   </div>
                 </div>
               {% endfor %}
