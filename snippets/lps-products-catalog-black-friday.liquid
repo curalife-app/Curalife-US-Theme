@@ -22,7 +22,7 @@
                 {% assign quantity_by_cents = quantity | times: 100 %}
                 {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
                 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
-
+                <script>console.log("{{product.price | divided_by: quantity_by_cents}}")</script>
                 {% if product.compare_at_price > product.price %}
                 <div class="discount"><i class="icofont-star"></i><p>SAVE <span class="rounded">{{ original_item_cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
                 {% endif %}
@@ -35,7 +35,6 @@
                 <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                 <div class="price">
                   {% if quantity > 1 %}
-                    <script>console.log("{{item_price}}")</script>
                     <p id="divided-price"><span class="rounded">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
                   {% elsif product.compare_at_price > product.price %}
                     <p id="discounted-price"><span class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
