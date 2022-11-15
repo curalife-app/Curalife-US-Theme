@@ -233,6 +233,7 @@
 
   {% if curaeats_exist %}
   <div id="curaeats-content">
+    {% render 'onboarding-hero', title: "Order {{order.name}} is confirmed!", icon_file: "onboarding-order-icon.png" %}
     {% render 'curaeats-download-section' %}
     {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
     {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true, box_link: '/pages/contact-us' %}
