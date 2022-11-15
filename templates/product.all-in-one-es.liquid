@@ -1,5 +1,5 @@
 <div class="product-template-all-in-one">
-  <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt=""> 
+  <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt="">
   <a id="back-to-top-btn">Paquete Curalin</a>
   <section class="cta-section">
     <div class="container product-container">
@@ -85,7 +85,7 @@
                     <div class="thumbs-img video-thumbnail">
                       <div class="img-wrap">
                         <img src="{{ "product-aio-product-video-thumbnail.png" | asset_url }}" alt="" loading="lazy">
-                      </div>                                        
+                      </div>
                     </div>
                   </div>
                   {% for image in product.images %}
@@ -205,7 +205,7 @@
                 <button class="main-btn" id="buy-button">COMPRA AHORA <span class="save" id="save"></span></button>
               </div>
             </div>
-          </div>                 
+          </div>
         </div>
       </div>
     </div>
@@ -960,7 +960,7 @@
       if (screen.width < 760) {
         $('.helpButton').attr('style', 'bottom: 60px !important');
       }
-    } 
+    }
     else {
       btn.removeClass('show');
       if (screen.width < 760) {
@@ -1029,7 +1029,7 @@
       $('.qty-control').css('border-color', '#AF5B35');
     }, function() {
       // on mouseout, reset the background colour
-      $('.qty-control').css('border-color', '#d07c5b');
+      $('.qty-control').css('border-color', '#FFB22D');
     });
   });
 
@@ -1061,7 +1061,7 @@
             oldValue = inputObj.val();
         if ($button.attr('data-act') === "+") {
             newVal = parseInt(oldValue) + 1;
-        } 
+        }
         else {
             newVal = parseInt(oldValue) - 1;
         }
@@ -1074,7 +1074,7 @@
   $(document).on("click", ".variant-box", function () {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      'event': 'variant-click', 
+      'event': 'variant-click',
       'label': $('input[name=pack]:checked', '#CTAForm').attr('sku'),
       'userId': '{{ customer.id }}',
       'email': '{{ customer.email }}',
@@ -1091,16 +1091,16 @@
   $(document).on("click", "#buy-button", function () {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'add_to_cart',    
-      ecommerce: {                          
-      items: [{       
-        item_name: '{{ product.title }}',      
-        item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'), 
+      event: 'add_to_cart',
+      ecommerce: {
+      items: [{
+        item_name: '{{ product.title }}',
+        item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
         affiliation: '{{ shop.name }}',
         price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
         currency: '{{ shop.currency }}',
-        item_brand: 'CuraLife',            
-        item_category: 'CuraLin',         
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
         quantity: parseInt($(".qty-control input").val())
       }]
       },
@@ -1169,7 +1169,7 @@
   .grecaptcha-badge {
     display: none !important;
   }
-  
+
   .transcy-switcher-container {
     bottom: 65px !important;
     transition: bottom 0.5s;

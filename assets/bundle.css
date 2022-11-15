@@ -1733,8 +1733,8 @@ select {
 
 .main-btn:hover {
   color: var(--white);
-  background-color: #d07c5b;
-  border-color: #d07c5b;
+  background-color: #FFB22D;
+  border-color: #FFB22D;
 }
 
 header {
@@ -3661,7 +3661,7 @@ footer .bottom-info .info-wrap .text p {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.5;
-  color: #d07c5b;
+  color: #FFB22D;
 }
 
 .culture-wrap {
