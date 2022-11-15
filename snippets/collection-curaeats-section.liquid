@@ -30,10 +30,16 @@
   <div class="background"></div>
 </section>
 
+
 <style>
   #curaeats-section {
     padding: 50px 0;
     position: relative;
+  }
+
+  #curaeats-section .container {
+    position: relative;
+    z-index: 1;
   }
 
   #curaeats-section .background {
@@ -41,7 +47,7 @@
     width: 100%;
     height: 50%;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     bottom: {% if invertSectionBack == false %}0{% else%}unset{% endif %};;
     top: {% if invertSectionBack == true %}0{% else%}unset{% endif %};
   }
@@ -52,7 +58,7 @@
 
   #curaeats-section .section-titles h2 {
     text-align: center;
-    color: {% if invertSectionBack == true %}white !important{% else%}#4B643D{% endif %};
+    color: {% if invertSectionBack == true %}white !important{% else %}#4B643D{% endif %};
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;   
@@ -65,8 +71,7 @@
     max-width: 825px;
     margin: auto;
     margin-bottom: 30px;
-    color: {% if invertSectionBack == true %}#FFFFFF{% else%}#000000{% endif %};
-    {%- comment -%} color: #FFFFFF; {%- endcomment -%}
+    color: {% if invertSectionBack == true %}#FFFFFF{% else %}#000000{% endif %};
   }
 
   #curaeats-section .features {
@@ -134,9 +139,13 @@
 
     #curaeats-section .section-titles h2 {
       margin-top: 20px;
-      text-align: start;
       color: white;
       font-size: 7vw;
+      text-align: start;
+    }
+
+    #curaeats-section .section-titles p {
+      color: white;
     }
 
     #curaeats-section .background {
