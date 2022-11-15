@@ -118,7 +118,9 @@
       </div>
     </div>
 
-    {% render 'collection-curaeats-section', invertSectionBack: false %}
+    {% if products.tag contains 'CuraEats' %}
+      {% render 'collection-curaeats-section', invertSectionBack: false %}
+    {% endif %}
   </div>
 
 <style>
