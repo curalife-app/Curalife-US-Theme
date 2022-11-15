@@ -1938,20 +1938,6 @@ input[type=number] {
     top: 5.5%;
     right: 5.5%;
     z-index: 3;
-
-    p {
-      margin: 0;
-      padding: 4px 13px;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 1;
-      letter-spacing: 0.02em;
-      color: var(--white);
-      background: var(--red);
-      border: 1px solid var(--red);
-      box-sizing: border-box;
-      border-radius: 4px;
-    }
   }
 
   .sliders-group {
