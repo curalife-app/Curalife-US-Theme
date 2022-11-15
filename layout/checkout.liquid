@@ -263,10 +263,16 @@
     #contact-us-section {
       margin-bottom: unset;
     }
+
+    @media screen and (max-width: 768px) {
+      .logo {
+        top: unset;
+      }
+    }
   </style>
   {% endif %}
 
-  {% if onboarding_exist %}
+  {%- comment -%} {% if onboarding_exist %}
   <div id="onboarding-content">
     {% assign progress_steps = "Daily Tip
     |Reviews
@@ -307,7 +313,7 @@
       margin-bottom: unset;
     }
   </style>
-  {% endif %}
+  {% endif %} {%- endcomment -%}
 
   {{ tracking_code }}
 
