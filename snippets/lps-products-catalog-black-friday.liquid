@@ -72,14 +72,14 @@
     </div>
 </section>
 
-{% if request.path contains 'bfcm' %}
+{%- comment -%} {% if request.path contains 'bfcm' %}
 {% if localization.country.iso_code != 'CA' and localization.country.iso_code != 'AU' %}
   <script>
     $("#dot5").before(".5");
     $("#dot5save:first-child").text("$135");
   </script>
 {% endif %}
-{% endif %}
+{% endif %} {%- endcomment -%}
 
 <style>
   #product-catalog-section h3 {
