@@ -16,11 +16,11 @@
 {% assign order_count = order_count | plus: 1 %}
 {% endfor %}
 
-{% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com, noa@curalife.com, dovi@curalife.com, or@curalife.com' %}
+{%- comment -%} {% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com, noa@curalife.com, dovi@curalife.com, or@curalife.com' %}
 
 {% if users contains customer.email %}
 {% assign onboarding_exist = true %}
-{% endif %}
+{% endif %} {%- endcomment -%}
 
 <!DOCTYPE html>
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
@@ -233,6 +233,8 @@
 
   {% if curaeats_exist %}
   <div id="curaeats-content">
+    {% assign thanksTitle = 'Order number ' | append: order.name | append: ' is confirmed!' %}
+    {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
     {% render 'curaeats-download-section' %}
     {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
     {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true, box_link: '/pages/contact-us' %}
@@ -261,10 +263,16 @@
     #contact-us-section {
       margin-bottom: unset;
     }
+
+    @media screen and (max-width: 768px) {
+      .logo {
+        top: unset;
+      }
+    }
   </style>
   {% endif %}
 
-  {% if onboarding_exist %}
+  {%- comment -%} {% if onboarding_exist %}
   <div id="onboarding-content">
     {% assign progress_steps = "Daily Tip
     |Reviews
@@ -305,7 +313,7 @@
       margin-bottom: unset;
     }
   </style>
-  {% endif %}
+  {% endif %} {%- endcomment -%}
 
   {{ tracking_code }}
 
