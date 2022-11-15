@@ -233,7 +233,7 @@
 
   {% if curaeats_exist %}
   <div id="curaeats-content">
-    {% assign thanksTitle = 'Order' | append: order.name | append: 'is confirmed!' %}
+    {% assign thanksTitle = 'Order ' | append: order.name | append: ' is confirmed!' %}
     {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
     {% render 'curaeats-download-section' %}
     {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
