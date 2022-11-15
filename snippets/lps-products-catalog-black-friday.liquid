@@ -24,7 +24,7 @@
                 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
                 <script>console.log("{{product.price | divided_by: quantity_by_cents}}")</script>
                 {% if product.compare_at_price > product.price %}
-                <div class="discount"><i class="icofont-star"></i><p id="dot5save">SAVE <span class="rounded">{{ original_item_cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
+                <div class="discount"><i class="icofont-star"></i><p>SAVE <span class="rounded" id="dot5save">{{ original_item_cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
                 {% endif %}
             </div>
             <div class="info">
@@ -76,7 +76,7 @@
 {% if localization.country.iso_code != 'CA' and localization.country.iso_code != 'AU' %}
   <script>
     $("#dot5").before(".5");
-    $("#dot5save").text("SAVE $135");
+    $("#dot5save").text("$135");
   </script>
 {% endif %}
 {% endif %}
