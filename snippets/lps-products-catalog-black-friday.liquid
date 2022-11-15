@@ -35,7 +35,7 @@
                 <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                 <div class="price">
                   {% if quantity > 1 %}
-                    <p id="divided-price"><span class="rounded">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
+                    <p id="divided-price"><span class="rounded">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded no-letters" {% if product.title contains '6 Pack' %}id="dot5"{% endif %}>{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike> Per Bottle</p>
                   {% elsif product.compare_at_price > product.price %}
                     <p id="discounted-price"><span class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike></p>
                   {% else %}
@@ -71,6 +71,15 @@
       </div>
     </div>
 </section>
+
+{% if request.path contains 'bfcm' %}
+{% if localization.country.iso_code != 'CA' and localization.country.iso_code != 'AU' %}
+  <script>
+    $("#dot5").before(".5");
+    $("#dot5save").text("SAVE $135");
+  </script>
+{% endif %}
+{% endif %}
 
 <style>
   #product-catalog-section h3 {
