@@ -1,50 +1,3 @@
-<style>
-  @font-face {
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
-    src: local(''), url('{{ "DMSans-Regular.ttf" | asset_url }}') format('ttf'),
-  }
-
-  @font-face {
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 500;
-    src: url('{{ "DMSans-Medium.ttf" | asset_url }}');
-    src: local(''), url('{{ "DMSans-Medium.ttf" | asset_url }}') format('ttf'),
-  }
-
-  @font-face {
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
-    src: local(''), url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
-  }
-
-  @font-face {
-    font-family: 'PP Radio Grotesk';
-    font-style: normal;
-    font-weight: 300;
-    src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
-    src: local(''), url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'), }
-
-  @font-face {
-    font-family: 'PP Radio Grotesk';
-    font-style: normal;
-    font-weight: 400;
-    src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
-    src: local(''), url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'), }
-
-  @font-face {
-    font-family: 'PP Radio Grotesk';
-    font-style: normal;
-    font-weight: 700;
-    src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
-    src: local(''), url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'), }
-</style>
-
 <section id="main-title-section">
   <div class="container">
     <div class="onboarding-thank-you">
@@ -107,13 +60,13 @@
 <script>
   const urlParams = new URLSearchParams(window.location.search);
 
-  if (urlParams.get('customer') && urlParams.get('field') && urlParams.get('value')) {
+  if (urlParams.get('recp') && urlParams.get('field') && urlParams.get('value')) {
     // Split to flow by Email or ID
     let zapierURL = urlParams.get('customer').includes('@') ? 'https://hooks.zapier.com/hooks/catch/10900898/bxyk2z1/' : 'https://hooks.zapier.com/hooks/catch/10900898/bxnq9au/';
 
     const options = {
       method: 'POST',
-      body: JSON.stringify({customer: urlParams.get("customer"), field: urlParams.get("field"), value: urlParams.get("value")})
+      body: JSON.stringify({customer: urlParams.get("recp"), field: urlParams.get("field"), value: urlParams.get("value")})
     };
 
     fetch(zapierURL, options)
