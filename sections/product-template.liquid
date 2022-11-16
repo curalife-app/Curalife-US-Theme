@@ -37,8 +37,8 @@
               {% if product.title contains 'Special Offer' %}
                 <div class="special-offer-badge">
                   <div class="badge-bg">
-                    <p class="new-price"><span class="rounded">{{ product.price | money }}</span></p>
-                    <p class="old-price"><strike class="rounded">{{ product.compare_at_price | money }}</strike></p>
+                    <p><span class="rounded">{{ product.price | money }}</span></p>
+                    <p class="cap"><strike class="rounded">{{ product.compare_at_price | money }}</strike></p>
                   </div>
                 </div>
 
