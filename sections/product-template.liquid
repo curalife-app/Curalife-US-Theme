@@ -1,3 +1,5 @@
+
+
 {% render 'script.round-converted-currency' %}
 {% render 'collection-page-header-black-friday' %}
 
@@ -7,7 +9,22 @@
     <div class="container">
       <div class="product-wrap">
         <div class="product-slider">
-          <div class="bg"></div>
+          <div class="bg">
+          {%- comment -%} <div class="ribbons">
+            {% for i in (1..4) %}
+            <div class="ribbon swiper {% cycle 'left', 'right' %}">
+              <div class="titles swiper-wrapper">
+                {% for i in (1..20) %}
+                <div class="title swiper-slide">
+                  <p>BLACK FRIDAY</p>
+                  <i class="icofont-star"></i>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div> {%- endcomment -%}
+          </div>
           {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
           {% assign quantity_by_cents = quantity | times: 100 %}
           {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
@@ -34,6 +51,12 @@
               </div>
             </div>
             <div class="main-slider">
+              {% if product.title contains 'Special Offer' %}
+                <div class="special-offer-badge">
+                  <p class="new-price"><span class="rounded">{{ product.price | money }}</span> {% if product.compare_at_price > product.price %}</p>
+                  <p class="old-price"><strike class="rounded">{{ product.compare_at_price | money }}</strike></p>
+                </div>
+              {% endif %}
               <div class="swiper">
                 <div class="swiper-wrapper">
                   {% for image in product.images %}
@@ -53,7 +76,11 @@
         <div class="product-info">
           <div class="title-wrapper">
             <div class="sub-title">
-              <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+              {% if product.metafields.my_fields.alternative_title.value %}
+              <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
+              {% else %}
+              <h1>{{ product.title }}</h1>
+              {% endif %}
             </div>
 
             {% capture CFH %}{{ content_for_header }}{% endcapture %}
@@ -77,6 +104,10 @@
             <div class="price">
               <p><span class="rounded">{{ product.price | money }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money }}</strike></p>{% endif %}
             </div>
+
+            {% if product.title contains 'Special Offer' %}
+              <p class="special-offer-title"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
+            {% endif %}
 
             <div class="form-wrap">
               <form method="post" id="addTocartForm" action="/cart/add">
@@ -122,6 +153,33 @@
       {% render 'collection-curaeats-section', invertSectionBack: false %}
     {% endif %}
   </div>
+
+  <script>
+    brandsTicker = new Swiper('.hero-banner .ribbon.right', {
+      speed: 5000,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false
+      },
+      loop: true,
+      slidesPerView: '4',
+      allowTouchMove: false,
+      disableOnInteraction: true
+    });
+
+    brandsTicker = new Swiper('.hero-banner .ribbon.left', {
+      speed: 5000,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: true,
+        reverseDirection: false
+      },
+      loop: true,
+      slidesPerView: '4',
+      allowTouchMove: false,
+      grabCursor: true
+    });
+  </script>
 
 <style>
   .product-wrap {
@@ -240,6 +298,94 @@
       position: absolute;
       right: 0;
     }
+  }
+</style>
+<style>
+  .ribbon {
+    background: white;
+    width: 1000px;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .ribbon .titles {
+    display: flex;
+    align-items: center;
+    transition-timing-function: linear !important;
+  }
+
+  .ribbon .titles .title {
+    display: flex;
+    align-items: center;
+    gap: 8%;
+  }
+
+  .ribbon .titles .title p {
+    margin: unset;
+    font-weight: bold;
+    font-size: clamp(20px, 2vw, 28px);
+  }
+
+  .ribbon:nth-child(1) {
+    display: none;
+    bottom: 0;
+    right: -40px;
+    transform: rotate(350deg);
+    z-index: 10;
+  }
+
+  .ribbon:nth-child(2) {
+    top: 50px;
+    right: -40px;
+    transform: rotate(15deg);
+    opacity: 0.3;
+    filter: blur(2px);
+  }
+
+  .ribbon:nth-child(3) {
+    display: none;
+    bottom: 0;
+    left: -200px;
+    transform: rotate(10deg);
+    opacity: 0.5;
+  }
+
+  .ribbon:nth-child(4) {
+    display: none;
+    top: 50px;
+    transform: rotate(345deg);
+    right: 65vw;
+  }
+
+  @media screen and (max-width: 760px) {
+
+
+    .ribbon .titles .title {
+      display: flex;
+      align-items: center;
+      gap: 7vw;
+      width: 200px !important;
+    }
+
+    .ribbon:nth-child(1) {
+      bottom: 22vw;
+      transform: rotate(350deg);
+    }
+
+    .ribbon:nth-child(2) {
+      transform: rotate(5deg);
+      top: 7vw;
+    }
+
+    .ribbon:nth-child(3) {
+      transform: rotate(60deg);
+      left: -96vw;
+    }
+
+    .ribbon:nth-child(4) {
+      display: none;
+    }
+
   }
 </style>
 
