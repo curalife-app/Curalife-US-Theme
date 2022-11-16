@@ -1,3 +1,9 @@
+<script>
+    if (window.location.pathname.includes("/en-ca")) {
+        window.location.replace(window.location.pathname.replace("/en-ca", ""));
+    }
+</script>
+
 <div class="container page-not-found" style="text-align: center;padding: 50px;">
     <img src="{{ '404-main-image.jpg' | asset_url }}" alt="404">
     <h1>OOPS! Page Not Found!</h1>
