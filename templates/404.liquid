@@ -1,6 +1,6 @@
 <script>
     if (window.location.pathname.includes("/en-ca")) {
-        window.location.replace(window.location.pathname.replace("/en-ca", ""));
+        window.location.replace(window.location.pathname.replace("/en-ca", "").concat(window.location.search));
     }
 </script>
 
