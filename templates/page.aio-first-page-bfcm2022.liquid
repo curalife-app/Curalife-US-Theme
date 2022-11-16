@@ -59,13 +59,11 @@
                         <div class="ticker-col swiper-wrapper">
                             <div class="partner-col swiper-slide">
                                 <div class="partner-item">
-                                    <a href="javascript:void(0)">
-                                        <picture>
-                                            <source srcset="{{ 'lp-aio-cnn-logo.png' | file_url}}" media="(min-width: 641px)">
-                                            <source srcset="{{ 'lp-aio-cnn-logo-mb.png' | file_url}}">
-                                            <img src="{{ 'lp-aio-cnn-logo-mb.png' | file_url}}" alt="">
-                                        </picture>
-                                    </a>
+                                    <picture>
+                                        <source srcset="{{ 'lp-aio-cnn-logo.png' | file_url}}" media="(min-width: 641px)">
+                                        <source srcset="{{ 'lp-aio-cnn-logo-mb.png' | file_url}}">
+                                        <img src="{{ 'lp-aio-cnn-logo-mb.png' | file_url}}" alt="">
+                                    </picture>
                                 </div>
                             </div>
                             <div class="partner-col swiper-slide">
@@ -852,7 +850,7 @@
                 |Will my doctor approve of this?:Over 700 doctors, endocrinologists, and medical practitioners are already recommending CuraLin to their patients. While we cannot speak for (and you should consult) your doctor, we can say that doctors everywhere have been thrilled by the results their patients are seeing with CuraLin.
                 |Can you tell me more about the 100,000 member support community?:Peer-support is one of the most important things you can get to help you maintain healthy blood sugar levels. Having a community that’s there to answer your questions, share a recipe, or give you a shoulder to lean is super valuable. This is the world’s largest online blood sugar support community, and it’s there for you day and night. Once you place your CuraLin order, we’ll send you an invite so you can join."
                 | split: '|' %}
-                
+
                 {% render 'section-faq', faqItems: faqItems %}
                 {%- comment -%} <ul>
                     <li>
