@@ -36,7 +36,7 @@
             <div class="main-slider">
               {% if product.title contains 'Special Offer' %}
                 <div class="special-offer-badge">
-                  <p class="new-price"><span class="rounded">{{ product.price | money }}</span> {% if product.compare_at_price > product.price %}</p>
+                  <p class="new-price"><span class="rounded">{{ product.price | money }}</span></p>
                   <p class="old-price"><strike class="rounded">{{ product.compare_at_price | money }}</strike></p>
                 </div>
               {% endif %}
