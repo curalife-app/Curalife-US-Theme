@@ -1,6 +1,7 @@
 {% capture CFH %}{{ content_for_header }}{% endcapture %}{{CFH}}
 
 {% if CFH contains "started=true" %}
+  {% assign fieldValue = 'yes' %}
   {% assign progress_steps =  "How To Use
                               |Reviews
                               |Support
@@ -14,6 +15,7 @@
   {% render 'onboarding-curalin-call-expert', background_color: '#FAF5E9', border: false %}
   {% render 'onboarding-faq' %}
 {% else %}
+  {% assign fieldValue = 'no-speak-to-cs' %}
   {% assign progress_steps =  "Support
                                 |How To Use
                                 |Reviews
@@ -36,7 +38,7 @@
 
       const options = {
         method: 'POST',
-        body: JSON.stringify({customer: urlParams.get("recp"), field: xxx, value: xxx})
+        body: JSON.stringify({customer: urlParams.get("recp"), field: "90", value: "{{ fieldValue }}")
       };
 
       fetch(zapierURL, options)
