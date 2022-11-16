@@ -62,7 +62,7 @@
 
   if (urlParams.get('recp') && urlParams.get('field') && urlParams.get('value')) {
     // Split to flow by Email or ID
-    let zapierURL = urlParams.get('customer').includes('@') ? 'https://hooks.zapier.com/hooks/catch/10900898/bxyk2z1/' : 'https://hooks.zapier.com/hooks/catch/10900898/bxnq9au/';
+    let zapierURL = urlParams.get('recp').includes('@') ? 'https://hooks.zapier.com/hooks/catch/10900898/bxyk2z1/' : 'https://hooks.zapier.com/hooks/catch/10900898/bxnq9au/';
 
     const options = {
       method: 'POST',
