@@ -177,10 +177,10 @@
                 </style>
               {% endif %}
 
-              <div>
-                <div>
+              <div class="swiper">
+                <div class="swiper-wrapper">
                   {% for image in product.images %}
-                  <div>
+                  <div class="swiper-slide">
                     <div class="product-img">
                       <div class="img-wrap">
                         <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" {%if forloop.index == 1%}style="object-fit:cover"{%endif%}>
@@ -390,7 +390,6 @@
   }
 </style>
 
-{%- comment -%}
 <script>
   productThumbs = new Swiper('.thumbs-slider .swiper', {
     spaceBetween: 20,
@@ -409,7 +408,7 @@
       slideToClickedSlide: false,
       thumbs: { swiper: productThumbs },
     });
-</script> {%- endcomment -%}
+</script>
 
 <script>
   // Change Quantity Widget On Product Page
