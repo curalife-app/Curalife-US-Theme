@@ -390,6 +390,7 @@
   }
 </style>
 
+{%- comment -%}
 <script>
   productThumbs = new Swiper('.thumbs-slider .swiper', {
     spaceBetween: 20,
@@ -408,7 +409,7 @@
       slideToClickedSlide: false,
       thumbs: { swiper: productThumbs },
     });
-  </script>
+</script> {%- endcomment -%}
 
 <script>
   // Change Quantity Widget On Product Page
