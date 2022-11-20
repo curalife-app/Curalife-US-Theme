@@ -66,6 +66,12 @@
         };
     });
 
+    function showvideo() {
+        this.classList.add('show-video');
+    }
+
+    document.querySelector('.iframe_overlay').closest(".testimonials-video_part").addEventListener('click', showvideo)
+
     /*count-effect*/
     const counters = document.querySelectorAll('.satisfaction-survey .success-list ul li .percentage p span');
     const countingSpeed = 6000;
