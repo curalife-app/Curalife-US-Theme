@@ -382,7 +382,7 @@
       jQuery("aside.sidebar").addClass("onboarding");
       {% endif %}
 
-      {%- comment -%} {% if onboarding_exist %}
+      {% if onboarding_exist %}
       jQuery("#onboarding-content").insertAfter(".thank-you__additional-content");
       if (jQuery("#curaeats-content")) {
         jQuery(".sidebar").insertAfter("#curaeats-content");
@@ -398,7 +398,7 @@
       jQuery(".upper-extentions").hide();
       jQuery(".sidebar-extentions").hide();
       jQuery("aside.sidebar").addClass("onboarding");
-      {% endif %} {%- endcomment -%}
+      {% endif %}
     }
 
     let searchParams = new URLSearchParams(window.location.search);
