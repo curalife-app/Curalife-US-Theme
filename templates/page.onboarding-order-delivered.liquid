@@ -32,13 +32,13 @@
 <script>
   const urlParams = new URLSearchParams(window.location.search);
 
-    if (urlParams.get('recp')) {
+    if (urlParams.get('customer')) {
       // Split to flow by Email or ID
-      let zapierURL = urlParams.get('recp').includes('@') ? 'https://hooks.zapier.com/hooks/catch/10900898/bxyk2z1/' : 'https://hooks.zapier.com/hooks/catch/10900898/bxnq9au/';
+      let zapierURL = urlParams.get('customer').includes('@') ? 'https://hooks.zapier.com/hooks/catch/10900898/bxyk2z1/' : 'https://hooks.zapier.com/hooks/catch/10900898/bxnq9au/';
 
       const options = {
         method: 'POST',
-        body: JSON.stringify({customer: urlParams.get("recp"), field: "90", value: "{{ fieldValue }}")
+        body: JSON.stringify({customer: urlParams.get("customer"), field: "90", value: "{{ fieldValue }}")
       };
 
       fetch(zapierURL, options)
