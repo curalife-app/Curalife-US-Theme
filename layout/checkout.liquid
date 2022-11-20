@@ -10,17 +10,9 @@
   {% endif %}
 {% endfor %}
 
-<!-- If the customer bought first time - Onboarding -->
-{% assign order_count = 0 %}
-{% for order in customer.orders %}
-{% assign order_count = order_count | plus: 1 %}
-{% endfor %}
-
-{%- comment -%} {% assign users = 'yotam@curalife.com, ana@curalife.com, ofirv92@yahoo.com, svetlana@curalife.com, sagi@curalife.com, noa@curalife.com, dovi@curalife.com, or@curalife.com' %}
-
-{% if users contains customer.email %}
+{% if customer.orders_count == 1 %}
 {% assign onboarding_exist = true %}
-{% endif %} {%- endcomment -%}
+{% endif %}
 
 <!DOCTYPE html>
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
@@ -272,7 +264,7 @@
   </style>
   {% endif %}
 
-  {%- comment -%} {% if onboarding_exist %}
+  {% if onboarding_exist %}
   <div id="onboarding-content">
     {% assign progress_steps = "Daily Tip
     |Reviews
@@ -313,7 +305,7 @@
       margin-bottom: unset;
     }
   </style>
-  {% endif %} {%- endcomment -%}
+  {% endif %}
 
   {{ tracking_code }}
 
