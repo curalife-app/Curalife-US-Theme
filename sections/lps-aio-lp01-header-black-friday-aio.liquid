@@ -101,25 +101,3 @@
         }
     }
 </style>
-
-{%- comment -%}
-<script>
-        $(document).ready(function () {
-            let productsOffset = $("#product-catalog-section").offset();
-
-            $(window).scroll(function () {
-                if ($(this).scrollTop() < productsOffset.top) {
-                    $('#page-header').fadeIn();
-                } else {
-                    $('#page-header').fadeOut();
-                }
-            });
-
-        $("#main-cta-btn").click(function () {
-            $([document.documentElement, document.body]).animate({
-                scrollTop: productsOffset.top - 130
-            }, 2000);
-        });
-    })
-</script> {%- endcomment -%}
-
