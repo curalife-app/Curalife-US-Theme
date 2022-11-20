@@ -33,39 +33,6 @@
         });
     }
 
-    const accordions = document.querySelectorAll(".faq-list ul li");
-
-    const openAccordion = (accordion) => {
-        const content = accordion.querySelector(".answer");
-        accordion.classList.add("active");
-        // content.style.maxHeight = content.scrollHeight + "px";
-    };
-
-    const closeAccordion = (accordion) => {
-        const content = accordion.querySelector(".answer");
-        accordion.classList.remove("active");
-        // content.style.maxHeight = null;
-    };
-
-    accordions.forEach((accordion) => {
-        const intro = accordion.querySelector(".question");
-        const content = accordion.querySelector(".answer");
-
-        intro.onclick = () => {
-            if (accordion.classList.contains("active")) {
-                closeAccordion(accordion);
-            } else {
-                openAccordion(accordion);
-            }
-            if (content.style.maxHeight) {
-                closeAccordion(accordion);
-            } else {
-                accordions.forEach((accordion) => closeAccordion(accordion));
-                openAccordion(accordion);
-            }
-        };
-    });
-
     function showvideo() {
         this.classList.add('show-video');
     }
