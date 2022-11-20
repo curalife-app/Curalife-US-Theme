@@ -1,0 +1,33 @@
+{% assign progress_steps = "Support
+|How To Use
+|Reviews
+|FAQ"
+| split: '|' %}
+
+{% render 'onboarding-hero', title: "Curalin has been delivered - lets start!", icon_file: "onboarding-deliver-icon.png"%}
+{% render 'onboarding-progress-bar', progress_steps: progress_steps %}
+{% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
+{% render 'onboarding-curalin-consumers-not-started'%}
+{% render 'onboarding-faq' %}
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.get('customer')) {
+        // Split to flow by Email or ID
+        let zapierURL = urlParams.get('customer').includes('@') ? 'https://hooks.zapier.com/hooks/catch/10900898/bxyk2z1/' : 'https://hooks.zapier.com/hooks/catch/10900898/bxnq9au/';
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify({ customer: urlParams.get("customer"), field: "90", value: "no-speak-to-cs" })
+        };
+
+        fetch(zapierURL, options)
+            .then(response => console.log(response.json()))
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
+    else {
+        console.log("No Params");
+    }
+</script>
