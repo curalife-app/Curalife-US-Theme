@@ -13,5 +13,6 @@
   function submit(event) {
     $(".quiz-section").css("visibility", "hidden").animate({ opacity: 0.0 }, 1000);
     $(".quiz-section").height(0);
+    woopra.track('Finished Onboarding Quiz', {});
   }
 </script>
