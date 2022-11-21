@@ -15,7 +15,7 @@
     <div class="container">
       <div class="product-wrap">
       <div class="product-wrap-wrapper" style="position: relative">
-      
+
         {% if product.title contains '1+1' %}
         <div class="image-minor-wrapper">
           <div class="special-offer-badge">
@@ -28,7 +28,7 @@
           <img class="star-right" src="{{ 'bfcm-1-plus-1-star-02.png' | asset_url }}" alt="star" loading="lazy">
           <img class="main-img" src="{{'bfcm-2bottles.png' | asset_url }}" alt="2-bottles" loading="lazy" style="object-fit:cover">
         </div>
-      
+
         <style>
           .special-offer-badge {
             width: 130px;
@@ -46,7 +46,7 @@
             border: 3px solid #FFE746;
             box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
           }
-      
+
           .special-offer-badge .badge-bg {
             display: flex;
             flex-direction: column;
@@ -60,40 +60,40 @@
             left: 0;
             top: 0;
           }
-      
+
           .special-offer-badge p {
             margin: unset;
           }
-      
-      
-      
+
+
+
           .product-slider .bg {
             height: 100% !important;
             background-size: cover;
           }
-      
+
           .product-slider .discount {
             top: 310px !important;
           }
-      
+
           @media screen and (max-width: 760px) {
             .product-info {
               margin-top: -5vw;
             }
-      
+
             .special-offer-badge {
               width: 25vw;
               height: 25vw;
               font-size: 6vw;
               top: 15vw;
               right: -4vw;
-      
+
             }
-      
+
             .product-slider .bg {
               height: 80% !important;
             }
-      
+
             .product-slider .discount {
               top: 250px !important;
             }
@@ -116,33 +116,33 @@
                     </div>
                   </div>
                 </div>
-          
+
               <style>
                 .ribbon {
                   background: white;
                   position: absolute;
                   overflow: hidden;
                 }
-          
+
                 .ribbon .titles {
                   display: flex;
                   align-items: center;
                   transition-timing-function: linear !important;
                 }
-          
+
                 .ribbon .titles .title {
                   display: flex;
                   align-items: center;
                   justify-content: space-evenly;
                   width: 200px;
                 }
-          
+
                 .ribbon .titles .title p {
                   margin: unset;
                   font-weight: bold;
                   font-size: 20px;
                 }
-          
+
                 .ribbon {
                   top: 55px;
                   right: -40px;
@@ -150,15 +150,15 @@
                   opacity: 0.3;
                   filter: blur(2px);
                 }
-          
-          
+
+
                 @media screen and (max-width: 760px) {
                   .ribbon .titles .title {
                     display: flex;
                     align-items: center;
                     width: 200px !important;
                   }
-          
+
                   .ribbon {
                     transform: rotate(5deg);
                     top: 20vw;
@@ -176,7 +176,7 @@
               <p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i>
             </div>
             {% endif %}
-            
+
             <div class="sliders-group">
               <div class="main-slider">
                 {% if product.title contains 'Special Offer' %}
@@ -186,7 +186,7 @@
                     <p class="cap"><strike class="rounded">{{ product.compare_at_price | money | replace: ".00", "" }}</strike></p>
                   </div>
                 </div>
-          
+
                 <style>
                   .special-offer-badge {
                     width: 130px;
@@ -203,7 +203,7 @@
                     border: 3px solid #FFE746;
                     box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
                   }
-          
+
                   .special-offer-badge .badge-bg {
                     display: flex;
                     flex-direction: column;
@@ -217,39 +217,37 @@
                     left: 0;
                     top: 0;
                   }
-          
+
                   .special-offer-badge p {
                     margin: unset;
                   }
-          
+
                   .special-offer-badge p.cap {
                     font-size: 0.5em;
                     font-weight: unset;
                   }
-          
+
                   .product-slider .bg {
-                    height: 45% !important;
-                    top: 25% !important;
+                    height: 55% !important;
+                    top: 30% !important;
                   }
-          
+
                   .product-slider .discount {
                     top: 310px !important;
                   }
-          
+
                   @media screen and(max-width: 760px) {
                     .special-offer-badge {
-                      font-size: 9vw;
-                      width: 25vw;
-                      height: 25vw;
-                      right: 50vw;
-                      top: unset;
+                      width: 30vw;
+                      height: 30vw;
+                      font-size: 10vw;
                     }
-          
+
                     .product-slider .bg {
                       height: 60% !important;
                       top: unset !important;
                     }
-          
+
                     .product-slider .discount {
                       top: 250px !important;
                     }
@@ -257,7 +255,7 @@
                 </style>
                 {% endif %}
                 {% if product.title contains '1+1' %}
-                
+
                 <div class="ribbons">
                   <div class="ribbon">
                     <div class="titles">
@@ -270,137 +268,137 @@
                     </div>
                   </div>
                 </div>
-                
-                
+
+
                 <style>
                   .ribbon {
                     background: white;
                     position: absolute;
                     overflow: hidden;
                   }
-                
+
                   .ribbon .titles {
                     display: flex;
                     align-items: center;
                     transition-timing-function: linear !important;
                   }
-                
+
                   .ribbon .titles .title {
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
                     width: 200px;
                   }
-                
+
                   .ribbon .titles .title p {
                     margin: unset;
                     font-weight: bold;
                     font-size: 20px;
                   }
-                
+
                   .ribbon {
                     top: 55px;
                     right: -40px;
                     transform: rotate(8deg);
                     opacity: 0.3;
                   }
-                
-                
+
+
                   @media screen and (max-width: 760px) {
                     .ribbon .titles .title {
                       display: flex;
                       align-items: center;
                       width: 200px !important;
                     }
-                
+
                     .ribbon {
                       transform: rotate(5deg);
                       top: 7vw;
                     }
                   }
                 </style>
-                
+
                 <style>
                   .image-minor-wrapper img {
                     position: absolute;
                     z-index: 3;
                   }
-                
+
                   .image-minor-wrapper img.main-img {
                     top: 160px;
                     left: 10px;
                   }
-                
+
                   .image-minor-wrapper img.star-right {
                     right: -54px;
                     bottom: 60px;
                   }
-                
+
                   .image-minor-wrapper img.star-left {
                     top: 77px;
                     left: -55px;
                   }
-                
+
                   .product-slider .discount {
                     display: none !important;
                   }
-                
-                
+
+
                   .product-slider .bg {
                     background-color: unset;
                     background-image: url("{{ 'bfcm-1-plus-1-bg.png' | asset_url }}");
                   }
-                
-                
+
+
                   .product-slider .main-slider .product-img {
                     min-height: 420px;
                   }
-                
+
                   .product-slider .main-slider .product-img .img-wrap {
                     display: none;
                   }
-                
+
                   .product-slider .main-slider .product-img .img-wrap img {
                     height: unset;
                   }
-                
+
                   .product-slider .main-slider .product-img .img-wrap img {
                     object-fit: contain;
                   }
-                
+
                   @media screen and (max-width: 760px) {
-                
-                
+
+
                     .product-slider .main-slider .product-img {
                       min-height: 88vw;
                     }
-                
+
                     .product-info {
                       width: 100%;
                       padding: 0 15px 15px;
-                
+
                     }
-                
+
                     .image-minor-wrapper img.main-img {
                       top: 18vw;
                     }
-                
+
                     .image-minor-wrapper img.star-left {
                       width: 30vw;
                       top: 8vw;
                       left: -7vw;
                     }
-                
+
                     .image-minor-wrapper img.star-right {
                       width: 30vw;
                       right: -9vw;
                       bottom: 24vw;
                     }
-                
+
                   }
                 </style>
                 {% endif %}
-                
+
                 {% assign image = product.images | first %}
                 <div class="product-img">
                   <div class="img-wrap">
@@ -417,9 +415,9 @@
                         font-family: 'Poppins';
                         font-weight: 600 !important;
                       }
-                    
+
                       @media screen and (max-width: 1270px) {
-                    
+
                         .sub-title h1,
                         .sub-title h2 {
                           font-size: 21px;
@@ -429,13 +427,13 @@
                     <div class="product-info">
                       <div class="title-wrapper">
                         <div class="sub-title">
-                    
+
                           <h1><i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i> </h1>
-                    
-                    
+
+
                         </div>
                         {% capture CFH %}{{ content_for_header }}{% endcapture %}
-                    
+
                         {% if CFH contains 'adminBarInjector' %}
                         {% assign admin = true %}
                         {% elsif CFH contains 'admin-bar-iframe' %}
@@ -443,14 +441,14 @@
                         {% elsif CFH contains 'preview_bar_injector-' %}
                         {% assign admin = true %}
                         {% endif %}
-                    
+
                         {% if admin %}
                         <div class="edit">
                           <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
                         </div>
                         {% endif %}
                       </div>
-                    
+
                       <div class="description">
                         <div class="price">
                           <p><span class="rounded">{{ product.price | money }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money }}</strike></p>{% endif %}
@@ -502,7 +500,7 @@
             <div class="sub-title">
               {% if product.metafields.my_fields.alternative_title.value %}
               <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
-              
+
               {% else %}
               <h1>{{ product.title }}</h1>
               {% endif %}
@@ -624,7 +622,7 @@
     font-size: 17px;
   }
 
-  .product-slider .discount { 
+  .product-slider .discount {
     display: {% if product.title contains '1+1' %}none{% else%}flex{% endif %};
     justify-content: center;
     background: #FFE746;
