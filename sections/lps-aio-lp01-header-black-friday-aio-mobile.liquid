@@ -1,5 +1,9 @@
 <section class="page-header-mobile order-menu" id="page-header-mobile">
     <div class="container">
+        {% assign ifTimer = true %}
+        {% if ifTimer %}
+        {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
+        {% endif %}
         <div class="buttons-container">
             <div class="off-container">
                 {%- comment -%} <div class="up-to">UP TO</div>
