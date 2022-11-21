@@ -4,15 +4,16 @@
         <div class="main-logo">
             <img src="{{ 'logo-black-friday.svg' | asset_url }}" width="308" height="92" alt="logo">
         </div>
+        {% assign ifTimer = true %}
+        {% if ifTimer %}
+        {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
+        {% endif %}
         <div class="buttons-container">
             {%- comment -%} <div class="off-container">
                 <div class="up-to">UP TO</div>
                 <div class="thirty-off"> 30% OFF</div>
             </div> {%- endcomment -%}
-            {% assign ifTimer = true %}
-            {% if ifTimer %}
-            {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
-            {% endif %}
+        
             <div class="buy-btn">
                 <a class="main-btn" id='main-cta-btn' href="#green-strip">ORDER NOW</a>
             </div>
