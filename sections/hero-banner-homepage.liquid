@@ -5,32 +5,33 @@
         <div class="titles swiper-wrapper">
             {% for i in (1..20) %}
             <div class="title swiper-slide">
-                <p>BLACK FRIDAY</p>
+                <p>CYBER MONDAY</p>
                 <i class="icofont-star"></i>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    {% endfor %}
-</div>
-<div class="container">
+                </div>
+                {% endfor %}
+                </div>
+                </div>
+                {% endfor %}
+                </div>
+                <div class="container">
+
     <div class="black-friday">
         <div class="titles">
-            <p class="main-title bigger blink_text">BLACK</p>
+            <p class="main-title bigger blink_text">CYBER</p>
             <div class="shop-now-hero">
                 <p class="up-to">UP TO <b>30% OFF</b></p>
-                <a class="main-btn" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
-            </div>
-            <p class="main-title blink_text1">FRIDAY</p>
+                <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a>
+                </div>
+            <p class="main-title blink_text1">MONDAY</p>
             </div>
 
         <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
 
         <div class="shop-now-hero-mobile">
-            <a class="main-btn-mobile" id='main-cta-btn' href="/collections/all">SHOP NOW</a>
-        </div>
-        </div>
-        </div>
+            <a class="main-btn-mobile" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a>
+            </div>
+            </div>
+            </div>
 </div>
 
 
@@ -57,7 +58,7 @@
             },
             loop: true,
             slidesPerView: '4',
-            allowTouchMove: false,      
+            allowTouchMove: false,
             grabCursor: true
         });
 </script>
@@ -65,7 +66,7 @@
 <style>
   .hero-banner {
       position: relative;
-      background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");     
+      background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
       background-size: cover;
       background-position: bottom;
       overflow: hidden;
@@ -99,7 +100,7 @@
   .ribbon .titles .title p {
       margin: unset;
       font-weight: bold;
-      font-size: clamp(20px, 2vw, 28px);
+      font-size: clamp(18px, 2vw, 26px);
   }
 
   .ribbon:nth-child(1) {
@@ -132,36 +133,62 @@
 
   .blink_text {
       animation-name: blinker;
-      animation-duration: 1s;
+      animation-duration: 2s;
       animation-timing-function: ease-in;
       animation-iteration-count: 1;
   }
 
   .blink_text1 {
       animation-name: blinker;
-      animation-duration: 2s;
+      animation-duration: 3.5s;
       animation-timing-function: ease-in;
       animation-iteration-count: 1;
   }
 
   @keyframes blinker {
-    0%{
-          color: #D9D9D9;
-          opacity: 1;
-          filter:blur(5px);
+    0% {
+        -webkit-text-stroke: 4px hsl(0deg 0% 68%);
+        color: #D9D9D9
+        opacity: 0.5;
+        filter:blur(5px);
+    }
 
-      }
+    10% {
+        filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
+        opacity: 1.0;
+        color: #FFE746;
+        -webkit-text-stroke: 4px hsl(52, 100%, 64%);
+    }
 
-      50% {
-          color: #D9D9D9
-          opacity: 0.0;
-      }
+    25% {
+        -webkit-text-stroke: 4px hsl(0deg 0% 68%);
+        color: #D9D9D9
+        opacity: 0.5;
+        filter:blur(5px);
+    }
 
-      100% {
-          opacity: 1.0;
-          color: #FFE746;
+    50% {
+        filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
+        opacity: 1.0;
+        color: #FFE746;
+        -webkit-text-stroke: 4px hsl(52, 100%, 64%);
+    }
 
-      }
+    75% {
+        -webkit-text-stroke: 4px hsl(0deg 0% 68%);
+        color: #D9D9D9
+        opacity: 0.5;
+        filter:blur(5px);
+    }
+
+
+
+    100% {
+        filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
+        opacity: 1.0;
+        color: #FFE746;
+        -webkit-text-stroke: 4px hsl(52, 100%, 64%);
+    }
   }
 
   .hero-banner .container .black-friday {
@@ -177,6 +204,8 @@
       transition-timing-function: linear !important;
   }
 
+
+
   .container .black-friday .titles .main-title {
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke: 4px hsl(52, 100%, 64%);
@@ -184,14 +213,15 @@
       color: #FFE746;
       font-weight: 900;
       font-family: 'PP Radio Grotesk';
-      letter-spacing: 15px;
+      letter-spacing: 0.8rem;
       margin: unset;
       text-align: center;
       font-size: clamp(50px, 10vw, 200px);
   }
 
   .container .black-friday .titles .main-title.bigger {
-      letter-spacing: 20px;
+      letter-spacing: 2.35rem;
+      font-size: clamp(50px, 10vw, 240px);
   }
 
   .container .black-friday .titles .shop-now-hero {
@@ -254,7 +284,6 @@
           display: flex;
           align-items: center;
           gap: 7vw;
-          width: 200px !important;
       }
 
       .ribbon:nth-child(1) {
@@ -303,7 +332,7 @@
          }
 
          .container .black-friday .titles .main-title.bigger {
-             letter-spacing: 2vw;
+             letter-spacing: 6vw;
              font-size: 22vw;
 
      }
