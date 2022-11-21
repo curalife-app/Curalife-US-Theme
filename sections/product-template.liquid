@@ -431,9 +431,9 @@
             {% endif %}
 
             {% if admin %}
-            <div class="edit">
-              <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
-            </div>
+              <div class="edit">
+                <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
+              </div>
             {% endif %}
           </div>
 
@@ -443,7 +443,7 @@
             </div>
 
             {% if product.title contains 'Special Offer' %}
-            <p class="special-offer-title" style="font-size:30px;margin:unset;"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
+              <p class="special-offer-title" style="font-size:30px;margin:unset;"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
             {% endif %}
 
             <div class="form-wrap">
@@ -625,7 +625,6 @@
 
 <script>
   $(document).on("click", "#AddTCart", function () {
-    // New One
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'add_to_cart',             // name of the event. In this case, it always must be add_to_cart
