@@ -621,7 +621,7 @@
 
     inputObj.val(newVal);
   });
-    </script>
+</script>
 
 <script>
   $(document).on("click", "#AddTCart", function () {
@@ -696,8 +696,7 @@
 
 <script>
   var _learnq = _learnq || [];
-
-    var item = {
+  var item = {
     Name: {{ product.title|json }},
     ProductID: {{ product.id|json }},
     Categories: {{ product.collections|map:'title'|json }},
@@ -720,9 +719,8 @@
       Price: item.Price,
       CompareAtPrice: item.CompareAtPrice
     }
-    }]);
-
-  </script>
+  }]);
+</script>
 
 {% schema %}
 {
