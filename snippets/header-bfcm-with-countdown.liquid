@@ -1,0 +1,74 @@
+<header class="page-header" id="page-header">
+    <div class="container-header">
+        <div class="main-logo">
+            <img src="{{ 'logo-black-friday.svg' | asset_url }}" width="308" height="92" alt="logo">
+        </div>
+        <div class="countdown-timer">
+            {%render 'countdown-timer-cyber-monday' %}
+        </div>
+
+        <div class="buy-btn">
+            <a class="main-btn" id='main-cta-btn' href="#green-strip">ORDER NOW</a>
+        </div>
+
+    </div>
+</header>
+
+<style>
+    header.page-header {
+        background-color: #FFE746;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    header.page-header .main-logo {
+        padding: 15px 0 10px 0;
+    }
+
+    header.page-header .main-logo img {
+        margin-top: unset !important;
+    }
+
+    header.page-header .main-logo {
+        display: inline-block;
+        padding: 15px 0;
+        max-width: 181px;
+    }
+
+    header.page-header .main-logo img {
+        width: 150px;
+    }
+
+    header.page-header .container-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header.page-header .buy-btn .main-btn {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 20px;
+        color: #FFFFFF;
+        border: 1px solid #000000 !important;
+        background: #000000;
+        box-shadow: 0px 5.01961px 12.549px rgb(0 0 0 / 15%);
+        border-radius: 5.01961px;
+        transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+        padding: 10px;
+    }
+
+    header.page-header .buy-btn .main-btn:hover {
+        background-color: #000000;
+    }
+
+
+
+
+
+    @media screen and (max-width: 760px) {
+        header {
+            display: none !important;
+        }
+    }
+</style>
