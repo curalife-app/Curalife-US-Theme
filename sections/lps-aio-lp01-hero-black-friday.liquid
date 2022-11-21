@@ -5,7 +5,7 @@
             <div class="titles swiper-wrapper">
                 {% for i in (1..20) %}
                 <div class="title swiper-slide">
-                    <p>BLACK FRIDAY</p>
+                    <p>CYBER MONDAY</p>
                     <i class="icofont-star"></i>
                 </div>
                 {% endfor %}
@@ -18,12 +18,12 @@
         </div>
         <div class="black-friday">
                 <div class="titles">
-                    <p class="main-title bigger blink_text2">BLACK</p>
+                    <p class="main-title bigger blink_text2">CYBER</p>
                     <div class="shop-now-hero">
                         <p class="up-to">UP TO 30% OFF</p>
                         <a class="main-btn" id='main-cta-btn' href="#green-strip">SHOP NOW</a>
                         </div>
-                    <p class="main-title blink_text3">FRIDAY</p>
+                    <p class="main-title blink_text3">MONDAY</p>
                 </div>
 
             <img class="main-img" src="{{ 'black-friday-hero-bottle.png' | asset_url }}" alt="bottle" loading="lazy">
@@ -36,10 +36,9 @@
         display: none;
     }
 
-
     @media screen and (max-width: 760px) {
         .curlife-img {
-            margin-top: 10vw;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
         }
@@ -48,7 +47,6 @@
             max-width: 40% !important;
         }
     }
-
 </style>
 
 <script>
@@ -81,6 +79,7 @@
 
 <style>
     .hero-banner {
+        margin-top: 64px;
         position: relative;
         background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
         background-size: cover;
@@ -117,7 +116,7 @@
     .ribbon .titles .title p {
         margin: unset;
         font-weight: bold;
-        font-size: clamp(20px, 2vw, 28px);
+        font-size: clamp(18px, 2vw, 26px);
     }
 
     .ribbon:nth-child(1) {
@@ -148,22 +147,22 @@
         right: 65vw;
     }
 
-    .blink_text2 {
-        animation-name: blinker;
-        animation-duration: 1s;
-        animation-timing-function: ease-in;
-        animation-iteration-count: 1;
-    }
+   .blink_text2 {
+       animation-name: blinker;
+       animation-duration: 1s;
+       animation-timing-function: ease-in;
+       animation-iteration-count: 1;
+   }
 
-    .blink_text3 {
-        animation-name: blinker;
-        animation-duration: 2s;
-        animation-timing-function: ease-in;
-        animation-iteration-count: 1;
-    }
+   .blink_text3 {
+       animation-name: blinker;
+       animation-duration: 2s;
+       animation-timing-function: ease-in;
+       animation-iteration-count: 1;
+   }
 
-    @keyframes blinker {
-      0%{
+   @keyframes blinker {
+    0%{
           color: #D9D9D9;
           opacity: 1;
           filter:blur(5px);
@@ -172,7 +171,7 @@
 
       50% {
           color: #D9D9D9
-          opacity: 0.0;
+          opacity: 0.5;
       }
 
       100% {
@@ -180,7 +179,7 @@
           color: #FFE746;
 
       }
-    }
+   }
 
     .hero-banner .container .black-friday {
         display: flex;
@@ -201,14 +200,15 @@
         color: #FFE746;
         font-weight: 900;
         font-family: 'PP Radio Grotesk';
-        letter-spacing: 15px;
+        letter-spacing:  0.8rem;
         margin: unset;
         text-align: center;
         font-size: clamp(50px, 10vw, 200px);
     }
 
     .container .black-friday .titles .main-title.bigger {
-        letter-spacing: 20px;
+        letter-spacing: 2.35rem;
+        font-size: clamp(50px, 10vw, 240px);
     }
 
     .container .black-friday .titles .shop-now-hero {
@@ -263,7 +263,6 @@
             margin-top: unset;
             background-image: url("{{ 'bfcm-homepage-mobile.png' | asset_url }}");
             height: calc(100vh - 15vw);
-
         }
 
         .hero-banner .container {
@@ -274,7 +273,7 @@
             display: flex;
             align-items: center;
             gap: 7vw;
-            width: 200px !important;
+          
         }
 
         .ribbon:nth-child(1) {
@@ -312,19 +311,16 @@
 
 
 
-      .container .black-friday .titles .main-title {
-              font-size: 20vw;
-              -webkit-text-stroke: 2px hsl(52, 100%, 64%);
-              letter-spacing: 2vw;
-          }
+        .container .black-friday .titles .main-title {
+                font-size: 20vw;
+                -webkit-text-stroke: 2px hsl(52, 100%, 64%);
+                letter-spacing: 2vw;
+            }
 
-          .container .black-friday .titles .main-title.bigger {
-              letter-spacing: 2vw;
-              font-size: 22vw;
-
-      }
-
-
+        .container .black-friday .titles .main-title.bigger {
+            letter-spacing: 2vw;
+            font-size: 22vw;
+    }
 
         .hero-banner .container .black-friday {
             justify-content: space-between;
@@ -335,7 +331,7 @@
         }
 
         .container .black-friday .main-img {
-            top: 53vw;
+            top: 55vw;
             position: absolute;
             width: unset;
             object-fit: cover;
