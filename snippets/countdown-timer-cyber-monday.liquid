@@ -1,0 +1,99 @@
+<div id="countdown">
+  <ul>
+    <li><span class="hours"></span>Hours</li>
+    <li><span class="minutes"></span>Minutes</li>
+    <li><span class="seconds"></span>Seconds</li>
+  </ul>
+</div>
+
+
+<style>
+  #countdown {
+    color: #222222;
+    padding: 15px;
+    margin-top: 10px;
+    width: 80%;
+  }
+
+  #countdown li {
+    display: inline-block;
+    font-size: 15px;
+    list-style-type: none;
+    text-transform: uppercase;
+    min-width: 80px;
+    text-align: center;
+    font-family: 'Poppins';
+    position: relative;
+  }
+
+  #countdown li span {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    font-family: 'Ticking Timebomb';
+    line-height: 0.7em;
+  }
+
+  #countdown li:not(:last-child):before {
+    content: ":";
+    display: block;
+    font-size: 40px;
+    position: absolute;
+    top: -10px;
+    left: 83px;
+  }
+
+  @media screen and (max-width: 768px) {
+    #countdown {
+      margin-top: -1vw !important;
+      width: 100%;
+      display: flex;
+      color: #222222;
+      padding: 15px;
+      margin-top: 10px;
+      justify-content: center;
+    }
+
+    #countdown li {
+      padding: 5px;
+      font-size: 16px;
+      min-width: 70px;
+    }
+
+    #countdown li span {
+      font-size: 45px;
+    }
+
+    #countdown li:not(:last-child):before {
+      left: 68px;
+    }
+  }
+</style>
+
+<script>
+  // Timer
+  Number.prototype.pad = function () {
+    return this < 10 ? '0' + this : this;
+  }
+
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60;
+
+  let birthday = "December 01, 2022 09:59:00";
+  let countDown = new Date(birthday).getTime();
+  let x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countDown - now;
+
+    Array.from(document.getElementsByClassName("hours")).forEach(element => element.innerText = Math.floor(distance / (hour)).pad());
+    Array.from(document.getElementsByClassName("minutes")).forEach(element => element.innerText = Math.floor((distance % (hour)) / (minute)).pad());
+    Array.from(document.getElementsByClassName("seconds")).forEach(element => element.innerText = Math.floor((distance % (minute)) / second).pad());
+
+    // do something later when date is reached
+    if (distance < 0) {
+      clearInterval(x);
+    }
+    //seconds
+  }, 0)
+</script>
