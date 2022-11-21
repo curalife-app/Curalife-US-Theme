@@ -384,7 +384,6 @@
                       right: -9vw;
                       bottom: 24vw;
                     }
-
                   }
                 </style>
                 {% endif %}
@@ -393,54 +392,55 @@
                 <div class="product-img">
                   <div class="img-wrap">
                     <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    {% if product.title contains '1+1' %}
-                    <style>
-                      .sub-title h1 {
-                        font-family: 'Poppins';
-                        font-weight: 600 !important;
-                      }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                      @media screen and (max-width: 1270px) {
+        {% if product.title contains '1+1' %}
+          <style>
+            .sub-title h1 {
+              font-family: 'Poppins';
+              font-weight: 600 !important;
+            }
 
-                        .sub-title h1,
-                        .sub-title h2 {
-                          font-size: 21px;
-                        }
-                      }
-                    </style>
-                  {% endif %}
-                    <div class="product-info">
-                      <div class="title-wrapper">
-                        <div class="sub-title">
-                          <h1><i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i> </h1>
-                        </div>
-                        {% capture CFH %}{{ content_for_header }}{% endcapture %}
+            @media screen and (max-width: 1270px) {
+              .sub-title h1 {
+                font-size: 21px;
+              }
+            }
+          </style>
+          {% endif %}
 
-                        {% if CFH contains 'adminBarInjector' %}
-                        {% assign admin = true %}
-                        {% elsif CFH contains 'admin-bar-iframe' %}
-                        {% assign admin = true %}
-                        {% elsif CFH contains 'preview_bar_injector-' %}
-                        {% assign admin = true %}
-                        {% endif %}
+            <div class="product-info">
+              <div class="title-wrapper">
+                <div class="sub-title">
+                  <h1>{% if product.title contains '1+1' %}<i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i>{% else %}{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}{% endif %}</h1>
+                </div>
 
-                        {% if admin %}
-                        <div class="edit">
-                          <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
-                        </div>
-                        {% endif %}
-                      </div>
+                {% capture CFH %}{{ content_for_header }}{% endcapture %}
 
-                      <div class="description">
-                        <div class="price">
-                          <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money | replace: ".00", ""| replace: ".00", "" }}</strike></p>{% endif %}
-                        </div>
+                {% if CFH contains 'adminBarInjector' %}
+                {% assign admin = true %}
+                {% elsif CFH contains 'admin-bar-iframe' %}
+                {% assign admin = true %}
+                {% elsif CFH contains 'preview_bar_injector-' %}
+                {% assign admin = true %}
+                {% endif %}
+
+                {% if admin %}
+                <div class="edit">
+                  <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
+                </div>
+                {% endif %}
+              </div>
+
+              <div class="description">
+                <div class="price">
+                  <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money | replace: ".00", ""| replace: ".00", "" }}</strike></p>{% endif %}
+                </div>
 {% if product.title contains 'Special Offer' %}
 <p class="special-offer-title" style="font-size:30px;margin:unset;"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
 {% endif %}
