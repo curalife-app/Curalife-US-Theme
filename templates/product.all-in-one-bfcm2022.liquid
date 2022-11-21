@@ -122,24 +122,6 @@
                       {% assign curaeats_premium_price = curaeats_premium_variant.price %}
                       <p>FREE GIFT! - Meal Plan App (<span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
                     </div>
-
-                    <style>
-                      .variant-notice p {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        background: #4B643D;
-                        color: white;
-                        padding: 4px;
-                        padding-left: 35px;
-                        margin: unset;
-                      }
-
-                      .variant-box:nth-child(3) {
-                        height: 100px !important;
-                      }
-                    </style>
                   {% endif %}
                   <div class="radio-box">
                     {% if var.compare_at_price > var.price %} {% assign discount_amount = var.compare_at_price | minus: var.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
@@ -151,7 +133,7 @@
                       <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
                     </div>
                   </div>
-                  <div class="price">
+                  <div class="price {% if forloop.index == 3 %}last{% endif %}">
                     <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | money_without_trailing_zeros }}</strike></p>
                     <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
                   </div>
@@ -187,7 +169,7 @@
       <div class="trust-badges">
 <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
 <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">
-  <div id="shipping-badge-text" style="display: inline-block">Free Shipping <div class="geo" style="display:none;display: inline-block;"></div>
+  <div id="shipping-badge-text" style="display: inline-block">Free Shipping <div class="geo" style="display:none;display: inline-block;">Above &pound;99</div>
   </div>
 </div>
 <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
@@ -337,6 +319,7 @@
     <div class="container">
       <h2>FAQ</h2>
       <div class="faq">
+        
         <div class="faq-item">
           <div class="question">How much CuraLin do I need to take?</div>
           <div class="answer">
@@ -354,92 +337,92 @@
           <div class="answer">
             <div class="answer-content">Each ingredient does a little something different to promote health in the 18 key body functions needed for glucose support.</div>
             <div class="ingredients-main-slider swiper">
-          <div class="swiper-button-prev swiper-nav"></div>
-          <div class="ingredients swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-1.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Turmeric</p>
-                  <p class="ingredient-description">Also known as Curcuma Longa, Turmeric has been used in Eastern medicinal systems for hundreds of years to help people maintain healthy glucose levels though healthy insulin tolerance.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-2.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Swertia Chirata</p>
-                  <p class="ingredient-description">The active ingredients help the pancreatic cells release insulin, reduce absorption of glucose from the digestive system and improve the intracellular metabolism of glucose.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-3.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Bitter Melon</p>
-                  <p class="ingredient-description">Also known as Karela or Momordica Charantia, Bitter Melon is traditionally used by diabetes in Eastern medicinal systems. Its mechanism of action promotes healthy physiological function in damaged pancreatic cells, supports glucose absorption, and the sensitivity of the muscle cells to insulin.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-4.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Cinnamomum Zeylanicum</p>
-                  <p class="ingredient-description">Cinnamon has many benefits, including supporting healthy glucose absorption & metabolism, promoting healthy insulin release, circulation & sensitivity, and maintaining healthy levels of gluconeogenesis. It also supports healthy weight loss, promotes healthy HbA1c and fasting blood sugar, healthy cholesterol levels, and promotes a healthy nervous system.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-5.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Picrorhiza Kurroa</p>
-                  <p class="ingredient-description">The active compounds in Pirorhiza Kurroa act as an anti-oxidant and promotes healthy liver function (protecting it from toxins). This supports healthy glucose tolerance and helps people maintain a healthy weight.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-6.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Amla</p>
-                  <p class="ingredient-description">Also known as Indian gooseberry or Emblica Officinalis, the active property in Amla is Tannoid, which helps support the physiological function of pancreatic cells.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-7.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Syzygium Cumini</p>
-                  <p class="ingredient-description">Also known as Eugenia Jambolana, the active components in Syzygium Cumini supports a healthy physiological function in the liver, creating a reservoir of glucose macromolecules, thereby helping maintain healthy fasting blood glucose levels.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-8.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Fenugreek</p>
-                  <p class="ingredient-description">Also known as Trigonella Foenum Graecum, Fenugreek contains fibers that promotes insulin production, release & sensitivity. Fenugreek also helps support a healthy rate of carbohydrate absorption in the digestive system.</p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ingredient">
-                <img src="{{ "ingredients-9.png" | asset_url }}" alt="" loading="lazy">
-                <div class="ingredient-content">
-                  <p class="ingredient-title">Gymnema Sylvestre</p>
-                  <p class="ingredient-description">Gymnema Sylvestre has many active compounds including Saponin, which is known to help manage cravings for carbohydrate. Metabolically, it encourages healthy insulin release.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-button-next swiper-nav"></div>
-        </div>
+              <div class="swiper-button-prev swiper-nav"></div>
+              <div class="ingredients swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="ingredient">
+                    <img src="{{ " ingredients-1.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Turmeric</p>
+                      <p class="ingredient-description">Also known as Curcuma Longa, Turmeric has been used in Eastern medicinal systems for hundreds of years to help people maintain healthy glucose levels though healthy insulin tolerance.</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ingredient">
+                    <img src="{{ " ingredients-2.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Swertia Chirata</p>
+                      <p class="ingredient-description">The active ingredients help the pancreatic cells release insulin, reduce absorption of glucose from the digestive system and improve the intracellular metabolism of glucose.</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ingredient">
+                    <img src="{{ " ingredients-3.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Bitter Melon</p>
+                      <p class="ingredient-description">Also known as Karela or Momordica Charantia, Bitter Melon is traditionally used by diabetes in Eastern medicinal systems. Its mechanism of action promotes healthy physiological function in damaged pancreatic cells, supports glucose absorption, and the sensitivity of the muscle cells to insulin.</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ingredient">
+                    <img src="{{ " ingredients-4.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Gymnema Sylvestre</p>
+                      <p class="ingredient-description">Gymnema Sylvestre has many active compounds including Saponin, which is known to help manage cravings for carbohydrate. Metabolically, it encourages healthy insulin release.</p>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="ingredient">
+                    <img src="{{ " ingredients-5.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Picrorhiza Kurroa</p>
+                      <p class="ingredient-description">The active compounds in Pirorhiza Kurroa act as an anti-oxidant and promotes healthy liver function (protecting it from toxins). This supports healthy glucose tolerance and helps people maintain a healthy weight.</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ingredient">
+                    <img src="{{ " ingredients-6.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Amla</p>
+                      <p class="ingredient-description">Also known as Indian gooseberry or Emblica Officinalis, the active property in Amla is Tannoid, which helps support the physiological function of pancreatic cells.</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ingredient">
+                    <img src="{{ " ingredients-7.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Syzygium Cumini</p>
+                      <p class="ingredient-description">Also known as Eugenia Jambolana, the active components in Syzygium Cumini supports a healthy physiological function in the liver, creating a reservoir of glucose macromolecules, thereby helping maintain healthy fasting blood glucose levels.</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ingredient">
+                    <img src="{{ " ingredients-8.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Fenugreek</p>
+                      <p class="ingredient-description">Also known as Trigonella Foenum Graecum, Fenugreek contains fibers that promotes insulin production, release & sensitivity. Fenugreek also helps support a healthy rate of carbohydrate absorption in the digestive system.</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ingredient">
+                    <img src="{{ " ingredients-9.png" | asset_url }}" alt="" loading="lazy">
+                    <div class="ingredient-content">
+                      <p class="ingredient-title">Cinnamomum Zeylanicum</p>
+                      <p class="ingredient-description">Cinnamon has many benefits, including supporting healthy glucose absorption & metabolism, promoting healthy insulin release, circulation & sensitivity, and maintaining healthy levels of gluconeogenesis. It also supports healthy weight loss, promotes healthy HbA1c and fasting blood sugar, healthy cholesterol levels, and promotes a healthy nervous system.</p>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="swiper-button-next swiper-nav"></div>
+                      </div>
           </div>
         </div>
         <div class="faq-item">
@@ -762,8 +745,9 @@
 
 @media screen and (max-width: 760px) {
   .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
-    top: 10vw;
+     top: 4vw;
   }
+ 
 
   .grecaptcha-badge {
     display: none !important;
@@ -814,6 +798,35 @@
       font-size: 10px !important;
   }
 }
+
+</style>
+
+<style>
+  .variant-notice p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #4B643D;
+    color: white;
+    padding: 4px;
+    padding-left: 35px;
+    margin: unset;
+  }
+
+  .variant-box:nth-child(3) {
+    height: 100px !important;
+  }
+
+  @media screen and (max-width: 760px) {
+    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price.last {
+      top: 10vw;
+    }
+
+    .variant-notice p {
+      font-size: 12px;
+    }
+  }
 </style>
 
 <script>
