@@ -176,216 +176,216 @@
             <div class="sliders-group">
               <div class="main-slider">
                 {% if product.title contains 'Special Offer' %}
-                <div class="special-offer-badge">
-                  <div class="badge-bg">
-                    <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span></p>
-                    <p class="cap"><strike class="rounded">{{ product.compare_at_price | money | replace: ".00", "" }}</strike></p>
+                  <div class="special-offer-badge">
+                    <div class="badge-bg">
+                      <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span></p>
+                      <p class="cap"><strike class="rounded">{{ product.compare_at_price | money | replace: ".00", "" }}</strike></p>
+                    </div>
                   </div>
-                </div>
 
-                <style>
-                  .special-offer-badge {
-                    width: 130px;
-                    height: 130px;
-                    background: #FFE746;
-                    border-radius: 50%;
-                    position: absolute;
-                    right: 80px;
-                    z-index: 2;
-                    font-size: 50px;
-                    font-family: 'Montserrat';
-                    text-align: center;
-                    font-weight: 700;
-                    border: 3px solid #FFE746;
-                    box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
-                  }
-
-                  .special-offer-badge .badge-bg {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    border-radius: 50%;
-                    position: absolute;
-                    box-shadow: inset 0px 0px 0px 1px black;
-                    width: 100%;
-                    height: 100%;
-                    padding: 20px 10px;
-                    left: 0;
-                    top: 0;
-                  }
-
-                  .special-offer-badge p {
-                    margin: unset;
-                  }
-
-                  .special-offer-badge p.cap {
-                    font-size: 0.5em;
-                    font-weight: 500;
-                  }
-
-                  .product-slider .bg {
-                    height: 55% !important;
-                    top: 30% !important;
-                  }
-
-                  .product-slider .discount {
-                    top: 310px !important;
-                  }
-
-                  @media screen and (max-width: 760px) {
+                  <style>
                     .special-offer-badge {
-                      width: 30vw;
-                      height: 30vw;
-                      font-size: 10vw;
+                      width: 130px;
+                      height: 130px;
+                      background: #FFE746;
+                      border-radius: 50%;
+                      position: absolute;
+                      right: 80px;
+                      z-index: 2;
+                      font-size: 50px;
+                      font-family: 'Montserrat';
+                      text-align: center;
+                      font-weight: 700;
+                      border: 3px solid #FFE746;
+                      box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
+                    }
+
+                    .special-offer-badge .badge-bg {
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      border-radius: 50%;
+                      position: absolute;
+                      box-shadow: inset 0px 0px 0px 1px black;
+                      width: 100%;
+                      height: 100%;
+                      padding: 20px 10px;
+                      left: 0;
+                      top: 0;
+                    }
+
+                    .special-offer-badge p {
+                      margin: unset;
+                    }
+
+                    .special-offer-badge p.cap {
+                      font-size: 0.5em;
+                      font-weight: 500;
                     }
 
                     .product-slider .bg {
-                      height: 60% !important;
-                      top: unset !important;
+                      height: 55% !important;
+                      top: 30% !important;
                     }
 
                     .product-slider .discount {
-                      top: 250px !important;
+                      top: 310px !important;
                     }
-                  }
-                </style>
+
+                    @media screen and (max-width: 760px) {
+                      .special-offer-badge {
+                        width: 30vw;
+                        height: 30vw;
+                        font-size: 10vw;
+                      }
+
+                      .product-slider .bg {
+                        height: 60% !important;
+                        top: unset !important;
+                      }
+
+                      .product-slider .discount {
+                        top: 250px !important;
+                      }
+                    }
+                  </style>
                 {% elsif product.title contains '1+1' %}
-                <div class="ribbons">
-                  <div class="ribbon">
-                    <div class="titles">
-                      {% for i in (1..4) %}
-                      <div class="title">
-                        <p>CYBER MONDAY</p>
-                        <i class="icofont-star"></i>
+                  <div class="ribbons">
+                    <div class="ribbon">
+                      <div class="titles">
+                        {% for i in (1..4) %}
+                        <div class="title">
+                          <p>CYBER MONDAY</p>
+                          <i class="icofont-star"></i>
+                        </div>
+                        {% endfor %}
                       </div>
-                      {% endfor %}
                     </div>
                   </div>
-                </div>
 
-                <style>
-                  .ribbon {
-                    background: white;
-                    position: absolute;
-                    overflow: hidden;
-                  }
+                  <style>
+                    .ribbon {
+                      background: white;
+                      position: absolute;
+                      overflow: hidden;
+                    }
 
-                  .ribbon .titles {
-                    display: flex;
-                    align-items: center;
-                    transition-timing-function: linear !important;
-                  }
+                    .ribbon .titles {
+                      display: flex;
+                      align-items: center;
+                      transition-timing-function: linear !important;
+                    }
 
-                  .ribbon .titles .title {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    width: 200px;
-                  }
-
-                  .ribbon .titles .title p {
-                    margin: unset;
-                    font-weight: bold;
-                    font-size: 20px;
-                  }
-
-                  .ribbon {
-                    top: 55px;
-                    right: -40px;
-                    transform: rotate(8deg);
-                    opacity: 0.3;
-                  }
-
-                  @media screen and (max-width: 760px) {
                     .ribbon .titles .title {
                       display: flex;
                       align-items: center;
-                      width: 200px !important;
+                      justify-content: space-evenly;
+                      width: 200px;
+                    }
+
+                    .ribbon .titles .title p {
+                      margin: unset;
+                      font-weight: bold;
+                      font-size: 20px;
                     }
 
                     .ribbon {
-                      transform: rotate(5deg);
-                      top: 7vw;
-                    }
-                  }
-                </style>
-
-                <style>
-                  .image-minor-wrapper img {
-                    position: absolute;
-                    z-index: 3;
-                  }
-
-                  .image-minor-wrapper img.main-img {
-                    top: 160px;
-                    left: 10px;
-                  }
-
-                  .image-minor-wrapper img.star-right {
-                    right: -54px;
-                    bottom: 60px;
-                  }
-
-                  .image-minor-wrapper img.star-left {
-                    top: 77px;
-                    left: -55px;
-                  }
-
-                  .product-slider .discount {
-                    display: none !important;
-                  }
-
-
-                  .product-slider .bg {
-                    background-color: unset;
-                    background-image: url("{{ 'bfcm-1-plus-1-bg.png' | asset_url }}");
-                  }
-
-
-                  .product-slider .main-slider .product-img {
-                    min-height: 420px;
-                  }
-
-                  .product-slider .main-slider .product-img .img-wrap {
-                    display: none;
-                  }
-
-                  .product-slider .main-slider .product-img .img-wrap img {
-                    height: unset;
-                  }
-
-                  .product-slider .main-slider .product-img .img-wrap img {
-                    object-fit: contain;
-                  }
-
-                  @media screen and (max-width: 760px) {
-                    .product-slider .main-slider .product-img {
-                      min-height: 88vw;
+                      top: 55px;
+                      right: -40px;
+                      transform: rotate(8deg);
+                      opacity: 0.3;
                     }
 
-                    .product-info {
-                      width: 100%;
-                      padding: 0 15px 15px;
+                    @media screen and (max-width: 760px) {
+                      .ribbon .titles .title {
+                        display: flex;
+                        align-items: center;
+                        width: 200px !important;
+                      }
 
+                      .ribbon {
+                        transform: rotate(5deg);
+                        top: 7vw;
+                      }
+                    }
+                  </style>
+
+                  <style>
+                    .image-minor-wrapper img {
+                      position: absolute;
+                      z-index: 3;
                     }
 
                     .image-minor-wrapper img.main-img {
-                      top: 18vw;
-                    }
-
-                    .image-minor-wrapper img.star-left {
-                      width: 30vw;
-                      top: 8vw;
-                      left: -7vw;
+                      top: 160px;
+                      left: 10px;
                     }
 
                     .image-minor-wrapper img.star-right {
-                      width: 30vw;
-                      right: -9vw;
-                      bottom: 24vw;
+                      right: -54px;
+                      bottom: 60px;
                     }
-                  }
-                </style>
+
+                    .image-minor-wrapper img.star-left {
+                      top: 77px;
+                      left: -55px;
+                    }
+
+                    .product-slider .discount {
+                      display: none !important;
+                    }
+
+
+                    .product-slider .bg {
+                      background-color: unset;
+                      background-image: url("{{ 'bfcm-1-plus-1-bg.png' | asset_url }}");
+                    }
+
+
+                    .product-slider .main-slider .product-img {
+                      min-height: 420px;
+                    }
+
+                    .product-slider .main-slider .product-img .img-wrap {
+                      display: none;
+                    }
+
+                    .product-slider .main-slider .product-img .img-wrap img {
+                      height: unset;
+                    }
+
+                    .product-slider .main-slider .product-img .img-wrap img {
+                      object-fit: contain;
+                    }
+
+                    @media screen and (max-width: 760px) {
+                      .product-slider .main-slider .product-img {
+                        min-height: 88vw;
+                      }
+
+                      .product-info {
+                        width: 100%;
+                        padding: 0 15px 15px;
+
+                      }
+
+                      .image-minor-wrapper img.main-img {
+                        top: 18vw;
+                      }
+
+                      .image-minor-wrapper img.star-left {
+                        width: 30vw;
+                        top: 8vw;
+                        left: -7vw;
+                      }
+
+                      .image-minor-wrapper img.star-right {
+                        width: 30vw;
+                        right: -9vw;
+                        bottom: 24vw;
+                      }
+                    }
+                  </style>
                 {% endif %}
 
                 {% assign image = product.images | first %}
@@ -412,82 +412,78 @@
               }
             }
           </style>
-          {% endif %}
+        {% endif %}
 
-            <div class="product-info">
-              <div class="title-wrapper">
-                <div class="sub-title">
-                  <h1>{% if product.title contains '1+1' %}<i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i>{% else %}{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}{% endif %}</h1>
-                </div>
+        <div class="product-info">
+          <div class="title-wrapper">
+            <div class="sub-title">
+              <h1>{% if product.title contains '1+1' %}<i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i>{% else %}{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}{% endif %}</h1>
+            </div>
 
-                {% capture CFH %}{{ content_for_header }}{% endcapture %}
+            {% capture CFH %}{{ content_for_header }}{% endcapture %}
 
-                {% if CFH contains 'adminBarInjector' %}
-                {% assign admin = true %}
-                {% elsif CFH contains 'admin-bar-iframe' %}
-                {% assign admin = true %}
-                {% elsif CFH contains 'preview_bar_injector-' %}
-                {% assign admin = true %}
-                {% endif %}
+            {% if CFH contains 'adminBarInjector' %}
+            {% assign admin = true %}
+            {% elsif CFH contains 'admin-bar-iframe' %}
+            {% assign admin = true %}
+            {% elsif CFH contains 'preview_bar_injector-' %}
+            {% assign admin = true %}
+            {% endif %}
 
-                {% if admin %}
-                <div class="edit">
-                  <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
-                </div>
-                {% endif %}
-              </div>
+            {% if admin %}
+            <div class="edit">
+              <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
+            </div>
+            {% endif %}
+          </div>
 
-              <div class="description">
-                <div class="price">
-                  <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money | replace: ".00", ""| replace: ".00", "" }}</strike></p>{% endif %}
-                </div>
+          <div class="description">
+            <div class="price">
+              <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money | replace: ".00", ""| replace: ".00", "" }}</strike></p>{% endif %}
+            </div>
 
-                {% if product.title contains 'Special Offer' %}
-                <p class="special-offer-title" style="font-size:30px;margin:unset;"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
-                {% endif %}
+            {% if product.title contains 'Special Offer' %}
+            <p class="special-offer-title" style="font-size:30px;margin:unset;"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
+            {% endif %}
 
-                <div class="form-wrap">
-                  <form method="post" id="addTocartForm" action="/cart/add">
-                    <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                    <div class="qty-data">
-                      <p>Quantity</p>
-                      <div class="qty-control">
-                        <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
-                        <label><input type="number" name="quantity" value="1" maxlength="4"></label>
-                        <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
-                      </div>
-                    </div>
-                    {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
-                      {% if current_variant.available %}
-                        <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
-                      {% else %}
-                        <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
-                      {% endif %}
-                    {% else %}
-                      <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
-                    {% endif %}
-                    </form>
+            <div class="form-wrap">
+              <form method="post" id="addTocartForm" action="/cart/add">
+                <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                <div class="qty-data">
+                  <p>Quantity</p>
+                  <div class="qty-control">
+                    <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                    <label><input type="number" name="quantity" value="1" maxlength="4"></label>
+                    <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                   </div>
-                <div class="extra-info">
-                  {% for block in section.blocks %}
-                    {% if block.type == 'prdct_tabs' %}
-                      <div class="text-wrap">
-                        <p>{{block.settings.tab_des}}</p>
-                      </div>
-                    {% endif %}
-                  {% endfor %}
-                  </ul>
                 </div>
+                {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
+                  {% if current_variant.available %}
+                    <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
+                  {% else %}
+                    <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
+                  {% endif %}
+                {% else %}
+                  <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+                {% endif %}
+                </form>
               </div>
+            <div class="extra-info">
+              {% for block in section.blocks %}
+                {% if block.type == 'prdct_tabs' %}
+                  <div class="text-wrap"><p>{{block.settings.tab_des}}</p></div>
+                {% endif %}
+              {% endfor %}
             </div>
           </div>
         </div>
-
-        {% if product.tags contains 'CuraEats' %}
-          {% render 'collection-curaeats-section', invertSectionBack: false %}
-        {% endif %}
       </div>
+    </div>
 
+    {% if product.tags contains 'CuraEats' %}
+      {% render 'collection-curaeats-section', invertSectionBack: false %}
+    {% endif %}
+  </div>
 
 <style>
   .product-wrap {
