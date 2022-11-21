@@ -79,7 +79,7 @@
 
 <style>
     .hero-banner {
-        margin-top: 64px;
+        
         position: relative;
         background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
         background-size: cover;
@@ -253,7 +253,11 @@
         max-width: 450px;
     }
 
-
+    @media screen and (max-width: 768px) {
+        .hero-banner {
+            margin-top: 64px;
+        }
+    }
 
 
 
