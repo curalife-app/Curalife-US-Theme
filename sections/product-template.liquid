@@ -1,54 +1,148 @@
+
+
 {% render 'script.round-converted-currency' %}
+{% if product.title contains '1+1' %}
+{% render 'collection-page-header-black-friday-1-plus-1' %}
+{% else %}
 {% render 'collection-page-header-black-friday' %}
+{% endif %}
+
+<script>console.log("{{product.title}}")</script>
 
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 <div class="product-data">
     <div class="container">
       <div class="product-wrap">
-        <div class="product-slider">
-          <div class="bg">
-          {%- comment -%} Ribbon for only Single CuraLin {%- endcomment -%}
-          {% if product.title == "CuraLin BFCM 2022" %}
-          <div class="ribbons">
-            <div class="ribbon">
-              <div class="titles">
-                {% for i in (1..4) %}
-                <div class="title">
-                  <p>BLACK FRIDAY</p>
-                  <i class="icofont-star"></i>
-                </div>
-                {% endfor %}
-              </div>
+      <div class="product-wrap-wrapper" style="position: relative">
+      
+        {% if product.title contains '1+1' %}
+        <div class="image-minor-wrapper">
+          <div class="special-offer-badge">
+            <div class="badge-bg">
+              <p><span class="rounded">1+1</span></p>
+              <p>FREE</p>
             </div>
           </div>
-          
-          <style>
-            .ribbon {
-              background: white;
-              position: absolute;
-              overflow: hidden;
+          <img class="star-left" src="{{ 'bfcm-1-plus-1-star-01.png' | asset_url }}" alt="star" loading="lazy">
+          <img class="star-right" src="{{ 'bfcm-1-plus-1-star-02.png' | asset_url }}" alt="star" loading="lazy">
+          <img class="main-img" src="{{'bfcm-2bottles.png' | asset_url }}" alt="2-bottles" loading="lazy" style="object-fit:cover">
+        </div>
+      
+        <style>
+          .special-offer-badge {
+            width: 130px;
+            height: 130px;
+            background: #FFE746;
+            border-radius: 50%;
+            position: absolute;
+            top: 85px;
+            right: -23px;
+            z-index: 4;
+            font-size: 33px;
+            font-family: 'PP Radio Grotesk';
+            text-align: center;
+            font-weight: 700;
+            border: 3px solid #FFE746;
+            box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
+          }
+      
+          .special-offer-badge .badge-bg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: inset 0px 0px 0px 1px black;
+            width: 100%;
+            height: 100%;
+            padding: 20px 10px;
+            left: 0;
+            top: 0;
+          }
+      
+          .special-offer-badge p {
+            margin: unset;
+          }
+      
+      
+      
+          .product-slider .bg {
+            height: 100% !important;
+            background-size: cover;
+          }
+      
+          .product-slider .discount {
+            top: 310px !important;
+          }
+      
+          @media screen and (max-width: 760px) {
+            .product-info {
+              margin-top: -5vw;
             }
-          
-            .ribbon .titles {
-              display: flex;
-              align-items: center;
-              transition-timing-function: linear !important;
+      
+            .special-offer-badge {
+              width: 25vw;
+              height: 25vw;
+              font-size: 6vw;
+              top: 15vw;
+              right: -4vw;
+      
             }
-
+      
+            .product-slider .bg {
+              height: 80% !important;
+            }
+      
+            .product-slider .discount {
+              top: 250px !important;
+            }
+          }
+        </style>
+        {% endif %}
+            <div class="product-slider">
+              <div class="bg">
+                {%- comment -%} Ribbon for only Single CuraLin {%- endcomment -%}
+                {% if product.title == "CuraLin BFCM 2022" %}
+                <div class="ribbons">
+                  <div class="ribbon">
+                    <div class="titles">
+                      {% for i in (1..4) %}
+                      <div class="title">
+                      <p>CYBER MONDAY</p>
+                      <i class="icofont-star"></i>
+                      </div>
+                      {% endfor %}
+                      </div>
+                      </div>
+                      </div>
+          
+              <style>
+                .ribbon {
+                  background: white;
+                  position: absolute;
+                  overflow: hidden;
+                }
+          
+                .ribbon .titles {
+                  display: flex;
+                  align-items: center;
+                  transition-timing-function: linear !important;
+                }
+          
                 .ribbon .titles .title {
                   display: flex;
                   align-items: center;
                   justify-content: space-evenly;
                   width: 200px;
                 }
-
+          
                 .ribbon .titles .title p {
                   margin: unset;
                   font-weight: bold;
                   font-size: 20px;
                 }
-
+          
                 .ribbon {
                   top: 55px;
                   right: -40px;
@@ -56,57 +150,43 @@
                   opacity: 0.3;
                   filter: blur(2px);
                 }
-
-
+          
+          
                 @media screen and (max-width: 760px) {
                   .ribbon .titles .title {
                     display: flex;
                     align-items: center;
-                    width: 200px !important;
+                    
                   }
-
+          
                   .ribbon {
                     transform: rotate(5deg);
-                    top: 7vw;
+                    top: 20vw;
                   }
                 }
               </style>
               {% endif %}
-          </div>
-          {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-          {% assign quantity_by_cents = quantity | times: 100 %}
-          {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
-          {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
-
-          {% if product.compare_at_price > product.price %}
-          <div class="discount"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
-          {% endif %}
-
-          <div class="sliders-group">
-            <div class="thumbs-slider">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  {%- comment -%} {% for image in product.images %}
-                  <div class="swiper-slide">
-                    <div class="thumbs-img">
-                      <div class="img-wrap">
-                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy">
-                      </div>
-                    </div>
-                  </div>
-                  {% endfor %} {%- endcomment -%}
-                </div>
-              </div>
             </div>
-            <div class="main-slider">
-              {% if product.title contains 'Special Offer' %}
+            {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+            {% assign quantity_by_cents = quantity | times: 100 %}
+            {% assign item_price = product.price | divided_by: quantity_by_cents | times: 100 %}
+            {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
+            {% if product.compare_at_price > product.price %}
+            <div class="discount"><i class="icofont-star"></i>
+              <p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i>
+            </div>
+            {% endif %}
+            
+            <div class="sliders-group">
+              <div class="main-slider">
+                {% if product.title contains 'Special Offer' %}
                 <div class="special-offer-badge">
                   <div class="badge-bg">
                     <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span></p>
                     <p class="cap"><strike class="rounded">{{ product.compare_at_price | money | replace: ".00", "" }}</strike></p>
                   </div>
                 </div>
-
+          
                 <style>
                   .special-offer-badge {
                     width: 130px;
@@ -123,7 +203,7 @@
                     border: 3px solid #FFE746;
                     box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
                   }
-
+          
                   .special-offer-badge .badge-bg {
                     display: flex;
                     flex-direction: column;
@@ -137,26 +217,26 @@
                     left: 0;
                     top: 0;
                   }
-
+          
                   .special-offer-badge p {
-                      margin: unset;
+                    margin: unset;
                   }
-
+          
                   .special-offer-badge p.cap {
                     font-size: 0.5em;
                     font-weight: unset;
                   }
-
+          
                   .product-slider .bg {
                     height: 45% !important;
                     top: 25% !important;
                   }
-
+          
                   .product-slider .discount {
                     top: 310px !important;
                   }
-
-                  @media screen and(max-width: 768px) {
+          
+                  @media screen and(max-width: 760px) {
                     .special-offer-badge {
                       font-size: 9vw;
                       width: 25vw;
@@ -164,41 +244,269 @@
                       right: 50vw;
                       top: unset;
                     }
-
+          
                     .product-slider .bg {
                       height: 60% !important;
                       top: unset !important;
                     }
-
+          
                     .product-slider .discount {
                       top: 250px !important;
                     }
                   }
                 </style>
-              {% endif %}
-
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  {% for image in product.images %}
-                  <div class="swiper-slide">
-                    <div class="product-img">
-                      <div class="img-wrap">
-                        <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" {%if forloop.index == 1%}style="object-fit:cover"{%endif%}>
+                {% endif %}
+                {% if product.title contains '1+1' %}
+                
+                <div class="ribbons">
+                  <div class="ribbon">
+                    <div class="titles">
+                      {% for i in (1..4) %}
+                      <div class="title">
+                        <p>CYBER MONDAY</p>
+                        <i class="icofont-star"></i>
                       </div>
+                      {% endfor %}
                     </div>
                   </div>
-                  {% endfor %}
                 </div>
-              </div>
-            </div>
+                
+                
+                <style>
+                  .ribbon {
+                    background: white;
+                    position: absolute;
+                    overflow: hidden;
+                  }
+                
+                  .ribbon .titles {
+                    display: flex;
+                    align-items: center;
+                    transition-timing-function: linear !important;
+                  }
+                
+                  .ribbon .titles .title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 200px;
+                  }
+                
+                  .ribbon .titles .title p {
+                    margin: unset;
+                    font-weight: bold;
+                    font-size: 20px;
+                  }
+                
+                  .ribbon {
+                    top: 55px;
+                    right: -40px;
+                    transform: rotate(8deg);
+                    opacity: 0.3;
+                  }
+                
+                
+                  @media screen and (max-width: 760px) {
+                    .ribbon .titles .title {
+                      display: flex;
+                      align-items: center;
+                
+                    }
+                
+                    .ribbon {
+                      transform: rotate(5deg);
+                      top: 7vw;
+                    }
+                  }
+                </style>
+                
+                <style>
+                  .image-minor-wrapper img {
+                    position: absolute;
+                    z-index: 3;
+                  }
+                
+                  .image-minor-wrapper img.main-img {
+                    top: 160px;
+                    left: 10px;
+                  }
+                
+                  .image-minor-wrapper img.star-right {
+                    right: -54px;
+                    bottom: 60px;
+                  }
+                
+                  .image-minor-wrapper img.star-left {
+                    top: 77px;
+                    left: -55px;
+                  }
+                
+                  .product-slider .discount {
+                    display: none !important;
+                  }
+                
+                
+                  .product-slider .bg {
+                    background-color: unset;
+                    background-image: url("{{ 'bfcm-1-plus-1-bg.png' | asset_url }}");
+                  }
+                
+                
+                  .product-slider .main-slider .product-img {
+                    min-height: 420px;
+                  }
+                
+                  .product-slider .main-slider .product-img .img-wrap {
+                    display: none;
+                  }
+                
+                  .product-slider .main-slider .product-img .img-wrap img {
+                    height: unset;
+                  }
+                
+                  .product-slider .main-slider .product-img .img-wrap img {
+                    object-fit: contain;
+                  }
+                
+                  @media screen and (max-width: 760px) {
+                
+                
+                    .product-slider .main-slider .product-img {
+                      min-height: 88vw;
+                    }
+                
+                    .product-info {
+                      width: 100%;
+                      padding: 0 15px 15px;
+                
+                    }
+                
+                    .image-minor-wrapper img.main-img {
+                      top: 18vw;
+                    }
+                
+                    .image-minor-wrapper img.star-left {
+                      width: 30vw;
+                      top: 8vw;
+                      left: -7vw;
+                    }
+                
+                    .image-minor-wrapper img.star-right {
+                      width: 30vw;
+                      right: -9vw;
+                      bottom: 24vw;
+                    }
+                
+                  }
+                </style>
+                {% endif %}
+                
+                {% assign image = product.images | first %}
+                <div class="product-img">
+                  <div class="img-wrap">
+                    <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    {% if product.title contains '1+1' %}
+                    <style>
+                      .sub-title h1 {
+                        font-family: 'Poppins';
+                        font-weight: 600 !important;
+                      }
+                    
+                      @media screen and (max-width: 1270px) {
+                    
+                        .sub-title h1,
+                        .sub-title h2 {
+                          font-size: 21px;
+                        }
+                      }
+                    </style>
+                    <div class="product-info">
+                      <div class="title-wrapper">
+                        <div class="sub-title">
+                    
+                          <h1><i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i> </h1>
+                    
+                    
+                        </div>
+                        {% capture CFH %}{{ content_for_header }}{% endcapture %}
+                    
+                        {% if CFH contains 'adminBarInjector' %}
+                        {% assign admin = true %}
+                        {% elsif CFH contains 'admin-bar-iframe' %}
+                        {% assign admin = true %}
+                        {% elsif CFH contains 'preview_bar_injector-' %}
+                        {% assign admin = true %}
+                        {% endif %}
+                    
+                        {% if admin %}
+                        <div class="edit">
+                          <a href="/admin/products/{{ product.id }}"> <i class="icofont-ui-edit"></i></a>
+                        </div>
+                        {% endif %}
+                      </div>
+                    
+                      <div class="description">
+                        <div class="price">
+                          <p><span class="rounded">{{ product.price | money }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money }}</strike></p>{% endif %}
+                        </div>
+{% if product.title contains 'Special Offer' %}
+<p class="special-offer-title" style="font-size:30px;margin:unset;"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
+{% endif %}
+
+<div class="form-wrap">
+  <form method="post" id="addTocartForm" action="/cart/add">
+    <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
+    <div class="qty-data">
+      <p>Quantity</p>
+      <div class="qty-control">
+        <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+        <label>
+          <input type="number" name="quantity" value="1" maxlength="4">
+        </label>
+        <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
           </div>
+          </div>
+        {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
+        {% if current_variant.available %}
+        <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
+        {% else %}
+        <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
+        {{ 'products.product.sold_out' | t }}
+        {% endif %}
+        {% else %}
+        <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+        {% endif %}
+        </form>
         </div>
+    <div class="extra-info">
+      {% for block in section.blocks %}
+      {% if block.type == 'prdct_tabs' %}
+      <div class="text-wrap">
+        <p>{{block.settings.tab_des}}</p>
+      </div>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+    </div>
+    </div>
+{% else %}
         <div class="product-info">
           <div class="title-wrapper">
             <div class="sub-title">
-              <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+              {% if product.metafields.my_fields.alternative_title.value %}
+              <h1>{{ product.metafields.my_fields.alternative_title.value }}</h1>
+              
+              {% else %}
+              <h1>{{ product.title }}</h1>
+              {% endif %}
             </div>
-
             {% capture CFH %}{{ content_for_header }}{% endcapture %}
 
             {% if CFH contains 'adminBarInjector' %}
@@ -218,7 +526,7 @@
 
           <div class="description">
             <div class="price">
-              <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money | replace: ".00", "" }}</strike></p>{% endif %}
+              <p><span class="rounded">{{ product.price | money }}</span> {% if product.compare_at_price > product.price %}<strike class="rounded">{{ product.compare_at_price | money }}</strike></p>{% endif %}
             </div>
 
             {% if product.title contains 'Special Offer' %}
@@ -262,6 +570,7 @@
             </div>
           </div>
         </div>
+      {% endif %}
       </div>
     </div>
 
@@ -269,6 +578,7 @@
       {% render 'collection-curaeats-section', invertSectionBack: false %}
     {% endif %}
   </div>
+
 
 <style>
   .product-wrap {
@@ -297,7 +607,7 @@
   .product-slider .bg {
     position: absolute;
     z-index: -1;
-    background: #222222;
+    background-color: #222222;
     height: 65%;
     width: 100%;
   }
@@ -314,8 +624,8 @@
     font-size: 17px;
   }
 
-  .product-slider .discount {
-    display: flex;
+  .product-slider .discount { 
+    display: {% if product.title contains '1+1' %}none{% else%}flex{% endif %};
     justify-content: center;
     background: #FFE746;
     box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
@@ -389,26 +699,6 @@
     }
   }
 </style>
-
-<script>
-  productThumbs = new Swiper('.thumbs-slider .swiper', {
-    spaceBetween: 20,
-    direction: 'vertical',
-    watchSlidesVisibility: true,
-    grabCursor: false,
-    loop: false,
-    touchRatio: 0,
-  });
-
-    productSlider = new Swiper('.main-slider .swiper', {
-      slidesPerView: 1,
-      spaceBetween: 15,
-      watchSlidesVisibility: true,
-      loop: false,
-      slideToClickedSlide: false,
-      thumbs: { swiper: productThumbs },
-    });
-</script>
 
 <script>
   // Change Quantity Widget On Product Page
