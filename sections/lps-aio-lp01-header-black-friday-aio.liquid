@@ -6,7 +6,7 @@
         </div>
         {% assign ifTimer = true %}
         {% if ifTimer %}
-        {% render 'countdown-timer' %}
+        {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
         {% endif %}
         <div class="buttons-container">
             {%- comment -%} <div class="off-container">
