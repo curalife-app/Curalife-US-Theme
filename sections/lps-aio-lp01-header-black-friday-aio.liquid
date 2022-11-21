@@ -8,16 +8,10 @@
         {% if ifTimer %}
         {% render 'countdown-timer-cyber-monday' %}
         {% endif %}
-        <div class="buttons-container">
-            {%- comment -%} <div class="off-container">
-                <div class="up-to">UP TO</div>
-                <div class="thirty-off"> 30% OFF</div>
-            </div> {%- endcomment -%}
-        
-            <div class="buy-btn">
-                <a class="main-btn" id='main-cta-btn' href="#green-strip">ORDER NOW</a>
-            </div>
+        <div class="buy-btn">
+            <a class="main-btn" id='main-cta-btn' href="#green-strip">ORDER NOW</a>
         </div>
+    
     </div>
 </header>
 
@@ -69,36 +63,8 @@
         background-color: #000000;
     }
 
-    header.page-header .buttons-container {
-        display: flex;
-        align-items: center;
-    }
 
-    header.page-header .off-container {
-        display: flex;
-        align-items: center;
-    }
 
-    header.page-header .up-to {
-        width: 72px;
-        font-family: 'PP Radio Grotesk';
-        font-weight: 400;
-        font-size: 25px;
-        display: flex;
-        align-items: center;
-        color: #000000;
-    }
-
-    header.page-header .thirty-off {
-        width: 202px;
-        font-family: 'PP Radio Grotesk';
-        font-weight: 700;
-        font-size: 50px;
-        display: flex;
-        align-items: center;
-        color: #000000;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
 
     @media screen and (max-width: 760px) {
         header {
