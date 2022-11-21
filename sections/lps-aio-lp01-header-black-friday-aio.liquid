@@ -4,7 +4,7 @@
         <div class="main-logo">
             <img src="{{ 'logo-black-friday.svg' | asset_url }}" width="308" height="92" alt="logo">
         </div>
-        {% assign ifTimer = true %}
+        {% assign ifTimer = false %}
         {% if ifTimer %}
         {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
         {% endif %}
