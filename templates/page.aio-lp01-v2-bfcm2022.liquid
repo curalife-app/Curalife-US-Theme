@@ -9,11 +9,17 @@
 </style>
 
 <div class="page-overflow">
-  {% render 'header-bfcm-with-countdown' %}
-  {%- comment -%} {% section 'lps-aio-lp01-header-black-friday-aio' %} {%- endcomment -%}
+  {% assign ifTimer = false %}
+  
+  {% if ifTimer %}
+  {% render 'header-bfcm-with-countdown' %} {% else %}
+  {% section 'lps-aio-lp01-header-black-friday-aio' %}
+  {% endif %}
   {% section 'lps-aio-lp01-hero-black-friday' %}
-  {% render 'header-bfcm-with-countdown-mobile' %}
-  {%- comment -%} {% section 'lps-aio-lp01-header-black-friday-aio-mobile' %} {%- endcomment -%}
+  {% if ifTimer %}
+  {% render 'header-bfcm-with-countdown-mobile' %} {% else %}
+  {% section 'lps-aio-lp01-header-black-friday-aio-mobile' %}
+  {% endif %}
   {% section 'lps-featured-on' %}
   {% section 'lps-video-reviews' %}
   {% section 'lps-instructions' %}
