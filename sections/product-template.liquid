@@ -7,96 +7,95 @@
 {% render 'collection-page-header-black-friday' %}
 {% endif %}
 
-<script>console.log("{{ product.title }}")</script>
-
 {% assign current_variant = product.selected_or_first_available_variant %}
 
 <div class="product-data">
     <div class="container">
       <div class="product-wrap">
-      <div class="product-wrap-wrapper" style="position: relative">
+        <div class="product-wrap-wrapper" style="position: relative">
 
-        {% if product.title contains '1+1' %}
-        <div class="image-minor-wrapper">
-          <div class="special-offer-badge">
-            <div class="badge-bg">
-              <p><span class="rounded">1+1</span></p>
-              <p>FREE</p>
+          {% if product.title contains '1+1' %}
+          <div class="image-minor-wrapper">
+            <div class="special-offer-badge">
+              <div class="badge-bg">
+                <p><span class="rounded">1+1</span></p>
+                <p>FREE</p>
+              </div>
             </div>
+            <img class="star-left" src="{{ 'bfcm-1-plus-1-star-01.png' | asset_url }}" alt="star" loading="lazy">
+            <img class="star-right" src="{{ 'bfcm-1-plus-1-star-02.png' | asset_url }}" alt="star" loading="lazy">
+            <img class="main-img" src="{{'bfcm-2bottles.png' | asset_url }}" alt="2-bottles" loading="lazy" style="object-fit:cover">
           </div>
-          <img class="star-left" src="{{ 'bfcm-1-plus-1-star-01.png' | asset_url }}" alt="star" loading="lazy">
-          <img class="star-right" src="{{ 'bfcm-1-plus-1-star-02.png' | asset_url }}" alt="star" loading="lazy">
-          <img class="main-img" src="{{'bfcm-2bottles.png' | asset_url }}" alt="2-bottles" loading="lazy" style="object-fit:cover">
-        </div>
 
-        <style>
-          .special-offer-badge {
-            width: 130px;
-            height: 130px;
-            background: #FFE746;
-            border-radius: 50%;
-            position: absolute;
-            top: 85px;
-            right: -23px;
-            z-index: 4;
-            font-size: 33px;
-            font-family: 'PP Radio Grotesk';
-            text-align: center;
-            font-weight: 700;
-            border: 3px solid #FFE746;
-            box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
-          }
-
-          .special-offer-badge .badge-bg {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-radius: 50%;
-            position: absolute;
-            box-shadow: inset 0px 0px 0px 1px black;
-            width: 100%;
-            height: 100%;
-            padding: 20px 10px;
-            left: 0;
-            top: 0;
-          }
-
-          .special-offer-badge p {
-            margin: unset;
-          }
-
-          .product-slider .bg {
-            height: 100% !important;
-            background-size: cover;
-          }
-
-          .product-slider .discount {
-            top: 310px !important;
-          }
-
-          @media screen and (max-width: 760px) {
-            .product-info {
-              margin-top: -5vw;
+          <style>
+            .special-offer-badge {
+              width: 130px;
+              height: 130px;
+              background: #FFE746;
+              border-radius: 50%;
+              position: absolute;
+              top: 85px;
+              right: -23px;
+              z-index: 4;
+              font-size: 33px;
+              font-family: 'PP Radio Grotesk';
+              text-align: center;
+              font-weight: 700;
+              border: 3px solid #FFE746;
+              box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
             }
 
-            .special-offer-badge {
-              width: 25vw;
-              height: 25vw;
-              font-size: 6vw;
-              top: 15vw;
-              right: -4vw;
+            .special-offer-badge .badge-bg {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              border-radius: 50%;
+              position: absolute;
+              box-shadow: inset 0px 0px 0px 1px black;
+              width: 100%;
+              height: 100%;
+              padding: 20px 10px;
+              left: 0;
+              top: 0;
+            }
+
+            .special-offer-badge p {
+              margin: unset;
             }
 
             .product-slider .bg {
-              height: 80% !important;
+              height: 100% !important;
+              background-size: cover;
             }
 
             .product-slider .discount {
-              top: 250px !important;
+              top: 310px !important;
             }
-          }
-        </style>
-        {% endif %}
+
+            @media screen and (max-width: 760px) {
+              .product-info {
+                margin-top: -5vw;
+              }
+
+              .special-offer-badge {
+                width: 25vw;
+                height: 25vw;
+                font-size: 6vw;
+                top: 15vw;
+                right: -4vw;
+              }
+
+              .product-slider .bg {
+                height: 80% !important;
+              }
+
+              .product-slider .discount {
+                top: 250px !important;
+              }
+            }
+          </style>
+          {% endif %}
+
             <div class="product-slider">
               <div class="bg">
                 {%- comment -%} Ribbon for only Single CuraLin {%- endcomment -%}
