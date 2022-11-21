@@ -1,13 +1,9 @@
 <section class="page-header-mobile order-menu" id="page-header-mobile">
     <div class="container">
-        {% assign ifTimer = false %}
-        {% if ifTimer %}
-        {% render 'countdown-timer-cyber-monday' %}
-        {% endif %}
         <div class="buttons-container">
             <div class="off-container">
-                {%- comment -%} <div class="up-to">UP TO</div>
-                <div class="thirty-off"> 30% OFF</div> {%- endcomment -%}
+                <div class="up-to">UP TO</div>
+                <div class="thirty-off"> 30% OFF</div>
             </div>
             <div class="buy-btn">
                 <a class="main-btn" id='main-cta-btn' href="#green-strip">ORDER NOW</a>
@@ -51,9 +47,9 @@
 
 
     @media screen and (max-width: 760px) {
-        #page-header-mobile.page-header-mobile { 
+        #page-header-mobile.page-header-mobile {
            display: block !important;
-           padding: unset; 
+           padding: unset;
         }
 
         #page-header-mobile.page-header-mobile.order-menu {
@@ -77,12 +73,12 @@
             flex-direction: column;
         }
 
-        #page-header-mobile.page-header-mobile .up-to {  
+        #page-header-mobile.page-header-mobile .up-to {
             font-family: 'PP Radio Grotesk';
             font-weight: 400;
             display: flex;
             align-items: center;
-            color: #000000; 
+            color: #000000;
             font-size: 4vw;
             line-height: 4vw;
         }
@@ -133,6 +129,7 @@
 
 
 
+
 <script>
         $(document).ready(function () {
             let productsOffset = $("#product-catalog-section").offset();
@@ -152,6 +149,7 @@
     });
     })
 </script>
+
 
 
 
