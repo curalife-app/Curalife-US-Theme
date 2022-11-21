@@ -1,0 +1,153 @@
+<section class="page-header-mobile order-menu" id="page-header-mobile">
+    <div class="container-header-mobile">
+        <div class="countdown-mobile">
+            {% render 'countdown-timer-cyber-monday' %}
+        </div>
+
+        <div class="buy-btn">
+            <a class="main-btn" id='main-cta-btn' href="#green-strip">ORDER NOW</a>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    #page-header-mobile.page-header-mobile {
+        position: -webkit-sticky;
+        position: sticky;
+        display: none !important;
+    }
+
+    #page-header-mobile.page-header-mobile {
+        background-color: #FFE746;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    #page-header-mobile.page-header-mobile .container-header-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #page-header-mobile.page-header-mobile .buy-btn .main-btn:hover {
+        background-color: #000000;
+    }
+
+    #page-header-mobile.page-header-mobile .buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #page-header-mobile.page-header-mobile .off-container {
+        display: flex;
+        align-items: center;
+    }
+
+
+    @media screen and (max-width: 760px) {
+        #page-header-mobile.page-header-mobile {
+            display: block !important;
+            padding: unset;
+        }
+
+        #page-header-mobile.page-header-mobile.order-menu {
+            top: 0;
+            height: 15vw;
+            width: 100%;
+            z-index: 99;
+            position: static;
+        }
+
+        #page-header-mobile.page-header-mobile.order-menu.sticky {
+            position: fixed;
+            top: 0;
+        }
+
+        #page-header-mobile.page-header-mobile .buttons-container {
+            padding: 2vw 0;
+        }
+
+        #page-header-mobile.page-header-mobile .off-container {
+            flex-direction: column;
+        }
+
+        #page-header-mobile.page-header-mobile .up-to {
+            font-family: 'PP Radio Grotesk';
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            color: #000000;
+            font-size: 4vw;
+            line-height: 4vw;
+        }
+
+        #page-header-mobile.page-header-mobile .thirty-off {
+            font-family: 'PP Radio Grotesk';
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: #000000;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-size: 7vw;
+            line-height: 7vw;
+        }
+
+        #page-header-mobile.page-header-mobile .buy-btn .main-btn {
+            font-family: 'Poppins';
+            font-weight: 600;
+            color: #FFFFFF;
+            border: 1px solid #000000 !important;
+            background: #000000;
+            filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.35));
+            border-radius: 5px;
+            transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+            font-size: 7vw;
+            padding: 2vw;
+            height: unset;
+        }
+    }
+</style>
+
+<script>
+    var div_top = $('.order-menu').offset().top;
+
+    $(window).scroll(function () {
+        var window_top = $(window).scrollTop();
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (window_top >= div_top) {
+            if (!$('.order-menu').is('.sticky')) {
+                $('.order-menu').addClass('sticky');
+                $('#shopify-section-lps-featured-on-black-friday').css("padding-top", $('.order-menu').height() + "px");
+            }
+        } else {
+            $('.order-menu').removeClass('sticky');
+            $('#shopify-section-lps-featured-on-black-friday').css("padding-top", 0);
+        }
+    });
+</script>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        let productsOffset = $("#product-catalog-section").offset();
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() < productsOffset.top) {
+                $('#page-header').fadeIn();
+            } else {
+                $('#page-header').fadeOut();
+            }
+        });
+
+        $("#main-cta-btn").click(function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: productsOffset.top - 130
+            }, 2000);
+        });
+    })
+</script>
