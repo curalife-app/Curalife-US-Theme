@@ -597,7 +597,7 @@
   }
 
   .product-slider .discount {
-    display: {% if product.title contains '1+1' %}none{% else%}flex{% endif %};
+    display: {% if product.title contains '1+1' or product.title contains 'Special Offer' %}none{% else%}flex{% endif %};
     justify-content: center;
     background: #FFE746;
     box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
