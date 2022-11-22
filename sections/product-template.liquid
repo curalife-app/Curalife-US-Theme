@@ -449,8 +449,13 @@
                       top: 8vw;
                     }
                   }
+
+                  @media screen and (max-width: 760px) {
+                    .product-slider .discount {
+                        top: 47vw !important;
+                    }
+                  }
                 </style>
-                
                 {% endif %}
 
                 {% assign image = product.images | first %}
