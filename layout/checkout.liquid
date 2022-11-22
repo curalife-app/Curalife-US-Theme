@@ -1,8 +1,16 @@
-{% if content_for_layout contains 'data-step="thank_you"' %}
-  {% assign is_thank_you = true %}
+{% if content_for_layout contains 'data-step="contact_information"' %}
+  {% assign is_contact_step = true %}
+{% elsif content_for_layout contains 'data-step="shipping_method"' %}
+  {% assign is_shipping_step = true %}
+{% elsif content_for_layout contains 'data-step="payment_method"' %}
+  {% assign is_payment_step = true %}
+{% elsif content_for_layout contains 'Processing order' %}
+  {% assign is_processing_step = true %}
+{% elsif content_for_layout contains 'data-step="thank_you"' %}
+  {% assign is_thank_you_step = true %}
 {% endif %}
 
-{% if is_thank_you %}
+{% if is_thank_you_step %}
   <!-- If the customer bought curaeats app -->
   {% for item in order.line_items %}
     {% assign productTags = item.product.tags | join: ', ' %}
@@ -340,7 +348,43 @@
       jQuery(".reviews").insertAfter("#payment-badges");
     }
 
-    {% if content_for_layout contains 'data-step="contact_information"' %}
+    // Track Discount Code
+    var checker;
+
+    function trackApplyDiscount() {
+      checker = setInterval(checkApplyDiscount, 200);
+    }
+
+    function checkApplyDiscount() {
+      if ($(".tag .reduction-code .reduction-code__text").length) {
+        woopra.track('Apply Discount Code', {
+          discount_code: $(".tag .reduction-code .reduction-code__text").text()
+        });
+        clearInterval(checker);
+        $("#checkout_submit").click(trackApplyDiscount);
+      }
+      else if ($("#error-for-reduction_code").length) {
+        woopra.track('Apply Discount Code - Failed', {
+          discount_code: $("#checkout_reduction_code").attr("value"),
+          error_message: $("#error-for-reduction_code").text()
+        });
+        clearInterval(checker);
+        $("#checkout_submit").click(trackApplyDiscount);
+      }
+      else if ($("#checkout_submit").hasClass("btn--disabled")) {
+        woopra.track('Apply Discount Code - Failed', {
+          discount_code: $("#checkout_reduction_code").attr("value"),
+          error_message: "No message displayed (but apply button disabled)"
+        });
+        clearInterval(checker);
+        $("#checkout_submit").click(trackApplyDiscount);
+      }
+    }
+
+    $("#checkout_submit").click(trackApplyDiscount);
+    // End Track Discount Code
+
+    {% if is_contact_step %}
       console.log("- step: contact");
       jQuery("label[for='smsbump-checkout-messages-subscription'] span").html("Get free SMS order status updates");
       if (jQuery("label[for='smsbump-checkout-messages-subscription']").length) {
@@ -369,7 +413,12 @@
       });
 
       woopra.track('Checkout Step - Information', { page_url: window.location.href });
-    {% elsif content_for_layout contains 'data-step="shipping_method"' %}
+
+      // Track Login
+      $('a[href*="/account/login"]').click(function () {
+        woopra.track('Checkout Login');
+      })
+    {% elsif is_shipping_step %}
       console.log("- step: shipping");
       jQuery("#shipping-method").addClass('active');
       jQuery(".tc").hide();
@@ -414,7 +463,7 @@
         });
       }); {%- endcomment -%}
     // End Track Shipping Change
-    {% elsif content_for_layout contains 'data-step="payment_method"' %}
+    {% elsif is_payment_step %}
       console.log("- step: payment")
       jQuery("#shipping-method").addClass('active');
       jQuery("#payment-method").addClass('active');
@@ -443,10 +492,22 @@
       });
 
       woopra.track('Checkout Step - Payment', {});
-    {% elsif content_for_layout contains 'Processing order' %}
+
+      // Track Changing Billing Same/Different as Shipping
+      $('.section--billing-address input').click(function () {
+        woopra.track('Billing Same/Different as Shipping Select', {
+          option: $(this).val() == 'true' ? 'Different' : 'Same'
+        })
+      })
+
+      $('.section--billing-address label').click(function () {
+        woopra.track('Billing Same/Different as Shipping Select', {
+          option: $(this).attr('for') == 'checkout_different_billing_address_true' ? 'Different' : 'Same'
+        })
+      })
+    {% elsif is_processing_step %}
       console.log("- step: processing")
-    {% elsif content_for_layout contains 'data-step="thank_you"' %}
-      {% assign is_thank_you = true %}
+    {% elsif is_thank_you_step %}
       console.log("- step: thank you")
       jQuery("#progressbar").hide();
 
@@ -512,132 +573,6 @@
     {% endif %}
   </script>
 
-  {%- comment -%} <script>
-    function allStages() {
-      jQuery(".breadcrumb li:nth-child(2) .breadcrumb__text").html("Customer");
-      jQuery(".sidebar-extentions").insertAfter(".order-summary__section--total-lines");
-
-      let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-
-      if (isMobile) {
-        jQuery(".reviews").insertAfter("#payment-badges");
-      }
-    }
-
-    function informationStage() {
-      jQuery("label[for='smsbump-checkout-messages-subscription'] span").html("Get free SMS order status updates");
-      if (jQuery("label[for='smsbump-checkout-messages-subscription']").length) {
-        var replacer = jQuery("label[for='smsbump-checkout-messages-subscription']").html().replace("YES - I want Free SMS order updates on my order, shipping status, and exclusive discounts", "I want free order status updates by SMS, and to be notified when CuraLin is on sale");
-        jQuery("label[for='smsbump-checkout-messages-subscription']").html(replacer);
-      }
-      jQuery("label[for='checkout_remember_me']").html("Save my details for a faster shopping experience");
-      jQuery("label[for='checkout_buyer_accepts_marketing']").html("Send me emails about my order status, keep me up to date on discounts and educational content.");
-    }
-
-    function shippingStage() {
-      jQuery("#shipping-method").addClass('active');
-      jQuery(".tc").hide();
-      $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Information")').attr("href") + '"></a>');
-
-      // Track Changing Shipping Method
-      function runAfterElementExists(jquery_selector, callback) {
-        var checker = window.setInterval(function () {
-          if ($(jquery_selector).length) {
-            clearInterval(checker);
-            callback();
-          }
-        }, 200);
-      }
-
-      runAfterElementExists(".section--shipping-method .content-box__row", function () {
-        console.log("Shipping Method Exists");
-        $('.section--shipping-method .content-box__row .input-radio').on('change', function () {
-          console.log("radio changed");
-          woopra.track('shipping method selection change', { selection: $('.section--shipping-method .content-box__row .input-radio:checked').parent().siblings("label").find(".radio__label__primary").attr("data-shipping-method-label-title") });
-        });
-      });
-      // End Track Shipping
-    };
-
-    function paymentStage() {
-      jQuery("#shipping-method").addClass('active');
-      jQuery("#payment-method").addClass('active');
-      jQuery(".tc").hide();
-      jQuery(".content-box__row .review-block").last().hide();
-      $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Information")').attr("href") + '"></a>');
-      $('#shipping-method').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Shipping")').attr("href") + '"></a>');
-    }
-
-    function thankyouStage() {
-      jQuery("#progressbar").hide();
-
-      {% if curaeats_exist %}
-      jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
-      jQuery(".sidebar").insertAfter("#curaeats-content");
-      jQuery("#curaeats-content").show();
-      jQuery(".anyflexbox .content .wrap").css("flex-direction", "column");
-      jQuery(".anyflexbox .content .wrap .main").css("width", "unset");
-      jQuery(".anyflexbox .content .wrap .main").css("padding-right", "unset");
-      jQuery(".anyflexbox .content .wrap .main").css("padding-top", "50px");
-      jQuery(".anyflexbox .content .wrap .main .step .step__sections .section[data-order-update-options]").hide();
-      jQuery(".upper-extentions").hide();
-      jQuery(".sidebar-extentions").hide();
-      jQuery("aside.sidebar").addClass("onboarding");
-      {% endif %}
-
-      {% if onboarding_exist %}
-      jQuery("#onboarding-content").insertAfter(".thank-you__additional-content");
-      if (jQuery("#curaeats-content")) {
-        jQuery(".sidebar").insertAfter("#curaeats-content");
-      } else {
-        jQuery(".sidebar").insertAfter("#onboarding-content");
-      }
-      jQuery("#onboarding-content").show();
-      jQuery(".anyflexbox .content .wrap").css("flex-direction", "column");
-      jQuery(".anyflexbox .content .wrap .main").css("width", "unset");
-      jQuery(".anyflexbox .content .wrap .main").css("padding-right", "unset");
-      jQuery(".anyflexbox .content .wrap .main").css("padding-top", "50px");
-      jQuery(".anyflexbox .content .wrap .main .step .step__sections .section[data-order-update-options]").hide();
-      jQuery(".upper-extentions").hide();
-      jQuery(".sidebar-extentions").hide();
-      jQuery("aside.sidebar").addClass("onboarding");
-      {% endif %}
-    }
-
-    let searchParams = new URLSearchParams(window.location.search);
-    let currentStep = searchParams.get('step') ? searchParams.get('step') : jQuery(".breadcrumb__item--current span").text();
-
-    allStages();
-
-    if (currentStep) {
-      switch (currentStep) {
-        case 'contact_information':
-        case 'Information':
-          informationStage();
-          break;
-        case 'shipping_method':
-        case 'Shipping':
-          shippingStage();
-          break;
-        case 'payment_method':
-        case 'Payment':
-          paymentStage();
-          break;
-        case 'thank_you':
-          thankyouStage();
-          break;
-      }
-    }
-    else {
-      window.location.href.includes("thank_you") ? thankyouStage() : console.log("can't find current step");
-    }
-
-    sessionStorage.setItem('paypal', 'hide');
-    if (sessionStorage.getItem('paypal') == 'hide') {
-      $("[data-alternative-payments]").hide();
-    }
-  </script> {%- endcomment -%}
-
   <script>
     let utm_url = '&'
     let utm = location.search.split('utm')
@@ -681,83 +616,6 @@
     woopra.track();
   </script>
   <!-- End of Woopra Code -->
-
-  {%- comment -%} <script>
-
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const step = urlParams.get('step');
-
-    if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window.location.href) && step == null)) {
-
-    }
-    else if (step == 'shipping_method') {
-
-    }
-    else if (step == 'payment_method') {
-
-    }
-    else if (window.location.href.includes('thank_you')) {
-
-    };
-  </script> {%- endcomment -%}
-
-  {%- comment -%} Woopra Trackings {%- endcomment -%}
-  <script>
-    // Track Discount Code
-    var checker;
-
-    function trackApplyDiscount() {
-      checker = setInterval(checkApplyDiscount, 200);
-    }
-
-    function checkApplyDiscount() {
-      if ($(".tag .reduction-code .reduction-code__text").length) {
-        woopra.track('Apply Discount Code', {
-          discount_code: $(".tag .reduction-code .reduction-code__text").text()
-        });
-        clearInterval(checker);
-        $("#checkout_submit").click(trackApplyDiscount);
-      }
-      else if ($("#error-for-reduction_code").length) {
-        woopra.track('Apply Discount Code - Failed', {
-          discount_code: $("#checkout_reduction_code").attr("value"),
-          error_message: $("#error-for-reduction_code").text()
-        });
-        clearInterval(checker);
-        $("#checkout_submit").click(trackApplyDiscount);
-      }
-      else if ($("#checkout_submit").hasClass("btn--disabled")) {
-        woopra.track('Apply Discount Code - Failed', {
-          discount_code: $("#checkout_reduction_code").attr("value"),
-          error_message: "No message displayed (but apply button disabled)"
-        });
-        clearInterval(checker);
-        $("#checkout_submit").click(trackApplyDiscount);
-      }
-    }
-
-    $("#checkout_submit").click(trackApplyDiscount);
-
-    // Track Login
-    $('a[href*="/account/login"]').click(function () {
-      woopra.track('Checkout Login');
-    })
-
-    // Track Changing Billing Same/Different as Shipping
-    $('.section--billing-address input').click(function () {
-      woopra.track('Billing Same/Different as Shipping Select', {
-        option: $(this).val() == 'true' ? 'Different' : 'Same'
-      })
-    })
-
-    $('.section--billing-address label').click(function () {
-      woopra.track('Billing Same/Different as Shipping Select', {
-        option: $(this).attr('for') == 'checkout_different_billing_address_true' ? 'Different' : 'Same'
-      })
-    })
-  </script>
 
   <style>
     @media only screen and (min-width: 760px) {
