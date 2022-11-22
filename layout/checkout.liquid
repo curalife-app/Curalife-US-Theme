@@ -316,6 +316,21 @@
   {{ tracking_code }}
 
   <script>
+    items_data = [];
+    {% for line_item in checkout.line_items %}
+    var item = {
+      item_id: '{{ line_item.product.selected_or_first_available_variant.sku }}',
+      item_name: '{{ line_item.product.title }}',
+      affiliation: '{{ shop.name }}',
+      price: parseFloat({{ line_item.product.price }} / 100.0).toFixed(2).toString(),
+        currency: '{{ shop.currency }}',
+          item_brand: 'CuraLife',
+            item_category: 'CuraLin',
+              quantity: {{ line_item.quantity }}
+        }
+    items_data.push(item);
+    {% endfor %}
+
     jQuery(".breadcrumb li:nth-child(2) .breadcrumb__text").html("Customer");
     jQuery(".sidebar-extentions").insertAfter(".order-summary__section--total-lines");
 
@@ -334,11 +349,52 @@
       }
       jQuery("label[for='checkout_remember_me']").html("Save my details for a faster shopping experience");
       jQuery("label[for='checkout_buyer_accepts_marketing']").html("Send me emails about my order status, keep me up to date on discounts and educational content.");
+
+      // Track Begin Checkout
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'begin_checkout',
+        ecommerce: {
+          items: items_data
+        },
+        email: '{{ checkout.email }}',
+        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
+        name: '{{ checkout.shipping_address.first_name }}',
+        surname: '{{ checkout.shipping_address.last_name }}',
+        city: '{{ checkout.shipping_address.city }}',
+        state: '{{ checkout.shipping_address.province }}',
+        zip: '{{ checkout.shipping_address.zip }}',
+        country: '{{ checkout.shipping_address.country_code }}',
+        user_agent: navigator.userAgent
+      });
+
+      woopra.track('Checkout Step - Information', { page_url: window.location.href });
     {% elsif content_for_layout contains 'data-step="shipping_method"' %}
       console.log("- step: shipping");
       jQuery("#shipping-method").addClass('active');
       jQuery(".tc").hide();
       $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Information")').attr("href") + '"></a>');
+
+      // Track Shipping Step
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'add_shipping_info',
+        ecommerce: {
+          shipping_tier: 'Free Shipping',
+          items: items_data
+        },
+        email: '{{ checkout.email }}',
+        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
+        name: '{{ checkout.shipping_address.first_name }}',
+        surname: '{{ checkout.shipping_address.last_name }}',
+        city: '{{ checkout.shipping_address.city }}',
+        state: '{{ checkout.shipping_address.province }}',
+        zip: '{{ checkout.shipping_address.zip }}',
+        country: '{{ checkout.shipping_address.country_code }}',
+        user_agent: navigator.userAgent
+      });
+
+      woopra.track('Checkout Step - Shipping', {});
 
       // Track Changing Shipping Method
       {%- comment -%} function runAfterElementExists(jquery_selector, callback) {
@@ -357,7 +413,7 @@
           woopra.track('shipping method selection change', { selection: $('.section--shipping-method .content-box__row .input-radio:checked').parent().siblings("label").find(".radio__label__primary").attr("data-shipping-method-label-title") });
         });
       }); {%- endcomment -%}
-    // End Track Shipping
+    // End Track Shipping Change
     {% elsif content_for_layout contains 'data-step="payment_method"' %}
       console.log("- step: payment")
       jQuery("#shipping-method").addClass('active');
@@ -366,6 +422,27 @@
       jQuery(".content-box__row .review-block").last().hide();
       $('#contact-information').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Information")').attr("href") + '"></a>');
       $('#shipping-method').html('<a class="new-breadcrumb-link" href="' + jQuery('.breadcrumb__link:contains("Shipping")').attr("href") + '"></a>');
+
+      // Track Payment Step
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'add_payment_info',
+        ecommerce: {
+          payment_type: '',
+          items: items_data
+        },
+        email: '{{ checkout.email }}',
+        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
+        name: '{{ checkout.shipping_address.first_name }}',
+        surname: '{{ checkout.shipping_address.last_name }}',
+        city: '{{ checkout.shipping_address.city }}',
+        state: '{{ checkout.shipping_address.province }}',
+        zip: '{{ checkout.shipping_address.zip }}',
+        country: '{{ checkout.shipping_address.country_code }}',
+        user_agent: navigator.userAgent
+      });
+
+      woopra.track('Checkout Step - Payment', {});
     {% elsif content_for_layout contains 'Processing order' %}
       console.log("- step: processing")
     {% elsif content_for_layout contains 'data-step="thank_you"' %}
@@ -404,6 +481,34 @@
         jQuery(".sidebar-extentions").hide();
         jQuery("aside.sidebar").addClass("onboarding");
       {% endif %}
+
+      // Track Purchase
+      {% assign coupon = checkout.discount_applications | first %}
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'purchase',
+        ecommerce: {
+          currency: '{{ shop.currency }}',
+          value: '{{ checkout.total_price | money_without_currency }}',
+          tax: '{{ checkout.tax_price | money_without_currency }}',
+          shipping: '{{ checkout.shipping_price | money_without_currency }}',
+          affiliation: '{{ shop.name }}',
+          transaction_id: '{{ checkout.order.name }}',
+          coupon: '{{ coupon.title }}',
+          items: items_data
+        },
+        email: '{{ checkout.email }}',
+        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
+        name: '{{ checkout.shipping_address.first_name }}',
+        surname: '{{ checkout.shipping_address.last_name }}',
+        city: '{{ checkout.shipping_address.city }}',
+        state: '{{ checkout.shipping_address.province }}',
+        zip: '{{ checkout.shipping_address.zip }}',
+        country: '{{ checkout.shipping_address.country_code }}',
+        user_agent: navigator.userAgent
+      });
+
+      woopra.track('Checkout Step - Thank You', {});
     {% endif %}
   </script>
 
@@ -577,118 +682,28 @@
   </script>
   <!-- End of Woopra Code -->
 
-  <script>
-    items_data = [];
-    {% for line_item in checkout.line_items %}
-    var item = {
-      item_id: '{{ line_item.product.selected_or_first_available_variant.sku }}',
-      item_name: '{{ line_item.product.title }}',
-      affiliation: '{{ shop.name }}',
-      price: parseFloat({{ line_item.product.price }} / 100.0).toFixed(2).toString(),
-        currency: '{{ shop.currency }}',
-          item_brand: 'CuraLife',
-            item_category: 'CuraLin',
-              quantity: {{ line_item.quantity }}
-        }
-    items_data.push(item);
-    {% endfor %}
+  {%- comment -%} <script>
+
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const step = urlParams.get('step');
 
     if (step == 'contact_information' || (!/thank_you|processing|orders/.test(window.location.href) && step == null)) {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'begin_checkout',
-        ecommerce: {
-          items: items_data
-        },
-        email: '{{ checkout.email }}',
-        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
-        name: '{{ checkout.shipping_address.first_name }}',
-        surname: '{{ checkout.shipping_address.last_name }}',
-        city: '{{ checkout.shipping_address.city }}',
-        state: '{{ checkout.shipping_address.province }}',
-        zip: '{{ checkout.shipping_address.zip }}',
-        country: '{{ checkout.shipping_address.country_code }}',
-        user_agent: navigator.userAgent
-      });
 
-      woopra.track('Checkout Step - Information', { page_url: window.location.href });
     }
     else if (step == 'shipping_method') {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'add_shipping_info',
-        ecommerce: {
-          shipping_tier: 'Free Shipping',
-          items: items_data
-        },
-        email: '{{ checkout.email }}',
-        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
-        name: '{{ checkout.shipping_address.first_name }}',
-        surname: '{{ checkout.shipping_address.last_name }}',
-        city: '{{ checkout.shipping_address.city }}',
-        state: '{{ checkout.shipping_address.province }}',
-        zip: '{{ checkout.shipping_address.zip }}',
-        country: '{{ checkout.shipping_address.country_code }}',
-        user_agent: navigator.userAgent
-      });
 
-      woopra.track('Checkout Step - Shipping', {});
     }
     else if (step == 'payment_method') {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'add_payment_info',
-        ecommerce: {
-          payment_type: '',
-          items: items_data
-        },
-        email: '{{ checkout.email }}',
-        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
-        name: '{{ checkout.shipping_address.first_name }}',
-        surname: '{{ checkout.shipping_address.last_name }}',
-        city: '{{ checkout.shipping_address.city }}',
-        state: '{{ checkout.shipping_address.province }}',
-        zip: '{{ checkout.shipping_address.zip }}',
-        country: '{{ checkout.shipping_address.country_code }}',
-        user_agent: navigator.userAgent
-      });
 
-      woopra.track('Checkout Step - Payment', {});
     }
     else if (window.location.href.includes('thank_you')) {
-      {% assign coupon = checkout.discount_applications | first %}
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'purchase',
-        ecommerce: {
-          currency: '{{ shop.currency }}',
-          value: '{{ checkout.total_price | money_without_currency }}',
-          tax: '{{ checkout.tax_price | money_without_currency }}',
-          shipping: '{{ checkout.shipping_price | money_without_currency }}',
-          affiliation: '{{ shop.name }}',
-          transaction_id: '{{ checkout.order.name }}',
-          coupon: '{{ coupon.title }}',
-          items: items_data
-        },
-        email: '{{ checkout.email }}',
-        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
-        name: '{{ checkout.shipping_address.first_name }}',
-        surname: '{{ checkout.shipping_address.last_name }}',
-        city: '{{ checkout.shipping_address.city }}',
-        state: '{{ checkout.shipping_address.province }}',
-        zip: '{{ checkout.shipping_address.zip }}',
-        country: '{{ checkout.shipping_address.country_code }}',
-        user_agent: navigator.userAgent
-      });
 
-      woopra.track('Checkout Step - Thank You', {});
     };
-  </script>
+  </script> {%- endcomment -%}
 
+  {%- comment -%} Woopra Trackings {%- endcomment -%}
   <script>
     // Track Discount Code
     var checker;
