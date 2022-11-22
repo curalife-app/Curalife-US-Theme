@@ -311,7 +311,7 @@
         }
 
         .container .black-friday .titles .shop-now-hero {
-            display: none;
+            display: {% if ifTimer == false %}none{% else%}flex{% endif %};
         }
 
 
