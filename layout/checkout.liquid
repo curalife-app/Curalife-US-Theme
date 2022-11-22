@@ -406,8 +406,6 @@
 
     allStages();
 
-    console.log("currentStep: " + currentStep);
-
     if (currentStep) {
       switch (currentStep) {
         case 'contact_information':
@@ -423,13 +421,12 @@
           paymentStage();
           break;
         case 'thank_you':
-          console.log("Thank you");
           thankyouStage();
           break;
       }
     }
     else {
-      window.location.href.includes("thank_you") ? thankyouStage() : console.log("Error: can't find current step");
+      window.location.href.includes("thank_you") ? thankyouStage() : console.log("can't find current step");
     }
 
     sessionStorage.setItem('paypal', 'hide');
