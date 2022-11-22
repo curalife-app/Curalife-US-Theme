@@ -386,6 +386,71 @@
                       }
                     }
                   </style>
+
+                {% endif %}
+                {% if product.title contains 'Special Offer' %}
+                <div class="ribbons">
+                  <div class="ribbon">
+                    <div class="titles">
+                      {% for i in (1..4) %}
+                      <div class="title">
+                        <p>CYBER MONDAY</p>
+                        <i class="icofont-star"></i>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <style>
+                  .ribbon {
+                    background: white;
+                    position: absolute;
+                    overflow: hidden;
+                  }
+                
+                  .ribbon .titles {
+                    display: flex;
+                    align-items: center;
+                    transition-timing-function: linear !important;
+                  }
+                
+                  .ribbon .titles .title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 200px;
+                  }
+                
+                  .ribbon .titles .title p {
+                    margin: unset;
+                    font-weight: bold;
+                    font-size: 20px;
+                  }
+                
+                  .ribbon {
+                    top: 55px;
+                    right: -40px;
+                    transform: rotate(8deg);
+                    opacity: 0.3;
+                  }
+                
+                
+                  @media screen and (max-width: 760px) {
+                    .ribbon .titles .title {
+                      display: flex;
+                      align-items: center;
+                
+                    }
+                
+                    .ribbon {
+                      transform: rotate(5deg);
+                      top: 7vw;
+                    }
+                  }
+                </style>
+                
                 {% endif %}
 
                 {% assign image = product.images | first %}
