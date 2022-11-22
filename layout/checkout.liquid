@@ -1,14 +1,5 @@
-{% if content_for_layout contains 'data-step="contact_information"' %}
-<script>console.log("- step: contact")</script>
-{% elsif content_for_layout contains 'data-step="shipping_method"' %}
-<script>console.log("- step: shipping")</script>
-{% elsif content_for_layout contains 'data-step="payment_method"' %}
-<script>console.log("- step: payment")</script>
-{% elsif content_for_layout contains 'Processing order' %}
-<script>console.log("- step: processing")</script>
-{% elsif content_for_layout contains 'data-step="thank_you"' %}
-{% assign is_thank_you = true %}
-<script>console.log("- step: processing")</script>
+{% if content_for_layout contains 'data-step="thank_you"' %}
+  {% assign is_thank_you = true %}
 {% endif %}
 
 {% if is_thank_you %}
