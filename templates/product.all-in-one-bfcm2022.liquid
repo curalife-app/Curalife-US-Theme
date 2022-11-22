@@ -158,7 +158,10 @@
               </div>
 
               <div class="btn">
-                <button class="main-btn" id="buy-button">Shop Now</button>
+                <button class="main-btn" id="buy-button">
+                  <div class="shop-class"> Shop Now</div>
+                  <div class="save-class">YOU SAVE 20% </div>
+                </button>
               </div>
             </div>
           </div>
@@ -714,6 +717,17 @@
     background: unset !important;
    }
 
+   .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn {
+    display: flex;
+    justify-content: space-between;
+   }
+
+
+   .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn .save-class {
+    font-weight: 400;
+    font-size: 14px;
+   }
+
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn {
     background-color: #FFE746 !important;
@@ -743,7 +757,14 @@
       font-weight: 400;
   }
 
+@media screen and (max-width: 768px) {
+  .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn {
+    flex-direction: column;
+  }
+
+}
 @media screen and (max-width: 760px) {
+
   .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
      top: 4vw;
   }
@@ -818,16 +839,33 @@
     height: 100px !important;
   }
 
-  @media screen and (max-width: 760px) {
-    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price.last {
-      top: 9vw;
+  @media screen and (max-width: 768px) {
+    .variant-notice p {  
+          padding-left: 8px;  
     }
-
     .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
       font-size: 12px !important;
     }
     .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-title {
       font-size: 18px !important;
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price.last {
+      top: 6vw;
+    }
+  }
+
+  @media screen and (max-width: 330px) {
+    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price.last {
+      top: 10vw;
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
+      top: 1vw;
+    }
+    .variant-notice p {
+      padding: 1px;
+      padding-left: 1px;
     }
   }
 </style>
