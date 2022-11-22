@@ -18,7 +18,7 @@
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
 <head>
   {% if content_for_layout contains 'data-step="contact_information"' %}
-  <script>console.log("- step: contact")</script>
+  <script>console.log("{{content_for_layout}}")</script>
   {% elsif content_for_layout contains 'data-step="shipping_method"' %}
   <script>console.log("- step: shipping")</script>
   {% elsif content_for_layout contains 'data-step="payment_method"' %}
