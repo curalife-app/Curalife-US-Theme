@@ -1,9 +1,12 @@
 {% if content_for_layout contains 'data-step="contact_information"' %}
   {% assign is_contact_step = true %}
+  {% assign extensions_exist = true %}
 {% elsif content_for_layout contains 'data-step="shipping_method"' %}
   {% assign is_shipping_step = true %}
+  {% assign extensions_exist = true %}
 {% elsif content_for_layout contains 'data-step="payment_method"' %}
   {% assign is_payment_step = true %}
+  {% assign extensions_exist = true %}
 {% elsif content_for_layout contains 'Processing order' %}
   {% assign is_processing_step = true %}
 {% elsif content_for_layout contains 'data-step="thank_you"' %}
@@ -142,13 +145,15 @@
           {{ content_for_logo }}
           {{ breadcrumb }}
 
-          <div class="upper-extentions">
-            <ul id="progressbar">
-              <li id="contact-information" style="--step-content: 'Customer';z-index:3;" class="active"></li>
-              <li id="shipping-method" style="--step-content: 'Shipping';z-index:2;"></li>
-              <li id="payment-method" style="--step-content: 'Payment';z-index:1;"></li>
-            </ul>
-          </div>
+          {% if extensions_exist %}
+            <div class="upper-extentions">
+              <ul id="progressbar">
+                <li id="contact-information" style="--step-content: 'Customer';z-index:3;" class="active"></li>
+                <li id="shipping-method" style="--step-content: 'Shipping';z-index:2;"></li>
+                <li id="payment-method" style="--step-content: 'Payment';z-index:1;"></li>
+              </ul>
+            </div>
+          {% endif %}
 
           {{ alternative_payment_methods }}
         </header>
@@ -159,14 +164,16 @@
           </div>
         </main>
 
-        <div id="payment-badges" class="payment-badges">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-visa.png' | asset_url }}" alt="payment provider visa" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-mastercard.png' | asset_url }}" alt="payment provider mastercard" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-amex.png' | asset_url }}" alt="payment provider amex" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-discover.png' | asset_url }}" alt="payment provider discover" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-jcb.png' | asset_url }}" alt="payment provider jcb" loading="lazy">
-          <img class="payment-badge" src="{{ 'checkout-payment-badges-diners.png' | asset_url }}" alt="payment provider diners" loading="lazy">
-        </div>
+        {% if extensions_exist %}
+          <div id="payment-badges" class="payment-badges">
+            <img class="payment-badge" src="{{ 'checkout-payment-badges-visa.png' | asset_url }}" alt="payment provider visa" loading="lazy">
+            <img class="payment-badge" src="{{ 'checkout-payment-badges-mastercard.png' | asset_url }}" alt="payment provider mastercard" loading="lazy">
+            <img class="payment-badge" src="{{ 'checkout-payment-badges-amex.png' | asset_url }}" alt="payment provider amex" loading="lazy">
+            <img class="payment-badge" src="{{ 'checkout-payment-badges-discover.png' | asset_url }}" alt="payment provider discover" loading="lazy">
+            <img class="payment-badge" src="{{ 'checkout-payment-badges-jcb.png' | asset_url }}" alt="payment provider jcb" loading="lazy">
+            <img class="payment-badge" src="{{ 'checkout-payment-badges-diners.png' | asset_url }}" alt="payment provider diners" loading="lazy">
+          </div>
+        {% endif %}
 
         <footer class="main__footer" role="contentinfo">
           {{ content_for_footer }}
@@ -183,56 +190,57 @@
         <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
         <div class="yotpo-widget-instance" data-yotpo-instance-id="18962"></div>
 
-        <div class="sidebar-extentions">
-          <div id="trust-badges" class="trust-badges">
-            <div class="badge">
-              <img class="badge-icon" src="{{ 'icon-money-back.png' | asset_url }}" alt="60 Days Money Back Guarantee Icon" loading="lazy">
-              <p class="badge-title">60 DAYS GUARANTEE</p>
+        {% if extensions_exist %}
+          <div class="sidebar-extentions">
+            <div id="trust-badges" class="trust-badges">
+              <div class="badge">
+                <img class="badge-icon" src="{{ 'icon-money-back.png' | asset_url }}" alt="60 Days Money Back Guarantee Icon" loading="lazy">
+                <p class="badge-title">60 DAYS GUARANTEE</p>
+              </div>
+              <div class="badge">
+                <img class="badge-icon" src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="Secure Checkout Icon" loading="lazy">
+                <p class="badge-title">100% SECURE CHECKOUT</p>
+              </div>
             </div>
-            <div class="badge">
-              <img class="badge-icon" src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="Secure Checkout Icon" loading="lazy">
-              <p class="badge-title">100% SECURE CHECKOUT</p>
-            </div>
-          </div>
 
-          <div class="reviews">
-            <p class="reviews-title"><span>Customers Reviews</span></p>
-            <div class="review">
-              <div class="review-info">
-                <img src="{{ 'checkout-review-thumbnail-1.png' | asset_url }}" alt="" loading="lazy">
-                <div class="review-details">
-                  <p class="reviewer">Jo. R</p>
-                  <div class="review-stars">
-                    <div class="review-stars-selected"></div>
+            <div class="reviews">
+              <p class="reviews-title"><span>Customers Reviews</span></p>
+              <div class="review">
+                <div class="review-info">
+                  <img src="{{ 'checkout-review-thumbnail-1.png' | asset_url }}" alt="" loading="lazy">
+                  <div class="review-details">
+                    <p class="reviewer">Jo. R</p>
+                    <div class="review-stars">
+                      <div class="review-stars-selected"></div>
+                    </div>
+                  </div>
+                  <div class="review-date">
+                    <p>01/01/2020</p>
                   </div>
                 </div>
-                <div class="review-date">
-                  <p>01/01/2020</p>
-                </div>
+                <div class="review-title">Give it a try</div>
+                <p class="review-content">“I now feel that I’m being rewarded for my hard work. I am now a permanent
+                  customer. Just give it a try. You’ll be delighted.”</p>
               </div>
-              <div class="review-title">Give it a try</div>
-              <p class="review-content">“I now feel that I’m being rewarded for my hard work. I am now a permanent
-                customer. Just give it a try. You’ll be delighted.”</p>
-            </div>
-            <div class="review">
-              <div class="review-info">
-                <img src="{{ 'checkout-review-thumbnail-2.png' | asset_url }}" alt="" loading="lazy">
-                <div class="review-details">
-                  <p class="reviewer">D’Gaye</p>
-                  <div class="review-stars">
-                    <div class="review-stars-selected"></div>
+              <div class="review">
+                <div class="review-info">
+                  <img src="{{ 'checkout-review-thumbnail-2.png' | asset_url }}" alt="" loading="lazy">
+                  <div class="review-details">
+                    <p class="reviewer">D’Gaye</p>
+                    <div class="review-stars">
+                      <div class="review-stars-selected"></div>
+                    </div>
+                  </div>
+                  <div class="review-date">
+                    <p>01/01/2020</p>
                   </div>
                 </div>
-                <div class="review-date">
-                  <p>01/01/2020</p>
-                </div>
+                <div class="review-title">Amazing product</div>
+                <p class="review-content">“CuraLin sounded too good to be true. But it works. Oh man, it works.”</p>
               </div>
-              <div class="review-title">Amazing product</div>
-              <p class="review-content">“CuraLin sounded too good to be true. But it works. Oh man, it works.”</p>
             </div>
           </div>
-
-        </div>
+        {% endif %}
       </aside>
     </div>
   </div>
