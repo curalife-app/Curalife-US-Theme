@@ -571,6 +571,15 @@
                 {% endif %}
                 </form>
               </div>
+              {% if product.title contains 'Special Offer' %}
+              <div class="extra-info">
+              
+                <div class="text-wrap">
+                  <p>Hello</p>
+                </div>
+              
+              </div>
+              {% else %}
             <div class="extra-info">
               {% for block in section.blocks %}
                 {% if block.type == 'prdct_tabs' %}
@@ -578,6 +587,7 @@
                 {% endif %}
               {% endfor %}
             </div>
+          {% endif %}
           </div>
         </div>
       </div>
