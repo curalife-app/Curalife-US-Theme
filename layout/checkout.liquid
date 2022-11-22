@@ -52,78 +52,80 @@
   <!-- Curalife Shopify Only Google Tag Manager -->
   {% render 'layout.head.google-tag-manager'%}
 
-  <!-- Swiper Import -->
-  {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
-  <script src="{{ 'swiper.min.js' | asset_url }}"></script>
-
-  <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
-  <style>
-    @font-face {
-      font-family: IcoFont;
-      font-weight: 400;
-      font-style: Regular;
-      src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),
-      url({{ "icoFont.woff" | asset_url }}) format("woff")
-    }
-  </style>
-
-  <style>
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 400;
-      src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
-      src: local(''),
-      url('{{ "DMSans-Regular.ttf" | asset_url }}') format('ttf'),
-    }
-
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 500;
-      src: url('{{ "DMSans-Medium.ttf" | asset_url }}');
-      src: local(''),
-      url('{{ "DMSans-Medium.ttf" | asset_url }}') format('ttf'),
-    }
-
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 700;
-      src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
-      src: local(''),
-      url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
-    }
-
-    @font-face {
-      font-family: 'PP Radio Grotesk';
-      font-style: normal;
-      font-weight: 300;
-      src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
-      src: local(''),
-      url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'),
-    }
-
-    @font-face {
-      font-family: 'PP Radio Grotesk';
-      font-style: normal;
-      font-weight: 400;
-      src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
-      src: local(''),
-      url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'),
-    }
-
-    @font-face {
-      font-family: 'PP Radio Grotesk';
-      font-style: normal;
-      font-weight: 700;
-      src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
-      src: local(''),
-      url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'),
-    }
-  </style>
-
   <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
+
+  {% if is_thank_you_step %}
+    <!-- Swiper Import -->
+    {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
+    <script src="{{ 'swiper.min.js' | asset_url }}"></script>
+
+    <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
+    <style>
+      @font-face {
+        font-family: IcoFont;
+        font-weight: 400;
+        font-style: Regular;
+        src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),
+        url({{ "icoFont.woff" | asset_url }}) format("woff")
+      }
+    </style>
+
+    <style>
+      @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        src: url('{{ "DMSans-Regular.ttf" | asset_url }}');
+        src: local(''),
+        url('{{ "DMSans-Regular.ttf" | asset_url }}') format('ttf'),
+      }
+
+      @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 500;
+        src: url('{{ "DMSans-Medium.ttf" | asset_url }}');
+        src: local(''),
+        url('{{ "DMSans-Medium.ttf" | asset_url }}') format('ttf'),
+      }
+
+      @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        src: url('{{ "DMSans-Bold.ttf" | asset_url }}');
+        src: local(''),
+        url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
+      }
+
+      @font-face {
+        font-family: 'PP Radio Grotesk';
+        font-style: normal;
+        font-weight: 300;
+        src: url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}');
+        src: local(''),
+        url('{{ "PPRadioGrotesk-Light.otf" | asset_url }}') format('otf'),
+      }
+
+      @font-face {
+        font-family: 'PP Radio Grotesk';
+        font-style: normal;
+        font-weight: 400;
+        src: url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}');
+        src: local(''),
+        url('{{ "PPRadioGrotesk-Regular.otf" | asset_url }}') format('otf'),
+      }
+
+      @font-face {
+        font-family: 'PP Radio Grotesk';
+        font-style: normal;
+        font-weight: 700;
+        src: url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}');
+        src: local(''),
+        url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'),
+      }
+    </style>
+  {% endif %}
 </head>
 
 <body>
