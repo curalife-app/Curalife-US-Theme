@@ -406,8 +406,6 @@
 
     allStages();
 
-    console.log("currentStep: " + currentStep);
-
     if (currentStep) {
       switch (currentStep) {
         case 'contact_information':
@@ -423,7 +421,6 @@
           paymentStage();
           break;
         case 'thank_you':
-          console.log("Thank you");
           thankyouStage();
           break;
       }
