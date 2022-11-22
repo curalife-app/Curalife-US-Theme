@@ -3,7 +3,12 @@
 {% render 'script.round-converted-currency' %}
 {% if product.title contains '1+1' %}
   {% render 'collection-page-header-black-friday-1-plus-1' %}
+{% if product.title contains 'Special Offer' %}
+{% render 'collection-page-header-cyber-monday' %}
+
 {% else %}
+
+
   {% render 'collection-page-header-black-friday' %}
 {% endif %}
 
