@@ -1,31 +1,37 @@
-<!-- If the customer bought curaeats app -->
-{% for item in order.line_items %}
-  {% assign productTags = item.product.tags | join: ', ' %}
-  {% if item.product.title contains 'CuraEats' %}
-    {% assign curaeats_exist = true %}
-  {% elsif productTags contains 'CuraEats' %}
-    {% assign curaeats_exist = true %}
-  {% elsif item.variant.title contains 'CuraEats' %}
-    {% assign curaeats_exist = true %}
-  {% endif %}
-{% endfor %}
+{% if content_for_layout contains 'data-step="contact_information"' %}
+<script>console.log("- step: contact")</script>
+{% elsif content_for_layout contains 'data-step="shipping_method"' %}
+<script>console.log("- step: shipping")</script>
+{% elsif content_for_layout contains 'data-step="payment_method"' %}
+<script>console.log("- step: payment")</script>
+{% elsif content_for_layout contains 'Processing order' %}
+<script>console.log("- step: processing")</script>
+{% elsif content_for_layout contains 'data-step="thank_you"' %}
+{% assign is_thank_you = true %}
+<script>console.log("- step: processing")</script>
+{% endif %}
 
-{% if customer.orders_count == 1 %}
-{% assign onboarding_exist = true %}
+{% if is_thank_you %}
+  <!-- If the customer bought curaeats app -->
+  {% for item in order.line_items %}
+    {% assign productTags = item.product.tags | join: ', ' %}
+    {% if item.product.title contains 'CuraEats' %}
+      {% assign curaeats_exist = true %}
+    {% elsif productTags contains 'CuraEats' %}
+      {% assign curaeats_exist = true %}
+    {% elsif item.variant.title contains 'CuraEats' %}
+      {% assign curaeats_exist = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if customer.orders_count == 1 %}
+    {% assign onboarding_exist = true %}
+  {% endif %}
 {% endif %}
 
 <!DOCTYPE html>
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
 <head>
-  {% if content_for_layout contains 'data-step="contact_information"' %}
-  <script>console.log("- step: contact")</script>
-  {% elsif content_for_layout contains 'data-step="shipping_method"' %}
-  <script>console.log("- step: shipping")</script>
-  {% elsif content_for_layout contains 'data-step="payment_method"' %}
-  <script>console.log("- step: payment")</script>
-  {% elsif content_for_layout contains 'Processing order' %}
-  <script>console.log("- step: processing")</script>
-  {% endif %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
@@ -233,87 +239,87 @@
   </div>
 
   {% if curaeats_exist %}
-  <div id="curaeats-content">
-    {% assign thanksTitle = 'Order number ' | append: order.name | append: ' is confirmed!' %}
-    {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
-    {% render 'curaeats-download-section' %}
-    {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
-    {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true, box_link: '/pages/contact-us' %}
-  </div>
+    <div id="curaeats-content">
+      {% assign thanksTitle = 'Order number ' | append: order.name | append: ' is confirmed!' %}
+      {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
+      {% render 'curaeats-download-section' %}
+      {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
+      {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true, box_link: '/pages/contact-us' %}
+    </div>
 
-  <style>
-    #curaeats-content {
-      display: none;
-    }
-
-    .logo {
-      position: relative;
-      top: -30px;
-    }
-
-    aside.sidebar.onboarding {
-      width: unset;
-      float: unset;
-    }
-
-    aside.sidebar.onboarding:after {
-      background: unset;
-      box-shadow: unset;
-    }
-
-    #contact-us-section {
-      margin-bottom: unset;
-    }
-
-    @media screen and (max-width: 768px) {
-      .logo {
-        top: unset;
+    <style>
+      #curaeats-content {
+        display: none;
       }
-    }
-  </style>
+
+      .logo {
+        position: relative;
+        top: -30px;
+      }
+
+      aside.sidebar.onboarding {
+        width: unset;
+        float: unset;
+      }
+
+      aside.sidebar.onboarding:after {
+        background: unset;
+        box-shadow: unset;
+      }
+
+      #contact-us-section {
+        margin-bottom: unset;
+      }
+
+      @media screen and (max-width: 768px) {
+        .logo {
+          top: unset;
+        }
+      }
+    </style>
   {% endif %}
 
   {% if onboarding_exist %}
-  <div id="onboarding-content">
-    {% assign progress_steps = "Daily Tip
-    |Reviews
-    |How To Use
-    |Support
-    |FAQ
-    |Order Info"
-    | split: '|' %}
-    {% render 'onboarding-hero', title: "Your order is confirmed!", icon_file: "onboarding-order-icon.png" %}
-    {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
-    {% render 'onboarding-quiz' %}
-    {% render 'onboarding-curalin-consumers-not-started' %}
-    {% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
-    {% render 'onboarding-faq' %}
-  </div>
+    <div id="onboarding-content">
+      {% assign progress_steps = "Daily Tip
+      |Reviews
+      |How To Use
+      |Support
+      |FAQ
+      |Order Info"
+      | split: '|' %}
+      {% render 'onboarding-hero', title: "Your order is confirmed!", icon_file: "onboarding-order-icon.png" %}
+      {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
+      {% render 'onboarding-quiz' %}
+      {% render 'onboarding-curalin-consumers-not-started' %}
+      {% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
+      {% render 'onboarding-faq' %}
+    </div>
 
-  <style>
-    #onboarding-content {
-      display: none;
-    }
+    <style>
+      #onboarding-content {
+        display: none;
+      }
 
-    .logo {
-      position: relative;
-      top: -30px;
-    }
+      .logo {
+        position: relative;
+        top: -30px;
+      }
 
-    aside.sidebar.onboarding {
-      width: unset;
-      float: unset;
-    }
+      aside.sidebar.onboarding {
+        width: unset;
+        float: unset;
+      }
 
-    aside.sidebar.onboarding:after {
-      background: unset;
-      box-shadow: unset;
-    }
+      aside.sidebar.onboarding:after {
+        background: unset;
+        box-shadow: unset;
+      }
 
-    #contact-us-section {
-      margin-bottom: unset;
-    }
-  </style>
+      #contact-us-section {
+        margin-bottom: unset;
+      }
+    </style>
   {% endif %}
 
   {{ tracking_code }}
