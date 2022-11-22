@@ -390,16 +390,18 @@
                 {% endif %}
                 {% if product.title contains 'Special Offer' %}
                 <div class="ribbons">
-                  <div class="ribbon">
-                    <div class="titles">
-                      {% for i in (1..4) %}
-                      <div class="title">
-                        <p>CYBER MONDAY</p>
-                        <i class="icofont-star"></i>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </div>
+                    {% for i in (1..2) %}
+                    <div class="ribbon ">
+                      <div class="titles">
+                            {% for i in (1..20) %}
+                            <div class="title">
+                              <p>CYBER MONDAY</p>
+                              <i class="icofont-star"></i>
+                            </div>
+                            {% endfor %}
+                            </div>
+                            </div>
+                    {% endfor %}
                 </div>
                 
                 
@@ -429,11 +431,18 @@
                     font-size: 20px;
                   }
                 
-                  .ribbon {
+                  .ribbon:nth-child(2) {
                     top: 130px;
                     right: -40px;
                     transform: rotate(8deg);
                     opacity: 0.3;
+                  }
+
+                  .ribbon:nth-child(1) {
+                      bottom: 0;
+                      right: -40px;
+                      transform: rotate(350deg);
+                      z-index: 10;
                   }
                 
                 
@@ -443,8 +452,13 @@
                       align-items: center;
                 
                     }
+
+                    .ribbon:nth-child(1) {
+                        bottom: 16vw;
+                        transform: rotate(352deg);
+                    }
                 
-                    .ribbon {
+                    .ribbon:nth-child(2) {
                       transform: rotate(5deg);
                       top: 8vw;
                     }
