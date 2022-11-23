@@ -12,22 +12,24 @@
                         |Group_4.png
                         |Group_5.png
                         |Vector_1.png
-                        |Group_4787.png' | split: '|' %}
-                         
+                        |Group_4787.png
+                        ' | split: '|' %}
                         <ul>
                             {% assign count = 0 %}
-                            {% for cura_power in cura_powers %}
-                               
+                            {% for block in section.blocks %}
+                                {% if block.type == 'cura_power' %}
+                                    {%for cura_power in cura_powers %}
                                         <li class="advantage-content-{{ count }}">
                                             <div class="icon-wrap">
-                                                <img src="{{ cura_power | file_url }}" width="80px" height="60px" alt="icon-wrap" loading="lazy">
+                                                <img src="{{ block.settings.cpwr_img | image_url }}" width="80px" height="60px" alt="icon-wrap" loading="lazy">
                                             </div>
                                             <div class="name">
                                                 <p>{{block.settings.cpwr_desc }}</p>
                                             </div>
                                         </li>
                                         {% assign count = count | plus: 1 %}
-                                 
+                                    {% endfor %}
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     </div>
