@@ -7,30 +7,31 @@
                         <h3>{{section.settings.cpwr_titl}}</h3>
                     </div>
                     <div class="advantages-wrap">
-                        {% assign cura_powers = 'Group_3.png
-                        |Vector_2.png
-                        |Group_4.png
-                        |Group_5.png
-                        |Vector_1.png
-                        |Group_4787.png
+                        {% assign cura_powers = 'Group_3.png&Supports healthy pancreatic beta cells function
+                        |Vector_2.png&Promotes Short & Long Term Healthy & Balanced blood glucose levels
+                        |Group_4.png&Reduces the craving for sugars & other carbs
+                        |Group_5.png&Promotes high daily energy levels
+                        |Vector_1.png&Supports pancreas, liver, and kidney health
+                        |Group_4787.png&Promotes healthy weight loss
                         ' | split: '|' %}
                         <ul>
                             {% assign count = 0 %}
-                            {% for block in section.blocks %}
-                                {% if block.type == 'cura_power' %}
-                                    {%for power in cura_powers %}
+                            
+                               
+                                    {%for cura_power in cura_powers %}
                                         <li class="advantage-content-{{ count }}">
                                             <div class="icon-wrap">
-                                                <img src="{{ power | file_url }}" width="80px" height="60px" alt="icon-wrap" loading="lazy">
+                                                <img src="{{ cura_power | split: '&' | first | file_url }}" width="80px" height="60px" alt="icon-wrap" loading="lazy">
                                             </div>
                                             <div class="name">
-                                                <p>{{block.settings.cpwr_desc }}</p>
+                                                {% assign cura_desc = cura_power | split: '&' | last | split: "$" | last %}
+                                                <p>{{ cura_desc }}</p>
                                             </div>
                                         </li>
                                         {% assign count = count | plus: 1 %}
                                     {% endfor %}
-                                {% endif %}
-                            {% endfor %}
+                               
+                           
                         </ul>
                     </div>
                 </div>
