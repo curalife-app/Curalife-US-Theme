@@ -15,11 +15,11 @@
                         |Group_4787.png&Promotes healthy weight loss
                         ' | split: '|' %}
                         <ul>
-                            {% assign count = 0 %}
+                           
                             
                                
                                     {%for cura_power in cura_powers %}
-                                        <li class="advantage-content-{{ count }}">
+                                        <li class="advantage-content">
                                             <div class="icon-wrap">
                                                 <img src="{{ cura_power | split: '&' | first | file_url }}" width="80px" height="60px" alt="icon-wrap" loading="lazy">
                                             </div>
@@ -28,7 +28,7 @@
                                                 <p>{{ cura_desc }}</p>
                                             </div>
                                         </li>
-                                        {% assign count = count | plus: 1 %}
+                                       
                                     {% endfor %}
                                
                            
