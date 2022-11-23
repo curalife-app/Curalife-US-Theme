@@ -31,14 +31,15 @@
                       <ul>
                           {% for block in section.blocks %}
                           {% if block.type == 'contact' %}
+                            {% for i in (1..3) %}
                           <li>
                             <div class="phone-title">
-                            {% for i in (1..3) %}
+                        
                             <span>
                             {% assign imgUrl = "phone-" | append: i | append: ".png" %}
                             <img src="{{imgUrl | file_url }}" alt="" width="20" height="20">
                             </span>
-                            {% endfor %}
+                          
                               {{block.settings.phn_title}} 
                             </div>
                               <div class="show-phone">
@@ -48,6 +49,7 @@
                                 </div>
                               </div>
                           </li>
+                            {% endfor %}
                           {% endif %}
                           {% endfor %}
                          
