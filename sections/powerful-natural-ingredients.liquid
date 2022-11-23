@@ -10,7 +10,7 @@
       <div class="thumbs-slider">
         <div class="swiper" data-swiper="{'observer': true}">
           <div class="swiper-wrapper">
-           {% assign payments = '9.png
+           {% assign ingredients = '9.png
            |9_4.png
            |9_8.png
            |9_1.png
@@ -19,18 +19,14 @@
            |9_3.png
            |9_5.png
            |9_7.png' | split: '|' %}
-            {% for block in section.blocks %}
-              {% if block.type == 'natural_ingred' %}
-                {%if block.settings.pwing_img != blank %}
+            {% for ingredient in ingredients %}
                   <div class="swiper-slide">
                     <div class="ingredient-item">
                       <div class="img-wrap">
-                        <img src="{{ block.settings.pwing_img | img_url: '316x296' }}" width="432px" height="378px" alt="" loading="lazy">
+                        <img src="{{ ingredient | file_url }}" width="432px" height="378px" alt="" loading="lazy">
                       </div>
                     </div>
                   </div>
-                {% endif %}
-              {% endif %}
             {% endfor %}
           </div>
         </div>
