@@ -37,10 +37,7 @@
               {% for phone in phones %}
               <li>
                 <div class="phone-title">
-                  {% if block.settings.phn_img != blank %}
-                  <span><img src="{{ phone | split: '&' | first | append: " .png" | file_url }}" alt="" width="20"
-                      height="20" loading="lazy"></span>
-                  {% endif %}
+                  <span><img src="{{ phone | split: '&' | first | append: ".png" | file_url }}" alt="" width="20" height="20" loading="lazy"></span>
                   {{ phone | split: '&' | last | split: "$" | first }}:
                 </div>
                 <div class="show-phone">
@@ -61,8 +58,8 @@
             <ul>
               {% for block in section.blocks %}
               {% if block.type == 'social' %}
-              <li><a href="{{block.settings.socil_link}}" target="_blank"><i
-                    class="{{block.settings.socil_icn}}"></i></a></li>
+              <li><a href="{{ block.settings.socil_link }}" target="_blank"><i
+                    class="{{ block.settings.socil_icn }}"></i></a></li>
               {% endif %}
               {% endfor %}
             </ul>

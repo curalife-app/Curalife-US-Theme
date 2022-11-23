@@ -9,6 +9,5 @@
         "statusBarItem.remoteForeground": "#e7e7e7"
     },
     "peacock.color": "#005fd3",
-    "docwriter.style": "JSDoc",
     "liquid.format.enable": true
 }
