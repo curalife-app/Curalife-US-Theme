@@ -28,15 +28,19 @@
                       <div class="title">
                           <h3>24/7 CUSTOMER SUPPORT</h3>
                       </div>
+                      {% assign phone_images = %}
                       <ul>
                           {% for block in section.blocks %}
                           {% if block.type == 'contact' %}
                           <li>
                             <div class="phone-title">
                               {% if block.settings.phn_img != blank %}
-                              <span>
-                                <img src="{{block.settings.phn_img | img_url: width: 32 }}" alt="" width="20" height="20">
-                                </span>
+                            {% for i in (1..3) %}
+                            <span>
+                            {% assign imgUrl = "phone-" | append: i | append: ".png" %}
+                            <img src="{{imgUrl | file_url }}" alt="" width="20" height="20">
+                            </span>
+                            {% endfor %}
                               {% endif %}
                               {{block.settings.phn_title}} 
                             </div>
