@@ -50,14 +50,11 @@
                     {% endif %}
                     <div class="badges">
                         <ul>
-                            {% for block in section.blocks %}
-                            {% if block.type == 'what_cura' %}
-                            {% if block.settings.wht_img != blank %}
-                            <li>
-                                <img src="{{ block.settings.wht_img | image_url }}" width="168px" height="143px" alt="" loading="lazy">
+                            {% for i in (1..6) %}
+                            <li class="wht_img">
+                              {% assign imgUrl = "wht_img-" | append: i | append: ".png" %}
+                              <img src="{{ imgUrl | file_url }}" alt="" loading="lazy">
                             </li>
-                            {% endif %}
-                            {% endif %}
                             {% endfor %}
                         </ul>
                     </div>
