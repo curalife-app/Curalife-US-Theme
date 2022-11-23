@@ -2,15 +2,14 @@
   <div class="top-info">
     <div class="container">
       <div class="info-wrap">
-        <div class="main-side footer-column">
-          {% if section.settings.ftr_logoimage != blank %}
+        <div class="main-side footer-column">  
           <div class="title">
             <div class="logo">
-              <a href="{{section.settings.lgo_ftrlink}}"><img src="{{'logo-white.png' | file_url }}"
+              <a href="{{section.settings.lgo_ftrlink}}"><img src="{{'logo-white_afbea3d6-ff19-4fc9-a60f-0a5c8acb717a.png' | file_url }}"
                   width="183px" height="52px" alt="" loading="lazy"></a>
             </div>
           </div>
-          {% endif %}
+        
           <div class="menu-list">
             {% for block in section.blocks %}
             {%- assign footer_linklist = block.settings.footer_linklist -%}
@@ -114,11 +113,7 @@
 "name": "Footer",
 "class":"footer_section",
 "settings": [
-{
-"type": "image_picker",
-"id": "ftr_logoimage",
-"label": "Logo image"
-},
+
 {
 "type": "url",
 "id": "lgo_ftrlink",
