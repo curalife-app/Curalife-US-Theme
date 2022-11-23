@@ -11,9 +11,9 @@
 {% elsif content_for_layout contains 'Processing order' %}
   {% assign is_processing_step = true %}
 {% elsif content_for_layout contains 'data-step="thank_you"' %}
-  {% unless content_for_layout contains 'You’ll receive an email when your order is ready.' %}
+  {% if content_for_layout contains 'You’ll receive a confirmation email with your order number shortly.' %}
     {% assign is_thank_you_step = true %}
-  {% endunless %}
+  {% endif %}
 {% endif %}
 
 {% if is_thank_you_step %}
