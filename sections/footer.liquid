@@ -28,34 +28,27 @@
                       <div class="title">
                           <h3>24/7 CUSTOMER SUPPORT</h3>
                       </div>
-                      {% assign phones = 'phone-1.png&US-Toll-Free$+1 888 286 7307
-                      |phone-2.png&UK-Toll-Free$+44 800 086 9122
-                      |phone-3.png&AU-Toll-Free$+61 1800 942 961' %}
+                      {% assign phones = 'phone-1&US-Toll-Free$+1 888 286 7307
+                      |phone-2&UK-Toll-Free$+44 800 086 9122
+                      |phone-3&AU-Toll-Free$+61 1800 942 961' | split: '|' %}
                       <ul>
-                          {% for block in section.blocks %}
-                          {% if block.type == 'contact' %}
+                        {% for phone in phones %}
                           <li>
                             <div class="phone-title">
                               {% if block.settings.phn_img != blank %}
-                            {% for i in (1..3) %}
-                            <span>
-                            {% assign imgUrl = "phone-" | append: i | append: ".png" %}
-                            <img src="{{imgUrl | file_url }}" alt="" width="20" height="20">
-                            </span>
-                            {% endfor %}
+                                <span><img src="{{ phone | split: '&' | first | append: " .png" | file_url }}" alt="" width="20" height="20"></span>
                               {% endif %}
-                              {{block.settings.phn_title}} 
+                              {{ phone | split: '&' | last | split: "$" | first }}:
                             </div>
-                              <div class="show-phone">
-                                <div class="show-phone-btn"><i class="{{block.settings.phn_icn}}"></i> Show Phone</div>
-                                <div class="show-phone-content">
-                                  <a href="tel:{{block.settings.phn_numbr}}">{{block.settings.phn_numbr}}</a>
+                            <div class="show-phone">
+                              <div class="show-phone-btn"><i class="{{block.settings.phn_icn}}"></i> Show Phone</div>
+                              <div class="show-phone-content">
+                                {% assign phone_number = phone | split: '&' | last | split: "$" | last %}
+                                <a href="tel:{{ phone_number }}">{{ phone_number }}}</a>
                                 </div>
-                              </div>
+                                </div>
                           </li>
-                          {% endif %}
-                          {% endfor %}
-                         
+                        {% endfor %}
                       </ul>
                   </div>
                   <div class="social-bar">
