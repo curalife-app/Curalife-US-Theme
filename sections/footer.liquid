@@ -80,16 +80,16 @@
             <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
           </div>
           <div class="payment-methods">
-            {% assign payments = 'amex.png
-            |apple-pay.png
-            |mastercard.png
-            |paypal.png
-            |visa.png
-            |afterpay.png' | split: '|' %}
+            {% assign payments = 'amex
+            |apple-pay
+            |mastercard
+            |paypal
+            |visa
+            |afterpay' | split: '|' %}
             <ul>
               {% for payment in payments %}
              
-              <li><span><img src="{{ payment | file_url }}" width="51px" height="32px" alt="" loading="lazy"></span>
+              <li><span><img src="{{ payment | append: ".png" | file_url }}" width="51px" height="32px" alt="" loading="lazy"></span>
               </li>
            
               {% endfor %}
