@@ -93,12 +93,11 @@
       </div>
       <div class="logo-list">
           <ul>
-              {% for block in section.blocks %}
-              {% if block.type == 'partners' %}
-              {% if block.settings.fetr_imgfour != blank %}
-              <li><img src="{{ block.settings.fetr_imgfour | img_url: '' }}" alt=""></li>
-              {% endif %}
-              {% endif %}
+            {% for i in (1..6) %}
+            <li class="seeklogo">
+              {% assign imgUrl = "seeklogo-" | append: i | append: ".png" %}
+              <img src="{{ imgUrl | file_url }}" alt="" loading="lazy">
+            </li>
             {% endfor %}
           </ul>
       </div>
