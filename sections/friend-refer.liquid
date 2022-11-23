@@ -2,11 +2,11 @@
   <div class="container">
     <div class="mini-wrap">
       <div class="refer-friend">
-        {% if section.settings.refr_img != blank %}
+      
         <div class="img-wrap">
-          <img src="{{ section.settings.refr_img | image_url }}" alt="" width="472" height="auto" loading="lazy">
+          <img src="{{ 'Frame_23365.png' | file_url }}" alt="" width="472" height="auto" loading="lazy">
         </div>
-          {% endif %}
+    
         <div class="intro-text">
           <div class="sub-title">
             <h2>{{section.settings.refr_titl}}</h2>
@@ -31,11 +31,7 @@
         "type": "header", 
         "content": "Refer a Friend Section Start" 
       }, 
-      {
-        "type": "image_picker",
-        "id": "refr_img",
-        "label": "Select image"
-      },
+    
       {
         "type": "text",
         "id": "refr_titl",
