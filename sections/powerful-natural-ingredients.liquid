@@ -10,6 +10,15 @@
       <div class="thumbs-slider">
         <div class="swiper" data-swiper="{'observer': true}">
           <div class="swiper-wrapper">
+           {% assign payments = '9.png
+           |9_4.png
+           |9_8.png
+           |9_1.png
+           |9_2.png
+           |9_6.png
+           |9_3.png
+           |9_5.png
+           |9_7.png' | split: '|' %}
             {% for block in section.blocks %}
               {% if block.type == 'natural_ingred' %}
                 {%if block.settings.pwing_img != blank %}
