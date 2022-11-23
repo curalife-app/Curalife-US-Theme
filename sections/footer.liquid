@@ -28,7 +28,9 @@
                       <div class="title">
                           <h3>24/7 CUSTOMER SUPPORT</h3>
                       </div>
-                      {% assign phone_images = %}
+                      {% assign phones = 'phone-1.png&US-Toll-Free$+1 888 286 7307
+                      |phone-2.png&UK-Toll-Free$+44 800 086 9122
+                      |phone-3.png&AU-Toll-Free$+61 1800 942 961' %}
                       <ul>
                           {% for block in section.blocks %}
                           {% if block.type == 'contact' %}
