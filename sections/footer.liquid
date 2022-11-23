@@ -41,7 +41,7 @@
                               {{ phone | split: '&' | last | split: "$" | first }}:
                             </div>
                             <div class="show-phone">
-                              <div class="show-phone-btn"><i class="{{block.settings.phn_icn}}"></i> Show Phone</div>
+                              <div class="show-phone-btn"><i class="icon-tel"></i> Show Phone</div>
                               <div class="show-phone-content">
                                 {% assign phone_number = phone | split: '&' | last | split: "$" | last %}
                                 <a href="tel:{{ phone_number }}">{{ phone_number }}}</a>
