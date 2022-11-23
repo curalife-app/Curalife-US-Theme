@@ -89,7 +89,7 @@
             <ul>
               {% for payment in payments %}
              
-              <li><span><img src="{{payment | append: ".png" | file_url }}" width="51px" height="32px" alt=""></span>
+              <li><span><img src="{{ payment | append: ".png" | file_url }}" width="51px" height="32px" alt="" loading="lazy"></span>
               </li>
            
               {% endfor %}
