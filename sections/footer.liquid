@@ -36,7 +36,7 @@
                           <li>
                             <div class="phone-title">
                               {% if block.settings.phn_img != blank %}
-                                <span><img src="{{ phone | split: '&' | first | append: " .png" | file_url }}" alt="" width="20" height="20"></span>
+                                <span><img src="{{ phone | split: '&' | first | append: " .png" | file_url }}" alt="" width="20" height="20" loading="lazy"></span>
                               {% endif %}
                               {{ phone | split: '&' | last | split: "$" | first }}:
                             </div>
