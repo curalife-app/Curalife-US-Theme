@@ -33,11 +33,12 @@
                           {% if block.type == 'contact' %}
                           <li>
                             <div class="phone-title">
-                              {% if block.settings.phn_img != blank %}
-                              <span>
-                                <img src="{{block.settings.phn_img | img_url: width: 32 }}" alt="" width="20" height="20">
-                              </span>
-                              {% endif %}
+                            {% for i in (1..3) %}
+                            <span>
+                            {% assign imgUrl = "phone-" | append: i | append: ".png" %}
+                            <img src="{{imgUrl | file_url }}" alt="" width="20" height="20">
+                            </span>
+                            {% endfor %}
                               {{block.settings.phn_title}} 
                             </div>
                               <div class="show-phone">
