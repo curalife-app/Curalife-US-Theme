@@ -31,6 +31,7 @@
                       <ul>
                         {% for i in (1..3) %}
                           {% for block in section.blocks %}
+                          {% if block.type == 'contact' %}
                           <li>
                             <div class="phone-title">
                         
@@ -48,7 +49,7 @@
                                 </div>
                               </div>
                           </li>
-                        
+                          {% endif %}
                           {% endfor %}
                           {% endfor %}
                          
