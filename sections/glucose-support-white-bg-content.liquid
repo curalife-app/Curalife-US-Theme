@@ -7,22 +7,27 @@
                         <h3>{{section.settings.cpwr_titl}}</h3>
                     </div>
                     <div class="advantages-wrap">
+                        {% assign cura_powers = 'Group_3.png
+                        |Vector_2.png
+                        |Group_4.png
+                        |Group_5.png
+                        |Vector_1.png
+                        |Group_4787.png' | split: '|' %}
+                         
                         <ul>
                             {% assign count = 0 %}
-                            {% for block in section.blocks %}
-                                {% if block.type == 'cura_power' %}
-                                    {%if block.settings.cpwr_img != blank %}
+                            {% for cura_power in cura_powers %}
+                               
                                         <li class="advantage-content-{{ count }}">
                                             <div class="icon-wrap">
-                                                <img src="{{ block.settings.cpwr_img | image_url }}" width="80px" height="60px" alt="icon-wrap" loading="lazy">
+                                                <img src="{{ cura_power | file_url }}" width="80px" height="60px" alt="icon-wrap" loading="lazy">
                                             </div>
                                             <div class="name">
                                                 <p>{{block.settings.cpwr_desc }}</p>
                                             </div>
                                         </li>
                                         {% assign count = count | plus: 1 %}
-                                    {% endif %}
-                                {% endif %}
+                                 
                             {% endfor %}
                         </ul>
                     </div>
