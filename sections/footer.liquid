@@ -44,7 +44,7 @@
                               <div class="show-phone-btn"><i class="icon-tel"></i> Show Phone</div>
                               <div class="show-phone-content">
                                 {% assign phone_number = phone | split: '&' | last | split: "$" | last %}
-                                <a href="tel:{{ phone_number }}">{{ phone_number }}}</a>
+                                <a href="tel:{{ phone_number }}">{{ phone_number }}</a>
                                 </div>
                                 </div>
                           </li>
