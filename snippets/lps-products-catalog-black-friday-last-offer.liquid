@@ -64,8 +64,8 @@
               </form>
               <div class="total-and-shipping">
                 <div class="total-prices">
-                  TOTAL: <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
-                  <span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+                  TOTAL: <strike class="striked" style="font-weight: 400;">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                  <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
                 </div>
                 <div class="free-shipping">US SHIPPING: <span class="free-red"> FREE</span></div>
               </div>
@@ -93,18 +93,18 @@
     margin-top: 20px;
   }
 
-  .total-and-shipping .total-prices, .free-shipping  {
+  .total-and-shipping {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
     font-family: 'Roboto';
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 10px 0;
-  
+
   }
 
+  
   .total-and-shipping .free-shipping .free-red {
     
     color: #ED073E;
