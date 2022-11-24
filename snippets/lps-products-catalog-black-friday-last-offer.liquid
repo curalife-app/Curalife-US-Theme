@@ -9,6 +9,7 @@
 
                 {% assign product = all_products[prod] %}
             {% endif %}
+            {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 12800 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
       <div class="product-card" id="product-card-section">
           <div class="wrap">
             <div class="picture">
