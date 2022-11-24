@@ -9,9 +9,17 @@
 </style>
 
 <div class="page-overflow">
+  {% assign ifTimer = true %}
+  
+  {% if ifTimer %}
+  {% render 'header-bfcm-with-countdown' %} {% else %}
   {% section 'lps-aio-lp01-header-black-friday-aio' %}
+  {% endif %}
   {% section 'lps-aio-lp01-hero-black-friday' %}
+  {% if ifTimer %}
+  {% render 'header-bfcm-with-countdown-mobile' %} {% else %}
   {% section 'lps-aio-lp01-header-black-friday-aio-mobile' %}
+  {% endif %}
   {% section 'lps-featured-on' %}
   {% section 'lps-video-reviews' %}
   {% section 'lps-instructions' %}
@@ -21,9 +29,10 @@
   {% section 'lps-clinically-tested' %}
   {% section 'lps-ingredients' %}
   {% section 'lps-supported-community' %}
-  <div class="green-strip" id="green-strip">Limited Offer! Choose a bundle and get a FREE CuraEats meal plan</div>
+  <div class="green-strip" id="green-strip">BEST. PRICE. EVER.</div>
+  
   {% assign Prods = page.content | split: ',' %}
-  {% render 'lps-products-catalog-black-friday-last-offer', Prods: Prods %}
+  {% render 'lps-products-catalog-black-friday', Prods: Prods %}
   {% render 'collection-curaeats-section', invertSectionBack: true %}
   {% section 'lps-return-policy' %}
   {% section 'lps-badges' %}
@@ -38,15 +47,15 @@
   .green-strip {
       top: 100px;
       width: 100%;
-      background: #99B182;
+      background: #FFE746;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
       font-family: 'DM Sans';
       font-weight: 600;
-      font-size: clamp(18px, 4vw, 25px); !important;
+      font-size: clamp(35px, 3vw, 60px); !important;
       line-height: 24px;
       text-align: center;
       letter-spacing: -0.02em;
-      color: #FFFFFF;
+      color: #222222;
       padding: 20px;
       margin-top: 30px;
   }
