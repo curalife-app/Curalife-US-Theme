@@ -33,7 +33,10 @@
 <style>
   #curaeats-section .challange {
     background: #404733;
+    color: white;
     padding: 30px 0;
+    font-size: 20px;
+    line-height: 0.7em;
   }
 
   #curaeats-section .challange .container {
@@ -41,14 +44,17 @@
   }
 
   #curaeats-section .challange h3 {
-    color: white;
-    font-size: 30px;
+    font-size: 2em;
     font-weight: 500;
     margin-bottom: 20px;
   }
 
   #curaeats-section .challange h3:before {
     background-image: url("{{ 'curaeats-section-title-decoration.svg' | asset_url }}");
+  }
+
+  #curaeats-section .challange p {
+    max-width: 780px;
   }
 
   @media screen and (max-width: 768px) {
