@@ -529,7 +529,7 @@
 
                       <div class="description">
                         <div class="price">
-                          <p><span class="rounded">{{ product.price | money }}</span> <span class="per-bottle" style="font-size: 17px;
+                          <p><span class="rounded new-price">{{ product.price | money }}</span> <span class="per-bottle" style="font-size: 17px;
                           margin-top: 5px;
                           text-align: left;"> PER<br>BOTTLE</span></p>
                         </div>
@@ -723,6 +723,23 @@
       right: 0;
     }
   }
+</style>
+<style>
+    .new-price {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 47.5173px;
+        line-height: 56px;
+        /* identical to box height */
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.05em;
+
+        color: #000000;
+    }
 </style>
 
 <script>
