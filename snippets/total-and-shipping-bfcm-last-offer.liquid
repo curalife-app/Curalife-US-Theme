@@ -1,3 +1,5 @@
+{% if product.tags contains "CuraEats" %}{% assign bundle_addition = 12800 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
+
 <div class="total-and-shipping">
   <div class="total-prices">
     TOTAL: <strike class="striked" style="font-weight: 400;">{{ product.compare_at_price | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
