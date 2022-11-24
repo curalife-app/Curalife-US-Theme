@@ -9,11 +9,11 @@
       <div class="product-card" id="product-card-section">
           <div class="wrap">
             <div class="picture">
-                <a href="{{ product.url }}">
+              
                   <div class="img">
                     <img src="{{ prod | asset_url }}" alt="" loading="lazy">
                   </div>
-                </a>
+              
                 {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
                 {% assign quantity_by_cents = quantity | times: 100 %}
                 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
