@@ -126,7 +126,7 @@
                 <div class="variant-box">
                   <div class="radio-box">
                     {% if var.compare_at_price > var.price %} {% assign discount_amount = var.compare_at_price| minus: var.price | divided_by: 100 | plus: challange_value | plus: curaeats_value | times: 100 %} {% else %} {% assign discount_amount = 0 %} {% endif %}
-                    <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount_amount | money_without_trailing_zeros | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
+                    <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
                   </div>
                   <div class="variant-info">
                     <p class="variant-title">{{ var.title }}</p>
