@@ -1,4 +1,4 @@
-<div id="countdown">
+<div id="countdown {% if isInverted %}inverted{% endif %}">
   <ul>
     <li><span class="hours"></span>Hours</li>
     <li><span class="minutes"></span>Minutes</li>
@@ -15,6 +15,14 @@
     padding: 15px;
     margin-top: 10px;
     width: 80%;
+  }
+
+  #countdown.inverted {
+    background-color: #222222;
+    color: #FFE746;
+    padding: unset;
+    margin-top: unset;
+    width: unset;
   }
 
   #countdown li {
