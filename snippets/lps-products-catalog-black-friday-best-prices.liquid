@@ -5,17 +5,15 @@
 
     <div class="product-list" id="product-list-section">
         {% for prod in Prods %}
-            {% if request.page_type == 'collection' %}
+            
                 {% assign product = prod %}
-            {% else %}
-                {% assign product = all_products[prod] %}
-            {% endif %}
+           
       <div class="product-card" id="product-card-section">
           <div class="wrap">
             <div class="picture">
                 <a href="{{ product.url }}">
                   <div class="img">
-                    <img src="{{ prod | file_url }}" alt="" loading="lazy">
+                    <img src="{{ product | file_url }}" alt="" loading="lazy">
                   </div>
                 </a>
                 {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
