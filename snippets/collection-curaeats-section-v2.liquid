@@ -25,13 +25,14 @@
     </div>
   </div>
   <div class="curaeats">
+    <i class="icofont-plus plus"></i>
     <div class="container">
       <div class="content-wrapper">
         <img class="main-image" src="{{ 'curaeats-section-curaeats-main-image.png' | asset_url }}" alt="" loading="lazy">
         <div class="titles">
-          <p class="limited-time">Limited Time Bonus</p>
+          <p class="limited-time">Limited Time Bonus!</p>
           <div class="main-titles">
-            <p class="title"><i class="icofont-star"></i> CuraEats Meal Plan! <i class="icofont-star"></i></p>
+            <p class="title"><i class="icofont-star"></i> CuraEats Meal Plan!* <i class="icofont-star"></i></p>
             <p class="subtitle">86 recipes you’ll love making and devouring</p>
           </div>
         </div>
@@ -61,8 +62,12 @@
 
   #curaeats-section .challange h3 {
     font-size: 2em;
+    line-height: 1em;
     font-weight: 500;
     margin-bottom: 40px;
+    z-index: 0;
+    position: relative;
+    width: fit-content;
   }
 
   #curaeats-section .challange h3::before {
@@ -119,9 +124,19 @@
   }
 
   #curaeats-section .curaeats {
+    position: relative;
     background: #FFE746;
     padding: 30px 0;
     text-align: center;
+  }
+
+  #curaeats-section i.plus {
+    color: white;
+    font-size: 200px;
+    position: absolute;
+    top: -100px;
+    left: calc(50% - 0.5em);
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   }
 
   #curaeats-section .curaeats .content-wrapper {
@@ -147,6 +162,13 @@
     font-size: 3em;
     font-weight: bold;
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #curaeats-section .curaeats .content-wrapper .main-titles p.title i {
+    font-size: 0.5em;
   }
 
   #curaeats-section .curaeats .content-wrapper .main-titles p.subtitle {
@@ -160,5 +182,19 @@
   }
 
   @media screen and (max-width: 768px) {
+    #curaeats-section .challange h3 {
+      margin-top: unset;
+    }
+
+    #curaeats-section .challange h3::before {
+      content: unset;
+    }
+
+    #curaeats-section .challange .main-image {
+      position: relative;
+      min-width: 150%;
+      right: 25%;
+      bottom: 0;
+    }
   }
 </style>
