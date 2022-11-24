@@ -6,7 +6,7 @@
 {% elsif product.title contains 'Special Offer' %}
 {% render 'collection-page-header-cyber-monday' %}
 {% else %}
-  {% render 'collection-page-header-black-friday' %}
+  {% render 'collection-page-header-black-friday-last-offer' %}
 {% endif %}
 
 {% assign current_variant = product.selected_or_first_available_variant %}
