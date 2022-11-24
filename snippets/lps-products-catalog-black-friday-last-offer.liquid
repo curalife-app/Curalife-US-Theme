@@ -67,7 +67,7 @@
                   TOTAL: <strike class="striked" style="font-weight: 400;">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
                   <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
                 </div>
-                <div class="free-shipping">US SHIPPING: <span class="free-red"> FREE</span></div>
+                <div class="free-shipping1" style="font-size: 14px;">US SHIPPING: <span class="free-red"> FREE</span></div>
               </div>
             </div>
           </div>
@@ -104,8 +104,7 @@
 
   }
 
-  
-  .total-and-shipping .free-shipping .free-red {
+  .total-and-shipping .free-shipping1 .free-red {
     
     color: #ED073E;
   }
@@ -118,13 +117,14 @@
   }
   #product-catalog-section h3 {
       text-align: center;
-      font-size: clamp(28px, 2vw, 40px);
+      font-size: clamp(28px, 4vw, 40px);
       font-weight: bold;
   }
 
   #product-catalog-section .changing-programm {
     text-align: center;
-    font-size: clamp(14px, 2vw, 28px);
+    font-size: clamp(16px, 2.5vw, 30px);
+    padding-bottom: 10px;
   }
 
   #product-catalog-section .product-list {
