@@ -1,3 +1,6 @@
+{% assign challange_value = 150 %}
+{% assign curaeats_value = 49 %}
+
 {% render 'script.round-converted-currency' %}
 {% render 'lps-aio-header-bfcm2022' %}
 
@@ -119,7 +122,7 @@
                   <div class="variant-notice">
                     {% assign curaeats_premium_variant = all_products['curaeats'].variants | last %}
                     {% assign curaeats_premium_price = curaeats_premium_variant.price %}
-                    <p><b>Bonus</b> - 30 Day Life Changing Program (<span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+                    <p><b>Bonus</b> - 30 Day Life Changing Program (<span class="rounded no-letters">{{ challange_value | plus: curaeats_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
                   </div>
                 {% endif %}
                 <div class="variant-box">
@@ -177,7 +180,7 @@
     </div>
   </section>
 
-  {% render 'collection-curaeats-section-last-offer', challange_value: 150, curaeats_value: 49 %}
+  {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
 
   <section class="how-to-section" id="how-to">
     <div class="container">
