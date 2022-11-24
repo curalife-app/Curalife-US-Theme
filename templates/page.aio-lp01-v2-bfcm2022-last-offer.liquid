@@ -30,6 +30,10 @@
   {% section 'lps-ingredients' %}
   {% section 'lps-supported-community' %}
   <div class="green-strip" id="green-strip">BEST. PRICE. EVER.</div>
+  <div class="catalog">
+  <div class="limited"> <span style="color: #ED073E
+    ">PLUS</span> Limited time bonuses:</div>
+  <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div></div>
   
   {% assign Prods = page.content | split: ',' %}
   {% render 'lps-products-catalog-black-friday-last-offer', Prods: Prods %}
@@ -42,6 +46,38 @@
 
   <div id="floating-cta">ORDER NOW</div>
 </div>
+
+
+<style>
+   .catalog  {
+    margin-top: 20px;
+      display: flex;
+      text-align: center;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: bold;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .limited {
+    font-size: clamp(25px, 3vw, 35px);
+  }
+
+  .changing-programm {
+    text-align: center;
+    font-size: clamp(16px, 2vw, 24px);
+
+  }
+
+
+  @media screen and (max-width:760px) {
+
+  .changing-programm {
+      padding: 0 1vw;
+    }
+
+  }
+</style>
 
 <style>
   .green-strip {
