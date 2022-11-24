@@ -1,10 +1,10 @@
-{% render 'collection-page-header-black-friday' %}
+{% render 'collection-page-header-black-friday-last-offer' %}
 
 <div class="catalog-page">
   <div class="container">
-    {% render 'lps-products-catalog-black-friday', Prods: collection.products %}
+    {% render 'lps-products-catalog-black-friday-last-offer', Prods: collection.products %}
   </div>
-  {% render 'collection-curaeats-section', invertSectionBack: false %}
+  {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
 </div>
 
 {% schema %}
