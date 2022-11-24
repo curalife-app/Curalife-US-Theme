@@ -64,7 +64,7 @@
               </form>
               <div class="total-and-shipping">
                 <div class="total-prices">
-                  TOTAL: <strike class="striked">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                  TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
                   <span class="real">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
                 </div>
                 <div class="free-shipping">US SHIPPING: <span class="free-red"> FREE</span></div>
