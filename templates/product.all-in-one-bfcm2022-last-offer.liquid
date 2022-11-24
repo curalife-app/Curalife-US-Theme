@@ -115,14 +115,14 @@
             <p class="cta-title">Select Your Pack</p>
             <div class="input-field product-option-select">
               {% for var in product.variants %}
+                {% if var.title contains "CuraEats" %}
+                  <div class="variant-notice">
+                    {% assign curaeats_premium_variant = all_products['curaeats'].variants | last %}
+                    {% assign curaeats_premium_price = curaeats_premium_variant.price %}
+                    <p><b>Bonus</b> - 30 Day Life Changing Program (<span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+                  </div>
+                {% endif %}
                 <div class="variant-box">
-                  {% if var.title contains "CuraEats" %}
-                    <div class="variant-notice">
-                      {% assign curaeats_premium_variant = all_products['curaeats'].variants | last %}
-                      {% assign curaeats_premium_price = curaeats_premium_variant.price %}
-                      <p><b>Bonus</b> - 30 Day Life Changing Program (<span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-                    </div>
-                  {% endif %}
                   <div class="radio-box">
                     {% if var.compare_at_price > var.price %} {% assign discount_amount = var.compare_at_price | minus: var.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
                     <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount_amount | money_without_currency }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
