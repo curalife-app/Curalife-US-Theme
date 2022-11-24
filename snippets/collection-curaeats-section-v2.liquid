@@ -53,11 +53,18 @@
   #curaeats-section .challange h3::before {
     content: "";
     background-image: url("{{ 'curaeats-section-title-decoration.svg' | asset_url }}");
+    width: 106%;
+    height: 85px;
+    background-size: contain;
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    z-index: -1;
   }
 
   #curaeats-section .challange p {
     max-width: 780px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   #curaeats-section .challange .main-image {
