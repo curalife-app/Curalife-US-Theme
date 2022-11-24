@@ -409,34 +409,34 @@
                             </div>
                     {% endfor %}
                 </div>
-                
-                
+
+
                 <style>
                   .ribbon {
                     background: white;
                     position: absolute;
                     overflow: hidden;
                   }
-                
+
                   .ribbon .titles {
                     display: flex;
                     align-items: center;
                     transition-timing-function: linear !important;
                   }
-                
+
                   .ribbon .titles .title {
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
                     width: 200px;
                   }
-                
+
                   .ribbon .titles .title p {
                     margin: unset;
                     font-weight: bold;
                     font-size: 20px;
                   }
-                
+
                   .ribbon:nth-child(2) {
                     top: 130px;
                     right: -40px;
@@ -451,20 +451,20 @@
                       transform: rotate(350deg);
                       z-index: 10;
                   }
-                
-                
+
+
                   @media screen and (max-width: 760px) {
                     .ribbon .titles .title {
                       display: flex;
                       align-items: center;
-                
+
                     }
 
                     .ribbon:nth-child(1) {
                         bottom: 11vw;
                         transform: rotate(352deg);
                     }
-                
+
                     .ribbon:nth-child(2) {
                       transform: rotate(5deg);
                       top: 8vw;
@@ -504,9 +504,9 @@
             }
           </style>
         {% endif %}
-        
+
         <div class="product-info">
-        
+
           <div class="title-wrapper">
             <div class="sub-title">
               <h1>{% if product.title contains '1+1' %}<i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i>{% else %}{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}{% endif %}</h1>
@@ -575,9 +575,9 @@
                 {% endif %}
                 </form>
               </div>
-             
+
               <div class="extra-info">
-              
+
                 <div class="text-wrap">
                   <p><b> A Cyber Monday special... one Curalin for just $60!</b> <br />
                     We’ve never offered this before and may never offer it again. This makes Curalin the least expensive it’s EVER been.</p>
@@ -592,9 +592,9 @@
                   }
                 }
               </style>
-            
-       
-       
+
+
+
           </div>
         </div>
       </div>
@@ -723,14 +723,14 @@
       right: 0;
     }
   }
-  
+
 </style>
 <style>
     .product-info .description .price p {
         display: flex;
     }
     .new-price {
-        font-family: 'Roboto';
+        font-family: 'PP Radio Grotesk';
         font-weight: 700;
         font-size: clamp(41px, 10vw, 47px);
         display: flex;
