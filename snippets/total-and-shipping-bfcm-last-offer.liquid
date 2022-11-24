@@ -13,18 +13,22 @@
     
     .total-and-shipping {
         display: flex;
-        flex-direction: column;
         margin: 10px auto;
-        font-family: 'Roboto';
+        font-family: 'PP Radio Grotesk';
         font-weight: 700;
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 20px;
 
         }
 
         .total-and-shipping .free-shipping1 .free-red {
 
         color: #ED073E;
+        }
+
+        @media screen and (max-width: 760px) {
+            .total-and-shipping {
+                justify-content: center;
+            } 
         }
         
 </style>
