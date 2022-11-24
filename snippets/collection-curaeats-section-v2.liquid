@@ -1,0 +1,30 @@
+<section id="curaeats-section">
+  <div class="container">
+    <h3>30 Day Life Changing Program</h3>
+    <p>There is a science to healthy blood sugar, and we’ve cracked it.<br><br>
+    Together, we’ll help you kickstart a healthier, stronger, and more determined you... because you deserve health that lasts.<br><br>
+    Let’s build good habits together. We’ll guide you every step of the way!</p>
+
+    {% assign features = "<b>Curalin</b> - clinically tested for blood sugar health
+      |Tips on what to eat to nourish your body (and cravings 😉)
+      |Easy exercise routines that you’ll love
+      |A community of 100K+ people cheering you on and helping you out
+      |24/7 unlimited access to Curalife’s customer success team" %}
+
+    <div class="features">
+      {% for feature in features %}
+        <div class="feature">
+          <div class="feature-icon"><i class="icofont-check"></i></div>
+          <div class="feature-text">{{ feature | split: "|" | last }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<style>
+
+  @media screen and (max-width: 768px) {
+  }
+</style>
