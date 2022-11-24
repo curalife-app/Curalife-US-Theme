@@ -31,7 +31,7 @@
     <i class="icofont-plus plus"></i>
     <div class="badge">
       <div class="badge-bg">
-        {% assign premium_variant = all_products["curaeats"].vartiants | last %}
+        {% assign premium_variant = all_products["curaeats"].variants | last %}
         <p><span class="rounded">{{ premium_variant.price | money | replace: ".00", "" }}</span><br>Value</p>
       </div>
     </div>
