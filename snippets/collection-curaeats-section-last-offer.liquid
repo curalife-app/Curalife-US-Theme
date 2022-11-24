@@ -34,13 +34,13 @@
   </div>
   <div class="curaeats">
     <i class="icofont-plus plus"></i>
-    <div class="badge">
-      <div class="badge-bg">
-        {% assign premium_variant = all_products["curaeats"].variants | last %}
-        <p><span class="rounded floor">{{ premium_variant.price | money | replace: ".00", "" }}</span><br>Value</p>
-      </div>
-    </div>
     <div class="container">
+      <div class="badge">
+        <div class="badge-bg">
+          {% assign premium_variant = all_products["curaeats"].variants | last %}
+          <p><span class="rounded floor">{{ premium_variant.price | money | replace: ".00", "" }}</span><br>Value</p>
+        </div>
+      </div>
       <div class="content-wrapper">
         <img class="main-image" src="{{ 'curaeats-section-curaeats-main-image.png' | asset_url }}" alt="" loading="lazy">
         <div class="titles">
