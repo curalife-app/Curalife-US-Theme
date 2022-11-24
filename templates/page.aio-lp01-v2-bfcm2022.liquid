@@ -34,7 +34,7 @@
   {% assign Prods = 'bfcm_1_pack.png
   |bfcm_3_pack.png
   |bfcm_6_pack.png
-  ' | split: ',' %}
+  ' | split: '|' %}
   {% render 'lps-products-catalog-black-friday-best-prices', Prods: Prods %}
   {% render 'collection-curaeats-section', invertSectionBack: true %}
   {% section 'lps-return-policy' %}
