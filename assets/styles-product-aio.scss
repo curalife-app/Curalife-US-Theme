@@ -271,10 +271,6 @@
                                 .variant-title {
                                     margin: 0;
                                     font-size: 20px;
-
-                                    b {
-                                        font-weight: 600;
-                                    }
                                 }
 
                                 .variant-infos {
@@ -283,6 +279,10 @@
                                         display: inline-block;
                                         margin: 0;
                                     }
+                                }
+
+                                b {
+                                    font-weight: 800;
                                 }
                             }
 
@@ -349,10 +349,6 @@
                                     &:hover {
                                         background-color: #db9d30;
                                         border-color: #db9d30;
-
-                                        &>.save {
-                                            color: white;
-                                        }
                                     }
 
                                     .save {
