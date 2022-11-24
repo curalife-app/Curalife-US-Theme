@@ -13,6 +13,7 @@
 
 <div class="product-data">
     <div class="container">
+        {% render 'product-catalog-section-last-offer' %}
       <div class="product-wrap">
         <div class="product-wrap-wrapper" style="position: relative">
 
@@ -505,7 +506,7 @@
         {% endif %}
         
         <div class="product-info">
-         {% render 'product-catalog-section-last-offer' %}
+        
           <div class="title-wrapper">
             <div class="sub-title">
               <h1>{% if product.title contains '1+1' %}<i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i>{% else %}{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}{% endif %}</h1>
