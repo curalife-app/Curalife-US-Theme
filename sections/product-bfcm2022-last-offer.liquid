@@ -604,9 +604,9 @@
       </div>
     </div>
 
-    {% if product.tags contains 'CuraEats' %}
-      {% render 'collection-curaeats-section', invertSectionBack: false %}
-    {% endif %}
+    {% unless product.title == "CuraLin BFCM 2022 Last Offer" %}
+      {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
+    {% endunless %}
   </div>
 
 <style>

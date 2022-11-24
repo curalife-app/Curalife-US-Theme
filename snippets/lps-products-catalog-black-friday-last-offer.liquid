@@ -43,9 +43,6 @@
                   {% endif %}
                 </div>
 
-                {% assign curaeats_premium_variant = all_products['curaeats'].variants | last %}
-                {% assign curaeats_premium_price = curaeats_premium_variant.price %}
-
                 {% if product.tags contains 'CuraEats' %}
                     <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">Life Changing Bonus (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value!)</p>
                     <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
@@ -102,12 +99,8 @@
   }
 
   .total-and-shipping .free-shipping1 .free-red {
-
     color: #ED073E;
   }
-
-
-
 
   #product-catalog-section .product-card .info .price p {
     display: flex;
