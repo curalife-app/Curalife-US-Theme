@@ -1,34 +1,28 @@
+{% if product.tags contains "CuraEats" %}{% assign bundle_addition = 12800 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
+
 <div class="total-and-shipping">
-    <div class="total-prices">
-      TOTAL: <strike class="striked" style="font-weight: 400;">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
-      <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-    </div>
-   
+  <div class="total-prices">
+    TOTAL: <strike class="striked" style="font-weight: 400;">{{ product.compare_at_price | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+    <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
   </div>
-  
-  
-  
-  
+</div>
+
 <style>
-    
     .total-and-shipping {
-        margin-top: 10px;
-        display: flex;
-        font-family: 'PP Radio Grotesk';
-        font-weight: 700;
-        font-size: 20px;
+      margin-top: 10px;
+      display: flex;
+      font-family: 'PP Radio Grotesk';
+      font-weight: 700;
+      font-size: 20px;
+    }
 
-        }
+    .total-and-shipping .free-shipping1 .free-red {
+      color: #ED073E;
+    }
 
-        .total-and-shipping .free-shipping1 .free-red {
-
-        color: #ED073E;
-        }
-
-        @media screen and (max-width: 760px) {
-            .total-and-shipping {
-                justify-content: center;
-            } 
-        }
-        
+    @media screen and (max-width: 760px) {
+      .total-and-shipping {
+        justify-content: center;
+      }
+    }
 </style>
