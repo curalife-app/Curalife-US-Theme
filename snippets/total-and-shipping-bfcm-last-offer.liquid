@@ -1,0 +1,27 @@
+<div class="total-and-shipping">
+    <div class="total-prices">
+      TOTAL: <strike class="striked" style="font-weight: 400;">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+      <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+    </div>
+    <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
+  </div>
+  
+  
+  
+  
+  
+    .total-and-shipping {
+display: flex;
+flex-direction: column;
+margin: 10px auto;
+font-family: 'Roboto';
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+
+}
+
+.total-and-shipping .free-shipping1 .free-red {
+
+color: #ED073E;
+}
