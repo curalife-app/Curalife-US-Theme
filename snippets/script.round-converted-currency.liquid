@@ -4,28 +4,11 @@
 {% assign currency_letters = "AUD" %}
 {% endif %}
 
-{% if currency_letters %}
   <style>
     .rounded {
       display: none;
     }
   </style>
-  <script>
-    $( document ).ready(function() {
-      $(".rounded").each(function() {
-        if ($(this).hasClass("floor")) {
-          $(this).text("{{ cart.currency.symbol }}" + Math.floor(Number($(this).text().replace(/[^0-9\.-]+/g,""))));
-        }
-        else {
-          $(this).text("{{ cart.currency.symbol }}" + Math.ceil(Number($(this).text().replace(/[^0-9\.-]+/g,""))));
-        }
-
-        if (!$(this).hasClass("no-letters")) { $(this).text($(this).text() + " {{ currency_letters }}") };
-        $(this).show();
-      });
-    });
-  </script>
-{% else %}
 <script>
   $( document ).ready(function() {
     $(".rounded").each(function() {
@@ -41,4 +24,3 @@
     });
   });
 </script>
-{% endif %}
