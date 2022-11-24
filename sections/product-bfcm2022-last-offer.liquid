@@ -13,7 +13,7 @@
 
 <div class="product-data">
     <div class="container">
-      {% unless product.title = "CuraLin BFCM 2022 Last Offer" %}
+      {% unless product.title == "CuraLin BFCM 2022 Last Offer" %}
         {% render 'product-catalog-section-last-offer' %}
       {% endunless %}
 
