@@ -3,7 +3,7 @@
 <section id="product-catalog-section">
     <h3> <span style="color: #ED073E
       ">PLUS</span> Limited time bonuses:</h3>
-    <p class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</p>
+    <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div>
 
     <div class="product-list" id="product-list-section">
         {% for prod in Prods %}
@@ -84,7 +84,7 @@
 
   #product-catalog-section .changing-programm {
     text-align: center;
-    font-size: clamp(14px, 3vw, 50px);
+    font-size: clamp(14px, 2vw, 28px);
   }
 
   #product-catalog-section .product-list {
@@ -186,12 +186,13 @@
   }
 
   #product-catalog-section .product-card .info .name h3 {
+      font-family: 'Poppins';
       margin: 0;
-      font-weight: 800;
-      font-size: 22px;
+      font-weight: 900;
+      font-size: 24px;
       line-height: 1.08;
       text-align: center;
-      color: var(--dark);
+      color: #222222;
   }
 
   #product-catalog-section .product-card .info .name h3 a {
@@ -307,6 +308,10 @@
     #product-catalog-section .product-card {
         width: 100%;
         padding: 10px;
+    }
+
+    #product-catalog-section .changing-programm {
+      padding: 0 1vw;
     }
 
     #product-catalog-section .product-card .picture {
