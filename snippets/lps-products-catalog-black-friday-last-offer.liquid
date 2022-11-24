@@ -38,7 +38,7 @@
                 <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                 <div class="price">
                   {% if quantity > 0 %}
-                    <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle">PER BOTTLE</span> </p>
+                    <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
                   {% elsif product.compare_at_price > product.price %}
                     <p id="discounted-price"><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p>
                   {% else %}
@@ -50,7 +50,7 @@
                 {% assign curaeats_premium_price = curaeats_premium_variant.price %}
 
                 {% if product.tags contains 'CuraEats' %}
-                    <p style="color:#99B182;font-size:20px;font-weight:bold;margin: 10px 0;">Free Meal Plan App - <span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value</p>
+                    <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">Life Changing Bonus (<span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value!)</p>
                     <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
                 {% endif %}
                 </div>
@@ -62,6 +62,13 @@
                   <button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button>
                 </div>
               </form>
+              <div class="total-and-shipping">
+                <div class="total-prices">
+                  TOTAL: <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                  <span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+                </div>
+                <div class="free-shipping">US SHIPPING: <span class="free-red"> FREE</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -76,6 +83,39 @@
 </section>
 
 <style>
+  .per-bottle {
+    font-size: 17px;
+    margin-top: 5px;
+    text-align: left;
+  }
+
+  .product-card .info .price p strike {
+    margin-top: 20px;
+  }
+
+  .total-and-shipping .total-prices, .free-shipping  {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+  
+  }
+
+  .total-and-shipping .free-shipping .free-red {
+    
+    color: #ED073E;
+  }
+
+
+
+  
+  #product-catalog-section .product-card .info .price p {
+    display: flex;
+  }
   #product-catalog-section h3 {
       text-align: center;
       font-size: 30px;
@@ -220,6 +260,8 @@
     font-family: 'Roboto';
       font-weight: 700;
       font-size: 45px;
+      padding-left: 5px;
+      padding-right: 5px;
       
   }
 
@@ -348,6 +390,8 @@
 
     #product-catalog-section .product-card .info .price .rounded.current-price {
         font-size: 41px;
+        padding-left: 1vw;
+        padding-right: 1vw;
     }
 
     #product-catalog-section .product-card .info .price p {
