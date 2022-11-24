@@ -2,6 +2,7 @@
 
 <div class="catalog-page">
   <div class="container">
+    {% render 'product-catalog-section-last-offer' %}
     {% render 'lps-products-catalog-black-friday-last-offer', Prods: collection.products %}
   </div>
   {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
