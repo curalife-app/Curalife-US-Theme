@@ -1,8 +1,8 @@
 <div id="countdown" {% if isInverted %}class="inverted"{% endif %}">
   <ul>
-    <li><span class="hours"></span>Hours</li>
-    <li><span class="minutes"></span>Minutes</li>
-    <li><span class="seconds"></span>Seconds</li>
+    <li><span class="hours"></span>{% if isHideTitles %}Hours{% endif %}</li>
+    <li><span class="minutes"></span>{% if isHideTitles %}Minutes{% endif %}</li>
+    <li><span class="seconds"></span>{% if isHideTitles %}Seconds{% endif %}</li>
   </ul>
 </div>
 
