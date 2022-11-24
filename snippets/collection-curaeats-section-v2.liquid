@@ -1,31 +1,51 @@
 <section id="curaeats-section">
-  <div class="container">
-    <h3>30 Day Life Changing Program</h3>
-    <p>There is a science to healthy blood sugar, and we’ve cracked it.<br><br>
-    Together, we’ll help you kickstart a healthier, stronger, and more determined you... because you deserve health that lasts.<br><br>
-    Let’s build good habits together. We’ll guide you every step of the way!</p>
+  <div class="30-day-challange">
+    <div class="container">
+      <h3>30 Day Life Changing Program</h3>
+      <p>There is a science to healthy blood sugar, and we’ve cracked it.<br><br>
+      Together, we’ll help you kickstart a healthier, stronger, and more determined you... because you deserve health that lasts.<br><br>
+      Let’s build good habits together. We’ll guide you every step of the way!</p>
 
-    <img src="{{ 'curaeats-section-main-image.png' | asset_url }}" alt="" loading="lazy">
+      <img src="{{ 'curaeats-section-main-image.png' | asset_url }}" alt="" loading="lazy">
 
-    {% assign features = "<b>Curalin</b> - clinically tested for blood sugar health
-      |Tips on what to eat to nourish your body (and cravings 😉)
-      |Easy exercise routines that you’ll love
-      |A community of 100K+ people cheering you on and helping you out
-      |24/7 unlimited access to Curalife’s customer success team" %}
+      {% assign features = "<b>Curalin</b> - clinically tested for blood sugar health
+        |Tips on what to eat to nourish your body (and cravings 😉)
+        |Easy exercise routines that you’ll love
+        |A community of 100K+ people cheering you on and helping you out
+        |24/7 unlimited access to Curalife’s customer success team" %}
 
-    <div class="features">
-      {% for feature in features %}
-        <div class="feature">
-          <div class="feature-icon"><i class="icofont-check"></i></div>
-          <div class="feature-text">{{ feature | split: "|" | last }}</div>
-        </div>
-      {% endfor %}
+      <div class="features">
+        {% for feature in features %}
+          <div class="feature">
+            <div class="feature-icon"><i class="icofont-check"></i></div>
+            <div class="feature-text">{{ feature | split: "|" | last }}</div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
+  <div class="curaeats">
+
   </div>
 </section>
 
 
 <style>
+  .30-day-challange {
+    background: #404733;
+    padding: 30px 0;
+  }
+
+  .30-day-challange h3 {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .30-day-challange h3:before {
+    background-image: url("{{ 'curaeats-section-title-decoration.svg' | asset_url }}");
+  }
 
   @media screen and (max-width: 768px) {
   }
