@@ -1,3 +1,5 @@
+{% render 'script.round-converted-currency' %}
+
 <section id="curaeats-section">
   <h2>Everything you need to keep your blood sugar happy!</h2>
   <div class="challange">
@@ -29,7 +31,8 @@
     <i class="icofont-plus plus"></i>
     <div class="badge">
       <div class="badge-bg">
-        <p><span class="rounded">{{ all_products["curaeats"].price | money | replace: ".00", "" }}</span><br>Value</p>
+        {% assign premium_variant = all_products["curaeats"].variants | last %}
+        <p><span class="rounded">{{ premium_variant.price | money | replace: ".00", "" }}</span><br>Value</p>
       </div>
     </div>
     <div class="container">
