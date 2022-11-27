@@ -1,3 +1,6 @@
+{% assign challange_value = 150 %}
+{% assign curaeats_value = 49 %}
+
 {% render 'script.round-converted-currency' %}
 {% render 'lps-aio-header-bfcm2022' %}
 
@@ -115,17 +118,17 @@
             <p class="cta-title">Select Your Pack</p>
             <div class="input-field product-option-select">
               {% for var in product.variants %}
+                {% if var.title contains "CuraEats" %}
+                  {% assign bundle_addition = challange_value | plus: curaeats_value | times: 100 %}
+                  <div class="variant-notice"><p><b>Bonus</b> - 30 Day Life Changing Program <b>(<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
+                {% else %}
+                  {% assign bundle_addition = 0 %}
+                {% endif %}
                 <div class="variant-box">
-                  {% if forloop.index == 3 %}
-                    <div class="variant-notice">
-                      {% assign curaeats_premium_variant = all_products['curaeats'].variants | last %}
-                      {% assign curaeats_premium_price = curaeats_premium_variant.price %}
-                      <p>FREE GIFT! - Meal Plan App (<span class="rounded no-letters">{{ curaeats_premium_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-                    </div>
-                  {% endif %}
                   <div class="radio-box">
-                    {% if var.compare_at_price > var.price %} {% assign discount_amount = var.compare_at_price | minus: var.price %} {% else %} {% assign discount_amount = 0 %} {% endif %}
-                    <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount_amount | money_without_currency }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
+                    {% assign original_cap = var.compare_at_price | minus: var.price | divided_by: 100 %}
+                    {% if var.compare_at_price > var.price %} {% assign discount_amount = bundle_addition | divided_by: 100 | plus: original_cap %} {% else %} {% assign discount_amount = 0 %} {% endif %}
+                    <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount_amount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
                   </div>
                   <div class="variant-info">
                     <p class="variant-title">{{ var.title }}</p>
@@ -134,7 +137,7 @@
                     </div>
                   </div>
                   <div class="price {% if forloop.index == 3 %}last{% endif %}">
-                    <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | money_without_trailing_zeros }}</strike></p>
+                    <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | plus: bundle_addition | money_without_trailing_zeros }}</strike></p>
                     <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
                   </div>
                 </div>
@@ -158,7 +161,7 @@
               </div>
 
               <div class="btn">
-                <button class="main-btn" id="buy-button">Shop Now</button>
+                <button class="main-btn" id="buy-button">Shop Now <span class="save" id="save"></span></button>
               </div>
             </div>
           </div>
@@ -176,7 +179,9 @@
       </div>
     </div>
   </section>
-  {% render 'collection-curaeats-section', invertSectionBack: false %}
+
+  {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
+
   <section class="how-to-section" id="how-to">
     <div class="container">
       <h2>How to get the best results with CuraLin</h2>
@@ -319,7 +324,7 @@
     <div class="container">
       <h2>FAQ</h2>
       <div class="faq">
-        
+
         <div class="faq-item">
           <div class="question">How much CuraLin do I need to take?</div>
           <div class="answer">
@@ -496,7 +501,7 @@
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
     // Save Text Change
-    let saveText = "You Save " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
+    let saveText = "You Save " + "$" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
@@ -745,9 +750,9 @@
 
 @media screen and (max-width: 760px) {
   .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
-     top: 4vw;
+     top: 9vw;
   }
- 
+
 
   .grecaptcha-badge {
     display: none !important;
@@ -803,19 +808,10 @@
 
 <style>
   .variant-notice p {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     background: #4B643D;
     color: white;
     padding: 4px;
-    padding-left: 35px;
     margin: unset;
-  }
-
-  .variant-box:nth-child(3) {
-    height: 100px !important;
   }
 
   @media screen and (max-width: 768px) {
