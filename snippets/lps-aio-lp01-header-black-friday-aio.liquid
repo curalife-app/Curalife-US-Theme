@@ -1,5 +1,5 @@
 
-<header class="page-header" id="page-header">
+<header>
     <div class="container">
         <div class="main-logo">
             <img src="{{ 'logo-black-friday.svg' | asset_url }}" width="308" height="92" alt="logo">
@@ -22,37 +22,37 @@
 </header>
 
 <style>
-    header.page-header {
+    header {
         background-color: #FFE746;
         box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
         transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     }
 
-    header.page-header .main-logo {
+    header .main-logo {
         padding: 15px 0 10px 0;
     }
 
-    header.page-header .main-logo img {
+    header .main-logo img {
         margin-top: unset !important;
     }
 
-    header.page-header .main-logo  {
+    header .main-logo  {
         display: inline-block;
         padding: 15px 0;
         max-width: 181px;
     }
 
-    header.page-header .main-logo img {
+    header .main-logo img {
         width: 150px;
     }
 
-    header.page-header .container {
+    header .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    header.page-header .buy-btn .main-btn {
+    header .buy-btn .main-btn {
         font-family: 'Poppins';
         font-weight: 600;
         font-size: 20px;
@@ -65,21 +65,21 @@
         padding: 10px;
     }
 
-    header.page-header .buy-btn .main-btn:hover {
+    header .buy-btn .main-btn:hover {
         background-color: #000000;
     }
 
-    header.page-header .buttons-container {
+    header .buttons-container {
         display: flex;
         align-items: center;
     }
 
-    header.page-header .off-container {
+    header .off-container {
         display: flex;
         align-items: center;
     }
 
-    header.page-header .up-to {
+    header .up-to {
         width: 72px;
         font-family: 'PP Radio Grotesk';
         font-weight: 400;
@@ -89,7 +89,7 @@
         color: #000000;
     }
 
-    header.page-header .thirty-off {
+    header .thirty-off {
         width: 202px;
         font-family: 'PP Radio Grotesk';
         font-weight: 700;
@@ -122,18 +122,12 @@
             flex-direction: column;
         }
 
-        header.page-header .main-logo  {
+        header .main-logo  {
             display: none;
         }
 
         header .up-to {  
-            font-family: 'PP Radio Grotesk';
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            color: #000000; 
             font-size: 4vw;
-            line-height: 4vw;
         }
 
         header .thirty-off {
