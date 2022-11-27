@@ -136,10 +136,6 @@
                 {% endif %}
                 <div class="variant-box">
                   <div class="radio-box">
-
-                    <script>console.log("original_discount: {{original_discount}}")</script>
-                    <script>console.log("bundle_addition_real: {{bundle_addition_real}}")</script>
-                    <script>console.log("discounted: {{discounted}}")</script>
                     {% if var.compare_at_price > var.price %}
                       {% assign original_discount = var.compare_at_price | minus: var.price | divided_by: 100 %}
                       {% assign bundle_addition_real = bundle_addition | divided_by: 100 %}
