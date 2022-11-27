@@ -159,20 +159,22 @@
 </style>
 
 <script>
-    var div_top = $('header').offset().top;
-
-    $(window).scroll(function () {
-        var window_top = $(window).scrollTop();
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        if (window_top >= div_top) {
-            if (!$('header').is('.sticky')) {
-                $('header').addClass('sticky');
-                $('#shopify-section-lps-featured-on-black-friday').css("padding-top", $('header').height() + "px");
+    if( screen.width <= 480 ) {     
+        var div_top = $('header').offset().top;
+    
+        $(window).scroll(function () {
+            var window_top = $(window).scrollTop();
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (window_top >= div_top) {
+                if (!$('header').is('.sticky')) {
+                    $('header').addClass('sticky');
+                    $('#shopify-section-lps-featured-on-black-friday').css("padding-top", $('header').height() + "px");
+                }
+            } 
+            else {
+                $('header').removeClass('sticky');
+                $('#shopify-section-lps-featured-on-black-friday').css("padding-top", 0);
             }
-        } 
-        else {
-            $('header').removeClass('sticky');
-            $('#shopify-section-lps-featured-on-black-friday').css("padding-top", 0);
-        }
-    });
+        });
+    }
 </script>
