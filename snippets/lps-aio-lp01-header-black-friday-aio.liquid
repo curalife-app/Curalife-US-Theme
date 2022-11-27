@@ -142,12 +142,12 @@
                 if (window_top >= hero_bottom) {
                     if (!$('header').is('.sticky')) {
                         $('header').addClass('sticky');
-                        $('#shopify-section-lps-featured-on-black-friday').css("padding-top", $('header').height() + "px");
+                        $('.hero-banner').css("padding-bottom", $('header').height() + "px");
                     }
                 } 
                 else {
                     $('header').removeClass('sticky');
-                    $('#shopify-section-lps-featured-on-black-friday').css("padding-top", 0);
+                    $('.hero-banner').css("padding-bottom", 0);
                 }
             });
         }
