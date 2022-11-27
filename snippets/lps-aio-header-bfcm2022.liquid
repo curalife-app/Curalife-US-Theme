@@ -170,10 +170,14 @@
     }
 
     .off-container {
-      min-width: 20vw;
-      gap: unset;
-      flex-wrap: wrap;
-      flex-direction: column;
+      {% if isTimer %}
+        display: none;
+      {% else %}
+        min-width: 20vw;
+        gap: unset;
+        flex-wrap: wrap;
+        flex-direction: column;
+      {% endif %}
     }
 
     .up-to {
