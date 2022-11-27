@@ -178,10 +178,6 @@
           {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 
           {% if product.compare_at_price > product.price %}
-            <script>console.log("quantity: {{quantity}}")</script>
-            <script>console.log("quantity_by_cents: {{quantity_by_cents}}")</script>
-            <script>console.log("item_price: {{item_price}}")</script>
-            <script>console.log("original_item_cap: {{original_item_cap}}")</script>
           <div class="discount"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
           {% endif %}
 
