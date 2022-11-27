@@ -1,3 +1,5 @@
+{% assign ifTimer = false %}
+
 <div class="page-header" id="page-header-collection">
   <div class="animated-container swiper">
     <div class="swiper-wrapper">
@@ -13,7 +15,6 @@
         </div>
 
         <div class="title desktop swiper-slide">
-          {% assign ifTimer = false %}
           {% if ifTimer %}
             <div class="countdown-wrapper">
               {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
