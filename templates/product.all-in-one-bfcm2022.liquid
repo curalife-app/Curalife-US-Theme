@@ -1,12 +1,13 @@
-{% assign challange_value = 150 %}
-{% assign curaeats_value = 49 %}
 
-
-{% if store.name = "CuraLife" %}
+{% if shop.name = "CuraLife" %}
     {% assign shipping_worldwide = 'US Free Shipping'}
-{% else %}
-    {% assign shipping_worldwide = 'Free Shipping Above £99'}  
-{% endif %} 
+      {% assign challange_value = 150 %}
+      {% assign curaeats_value = 49 %}
+{% elsif shop.name == "CuraLife Global" %}
+    {% assign shipping_worldwide = 'Free Shipping Above £99'}
+      {% assign challange_value = 150 %}
+      {% assign curaeats_value = 49 %}
+{% endif %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'lps-aio-header-bfcm2022' %}
