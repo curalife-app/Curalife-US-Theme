@@ -17,10 +17,10 @@
 {% endif %}
 
 {%- comment -%} If store is US {%- endcomment -%}
-{% if store.name == 'CuraLife' %}
+{% if shop.name == 'CuraLife' %}
   {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
   {% assign yotpo_checkout_widget = "18962" %}
-{% elsif store.name == "CuraLife Global" %}
+{% elsif shop.name == "CuraLife Global" %}
   {% assign yotpo_script_id = "oMYBvmnASlHzmouicgkepg" %}
   {% assign yotpo_checkout_widget = "85446" %}
 {% endif %}
