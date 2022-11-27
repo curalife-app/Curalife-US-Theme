@@ -6,37 +6,37 @@
     <div class="animated-logo blink">
       <i class="icofont-star"></i>
       <div class="animated-yellow-desk">
-        BLACK FRIDAY
+        CYBER
+        MONDAY
       </div>
       <i class="icofont-star"></i>
     </div>
-    {%- comment -%} {% render 'countdown-timer', timerAlreadyRun: false, isInverted: true, isHideTitles: true %} {%- endcomment -%}
     <div class="off-container">
       <div class="up-to">UP TO</div>
-      <div class="thirty-off"> 40% OFF</div>
+      <div class="thirty-off"> 20% OFF</div>
     </div>
   </div>
 </header>
 
 <style>
   @-webkit-keyframes blinker {
-    0% {
-        color: #D9D9D9;
-        opacity: 0.5;
+   0%{
+       color: #D9D9D9;
+       opacity: 1;
+       filter:blur(5px);
 
-    }
+   }
 
-    50% {
-        opacity: 0.0;
-    }
+   50% {
+       color: #D9D9D9
+       opacity: 0.0;
+   }
 
+   100% {
+       opacity: 1.0;
+       color: #FFE746;
 
-
-    100% {
-        opacity: 1.0;
-        color: #FFE746;
-
-    }
+   }
   }
 
   .blink {
@@ -63,10 +63,6 @@
     padding: 10px 0 15px;
   }
 
-  header.page-header .main-logo img {
-      margin-top:unset !important;
-  }
-
   header.page-header .main-logo {
     display: inline-block;
     padding: 4px 0;
@@ -75,6 +71,10 @@
 
   header.page-header .main-logo img {
     width: 150px;
+  }
+
+  header.page-header .main-logo img {
+    margin-top: unset !important;
   }
 
   header.page-header .container {
@@ -156,7 +156,7 @@
         gap: 4vw;
       }
 
-    header.page-header .main-logo img {
+    header.page-header .main-logo  img {
       width: 22vw;
     }
 
