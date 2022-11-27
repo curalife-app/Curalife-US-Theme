@@ -9,17 +9,15 @@
 </style>
 
 <div class="page-overflow">
-  {% assign ifTimer = true %}
+  {% assign isTimer = true %}
   
-  {% if ifTimer %}
-    {% render 'header-bfcm-with-countdown' %} 
-  {% else %}
-    {% section 'lps-aio-lp01-header-black-friday-aio' %}
+  {% if isTimer %}
+    {% section 'lps-aio-lp01-header-black-friday-aio', isTimer: isTimer %}
   {% endif %}
 
   {% section 'lps-aio-lp01-hero-black-friday' %}
 
-  {% if ifTimer %}
+  {% if isTimer %}
     {% render 'header-bfcm-with-countdown-mobile' %} 
   {% else %}
     {% section 'lps-aio-lp01-header-black-friday-aio-mobile' %}
