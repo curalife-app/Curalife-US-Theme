@@ -9,11 +9,10 @@
 </style>
 
 <div class="page-overflow">
-  {% assign isTimer = false %}
+  {% assign isTimer = true %}
   
   {% render 'lps-aio-lp01-header-black-friday-aio', isTimer: isTimer %}
   {% section 'lps-aio-lp01-hero-black-friday' %}
-  {%- comment -%} {% render 'lps-aio-lp01-header-black-friday-aio-mobile', isTimer: isTimer %} {%- endcomment -%}
   {% section 'lps-featured-on' %}
   {% section 'lps-video-reviews' %}
   {% section 'lps-instructions' %}
