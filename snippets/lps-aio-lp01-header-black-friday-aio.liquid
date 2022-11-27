@@ -139,8 +139,8 @@
 
 <script>
     if(screen.width <= 768) {     
-        var div_top = $('header').offset().top;
-        console.log("div_top: " + div_top)
+        var hero_bottom = $('.hero-banner').offset().top + $('.hero-banner').outerHeight(true);
+        console.log("hero_bottom: " + hero_bottom);
     
         $(window).scroll(function () {
             var window_top = $(window).scrollTop();
