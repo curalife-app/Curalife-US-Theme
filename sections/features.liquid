@@ -3,11 +3,11 @@
   <div class="container">
     <div class="mini-wrap">
       <div class="feature-info">
-        {% if section.settings.fetr_imgone != blank %}
+      
         <div class="img-wrap">
-          <span><img src="{{ section.settings.fetr_imgone | img_url: '' }}" alt="" width="391px" height="396px"></span> 
+          <span><img src="{{ 'bottle-01.png' | file_url }}" alt="" width="391px" height="396px"></span>
         </div>
-        {% endif %} 
+      
         <div class="intro-text">
           <div class="sub-title">
             <h1>{{section.settings.fetr_titlone}}</h1>
@@ -32,11 +32,9 @@
             <a href="{{section.settings.fterbnr_btnlinktwo}}" class="main-btn">{{section.settings.fterbtn_titltwo}}</a>
           </div>
         </div>
-        {% if section.settings.fetr_imgtwo != blank %}
         <div class="img-wrap">
-          <img src="{{ section.settings.fetr_imgtwo | img_url: '' }}" alt="" width="332" height="auto">
+          <img src="{{ 'cust_536e945c-3cbe-4c35-8ec8-8a8f31c1850d.png' | file_url }}" alt="" width="332" height="auto">
         </div>
-        {% endif %}
       </div>
     </div>
   </div>
@@ -89,16 +87,15 @@
   <div class="making-headlines">
     <div class="container">
       <div class="sub-title">
-          <h3>{{section.settings.fetr_titlfour}}</h3>
+          <h3>{{ section.settings.fetr_titlfour }}</h3>
       </div>
       <div class="logo-list">
           <ul>
-              {% for block in section.blocks %}
-              {% if block.type == 'partners' %}
-              {% if block.settings.fetr_imgfour != blank %}
-              <li><img src="{{ block.settings.fetr_imgfour | img_url: '' }}" alt=""></li>
-              {% endif %}
-              {% endif %}
+            {% for i in (1..6) %}
+            <li class="seeklogo">
+              {% assign imgUrl = "seeklogo-" | append: i | append: ".png" %}
+              <img src="{{ imgUrl | file_url }}" alt="" loading="lazy">
+            </li>
             {% endfor %}
           </ul>
       </div>
@@ -142,11 +139,7 @@
          "type": "header", 
          "content": "Glucose Support Section Start" 
     }, 
-    {
-        "type": "image_picker",
-        "id": "fetr_imgone",
-        "label": "Select image"
-      },
+    
     {
       "type": "text",
       "id": "fetr_titlone",
@@ -192,11 +185,7 @@
         "type": "url",
         "label": "Button Link"
       },
-      {
-        "type": "image_picker",
-        "id": "fetr_imgtwo",
-        "label": "Select image"
-      },
+    
       {
          "type": "header", 
          "content": "Quote Slider Section Start" 
@@ -272,11 +261,7 @@
           "type": "partners",
           "name": "Partners Content",
           "settings": [    
-              {
-                "type": "image_picker",
-                "id": "fetr_imgfour",
-                "label": "Select image"
-              }
+            
               
           ]    
         }
