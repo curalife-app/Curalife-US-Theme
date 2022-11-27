@@ -6,7 +6,7 @@
         </div>
         
         {% if isTimer %}
-            {% render 'countdown-timer', isHideTitles: true %}
+            {% render 'countdown-timer', timerAlreadyRun: false %}
         {% endif %}
 
         <div class="buttons-container">
