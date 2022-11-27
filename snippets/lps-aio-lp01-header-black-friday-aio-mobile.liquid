@@ -1,10 +1,14 @@
 <section class="page-header-mobile order-menu" id="page-header-mobile">
     <div class="container">
         <div class="buttons-container">
-            <div class="off-container">
-                <div class="up-to">UP TO</div>
-                <div class="thirty-off"> 40% OFF</div>
-            </div>
+            {% if isTimer %}
+                {% render 'countdown-timer-cyber-monday' %}
+            {% else %}
+                <div class="off-container">
+                    <div class="up-to">UP TO</div>
+                    <div class="thirty-off"> 40% OFF</div>
+                </div>
+            {% endif %}
             <div class="buy-btn">
                 <a class="main-btn" id='main-cta-btn' href="#green-strip">ORDER NOW</a>
             </div>
