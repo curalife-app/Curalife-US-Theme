@@ -1,3 +1,18 @@
+{%- comment -%} If store is US {%- endcomment -%}
+{% if shop.name == 'CuraLife' %}
+  {% assign store_domain = "curalife.com" %}
+  {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
+  {% assign yotpo_raf_widget_id = "111012" %}
+  {% assign yotpo_rewards_widget_id = "20220" %}
+  {% assign yotpo_rewards_raf_widget_id = "35419" %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign store_domain = "global.curalife.com" %}
+  {% assign yotpo_script_id = "oMYBvmnASlHzmouicgkepg" %}
+  {% assign yotpo_raf_widget_id = "111013" %}
+  {% assign yotpo_rewards_widget_id = "18989" %}
+  {% assign yotpo_rewards_raf_widget_id = "73923" %}
+{% endif %}
+
 <!doctype html>
 <html>
   <script defer type="text/javascript" src="https://static.rechargecdn.com/assets/js/widget.min.js?shop=<curalife-commerce.myshopify.com>"></script>
@@ -25,7 +40,7 @@
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'libs.js' | asset_url }}" async></script>
     <script src="{{ 'common.js' | asset_url }}" async></script>
-    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{yotpo_script_id}}" async></script>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" async></script>
 
@@ -42,7 +57,6 @@
 
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
-    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/oMYBvmnASlHzmouicgkepg" async></script>
 </head>
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->

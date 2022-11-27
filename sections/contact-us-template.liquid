@@ -19,7 +19,7 @@
                        <img src="{{block.settings.cntphn_img | img_url: width: 32 }}" width="20px" height="20px" alt="">
                     </span>
                     {% endif %}
-                    {{block.settings.cntphn_title}} 
+                    {{block.settings.cntphn_title}}
                   </div>
                   <div class="show-phone">
                     <div class="show-phone-btn"><i class="icofont-phone"></i> Show Phone</div>
@@ -90,31 +90,6 @@
               </div>
             {% endform %}
 
-<!--             
-             <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"; method="POST" id="contact-us-form">
-            <input type=hidden name="orgid" value="00D5I000003d6uG">
-            <input type=hidden name="retURL" value="https://curalife.com/pages/thank-you?type=contact-us">
-              <div class="form-fields">
-                <label for="name" class="full-size">
-                  <input  id="name" maxlength="80" name="name" size="20" type="text" placeholder="Full Name" />
-                </label>
-                <label for="subject" class="full-size">
-                  <input  id="subject" maxlength="80" name="subject" size="20" type="text" placeholder="Subject" />
-                </label>
-                <label for="email" class="full-size">
-                   <input  id="email" maxlength="80" name="email" size="20" type="text" placeholder="Email" />
-                </label>
-                <label for="phone" class="full-size">
-                  <input  id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="Phone" />
-                </label>
-                <label for="body" class="full-size">
-                    <textarea name="description" placeholder="Message"></textarea>
-                </label>
-              </div>
-              <div class="submit-form">
-                <button type="submit" name="submit" class="main-btn" value="{{ 'contact.form.send' | t }}">Submit</button>
-              </div>
-             </form> -->
             <div class="social-bar">
               <h3>{{section.settings.flow_titl}}</h3>
               <ul>
@@ -123,7 +98,7 @@
                 <li><a href="{{block.settings.cntsocil_link}}" target="_blank"><i class="{{block.settings.cntsocil_icn}}"></i></a></li>
                 {% endif %}
                 {% endfor %}
-              </ul> 
+              </ul>
             </div>
           </div>
         </div>
@@ -137,8 +112,8 @@
   "class":"contact-us",
   "settings": [
     {
-      "type": "header", 
-      "content": "24/7 Customer Success Section Start" 
+      "type": "header",
+      "content": "24/7 Customer Success Section Start"
     },
     {
       "type": "text",
@@ -147,8 +122,8 @@
       "default": "Enter Email"
     },
     {
-      "type": "header", 
-      "content": "Contact Us Form Section Start" 
+      "type": "header",
+      "content": "Contact Us Form Section Start"
     },
     {
       "type": "text",
@@ -157,18 +132,18 @@
       "default": "Enter Title"
     },
     {
-      "type": "header", 
-      "content": "Follow Us Section Start" 
+      "type": "header",
+      "content": "Follow Us Section Start"
     },
     {
       "type": "text",
       "id": "flow_titl",
       "label": "Title",
       "default": "Enter Title"
-    } 
+    }
   ],
   "blocks": [
-   
+
     {
       "type": "contact",
       "name": "Contact Numbers",
@@ -177,7 +152,7 @@
         "type": "image_picker",
         "id": "cntphn_img",
         "label": "Select Image"
-        },    
+        },
         {
         "type": "text",
         "id": "cntphn_title",
@@ -190,8 +165,8 @@
         "label": "Contact Number",
         "default": " Enter Phone Number "
         }
-    
-      ]    
+
+      ]
       },
       {
       "type": "social",
@@ -214,10 +189,10 @@
         "type": "url",
         "label": "Add Link"
         }
-    
-      ]    
+
+      ]
       }
-      
+
 
   ],
   "presets":[
@@ -233,7 +208,7 @@
 .support-contacts .phone-title {
   line-height: 2.5;
   }
-  
+
   .support-contacts .show-phone-btn {
   background: white;
   border-radius: 10px;
@@ -242,7 +217,7 @@
   padding: 3px 10px;
   margin-left: 5px;
   }
-  
+
   .support-contacts .show-phone-content {
   display: none;
   }
