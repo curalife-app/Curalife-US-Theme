@@ -41,6 +41,22 @@
     top: -4px;
     left: 80px;
   }
+
+  @media screen and (max-width: 760px) {
+    #countdown li {
+      font-size: 9vw;
+    }
+
+    #countdown li span {
+      font-size: 8vw;
+    }
+
+    #countdown li:not(:last-child):before {
+      font-size: 5vw;
+      top: -1vw;
+      left: 12vw;
+    }
+  }
 </style>
 
 <script>
