@@ -166,7 +166,6 @@
           "51b22381-32c5-47fb-9835-a9bf89640921"
         ],
         "settings": {
-          "ftr_logoimage": "shopify:\/\/shop_images\/logo-white.png",
           "lgo_ftrlink": "https:\/\/curalife.com",
           "ftr_titl": "24\/7 CUSTOMER SUCCESS TEAM",
           "ftr_desc": "*CuraLin, CuraLife products, and statements on this website and other CuraLife assets have not been evaluated by the Food and Drug Administration, and are not intended to diagnose, treat, cure, or prevent any disease. Results will vary from one person to another and there is no guarantee of specific results. We recommend consulting your doctor or your primary healthcare provider before using our products, especially when if you’re taking any medications.",
@@ -228,37 +227,31 @@
           "adae4013-b5d0-43ff-8856-e6263fbd4bfb": {
             "type": "partners",
             "settings": {
-              "fetr_imgfour": "shopify:\/\/shop_images\/usa-today-seeklogo.com_1.png"
             }
           },
           "25dc5b08-6d65-45f0-bc50-805d17604461": {
             "type": "partners",
             "settings": {
-              "fetr_imgfour": "shopify:\/\/shop_images\/yahoo-finance.png"
             }
           },
           "c7a5b1e9-7c96-47cd-8585-ac10c6b645d3": {
             "type": "partners",
             "settings": {
-              "fetr_imgfour": "shopify:\/\/shop_images\/bbc.png"
             }
           },
           "4e33b58d-6d1d-4fe1-a90a-7226d49f928d": {
             "type": "partners",
             "settings": {
-              "fetr_imgfour": "shopify:\/\/shop_images\/the-sun.png"
             }
           },
           "515d16a4-d370-4cf5-8efd-64d3d966649a": {
             "type": "partners",
             "settings": {
-              "fetr_imgfour": "shopify:\/\/shop_images\/daily-express-seeklogo.com.png"
             }
           },
           "f19cc252-c700-4157-a247-c7e62fe8a129": {
             "type": "partners",
             "settings": {
-              "fetr_imgfour": "shopify:\/\/shop_images\/daily-mail.png"
             }
           }
         },
@@ -274,7 +267,6 @@
           "f19cc252-c700-4157-a247-c7e62fe8a129"
         ],
         "settings": {
-          "fetr_imgone": "shopify:\/\/shop_images\/bottle-01_3ed0e37e-1865-4733-9118-5146ad43e35a.png",
           "fetr_titlone": "Safe & Powerful <br>Glucose Support",
           "fter_descone": "CuraLin is designed specifically for people looking for an effective and natural way to maintain healthy glucose levels so they can enjoy life’s events to the fullest.",
           "fterbtn_titlone": "learn more",
@@ -282,7 +274,6 @@
           "fetr_titltwo": "9 powerful natural<br> ingredients combined<br> into one capsule.",
           "fterbtn_titltwo": "learn more",
           "fterbnr_btnlinktwo": "https:\/\/curalife.com\/pages\/curalin-advanced-glucose-support",
-          "fetr_imgtwo": "shopify:\/\/shop_images\/cust_536e945c-3cbe-4c35-8ec8-8a8f31c1850d.png",
           "fetr_titlthree": "Life Changing Experiences",
           "fetr_titlfour": "We're making headlines..."
         }
@@ -290,7 +281,6 @@
       "16190717353dc6eba6": {
         "type": "winning-diabetes",
         "settings": {
-          "win_img": "shopify:\/\/shop_images\/winning-bg_7573bb3b-7f63-419f-997d-d37bef7160a4.jpg",
           "win_titl": "Winning Type 2<br> Diabetes Together",
           "winr_desc": "Every day, people around the world connect in our active community to share advice, get support, and help each other live a healthier fuller life. It’s a movement changing lives across the globe.",
           "win_btntitl": "Join the Community",
@@ -523,18 +513,13 @@
           "85b9c9d6-30d0-4150-97d7-7b0158ce969e",
           "033f1883-ae18-4db8-bc42-3478dc5d73b7",
           "5a9456de-815b-4922-a1f8-dfb5c35e95a8",
-          "7808b079-a5ea-4db5-b537-8efe75fe592d",
           "9a229cd3-d79d-4585-b2a0-f8179fff3f8b",
           "b702e5f5-e32f-4240-b096-ee2c0b543b4a",
           "b34e5401-0b3b-4155-b841-15a73f2a2468",
           "446b307d-7f33-42f4-9078-0c9f1d36c181",
           "94e2bfc7-4ad5-4a51-ad23-a6e4f34de98f",
           "9b1a3a7d-ef51-430d-b324-9af611856fdd",
-          "9f9ab3a1-8e20-4625-bfef-02e22bede349",
-          "4907a2f3-3ee2-4203-8552-589eeba13b6b",
           "1ef4abbd-b226-42d3-9f0f-20082c9e8272",
-          "31e6cb49-2950-48d8-b628-a23163b8910c",
-          "3f6d099e-a3eb-4202-9ae0-0e649230ab17",
           "97cedbb7-f2b6-42e2-aca2-f992f5cd2705",
           "c96f9156-6ffa-4eaa-a270-275850875c0f",
           "30a827de-82cf-4cf0-988d-7438ae8f52b5",
@@ -569,11 +554,6 @@
       "glucose-support-banner": {
         "type": "glucose-support-banner",
         "settings": {
-          "header_image": "shopify:\/\/shop_images\/Group_4793.png",
-          "header_title": "CuraLin",
-          "header_subtitle": "Natural Blood Sugar<br>Support Supplement",
-          "button_title": "shop now",
-          "button_link": "shopify:\/\/collections\/all"
         }
       },
       "glucose-support-white-bg-content": {
@@ -582,79 +562,67 @@
           "41573441-ee02-49ee-963f-b7d878ab6ea4": {
             "type": "cura_power",
             "settings": {
-              "cpwr_img": "shopify:\/\/shop_images\/Group_3.png",
               "cpwr_desc": "Supports healthy pancreatic beta cells function"
             }
           },
           "e81c3a7e-edf0-4b04-99e7-91c94e127a32": {
             "type": "cura_power",
             "settings": {
-              "cpwr_img": "shopify:\/\/shop_images\/Vector_2.png",
               "cpwr_desc": "Promotes Short & Long Term Healthy & Balanced blood glucose levels"
             }
           },
           "f305c7d6-6fe2-49f7-9b99-1ddc4dd7a19a": {
             "type": "cura_power",
             "settings": {
-              "cpwr_img": "shopify:\/\/shop_images\/Group_4.png",
               "cpwr_desc": "Reduces the craving for sugars & other carbs"
             }
           },
           "8536fb21-dc3a-4477-a58a-f47985a9b4cb": {
             "type": "cura_power",
             "settings": {
-              "cpwr_img": "shopify:\/\/shop_images\/Group_5.png",
               "cpwr_desc": "Promotes high daily energy levels"
             }
           },
           "3b17f853-0362-4d7d-b56e-be53f39b13fd": {
             "type": "cura_power",
             "settings": {
-              "cpwr_img": "shopify:\/\/shop_images\/Vector_1.png",
               "cpwr_desc": "Supports pancreas, liver, and kidney health"
             }
           },
           "cb7cf8ab-3da3-41a5-943f-d2b41c0ae29c": {
             "type": "cura_power",
             "settings": {
-              "cpwr_img": "shopify:\/\/shop_images\/Group_4787.png",
               "cpwr_desc": "Promotes healthy weight loss"
             }
           },
           "6300bf83-f16c-40bd-bce1-20f6bc5d47e9": {
             "type": "what_cura",
             "settings": {
-              "wht_img": "shopify:\/\/shop_images\/certified.png"
             }
           },
           "ac87e775-2116-4668-94d0-f6d00cb0e929": {
             "type": "what_cura",
             "settings": {
-              "wht_img": "shopify:\/\/shop_images\/02_47450747-793a-4005-82b7-d954fd1aafef.png"
             }
           },
           "733afe09-f74d-4b6c-a7c6-bf358eb7c709": {
             "type": "what_cura",
             "settings": {
-              "wht_img": "shopify:\/\/shop_images\/03_91aebecf-24b6-4657-bbd4-29845fa1c67c.png"
             }
           },
           "0b1ec848-c886-44fd-ba34-8267f036a39a": {
             "type": "what_cura",
             "settings": {
-              "wht_img": "shopify:\/\/shop_images\/06_ae7c7710-7cc7-4982-a735-808ff5edfcb3.png"
             }
           },
           "f49cb40b-3104-4913-bd9a-f3f3c3354641": {
             "type": "what_cura",
             "settings": {
-              "wht_img": "shopify:\/\/shop_images\/04_87d176d5-f866-43fd-891e-2b706eb35713.png"
             }
           },
           "374b6ed8-a829-4968-b495-aba3e440980a": {
             "type": "what_cura",
             "settings": {
-              "wht_img": "shopify:\/\/shop_images\/05_610822b2-bdd3-4748-9b41-5925822d2818.png"
             }
           }
         },
@@ -854,7 +822,7 @@
           "clnt_titl": "What Our Clients Say <br>About CuraLin",
           "clnt_mbltitl": "Life Changing Experiences",
           "custm_titl": "Customer Success <br>With CuraLin",
-          "mntain_img": "shopify:\/\/shop_images\/bottle-02_1071910e-a3f2-4118-bb84-bde265428c3d.png",
+          "mntain_img": "shopify:\/\/shop_images\/curalin-homepage-bottle-global.png",
           "mntain_titl": "Maintain Healthy<br> Glucose levels",
           "mntain_desc": "CuraLin is designed specifically for people looking for an effective and natural way to maintain healthy glucose levels so they can enjoy life’s events to the fullest",
           "mntainbtn_titl": "Shop Now",
