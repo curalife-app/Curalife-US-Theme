@@ -52,7 +52,7 @@
                 </div>
 
                 {% if product.tags contains 'CuraEats' %}
-                    <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">Life Changing Bonus (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value!)</p>
+                    <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">+ CuraEats App Bonus (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
                     <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
                 {% endif %}
                 </div>
@@ -66,10 +66,12 @@
               </form>
               <div class="total-and-shipping">
                 <div class="total-prices">
-                  TOTAL: <strike class="striked" style="font-weight: 400;">{{ product.compare_at_price | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                  TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
                   <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
                 </div>
-                <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
+                {% if shop.name == "CuraLife" %}
+                  <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
+                {% endif %}
               </div>
             </div>
           </div>

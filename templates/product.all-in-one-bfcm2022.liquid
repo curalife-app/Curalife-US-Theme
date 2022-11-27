@@ -1,12 +1,15 @@
-{% assign challange_value = 150 %}
-{% assign curaeats_value = 49 %}
 
-
-{% if store.name = "CuraLife" %}
-    {% assign shipping_worldwide = 'US Free Shipping'}
-{% else %}
-    {% assign shipping_worldwide = 'Free Shipping Above £99'}  
-{% endif %} 
+{% if shop.name == "CuraLife" %}
+    {% assign shipping_worldwide = 'US Free Shipping' %}
+      {% assign challange_value = 150 %}
+      {% assign curaeats_value = 49 %}
+      {% assign currency_symbol = '$'%}
+{% elsif shop.name == "CuraLife Global" %}
+    {% assign shipping_worldwide = 'Free Shipping Above £99' %}
+    {% assign challange_value = 0 %}
+    {% assign curaeats_value = 40 %}
+    {% assign currency_symbol = '£'%}
+{% endif %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'lps-aio-header-bfcm2022' %}
@@ -127,7 +130,7 @@
               {% for var in product.variants %}
                 {% if var.title contains "CuraEats" %}
                   {% assign bundle_addition = challange_value | plus: curaeats_value | times: 100 %}
-                  <div class="variant-notice"><p><b>Bonus</b> - 30 Day Life Changing Program <b>(<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
+                  <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
                 {% else %}
                   {% assign bundle_addition = 0 %}
                 {% endif %}
@@ -508,7 +511,7 @@
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
     // Save Text Change
-    let saveText = "You Save " + "$" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);

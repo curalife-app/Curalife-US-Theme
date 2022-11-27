@@ -1,41 +1,47 @@
 {% render 'script.round-converted-currency' %}
 
 <section id="curaeats-section">
-  {% unless product.title == "CuraLin BFCM 2022" %}
-  <h2>Everything you need to keep your blood sugar happy!</h2>
-  {% endunless %}
-  <div class="challange">
-    <div class="container">
-      <div class="badge">
-        <div class="badge-bg">
-          <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
+  {% if shop.name == "CuraLife" %}
+    {% unless product.title == "CuraLin BFCM 2022" %}
+    <h2>Everything you need to keep your blood sugar happy!</h2>
+    {% endunless %}
+    <div class="challange">
+      <div class="container">
+        <div class="badge">
+          <div class="badge-bg">
+            <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
+          </div>
+        </div>
+        <h3>30 Day Life Changing Program</h3>
+        <p>There is a science to healthy blood sugar, and we’ve cracked it.<br><br>
+        Together, we’ll help you kickstart a healthier, stronger, and more determined you... because you deserve health that lasts.<br><br>
+        Let’s build good habits together. <b>We’ll guide you every step of the way!</b></p>
+
+        <img class="main-image" src="{{ 'curaeats-section-main-image.png' | asset_url }}" alt="">
+
+        {% assign features = "<b>Curalin</b> - clinically tested for blood sugar health
+          |Tips on what to eat to nourish your body (and cravings 😉)
+          |Easy exercise routines that you’ll love
+          |A community of 100K+ people cheering you on and helping you out
+          |24/7 unlimited access to Curalife’s customer success team" | split: "|" %}
+
+        <div class="features">
+          {% for feature in features %}
+            <div class="feature">
+              <div class="feature-icon"><i class="icofont-check"></i></div>
+              <div class="feature-text">{{ feature | split: "|" | last }}</div>
+            </div>
+          {% endfor %}
         </div>
       </div>
-      <h3>30 Day Life Changing Program</h3>
-      <p>There is a science to healthy blood sugar, and we’ve cracked it.<br><br>
-      Together, we’ll help you kickstart a healthier, stronger, and more determined you... because you deserve health that lasts.<br><br>
-      Let’s build good habits together. <b>We’ll guide you every step of the way!</b></p>
-
-      <img class="main-image" src="{{ 'curaeats-section-main-image.png' | asset_url }}" alt="">
-
-      {% assign features = "<b>Curalin</b> - clinically tested for blood sugar health
-        |Tips on what to eat to nourish your body (and cravings 😉)
-        |Easy exercise routines that you’ll love
-        |A community of 100K+ people cheering you on and helping you out
-        |24/7 unlimited access to Curalife’s customer success team" | split: "|" %}
-
-      <div class="features">
-        {% for feature in features %}
-          <div class="feature">
-            <div class="feature-icon"><i class="icofont-check"></i></div>
-            <div class="feature-text">{{ feature | split: "|" | last }}</div>
-          </div>
-        {% endfor %}
-      </div>
     </div>
-  </div>
+  {% endif %}
   <div class="curaeats">
-    <i class="icofont-plus plus"></i>
+    {% if shop.name == "CuraLife" %}
+      <i class="icofont-plus plus"></i>
+    {% else %}
+    <br><br><br>
+    {% endif %}
     <div class="container">
       <div class="badge">
         <div class="badge-bg">
@@ -60,7 +66,7 @@
 <style>
   #curaeats-section {
     font-size: 20px;
-    padding-top: unset;
+    padding-top: 50px;
   }
 
   #curaeats-section .container {
