@@ -11,9 +11,7 @@
 <div class="page-overflow">
   {% assign isTimer = true %}
   
-  {% if isTimer %}
-    {% section 'lps-aio-lp01-header-black-friday-aio', isTimer: isTimer %}
-  {% endif %}
+  {% render 'lps-aio-lp01-header-black-friday-aio', isTimer: isTimer %}
 
   {% section 'lps-aio-lp01-hero-black-friday' %}
 
