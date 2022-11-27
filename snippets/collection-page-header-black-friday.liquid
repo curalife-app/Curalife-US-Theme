@@ -1,6 +1,6 @@
 <div class="page-header" id="page-header-collection">
   <div class="animated-container swiper">
-    <div class="animated-yellow-desk swiper-wrapper">
+    <div class="swiper-wrapper">
       {% for i in (1..2) %}
         <div class="title swiper-slide">
           <i class="icofont-star"></i>
@@ -82,16 +82,6 @@
     height: 10vw;
   }
 
-  #page-header-collection.page-header .animated-container .animated-yellow-desk {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    color: #FFE746;
-    height: 100%;
-    transition-timing-function: linear !important;
-  }
-
   #page-header-collection.page-header .animated-container .animated-yellow-desk .title {
     width: 450px;
     display: flex;
@@ -136,6 +126,7 @@
     }
 
     #page-header-collection.page-header .animated-container .animated-yellow-desk .title i {
+      color: #FFE746;
       font-size: 4vw;
     }
   }
