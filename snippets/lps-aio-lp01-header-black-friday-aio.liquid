@@ -101,6 +101,24 @@
     }
 
     @media screen and (max-width: 760px) {
-        
+
     }
 </style>
+
+<script>
+    var div_top = $('.order-menu').offset().top;
+
+    $(window).scroll(function () {
+var window_top = $(window).scrollTop();
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+if (window_top >= div_top) {
+    if (!$('.order-menu').is('.sticky')) {
+        $('.order-menu').addClass('sticky');
+        $('#shopify-section-lps-featured-on-black-friday').css("padding-top", $('.order-menu').height() + "px");
+    }
+} else {
+    $('.order-menu').removeClass('sticky');
+    $('#shopify-section-lps-featured-on-black-friday').css("padding-top", 0);
+}
+});
+</script>
