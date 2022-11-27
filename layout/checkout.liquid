@@ -16,6 +16,15 @@
   {% endif %}
 {% endif %}
 
+{%- comment -%} If store is US {%- endcomment -%}
+{% if store.name == 'CuraLife' %}
+  {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
+  {% assign yotpo_checkout_widget = "18962" %}
+{% elsif store.name == "CuraLife Global" %}
+  {% assign yotpo_script_id = "oMYBvmnASlHzmouicgkepg" %}
+  {% assign yotpo_checkout_widget = "85446" %}
+{% endif %}
+
 {% if is_thank_you_step %}
   <!-- If the customer bought curaeats app -->
   {% for item in order.line_items %}
@@ -192,7 +201,7 @@
         </div>
 
         <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
-        <div class="yotpo-widget-instance" data-yotpo-instance-id="18962"></div>
+        <div class="yotpo-widget-instance" data-yotpo-instance-id="{{ yotpo_checkout_widget }}"></div>
 
         {% if extensions_exist %}
           <div class="sidebar-extentions">
