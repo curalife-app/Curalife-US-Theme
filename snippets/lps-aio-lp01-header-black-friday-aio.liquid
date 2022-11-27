@@ -105,9 +105,11 @@
             top: 0;
         }
 
-        header .buttons-container {
-            width: 100%;
-        }
+        {% unless isTimer %}
+            header .buttons-container {
+                width: 100%;
+            }
+        {% endunless %}
         
         header .off-container {
             flex-direction: column;
