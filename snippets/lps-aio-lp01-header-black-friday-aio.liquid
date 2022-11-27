@@ -167,7 +167,7 @@ let height = document.documentElement.scrollHeight - document.documentElement.cl
 if (window_top >= div_top) {
     if (!$('header').is('.sticky')) {
         $('header').addClass('sticky');
-        $('#shopify-section-lps-featured-on-black-friday').css("padding-top", $('.order-menu').height() + "px");
+        $('#shopify-section-lps-featured-on-black-friday').css("padding-top", $('header').height() + "px");
     }
 } else {
     $('header').removeClass('sticky');
