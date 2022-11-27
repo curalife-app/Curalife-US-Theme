@@ -35,9 +35,12 @@
 
   </div>
 </div>
-<div class="countdown-wrapper mobile">
-  {% render 'countdown-timer', timerAlreadyRun: true %}
-</div>
+
+{% if ifTimer %}
+  <div class="countdown-wrapper mobile">
+    {% render 'countdown-timer', timerAlreadyRun: true %}
+  </div>
+{% endif %}
 
 <style>
   .countdown-wrapper {
