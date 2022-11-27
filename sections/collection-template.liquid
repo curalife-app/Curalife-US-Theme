@@ -1,5 +1,6 @@
 {% if shop.name == "CuraLife" %}
   {% assign curaeats_value = 29 %}
+  {% assign challange_value = 99 %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign curaeats_value = 16 %}
 {% endif %}
@@ -12,7 +13,7 @@
     {% render 'last-offer-title' %}
     {% render 'products-catalog-section', Prods: collection.products %}
   </div>
-  {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: curaeats_value %}
+  {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
 </div>
 
 {% schema %}
