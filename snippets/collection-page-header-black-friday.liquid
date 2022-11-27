@@ -35,7 +35,7 @@
   </div>
 </div>
 <div class="countdown-wrapper mobile">
-{% render 'countdown-timer', timerAlreadyRun: true %}
+  {% render 'countdown-timer', timerAlreadyRun: true %}
 </div>
 
 <style>
@@ -120,10 +120,6 @@
   }
 
   @media screen and (max-width: 768px) {
-    #page-header-collection.page-header {
-      
-    }
-
     .countdown-wrapper.mobile {
       display: flex;
       justify-content: center;
@@ -156,5 +152,4 @@
     allowTouchMove: false,
     disableOnInteraction: true
   });
-
 </script>
