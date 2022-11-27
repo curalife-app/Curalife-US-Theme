@@ -12,6 +12,7 @@
   #countdown {
     {% if timerColor %}color: {{ color }};{% endif %}
     padding: 15px;
+    margin-top: 10px;
   }
 
   #countdown li {
@@ -43,6 +44,10 @@
   }
 
   @media screen and (max-width: 760px) {
+    #countdown {
+      margin-top: 2vw;
+    }
+
     #countdown li {
       font-size: 3vw;
       min-width: 14vw;
