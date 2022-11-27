@@ -3,10 +3,12 @@
     {% assign shipping_worldwide = 'US Free Shipping' %}
       {% assign challange_value = 150 %}
       {% assign curaeats_value = 49 %}
+      {% assign currency_symbol = '$'%}
 {% elsif shop.name == "CuraLife Global" %}
     {% assign shipping_worldwide = 'Free Shipping Above £99' %}
     {% assign challange_value = 0 %}
     {% assign curaeats_value = 40 %}
+    {% assign currency_symbol = '£'%}
 {% endif %}
 
 {% render 'script.round-converted-currency' %}
@@ -509,7 +511,7 @@
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
     // Save Text Change
-    let saveText = "You Save " + "$" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
