@@ -1,8 +1,13 @@
+{% assign isTimer = false %}
+
 <header class="page-header" id="page-header">
   <div class="container">
     <div class="main-logo">
       <img src="{{ 'logo-white-black-friday.png' | asset_url }}" alt="logo">
     </div>
+    {% if isTimer %}
+      {% render 'countdown-timer', timerAlreadyRun: false, isHideTitles: true, timerColor: '#FFE746' %}
+    {% endif %}
     <div class="animated-logo blink">
       <i class="icofont-star"></i>
       <div class="animated-yellow-desk">CYBER MONDAY</div>
@@ -21,7 +26,6 @@
        color: #D9D9D9;
        opacity: 1;
        filter:blur(5px);
-
    }
 
    50% {
