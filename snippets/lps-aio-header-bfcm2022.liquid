@@ -7,12 +7,13 @@
     </div>
     {% if isTimer %}
       {% render 'countdown-timer', timerAlreadyRun: false, isHideTitles: true, timerColor: '#FFE746' %}
+    {% else %}
+      <div class="animated-logo blink">
+        <i class="icofont-star"></i>
+        <div class="animated-yellow-desk">CYBER MONDAY</div>
+        <i class="icofont-star"></i>
+      </div>
     {% endif %}
-    <div class="animated-logo blink">
-      <i class="icofont-star"></i>
-      <div class="animated-yellow-desk">CYBER MONDAY</div>
-      <i class="icofont-star"></i>
-    </div>
     <div class="off-container">
       <div class="up-to">UP TO</div>
       <div class="thirty-off"> 20% OFF</div>
