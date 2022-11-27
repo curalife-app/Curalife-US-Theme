@@ -1,6 +1,6 @@
 
 
-{% if store.name == "CuraLife" %}
+{% if shop.name == "CuraLife" %}
   {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 12800 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 {% else %}
   {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 1700 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
