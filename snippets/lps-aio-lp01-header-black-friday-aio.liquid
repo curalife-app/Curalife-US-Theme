@@ -4,13 +4,12 @@
         <div class="main-logo">
             <img src="{{ 'logo-black-friday.svg' | asset_url }}" width="308" height="92" alt="logo">
         </div>
-
         
+        {% if isTimer %}
+            {% render 'countdown-timer-cyber-monday' %}
+        {% endif %}
+
         <div class="buttons-container">
-            {% if isTimer %}
-                {% render 'countdown-timer-cyber-monday' %}
-            {% endif %}
-            
             <div class="off-container">
                 <div class="up-to">UP TO</div>
                 <div class="thirty-off"> 40% OFF</div>
@@ -102,8 +101,6 @@
     }
 
     @media screen and (max-width: 760px) {
-        header {
-            display: none !important;
-        }
+
     }
 </style>
