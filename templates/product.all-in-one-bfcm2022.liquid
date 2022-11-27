@@ -136,10 +136,10 @@
                 {% endif %}
                 <div class="variant-box">
                   <div class="radio-box">
-                    {% assign original_cap = var.compare_at_price | minus: var.price %}
+                    {% assign original_discount = var.compare_at_price | minus: var.price | divided_by: 100 %}
                     {% assign bundle_addition_real = bundle_addition | divided_by: 100 %}
-                    {% assign discounted = original_cap | divided_by: 100 | plus: bundle_addition_real %}
-                    <script>console.log("original cap: {{original_cap}}")</script>
+                    {% assign discounted = original_discount | divided_by: 100 | plus: bundle_addition_real %}
+                    <script>console.log("original_discount: {{original_discount}}")</script>
                     <script>console.log("bundle_addition_real: {{bundle_addition_real}}")</script>
                     <script>console.log("discounted: {{discounted}}")</script>
                     {% if var.compare_at_price > var.price %} {% assign discount_amount = bundle_addition | plus: original_cap %} {% else %} {% assign discount_amount = 0 %} {% endif %}
