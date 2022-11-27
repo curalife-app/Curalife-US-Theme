@@ -70,7 +70,7 @@
   Number.prototype.pad = function () {
     return this < 10 ? '0' + this : this;
   }
-
+  const countDown = document.getElementById('countdown')
   const second = 1000,
     minute = second * 60,
     hour = minute * 60;
@@ -88,6 +88,8 @@
     // do something later when date is reached
     if (distance < 0) {
       clearInterval(x);
+      countDown.style.display='none';
+      
     }
     //seconds
   }, 0)
