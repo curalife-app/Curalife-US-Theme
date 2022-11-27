@@ -23,7 +23,7 @@
         <div class="product-slider">
           <div class="sliders-group">
             <div class="main-slider">
-               <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt=""> 
+               <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
               <div id="product-main-slider-sc" class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -128,8 +128,8 @@
             <p class="cta-title">Select Your Pack</p>
             <div class="input-field product-option-select">
               {% for var in product.variants %}
+                {% assign bundle_addition = challange_value | plus: curaeats_value | times: 100 %}
                 {% if var.title contains "CuraEats" %}
-                  {% assign bundle_addition = challange_value | plus: curaeats_value | times: 100 %}
                   <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
                 {% else %}
                   {% assign bundle_addition = 0 %}
@@ -138,7 +138,7 @@
                   <div class="radio-box">
                     {% assign original_cap = var.compare_at_price | minus: var.price | divided_by: 100 %}
                     {% if var.compare_at_price > var.price %} {% assign discount_amount = bundle_addition | divided_by: 100 | plus: original_cap %} {% else %} {% assign discount_amount = 0 %} {% endif %}
-                    <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount_amount | plus: bundle_addition | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
+                    <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount_amount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
                   </div>
                   <div class="variant-info">
                     <p class="variant-title">{{ var.title }}</p>
