@@ -1,6 +1,6 @@
 {% assign isTimer = true %}
 
-<header class="page-header" id="page-header">
+<header id="page-header">
   <div class="container">
     <div class="main-logo">
       <img src="{{ 'logo-white-black-friday.png' | asset_url }}" alt="logo">
@@ -37,7 +37,6 @@
    100% {
        opacity: 1.0;
        color: #FFE746;
-
    }
   }
 
@@ -61,32 +60,32 @@
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   }
 
-  header.page-header .main-logo {
+  header .main-logo {
     padding: 10px 0 15px;
   }
 
-  header.page-header .main-logo {
+  header .main-logo {
     display: inline-block;
     padding: 4px 0;
     max-width: 181px;
   }
 
-  header.page-header .main-logo img {
+  header .main-logo img {
     width: 150px;
   }
 
-  header.page-header .main-logo img {
+  header .main-logo img {
     margin-top: unset !important;
   }
 
-  header.page-header .container {
+  header .container {
     max-height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  header.page-header .animated-logo {
+  header .animated-logo {
     display: flex;
     align-items: center;
     color: #FFE746;
@@ -94,7 +93,7 @@
     font-size: clamp(15px, 3vw, 35px);
   }
 
-  header.page-header .animated-logo .animated-yellow-desk  {
+  header .animated-logo .animated-yellow-desk  {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px 	hsl(52, 100%, 64%);
     filter: drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5)) drop-shadow(0px 0px 4px hsl(59deg 100% 50% / 0.5)) drop-shadow(0px 0px 10px hsl(50deg 100% 40% / 0.5)) drop-shadow(0px 0px 50px hsl(52deg 100% 30% / 1));
