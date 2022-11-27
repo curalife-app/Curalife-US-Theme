@@ -10,13 +10,13 @@
 {% assign timerAlreadyRun = true %}
 <style>
   #countdown {
+    {% if color %}color: {{color}};{% endif %}
     padding: 15px;
     margin-top: 10px;
     width: 80%;
   }
 
   #countdown.inverted {
-    background-color: #222222;
     color: #FFE746;
     padding: unset;
     width: unset;
