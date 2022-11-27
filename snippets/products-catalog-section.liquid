@@ -1,4 +1,10 @@
 {% render 'script.round-converted-currency' %}
+{% assign lp_prods = page.content | split: ',' %}
+{% if store.name = "CuraLife" %}
+    {% assign shipping_worldwide = 'US Free Shipping'}
+{% else %}
+    {% assign shipping_worldwide = 'Free Shipping Above £99'}  
+{% endif %} 
 
 <section id="product-catalog-section">
     <div class="product-list" id="product-list-section">
@@ -69,7 +75,7 @@
       {% endfor %}
 
       <div class="trust-badges">
-        <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="" loading="lazy">US Free Shipping</div>
+        <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="" loading="lazy">{{ shipping_worldwide }}</div>
           <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="" loading="lazy">60 Day Money Back Guarantee</div>
           <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="" loading="lazy">100% Secure Checkout</div>
       </div>
