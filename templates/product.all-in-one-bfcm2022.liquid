@@ -128,8 +128,8 @@
             <p class="cta-title">Select Your Pack</p>
             <div class="input-field product-option-select">
               {% for var in product.variants %}
-                {% assign bundle_addition = challange_value | plus: curaeats_value | times: 100 %}
                 {% if var.title contains "CuraEats" %}
+                  {% assign bundle_addition = challange_value | plus: curaeats_value | times: 100 %}
                   <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
                 {% else %}
                   {% assign bundle_addition = 0 %}
