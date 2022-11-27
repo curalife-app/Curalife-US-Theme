@@ -1,38 +1,39 @@
 <div class="page-header" id="page-header-collection">
   <div class="animated-container swiper">
     <div class="animated-yellow-desk swiper-wrapper">
-      {% for i in (1..2) %}
+      {% for i in (1..4) %}
         <div class="title swiper-slide">
           <i class="icofont-star"></i>
-          <span class="black-friday-span">CYBER MONDAY</span>
+          <span class="black-friday-span">BLACK FRIDAY</span>
         </div>
 
         <div class="title swiper-slide">
           <i class="icofont-star"></i>
-          <span class="off-container-collection">UP TO 30% OFF</span>
+          <span class="off-container-collection">UP TO 40% OFF</span>
         </div>
+     
 
         <div class="title desktop swiper-slide">
-          {% assign ifTimer = false %}
+          {% assign ifTimer = true %}
           {% if ifTimer %}
             {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
             {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
           {% else %}
             <i class="icofont-star"></i>
-            <span class="black-friday-span">CYBER MONDAY</span>
+            <span class="black-friday-span">BLACK FRIDAY</span>
           {% endif %}
         </div>
 
         <div class="title desktop swiper-slide">
           <i class="icofont-star"></i>
-          <span class="off-container-collection">UP TO 30% OFF</span>
+          <span class="off-container-collection">BEST DEAL EVER!</span>
         </div>
       {% endfor %}
     </div>
 
   </div>
 </div>
-<div class="countdown-mobile" style="display: none;">
+<div class="countdown-mobile" style="display: none;>
 {% render 'countdown-timer', timerAlreadyRun: true %}
 </div>
 
@@ -115,7 +116,7 @@
 
   @media screen and (max-width: 768px) {
     #page-header-collection.page-header {
-      
+      padding: 3vw 0;
     }
 
     .countdown-mobile {

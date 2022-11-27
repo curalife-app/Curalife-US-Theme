@@ -29,10 +29,16 @@
   {% section 'lps-clinically-tested' %}
   {% section 'lps-ingredients' %}
   {% section 'lps-supported-community' %}
-  <div class="green-strip" id="green-strip">Limited Offer! Choose a bundle and get a FREE CuraEats meal plan</div>
+  <div class="green-strip" id="green-strip">BEST. PRICE. EVER.</div>
+  <div class="catalog">
+  <div class="limited"> <span style="color: #ED073E
+    ">PLUS</span> Limited time bonuses:</div>
+  <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div></div>
+  
   {% assign Prods = page.content | split: ',' %}
-  {% render 'lps-products-catalog-black-friday', Prods: Prods %}
-  {% render 'collection-curaeats-section', invertSectionBack: true %}
+  {% render 'lps-products-catalog-black-friday-last-offer', Prods: Prods %}
+  {%- comment -%} {% render 'collection-curaeats-section', invertSectionBack: true %} {%- endcomment -%}
+  {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
   {% section 'lps-return-policy' %}
   {% section 'lps-badges' %}
   {% section 'lps-faq' %}
@@ -42,19 +48,51 @@
   <div id="floating-cta">ORDER NOW</div>
 </div>
 
+
+<style>
+   .catalog  {
+    margin-top: 20px;
+      display: flex;
+      text-align: center;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: bold;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .limited {
+    font-size: clamp(25px, 3vw, 35px);
+  }
+
+  .changing-programm {
+    text-align: center;
+    font-size: clamp(16px, 2vw, 24px);
+
+  }
+
+
+  @media screen and (max-width:760px) {
+
+  .changing-programm {
+      padding: 0 1vw;
+    }
+
+  }
+</style>
+
 <style>
   .green-strip {
       top: 100px;
       width: 100%;
-      background: #99B182;
+      background: #FFE746;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
       font-family: 'DM Sans';
       font-weight: 600;
-      font-size: clamp(18px, 4vw, 25px); !important;
+      font-size: clamp(33px, 3vw, 60px); !important;
       line-height: 24px;
       text-align: center;
       letter-spacing: -0.02em;
-      color: #FFFFFF;
+      color: #222222;
       padding: 20px;
       margin-top: 30px;
   }
