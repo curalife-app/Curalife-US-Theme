@@ -1,10 +1,11 @@
 {% render 'script.round-converted-currency' %}
 
-{% if store.name = "CuraLife" %}
-    {% assign shipping_worldwide = 'US Free Shipping'}
+{% if store.name == "CuraLife" %}
+    {% assign shipping_worldwide = 'US Free Shipping' %}
     {% assign bundle_addition_value = 12800 %}
 {% else %}
-    {% assign shipping_worldwide = 'Free Shipping Above £99'}
+    {% assign shipping_worldwide = 'Free Shipping Above £99' %}
+      {% assign bundle_addition_value = 12800 %}
 {% endif %}
 
 <section id="product-catalog-section">
@@ -16,7 +17,7 @@
 
                 {% assign product = all_products[prod] %}
             {% endif %}
-            {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 12800 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
+            {% if product.tags contains "CuraEats" %}{% assign bundle_addition = bundle_addition_value %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
       <div class="product-card" id="product-card-section">
           <div class="wrap">
             <div class="picture">
