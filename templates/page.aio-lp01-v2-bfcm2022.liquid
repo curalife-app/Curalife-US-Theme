@@ -26,7 +26,7 @@
   <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div></div>
   
   {% assign Prods = page.content | split: ',' %}
-  {% render 'lps-products-catalog-black-friday-last-offer', Prods: Prods %}
+  {% render 'products-catalog-section', Prods: Prods %}
   {%- comment -%} {% render 'collection-curaeats-section', invertSectionBack: true %} {%- endcomment -%}
   {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
   {% section 'lps-return-policy' %}
