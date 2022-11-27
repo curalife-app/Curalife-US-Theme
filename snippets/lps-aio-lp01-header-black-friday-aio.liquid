@@ -140,8 +140,9 @@
 <script>
     if(screen.width <= 768) {     
         var hero_bottom = $('.hero-banner').offset().top + $('.hero-banner').outerHeight(true);
+        console.log($('.hero-banner'));
         console.log("hero_bottom: " + hero_bottom);
-    
+        
         $(window).scroll(function () {
             var window_top = $(window).scrollTop();
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
