@@ -130,9 +130,8 @@
 
 <script>
     $( document ).ready(function() {
-        $('header').insertAfter('.hero-banner');
-
         if(screen.width <= 768) {     
+            $('header').insertAfter('.hero-banner');
             var hero_bottom = $('.hero-banner').offset().top + $('.hero-banner').outerHeight(true);
             
             $(window).scroll(function () {
