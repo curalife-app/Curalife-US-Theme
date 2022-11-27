@@ -141,7 +141,7 @@
                 if (window_top >= hero_bottom) {
                     if (!$('header').is('.sticky')) {
                         $('header').addClass('sticky');
-                        $('.hero-banner').css("margin-bottom", $('header').height() + "px");
+                        $('.hero-banner').css("margin-bottom", $('header').outerHeight(true) + "px");
                     }
                 } 
                 else {
