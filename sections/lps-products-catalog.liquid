@@ -1,4 +1,10 @@
 {% assign lp_prods = page.content | split: ',' %}
+{% if settings.environment = 'us' %}
+    {% assign shipping_worldwide = 'US Free Shipping'}
+{% else %}
+    {% assign shipping_worldwide = 'Free Shipping Above £99'}  
+{% endif %} 
+
 <section class="product-section" id="product-section">
     <div class="container">
         <div class="extra-info"><img src="{{ 'icon-free-shipping-light.png' | asset_url }}" alt="free shipping"><p id="shipping-badge-text">US FREE SHIPPING</p></div>
