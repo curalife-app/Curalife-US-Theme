@@ -1,4 +1,4 @@
-{% assign ifTimer = true %}
+
 <div class="hero-banner">
     <div class="ribbons">
         {% for i in (1..4) %}
@@ -308,10 +308,6 @@
 
         .container .black-friday .titles .main-title {
             font-size: clamp(50px, 14vw, 200px);
-        }
-
-        .container .black-friday .titles .shop-now-hero {
-            display: {% if ifTimer == false %}none{% else%}flex{% endif %};
         }
 
         .container .black-friday .titles .shop-now-hero .main-btn {
