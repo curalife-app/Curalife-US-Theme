@@ -24,7 +24,7 @@
         <div class="product-slider">
           <div class="sliders-group">
             <div class="main-slider">
-               <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
+              <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
               <div id="product-main-slider-sc" class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -38,8 +38,7 @@
                     <div class="swiper-slide">
                       <div class="product-img">
                         <div class="img-wrap">
-                          {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
-                          <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
+                          <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" alt="" loading="lazy">
                         </div>
                       </div>
                     </div>
@@ -79,8 +78,7 @@
                     <div class="swiper-slide">
                       <div class="thumbs-img">
                         <div class="img-wrap">
-                          {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
-                          <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
+                          <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" alt="" loading="lazy">
                         </div>
                       </div>
                     </div>
@@ -142,7 +140,7 @@
                       {% assign bundle_addition_real = bundle_addition | divided_by: 100 %}
                       {% assign discount = original_discount | plus: bundle_addition_real %}
                     {% else %}
-                      {% assign discount_amount = 0 %}
+                      {% assign discount = 0 %}
                     {% endif %}
                     <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
                   </div>
