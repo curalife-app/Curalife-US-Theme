@@ -1,9 +1,16 @@
 {% if shop.name == "CuraLife" %}
+  
+{% else %}
+ 
+{% endif %} 
+
+{%- comment -%} If store is US {%- endcomment -%}
+{% if shop.name == 'CuraLife' %}
   {% assign curalifeUS = true %}
   {% assign shipping_worldwide = 'US Free Shipping'}
-{% else %}
+{% elsif shop.name == "CuraLife Global" %}
   {% assign shipping_worldwide = 'Free Shipping Above £99'}  
-{% endif %} 
+{% endif %}
 
 <div class="product-template-all-in-one">
   <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt="">
