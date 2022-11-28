@@ -102,7 +102,8 @@
     padding-top: 2vw;
     gap: 1vw;
     position: absolute;
-    left: 250px
+    left: 250px;
+    z-index: 3;
   }
 
   .hero-banner .container .holiday-sale .text-button .holiday-title {
@@ -140,11 +141,11 @@
 w
   .container .holiday-sale .shadow-img img {   
       position: absolute;
-      right: 230px;
+      right: 22px;
       bottom: 0px;
       object-fit: contain;
-      height: max(300px,26vw);
-      z-index: 2;
+      height: max(150px, 24vw);
+     
   }
 
   @media screen and (max-width: 1008px){
@@ -153,11 +154,15 @@ w
     }
 
     .snowflake:nth-child(3) {
-        left: 11vw;
+        left: 6vw;
+    }
+
+    .snowflake:nth-child(4) {
+        left: 2vw;
     }
 
     .hero-banner .container .holiday-sale .text-button {
-        left: 19vw; 
+        left: 11vw; 
         padding-top: 6vw;
     }
 
