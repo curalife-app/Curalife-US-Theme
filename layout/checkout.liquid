@@ -200,7 +200,7 @@
           {{ content_for_order_summary }}
         </div>
 
-        {%- comment -%} <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script> {%- endcomment -%}
+        <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
         <div class="yotpo-widget-instance" data-yotpo-instance-id="{{ yotpo_checkout_widget }}"></div>
 
         {% if extensions_exist %}
