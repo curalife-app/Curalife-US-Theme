@@ -1,15 +1,14 @@
 
 {% if shop.name == "CuraLife" %}
-    {% assign curalifeUS = true %} 
     {% assign shipping_worldwide = 'US Free Shipping' %}
-      {% assign challange_value = 150 %}
-      {% assign curaeats_value = 49 %}
-      {% assign currency_symbol = '$'%}
+    {% assign challange_value = 150 %}
+    {% assign curaeats_value = 49 %}
+    {% assign currency_symbol = '$' %}
 {% elsif shop.name == "CuraLife Global" %}
     {% assign shipping_worldwide = 'Free Shipping Above £99' %}
     {% assign challange_value = 0 %}
     {% assign curaeats_value = 40 %}
-    {% assign currency_symbol = '£'%}
+    {% assign currency_symbol = '£' %}
 {% endif %}
 
 {% render 'script.round-converted-currency' %}
@@ -24,7 +23,6 @@
         <div class="product-slider">
           <div class="sliders-group">
             <div class="main-slider">
-              <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
               <div id="product-main-slider-sc" class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -36,6 +34,7 @@
                   </div>
                   {% for i in (1..5) %}
                     <div class="swiper-slide">
+                      <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
                       <div class="product-img">
                         <div class="img-wrap">
                           <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" alt="" loading="lazy">
@@ -50,6 +49,9 @@
                   </div>
                   {% for image in product.images %}
                     <div class="swiper-slide">
+                      {% if shop.name == "CuraLife Global" %}
+                        <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
+                      {% endif %}
                       <div class="product-img">
                         <div class="img-wrap">
                           <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
@@ -485,9 +487,7 @@
   {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
 </div>
 <style>
-  .main-slider .main-slider-vector-bg:nth-child(1) {
-      display:{% if curalifeUS == true %}none{% else %}block{% endif %};
-  }
+
 
 </style>
 
@@ -514,12 +514,16 @@
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
   });
+{%- comment -%} 
+  if($(".variant-box").last()) {
+    $(".main-slider-vector-bg").hide();
+  } {%- endcomment -%}
 
   // Check Radio Button on Variant Box Click
   $(".variant-box").click(function() {
     $(this).find('input[type=radio]').prop('checked', true);
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
-
+   
     // Save Text Change
     let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
@@ -529,7 +533,11 @@
 
   $( document ).ready(function() {
     $(".variant-box").last().trigger( "click" );
+    
+
   });
+
+  
 
   // Buy Button Functionality
   $("#buy-button").click(function() {
