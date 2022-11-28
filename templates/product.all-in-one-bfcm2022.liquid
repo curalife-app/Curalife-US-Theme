@@ -35,9 +35,7 @@
                   </div>
                   {% for i in (1..5) %}
                     <div class="swiper-slide">
-                      {% unless forloop.index == 1 %}
-                        <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
-                      {% endunless %}
+                      <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
                       <div class="product-img">
                         <div class="img-wrap">
                           <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" alt="" loading="lazy">
