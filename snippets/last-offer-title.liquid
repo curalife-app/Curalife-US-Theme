@@ -1,37 +1,37 @@
-{% if shop.name == "CuraLife" %}
-  <section id="last-offer-title-section">
-      <div class="catalog">
-        <div class="limited">Limited Time Bonuses:</div>
-        <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div>
+<section id="last-offer-title-section">
+  <div class="catalog">
+        {% if shop.name == "CuraLife" %}
+          <div class="limited">Limited Time Bonuses:</div>
+          <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div>
+        {% else %}
+          <h1 style="text-align:center">Limited Time Bonus: CuraEats Meal Plan App (Valued $29)</h1>
+        {% endif %}
     </div>
-  </section>
+</section>
 
-  <style>
-    #last-offer-title-section .catalog  {
-      margin-top: 20px;
-        display: flex;
-        text-align: center;
-        font-size: clamp(28px, 4vw, 40px);
-        font-weight: bold;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    #last-offer-title-section .limited {
-      font-size: clamp(25px, 3vw, 35px);
-    }
-
-    #last-offer-title-section .changing-programm {
+<style>
+  #last-offer-title-section .catalog  {
+    margin-top: 20px;
+      display: flex;
       text-align: center;
-      font-size: clamp(16px, 2vw, 24px);
-    }
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: bold;
+      flex-direction: column;
+      gap: 10px;
+  }
 
-    @media screen and (max-width:760px) {
-      #last-offer-title-section .changing-programm {
-        padding: 0 1vw;
-      }
+  #last-offer-title-section .limited {
+    font-size: clamp(25px, 3vw, 35px);
+  }
+
+  #last-offer-title-section .changing-programm {
+    text-align: center;
+    font-size: clamp(16px, 2vw, 24px);
+  }
+
+  @media screen and (max-width:760px) {
+    #last-offer-title-section .changing-programm {
+      padding: 0 1vw;
     }
-  </style>
-{% else %}
-  <h1 style="text-align:center">Choose Your CuraLin Bundle</h1>
-{% endif %}
+  }
+</style>
