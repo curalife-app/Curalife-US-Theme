@@ -9,6 +9,7 @@
     {% assign challange_value = 0 %}
     {% assign curaeats_value = 40 %}
     {% assign currency_symbol = '£' %}
+    {% assign globalURLAddition = '-global' %}
 {% endif %}
 
 {% render 'script.round-converted-currency' %}
@@ -28,8 +29,7 @@
                   <div class="swiper-slide">
                     <div class="product-img">
                       <div class="img-wrap">
-                        {% if shop.name == "CuraLife Global" %}{% assign globalAddition = '-global' %}{% endif %}
-                        <img src="{{ "product-aio-product-thumbnail-0" | append: globalAddition | append: ".png" | asset_url }}" alt="" loading="lazy">
+                        <img src="{{ "product-aio-product-thumbnail-0" | append: globalURLAddition | append: ".png" | asset_url }}" alt="" loading="lazy">
                       </div>
                     </div>
                   </div>
@@ -73,7 +73,7 @@
                   <div class="swiper-slide">
                     <div class="thumbs-img">
                       <div class="img-wrap">
-                        <img src="{{ "product-aio-product-thumbnail-0{% if shop.name == "CuraLife Global" %}-global{% endif %}.png" | asset_url }}" alt="" loading="lazy">
+                        <img src="{{ "product-aio-product-thumbnail-0" | append: globalURLAddition | append: ".png" | asset_url }}" alt="" loading="lazy">
                       </div>
                     </div>
                   </div>
