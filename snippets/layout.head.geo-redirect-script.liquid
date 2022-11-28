@@ -58,19 +58,30 @@
       let req = new XMLHttpRequest;
       req.overrideMimeType("application/json"), req.open("GET", "https://geo.curalife.com/", !0), req.onload = function() {
         let country = JSON.parse(req.responseText).country;
-        let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
+        {%- comment -%} let host = location.hostname == "global.curalife.com" ? "Global" : "USA"; {%- endcomment -%}
         let countriesUS = ["US", "PR", "CA", "AU"]; // Countries for main domain (USA)
         sessionStorage.setItem('country', country);
 
         if (["LT", "LV"].includes(country)) {redirectTo("https://curalife.lv", false)} // If Lithuania Or Latvia
         else if (country == "AT") {redirectTo("https://curalife.at", false)} // If Austria
         else if (country == "KW") {redirectTo("https://trycuralife.com", false)} // If Kuwait
+        {% if shop.name == "CuraLife" %}
+          else if (!countriesUS.includes(country)) { // If host is US but not on US Countries
+            redirectTo("global.curalife.com", true)
+          }
+        {% elsif shop.name == "CuraLife Global" %}
+          else if (countriesUS.includes(country)) { // If Global and we are on US Countries so go US
+            redirectTo("curalife.com", true);
+          }
+        {% endif %}
+        {%- comment -%}
         else if ((host == "USA") && (!countriesUS.includes(country))) { // If host is US but not on US Countries
           redirectTo("global.curalife.com", true)
         }
         else if ((host == "Global") && (countriesUS.includes(country))) { // If Global and we are on US Countries so go US
           redirectTo("curalife.com", true);
         }
+        {%- endcomment -%}
 
       }, req.send(null);
     }
