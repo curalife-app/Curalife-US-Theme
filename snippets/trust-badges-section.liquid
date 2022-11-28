@@ -1,3 +1,9 @@
+{% if shop.name == "CuraLife" %}
+  {% assign shipping_worldwide = 'US Free Shipping' %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign shipping_worldwide = 'Free Shipping Above £99' %}
+{% endif %}
+
 <section id="trust-badges-section">
   <div class="container">
     <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="" loading="lazy">{{ shipping_worldwide }}</div>
