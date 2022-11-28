@@ -50,6 +50,9 @@
                   </div>
                   {% for image in product.images %}
                     <div class="swiper-slide">
+                      {% if shop.name == "CuraLife Global" %}
+                        <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
+                      {% endif %}
                       <div class="product-img">
                         <div class="img-wrap">
                           <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
