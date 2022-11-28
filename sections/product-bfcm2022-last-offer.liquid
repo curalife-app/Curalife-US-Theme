@@ -216,6 +216,8 @@
       </div>
     </div>
 
+    {% render 'trust-badges-section' %}
+
     {% if product.tags contains "CuraEats" %}
       {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
     {% endif %}
