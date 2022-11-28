@@ -8,7 +8,7 @@
   }
 </style>
 
-<div class="page-overflow">  
+<div class="page-overflow">
   {% render 'lps-aio-lp01-header-black-friday-aio', isTimer: false %}
   {% section 'lps-aio-lp01-hero-black-friday' %}
   {% section 'lps-featured-on' %}
@@ -24,10 +24,10 @@
   <div class="catalog">
   <div class="limited" id="limited">Limited time bonuses:</div>
   <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div></div>
-  
+
   {% assign Prods = page.content | split: ',' %}
   {% render 'products-catalog-section', Prods: Prods %}
-  {%- comment -%} {% render 'collection-curaeats-section', invertSectionBack: true %} {%- endcomment -%}
+  {% render 'trust-badges-section' %}
   {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
   {% section 'lps-return-policy' %}
   {% section 'lps-badges' %}
