@@ -145,12 +145,12 @@
                           <p>
                             <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
                             <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
-                            <span class="per-bottle" style="font-size: 17px;"> PER<br>BOTTLE</span>
+                            <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
                           </p>
                         </div>
                         <div class="total-and-shipping">
                           <div class="total-prices">
-                            TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                            TOTAL: <p style="font-weight: 100;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
                             <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
                           </div>
                         </div>
