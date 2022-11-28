@@ -58,7 +58,9 @@
           </div>
         </div>
       </div>
-      <p class="notice">*Offer applies when you buy a Curalin 2, 3 or 6 Pack</p>
+      {% unless product.title == "CuraLin BFCM 2022 Ending Offer" %}
+        <p class="notice">*Offer applies when you buy a Curalin 2, 3 or 6 Pack</p>
+      {% endunless %}
     </div>
   </div>
 </section>
