@@ -43,9 +43,9 @@
               <h3>{{section.settings.flow_titl}}</h3>
               <ul>
                 {% for block in section.blocks %}
-                {% if block.type == 'social' %}
-                <li><a href="{{block.settings.cntsocil_link}}" target="_blank"><i class="{{block.settings.cntsocil_icn}}"></i></a></li>
-                 {% endif %}
+                  {% if block.type == 'social' %}
+                    <li><a href="{{block.settings.cntsocil_link}}" target="_blank"><i class="{{block.settings.cntsocil_icn}}"></i></a></li>
+                  {% endif %}
                 {% endfor %}
               </ul>
             </div>
@@ -83,7 +83,6 @@
                     <textarea name="contact[body]" placeholder="Message"></textarea>
                 </label>
               </div>
-
 
               <div class="submit-form">
                 <button type="submit"  value="{{ 'contact.form.send' | t }}" class="main-btn">Submit</button>
