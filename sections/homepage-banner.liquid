@@ -20,34 +20,6 @@
         </div>
 
 
-
-<script>
-    brandsTicker = new Swiper('.hero-banner .ribbon.right', {
-        speed: 5000,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false
-        },
-        loop: true,
-        slidesPerView: '4',
-        allowTouchMove: false,
-        disableOnInteraction: true
-    });
-
-        brandsTicker = new Swiper('.hero-banner .ribbon.left', {
-            speed: 5000,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: true,
-                reverseDirection: false
-            },
-            loop: true,
-            slidesPerView: '4',
-            allowTouchMove: false,
-            grabCursor: true
-        });
-        </script>
-
 <style>
     .hero-banner {
         position: relative;
@@ -62,58 +34,7 @@
       z-index: 5;
   }
 
-  .ribbon {
-      background: white;
-      width: 1000px;
-      position: absolute;
-      overflow: hidden;
-  }
 
-  .ribbon .titles {
-      display: flex;
-      align-items: center;
-      transition-timing-function: linear !important;
-  }
-
-  .ribbon .titles .title {
-      display: flex;
-      align-items: center;
-      gap: 8%;
-  }
-
-  .ribbon .titles .title p {
-      margin: unset;
-      font-weight: bold;
-      font-size: clamp(18px, 2vw, 26px);
-  }
-
-  .ribbon:nth-child(1) {
-      bottom: 0;
-      right: -40px;
-      transform: rotate(350deg);
-      z-index: 10;
-  }
-
-  .ribbon:nth-child(2) {
-      top: 50px;
-      right: -40px;
-      transform: rotate(15deg);
-      opacity: 0.3;
-      filter: blur(2px);
-  }
-
-  .ribbon:nth-child(3) {
-      bottom: 0;
-      left: -200px;
-      transform: rotate(10deg);
-      opacity: 0.5;
-  }
-
-  .ribbon:nth-child(4) {
-      top: 50px;
-      transform: rotate(345deg);
-      right: 65vw;
-  }
 
   .blink_text {
       animation-name: blinker;
@@ -236,14 +157,12 @@
   .container .black-friday .titles .shop-now-hero .main-btn {
       font-family: 'PP Radio Grotesk';
       font-weight: 700;
-      background: #FFFFFF;
+      background: #4B643D;
       text-align: center;
-      color: #222222;
-      border: none;
-      text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+      color: #FFFFFF;
+      border: #4B643D;
+      border-radius: 4px;
       padding: 12px 4vw;
-      box-shadow: 0px 0px 42px 0px rgb(255 255 255 / 80%);
-      border-bottom: 2px solid #0000008f;
       font-size: clamp(0px, 2vw, 33px);
   }
 
@@ -263,30 +182,7 @@
           padding: unset;
       }
 
-      .ribbon .titles .title {
-          display: flex;
-          align-items: center;
-          gap: 7vw;
-      }
 
-      .ribbon:nth-child(1) {
-          bottom: 22vw;
-          transform: rotate(350deg);
-      }
-
-      .ribbon:nth-child(2) {
-          transform: rotate(5deg);
-          top: 70vw;
-      }
-
-      .ribbon:nth-child(3) {
-          transform: rotate(60deg);
-          left: -96vw;
-      }
-
-      .ribbon:nth-child(4) {
-          display: none;
-      }
 
       .container .black-friday .titles .shop-now-hero {
           justify-content: center;
