@@ -78,8 +78,7 @@
                     <div class="swiper-slide">
                       <div class="thumbs-img">
                         <div class="img-wrap">
-                          {% assign imgUrl = "product-aio-product-thumbnail-" | append: i | append: ".png" %}
-                          <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
+                          <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" alt="" loading="lazy">
                         </div>
                       </div>
                     </div>
