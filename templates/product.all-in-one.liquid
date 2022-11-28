@@ -1,4 +1,4 @@
-{% if store.name = "CuraLife" %}
+{% if shop.name == "CuraLife" %}
   {% assign curalifeUS = true %}
   {% assign shipping_worldwide = 'US Free Shipping'}
 {% else %}
@@ -52,8 +52,8 @@
           <style>
 
        
-            .main-slider .main-slider-vector-bg{
-            display:{% if curalifeUS==true %}none{% else %}block{% endif %};
+            .main-slider .main-slider-vector-bg: :nth-child(1) {
+               display:{% if curalifeUS==true %}none{% else %}block{% endif %};
           }
           .free-shipping {
             position: absolute;
