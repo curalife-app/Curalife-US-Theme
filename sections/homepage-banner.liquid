@@ -4,11 +4,12 @@
         <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a>
         <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy">
      </div>
-   </div>      
+   </div> 
+   <div class="bottom-snow">
+      <img  src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="man-woman" loading="lazy">
+   </div>     
  </div>
- <div class="bottom-snow">
-    <img  src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="man-woman" loading="lazy">
- </div>
+ 
 
 
 <style>
@@ -16,6 +17,12 @@
         position: relative;
         background-color: #B5141F;       
         overflow: hidden;
+    }
+
+    .hero-banner .bottom-snow {
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
     }
 
   .hero-banner .container {
