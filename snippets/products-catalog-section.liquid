@@ -75,8 +75,6 @@
           </div>
         </div>
       {% endfor %}
-
-      {% render 'trust-badges-section' %}
     </div>
 </section>
 
@@ -331,33 +329,6 @@
   #product-catalog-section .icofont-star:before {
       content: "\f000";
   }
-
-  #product-catalog-section .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      font-size: 18px;
-      margin-top: 30px;
-  }
-
-  #product-catalog-section .trust-badges .trust-badge {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      text-align: center;
-      align-items: center;
-      text-transform: uppercase;
-  }
-
-  #product-catalog-section .trust-badges .trust-badge img {
-      margin-right: 10px;
-      height: 5vw;
-      width: 10vw;
-      object-fit: contain;
-      max-width: 40px;
-      max-height: 30px;
-  }
-
   @media screen and (max-width:760px) {
     #product-catalog-section .product-card {
         width: 100%;
@@ -396,22 +367,6 @@
 
     #product-catalog-section .product-card .info .btn .main-btn {
         font-size: 5vw;
-    }
-
-    #product-catalog-section .trust-badges {
-        gap: unset;
-        justify-content: space-between;
-        display: none;
-    }
-
-    #product-catalog-section .trust-badges .trust-badge {
-        font-size: 3vw;
-        flex-direction: column;
-    }
-
-    #product-catalog-section .trust-badges .trust-badge img {
-        height: 20px;
-        width: 40px;
     }
   }
 </style>
