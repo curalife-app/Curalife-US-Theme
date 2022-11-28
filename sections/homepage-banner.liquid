@@ -8,9 +8,7 @@
 
         </div>
         </div>
-        <div class="bottom-snow">
-            <img class="snow-img" src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="snow-bottom" loading="lazy">
-        </div>
+       
         </div>
 
 
@@ -18,6 +16,7 @@
     .hero-banner {
         position: relative;
         background-color: #B5141F;
+        background-image: url("{{ 'hs-bottom-snow.png' | asset_url }}");
         background-position: bottom;
         overflow: hidden;
     }
@@ -56,10 +55,7 @@
       max-width: 450px;
   }
 
-  .hero-banner .bottom-snow {
-    position: absolute;
-    bottom: 0;
-  }
+
 
 
   @media screen and (max-width: 760px) {
