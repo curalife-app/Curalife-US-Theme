@@ -17,9 +17,10 @@
             a gift this season!
         </div>
         <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a></div>
-      
-        <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy">
        
+        <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy">
+        <img class="shadow-img" src="{{ 'hs-img-shadow.png' | asset_url }}" alt="shadow" loading="lazy">
+    
      </div>
    </div> 
    <div class="bottom-snow">
@@ -112,7 +113,7 @@
     color: #FFFFFF;
   }
 
-  .hero-banner .container .holiday-sale .text-button .main-btn {
+  .container .holiday-sale .text-button .main-btn {
     max-width: 205px;
       font-family: 'PP Radio Grotesk';
       font-weight: 700;
@@ -124,8 +125,11 @@
       font-size: clamp(20px, 2vw, 28px);
   }
 
+  .container .holiday-sale .img-wrap {
+    
+  }
 
-  .hero-banner .container .holiday-sale .main-img {   
+  .container .holiday-sale .main-img {   
       position: absolute;
       right: 230px;
       bottom: 0px;
@@ -134,6 +138,14 @@
       z-index: 3;
   }
 w
+  .container .holiday-sale .shadow-img img {   
+      position: absolute;
+      right: 230px;
+      bottom: 0px;
+      object-fit: contain;
+      height: max(300px,26vw);
+      z-index: 2;
+  }
 
   @media screen and (max-width: 1008px){
     .snowflake img {
