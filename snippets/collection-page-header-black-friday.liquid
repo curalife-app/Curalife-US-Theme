@@ -36,7 +36,7 @@
   </div>
 </div>
 
-{% if ifTimer %}
+{% if ifTimer or product.title == 'CuraLin BFCM 2022 Ending Offer' %}
   <div class="countdown-wrapper mobile">
     {% render 'countdown-timer', timerAlreadyRun: true %}
   </div>
