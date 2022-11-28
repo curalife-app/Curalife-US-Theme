@@ -64,8 +64,10 @@
   <!-- Curalife Shopify Only Google Tag Manager -->
   {% render 'layout.head.google-tag-manager'%}
 
-  <!-- ADDRESS VALIDATOR -->
-  <script async src="https://d3ox8tdk614ykk.cloudfront.net/pobox_checker.js"></script>
+  {% if shop.name == "CuraLife Global" %}
+    <!-- ADDRESS VALIDATOR -->
+    <script async src="https://d3ox8tdk614ykk.cloudfront.net/pobox_checker.js"></script>
+  {% endif %}
 
   <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
 
