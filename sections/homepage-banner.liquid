@@ -10,13 +10,14 @@
            </div>
            {% endfor %}
         </div>
+        <div class="text-and-img">
         <div class="text-button">
         <div class="holiday-title">
             Give yourself
             a gift this season!
         </div>
         <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a></div>
-        <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy">
+        <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy"></div>
      </div>
    </div> 
    <div class="bottom-snow">
@@ -86,6 +87,9 @@
   .hero-banner .container .holiday-sale {
       display: flex;
       justify-content: center;
+  }
+  .hero-banner .container .holiday-sale .text-and-img {
+    display: flex;
   }
 
   .hero-banner .container .holiday-sale .text-button {
