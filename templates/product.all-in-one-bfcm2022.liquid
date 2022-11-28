@@ -1,5 +1,6 @@
 
 {% if shop.name == "CuraLife" %}
+    {% assign curalifeUS = true %} 
     {% assign shipping_worldwide = 'US Free Shipping' %}
       {% assign challange_value = 150 %}
       {% assign curaeats_value = 49 %}
@@ -483,6 +484,12 @@
   </section>
   {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
 </div>
+<style>
+  .main-slider .main-slider-vector-bg:nth-child(1) {
+      display:{% if curalifeUS == true %}none{% else %}block{% endif %};
+  }
+
+</style>
 
 <script>
   // Back To Top Button
