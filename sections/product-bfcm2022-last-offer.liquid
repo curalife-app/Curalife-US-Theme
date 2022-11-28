@@ -116,6 +116,15 @@
             <div class="sub-title">
               <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
               <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
+
+              <style>
+                sub-title p {
+                  padding-top: unset;
+                  font-size: 16px;
+                  color: #6f6f6f;
+                  margin-top: -5px;
+                }
+              </style>
             </div>
 
             {% capture CFH %}{{ content_for_header }}{% endcapture %}
