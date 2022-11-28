@@ -513,6 +513,10 @@
     $('html, body').animate({scrollTop:0}, '300');
   });
 
+  if($(".variant-box").last()) {
+    $(".main-slider-vector-bg").hide();
+  }
+
   // Check Radio Button on Variant Box Click
   $(".variant-box").click(function() {
     $(this).find('input[type=radio]').prop('checked', true);
@@ -527,7 +531,7 @@
 
   $( document ).ready(function() {
     $(".variant-box").last().trigger( "click" );
-    $(".main-slider-vector-bg").hide();
+    
 
   });
 
