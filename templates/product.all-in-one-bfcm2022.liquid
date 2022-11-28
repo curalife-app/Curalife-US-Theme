@@ -28,7 +28,8 @@
                   <div class="swiper-slide">
                     <div class="product-img">
                       <div class="img-wrap">
-                        <img src="{{ "product-aio-product-thumbnail-0{% if shop.name == "CuraLife Global" %}-global{% endif %}.png" | asset_url }}" alt="" loading="lazy">
+                        {% if shop.name == "CuraLife Global" %}{% assign globalAddition = '-global' %}{% endif %}
+                        <img src="{{ "product-aio-product-thumbnail-0" | append: globalAddition | append: ".png" | asset_url }}" alt="" loading="lazy">
                       </div>
                     </div>
                   </div>
