@@ -17,10 +17,10 @@
             a gift this season!
         </div>
         <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a></div>
-        <div class="img-wrap">
+       
         <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy">
         <img class="shadow-img" src="{{ 'hs-img-shadow.png' | asset_url }}" alt="shadow" loading="lazy">
-    </div>
+    
      </div>
    </div> 
    <div class="bottom-snow">
@@ -135,6 +135,16 @@
       bottom: 0px;
       object-fit: contain;
       height: max(300px,26vw);
+      z-index: 3;
+  }
+w
+  .container .holiday-sale .shadow-img {   
+      position: absolute;
+      right: 230px;
+      bottom: 0px;
+      object-fit: contain;
+      height: max(300px,26vw);
+      z-index: 2;
   }
 
   @media screen and (max-width: 1008px){
