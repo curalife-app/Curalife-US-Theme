@@ -4,7 +4,7 @@
 {% elsif shop.name == "CuraLife Global" %}
   {% assign challange_value = 0 %}
   {% assign curaeats_value = 17 %}
-{% endif %}17
+{% endif %}
 
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
