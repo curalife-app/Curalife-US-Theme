@@ -74,6 +74,8 @@
             redirectTo("curalife.com", true);
           }
         {% endif %}
+
+        {%- comment -%} TEMP: Old solution {%- endcomment -%}
         {%- comment -%}
         else if ((host == "USA") && (!countriesUS.includes(country))) { // If host is US but not on US Countries
           redirectTo("global.curalife.com", true)
