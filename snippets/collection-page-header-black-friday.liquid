@@ -15,7 +15,7 @@
         </div>
 
         <div class="title desktop swiper-slide">
-          {% if ifTimer %}
+          {% if ifTimer or product.title == 'CuraLin BFCM 2022 Ending Offer' %}
             <div class="countdown-wrapper">
               {% if forloop.index == 1 %}{% assign timerAlreadyRun = false %}{% else %}{% assign timerAlreadyRun = true %}{% endif %}
               {% render 'countdown-timer', timerAlreadyRun: timerAlreadyRun %}
