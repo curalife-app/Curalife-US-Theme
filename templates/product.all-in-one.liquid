@@ -53,7 +53,7 @@
 
        
           .main-slider-vector-bg:nth-child(1){
-            display:{%if curalifeUS==true %}none{% else %}block{% endif %};
+            display:{% if curalifeUS==true %}none{% else %}block{% endif %};
           }
           .free-shipping {
             position: absolute;
