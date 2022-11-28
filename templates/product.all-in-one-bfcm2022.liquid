@@ -28,7 +28,7 @@
                   <div class="swiper-slide">
                     <div class="product-img">
                       <div class="img-wrap">
-                        <img src="{{ "product-aio-product-thumbnail-0.png" | asset_url }}" alt="" loading="lazy">
+                        <img src="{{ "product-aio-product-thumbnail-0{{ if shop.name == "CuraLife Global" }}-global{% endif %}.png" | asset_url }}" alt="" loading="lazy">
                       </div>
                     </div>
                   </div>
@@ -514,7 +514,7 @@
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
   });
-{%- comment -%} 
+{%- comment -%}
   if($(".variant-box").last()) {
     $(".main-slider-vector-bg").hide();
   } {%- endcomment -%}
@@ -523,7 +523,7 @@
   $(".variant-box").click(function() {
     $(this).find('input[type=radio]').prop('checked', true);
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
-   
+
     // Save Text Change
     let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
@@ -533,11 +533,11 @@
 
   $( document ).ready(function() {
     $(".variant-box").last().trigger( "click" );
-    
+
 
   });
 
-  
+
 
   // Buy Button Functionality
   $("#buy-button").click(function() {
