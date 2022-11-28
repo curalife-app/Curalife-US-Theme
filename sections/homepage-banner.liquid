@@ -1,6 +1,10 @@
 <div class="hero-banner">
   <div class="container">
     <div class="holiday-sale">
+        <div class="holiday-title">
+            Give yourself
+            a gift this season!
+        </div>
         <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a>
         <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy">
      </div>
@@ -40,6 +44,15 @@
       justify-content: center;
       align-items: center;
       height: 100%;
+  }
+
+  .hero-banner .container .holiday-sale .holiday-title {
+    font-family: 'PP Radio Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(50px, 2vw, 80px);
+    line-height: 78px;
+    color: #FFFFFF;
   }
 
   .container .holiday-sale .main-btn {
