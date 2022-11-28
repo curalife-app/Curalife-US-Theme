@@ -114,7 +114,8 @@
         <div class="product-info">
           <div class="title-wrapper">
             <div class="sub-title">
-              <h1>{% if product.title contains '1+1' %}<i class="icofont-star"></i> Curalin Buy 1 Get 1 <i class="icofont-star"></i>{% else %}{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}{% endif %}</h1>
+              <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+              <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
             </div>
 
             {% capture CFH %}{{ content_for_header }}{% endcapture %}
