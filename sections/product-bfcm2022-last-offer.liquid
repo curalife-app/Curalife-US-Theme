@@ -1,8 +1,12 @@
 {% if shop.name == "CuraLife" %}
-  {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 12800 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
+  {% assign challange_value = 99 %}
+  {% assign curaeats_value = 29 %}
 {% elsif shop.name == "CuraLife Global" %}
-  {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 1700 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
-{% endif %}
+  {% assign challange_value = 0 %}
+  {% assign curaeats_value = 17 %}
+{% endif %}17
+
+{% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'collection-page-header-black-friday' %}
@@ -202,7 +206,7 @@
     </div>
 
     {% if product.tags contains "CuraEats" %}
-      {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
+      {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
     {% endif %}
   </div>
 
