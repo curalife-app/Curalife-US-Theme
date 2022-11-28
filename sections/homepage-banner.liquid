@@ -123,12 +123,11 @@
   }
 
   .container .holiday-sale .main-img {   
-    max-width: 50%;
       position: absolute;
       right: 230px;
-      bottom: -57px;
+      bottom: 0px;
       object-fit: contain;
-      height: max(300px,27vw);
+      height: max(300px,26vw);
   }
 
   @media screen and (max-width: 1008px){
@@ -170,7 +169,7 @@
         right: 0;
     }
       .hero-banner {
-          height: 135vw;
+        height: max(100vw, 32vw);
       }
 
       .container .holiday-sale .text-button .main-btn {
@@ -188,6 +187,8 @@
           width: unset;
           object-fit: cover;
           max-width: 100vw;
+          height: max(59vw, 29vw);
+          right: 10vw;
       }
   }
 </style>
