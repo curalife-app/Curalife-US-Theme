@@ -11,8 +11,8 @@
       </div>
       <div class="container">
         <div class="badge">
-          <div class="badge-bg">
-            <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
+          <div class="badge-bg" style="display: none;">
+            {%- comment -%} <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p> {%- endcomment -%}
           </div>
         </div>
         <h3>30 Day Life Changing Program</h3>
@@ -134,11 +134,10 @@
     line-height: 1.2em;
   }
 
-  #curaeats-section .challange .badge-img {
-    
+  #curaeats-section .challange .badge-img { 
     position: absolute;
     top: 0;
-    right: 100px;
+    right: 300px;
   }
 
   #curaeats-section .challange .badge {
