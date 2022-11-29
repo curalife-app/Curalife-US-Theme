@@ -10,10 +10,10 @@
         <img src="{{ 'hs-badge.png' | asset_url }}" alt="" loading="lazy">
       </div>
       <div class="container">
-        <div class="badge">
+        {%- comment -%} <div class="badge">
           <div class="badge-bg">
             <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
-          </div>
+          </div> {%- endcomment -%}
         </div>
         <h3>30 Day Life Changing Program</h3>
         <p>There is a science to healthy blood sugar, and we’ve cracked it.<br><br>
