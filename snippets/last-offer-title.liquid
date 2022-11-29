@@ -2,9 +2,9 @@
   <div class="catalog">
         {% if shop.name == "CuraLife" %}
           <div class="limited">{% if product.title == "CuraLin BFCM 2022 Ending Offer" %}Special Offer <span style="color:#ED073E">PLUS</span> {% endif %}Limited Time Bonuses:</div>
-          <div class="changing-programm">30 Day Life Changing Program (Valued {{ shop.currency.symbol }}{{ curaeats_value }}) & CuraEats Meal Plan App (Valued {{ shop.currency.symbol }}{{ curaeats_value }})</div>
+          <div class="changing-programm">30 Day Life Changing Program (Valued ${{ curaeats_value }}) & CuraEats Meal Plan App (Valued ${{ curaeats_value }})</div>
         {% else %}
-          <h1 style="text-align:center;font-size:30px;">Limited Time Bonus: CuraEats Meal Plan App (Valued {{ shop.currency.symbol }}{{ curaeats_value }})</h1>
+          <h1 style="text-align:center;font-size:30px;">Limited Time Bonus: CuraEats Meal Plan App (Valued £{{ curaeats_value }})</h1>
         {% endif %}
     </div>
 </section>
