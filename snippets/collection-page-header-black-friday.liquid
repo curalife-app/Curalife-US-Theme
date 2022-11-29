@@ -2,7 +2,9 @@
 
 <div id="sale-banner">
   <div class="container">
-    <img class="logo" src="{{ 'hs-santa-logo-green.png' | asset_url }}" alt="logo">
+    {% if isLogo %}
+      <img class="logo" src="{{ 'hs-santa-logo-green.png' | asset_url }}" alt="logo">
+    {% endif %}
     <p class="get-into-holiday">Get into the holiday spirit!</p>
   </div>
 </div>
