@@ -28,42 +28,44 @@
           <div class="product-slider">
             <div class="bg"></div>
 
-          <div class="sliders-group">
-            <div class="main-slider">
-              {% if product.compare_at_price > product.price %}
-                <div class="save-badge">
-                  <p class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
-                </div>
-                <style>
-                  .save-badge {
-                    background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    z-index: 4;
-                    font-family: 'PP Radio Grotesk';
-                    font-weight: 700;
-                    font-size: clamp(20px, 2vw, 22px);
-                    text-align: center;
-                    color: #C00101;
-                  }
+            <div class="sliders-group">
+              <div class="main-slider">
+                {% if product.compare_at_price > product.price %}
+                  <div class="save-badge">
+                    <p class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
+                  </div>
 
-                  .save-badge-title {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 4.5rem 0;
-                    margin: unset;
-                  }
-                </style>
-              {% endif %}
+                  <style>
+                    .save-badge {
+                      background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      width: 100px;
+                      z-index: 4;
+                      font-family: 'PP Radio Grotesk';
+                      font-weight: 700;
+                      font-size: clamp(20px, 2vw, 22px);
+                      text-align: center;
+                      color: #C00101;
+                    }
 
-              {% assign image = product.images | first %}
-              <div class="product-img">
-                <div class="img-wrap">
-                  <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
+                    .save-badge-title {
+                      display: flex;
+                      flex-direction: column;
+                      padding: 4.5rem 0;
+                      margin: unset;
+                    }
+                  </style>
+                {% endif %}
+
+                {% assign image = product.images | first %}
+                <div class="product-img">
+                  <div class="img-wrap">
+                    <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
+                  </div>
                 </div>
               </div>
             </div>
