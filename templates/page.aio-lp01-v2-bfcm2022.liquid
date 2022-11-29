@@ -1,12 +1,11 @@
+{% if shop.name == "CuraLife" %}
+  {% assign curaeats_value = 29 %}
+  {% assign challange_value = 99 %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign curaeats_value = 17 %}
+{% endif %}
+
 {% layout 'theme.aio-lp01' %}
-
-<style>
-  body {padding-top:60px;}
-
-  @media screen and (max-width: 768px) {
-    body {padding-top:0px;}
-  }
-</style>
 
 <div class="page-overflow">
   {% render 'lps-aio-lp01-header-black-friday-aio', isTimer: true %}
@@ -22,13 +21,13 @@
   {% section 'lps-supported-community' %}
   {%- comment -%} <div class="green-strip" id="green-strip">BEST. PRICE. EVER.</div> {%- endcomment -%}
   <div class="catalog">
-  <div class="limited" id="limited">Limited time bonuses:</div>
-  <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div></div>
+
 
   {% assign Prods = page.content | split: ',' %}
+  {% render 'last-offer-title', challange_value: challange_value, curaeats_value: curaeats_value %}
   {% render 'products-catalog-section', Prods: Prods %}
   {% render 'trust-badges-section' %}
-  {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
+  {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
   {% section 'lps-return-policy' %}
   {% section 'lps-badges' %}
   {% section 'lps-faq' %}
@@ -38,8 +37,11 @@
   <div id="floating-cta">ORDER NOW</div>
 </div>
 
-
 <style>
+  body {
+    padding-top:60px;
+  }
+
    .catalog  {
     margin-top: 20px;
       display: flex;
@@ -60,18 +62,7 @@
 
   }
 
-
-  @media screen and (max-width:760px) {
-
-  .changing-programm {
-      padding: 0 1vw;
-    }
-
-  }
-</style>
-
-<style>
-  .green-strip {
+.green-strip {
       top: 100px;
       width: 100%;
       background: #FFE746;
@@ -111,6 +102,16 @@
     font-size: 40px;
     text-align: center;
     display: none;
+  }
+
+  @media screen and (max-width:760px) {
+    body {
+      padding-top:0px;
+    }
+
+  .changing-programm {
+      padding: 0 1vw;
+    }
   }
 </style>
 
