@@ -10,8 +10,8 @@
         <img src="{{ 'hs-badge.png' | asset_url }}" alt="" loading="lazy">
       </div>
       <div class="container">
-        <div class="badge">
-          <div class="badge-bg" style="display: none;">
+        <div class="badge" style="display: none;">
+          <div class="badge-bg">
             {%- comment -%} <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p> {%- endcomment -%}
           </div>
         </div>
@@ -137,7 +137,7 @@
   #curaeats-section .challange .badge-img { 
     position: absolute;
     top: 0;
-    right: 300px;
+    right: 100px;
   }
 
   #curaeats-section .challange .badge {
