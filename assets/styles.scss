@@ -82,9 +82,9 @@ input[type=number] {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: white;
-  background: #FFB22D;
+  background: #404733;
   border-radius: 2px;
-  border: 1px solid #FFB22D;
+  border: 1px solid #404733;
   transition: color var(--transition), border-color var(--transition), background-color var(--transition);
 
   i {
@@ -101,8 +101,8 @@ input[type=number] {
 
   &:hover {
     color: var(--white);
-    background-color: #db9d30;
-    border-color: #db9d30;
+    background-color: #404733;
+    border-color: #404733;
   }
 }
 
