@@ -498,7 +498,11 @@
                 </style>
                 {% endif %}
 
-                {% assign image = product.images | first %}
+               
+                  <div class="save-badge">
+                    <div class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
+                  </div>
+              
                 <div class="product-img">
                   <div class="img-wrap">
                     <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
@@ -648,6 +652,31 @@
       {% render 'collection-curaeats-section-last-offer', challange_value: 99, curaeats_value: 29 %}
     {% endunless %}
   </div>
+
+  
+    <style>
+      .save-badge {
+    background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    z-index: 4;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 22px);
+    text-align: center;
+    color: #C00101;
+  }
+
+  .save-badge-title {
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem 0;
+  }
+  </style>
 
 <style>
   .product-wrap {
