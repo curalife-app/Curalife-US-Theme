@@ -1,4 +1,610 @@
 {% if shop.name == "CuraLife" %}
+  {% assign challange_value = 99 %}
+  {% assign curaeats_value = 29 %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign challange_value = 0 %}
+  {% assign curaeats_value = 17 %}
+{% endif %}
+
+{% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
+
+{% render 'script.round-converted-currency' %}
+{% render 'sale-banner', title: "Get into the holiday spirit!", color: "red" %}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<div class="product-data">
+    <div class="container">
+      {% if product.tags contains "CuraEats" %}
+        {% render 'last-offer-title' %}
+      {% endif %}
+
+      <div class="product-wrap">
+        <div class="product-wrap-wrapper" style="position: relative">
+          <div class="product-slider">
+            <div class="bg">
+
+              {%- comment -%} Ribbon for only Single CuraLin {%- endcomment -%}
+              {% if product.title == "CuraLin BFCM 2022" %}
+              <div class="ribbons">
+                <div class="ribbon">
+                  <div class="titles">
+                    {% for i in (1..4) %}
+                    <div class="title">
+                      <p>BLACK FRIDAY</p>
+                      <i class="icofont-star"></i>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+              <style>
+                .ribbon {
+                  background: white;
+                  position: absolute;
+                  overflow: hidden;
+                }
+
+                .ribbon .titles {
+                  display: flex;
+                  align-items: center;
+                  transition-timing-function: linear !important;
+                }
+
+                .ribbon .titles .title {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-evenly;
+                  width: 200px;
+                }
+
+                .ribbon .titles .title p {
+                  margin: unset;
+                  font-weight: bold;
+                  font-size: 20px;
+                }
+
+                .ribbon {
+                  top: 55px;
+                  right: -40px;
+                  transform: rotate(8deg);
+                  opacity: 0.3;
+                  filter: blur(2px);
+                }
+
+                @media screen and (max-width: 760px) {
+                  .ribbon .titles .title {
+                    display: flex;
+                    align-items: center;
+                    width: 200px !important;
+                  }
+
+                  .ribbon {
+                    transform: rotate(5deg);
+                    top: 20vw;
+                  }
+                }
+              </style>
+            {% endif %}
+          </div>
+          {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+          {% assign quantity_by_cents = quantity | times: 100 %}
+          {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
+          {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
+
+          {% if product.compare_at_price > product.price %}
+            <div class="discount"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
+          {% endif %}
+
+            <div class="sliders-group">
+              <div class="main-slider">
+                <div class="save-badge">
+                  <div class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
+                </div>
+                <style>
+                    .save-badge {
+                  background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 100px;
+                  z-index: 4;
+                  font-family: 'PP Radio Grotesk';
+                  font-weight: 700;
+                  font-size: clamp(20px, 2vw, 22px);
+                  text-align: center;
+                  color: #C00101;
+                }
+
+                .save-badge-title {
+                  display: flex;
+                  flex-direction: column;
+                  padding: 4.5rem 0;
+                }
+                </style>
+                {% assign image = product.images | first %}
+                <div class="product-img">
+                  <div class="img-wrap">
+                    <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-info">
+          <div class="title-wrapper">
+            <div class="sub-title">
+              <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+              <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
+
+              <style>
+                .sub-title p {
+                  padding-top: unset;
+                  font-size: 16px;
+                  color: #6f6f6f;
+                  margin-top: -5px;
+                }
+              </style>
+            </div>
+
+            {% capture CFH %}{{ content_for_header }}{% endcapture %}
+
+            {% if CFH contains 'adminBarInjector' %}
+            {% assign admin = true %}
+            {% elsif CFH contains 'admin-bar-iframe' %}
+            {% assign admin = true %}
+            {% elsif CFH contains 'preview_bar_injector-' %}
+            {% assign admin = true %}
+            {% endif %}
+
+            {% if admin %}
+              <div class="edit"><a href="/admin/products/{{ product.id }}"><i class="icofont-ui-edit"></i></a></div>
+            {% endif %}
+          </div>
+                      <div class="description">
+                        <div class="price">
+                          <p>
+                            <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                            <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
+                            <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
+                          </p>
+                        </div>
+                        <div class="total-and-shipping">
+                          <div class="total-prices" style="display:flex;align-items:center">
+                            TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+                            <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+                          </div>
+                        </div>
+
+                        <style>
+                            .total-and-shipping {
+                              margin-top: 10px;
+                              display: flex;
+                              font-family: 'PP Radio Grotesk';
+                              font-weight: 700;
+                              font-size: 20px;
+                            }
+
+                            .total-and-shipping .free-shipping1 .free-red {
+                              color: #ED073E;
+                            }
+
+                            @media screen and (max-width: 760px) {
+                              .total-and-shipping {
+                                justify-content: center;
+                              }
+                            }
+                        </style>
+
+            <div class="form-wrap">
+              <form method="post" id="addTocartForm" action="/cart/add">
+                <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                <div class="qty-data">
+                  <p>Quantity</p>
+                  <div class="qty-control">
+                    <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                    <label><input type="number" name="quantity" value="1" maxlength="4"></label>
+                    <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
+                  </div>
+                </div>
+                {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
+                  {% if current_variant.available %}
+                    <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
+                  {% else %}
+                    <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' }}</button>
+                  {% endif %}
+                {% else %}
+                  <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+                {% endif %}
+              </form>
+
+              {% if product.tags contains 'CuraEats' %}
+                  <p style="color:#C00101;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">+ {% if shop.name == "CuraLife" %}Life Changing Bonus{% else %}CuraEats App Bonus{% endif %} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+                  <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
+              {% endif %}
+              </div>
+
+              <div class="extra-info">
+
+                <div class="text-wrap">
+                  <p>CuraLin is different than anything else available on the market right now, and anything you may have tried in the past.</p>
+                    <p>CuraLin offers people needing advanced glucose support an effective and 100% natural option for maintaining healthy glucose levels.</p>
+                    <p>Each vegan-friendly capsule contains our powerful Ayurvedic formula, free from dairy, gluten, preservatives, and artificial colors & flavors.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% render 'trust-badges-section' %}
+
+    {% if product.tags contains "CuraEats" %}
+      {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
+    {% endif %}
+  </div>
+
+<style>
+  .product-wrap {
+    justify-content: center;
+  }
+
+  .sliders-group {
+    margin-top: 20px;
+  }
+
+  .product-slider {
+    overflow: hidden;
+    padding: unset;
+    padding-top: 40px;
+    width: 460px;
+  }
+
+  .product-slider:before {
+    background: unset;
+  }
+
+  .product-slider .sliders-group:before {
+    background: unset;
+  }
+
+  .product-slider .bg {
+    position: absolute;
+    z-index: -1;
+    background-color: #222222;
+    height: 65%;
+    width: 100%;
+  }
+
+  .product-slider .discount {
+    left: -5%;
+    padding: unset;
+    width: 110%;
+    top: 250px;
+    transform: rotate(-8.5deg);
+  }
+
+  .text-wrap p {
+    font-size: 17px;
+  }
+
+  .product-slider .discount {
+    display: {% if product.title contains '1+1' or product.title contains 'Special Offer' %}none{% else%}flex{% endif %};
+    justify-content: center;
+    background: #FFE746;
+    box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
+    font-size: 30px;
+    font-weight: bold;
+    gap: 10px;
+  }
+
+  .product-slider .discount p {
+    margin: 0;
+  }
+
+  .main-btn {
+    background: #FFE746 !important;
+    border-color: #FFE746 !important;
+    color: black !important;
+  }
+
+  .wisepops-root {
+    display: none;
+  }
+
+  .product-data {
+    padding-top: 0 !important;
+  }
+  .thumbs-slider .swiper-slide {
+    height: 50px !important;
+  }
+
+  .title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .edit a {
+    margin-left: 15px;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 760px) {
+    .product-data {
+      padding-top: 15px;
+    }
+
+    .product-slider {
+      padding-top: 15px;
+      width: 100%;
+    }
+
+    .product-slider .discount {
+      top: 40vw;
+    }
+
+    .product-slider .discount {
+      padding: 0.5vw;
+    }
+
+    .product-slider .discount p {
+      font-size: 6vw;
+    }
+
+    .title-wrapper {
+      justify-content: center;
+      position: relative;
+    }
+
+    .edit a {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+</style>
+<style>
+    .product-info .description .price {
+        padding-bottom: unset !important;
+    }
+
+    .product-info .description .price p {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .new-price {
+        font-family: 'PP Radio Grotesk';
+        font-weight: 700;
+        font-size: clamp(41px, 10vw, 47px);
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    @media screen and (max-width: 760px) {
+        .product-info .description .price p {
+            justify-content: center;
+        }
+    }
+</style>
+
+<script>
+  // Change Quantity Widget On Product Page
+  $(document).on("click", ".product-data .qty-control a", function (e) {
+    e.preventDefault();
+    let newVal, $button = $(this),
+      inputObj = $button.closest(".qty-control").find("input"),
+      oldValue = inputObj.val();
+    if ($button.attr('data-act') === "+") {
+      newVal = parseInt(oldValue) + 1;
+    }
+    else {
+      newVal = parseInt(oldValue) - 1;
+    }
+
+    inputObj.val(newVal);
+  });
+</script>
+
+<script>
+  $(document).on("click", "#AddTCart", function () {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'add_to_cart',             // name of the event. In this case, it always must be add_to_cart
+      ecommerce: {
+      items: [{                           // an array with a product (or multiple products) that was added to a cart
+        item_name: '{{ product.title }}',
+        item_id: '{{ product.selected_or_first_available_variant.sku }}',
+        affiliation: '{{ shop.name }}',
+        price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
+        quantity: parseInt($(".qty-control input").val())
+      }]
+      },
+      email: '{{ customer.email }}',
+      phone: '{{ customer.phone }}',
+      name: '{{ customer.first_name }}',
+      surname: '{{ customer.last_name }}',
+      city: '{{ customer.customer_address.city }}',
+      state: '{{ customer.customer_address.province }}',
+      zip: '{{ customer.customer_address.zip }}',
+      country: '{{customer.customer_address.country_code | t}}',
+      user_agent: navigator.userAgent
+    });
+
+    woopra.track('add to cart', {
+      product_sku: '{{ product.selected_or_first_available_variant.sku }}',
+      product_name: '{{ product.title }}',
+      product_price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+      currency: '{{ shop.currency }}',
+      quantity: parseInt($(".qty-control input").val())
+    });
+  });
+</script>
+
+<script>
+  $(document).on("click", "#AddToCart", function (Event) {
+    $("#cart-upgrade-popup").slideToggle();
+    return false;
+  });
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'view_item',
+    ecommerce: {
+    items: [{
+      item_name: '{{ product.title }}',
+      item_id: '{{ product.selected_or_first_available_variant.sku }}',
+      affiliation: '{{ shop.name }}',
+      price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+      currency: '{{ shop.currency }}',
+      item_brand: 'CuraLife',
+      item_category: 'CuraLin',
+      quantity: 1
+    }]
+    },
+    email: '{{ customer.email }}',
+    phone: '{{ customer.phone }}',
+    name: '{{ customer.first_name }}',
+    surname: '{{ customer.last_name }}',
+    city: '{{ customer.customer_address.city }}',
+    state: '{{ customer.customer_address.province }}',
+    zip: '{{ customer.customer_address.zip }}',
+    country: '{{customer.customer_address.country_code | t}}',
+    user_agent: navigator.userAgent
+  });
+</script>
+
+<script>
+  var _learnq = _learnq || [];
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url | remove: '/en-au' | remove: '/en-ca' }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+    };
+
+    _learnq.push(['track', 'Viewed Product', item]);
+    _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+
+{% schema %}
+{
+  "name": "Proudct",
+  "class": "cart-content",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "prd_descript",
+      "label": "Description",
+      "default": "Add Description "
+    }, {
+      "type": "text",
+      "id": "prd_icn",
+      "label": "Add Icon",
+      "default": "icon-afterpay"
+    }, {
+      "type": "text",
+      "id": "prd_text",
+      "label": "Button Title",
+      "default": "Add Button Title "
+    }, {
+      "type": "url",
+      "id": "prd_url",
+      "label": "Button URL"
+    }, {
+      "type": "text",
+      "id": "ship_txt",
+      "label": "Shipping Title",
+      "default": "Add Shipping Title"
+    }, {
+      "type": "text",
+      "id": "ship_icn",
+      "label": "Shipping Icon",
+      "default": "icon-shipping"
+    }, {
+      "type": "header",
+      "content": "Upgrade Popup"
+    }, {
+      "type": "textarea",
+      "id": "first_up_title",
+      "label": "3-pack Title"
+    }, {
+      "type": "textarea",
+      "id": "first_up_text",
+      "label": "3-pack Text"
+    }, {
+      "type": "text",
+      "id": "first_btnup_text",
+      "label": "3-pack Btn"
+    }, {
+      "type": "textarea",
+      "id": "second_up_title",
+      "label": "6-pack Title"
+    }, {
+      "type": "textarea",
+      "id": "second_up_text",
+      "label": "6-pack Text"
+    }, {
+      "type": "text",
+      "id": "second_btnup_text",
+      "label": "6-pack Btn"
+    }, {
+      "type": "text",
+      "id": "continue_btn_text",
+      "label": "Continue Btn"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "prdct_tabs",
+      "name": "Product Tabs",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "tab_des",
+          "label": "Tab Description",
+          "default": "Enter Tab Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+
+
+
+
+
+
+{% if shop.name == "CuraLife" %}
   {% assign shipping_worldwide = 'US Free Shipping' %}
   {% assign challange_value = 128 %}
   {% assign curaeats_value = 49 %}
@@ -10,22 +616,9 @@
   {% assign currency_symbol = '£' %}
 {% endif %}
 
-{% if shop.name == "Csub-titleuraLife" %}
-  {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 12800 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
-{% elsif shop.name == "CuraLife Global" %}
-  {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 1700 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
-{% endif %}
 
-{% render 'script.round-converted-currency' %}
-{% if product.title contains '1+1' %}
-  {% render 'collection-page-header-black-friday-1-plus-1' %}
-{% elsif product.title contains 'Special Offer' %}
-{% render 'collection-page-header-cyber-monday' %}
-{% else %}
-  {% render 'collection-page-header-black-friday' %}
-{% endif %}
 
-{% assign current_variant = product.selected_or_first_available_variant %}
+
 
 <div class="product-data">
     <div class="container">
@@ -197,312 +790,10 @@
 
             <div class="sliders-group">
               <div class="main-slider">
-                {% if product.title contains 'Special Offer' %}
-                  <div class="special-offer-badge">
-                    <div class="badge-bg">
-                      <p><span class="rounded">{{ product.price | money | replace: ".00", "" }}</span></p>
-                      <p class="cap"><strike class="rounded">{{ product.compare_at_price | money | replace: ".00", "" }}</strike></p>
-                    </div>
-                  </div>
-
-                  <style>
-                    .special-offer-badge {
-                      width: 130px;
-                      height: 130px;
-                      background: #FFE746;
-                      border-radius: 50%;
-                      position: absolute;
-                      top: 60px;
-                      right: 80px;
-                      z-index: 2;
-                      font-size: 50px;
-                      font-family: 'Montserrat';
-                      text-align: center;
-                      font-weight: 700;
-                      border: 3px solid #FFE746;
-                      box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
-                    }
-
-                    .special-offer-badge .badge-bg {
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      border-radius: 50%;
-                      position: absolute;
-                      box-shadow: inset 0px 0px 0px 1px black;
-                      width: 100%;
-                      height: 100%;
-                      padding: 20px 10px;
-                      left: 0;
-                      top: 0;
-                    }
-
-                    .special-offer-badge p {
-                      margin: unset;
-                    }
-
-                    .special-offer-badge p.cap {
-                      font-size: 0.5em;
-                      font-weight: 500;
-                    }
-
-                    .product-slider .bg {
-                      height: 55% !important;
-                      top: 30% !important;
-                    }
-
-                    .product-slider .discount {
-                      top: 310px !important;
-                    }
-
-                    @media screen and (max-width: 760px) {
-                      .special-offer-badge {
-                        width: 30vw;
-                        height: 30vw;
-                        font-size: 10vw;
-                        top: 7vw;
-                        right: 15vw;
-                      }
-
-                      .product-slider .bg {
-                        height: 60% !important;
-                        top: unset !important;
-                      }
-
-                      .product-slider .discount {
-                        top: 250px !important;
-                      }
-                    }
-                  </style>
-                {% elsif product.title contains '1+1' %}
-                  <div class="ribbons">
-                    <div class="ribbon">
-                      <div class="titles">
-                        {% for i in (1..4) %}
-                        <div class="title">
-                          <p>CYBER MONDAY</p>
-                          <i class="icofont-star"></i>
-                        </div>
-                        {% endfor %}
-                      </div>
-                    </div>
-                  </div>
-
-                  <style>
-                    .ribbon {
-                      background: white;
-                      position: absolute;
-                      overflow: hidden;
-                    }
-
-                    .ribbon .titles {
-                      display: flex;
-                      align-items: center;
-                      transition-timing-function: linear !important;
-                    }
-
-                    .ribbon .titles .title {
-                      display: flex;
-                      align-items: center;
-                      justify-content: space-evenly;
-                      width: 200px;
-                    }
-
-                    .ribbon .titles .title p {
-                      margin: unset;
-                      font-weight: bold;
-                      font-size: 20px;
-                    }
-
-                    .ribbon {
-                      top: 55px;
-                      right: -40px;
-                      transform: rotate(8deg);
-                      opacity: 0.3;
-                    }
-
-                    @media screen and (max-width: 760px) {
-                      .ribbon .titles .title {
-                        display: flex;
-                        align-items: center;
-                        width: 200px !important;
-                      }
-
-                      .ribbon {
-                        transform: rotate(5deg);
-                        top: 7vw;
-                      }
-                    }
-                  </style>
-
-                  <style>
-                    .image-minor-wrapper img {
-                      position: absolute;
-                      z-index: 3;
-                    }
-
-                    .image-minor-wrapper img.main-img {
-                      top: 160px;
-                      left: 10px;
-                    }
-
-                    .image-minor-wrapper img.star-right {
-                      right: -54px;
-                      bottom: 60px;
-                    }
-
-                    .image-minor-wrapper img.star-left {
-                      top: 77px;
-                      left: -55px;
-                    }
-
-                    .product-slider .discount {
-                      display: none !important;
-                    }
-
-
-                    .product-slider .bg {
-                      background-color: unset;
-                      background-image: url("{{ 'bfcm-1-plus-1-bg.png' | asset_url }}");
-                    }
-
-
-                    .product-slider .main-slider .product-img {
-                      min-height: 420px;
-                    }
-
-                    .product-slider .main-slider .product-img .img-wrap {
-                      display: none;
-                    }
-
-                    .product-slider .main-slider .product-img .img-wrap img {
-                      height: unset;
-                    }
-
-                    .product-slider .main-slider .product-img .img-wrap img {
-                      object-fit: contain;
-                    }
-
-                    @media screen and (max-width: 760px) {
-                      .product-slider .main-slider .product-img {
-                        min-height: 88vw;
-                      }
-
-                      .product-info {
-                        width: 100%;
-                        padding: 0 15px 15px;
-
-                      }
-
-                      .image-minor-wrapper img.main-img {
-                        top: 18vw;
-                      }
-
-                      .image-minor-wrapper img.star-left {
-                        width: 30vw;
-                        top: 8vw;
-                        left: -7vw;
-                      }
-
-                      .image-minor-wrapper img.star-right {
-                        width: 30vw;
-                        right: -9vw;
-                        bottom: 24vw;
-                      }
-                    }
-                  </style>
-
-                {% endif %}
-                {% if product.title contains 'Special Offer' %}
-                <div class="ribbons">
-                    {% for i in (1..2) %}
-                    <div class="ribbon ">
-                      <div class="titles">
-                            {% for i in (1..4) %}
-                            <div class="title">
-                              <p>CYBER MONDAY</p>
-                              <i class="icofont-star"></i>
-                            </div>
-                            {% endfor %}
-                            </div>
-                            </div>
-                    {% endfor %}
-                </div>
-
-
-                <style>
-                  .ribbon {
-                    background: white;
-                    position: absolute;
-                    overflow: hidden;
-                  }
-
-                  .ribbon .titles {
-                    display: flex;
-                    align-items: center;
-                    transition-timing-function: linear !important;
-                  }
-
-                  .ribbon .titles .title {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    width: 200px;
-                  }
-
-                  .ribbon .titles .title p {
-                    margin: unset;
-                    font-weight: bold;
-                    font-size: 20px;
-                  }
-
-                  .ribbon:nth-child(2) {
-                    top: 130px;
-                    right: -40px;
-                    transform: rotate(8deg);
-                    opacity: 0.3;
-                  }
-
-                  .ribbon:nth-child(1) {
-                      background-color: #FFE746;
-                      bottom: 80px;
-                      right: -40px;
-                      transform: rotate(350deg);
-                      z-index: 10;
-                  }
-
-
-                  @media screen and (max-width: 760px) {
-                    .ribbon .titles .title {
-                      display: flex;
-                      align-items: center;
-
-                    }
-
-                    .ribbon:nth-child(1) {
-                        bottom: 11vw;
-                        transform: rotate(352deg);
-                    }
-
-                    .ribbon:nth-child(2) {
-                      transform: rotate(5deg);
-                      top: 8vw;
-                    }
-                  }
-
-                  @media screen and (max-width: 760px) {
-                    .product-slider .discount {
-                        top: 47vw !important;
-                    }
-                  }
-                </style>
-                {% endif %}
-
-               
                   <div class="save-badge">
                     <div class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
                   </div>
-              
+
                 <div class="product-img">
                   <div class="img-wrap">
                     <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
@@ -563,8 +854,8 @@
                         <p style="font-family: 'DM Sans';
                         font-weight: 700;
                         font-size: 16px;
-                        color: #C00101;">Life Changing Bonus ( <span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span>value)</p> 
-                      
+                        color: #C00101;">Life Changing Bonus ( <span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span>value)</p>
+
 {% if product.title contains 'Special Offer' %}
 <p class="special-offer-title"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
 <style>
@@ -653,30 +944,8 @@
     {% endunless %}
   </div>
 
-  
-    <style>
-      .save-badge {
-    background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    z-index: 4;
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: clamp(20px, 2vw, 22px);
-    text-align: center;
-    color: #C00101;
-  }
 
-  .save-badge-title {
-    display: flex;
-    flex-direction: column;
-    padding: 4.5rem 0;
-  }
-  </style>
+
 
 <style>
   .product-wrap {
