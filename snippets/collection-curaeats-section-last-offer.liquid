@@ -8,11 +8,13 @@
     <div class="challange">
       <div class="badge-img">
         <img src="{{ 'hs-badge.png' | asset_url }}" alt="" loading="lazy">
+        <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p> 
+
       </div>
       <div class="container">
         <div class="badge" style="display: none;">
           <div class="badge-bg">
-            {%- comment -%} <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p> {%- endcomment -%}
+            <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p> 
           </div>
         </div>
         <h3>30 Day Life Changing Program</h3>
