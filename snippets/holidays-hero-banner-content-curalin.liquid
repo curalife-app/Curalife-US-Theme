@@ -1,11 +1,11 @@
 <div class="holidays-hero-banner-content">
   <div class="text-button">
-    <div class="holiday-title">Give yourself a gift this season!</div>
+    <h1 class="holiday-title">Curalin</h1>
+    <p class="holiday-title">Natural Blood Sugar Support Supplement</p>
     <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a>
   </div>
 
   <img class="main-img" src="{{ 'hs-curalin-bottle.png' | asset_url }}" alt="curalin bottle holiday sale" loading="lazy">
-  <img class="shadow-img" style="position: absolute;right: 24px;z-index: 0;bottom: 0px;object-fit: contain;height: max(147px, 26vw);" src="{{ 'hs-img-shadow.png' | asset_url }}" alt="shadow" loading="lazy">
 </div>
 
 <style>
@@ -21,9 +21,7 @@
   .holidays-hero-banner-content .text-button {
     display: flex;
     flex-direction: column;
-    padding-bottom: 3vw;
     padding-top: 2vw;
-    gap: 1vw;
     position: absolute;
     left: 250px;
     z-index: 3;
@@ -32,9 +30,14 @@
   .holidays-hero-banner-content .text-button .holiday-title {
     max-width: 295px;
     font-family: 'PP Radio Grotesk';
-    font-weight: 700;
     font-size: clamp(45px, 2vw, 80px);
     color: #FFFFFF;
+    margin: unset;
+  }
+
+  .holidays-hero-banner-content .text-button h1.holiday-title {
+    font-weight: 700;
+    font-size: clamp(45px, 6vw, 80px);
   }
 
   .holidays-hero-banner-content .text-button .main-btn {
@@ -47,6 +50,7 @@
     border: #4B643D;
     border-radius: 4px;
     font-size: clamp(20px, 2vw, 28px);
+    margin-top: 20px;
   }
 
   .holidays-hero-banner-content .main-img {
