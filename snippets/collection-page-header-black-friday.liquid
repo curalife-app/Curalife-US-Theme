@@ -1,7 +1,7 @@
 {% assign ifTimer = false %}
 
 <div class="page-header" id="page-header-collection">
-  <div class="animated-container swiper">
+  {%- comment -%} <div class="animated-container swiper">
     <div class="swiper-wrapper">
       {% for i in (1..2) %}
         <div class="title swiper-slide">
@@ -33,7 +33,7 @@
       {% endfor %}
     </div>
 
-  </div>
+  </div> {%- endcomment -%}
 </div>
 
 {% if ifTimer %}
