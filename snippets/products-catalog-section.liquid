@@ -46,7 +46,7 @@
                 <div class="price">
                   {% if quantity > 1 %}
                     <div class="save-badge">
-                      
+                      <img src="{{ 'hs-badge-save.png' | asset_url }}" alt="" loading="lazy">
                     </div>
                     <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
                   {% elsif product.compare_at_price > product.price %}
