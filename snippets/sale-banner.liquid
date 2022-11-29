@@ -2,7 +2,7 @@
 
 <div id="sale-banner">
   <div class="container">
-    {% if isLogo == true %}
+    {% if isLogo %}
       {% if logoColor %}
         {% assign greenAddition = "-" | append: logoColor %}
       {% endif %}
@@ -10,7 +10,7 @@
     {% endif %}
     <p class="title">{{ title }}</p>
 
-    {% if isLogo == false %}
+    {% if isCTA %}
       <div class="buttons-container">
         <div class="off-container">
           <div class="up-to">UP TO</div>
