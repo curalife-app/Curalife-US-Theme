@@ -514,7 +514,7 @@
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
   });
-{%- comment -%} 
+{%- comment -%}
   if($(".variant-box").last()) {
     $(".main-slider-vector-bg").hide();
   } {%- endcomment -%}
@@ -523,7 +523,7 @@
   $(".variant-box").click(function() {
     $(this).find('input[type=radio]').prop('checked', true);
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
-   
+
     // Save Text Change
     let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
@@ -533,11 +533,11 @@
 
   $( document ).ready(function() {
     $(".variant-box").last().trigger( "click" );
-    
+
 
   });
 
-  
+
 
   // Buy Button Functionality
   $("#buy-button").click(function() {
@@ -749,17 +749,17 @@
 
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn {
-    background-color: #FFE746 !important;
-    border-color: #FFE746 !important;
+    background-color: #4B643D !important;
+    border-color: #4B643D !important;
     color: #000000 !important;
    }
 
    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
-    border-color: #FFE746;
+    border-color: #4B643D;
    }
 
    .product-template-all-in-one #back-to-top-btn {
-    background-color: #FFE746 !important;
+    background-color: #4B643D !important;
     color: #000000 !important;
    }
 
