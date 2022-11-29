@@ -13,7 +13,8 @@
 <style>
   .holidays-hero-banner-content {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   .holidays-hero-banner-content .text-and-img {
@@ -23,29 +24,25 @@
   .holidays-hero-banner-content .text-button {
     display: flex;
     flex-direction: column;
-    padding-bottom: 3vw;
-    padding-top: 2vw;
     gap: 1vw;
     position: absolute;
     left: 250px;
     z-index: 3;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    color: #FFFFFF;
+    max-width: 400px;
   }
 
   .holidays-hero-banner-content .text-button .holiday-title {
-    max-width: 295px;
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: clamp(45px, 2vw, 80px);
-    color: #FFFFFF;
+    font-size: clamp(45px, 4vw, 80px);
   }
 
   .holidays-hero-banner-content .text-button .main-btn {
     max-width: 205px;
-    font-family: 'PP Radio Grotesk';
     font-weight: 700;
     background: #4B643D;
     text-align: center;
-    color: #FFFFFF;
     border: #4B643D;
     border-radius: 4px;
     font-size: clamp(20px, 2vw, 28px);
@@ -72,12 +69,15 @@
 
   @media screen and (max-width: 1008px) {
     .holidays-hero-banner-content .text-button {
-        left: 11vw;
-        padding-top: 6vw;
+        left: 15vw;
     }
   }
 
   @media screen and (max-width: 760px) {
+    .holidays-hero-banner-content {
+      align-items: unset;
+    }
+
     .holidays-hero-banner-content .text-button .holiday-title {
       max-width: 64vw;
       font-size: clamp(35px, 2vw, 80px);
