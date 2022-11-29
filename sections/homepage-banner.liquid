@@ -1,43 +1,34 @@
 <div class="hero-banner">
   <div class="container">
-   
     <div class="holiday-sale">
-        <div class="snowflakes">
-           {% for i in (1..4) %}
-           <div class="snowflake">
-             {% assign imgUrl = "hs-snowflake-0" | append: i | append: ".png" %}
-             <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
-           </div>
-           {% endfor %}
-        </div>
-       
-        <div class="text-button">
-        <div class="holiday-title">
-            Give yourself
-            a gift this season!
-        </div>
-        <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a></div>
-       
-        <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy">
-        <img class="shadow-img" style="position: absolute;
-        right: 24px;
-        bottom: 0px;
-        object-fit: contain;
-        height: max(147px, 26vw);" src="{{ 'hs-img-shadow.png' | asset_url }}" alt="shadow" loading="lazy">
-    
-     </div>
-   </div> 
-   <div class="bottom-snow">
-      <img  src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="bottom-snow" loading="lazy">
-   </div>     
- </div>
- 
+      <div class="snowflakes">
+        {% for i in (1..4) %}
+          <div class="snowflake">
+            <img src="{{ "hs-snowflake-0" | append: i | append: ".png" | asset_url }}" alt="" loading="lazy">
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="text-button">
+        <div class="holiday-title">Give yourself a gift this season!</div>
+        <a class="main-btn" id='main-cta-btn' href="/collections/all-bfcm2022">SHOP NOW</a>
+      </div>
+
+      <img class="main-img" src="{{ 'hs-man-woman.png' | asset_url }}" alt="man-woman" loading="lazy">
+      <img class="shadow-img" style="position: absolute;right: 24px;bottom: 0px;object-fit: contain;height: max(147px, 26vw);" src="{{ 'hs-img-shadow.png' | asset_url }}" alt="shadow" loading="lazy">
+    </div>
+  </div>
+  <div class="bottom-snow">
+    <img src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="bottom-snow" loading="lazy">
+  </div>
+</div>
+
 
 
 <style>
     .snowflake {
         position: absolute;
-        z-index: -1;       
+        z-index: -1;
     }
 
     .snowflake img {
@@ -65,10 +56,10 @@
     }
     .hero-banner {
         position: relative;
-        background-color: #B5141F;       
+        background-color: #B5141F;
         overflow: hidden;
         height: max(300px,27vw);
-        
+
     }
 
     .hero-banner .bottom-snow {
@@ -76,7 +67,7 @@
         bottom: 0;
         z-index: 0;
         width: 100%;
-        
+
     }
 
     .hero-banner .bottom-snow img {
@@ -130,8 +121,8 @@
       font-size: clamp(20px, 2vw, 28px);
   }
 
- 
-  .container .holiday-sale .main-img {   
+
+  .container .holiday-sale .main-img {
       position: absolute;
       right: 230px;
       bottom: 0px;
@@ -156,7 +147,7 @@
     }
 
     .hero-banner .container .holiday-sale .text-button {
-        left: 11vw; 
+        left: 11vw;
         padding-top: 6vw;
     }
 
@@ -195,13 +186,13 @@
 
       .container .holiday-sale .text-button .main-btn {
         max-width: 50vw;
-        
+
       }
 
       .hero-banner .container .holiday-sale .text-button {
         padding-top: 6vw;
       }
- 
+
       .container .holiday-sale .main-img {
           position: absolute;
           bottom: 0;
@@ -236,10 +227,10 @@
     }
 
     .hero-banner .container .holiday-sale .text-button .holiday-title {
-       
-        
+
+
     }
-    
+
   }
 </style>
 
