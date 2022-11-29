@@ -7,8 +7,13 @@
         </div>
       {% endfor %}
     </div>
-    {% assign bannerContentFileName = "holidays-hero-banner-content-" | append: bannerContent %}
-    {% render bannerContentFileName %}
+
+    {% case request.path %}
+      {% when '/' %}
+        {% render "holidays-hero-banner-content-homepage" %}
+      {% when '/pages/curalin-advanced-glucose-support' %}
+        {% render "holidays-hero-banner-content-curalin" %}
+    {% endcase %}
   </div>
   <div class="bottom-snow">
     <img src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="bottom-snow" loading="lazy">
