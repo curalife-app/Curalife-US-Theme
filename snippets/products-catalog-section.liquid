@@ -24,7 +24,7 @@
               {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
               {% if quantity > 1 %}
               <div class="save-badge">
-                <p>SAVE <span >{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p>
+               SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}
               </div>
 
             {% endif %}
@@ -108,19 +108,12 @@
     z-index: 4;
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
-    font-size: clamp(12px, 2vw, 22px);
+    font-size: clamp(12px, 4vw, 22px);
     text-align: center;
-    color: black;
+    color: #C00101;
   }
 
-  .save-badge p {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-   padding-top: 39px; 
-   color: #C00101;
-  }
+  
   .bg-picture img {
     width: 100%;
   }
