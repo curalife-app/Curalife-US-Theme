@@ -61,7 +61,7 @@
   .hero-banner .bottom-snow {
     position: absolute;
     bottom: 0;
-    z-index: 0;
+    z-index: 10;
     width: 100%;
   }
 
@@ -72,7 +72,7 @@
   .hero-banner .container {
     height: 100%;
     position: relative;
-    z-index: 0;
+    z-index: 1;
   }
 
   @media screen and (max-width: 1008px){
@@ -280,18 +280,23 @@
 
 <script>
   $('.hero-banner').sparkle({
+    size: 15,
+    duration: 700,
+    pause: 200
+  });
+  $('.hero-banner').sparkle({
     size: 20,
     duration: 1000,
     pause: 400
   });
   $('.hero-banner').sparkle({
     size: 30,
-    duration: 1000,
+    duration: 1300,
     pause: 600
   });
   $('.hero-banner').sparkle({
     size: 40,
-    duration: 1000,
+    duration: 1600,
     pause: 1000
   });
 </script>
