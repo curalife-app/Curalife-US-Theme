@@ -24,7 +24,7 @@
               {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
               {% if quantity > 1 %}
               <div class="save-badge">
-                save
+                <div class="discount"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p></div>
               </div>
 
             {% endif %}
