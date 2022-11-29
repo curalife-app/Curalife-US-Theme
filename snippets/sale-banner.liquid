@@ -9,6 +9,18 @@
       <img class="logo" src="{{ 'hs-santa-logo' | append: greenAddition | append: '.png' | asset_url }}" alt="logo">
     {% endif %}
     <p class="title">{{ title }}</p>
+
+    {% if isLogo == false %}
+      <div class="buttons-container">
+        <div class="off-container">
+          <div class="up-to">UP TO</div>
+          <div class="thirty-off">30% OFF</div>
+        </div>
+        <div class="buy-btn">
+          <a class="main-btn" id='main-cta-btn' href="#limited">ORDER NOW</a>
+        </div>
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -49,9 +61,59 @@
     padding-bottom: 20px;
   }
 
+  header .buttons-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  header .off-container {
+      display: flex;
+      align-items: center;
+      font-family: 'PP Radio Grotesk';
+      gap: 10px;
+      margin-right: 10px;
+  }
+
+  header .up-to {
+      font-size: 25px;
+  }
+
+  header .thirty-off {
+      font-size: 35px;
+      font-weight: bold;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
   @media screen and (max-width: 760px) {
     #sale-banner .title {
       padding: 2vw;
+    }
+
+    header .buttons-container {
+        width: 100%;
+    }
+
+    header .off-container {
+        flex-direction: column;
+        gap: unset;
+    }
+
+    header .main-logo  {
+        display: none;
+    }
+
+    header .up-to {
+        font-size: 4vw;
+    }
+
+    header .thirty-off {
+        font-size: 7vw;
+        line-height: 7vw;
+    }
+    header .buy-btn .main-btn {
+        font-size: 4vw;
+        padding: 2vw;
     }
 }
 </style>
