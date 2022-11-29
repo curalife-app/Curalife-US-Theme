@@ -5,8 +5,6 @@
     {% if isLogo == true %}
       {% if color == "red" %}
         {% assign greenAddition = "-green" %}
-      {% else %}
-        {% assign greenAddition = "" %}
       {% endif %}
       <img class="logo" src="{{ 'hs-santa-logo' | append: greenAddition | append: '.png' | asset_url }}" alt="logo">
     {% endif %}
