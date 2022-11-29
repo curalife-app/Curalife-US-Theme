@@ -1,3 +1,5 @@
+{% render 'sparkles', element_selector: '#sale-banner' %}
+
 <div id="sale-banner">
   {% render 'snow-effect' %}
   <div class="container">
@@ -128,46 +130,3 @@
     }
 }
 </style>
-{%- comment -%}
-<script>
-  $('#sale-banner').sparkle({
-    size: 15,
-    duration: 700,
-    pause: 200
-  });
-  $('#sale-banner').sparkle({
-    size: 20,
-    duration: 1000,
-    pause: 400
-  });
-  $('#sale-banner').sparkle({
-    size: 30,
-    duration: 1300,
-    pause: 600
-  });
-  $('#sale-banner').sparkle({
-    size: 40,
-    duration: 1600,
-    pause: 1000
-  });
-  $('#sale-banner').sparkle({
-    size: 15,
-    duration: 700,
-    pause: 200
-  });
-  $('#sale-banner').sparkle({
-    size: 20,
-    duration: 1000,
-    pause: 400
-  });
-  $('#sale-banner').sparkle({
-    size: 30,
-    duration: 1300,
-    pause: 600
-  });
-  $('#sale-banner').sparkle({
-    size: 40,
-    duration: 1600,
-    pause: 1000
-  });
-</script> {%- endcomment -%}
