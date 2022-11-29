@@ -21,6 +21,13 @@
       <div class="product-card" id="product-card-section">
           <div class="wrap">
             <div class="picture">
+              {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+              {% if quantity > 1 %}
+              <div class="save-badge">
+                <img src="{{ 'hs-badge-save.png' | asset_url }}" alt="" loading="lazy">
+              </div>
+
+            {% endif %}
               <div class="bg-picture"><img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy"></div>
 
                 <a href="{{ product.url }}">
@@ -28,7 +35,7 @@
                     <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
                   </div>
                 </a>
-                {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+                {%- comment -%} {% assign quantity = product.metafields.my_fields.pack_items_quantity %} {%- endcomment -%}
                 {% assign quantity_by_cents = quantity | times: 100 %}
                 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
                 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
@@ -44,10 +51,8 @@
                 </div>
                 <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
                 <div class="price">
-                  {% if quantity > 1 %}
-                    <div class="save-badge">
-                      <img src="{{ 'hs-badge-save.png' | asset_url }}" alt="" loading="lazy">
-                    </div>
+                  {% if quantity > 0 %}
+  
                     <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
                   {% elsif product.compare_at_price > product.price %}
                     <p id="discounted-price"><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p>
