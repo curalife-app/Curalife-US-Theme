@@ -7,6 +7,9 @@
     {% endunless %}
     <div class="challange">
       <div class="container">
+        <div class="badge-img">
+          <img src="{{ 'hs-badge.png' | asset_url }}" alt="" loading="lazy">
+        </div>
         <div class="badge">
           <div class="badge-bg">
             <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
@@ -43,6 +46,7 @@
     <br><br><br>
     {% endif %}
     <div class="container">
+      
       <div class="badge">
         <div class="badge-bg">
           <p><span class="rounded floor">{{ curaeats_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
@@ -86,7 +90,10 @@
   }
 
   #curaeats-section .badge {
-    
+    width: 100px;
+    height: 100px;
+    background: #FFE746;
+    border-radius: 50%;
     position: absolute;
     right: 100px;
     z-index: 2;
@@ -95,12 +102,12 @@
     font-family: 'Montserrat';
     text-align: center;
     font-weight: 700;
+    border: 3px solid #FFE746;
     box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
     color: black;
   }
 
   #curaeats-section .badge .badge-bg {
-    background-image: url("{{ 'hs-badge.png' | asset_url }}");
     display: flex;
     flex-direction: column;
     justify-content: center;
