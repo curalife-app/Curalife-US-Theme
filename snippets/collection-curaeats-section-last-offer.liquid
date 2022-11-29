@@ -7,7 +7,8 @@
     {% endunless %}
     <div class="challange">
       <div class="badge-img">
-       
+       <div class="save-badge-curaeats-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
+       </div>
       </div> 
       
       <div class="container">
@@ -160,6 +161,12 @@
     text-align: center;
     color: #404733;
     
+  }
+
+  #curaeats-section .challange .badge-img .save-badge-curaeats-title {
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem 0;
   }
 
   #curaeats-section .challange .badge {
