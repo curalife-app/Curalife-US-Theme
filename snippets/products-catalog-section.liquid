@@ -24,7 +24,7 @@
               {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
               {% if quantity > 1 %}
               <div class="save-badge">
-                SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}
+                <div class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
               </div>
 
             {% endif %}
@@ -111,6 +111,10 @@
     font-size: clamp(12px, 4vw, 22px);
     text-align: center;
     color: #C00101;
+  }
+
+  .save-badge-title {
+    
   }
 
   
