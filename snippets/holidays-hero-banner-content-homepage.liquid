@@ -51,32 +51,29 @@
     font-size: clamp(20px, 2vw, 28px);
   }
 
-  .holidays-hero-banner-content .main-img {
+  .holidays-hero-banner-content .main-img-wrapper {
     position: absolute;
-    right: 230px;
-    bottom: 0px;
-    object-fit: contain;
-    height: max(300px,26vw);
-    z-index: 3;
-  }
-
-  .holidays-hero-banner-content .shadow-img {
-    position: absolute;
-    right: 0;
+    right: 90px;
     z-index: 0;
     bottom: 0px;
-    object-fit: contain;
     height: max(147px, 26vw);
+  }
+
+  .holidays-hero-banner-content .main-img-wrapper img {
+    height: max(147px, 26vw);
+  }
+
+  .holidays-hero-banner-content .main-img-wrapper .main-img {
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
+    object-fit: contain;
   }
 
   @media screen and (max-width: 1008px) {
     .holidays-hero-banner-content .text-button {
         left: 11vw;
         padding-top: 6vw;
-    }
-
-    .holidays-hero-banner-content .main-img {
-        right: 15vw;
     }
   }
 
