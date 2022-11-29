@@ -20,6 +20,12 @@
     {% if isFixed %}position: fixed;{% endif %}
   }
 
+  {% if isFixed %}
+  .cta-section {
+    padding-top: 120% !important;
+  }
+  {% endif %}
+
   #sale-banner .container {
     position: relative;
   }
