@@ -1,22 +1,19 @@
+{% render 'sparkles' %}
 
-<div class="page-header" id="page-header-collection">
-  
-  <div class="get-into-holiday">Get into the holiday spirit!
-  </div>
+<div id="sale-banner">
+  <p class="get-into-holiday">Get into the holiday spirit!</p>
 </div>
 
-
-
 <style>
- 
-  #page-header-collection.page-header {
+  #sale-banner {
     background-color: #B5141F;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     overflow: hidden;
+    padding-bottom: 50px;
   }
 
-  #page-header-collection.page-header .get-into-holiday {
+  #sale-banner .get-into-holiday {
     display: flex;
     justify-content: center;
     font-family: 'PP Radio Grotesk';
@@ -26,16 +23,12 @@
     color: #ffffff;
     padding: 10px 0;
     text-shadow: 2px 1px 4px #ffffff;
-}
-
+    margin: unset;
+  }
 
   @media screen and (max-width: 760px) {
- 
-    #page-header-collection.page-header .get-into-holiday {
+    #sale-banner .get-into-holiday {
       padding: 2vw;
-     
     }
-
-  
 }
 </style>
