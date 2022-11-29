@@ -106,14 +106,17 @@
     z-index: 4;
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
-    font-size: 22px;
+    font-size: clamp(12px, 2vw, 22px);
     text-align: center;
     color: black;
   }
 
-  .save-title-badge {
+  .save-badge p {
+    display: flex;
+    align-content: center;
+    justify-content: center;
    
-    color: #C00101;
+    {%- comment -%} color: #C00101; {%- endcomment -%}
   }
   .bg-picture img {
     width: 100%;
