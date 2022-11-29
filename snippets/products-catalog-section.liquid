@@ -29,7 +29,7 @@
 
             {% endif %}
               <div class="bg-picture">
-                {% render 'snow-effect', hasAlreadyRun: true %}
+                {%- comment -%} {% render 'snow-effect', hasAlreadyRun: true %} {%- endcomment -%}
                 <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
               </div>
 
