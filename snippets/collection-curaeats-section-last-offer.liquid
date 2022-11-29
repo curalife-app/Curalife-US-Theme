@@ -7,8 +7,10 @@
     {% endunless %}
     <div class="challange">
       <div class="badge-img">
-        <img src="{{ 'hs-badge.png' | asset_url }}" alt="" loading="lazy">
-      </div>
+       <div class="save-badge-curaeats-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
+       </div>
+      </div> 
+      
       <div class="container">
         <div class="badge" style="display: none;">
           <div class="badge-bg">
@@ -145,10 +147,26 @@
   }
 
   #curaeats-section .challange .badge-img { 
-    width: 25%;
+    background-image: url("{{ 'hs-badge.png' | asset_url }}");
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
     top: 0;
-    right: 0px;
+    right: 0;
+    width: 100px;
+    z-index: 4;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 22px);
+    text-align: center;
+    color: #404733;
+    
+  }
+
+  #curaeats-section .challange .badge-img .save-badge-curaeats-title {
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem 0;
   }
 
   #curaeats-section .challange .badge {
