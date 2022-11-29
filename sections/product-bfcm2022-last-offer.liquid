@@ -111,7 +111,7 @@
 
               {%- comment -%} Ribbon for only Single CuraLin {%- endcomment -%}
               {% if product.title == "CuraLin BFCM 2022" %}
-              <div class="ribbons">
+              {%- comment -%} <div class="ribbons">
                 <div class="ribbon">
                   <div class="titles">
                     {% for i in (1..4) %}
@@ -122,9 +122,9 @@
                     {% endfor %}
                   </div>
                 </div>
-              </div>
+              </div> {%- endcomment -%}
 
-              <style>
+              {%- comment -%} <style>
                 .ribbon {
                   background: white;
                   position: absolute;
@@ -171,7 +171,7 @@
                     top: 20vw;
                   }
                 }
-              </style>
+              </style> {%- endcomment -%}
             {% endif %}
           </div>
           {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
