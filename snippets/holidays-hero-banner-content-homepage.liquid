@@ -10,8 +10,8 @@
 
 <style>
   .holidays-hero-banner-content {
-      display: flex;
-      justify-content: center;
+    display: flex;
+    justify-content: center;
   }
 
   .holidays-hero-banner-content .text-and-img {
@@ -58,6 +58,15 @@
     z-index: 3;
   }
 
+  .holidays-hero-banner-content .shadow-img {
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    bottom: 0px;
+    object-fit: contain;
+    height: max(147px, 26vw);
+  }
+
   @media screen and (max-width: 1008px) {
     .holidays-hero-banner-content .text-button {
         left: 11vw;
@@ -86,6 +95,11 @@
     .holidays-hero-banner-content .main-img {
       height: unset;
         right: 10vw;
+    }
+
+    .holidays-hero-banner-content .shadow-img {
+      height: unset;
+      right: unset;
     }
   }
 </style>
