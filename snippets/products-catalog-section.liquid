@@ -24,7 +24,7 @@
               {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
               {% if quantity > 1 %}
               <div class="save-badge">
-              
+                <img src="{{ 'hs-badge-save.png' | asset_url }}" alt="" loading="lazy">
               </div>
 
             {% endif %}
