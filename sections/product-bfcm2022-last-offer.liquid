@@ -1,3 +1,15 @@
+{% if shop.name == "CuraLife" %}
+  {% assign shipping_worldwide = 'US Free Shipping' %}
+  {% assign challange_value = 150 %}
+  {% assign curaeats_value = 49 %}
+  {% assign currency_symbol = '$' %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign shipping_worldwide = 'Free Shipping Above £99' %}
+  {% assign challange_value = 0 %}
+  {% assign curaeats_value = 40 %}
+  {% assign currency_symbol = '£' %}
+{% endif %}
+
 {% if shop.name == "Csub-titleuraLife" %}
   {% if product.tags contains "CuraEats" %}{% assign bundle_addition = 12800 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 {% elsif shop.name == "CuraLife Global" %}
