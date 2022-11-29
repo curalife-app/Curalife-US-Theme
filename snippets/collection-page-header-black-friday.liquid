@@ -5,7 +5,7 @@
     {% if isLogo %}
       <img class="logo" src="{{ 'hs-santa-logo-green.png' | asset_url }}" alt="logo">
     {% endif %}
-    <p class="get-into-holiday">Get into the holiday spirit!</p>
+    <p class="title">{{ title }}</p>
   </div>
 </div>
 
@@ -20,12 +20,6 @@
     {% if isFixed %}position: fixed;{% endif %}
   }
 
-  {% if isFixed %}
-  .cta-section {
-    padding-top: 120% !important;
-  }
-  {% endif %}
-
   #sale-banner .container {
     position: relative;
   }
@@ -36,7 +30,7 @@
     top: 25%;
   }
 
-  #sale-banner p.get-into-holiday {
+  #sale-banner p.title {
     display: flex;
     justify-content: center;
     font-family: 'PP Radio Grotesk';
@@ -51,7 +45,7 @@
   }
 
   @media screen and (max-width: 760px) {
-    #sale-banner .get-into-holiday {
+    #sale-banner .title {
       padding: 2vw;
     }
 }
