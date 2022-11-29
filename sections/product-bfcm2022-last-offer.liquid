@@ -497,7 +497,12 @@
                   }
                 </style>
                 {% endif %}
-         
+
+               
+                  <div class="save-badge">
+                    <div class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
+                  </div>
+              
                 <div class="product-img">
                   <div class="img-wrap">
                     <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
@@ -650,7 +655,7 @@
 
   
     <style>
- .save-badge {
+      .save-badge {
     background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
     background-size: contain;
     background-repeat: no-repeat;
