@@ -21,14 +21,15 @@
   .holidays-hero-banner-content .text-button {
     display: flex;
     flex-direction: column;
-    padding-top: 2vw;
+    justify-content: center;
+    height: 100%;
     position: absolute;
     left: 250px;
-    z-index: 3;
+    z-index: 4;
+    max-width: 400px;
   }
 
   .holidays-hero-banner-content .text-button .holiday-title {
-    max-width: 295px;
     font-family: 'PP Radio Grotesk';
     font-size: clamp(45px, 2vw, 80px);
     color: #FFFFFF;
@@ -55,10 +56,9 @@
 
   .holidays-hero-banner-content .main-img {
     position: absolute;
-    right: 230px;
-    bottom: 0px;
+    right: 200px;
     object-fit: contain;
-    height: max(300px,26vw);
+    height: 100%;
     z-index: 3;
   }
 
