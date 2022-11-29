@@ -7,7 +7,7 @@
     {% endunless %}
     <div class="challange">
       <div class="badge-img">
-        <img src="{{ 'hs-badge.png' | asset_url }}" alt="" loading="lazy">
+       
       </div>
       <div class="container">
         <div class="badge">
@@ -135,6 +135,7 @@
   }
 
   #curaeats-section .challange .badge-img {
+    background-image: url("{{ 'hs-badge.png' | asset_url }}");
     position: absolute;
     top: 0;
     right: 100px;
