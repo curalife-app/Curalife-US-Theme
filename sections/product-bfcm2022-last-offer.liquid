@@ -560,32 +560,7 @@
                         font-weight: 700;
                         font-size: 16px;
                         color: #C00101;">Life Changing Bonus ( <span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span>value)</p> 
-                        <div class="total-and-shipping">
-                          <div class="total-prices">
-                            TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
-                            <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-                          </div>
-                        </div>
-
-                        <style>
-                            .total-and-shipping {
-                              margin-top: 10px;
-                              display: flex;
-                              font-family: 'PP Radio Grotesk';
-                              font-weight: 700;
-                              font-size: 20px;
-                            }
-
-                            .total-and-shipping .free-shipping1 .free-red {
-                              color: #ED073E;
-                            }
-
-                            @media screen and (max-width: 760px) {
-                              .total-and-shipping {
-                                justify-content: center;
-                              }
-                            }
-                        </style>
+                      
 {% if product.title contains 'Special Offer' %}
 <p class="special-offer-title"><i class="icofont-star"></i> Special Offer!!! <i class="icofont-star"></i></p>
 <style>
@@ -628,6 +603,33 @@
                 {% endif %}
                 </form>
               </div>
+
+              <div class="total-and-shipping">
+                <div class="total-prices">
+                  TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                  <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+                </div>
+              </div>
+
+              <style>
+                  .total-and-shipping {
+                    margin-top: 10px;
+                    display: flex;
+                    font-family: 'PP Radio Grotesk';
+                    font-weight: 700;
+                    font-size: 20px;
+                  }
+
+                  .total-and-shipping .free-shipping1 .free-red {
+                    color: #ED073E;
+                  }
+
+                  @media screen and (max-width: 760px) {
+                    .total-and-shipping {
+                      justify-content: center;
+                    }
+                  }
+              </style>
 
               <div class="extra-info">
 
