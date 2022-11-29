@@ -3,7 +3,10 @@
 <div id="sale-banner">
   <div class="container">
     {% if isLogo %}
-      <img class="logo" src="{{ 'hs-santa-logo-green.png' | asset_url }}" alt="logo">
+      {% if color == "red" %}
+        {% assign greenAddition = "-green" %}
+      {% endif %}
+      <img class="logo" src="{{ 'hs-santa-logo' | append: greenAddition | append: '.png' | asset_url }}" alt="logo">
     {% endif %}
     <p class="title">{{ title }}</p>
   </div>
