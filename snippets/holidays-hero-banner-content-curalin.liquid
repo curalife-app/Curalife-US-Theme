@@ -74,8 +74,13 @@
   }
 
   @media screen and (max-width: 760px) {
+    .holidays-hero-banner-content {
+      flex-direction: column;
+    }
+
     .holidays-hero-banner-content .text-button .holiday-title {
-      max-width: 64vw;
+      max-width: 80vw;
+      margin: auto;
       font-size: clamp(35px, 2vw, 80px);
     }
 
@@ -84,6 +89,8 @@
     }
 
     .holidays-hero-banner-content .text-button {
+      position: unset;
+      text-align: center;
       padding-top: 6vw;
     }
 
