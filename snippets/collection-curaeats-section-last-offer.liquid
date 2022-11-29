@@ -6,10 +6,10 @@
     <h2>Everything you need to keep your blood sugar happy!</h2>
     {% endunless %}
     <div class="challange">
+      <div class="badge-img">
+        <img src="{{ 'hs-badge.png' | asset_url }}" alt="" loading="lazy">
+      </div>
       <div class="container">
-        <div class="badge-img">
-          <img src="{{ 'hs-badge.png' | asset_url }}" alt="" loading="lazy">
-        </div>
         <div class="badge">
           <div class="badge-bg">
             <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
