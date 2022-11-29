@@ -7,7 +7,8 @@
         </div>
       {% endfor %}
     </div>
-    {% render "holidays-hero-banner-content-" | append: bannerContent %}
+    {% assign bannerContentFileName = "holidays-hero-banner-content-" | append: bannerContent %}
+    {% render bannerContentFileName %}
   </div>
   <div class="bottom-snow">
     <img src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="bottom-snow" loading="lazy">
