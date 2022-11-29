@@ -6,12 +6,16 @@
   {% assign curaeats_value = 17 %}
 {% endif %}
 
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+{% assign quantity_by_cents = quantity | times: 100 %}
+{% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
+{% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
+
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'sale-banner', title: "Get into the holiday spirit!", color: "red" %}
-
-{% assign current_variant = product.selected_or_first_available_variant %}
 
 <div class="product-data">
     <div class="container">
@@ -24,10 +28,6 @@
           <div class="product-slider">
             <div class="bg"></div>
           </div>
-          {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-          {% assign quantity_by_cents = quantity | times: 100 %}
-          {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
-          {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 
           {% if product.compare_at_price > product.price %}
             <div class="discount"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
