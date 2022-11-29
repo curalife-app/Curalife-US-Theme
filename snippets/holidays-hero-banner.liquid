@@ -1,4 +1,4 @@
-{% render 'sparkles' %}
+{% render 'sparkles', element_selector: '.hero-banner' %}
 
 <div class="hero-banner">
   {% render 'snow-effect' %}
@@ -136,46 +136,3 @@
     }
   }
 </style>
-
-<script>
-  $('.hero-banner').sparkle({
-    size: 15,
-    duration: 700,
-    pause: 200
-  });
-  $('.hero-banner').sparkle({
-    size: 20,
-    duration: 1000,
-    pause: 400
-  });
-  $('.hero-banner').sparkle({
-    size: 30,
-    duration: 1300,
-    pause: 600
-  });
-  $('.hero-banner').sparkle({
-    size: 40,
-    duration: 1600,
-    pause: 1000
-  });
-  $('.hero-banner').sparkle({
-    size: 15,
-    duration: 700,
-    pause: 200
-  });
-  $('.hero-banner').sparkle({
-    size: 20,
-    duration: 1000,
-    pause: 400
-  });
-  $('.hero-banner').sparkle({
-    size: 30,
-    duration: 1300,
-    pause: 600
-  });
-  $('.hero-banner').sparkle({
-    size: 40,
-    duration: 1600,
-    pause: 1000
-  });
-</script>
