@@ -1,3 +1,10 @@
+{% if shop.name == "CuraLife" %}
+  {% assign mealplan_value = '$29' %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign mealplan_value = '£24' %}
+{% endif %}
+
+
 <section id="last-offer-title-section">
   <div class="catalog">
         {% if shop.name == "CuraLife" %}
