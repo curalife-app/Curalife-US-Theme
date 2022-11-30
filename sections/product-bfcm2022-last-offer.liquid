@@ -96,11 +96,11 @@
             {% capture CFH %}{{ content_for_header }}{% endcapture %}
 
             {% if CFH contains 'adminBarInjector' %}
-            {% assign admin = true %}
+              {% assign admin = true %}
             {% elsif CFH contains 'admin-bar-iframe' %}
-            {% assign admin = true %}
+              {% assign admin = true %}
             {% elsif CFH contains 'preview_bar_injector-' %}
-            {% assign admin = true %}
+              {% assign admin = true %}
             {% endif %}
 
             {% if admin %}
