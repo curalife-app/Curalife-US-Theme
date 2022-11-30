@@ -12,12 +12,12 @@
 
     <div class="features">
       {% for feature in features %}
-      <div class="feature">
-        <img src="{{ "collection-curaeats-feature-" | append: forloop.index | append: ".png" | asset_url }}" alt="" loading="lazy">
-        <div class="feature-titles">
-          <h3>{{ feature | split: ":" | first }}</h3>
-          <p>{{ feature | split: ":" | last }}</p>
-        </div>
+        <div class="feature">
+          <img src="{{ "collection-curaeats-feature-" | append: forloop.index | append: ".png" | asset_url }}" alt="" loading="lazy">
+          <div class="feature-titles">
+            <h3>{{ feature | split: ":" | first }}</h3>
+            <p>{{ feature | split: ":" | last }}</p>
+          </div>
         </div>
       {% endfor %}
     </div>
