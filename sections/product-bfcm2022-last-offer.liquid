@@ -32,131 +32,131 @@
 {% render 'sale-banner', title: "Get into the holiday spirit!", color: "red" %}
 
 <div class="product-data">
-    <div class="container">
-      {% if product.tags contains "CuraEats" %}
-        {% render 'last-offer-title' %}
-      {% endif %}
+  <div class="container">
+    {% if product.tags contains "CuraEats" %}
+      {% render 'last-offer-title' %}
+    {% endif %}
 
-      <div class="product-wrap">
-        <div class="product-wrap-wrapper" style="position: relative">
-          <div class="product-slider">
-            <div class="bg">
-              {% render 'snow-effect', hasAlreadyRun: true %}
-            </div>
-
-            <div class="sliders-group">
-              <div class="main-slider">
-                {% if product.compare_at_price > product.price %}
-                  <div class="save-badge">
-                    <p class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
-                  </div>
-
-                  <style>
-                    .save-badge {
-                      background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
-                      background-size: contain;
-                      background-repeat: no-repeat;
-                      position: absolute;
-                      top: -20px;
-                      right: 20px;
-                      width: 100px;
-                      z-index: 4;
-                      font-family: 'PP Radio Grotesk';
-                      font-weight: 700;
-                      font-size: clamp(20px, 2vw, 22px);
-                      text-align: center;
-                      color: #C00101;
-                    }
-
-                    .save-badge-title {
-                      display: flex;
-                      flex-direction: column;
-                      padding: 4.5rem 0;
-                      margin: unset;
-                    }
-                  </style>
-                {% endif %}
-
-                {% assign image = product.images | first %}
-                <div class="product-img">
-                  <div class="img-wrap">
-                    <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
-                  </div>
-                  <div class="bg-picture">
-                    <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-info">
-          <div class="title-wrapper">
-            <div class="sub-title">
-              <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
-              <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
-            </div>
-
-            {% if admin %}
-              <div class="edit"><a href="/admin/products/{{ product.id }}"><i class="icofont-ui-edit"></i></a></div>
-            {% endif %}
+    <div class="product-wrap">
+      <div class="product-wrap-wrapper" style="position: relative">
+        <div class="product-slider">
+          <div class="bg">
+            {% render 'snow-effect', hasAlreadyRun: true %}
           </div>
 
-          <div class="description">
-            <div class="price">
-              <p>
-                <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
-                <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
-                <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
-              </p>
-            </div>
-            <div class="total-and-shipping">
-              <div class="total-prices" style="display:flex;align-items:center">
-                TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
-                <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-              </div>
-            </div>
-
-            {% if product.tags contains 'CuraEats' %}
-                <p class="bundle-notice">{{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-                <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
-            {% endif %}
-
-            <div class="form-wrap">
-              <form method="post" id="addTocartForm" action="/cart/add">
-                <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                <div class="qty-data">
-                  <p>Quantity</p>
-                  <div class="qty-control">
-                    <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
-                    <label><input type="number" name="quantity" value="1" maxlength="4"></label>
-                    <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
-                  </div>
+          <div class="sliders-group">
+            <div class="main-slider">
+              {% if product.compare_at_price > product.price %}
+                <div class="save-badge">
+                  <p class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
                 </div>
 
-                <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
-              </form>
-            </div>
+                <style>
+                  .save-badge {
+                    background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: -20px;
+                    right: 20px;
+                    width: 100px;
+                    z-index: 4;
+                    font-family: 'PP Radio Grotesk';
+                    font-weight: 700;
+                    font-size: clamp(20px, 2vw, 22px);
+                    text-align: center;
+                    color: #C00101;
+                  }
 
-            <div class="extra-info">
-              <div class="text-wrap">
-                <p>CuraLin is different than anything else available on the market right now, and anything you may have tried in the past.</p>
-                <p>CuraLin offers people needing advanced glucose support an effective and 100% natural option for maintaining healthy glucose levels.</p>
-                <p>Each vegan-friendly capsule contains our powerful Ayurvedic formula, free from dairy, gluten, preservatives, and artificial colors & flavors.</p>
+                  .save-badge-title {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 4.5rem 0;
+                    margin: unset;
+                  }
+                </style>
+              {% endif %}
+
+              {% assign image = product.images | first %}
+              <div class="product-img">
+                <div class="img-wrap">
+                  <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
+                </div>
+                <div class="bg-picture">
+                  <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="product-info">
+        <div class="title-wrapper">
+          <div class="sub-title">
+            <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+            <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
+          </div>
+
+          {% if admin %}
+            <div class="edit"><a href="/admin/products/{{ product.id }}"><i class="icofont-ui-edit"></i></a></div>
+          {% endif %}
+        </div>
+
+        <div class="description">
+          <div class="price">
+            <p>
+              <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+              <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
+              <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
+            </p>
+          </div>
+          <div class="total-and-shipping">
+            <div class="total-prices" style="display:flex;align-items:center">
+              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+              <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+            </div>
+          </div>
+
+          {% if product.tags contains 'CuraEats' %}
+              <p class="bundle-notice">{{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+              <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
+          {% endif %}
+
+          <div class="form-wrap">
+            <form method="post" id="addTocartForm" action="/cart/add">
+              <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <div class="qty-data">
+                <p>Quantity</p>
+                <div class="qty-control">
+                  <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                  <label><input type="number" name="quantity" value="1" maxlength="4"></label>
+                  <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
+                </div>
+              </div>
+
+              <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+            </form>
+          </div>
+
+          <div class="extra-info">
+            <div class="text-wrap">
+              <p>CuraLin is different than anything else available on the market right now, and anything you may have tried in the past.</p>
+              <p>CuraLin offers people needing advanced glucose support an effective and 100% natural option for maintaining healthy glucose levels.</p>
+              <p>Each vegan-friendly capsule contains our powerful Ayurvedic formula, free from dairy, gluten, preservatives, and artificial colors & flavors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    {% render 'trust-badges-section' %}
-
-    {% if product.tags contains "CuraEats" %}
-      {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
-    {% endif %}
   </div>
+
+  {% render 'trust-badges-section' %}
+
+  {% if product.tags contains "CuraEats" %}
+    {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
+  {% endif %}
+</div>
 
 <style>
   .bg-picture img {
