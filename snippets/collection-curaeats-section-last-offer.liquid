@@ -6,15 +6,15 @@
     <h2>Everything you need to keep your blood sugar happy!</h2>
     {% endunless %}
     <div class="challange">
-    
+
       <div class="container">
-        <div class="badge-img">    
-         SAVE {{ challange_value | times: 100 | money | replace: ".00", "" }} 
-        </div> 
-   
+        <div class="badge-img">
+         SAVE {{ challange_value | times: 100 | money | replace: ".00", "" }}
+        </div>
+
         <div class="badge" style="display: none;">
           <div class="badge-bg">
-            <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p> 
+            <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
           </div>
         </div>
         <h3>30 Day Life Changing Program</h3>
@@ -48,7 +48,7 @@
     <br><br><br>
     {% endif %}
     <div class="container">
-      
+
       <div class="badge">
         <div class="badge-bg">
           <p><span class="rounded floor">{{ curaeats_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
@@ -60,7 +60,7 @@
           <p class="limited-time">Limited Time Bonus!</p>
           <div class="main-titles">
             <p class="title"><i class="icofont-star"></i> CuraEats Meal Plan!* <i class="icofont-star"></i></p>
-            <p class="subtitle">86 recipes you’ll love making and devouring</p>
+            <p class="subtitle">84 recipes you’ll love making and devouring</p>
           </div>
         </div>
       </div>
@@ -136,8 +136,8 @@
     line-height: 1.2em;
   }
 
-  #curaeats-section .challange .badge-img { 
-    background-image: url("{{ 'hs-badge.png' | asset_url }}"); 
+  #curaeats-section .challange .badge-img {
+    background-image: url("{{ 'hs-badge.png' | asset_url }}");
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -312,7 +312,7 @@
 
 
   @media screen and (max-width: 768px) {
-    #curaeats-section .challange .badge-img { 
+    #curaeats-section .challange .badge-img {
       right: 0;
       padding-top: 4vw;
       line-height: 23px;
@@ -335,7 +335,7 @@
     }
 
     #curaeats-section h2 {
-      
+
     }
 
     #curaeats-section .challange h3 {
