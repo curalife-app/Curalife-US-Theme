@@ -116,6 +116,11 @@
               </div>
             </div>
 
+            {% if product.tags contains 'CuraEats' %}
+                <p class="bundle-notice">+ {% if shop.name == "CuraLife" %}Life Changing Bonus{% else %}CuraEats App Bonus{% endif %} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+                <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
+            {% endif %}
+
             <div class="form-wrap">
               <form method="post" id="addTocartForm" action="/cart/add">
                 <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
