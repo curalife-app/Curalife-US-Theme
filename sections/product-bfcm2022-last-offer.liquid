@@ -1,3 +1,13 @@
+{% capture CFH %}{{ content_for_header }}{% endcapture %}
+
+{% if CFH contains 'adminBarInjector' %}
+  {% assign admin = true %}
+{% elsif CFH contains 'admin-bar-iframe' %}
+  {% assign admin = true %}
+{% elsif CFH contains 'preview_bar_injector-' %}
+  {% assign admin = true %}
+{% endif %}
+
 {% if shop.name == "CuraLife" %}
   {% assign challange_value = 99 %}
   {% assign curaeats_value = 29 %}
@@ -92,16 +102,6 @@
                 }
               </style>
             </div>
-
-            {% capture CFH %}{{ content_for_header }}{% endcapture %}
-
-            {% if CFH contains 'adminBarInjector' %}
-              {% assign admin = true %}
-            {% elsif CFH contains 'admin-bar-iframe' %}
-              {% assign admin = true %}
-            {% elsif CFH contains 'preview_bar_injector-' %}
-              {% assign admin = true %}
-            {% endif %}
 
             {% if admin %}
               <div class="edit"><a href="/admin/products/{{ product.id }}"><i class="icofont-ui-edit"></i></a></div>
