@@ -44,30 +44,29 @@
                 </a>
 
                 {% if product.compare_at_price > product.price %}
-                <div class="discount" style="display: none;"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
+                  <div class="discount" style="display: none;"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
                 {% endif %}
-            </div>
-            <div class="info">
-              <div class="main">
-                <div class="name">
-                  <h3><a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a></h3>
-                </div>
-                <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
-                <div class="price">
-                  {% if quantity > 0 %}
+              </div>
+              <div class="info">
+                <div class="main">
+                  <div class="name">
+                    <h3><a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a></h3>
+                  </div>
+                  <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+                  <div class="price">
+                    {% if quantity > 0 %}
+                      <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
+                    {% elsif product.compare_at_price > product.price %}
+                      <p id="discounted-price"><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p>
+                    {% else %}
+                      <p id="original-price" class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
+                    {% endif %}
+                  </div>
 
-                    <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
-                  {% elsif product.compare_at_price > product.price %}
-                    <p id="discounted-price"><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p>
-                  {% else %}
-                    <p id="original-price" class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
+                  {% if product.tags contains 'CuraEats' %}
+                      <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">+ CuraEats App Bonus (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+                      <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
                   {% endif %}
-                </div>
-
-                {% if product.tags contains 'CuraEats' %}
-                    <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">+ CuraEats App Bonus (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-                    <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
-                {% endif %}
                 </div>
               <form action="/cart/add" method="post">
                 <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
