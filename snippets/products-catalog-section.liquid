@@ -52,7 +52,11 @@
           <div class="info">
             <div class="main">
               <div class="name">
-                <h3>{% unless request.path contains '/collection' %}<a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a></h3>
+                {% if request.path contains '/collection' %}
+                  <h3><a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a></h3>
+                {% else %}
+                  <h3><a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a></h3>
+                {% endif %}
               </div>
               <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
               <div class="price">
