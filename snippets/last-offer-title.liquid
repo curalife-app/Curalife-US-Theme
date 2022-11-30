@@ -1,9 +1,3 @@
-{% if shop.name == "CuraLife" %}
-  {% assign mealplan_value = '$29' %}
-{% elsif shop.name == "CuraLife Global" %}
-  {% assign mealplan_value = '£24' %}
-{% endif %}
-
 
 <section id="last-offer-title-section">
   <div class="catalog">
@@ -11,9 +5,9 @@
           <div class="limited">Special Curalin Offer <br>
           Get Curalin in a bundle!
           </div>
-          <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued {{ mealplan_value }})</div>
+          <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div>
         {% else %}
-          <h1 style="text-align:center;font-size:30px;">Limited Time Bonus: CuraEats Meal Plan App (Valued {{mealplan_value}})</h1>
+          <h1 style="text-align:center;font-size:30px;">Limited Time Bonus: CuraEats Meal Plan App (Valued £24)</h1>
         {% endif %}
     </div>
 </section>
