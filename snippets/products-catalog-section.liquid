@@ -475,8 +475,7 @@
     $(".add-to-cart-btn").click(function() {
       let checkedPack = $(this).attr("prod-id");
       let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":1";
-      console.log(checkoutLink);
-      {%- comment -%} window.location.href = checkoutLink; {%- endcomment -%}
+      window.location.href = checkoutLink;
     })
   </script>
 {% endif %}
