@@ -66,15 +66,14 @@
               </div>
 
               {% if product.tags contains 'CuraEats' %}
-                  <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">+ CuraEats App Bonus (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-                  <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
+                  <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">{{ bundle_notice_texts }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
               {% endif %}
             </div>
 
-            <form action="/cart/add" method="post">
+            <form {% unless isSkipCart %}action="/cart/add" method="post"{% endunless %}>
               <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
               <input name="return_to" type="hidden" value="/cart/">
-              <div class="btn"><button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button></div>
+              <div class="btn"><button class="main-btn add-to-cart-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button></div>
             </form>
 
             <div class="total-and-shipping">
@@ -469,6 +468,18 @@
     }
   }
 </style>
+
+{% if isSkipCart %}
+  <script>
+    // Buy Button Functionality
+    $(".add-to-cart-btn").click(function() {
+      let checkedPack = $(this).closest('input[name=id]').val();
+      let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":1";
+      console.log(checkoutLink);
+      {%- comment -%} window.location.href = checkoutLink; {%- endcomment -%}
+    })
+  </script>
+{% endif %}
 
 <script>
   window.dataLayer = window.dataLayer || [];
