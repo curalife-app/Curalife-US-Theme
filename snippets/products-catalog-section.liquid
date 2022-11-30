@@ -37,11 +37,11 @@
               <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
             </div>
 
-            <a href="{{ product.url }}">
-              <div class="img">
-                <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
-              </div>
-            </a>
+            {% if request.path contains '/collection' %}
+              <a href="{{ product.url }}"><div class="img"><img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy"></div></a>
+            {% else %}
+              <div class="img"><img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy"></div>
+            {% endif %}
 
             {% if product.compare_at_price > product.price %}
               <div class="discount" style="display: none;"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
