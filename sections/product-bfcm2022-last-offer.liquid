@@ -68,6 +68,10 @@
                   <div class="img-wrap">
                     <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
                   </div>
+                  <div class="bg-picture">
+                    <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
+                  </div>
+       
                 </div>
               </div>
             </div>
@@ -188,6 +192,12 @@
   </div>
 
 <style>
+  .bg-picture img {
+    position: absolute;
+    top: 230px;
+    width: 100%;
+  }			  
+
   .product-wrap {
     justify-content: center;
   }
