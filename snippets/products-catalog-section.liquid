@@ -71,7 +71,7 @@
             </div>
 
             <form {% unless isSkipCart %}action="/cart/add" method="post"{% endunless %}>
-              <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+              <input type="hidden" name="id" value="{{ product.id }}"/>
               <input name="return_to" type="hidden" value="/cart/">
               <div class="btn"><button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button></div>
             </form>
@@ -473,9 +473,8 @@
   <script>
     // Buy Button Functionality
     $("#buy-button").click(function() {
-      let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
-      let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
-      let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity;
+      let checkedPack = $(this).closest('input[name=id]:checked', '#CTAForm').attr();
+      let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":1";
       window.location.href = checkoutLink;
     })
   </script>
