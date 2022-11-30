@@ -73,7 +73,7 @@
             <form {% unless isSkipCart %}action="/cart/add" method="post"{% endunless %}>
               <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
               <input name="return_to" type="hidden" value="/cart/">
-              <div class="btn"><button class="main-btn add-to-cart-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button></div>
+              <button class="main-btn add-to-cart-btn" id='AddTCart' {% unless isSkipCart %}type="submit"{% endunless %} title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button>
             </form>
 
             <div class="total-and-shipping">
@@ -473,7 +473,7 @@
   <script>
     // Buy Button Functionality
     $(".add-to-cart-btn").click(function() {
-      let checkedPack = $(this).closest('input[name=id]').val();
+      let checkedPack = $(this).parent().find('input[name=id]').val();
       let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":1";
       console.log(checkoutLink);
       {%- comment -%} window.location.href = checkoutLink; {%- endcomment -%}
