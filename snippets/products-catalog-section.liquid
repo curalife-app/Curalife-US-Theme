@@ -473,7 +473,7 @@
   <script>
     // Buy Button Functionality
     $(".add-to-cart-btn").click(function() {
-      let checkedPack = $(this).closest('input[name=id]').attr();
+      let checkedPack = $(this).closest('input[name=id]').val();
       let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":1";
       window.location.href = checkoutLink;
     })
