@@ -1,96 +1,96 @@
-{% render 'script.round-converted-currency' %}
-
 {% if shop.name == "CuraLife" %}
-    {% assign shipping_worldwide = 'US Free Shipping' %}
-    {% assign bundle_addition_value = 12800 %}
+  {% assign shipping_worldwide = 'US Free Shipping' %}
+  {% assign bundle_notice_text = "+ Life Changing Bonus" %}
+  {% assign bundle_addition_value = 12800 %}
 {% elsif shop.name == "CuraLife Global" %}
-    {% assign shipping_worldwide = 'Free Shipping Above £99' %}
-      {% assign bundle_addition_value = 1700 %}
+  {% assign shipping_worldwide = 'Free Shipping Above £99' %}
+  {% assign bundle_notice_text = "+ CuraEats App Bonus" %}
+  {% assign bundle_addition_value = 1700 %}
 {% endif %}
 
-<section id="product-catalog-section">
-    <div class="product-list" id="product-list-section">
-        {% for prod in Prods %}
-            {% if request.page_type == 'collection' %}
-                {% assign product = prod %}
-            {% else %}
+{% render 'script.round-converted-currency' %}
 
-                {% assign product = all_products[prod] %}
-            {% endif %}
-            {% if product.tags contains "CuraEats" %}{% assign bundle_addition = bundle_addition_value %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
+<section id="product-catalog-section">
+  <div class="product-list" id="product-list-section">
+    {% for prod in Prods %}
+      {% if request.page_type == 'collection' %}
+        {% assign product = prod %}
+      {% else %}
+        {% assign product = all_products[prod] %}
+      {% endif %}
+
+      {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
+      {% assign quantity_by_cents = quantity | times: 100 %}
+      {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
+      {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
+
+      {% if product.tags contains "CuraEats" %}{% assign bundle_addition = bundle_addition_value %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
       <div class="product-card" id="product-card-section">
-          <div class="wrap">
-            <div class="picture">
-              {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
-              {% if quantity > 1 %}
+        <div class="wrap">
+          <div class="picture">
+            {% if quantity > 1 %}
               <div class="save-badge">
                 <div class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
               </div>
-
             {% endif %}
-              <div class="bg-picture">
-                {% render 'snow-effect', hasAlreadyRun: true %}
-                <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
-              </div>
 
-                <a href="{{ product.url }}">
-                  <div class="img">
-                    <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
-                  </div>
-                </a>
-                {%- comment -%} {% assign quantity = product.metafields.my_fields.pack_items_quantity %} {%- endcomment -%}
-                {% assign quantity_by_cents = quantity | times: 100 %}
-                {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
-                {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
-
-                {% if product.compare_at_price > product.price %}
-                <div class="discount" style="display: none;"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
-                {% endif %}
+            <div class="bg-picture">
+              {% render 'snow-effect', hasAlreadyRun: true %}
+              <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
             </div>
-            <div class="info">
-              <div class="main">
-                <div class="name">
-                  <h3><a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a></h3>
-                </div>
-                <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
-                <div class="price">
-                  {% if quantity > 0 %}
 
-                    <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
-                  {% elsif product.compare_at_price > product.price %}
-                    <p id="discounted-price"><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p>
-                  {% else %}
-                    <p id="original-price" class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
-                  {% endif %}
-                </div>
+            <a href="{{ product.url }}">
+              <div class="img">
+                <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
+              </div>
+            </a>
 
-                {% if product.tags contains 'CuraEats' %}
-                    <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">+ CuraEats App Bonus (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-                    <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
-                {% endif %}
-                </div>
-              <form action="/cart/add" method="post">
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
-                <input name="return_to" type="hidden" value="/cart/">
-
-                <div class="btn">
-                  <button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button>
-                </div>
-              </form>
-              <div class="total-and-shipping">
-                <div class="total-prices">
-                  TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
-                  <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-                </div>
-                {% if shop.name == "CuraLife" %}
-                  <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
+            {% if product.compare_at_price > product.price %}
+              <div class="discount" style="display: none;"><i class="icofont-star"></i><p>SAVE <span class="rounded floor">{{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p><i class="icofont-star"></i></div>
+            {% endif %}
+          </div>
+          <div class="info">
+            <div class="main">
+              <div class="name">
+                <h3><a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a></h3>
+              </div>
+              <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+              <div class="price">
+                {% if quantity > 0 %}
+                  <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
+                {% elsif product.compare_at_price > product.price %}
+                  <p id="discounted-price"><strike class="rounded no-letters">{{ product.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span></p>
+                {% else %}
+                  <p id="original-price" class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
                 {% endif %}
               </div>
+
+              {% if product.tags contains 'CuraEats' %}
+                  <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">+ CuraEats App Bonus (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+                  <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
+              {% endif %}
+            </div>
+
+            <form action="/cart/add" method="post">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+              <input name="return_to" type="hidden" value="/cart/">
+              <div class="btn"><button class="main-btn" id='AddTCart' type="submit" title="{{product.title}}" prod-id="{{product.selected_or_first_available_variant.sku}}" price="{{product.selected_or_first_available_variant.price | money_without_currency}}" discount="{% if product.compare_at_price > product.price %}{{ product.compare_at_price | minus: product.price | times: 0.01 }}{% else %}0{% endif %}"><i class="icon-cart"></i>Add To Cart</button></div>
+            </form>
+
+            <div class="total-and-shipping">
+              <div class="total-prices">
+                TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+              </div>
+              {% if shop.name == "CuraLife" %}
+                <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
+              {% endif %}
             </div>
           </div>
         </div>
-      {% endfor %}
-    </div>
+      </div>
+    {% endfor %}
+  </div>
 </section>
 
 <style>
@@ -100,7 +100,7 @@
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 20px;
     width: 100px;
     z-index: 4;
     font-family: 'PP Radio Grotesk';
@@ -127,8 +127,7 @@
 
   .bg-picture img {
     position: absolute;
-    top: 230px;
-    width: 100%;
+    bottom: 80px;
   }
   .per-bottle {
     font-size: 17px;
@@ -181,196 +180,195 @@
   }
 
   #product-catalog-section #product-catalog-section .product-card {
-      display: flex;
-      padding: 10px;
-      width: calc(100% / 3);
+    display: flex;
+    padding: 10px;
+    width: calc(100% / 3);
   }
 
   #product-catalog-section .product-card .wrap {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      border: 2px solid #f5f5f5;
-      border-radius: 6px;
-      overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #f5f5f5;
+    border-radius: 6px;
+    overflow: hidden;
   }
 
   #product-catalog-section .product-card .picture {
-      background: linear-gradient(#A9151E, #BE171F);
-      height: 370px;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
+    background: linear-gradient(#A9151E, #BE171F);
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
   }
 
   #product-catalog-section .product-card .picture .img {
-      padding: 5px 0 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      {%- comment -%} z-index: 3; {%- endcomment -%}
+    padding: 5px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    {%- comment -%} z-index: 3; {%- endcomment -%}
   }
 
   #product-catalog-section .product-card .picture .img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   #product-catalog-section .product-card .picture:after {
-      content: "";
-      display: block;
-      height: 30%;
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 2;
-      pointer-events: none;
+    content: "";
+    display: block;
+    height: 30%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
   }
 
   #product-catalog-section .product-card .picture:after {
-      content: "";
-      display: block;
-      height: 30%;
-      background-image: url({{ 'ellipse.svg' | asset_url }});
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 2;
-      pointer-events: none;
+    content: "";
+    display: block;
+    height: 30%;
+    background-image: url({{ 'ellipse.svg' | asset_url }});
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
   }
 
   #product-catalog-section .product-card .info {
-      display: flex;
-      flex: auto;
-      flex-direction: column;
-      padding: 16px;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    padding: 16px;
   }
 
   #product-catalog-section .product-card .info .price {
-      padding:  15px 0;
-      position: relative;
+    padding:  15px 0;
+    position: relative;
   }
 
   #product-catalog-section .product-card .info .main {
-      flex: auto;
-      padding-bottom: 10px;
-      text-align: center;
+    flex: auto;
+    padding-bottom: 10px;
+    text-align: center;
   }
 
   #product-catalog-section .product-card .info .name h3 {
-      font-family: 'Poppins';
-      margin: 0;
-      font-weight: 900;
-      font-size: 24px;
-      line-height: 1.08;
-      text-align: center;
-      color: #222222;
+    font-family: 'Poppins';
+    margin: 0;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.08;
+    text-align: center;
+    color: #222222;
   }
 
   #product-catalog-section .product-card .info .name h3 a {
-      color: inherit;
-      transition: color var(--transition);
+    color: inherit;
+    transition: color var(--transition);
   }
 
   #product-catalog-section .supply-days {
-      font-size: 16px;
-      text-align: center;
-      line-height: 0;
-      font-weight: 200;
+    font-size: 16px;
+    text-align: center;
+    line-height: 0;
+    font-weight: 200;
   }
 
   #product-catalog-section .product-card .info .price {
-      padding-top: 14px;
-      position: relative;
-      display: flex;
-      justify-content: center;
+    padding-top: 14px;
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
   #product-catalog-section .product-card .info .price .rounded.current-price {
     font-family: 'PP Radio Grotesk';
-      font-weight: 700;
-      font-size: 45px;
-      padding-left: 5px;
-      padding-right: 5px;
-
+    font-weight: 700;
+    font-size: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   #product-catalog-section .product-card .info .price p {
-      margin: 0;
-      font-weight: 400;
-      font-size: 26px;
-      line-height: 1;
-      text-align: center;
-      color: var(--dark);
-      white-space: nowrap;
+    margin: 0;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1;
+    text-align: center;
+    color: var(--dark);
+    white-space: nowrap;
   }
 
   #product-catalog-section .product-card .info .btn .main-btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 20px;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 1;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #fff;
-      background: #FFB22D;
-      border-radius: 2px;
-      border: 1px solid #FFB22D;
-      transition: color var(--transition),border-color var(--transition),background-color var(--transition);
-      width: 100%;
-      background: #404733 !important;
-      border: 1px solid #404733 !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #FFB22D;
+    border-radius: 2px;
+    border: 1px solid #FFB22D;
+    transition: color var(--transition),border-color var(--transition),background-color var(--transition);
+    width: 100%;
+    background: #404733 !important;
+    border: 1px solid #404733 !important;
   }
 
   #product-catalog-section .main-btn i {
-      display: block;
-      font-size: 24px;
-      padding-right: 10px;
+    display: block;
+    font-size: 24px;
+    padding-right: 10px;
   }
 
   #product-catalog-section .icon-cart:before {
-      content: "\efe7";
+    content: "\efe7";
   }
 
   #product-catalog-section .product-card .picture .discount {
     padding: unset;
-      width: 110%;
-      top: 200px;
-      left: -5%;
-      transform: rotate(-8.4deg);
-      padding: 3px;
-      position: relative;
-      z-index: 5;
-      display: flex;
-      justify-content: center;
-      background: #FFE746;
-      box-shadow: 0px 3.6px 3.6px rgb(0 0 0 / 25%);
-      font-size: 20px;
-      font-weight: bold;
-      gap: 10px;
-      pointer-events: none;
+    width: 110%;
+    top: 200px;
+    left: -5%;
+    transform: rotate(-8.4deg);
+    padding: 3px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    background: #FFE746;
+    box-shadow: 0px 3.6px 3.6px rgb(0 0 0 / 25%);
+    font-size: 20px;
+    font-weight: bold;
+    gap: 10px;
+    pointer-events: none;
   }
 
   #product-catalog-section .product-card .picture .discount p {
-      margin: 0;
+    margin: 0;
   }
 
   #product-catalog-section .icofont-star:before {
-      content: "\f000";
+    content: "\f000";
   }
 
   @media screen and (max-width:760px) {
@@ -378,8 +376,8 @@
       top: 20vw;
     }
     #product-catalog-section .product-card {
-        width: 100%;
-        padding: 10px;
+      width: 100%;
+      padding: 10px;
     }
 
     #product-catalog-section .changing-programm {
@@ -387,33 +385,37 @@
     }
 
     #product-catalog-section .product-card .picture {
-        height: 240px;
+      height: 240px;
     }
 
     #product-catalog-section .product-card .picture .discount {
-        top: 20vw;
+      top: 20vw;
     }
 
     #product-catalog-section .product-card .info .name h3 {
-        font-size: 7vw;
+      font-size: 7vw;
     }
 
     #product-catalog-section .product-card .info .price {
-        padding-top: 4vw;
+      padding-top: 4vw;
     }
 
     #product-catalog-section .product-card .info .price .rounded.current-price {
-        font-size: 41px;
-        padding-left: 1vw;
-        padding-right: 1vw;
+      font-size: 41px;
+      padding-left: 1vw;
+      padding-right: 1vw;
     }
 
     #product-catalog-section .product-card .info .price p {
-        font-size: 6vw;
+      font-size: 6vw;
     }
 
     #product-catalog-section .product-card .info .btn .main-btn {
-        font-size: 5vw;
+      font-size: 5vw;
+    }
+
+    #product-catalog-section .bg-picture img {
+      bottom: 30px;
     }
   }
 
@@ -441,7 +443,6 @@
     #product-catalog-section .product-card .picture .discount {
         top: 35vw;
     }
-
   }
 
   @media screen and (max-width:412px){

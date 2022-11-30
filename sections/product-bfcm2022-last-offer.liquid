@@ -1,12 +1,26 @@
+{%- comment -%} Get If User Is Admin {%- endcomment -%}
+{% capture CFH %}{{ content_for_header }}{% endcapture %}
+
+{% if CFH contains 'adminBarInjector' %}
+  {% assign admin = true %}
+{% elsif CFH contains 'admin-bar-iframe' %}
+  {% assign admin = true %}
+{% elsif CFH contains 'preview_bar_injector-' %}
+  {% assign admin = true %}
+{% endif %}
+
+{%- comment -%} Differences Between US and Global {%- endcomment -%}
 {% if shop.name == "CuraLife" %}
+  {% assign bundle_notice_text = "+ Life Changing Bonus" %}
   {% assign challange_value = 99 %}
   {% assign curaeats_value = 29 %}
 {% elsif shop.name == "CuraLife Global" %}
+  {% assign bundle_notice_text = "+ CuraEats App Bonus" %}
   {% assign challange_value = 0 %}
   {% assign curaeats_value = 17 %}
 {% endif %}
 
-{% assign current_variant = product.selected_or_first_available_variant %}
+{%- comment -%} More Variables {%- endcomment -%}
 {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
 {% assign quantity_by_cents = quantity | times: 100 %}
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
@@ -18,178 +32,131 @@
 {% render 'sale-banner', title: "Get into the holiday spirit!", color: "red" %}
 
 <div class="product-data">
-    <div class="container">
-      {% if product.tags contains "CuraEats" %}
-        {% render 'last-offer-title' %}
-      {% endif %}
+  <div class="container">
+    {% if product.tags contains "CuraEats" %}
+      {% render 'last-offer-title' %}
+    {% endif %}
 
-      <div class="product-wrap">
-        <div class="product-wrap-wrapper" style="position: relative">
-          <div class="product-slider">
-            <div class="bg">
-              {% render 'snow-effect', hasAlreadyRun: true %}
-            </div>
+    <div class="product-wrap">
+      <div class="product-wrap-wrapper" style="position: relative">
+        <div class="product-slider">
+          <div class="bg">
+            {% render 'snow-effect', hasAlreadyRun: true %}
+          </div>
 
-            <div class="sliders-group">
-              <div class="main-slider">
-                {% if product.compare_at_price > product.price %}
-                  <div class="save-badge">
-                    <p class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
-                  </div>
+          <div class="sliders-group">
+            <div class="main-slider">
+              {% if product.compare_at_price > product.price %}
+                <div class="save-badge">
+                  <p class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
+                </div>
 
-                  <style>
-                    .save-badge {
-                      background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
-                      background-size: contain;
-                      background-repeat: no-repeat;
-                      position: absolute;
-                      top: -20px;
-                      right: 20px;
-                      width: 100px;
-                      z-index: 4;
-                      font-family: 'PP Radio Grotesk';
-                      font-weight: 700;
-                      font-size: clamp(20px, 2vw, 22px);
-                      text-align: center;
-                      color: #C00101;
-                    }
+                <style>
+                  .save-badge {
+                    background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: -20px;
+                    right: 20px;
+                    width: 100px;
+                    z-index: 4;
+                    font-family: 'PP Radio Grotesk';
+                    font-weight: 700;
+                    font-size: clamp(20px, 2vw, 22px);
+                    text-align: center;
+                    color: #C00101;
+                  }
 
-                    .save-badge-title {
-                      display: flex;
-                      flex-direction: column;
-                      padding: 4.5rem 0;
-                      margin: unset;
-                    }
-                  </style>
-                {% endif %}
+                  .save-badge-title {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 4.5rem 0;
+                    margin: unset;
+                  }
+                </style>
+              {% endif %}
 
-                {% assign image = product.images | first %}
-                <div class="product-img">
-                  <div class="img-wrap">
-                    <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
-                  </div>
-                  <div class="bg-picture">
-                    <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
-                  </div>
-
+              {% assign image = product.images | first %}
+              <div class="product-img">
+                <div class="img-wrap">
+                  <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
+                </div>
+                <div class="bg-picture">
+                  <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="product-info">
-          <div class="title-wrapper">
-            <div class="sub-title">
-              <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
-              <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
-
-              <style>
-                .sub-title p {
-                  padding-top: unset;
-                  font-size: 16px;
-                  color: #6f6f6f;
-                  margin-top: -5px;
-                }
-              </style>
-            </div>
-
-            {% capture CFH %}{{ content_for_header }}{% endcapture %}
-
-            {% if CFH contains 'adminBarInjector' %}
-            {% assign admin = true %}
-            {% elsif CFH contains 'admin-bar-iframe' %}
-            {% assign admin = true %}
-            {% elsif CFH contains 'preview_bar_injector-' %}
-            {% assign admin = true %}
-            {% endif %}
-
-            {% if admin %}
-              <div class="edit"><a href="/admin/products/{{ product.id }}"><i class="icofont-ui-edit"></i></a></div>
-            {% endif %}
+      <div class="product-info">
+        <div class="title-wrapper">
+          <div class="sub-title">
+            <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+            <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
           </div>
-                      <div class="description">
-                        <div class="price">
-                          <p>
-                            <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
-                            <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
-                            <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
-                          </p>
-                        </div>
-                        <div class="total-and-shipping">
-                          <div class="total-prices" style="display:flex;align-items:center">
-                            TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
-                            <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-                          </div>
-                        </div>
 
-                        <style>
-                            .total-and-shipping {
-                              margin-top: 10px;
-                              display: flex;
-                              font-family: 'PP Radio Grotesk';
-                              font-weight: 700;
-                              font-size: 20px;
-                            }
+          {% if admin %}
+            <div class="edit"><a href="/admin/products/{{ product.id }}"><i class="icofont-ui-edit"></i></a></div>
+          {% endif %}
+        </div>
 
-                            .total-and-shipping .free-shipping1 .free-red {
-                              color: #ED073E;
-                            }
+        <div class="description">
+          <div class="price">
+            <p>
+              <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+              <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
+              <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
+            </p>
+          </div>
+          <div class="total-and-shipping">
+            <div class="total-prices" style="display:flex;align-items:center">
+              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+              <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+            </div>
+          </div>
 
-                            @media screen and (max-width: 760px) {
-                              .total-and-shipping {
-                                justify-content: center;
-                              }
-                            }
-                        </style>
+          {% if product.tags contains 'CuraEats' %}
+              <p class="bundle-notice">{{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+              <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
+          {% endif %}
 
-            <div class="form-wrap">
-              <form method="post" id="addTocartForm" action="/cart/add">
-                <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                <div class="qty-data">
-                  <p>Quantity</p>
-                  <div class="qty-control">
-                    <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
-                    <label><input type="number" name="quantity" value="1" maxlength="4"></label>
-                    <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
-                  </div>
-                </div>
-                {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
-                  {% if current_variant.available %}
-                    <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
-                  {% else %}
-                    <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' }}</button>
-                  {% endif %}
-                {% else %}
-                  <button type="submit" name="add" id="AddTCart" class="main-btn" style="background-color: #4B643D; color: #ffffff"><i class="icon-cart"></i>Add to Cart</button>
-                {% endif %}
-              </form>
-
-              {% if product.tags contains 'CuraEats' %}
-                  <p class="bundle-notice">+ {% if shop.name == "CuraLife" %}Life Changing Bonus{% else %}CuraEats App Bonus{% endif %} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-                  <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
-              {% endif %}
-              </div>
-
-              <div class="extra-info">
-
-                <div class="text-wrap">
-                  <p>CuraLin is different than anything else available on the market right now, and anything you may have tried in the past.</p>
-                    <p>CuraLin offers people needing advanced glucose support an effective and 100% natural option for maintaining healthy glucose levels.</p>
-                    <p>Each vegan-friendly capsule contains our powerful Ayurvedic formula, free from dairy, gluten, preservatives, and artificial colors & flavors.</p>
+          <div class="form-wrap">
+            <form method="post" id="addTocartForm" action="/cart/add">
+              <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <div class="qty-data">
+                <p>Quantity</p>
+                <div class="qty-control">
+                  <a href="javascript:void(0)" data-act="-"><span class="icon-minus"></span></a>
+                  <label><input type="number" name="quantity" value="1" maxlength="4"></label>
+                  <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                 </div>
               </div>
+
+              <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
+            </form>
+          </div>
+
+          <div class="extra-info">
+            <div class="text-wrap">
+              <p>CuraLin is different than anything else available on the market right now, and anything you may have tried in the past.</p>
+              <p>CuraLin offers people needing advanced glucose support an effective and 100% natural option for maintaining healthy glucose levels.</p>
+              <p>Each vegan-friendly capsule contains our powerful Ayurvedic formula, free from dairy, gluten, preservatives, and artificial colors & flavors.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    {% render 'trust-badges-section' %}
-
-    {% if product.tags contains "CuraEats" %}
-      {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
-    {% endif %}
   </div>
+
+  {% render 'trust-badges-section' %}
+
+  {% if product.tags contains "CuraEats" %}
+    {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
+  {% endif %}
+</div>
 
 <style>
   .bg-picture img {
@@ -279,6 +246,13 @@
     align-items: center;
   }
 
+  .sub-title p {
+    padding-top: unset;
+    font-size: 16px;
+    color: #6f6f6f;
+    margin-top: -5px;
+  }
+
   .edit a {
     margin-left: 15px;
     font-size: 18px;
@@ -286,9 +260,10 @@
 
   .bundle-notice {
     color: #C00101;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: 18px;
     font-weight: bold;
-    margin: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 0px;
   }
 
   .product-info .description .price {
@@ -309,6 +284,18 @@
     display: flex;
     align-items: center;
     text-align: center;
+  }
+
+  .total-and-shipping {
+    margin-top: 10px;
+    display: flex;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .total-and-shipping .free-shipping1 .free-red {
+    color: #ED073E;
   }
 
   @media screen and (max-width: 760px) {
@@ -352,6 +339,10 @@
 
     .product-info .description .price p {
         justify-content: center;
+    }
+
+    .total-and-shipping {
+      justify-content: center;
     }
   }
 </style>
