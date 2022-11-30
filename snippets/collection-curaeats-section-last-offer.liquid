@@ -139,7 +139,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: {% if shop.name == "CuraLife" %} -50px{% else %} -150px;{% endif %}
+    top: -50px;
     right: 100px;
     width: 100px;
     height: 150px;
@@ -260,7 +260,7 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    top: -50px;
+    top: {% if shop.name == "CuraLife" %} -50px{% else %} -150px;{% endif %}
     position: relative;
   }
 
