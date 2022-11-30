@@ -44,7 +44,7 @@
                       background-repeat: no-repeat;
                       position: absolute;
                       top: -20px;
-                      right: 0;
+                      right: 20px;
                       width: 100px;
                       z-index: 4;
                       font-family: 'PP Radio Grotesk';
@@ -71,7 +71,7 @@
                   <div class="bg-picture">
                     <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
                   </div>
-       
+
                 </div>
               </div>
             </div>
@@ -166,7 +166,7 @@
               </form>
 
               {% if product.tags contains 'CuraEats' %}
-                  <p style="color:#C00101;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">+ {% if shop.name == "CuraLife" %}Life Changing Bonus{% else %}CuraEats App Bonus{% endif %} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+                  <p class="bundle-notice">+ {% if shop.name == "CuraLife" %}Life Changing Bonus{% else %}CuraEats App Bonus{% endif %} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
                   <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
               {% endif %}
               </div>
@@ -197,7 +197,7 @@
     top: 230px;
     width: 100%;
     z-index: -1;
-  }			  
+  }
 
   .product-wrap {
     justify-content: center;
@@ -284,6 +284,13 @@
     font-size: 18px;
   }
 
+  .bundle-notice {
+    color: #C00101;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight:bold;
+    margin: 10px 0;
+  }
+
   @media screen and (max-width: 760px) {
     .bg-picture img {
       top: 31vw;
@@ -317,6 +324,10 @@
     .edit a {
       position: absolute;
       right: 0;
+    }
+
+    .bundle-notice {
+      text-align: center;
     }
   }
 
