@@ -6,7 +6,6 @@
   {% assign curaeats_value = 17 %}
 {% endif %}
 
-{% assign current_variant = product.selected_or_first_available_variant %}
 {% assign quantity = product.metafields.my_fields.pack_items_quantity %}
 {% assign quantity_by_cents = quantity | times: 100 %}
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
@@ -155,15 +154,8 @@
                     <a href="javascript:void(0)" data-act="+"><span class="icon-plus"></span></a>
                   </div>
                 </div>
-                {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
-                  {% if current_variant.available %}
-                    <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
-                  {% else %}
-                    <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' }}</button>
-                  {% endif %}
-                {% else %}
-                  <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
-                {% endif %}
+
+                <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
               </form>
 
               {% if product.tags contains 'CuraEats' %}
