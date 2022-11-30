@@ -108,40 +108,41 @@
               <div class="edit"><a href="/admin/products/{{ product.id }}"><i class="icofont-ui-edit"></i></a></div>
             {% endif %}
           </div>
-                      <div class="description">
-                        <div class="price">
-                          <p>
-                            <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
-                            <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
-                            <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
-                          </p>
-                        </div>
-                        <div class="total-and-shipping">
-                          <div class="total-prices" style="display:flex;align-items:center">
-                            TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
-                            <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-                          </div>
-                        </div>
 
-                        <style>
-                            .total-and-shipping {
-                              margin-top: 10px;
-                              display: flex;
-                              font-family: 'PP Radio Grotesk';
-                              font-weight: 700;
-                              font-size: 20px;
-                            }
+          <div class="description">
+            <div class="price">
+              <p>
+                <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
+                <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
+              </p>
+            </div>
+            <div class="total-and-shipping">
+              <div class="total-prices" style="display:flex;align-items:center">
+                TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+                <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+              </div>
+            </div>
 
-                            .total-and-shipping .free-shipping1 .free-red {
-                              color: #ED073E;
-                            }
+            <style>
+                .total-and-shipping {
+                  margin-top: 10px;
+                  display: flex;
+                  font-family: 'PP Radio Grotesk';
+                  font-weight: 700;
+                  font-size: 20px;
+                }
 
-                            @media screen and (max-width: 760px) {
-                              .total-and-shipping {
-                                justify-content: center;
-                              }
-                            }
-                        </style>
+                .total-and-shipping .free-shipping1 .free-red {
+                  color: #ED073E;
+                }
+
+                @media screen and (max-width: 760px) {
+                  .total-and-shipping {
+                    justify-content: center;
+                  }
+                }
+            </style>
 
             <div class="form-wrap">
               <form method="post" id="addTocartForm" action="/cart/add">
