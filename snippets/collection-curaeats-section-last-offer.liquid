@@ -8,7 +8,7 @@
     <div class="challange">
       <div class="badge-img">
       
-       SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}
+       SAVE {{ curaeats_value | times: 100 | money | replace: ".00", "" }}
       
       </div> 
       
