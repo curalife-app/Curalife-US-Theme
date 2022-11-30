@@ -1,12 +1,14 @@
-{% render 'script.round-converted-currency' %}
-
 {% if shop.name == "CuraLife" %}
   {% assign shipping_worldwide = 'US Free Shipping' %}
+  {% assign bundle_notice_text = "+ Life Changing Bonus" %}
   {% assign bundle_addition_value = 12800 %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign shipping_worldwide = 'Free Shipping Above £99' %}
+  {% assign bundle_notice_text = "+ CuraEats App Bonus" %}
   {% assign bundle_addition_value = 1700 %}
 {% endif %}
+
+{% render 'script.round-converted-currency' %}
 
 <section id="product-catalog-section">
     <div class="product-list" id="product-list-section">
