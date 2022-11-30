@@ -130,20 +130,15 @@
 
                 <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
               </form>
+            </div>
 
-              {% if product.tags contains 'CuraEats' %}
-                  <p class="bundle-notice">+ {% if shop.name == "CuraLife" %}Life Changing Bonus{% else %}CuraEats App Bonus{% endif %} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-                  <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
-              {% endif %}
+            <div class="extra-info">
+              <div class="text-wrap">
+                <p>CuraLin is different than anything else available on the market right now, and anything you may have tried in the past.</p>
+                <p>CuraLin offers people needing advanced glucose support an effective and 100% natural option for maintaining healthy glucose levels.</p>
+                <p>Each vegan-friendly capsule contains our powerful Ayurvedic formula, free from dairy, gluten, preservatives, and artificial colors & flavors.</p>
               </div>
-
-              <div class="extra-info">
-                <div class="text-wrap">
-                  <p>CuraLin is different than anything else available on the market right now, and anything you may have tried in the past.</p>
-                    <p>CuraLin offers people needing advanced glucose support an effective and 100% natural option for maintaining healthy glucose levels.</p>
-                    <p>Each vegan-friendly capsule contains our powerful Ayurvedic formula, free from dairy, gluten, preservatives, and artificial colors & flavors.</p>
-                </div>
-              </div>
+            </div>
           </div>
         </div>
       </div>
