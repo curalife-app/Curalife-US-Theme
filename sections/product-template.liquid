@@ -568,7 +568,7 @@
                 </div>
                 {% if product.id == all_products["curalin"].id or product.id == all_products["curalin-3-pack"].id %}
                   {% if current_variant.available %}
-                    <button type="submit" name="add" id="AddTCart" class="main-btn " style="background-color: #4B643D; color: #ffffff"><i class="icon-cart"></i>Add to Cart</button>
+                    <button type="submit" name="add" id="AddTCart" class="main-btn "><i class="icon-cart"></i>Add to Cart</button>
                   {% else %}
                     <button type="button" name="add" id="" class="main-btn"><i class="icon-cart"></i>{{ 'products.product.sold_out' | t }}</button>
                   {% endif %}
