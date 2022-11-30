@@ -469,6 +469,18 @@
   }
 </style>
 
+{% if isSkipCart %}
+  <script>
+    // Buy Button Functionality
+    $("#buy-button").click(function() {
+      let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
+      let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
+      let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity;
+      window.location.href = checkoutLink;
+    })
+  </script>
+{% endif %}
+
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
