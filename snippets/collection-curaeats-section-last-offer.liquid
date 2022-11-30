@@ -84,7 +84,7 @@
     font-weight: bold;
   }
 
-  #curaeats-section .container {
+  #curaeats-section .container {badge
     position: relative;
     padding: 0 100px;
   }
@@ -139,7 +139,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: -50px;
+    top: {% if shop.name == "CuraLife" %}-50px{% else %}-150px;
     right: 100px;
     width: 100px;
     height: 150px;
