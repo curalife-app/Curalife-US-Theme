@@ -1,7 +1,7 @@
 {% layout 'theme.aio-first-page' %}
 
-
-{% render 'lps-aio-header-bfcm2022' %}
+{% render 'sale-banner', title: "Get into the holiday spirit!", isLogo: true, logoColor: "green", color: "red" %}
+{%- comment -%} {% render 'lps-aio-header-bfcm2022' %} {%- endcomment -%}
 <div class="page-overflow">
 
     <div class="hero-section">
@@ -1082,7 +1082,7 @@
 <style>
 
     .hero-section {
-        margin-top: 80px;
+        
     }
     .brand-intro-cover-img-mobile {
         display: none !important;
@@ -1094,13 +1094,13 @@
 
     .btn-cta {
         border: none;
-        background: #FDD246;
+        background: #4B643D;
         color: black;
         font-weight: 400;
     }
 
     .btn-cta:hover {
-        background: #e6bb2c;
+        background: #4B643D;
         color: black;
     }
 
@@ -1160,7 +1160,7 @@
     @media screen and (max-width: 760px) {
 
         .hero-section {
-            margin-top: 60px;
+            
         }
         .brand-intro-cover-img-mobile {
             display: block !important;
@@ -1173,7 +1173,7 @@
 
         .hero-section .brand-welcome-text * {
             font-size: 6vw;
-            color: #62C1C5 !important;
+            color: #4B643D !important;
             background: unset !important;
             padding: 0 !important;
         }
