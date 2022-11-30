@@ -86,7 +86,7 @@ input[type=number] {
   background: #4B643D;
   border-radius: 2px;
   border: 1px solid #4B643D;
-  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+  transition: all 1s;
 
   i {
     display: block;
