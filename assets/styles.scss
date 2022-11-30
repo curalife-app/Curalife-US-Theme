@@ -102,8 +102,8 @@ input[type=number] {
 
   &:hover {
     color: var(--white);
-    background-color: #404733;
-    border-color: #404733;
+    background-color: #404733 !important;
+    border-color: #404733 !important;
   }
 }
 
