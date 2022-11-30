@@ -111,12 +111,6 @@
               <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
             </p>
           </div>
-          <div class="total-and-shipping">
-            <div class="total-prices" style="display:flex;align-items:center">
-              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
-              <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-            </div>
-          </div>
 
           {% if product.tags contains 'CuraEats' %}
               <p class="bundle-notice">{{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
@@ -137,6 +131,13 @@
 
               <button type="submit" name="add" id="AddTCart" class="main-btn"><i class="icon-cart"></i>Add to Cart</button>
             </form>
+          </div>
+
+          <div class="total-and-shipping">
+            <div class="total-prices" style="display:flex;align-items:center">
+              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+              <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+            </div>
           </div>
 
           <div class="extra-info">
