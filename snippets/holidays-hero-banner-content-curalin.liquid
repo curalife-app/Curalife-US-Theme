@@ -12,6 +12,7 @@
   .holidays-hero-banner-content {
       display: flex;
       justify-content: center;
+      align-items: center;
   }
 
   .holidays-hero-banner-content .text-and-img {
@@ -23,7 +24,6 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    position: absolute;
     left: 250px;
     z-index: 4;
     max-width: 400px;
@@ -60,15 +60,10 @@
   }
 
   .holidays-hero-banner-content .main-img {
-    position: absolute;
-    right: 200px;
     object-fit: contain;
-    height: 100%;
-    z-index: 3;
   }
 
   @media screen and (max-width: 1008px) {
-
     .holidays-hero-banner-content .text-button {
         left: 11vw;
         padding-top: 6vw;
@@ -110,7 +105,6 @@
         object-fit: contain;
         max-width: 100vw;
         height: max(59vw, 29vw);
-        position: unset;
         margin-left: 10vw;
     }
   }

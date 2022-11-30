@@ -1,13 +1,13 @@
 
 {% if shop.name == "CuraLife" %}
     {% assign shipping_worldwide = 'US Free Shipping' %}
-    {% assign challange_value = 150 %}
-    {% assign curaeats_value = 49 %}
+    {% assign challange_value = 99 %}
+    {% assign curaeats_value = 29 %}
     {% assign currency_symbol = '$' %}
 {% elsif shop.name == "CuraLife Global" %}
     {% assign shipping_worldwide = 'Free Shipping Above £99' %}
     {% assign challange_value = 0 %}
-    {% assign curaeats_value = 40 %}
+    {% assign curaeats_value = 24 %}
     {% assign currency_symbol = '£' %}
 {% endif %}
 
@@ -186,12 +186,11 @@
     </div>
     <div class="container badges-container">
       <div class="trust-badges">
-<div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
-<div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">
-  <div id="shipping-badge-text" style="display: inline-block">{{shipping_worldwide}} <div class="geo" style="display:none;display: inline-block;"></div>
-  </div>
-</div>
-<div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
+        <div class="trust-badge"><img src="{{ 'icon-money-back.png' | asset_url }}" alt="">60 Day Money Back Guarantee</div>
+          <div class="trust-badge"><img src="{{ 'icon-free-shipping.png' | asset_url }}" alt="">
+            <div id="shipping-badge-text" style="display: inline-block">{{shipping_worldwide}} <div class="geo" style="display:none;display: inline-block;"></div></div>
+          </div>
+        <div class="trust-badge"><img src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="">100% Secure Checkout</div>
       </div>
     </div>
   </section>
