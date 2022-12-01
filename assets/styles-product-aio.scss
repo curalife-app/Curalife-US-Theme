@@ -354,12 +354,9 @@
                                     }
 
                                     .save {
-                                        color: black;
-                                        margin-left: 42px;
                                         font-size: 14px;
                                         font-weight: 400;
                                         transition: all 0.3s;
-                                        min-width: 40%;
                                     }
                                 }
                             }
@@ -789,22 +786,6 @@
                                     right: 10px;
                                     width: unset;
                                     margin-right: unset;
-                                }
-                            }
-
-                            .submit-wrap {
-                                .btn {
-                                    .main-btn {
-                                        max-width: unset;
-                                        display: block;
-
-                                        .save {
-                                            display: block;
-                                            margin-left: unset;
-                                            margin-top: 5px;
-                                            min-width: unset;
-                                        }
-                                    }
                                 }
                             }
                         }
