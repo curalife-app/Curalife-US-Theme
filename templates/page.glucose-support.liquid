@@ -1,15 +1,4 @@
 {% section 'glucose-support-banner' %}
-{% section 'glucose-support-white-bg-content'%}
-{%- comment -%} {% section 'powerful-natural-ingredients'%} {%- endcomment -%}
-{% section 'what-our-clients-say'%}
-
-<script>
-    function runAfterElementExists(jquery_selector, callback) {
-        var checker = window.setInterval(function () {
-            if ($(jquery_selector).length) {
-                clearInterval(checker);
-                callback();
-            }
-        }, 200);
-    }
-</script>
+{% section 'glucose-support-white-bg-content' %}
+{%- comment -%} {% render 'powerful-natural-ingredients' %}  {%- endcomment -%}
+{% section 'what-our-clients-say' %}
