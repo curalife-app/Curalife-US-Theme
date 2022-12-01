@@ -11,6 +11,7 @@
 <section id="product-catalog-section">
   <div class="product-list" id="product-list-section">
     {% for prod in Prods %}
+      <script>console.log("{{prod}}")</script>
       {% if request.page_type == 'collection' %}
         {% assign product = prod %}
       {% else %}
