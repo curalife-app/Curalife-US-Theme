@@ -1,20 +1,4 @@
-<style>
-  @media screen and (max-width:760px) {
-    .product-template-all-in-one .cta-section .product-container {
-      grid-template-rows: 8% 47% 45% !important;
-      grid-template-columns: unset !important;
-      min-height: 250vw;
-    }
 
-    .main-slider-vector-bg {
-      height: unset !important;
-    }
-
-    #contact-us-section {
-      display: none !important;
-    }
-  }
-</style>
 
 <div class="product-template-all-in-one">
   <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt="">
@@ -132,6 +116,33 @@
 
   {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
 </div>
+<style>
+  .product-template-all-in-one .cta-section .product-container .product-info {
+      max-height:120px;
+
+}
+
+@media screen and (max-width: 760px)  {
+  .product-template-all-in-one .cta-section .product-container .product-info {
+      max-height:41vw;
+
+  }
+}
+</style>
+<style>
+  .product-template-all-in-one .cta-section .product-container .product-info {
+      max-height:120px;
+
+}
+
+@media screen and (max-width: 760px)  {
+  .product-template-all-in-one .cta-section .product-container .product-info {
+      max-height:41vw;
+
+  }
+}
+</style>
+
 
 <script>
   // Back To Top Button
