@@ -2,9 +2,16 @@
 <section id="last-offer-title-section">
   <div class="catalog">
         {% if shop.name == "CuraLife" %}
+          {% if isLP %}
+         <div class="offer">Special Curalin Offer</div>
+          <div class="limited" id="limited">
+          Get Curalin in a bundle!
+          </div>
+          {% else %}
           <div class="limited" id="limited">Special Curalin Offer <br>
           Get Curalin in a bundle!
           </div>
+        {% endif %}
           <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div>
         {% else %}
           <h1 style="text-align:center;font-size:30px;">Limited Time Bonus: CuraEats Meal Plan App (Valued £24)</h1>
@@ -13,6 +20,10 @@
 </section>
 
 <style>
+  .offer {
+    background-color: #C00101;
+    color: #ffffff;
+  }
   #last-offer-title-section .catalog  {
     margin-top: 20px;
       display: flex;
