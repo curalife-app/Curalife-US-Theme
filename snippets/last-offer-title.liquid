@@ -5,6 +5,7 @@
           {% if isLP %}
          
           <div class="limited" id="limited">
+            <div class="offer">Special Curalin Offer</div>
           Get Curalin in a bundle!
           </div>
           {% else %}
@@ -20,6 +21,15 @@
 </section>
 
 <style>
+
+  .offer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #C00101;
+    color: #ffffff;
+    font-size: clamp(25px, 3vw, 35px);
+  }
 
   #last-offer-title-section .catalog  {
     margin-top: 20px;
