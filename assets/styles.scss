@@ -970,8 +970,6 @@ input[type=number] {
 }
 
 .swiper-pagination {
-  top: -20px;
-
   .swiper-pagination-bullet {
     width: 20px;
     height: 20px;
@@ -8819,10 +8817,6 @@ html {
         right: 0;
       }
     }
-  }
-
-  .swiper-pagination {
-    top: 0;
   }
 
   .ingredient-item {
