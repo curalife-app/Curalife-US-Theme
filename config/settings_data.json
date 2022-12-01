@@ -523,18 +523,13 @@
           "85b9c9d6-30d0-4150-97d7-7b0158ce969e",
           "033f1883-ae18-4db8-bc42-3478dc5d73b7",
           "5a9456de-815b-4922-a1f8-dfb5c35e95a8",
-          "7808b079-a5ea-4db5-b537-8efe75fe592d",
           "9a229cd3-d79d-4585-b2a0-f8179fff3f8b",
           "b702e5f5-e32f-4240-b096-ee2c0b543b4a",
           "b34e5401-0b3b-4155-b841-15a73f2a2468",
           "446b307d-7f33-42f4-9078-0c9f1d36c181",
           "94e2bfc7-4ad5-4a51-ad23-a6e4f34de98f",
           "9b1a3a7d-ef51-430d-b324-9af611856fdd",
-          "9f9ab3a1-8e20-4625-bfef-02e22bede349",
-          "4907a2f3-3ee2-4203-8552-589eeba13b6b",
           "1ef4abbd-b226-42d3-9f0f-20082c9e8272",
-          "31e6cb49-2950-48d8-b628-a23163b8910c",
-          "3f6d099e-a3eb-4202-9ae0-0e649230ab17",
           "97cedbb7-f2b6-42e2-aca2-f992f5cd2705",
           "c96f9156-6ffa-4eaa-a270-275850875c0f",
           "30a827de-82cf-4cf0-988d-7438ae8f52b5",
@@ -569,11 +564,6 @@
       "glucose-support-banner": {
         "type": "glucose-support-banner",
         "settings": {
-          "header_image": "shopify:\/\/shop_images\/Group_4793.png",
-          "header_title": "CuraLin",
-          "header_subtitle": "Natural Blood Sugar<br>Support Supplement",
-          "button_title": "shop now",
-          "button_link": "shopify:\/\/collections\/all"
         }
       },
       "glucose-support-white-bg-content": {
@@ -909,7 +899,7 @@
         "settings": {
           "rtlprdct_title": "Curalife Products",
           "rtlprdct_desc": "Recommended for Safe and Powerful Glucose Support",
-          "rtlcollection": "all",
+          "rtlcollection": "all-holidays",
           "rtlprdct_bgimg": "shopify:\/\/shop_images\/bg.jpg",
           "rtlbtm_desc": "If you’re excited by the impact CuraLife products can make in your community, we should discuss partnership opportunities. Simply fill in the contact form to get started."
         }
