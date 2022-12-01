@@ -215,10 +215,19 @@
                     </div>
                     <div class="curaline-widget-item">
                         <div class="curaline-widget-icon">
-                            <img src="{{ 'lp-aio-usa-icon.png' | file_url }}" alt="">
+                            {% if shop.name == "CuraLife" %}
+                                <img src="{{ 'lp-aio-usa-icon.png' | file_url }}" alt="">
+                            {% elsif shop.name == "CuraLife Global" %}
+                                <img src="{{ 'lp-aio-eu-icon.png' | file_url }}" alt="">
+                            {% endif %}
+                            
                         </div>
                         <div class="curaline-widget-text">
-                            <h4>Encapsulated in the USA</h4>
+                            {% if shop.name == "CuraLife" %}
+                               <h4>Encapsulated in the USA</h4>
+                            {% elsif shop.name == "CuraLife Global" %}
+                               <h4>Encapsulated in the Europe</h4>
+                        {% endif %}
                             <p>Uses regulated facilities</p>
                         </div>
                     </div>
