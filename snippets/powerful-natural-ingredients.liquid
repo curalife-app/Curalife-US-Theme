@@ -18,7 +18,7 @@
     <div class="sub-title">
       <h2>9 powerful natural ingredients combined into one capsule </h2>
     </div>
-    {% for ingredient in ingredients %}
+    
     <div class="ingredients-slider">
       <div class="prev-slide nav-slide">
         <span class="icon-arrow"></span>
@@ -26,6 +26,7 @@
       <div class="thumbs-slider">
         <div class="swiper" data-swiper="{'observer': true}">
           <div class="swiper-wrapper">
+            {% for ingredient in ingredients %}
             <div class="swiper-slide">
               <div class="ingredient-item">
                 <div class="img-wrap">
@@ -33,12 +34,14 @@
                 </div>
               </div>
             </div>
+          {% endfor %}
           </div>
         </div>
       </div>
       <div class="main-slider">
         <div class="swiper">
           <div class="swiper-wrapper">
+            {% for ingredient in ingredients %}
             <div class="swiper-slide">
               <div class="ingredient-item">
                 <div class="text-wrap">
@@ -50,7 +53,8 @@
                   </div>
                 </div>
               </div>
-            </div>         
+            </div> 
+          {% endfor %}        
           </div>
         </div>
       </div>
