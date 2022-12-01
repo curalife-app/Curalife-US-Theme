@@ -177,7 +177,7 @@
               </div>
 
               <div class="btn">
-                <button class="main-btn" id="buy-button">Shop Now <span class="save" id="save" style="color: #ffffff"></span></button>
+                <button class="main-btn" id="buy-button">Shop Now <span class="save" id="save"></span></button>
               </div>
             </div>
           </div>
@@ -492,9 +492,7 @@
 </style>
 
 <style>
-  .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn .save {
-      color: #ffff !important;   
-  }
+
 </style>
 
 <script>
@@ -532,7 +530,7 @@
    
     // Save Text Change
     let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
-    saveText.style.color = "#ffffff";
+    
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
