@@ -18,7 +18,7 @@
     <div class="sub-title">
       <h2>9 powerful natural ingredients combined into one capsule </h2>
     </div>
-   {% for ingredient in ingredients %}
+    {% for ingredient in ingredients %}
     <div class="ingredients-slider">
       <div class="prev-slide nav-slide">
         <span class="icon-arrow"></span>
@@ -26,32 +26,31 @@
       <div class="thumbs-slider">
         <div class="swiper" data-swiper="{'observer': true}">
           <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="ingredient-item">
-                      <div class="img-wrap">
-                        <img src="{{ ingredient | file_url | split: "*" | first }}" width="432" height="378" alt="" loading="lazy">
-                      </div>
-                    </div>
-                  </div>
+            <div class="swiper-slide">
+              <div class="ingredient-item">
+                <div class="img-wrap">
+                  <img src="{{ ingredient | file_url | split: "*" | first }}" width="432" height="378" alt="" loading="lazy">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="main-slider">
         <div class="swiper">
           <div class="swiper-wrapper">
-           
-                <div class="swiper-slide">
-                  <div class="ingredient-item">
-                    <div class="text-wrap">
-                      <div class="name">
-                        <h4>{{ ingredient | split: "*" | last }}</h4>
-                      </div>
-                      <div class="description">
-                        <p>{{ ingredient | split: ":" | first }}</p>
-                      </div>
-                    </div>
+            <div class="swiper-slide">
+              <div class="ingredient-item">
+                <div class="text-wrap">
+                  <div class="name">
+                    <h4>{{ ingredient | split: "*" | last | split: ":" | first }}</h4>
                   </div>
-                </div>         
+                  <div class="description">
+                    <p>{{ ingredient | split: "*" | last | split: ":" | last }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>         
           </div>
         </div>
       </div>
