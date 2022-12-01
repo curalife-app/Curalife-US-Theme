@@ -120,7 +120,8 @@
 
     #sale-banner .cta-wrapper {
       gap: 1vw;
-      width: 100%;
+
+      {% if isCTA %}width: 100%;{% endif %}
     }
 
     #sale-banner .off-container {
