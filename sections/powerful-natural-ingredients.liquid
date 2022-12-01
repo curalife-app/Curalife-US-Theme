@@ -35,20 +35,18 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             {% for block in section.blocks %}
-              {% if block.type == 'natural_ingred' %}
-                <div class="swiper-slide">
-                  <div class="ingredient-item">
-                    <div class="text-wrap">
-                      <div class="name">
-                        <h4>{{block.settings.pwing_sldtitl}}</h4>
-                      </div>
-                      <div class="description">
-                        <p>{{block.settings.pwing_desc}}</p>
-                      </div>
+              <div class="swiper-slide">
+                <div class="ingredient-item">
+                  <div class="text-wrap">
+                    <div class="name">
+                      <h4>{{block.settings.pwing_sldtitl}}</h4>
+                    </div>
+                    <div class="description">
+                      <p>{{block.settings.pwing_desc}}</p>
                     </div>
                   </div>
                 </div>
-              {% endif %}
+              </div>
             {% endfor %}
           </div>
         </div>
