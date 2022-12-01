@@ -944,6 +944,7 @@
                 .product-actions {
                     grid-area: unset;
                     grid-row: 3;
+                    max-width: unset;
 
                     .form-wrap {
                         #CTAForm {
