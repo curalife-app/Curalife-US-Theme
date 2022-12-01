@@ -106,7 +106,7 @@
         <div class="description">
           <div class="price">
             <p>
-              <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+              {% if quantity > 1 %}<strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>{% endif %}
               <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
               <span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>
             </p>
