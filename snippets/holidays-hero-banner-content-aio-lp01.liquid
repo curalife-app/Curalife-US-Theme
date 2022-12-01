@@ -1,5 +1,6 @@
 <div class="holidays-hero-banner-content">
   <div class="text-button">
+    <img class="logo" src="{{ 'hs-santa-logo-green.png' | asset_url }}" alt="curalife christmans holidays logo" loading="lazy">
     <h1 class="holiday-title">Give yourself a gift this season!</h1>
     <a class="main-btn" id='main-cta-btn' href="#product-list-section">SHOP NOW</a>
   </div>
@@ -14,8 +15,8 @@
       align-items: center;
   }
 
-  .holidays-hero-banner-content .text-and-img {
-    display: flex;
+  .holidays-hero-banner-content .logo {
+      display: none;
   }
 
   .holidays-hero-banner-content .text-button {
@@ -50,6 +51,7 @@
     border: #4B643D;
     border-radius: 4px;
     font-size: clamp(20px, 2vw, 28px);
+    box-shadow: 0px 5.01961px 12.549px rgba(0, 0, 0, 0.15);
     margin-top: 20px;
   }
 
@@ -81,6 +83,13 @@
   }
 
   @media screen and (max-width: 760px) {
+    .holidays-hero-banner-content .logo {
+      display: block;
+      margin: auto;
+      margin-bottom: 5vw;
+      width: 40vw;
+    }
+
     .holidays-hero-banner-content {
       flex-direction: column;
     }
@@ -100,8 +109,6 @@
       padding-left: unset;
       position: unset;
       text-align: center;
-      padding-top: 23vw;
-      margin: auto;
     }
 
     .holidays-hero-banner-content .main-img {
