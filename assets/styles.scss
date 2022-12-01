@@ -969,26 +969,17 @@ input[type=number] {
   }
 }
 
-.pagination-wrapper {
-  margin: auto;
-  max-width: 300px;
-  margin-bottom: 50px;
-  position: relative;
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    opacity: unset;
+    border: 1px solid var(--green);
+    background: white;
 
-  .swiper-pagination {
-    top: -20px;
-
-    .swiper-pagination-bullet {
-      width: 20px;
-      height: 20px;
-      margin-left: 10px;
-      opacity: unset;
-      border: 1px solid var(--green);
-      background: white;
-
-      &.swiper-pagination-bullet-active {
-        background: var(--green);
-      }
+    &.swiper-pagination-bullet-active {
+      background: var(--green);
     }
   }
 }
@@ -8825,12 +8816,6 @@ html {
       &.next-slide {
         right: 0;
       }
-    }
-  }
-
-  .pagination-wrapper {
-    .swiper-pagination {
-      top: 0;
     }
   }
 

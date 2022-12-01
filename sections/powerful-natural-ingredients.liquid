@@ -1,7 +1,7 @@
 <div class="mini-wrap">
   <div class="ingredients-section" id="powerful-ingredients">
     <div class="sub-title">
-      <h2>{{section.settings.pwing_ntrtitl}}</h2>
+      <h2>9 powerful natural ingredients </h2>
     </div>
     <div class="ingredients-slider">
       <div class="prev-slide nav-slide">
@@ -11,7 +11,7 @@
         <div class="swiper" data-swiper="{'observer': true}">
           <div class="swiper-wrapper">
            {% assign ingredients = '9.png
-           |9_4.png 
+           |9_4.png
            |9_8.png
            |9_1.png
            |9_2.png
@@ -23,7 +23,7 @@
                   <div class="swiper-slide">
                     <div class="ingredient-item">
                       <div class="img-wrap">
-                        <img src="{{ ingredient | file_url }}" width="432" height="378" alt="" loading="lazy">
+                        <img src="{{ ingredient | file_url }}" width="432px" height="378px" alt="" loading="lazy">
                       </div>
                     </div>
                   </div>
@@ -35,20 +35,18 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             {% for block in section.blocks %}
-              {% if block.type == 'natural_ingred' %}
-                <div class="swiper-slide">
-                  <div class="ingredient-item">
-                    <div class="text-wrap">
-                      <div class="name">
-                        <h4>{{block.settings.pwing_sldtitl}}</h4>
-                      </div>
-                      <div class="description">
-                        <p>{{block.settings.pwing_desc}}</p>
-                      </div>
+              <div class="swiper-slide">
+                <div class="ingredient-item">
+                  <div class="text-wrap">
+                    <div class="name">
+                      <h4>{{block.settings.pwing_sldtitl}}</h4>
+                    </div>
+                    <div class="description">
+                      <p>{{block.settings.pwing_desc}}</p>
                     </div>
                   </div>
                 </div>
-              {% endif %}
+              </div>
             {% endfor %}
           </div>
         </div>
@@ -118,41 +116,4 @@
   });
 </script>
 
-{% schema %}
-{
-  "name": "Natural Ingredients",
-  "settings": [
-    {
-      "type": "text",
-      "id": "pwing_ntrtitl",
-      "label": "Title",
-      "default": "Enter title"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "natural_ingred",
-      "name": "Natural Ingredients",
-      "settings": [
-        {
-          "type": "text",
-          "id": "pwing_sldtitl",
-          "label": "Title",
-          "default": "Enter title"
-        }, {
-          "type": "textarea",
-          "id": "pwing_desc",
-          "label": "Description",
-          "default": "Enter Description"
-        }, 
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Natural Ingredients",
-      "category": "slider"
-    }
-  ]
-}
-{% endschema %}
+  
