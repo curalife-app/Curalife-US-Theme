@@ -84,10 +84,12 @@
             {% unless isSkipCart %}</form>{% endunless %}
 
             <div class="total-and-shipping">
-              <div class="total-prices">
-                TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
-                <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-              </div>
+              {% if quantity > 1 %}
+                <div class="total-prices">
+                  TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+                  <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+                </div>
+              {% endif %}
               {% if shop.name == "CuraLife" %}
                 <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
               {% endif %}
@@ -153,7 +155,9 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-
+    margin-top: 10px;
+    text-align: center;
+    min-height: 42px;
   }
 
   .total-and-shipping .free-shipping1 .free-red {
@@ -205,7 +209,7 @@
     height: 370px;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    {% if request.path contains '/collections' %}cursor: pointer;{% endif %}
   }
 
   #product-catalog-section .product-card .picture .img {
