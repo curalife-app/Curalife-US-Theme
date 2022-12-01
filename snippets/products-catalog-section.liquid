@@ -209,7 +209,7 @@
     height: 370px;
     position: relative;
     overflow: hidden;
-    {% if request.path contains '/collections' %}cursor: pointer;{% endif %}
+    cursor: {% if request.path contains '/collections' %}pointer{% else %}unset{% endif %};
   }
 
   #product-catalog-section .product-card .picture .img {
@@ -219,7 +219,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    {%- comment -%} z-index: 3; {%- endcomment -%}
+    {% comment %} z-index: 3; {% endcomment %}
   }
 
   #product-catalog-section .product-card .picture .img img {
