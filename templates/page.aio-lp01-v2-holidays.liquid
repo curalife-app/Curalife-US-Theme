@@ -12,12 +12,7 @@
   {% section 'lps-clinically-tested' %}
   {% section 'lps-ingredients' %}
   {% section 'lps-supported-community' %}
-  <div class="catalog">
-  <div class="limited" id="limited">Special Curalin Offer <br>
-  Get Curalin in a bundle!
-  </div>
-  <div class="changing-programm">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div></div>
-
+  {% render 'last-offer-title' %}
   {% assign Prods = page.content | split: ',' %}
   {% render 'products-catalog-section', Prods: Prods, isSkipCart: true %}
   {% render 'trust-badges-section' %}
