@@ -646,97 +646,6 @@
           "wht_desc": "CuraLin is a 100% natural glucose support supplement for people looking to maintain\n                                    healthy blood sugar levels and enjoy life's events to the fullest. It works by\n                                    blending\n                                    ancient Ayurveda practices with modern science and technology into a spectacular,\n                                    synergistic glucose support formula.\n                                    <br><br>\n                                    Each CuraLin capsule is manufactured close to the source, using only premium\n                                    ingredients. Secret production processes ensure that each capsule is highly potent\n                                    and\n                                    safe. All facilities are GMP & ISO 9001 certified, independent quality controls\n                                    assures that you get only the safest, highest quality supplements possible.\n                                    <br><br>\n                                    CuraLin comprises of 9 natural ingredients. Scroll down to learn more about the\n                                    formula."
         }
       },
-      "powerful-natural-ingredients": {
-        "type": "powerful-natural-ingredients",
-        "blocks": {
-          "12c5e0af-8d4c-41d9-b942-60559af01e3b": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Swertia Chirata",
-              "pwing_desc": "Swertia Chirata is a beautiful purple flower containing active compounds that promote cellular glucose metabolism, support the release of insulin from the pancreas, and keep a healthy rate of glucose absorption in the digestive system.",
-              "pwing_img": "shopify:\/\/shop_images\/9.png"
-            }
-          },
-          "53901fa2-f752-48cf-810a-29c5361e0a82": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Amla",
-              "pwing_desc": "Also known as Indian gooseberry or Emblica Officinalis, the active\n                                                property\n                                                in Amla is Tannoid, which helps support the physiological function of\n                                                pancreatic cells.",
-              "pwing_img": "shopify:\/\/shop_images\/9_4.png"
-            }
-          },
-          "078a9729-2416-409a-a32f-c077193bdabd": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Turmeric",
-              "pwing_desc": "Also known as Curcuma Longa, Turmeric has been used in Eastern medicinal\n                                                systems for hundreds of years to help people maintain healthy glucose\n                                                levels\n                                                though healthy insulin tolerance.",
-              "pwing_img": "shopify:\/\/shop_images\/9_8.png"
-            }
-          },
-          "c7cd0d8c-b324-4196-868c-2083710108f3": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Bitter Melon",
-              "pwing_desc": "Also known as Karela or Momordica Charantia, Bitter Melon is traditionally used in Eastern medicinal systems to promote healthy physiological function in pancreatic cells, supports glucose absorption, and the sensitivity of the muscle cells to insulin.",
-              "pwing_img": "shopify:\/\/shop_images\/9_1.png"
-            }
-          },
-          "3d5875ce-1447-4ad5-8cbb-db1ec6dd62d5": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Cinnamomum Zeylanicum",
-              "pwing_desc": "Cinnamon has many benefits, including supporting healthy glucose absorption & metabolism, promoting healthy insulin release, circulation & sensitivity, and maintaining healthy levels of gluconeogenesis. It also supports healthy weight loss, promotes healthy HbA1c and fasting blood sugar, healthy cholesterol levels, and promotes a healthy nervous system.",
-              "pwing_img": "shopify:\/\/shop_images\/9_2.png"
-            }
-          },
-          "e48b50d3-3c0d-4664-8a08-88c2d6810825": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Fenugreek",
-              "pwing_desc": "Also known as Trigonella Foenum Graecum, Fenugreek contains fibers that promotes insulin production, release & sensitivity. Fenugreek also helps support a healthy rate of carbohydrate absorption in the digestive system.",
-              "pwing_img": "shopify:\/\/shop_images\/9_6.png"
-            }
-          },
-          "95a5b47b-29d0-42fc-9781-afa5759e0ebc": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Picrorhiza Kurroa",
-              "pwing_desc": "The active compounds in Pirorhiza Kurroa act as an anti-oxidant and promotes healthy liver function (protecting it from toxins). This supports healthy glucose tolerance and helps people maintain a healthy weight.",
-              "pwing_img": "shopify:\/\/shop_images\/9_3.png"
-            }
-          },
-          "8c327976-3222-4bc7-ba6c-1f13616bf040": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Syzygium Cumini",
-              "pwing_desc": "Also known as Eugenia Jambolana, the active components in Syzygium Cumini supports a healthy physiological function in the liver, creating a reservoir of glucose macromolecules, thereby helping maintain healthy fasting blood glucose levels.",
-              "pwing_img": "shopify:\/\/shop_images\/9_5.png"
-            }
-          },
-          "3b656744-1c15-48ef-8fa9-9d56da376b30": {
-            "type": "natural_ingred",
-            "settings": {
-              "pwing_sldtitl": "Gymnema Sylvestre",
-              "pwing_desc": "Gymnema Sylvestre has many active compounds including Saponin, which is known to help manage cravings for carbohydrates. Metabolically, it promotes healthy insulin release.",
-              "pwing_img": "shopify:\/\/shop_images\/9_7.png"
-            }
-          }
-        },
-        "block_order": [
-          "12c5e0af-8d4c-41d9-b942-60559af01e3b",
-          "53901fa2-f752-48cf-810a-29c5361e0a82",
-          "078a9729-2416-409a-a32f-c077193bdabd",
-          "c7cd0d8c-b324-4196-868c-2083710108f3",
-          "3d5875ce-1447-4ad5-8cbb-db1ec6dd62d5",
-          "e48b50d3-3c0d-4664-8a08-88c2d6810825",
-          "95a5b47b-29d0-42fc-9781-afa5759e0ebc",
-          "8c327976-3222-4bc7-ba6c-1f13616bf040",
-          "3b656744-1c15-48ef-8fa9-9d56da376b30"
-        ],
-        "settings": {
-          "pwing_ntrtitl": "9 powerful natural ingredients <br>combined into one capsule"
-        }
-      },
       "what-our-clients-say": {
         "type": "what-our-clients-say",
         "blocks": {
@@ -877,7 +786,7 @@
         "settings": {
           "rtlprdct_title": "Curalife Products",
           "rtlprdct_desc": "Recommended for Safe and Powerful Glucose Support",
-          "rtlcollection": "all",
+          "rtlcollection": "all-holidays2022",
           "rtlprdct_bgimg": "shopify:\/\/shop_images\/bg.jpg",
           "rtlbtm_desc": "If you’re excited by the impact CuraLife products can make in your community, we should discuss partnership opportunities. Simply fill in the contact form to get started."
         }
