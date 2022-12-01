@@ -12,7 +12,6 @@
   {% section 'lps-clinically-tested' %}
   {% section 'lps-ingredients' %}
   {% section 'lps-supported-community' %}
- 
   {% render 'last-offer-title', isLP: true %}
   {% assign Prods = page.content | split: ',' %}
   {% render 'products-catalog-section', Prods: Prods, isSkipCart: true %}
