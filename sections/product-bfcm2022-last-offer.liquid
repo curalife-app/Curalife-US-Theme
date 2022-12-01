@@ -133,12 +133,14 @@
             </form>
           </div>
 
-          <div class="total-and-shipping">
-            <div class="total-prices" style="display:flex;align-items:center">
-              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
-              <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+          {% if quantity > 1 %}
+            <div class="total-and-shipping">
+              <div class="total-prices" style="display:flex;align-items:center">
+                TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+                <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
+              </div>
             </div>
-          </div>
+          {% endif %}
 
           <div class="extra-info">
             <div class="text-wrap">
@@ -160,6 +162,10 @@
 </div>
 
 <style>
+  main {
+    padding-bottom: 50px;
+  }
+
   .bg-picture img {
     position: absolute;
     top: 230px;
@@ -193,7 +199,8 @@
   .product-slider .bg {
     position: absolute;
     z-index: -1;
-    background-color: #C00101;
+    background: linear-gradient(#990c14, #cd262e);
+    border-radius: 5px;
     height: 65%;
     width: 100%;
   }
