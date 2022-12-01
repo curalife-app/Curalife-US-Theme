@@ -29,7 +29,7 @@
                   <div class="swiper-slide">
                     <div class="ingredient-item">
                       <div class="img-wrap">
-                        <img src="{{ ingredient | file_url | split: "*" |  }}" width="432" height="378" alt="" loading="lazy">
+                        <img src="{{ ingredient | file_url | split: "*" | first }}" width="432" height="378" alt="" loading="lazy">
                       </div>
                     </div>
                   </div>
