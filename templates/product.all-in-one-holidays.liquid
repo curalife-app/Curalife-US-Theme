@@ -177,7 +177,7 @@
               </div>
 
               <div class="btn">
-                <button class="main-btn" id="buy-button">Shop Now <span class="save" id="save" style="color: white"></span></button>
+                <button class="main-btn" id="buy-button">Shop Now  | <span class="save" id="save" style="color: white"></span></button>
               </div>
             </div>
           </div>
@@ -530,7 +530,7 @@
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
     // Save Text Change
-    let saveText = " | You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
