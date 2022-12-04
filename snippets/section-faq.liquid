@@ -10,7 +10,7 @@
                 <div class="answer">
                     <p>{{ faqItem | split: ":" | last }}</p>
                     {% if faqItem contains 'How does each ingredient work' %}
-                        <p>Hello!!!</p>
+                        {% render 'product-all-in-one-ingredients-section' %}
                     {% endif %}
                 </div>
            </div>
