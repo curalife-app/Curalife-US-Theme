@@ -323,6 +323,31 @@ $('.phone-number').click(function() {
 </script>
 
 <style>
+  .product-template-all-in-one .cta-section .product-container .product-info {
+      max-height:120px;
+
+}
+
+@media screen and (max-width: 760px)  {
+  .product-template-all-in-one .cta-section .product-container .product-info {
+      max-height:41vw;
+
+  }
+
+  .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
+     top: 9vw;
+  }
+
+  @media screen and (max-width: 330px){
+    .cta-section .variant-infos {
+        font-size: 10px !important;
+    }
+  }
+
+}
+</style>
+
+<style>
   .cta-section {
     padding-top: 120px !important;
   }
