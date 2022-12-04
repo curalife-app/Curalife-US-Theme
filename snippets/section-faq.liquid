@@ -8,8 +8,8 @@
                 {{ faqItem | split: ":" | first }}
                 </div>
                 <div class="answer">
-                    <p>{{ faqItem | split: ":" | last }}</p>
-                    </div>
+                    {{ faqItem | split: ":" | last }}
+                </div>
            </div>
         {% endfor %}
         </div>
