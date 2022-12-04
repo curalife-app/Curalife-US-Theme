@@ -94,46 +94,31 @@
   <div class="container">
     <h2>FAQ</h2>
     {% assign faqItems = "How much CuraLin do I need to take?:The recommended usage of CuraLin is to take 1-2 capsules 30 minutes after each meal. Maximum 6 capsules per day. CuraLin is easy to take.
-    |What are the clinical results of CuraLin?:CuraLin’s real-world results show a very high level of safety and efficacy in supporting a healthy fasting and A1c level, improving daily energy, and helping with weight loss. A clinical case study on CuraLin’s effectiveness were published in a peer-reviewed medical journal, and CuraLin is currently involved in a number of double blind placebo controlled studies.
-    |Is CuraLin recommended by doctors?:Yes! Hundreds of doctors recommend CuraLin, and the number is rapidly growing. These include high profile doctors, endocrinologists, and diabetes researchers. Doctors are seeing an average success rate of about 90% with their patients, and many of these doctors also take CuraLin themselves for blood sugar support.
-    |Is CuraLin safe?: Yes! CuraLin has been noted by researchers for its ‘highly favorable safety profile’.
-    The production is done in GMP and ISO9001 certified, and registered facilities.
-    Every batch of CuraLin undergoes at least 10 safety tests during the production process. All tests are conducted by fully certified independent labs for total transparency. No severe negative effects have been reported while taking CuraLin, and it is safe to use alongside prescribed medication (consult your doctor first, of course).
-    |Is the capsule natural?:Yes, CuraLin comes in an easy to swallow rice-based capsule. It is 100% natural and vegan friendly.
-    |Where can I read more about the science?:CuraLin has 9 natural ingredients, each with its own actions that support healthy blood sugar. Together, they support 18 key body functions. CuraLin’s product page goes into depth on the science behind each ingredient and lists out a lot of the scientific studies. Check it out here.
-    |Which benefits will I get by using CuraLin?:CuraLin has many benefits including helping to promote:
-    · Healthy and stable blood sugar levels
-    · High daily energy levels
-    · Healthy weight loss
-    · Healthy pancreas and beta cell function
-    · Reduced cravings for sugars & other carbs
-    · Healthy absorption rates of carbohydrates
-    · Healthy live and kidney function
-    CuraLin users also rave about how they have more motivation and positivity in life after seeing that they can succeed.
-    We guarantee that you will love CuraLin. If for whatever reason you’re not 100% satisfied within 60 days, just write to our support for your money back.
-    |I started to see results within 2 days. Is that too fast?:Not at all! And we’re happy to hear that you’re seeing results so fast. We recommend taking CuraLin for 2-3 weeks before seeing results only to set expectations. But it’s completely normal to see results in as little as 2-3 days.
-    |What’s the story behind CuraLin?:CuraLife was founded by Ron when his father needed help with glucose support. None of the products he tried and none of the lifestyle changes he made where helping. So Ron, flew around the world looking for something that would help. Ron was introduced to a family of Ayurvedic doctors on an educational trip to India. They developed a glucose support formula together, and after years of research and testing, CuraLin was born. Today, CuraLin is used by over 100,000 customers around the world.
-    |I’m a doctor and want to recommend CuraLin to my patients. Do you have a professional program?:We do! Please click on this link to register for our Professionals program.
-    |Will my doctor approve of this?:Over 700 doctors, endocrinologists, and medical practitioners are already recommending CuraLin to their patients. While we cannot speak for (and you should consult) your doctor, we can say that doctors everywhere have been thrilled by the results their patients are seeing with CuraLin.
-    |Can you tell me more about the 100,000 member support community?:Peer-support is one of the most important things you can get to help you maintain healthy blood sugar levels. Having a community that’s there to answer your questions, share a recipe, or give you a shoulder to lean is super valuable. This is the world’s largest online blood sugar support community, and it’s there for you day and night. Once you place your CuraLin order, we’ll send you an invite so you can join."
+    |When should I be taking CuraLin?:For the best results, the recommended usage is to take 1-2 capsules of CuraLin 30 minutes after your meals (maximus 6 capsules per day).
+    |How does each ingredient work?:Each ingredient does a little something different to promote health in the 18 key body functions needed for glucose support.
+    |Is there a discount if I order more than one bottle?:Yes! You can save substantially by ordering a 3 pack of CuraLin. Check out the pricing section of this page for more information.
+    |How do I get my money back in line with your return policy?:Easy! We have a no questions asked policy. Just shoot us a message at hello@curalife.com, or call our 24/7 phone support and we’ll take care of your request:
+    \n UK-Toll-Free: +44 800 086 9122
+    \n US-Toll-Free: +1 888 286 7307
+    |How long does shipping take?:You will get a tracking number as soon as your order ships so that you can see exactly where your package is. Most orders in the continental USA arrive between 2-5 days after placing the order (depending on where in the US you live). Orders from the UK take an average of 7-8 days to arrive. Orders from Australia and the Asia Pacific Region can take a bit longer. Our official policy is that shipping can take 7-28 business days, but that’s just because of the uncertainty of shipping times these days. Your order will almost always arrive much faster than that, and your tracking number will always keep you up to date.
+    |Will I be able to track my order?:Yes! Every CuraLin order comes with a tracking number. You will be able to see where your package is any time you want – from the moment it ships, until the moment it reaches your home.
+    |Can I buy CuraLin in pharmacies and grocery stores?:We’re still working on getting CuraLin on the shelves of all the major US pharmacies. That’s part of our 2022 plan. For now, the best place to order CuraLin is online, though this page!"
     | split: '|' %}
-    
-    {%- comment -%} {% render 'section-faq', faqItems: faqItems %} {%- endcomment -%}
-    <div class="faq">
+     {% render 'section-faq', faqItems: faqItems %} 
 
-      <div class="faq-item">
+      {%- comment -%} <div class="faq-item">
         <div class="question">How much CuraLin do I need to take?</div>
         <div class="answer">
           <div class="answer-content">The recommended usage of CuraLin is to take 1-2 capsules 30 minutes after each meal. Maximum 6 capsules per day. CuraLin is easy to take.</div>
         </div>
-      </div>
-      <div class="faq-item">
+      </div> {%- endcomment -%}
+      {%- comment -%} <div class="faq-item">
         <div class="question">When should I be taking CuraLin?</div>
         <div class="answer">
           <div class="answer-content">For the best results, the recommended usage is to take 1-2 capsules of CuraLin 30 minutes after your meals (maximus 6 capsules per day).</div>
         </div>
-      </div>
-      <div class="faq-item">
+      </div> {%- endcomment -%}
+      {%- comment -%} <div class="faq-item">
         <div class="question">How does each ingredient work?</div>
         <div class="answer">
           <div class="answer-content">Each ingredient does a little something different to promote health in the 18 key body functions needed for glucose support.</div>
@@ -225,14 +210,14 @@
                     <div class="swiper-button-next swiper-nav"></div>
                     </div>
         </div>
-      </div>
-      <div class="faq-item">
+      </div> {%- endcomment -%}
+      {%- comment -%} <div class="faq-item">
         <div class="question">Is there a discount if I order more than one bottle?</div>
         <div class="answer">
           <div class="answer-content">Yes! You can save substantially by ordering a 3 pack of CuraLin. Check out the pricing section of this page for more information.</div>
         </div>
-      </div>
-      <div class="faq-item">
+      </div> {%- endcomment -%}
+      {%- comment -%} <div class="faq-item">
         <div class="question">How do I get my money back in line with your return policy?</div>
         <div class="answer">
           <div class="answer-content">Easy! We have a no questions asked policy. Just shoot us a message at hello@curalife.com, or call our 24/7 phone support and we’ll take care of your request:
@@ -240,28 +225,28 @@
             <br>US-Toll-Free: +1 888 286 7307
           </div>
         </div>
-      </div>
-      <div class="faq-item">
+      </div> {%- endcomment -%}
+      {%- comment -%} <div class="faq-item">
         <div class="question">How long does shipping take?</div>
         <div class="answer">
           <div class="answer-content">You will get a tracking number as soon as your order ships so that you can see exactly where your package is. Most orders in the continental USA arrive between 2-5 days after placing the order (depending on where in the US you live). Orders from the UK take an average of 7-8 days to arrive. Orders from Australia and the Asia Pacific Region can take a bit longer. Our official policy is that shipping can take 7-28 business days, but that’s just because of the uncertainty of shipping times these days. Your order will almost always arrive much faster than that, and your tracking number will always keep you up to date.</div>
         </div>
-      </div>
-      <div class="faq-item">
+      </div> {%- endcomment -%}
+      {%- comment -%} <div class="faq-item">
         <div class="question">Will I be able to track my order?</div>
         <div class="answer">
           <div class="answer-content">Yes! Every CuraLin order comes with a tracking number. You will be able to see where your package is any time you want – from the moment it ships, until the moment it reaches your home.</div>
         </div>
-      </div>
-      <div class="faq-item">
+      </div> {%- endcomment -%}
+      {%- comment -%} <div class="faq-item">
         <div class="question">Can I buy CuraLin in pharmacies and grocery stores?</div>
         <div class="answer">
           <div class="answer-content">We’re still working on getting CuraLin on the shelves of all the major US pharmacies. That’s part of our 2022 plan. For now, the best place to order CuraLin is online, though this page!
             <br>Internationally, CuraLin is already sold through channels is over 50 countries, including the UK, Italy, Austria, and other EU member states.
           </div>
         </div>
-      </div>
-    </div> 
+      </div> {%- endcomment -%}
+    {%- comment -%} </div>  {%- endcomment -%}
   </div>
 </section>
 {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
