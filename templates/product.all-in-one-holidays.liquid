@@ -39,43 +39,8 @@
 
 {% render 'lps-video-reviews-2', maintitle: 'Customers Reviews Of CuraLin' %}
 {% render 'lps-ingredients-slider', maintitle: '<b>9 Powerful Ingredients </b>Combined Into One Capsule'%}
+{% render 'product-all-in-one-badges-section' %}
 
-<section class="badges-section">
-  <div class="container">
-    <div class="badges">
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-clinically-tested.svg" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>Clinically Tested</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-doctor-approved.svg" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>Doctors Recommended</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-iso-certified.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>ISO9001 Certified</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-vegan-friendly.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>Vegan Friendly</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-gmp-certified.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>GMP Certified</p>
-      </div>
-    </div>
-  </div>
-</section>
 {% render 'product-all-in-one-return-policy-section' %}
 {% render 'product-all-in-one-free-shipping-section' %}
 
@@ -356,7 +321,7 @@ $('.phone-number').click(function() {
  })
 
 </script>
-{%- comment -%} <style>
+ <style>
 body {
   padding-top: 0 !important;
 }
@@ -439,9 +404,8 @@ header:before {
 }
 }
 
-</style> {%- endcomment -%}
-
-{%- comment -%} <style>
+</style> 
+ <style>
 .variant-notice p {
   background: #4B643D;
   color: white;
@@ -461,8 +425,7 @@ header:before {
     font-size: 18px !important;
   }
 }
-</style> {%- endcomment -%}
-
+</style> 
 <script>
 productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
   slidesPerView: 4,
