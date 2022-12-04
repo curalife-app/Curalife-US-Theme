@@ -91,9 +91,7 @@
 <section class="free-shipping-section">
   <img src="{{ "product-aio-free-shipping-line.png" | asset_url }}" alt="" class="free-shipping-line" loading="lazy">
 </section>
-<section class="faq-section">
-  <div class="container">
-    <h2>FAQ</h2>
+
     {% assign faqItems = "How much CuraLin do I need to take?:The recommended usage of CuraLin is to take 1-2 capsules 30 minutes after each meal. Maximum 6 capsules per day. CuraLin is easy to take.
     |When should I be taking CuraLin?:For the best results, the recommended usage is to take 1-2 capsules of CuraLin 30 minutes after your meals (maximus 6 capsules per day).
     |How does each ingredient work?:Each ingredient does a little something different to promote health in the 18 key body functions needed for glucose support.
@@ -104,8 +102,7 @@
     |Can I buy CuraLin in pharmacies and grocery stores?:We’re still working on getting CuraLin on the shelves of all the major US pharmacies. That’s part of our 2022 plan. For now, the best place to order CuraLin is online, though this page!"
     | split: '|' %}
      {% render 'section-faq', faqItems: faqItems %} 
-  </div>
-</section>
+  
 {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
 </div>
 
