@@ -140,7 +140,22 @@ $(".variant-box").click(function() {
 
 $( document ).ready(function() {
   $(".variant-box").last().trigger( "click" );
+});// Check Radio Button on Variant Box Click
+$(".variant-box").click(function() {
+  $(this).find('input[type=radio]').prop('checked', true);
+  $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
+
+  // Save Text Change
+  let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+  $('#save').animate({'opacity': 0}, 800, function () {
+    $(this).text(saveText);
+  }).animate({'opacity': 1}, 800);
+})
+
+$( document ).ready(function() {
+  $(".variant-box").last().trigger( "click" );
 });
+
 
 // Buy Button Functionality
 $("#buy-button").click(function() {
@@ -426,7 +441,7 @@ header:before {
 
 </style>
 
-<style>
+{%- comment -%} <style>
 .variant-notice p {
   background: #4B643D;
   color: white;
@@ -446,7 +461,7 @@ header:before {
     font-size: 18px !important;
   }
 }
-</style>
+</style> {%- endcomment -%}
 
 <script>
 productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
