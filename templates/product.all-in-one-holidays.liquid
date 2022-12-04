@@ -33,9 +33,9 @@
 '
 | split: '|' %}
 
-{% render 'product-all-in-one-reviews-section', reviewsItems: reviewsItems%}
+{% render 'product-all-in-one-reviews-section', reviewsItems: reviewsItems %}
 
- <section class="reviews-section">
+ {%- comment -%} <section class="reviews-section">
   <div class="white-fade">
     <div class="left-fade fade"></div>
     <div class="right-fade fade"></div>
@@ -111,7 +111,7 @@
     </div>
     <div class="next slider-nav swiper-button-next"></div>
   </div>
-</section> 
+</section>  {%- endcomment -%}
 
 {% render 'lps-video-reviews-2', maintitle: 'Customers Reviews Of CuraLin' %}
 {% render 'lps-ingredients-slider', maintitle: '<b>9 Powerful Ingredients </b>Combined Into One Capsule'%}
