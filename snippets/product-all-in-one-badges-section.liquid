@@ -2,43 +2,20 @@
 |icon-doctor-approved.svg:Doctors Recommended
 |icon-iso-certified.png:ISO9001 Certified
 |icon-vegan-friendly.png:Vegan Friendly
-|icon-gmp-certified.png:GMP Certified
-"
+|icon-gmp-certified.png:GMP Certified"
 | split: '|' %}
 
 <section class="badges-section">
   <div class="container">
     <div class="badges">
+    {% for badgeItem in badgeItems %}
       <div class="badge-wrapper">
         <div class="badge">
-          <img src="{{ "icon-clinically-tested.svg" | asset_url }}" alt="" loading="lazy">
+          <img src="{{ badgeItem | asset_url | split: ":" | first }}" alt="" loading="lazy">
         </div>
-        <p>Clinically Tested</p>
+        <p>{{ badgeItem | split: ":" | last }}</p>
       </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-doctor-approved.svg" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>Doctors Recommended</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-iso-certified.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>ISO9001 Certified</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-vegan-friendly.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>Vegan Friendly</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-gmp-certified.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>GMP Certified</p>
-      </div>
+    {% endfor %}
     </div>
   </div>
 </section>
