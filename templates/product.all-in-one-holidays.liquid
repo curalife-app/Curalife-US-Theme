@@ -480,19 +480,6 @@
   {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
 </div>
 
-{%- comment -%} <style>
-  .product-template-all-in-one .cta-section .product-container .product-info {
-      max-height:120px;
-
-}
-
-@media screen and (max-width: 760px)  {
-  .product-template-all-in-one .cta-section .product-container .product-info {
-      max-height:41vw;
-
-  }
-}
-</style> {%- endcomment -%}
 
 
 
@@ -526,7 +513,7 @@
   } {%- endcomment -%}
 
   // Check Radio Button on Variant Box Click
-  $(".variant-box").click(function() {
+  {%- comment -%} $(".variant-box").click(function() {
     $(this).find('input[type=radio]').prop('checked', true);
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
@@ -539,7 +526,7 @@
 
   $( document ).ready(function() {
     $(".variant-box").last().trigger( "click" );
-  });
+  }); {%- endcomment -%}
 
   // Buy Button Functionality
   $("#buy-button").click(function() {
