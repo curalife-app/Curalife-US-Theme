@@ -11,6 +11,7 @@
                     <p>{{ faqItem | split: ":" | last }}</p>
                     {% if faqItem contains 'How does each ingredient work' %}
                         <p>Hello!!!</p>
+                    {% endif %}
                 </div>
            </div>
         {% endfor %}
