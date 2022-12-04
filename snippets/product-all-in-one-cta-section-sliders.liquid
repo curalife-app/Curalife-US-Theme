@@ -252,7 +252,23 @@
 </style>
 
 
+<script>
+// Change Quantity Widget On Product Page
+$(document).on("click", ".submit-wrap .qty-control a", function (e) {
+      e.preventDefault();
+      let newVal, $button = $(this),
+          inputObj = $button.closest(".qty-control").find("input"),
+          oldValue = inputObj.val();
+      if ($button.attr('data-act') === "+") {
+          newVal = parseInt(oldValue) + 1;
+      }
+      else {
+          newVal = parseInt(oldValue) - 1;
+      }
 
+      inputObj.val(newVal);
+  });
+</script>
 
 
 
