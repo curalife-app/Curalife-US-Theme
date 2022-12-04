@@ -18,7 +18,8 @@
   
   {%- comment -%} <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt=""> {%- endcomment -%}
   <a id="back-to-top-btn" style="color: white;">Try CuraLin</a>
-  <section class="cta-section">
+  {% render 'product-all-in-one-cta-section-sliders' %}
+  {%- comment -%} <section class="cta-section">
     <div class="container product-container">
       <div class="product-thumbnails">
         <div class="product-slider">
@@ -186,7 +187,7 @@
       </div>
     </div>
     {% render 'trust-badges-section' %}
-  </section>
+  </section> {%- endcomment -%}
 
   {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
 
