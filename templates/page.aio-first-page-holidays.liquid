@@ -111,12 +111,21 @@ health.
                         </div>
                         <div class="ingredients-mainpanel_card">
                             <div class="card-icon_overlay">
+                               
                                 <div class="card-icon">
+                                    {% if shop.name == "CuraLife" %}
                                     <img src="{{ 'lp-aio-usa_flag.svg' | file_url }}" height="59" width="58" alt="">
+                                    {% elsif shop.name == "CuraLife Global" %}
+                                    <img src="{{ 'lp-aio-eu_flag.svg' | file_url }}" height="59" width="58" alt="">
+                                {% endif %}
                                 </div>
                             </div>
                             <div class="card-description">
+                                {% if shop.name == "CuraLife" %}
                                 <p>Encapsulated in the USA</p>
+                                {% elsif shop.name == "CuraLife Global" %}
+                                <p>Encapsulated in the Europe</p>
+                            {% endif %}
                             </div>
                         </div>
                         <div class="ingredients-mainpanel_card">
