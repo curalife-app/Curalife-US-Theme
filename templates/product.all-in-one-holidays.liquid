@@ -23,8 +23,17 @@
 
 {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
 {% render 'product-all-in-one-how-to-section' %}
+{% assign reviewsItems = '"This is the greatest! My husband started taking this! Finally found a product that works!":Linda Valtsiotis
+|"I have tried so many different supplements with no results. This one is amazing and i am excited. I just purchased my second bottle":Michael Murillo Sr.
+|"It is so wonderful to find something that really works. I feel so much better!":Leanne Anderson
+|"I&apos;ve started on my second bottle and this is the best thing I&apos;ve ever taken! I would recommend to anyone.": Debra Doss
+|"Have been taking CuraLin over the last four months and am beyond pleased with the results.":Michael Edwards
+|"Amazing results in such a short time. Thank you!":Meryl Hill
+'
+| split: '|' %}
 
-<section class="reviews-section">
+{% render 'product-all-in-one-reviews-section', reviewsItems: reviewsItems %}
+{%- comment -%} <section class="reviews-section">
   <div class="white-fade">
     <div class="left-fade fade"></div>
     <div class="right-fade fade"></div>
@@ -100,7 +109,7 @@
     </div>
     <div class="next slider-nav swiper-button-next"></div>
   </div>
-</section>
+</section> {%- endcomment -%}
 
 {% render 'lps-video-reviews-2', maintitle: 'Customers Reviews Of CuraLin' %}
 {% render 'lps-ingredients-slider', maintitle: '<b>9 Powerful Ingredients </b>Combined Into One Capsule'%}
