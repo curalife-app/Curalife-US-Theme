@@ -9,9 +9,9 @@
                 </div>
                 <div class="answer">
                     <p>{{ faqItem | split: ":" | last }}</p>
-                    {%- comment -%} {% if faqItem contains 'How does each ingredient work' %}
+                    {% if faqItem contains 'How does each ingredient work' %}
                         {% render 'product-all-in-one-ingredients-section' %}
-                    {% endif %} {%- endcomment -%}
+                    {% endif %}
                 </div>
            </div>
         {% endfor %}
