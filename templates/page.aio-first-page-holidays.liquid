@@ -63,32 +63,7 @@ health.
         <button class="btn-cta" onclick="LinkToProduct(this, '/products/curalin-pack-holidays2022')">Try CuraLin</button>
     </div>
     {% render 'aio-first-page-why-curalife' %}
-    
-
-    <div class="supported-community">
-        <div class="container">
-            <div class="data-wrap">
-                <div class="sub-title">
-                    <h3>Supported by a community of <b>100,000 people</b></h3>
-                    <div class="description-overlay">
-                        <h4>
-                            CuraLin gives you access to the world’s largest blood sugar peer-support community. It will
-                            be
-                            one of the most valuable resources to help you along your health journey.
-                        </h4>
-                    </div>
-                </div>
-                <div class="community-wall">
-                    <picture>
-                        <source srcset="{{ 'lp-aio-image-community.png' | file_url}}" media="(min-width: 641px)">
-                        <source srcset="{{ 'lp-aio-image-community-mb.png' | file_url}}">
-                        <img srcset="{{ 'lp-aio-image-community-mb.png' | file_url}}" alt="Community">
-                    </picture>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {% render 'aio-first-page-supported-community' %}
     <div class="satisfaction-survey">
         <div class="satisfaction-survey-bg">
             <div class="container">
