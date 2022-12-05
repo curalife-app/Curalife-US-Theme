@@ -33,137 +33,14 @@
 | split: '|' %}
 
 {% render 'product-all-in-one-reviews-section', reviewsItems: reviewsItems %}
-{%- comment -%} <section class="reviews-section">
-  <div class="white-fade">
-    <div class="left-fade fade"></div>
-    <div class="right-fade fade"></div>
-  </div>
-  <div class="top-bg"></div>
-  <div class="container no-padding">
-    <h2>Over 3000 5 Star Reviews</h2>
-    <img src="{{ 'product-aio-review-stars-5.png' | asset_url }}" alt="" class="reviews-stars" loading="lazy">
-    <div class="prev slider-nav swiper-button-prev"></div>
-    <div class="reviews swiper">
-      <div class="swiper-wrapper">
-        <div class="review swiper-slide">
-          <div class="review-top">
-            <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-            <p class="review-content">“This is the greatest! My husband started taking this! Finally found a product that works!"</p>
-          </div>
-          <div class="review-bottom">
-            <p class="review-author">Linda Valtsiotis</p>
-            <img src="{{ 'product-aio-review-stars-5.png' | asset_url }}" alt="" class="reviews-stars" loading="lazy">
-          </div>
-        </div>
-        <div class="review swiper-slide">
-          <div class="review-top">
-            <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-            <p class="review-content">“I have tried so many different supplements with no results. This one is amazing and i am excited. I just purchased my second bottle"</p>
-          </div>
-          <div class="review-bottom">
-            <p class="review-author">Michael Murillo Sr.</p>
-            <img src="{{ 'product-aio-review-stars-5.png' | asset_url }}" alt="" class="reviews-stars" loading="lazy">
-          </div>
-        </div>
-        <div class="review swiper-slide">
-          <div class="review-top">
-            <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-            <p class="review-content">“It is so wonderful to find something that really works. I feel so much better!"</p>
-          </div>
-          <div class="review-bottom">
-            <p class="review-author">Leanne Anderson</p>
-            <img src="{{ 'product-aio-review-stars-5.png' | asset_url }}" alt="" class="reviews-stars" loading="lazy">
-          </div>
-        </div>
-        <div class="review swiper-slide">
-          <div class="review-top">
-            <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-            <p class="review-content">“I've started on my second bottle and this is the best thing I've ever taken! I would recommend to anyone."</p>
-          </div>
-          <div class="review-bottom">
-            <p class="review-author">Debra Doss</p>
-            <img src="{{ 'product-aio-review-stars-5.png' | asset_url }}" alt="" class="reviews-stars" loading="lazy">
-          </div>
-        </div>
-        <div class="review swiper-slide">
-          <div class="review-top">
-            <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-            <p class="review-content">“Have been taking CuraLin over the last four months and am beyond pleased with the results."</p>
-          </div>
-          <div class="review-bottom">
-            <p class="review-author">Michael Edwards</p>
-            <img src="{{ 'product-aio-review-stars-5.png' | asset_url }}" alt="" class="reviews-stars" loading="lazy">
-          </div>
-        </div>
-        <div class="review swiper-slide">
-          <div class="review-top">
-            <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
-            <p class="review-content">“Amazing results in such a short time. Thank you!"</p>
-          </div>
-          <div class="review-bottom">
-            <p class="review-author">Meryl Hill</p>
-            <img src="{{ 'product-aio-review-stars-5.png' | asset_url }}" alt="" class="reviews-stars" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="next slider-nav swiper-button-next"></div>
-  </div>
-</section> {%- endcomment -%}
+
 
 {% render 'lps-video-reviews-2', maintitle: 'Customers Reviews Of CuraLin' %}
 {% render 'lps-ingredients-slider', maintitle: '<b>9 Powerful Ingredients </b>Combined Into One Capsule'%}
+{% render 'product-all-in-one-badges-section' %}
 
-<section class="badges-section">
-  <div class="container">
-    <div class="badges">
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-clinically-tested.svg" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>Clinically Tested</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-doctor-approved.svg" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>Doctors Recommended</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-iso-certified.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>ISO9001 Certified</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-vegan-friendly.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>Vegan Friendly</p>
-      </div>
-      <div class="badge-wrapper">
-        <div class="badge">
-          <img src="{{ "icon-gmp-certified.png" | asset_url }}" alt="" loading="lazy">
-        </div>
-        <p>GMP Certified</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="return-policy-section">
-  <div class="container">
-    <div class="return-policy">
-      <img src="{{ "icon-money-back-60-days.png" | asset_url }}" alt="" loading="lazy">
-      <div class="return-policy-content">
-        <p class="title">Return Policy:</p>
-        <p class="description">You get 100% of your money back if you are not 100% satisfied. Yes, even if the bottls are opened, or if you order more than on bottle. Every order is covered by this guarantee, making your purchase risk-free.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="free-shipping-section">
-  <img src="{{ "product-aio-free-shipping-line.png" | asset_url }}" alt="" class="free-shipping-line" loading="lazy">
-</section>
+{% render 'product-all-in-one-return-policy-section' %}
+{% render 'product-all-in-one-free-shipping-section' %}
 <section class="faq-section">
   <div class="container">
     <h2>FAQ</h2>
