@@ -60,7 +60,9 @@ health.
     {% render 'aio-first-page-testimonials-section' %}
     {% render 'aio-first-page-natural-ingredients' %}
     {% render 'aio-first-page-floating-cta' %}
-
+    <div class="floating-cta">
+        <button class="btn-cta" onclick="LinkToProduct(this, '/products/curalin-pack-holidays2022')">Try CuraLin</button>
+    </div>
     <div class="why-curaline">
         <div class="container">
             <div class="data-wrap">
@@ -220,4 +222,11 @@ health.
     .satisfaction-survey .success-list ul li .line span {
         background: linear-gradient(90.05deg, #DCEFEB 0%, #1F8B8D 100%);
     } 
+
+    @media screen and (max-width: 760px) {
+        .floating-cta .btn-cta {
+            max-width: calc(100vw - 40px);
+        }
+
+    }
 </style>
