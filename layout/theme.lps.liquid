@@ -1,12 +1,3 @@
-{%- comment -%} If store is US {%- endcomment -%}
-{% if shop.name == 'CuraLife' %}
-  {% assign store_domain = "curalife.com" %}
-  {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
-{% elsif shop.name == "CuraLife Global" %}
-  {% assign store_domain = "global.curalife.com" %}
-  {% assign yotpo_script_id = "oMYBvmnASlHzmouicgkepg" %}
-{% endif %}
-
 <!doctype html>
 <html>
 <head>
@@ -53,9 +44,6 @@
 
   {% render 'layout.head.marker-io-snippet' %}
   {% render 'fa_translate_core' %}
-  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
-  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async></script>
-  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/oMYBvmnASlHzmouicgkepg" async></script>
 </head>
 <body>
   <main role="main">
