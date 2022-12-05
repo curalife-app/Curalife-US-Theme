@@ -1,6 +1,19 @@
 
 <section class="faq-section">
     <div class="container">
+        <div class="titles">
+            {% if title_type == 'light' %}
+                <h2>{{}}</h2>
+            {% else %}
+                <div class="sub-title">
+                    <h2>Have Questions?<br>We Want You to Ask!</h2>
+                    <p>Our team of nutrition experts and scientists has answers</p>
+                </div>
+                <div class="title-img">
+                    <img src="{{ 'lp-aio-v3-faq-img.png' | file_url}}" alt="" width="312" height="280">
+                </div>
+            {% endif %}
+        </div>
         <div class="faq">
             {% for faqItem in faqItems %}
                 <div class="faq-item">
@@ -19,7 +32,15 @@
     </div>
 </section>
 
-
+<style>
+    {% if title_type == "complex" %}
+        #faq-section .titles {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    {% endif %}
+</style>
 
 <style>
 .faq-section .container .faq {
