@@ -48,7 +48,7 @@
 {% render 'product-all-in-one-badges-section' %}
 {% render 'product-all-in-one-return-policy-section' %}
 {% render 'product-all-in-one-free-shipping-section' %}
-{% render 'section-faq', faqItems: faqItems, title_type: "light" %} 
+{% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "light" %} 
 {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
 </div>
 <style>
@@ -135,28 +135,6 @@ function showNextQuote() {
   quotes.eq(quoteIndex % quotes.length).fadeIn(1000).delay(2000).fadeOut(1000, showNextQuote);
 }
 
-// FAQ
-{%- comment -%} const accordionItemHeaders = document.querySelectorAll(".question");
-
-accordionItemHeaders.forEach(accordionItemHeader => {
-accordionItemHeader.addEventListener("click", event => {
- const currentlyActiveAccordionItemHeader = document.querySelector(".question.active");
- if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
- currentlyActiveAccordionItemHeader.classList.toggle("active");
- currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
- }
-
- accordionItemHeader.classList.toggle("active");
- const accordionItemBody = accordionItemHeader.nextElementSibling;
- if(accordionItemHeader.classList.contains("active")) {
- accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
- }
- else {
- accordionItemBody.style.maxHeight = 0;
- }
-});
-}); {%- endcomment -%}
-
 showNextQuote();
 </script>
 
@@ -177,8 +155,6 @@ $(document).on("click", ".submit-wrap .qty-control a", function (e) {
       inputObj.val(newVal);
   });
 </script>
-
-
 
 <script>
 $(document).on("click", "#buy-button", function () {
