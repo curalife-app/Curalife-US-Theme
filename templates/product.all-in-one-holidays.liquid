@@ -40,7 +40,7 @@
 {% render 'product-all-in-one-badges-section' %}
 {% render 'product-all-in-one-return-policy-section' %}
 {% render 'product-all-in-one-free-shipping-section' %}
-<section class="faq-section">
+{%- comment -%} <section class="faq-section">
   <div class="container">
     <h2 style="margin: 0;">FAQ</h2>
     {% assign faqItems = "How much CuraLin do I need to take?:The recommended usage of CuraLin is to take 1-2 capsules 30 minutes after each meal. Maximum 6 capsules per day. CuraLin is easy to take.
@@ -54,7 +54,7 @@
     | split: '|' %}
      {% render 'section-faq', faqItems: faqItems %} 
   </div>
-</section>
+</section> {%- endcomment -%}
 {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
 </div>
 <style>
