@@ -36,7 +36,8 @@
     {% if title_type == "complex" %}
        .faq-section .titles {
             display: flex;
-            justify-content: space-around;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .faq-section .titles .sub-title h2 {
@@ -51,7 +52,6 @@
         @media screen and (max-width:760px) {
             .faq-section .titles {
                 flex-direction: column;
-                align-items: center;
             } 
         }
     {% endif %}
