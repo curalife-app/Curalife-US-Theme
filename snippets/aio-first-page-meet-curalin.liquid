@@ -1,0 +1,103 @@
+<div class="meet-curalin" id="meet-curalin">
+    <div class="container">
+        <div class="data-wrap">
+            <div class="sub-title">
+                <h3><b>Meet CuraLin.</b>
+                    Blood sugar support made for you...</h3>
+            </div>
+
+            <div class="curalin-intro">
+                <div class="curaline-widget-item">
+                    <div class="curaline-widget-icon">
+                        <img src="{{ 'lp-aio-client-tested-icon.svg' | file_url }}" alt="">
+                    </div>
+                    <div class="curaline-widget-text">
+                        <h4>Clinically tested</h4>
+                        <p>with results published in a peer-reviewed journal</p>
+                    </div>
+                </div>
+                <div class="curaline-widget-item">
+                    <div class="curaline-widget-icon">
+                        <img src="{{ 'lp-aio-capsules-icon.svg' | file_url }}" alt="">
+                    </div>
+                    <div class="curaline-widget-text">
+                        <h4>Easy to take capsules</h4>
+                        <p>take 1-2 after meals</p>
+                    </div>
+                </div>
+
+                <div class="curaline-widget-item">
+                    <div class="curaline-widget-icon">
+                        <img src="{{ 'lp-aio-formula-doctors.svg' | file_url }}" alt="">
+                    </div>
+                    <div class="curaline-widget-text">
+                        <h4>Formulated by doctors</h4>
+                        <p>specifically for glucose support </p>
+                    </div>
+                </div>
+                <div class="curaline-widget-item">
+                    <div class="curaline-widget-icon">
+                        <img src="{{ 'lp-aio-quick-results-icon.svg' | file_url }}" alt="">
+                    </div>
+                    <div class="curaline-widget-text">
+                        <h4>See results quickly</h4>
+                        <p>on average in 2-3 weeks</p>
+                    </div>
+                </div>
+
+                <div class="curaline-widget-item">
+                    <div class="curaline-widget-icon">
+                        <img src="{{ 'lp-aio-research-icon.svg' | file_url }}" alt="">
+                    </div>
+                    <div class="curaline-widget-text">
+                        <h4>10 years of research</h4>
+                        <p>support CuraLin’s formula</p>
+                    </div>
+                </div>
+                <div class="curaline-widget-item">
+                    <div class="curaline-widget-icon">
+                        <img src="{{ 'lp-aio-recommend-doctors-icon.svg' | file_url }}" alt="">
+                    </div>
+                    <div class="curaline-widget-text">
+                        <h4>700+ doctors recommend</h4>
+                        <p>CuraLin to their patients</p>
+                    </div>
+                </div>
+
+                <div class="curaline-widget-item">
+                    <div class="curaline-widget-icon">
+                        <img src="{{ 'lp-aio-supports-icon.svg' | file_url }}" alt="">
+                    </div>
+                    <div class="curaline-widget-text">
+                        <h4>Supports 18 cellular functions</h4>
+                        <p>that promote healthy blood sugar</p>
+                    </div>
+                </div>
+                <div class="curaline-widget-item">
+                    <div class="curaline-widget-icon">
+                        {% if shop.name == "CuraLife" %}
+                            <img src="{{ 'lp-aio-usa-icon.png' | file_url }}" alt="">
+                        {% elsif shop.name == "CuraLife Global" %}
+                            <img src="{{ 'lp-aio-eu-icon.png' | file_url }}" alt="">
+                        {% endif %}
+                        
+                    </div>
+                    <div class="curaline-widget-text">
+                        {% if shop.name == "CuraLife" %}
+                           <h4>Encapsulated in the USA</h4>
+                        {% elsif shop.name == "CuraLife Global" %}
+                           <h4>Encapsulated in the Europe</h4>
+                    {% endif %}
+                        <p>Uses regulated facilities</p>
+                    </div>
+                </div>
+
+                <div class="curaline-brandmark">
+                    <img src="{{ 'lp-aio-brand-mark.png' | file_url}}" alt="">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
