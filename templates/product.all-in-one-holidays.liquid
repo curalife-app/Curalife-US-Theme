@@ -142,7 +142,7 @@ function showNextQuote() {
 }
 
 // FAQ
-const accordionItemHeaders = document.querySelectorAll(".question");
+{%- comment -%} const accordionItemHeaders = document.querySelectorAll(".question");
 
 accordionItemHeaders.forEach(accordionItemHeader => {
 accordionItemHeader.addEventListener("click", event => {
@@ -161,7 +161,7 @@ accordionItemHeader.addEventListener("click", event => {
  accordionItemBody.style.maxHeight = 0;
  }
 });
-});
+}); {%- endcomment -%}
 
 showNextQuote();
 </script>
