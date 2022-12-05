@@ -1,8 +1,14 @@
+{%- comment -%} If store is US {%- endcomment -%}
+{% if shop.name == 'CuraLife' %}
+    {% assign yotpo_raf_widget_id = "111012" %}
+{% elsif shop.name == "CuraLife Global" %}
+    {% assign yotpo_raf_widget_id = "111013" %}
+{% endif %}
+
 <div class="confetti-container"></div>
 <div class="container">
     <h1 style="display:none">Refer A Friend</h1>
-    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/5AyB8SFKOjnnor-g4qIeMg" async=""></script>
-    <div class="yotpo-widget-instance" data-yotpo-instance-id="111012"></div>
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="{{ yotpo_raf_widget_id }}"></div>
     <div id="raf-steps" style="display: none;margin: 70px 0px 50px;">
         <div class="steps">
             <div class="step">
@@ -25,7 +31,7 @@
             </div>
         </div>
     </div>
-    <p id="terms-agree" style="display: none;">By clicking next step, you’re agreeing to CuraLife’s terms & conditions</p>      
+    <p id="terms-agree" style="display: none;">By clicking next step, you’re agreeing to CuraLife’s terms & conditions</p>
 
     <img id="thank-you-image-base" style="display: none;" src="{{ 'raf-thank-you-image.png' | asset_url }}" alt="">
 </div>
@@ -44,7 +50,7 @@
     function scrollUp() {
         $("html, body").animate({
         scrollTop: 0
-    }, 500);  
+    }, 500);
     }
 
     function renderEmailShare() {
@@ -94,7 +100,7 @@
         $("#terms-agree").css('display','none');
         renderRemindFriend();
         renderEmailShare();
-        renderQuote() 
+        renderQuote()
         $(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
         scrollUp();
 
@@ -116,7 +122,7 @@
                     $(".confetti-container").css('display','none');
                     renderEmailShare();
                     renderRemindFriend();
-                    renderQuote() 
+                    renderQuote()
                     $(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
                     });
                     scrollUp();
@@ -129,7 +135,7 @@
                         $(".confetti-container").css('display','none');
                         renderEmailShare();
                         renderRemindFriend();
-                        renderQuote() 
+                        renderQuote()
                         $(".yotpo-referral-widget-form").insertAfter(".yotpo-share-buttons-container");
                         });
                         scrollUp();
@@ -161,8 +167,8 @@ function create(i) {
     "left" : Math.random()*100+"%",
     "opacity" : Math.random()+0.5,
     "transform" : "rotate("+Math.random()*360+"deg)"
-  }).appendTo('.confetti-container');  
-  
+  }).appendTo('.confetti-container');
+
   drop(i);
 }
 
@@ -180,7 +186,7 @@ function reset(x) {
     "top" : -Math.random()*20+"%",
     "left" : "-="+Math.random()*15+"%"
   }, 0, function() {
-    drop(x);             
+    drop(x);
   });
 }
 </script>
@@ -550,13 +556,13 @@ svg.yotpo-share-button-icon {
     {
         "name": "Refer Friend",
         "settings": [
-           
+
             {
                 "type": "text",
                 "id": "refr_pretitl",
                 "label": "Pre Title",
                 "default": "Enter Pre Title"
-            },    
+            },
             {
                 "type": "text",
                 "id": "refr_titl",
@@ -590,9 +596,9 @@ svg.yotpo-share-button-icon {
                 ]
 
             }
-            
-        ],    
-            
+
+        ],
+
         "presets":[
             {
                 "name": "Refer Friend",
