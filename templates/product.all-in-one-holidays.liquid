@@ -13,9 +13,10 @@
 
 {% render 'script.round-converted-currency' %}
 {% render 'sale-banner' ,title: "Get into the holiday spirit!", color: "red", logoColor: "green", isLogo: true, isFixed: true %}
-{% render 'product-all-in-one-cta-section-sliders' %}
+
 
 <div class="product-template-all-in-one">
+  {% render 'product-all-in-one-cta-section-sliders' %}
 {%- comment -%} <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt=""> {%- endcomment -%}
 <a id="back-to-top-btn" style="color: white;">Try CuraLin</a>
 {%- comment -%} <section class="cta-section">
