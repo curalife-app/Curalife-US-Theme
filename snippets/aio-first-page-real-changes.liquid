@@ -1,0 +1,34 @@
+<div class="real-changes">
+    <div class="container">
+        <div class="data-wrap">
+            <div class="sub-title">
+                <h3><b>Are you ready for real change?</b></h3>
+                <div class="description-overlay">
+                    <h4>
+                        When keeping your blood sugar healthy is easy, your life is truly on your terms. You are
+                        back in
+                        control.
+                        Just take CuraLin as part of your diet to help support a healthy blood sugar level!
+                    </h4>
+                </div>
+            </div>
+            <div class="real-changes-wrapper">
+                {% for realChange in realChanges %}
+                <div class="rw-item-col">
+                    <div class="rw-item-box">
+                        
+                        <div class="rw-item-thumbnail">
+                            <img src="{{ realChange | file_url | split: "*" | first }}" alt="">
+                        </div>
+                        <div class="rw-item-description">
+                            <h4>{{ ingredient | split: "*" | last | split: ":" | first }}</h4>
+                            <p>{{ ingredient | split: "*" | last | split: ":" | last }}</p>
+                        </div>
+                   
+                    </div>
+                </div>
+            {% endfor %}  
+            </div>
+        </div>
+    </div>
+</div>
