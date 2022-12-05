@@ -124,3 +124,50 @@
     }
 
 </style>
+
+<script>
+    // Fade Quotes
+    var quotes = $(".title-text");
+    var quoteIndex = -1;
+
+    function showNextQuote() {
+        ++quoteIndex;
+        quotes.eq(quoteIndex % quotes.length)
+            .fadeIn(900)
+            .delay(1500)
+            .fadeOut(900, showNextQuote);
+    }
+
+    showNextQuote();
+
+    $next = 1;
+    $current = 0;
+    $nextM = 1;
+    $currentM = 0;
+    $interval = 1500;
+    $fadeTime = 1800;
+    $imgNum = 5;
+
+    $(document).ready(function () {
+        $('.brand-intro-cover-img img').css({ 'position': 'absolute' });
+        $('.brand-intro-cover-img-mobile img').css({ 'position': 'absolute' });
+        nextFadeIn();
+        nextFadeInM();
+    });
+
+    function nextFadeIn() {
+        $('.brand-intro-cover-img img').eq($current).delay($interval).fadeOut($fadeTime)
+            .end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
+
+        if ($next < $imgNum - 1) { $next++; } else { $next = 0; }
+        if ($current < $imgNum - 1) { $current++; } else { $current = 0; }
+    };
+
+    function nextFadeInM() {
+        $('.brand-intro-cover-img-mobile img').eq($currentM).delay($interval).fadeOut($fadeTime)
+            .end().eq($nextM).delay($interval).hide().fadeIn($fadeTime, nextFadeInM);
+
+        if ($nextM < $imgNum - 1) { $nextM++; } else { $nextM = 0; }
+        if ($currentM < $imgNum - 1) { $currentM++; } else { $currentM = 0; }
+    };
+</script>
