@@ -42,6 +42,13 @@ anymore
 
 ' | split: '|' %}
 
+{% assign doctors = 'lp-aio-michel.png*Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code.
+|lp-aio-nancy.png*Dr. Nancy Russell:Internal Medicine Specialist, North Kansas City Hospital
+|lp-aio-raz.png*Prof. Itamar Raz:World renouned diabetes expert with over 400 published peer-reviewed studies.
+|lp-aio-sarah.png*Dr. Sarah Brewer:Functional doctor, diabetes expert, and author of over 60 books on personal
+health.
+' | split: '|' %}
+
 <div class="page-overflow"> 
     {% render 'aio-first-page-hero-section' %}
     {% render 'partnerships-featured' %}
@@ -49,7 +56,7 @@ anymore
     {% render 'aio-first-page-life-changes'%}
     {% render 'aio-first-page-body-formula'%}
     {% render 'aio-first-page-real-changes', realChanges: realChanges %}
-    {% render 'aio-first-page-trusted-doctors'%}
+    {% render 'aio-first-page-trusted-doctors', doctors: doctors %}
 
     <div class="testimonials-section">
         <div class="container">
