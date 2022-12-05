@@ -171,6 +171,12 @@
 
 
 <script>
+
+  
+  $('.thumbs-img').click(function() {
+   woopra.track('Product Image Click', {});
+   });
+ 
   // Check Radio Button on Variant Box Click
   $(".variant-box").click(function() {
     $(this).find('input[type=radio]').prop('checked', true);
