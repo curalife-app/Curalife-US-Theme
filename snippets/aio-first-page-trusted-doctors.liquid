@@ -13,66 +13,22 @@
                 </div>
             </div>
             <div class="doctors-boxes-wrapper">
-
+           {% for doctor in doctors %}
                 <div class="doctor-box-col">
                     <div class="doctor-item-box">
                         <div class="doctor-thumbnail">
                             <span>
-                                <img src="{{ 'lp-aio-michel.png' | file_url}}" alt="">
+                                <img src="{{ doctor | file_url | split: "*" | first }}" alt="">
                             </span>
                         </div>
                         <div class="doctor-informative">
-                            <h4>Dr. Michael Binder</h4>
-                            <p>Functional doctor, author of Cracking The Diabetic Code.</p>
+                            <h4>{{ doctor | split: "*" | last | split: ":" | first }}</h4>
+                            <p>{{ doctor | split: "*" | last | split: ":" | last }}</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="doctor-box-col">
-                    <div class="doctor-item-box">
-                        <div class="doctor-thumbnail">
-                            <span>
-                                <img src="{{ 'lp-aio-nancy.png' | file_url}}" alt="">
-                            </span>
-                        </div>
-                        <div class="doctor-informative">
-                            <h4>Dr. Nancy Russell</h4>
-                            <p>Internal Medicine Specialist, North Kansas City Hospital</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-box-col">
-                    <div class="doctor-item-box">
-                        <div class="doctor-thumbnail">
-                            <span>
-                                <img src="{{ 'lp-aio-raz.png' | file_url}}" alt="">
-                            </span>
-                        </div>
-                        <div class="doctor-informative">
-                            <h4>Prof. Itamar Raz</h4>
-                            <p>World renouned diabetes expert with over 400 published peer-reviewed studies.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-box-col">
-                    <div class="doctor-item-box">
-                        <div class="doctor-thumbnail">
-                            <span>
-                                <img src="{{ 'lp-aio-sarah.png' | file_url}}" alt="" width="234" height="234">
-                            </span>
-                        </div>
-                        <div class="doctor-informative">
-                            <h4>Dr. Sarah Brewer</h4>
-                            <p>Functional doctor, diabetes expert, and author of over 60 books on personal
-                                health.</p>
-                        </div>
-                    </div>
-                </div>
-
+                </div> 
+            {% endfor %}
             </div>
-
         </div>
     </div>
 </div>
