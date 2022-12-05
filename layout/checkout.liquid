@@ -41,6 +41,10 @@
   {% if customer.orders_count == 1 %}
     {% assign onboarding_exist = true %}
   {% endif %}
+
+  {% if customer.email == "yotam@curalife.com" %}
+    {% assign onboarding_exist = true %}
+  {% endif %}
 {% endif %}
 
 <!DOCTYPE html>
