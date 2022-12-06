@@ -2,6 +2,32 @@
 
 {% render 'sale-banner', title: "Get into the holiday spirit!", isLogo: true, logoColor: "green", color: "red" %}
 
+{% if shop.name == "CuraLife" %}
+    {% assign meetCuralins = 'lp-aio-client-tested-icon.svg*Clinically tested:with results published in a peer-reviewed journal
+    |lp-aio-v3-benefits-eating.png*Eating the foods you love:is possible again. Yes, eat healthy, but CuraLin keeps your body reactive to all your
+    food choices
+    |lp-aio-capsules-icon.svg*Easy to take capsules:take 1-2 after meals
+    |lp-aio-formula-doctors.svg*Formulated by doctors:specifically for glucose support
+    |lp-aio-quick-results-icon.svg*See results quickly:on average in 2-3 weeks  
+    |lp-aio-research-icon.svg*10 years of research:support CuraLin&apos;s formula
+    |lp-aio-recommend-doctors-icon.svg*700+ doctors recommend:CuraLin to their patients
+    |lp-aio-supports-icon.svg*Supports 18 cellular functions:that promote healthy blood sugar
+    |lp-aio-usa-icon.png*Encapsulated in the USA:Uses regulated facilities
+    ' | split: '|' %}
+    {% elsif shop.name == "CuraLife Global" %}
+    {% assign meetCuralins = 'lp-aio-client-tested-icon.svg*Clinically tested:with results published in a peer-reviewed journal
+    |lp-aio-v3-benefits-eating.png*Eating the foods you love:is possible again. Yes, eat healthy, but CuraLin keeps your body reactive to all your
+    food choices
+    |lp-aio-capsules-icon.svg*Easy to take capsules:take 1-2 after meals
+    |lp-aio-formula-doctors.svg*Formulated by doctors:specifically for glucose support
+    |lp-aio-quick-results-icon.svg*See results quickly:on average in 2-3 weeks  
+    |lp-aio-research-icon.svg*10 years of research:support CuraLin&apos;s formula
+    |lp-aio-recommend-doctors-icon.svg*700+ doctors recommend:CuraLin to their patients
+    |lp-aio-supports-icon.svg*Supports 18 cellular functions:that promote healthy blood sugar
+    |lp-aio-eu-icon.png*Encapsulated in Europe:Uses regulated facilities
+    ' | split: '|' %}
+{% endif %}
+
 {% assign faqItems = "Can I take CuraLin alongside my drugs?:CuraLin is a natural dietary supplement, meaning that it’s meant as a compliment to your existing regime. You simply take it as part of your diet to help maintain a healthy blood sugar level. Thousands of CuraLin users take CuraLin alongside their prescribed drugs and treatments and no serious negative interactions have been recorded. Of course, please consult with your doctor before starting on CuraLin, whether you’re on drugs or not.
 |What are the clinical results of CuraLin?:CuraLin’s real-world results show a very high level of safety and efficacy in supporting a healthy fasting and A1c level, improving daily energy, and helping with weight loss. A clinical case study on CuraLin’s effectiveness were published in a peer-reviewed medical journal, and CuraLin is currently involved in a number of double blind placebo controlled studies.
 |Is CuraLin recommended by doctors?:Yes! Hundreds of doctors recommend CuraLin, and the number is rapidly growing. These include high profile doctors, endocrinologists, and diabetes researchers. Doctors are seeing an average success rate of about 90% with their patients, and many of these doctors also take CuraLin themselves for blood sugar support.
