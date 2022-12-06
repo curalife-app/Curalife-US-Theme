@@ -2336,7 +2336,7 @@
       },
       "15390791335168990234": {
         "type": "shopify:\/\/apps\/addify-dynamic-pricing\/blocks\/wholesale-tiered-pricing\/9ab4b5b0-20a7-4b48-8ce9-803a3d3f63ec",
-        "disabled": true,
+        "disabled": false,
         "settings": {
         }
       }
