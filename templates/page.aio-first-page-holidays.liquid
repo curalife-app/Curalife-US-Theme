@@ -24,6 +24,34 @@
     ' | split: '|' %}
 {% endif %}
 
+ 
+{% if shop.name == "CuraLife" %}
+ 
+    {% assign natural_ingredients = 'lp-aio-doctor1.svg*Doctor approved
+                          |lp-aio-medicans2.svg:Safe to take with medications*
+                          |lp-aio-list.svg:Independent quality checks
+                          |lp-aio-usa_flag.svg:Encapsulated in the USA
+                          |lp-aio-search.svg:Uses registered facilities
+                          |lp-aio-vegan.svg:Vegan friendly
+                          |lp-aio-gmp.png:GMP and ISO9001 Certified facilities
+                          ' | split: '|' %}
+                          
+                          
+      {% elsif shop.name == "CuraLife Global" %}					
+                          
+    {% assign natural_ingredients = 'lp-aio-doctor1.svg*Doctor approved
+                          |lp-aio-medicans2.svg:Safe to take with medications*
+                          |lp-aio-list.svg:Independent quality checks
+                          |lp-aio-eu_flag.svg:Encapsulated in Europe
+                          |lp-aio-search.svg:Uses registered facilities
+                          |lp-aio-vegan.svg:Vegan friendly
+                          |lp-aio-gmp.png:GMP and ISO9001 Certified facilities
+                          ' | split: '|' %}
+      {% endif %}					
+                          
+                          
+                          
+
 {% assign faqItems = "Can I take CuraLin alongside my drugs?:CuraLin is a natural dietary supplement, meaning that it’s meant as a compliment to your existing regime. You simply take it as part of your diet to help maintain a healthy blood sugar level. Thousands of CuraLin users take CuraLin alongside their prescribed drugs and treatments and no serious negative interactions have been recorded. Of course, please consult with your doctor before starting on CuraLin, whether you’re on drugs or not.
 |What are the clinical results of CuraLin?:CuraLin’s real-world results show a very high level of safety and efficacy in supporting a healthy fasting and A1c level, improving daily energy, and helping with weight loss. A clinical case study on CuraLin’s effectiveness were published in a peer-reviewed medical journal, and CuraLin is currently involved in a number of double blind placebo controlled studies.
 |Is CuraLin recommended by doctors?:Yes! Hundreds of doctors recommend CuraLin, and the number is rapidly growing. These include high profile doctors, endocrinologists, and diabetes researchers. Doctors are seeing an average success rate of about 90% with their patients, and many of these doctors also take CuraLin themselves for blood sugar support.
