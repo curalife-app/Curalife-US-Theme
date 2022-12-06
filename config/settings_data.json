@@ -2336,7 +2336,7 @@
         "type": "shopify:\/\/apps\/yotpo-loyalty-rewards\/blocks\/loader-app-embed-block\/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
         "disabled": false,
         "settings": {
-          "inject_modules_loader": false,
+          "inject_modules_loader": true,
           "inject_sdk_loader": false
         }
       }
