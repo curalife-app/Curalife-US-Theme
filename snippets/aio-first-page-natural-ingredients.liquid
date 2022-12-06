@@ -17,85 +17,18 @@
                     </div>
                 </div>
                 <div class="ingredients-mainpanel">
+                    {% for natural_ingredient in natural_ingredients %}
                     <div class="ingredients-mainpanel_card">
                         <div class="card-icon_overlay">
                             <div class="card-icon">
-                                <img src="{{ 'lp-aio-doctor1.svg' | file_url }}" height="59" width="58" alt="">
+                                <img src="{{ natural_ingredient | split: ':' | first | file_url }}" height="59" width="58" alt="">
                             </div>
                         </div>
                         <div class="card-description">
-                            <p>Doctor approved</p>
+                            <p>{{ natural_ingredient | split: ':' | last }}</p>
                         </div>
                     </div>
-                    <div class="ingredients-mainpanel_card">
-                        <div class="card-icon_overlay">
-                            <div class="card-icon">
-                                <img src="{{ 'lp-aio-medicans2.svg' | file_url }}" height="59" width="58" alt="">
-                            </div>
-                        </div>
-                        <div class="card-description">
-                            <p>Safe to take with medications*</p>
-                        </div>
-                    </div>
-                    <div class="ingredients-mainpanel_card no-mb">
-                        <div class="card-icon_overlay">
-                            <div class="card-icon">
-                                <img src="{{ 'lp-aio-list.svg' | file_url }}" height="59" width="58" alt="">
-                            </div>
-                        </div>
-                        <div class="card-description">
-                            <p>Independent quality checks</p>
-                        </div>
-                    </div>
-                    <div class="ingredients-mainpanel_card">
-                        <div class="card-icon_overlay">
-                           
-                            <div class="card-icon">
-                                {% if shop.name == "CuraLife" %}
-                                <img src="{{ 'lp-aio-usa_flag.svg' | file_url }}" height="59" width="58" alt="">
-                                {% elsif shop.name == "CuraLife Global" %}
-                                <img src="{{ 'lp-aio-eu_flag.svg' | file_url }}" height="59" width="58" alt="">
-                            {% endif %}
-                            </div>
-                        </div>
-                        <div class="card-description">
-                            {% if shop.name == "CuraLife" %}
-                            <p>Encapsulated in the USA</p>
-                            {% elsif shop.name == "CuraLife Global" %}
-                            <p>Encapsulated in Europe</p>
-                        {% endif %}
-                        </div>
-                    </div>
-                    <div class="ingredients-mainpanel_card">
-                        <div class="card-icon_overlay">
-                            <div class="card-icon">
-                                <img src="{{ 'lp-aio-search.svg' | file_url }}" height="59" width="58" alt="">
-                            </div>
-                        </div>
-                        <div class="card-description">
-                            <p>Uses registered facilities</p>
-                        </div>
-                    </div>
-                    <div class="ingredients-mainpanel_card">
-                        <div class="card-icon_overlay">
-                            <div class="card-icon">
-                                <img src="{{ 'lp-aio-vegan.svg' | file_url }}" height="59" width="58" alt="">
-                            </div>
-                        </div>
-                        <div class="card-description">
-                            <p>Vegan friendly</p>
-                        </div>
-                    </div>
-                    <div class="ingredients-mainpanel_card">
-                        <div class="card-icon_overlay">
-                            <div class="card-icon">
-                                <img src="{{ 'lp-aio-gmp.png' | file_url}}" height="59" width="58" alt="">
-                            </div>
-                        </div>
-                        <div class="card-description">
-                            <p>GMP and ISO9001 Certified facilities</p>
-                        </div>
-                    </div>
+                    {% endfor %}  
                 </div>
             </div>
         </div>
