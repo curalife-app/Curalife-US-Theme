@@ -2,10 +2,7 @@
   {% render 'snow-effect' %}
   <div class="container">
     <div class="logo-wrapper">
-        {% if logoColor %}
-          {% assign greenAddition = "-" | append: logoColor %}
-        {% endif %}
-        <img class="logo" src="{{ 'hs-santa-logo' | append: greenAddition | append: '.png' | asset_url }}" alt="logo">
+        <img class="logo" src="{{ logoFileName | append: '.png' | asset_url }}" alt="logo">
     </div>
     <p class="title">{{ title }}</p>
 
@@ -27,7 +24,7 @@
   {% endif %}
 
   #sale-banner {
-    background: {% if color == "red" %}linear-gradient(#A9151E, #d50b15){% elsif color == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
+    background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     overflow: hidden;
