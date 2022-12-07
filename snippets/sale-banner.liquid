@@ -78,8 +78,13 @@
       justify-content: space-between;
       gap: 10px;
   }
-
-  #sale-banner .off-container {
+   {% if isProductPage %}
+     #sale-banner .off-container {
+      display:none;
+    }
+  {% endif %}
+   #sale-banner .off-container {
+    
       display: flex;
       justify-content: center;
       align-items: center;
@@ -116,12 +121,24 @@
       }
     {% endif %}
 
-    #sale-banner .title {
-      {% if isProductPage %}
+    {% if isProductPage %}
+
+      #sale-banner .title {   
         display: none;
-        {% else %}
+      }
+  
+     #sale-banner .off-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-family: 'PP Radio Grotesk';
+     gap: 10px;
+     color: white;
+    }
+  {% endif %}
+
+    #sale-banner .title {   
       padding: 2vw;
-      {% endif %}
     }
 
     #sale-banner p.title {
