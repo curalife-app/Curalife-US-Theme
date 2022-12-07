@@ -131,15 +131,30 @@
           justify-content: center;
           align-items: center;
           font-family: 'PP Radio Grotesk';
-          gap: 1vw;
           color: white;
-          margin-left: 37vw;
+          flex-direction: column;
       }
 
       #sale-banner .thirty-off {
           margin-right: unset;
           font-size: 6vw;
           line-height: 6vw;
+      }
+
+      #sale-banner .off-container {
+          width: unset;
+      }
+
+      {% else %}
+
+      #sale-banner .off-container {
+          width: 50%;
+      }
+
+      #sale-banner .thirty-off {
+          margin-right: unset;
+          font-size: 7vw;
+          line-height: 7vw;
       }
 
     {% endif %}
@@ -166,10 +181,7 @@
       
     }
 
-    #sale-banner .off-container {
-        width: 50%;
-    }
-
+  
     #sale-banner .main-logo  {
         display: none;
     }
@@ -178,11 +190,7 @@
         font-size: 4vw;
     }
 
-    #sale-banner .thirty-off {
-        margin-right: unset;
-        font-size: 7vw;
-        line-height: 7vw;
-    }
+
     #sale-banner a.main-btn {
         font-size: 4vw;
         padding: 2vw;
