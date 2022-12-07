@@ -128,21 +128,14 @@
       #sale-banner .title {   
         display: none;
       }
-  
-     #sale-banner .off-container {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     font-family: 'PP Radio Grotesk';
-     gap: 10px;
-     color: white;
-    }
-  {% endif %}
-
-    #sale-banner .title {   
+  {% else %}
+  #sale-banner .title {   
       padding: 2vw;
     }
 
+  {% endif %}
+
+   
     #sale-banner p.title {
       font-size: 9vw;
     }
