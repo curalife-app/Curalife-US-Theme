@@ -18,6 +18,11 @@
           <div class="thirty-off">20% OFF</div>
         </div>
         <a class="main-btn" id='main-cta-btn' href="#product-list-section">ORDER NOW</a>
+      {% elsif isProductPage %}
+        <div class="off-container">
+          <div class="up-to">UP TO</div>
+          <div class="thirty-off">20% OFF</div>
+        </div>
       {% endif %}
     </div>
   </div>
@@ -106,13 +111,17 @@
   @media screen and (max-width: 760px) {
     {% if isFixed %}
       #sale-banner .logo-wrapper {
-        
+
         display: none;
       }
     {% endif %}
 
     #sale-banner .title {
+      {% if isProductPage %}
+        display: none;
+        {% else %}
       padding: 2vw;
+      {% endif %}
     }
 
     #sale-banner p.title {
