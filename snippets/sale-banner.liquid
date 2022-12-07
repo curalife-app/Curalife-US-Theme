@@ -91,6 +91,7 @@
         font-family: 'PP Radio Grotesk';
         color: white;
         flex-wrap: wrap;
+        gap: 10px;
     }
   {% endif %}
 
@@ -144,7 +145,9 @@
    
       {% else %}
 
-   
+      #sale-banner .off-container {
+        gap: unset;
+      }
 
       #sale-banner .thirty-off {
           margin-right: unset;
