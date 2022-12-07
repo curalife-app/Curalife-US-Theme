@@ -125,7 +125,9 @@
     {% endif %}
 
     {% if isProductPage %}
-
+      #sale-banner .container {
+        justify-content: space-around;
+      }
       #sale-banner .off-container {
 
           display: flex;
@@ -144,7 +146,9 @@
 
    
       {% else %}
-
+      #sale-banner .container {
+        justify-content: center;
+      }
       #sale-banner .off-container {
         gap: unset;
       }
