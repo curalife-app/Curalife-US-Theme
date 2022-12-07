@@ -2,28 +2,16 @@
   {% render 'snow-effect' %}
   <div class="container">
     <div class="logo-wrapper">
-      {% if isLogo %}
-        {% if logoColor %}
-          {% assign greenAddition = "-" | append: logoColor %}
-        {% endif %}
-        <img class="logo" src="{{ 'hs-santa-logo' | append: greenAddition | append: '.png' | asset_url }}" alt="logo">
-      {% endif %}
+        <img class="logo" src="{{ logoFileName | append: '.png' | asset_url }}" alt="logo">
     </div>
     <p class="title">{{ title }}</p>
 
     <div class="cta-wrapper">
-      {% if isCTA %}
         <div class="off-container">
           <div class="up-to">UP TO</div>
-          <div class="thirty-off">20% OFF</div>
+          <div class="percents-off">20% OFF</div>
         </div>
-        <a class="main-btn" id='main-cta-btn' href="#product-list-section">ORDER NOW</a>
-      {% elsif isProductPage %}
-        <div class="off-container">
-          <div class="up-to">UP TO</div>
-          <div class="thirty-off">20% OFF</div>
-        </div>
-      {% endif %}
+        <a class="main-btn" id='main-cta-btn' href="{{ ctaButtonLink }}">ORDER NOW</a>
     </div>
   </div>
 </div>
@@ -36,7 +24,7 @@
   {% endif %}
 
   #sale-banner {
-    background: {% if color == "red" %}linear-gradient(#A9151E, #d50b15){% elsif color == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
+    background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     overflow: hidden;
@@ -55,21 +43,24 @@
   }
 
   #sale-banner img.logo {
+    display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
     object-fit: contain;
   }
 
   #sale-banner p.title {
-    display: flex;
-    justify-content: center;
+    display: {% if desktopContent contains 'title' %}block{% else %}none{% endif %};
     font-family: 'PP Radio Grotesk';
-    font-weight: 400;
-    font-size: clamp(35px, 7vw, 50px);
-    text-align: center;
+    font-size: clamp(38px, 4vw, 50px);
     color: #ffffff;
     padding: 10px 0;
     text-shadow: 2px 1px 4px #ffffff;
     margin: unset;
+    text-align: center;
     padding-bottom: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   #sale-banner .cta-wrapper {
@@ -78,29 +69,21 @@
       justify-content: space-between;
       gap: 10px;
   }
-   {% if isProductPage %}
-     #sale-banner .off-container {
-      display:none;
-    }
-    {% else %}
-    #sale-banner .off-container {
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'PP Radio Grotesk';
-        color: white;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-  {% endif %}
-
+  #sale-banner .off-container {
+      display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %};
+      justify-content: center;
+      align-items: center;
+      font-family: 'PP Radio Grotesk';
+      gap: 10px;
+      color: white;
+  }
 
   #sale-banner .up-to {
       font-size: 25px;
   }
 
-  #sale-banner .thirty-off {
+  #sale-banner .percents-off {
       margin-right: 10px;
       font-size: 35px;
       font-weight: bold;
@@ -108,96 +91,61 @@
   }
 
   #sale-banner a.main-btn {
+    display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
     font-size: 26px;
     padding: 10px 40px;
     color: #C00101;
     background: white;
     border-radius: 6px;
-    box-shadow: 0px 5.01961px 12.549px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.15);
   }
 
   @media screen and (max-width: 760px) {
-    {% if isFixed %}
-      #sale-banner .logo-wrapper {
-
-        display: none;
+    {% if mobileContent contains ',' %}
+      #sale-banner .container {
+        gap: 3vw;
       }
     {% endif %}
 
-    {% if isProductPage %}
-      #sale-banner .container {
-        justify-content: space-around;
-      }
-      #sale-banner .off-container {
+    #sale-banner img.logo {
+      display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
+    }
 
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-family: 'PP Radio Grotesk';
-          color: white;
-          flex-direction: column;
-      }
-
-      #sale-banner .thirty-off {
-          margin-right: unset;
-          font-size: 6vw;
-          line-height: 6vw;
-      }
-
-   
-      {% else %}
-      #sale-banner .container {
-        justify-content: center;
-      }
-      #sale-banner .off-container {
-        gap: unset;
-      }
-
-      #sale-banner .thirty-off {
-          margin-right: unset;
-          font-size: 7vw;
-          line-height: 7vw;
-      }
-
-    {% endif %}
-
-    {% if isProductPage %}
-      #sale-banner p.title {   
-        display: none;
-      }
-  {% else %}
- 
-  {% endif %}
-
-  #sale-banner .title {   
-    padding: 2vw;
-  }
-
-  #sale-banner p.title {
-    font-size: 9vw;
-  }
-
+    #sale-banner p.title {
+      display: {% if mobileContent contains 'title' %}block{% else %}none{% endif %};
+      font-size: {% if isLogo %}7{% else %}9{% endif %}vw;
+      position: unset;
+      transform: unset;
+      {% if isLogo %}max-width: 50%;{% endif %}
+    }
 
     #sale-banner .cta-wrapper {
       gap: 1vw;
-      
+      {% if isCTA %}width: 100%;{% endif %}
     }
 
-  
-    #sale-banner .main-logo  {
-        display: none;
+    #sale-banner .off-container {
+        display: {% if mobileContent contains 'cta' %}block{% else %}none{% endif %};
+        gap: unset;
     }
 
     #sale-banner .up-to {
         font-size: 4vw;
     }
 
+    #sale-banner .percents-off {
+        margin-right: unset;
+        font-size: 6vw;
+        line-height: 6vw;
+    }
 
     #sale-banner a.main-btn {
-        font-size: 4vw;
-        padding: 2vw;
-        height: 10vw;
-        width: 50%;
+      display: {% if mobileContent contains 'cta-button' %}block{% else %}none{% endif %};
+      text-align:center;
+      font-size: 4vw;
+      padding: 3vw;
+      height: 10vw;
+      width:44vw;
     }
 }
 </style>
