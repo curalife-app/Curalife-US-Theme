@@ -116,7 +116,72 @@
       max-width: 100%
     }
 
-    
+    @media screen and (max-width: 991px) {
+        .trusted-doctors {
+          padding: 2.8125rem 0 2.1875rem
+        }
+
+        .doctor-box-col {
+          margin-top: 1.875rem;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+          max-width: 15.625rem
+        }
+
+        .doctors-boxes-wrapper,
+        .trusted-doctors .data-wrap {
+          padding: 0
+        }
+
+        .doctors-boxes-wrapper {
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center
+        }
+    }
+
+    @media screen and (max-width: 760px){
+        .trusted-doctors {
+          padding: 1.5rem 0
+        }
+
+        .trusted-doctors .description-overlay {
+          margin-top: .1875rem;
+          padding-right: .875rem
+        }
+
+        .doctor-thumbnail {
+          max-width: 7.0625rem
+        }
+
+        .doctor-informative h4 {
+          font-size: .875rem
+        }
+
+        .doctor-informative p {
+          font-size: .75rem;
+          line-height: 1.17
+        }
+
+        .doctor-thumbnail span {
+          top: .1875rem;
+          left: .1875rem;
+          right: .1875rem;
+          bottom: .1875rem
+        }
+
+        .doctor-informative {
+          margin-top: .5625rem;
+          padding-top: .5rem
+        }
+
+        .doctor-informative:after {
+          height: 2px;
+          max-width: 3rem
+        }
+      
+    }
 </style>
 
 
