@@ -82,16 +82,18 @@
      #sale-banner .off-container {
       display:none;
     }
+    {% else %}
+    #sale-banner .off-container {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'PP Radio Grotesk';
+        gap: 10px;
+        color: white;
+    }
   {% endif %}
-   #sale-banner .off-container {
-    
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'PP Radio Grotesk';
-      gap: 10px;
-      color: white;
-  }
+
 
   #sale-banner .up-to {
       font-size: 25px;
