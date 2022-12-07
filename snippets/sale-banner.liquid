@@ -105,6 +105,10 @@
   }
 
   @media screen and (max-width: 760px) {
+    #sale-banner .container {
+      gap: 3vw;
+    }
+
     #sale-banner p.title {
       font-size: {% if isLogo %}7{% else %}9{% endif %}vw;
       position: unset;
@@ -117,28 +121,19 @@
       {% if isCTA %}width: 100%;{% endif %}
     }
 
-    #sale-banner .off-container {
-        width: 50%;
-    }
-
-    #sale-banner .main-logo  {
-        display: none;
-    }
-
     #sale-banner .up-to {
         font-size: 4vw;
     }
 
     #sale-banner .thirty-off {
         margin-right: unset;
-        font-size: 7vw;
-        line-height: 7vw;
+        font-size: 6vw;
+        line-height: 6vw;
     }
     #sale-banner a.main-btn {
         font-size: 4vw;
         padding: 2vw;
         height: 10vw;
-        width: 50%;
     }
 }
 </style>
