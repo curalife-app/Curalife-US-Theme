@@ -12,7 +12,7 @@
   {% render 'layout.head.fonts' %}
 
  <!-- Stylesheets -->
- <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+ {%- comment -%} <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'"> {%- endcomment -%}
  <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
  <!-- Swiper Import -->
