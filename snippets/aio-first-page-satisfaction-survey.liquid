@@ -65,6 +65,137 @@
         </div>
     </div>
 </div>
+  <style>
+  .satisfaction-survey {
+      padding-bottom: 6.8125rem;
+      margin-top: 4.375rem
+    }
+
+    .satisfaction-survey .satisfaction-survey-bg {
+      position: relative;
+      padding-top: 2.0625rem;
+      padding-bottom: 10rem;
+      overflow: hidden
+    }
+
+    .satisfaction-survey .satisfaction-survey-bg:before,
+    .satisfaction-survey .satisfaction-survey-bg:after {
+      content: "";
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left top;
+      position: absolute;
+      z-index: -1
+    }
+
+    .satisfaction-survey .satisfaction-survey-bg:before {
+      background-image:url({{'lp-aio-green-area.png' | file_url }});
+      background-size: contain;
+      background-position: right center;
+      left: -11%;
+      top: 0;
+      max-width: 66%;
+      width: 100%;
+      height: 40.875rem;
+      max-height: 100%
+    }
+
+    .satisfaction-survey .satisfaction-survey-bg:after {
+      background-image:url({{'lp-aio-vector-dynamical.png' | file_url }});
+      background-size: contain;
+      background-position: left bottom;
+      left: 0;
+      bottom: 4.9375rem;
+      max-width: 52%;
+      width: 100%;
+      height: 15.3125rem
+    }
+
+    .satisfaction-survey .data-wrap {
+      padding-left: .9375rem
+    }
+
+    .satisfaction-survey .sub-title {
+      padding-bottom: 3.6875rem
+    }
+
+    .satisfaction-survey .survey-button {
+      width: 100%;
+      max-width: 100%;
+      text-align: center
+    }
+
+    .satisfaction-survey .success-list {
+      max-width: 48.9375rem;
+      margin: 0 auto
+    }
+
+    .satisfaction-survey .success-list ul li {
+      padding-left: 10.25rem;
+      margin-bottom: 3.375rem;
+      position: relative;
+      z-index: 1
+    }
+
+    .satisfaction-survey .success-list ul li:last-child {
+      margin-bottom: 0
+    }
+
+    .satisfaction-survey .success-list ul li .percentage {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      position: absolute;
+      top: .5rem;
+      left: 0;
+      bottom: 0;
+      overflow: hidden
+    }
+
+    .satisfaction-survey .success-list ul li .percentage p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 2.8125rem;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #222
+    }
+
+    .satisfaction-survey .success-list ul li .title {
+      padding-bottom: .25rem
+    }
+
+    .satisfaction-survey .success-list ul li .title h4 {
+      margin: 0;
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      color: #222
+    }
+
+    .satisfaction-survey .success-list ul li .line {
+      height: 1.4375rem;
+      position: relative;
+      overflow: hidden
+    }
+
+    .satisfaction-survey .success-list ul li .line span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: -o-linear-gradient(359.95deg, rgba(238, 208, 195, .5) 0%, rgba(208, 125, 91, .5) 100%);
+      background: linear-gradient(90.05deg, rgba(238, 208, 195, .5) 0%, rgba(208, 125, 91, .5) 100%);
+      border-radius: 0 .9375rem .9375rem 0;
+      -webkit-transition: width 1s ease-in-out;
+      -o-transition: width 1s ease-in-out;
+      transition: width 1s ease-in-out
+    }
+</style>
 
 <style>
     .satisfaction-survey .success-list ul li .line span {
