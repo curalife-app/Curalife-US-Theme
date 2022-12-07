@@ -1,7 +1,8 @@
 {% layout 'theme.aio-lp01' %}
 
 <div class="page-overflow">
-  {% render 'sale-banner', color: "green", isLogo: true, logoColor: "white", isFixed: true, isCTA: true %}
+  {% render 'sale-banner', desktopContent: "logo,cta,cta-button", mobileContent: "logo,cta,cta-button", bgColor: "green", logoFileName: "hs-santa-logo-white", isFixed: true, ctaButtonLink: "#product-list-section" %}
+  {% render 'holidays-hero-banner' %}
   {% render 'holidays-hero-banner' %}
   {% section 'lps-featured-on' %}
   {% section 'lps-video-reviews' %}
