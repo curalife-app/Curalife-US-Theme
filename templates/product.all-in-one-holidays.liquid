@@ -1,14 +1,16 @@
 
 {% if shop.name == "CuraLife" %}
-    {% assign shipping_worldwide = 'US Free Shipping' %}
-    {% assign challange_value = 99 %}
-    {% assign curaeats_value = 29 %}
-    {% assign currency_symbol = '$' %}
+  {% assign bundle_title = '30 Day Life Changing Program' %}
+  {% assign shipping_worldwide = 'US Free Shipping' %}
+  {% assign challange_value = 99 %}
+  {% assign curaeats_value = 29 %}
+  {% assign currency_symbol = '$' %}
 {% elsif shop.name == "CuraLife Global" %}
-    {% assign shipping_worldwide = 'Free Shipping Above £99' %}
-    {% assign challange_value = 0 %}
-    {% assign curaeats_value = 24 %}
-    {% assign currency_symbol = '£' %}
+  {% assign bundle_title = 'CuraEats Meal Plan App' %}
+  {% assign shipping_worldwide = 'Free Shipping Above £99' %}
+  {% assign challange_value = 0 %}
+  {% assign curaeats_value = 24 %}
+  {% assign currency_symbol = '£' %}
 {% endif %}
 
 {% render 'script.round-converted-currency' %}
@@ -131,7 +133,7 @@
               {% for var in product.variants %}
                 {% if var.title contains "CuraEats" %}
                   {% assign bundle_addition = challange_value | plus: curaeats_value | times: 100 %}
-                  <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
+                  <div class="variant-notice"><p><b>Bonus</b> - {{ bundle_title }} <b>(<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
                 {% else %}
                   {% assign bundle_addition = 0 %}
                 {% endif %}
