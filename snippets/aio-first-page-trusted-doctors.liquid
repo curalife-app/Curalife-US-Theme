@@ -33,6 +33,92 @@
     </div>
 </div>
 
+<style>
+    .doctor-thumbnail {
+      max-width: 15.375rem;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden
+    }
+
+    .doctor-thumbnail:before {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+      pointer-events: none;
+      border: 1px solid #C78263;
+      border-radius: 50%;
+      background: #FFF
+    }
+
+    .doctor-thumbnail span {
+      display: block;
+      position: absolute;
+      top: .375rem;
+      left: .375rem;
+      right: .375rem;
+      bottom: .375rem;
+      background: -o-linear-gradient(89.57deg, rgba(196, 196, 196, .52) .31%, #C4C4C4 99.57%);
+      background: linear-gradient(.43deg, rgba(196, 196, 196, .52) .31%, #C4C4C4 99.57%);
+      border-radius: 50%;
+      overflow: hidden
+    }
+
+    .doctor-thumbnail span img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover
+    }
+
+    .doctor-box-col {
+      margin-top: 4.25rem;
+      padding-left: .9375rem;
+      padding-right: .9375rem;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%
+    }
+
+    .doctors-boxes-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      padding: 0 2.75rem 0 .75rem
+    }
+
+    .doctor-item-box {
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      text-align: center
+    }
+
+    .trusted-doctors {
+      padding: 5.5rem 0 2.625rem
+    }
+
+    .trusted-doctors .data-wrap {
+      padding: 0 1.375rem
+    }
+
+    
+    .trusted-doctors .description-overlay {
+      max-width: 74.125rem;
+      margin-top: .6875rem
+    }
+
+    .doctors-boxes-wrapper {
+      width: 100%;
+      max-width: 100%
+    }
+
+    
+</style>
+
 
 <style>
     .doctor-informative {
