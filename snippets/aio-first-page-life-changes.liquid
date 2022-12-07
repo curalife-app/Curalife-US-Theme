@@ -219,6 +219,15 @@
     }
 
     @media screen and (max-width: 991px) {
+        
+        .video-wrapper .video-headline {
+            font-size: .875rem;
+            padding: 2.3125rem .3125rem 0
+          }
+
+          .video-wrapper .video-headline br {
+            display: none
+          }
         .life-changes {
           padding-top: 2.1875rem;
           padding-bottom: 2.8125rem
@@ -233,6 +242,52 @@
 
 
     @media screen and (max-width: 760px) {
+
+        .video-wrapper {
+          margin: 0 -15px;
+          padding: 1.1875rem 0 0 .875rem;
+          -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+          overflow-x: scroll;
+          scroll-behavior: smooth
+        }
+
+        .video-wrapper::-webkit-scrollbar {
+          width: 0
+        }
+
+        .video-wrapper .video-block-item-overlay-col {
+          -ms-flex-negative: 0 !important;
+          flex-shrink: 0 !important;
+          margin: 0 .375rem;
+          -webkit-box-flex: unset;
+          -ms-flex: unset;
+          flex: unset;
+          width: 100%;
+          max-width: 10rem;
+          padding: 0
+        }
+
+        .video-wrapper .video-headline p {
+          min-height: unset
+        }
+
+        .video-wrapper .video-headline {
+          font-size: .75rem;
+          line-height: 1.08;
+          padding: .8125rem .1875rem;
+          text-align: left
+        }
+
+        .video-wrapper .video-headline:after {
+          top: .3125rem;
+          left: .125rem;
+          -webkit-transform: none;
+          -ms-transform: none;
+          transform: none;
+          width: .8125rem;
+          height: .8125rem
+        }
 
         .life-changes {
           padding-top: .9375rem;
