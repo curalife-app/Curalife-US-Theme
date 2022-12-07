@@ -29,7 +29,7 @@
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% render 'script.round-converted-currency' %}
-{% render 'sale-banner', title: "Get into the holiday spirit!", color: "red" %}
+{% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Get into the holiday spirit!", color: "red" %}
 
 <div class="product-data">
   <div class="container">
