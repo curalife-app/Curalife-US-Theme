@@ -107,9 +107,9 @@
   @media screen and (max-width: 760px) {
     #sale-banner p.title {
       font-size: 7vw;
-      max-width: 50%;
       position: unset;
       transform: unset;
+      {% if isLogo %}max-width: 50%;{% endif %}
     }
 
     #sale-banner .cta-wrapper {
