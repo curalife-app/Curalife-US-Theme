@@ -106,7 +106,7 @@
 
   @media screen and (max-width: 760px) {
     #sale-banner p.title {
-      font-size: 7vw;
+      font-size: {% if isLogo %}7{% else %}9{% endif %}vw;
       position: unset;
       transform: unset;
       {% if isLogo %}max-width: 50%;{% endif %}
