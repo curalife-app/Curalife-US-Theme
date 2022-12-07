@@ -89,6 +89,38 @@
     .informer-list ul li:nth-child(6n):before {
       background-image:url({{'lp-aio-lp-6.png' | file_url }})
     }
+
+    @media screen and (max-width: 991px) {
+        .informer-list {
+          padding-top: 1.875rem;
+          margin: 0;
+          font-size: 1.125rem
+        }
+
+        .informer-list ul li {
+          padding-left: 2.8125rem;
+          margin-bottom: .9375rem
+        }
+    }
+
+    @media screen and (max-width: 760px){
+        .informer-list ul li:before {
+          max-width: 1.125rem;
+          max-height: 1.25rem;
+          left: .25rem
+        }
+
+        .informer-list {
+          padding-top: 1.75rem;
+          margin: 0 -15px 0 0;
+          font-size: 1.0625rem
+        }
+
+        .informer-list ul li {
+          padding-left: 2rem;
+          margin-bottom: 1.375rem
+        }
+    }
 </style>
 
 <style>
