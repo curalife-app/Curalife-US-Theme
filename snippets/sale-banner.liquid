@@ -104,9 +104,11 @@
   }
 
   @media screen and (max-width: 760px) {
-    #sale-banner .container {
-      gap: 3vw;
-    }
+    {% unless mobileContent contains ',' %}
+      #sale-banner .container {
+        gap: 3vw;
+      }
+    {% endunless %}
 
     #sale-banner img.logo {
       display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
