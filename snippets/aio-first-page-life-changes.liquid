@@ -131,6 +131,67 @@
       flex-wrap: wrap;
       padding: 0 4.6875rem
     }
+
+    .video-wrapper .video-block-item {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      border: 1px solid #C1DAD8;
+      max-width: 18.125rem
+    }
+
+    .video-wrapper .video-player #frame .lvo-playbtn {
+      background: rgba(255, 255, 255, .3);
+      width: 3.25rem;
+      height: 3.25rem
+    }
+
+    .video-wrapper .video-block-item-overlay-col {
+      margin-top: 1.875rem;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.33333%;
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+      padding: 0 .9375rem
+    }
+
+    .video-wrapper .video-headline {
+      font-weight: 300;
+      font-size: .947225rem;
+      line-height: 1.33;
+      text-align: center;
+      color: #000;
+      padding-top: 2.875rem;
+      position: relative;
+      padding-left: .5rem;
+      padding-right: .5rem
+    }
+
+    .video-wrapper .video-headline p {
+      min-height: 3.8125rem
+    }
+
+    .video-wrapper .video-headline * {
+      margin: 0
+    }
+
+    .video-wrapper .video-headline:after {
+      content: "";
+      position: absolute;
+      top: .5rem;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%);
+      display: inline-block;
+      width: 1.75rem;
+      height: 1.4375rem;
+      background-image:url({{'lp-aio-quote-icon.png' | file_url }});
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 1
+    }
     
     
     .life-changes .survey-button {
