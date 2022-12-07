@@ -123,6 +123,49 @@
       width: 100%
     }
 
+    @media screen and (min-width: 992px) {
+
+      .curalin-intro .curaline-widget-item:nth-child(2):after {
+        content: "";
+        display: inline-block;
+        width: 14.4375rem;
+        height: 6.875rem;
+        background-image:url({{'lp-aio-to-the-left.svg' | file_url }});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        top: -1.5rem;
+        left: -13rem;
+        z-index: -1
+      }
+
+      .curalin-intro .curaline-widget-item:nth-child(5) {
+        margin-top: 1rem;
+        padding-bottom: 1.125rem
+      }
+
+      .curalin-intro .curaline-widget-item:nth-child(5):after {
+        content: "";
+        display: inline-block;
+        width: 22.375rem;
+        height: 3.5625rem;
+        background-image:url({{'lp-aio-to-the-right.svg' | file_url }});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        top: -2.1875rem;
+        left: 3.125rem;
+        z-index: -1
+      }
+
+      .curalin-intro .curaline-widget-item:nth-child(6) {
+        margin-top: 1.4375rem
+      }
+    }
+  
+
     @media screen and (max-width: 991px) {
         .meet-curalin .data-wrap {
           padding: 0
