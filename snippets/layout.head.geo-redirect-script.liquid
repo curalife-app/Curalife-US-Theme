@@ -64,6 +64,7 @@
       console.log('REDIRECTING...');
       let req = new XMLHttpRequest;
       req.overrideMimeType("application/json"), req.open("GET", "https://geo.curalife.com/", !0), req.onload = function() {
+        console.log(JSON.parse(req.responseText));
         let country = JSON.parse(req.responseText).country;
         let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
         let countriesUS = ["US", "PR", "CA", "AU"]; // Countries for main domain (USA)
