@@ -119,13 +119,13 @@ a:hover {
   <style>
       .btn-cta {
           border: none;
-          background: #4B643D;
-          color: white;
+          background: {% if regColor %}#FDD246 {% else %} #4B643D {% endif %};
+          color: {% if regColor %}black {% else %}white {% endif %} ;
           font-weight: 400;
       }
   
       .btn-cta:hover {
-          background: #314227;
+          background: {% if regColor %}#e6bb2c {% else %} #314227 {% endif %};
       }
     
       @media screen and (max-width: 760px) {
