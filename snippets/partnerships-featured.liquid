@@ -2,7 +2,11 @@
   <div class="container" data-aos="fade-up">
     <div class="data-wrap">
       <div class="sub-title">
+        {% if pageLp %}
+          <h4>As Seen on:</h4>
+        {% else %}
         <h4>As featured on:</h4>
+        {% endif %}
       </div>
       <div class="partners-wrapper">
         <div class="ticker-wrap swiper" id="ticker-wrap">
