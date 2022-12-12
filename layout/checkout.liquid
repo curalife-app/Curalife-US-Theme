@@ -38,7 +38,7 @@
     {% endif %}
   {% endfor %}
 
-  {% if customer.orders_count == 1 %}
+  {% if customer.name contains 'Sve' %}
     {% assign onboarding_exist = true %}
   {% endif %}
 {% endif %}
