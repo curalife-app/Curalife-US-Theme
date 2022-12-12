@@ -32,24 +32,7 @@
     </div>
 </div>
 
-<style>
-   
-    .curlife-img {
-        display: none;
-    }
 
-    @media screen and (max-width: 760px) {
-        .curlife-img {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .curlife-img img {
-            max-width: 40% !important;
-        }
-    }
-</style>
 
 <script>
             brandsTicker = new Swiper('.hero-banner .ribbon.right', {
@@ -80,8 +63,11 @@
 
 
 <style>
+    .curlife-img {
+        display: none;
+    }
     .hero-banner {
-        
+        margin-top: 20px;
         position: relative;
         background-image: url("{{ 'bfcm-homepage-desktop.png' | asset_url }}");
         background-size: cover;
@@ -256,10 +242,23 @@
     }
 
    
-
+    @media screen and (max-width: 768px) {
+        .hero-banner {
+            margin-top: unset;
+        }
+    }
 
 
     @media screen and (max-width: 760px) {
+        .curlife-img {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .curlife-img img {
+            max-width: 40% !important;
+        }
         .hero-banner {
             margin-top: unset;
             background-image: url("{{ 'bfcm-homepage-mobile.png' | asset_url }}");
