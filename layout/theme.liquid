@@ -89,7 +89,7 @@
 
         let linksQuery = '';
         redirectPages.forEach((value, index)=>{linksQuery += 'a[href="' + redirectPages[index] + '"], '});
-
+        linksQuery = linksQuery.slice(0, -2);
         console.log(linksQuery);
         $(linksQuery).each(function () {
           $(this).attr('href', $(this).attr('href') + '-p');
