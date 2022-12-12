@@ -87,6 +87,10 @@
     z-index: 100;
   }
 
+  .main-menu ul li.dropdown:hover .dropdown-menu {
+      opacity: 1;
+  }
+
   .main-menu ul li.dropdown .dropdown-menu ul:before {
     border: unset;
   }
@@ -110,8 +114,19 @@
     }
 
     .main-menu ul li.dropdown .dropdown-menu {
+      max-height: 0px;
+      position: static;
+      overflow: hidden;
+    }
+
+    .main-menu ul li.dropdown.open .dropdown-menu {
+      max-height: 100vh;
+    }
+
+    .main-menu ul li.dropdown .dropdown-menu {
       box-shadow: unset;
       width: 100%;
+      margin-top: unset;
     }
 
     .header_cart_count {
