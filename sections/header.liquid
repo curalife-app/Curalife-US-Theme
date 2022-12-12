@@ -63,12 +63,6 @@
   })
 </script>
 
-<script>
-  if( $('header').css('position')=='fixed') {
-    $('body').css('padding-top', $('header').height() + 'px');
-  }
-</script>
-
 <style>
   header {
     position: static !important;
@@ -112,6 +106,12 @@
     }
   }
 </style>
+
+<script>
+  if( $('header').css('position')=='fixed') {
+    $('body').css('padding-top', $('header').height() + 'px');
+  }
+</script>
 
 {% schema %}
   {
