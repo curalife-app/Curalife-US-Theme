@@ -74,7 +74,7 @@
     </style>
 
     <script>
-      $('a[href*="/collections/all-holidays2022"], a[href*="/products/curalin"]').each(()=> {
+      $('a[href*="/collections/all-holidays2022"], a[href*="/products/curalin"]').each(function () {
         let link = $(this).attr('href') + '-p';
         console.log($(this));
         $(this).attr('href', link);
