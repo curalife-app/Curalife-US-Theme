@@ -88,7 +88,7 @@
         }
 
         let linksQuery = '';
-        redirectPages.forEach(()=>{linksQuery += 'a[href="' + redirectPages[i] + '"], '});
+        redirectPages.forEach((value, index)=>{linksQuery += 'a[href="' + redirectPages[index] + '"], '});
 
         console.log(linksQuery);
         $(linksQuery).each(function () {
