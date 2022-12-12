@@ -90,6 +90,7 @@
         let linksQuery = '';
         redirectPages.foreach(()=>{linksQuery += 'a[href="' + redirectPages[i] + '"], '});
 
+        console.log(linksQuery);
         $(linksQuery).each(function () {
           $(this).attr('href', $(this).attr('href') + '-p');
         });
