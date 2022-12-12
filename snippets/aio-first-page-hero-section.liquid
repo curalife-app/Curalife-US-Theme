@@ -1,11 +1,12 @@
 <div class="hero-section">
     <div class="container">
         <div class="data-wrap">
-            {%- comment -%} <div class="brand-logo">
+          {% if brandPage %}
+          <div class="brand-logo">
                 <a href="javascript:void(0)">
                     <img src="{{ 'logo-black.png' | asset_url}}" alt="">
                 </a>
-            </div> {%- endcomment -%}
+            </div> {% endif %}
             <div class="brand-slogan">
                 <h1>
                     Natural &
