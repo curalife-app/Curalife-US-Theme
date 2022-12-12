@@ -114,6 +114,21 @@
       position: fixed;
     }
 
+    .main-menu ul {
+      flex-direction: column;
+    }
+
+    .main-menu ul li {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid rgba(0,0,0,.05)
+    }
+
+    .main-menu ul li a {
+      padding: 20px 0;
+      font-size: 20px;
+    }
+
     .main-menu ul li.dropdown .dropdown-menu {
       max-height: 0px;
       position: static;
@@ -128,6 +143,10 @@
       box-shadow: unset;
       width: 100%;
       margin-top: unset;
+    }
+
+    .main-menu ul li.dropdown .dropdown-menu ul {
+        padding-inline-start: 15px;
     }
 
     .header_cart_count {
