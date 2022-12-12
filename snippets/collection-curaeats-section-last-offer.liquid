@@ -1,7 +1,7 @@
 {% render 'script.round-converted-currency' %}
 
 <section id="curaeats-section">
-  {% if shop.name == "CuraLife" %}
+  {%- comment -%} {% if shop.name == "CuraLife" %} {%- endcomment -%}
     {% unless product.title == "CuraLin BFCM 2022" %}
     <h2>Everything you need to keep your blood sugar happy!</h2>
     {% endunless %}
@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-  {% endif %}
+  {%- comment -%} {% endif %} {%- endcomment -%}
   <div class="curaeats">
     {% if shop.name == "CuraLife" %}
       <i class="icofont-plus plus"></i>
