@@ -75,7 +75,7 @@
     </style>
 
     <script>
-      if ($.cookie('_gaexp').endsWith('1')) {
+      if ($.cookie('_gaexp').endsWith('1') && $.cookie('_gaexp').endsWith('1')) {
         $('a[href="/collections/all-holidays2022"], a[href="/products/curalin-holidays2022"], a[href="/products/curalin-2-pack-holidays2022"], a[href="/products/curalin-3-pack-holidays2022"], a[href="/products/curalin-6-pack-holidays2022"]').each(function () {
           $(this).attr('href', $(this).attr('href') + '-p');
         });
