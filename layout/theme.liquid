@@ -31,6 +31,7 @@
 
     <!-- Script Libraries -->
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="{{ 'libs.js' | asset_url }}" async></script>
     <script src="{{ 'common.js' | asset_url }}" async></script>
 
@@ -73,13 +74,13 @@
       }
     </style>
 
-    {%- comment -%} <script>
-      $('a[href*="/collections/all-holidays2022"], a[href*="/products/curalin"]').each(function () {
-        let link = $(this).attr('href') + '-p';
-        console.log($(this));
-        $(this).attr('href', link);
-      });
-    </script> {%- endcomment -%}
+    <script>
+      if ($.cookie('the_cookie')) {
+        $('a[href*="/collections/all-holidays2022"], a[href*="/products/curalin"]').each(function () {
+          $(this).attr('href', $(this).attr('href') + '-p');
+        });
+      }
+    </script>
 
     {% render 'social-login' %}
   </body>
