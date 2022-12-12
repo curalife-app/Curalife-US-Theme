@@ -43,6 +43,12 @@
 
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
+
+    <script>
+      if( $('header').css('position')=='fixed') {
+        $('body').css('padding-top', $('header').height() + 'px');
+      }
+    </script>
 </head>
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->
