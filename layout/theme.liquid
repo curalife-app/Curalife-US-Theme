@@ -75,9 +75,9 @@
 
     <script>
       $('a[href*="/collections/all-holidays2022"], a[href*="/products/curalin"]').each(()=> {
-        let link = this.attr('href') + '-p';
-        console.log(link);
-        this.attr('href', link);
+        let link = $(this).attr('href') + '-p';
+        console.log($(this));
+        $(this).attr('href', link);
       });
     </script>
 
