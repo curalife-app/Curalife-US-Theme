@@ -63,6 +63,36 @@
   })
 </script>
 
+<style>
+  header {
+    background: white;
+    box-shadow: 0px 4px 40px rgb(0 0 0 / 25%);
+  }
+
+  header .main-toolbar {
+    padding: 20px 0;
+  }
+
+  .header_cart_count {
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex !important;
+    background-color: var(--dark-green);
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: 760px){
+    .header_cart_count {
+      margin-left: 0;
+    }
+  }
+</style>
+
 {% schema %}
   {
   "name": "Header",
@@ -94,24 +124,3 @@
   ]
   }
 {% endschema %}
-
-{% style %}
-  .header_cart_count {
-    border-radius: 50px;
-    width: 20px;
-    height: 20px;
-    justify-content: center;
-    align-items: center;
-    display: inline-flex !important;
-    background-color: var(--dark-green);
-    color: white;
-    font-weight: bold;
-    margin-left: 10px;
-  }
-
-  @media screen and (max-width: 760px){
-    .header_cart_count {
-      margin-left: 0;
-    }
-  }
-{% endstyle %}
