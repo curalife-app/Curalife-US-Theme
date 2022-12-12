@@ -7,11 +7,9 @@
           <li><a href="javascript:void(0)" class="open-search"><i class="icon-search"></i></a></li>
         </ul>
       </div>
-      {% if section.settings.logo != blank %}
       <div class="main-logo">
         <a href="/"><img src="{{ "hs-santa-logo.png" | asset_url }}" alt="logo"></a>
       </div>
-      {% endif %}
       <div class="main-menu">
         <div class="menu-scroll">
           <ul>
@@ -121,20 +119,6 @@
   {
   "name": "Header",
   "settings": [
-    {
-    "type": "header",
-    "content": "Logo"
-  },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo image"
-    },
-    {
-      "type": "url",
-      "id": "lgo_lnk",
-      "label": "Logo Link"
-    },
     {
     "type": "header",
     "content": "Menu"
