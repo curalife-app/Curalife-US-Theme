@@ -91,7 +91,7 @@ health.
 
   {% render 'partnerships-featured' %}
 
-  <div class="what-is-curalin-challenge">
+  {%- comment -%} <div class="what-is-curalin-challenge">
     <div class="container">
       <div class="sub-title">
         <h3><b>What is CuraLin Challenge</b></h3>
@@ -120,9 +120,9 @@ health.
         </div>
       </div>    
     </div>
-  </div>  
+  </div>   {%- endcomment -%}
   
-  <section class="see-results">
+  {%- comment -%} <section class="see-results">
     <div class="container">
       <div class="main-title-wrapper">
         <div class="main-title"><span>All in 7 days… </span>or your money back</div>
@@ -137,7 +137,7 @@ health.
         <div class="result"> &#8226; Live better</div>
       </div>
     </div>
-  </section>
+  </section> {%- endcomment -%}
 
   {% render 'aio-first-page-meet-curalin', meetCuralins: meetCuralins %}
 
