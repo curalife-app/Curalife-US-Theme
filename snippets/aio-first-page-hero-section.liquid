@@ -259,7 +259,7 @@
     }
 
     .hero-section .brand-welcome-text h2 {
-        background: #4B643D;
+        background: {% if regColor %}#62C1C5 {% else %} #4B643D {% endif %};
         padding: 0 30px;
         width: max-content;
         margin: inherit;
@@ -287,7 +287,7 @@
 
         .hero-section .brand-welcome-text * {
             font-size: 6vw;
-            color: #4B643D !important;
+            color: {% if regColor %}#62C1C5 {% else %} #4B643D {% endif %};;
             background: unset !important;
             padding: 0 !important;
         }
