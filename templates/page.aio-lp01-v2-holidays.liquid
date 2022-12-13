@@ -1,5 +1,4 @@
 {% layout 'theme.aio-lp01' %}
-
 {% assign doctors = 'lp-aio-michel.png*Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code.
 |lp-aio-nancy.png*Dr. Nancy Russell:Internal Medicine Specialist, North Kansas City Hospital
 |lp-aio-raz.png*Prof. Itamar Raz:World renouned diabetes expert with over 400 published peer-reviewed studies.
@@ -10,11 +9,11 @@ health.
 <div class="page-overflow">
   {% render 'sale-banner', desktopContent: "logo,cta,cta-button", mobileContent: "logo,cta,cta-button", bgColor: "green", logoFileName: "hs-santa-logo-white", isFixed: true, ctaButtonLink: "#product-list-section" %}
   {% render 'holidays-hero-banner' %}
-  {% render 'partnerships-featured', pageLp: true %}
-  {% render 'lps-video-reviews' %}
-  {% render 'lps-instructions' %}
-  {% render 'lps-satisfaction-survey' %}
-  {% render 'aio-first-page-trusted-doctors', doctors: doctors %}
+  {% section 'lps-featured-on' %}
+  {% section 'lps-video-reviews' %}
+  {% section 'lps-instructions' %}
+  {% section 'lps-satisfaction-survey' %}
+  {% section 'lps-trusted-by-doctors' %}
   {% section 'lps-doctors-testimonials' %}
   {% section 'lps-clinically-tested' %}
   {% section 'lps-ingredients' %}
@@ -35,6 +34,10 @@ health.
 
 
 <style>
+
+  body {
+    padding-top: 0 !important;
+  }
 
   #shopify-section-lps-aio-lp01-hero-black-friday {
     padding-top: 110px;
