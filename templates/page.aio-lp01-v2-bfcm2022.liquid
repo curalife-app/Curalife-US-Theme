@@ -37,7 +37,7 @@ health.
   }
 </style>
 
- 
+<div class="page-overflow">  
   {% render 'lps-aio-lp01-header-black-friday-aio', isTimer: false %}
   {% render 'lps-aio-lp01-hero-black-friday' %}
   {% render 'partnerships-featured', isLP: true %}
@@ -49,7 +49,7 @@ health.
   {% render 'lps-clinically-tested' %}
   {% render 'lps-ingredients', ingredients: ingredients %}
   {% render 'aio-first-page-supported-community', isLP: true %}
-  <div class="green-strip" id="green-strip">BEST. PRICE. EVER.</div> 
+  {%- comment -%} <div class="green-strip" id="green-strip">BEST. PRICE. EVER.</div> {%- endcomment -%}
   <div class="catalog">
   <div class="limited" id="limited">Special Curalin Offer <br>
   Get Curalin in a bundle!
@@ -67,7 +67,7 @@ health.
   {% render 'lps-sources' %}
 
   {% render 'floating-cta-btn' %}
-
+</div>
 
 
 <style>
@@ -122,5 +122,11 @@ health.
  
 </style>
 
+<style>
+  .page-overflow {
+    overflow: hidden
+  }
+
+</style>
 
 
