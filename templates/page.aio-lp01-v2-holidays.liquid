@@ -55,70 +55,10 @@ health.
 </div>
 
 
- <style>
-
-  body {
-    padding-top: 0 !important;
-  }
-
-  #shopify-section-lps-aio-lp01-hero-black-friday {
-    padding-top: 110px;
-  }
-
-   .catalog  {
-    margin-top: 20px;
-      display: flex;
-      text-align: center;
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: bold;
-      flex-direction: column;
-      gap: 10px;
-  }
-
-  .limited {
-    font-size: clamp(25px, 3vw, 35px);
-  }
-
-  .changing-programm {
-    text-align: center;
-    font-size: clamp(16px, 2vw, 24px);
-
-  }
-
-
-  @media screen and (max-width:760px) {
-
-  .changing-programm {
-      padding: 0 1vw;
-    }
-
-  }
-</style> 
 
  <style>
-  .green-strip {
-      top: 100px;
-      width: 100%;
-      background: #FFE746;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-      font-family: 'DM Sans';
-      font-weight: 600;
-      font-size: clamp(33px, 3vw, 60px); !important;
-      line-height: 24px;
-      text-align: center;
-      letter-spacing: -0.02em;
-      color: #222222;
-      padding: 20px;
-      margin-top: 30px;
-  }
 
-  .real-changes .sub-title {
-    border-top: unset !important;
-  }
 
-  .featured-section {
-    border-bottom: 1px solid #DCD9D9;
-  }
 
   #floating-cta {
     position: fixed;
@@ -139,20 +79,4 @@ health.
   }
 </style> 
 
-<script>
-  $("#floating-cta").click(function () {
-    $([document.documentElement, document.body]).animate({
-      scrollTop: $("#product-catalog-section").offset().top + 130
-    }, 2000);
-  });
 
-  if ($(window).width() < 761) {
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 800 && $(this).scrollTop() < ($("#product-catalog-section").offset().top - 1000)) {
-        $('#floating-cta').fadeIn();
-      } else {
-        $('#floating-cta').fadeOut();
-      }
-    });
-  }
-</script>
