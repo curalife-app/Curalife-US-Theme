@@ -1006,5 +1006,19 @@
       }
     </style>
   {% endif %}
+
+  {% if onboarding_exist or curaeats_exist %}
+    <style>
+      aside[role="complementary"] {
+        display: none;
+      }
+
+      @media (width >= 1000) {
+        .order-summary__sections {
+          height: unset;
+        }
+      }
+    </style>
+  {% endif %}
 </body>
 </html>
