@@ -296,7 +296,7 @@
         margin-bottom: unset;
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 999px) {
         .logo {
           top: unset;
         }
@@ -343,6 +343,12 @@
 
       #contact-us-section {
         margin-bottom: unset;
+      }
+
+      @media screen and (max-width: 999px) {
+        .logo {
+          top: unset;
+        }
       }
     </style>
   {% endif %}
@@ -1011,6 +1017,11 @@
     <style>
       aside[role="complementary"]:not(.onboarding) {
         display: none;
+      }
+
+      .js .order-summary--is-collapsed {
+        height: unset;
+        visibility: unset;
       }
 
       @media (width >= 1000) {
