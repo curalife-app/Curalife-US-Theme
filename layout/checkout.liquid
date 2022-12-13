@@ -596,7 +596,7 @@
 
       {% if onboarding_exist %}
         jQuery("#onboarding-content").insertAfter(".thank-you__additional-content");
-        if (jQuery("#curaeats-content")) {
+        if (jQuery("#curaeats-content").length) {
           jQuery(".sidebar").insertAfter("#curaeats-content");
         } else {
           jQuery(".sidebar").insertAfter("#onboarding-content");
