@@ -20,7 +20,7 @@ health.
 <div class="page-overflow">
   {% render 'sale-banner', desktopContent: "logo,cta,cta-button", mobileContent: "logo,cta,cta-button", bgColor: "green", logoFileName: "hs-santa-logo-white", isFixed: true, ctaButtonLink: "#product-list-section" %}
   {% render 'holidays-hero-banner' %}
-  {% render 'partnerships-featured', pageLp: true %}
+  {% render 'partnerships-featured', isLP: true %}
   {% render 'lps-video-reviews' %}
   {% render 'lps-instructions' %}
   {% render 'lps-satisfaction-survey' %}
@@ -28,7 +28,7 @@ health.
   {% render 'lps-doctors-testimonials' %}
   {% render 'lps-clinically-tested' %}
   {% render 'lps-ingredients', ingredients: ingredients %}
-  {% render 'aio-first-page-supported-community', pageLp: true %}
+  {% render 'aio-first-page-supported-community', isLP: true %}
   {% render 'last-offer-title', isLP: true %}
   {% assign Prods = page.content | split: ',' %}
   {% render 'products-catalog-section', Prods: Prods, isSkipCart: true %}
