@@ -273,18 +273,15 @@
     </div>
   </div>
 
-  {% if curaeats_exist %}
-    <div id="curaeats-content">
-      {% assign thanksTitle = 'Order number ' | append: order.name | append: ' is confirmed!' %}
-      {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
-      {% render 'curaeats-download-section' %}
-      {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
-      {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true, box_link: '/pages/contact-us' %}
-    </div>
-
+  {% if onboarding_exist or curaeats_exist %}
     <style>
-      #curaeats-content {
+      aside[role="complementary"]:not(.onboarding) {
         display: none;
+      }
+
+      .js .order-summary--is-collapsed {
+        height: unset;
+        visibility: unset;
       }
 
       .logo {
@@ -292,69 +289,88 @@
         top: -30px;
       }
 
-      aside.sidebar.onboarding {
-        width: unset;
-        float: unset;
+      .order-summary__sections {
+        height: unset !important;
       }
 
-      aside.sidebar.onboarding:after {
-        background: unset;
-        box-shadow: unset;
-      }
-
-      #contact-us-section {
-        margin-bottom: unset;
-      }
-
-      @media screen and (max-width: 768px) {
+      @media (width <= 1000) {
         .logo {
           top: unset;
         }
+
+        .main {
+          padding-top: 0;
+        }
       }
     </style>
-  {% endif %}
 
-  {% if onboarding_exist %}
-    <div id="onboarding-content">
-      {% assign progress_steps = "Daily Tip
-      |Reviews
-      |How To Use
-      |Support
-      |FAQ
-      |Order Info"
-      | split: '|' %}
-      {% render 'onboarding-hero', title: "Your order is confirmed!", icon_file: "onboarding-order-icon.png" %}
-      {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
-      {% render 'onboarding-quiz' %}
-      {% render 'onboarding-curalin-consumers-not-started' %}
-      {% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
-      {% render 'onboarding-faq' %}
-    </div>
+    {% if curaeats_exist %}
+      <div id="curaeats-content">
+        {% assign thanksTitle = 'Order number ' | append: order.name | append: ' is confirmed!' %}
+        {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
+        {% render 'curaeats-download-section' %}
+        {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
+        {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true, box_link: '/pages/contact-us' %}
+      </div>
 
-    <style>
-      #onboarding-content {
-        display: none;
-      }
+      <style>
+        #curaeats-content {
+          display: none;
+        }
 
-      .logo {
-        position: relative;
-        top: -30px;
-      }
+        aside.sidebar.onboarding {
+          width: unset;
+          float: unset;
+        }
 
-      aside.sidebar.onboarding {
-        width: unset;
-        float: unset;
-      }
+        aside.sidebar.onboarding:after {
+          background: unset;
+          box-shadow: unset;
+        }
 
-      aside.sidebar.onboarding:after {
-        background: unset;
-        box-shadow: unset;
-      }
+        #contact-us-section {
+          margin-bottom: unset;
+        }
+      </style>
+    {% endif %}
 
-      #contact-us-section {
-        margin-bottom: unset;
-      }
-    </style>
+    {% if onboarding_exist %}
+      <div id="onboarding-content">
+        {% assign progress_steps = "Daily Tip
+        |Reviews
+        |How To Use
+        |Support
+        |FAQ
+        |Order Info"
+        | split: '|' %}
+        {% render 'onboarding-hero', title: "Your order is confirmed!", icon_file: "onboarding-order-icon.png" %}
+        {% render 'onboarding-progress-bar', progress_steps: progress_steps %}
+        {% render 'onboarding-quiz' %}
+        {% render 'onboarding-curalin-consumers-not-started' %}
+        {% render 'onboarding-curalin-call-expert', background_color: 'unset', border: true %}
+        {% render 'onboarding-faq' %}
+      </div>
+
+      <style>
+        #onboarding-content {
+          display: none;
+        }
+
+        aside.sidebar.onboarding {
+          width: unset;
+          float: unset;
+        }
+
+        aside.sidebar.onboarding:after {
+          background: unset;
+          box-shadow: unset;
+        }
+
+        #contact-us-section {
+          margin-bottom: unset;
+        }
+      </style>
+    {% endif %}
   {% endif %}
 
   {{ tracking_code }}
