@@ -28,7 +28,7 @@ health.
   {% render 'lps-doctors-testimonials' %}
   {% render 'lps-clinically-tested' %}
   {% render 'lps-ingredients', ingredients: ingredients %}
-  {% section 'lps-supported-community' %}
+  {% render 'aio-first-page-supported-community' %}
   {% render 'last-offer-title', isLP: true %}
   {% assign Prods = page.content | split: ',' %}
   {% render 'products-catalog-section', Prods: Prods, isSkipCart: true %}
