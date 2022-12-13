@@ -21,6 +21,36 @@
         </div>
     </div>
 </div>
+{% if pageLp %}
+  <style>
+  .supported-community {
+      padding: 30px 0 0;
+  }
+      .supported-community .data-wrap {
+      padding: 0 1.875rem;
+  }
+
+  .supported-community .community-wall {
+      text-align: center;
+  }
+
+  .supported-community .community-wall img {
+      width: 100vw;
+  }
+
+  .supported-community .description-overlay {
+      margin-bottom: 30px;
+  }
+
+  @media screen and (max-width:760px) {
+      .supported-community .data-wrap {
+      padding: 0;
+  }
+  }
+  </style>
+
+
+{% else %}
 
 <style>
 
@@ -37,7 +67,7 @@
   margin: 0 auto;
   padding: 0 15px
 }
-    
+
     .supported-community {
       background: #F0F0F0;
       padding-top: 2.5625rem;
@@ -87,7 +117,7 @@
         .supported-community .community-wall {
           margin: 0 -.9375rem
         }
-      
+
     }
 
     @media screen and (max-width: 760px) {
@@ -115,3 +145,6 @@
     }
 
 </style>
+
+
+{% endif %}
