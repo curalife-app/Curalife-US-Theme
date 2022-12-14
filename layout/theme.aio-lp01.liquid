@@ -162,3 +162,14 @@
   {% render 'fa_translate_core' %}
 
 </html>
+
+<!-- Cta Buttons -->
+<script>
+  async function LinkToProduct(element, url) {
+    await woopra.track('Click CTA', {
+      button_title: element.innerText
+    });
+
+    window.location.href = url;
+  }
+</script>
