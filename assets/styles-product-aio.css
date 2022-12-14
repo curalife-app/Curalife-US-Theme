@@ -1,10 +1,5 @@
 
 
-.product-template-all-in-one .swiper-button-prev,
-.product-template-all-in-one .swiper-button-next {
-    color: gray;
-    transition: opacity .5s
-}
 
 .product-template-all-in-one .swiper-button-prev.disabled,
 .product-template-all-in-one .swiper-button-next.disabled {
