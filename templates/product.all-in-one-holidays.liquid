@@ -57,40 +57,7 @@
 
 
 <!-- Woopra Tracking -->
-<script>
-// Play Video
 
-
-
- //Product Arrow Click
-
-
-
- 
-
-
-
-
- $('.ingredients-main-slider').click(function() {
- woopra.track('Arrow Click', {
-   section: "Ingredients"
- });
-
- });
-
-
-
- $(".ingredients-section .ingredients-thumbs-slider .ingredient").click(function() {
- let ingIndex = $(this).attr("aria-label");
- let realIndex = ingIndex.charAt(0) - 1;
-
- woopra.track('Ing Icon Click', {
-   ing_order: ingIndex,
-   ing_title: $(".ingredients-section .ingredients-main-slider .swiper-slide").get(realIndex).querySelectorAll(".ingredient-title")[0].innerHTML
- });
- })
-
-</script>
 <style>
 body {
   padding-top: 0 !important;
