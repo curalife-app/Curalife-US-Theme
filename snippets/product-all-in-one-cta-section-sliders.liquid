@@ -647,6 +647,13 @@
 
 </script>
 
+<script>
+  productSliderAllInOne.on('slideChange', function () {
+    $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
+  });
+
+  </script>
+
 
 <script>
 
