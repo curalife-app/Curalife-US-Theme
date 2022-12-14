@@ -169,6 +169,13 @@
 </section>
 
 <style>
+
+.variant-notice p {
+              background: #4B643D;
+              color: white;
+              padding: 4px;
+              margin: unset;
+            }
    .cta-section .product-container {
     display: grid;
     grid-template-columns: 60% 40%;
@@ -459,6 +466,19 @@
 }
 .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
   border-color: #468734;
+}
+
+@media screen and (max-width: 768px) {
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price.last {
+    top: 9vw;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
+    font-size: 12px !important;
+  }
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-title {
+    font-size: 18px !important;
+  }
 }
   
   @media screen and (max-width: 760px) {
