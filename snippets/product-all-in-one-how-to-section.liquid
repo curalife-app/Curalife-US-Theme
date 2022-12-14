@@ -25,18 +25,15 @@
   }
 
   @media screen and (max-width: 760px) {
-    .how-to-section {
-      .container {
-        img {
-          margin-top: unset;
-          display: none;
-
-          &.mobile-version {
-            display: block;
-            width: 100%;
-          }
-        }
-      }
+    #how-to-section .container img {
+      margin-top: unset;
+      display: none;
     }
+
+    #how-to-section .container img.mobile-version {
+      display: block;
+      width: 100%;
+    }
+
   }
 </style>
