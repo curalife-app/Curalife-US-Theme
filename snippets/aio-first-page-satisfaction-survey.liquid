@@ -66,8 +66,8 @@
     </div>
 </div>
 <script>
-  async function LinkToProduct(element, url) {
-    await woopra.track('Click CTA', {
+  function LinkToProduct(element, url) {
+    woopra.track('Click CTA', {
       button_title: element.innerText
     });
 
