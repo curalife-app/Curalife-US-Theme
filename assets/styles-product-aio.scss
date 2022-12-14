@@ -387,27 +387,6 @@
     }
   }
 
-  .how-to-section {
-    .container {
-      text-align: center;
-
-      h2 {
-        text-align: left;
-        max-width: 450px;
-      }
-
-      img {
-        max-width: 1000px;
-        margin: -100px auto auto;
-        width: 100%;
-
-        &.mobile-version {
-          display: none;
-        }
-      }
-    }
-  }
-
   .reviews-section {
     text-align: center;
     position: relative;
@@ -971,20 +950,6 @@
               width: 40px;
               height: 5vw
             }
-          }
-        }
-      }
-    }
-
-    .how-to-section {
-      .container {
-        img {
-          margin-top: unset;
-          display: none;
-
-          &.mobile-version {
-            display: block;
-            width: 100%;
           }
         }
       }
