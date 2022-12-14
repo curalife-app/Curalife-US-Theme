@@ -944,3 +944,13 @@
       }
   });
 </script>
+
+<script>
+  function LinkToProduct(element, url) {
+    woopra.track('Click CTA', {
+      button_title: element.innerText
+    });
+
+    window.location.href = url;
+  }
+</script>
