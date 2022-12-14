@@ -49,33 +49,3 @@
 {% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "light" %} 
 {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
 </div>
-
-
-<style>
-body {
-  padding-top: 0 !important;
-}
-</style>
-
-
-
-<script>
-
-
-
-
-
-faqIngredientsMainSliderAllInOne = new Swiper('.product-template-all-in-one .faq-section .ingredients-main-slider.swiper', {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    watchSlidesVisibility: false,
-    loop: false,
-    autoHeight: true,
-    slideToClickedSlide: true,
-    navigation: {
-        nextEl: '.faq-section .swiper-button-next',
-        prevEl: '.faq-section .swiper-button-prev',
-        disabledClass: 'disabled'
-    }
-});
-</script>
