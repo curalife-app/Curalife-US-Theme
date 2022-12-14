@@ -42,3 +42,28 @@
 
   });
 </script>
+
+<script>
+  reviewsSliderAllInOne = new Swiper(' .reviews-section .swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      watchSlidesVisibility: false,
+      centeredSlides: true,
+      loop: true,
+      slideToClickedSlide: true,
+      navigation: {
+          nextEl: '.reviews-section .swiper-button-next',
+          prevEl: '.reviews-section .swiper-button-prev',
+          disabledClass: 'disabled'
+      },
+      breakpoints: {
+          760: {
+              slidesPerView: 3,
+          },
+          1200: {
+              slidesPerView: 5,
+          }
+      }
+  });
+
+</script>
