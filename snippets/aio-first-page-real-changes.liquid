@@ -16,7 +16,7 @@
                 {% for realChange in realChanges %}
                 <div class="rw-item-col">
                     <div class="rw-item-box">
-                        
+
                         <div class="rw-item-thumbnail">
                             <img src="{{ realChange | file_url | split: "*" | first }}" alt="">
                         </div>
@@ -24,17 +24,17 @@
                             <h4>{{ realChange | split: "*" | last | split: ":" | first }}</h4>
                             <p>{{ realChange | split: "*" | last | split: ":" | last }}</p>
                         </div>
-                   
+
                     </div>
                 </div>
-            {% endfor %}  
+            {% endfor %}
             </div>
         </div>
     </div>
 </div>
 <!-- Real_Changes Section from General Page Style -->
 <style>
-  
+
   *,
   *:before,
   *:after {
@@ -49,7 +49,7 @@
     padding: 0 15px
   }
 
-  
+
   .description-overlay {
     margin-top: .375rem;
     max-width: 58.3125rem
@@ -188,7 +188,7 @@
     }
 
 
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 768px) {
       .rw-item-col {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
@@ -230,15 +230,15 @@
           line-height: unset;
       }
 
-   
+
       .real-changes .sub-title h4 {
         font-size: 1.06rem
       }
- 
 
-      
+
+
     }
-    
+
 </style>
 
 

@@ -82,7 +82,7 @@
   var player4 = new Vimeo.Player(document.querySelector('#review-video-4'));
 
   let players = [player1, player2, player3, player4];
-  
+
   players.forEach(function(el, index) {
     el.on('play', function() {
       woopra.track('Playing Video Rewievs', {
@@ -164,7 +164,7 @@
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     .video-reviews-section {
       background-color: #f0f0f0;
       padding: 8vw 0;

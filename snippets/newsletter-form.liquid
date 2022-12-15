@@ -32,7 +32,7 @@
     background-color: #4B643D !important;
   }
   ._submit {
-    
+
     min-height: 44px !important;
     font-weight: 700 !important;
     letter-spacing: 1px !important;
@@ -70,9 +70,9 @@
     display: none !important;
   }
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     ._field-wrapper input#email,
-    ._submit 
+    ._submit
     {
       width: 100% !important;
       margin-bottom: 10px;
@@ -138,7 +138,7 @@
         delete data[key];
       }
     }
-    
+
     if (form.className.indexOf('_form_3') !== -1) {
       woopra.identify({
       'email': data["email"]

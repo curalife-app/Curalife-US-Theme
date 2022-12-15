@@ -14,7 +14,7 @@
           <h1>Soporte de azúcar en sangre natural y eficaz.</h1>
         </div>
         <div class="brand-welcome-text">
-          <h2 class="v3">Para que puedas 
+          <h2 class="v3">Para que puedas
             <span class="title-text">comer bien</span>
             <span class="title-text" style="display: none;">dormir bien</span>
             <span class="title-text" style="display: none;">sentirte bien</span>
@@ -241,75 +241,75 @@
                 <lite-vimeo videoid="672324461" videoplay="Mirar"></lite-vimeo>
               </div>
               <div class="close-player"></div>
-  
+
               <div class="video-headline">
                 <p>Funcionó, y funcionó para otras personas a las que se lo recomendé.</p>
               </div>
             </div>
           </div>
-  
+
           <div class="video-block-item-overlay-col">
             <div class="video-block-item">
               <div class="video-player">
                 <lite-vimeo videoid="672291517" videoplay="Mirar"></lite-vimeo>
               </div>
               <div class="close-player"></div>
-              
+
               <div class="video-headline">
                 <p>CuraLin realmente me ha ayudado.<br>
                 Es una herramienta maravillosa en mi caja de herramientas.</p>
               </div>
             </div>
           </div>
-  
+
           <div class="video-block-item-overlay-col">
             <div class="video-block-item">
               <div class="video-player">
                 <lite-vimeo videoid="672324380" videoplay="Mirar"></lite-vimeo>
               </div>
               <div class="close-player"></div>
-  
+
               <div class="video-headline">
                 <p>Hice toda la investigación que pude antes<br>
                 de tomarlo. ¡Cruza mi corazón... funciona!</p>
               </div>
             </div>
           </div>
-  
+
           <div class="video-block-item-overlay-col">
             <div class="video-block-item">
               <div class="video-player">
                 <lite-vimeo videoid="672291614" videoplay="Mirar"></lite-vimeo>
               </div>
               <div class="close-player"></div>
-              
+
               <div class="video-headline">
                 <p>Gracias CuraLin, aprecio mucho el suplemento. Ha cambiado radicalmente mi vida.</p>
               </div>
             </div>
           </div>
-  
+
           <div class="video-block-item-overlay-col">
             <div class="video-block-item">
               <div class="video-player">
                 <lite-vimeo videoid="672291580" videoplay="Mirar"></lite-vimeo>
               </div>
               <div class="close-player"></div>
-  
+
               <div class="video-headline">
                 <p>Ha cambiado mi vida por completo.<br>
                 Gracias, Cura Lin.</p>
               </div>
             </div>
           </div>
-  
+
           <div class="video-block-item-overlay-col">
             <div class="video-block-item">
               <div class="video-player">
                 <lite-vimeo videoid="672317874" videoplay="Mirar"></lite-vimeo>
               </div>
               <div class="close-player"></div>
-              
+
               <div class="video-headline">
                 <p>Pensé 'bueno, intentémoslo'. Y lo hice. Y me quedé asombrado. Mi médico estaba totalmente asombrado.</p>
               </div>
@@ -895,25 +895,25 @@ CuraLin le brinda acceso a la comunidad de apoyo entre pares de azúcar en la sa
 
   showNextQuote();
 
-  $next = 1;			
+  $next = 1;
   $current = 0;
-  $nextM = 1;			
-  $currentM = 0;		
+  $nextM = 1;
+  $currentM = 0;
   $interval = 1500;
   $fadeTime = 1800;
-  $imgNum = 5;	
- 
+  $imgNum = 5;
+
   $(document).ready(function(){
     $('.brand-intro-cover-img img').css({'position':'absolute'});
     $('.brand-intro-cover-img-mobile img').css({'position':'absolute'});
     nextFadeIn();
     nextFadeInM();
   });
- 
+
   function nextFadeIn(){
     $('.brand-intro-cover-img img').eq($current).delay($interval).fadeOut($fadeTime)
     .end().eq($next).delay($interval).hide().fadeIn($fadeTime, nextFadeIn);
-      
+
     if($next < $imgNum-1){ $next++; } else { $next = 0;}
     if($current < $imgNum-1){ $current++; } else { $current =0; }
   };
@@ -921,7 +921,7 @@ CuraLin le brinda acceso a la comunidad de apoyo entre pares de azúcar en la sa
   function nextFadeInM(){
     $('.brand-intro-cover-img-mobile img').eq($currentM).delay($interval).fadeOut($fadeTime)
     .end().eq($nextM).delay($interval).hide().fadeIn($fadeTime, nextFadeInM);
-      
+
     if($nextM < $imgNum-1){ $nextM++; } else { $nextM = 0;}
     if($currentM < $imgNum-1){ $currentM++; } else { $currentM =0; }
   };
@@ -1008,7 +1008,7 @@ CuraLin le brinda acceso a la comunidad de apoyo entre pares de azúcar en la sa
     border-bottom: 1px solid #DCD9D9;
   }
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     .brand-intro-cover-img-mobile {
       display: block !important;
       position: absolute !important;
@@ -1022,7 +1022,7 @@ CuraLin le brinda acceso a la comunidad de apoyo entre pares de azúcar en la sa
       font-size: 6vw;
       color: #62C1C5 !important;
       background: unset !important;
-      padding: 0 !important; 
+      padding: 0 !important;
     }
 
     .hero-section .brand-welcome-text {

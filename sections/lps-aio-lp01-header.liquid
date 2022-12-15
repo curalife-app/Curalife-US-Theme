@@ -63,7 +63,7 @@ header.page-header .buy-btn .main-btn:hover {
     background-color: #4b8c82;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
     header.page-header {
         position: absolute;
         background-color: unset;
@@ -82,12 +82,12 @@ header.page-header .buy-btn .main-btn:hover {
 {% endstyle %}
 
 <script>
-    $(window).scroll(function(){ 
-        if ($(this).scrollTop() < ($("#product-section").offset().top)) { 
-            $('#page-header').fadeIn(); 
-        } else { 
-            $('#page-header').fadeOut(); 
-        } 
+    $(window).scroll(function(){
+        if ($(this).scrollTop() < ($("#product-section").offset().top)) {
+            $('#page-header').fadeIn();
+        } else {
+            $('#page-header').fadeOut();
+        }
     });
 
     $("#main-cta-btn").click(function() {

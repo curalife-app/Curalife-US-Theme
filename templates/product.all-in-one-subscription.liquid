@@ -2,8 +2,8 @@
 {% if store.name = "CuraLife" %}
     {% assign shipping_worldwide = 'US Free Shipping'}
 {% else %}
-    {% assign shipping_worldwide = 'Free Shipping Above £99'}  
-{% endif %} 
+    {% assign shipping_worldwide = 'Free Shipping Above £99'}
+{% endif %}
 
 <div class="product-template-all-in-one">
   <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt="">
@@ -58,7 +58,7 @@
             height: unset !important;
           }
 
-          @media screen and (max-width: 760px) {
+          @media screen and (max-width: 768px) {
             .free-shipping {
             right: 40px;
             width: 100px !important;
@@ -848,7 +848,7 @@
   font-weight: 400;
   }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
   .grecaptcha-badge {
   display: none !important;
   }
