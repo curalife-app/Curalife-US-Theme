@@ -1,5 +1,5 @@
 
-<section id="last-offer-title-section">
+<section id="sale-titles-section">
   <div class="catalog">
         {% if shop.name == "CuraLife" %}
           <div class="limited" id="limited">{{ mainTitle }}Enter The Raffle With Extra Holiday Bonuses!</div>
@@ -12,7 +12,12 @@
 </section>
 
 <style>
-  .offer {
+  #sale-titles-section .plus {
+    margin: 0;
+    font-size: 25px;
+  }
+
+  #sale-titles-section .offer {
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -22,7 +27,7 @@
     margin-bottom: 10px;
   }
 
-  #last-offer-title-section .catalog  {
+  #sale-titles-section  .catalog  {
     margin-top: 20px;
       display: flex;
       text-align: center;
@@ -32,17 +37,17 @@
       gap: 10px;
   }
 
-  #last-offer-title-section .limited {
+  #sale-titles-section .limited {
     font-size: clamp(25px, 3vw, 35px);
   }
 
-  #last-offer-title-section .changing-program {
+  #sale-titles-section .changing-program {
     text-align: center;
     font-size: clamp(16px, 2vw, 24px);
   }
 
   @media screen and (max-width:760px) {
-    #last-offer-title-section .changing-program {
+    #sale-titles-section .changing-program {
       padding: 0 1vw;
     }
   }
