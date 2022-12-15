@@ -37,7 +37,7 @@
         display: none;
     }
 
-    @media screen and (max-width: 768px) {
+    @media (width <= 768px) {
         .curlife-img {
             margin-top: 20px;
             display: flex;
@@ -254,7 +254,7 @@
         max-width: 450px;
     }
 
-    @media screen and (max-width: 768px) {
+    @media (width <= 768px) {
         .hero-banner {
             margin-top: 64px;
         }
@@ -263,7 +263,7 @@
 
 
 
-    @media screen and (max-width: 768px) {
+    @media (width <= 768px) {
         .hero-banner {
             margin-top: unset;
             background-image: url("{{ 'bfcm-homepage-mobile.png' | asset_url }}");
