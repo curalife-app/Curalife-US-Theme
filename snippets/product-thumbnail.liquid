@@ -101,10 +101,18 @@
     cursor: {% if request.path contains '/collections' %}pointer{% else %}unset{% endif %};
   }
 
+  .product-thumbnail:after {
+    background: white;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
   .product-thumbnail img.product-image {
     object-fit: contain;
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     z-index: 1;
   }
 
