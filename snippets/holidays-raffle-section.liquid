@@ -1,4 +1,5 @@
 <section id="holidays-raffle-section">
+  <img class="top-snow" src="{{ 'hs-top-snow.png' | asset_url }}" alt="bottom-snow" loading="lazy">
   <div class="container">
     <img class="main-img" src="{{ 'hs-raffle-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
     <div class="titles">
@@ -46,11 +47,16 @@
     font-weight: 100;
   }
 
+  #holidays-raffle-section img.top-snow {
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
   #holidays-raffle-section img.bottom-snow {
     width: 100%;
     position: absolute;
     bottom: 0;
-    left: 0;
   }
 
   @media (width <= 760px) {
