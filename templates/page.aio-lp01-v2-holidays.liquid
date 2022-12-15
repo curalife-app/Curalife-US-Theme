@@ -28,6 +28,7 @@ health.
   |Can I buy CuraLin in pharmacies and grocery stores?:We’re still working on getting CuraLin on the shelves of all the major US pharmacies. That’s part of our 2022 plan. For now, the best place to order CuraLin is online, though this page!"
   | split: '|' %}
 
+<div class="page-overflow">
   {% render 'sale-banner', desktopContent: "logo,cta,cta-button", mobileContent: "logo,cta,cta-button", bgColor: "green", logoFileName: "hs-santa-logo-white", isFixed: true, ctaButtonLink: "#product-list-section" %}
   {% render 'holidays-hero-banner' %}
   {% render 'partnerships-featured', isLP: true %}
@@ -49,22 +50,10 @@ health.
   {% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "light" %} 
   {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false, isLP: true %}
   {% render 'lps-sources' %}
-  {% render 'floating-cta-btn', isHolidays: true %}
 
+  <div id="floating-cta">ORDER NOW</div>
+</div>
 
-
-
-  <script>
-    let urlParams = new URLSearchParams(window.location.search);
-    let linksAddition = urlParams.get('add');
-
-    if (linksAddition) {
-        $('a').each(function () {
-            var currLink = $(this).attr('href');
-            if (currLink) { $(this).attr('href', currLink + linksAddition) };
-        });
-    }
-</script>
 
 
 
