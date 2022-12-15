@@ -10,7 +10,11 @@
 <div class="catalog-page">
   <div class="container">
     {% render 'last-offer-title' %}
-    {% render 'products-catalog-section', Prods: collection.products %}
+    {% if customer.email contains "yotam" %}
+      {% render 'products-catalog-section-holiday-expansion', Prods: collection.products %}
+    {% else %}
+      {% render 'products-catalog-section', Prods: collection.products %}
+    {% endif %}
     {% render 'trust-badges-section' %}
   </div>
   {% if customer.email contains "yotam" %}
