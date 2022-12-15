@@ -1,12 +1,12 @@
 <section id="holidays-raffle-section">
   <div class="container">
-    <img src="{{ 'hs-raffle-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
+    <img class="main-img" src="{{ 'hs-raffle-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
     <div class="titles">
       <p class="main-title">With every purchase of Curalin, you’ll be automatically entered into a raffle. <span>23 lucky winners</span> will win free Curalin for the entire <span>2023</span>!* (Valued at $900!)</p>
       <p class="subtitle">*A yearly supply of Curalin includes 12 bottles of 180 capsules</p>
     </div>
   </div>
-  <img src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="bottom-snow" loading="lazy">
+  <img class="bottom-snow" src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="bottom-snow" loading="lazy">
 </section>
 
 <style>
@@ -22,7 +22,7 @@
     align-items: center;
   }
 
-  #holidays-raffle-section .container img {
+  #holidays-raffle-section .container img.main-img {
     position: absolute;
     left: 0;
   }
@@ -44,7 +44,7 @@
     font-weight: unset;
   }
 
-  #holidays-raffle-section .bottom-snow img {
+  #holidays-raffle-section img.bottom-snow {
     width: 100%;
     position: absolute;
     bottom: 0;
