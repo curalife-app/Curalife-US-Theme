@@ -89,7 +89,7 @@
 
   .product-thumbnail img.snow-bottom {
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
   }
 
   .product-thumbnail {
@@ -102,26 +102,10 @@
   }
 
   .product-thumbnail img.product-image {
-    width: 100%;
-    height: 100%;
     object-fit: contain;
     position: absolute;
-    bottom: 0px;
-  }
-
-  .product-thumbnail:after {
-    content: "";
-    display: block;
-    height: 30%;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    right: 0;
     bottom: 0;
-    z-index: 2;
-    pointer-events: none;
+    z-index: 1;
   }
 
   @media screen and (max-width: 760px) {
