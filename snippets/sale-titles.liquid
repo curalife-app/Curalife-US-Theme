@@ -1,14 +1,14 @@
 
 <section id="sale-titles-section">
   <div class="catalog">
-        {% if shop.name == "CuraLife" %}
-          <div class="limited" id="limited">{{ mainTitle }}Enter The Raffle With Extra Holiday Bonuses!</div>
-          <p class="plus">+</p>
-          <div class="changing-program">30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)</div>
-        {% else %}
-          <h1 style="text-align:center;font-size:30px;">Limited Time Bonus: CuraEats Meal Plan App (Valued £24)</h1>
-        {% endif %}
-    </div>
+    {% if shop.name == "CuraLife" %}
+      <div class="main-title">{{ mainTitle }}</div>
+      <p class="plus">+</p>
+      <div class="changing-program">{{ subTitle }}</div>
+    {% else %}
+      <h1 style="text-align:center;font-size:30px;">Limited Time Bonus: CuraEats Meal Plan App (Valued £24)</h1>
+    {% endif %}
+  </div>
 </section>
 
 <style>
@@ -37,17 +37,17 @@
       gap: 10px;
   }
 
-  #sale-titles-section .limited {
+  #sale-titles-section .main-title {
     font-size: clamp(25px, 3vw, 35px);
   }
 
-  #sale-titles-section .changing-program {
+  #sale-titles-section .subtitle {
     text-align: center;
     font-size: clamp(16px, 2vw, 24px);
   }
 
   @media screen and (max-width:760px) {
-    #sale-titles-section .changing-program {
+    #sale-titles-section .subtitle {
       padding: 0 1vw;
     }
   }
