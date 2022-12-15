@@ -94,7 +94,7 @@
     bottom: 80px;
   }
 
-  .product-thumbnail .product-card .picture {
+  .product-thumbnail {
     background: linear-gradient(#A9151E, #BE171F);
     height: 350px;
     position: relative;
@@ -103,7 +103,7 @@
     cursor: {% if request.path contains '/collections' %}pointer{% else %}unset{% endif %};
   }
 
-  .product-thumbnail .product-card .picture .img {
+  .product-thumbnail .img {
     padding: 5px 0 0;
     position: absolute;
     top: 50px;
@@ -114,32 +114,16 @@
     {% comment %} z-index: 3; {% endcomment %}
   }
 
-  .product-thumbnail .product-card .picture .img img {
+  .product-thumbnail .img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 
-  .product-thumbnail .product-card .picture:after {
+  .product-thumbnail:after {
     content: "";
     display: block;
     height: 30%;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .product-thumbnail .product-card .picture:after {
-    content: "";
-    display: block;
-    height: 30%;
-    background-image: url({{ 'ellipse.svg' | asset_url }});
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -156,11 +140,11 @@
       top: 20vw;
     }
 
-    .product-thumbnail .product-card .picture {
+    .product-thumbnail {
       height: 240px;
     }
 
-    .product-thumbnail .product-card .picture .discount {
+    .product-thumbnail .discount {
       top: 20vw;
     }
   }
