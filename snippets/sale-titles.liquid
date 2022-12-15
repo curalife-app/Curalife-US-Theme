@@ -1,13 +1,9 @@
 
 <section id="sale-titles-section">
-  <div class="catalog">
-    {% if shop.name == "CuraLife" %}
-      <div class="main-title">{{ mainTitle }}</div>
-      <p class="plus">+</p>
-      <div class="changing-program">{{ subTitle }}</div>
-    {% else %}
-      <h1 style="text-align:center;font-size:30px;">Limited Time Bonus: CuraEats Meal Plan App (Valued £24)</h1>
-    {% endif %}
+  <div class="container">
+    <h1 class="main-title">{{ mainTitle }}</h1>
+    <p class="plus">+</p>
+    <div class="changing-program">{{ subTitle }}</div>
   </div>
 </section>
 
@@ -25,16 +21,6 @@
     color: #ffffff;
     font-size: clamp(25px, 3vw, 35px);
     margin-bottom: 10px;
-  }
-
-  #sale-titles-section  .catalog  {
-    margin-top: 20px;
-      display: flex;
-      text-align: center;
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: bold;
-      flex-direction: column;
-      gap: 10px;
   }
 
   #sale-titles-section .main-title {
