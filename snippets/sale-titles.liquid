@@ -1,6 +1,6 @@
 
 <section id="sale-titles-section">
-  <div class="container">
+  <div class="container titles">
     <h1 class="main-title">{{ mainTitle }}</h1>
     <p class="plus">+</p>
     <div class="subtitle">{{ subTitle }}</div>
@@ -13,23 +13,15 @@
     font-size: 25px;
   }
 
-  #sale-titles-section .offer {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    background-color: #C00101;
-    color: #ffffff;
-    font-size: clamp(25px, 3vw, 35px);
-    margin-bottom: 10px;
-  }
-
-  #sale-titles-section .container {
+  #sale-titles-section .titles {
     font-size: 50px;
     text-align: center;
+    padding: 30px 0;
   }
 
   #sale-titles-section h1.main-title {
     font-size: inherit;
+    margin: unset;
   }
 
   #sale-titles-section .subtitle {
