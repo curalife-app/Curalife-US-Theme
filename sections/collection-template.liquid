@@ -13,6 +13,9 @@
     {% render 'products-catalog-section', Prods: collection.products %}
     {% render 'trust-badges-section' %}
   </div>
+  {% if customer.email contains "yotam" %}
+    {% render 'holidays-raffle-section' %}
+  {% endif %}
   {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
 </div>
 
