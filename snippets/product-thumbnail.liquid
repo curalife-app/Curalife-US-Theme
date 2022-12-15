@@ -1,3 +1,4 @@
+{% if request.path contains '/collection' %}< href="{{ product.url }}">{% endif %}
 <div class="product-thumbnail picture">
   {% render 'snow-effect', hasAlreadyRun: true %}
   {% if product.metafields.my_fields.pack_items_quantity > 1 %}
@@ -11,14 +12,11 @@
     <p>{{ product.metafields.my_fields.subtitle }}</p>
   </div>
 
-  {% if request.path contains '/collection' %}
-    <a href="{{ product.url }}"><img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy"></a>
-  {% else %}
-    <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
-  {% endif %}
+  <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
 
   <img class="snow-bottom" src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow season" loading="lazy">
 </div>
+{% if request.path contains '/collection' %}</a>{% endif %}
 
 <style>
   .product-thumbnail .after-price-notice {
