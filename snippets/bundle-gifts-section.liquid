@@ -2,11 +2,9 @@
 
 <section id="curaeats-section">
   {% if shop.name == "CuraLife" %}
-    {% unless product.title == "CuraLin BFCM 2022" %}
-    <h2>Everything you need to keep your blood sugar happy!</h2>
-    {% endunless %}
-    <div class="challange">
+    <h2>With every order of Curalin, we’re gifting you:</h2>
 
+    <div class="challange">
       <div class="container">
         <div class="badge-img">SAVE {{ challange_value | times: 100 | money | replace: ".00", "" }}</div>
 
