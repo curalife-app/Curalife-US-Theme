@@ -210,52 +210,13 @@
     background-color: #a9a9a9
 }
 
-.product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box {
-    width: 5%;
-    align-items: center;
-    display: flex;
-    padding: 10px
-}
 
-.product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio] {
-    position: relative;
-    left: -3px;
-    pointer-events: none
-}
 
-.product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    left: 1px;
-    top: 50%;
-    margin-top: -7px;
-    border: 1px solid #000;
-    border-radius: 8px
-}
 
-.product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:after {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: #4b643d !important;
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 8px;
-    margin-top: 0;
-    border-radius: 4px;
-    transition: .2s ease-in-out
-}
 
-.product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:checked:after {
-    height: 8px;
-    width: 8px;
-    margin-top: -4px;
-    left: 4px
-}
+
+
+
 
 .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info {
     padding: 10px;
