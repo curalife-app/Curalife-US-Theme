@@ -124,6 +124,11 @@
   #product-catalog-section .thumbnail-notice::before {
     content: "";
     background-image: url("{{ 'hs-product-thumbnail-notice-arrow.svg' | asset_url }}");
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    left: -30px;
+    z-index: 10;
   }
 
   #product-catalog-section .thumbnail-notice p {
@@ -240,7 +245,7 @@
 
   #product-catalog-section .product-card .picture {
     background: linear-gradient(#A9151E, #BE171F);
-    height: 370px;
+    height: 350px;
     position: relative;
     overflow: hidden;
     cursor: {% if request.path contains '/collections' %}pointer{% else %}unset{% endif %};
@@ -249,7 +254,7 @@
   #product-catalog-section .product-card .picture .img {
     padding: 5px 0 0;
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
     right: 0;
     bottom: 0;
