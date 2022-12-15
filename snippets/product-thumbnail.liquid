@@ -16,7 +16,7 @@
     {% else %}
     <div class="img"><img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy"></div>
   {% endif %}
-  <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
+  <img class="snow-bottom" src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
 </div>
 
 <style>
