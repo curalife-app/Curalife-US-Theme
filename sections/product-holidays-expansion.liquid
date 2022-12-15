@@ -40,13 +40,11 @@
 {% endif %}
 
 {% render 'script.round-converted-currency' %}
-{% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Get into the holiday spirit!", bgColor: "red" %}
+{% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Spread the cheer. Free Curalin for a year!", bgColor: "red" %}
 
 <div class="product-data">
   <div class="container">
-    {% if product.tags contains "CuraEats" %}
-      {% render 'sale-titles' %}
-    {% endif %}
+    {% render 'sale-titles' %}
 
     <div class="product-wrap">
       <div class="product-thumbnail-wrapper">
