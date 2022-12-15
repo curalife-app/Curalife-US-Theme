@@ -75,7 +75,7 @@
                 {% endif %}
               </div>
 
-              <p style="color:#C00101;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">
+              <p class="after-price-notice">
                 {% if product.title contains "3 Pack" %}
                   + Free bottle of Curalin
                 {% elsif product.title contains "6 Pack" %}
@@ -113,6 +113,14 @@
 </section>
 
 <style>
+  #product-catalog-section .after-price-notice {
+    color:#C00101;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight:bold;
+    margin: 10px 0;
+    margin: unset;
+  }
+
   #product-catalog-section .thumbnail-notice {
     color: white;
     text-align: center;
