@@ -1,6 +1,19 @@
 
 <section class="faq-section">
     <div class="container">
+        <div class="titles">
+            {% if title_type == 'light' %}
+                <h2>FAQ</h2>
+            {% else %}
+                <div class="sub-title">
+                    <h2>Have Questions?<br>We Want You to Ask!</h2>
+                    <p>Our team of nutrition experts and scientists has answers</p>
+                </div>
+                <div class="title-img">
+                    <img src="{{ 'lp-aio-v3-faq-img.png' | file_url}}" alt="" width="312" height="280">
+                </div>
+            {% endif %}
+        </div>
         <div class="faq">
             {% for faqItem in faqItems %}
                 <div class="faq-item">
@@ -9,14 +22,79 @@
                 </div>
                 <div class="answer">
                     <p>{{ faqItem | split: ":" | last }}</p>
-                    </div>
+                    {% if faqItem contains 'How does each ingredient work' %}
+                        {% render 'product-all-in-one-ingredients-section' %}
+                    {% endif %}
+                </div>
            </div>
         {% endfor %}
         </div>
     </div>
 </section>
 
+<style>
 
+    
+    *,
+    *:before,
+    *:after {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box
+    }
+    .container {
+      width: 100%;
+      max-width: 1470px;
+      margin: 0 auto;
+      padding: 0 15px
+    }
+
+     .swiper-button-prev,
+     .swiper-button-next {
+        color: gray;
+        transition: opacity .5s
+    }
+
+
+ 
+    .faq-section {
+        font-family: "Poppins", sans-serif;
+    }
+    {% if title_type == "complex" %}
+       .faq-section .titles {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .faq-section .titles .sub-title h2 {
+            font-size: 1.9rem;
+        }
+
+
+        .faq-section .titles .sub-title p {
+            font-size: 1.4rem;
+        }
+
+        @media screen and (max-width:760px) {
+            .faq-section .titles {
+                flex-direction: column;
+            } 
+        }
+    {% endif %}
+
+    {% if title_type == "light" %}
+        .faq-section .titles h2 {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width:760px) {
+            .faq-section .titles h2 {
+                margin-bottom: unset;
+            }
+        }
+    {% endif %}
+</style>
 
 <style>
 .faq-section .container .faq {
@@ -45,7 +123,9 @@
     transition: transform 0.3s;
 }
 
+
 .faq-section .container .faq .faq-item .question.active:after {
+    content: "+";
     transform: rotate(45deg);
 }
 
@@ -126,13 +206,13 @@
 accordionItemHeaders.forEach(accordionItemHeader => {
   accordionItemHeader.addEventListener("click", event => {
     
-    // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-    
-    // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-    // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
-    //   currentlyActiveAccordionItemHeader.classList.toggle("active");
-    //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-    // }
+    {% if isAllowOneOpen %}
+        const currentlyActiveAccordionItemHeader = document.querySelector(".question.active");
+        if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
+            currentlyActiveAccordionItemHeader.classList.toggle("active");
+            currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+        }
+    {% endif %}
 
     accordionItemHeader.classList.toggle("active");
     const accordionItemBody = accordionItemHeader.nextElementSibling;
@@ -159,4 +239,12 @@ faqIngredientsMainSliderAllInOne = new Swiper('.faq-section .ingredients-main-sl
             disabledClass: 'disabled'
         }
     });
+
+    // Open FAQ
+    $('.question').click(function() {
+       woopra.track('Open FAQ', {
+         question_display_text: $(this).text(),
+         question_order:  $(this).parents('.faq-item').index() + 1
+       })
+       });
 </script>
