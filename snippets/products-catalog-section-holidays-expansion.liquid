@@ -26,7 +26,8 @@
 
       <div class="product-card" id="product-card-section">
         <div class="wrap">
-          {% render 'product-thumbnail', product: product, savePrice: save_price %}
+          {% if forloop.index > 0 %}{% assign alreadyRun = true %}{% else %}{% assign alreadyRun = false %}{% endif %}
+          {% render 'product-thumbnail', product: product, savePrice: save_price, alreadyRun:  %}
 
           <div class="info">
             <div class="main">

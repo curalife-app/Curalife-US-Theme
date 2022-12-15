@@ -19,6 +19,7 @@
 </div>
 {% if request.path contains '/collection' %}</a>{% endif %}
 
+{% unless alreadyRun %}
 <style>
   .product-thumbnail {
     background: linear-gradient(#A9151E, #BE171F);
@@ -118,3 +119,4 @@
     }
   }
 </style>
+{% endunless %}
