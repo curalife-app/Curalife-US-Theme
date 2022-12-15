@@ -40,7 +40,7 @@
     {% endif %}
 
     <div class="product-wrap">
-      <div class="product-thumbnail-wrapper" style="position: relative">
+      <div class="product-thumbnail-wrapper">
         {% render 'product-thumbnail', product: product, savePrice: save_price %}
       </div>
 
@@ -115,10 +115,6 @@
 </div>
 
 <style>
-  main {
-    padding-bottom: 50px;
-  }
-
   .product-thumbnail-wrapper {
     position: relative;
     top: 45px;
