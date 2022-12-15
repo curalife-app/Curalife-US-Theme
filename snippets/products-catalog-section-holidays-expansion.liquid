@@ -32,6 +32,11 @@
               </div>
             {% endif %}
 
+            <div class="thumbnail-notice">
+              <p>FREE!</p>
+              <p>{{ product.metafields.my_fields.subtitle }}</p>
+            </div>
+
             <div class="bg-picture">
               {% render 'snow-effect', hasAlreadyRun: true %}
               <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
@@ -108,6 +113,21 @@
 </section>
 
 <style>
+  #product-catalog .thumbnail-notice {
+    color: white;
+    text-align: center;
+  }
+
+  #product-catalog .thumbnail-notice p {
+    margin: unset;
+  }
+
+  #product-catalog .thumbnail-notice p:first-child {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+
   .save-badge {
     background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
     background-size: contain;
