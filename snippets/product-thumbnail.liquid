@@ -1,6 +1,6 @@
 {% if request.path contains '/collection' %}<a href="{{ product.url }}">{% endif %}
 <div class="product-thumbnail picture">
-  {% render 'snow-effect', hasAlreadyRun: true, isSnowOnHover: isSnowOnHover %}
+  {% render 'snow-effect', hasAlreadyRun: true %}
 
   {% if product.metafields.my_fields.pack_items_quantity > 1 %}
     <div class="save-badge">SAVE {{ savePrice }}</div>
@@ -103,14 +103,17 @@
     padding: 4.5rem 0;
   }
 
+  {% if isSnowOnHover %}
   .product-thumbnail .snow {
-    opacity: 0;
-    transition: 0.8s;
-  }
+      opacity: 0;
+      transition: 0.8s;
+    }
+
 
   .product-card:hover .snow {
     opacity: 0.8;
   }
+  {% endif %}
 
   .product-thumbnail img.snow-bottom {
     position: absolute;
