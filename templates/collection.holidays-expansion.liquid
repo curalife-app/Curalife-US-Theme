@@ -1,17 +1,15 @@
 {% if shop.name == "CuraLife" %}
   {% assign curaeats_value = 29 %}
   {% assign challange_value = 99 %}
-  {% assign sale_subtitle = "30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)" %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign curaeats_value = 24 %}
-  {% assign sale_subtitle = "CuraEats Meal Plan App (Valued £24)" %}
 {% endif %}
 
 {% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Spread the cheer. Free Curalin for a year!", bgColor: "red" %}
 
 <div class="catalog-page">
   <div class="container">
-    {% render 'sale-titles', mainTitle: "Enter The Raffle With Extra Holiday Bonuses!", subTitle: sale_subtitle %}
+    {% render 'sale-titles' %}
     {% render 'products-catalog-section-holidays-expansion', Prods: collection.products %}
     {% render 'trust-badges-section' %}
   </div>
