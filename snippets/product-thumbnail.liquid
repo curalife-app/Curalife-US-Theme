@@ -8,18 +8,44 @@
     </div>
   {% endif %}
 
-  <div class="thumbnail-notice">
-    <p>FREE!</p>
-    <p>{{ product.metafields.my_fields.subtitle }}</p>
-  </div>
+  <div class="product-image-wrapper">
+    <div class="thumbnail-notice">
+      <p>FREE!</p>
+      <p>{{ product.metafields.my_fields.subtitle }}</p>
+    </div>
 
-  <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
+    <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
+  </div>
 
   <img class="snow-bottom" src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow season" loading="lazy">
 </div>
 {% if request.path contains '/collection' %}</a>{% endif %}
 
 <style>
+  .product-thumbnail {
+    background: linear-gradient(#A9151E, #BE171F);
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    cursor: {% if request.path contains '/collections' %}pointer{% else %}unset{% endif %};
+  }
+
+  .product-thumbnail::after {
+    background: white;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .product-thumbnail img.product-image {
+    object-fit: contain;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+  }
+
   .product-thumbnail .after-price-notice {
     color: #C00101;
     font-size: clamp(14px, 2vw, 18px);
@@ -89,30 +115,6 @@
   .product-thumbnail img.snow-bottom {
     position: absolute;
     bottom: 28px;
-  }
-
-  .product-thumbnail {
-    background: linear-gradient(#A9151E, #BE171F);
-    height: 350px;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    cursor: {% if request.path contains '/collections' %}pointer{% else %}unset{% endif %};
-  }
-
-  .product-thumbnail::after {
-    background: white;
-    height: 30px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-  }
-
-  .product-thumbnail img.product-image {
-    object-fit: contain;
-    position: absolute;
-    bottom: 0;
-    z-index: 1;
   }
 
   @media screen and (max-width: 760px) {
