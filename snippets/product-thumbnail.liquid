@@ -12,7 +12,7 @@
   </div>
 
   {% if request.path contains '/collection' %}
-    <a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy"></a>
+    <a href="{{ product.url }}"><img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy"></a>
   {% else %}
     <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
   {% endif %}
