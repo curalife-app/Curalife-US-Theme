@@ -1,6 +1,7 @@
-{% if request.path contains '/collection' %}< href="{{ product.url }}">{% endif %}
+{% if request.path contains '/collection' %}<a href="{{ product.url }}">{% endif %}
 <div class="product-thumbnail picture">
   {% render 'snow-effect', hasAlreadyRun: true %}
+
   {% if product.metafields.my_fields.pack_items_quantity > 1 %}
     <div class="save-badge">
       <div class="save-badge-title">SAVE {{ savePrice }}</div>
