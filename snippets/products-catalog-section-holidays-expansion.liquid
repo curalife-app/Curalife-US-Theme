@@ -76,8 +76,9 @@
                 {% elsif product.title contains "6 Pack" %}
                   + 2 free bottles of Curalin
                 {% else %}
-                  {{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-              {% endif %}
+                  {{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)
+                {% endif %}
+              </p>
             </div>
 
             {% unless isSkipCart %}
