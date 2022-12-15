@@ -54,6 +54,84 @@
         transition: opacity .5s
     }
 
+   .faq-section .container h2 {
+        text-align: start
+    }
+
+     .faq-section .container .faq {
+        margin: 1rem auto
+    }
+
+     .faq-section .container .faq .faq-item {
+        border-bottom: 1px solid #d3d3d3
+    }
+
+  .faq-section .container .faq .faq-item .question {
+        padding: .7rem 3rem .7rem 0;
+        line-height: 1.25rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        font-size: 18px
+    }
+
+     .faq-section .container .faq .faq-item .question::after {
+        content: "+";
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem
+    }
+
+     .faq-section .container .faq .faq-item .question.active::after {
+        content: "−"
+    }
+
+    .faq-section .container .faq .faq-item .answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .2s ease-out
+    }
+
+   .faq-section .container .faq .faq-item .answer .answer-content {
+        padding: 0 1rem 1rem;
+        line-height: 1.5rem;
+        font-weight: 300
+    }
+
+   .faq-section .container .faq .faq-item .answer .ingredients-main-slider {
+        padding: 50px 0
+    }
+
+    .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient {
+        display: flex;
+        align-items: center;
+        max-width: 70%;
+        margin: auto
+    }
+
+     .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient img {
+        margin-left: -10%
+    }
+
+    .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content {
+        margin-left: 50px
+    }
+
+    .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-title {
+        font-size: 40px;
+        font-size: 30px;
+        font-weight: 500;
+        margin-top: 20px;
+        text-transform: uppercase
+    }
+
+    .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-description {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 2rem
+    }
+
 
  
     .faq-section {
@@ -177,6 +255,30 @@
 }
 
 @media screen and (max-width:760px) {
+     .faq-section .container .faq .faq-item .question {
+        font-size: 14px
+    }
+
+     .faq-section .container .faq .faq-item .answer .ingredients-main-slider {
+        padding: 0
+    }
+
+     .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient {
+        flex-direction: column;
+        max-width: 80%
+    }
+
+     .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content {
+        margin-left: unset
+    }
+
+     .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-title {
+        margin: 0
+    }
+
+     .faq-section .container .faq .faq-item .answer .ingredients-main-slider .swiper-nav {
+        top: 120px
+    }
     .faq-section .container .faq .faq-item .question {
     font-size: 14px;
     }
