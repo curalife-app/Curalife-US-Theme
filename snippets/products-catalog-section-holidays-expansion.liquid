@@ -21,11 +21,12 @@
       {% assign quantity_by_cents = quantity | times: 100 %}
       {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
       {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
+      {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
       {% if product.tags contains "CuraEats" %}{% assign bundle_addition = bundle_addition_value %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
       <div class="product-card" id="product-card-section">
         <div class="wrap">
-          {% render 'product-thumbnail', product: product %}
+          {% render 'product-thumbnail', product: product, savePrice: save_price %}
 
           <div class="info">
             <div class="main">

@@ -1,7 +1,7 @@
 <div class="product-card picture">
-  {% if quantity > 1 %}
+  {% if product.metafields.my_fields.pack_items_quantity > 1 %}
     <div class="save-badge">
-      <div class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</div>
+      <div class="save-badge-title">SAVE {{ savePrice }}</div>
     </div>
   {% endif %}
 
@@ -100,6 +100,8 @@
     height: 350px;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    padding: unset;
     cursor: {% if request.path contains '/collections' %}pointer{% else %}unset{% endif %};
   }
 
