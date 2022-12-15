@@ -113,16 +113,23 @@
 </section>
 
 <style>
-  #product-catalog .thumbnail-notice {
+  #product-catalog-section .thumbnail-notice {
     color: white;
     text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 20px;
   }
 
-  #product-catalog .thumbnail-notice p {
+  #product-catalog-section .thumbnail-notice::before {
+    background-image: url("{{ 'hs-product-thumbnail-notice-arrow.svg' | asset_url }}");
+  }
+
+  #product-catalog-section .thumbnail-notice p {
     margin: unset;
   }
 
-  #product-catalog .thumbnail-notice p:first-child {
+  #product-catalog-section .thumbnail-notice p:first-child {
     font-weight: bold;
     font-size: 1.5em;
   }
