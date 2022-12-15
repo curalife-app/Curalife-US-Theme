@@ -3,7 +3,7 @@
   <div class="container">
     <h1 class="main-title">{{ mainTitle }}</h1>
     <p class="plus">+</p>
-    <div class="changing-program">{{ subTitle }}</div>
+    <div class="subtitle">{{ subTitle }}</div>
   </div>
 </section>
 
@@ -23,18 +23,16 @@
     margin-bottom: 10px;
   }
 
-  #sale-titles-section .main-title {
-    font-size: clamp(25px, 3vw, 35px);
+  #sale-titles-section .container {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  #sale-titles-section h1.main-title {
+    font-size: inherit;
   }
 
   #sale-titles-section .subtitle {
-    text-align: center;
-    font-size: clamp(16px, 2vw, 24px);
-  }
-
-  @media screen and (max-width:760px) {
-    #sale-titles-section .subtitle {
-      padding: 0 1vw;
-    }
+    font-size: 0.8em;
   }
 </style>
