@@ -30,7 +30,8 @@
     cursor: {% if request.path contains '/collections' %}pointer{% else %}unset{% endif %};
   }
 
-  .product-thumbnail img.snow-bottom::after {
+  .product-thumbnail::after {
+    content: '';
     background: white;
     height: 30px;
     width: 100%;
