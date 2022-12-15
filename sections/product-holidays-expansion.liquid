@@ -40,7 +40,7 @@
     {% endif %}
 
     <div class="product-wrap">
-      <div class="product-wrap-wrapper" style="position: relative">
+      <div class="product-thumbnail-wrapper" style="position: relative">
         {% render 'product-thumbnail', product: product, savePrice: save_price %}
       </div>
 
@@ -110,7 +110,7 @@
   {% render 'trust-badges-section' %}
 
   {% if product.tags contains "CuraEats" %}
-    {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
+    {% render 'bundle-gifts-section', challange_value: challange_value, curaeats_value: curaeats_value %}
   {% endif %}
 </div>
 
