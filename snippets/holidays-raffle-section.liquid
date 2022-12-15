@@ -1,8 +1,10 @@
 <section id="holidays-raffle-section">
   <div class="container">
     <img src="{{ 'holidays-raffle-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
-    <p class="title">With every purchase of Curalin, you’ll be automatically entered into a raffle. <span>23 lucky winners</span> will win free Curalin for the entire </span>2023</span>!* (Valued at $900!)</p>
-    <p class="subtitle">*A yearly supply of Curalin includes 12 bottles of 180 capsules</p>
+    <div class="titles">
+      <p class="main-title">With every purchase of Curalin, you’ll be automatically entered into a raffle. <span>23 lucky winners</span> will win free Curalin for the entire <span>2023</span>!* (Valued at $900!)</p>
+      <p class="subtitle">*A yearly supply of Curalin includes 12 bottles of 180 capsules</p>
+    </div>
   </div>
 </section>
 
@@ -16,22 +18,25 @@
   #holidays-raffle-section .container {
     display: flex;
     align-items: center;
-    flex-direction: column;
   }
 
   #holidays-raffle-section .container img {
     position: absolute;
     left: 0;
   }
-  #holidays-raffle-section .container .title {
+
+  #holidays-raffle-section .container .titles {
+    text-align: center;
     font-size: 35px;
     font-weight: bold;
+    z-index: 1;
   }
 
-  #holidays-raffle-section .container .title span {
+  #holidays-raffle-section .container .titles .main-title span {
     color: #C00101;
   }
-  #holidays-raffle-section .container .subtitle {
+  #holidays-raffle-section .container .titles .subtitle {
     font-size: 28px;
+    font-weight: unset;
   }
 </style>
