@@ -1,0 +1,24 @@
+{% if shop.name == "CuraLife" %}
+  {% assign curaeats_value = 29 %}
+  {% assign challange_value = 99 %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign curaeats_value = 24 %}
+{% endif %}
+
+{% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Get into the holiday spirit!", bgColor: "red" %}
+
+<div class="catalog-page">
+  <div class="container">
+    {% render 'last-offer-title' %}
+    {% if customer.email contains "yotam" %}
+      {% render 'products-catalog-section-holidays-expansion', Prods: collection.products %}
+    {% else %}
+      {% render 'products-catalog-section', Prods: collection.products %}
+    {% endif %}
+    {% render 'trust-badges-section' %}
+  </div>
+  {% if customer.email contains "yotam" %}
+    {% render 'holidays-raffle-section' %}
+  {% endif %}
+  {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
+</div>
