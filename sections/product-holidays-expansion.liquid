@@ -14,10 +14,12 @@
   {% assign bundle_notice_text = "+ Life Changing Bonus" %}
   {% assign challange_value = 99 %}
   {% assign curaeats_value = 29 %}
+  {% assign bundle_addition_value = 12800 %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign bundle_notice_text = "+ CuraEats App Bonus" %}
   {% assign challange_value = 0 %}
   {% assign curaeats_value = 24 %}
+  {% assign bundle_addition_value = 2400 %}
 {% endif %}
 
 {%- comment -%} More Variables {%- endcomment -%}
@@ -25,8 +27,8 @@
 {% assign quantity_by_cents = quantity | times: 100 %}
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
-
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
+{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Get into the holiday spirit!", bgColor: "red" %}
@@ -39,56 +41,7 @@
 
     <div class="product-wrap">
       <div class="product-wrap-wrapper" style="position: relative">
-        <div class="product-slider">
-          <div class="bg">
-            {% render 'snow-effect', hasAlreadyRun: true %}
-          </div>
-
-          <div class="sliders-group">
-            <div class="main-slider">
-              {% if product.compare_at_price > product.price %}
-                <div class="save-badge">
-                  <p class="save-badge-title">SAVE {{ original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
-                </div>
-
-                <style>
-                  .save-badge {
-                    background-image: url("{{ 'hs-badge-save.png' | asset_url }}");
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    position: absolute;
-                    top: -20px;
-                    right: 20px;
-                    width: 100px;
-                    z-index: 4;
-                    font-family: 'PP Radio Grotesk';
-                    font-weight: 700;
-                    font-size: clamp(20px, 2vw, 22px);
-                    text-align: center;
-                    color: #C00101;
-                  }
-
-                  .save-badge-title {
-                    display: flex;
-                    flex-direction: column;
-                    padding: 4.5rem 0;
-                    margin: unset;
-                  }
-                </style>
-              {% endif %}
-
-              {% assign image = product.images | first %}
-              <div class="product-img">
-                <div class="img-wrap">
-                  <img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" loading="lazy" style="object-fit:cover">
-                </div>
-                <div class="bg-picture">
-                  <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% render 'product-thumbnail', product: product, savePrice:  %}
       </div>
 
       <div class="product-info">
