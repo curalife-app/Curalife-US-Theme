@@ -1,5 +1,6 @@
 <div id="sale-banner">
   {% render 'snow-effect' %}
+  <img class="snow-border top" src="{{ 'hs-top-snow.svg' | asset_url }}" alt="dripping snow" loading="lazy">
   <div class="container">
     <div class="logo-wrapper">
         {% if logoFileName %}<img class="logo" src="{{ logoFileName | append: '.png' | asset_url }}" alt="logo">{% endif %}
