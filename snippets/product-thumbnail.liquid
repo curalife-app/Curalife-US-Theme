@@ -3,9 +3,7 @@
   {% render 'snow-effect', hasAlreadyRun: true %}
 
   {% if product.metafields.my_fields.pack_items_quantity > 1 %}
-    <div class="save-badge">
-      <div class="save-badge-title">SAVE {{ savePrice }}</div>
-    </div>
+    <p class="save-badge">SAVE {{ savePrice }}</p>
   {% endif %}
 
   <div class="product-image-wrapper">
@@ -95,9 +93,6 @@
     font-size: clamp(20px, 2vw, 22px);
     text-align: center;
     color: #C00101;
-  }
-
-  .product-thumbnail .save-badge-title {
     display: flex;
     flex-direction: column;
     padding: 4.5rem 0;
