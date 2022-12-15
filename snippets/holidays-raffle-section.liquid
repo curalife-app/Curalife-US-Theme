@@ -27,6 +27,7 @@
   #holidays-raffle-section .container img.main-img {
     position: absolute;
     left: 0;
+    object-fit: contain;
   }
 
   #holidays-raffle-section .container .titles {
@@ -51,5 +52,15 @@
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+
+  @media (width <= 760px) {
+    #holidays-raffle-section .container {
+      flex-direction: column-reverse;
+    }
+
+    #holidays-raffle-section .container img.main-img {
+      position: unset;
+    }
   }
 </style>
