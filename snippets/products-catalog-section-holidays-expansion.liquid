@@ -2,7 +2,7 @@
   {% assign bundle_notice_text = "+ Life Changing Bonus" %}
   {% assign bundle_addition_value = 12800 %}
 {% elsif shop.name == "CuraLife Global" %}
-  {% assign bundle_notice_text = "+ CuraEats App Bonus" %}
+  {% assign bundle_notice_text = "+ CuraEats - meal plan app" %}
   {% assign bundle_addition_value = 2400 %}
 {% endif %}
 
@@ -70,8 +70,13 @@
                 {% endif %}
               </div>
 
-              {% if product.tags contains 'CuraEats' %}
-                  <p style="color:#99B182;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">{{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
+              <p style="color:#C00101;font-size: clamp(14px, 2vw, 18px);font-weight:bold;margin: 10px 0;">
+                {% if product.title contains "3 Pack" %}
+                  + Free bottle of Curalin
+                {% elsif product.title contains "6 Pack" %}
+                  + 2 free bottles of Curalin
+                {% else %}
+                  {{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
               {% endif %}
             </div>
 
