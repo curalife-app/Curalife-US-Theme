@@ -1,9 +1,14 @@
+{% if shop.name == "CuraLife" %}
+  {% assign sale_subtitle = "30 Day Life Changing Program (Valued $99) & CuraEats Meal Plan App (Valued $29)" %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign sale_subtitle = "CuraEats Meal Plan App (Valued £24)" %}
+{% endif %}
 
 <section id="sale-titles-section">
   <div class="container titles">
-    <h1 class="main-title">{{ mainTitle }}</h1>
+    <h1 class="main-title">Enter The Raffle With Extra Holiday Bonuses!</h1>
     <p class="plus">+</p>
-    <div class="subtitle">{{ subTitle }}</div>
+    <div class="subtitle">{{ sale_subtitle }}</div>
   </div>
 </section>
 
