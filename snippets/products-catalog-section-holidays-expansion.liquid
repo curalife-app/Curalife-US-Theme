@@ -32,6 +32,11 @@
               </div>
             {% endif %}
 
+            <div class="thumbnail-notice">
+              <p>FREE!</p>
+              <p>{{ product.metafields.my_fields.original_item.value.subtitle }}</p>
+            </div>
+
             <div class="bg-picture">
               {% render 'snow-effect', hasAlreadyRun: true %}
               <img src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow" loading="lazy">
