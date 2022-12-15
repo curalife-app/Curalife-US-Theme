@@ -30,6 +30,15 @@
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
+{% if product.title contains "3 Pack" %}
+  {% assign promotion_title = "+ Free bottle of Curalin" %}
+{% elsif product.title contains "6 Pack" %}
+  {% assign promotion_title = "+ 2 free bottles of Curalin" %}
+{% else %}
+{% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
+  {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
+{% endif %}
+
 {% render 'script.round-converted-currency' %}
 {% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Get into the holiday spirit!", bgColor: "red" %}
 
@@ -65,10 +74,7 @@
             </p>
           </div>
 
-          {% if product.tags contains 'CuraEats' %}
-              <p class="bundle-notice">{{ bundle_notice_text }} (<span class="rounded no-letters">{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</p>
-              <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160" height="28" alt="" loading="lazy" style="display:none">
-          {% endif %}
+          <p class="promotion_title">{{ promotion_title }}</p>
 
           <div class="form-wrap">
             <form method="post" id="addTocartForm" action="/cart/add">
@@ -226,7 +232,7 @@
     font-size: 18px;
   }
 
-  .bundle-notice {
+  .promotion-title {
     color: #C00101;
     font-size: 18px;
     font-weight: bold;
