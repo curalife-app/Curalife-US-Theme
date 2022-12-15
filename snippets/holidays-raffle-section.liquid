@@ -1,5 +1,5 @@
 <section id="holidays-raffle-section">
-  <img class="top-snow" src="{{ 'hs-top-snow.svg' | asset_url }}" alt="dripping snow" loading="lazy">
+  <img class="snow-border top" src="{{ 'hs-top-snow.svg' | asset_url }}" alt="dripping snow" loading="lazy">
   <div class="container">
     <img class="main-img" src="{{ 'hs-raffle-main-img.png' | asset_url }}" alt="curaeats" loading="lazy">
     <div class="titles">
@@ -7,7 +7,7 @@
       <p class="subtitle">*A yearly supply of Curalin includes 12 bottles of 180 capsules</p>
     </div>
   </div>
-  <img class="bottom-snow" src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="snow ground" loading="lazy">
+  <img class="snow-border bottom" src="{{ 'hs-bottom-snow.png' | asset_url }}" alt="snow ground" loading="lazy">
 </section>
 
 <style>
@@ -47,18 +47,19 @@
     font-weight: 100;
   }
 
-  #holidays-raffle-section img.top-snow {
+  #holidays-raffle-section img.snow-border {
     width: 100%;
     position: absolute;
-    top: 0;
     left: 0;
+    z-index: 1;
   }
 
-  #holidays-raffle-section img.bottom-snow {
-    width: 100%;
-    position: absolute;
+  #holidays-raffle-section img.snow-border.bottom {
     bottom: 0;
-    left: 0;
+  }
+
+  #holidays-raffle-section img.snow-border.top {
+    top: 0;
   }
 
   @media (width <= 760px) {
