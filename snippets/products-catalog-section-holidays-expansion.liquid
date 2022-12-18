@@ -26,10 +26,10 @@
       {% if product.tags contains "CuraEats" %}{% assign bundle_addition = bundle_addition_value %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
       {% if product.title contains "3 Pack" %}
-        {% assign promotion_title = "+ Free bottle of Curalin" %}
+        {% assign promotion_title = "+ Free bottle of CuraLin" %}
         {% assign mini_addition = mini_value %}
       {% elsif product.title contains "6 Pack" %}
-        {% assign promotion_title = "+ 2 free bottles of Curalin" %}
+        {% assign promotion_title = "+ 2 free bottles of CuraLin" %}
         {% assign mini_addition = mini_value | times: 2 %}
       {% else %}
         {% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
@@ -83,9 +83,13 @@
                 <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
               </div>
 
-              {% unless shop.name == "CuraLin Holidays 2022 Expansion" %}
-                <div class="free-shipping1" style="font-size: 14px; text-align: center;"><span class="free-red">FREE</span> Shipping</div>
-              {% endunless %}
+              {% if shop.name == "CuraLife" %}
+                <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
+              {% elsif shop.name == "CuraLife Global" %}
+                {% unless product.title == "CuraLin Holidays 2022 Expansion" %}
+                  <div class="free-shipping1" style="font-size: 14px; text-align: center;"><span class="free-red">FREE</span> SHIPPING</div>
+                {% endunless %}
+              {% endif %}
             </div>
           </div>
         </div>
