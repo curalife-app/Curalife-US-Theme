@@ -14,13 +14,12 @@
   {% assign bundle_notice_text = "+ Life Changing Bonus" %}
   {% assign challange_value = 99 %}
   {% assign curaeats_value = 29 %}
-  {% assign mini_value = 4900 %}
-  {% assign bundle_addition_value = 12800 %}
+  {% assign mini_value = 49 %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign bundle_notice_text = "+ CuraEats App Bonus" %}
   {% assign challange_value = 0 %}
-  {% assign mini_value = 4100 %}
-  {% assign bundle_addition_value = 2400 %}
+  {% assign curaeats_value = 24 %}
+  {% assign mini_value = 41 %}
 {% endif %}
 
 {%- comment -%} More Variables {%- endcomment -%}
@@ -28,10 +27,10 @@
 {% assign quantity_by_cents = quantity | times: 100 %}
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
-{% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
+{% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | plus: mini_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% if product.title contains "3 Pack" %}
-  {% assign promotion_title = "+ Free bottle of CuraLin" %}
+{% assign promotion_title = "+ Free bottle of CuraLin" %}
   {% assign mini_addition = mini_value %}
 {% elsif product.title contains "6 Pack" %}
   {% assign promotion_title = "+ 2 free bottles of CuraLin" %}
@@ -41,7 +40,8 @@
   {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
 {% endif %}
 
-{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | plus: mini_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
+<script>console.log("{{bundle_addition}}")</script>
+{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Spread the cheer. Free Curalin for a year!", bgColor: "red" %}
@@ -96,7 +96,7 @@
 
           <div class="total-and-shipping">
             <div class="total-prices" style="display:flex;align-items:center">
-              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | plus: mini_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
               <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
             </div>
           </div>
