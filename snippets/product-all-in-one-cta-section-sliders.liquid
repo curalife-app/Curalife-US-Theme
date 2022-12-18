@@ -123,7 +123,7 @@
           <div class="input-field product-option-select">
             {% for var in product.variants %}  
               {% if var.title contains "CuraEats" %}
-              {% assign bundle_value = challange_value | plus: var.price %}
+              {% assign bundle_value = challange_value | plus: curaeats_value %}
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>               
               {% else %}
                 {% assign bundle_value = 0 %}
