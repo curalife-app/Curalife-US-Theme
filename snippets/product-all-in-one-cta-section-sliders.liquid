@@ -132,7 +132,7 @@
                   {% if var.compare_at_price > var.price %}
                     {% assign original_discount = var.compare_at_price | minus: var.price | divided_by: 100 %}
                     {% assign bundle_addition_real = bundle_addition | divided_by: 100 %}
-                    {% assign discount = original_discount | plus: bundle_addition_real %}
+                    {% assign discount = original_discount | plus: bundle_value %}
                   {% else %}
                     {% assign discount = 0 %}
                   {% endif %}
