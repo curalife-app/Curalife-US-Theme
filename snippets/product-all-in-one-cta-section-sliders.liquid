@@ -121,10 +121,11 @@
         <div id="CTAForm">
           <p class="cta-title">Select Your Pack</p>
           <div class="input-field product-option-select">
-            {% for var in product.variants %}
-              {% assign bundle_value = challange_value | plus: curaeats_value %}
+            {% for var in product.variants %}  
               {% if var.title contains "CuraEats" %}
+              {% assign bundle_value = challange_value | plus: curaeats_value %}
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
+                <script>console.log("Bubdle Value" + {{bundle_value}} )</script>
               {% else %}
                 {% assign bundle_value = 0 %}
               {% endif %}
