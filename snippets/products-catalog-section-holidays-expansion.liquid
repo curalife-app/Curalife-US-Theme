@@ -67,6 +67,10 @@
               </div>
 
               <p class="promotion-title">{{ promotion_title }}</p>
+
+              {% unless forloop.index == 1 %}
+              <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
+              {% endunless %}
             </div>
 
             {% unless isSkipCart %}
