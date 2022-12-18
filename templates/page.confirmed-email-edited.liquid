@@ -1910,6 +1910,15 @@
                              
 {% else %}
 
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="text-size-adjust: 100%; color: rgb(51, 51, 51); font-family: Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px; border-width: 0px; border-style: none; font-size: 18px;">
+  <tbody><tr>
+  <td align="center" style="padding: 0.625rem 0px; text-size-adjust: 100%; width: 100%;">
+   <div class="raffle" style="width: 100%;"> <img src="{{ 'Raffle_confirmation.png' | file_url }}" width="600" loading="lazy"></div>   
+    
+  </td>
+  </tr>
+</tbody></table>
+
 {% capture email_title %}Thank you for your purchase! {% endcapture %}
 {% capture email_body %}
   {% if requires_shipping %}
