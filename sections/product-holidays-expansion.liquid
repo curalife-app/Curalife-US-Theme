@@ -41,7 +41,7 @@
 {% endif %}
 
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | plus: mini_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
-
+<script>console.log("{{bundle_addition}}")</script>
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
 {% render 'script.round-converted-currency' %}
