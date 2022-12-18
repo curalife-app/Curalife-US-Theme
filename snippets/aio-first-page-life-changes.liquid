@@ -84,8 +84,13 @@
                     </div>
                 </div>
             </div>
+
             <div class="survey-button">
+              {% if shop.name == "Curalife Global" %}
+                <button class="btn-cta" onclick="LinkToProduct(this, '/collections/all')"><b>Yes,</b> I want to try CuraLin<br>for glucose support</b>
+                {% else  %}
                 <button class="btn-cta" onclick="LinkToProduct(this, '/products/curalin-pack-holidays2022')"><b>Yes,</b> I want to try CuraLin<br>for glucose support</b>
+               {% endif % %}
             </div>
         </div>
     </div>
