@@ -31,10 +31,10 @@
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% if product.title contains "3 Pack" %}
-{% assign promotion_title = "+ Free bottle of Curalin" %}
+{% assign promotion_title = "+ Free bottle of CuraLin" %}
 {% assign mini_addition = mini_value %}
 {% elsif product.title contains "6 Pack" %}
-  {% assign promotion_title = "+ 2 free bottles of Curalin" %}
+  {% assign promotion_title = "+ 2 free bottles of CuraLin" %}
   {% assign mini_addition = mini_value | times: 2 %}
 {% else %}
 {% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
