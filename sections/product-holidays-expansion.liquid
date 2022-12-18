@@ -28,18 +28,19 @@
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
-{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
 {% if product.title contains "3 Pack" %}
-  {% assign promotion_title = "+ Free bottle of Curalin" %}
-  {% assign mini_addition = 4900 %}
+{% assign promotion_title = "+ Free bottle of Curalin" %}
+{% assign mini_addition = 4900 %}
 {% elsif product.title contains "6 Pack" %}
   {% assign promotion_title = "+ 2 free bottles of Curalin" %}
   {% assign mini_addition = 9800 %}
 {% else %}
 {% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
-  {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
+{% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
 {% endif %}
+
+{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | plus: mini_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Spread the cheer. Free Curalin for a year!", bgColor: "red" %}
