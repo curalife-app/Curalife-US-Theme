@@ -28,6 +28,7 @@
 {% assign quantity_by_cents = quantity | times: 100 %}
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
 {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
+{% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | plus: mini_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% if product.title contains "3 Pack" %}
 {% assign promotion_title = "+ Free bottle of CuraLin" %}
@@ -40,7 +41,6 @@
   {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
 {% endif %}
 
-{% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | plus: mini_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 <script>console.log("{{bundle_addition}}")</script>
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
