@@ -1145,7 +1145,7 @@ $(document).on("click", ".submit-wrap .qty-control a", function (e) {
 
     // Save Text Change
     let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
-    $('#save').animate({'opacity': 0}, 800, function () {
+    $('#save').animate({'opacity': 0.5}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
   })
