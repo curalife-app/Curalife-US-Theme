@@ -1,9 +1,11 @@
 {% if shop.name == "CuraLife" %}
   {% assign bundle_notice_text = "+ Life Changing Bonus" %}
   {% assign bundle_addition_value = 12800 %}
+  {% assign mini_value = 4900 %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign bundle_notice_text = "+ CuraEats App" %}
   {% assign bundle_addition_value = 2400 %}
+  {% assign mini_value = 4100 %}
 {% endif %}
 
 {% render 'script.round-converted-currency' %}
@@ -25,10 +27,10 @@
 
       {% if product.title contains "3 Pack" %}
         {% assign promotion_title = "+ Free bottle of Curalin" %}
-        {% assign mini_addition = 4900 %}
+        {% assign mini_addition = mini_value %}
       {% elsif product.title contains "6 Pack" %}
         {% assign promotion_title = "+ 2 free bottles of Curalin" %}
-        {% assign mini_addition = 9800 %}
+        {% assign mini_addition = mini_value | times: 2 %}
       {% else %}
         {% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
         {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
