@@ -67,10 +67,6 @@
               </div>
 
               <p class="promotion-title">{{ promotion_title }}</p>
-
-              {% if forloop.index > 1 %}
-                <img class="free-shipping geo" src="{{ "collection-free-shipping-badge.png" | asset_img_url: 'compact' }}" width="160px" height="28px" alt="" loading="lazy" style="display:none">
-              {% endif %}
             </div>
 
             {% unless isSkipCart %}
@@ -87,9 +83,9 @@
                 <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
               </div>
 
-              {% if shop.name == "CuraLife" %}
+              {% unless shop.name == "CuraLife" %}
                 <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
-              {% endif %}
+          {% endunless %}
             </div>
           </div>
         </div>
