@@ -125,14 +125,14 @@
               {% if var.title contains "CuraEats" %}
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
               {% else %}
-                {% assign bundle_addition = 0 %}
+                {% assign bundle_value = 0 %}
               {% endif %}
               <div class="variant-box">
                 <div class="radio-box">
                   {% if var.compare_at_price > var.price %}
                     {% assign original_discount = var.compare_at_price | minus: var.price | divided_by: 100 %}
-                    {% assign bundle_addition_real = bundle_addition | divided_by: 100 %}
-                    {% assign discount = original_discount | plus: bundle_value %}
+                    {% assign bundle_value_real = bundle_value | divided_by: 100 %}
+                    {% assign discount = original_discount | plus: bundle_value_real %}
                   {% else %}
                     {% assign discount = 0 %}
                   {% endif %}
@@ -145,7 +145,7 @@
                   </div>
                 </div>
                 <div class="price {% if forloop.index == 3 %}last{% endif %}">
-                  <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | plus: bundle_addition | money_without_trailing_zeros }}</strike></p>
+                  <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | plus: bundle_value | money_without_trailing_zeros }}</strike></p>
                   <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
                 </div>
               </div>
