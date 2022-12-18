@@ -25,10 +25,10 @@
 
       {% if product.title contains "3 Pack" %}
         {% assign promotion_title = "+ Free bottle of Curalin" %}
-        {% assign miniAddition = 41 %}
+        {% assign miniAddition = 39 %}
       {% elsif product.title contains "6 Pack" %}
         {% assign promotion_title = "+ 2 free bottles of Curalin" %}
-        {% assign miniAddition = 82 %}
+        {% assign miniAddition = 78 %}
       {% else %}
         {% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
         {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
