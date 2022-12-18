@@ -185,21 +185,7 @@
     margin: 10px 0
 }
 
-.product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 80px;
-    background: #fff;
-    border: 1px solid #cbcbcb;
-    box-sizing: border-box;
-    border-radius: 2px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.1));
-    transition: all .5s;
-    position: relative
-}
+
 
 .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap {
     display: flex
@@ -614,21 +600,7 @@
         padding: 0 20px
     }
 
-    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box {
-        width: 100%
-    }
-
-    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info {
-        padding: 10px;
-        width: 95%
-    }
-
-    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        margin-right: unset
-    }
+    
 
     .product-template-all-in-one .cta-section .badges-container {
         padding: 0 0 20px !important;
