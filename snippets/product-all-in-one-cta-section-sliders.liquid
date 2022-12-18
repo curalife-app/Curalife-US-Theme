@@ -9,7 +9,7 @@
   {% assign curaeats_value = 24 %}  
   {% assign currency_symbol = '£' %}
 {% endif %}
-{% assign bundle_value = challange_value | plus: curaeats_value %}
+
 <section class="cta-section">
   <div class="container product-container">
     <div class="product-thumbnails">
@@ -122,6 +122,7 @@
           <p class="cta-title">Select Your Pack</p>
           <div class="input-field product-option-select">
             {% for var in product.variants %}
+              {% assign bundle_value = challange_value | plus: curaeats_value %}
               {% if var.title contains "CuraEats" %}
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
               {% else %}
