@@ -42,7 +42,7 @@
 
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | plus: mini_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
-{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | plus: mini_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
+{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Spread the cheer. Free Curalin for a year!", bgColor: "red" %}
@@ -97,7 +97,7 @@
 
           <div class="total-and-shipping">
             <div class="total-prices" style="display:flex;align-items:center">
-              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | plus: mini_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
               <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
             </div>
           </div>
