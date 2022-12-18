@@ -128,7 +128,7 @@
                 {% assign bundle_addition = 0 %}
               {% endif %}
               <div class="variant-box">
-               
+                <div class="radio-box">
                   {% if var.compare_at_price > var.price %}
                     {% assign original_discount = var.compare_at_price | minus: var.price | divided_by: 100 %}
                     {% assign bundle_addition_real = bundle_addition | divided_by: 100 %}
@@ -137,7 +137,7 @@
                     {% assign discount = 0 %}
                   {% endif %}
                   <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{var.metafields.my_fields.discount_percents}}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
-              
+                </div>
                 <div class="variant-info">
                   <p class="variant-title">{{ var.title }}</p>
                   <div class="variant-infos">
