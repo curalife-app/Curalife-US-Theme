@@ -2,9 +2,7 @@
 <div class="product-thumbnail picture">
   {% render 'snow-effect', hasAlreadyRun: true %}
 
-  {% if product.metafields.my_fields.pack_items_quantity > 1 %}
-    <div class="save-badge">SAVE {{ savePrice }}</div>
-  {% endif %}
+  <div class="save-badge">SAVE {{ savePrice }}</div>
 
   <div class="product-image-wrapper">
     <div class="thumbnail-notice">
