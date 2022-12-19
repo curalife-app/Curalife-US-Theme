@@ -47,6 +47,13 @@
 
   .sale-banner.{{ instance_id }} .off-container {
     display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %};
+  }
+
+  .sale-banner.{{ instance_id }} .off-container {
+    display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %}; 
+  }
+  .sale-banner.{{ instance_id }} a.main-btn {
+    display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
    
   }
 </style>
@@ -100,7 +107,6 @@
   }
 
   .sale-banner .off-container {
-      display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %};
       justify-content: center;
       align-items: center;
       font-family: 'PP Radio Grotesk';
