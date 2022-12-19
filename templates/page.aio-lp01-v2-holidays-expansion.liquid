@@ -39,7 +39,7 @@ health.
 {% render 'lps-ingredients', ingredients: ingredients %}
 {% render 'aio-first-page-supported-community', isLP: true %}
 {% render 'sale-titles' %}
-{% render 'products-catalog-section', Prods: Prods, isSkipCart: true %}
+{% render 'products-catalog-section-holidays-expansion', Prods: collection.products, challange_value: challange_value, curaeats_value: curaeats_value %}
 {% render 'trust-badges-section' %}
 {% render 'holidays-raffle-section' %}
 {% render 'bundle-gifts-section', challange_value: 99, curaeats_value: 29 %}
