@@ -6,7 +6,7 @@
 {% elsif shop.name == "CuraLife Global" %}
   {% assign shipping_worldwide = 'Free Shipping Above £99' %}
   {% assign challange_value = 0 %}
-  {% assign curaeats_value = 24 %}  
+  {% assign curaeats_value = 24 %}
   {% assign currency_symbol = '£' %}
 {% endif %}
 
@@ -123,10 +123,10 @@
         <div id="CTAForm">
           <p class="cta-title">Select Your Pack</p>
           <div class="input-field product-option-select">
-            {% for var in product.variants %}  
+            {% for var in product.variants %}
               {% if var.title contains "CuraEats" %}
               {% assign bundle_value = challange_value | plus: curaeats_value %}
-                <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>               
+                <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
               {% else %}
                 {% assign bundle_value = 0 %}
               {% endif %}
@@ -148,7 +148,7 @@
                     <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
                   </div>
                 </div>
-               
+
                 <div class="price {% if forloop.index == 3 %}last{% endif %}">
                   {% if forloop.index == 1 %}
                   <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | money_without_trailing_zeros }}</strike></p>
@@ -193,7 +193,7 @@
   button, input, textarea {
       border-radius: 0;
       -webkit-appearance: none;
-  } 
+  }
   button, input {
       overflow: visible;
   }
@@ -1096,7 +1096,7 @@
       }
       else {
           // Slide to Variant Image
-          let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
+          let slideIndex = productSliderAllInOne.slides.length + 1 - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
           productSliderAllInOne.slideTo(slideIndex);
 
           // Track in GA
