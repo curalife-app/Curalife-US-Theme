@@ -1,4 +1,4 @@
-<div id="sale-banner">
+<div class="sale-banner">
   {% render 'snow-effect' %}
   <div class="container">
     <div class="logo-wrapper">
@@ -25,13 +25,9 @@
 </div>
 
 <style>
-  {% if isFixed %}
-    .hero-banner {
-      padding-top: 80px;
-    }
-  {% endif %}
 
-  #sale-banner {
+
+  .sale-banner {
     background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -39,10 +35,13 @@
     width: 100%;
     z-index: 20;
     min-height: 80px;
+  }
+
+  .sale-banner:first {
     {% if isFixed %}position: fixed;{% endif %}
   }
 
-  #sale-banner .container {
+  .sale-banner .container {
     position: relative;
     min-height: 80px;
     display: flex;
@@ -50,12 +49,12 @@
     align-items: center;
   }
 
-  #sale-banner img.logo {
+  .sale-banner img.logo {
     display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
     object-fit: contain;
   }
 
-  #sale-banner p.title {
+  .sale-banner p.title {
     display: {% if desktopContent contains 'title' %}block{% else %}none{% endif %};
     font-family: 'PP Radio Grotesk';
     font-size: clamp(38px, 4vw, 50px);
@@ -72,14 +71,14 @@
     width: max-content;
   }
 
-  #sale-banner .cta-wrapper {
+  .sale-banner .cta-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
   }
 
-  #sale-banner .off-container {
+  .sale-banner .off-container {
       display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %};
       justify-content: center;
       align-items: center;
@@ -88,18 +87,18 @@
       color: white;
   }
 
-  #sale-banner .up-to {
+  .sale-banner .up-to {
       font-size: 25px;
   }
 
-  #sale-banner .percents-off {
+  .sale-banner .percents-off {
       margin-right: 10px;
       font-size: 35px;
       font-weight: bold;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  #sale-banner a.main-btn {
+  .sale-banner a.main-btn {
     display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
     font-size: 26px;
     padding: 10px 40px;
@@ -111,16 +110,16 @@
 
   @media (width <= 768px) {
     {% if mobileContent contains ',' %}
-      #sale-banner .container {
+      .sale-banner .container {
         gap: 3vw;
       }
     {% endif %}
 
-    #sale-banner img.logo {
+    .sale-banner img.logo {
       display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
     }
 
-    #sale-banner p.title {
+    .sale-banner p.title {
       display: {% if mobileContent contains 'title' %}block{% else %}none{% endif %};
       font-size: {% if isLogo %}7{% else %}9{% endif %}vw;
       position: unset;
@@ -129,27 +128,27 @@
       {% if isLogo %}max-width: 50%;{% endif %}
     }
 
-    #sale-banner .cta-wrapper {
+    .sale-banner .cta-wrapper {
       gap: 1vw;
       {% if isCTA %}width: 100%;{% endif %}
     }
 
-    #sale-banner .off-container {
+    .sale-banner .off-container {
         display: {% if mobileContent contains 'cta' %}block{% else %}none{% endif %};
         gap: unset;
     }
 
-    #sale-banner .up-to {
+    .sale-banner .up-to {
         font-size: 4vw;
     }
 
-    #sale-banner .percents-off {
+    .sale-banner .percents-off {
         margin-right: unset;
         font-size: 6vw;
         line-height: 6vw;
     }
 
-    #sale-banner a.main-btn {
+    .sale-banner a.main-btn {
       display: {% if mobileContent contains 'cta-button' %}block{% else %}none{% endif %};
       text-align:center;
       font-size: 4vw;
@@ -160,4 +159,4 @@
 }
 </style>
 
-{% render 'sparkles', element_selector: '#sale-banner' %}
+{% render 'sparkles', element_selector: '.sale-banner' %}
