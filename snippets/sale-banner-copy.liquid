@@ -1,3 +1,6 @@
+{% unless instance_id %}
+  {% assign instance_id = 'origin' %}
+{% endunless %}
 
 <div class="sale-banner {{ instance_id }}">
   {% render 'snow-effect' %}
@@ -29,6 +32,10 @@
     background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
    
   }
+
+  .sale-banner.{{ instance_id }} img.logo {
+    display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
+  }
 </style>
 
 <style>
@@ -57,7 +64,6 @@
   }
 
   .sale-banner img.logo {
-    display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
     object-fit: contain;
   }
 
