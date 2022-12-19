@@ -118,7 +118,6 @@
               {% else %}
                 {% assign bundle_value = 0 %}
               {% endif %}
-              <script>console.log("Bundle_Value " +  {{ bundle_value }} )</script>
               <div class="variant-box">
                 <div class="radio-box">
                   {% if var.compare_at_price > var.price %}
@@ -1091,7 +1090,6 @@
   jQuery(".variant-box").click(function() {
     if (isFirstClick) {
       isFirstClick = false;
-      console.log("isFirstClick: "+isFirstClick);
     }
     else {
       $(this).find('input[type=radio]').prop('checked', true);
@@ -1100,8 +1098,6 @@
       // Slide to Variant Image
       let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
       productSliderAllInOne.slideTo(slideIndex)
-      console.log("isFirstClick: "+isFirstClick);
-      console.log("index: "+slideIndex);
 
       // Track in GA
       window.dataLayer = window.dataLayer || [];
