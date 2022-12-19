@@ -28,7 +28,7 @@ health.
   |Can I buy CuraLin in pharmacies and grocery stores?:We’re still working on getting CuraLin on the shelves of all the major US pharmacies. That’s part of our 2022 plan. For now, the best place to order CuraLin is online, though this page!"
   | split: '|' %}
 
-  {% render 'sale-banner-copy', instance_id: 1, desktopContent: "logo,cta,cta-button", mobileContent: "logo,cta-button", bgColor: "green", logoFileName: "hs-santa-logo-white", isFixed: true, ctaButtonLink: "#product-list-section", ctaTitle: "20" %}
+  {% render 'sale-banner-copy', instance_id: '1', desktopContent: "logo,cta,cta-button", mobileContent: "logo,cta-button", bgColor: "green", logoFileName: "hs-santa-logo-white", isFixed: true, ctaButtonLink: "#product-list-section", ctaTitle: "20" %}
   {% render 'holidays-hero-banner' %}
   {% render 'partnerships-featured', isLP: true %}
   {% render 'lps-video-reviews-2' maintitle: 'Customers Reviews Of CuraLin' %}
@@ -39,7 +39,7 @@ health.
   {% render 'lps-clinically-tested' %}
   {% render 'lps-ingredients', ingredients: ingredients %}
   {% render 'aio-first-page-supported-community', isLP: true %}
-  {% render 'sale-banner-copy', instance_id: 2, desktopContent: "cta", mobileContent: "cta", bgColor: "red", ctaTitle: "Spread the cheer. Free Curalin for a year!", isFixed: false %} 
+  {% render 'sale-banner-copy', instance_id: '2', desktopContent: "cta", mobileContent: "cta", bgColor: "red", ctaTitle: "Spread the cheer. Free Curalin for a year!", isFixed: false %} 
   {% comment %} {% render 'last-offer-title', isLP: true %} {% endcomment %}
   {% assign Prods = page.content | split: ',' %}
   {% render 'products-catalog-section', Prods: Prods, isSkipCart: true %}
