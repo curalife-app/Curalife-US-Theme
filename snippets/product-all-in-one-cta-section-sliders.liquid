@@ -1091,11 +1091,14 @@
   jQuery(".variant-box").click(function() {
     if (isFirstClick) {
       isFirstClick = false;
+      console.log("isFirstClick: "+isFirstClick);
     }
     else {
       // Slide to Variant Image
       let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
       productSliderAllInOne.slideTo(slideIndex)
+      console.log("isFirstClick: "+isFirstClick);
+      console.log("index: "+slideIndex);
       // Slide to Variant Image
       productSliderAllInOne.slideTo(slideIndex);
 
