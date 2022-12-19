@@ -20,7 +20,9 @@
           <div class="main-slider">
             <div id="product-main-slider-sc" class="swiper">
               <div class="swiper-wrapper">
+                {% assign imagesCounter = 0 %}
                 {% for i in (1..6) %}
+                  {% assign imagesCounter = imagesCounter | plus: 1 %}
                   <div class="swiper-slide">
                     <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
                     <div class="product-img">
@@ -1093,7 +1095,9 @@
     else {
       // Slide to Variant Image
       let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
-      productSliderAllInOne.slideTo(slideIndex);
+      productSliderAllInOne.slideTo(slideIndex)
+      // Slide to Variant Image
+      let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
       productSliderAllInOne.slideTo(slideIndex);
 
       // Track in GA
