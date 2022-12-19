@@ -40,7 +40,7 @@
   {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
 {% endif %}
 
-{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
+{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | plus: mini_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
 {% render 'script.round-converted-currency' %}
 {% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Spread the cheer. Free Curalin for a year!", bgColor: "red" %}
