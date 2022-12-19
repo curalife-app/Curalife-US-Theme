@@ -1088,6 +1088,7 @@
 
   let isFirstClick = true;
   jQuery(".variant-box").click(function() {
+    $(this).trigger("click");
     if (isFirstClick) {
       isFirstClick = false;
     }
