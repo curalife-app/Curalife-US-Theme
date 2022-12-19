@@ -1,5 +1,12 @@
 {% layout 'theme.aio-lp01' %}
 
+{% if shop.name == "CuraLife" %}
+  {% assign curaeats_value = 29 %}
+  {% assign challange_value = 99 %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign curaeats_value = 24 %}
+{% endif %}
+
 {% assign Prods = page.content | split: ',' %}
 {% assign doctors = 'lp-aio-michel.png*Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code.
 |lp-aio-nancy.png*Dr. Nancy Russell:Internal Medicine Specialist, North Kansas City Hospital
