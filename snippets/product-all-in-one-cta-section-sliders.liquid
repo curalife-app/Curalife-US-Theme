@@ -20,13 +20,13 @@
           <div class="main-slider">
             <div id="product-main-slider-sc" class="swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                {% comment %} <div class="swiper-slide">
                   <div class="product-img">
                     <div class="img-wrap">
                       <img src="{{ "product-aio-product-thumbnail-0.png" | asset_url }}" alt="" loading="lazy">
                     </div>
                   </div>
-                </div>
+                </div> {% endcomment %}
                 {% for i in (1..5) %}
                   <div class="swiper-slide">
                     <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" alt="">
@@ -1016,13 +1016,12 @@
     .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
         border: 1px solid #ffb22d
     }
-
   }
 
-  @media screen and (max-width: 330px){
-  .cta-section .variant-infos {
-      font-size: 10px !important;
-  }
+  @media screen and (max-width: 330px) {
+    .cta-section .variant-infos {
+        font-size: 10px !important;
+    }
   }
 </style>
 
