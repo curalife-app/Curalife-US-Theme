@@ -1,4 +1,7 @@
-<div class="sale-banner">
+{% unless instance_id %}
+  {% assign instance_id = 'origin' %}
+{% endunless %}
+<div class="sale-banner {{ instance_id }}">
   {% render 'snow-effect' %}
   <div class="container">
     <div class="logo-wrapper">
@@ -23,22 +26,76 @@
     </div>
   </div>
 </div>
+<style>
+  .sale-banner.{{ instance_id }} {
+    background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
+   
+  }
+
+  .sale-banner:first.{{ instance_id }} {
+    {% if isFixed %}position: fixed;{% endif %}
+  }
+
+  .sale-banner.{{ instance_id }} img.logo {
+    display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};  
+  }
+
+  .sale-banner.{{ instance_id }} p.title {
+    display: {% if desktopContent contains 'title' %}block{% else %}none{% endif %};
+   
+  }
+
+  .sale-banner.{{ instance_id }} .off-container {
+    display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %};
+  }
+
+  .sale-banner.{{ instance_id }} .off-container {
+    display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %}; 
+  }
+  .sale-banner.{{ instance_id }} a.main-btn {
+    display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
+  }
+
+  @media (width <= 768px) {
+    {% if mobileContent contains ',' %}
+      .sale-banner.{{ instance_id }} .container {
+        gap: 3vw;
+      }
+    {% endif %}
+    .sale-banner.{{ instance_id }} img.logo {
+      display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
+    }
+
+    .sale-banner.{{ instance_id }} p.title {
+      display: {% if mobileContent contains 'title' %}block{% else %}none{% endif %};
+      font-size: {% if isLogo %}7{% else %}9{% endif %}vw;
+      {% if isLogo %}max-width: 50%;{% endif %}
+    }
+
+    .sale-banner.{{ instance_id }} .cta-wrapper {
+      {% if isCTA %}width: 100%;{% endif %}
+    }
+
+    .sale-banner.{{ instance_id }} .off-container {
+        display: {% if mobileContent contains 'cta' %}block{% else %}none{% endif %};
+    }
+
+    .sale-banner.{{ instance_id }} a.main-btn {
+      display: {% if mobileContent contains 'cta-button' %}block{% else %}none{% endif %};
+    }
+  }
+</style>
 
 <style>
 
 
   .sale-banner {
-    background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     overflow: hidden;
     width: 100%;
     z-index: 20;
     min-height: 80px;
-  }
-
-  .sale-banner:first {
-    {% if isFixed %}position: fixed;{% endif %}
   }
 
   .sale-banner .container {
@@ -50,12 +107,10 @@
   }
 
   .sale-banner img.logo {
-    display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
     object-fit: contain;
   }
 
   .sale-banner p.title {
-    display: {% if desktopContent contains 'title' %}block{% else %}none{% endif %};
     font-family: 'PP Radio Grotesk';
     font-size: clamp(38px, 4vw, 50px);
     color: #ffffff;
@@ -79,7 +134,6 @@
   }
 
   .sale-banner .off-container {
-      display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %};
       justify-content: center;
       align-items: center;
       font-family: 'PP Radio Grotesk';
@@ -99,7 +153,6 @@
   }
 
   .sale-banner a.main-btn {
-    display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
     font-size: 26px;
     padding: 10px 40px;
     color: #C00101;
@@ -109,32 +162,17 @@
   }
 
   @media (width <= 768px) {
-    {% if mobileContent contains ',' %}
-      .sale-banner .container {
-        gap: 3vw;
-      }
-    {% endif %}
-
-    .sale-banner img.logo {
-      display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
-    }
-
-    .sale-banner p.title {
-      display: {% if mobileContent contains 'title' %}block{% else %}none{% endif %};
-      font-size: {% if isLogo %}7{% else %}9{% endif %}vw;
+   .sale-banner p.title {
       position: unset;
       transform: unset;
       padding-bottom: 10px;
-      {% if isLogo %}max-width: 50%;{% endif %}
     }
 
     .sale-banner .cta-wrapper {
       gap: 1vw;
-      {% if isCTA %}width: 100%;{% endif %}
     }
 
     .sale-banner .off-container {
-        display: {% if mobileContent contains 'cta' %}block{% else %}none{% endif %};
         gap: unset;
     }
 
@@ -143,13 +181,14 @@
     }
 
     .sale-banner .percents-off {
+        display:flex;
+        justify-content: center;
         margin-right: unset;
-        font-size: 6vw;
+        font-size: 5vw;
         line-height: 6vw;
     }
 
     .sale-banner a.main-btn {
-      display: {% if mobileContent contains 'cta-button' %}block{% else %}none{% endif %};
       text-align:center;
       font-size: 4vw;
       padding: 3vw;
