@@ -30,7 +30,7 @@
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | plus: mini_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% if product.title contains "3 Pack" %}
-{% assign promotion_title = "+ Free bottle of CuraLin" %}
+  {% assign promotion_title = "+ Free bottle of CuraLin" %}
   {% assign mini_addition = mini_value %}
 {% elsif product.title contains "6 Pack" %}
   {% assign promotion_title = "+ 2 free bottles of CuraLin" %}
@@ -40,7 +40,6 @@
   {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
 {% endif %}
 
-<script>console.log("{{ product.handle }}")</script>
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
 {% render 'script.round-converted-currency' %}
@@ -96,7 +95,7 @@
 
           <div class="total-and-shipping">
             <div class="total-prices" style="display:flex;align-items:center">
-              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | plus: mini_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
               <span class="real">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
             </div>
           </div>
