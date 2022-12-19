@@ -34,8 +34,10 @@
         {% assign mini_addition = mini_value | times: 200 %}
         {% assign bundle_addition = bundle_addition | plus: mini_addition %}
       {% else %}
-        {% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
-        {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
+        {% if bundle_addition > 0 %}
+          {% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
+          {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
+        {% endif %}
       {% endif %}
 
       {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
