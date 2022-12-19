@@ -8173,7 +8173,7 @@ html {
   }
 }
 
-@media (width <= 768px) {
+@media screen and (max-width: 768px) {
   .page-intro {
     .intro-wrap {
       .data-wrap {

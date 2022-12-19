@@ -8680,7 +8680,7 @@ footer {
   .about-intro.count-title.black-sale + .seen-on {
     padding-top: 0; } }
 
-@media (width <= 768px) {
+@media screen and (max-width: 768px) {
   .product-list .card {
     width: calc(100% / 2); }
   .article-content .natural-support .title h2 {
@@ -11523,7 +11523,7 @@ footer {
         max-width: 375px;
         padding: 0 15px; } }
 
-    @media (width <= 768px) {
+    @media screen and (max-width: 768px) {
       .goods-list .list-wrap .sale-card {
         width: calc(100% / 2); }
       .lumen-page .lumen-intro .countdown-sale-line .sale-img {

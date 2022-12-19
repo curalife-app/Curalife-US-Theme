@@ -29,7 +29,7 @@
 <style>
   .sale-banner.{{ instance_id }} {
     background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(#4B643D, #4B643D){% else %}white{% endif %};
-   
+
   }
 
   .sale-banner:first.{{ instance_id }} {
@@ -37,12 +37,12 @@
   }
 
   .sale-banner.{{ instance_id }} img.logo {
-    display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};  
+    display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
   }
 
   .sale-banner.{{ instance_id }} p.title {
     display: {% if desktopContent contains 'title' %}block{% else %}none{% endif %};
-   
+
   }
 
   .sale-banner.{{ instance_id }} .off-container {
@@ -50,13 +50,13 @@
   }
 
   .sale-banner.{{ instance_id }} .off-container {
-    display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %}; 
+    display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %};
   }
   .sale-banner.{{ instance_id }} a.main-btn {
     display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
   }
 
-  @media (width <= 768px) {
+  @media screen and (max-width: 768px) {
     {% if mobileContent contains ',' %}
       .sale-banner.{{ instance_id }} .container {
         gap: 3vw;
@@ -161,7 +161,7 @@
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.15);
   }
 
-  @media (width <= 768px) {
+  @media screen and (max-width: 768px) {
    .sale-banner p.title {
       position: unset;
       transform: unset;

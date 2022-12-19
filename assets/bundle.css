@@ -11283,7 +11283,7 @@ footer .bottom-info .info-wrap .text p {
   }
 }
 
-@media (width <= 768px) {
+@media screen and (max-width: 768px) {
   .page-intro .intro-wrap {
     margin: 0 -5px;
   }
@@ -13861,7 +13861,7 @@ a.lgoutlnk:hover {
   }
 }
 
-@media (width <= 768px) {
+@media screen and (max-width: 768px) {
   a.lgoutlnk {
     padding-left: 30px;
 
