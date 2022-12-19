@@ -1,11 +1,11 @@
 {% if shop.name == "CuraLife" %}
   {% assign bundle_notice_text = "+ Life Changing Bonus" %}
   {% assign bundle_addition_value = 12800 %}
-  {% assign mini_value = 4900 %}
+  {% assign mini_value = 49 %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign bundle_notice_text = "+ CuraEats App" %}
   {% assign bundle_addition_value = 2400 %}
-  {% assign mini_value = 4100 %}
+  {% assign mini_value = 41 %}
 {% endif %}
 
 {% render 'script.round-converted-currency' %}
@@ -27,17 +27,19 @@
 
       {% if product.title contains "3 Pack" %}
         {% assign promotion_title = "+ Free bottle of CuraLin" %}
-        {% assign mini_addition = mini_value %}
+        {% assign mini_addition = mini_value | times: 100 %}
+        {% assign bundle_addition = bundle_addition | plus: mini_value %}
       {% elsif product.title contains "6 Pack" %}
         {% assign promotion_title = "+ 2 free bottles of CuraLin" %}
-        {% assign mini_addition = mini_value | times: 2 %}
+        {% assign mini_addition = mini_value | times: 200 %}
+        {% assign bundle_addition = bundle_addition | plus: mini_value %}
       {% else %}
         {% assign bundle_addition_money = bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
         {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
         {% assign mini_addition = 0 %}
       {% endif %}
 
-      {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | plus: mini_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
+      {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" %}
 
       <div class="product-card" id="product-card-section">
         <div class="wrap">
@@ -86,9 +88,9 @@
               {% if shop.name == "CuraLife" %}
                 <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
               {% elsif shop.name == "CuraLife Global" %}
-               
+
                   <div class="free-shipping1" style="font-size: 14px; text-align: center;"><span class="free-red">FREE</span> SHIPPING</div>
-              
+
               {% endif %}
             </div>
           </div>
