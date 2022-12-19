@@ -1091,7 +1091,10 @@
 
   let isFirstClick = true;
   jQuery(".variant-box").click(function() {
-
+    if (isFirstClick) {
+      isFirstClick = false;
+    }
+    else {
       // Slide to Variant Image
       let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
       productSliderAllInOne.slideTo(slideIndex);
@@ -1119,7 +1122,7 @@
         variant_title: $(this).find("input").attr("title"),
         price: $(this).find("input").attr("price")
       })
-
+    }
 
     $(this).find('input[type=radio]').prop('checked', true);
     $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
