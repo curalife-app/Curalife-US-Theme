@@ -45,8 +45,9 @@ health.
 {% render 'lps-clinically-tested' %}
 {% render 'lps-ingredients', ingredients: ingredients %}
 {% render 'aio-first-page-supported-community', isLP: true %}
+{% render 'sale-banner', desktopContent: "cta", mobileContent: "cta", bgColor: "red", ctaTitle: "Spread the cheer. Free Curalin for a year!", isFixed: false %} 
 {% render 'sale-titles' %}
-{% comment %} {% render 'sale-banner', desktopContent: "cta", mobileContent: "cta", bgColor: "red", ctaTitle: "Spread the cheer. Free Curalin for a year!" %} {% endcomment %}
+
 {% render 'products-catalog-section-holidays-expansion', Prods: Prods, challange_value: challange_value, curaeats_value: curaeats_value %}
 {% render 'trust-badges-section' %}
 {% render 'holidays-raffle-section' %}
