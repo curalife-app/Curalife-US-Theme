@@ -1103,6 +1103,7 @@
 
   let isFirstClick = true;
   jQuery(".variant-box").click(function() {
+    $(this).dispatchEvent("dblclick");
     if (isFirstClick) {
       isFirstClick = false;
     }
