@@ -1158,10 +1158,6 @@ $(document).on("click", ".submit-wrap .qty-control a", function (e) {
     woopra.track('Product Image Click', {});
   });
 
-  $( document ).ready(function() {
-    $(".variant-box").last().trigger( "click" );
-  });
-
   // Buy Button Functionality
   $("#buy-button").click(function() {
     let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
