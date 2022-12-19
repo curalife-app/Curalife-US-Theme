@@ -5,7 +5,7 @@
   <div class="save-badge">SAVE {{ savePrice }}</div>
 
   <div class="product-image-wrapper">
-    <div class="thumbnail-notice">
+    <div class="thumbnail-notice" {% unless product.metafields.my_fields.subtitle %}style="opacity: 0;"{% endunless %}>
       <p>FREE!</p>
       <p>{{ product.metafields.my_fields.subtitle }}</p>
     </div>
