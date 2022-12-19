@@ -1,3 +1,8 @@
+{% if shop.name == "CuraLife Global" %}
+  {% assign linkAdd = '/collections/all' %}
+{% elsif shop.name == "CuraLife" %}
+  {% assign linkAdd = '/products/curalin-pack-holidays2022' %}
+{% endif %}
 <div class="satisfaction-survey">
     <div class="satisfaction-survey-bg">
         <div class="container">
@@ -63,7 +68,7 @@
                <a href="/products/curalin-pack-holidays2022" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
                for glucose support</a>
                {% else %}
-                 <button class="btn-cta" onclick="LinkToProduct(this, '/products/curalin-pack-holidays2022')"><b>Yes,</b> I want to try CuraLin <br>
+                 <button class="btn-cta" onclick="LinkToProduct(this, '{{ linkAdd }}')"><b>Yes,</b> I want to try CuraLin <br>
                      for glucose support</button>
                 {% endif %}
             </div>
