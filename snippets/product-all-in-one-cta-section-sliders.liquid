@@ -150,8 +150,8 @@
                 </div>
                
                 <div class="price {% if forloop.index == 3 %}last{% endif %}">
-                  {% assign compared_prise_var = var.compare_at_price | money_without_trailing_zeros %}
-                  <p class="compared-at-price"><strike class="rounded no-letters">{{ compared_prise_var | plus: bundle_value  }}</strike></p>
+                  {% assign bundle_value = challange_value | plus: curaeats_value %}
+                  <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | plus: bundle_value | money_without_trailing_zeros }}</strike></p>
                   <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
                 </div>
               </div>
