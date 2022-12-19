@@ -40,7 +40,7 @@ health.
   {% render 'lps-ingredients', ingredients: ingredients %}
   {% render 'aio-first-page-supported-community', isLP: true %}
   {% render 'sale-banner-copy', instance_id: 2, desktopContent: "cta", mobileContent: "cta", bgColor: "red", ctaTitle: "Spread the cheer. Free Curalin for a year!", isFixed: false %} 
-  {% render 'last-offer-title', isLP: true %}
+  {% comment %} {% render 'last-offer-title', isLP: true %} {% endcomment %}
   {% assign Prods = page.content | split: ',' %}
   {% render 'products-catalog-section', Prods: Prods, isSkipCart: true %}
   {% render 'trust-badges-section' %}
