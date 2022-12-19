@@ -54,7 +54,35 @@
   }
   .sale-banner.{{ instance_id }} a.main-btn {
     display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
-   
+  }
+
+  @media (width <= 768px) {
+    {% if mobileContent contains ',' %}
+      .sale-banner.{{ instance_id }} .container {
+        gap: 3vw;
+      }
+    {% endif %}
+    .sale-banner.{{ instance_id }} img.logo {
+      display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
+    }
+
+    .sale-banner.{{ instance_id }} p.title {
+      display: {% if mobileContent contains 'title' %}block{% else %}none{% endif %};
+      font-size: {% if isLogo %}7{% else %}9{% endif %}vw;
+      {% if isLogo %}max-width: 50%;{% endif %}
+    }
+
+    .sale-banner.{{ instance_id }} .cta-wrapper {
+      {% if isCTA %}width: 100%;{% endif %}
+    }
+
+    .sale-banner.{{ instance_id }} .off-container {
+        display: {% if mobileContent contains 'cta' %}block{% else %}none{% endif %};
+    }
+
+    .sale-banner.{{ instance_id }} a.main-btn {
+      display: {% if mobileContent contains 'cta-button' %}block{% else %}none{% endif %};
+    }
   }
 </style>
 
@@ -62,7 +90,6 @@
 
 
   .sale-banner {
-   
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     overflow: hidden;
@@ -126,7 +153,6 @@
   }
 
   .sale-banner a.main-btn {
-    display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
     font-size: 26px;
     padding: 10px 40px;
     color: #C00101;
@@ -136,32 +162,17 @@
   }
 
   @media (width <= 768px) {
-    {% if mobileContent contains ',' %}
-      .sale-banner .container {
-        gap: 3vw;
-      }
-    {% endif %}
-
-    .sale-banner img.logo {
-      display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
-    }
-
-    .sale-banner p.title {
-      display: {% if mobileContent contains 'title' %}block{% else %}none{% endif %};
-      font-size: {% if isLogo %}7{% else %}9{% endif %}vw;
+   .sale-banner p.title {
       position: unset;
       transform: unset;
       padding-bottom: 10px;
-      {% if isLogo %}max-width: 50%;{% endif %}
     }
 
     .sale-banner .cta-wrapper {
       gap: 1vw;
-      {% if isCTA %}width: 100%;{% endif %}
     }
 
     .sale-banner .off-container {
-        display: {% if mobileContent contains 'cta' %}block{% else %}none{% endif %};
         gap: unset;
     }
 
@@ -176,7 +187,6 @@
     }
 
     .sale-banner a.main-btn {
-      display: {% if mobileContent contains 'cta-button' %}block{% else %}none{% endif %};
       text-align:center;
       font-size: 4vw;
       padding: 3vw;
