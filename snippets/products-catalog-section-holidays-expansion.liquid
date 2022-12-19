@@ -85,11 +85,11 @@
               </div>
 
               {% if shop.name == "CuraLife" %}
-                <div class="free-shipping1" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
+                <div class="free-shipping" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
               {% elsif shop.name == "CuraLife Global" %}
-                {% unless product.tags contains "no-free-shipping" %}
-                  <div class="free-shipping1" style="font-size: 14px; text-align: center;"><span class="free-red">FREE</span> SHIPPING</div>
-                {% endunless %}
+                {% comment %} {% unless product.tags contains "no-free-shipping" %}
+                  <div class="free-shipping" style="font-size: 14px; text-align: center;"><span class="free-red">FREE</span> SHIPPING</div>
+                {% endunless %} {% endcomment %}
               {% endif %}
             </div>
           </div>
@@ -130,7 +130,7 @@
     min-height: 42px;
   }
 
-  #product-catalog-section .total-and-shipping .free-shipping1 .free-red {
+  #product-catalog-section .total-and-shipping .free-shipping .free-red {
     color: #ED073E;
   }
 
