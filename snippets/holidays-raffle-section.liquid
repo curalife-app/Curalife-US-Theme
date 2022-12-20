@@ -1,6 +1,12 @@
-
 {% if shop.name == "CuraLife" %}
-  {% assign raffle_value = 900 %}
+  {% if localization.country.iso_code == 'CA' %}
+    {% assign raffle_value = 900 %}
+  {% elsif localization.country.iso_code == 'AU' %}
+    {% assign raffle_value = 900 %}
+  {% else %}
+    {% assign raffle_value = 900 %}
+  {% endif %}
+  
   {% assign currency_symbol = '$' %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign raffle_value = 747 %}
