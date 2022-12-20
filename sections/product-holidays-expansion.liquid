@@ -29,9 +29,9 @@
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challange_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% if localization.country.iso_code == 'CA' %}
-  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap %}
+  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
 {% elsif localization.country.iso_code == 'AU' %}
-  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.au_cap %}
+  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.au_cap | times: 100 %}
 {% else %}
   {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 {% endif %}
