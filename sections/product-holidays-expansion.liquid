@@ -1,32 +1,20 @@
-{%- comment -%} Get If User Is Admin {%- endcomment -%}
-{% capture CFH %}{{ content_for_header }}{% endcapture %}
-
-{% if CFH contains 'adminBarInjector' %}
-  {% assign admin = true %}
-{% elsif CFH contains 'admin-bar-iframe' %}
-  {% assign admin = true %}
-{% elsif CFH contains 'preview_bar_injector-' %}
-  {% assign admin = true %}
-{% endif %}
-
 {%- comment -%} Differences Between US and Global {%- endcomment -%}
 {% if shop.name == "CuraLife" %}
   {% assign bundle_notice_text = "+ Life Changing Bonus" %}
+
   {% if localization.country.iso_code == 'CA' %}
     {% assign challange_value = 132 %}
+    {% assign curaeats_value = 39 %}
+    {% assign mini_value = 65 %}
   {% elsif localization.country.iso_code == 'AU' %}
     {% assign challange_value = 147 %}
-    {% else %}
-  {% assign challange_value = 99 %}
-    {% endif %}
-  {% if localization.country.iso_code == 'CA' %}
-    {% assign curaeats_value = 39 %}
-  {% elsif localization.country.iso_code == 'AU' %}
     {% assign curaeats_value = 43 %}
-    {% else %}
-  {% assign curaeats_value = 29 %}
-    {% endif %}
-  {% assign mini_value = 49 %}
+    {% assign mini_value = 73 %}
+  {% else %}
+    {% assign challange_value = 99 %}
+    {% assign curaeats_value = 29 %}
+    {% assign mini_value = 49 %}
+  {% endif %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign bundle_notice_text = "+ CuraEats App Bonus" %}
   {% assign challange_value = 0 %}
@@ -86,10 +74,6 @@
             <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
             <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
           </div>
-
-          {% if admin %}
-            <div class="edit"><a href="/admin/products/{{ product.id }}"><i class="icofont-ui-edit"></i></a></div>
-          {% endif %}
         </div>
 
         <div class="description">
@@ -191,11 +175,6 @@
     font-size: 16px;
     color: #6f6f6f;
     margin-top: -5px;
-  }
-
-  .edit a {
-    margin-left: 15px;
-    font-size: 18px;
   }
 
   .promotion-title {
