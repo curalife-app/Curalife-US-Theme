@@ -124,6 +124,7 @@
               {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
               {% assign original_item_cap_total = original_item_cap | times: var.metafields.my_fields.pack_bottles_quantity %}
               {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
+              <script>console.log("{{bundle_value | times: 100}} + {{original_item_cap_total}}")</script>
 
               <div class="variant-box">
                 <div class="radio-box">
