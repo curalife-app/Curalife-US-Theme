@@ -1,9 +1,3 @@
-{% if shop.name == "CuraLife" %}
-  {% assign shipping_worldwide = 'US Free Shipping' %}
-{% elsif shop.name == "CuraLife Global" %}
-  {% assign shipping_worldwide = 'Free Shipping Above £99' %}
-{% endif %}
-
 {% if localization.country.iso_code == 'CA' %}
   {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
 {% elsif localization.country.iso_code == 'AU' %}
