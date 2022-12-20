@@ -1,7 +1,5 @@
 {% layout 'theme.aio-first-page' %}
 
-{% render 'sale-banner', desktopContent: "logo,title", mobileContent: "logo,cta", title: "Enter The Raffle With Extra Holiday Bonuses!", bgColor: "red", logoFileName: "hs-santa-logo-green" %}
-
 {% if shop.name == "CuraLife" %}
   {% assign meetCuralins = 'lp-aio-client-tested-icon.svg*Clinically tested:with results published in a peer-reviewed journal
   |lp-aio-capsules-icon.svg*Easy to take capsules:take 1-2 after meals
@@ -91,6 +89,7 @@ health.
 ' | split: '|' %}
 
 <div class="page-overflow">
+  {% render 'sale-banner', desktopContent: "logo,title", mobileContent: "logo,cta", title: "Enter The Raffle With Extra Holiday Bonuses!", bgColor: "red", logoFileName: "hs-santa-logo-green" %}
   {% render 'aio-first-page-hero-section' %}
   {% render 'partnerships-featured' %}
   {% render 'aio-first-page-meet-curalin', meetCuralins: meetCuralins %}
