@@ -119,9 +119,9 @@
           <div class="input-field product-option-select">
             {% for var in product.variants %}
               {% if localization.country.iso_code == 'CA' %}
-                {% assign original_item_cap = var.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
+                {% assign original_item_cap = var.metafields.custom.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
               {% elsif localization.country.iso_code == 'AU' %}
-                {% assign original_item_cap = var.metafields.my_fields.original_item.value.metafields.my_fields.au_cap | times: 100 %}
+                {% assign original_item_cap = var.metafields.custom.original_item.value.metafields.my_fields.au_cap | times: 100 %}
               {% else %}
                 {% assign original_item_cap = var.compare_at_price %}
               {% endif %}
