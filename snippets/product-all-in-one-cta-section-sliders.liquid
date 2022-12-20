@@ -125,7 +125,7 @@
               {% endif %}
               <div class="variant-box">
                 <div class="radio-box">
-                  <script>console.log("original item cap: {{original_item_cap}}")</script>
+                  <script>console.log("original item cap total: {{original_item_cap_total}}")</script>
                   {% if original_item_cap_total > var.price %}
                     {% assign original_discount = original_item_cap_total | minus: var.price | divided_by: 100 %}
                     {% assign discount = original_discount | plus: bundle_value %}
