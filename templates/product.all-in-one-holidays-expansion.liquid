@@ -1,11 +1,18 @@
 
 {% if shop.name == "CuraLife" %}
-  {% assign shipping_worldwide = 'US Free Shipping' %}
-  {% assign challange_value = 99 %}
-  {% assign curaeats_value = 29 %}
+  {% if localization.country.iso_code == 'CA' %}
+    {% assign challange_value = 132 %}
+    {% assign curaeats_value = 39 %}
+  {% elsif localization.country.iso_code == 'AU' %}
+    {% assign challange_value = 147 %}
+    {% assign curaeats_value = 43 %}
+  {% else %}
+    {% assign challange_value = 99 %}
+    {% assign curaeats_value = 29 %}
+  {% endif %}
+
   {% assign currency_symbol = '$' %}
 {% elsif shop.name == "CuraLife Global" %}
-  {% assign shipping_worldwide = 'Free Shipping Above £99' %}
   {% assign challange_value = 0 %}
   {% assign curaeats_value = 24 %}
   {% assign currency_symbol = '£' %}
