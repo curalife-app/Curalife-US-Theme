@@ -1087,9 +1087,11 @@
   });
 
   let isFirstClick = true;
+
   jQuery(".variant-box").click(function() {
     if (isFirstClick) {
       isFirstClick = false;
+      console.log("isFirstClick: " + isFirstClick)
     }
     else {
       $(this).find('input[type=radio]').prop('checked', true);
