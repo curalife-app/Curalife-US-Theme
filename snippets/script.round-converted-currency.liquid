@@ -1,7 +1,9 @@
-{% if localization.country.iso_code == 'CA' %}
-  {% assign currency_letters = "CAD" %}
-{% elsif localization.country.iso_code == 'AU' %}
-  {% assign currency_letters = "AUD" %}
+{% if isCurrencyLetters %}
+  {% if localization.country.iso_code == 'CA' %}
+    {% assign currency_letters = "CAD" %}
+  {% elsif localization.country.iso_code == 'AU' %}
+    {% assign currency_letters = "AUD" %}
+  {% endif %}
 {% endif %}
 
 <style>
