@@ -114,6 +114,8 @@
                 {% assign original_item_cap = var.compare_at_price %}
               {% endif %}
 
+              {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
+
               {% if var.title contains "CuraEats" %}
               {% assign bundle_value = challange_value | plus: curaeats_value %}
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
@@ -124,7 +126,7 @@
                 <div class="radio-box">
                   <script>console.log("original item cap: {{original_item_cap}}")</script>
                   {% if original_item_cap > var.price %}
-                    {% assign original_discount = original_item_cap | minus: var.price | divided_by: 100 %}
+                    {% assign original_discount = original_item_cap | times: bottle_quantity | minus: var.price | divided_by: 100 %}
                     {% assign discount = original_discount | plus: bundle_value %}
                   {% else %}
                     {% assign discount = 0 %}
@@ -143,7 +145,7 @@
                     <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap | money_without_trailing_zeros }}</strike></p>
                   {% else %}
                     {% assign bundle_price = challange_value | plus: curaeats_value | times: 100 %}
-                    <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap | times: var.metafields.my_fields.pack_bottles_quantity | plus: bundle_price | money_without_trailing_zeros }}</strike></p>
+                    <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap | times: bottle_quantity | plus: bundle_price | money_without_trailing_zeros }}</strike></p>
                   {% endif %}
                     <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
                 </div>
