@@ -142,7 +142,7 @@
                   {% else %}
                   {% assign bundle_price = challange_value | plus: curaeats_value | times: 100 %}
                   <p class="compared-at-price"><strike class="rounded no-letters">{{ var.compare_at_price | plus: bundle_price | money_without_trailing_zeros }}</strike></p>
-                  <script>console.log("var.compare_at_price: "+var.compare_at_price)</script>
+                  <script>console.log("var.compare_at_price: "+ var.compare_at_price)</script>
                   {% endif %}
                   <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
                   <script>console.log("var.price: "+var.price)</script>
