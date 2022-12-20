@@ -10,7 +10,13 @@
   {% assign currency_symbol = '£' %}
 {% endif %}
 
-
+{% if localization.country.iso_code == 'CA' %}
+  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
+{% elsif localization.country.iso_code == 'AU' %}
+  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.au_cap | times: 100 %}
+{% else %}
+  {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
+{% endif %}
 
 <section class="cta-section">
   <div class="container product-container">
@@ -112,6 +118,14 @@
           <p class="cta-title">Select Your Pack</p>
           <div class="input-field product-option-select">
             {% for var in product.variants %}
+              {% if localization.country.iso_code == 'CA' %}
+                {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
+              {% elsif localization.country.iso_code == 'AU' %}
+                {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.au_cap | times: 100 %}
+              {% else %}
+                {% assign original_item_cap = var.compare_at_price %}
+              {% endif %}
+
               {% if var.title contains "CuraEats" %}
               {% assign bundle_value = challange_value | plus: curaeats_value %}
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
@@ -120,8 +134,8 @@
               {% endif %}
               <div class="variant-box">
                 <div class="radio-box">
-                  {% if var.compare_at_price > var.price %}
-                    {% assign original_discount = var.compare_at_price | minus: var.price | divided_by: 100 %}
+                  {% if original_item_cap > var.price %}
+                    {% assign original_discount = original_item_cap | minus: var.price | divided_by: 100 %}
                     {% assign discount = original_discount | plus: bundle_value %}
                   {% else %}
                     {% assign discount = 0 %}
