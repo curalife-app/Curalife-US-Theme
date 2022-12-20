@@ -128,13 +128,11 @@
               <div class="variant-box">
                 <div class="radio-box">
                   <script>console.log("original item cap total: {{original_item_cap_total}}")</script>
-                  {% if original_item_cap_total > var.price %}
+                  {% if original_item_cap_total_with_bundle > var.price %}
                     {% assign original_discount = original_item_cap_total | minus: var.price | divided_by: 100 %}
                     {% assign discount = original_discount | plus: bundle_value %}
-                    <script>console.log("1")</script>
                   {% else %}
                     {% assign discount = 0 %}
-                    <script>console.log("2")</script>
                   {% endif %}
                   <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}"></input>
                 </div>
