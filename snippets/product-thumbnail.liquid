@@ -2,7 +2,7 @@
 <div class="product-thumbnail picture">
   {% render 'snow-effect', hasAlreadyRun: true %}
 
-  <div class="save-badge rounded">SAVE {{ savePrice }}</div>
+  <div class="save-badge">SAVE <span class="rounded">{{ savePrice }}</span></div>
 
   <div class="product-image-wrapper">
     <div class="thumbnail-notice" {% unless product.metafields.my_fields.subtitle %}style="opacity: 0;"{% endunless %}>
