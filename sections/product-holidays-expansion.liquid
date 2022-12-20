@@ -49,6 +49,11 @@
   {% assign promotion_title = bundle_notice_text | append: " (<span class='rounded no-letters'>" | append: bundle_addition_money | append: "</span> value)" %}
 {% endif %}
 
+<script>console.log("original_item_cap: {{original_item_cap}}")</script>
+<script>console.log("item_price: {{item_price}}")</script>
+<script>console.log("quantity: {{quantity}}")</script>
+<script>console.log("bundle_addition: {{bundle_addition}}")</script>
+
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP" | replace: "AUD", "" | replace: "CAD", "" %}
 
 {% render 'script.round-converted-currency' %}
@@ -271,7 +276,7 @@
 
     inputObj.val(newVal);
   });
-</script>
+</>
 
 <script>
   $(document).on("click", "#AddTCart", function () {
