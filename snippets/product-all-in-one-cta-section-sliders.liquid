@@ -1085,6 +1085,12 @@
      $(this).find('input[type=radio]').prop('checked', true);
      $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
+     let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+       $('#save').animate({'opacity': 0}, 800, function () {
+         $(this).text(saveText);
+       }).animate({'opacity': 1}, 800);
+     });
+
       // Slide to Variant Image
       let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
       productSliderAllInOne.slideTo(slideIndex)
@@ -1113,12 +1119,12 @@
         price: $(this).find("input").attr("price")
       })
 
-    // Save Text Change
+    {% comment %} // Save Text Change
     let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
-  });
+  }); {% endcomment %}
 </script>
 
 <script>
