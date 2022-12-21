@@ -1124,11 +1124,10 @@
 
     // Save Text Change
     
-    {% comment %} let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
-    }).animate({'opacity': 1}, 800); {% endcomment %}
-  });
+    }).animate({'opacity': 1}, 800);
 </script>
 
 <script>
