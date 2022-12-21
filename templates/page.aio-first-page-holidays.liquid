@@ -1,4 +1,19 @@
 {% layout 'theme.aio-first-page' %}
+{% if shop.name == 'CuraLife' %}
+  {% assign store_domain = "curalife.com" %}
+  {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign store_domain = "global.curalife.com" %}
+  {% assign yotpo_script_id = "oMYBvmnASlHzmouicgkepg" %}
+{% endif %}
+
+{% render 'layout.head.geo-redirect-script' %}
+{% render 'layout.head.redirects-script' %}
+{% render 'layout.head.google-tag-manager'%}
+{% render 'layout.head.meta-tags' %}
+{% render 'layout.head.canonicals-us' %}
+{% render 'layout.head.fonts' %}
+
 
 {% render 'sale-banner', desktopContent: "logo,title", mobileContent: "logo,cta", title: "Get into the holiday spirit!", bgColor: "red", logoFileName: "hs-santa-logo-green" %}
 

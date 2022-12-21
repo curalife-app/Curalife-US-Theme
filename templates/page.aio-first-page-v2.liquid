@@ -1,4 +1,19 @@
 {% layout 'theme.aio-first-page' %}
+{% if shop.name == 'CuraLife' %}
+  {% assign store_domain = "curalife.com" %}
+  {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign store_domain = "global.curalife.com" %}
+  {% assign yotpo_script_id = "oMYBvmnASlHzmouicgkepg" %}
+{% endif %}
+
+{% render 'layout.head.geo-redirect-script' %}
+{% render 'layout.head.redirects-script' %}
+{% render 'layout.head.google-tag-manager'%}
+{% render 'layout.head.meta-tags' %}
+{% render 'layout.head.canonicals-us' %}
+{% render 'layout.head.fonts' %}
+
 {% if shop.name == "CuraLife" %}
   {% assign meetCuralins = 'lp-aio-client-tested-icon.svg*Clinically tested:with results published in a peer-reviewed journal
   |lp-aio-capsules-icon.svg*Easy to take capsules:take 1-2 after meals   
