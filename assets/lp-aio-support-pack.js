@@ -31,7 +31,7 @@
     //         backSpeed: 30,
     //         loop: true
     //     });
-    }
+    // }
 
     function showvideo() {
         this.classList.add('show-video');
