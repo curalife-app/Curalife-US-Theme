@@ -15,7 +15,7 @@
     "dlt_desc": "Are you sure you want to delete your credit card?",
     "crd_titl": "Add new card",
     "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo-colored_f757e269-d78d-47eb-ba63-f1f9edfd98a0.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Asset_1.png",
     "sections": {
       "header": {
         "type": "header",
@@ -2328,12 +2328,6 @@
         "settings": {
           "inject_modules_loader": false,
           "inject_sdk_loader": false
-        }
-      },
-      "15390791335168990234": {
-        "type": "shopify:\/\/apps\/addify-dynamic-pricing\/blocks\/wholesale-tiered-pricing\/9ab4b5b0-20a7-4b48-8ce9-803a3d3f63ec",
-        "disabled": false,
-        "settings": {
         }
       }
     }
