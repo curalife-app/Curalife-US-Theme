@@ -23,14 +23,14 @@
     //     }
     // }
 
-    if (!$(".hero-section .brand-welcome-text .v3").length) {
-        let typed = new Typed('.hero-section .brand-welcome-text span', {
-            strings: ["sleep well", "eat well", "feel energetic", "stay romantic", "stay healthy"],
-            typeSpeed: 50,
-            backDelay: 3000,
-            backSpeed: 30,
-            loop: true
-        });
+    // if (!$(".hero-section .brand-welcome-text .v3").length) {
+    //     let typed = new Typed('.hero-section .brand-welcome-text span', {
+    //         strings: ["sleep well", "eat well", "feel energetic", "stay romantic", "stay healthy"],
+    //         typeSpeed: 50,
+    //         backDelay: 3000,
+    //         backSpeed: 30,
+    //         loop: true
+    //     });
     }
 
     function showvideo() {
