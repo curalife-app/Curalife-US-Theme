@@ -13,15 +13,15 @@
     //     disableOnInteraction: true
     //   });
 
-    const get_utm = window.location.search.substring(1);
-    if (get_utm) {
-        let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
-        window.onload = function () {
-            for (let i = 0; i < product_link.length; i++) {
-                product_link[i].href = product_link[i].href + "?" + get_utm
-            }
-        }
-    }
+    // const get_utm = window.location.search.substring(1);
+    // if (get_utm) {
+    //     let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
+    //     window.onload = function () {
+    //         for (let i = 0; i < product_link.length; i++) {
+    //             product_link[i].href = product_link[i].href + "?" + get_utm
+    //         }
+    //     }
+    // }
 
     if (!$(".hero-section .brand-welcome-text .v3").length) {
         let typed = new Typed('.hero-section .brand-welcome-text span', {
