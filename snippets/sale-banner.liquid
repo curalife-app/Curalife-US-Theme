@@ -38,13 +38,14 @@
 
   .sale-banner.{{ instance_id }} img.logo {
     display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
+    max-width:{% if longTitle %}93%{% else %}100%{% endif %};
   }
 
   .sale-banner.{{ instance_id }} p.title {
     display: {% if desktopContent contains 'title' %}block{% else %}none{% endif %};
-    font-size:{% if longTitle %}clamp(31px, 3vw, 50px){% else %}clamp(38px, 4vw, 50px){% endif %};
-    padding-bottom:{% if longTitle %}10px{% else %}20px{% endif %};
-    left:{% if longTitle %}63%{% else %}50%{% endif %};
+    font-size:{% if longTitle %}clamp(32px, 3vw, 50px){% else %}clamp(38px, 4vw, 50px){% endif %};
+    padding-bottom:{% if longTitle %}7px{% else %}20px{% endif %};
+    left:{% if longTitle %}62%{% else %}50%{% endif %};
   }
 
   .sale-banner.{{ instance_id }} .off-container {
