@@ -1081,6 +1081,13 @@
 
   let isFirstClick = true;
 
+  $( document ).ready(function() {
+    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+     $('#save').animate({'opacity': 0}, 800, function () {
+       $(this).text(saveText);
+     }).animate({'opacity': 1}, 800); 
+  });
+
   jQuery(".variant-box").click(function() {
      $(this).find('input[type=radio]').prop('checked', true);
      $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
@@ -1115,6 +1122,7 @@
       })
 
     // Save Text Change
+    
     let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
