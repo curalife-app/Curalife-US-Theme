@@ -1,7 +1,16 @@
 {% if shop.name == "CuraLife" %}
   {% assign bundle_notice_text = "+ Life Changing Bonus" %}
-  {% assign bundle_addition_value = 12800 %}
-  {% assign mini_value = 49 %}
+
+  {% if localization.country.iso_code == 'CA' %}
+    {% assign bundle_addition_value = 17100 %}
+    {% assign mini_value = 65 %}
+  {% elsif localization.country.iso_code == 'AU' %}
+    {% assign bundle_addition_value = 19000 %}
+    {% assign mini_value = 73 %}
+  {% else %}
+    {% assign bundle_addition_value = 12800 %}
+    {% assign mini_value = 49 %}
+  {% endif %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign bundle_notice_text = "+ CuraEats App" %}
   {% assign bundle_addition_value = 2400 %}
