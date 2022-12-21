@@ -1488,3 +1488,99 @@
     }
   }
 </style>
+
+<script>
+  function runAfterElementExists(jquery_selector, callback) {
+    var checker = window.setInterval(function () {
+      if ($(jquery_selector).length) {
+        clearInterval(checker);
+        callback();
+      }
+    }, 200);
+  }
+</script>
+
+<!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter. -->
+<script>
+  let urlParameters = new URLSearchParams(window.location.search);
+  let productVar = urlParameters.get('prod-var');
+
+  if (productVar) {
+  $('a').each(function() {
+    var currLink = $(this).attr('href');
+    if (currLink) { $(this).attr('href', "/products/curalin-pack-" + productVar) };
+  });
+  }
+</script>
+
+<!-- RAF -->
+<script>
+  let utmParam = new URLSearchParams(window.location.search).get('utm_campaign');
+
+  if (utmParam == 'referral_program') {
+    console.log("Referral program");
+    function runAfterElementExists(jquery_selector, callback) {
+      var checker = window.setInterval(function () {
+        if ($(jquery_selector).length) {
+          clearInterval(checker);
+          callback();
+        }
+      }, 200);
+    }
+
+    // Wisepop Event!
+    $(document).ready(function () {
+      runAfterElementExists(".yotpo-copy-code-icon", function () {
+        wisepops('properties', {rafCodeReceived: true});
+        wisepops("pageview");
+
+        $('a').each(function() {
+          var currLink = $(this).attr('href');
+          $(this).attr('href', currLink.split('?')[0] + "-raf");
+        });
+      })
+    });
+  }
+</script>
+
+<!-- Woopra Events -->
+<script>
+  $(document).ready(function () {
+    // Play Video
+    runAfterElementExists(".video-player", function () {
+      $(".video-player").click(function() {
+        woopra.track('Play Video', {
+          video_id: $(this).find("lite-vimeo").attr("videoid"),
+          video_title: $(this).siblings(".video-headline").find("p").text(),
+          video_order: $(this).parents(".video-block-item-overlay-col").index() + 1
+        });
+      })
+    })
+
+    runAfterElementExists(".testimonials_iframe", function () {
+      $(".testimonials_iframe").click(function() {
+        woopra.track('Play Video', {
+          video_id: $(this).find("lite-vimeo").attr("videoid"),
+          video_title: $(this).siblings(".testimonial-headline").find("h2").text(),
+        });
+      })
+    })
+
+    // Open FAQ
+    $('.question').click(function() {
+      woopra.track('Open FAQ', {
+        question_display_text: $(this).children("h4").text(),
+        question_order:  $(this).parents("li").index() + 1
+      })
+    });
+  })
+</script>
+
+{% render 'layout.footer.woopra-snippet' %}
+
+<style>
+#wisepops-root {
+  transition: opacity 0.5s;
+}
+</style>
+{% render 'wisepops-generated' %}

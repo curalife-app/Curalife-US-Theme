@@ -115,7 +115,7 @@
  <main role="main">
     {{ content_for_layout }}l
   </main>
-
+{% comment %} 
   <script>
     function runAfterElementExists(jquery_selector, callback) {
       var checker = window.setInterval(function () {
@@ -125,10 +125,10 @@
         }
       }, 200);
     }
-  </script>
+  </script> {% endcomment %}
 
   <!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter. -->
-  <script>
+  {% comment %} <script>
     let urlParameters = new URLSearchParams(window.location.search);
     let productVar = urlParameters.get('prod-var');
 
@@ -138,10 +138,10 @@
       if (currLink) { $(this).attr('href', "/products/curalin-pack-" + productVar) };
     });
     }
-  </script>
+  </script> {% endcomment %}
 
   <!-- RAF -->
-  <script>
+  {% comment %} <script>
     let utmParam = new URLSearchParams(window.location.search).get('utm_campaign');
 
     if (utmParam == 'referral_program') {
@@ -168,10 +168,10 @@
         })
       });
     }
-  </script>
+  </script> {% endcomment %}
 
   <!-- Woopra Events -->
-  <script>
+  {% comment %} <script>
     $(document).ready(function () {
       // Play Video
       runAfterElementExists(".video-player", function () {
@@ -201,15 +201,15 @@
         })
       });
     })
-  </script>
+  </script> {% endcomment %}
 
-  {% render 'layout.footer.woopra-snippet' %}
+  {% comment %} {% render 'layout.footer.woopra-snippet' %} {% endcomment %}
 
-<style>
+{% comment %} <style>
   #wisepops-root {
     transition: opacity 0.5s;
   }
-</style>
-{% render 'wisepops-generated' %}
+</style> {% endcomment %}
+{% comment %} {% render 'wisepops-generated' %} {% endcomment %}
 </body>
 </html>
