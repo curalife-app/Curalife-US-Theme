@@ -13,6 +13,16 @@
 {% render 'layout.head.canonicals-us' %}
 {% render 'layout.head.fonts' %}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="{{ 'libs.js' | asset_url }}"></script>
+
+<!-- Swiper Import -->
+<link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<script src="{{ 'swiper.min.js' | asset_url }}"></script>
+
+
 
 {% if shop.name == "CuraLife" %}
   {% assign meetCuralins = 'lp-aio-client-tested-icon.svg*Clinically tested:with results published in a peer-reviewed journal

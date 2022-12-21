@@ -1,4 +1,26 @@
 {% layout 'theme.aio-first-page' %}
+{% if shop.name == 'CuraLife' %}
+  {% assign store_domain = "curalife.com" %}
+  {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign store_domain = "global.curalife.com" %}
+  {% assign yotpo_script_id = "oMYBvmnASlHzmouicgkepg" %}
+{% endif %}
+{% render 'layout.head.geo-redirect-script' %}
+{% render 'layout.head.redirects-script' %}
+{% render 'layout.head.google-tag-manager' %}
+{% render 'layout.head.meta-tags' %}
+{% render 'layout.head.canonicals-us' %}
+{% render 'layout.head.fonts' %}
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <script src="{{ 'libs.js' | asset_url }}"></script>
+
+    <!-- Swiper Import -->
+    <link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <script src="{{ 'swiper.min.js' | asset_url }}"></script>
 {% render 'lp-aio-first-page-header-challenge' %}
 <div class="page-overflow">
 
