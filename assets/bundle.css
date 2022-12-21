@@ -10876,9 +10876,7 @@ footer .bottom-info .info-wrap .text p {
 }
 
 @media screen and (max-width: 991px) {
-  body {
-    padding-top: 61px;
-  }
+ 
 
   header:before {
     opacity: 1;
