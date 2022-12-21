@@ -106,9 +106,6 @@
                 {% assign original_item_cap = var.metafields.custom.original_item.value.compare_at_price %}
               {% endif %}
 
-              <script>console.log("var.price: {{var.price}}")</script>
-              <script>console.log("original_item_cap: {{original_item_cap}}")</script>
-
               {% if var.title contains "CuraEats" %}
                 {% assign bundle_value = challange_value | plus: curaeats_value %}
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
@@ -119,7 +116,6 @@
               {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
               {% assign original_item_cap_total = original_item_cap | times: var.metafields.my_fields.pack_bottles_quantity %}
               {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
-              <script>console.log("{{bundle_value | times: 100}} + {{original_item_cap_total}}")</script>
 
               <div class="variant-box">
                 <div class="radio-box">
