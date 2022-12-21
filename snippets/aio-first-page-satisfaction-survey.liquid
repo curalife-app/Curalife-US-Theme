@@ -508,7 +508,7 @@ ul {
 
 <script>
 
-{% comment %} const counters = document.querySelectorAll('.satisfaction-survey .success-list ul li .percentage p span');
+const counters = document.querySelectorAll('.satisfaction-survey .success-list ul li .percentage p span');
 const countingSpeed = 6000;
 let animateCounters = true;
 
@@ -535,7 +535,7 @@ window.addEventListener('scroll', (e) => {
             animate();
         });
     }
-}); {% endcomment %}
+});
 
 const get_utm = window.location.search.substring(1);
 if (get_utm) {
