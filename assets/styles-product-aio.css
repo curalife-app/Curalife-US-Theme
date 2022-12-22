@@ -351,14 +351,28 @@
     line-height: 2rem
 }
 
+@media screen and (max-width: 1270px) {
+    .product-template-all-in-one .container {
+        max-width: unset;
+        padding: 0 20px
+    }
 
+   
+}
 
 @media screen and (max-width: 768px) {
    
 
-  
+    .product-template-all-in-one .container {
+        padding: 0 20px !important
+    }
 
-  
+    .product-template-all-in-one .container h2 {
+        font-size: 6vw;
+        text-align: center;
+        max-width: unset;
+        margin-bottom: 10px
+    }
 
     .product-template-all-in-one .main-logo {
         padding: 10px 20px;
