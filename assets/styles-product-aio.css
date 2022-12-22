@@ -34,55 +34,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-.product-template-all-in-one .video-reviews-section .container .video-reviews {
-    overflow: visible;
-    max-width: 70%
-}
-
-.product-template-all-in-one .video-reviews-section .container .video-reviews .swiper-slide .video-review {
-    display: flex;
-    align-items: center
-}
-
-.product-template-all-in-one .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video {
-    width: 40%;
-    margin-left: 10%;
-    height: 500px
-}
-
-.product-template-all-in-one .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video iframe {
-    width: 100% !important;
-    height: 100% !important
-}
-
-.product-template-all-in-one .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote {
-    padding: 50px;
-    width: 50%;
-    font-size: 22px;
-    position: relative
-}
-
-.product-template-all-in-one .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote img {
-    opacity: .1;
-    width: 70px;
-    position: absolute;
-    left: 50px
-}
-
-.product-template-all-in-one .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote .quote-author {
-    font-size: 18px;
-    margin-bottom: 0
-}
-
 .product-template-all-in-one .ingredients-section {
     background-color: #f0f0f0
 }
