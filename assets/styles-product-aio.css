@@ -793,22 +793,7 @@
 
    
 
-    .product-template-all-in-one .reviews-section .slider-nav {
-        display: none
-    }
-
-    .product-template-all-in-one .reviews-section .reviews .review {
-        width: 70%;
-        height: 52vw;
-    }
-
-    .product-template-all-in-one .reviews-section .reviews .review .review-top img {
-        height: 6vw
-    }
-
-    .product-template-all-in-one .reviews-section .reviews .review .review-top .review-content {
-        font-size: 3vw
-    }
+    
 
     .product-template-all-in-one .video-reviews-section {
         background-color: #f0f0f0
