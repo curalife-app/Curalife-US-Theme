@@ -501,83 +501,7 @@
     width: 100%
 }
 
-.product-template-all-in-one .faq-section .container h2 {
-    text-align: start
-}
 
-.product-template-all-in-one .faq-section .container .faq {
-    margin: 1rem auto
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item {
-    border-bottom: 1px solid #d3d3d3
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .question {
-    padding: .7rem 3rem .7rem 0;
-    line-height: 1.25rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-    font-size: 18px
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .question::after {
-    content: "+";
-    font-size: 2rem;
-    position: absolute;
-    right: 1rem
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .question.active::after {
-    content: "−"
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .2s ease-out
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .answer .answer-content {
-    padding: 0 1rem 1rem;
-    line-height: 1.5rem;
-    font-weight: 300
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider {
-    padding: 50px 0
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient {
-    display: flex;
-    align-items: center;
-    max-width: 70%;
-    margin: auto
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient img {
-    margin-left: -10%
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content {
-    margin-left: 50px
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-title {
-    font-size: 40px;
-    font-size: 30px;
-    font-weight: 500;
-    margin-top: 20px;
-    text-transform: uppercase
-}
-
-.product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-description {
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 2rem
-}
 
 @media screen and (max-width: 1270px) {
     .product-template-all-in-one .container {
@@ -874,30 +798,7 @@
         object-position: left
     }
 
-    .product-template-all-in-one .faq-section .container .faq .faq-item .question {
-        font-size: 14px
-    }
-
-    .product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider {
-        padding: 0
-    }
-
-    .product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient {
-        flex-direction: column;
-        max-width: 80%
-    }
-
-    .product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content {
-        margin-left: unset
-    }
-
-    .product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-title {
-        margin: 0
-    }
-
-    .product-template-all-in-one .faq-section .container .faq .faq-item .answer .ingredients-main-slider .swiper-nav {
-        top: 120px
-    }
+ 
 }
 
 @media screen and (max-width: 330px) {
