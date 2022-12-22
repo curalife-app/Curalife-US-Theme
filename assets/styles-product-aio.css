@@ -394,7 +394,9 @@
 }
 
 @media screen and (max-width: 768px) {
-   
+    .product-template-all-in-one section {
+        padding: 8vw 0
+    }
 
     .product-template-all-in-one .container {
         padding: 0 20px !important
