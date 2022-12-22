@@ -58,6 +58,48 @@
   </div>
 </section>
 
+<style>
+  .video-reviews-section .container .video-reviews {
+      overflow: visible;
+      max-width: 70%
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review {
+      display: flex;
+      align-items: center
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video {
+      width: 40%;
+      margin-left: 10%;
+      height: 500px
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video iframe {
+      width: 100% !important;
+      height: 100% !important
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote {
+      padding: 50px;
+      width: 50%;
+      font-size: 22px;
+      position: relative
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote img {
+      opacity: .1;
+      width: 70px;
+      position: absolute;
+      left: 50px
+  }
+
+   .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote .quote-author {
+      font-size: 18px;
+      margin-bottom: 0
+  }
+</style>
+
 <script>
   videoReviewsSliderAllInOne = new Swiper('.video-reviews-section .swiper', {
       slidesPerView: 'auto',
