@@ -27,44 +27,10 @@
     margin: 0 0 30px
 }
 
-.product-template-all-in-one .main-logo {
-    position: absolute;
-    padding: 20px 30px;
-    z-index: 10
-}
 
 
 
 
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-
-
-   
-
-
-    .product-template-all-in-one .main-logo {
-        padding: 10px 20px;
-        width: 150px
-    }
-
- 
-   
-
-  
-
-    
-
-    
-
- 
- 
-}
 
 @media screen and (max-width: 330px) {
     .cta-section .variant-infos {
