@@ -37,16 +37,19 @@
       {% assign curaeats_exist = true %}
     {% endif %}
   {% endfor %}
-  
-  {% unless shop.name == "CuraLife Global" %}
+
+ 
   {% assign customer_order_count = 0 %}
   {% for order in customer.orders %}
     {% assign customer_order_count = customer_order_count | plus: 1 %}
   {% endfor %} 
+  {% if shop.name == "CuraLife" %}
   {% if customer_order_count <= 1 %}
     {% assign onboarding_exist = true %}
   {% endif %}
-{% endunless %}
+  {% else  %}
+  {% assign onboarding_exist = false %}
+{% endif %}
 
 
 
