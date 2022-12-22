@@ -46,6 +46,8 @@
   {% if customer_order_count <= 1 %}
     {% assign onboarding_exist = true %}
   {% endif %}
+  {% elsif shop.name == "CuraLife Global" %}
+    {% assign onboarding_exist = false %}
 {% endif %}
 
 
