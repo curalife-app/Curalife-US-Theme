@@ -338,24 +338,7 @@
     margin-right: 10px
 }
 
-.product-template-all-in-one .how-to-section .container {
-    text-align: center
-}
 
-.product-template-all-in-one .how-to-section .container h2 {
-    text-align: left;
-    max-width: 450px
-}
-
-.product-template-all-in-one .how-to-section .container img {
-    max-width: 1000px;
-    margin: -100px auto auto;
-    width: 100%
-}
-
-.product-template-all-in-one .how-to-section .container img.mobile-version {
-    display: none
-}
 
 
 
@@ -779,16 +762,6 @@
     .product-template-all-in-one .cta-section .badges-container .trust-badges .trust-badge img {
         width: 40px;
         height: 5vw
-    }
-
-    .product-template-all-in-one .how-to-section .container img {
-        margin-top: unset;
-        display: none
-    }
-
-    .product-template-all-in-one .how-to-section .container img.mobile-version {
-        display: block;
-        width: 100%
     }
 
    
