@@ -1,5 +1,12 @@
+.product-template-all-in-one {
+    background: #f7f7f7
+}
 
-
+.product-template-all-in-one .swiper-button-prev,
+.product-template-all-in-one .swiper-button-next {
+    color: gray;
+    transition: opacity .5s
+}
 
 .product-template-all-in-one .swiper-button-prev.disabled,
 .product-template-all-in-one .swiper-button-next.disabled {
@@ -30,55 +37,35 @@
     z-index: 10
 }
 
-.product-template-all-in-one #back-to-top-btn {
-    background-color: #c78263;
-    color: #fff;
-    font-size: 30px;
-    padding: 10px 20px;
-    font-weight: bold;
-    height: 50px;
-    text-align: center;
-    border-radius: 30px;
-    position: fixed;
-    bottom: 30px;
-    left: 100px;
-    transition: background-color .3s, opacity .5s, visibility .5s;
-    box-shadow: 0 4.5px 4.5px rgba(0, 0, 0, .2);
-    opacity: 0;
-    visibility: hidden;
-    z-index: 99
+
+
+
+
+.product-template-all-in-one .cta-section .product-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-column-gap: 0;
+    grid-row-gap: 0
 }
 
-.product-template-all-in-one #back-to-top-btn:hover {
-    cursor: pointer;
-    background-color: #db9d30
+
+.product-template-all-in-one .how-to-section .container {
+    text-align: center
 }
 
-.product-template-all-in-one #back-to-top-btn:active {
-    background-color: #8e4b2b
+.product-template-all-in-one .how-to-section .container h2 {
+    text-align: left;
+    max-width: 450px
 }
 
-.product-template-all-in-one #back-to-top-btn.show {
-    opacity: 1;
-    visibility: visible
+.product-template-all-in-one .how-to-section .container img {
+    max-width: 1000px;
+    margin: -100px auto auto;
+    width: 100%
 }
 
-.product-template-all-in-one .cta-section .badges-container {
-    border-bottom: 1px solid #d3d3d3;
-    padding-bottom: 30px
-}
-
-.product-template-all-in-one .cta-section .badges-container .trust-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    opacity: .5;
-    font-size: 18px
-}
-
-.product-template-all-in-one .cta-section .badges-container .trust-badges .trust-badge img {
-    margin-right: 10px
+.product-template-all-in-one .how-to-section .container img.mobile-version {
+    display: none
 }
 
 .product-template-all-in-one .reviews-section {
@@ -260,8 +247,67 @@
     line-height: 2rem
 }
 
+.product-template-all-in-one .badges-section .container .badges {
+    display: flex;
+    justify-content: center
+}
 
+.product-template-all-in-one .badges-section .container .badges .badge-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px
+}
 
+.product-template-all-in-one .badges-section .container .badges .badge-wrapper .badge {
+    border-radius: 50%;
+    border: 1px solid #000;
+    padding: 10px
+}
+
+.product-template-all-in-one .badges-section .container .badges .badge-wrapper .badge img {
+    height: 50px;
+    width: 50px;
+    max-width: 20vw;
+    max-height: 20vw;
+    -o-object-fit: contain;
+    object-fit: contain
+}
+
+.product-template-all-in-one .return-policy-section {
+    background-color: #e7f2f1
+}
+
+.product-template-all-in-one .return-policy-section .return-policy {
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+    align-items: center
+}
+
+.product-template-all-in-one .return-policy-section .return-policy img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: contain;
+    object-fit: contain
+}
+
+.product-template-all-in-one .return-policy-section .return-policy .return-policy-content {
+    margin-left: 30px
+}
+
+.product-template-all-in-one .return-policy-section .return-policy .return-policy-content .title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px
+}
+
+.product-template-all-in-one .return-policy-section .return-policy .return-policy-content .description {
+    margin: 0;
+    font-size: 16px
+}
 
 .product-template-all-in-one .free-shipping-section img {
     width: 100%
@@ -297,7 +343,7 @@
 }
 
 .product-template-all-in-one .faq-section .container .faq .faq-item .question.active::after {
-    content: "+"
+    content: "−"
 }
 
 .product-template-all-in-one .faq-section .container .faq .faq-item .answer {
@@ -396,7 +442,7 @@
     }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
     .product-template-all-in-one section {
         padding: 8vw 0
     }
@@ -417,15 +463,101 @@
         width: 150px
     }
 
-    .product-template-all-in-one #back-to-top-btn {
-        width: 100%;
-        border-radius: 0;
-        bottom: 0;
-        left: 0;
-        box-shadow: 0 -2px 15px rgba(0, 0, 0, .25)
+ 
+
+    .product-template-all-in-one .cta-section {
+        padding-top: 70px;
+        padding-bottom: 0
     }
 
-    
+    .product-template-all-in-one .cta-section .product-container {
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: unset;
+        padding: 0 20px 20px
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails {
+        grid-area: unset;
+        grid-row: 2
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider {
+        margin-left: unset
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider {
+        width: 95%;
+        margin: auto
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
+        margin-left: unset;
+        left: 0;
+        top: 10%
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper {
+        margin-bottom: 30px;
+        align-items: center
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe {
+        height: 45vh
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe .vp-video-wrapper {
+        border-radius: 10px
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-img::before {
+        padding-bottom: 100%
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
+        display: block
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-prev {
+        left: 0
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-next {
+        right: 0
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet {
+        background: #c78263;
+        opacity: .4;
+        width: 13px;
+        height: 13px
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background: #c78263;
+        opacity: 1
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
+        display: none
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-info {
+        grid-area: unset;
+        grid-row: 1;
+        text-align: center;
+        padding: 0 20px;
+        max-width: unset
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-actions {
+        grid-area: unset;
+        grid-row: 3;
+        max-width: unset
+    }
+
+    .product-template-all-in-one .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
+        border: 1px solid #ffb22d
+    }
 
     .product-template-all-in-one .cta-section .badges-container .trust-badges {
         gap: unset;
@@ -440,6 +572,16 @@
     .product-template-all-in-one .cta-section .badges-container .trust-badges .trust-badge img {
         width: 40px;
         height: 5vw
+    }
+
+    .product-template-all-in-one .how-to-section .container img {
+        margin-top: unset;
+        display: none
+    }
+
+    .product-template-all-in-one .how-to-section .container img.mobile-version {
+        display: block;
+        width: 100%
     }
 
     .product-template-all-in-one .reviews-section .white-fade {
@@ -460,7 +602,7 @@
     }
 
     .product-template-all-in-one .reviews-section .reviews .review .review-top .review-content {
-        font-size: 4vw
+        font-size: 3vw
     }
 
     .product-template-all-in-one .video-reviews-section {
@@ -536,8 +678,34 @@
         top: 100px
     }
 
-   
+    .product-template-all-in-one .badges-section .container .badges {
+        flex-wrap: wrap;
+        gap: 5%
+    }
 
+    .product-template-all-in-one .badges-section .container .badges .badge-wrapper {
+        width: 30%;
+        padding: 2vw;
+        min-width: unset;
+        text-align: center
+    }
+
+    .product-template-all-in-one .badges-section .container .badges .badge-wrapper .badge img {
+        height: 10vw;
+        width: 10vw
+    }
+
+    .product-template-all-in-one .return-policy-section .return-policy img {
+        width: 23vw
+    }
+
+    .product-template-all-in-one .return-policy-section .return-policy .return-policy-content {
+        margin-left: 6vw
+    }
+
+    .product-template-all-in-one .return-policy-section .return-policy .return-policy-content .title {
+        font-size: 24px
+    }
 
     .product-template-all-in-one .free-shipping-section img {
         height: 9vw;
