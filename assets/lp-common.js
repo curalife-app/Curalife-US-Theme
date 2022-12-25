@@ -44,34 +44,34 @@
 //     },
 // });
 
-const doctorsSlider = new Swiper('.doctors-list .list-slider .swiper', {
-    slidesPerView: 1,
-    spaceBetween: 8,
-    grabCursor: true,
-    loop: false,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        disabledClass: 'disabled'
-    },
-    pagination: {
-        el: '.slider-bullets',
-        bulletClass: 'bullet',
-        bulletActiveClass: 'active',
-        type: 'bullets',
-        clickable: true
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1.8,
-            spaceBetween: 8,
-        },
-        641: {
-            slidesPerView: 'auto',
-            spaceBetween: 17,
-        }
-    }
-});
+// const doctorsSlider = new Swiper('.doctors-list .list-slider .swiper', {
+//     slidesPerView: 1,
+//     spaceBetween: 8,
+//     grabCursor: true,
+//     loop: false,
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//         disabledClass: 'disabled'
+//     },
+//     pagination: {
+//         el: '.slider-bullets',
+//         bulletClass: 'bullet',
+//         bulletActiveClass: 'active',
+//         type: 'bullets',
+//         clickable: true
+//     },
+//     breakpoints: {
+//         0: {
+//             slidesPerView: 1.8,
+//             spaceBetween: 8,
+//         },
+//         641: {
+//             slidesPerView: 'auto',
+//             spaceBetween: 17,
+//         }
+//     }
+// });
 
 const seenSlider = new Swiper('.seen-on .seen-slider .swiper', {
     slidesPerView: 1,
