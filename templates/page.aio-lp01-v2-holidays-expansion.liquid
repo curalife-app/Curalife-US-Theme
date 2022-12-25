@@ -1,5 +1,14 @@
 {% layout 'theme.aio-lp01' %}
 
+
+{% render 'layout.head.geo-redirect-script' %}
+{% render 'layout.head.redirects-script' %}
+{% render 'layout.head.google-tag-manager'%}
+{% render 'layout.head.meta-tags' %}
+{% render 'layout.head.canonicals-us' %}
+{% render 'layout.head.fonts' %}
+
+
 {% if shop.name == "CuraLife" %}
   {% assign curaeats_value = 29 %}
   {% assign challange_value = 99 %}
