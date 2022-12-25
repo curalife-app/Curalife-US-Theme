@@ -11,7 +11,7 @@
   {% render 'layout.head.canonicals-us' %}
   {% render 'layout.head.fonts' %} {% endcomment %}
 
- <!-- Stylesheets -->
+ {% comment %} <!-- Stylesheets -->
  <link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
  <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -22,7 +22,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
 
-  <script src="{{ 'libs.js' | asset_url }}"></script>
+  <script src="{{ 'libs.js' | asset_url }}"></script> {% endcomment %}
 
   {{content_for_header}}
 </head>

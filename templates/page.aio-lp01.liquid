@@ -7,6 +7,19 @@
 {% render 'layout.head.canonicals-us' %}
 {% render 'layout.head.fonts' %}
 
+<!-- Stylesheets -->
+<link rel="preload" href="{{ 'common.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- Swiper Import -->
+<link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<script src="{{ 'swiper.min.js' | asset_url}}"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
+
+ <script src="{{ 'libs.js' | asset_url }}"></script>
+
 <div class="page-overflow">
     {% section 'lps-aio-lp01-header' %}
     {% section 'lps-aio-lp01-hero' %}
