@@ -27,22 +27,22 @@
 //     }
 // });
 
-const ingredientsSlider = new Swiper('.ingredients-slider .swiper', {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    // grabCursor: true,
-    loop: false,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        disabledClass: 'disabled'
-    },
-    pagination: {
-        el: '.ingredients-bullets',
-        type: 'bullets',
-        clickable: true
-    },
-});
+// const ingredientsSlider = new Swiper('.ingredients-slider .swiper', {
+//     slidesPerView: 1,
+//     spaceBetween: 15,
+//     // grabCursor: true,
+//     loop: false,
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//         disabledClass: 'disabled'
+//     },
+//     pagination: {
+//         el: '.ingredients-bullets',
+//         type: 'bullets',
+//         clickable: true
+//     },
+// });
 
 const doctorsSlider = new Swiper('.doctors-list .list-slider .swiper', {
     slidesPerView: 1,
