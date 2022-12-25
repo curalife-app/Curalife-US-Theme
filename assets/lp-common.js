@@ -73,52 +73,52 @@
 //     }
 // });
 
-const seenSlider = new Swiper('.seen-on .seen-slider .swiper', {
-    slidesPerView: 1,
-    spaceBetween: 8,
-    grabCursor: true,
-    loop: false,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        disabledClass: 'disabled'
-    },
-    breakpoints: {
-        0: {
-            spaceBetween: 35,
-            slidesPerView: 1.7,
-        },
-        641: {
-            slidesPerView: 2,
-        },
-        900: {
-            slidesPerView: 3,
-            spaceBetween: 15,
-        },
-        1271: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-        },
-        1391: {
-            slidesPerView: 4,
-            spaceBetween: 50,
-        },
-    }
-});
+// const seenSlider = new Swiper('.seen-on .seen-slider .swiper', {
+//     slidesPerView: 1,
+//     spaceBetween: 8,
+//     grabCursor: true,
+//     loop: false,
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//         disabledClass: 'disabled'
+//     },
+//     breakpoints: {
+//         0: {
+//             spaceBetween: 35,
+//             slidesPerView: 1.7,
+//         },
+//         641: {
+//             slidesPerView: 2,
+//         },
+//         900: {
+//             slidesPerView: 3,
+//             spaceBetween: 15,
+//         },
+//         1271: {
+//             slidesPerView: 4,
+//             spaceBetween: 30,
+//         },
+//         1391: {
+//             slidesPerView: 4,
+//             spaceBetween: 50,
+//         },
+//     }
+// });
 
-const dqSlider = new Swiper('.doctors-quote .dq-slider .swiper', {
-    slidesPerView: 1,
-    spaceBetween: 8,
-    grabCursor: true,
-    loop: false,
-    pagination: {
-        el: '.slider-bullets',
-        bulletClass: 'bullet',
-        bulletActiveClass: 'active',
-        type: 'bullets',
-        clickable: true
-    }
-});
+// const dqSlider = new Swiper('.doctors-quote .dq-slider .swiper', {
+//     slidesPerView: 1,
+//     spaceBetween: 8,
+//     grabCursor: true,
+//     loop: false,
+//     pagination: {
+//         el: '.slider-bullets',
+//         bulletClass: 'bullet',
+//         bulletActiveClass: 'active',
+//         type: 'bullets',
+//         clickable: true
+//     }
+// });
 // globals
 let canvas,
     ctx,
