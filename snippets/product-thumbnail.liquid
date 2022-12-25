@@ -10,7 +10,7 @@
       <p>{{ product.metafields.my_fields.subtitle }}</p>
     </div>
 
-    <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
+    <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" width="512" height="475" alt="" loading="lazy">
   </div>
 
   <img class="snow-bottom" src="{{ 'hs-bottom-snow-small.png' | asset_url }}" alt="snow season" loading="lazy">
