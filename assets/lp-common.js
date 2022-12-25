@@ -1,31 +1,31 @@
-const reviewsSlider = new Swiper('.real-reviews .swiper', {
-    slidesPerView: 2,
-    spaceBetween: 0,
-    grabCursor: true,
-    loop: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        disabledClass: 'disabled'
-    },
-    autoplay: {
-        delay: 3000,
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1,
-        },
-        630: {
-            slidesPerView: 2,
-        },
-        900: {
-            slidesPerView: 3,
-        },
-        1100: {
-            slidesPerView: 4,
-        },
-    }
-});
+// const reviewsSlider = new Swiper('.real-reviews .swiper', {
+//     slidesPerView: 2,
+//     spaceBetween: 0,
+//     grabCursor: true,
+//     loop: true,
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//         disabledClass: 'disabled'
+//     },
+//     autoplay: {
+//         delay: 3000,
+//     },
+//     breakpoints: {
+//         0: {
+//             slidesPerView: 1,
+//         },
+//         630: {
+//             slidesPerView: 2,
+//         },
+//         900: {
+//             slidesPerView: 3,
+//         },
+//         1100: {
+//             slidesPerView: 4,
+//         },
+//     }
+// });
 
 const ingredientsSlider = new Swiper('.ingredients-slider .swiper', {
     slidesPerView: 1,
