@@ -12,7 +12,7 @@
           {% endfor %}
         </div>
       </div>
-      <div class="ingredients-main-slider swiper">
+      {% comment %} <div class="ingredients-main-slider swiper">
         <div class="swiper-button-prev swiper-nav"></div>
         <div class="ingredients swiper-wrapper">
           <div class="swiper-slide">
@@ -98,7 +98,8 @@
           </div>
         </div>
         <div class="swiper-button-next swiper-nav"></div>
-      </div>
+      </div> {% endcomment %}
+      {% render 'product-all-in-one-ingredients-section' %}
     </div>
   </div>
 </section>
