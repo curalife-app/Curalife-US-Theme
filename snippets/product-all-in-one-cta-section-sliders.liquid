@@ -1572,7 +1572,11 @@
 
   let isFirstClick = true;
   $( document ).ready(function() {
-    saveTextChange();
+    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    console.log("saveText initial: " + saveText)
+     $('#save').animate({'opacity': 0}, 800, function () {
+       $(this).text(saveText);
+     }).animate({'opacity': 1}, 800); 
   });
 
 
@@ -1612,7 +1616,12 @@
 
     // Save Text Change
     
-   saveTextChange();
+    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    console.log("saveText: "+ saveText)
+    $('#save').animate({'opacity': 0}, 800, function () {
+      $(this).text(saveText);
+    }).animate({'opacity': 1}, 800);
+  }); 
 </script>
 
 <script>
