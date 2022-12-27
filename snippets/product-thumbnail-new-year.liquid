@@ -6,13 +6,15 @@
 
   <div class="product-image-wrapper">
     {% if bgVector %}
-      <img class="product-image-bg" src="{{ 'product-thumbnail-bg-vector.png' | asset_url }}" width="512" height="475" alt="" loading="lazy">
+      <img class="bg-vector" src="{{ 'product-thumbnail-bg-vector.png' | asset_url }}" width="512" height="475" alt="" loading="lazy">
     {% endif %}
 
-    <div class="thumbnail-notice" {% unless product.metafields.my_fields.subtitle %}style="opacity: 0;"{% endunless %}>
-      <p>FREE!</p>
-      <p>{{ product.metafields.my_fields.subtitle }}</p>
-    </div>
+    {% if thumbnailNotice %}
+      <div class="thumbnail-notice" {% unless product.metafields.my_fields.subtitle %}style="opacity: 0;"{% endunless %}>
+        <p>FREE!</p>
+        <p>{{ product.metafields.my_fields.subtitle }}</p>
+      </div>
+    {% endif %}
 
     <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" width="512" height="475" alt="" loading="lazy">
   </div>
@@ -44,6 +46,12 @@
   .product-thumbnail .product-image-wrapper {
     position: relative;
     z-index: 1;
+  }
+
+  .product-thumbnail .bg-vector {
+    position: absolute;
+    top: 80px;
+    z-index: -1;
   }
 
   .product-thumbnail img.product-image {
