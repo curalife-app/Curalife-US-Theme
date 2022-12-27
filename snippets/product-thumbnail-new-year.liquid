@@ -1,6 +1,8 @@
 {% if request.path contains '/collection' %}<a href="{{ product.url }}">{% endif %}
 <div class="product-thumbnail picture">
-  <div class="save-badge">SAVE <span class="rounded">{{ savePrice }}</span></div>
+  {% if savePrice %}
+    <div class="save-badge">SAVE <span class="rounded">{{ savePrice }}</span></div>
+  {% endif %}
 
   <div class="product-image-wrapper">
     {% if bgVector %}
