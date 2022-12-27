@@ -14,7 +14,7 @@
         <div class="menu-scroll">
           <ul>
             {% for link in linklists[section.settings.main_linklist].links %}
-              {% if link.links == blank  %}
+              {% if link.links == blank %}
                 <li><a class="notranslate" href="{{ link.url }}">{{ link.title }}</a></li>
               {% else %}
                 <li class="dropdown"><a href="{{ link.url }}">{{ link.title }}</a>
