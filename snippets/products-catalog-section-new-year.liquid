@@ -68,8 +68,7 @@
         </h3>
         <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
 
-        {% if forloop.index > 1 %}{% assign alreadyRun = true %}{% else %}{% assign alreadyRun = false %}{% endif %}
-        {% render 'product-thumbnail-new-year', product: product, alreadyRun: alreadyRun, isSnowOnHover: true, bgVector: true %}
+        <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" width="512" height="475" alt="" loading="lazy">
 
         <div class="info">
           <div class="main">
