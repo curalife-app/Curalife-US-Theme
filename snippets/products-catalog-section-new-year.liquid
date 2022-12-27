@@ -60,21 +60,20 @@
 
       <div class="product-card" id="product-card-section">
         <div class="wrap">
+          <h3>
+            {% if request.path contains '/collection' %}
+              <a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a>
+            {% else %}
+              {% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}
+            {% endif %}
+          </h3>
+          <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+
           {% if forloop.index > 1 %}{% assign alreadyRun = true %}{% else %}{% assign alreadyRun = false %}{% endif %}
-          {% render 'product-thumbnail', product: product, savePrice: save_price, alreadyRun: alreadyRun, isSnowOnHover: true %}
+          {% render 'product-thumbnail-new-year', product: product, alreadyRun: alreadyRun, isSnowOnHover: true, bgVector: true %}
 
           <div class="info">
             <div class="main">
-              <div class="name">
-                <h3>
-                {% if request.path contains '/collection' %}
-                  <a href="{{ product.url }}">{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</a>
-                {% else %}
-                  {% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}
-                {% endif %}
-                </h3>
-              </div>
-              <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
               <div class="price">
                 {% if quantity > 1 %}
                   <p id="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
@@ -220,7 +219,7 @@
     color: #222222;
   }
 
-  #product-catalog-section .product-card .info .name h3 a {
+  #product-catalog-section .product-card h3 a {
     color: inherit;
     transition: color var(--transition);
   }
@@ -296,7 +295,7 @@
       padding: 10px;
     }
 
-    #product-catalog-section .product-card .info .name h3 {
+    #product-catalog-section .product-card h3 {
       font-size: 7vw;
     }
 
