@@ -121,7 +121,14 @@
     flex-direction: column;
   }
 
-  #product-catalog-section .product-card img.product-image {
+  #product-catalog-section .product-card {
+    width: 33.3333333333%;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  #product-catalog-section .product-card.recommended {
     width: 90%;
     object-fit: contain;
     margin: auto;
@@ -216,10 +223,14 @@
     font-family: 'Poppins';
     margin: 0;
     font-weight: 900;
-    font-size: 24px;
+    font-size: 32px;
     line-height: 1.08;
     text-align: center;
     color: #222222;
+  }
+
+  #product-catalog-section .product-card.recommended .info .name h3 {
+    font-size: 35px;
   }
 
   #product-catalog-section .product-card h3 a {
