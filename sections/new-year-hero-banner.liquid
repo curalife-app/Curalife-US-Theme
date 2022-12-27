@@ -1,9 +1,9 @@
-<div class="homepage-banner">
+<div class="hero-banner">
   <div class="container no-mobile-padding">
       <div class="bg">
           <img class="bg-vector" src="{{ 'homepage-banner-bg-vector.svg' | asset_url }}" width="592" height="570" alt="">
           <img class="bg-img" src="{{ 'homepage-banner-bg.png' | asset_url }}" width="1313" height="566" alt="">
-          <img class="bg-img-mobile" src="{{ 'homepage-banner-bg-mobile.png' | asset_url }}" width="375" height="626" alt="">
+          <img class="bg-img-mobile" src="{{ 'hero-banner-bg-mobile.png' | asset_url }}" width="375" height="626" alt="">
       </div>
       <div class="content">
           <h1>Effective.<br>Safe.<br>Natural.</h1>
@@ -25,22 +25,22 @@
   </div>
 </div>
 <style>
-.homepage-banner {
+.hero-banner {
   background-color: #A8BFCB;
   position: relative;
 } 
 
-.homepage-banner .bg .bg-vector {
+.hero-banner .bg .bg-vector {
   position: absolute;
   z-index: 2;
   max-height: 100%;
 }
 
-.homepage-banner .bg .bg-img-mobile {
+.hero-banner .bg .bg-img-mobile {
   display: none;
 }
 
-.homepage-banner .bg .bg-img {
+.hero-banner .bg .bg-img {
   position: absolute;
   z-index: 0;
   right: 0;
@@ -49,7 +49,7 @@
   object-fit: cover;
 }
 
-.homepage-banner .content {
+.hero-banner .content {
   position: relative;
   z-index: 10;
   color: white;
@@ -60,23 +60,23 @@
   padding: 10px 15px;
 }
 
-.homepage-banner .content h1 {
+.hero-banner .content h1 {
   font-size: 50px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-.homepage-banner .content p {
+.hero-banner .content p {
   font-size: 30px;
   max-width: 450px;
   font-weight: 300;
 }
 
-.homepage-banner .content .cta-button-wrapper {
+.hero-banner .content .cta-button-wrapper {
   position: relative;
 }
 
-.homepage-banner .content .cta-button-wrapper .bottle-img {
+.hero-banner .content .cta-button-wrapper .bottle-img {
   width: 200px;
   margin-left: -50px;
   z-index: 1;
@@ -84,7 +84,7 @@
   pointer-events: none;
 }
 
-.homepage-banner .content .cta-button-wrapper .cta-btn {
+.hero-banner .content .cta-button-wrapper .cta-btn {
   text-transform: uppercase;
   background: #404733 ;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -97,11 +97,11 @@
   transition: background 0.3s ease-in-out;
 }
 
-.homepage-banner .content .cta-button-wrapper .cta-btn:hover {
+.hero-banner .content .cta-button-wrapper .cta-btn:hover {
   background: #4B643D;
 }
 
-.homepage-banner .content .cta-button-wrapper .free-shipping {
+.hero-banner .content .cta-button-wrapper .free-shipping {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -110,58 +110,58 @@
   top: 150px;
 }
 
-{% comment %} .homepage-banner .content .cta-button-wrapper .free-shipping .free-shipping-icon {
+{% comment %} .hero-banner .content .cta-button-wrapper .free-shipping .free-shipping-icon {
   height: 25px;
 } {% endcomment %}
 
-.homepage-banner .content .cta-button-wrapper .free-shipping p {
+.hero-banner .content .cta-button-wrapper .free-shipping p {
   font-weight: bold;
   font-size: 20px;
   margin: 0;
 }
 
-.homepage-banner .header-mobile-bottom {
+.hero-banner .header-mobile-bottom {
   display: none;
 }
 
 @media screen and (max-width:1270px) {
-  .homepage-banner .bg .bg-vector {
+  .hero-banner .bg .bg-vector {
       margin-left: -150px;
   }
 
-  .homepage-banner .bg .bg-img {
+  .hero-banner .bg .bg-img {
       object-position: left;
   }
 }
 
 @media screen and (max-width:760px) {
-  .homepage-banner .content .cta-button-wrapper .cta-btn {
+  .hero-banner .content .cta-button-wrapper .cta-btn {
       margin-left: 0;
       font-size: 8vw;
   }
 
-  .homepage-banner .bg .bg-vector {
+  .hero-banner .bg .bg-vector {
   display: none;
 }
 
-  .homepage-banner .bg .bg-img-mobile {
+  .hero-banner .bg .bg-img-mobile {
   display: block;
   position: absolute;
   width: 100%;
 }
 
-.homepage-banner .bg .bg-img {
+.hero-banner .bg .bg-img {
   display: none;
 }
 
-.homepage-banner .header-mobile-bottom {
+.hero-banner .header-mobile-bottom {
   display: block;
   position: absolute;
   bottom: 2vw;
   width: 100%;
 }
 
-.homepage-banner .header-mobile-bottom .free-shipping {
+.hero-banner .header-mobile-bottom .free-shipping {
   color: white;
   display: flex;
   gap: 10px;
@@ -171,33 +171,33 @@
   font-weight: bold;
 }
 
-.homepage-banner .content .cta-button-wrapper .free-shipping {
+.hero-banner .content .cta-button-wrapper .free-shipping {
   display: none;
 }
 
-{% comment %} .homepage-banner .header-mobile-bottom .free-shipping .free-shipping-icon {
+{% comment %} .hero-banner .header-mobile-bottom .free-shipping .free-shipping-icon {
   height: 5vw;
 } {% endcomment %}
 
-  .homepage-banner {
+  .hero-banner {
   height: 180vw;
 }
 
-.homepage-banner .content .cta-button-wrapper .bottle-img {
+.hero-banner .content .cta-button-wrapper .bottle-img {
   display: none;
 }
 
-.homepage-banner .content h1 {
+.hero-banner .content h1 {
   font-size: 9vw;
   margin: 0;
 }
 
-.homepage-banner .content p {
+.hero-banner .content p {
   font-size: 5vw;
   margin: 4vw 0;
 }
 
-.homepage-banner .content .cta-button-wrapper button {
+.hero-banner .content .cta-button-wrapper button {
   margin-left: 0;
   font-size: 7vw;
 }
