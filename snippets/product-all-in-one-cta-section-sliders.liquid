@@ -1561,7 +1561,14 @@
     $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
   });
 
- 
+  function saveTextChange(){
+    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+      console.log("saveText: "+ saveText)
+      $('#save').animate({'opacity': 0}, 800, function () {
+        $(this).text(saveText);
+      }).animate({'opacity': 1}, 800);
+    }); 
+  }
 
   let isFirstClick = true;
   $( document ).ready(function() {
@@ -1609,12 +1616,7 @@
 
     // Save Text Change
     
-    let saveText = "You Save " + "{{ currency_symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
-    console.log("saveText: "+ saveText)
-    $('#save').animate({'opacity': 0}, 800, function () {
-      $(this).text(saveText);
-    }).animate({'opacity': 1}, 800);
-  }); 
+  saveTextChange();
 </script>
 
 <script>
