@@ -8,12 +8,9 @@
     <div class="holiday-text">Natural Blood Sugar Support Supplement</div>
     <a class="main-btn" id='main-cta-btn' href="/collections/all-holidays2022">SHOP NOW</a>
   </div>
-
-  <div class="main-img-wrapper">
-    {% comment %} <img class="shadow-img" src="{{ 'new-year-mask.png' | asset_url }}" width="1039" height="509" alt="mask" loading="lazy"> {% endcomment %}
-     <img class="main-img" src="{{ 'mask-and-bottle.png' | asset_url }}" width="1039" height="528" alt="bottle-hand" loading="lazy"> 
-  </div>
-  </div>
+     <img class="main-img" src="{{ 'mask-and-bottle.png' | asset_url }}" width="1039" height="528" alt="bottle-hand-mask" loading="lazy"> 
+  
+ 
 
 </div>
 
@@ -115,9 +112,7 @@
     gap: 1vw;
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
-    line-height: 1;
-    color: #FFFFFF;
-    max-width: 400px;
+   
   }
 
   .holidays-hero-banner-content .text-button .holiday-title {
@@ -132,26 +127,14 @@
     font-size: clamp(26px, 2vw, 42px);
   }
 
-  .holidays-hero-banner-content .main-img-wrapper {
+
+
+  .holidays-hero-banner-content  .main-img {
     position: absolute;
-    right: 0;
-    z-index: 0;
-    bottom: 0px;
-    height: max(147px, 26vw);
-  }
-
-
-  .holidays-hero-banner-content .main-img-wrapper .main-img {
-    position: absolute;
-    right: 22px;
-    bottom: 0px;
-    object-fit: contain;
-  }
-
-  .holidays-hero-banner-content .main-img-wrapper .shadow-img {
-    position: relative;
+    top: 0;
     
   }
+
 
   @media screen and (max-width: 1008px) {
     .holidays-hero-banner-content .text-button {
@@ -179,14 +162,7 @@
       margin: unset !important;
     }
 
-    .holidays-hero-banner-content .main-img-wrapper {
-      height: unset;
-      right: unset;
-    }
 
-    .holidays-hero-banner-content .main-img-wrapper img {
-      height: unset;
-      right: -42vw !important;
-    }
+   
   }
 </style>
