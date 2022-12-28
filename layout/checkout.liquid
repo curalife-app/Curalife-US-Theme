@@ -227,42 +227,7 @@
               </div>
             </div>
 
-            <div class="reviews">
-              <p class="reviews-title"><span>Customers Reviews</span></p>
-              <div class="review">
-                <div class="review-info">
-                  <img src="{{ 'checkout-review-thumbnail-1.png' | asset_url }}" alt="" loading="lazy">
-                  <div class="review-details">
-                    <p class="reviewer">Jo. R</p>
-                    <div class="review-stars">
-                      <div class="review-stars-selected"></div>
-                    </div>
-                  </div>
-                  <div class="review-date">
-                    <p>01/01/2020</p>
-                  </div>
-                </div>
-                <div class="review-title">Give it a try</div>
-                <p class="review-content">“I now feel that I’m being rewarded for my hard work. I am now a permanent
-                  customer. Just give it a try. You’ll be delighted.”</p>
-              </div>
-              <div class="review">
-                <div class="review-info">
-                  <img src="{{ 'checkout-review-thumbnail-2.png' | asset_url }}" alt="" loading="lazy">
-                  <div class="review-details">
-                    <p class="reviewer">D’Gaye</p>
-                    <div class="review-stars">
-                      <div class="review-stars-selected"></div>
-                    </div>
-                  </div>
-                  <div class="review-date">
-                    <p>01/01/2020</p>
-                  </div>
-                </div>
-                <div class="review-title">Amazing product</div>
-                <p class="review-content">“CuraLin sounded too good to be true. But it works. Oh man, it works.”</p>
-              </div>
-            </div>
+            {% render 'checkout-reviews-widget' %}
           </div>
         {% endif %}
       </aside>
@@ -852,32 +817,6 @@
       .review-content {
         font-size: 17px;
         font-weight: 300;
-      }
-
-      :root {
-        --stars: url('{{ ' checkout-reviews-stars.png' | asset_url }}') right/auto 100% no-repeat;
-      }
-
-      .review-stars {
-        display: block;
-        position: relative;
-        width: 85px;
-        height: 20px;
-        user-select: none;
-        background: var(--stars);
-      }
-
-      .review-stars-selected {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 0%;
-        height: 100%;
-        background: var(--stars);
-        filter: gray;
-        -webkit-filter: grayscale(1);
-        filter: grayscale(1);
       }
 
       .order-summary__sections {
