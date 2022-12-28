@@ -38,7 +38,7 @@
     {% section 'lps-faq' %}
     {% section 'lps-contact-us' %}
     {% section 'lps-sources' %}
-    
+
     <div id="floating-cta">ORDER NOW</div>
 </div>
 
@@ -58,7 +58,7 @@
     cursor:pointer;
     width:100%;
     height:60px;
-    background-color:#C78263;
+    background-color:var(--green);
     z-index: 10;
     display:none;
     color: white;
@@ -77,12 +77,12 @@
 });
 
 if ($(window).width() < 761) {
-    $(window).scroll(function(){ 
-            if ($(this).scrollTop() > 800 && $(this).scrollTop() < ($("#product-section").offset().top - 1000)) { 
-                $('#floating-cta').fadeIn(); 
-            } else { 
-                $('#floating-cta').fadeOut(); 
-            } 
+    $(window).scroll(function(){
+            if ($(this).scrollTop() > 800 && $(this).scrollTop() < ($("#product-section").offset().top - 1000)) {
+                $('#floating-cta').fadeIn();
+            } else {
+                $('#floating-cta').fadeOut();
+            }
         });
 }
 </script>
