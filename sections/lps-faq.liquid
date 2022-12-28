@@ -219,7 +219,7 @@
     top: 150px;
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width:768px) {
     .faq-section .container .faq .faq-item .question {
     font-size: 14px;
     }
@@ -248,9 +248,9 @@
 
 accordionItemHeaders.forEach(accordionItemHeader => {
   accordionItemHeader.addEventListener("click", event => {
-    
+
     // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-    
+
     // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
     // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
     //   currentlyActiveAccordionItemHeader.classList.toggle("active");
@@ -265,7 +265,7 @@ accordionItemHeaders.forEach(accordionItemHeader => {
     else {
       accordionItemBody.style.maxHeight = 0;
     }
-    
+
   });
 });
 

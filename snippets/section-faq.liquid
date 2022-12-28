@@ -34,7 +34,7 @@
 
 <style>
 
-    
+
     *,
     *:before,
     *:after {
@@ -133,7 +133,7 @@
     }
 
 
- 
+
     .faq-section {
         font-family: "Poppins", sans-serif;
     }
@@ -153,10 +153,10 @@
             font-size: 1.4rem;
         }
 
-        @media screen and (max-width:760px) {
+        @media screen and (max-width:768px) {
             .faq-section .titles {
                 flex-direction: column;
-            } 
+            }
         }
     {% endif %}
 
@@ -166,7 +166,7 @@
             font-weight: bold;
         }
 
-        @media screen and (max-width:760px) {
+        @media screen and (max-width:768px) {
             .faq-section .titles h2 {
                 margin-bottom: unset;
             }
@@ -254,7 +254,7 @@
     top: 150px;
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width:768px) {
      .faq-section .container .faq .faq-item .question {
         font-size: 14px
     }
@@ -307,7 +307,7 @@
 
 accordionItemHeaders.forEach(accordionItemHeader => {
   accordionItemHeader.addEventListener("click", event => {
-    
+
     {% if isAllowOneOpen %}
         const currentlyActiveAccordionItemHeader = document.querySelector(".question.active");
         if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
@@ -324,7 +324,7 @@ accordionItemHeaders.forEach(accordionItemHeader => {
     else {
       accordionItemBody.style.maxHeight = 0;
     }
-    
+
   });
 });
 
