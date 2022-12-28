@@ -15,32 +15,30 @@
                         |new-year-group-6.png*Promotes healthy weight loss
                         ' | split: '|' %}
                         <ul>
-                           
-                            
-                               
+
+
+
                            {% for cura_power in cura_powers %}
                                <li class="advantage-content">
-                                  <div class="icon-wrap">
-                                      <img src="{{ cura_power | split: '*' | first | asset_url }}" width="128" height="112" alt="icon-wrap" loading="lazy">
-                                   </div>
+                                <img src="{{ cura_power | split: '*' | first | asset_url }}" width="128" height="112" alt="icon-wrap" loading="lazy">
                                  <div class="name">
                                    <p>{{ cura_power | split: '*' | last }}</p>
                                   </div>
-                                 </li>    
-                           {% endfor %}                     
+                                 </li>
+                           {% endfor %}
                          </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="story-section">
         <div class="story-data">
             <div class="container">
                 <div class="mini-wrap">
                     <div class="sub-title">
-                        <h2>{{section.settings.wht_titl}}</h2>
+                        <h2>{{ section.settings.wht_titl }}</h2>
                     </div>
 
                     {% if section.settings.wht_desc != blank %}
@@ -69,8 +67,8 @@
     "name": "CuraLin Powerfully Helps",
         "settings": [
             {
-                "type": "header", 
-                "content": "CuraLin Powerfully Section Start" 
+                "type": "header",
+                "content": "CuraLin Powerfully Section Start"
             },
             {
                 "type": "text",
@@ -79,8 +77,8 @@
                 "default": "Enter title"
             },
             {
-                "type": "header", 
-                "content": "What is CuraLin Section Start" 
+                "type": "header",
+                "content": "What is CuraLin Section Start"
             },
             {
                 "type": "text",
@@ -94,30 +92,30 @@
                 "label": "Description",
                 "default": "Enter Description"
             }
-   
+
         ],
         "blocks": [
             {
                 "type": "cura_power",
                 "name": "CuraLin Helps Content",
-                "settings": [    
-                  
+                "settings": [
+
                     {
                         "type": "textarea",
                         "id": "cpwr_desc",
                         "label": "Description",
                         "default": "Enter Description"
                     }
-                
-                ]    
+
+                ]
             },
             {
                 "type": "what_cura",
                 "name": "What CuraLin Images",
-                "settings": [    
-                  
-                    
-                ]    
+                "settings": [
+
+
+                ]
             }
         ],
         "presets":[
