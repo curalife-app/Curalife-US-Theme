@@ -1,12 +1,9 @@
 <div class="hero-section">
     <div class="container">
         <div class="data-wrap">
-          {% if brandPage %}
-          <div class="brand-logo">
-                <a href="javascript:void(0)">
-                  <img src="{{ "logo-new.svg" | file_url }}" width='410'  height="95" alt="logo">
-                </a>
-            </div> {% endif %}
+          {% if isLogo %}
+            <img src="{{ "logo-new.svg" | file_url }}" width='410'  height="95" alt="logo">
+          {% endif %}
             <div class="brand-slogan">
                 <h1>
                     Natural &
