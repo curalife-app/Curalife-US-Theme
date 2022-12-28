@@ -127,6 +127,7 @@ h1, h2, h3 {
 .sub-title {
   text-align: center;
   color: var(--dark);
+  margin-bottom: 30px;
 
   h1 {
     margin: 0;
@@ -766,8 +767,6 @@ h1, h2, h3 {
 }
 
 .advantages-wrap {
-  padding: 4% 0 2.5% 0;
-
   ul {
     display: flex;
     flex-wrap: wrap;
