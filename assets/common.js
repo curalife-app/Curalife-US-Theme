@@ -128,22 +128,6 @@ $(window).on('resize', function () {
     screenWidth = window.innerWidth;
 });
 
-function stickyHeader() {
-    const element = document.querySelector("header");
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    if (element) {
-        if (element.classList && winScroll > 0) {
-            element.classList.add("scrolled");
-        } else {
-            element.classList.remove("scrolled");
-        }
-    }
-}
-
-window.onscroll = function () {
-    stickyHeader()
-};
-
 let activeMenu = false;
 
 $(document).ready(function () {
