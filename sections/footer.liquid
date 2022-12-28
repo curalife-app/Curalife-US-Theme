@@ -3,13 +3,11 @@
     <div class="container">
       <div class="info-wrap">
         <div class="main-side footer-column">
-          {% if section.settings.ftr_logoimage != blank %}
           <div class="title">
             <div class="logo">
                 <a href="/"><img src="{{ 'logo-white.png' | asset_url }}" width="183px" height="52px" alt=""></a>
             </div>
           </div>
-          {% endif %}
 
           <div class="menu-list">
             {% for block in section.blocks %}
