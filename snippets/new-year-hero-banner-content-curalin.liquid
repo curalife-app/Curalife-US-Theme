@@ -13,7 +13,7 @@
 </div>
 <img class="main-img-mb" src="{{ 'mask-and-bottle-mb.png' | asset_url }}" width="750" height="1084" alt="bottle-hand-mask-mb" loading="lazy"> 
 <div class="container">
-<a class="main-btn" id='main-cta-btn' href="/collections/all-holidays2022">SHOP NOW</a></div> 
+<a class="main-btn mobile-button" id='main-cta-btn' href="/collections/all-holidays2022">SHOP NOW</a></div> 
 </section>
 
 
@@ -105,6 +105,11 @@
     display: none;
   }
 
+  .holidays-hero-banner-content .main-btn.mobile-btn {
+    display: none;
+   
+  }
+
 
 
 
@@ -139,7 +144,8 @@
 
   }
 
-  .holidays-hero-banner-content .main-btn {
+  .holidays-hero-banner-content .main-btn.mobile-btn {
+    display: flex;
     margin: 7vw 0;
   }
 
