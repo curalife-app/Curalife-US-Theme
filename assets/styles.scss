@@ -113,9 +113,8 @@ h1, h2, h3 {
   }
 
   &:hover {
-    color: var(--white);
-    background-color: var(--green) !important;
-    border-color: var(--green) !important;
+    background-color: var(--darker-green) !important;
+    border-color: var(--darker-green) !important;
   }
 }
 
