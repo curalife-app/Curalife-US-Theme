@@ -795,6 +795,7 @@ h1, h2, h3 {
     img {
       will-change: transform;
       transition: transform 0.7s ease-in-out;
+      margin-bottom: 10px;
     }
 
     &:hover {
