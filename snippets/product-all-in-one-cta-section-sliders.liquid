@@ -10,7 +10,7 @@
                 {% for i in (1..6) %}
                   {% assign imagesCounter = imagesCounter | plus: 1 %}
                   <div class="swiper-slide">
-                    <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">
+                {% unless forloop.index == 1 %}<img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">{% endunless %}
                     <div class="product-img">
                       <div class="img-wrap">
                         <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" width="588" height="453" alt="" loading="lazy">
