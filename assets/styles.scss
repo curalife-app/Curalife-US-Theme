@@ -777,6 +777,7 @@ h1, h2, h3 {
       display: block;
       padding: 32px 25px;
       width: calc(100% / 3);
+      text-align: center;
 
       .name {
         padding-top: 28px;
@@ -794,22 +795,14 @@ h1, h2, h3 {
   }
 
   li {
-    .icon-wrap {
-      span {
-        img {
-          will-change: transform;
-          transition: transform 0.7s ease-in-out;
-        }
-      }
+    img {
+      will-change: transform;
+      transition: transform 0.7s ease-in-out;
     }
 
     &:hover {
-      .icon-wrap {
-        span {
-          img {
-            transform: scale(1.1);
-          }
-        }
+      img {
+        transform: scale(1.1);
       }
     }
   }
