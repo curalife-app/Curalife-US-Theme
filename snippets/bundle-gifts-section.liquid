@@ -1,154 +1,31 @@
-{% render 'script.round-converted-currency' %}
-
-<section id="curaeats-section">
+<section id="bundles-section">
   {% if shop.name == "CuraLife" %}
     <h2>Everything you need to keep your blood sugar happy!</h2>
 
-    <div class="challange">
-      <div class="container">
-        <h3>30 Day Life Changing Program</h3>
-        <p>There is a science to healthy blood sugar, and we’ve cracked it.<br><br>
-        Together, we’ll help you kickstart a healthier, stronger, and more determined you... because you deserve health that lasts.<br><br>
-        Let’s build good habits together. <b>We’ll guide you every step of the way!</b></p>
+    {% render 'challange-section' %}
 
-        <div class="features-wrapper">
-          {% assign features = "<b>Curalin</b> - clinically tested for blood sugar health
-            |Tips on what to eat to nourish your body (and cravings 😉)
-            |Easy exercise routines that you’ll love
-            |A community of 100K+ people cheering you on and helping you out
-            |24/7 unlimited access to Curalife’s customer success team" | split: "|" %}
-
-          <div class="features">
-            {% for feature in features %}
-              <div class="feature">
-                <div class="feature-icon"><i class="icofont-check"></i></div>
-                <div class="feature-text">{{ feature | split: "|" | last }}</div>
-              </div>
-            {% endfor %}
-          </div>
-
-          <img class="main-image" src="{{ 'challange-section-main-img.png' | asset_url }}" alt="">
-        </div>
-      </div>
-    </div>
-  {% endif %}
-  <div class="curaeats">
-    {% if shop.name == "CuraLife" %}
-      <i class="icofont-plus plus"></i>
-    {% else %}
+    <i class="icofont-plus plus"></i>
+  {% else %}
     <br><br><br>
-    {% endif %}
-    <div class="container">
-      <div class="content-wrapper">
-        <img class="main-image" src="{{ 'curaeats-section-main-img.png' | asset_url }}" width="413" height="482" alt="" loading="lazy">
-        <div class="titles">
-          <p class="upper-title">Limited Time Bonus!</p>
-          <div class="main-titles">
-            <p class="title">CuraEats Meal Plan!<span>*</span></p>
-            <p class="subtitle">84 recipes you’ll love making and devouring</p>
-          </div>
-        </div>
-      </div>
-     {% comment %} <p class="notice">*Offer applies when you buy a Curalin 2, 3 or 6 Pack</p> {% endcomment %}
-    </div>
-  </div>
+  {% endif %}
+
+  {% render 'curaeats-section' %}
 </section>
 
 <style>
-  #curaeats-section {
+  #bundles-section {
     font-size: 20px;
     padding-top: 20px;
   }
 
-  #curaeats-section .container {
-    font-weight: bold;
-    position: relative;
-  }
-
-  #curaeats-section h2 {
+  #bundles-section h2 {
     text-align: center;
     font-family: 'PP Radio Grotesk';
     font-size: 56px;
     color: var(--dark-green);
   }
 
-  #curaeats-section .challange {
-    position: relative;
-    background: #FFF9F5;
-    color: var(--dark-green);
-    padding: 50px 0;
-    line-height: 1.2em;
-  }
-
-  #curaeats-section .challange h3 {
-    font-family: 'PP Radio Grotesk';
-    color: #404733;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 1em;
-    margin-top: unset;
-    margin-bottom: 40px;
-    z-index: 0;
-    position: relative;
-    width: fit-content;
-  }
-
-  #curaeats-section .challange p {
-    font-weight: normal;
-    color: var(--dark-green);
-  }
-
-  #curaeats-section .challange .features-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #curaeats-section .challange .main-image {
-    max-width: 60%;
-  }
-
-  #curaeats-section .challange .features {
-    max-width: 415px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  #curaeats-section .challange .features .feature {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #D9D9D9;
-    padding: 15px 0;
-    font-family: "PP Radio Grotesk";
-    font-weight: normal;
-    font-size: 24px;
-  }
-
-  #curaeats-section .challange .features .feature:last-child {
-    border-bottom: unset;
-  }
-
-  #curaeats-section .challange .features .feature .feature-icon {
-    background: var(--light-green);
-    color: white;
-    border-radius: 50%;
-    min-width: 45px;
-    height: 45px;
-    font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-  }
-
-  #curaeats-section .curaeats {
-    position: relative;
-    text-align: center;
-    padding-top: 50px;
-  }
-
-  #curaeats-section i.plus {
+  #bundles-section i.plus {
     color: var(--dark-green);
     font-size: 200px;
     position: absolute;
@@ -158,134 +35,18 @@
     line-height: unset !important;
   }
 
-  #curaeats-section .curaeats .content-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    top: {% if shop.name == "CuraLife" %} -50px{% else %} -150px{% endif %};
-    position: relative;
-  }
-
-  #curaeats-section .curaeats .content-wrapper p.upper-title {
-    font-size: 60px;
-    font-weight: bold;
-    margin: 0.3em 0;
-    color: #FFB22D;
-  }
-
-  #curaeats-section .curaeats .content-wrapper .titles {
-    font-family: "PP Radio Grotesk";
-  }
-
-  #curaeats-section .curaeats .content-wrapper .main-titles {
-    border-top: 1px solid #FFB22D;
-    border-bottom: 1px solid #FFB22D;
-    padding: 1.5em 0;
-  }
-
-  #curaeats-section .curaeats .content-wrapper .main-titles p.title {
-    letter-spacing: -2px;
-    font-size: 85px;
-    font-weight: bold;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-  }
-
-  #curaeats-section .curaeats .content-wrapper .main-titles p.title {
-    color: var(--dark-green);
-  }
-
-  #curaeats-section .curaeats .content-wrapper .main-titles p.title span {
-    color: #FFB22D;
-  }
-
-  #curaeats-section .curaeats .content-wrapper .main-titles p.subtitle {
-    font-size: 53px;
-    font-weight: 100;
-    max-width: 650px;
-    margin: 0 auto;
-  }
-
-  #curaeats-section .curaeats p.notice {
-    font-size: 1.5em;
-    margin: 20px 0 0;
-  }
-
   @media screen and (max-width: 768px) {
-    #curaeats-section {
+    #bundles-section {
       font-size: 5.4vw;
     }
 
-    #curaeats-section h2 {
+    #bundles-section h2 {
       font-size: 10vw;
     }
 
-    #curaeats-section .container {
-      padding: 0 15px;
-    }
-
-    #curaeats-section .challange h3 {
-      max-width: 80%;
-      font-size: 8vw;
-      line-height: 1.2em;
-      margin: unset;
-    }
-
-    #curaeats-section .challange .main-image {
-      position: relative;
-      min-width: 140%;
-      right: 20%;
-      bottom: 0;
-    }
-
-    #curaeats-section .challange .features {
-      max-width: unset;
-    }
-
-    #curaeats-section i.plus {
+    #bundles-section i.plus {
       font-size: 30vw;
       top: -18vw;
-    }
-
-    #curaeats-section .curaeats .content-wrapper {
-      flex-direction: column;
-    }
-
-    #curaeats-section .curaeats .content-wrapper .main-image {
-      margin: auto;
-      max-width: 70%;
-      margin-top: 10vw;
-    }
-
-    #curaeats-section .curaeats .content-wrapper .titles {
-      width: 100%;
-    }
-
-    #curaeats-section .curaeats .content-wrapper .titles p.upper-title {
-      font-size: 1.3em;
-    }
-
-    #curaeats-section .curaeats .content-wrapper .titles .main-titles {
-      width: 100%;
-      padding: 0.7em 0;
-    }
-
-    #curaeats-section .curaeats .content-wrapper .titles .main-titles .title {
-      font-size: 1.4em;
-      gap: 0.2em;
-    }
-
-    #curaeats-section .curaeats .content-wrapper .titles .main-titles p.subtitle {
-      font-size: 1.3em;
-      padding: 0.2em 0;
-    }
-
-    #curaeats-section .curaeats p.notice {
-        font-size: 0.65em;
     }
   }
 </style>

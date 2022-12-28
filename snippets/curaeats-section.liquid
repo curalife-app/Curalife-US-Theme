@@ -1,0 +1,165 @@
+{% render 'script.round-converted-currency' %}
+
+<section id="curaeats-section">
+  <div class="container">
+    <div class="content-wrapper">
+      <img class="main-image" src="{{ 'curaeats-section-main-img.png' | asset_url }}" width="413" height="482" alt="" loading="lazy">
+      <div class="titles">
+        <p class="upper-title">Limited Time Bonus!</p>
+        <div class="main-titles">
+          <p class="title">CuraEats Meal Plan!<span>*</span></p>
+          <p class="subtitle">84 recipes you’ll love making and devouring</p>
+        </div>
+      </div>
+    </div>
+    {% comment %} <p class="notice">*Offer applies when you buy a Curalin 2, 3 or 6 Pack</p> {% endcomment %}
+  </div>
+</section>
+
+<style>
+  #curaeats-section {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+
+  #curaeats-section .container {
+    font-weight: bold;
+    position: relative;
+  }
+
+  #curaeats-section h2 {
+    text-align: center;
+    font-family: 'PP Radio Grotesk';
+    font-size: 56px;
+    color: var(--dark-green);
+  }
+
+  #curaeats-section .curaeats {
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  #curaeats-section i.plus {
+    color: var(--dark-green);
+    font-size: 200px;
+    position: absolute;
+    top: -115px;
+    left: calc(50% - 0.5em);
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    line-height: unset !important;
+  }
+
+  #curaeats-section .curaeats .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    top: {% if shop.name == "CuraLife" %} -50px{% else %} -150px{% endif %};
+    position: relative;
+  }
+
+  #curaeats-section .curaeats .content-wrapper p.upper-title {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0.3em 0;
+    color: #FFB22D;
+  }
+
+  #curaeats-section .curaeats .content-wrapper .titles {
+    font-family: "PP Radio Grotesk";
+  }
+
+  #curaeats-section .curaeats .content-wrapper .main-titles {
+    border-top: 1px solid #FFB22D;
+    border-bottom: 1px solid #FFB22D;
+    padding: 1.5em 0;
+  }
+
+  #curaeats-section .curaeats .content-wrapper .main-titles p.title {
+    letter-spacing: -2px;
+    font-size: 85px;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  #curaeats-section .curaeats .content-wrapper .main-titles p.title {
+    color: var(--dark-green);
+  }
+
+  #curaeats-section .curaeats .content-wrapper .main-titles p.title span {
+    color: #FFB22D;
+  }
+
+  #curaeats-section .curaeats .content-wrapper .main-titles p.subtitle {
+    font-size: 53px;
+    font-weight: 100;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  #curaeats-section .curaeats p.notice {
+    font-size: 1.5em;
+    margin: 20px 0 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    #curaeats-section {
+      font-size: 5.4vw;
+    }
+
+    #curaeats-section h2 {
+      font-size: 10vw;
+    }
+
+    #curaeats-section .container {
+      padding: 0 15px;
+    }
+
+    #curaeats-section i.plus {
+      font-size: 30vw;
+      top: -18vw;
+    }
+
+    #curaeats-section .curaeats .content-wrapper {
+      flex-direction: column;
+    }
+
+    #curaeats-section .curaeats .content-wrapper .main-image {
+      margin: auto;
+      max-width: 70%;
+      margin-top: 10vw;
+    }
+
+    #curaeats-section .curaeats .content-wrapper .titles {
+      width: 100%;
+    }
+
+    #curaeats-section .curaeats .content-wrapper .titles p.upper-title {
+      font-size: 1.3em;
+    }
+
+    #curaeats-section .curaeats .content-wrapper .titles .main-titles {
+      width: 100%;
+      padding: 0.7em 0;
+    }
+
+    #curaeats-section .curaeats .content-wrapper .titles .main-titles .title {
+      font-size: 1.4em;
+      gap: 0.2em;
+    }
+
+    #curaeats-section .curaeats .content-wrapper .titles .main-titles p.subtitle {
+      font-size: 1.3em;
+      padding: 0.2em 0;
+    }
+
+    #curaeats-section .curaeats p.notice {
+        font-size: 0.65em;
+    }
+  }
+</style>
