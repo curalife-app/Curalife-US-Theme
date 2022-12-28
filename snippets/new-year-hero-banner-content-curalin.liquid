@@ -10,6 +10,7 @@
      <img class="main-img" src="{{ 'mask-and-bottle.png' | asset_url }}" width="1039" height="528" alt="bottle-hand-mask" loading="lazy">
     
 </div>
+</div>
 <img class="main-img-mb" src="{{ 'mask-and-bottle-mb.png' | asset_url }}" width="" height="" alt="bottle-hand-mask-mb" loading="lazy"> 
 <div class="container">
 <a class="main-btn" id='main-cta-btn' href="/collections/all-holidays2022">SHOP NOW</a></div> 
@@ -23,7 +24,7 @@
   .hero-banner {
     position: relative;
     overflow: hidden;
-    {% comment %} height: clamp(520px,34vw,600px); {% endcomment %}
+    
     background: #E8E8B0;
   }
 
@@ -61,27 +62,8 @@
     
   }
 
-  @media screen and (max-width:1192px) {
-    .holidays-hero-banner-content .main-btn {
-      margin-bottom: unset;
-    }
-  }  
-  }
-
-  @media screen and (max-width: 768px) {
-
-  .hero-banner {
-    height: 70vh;
-    min-height: 130vw;
-  }
-
-    .holidays-hero-banner-content .main-btn {
-      max-width: 50vw;
-      margin: auto;
-    }
 
 
-  }
 
 </style>
 
@@ -150,9 +132,9 @@
   }
 
   .hero-banner .main-img-mb {
-    display: flex;
-    margin: 6vw 0;
-    overflow: hidden;
+    display: block;
+    width: 150%;
+    
   }
 
   .holidays-hero-banner-content .text-button {
