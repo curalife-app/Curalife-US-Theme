@@ -22,7 +22,7 @@
   .hero-banner {
     position: relative;
     overflow: hidden;
-    height: clamp(520px,34vw,600px);
+    {% comment %} height: clamp(520px,34vw,600px); {% endcomment %}
     background: #E8E8B0;
   }
 
@@ -119,16 +119,16 @@
 
 
   .holidays-hero-banner-content  .main-img {
-    position: absolute;
+    {% comment %} position: absolute;
     z-index: -1;
     right: 0;
-    top: 0;
+    top: 0; {% endcomment %}
   }
 
   .holidays-hero-banner-content  .main-img-mb {
     display: none;
   }
-
+{% comment %} 
 @media screen and (max-width: 1192px) {
   .holidays-hero-banner-content .main-img {
     right: -240px;
@@ -159,7 +159,7 @@
   .holidays-hero-banner-content .main-img {
     top: 17vw;
   }
-}
+} {% endcomment %}
 
 
 
