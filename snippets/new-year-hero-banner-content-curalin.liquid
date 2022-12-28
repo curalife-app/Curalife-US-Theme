@@ -64,9 +64,7 @@
     height: 100%;
     position: static;
   }
-</style>
 
-<style>
   .holidays-hero-banner-content {
     display: flex;
     align-items: center;
@@ -83,7 +81,7 @@
 
   .holidays-hero-banner-content .text-button .main-title {
     color: var(--dark-green);
-    font-size: {% if isLP %}clamp(30px, 2vw, 120px){% else %}clamp(50px, 12vw, 120px) {% endif %};
+    font-size: {% if isLP %}clamp(40px, 4vw, 60px){% else %}clamp(50px, 12vw, 120px) {% endif %};
   }
 
   .holidays-hero-banner-content .text-button .subtitle {
@@ -105,6 +103,7 @@
     .hero-banner {
       text-align: center;
       height: calc(100vh - 60px);
+      padding-top: 30px;
     }
 
     .hero-banner .text-button .cta-btn {
@@ -134,9 +133,8 @@
 
     .hero-banner .main-img-mb {
       display: block;
-      width: 150%;
       position: absolute;
-      top: 20vw;
+      top: 50vw;
     }
 
     .holidays-hero-banner-content .text-button {
