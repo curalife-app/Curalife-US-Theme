@@ -34,28 +34,26 @@
     </div>
 
     <div class="story-section">
-        <div class="story-data">
-            <div class="container">
-                <div class="mini-wrap">
-                    <div class="sub-title">
-                        <h2>{{ section.settings.wht_titl }}</h2>
-                    </div>
+        <div class="container">
+            <div class="mini-wrap">
+                <div class="sub-title">
+                    <h2>{{ section.settings.wht_titl }}</h2>
+                </div>
 
-                    {% if section.settings.wht_desc != blank %}
-                    <div class="text">
-                        <p>{{section.settings.wht_desc}}</p>
-                    </div>
-                    {% endif %}
-                    <div class="badges">
-                        <ul>
-                            {% for i in (1..6) %}
-                            <li class="wht_img">
-                              {% assign imgUrl = "wht_img-" | append: i | append: ".png" %}
-                              <img src="{{ imgUrl | file_url }}" alt="" loading="lazy">
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                {% if section.settings.wht_desc != blank %}
+                <div class="text">
+                    <p>{{section.settings.wht_desc}}</p>
+                </div>
+                {% endif %}
+                <div class="badges">
+                    <ul>
+                        {% for i in (1..6) %}
+                        <li class="wht_img">
+                            {% assign imgUrl = "wht_img-" | append: i | append: ".png" %}
+                            <img src="{{ imgUrl | file_url }}" alt="" loading="lazy">
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
