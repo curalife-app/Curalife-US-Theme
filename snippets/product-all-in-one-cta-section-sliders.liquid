@@ -79,7 +79,9 @@
       </div>
     </div>
     <div class="product-info">
+      <div class="sub-title">
         <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+      </div>
       <div class="rating-stars">
         <img class="rating-stars-img" src="{{ 'product-aio-rating-stars.png' | asset_url }}" width="159" height="30" alt="">
         <span class="reviews-quantity">3000+ Reviews</span>
@@ -305,6 +307,7 @@
     height: 80px;
     background: #fff;
     border: 1px solid #cbcbcb;
+    box-sizing: border-box;
     border-radius: 2px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -705,6 +708,7 @@
       height: 80px;
       background: #fff;
       border: 1px solid #cbcbcb;
+      box-sizing: border-box;
       border-radius: 2px;
       margin-bottom: 10px;
       cursor: pointer;
@@ -740,7 +744,7 @@
 .swiper-button-prev,
  .swiper-button-next {
     color: gray;
-    transition: opacity .5s;
+    transition: opacity .5s
 }
 
 .variant-notice p {
@@ -868,6 +872,7 @@
     height: 80px;
     background: #fff;
     border: 1px solid #cbcbcb;
+    box-sizing: border-box;
     border-radius: 2px;
     margin-bottom: 10px;
     cursor: pointer;
