@@ -47,7 +47,7 @@
     {{ content_for_header }} <!-- Header hook for plugins -->
 
     {{ 'go-cart.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'go-cart.js' | asset_url | script_tag }}
+    <script type="module" src="{{ 'go-cart.js' | asset_url }}" async></script>
     <script>var goCart = new GoCart({
         cartMode: 'drawer', //drawer or mini-cart
         drawerDirection: 'right', //cart drawer from left or right
