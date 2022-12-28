@@ -57,7 +57,8 @@
   <div class="container">
     <div class="product-wrap">
       <div class="product-thumbnail-wrapper">
-        {% render 'product-thumbnail', product: product, savePrice: save_price %}
+        <img class="bg-vector" src="{{ 'product-thumbnail-bg-vector.png' | asset_url }}" alt="" loading="lazy">
+        <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="" loading="lazy">
       </div>
 
       <div class="product-info">
