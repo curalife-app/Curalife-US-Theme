@@ -3,15 +3,13 @@
   <div class="container">
     <div class="holidays-hero-banner-content">
       <div class="text-button">
-        {% if isLP %}
-          <div class="main-title">Long-Term Blood Sugar Support</div>
-          <div class="subtitle">Keep On Supporting Your Blood Sugar with CuraLin</div>
-          <a class="cta-btn" href="/collections/all-holidays2022">Order Now</a>
-        {% else %}
-          <div class="main-title">curalin</div>
-          <div class="subtitle">Natural Blood Sugar Support Supplement</div>
-          <a class="cta-btn" href="/collections/all-holidays2022">SHOP NOW</a>
-        {% endif %}
+        <div class="main-title">Long-Term Blood Sugar Support</div>
+        <div class="subtitle">Keep On Supporting Your Blood Sugar with CuraLin</div>
+        <a class="cta-btn" href="/collections/all-holidays2022">Order Now</a>
+
+        <div class="main-title">{{ mainTitle }}</div>
+        <div class="subtitle">{{ subTitle }}</div>
+        <a class="cta-btn" href="/collections/all-holidays2022">{{ ctaTitle }}</a>
       </div>
       <img class="main-img" src="{{ 'mask-and-bottle.png' | asset_url }}" width="1039" height="528" alt="bottle-hand-mask" loading="lazy">
     </div>
