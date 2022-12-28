@@ -21,7 +21,7 @@
                            {%for cura_power in cura_powers %}
                                <li class="advantage-content">
                                   <div class="icon-wrap">
-                                      <img src="{{ cura_power | split: '*' | first | file_url }}" width="128" height="112" alt="icon-wrap" loading="lazy">
+                                      <img src="{{ cura_power | split: '*' | first | asset_url }}" width="128" height="112" alt="icon-wrap" loading="lazy">
                                    </div>
                                  <div class="name">
                                    <p>{{ cura_power | split: '*' | last }}</p>
