@@ -1,4 +1,4 @@
-<div class="hero-section">
+<section id="hero-section">
   <div class="container">
     {% if isLogo %}
       <img src="{{ "logo-new.svg" | asset_url }}" width='410'  height="95" alt="logo">
@@ -31,7 +31,7 @@
       </span>
     </div>
   </div>
-</div>
+</section>
 <!-- Hero Section from General Page Style -->
 <style>
 
@@ -41,10 +41,9 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box
   }
-   body {
-  margin: 0;
-
-   }
+  body {
+    margin: 0;
+  }
 
    .container {
    width: 100%;
@@ -53,18 +52,12 @@
    padding: 0 15px
    }
 
-  .hero-section {
+  #hero-section {
     overflow: hidden;
     font-family: "Poppins", sans-serif;
   }
 
-  .hero-section .data-wrap {
-    padding: 1.0625rem 1.9375rem 5.75rem;
-    position: relative;
-    z-index: 1
-  }
-
-  .hero-section .data-wrap:before {
+  #hero-section .container:before {
     content: "";
     width: 100vw;
     position: absolute;
@@ -79,11 +72,11 @@
     pointer-events: none
   }
 
-  .hero-section .brand-logo {
+  #hero-section .brand-logo {
     max-width: 12rem;
   }
 
-  .hero-section .brand-intro-cover span {
+  #hero-section .brand-intro-cover span {
     width: 80%;
     display: block;
     position: absolute;
@@ -93,20 +86,20 @@
     z-index: -1
   }
 
-  .hero-section .brand-intro-cover span img {
+  #hero-section .brand-intro-cover span img {
     width: 100%;
     height: 100%;
     -o-object-fit: contain;
     object-fit: contain
   }
 
-  .hero-section h1 {
+  #hero-section h1 {
     max-width: 20.75rem;
     padding-left: .25rem;
     margin-top: 34px
   }
 
-  .hero-section h1 {
+  #hero-section h1 {
     margin: 0;
     font-weight: 500;
     font-size: 2.7rem;
@@ -114,13 +107,13 @@
     color: #000000ab
   }
 
-  .hero-section .brand-welcome-text {
+  #hero-section .brand-welcome-text {
     padding: 2rem 0 10.75rem;
     text-align: left;
 
   }
 
-  .hero-section .brand-welcome-text * {
+  #hero-section .brand-welcome-text * {
     font-weight: 400;
     font-size: 5rem;
     line-height: 1.2;
@@ -129,114 +122,102 @@
     margin: auto
   }
 
-  .hero-section .brand-welcome-text span,
-  .hero-section .brand-welcome-text b,
-  .hero-section .brand-welcome-text strong {
+  #hero-section .brand-welcome-text span,
+  #hero-section .brand-welcome-text b,
+  #hero-section .brand-welcome-text strong {
     font-weight: 700
   }
 
-  .hero-section .brand-welcome-text span.typed-cursor {
+  #hero-section .brand-welcome-text span.typed-cursor {
     font-weight: 200
   }
 
   @media screen and (max-width: 991px) {
-    .hero-section .brand-logo {
+    #hero-section .brand-logo {
       max-width: 9.5rem
     }
 
-    .hero-section h1 * {
+    #hero-section h1 * {
       font-size: 1.9rem
     }
 
-    .hero-section .data-wrap {
-      padding: .9375rem 0 2.5rem
-    }
-
-    .hero-section .data-wrap:before {
+    #hero-section .container:before {
       bottom: 2.5rem
     }
 
-    .hero-section .brand-welcome-text * {
+    #hero-section .brand-welcome-text * {
       font-size: 3.125rem
     }
 
-    .hero-section .brand-welcome-text {
+    #hero-section .brand-welcome-text {
       padding: 4.375rem 0 2.5rem
     }
 
-    .hero-section .brand-intro-cover span {
+    #hero-section .brand-intro-cover span {
       top: -1.25rem
     }
 
     @media screen and (max-width: 768px) {
-      .hero-section .data-wrap {
-        padding: .1875rem
-      }
 
-
-      .hero-section .brand-intro-cover span {
+      #hero-section .brand-intro-cover span {
         width: 100%;
         position: static
       }
 
-      .hero-section .brand-intro-cover {
-        margin: 0 -6.0625rem 0 -3.25rem
+      #hero-section .brand-intro-cover {
+        margin: 0 -6.0625rem 0 -3.25rem;
       }
 
-      .hero-section h1 {
+      #hero-section h1 {
+        text-align: center;
         font-size: 1.75rem;
-        text-align: center
-      }
-
-      .hero-section h1 {
         max-width: 20.625rem;
         margin: 0 auto;
         padding-left: 0;
         padding-top: .625rem
       }
 
-      .hero-section .brand-welcome-text * {
+      #hero-section .brand-welcome-text * {
         font-size: 7vw;
-        color: var(--green)
+        color: var(--green);
       }
 
-      .hero-section .brand-welcome-text {
+      #hero-section .brand-welcome-text {
         padding: .875rem 0;
-        margin: 0 -15px 0 5%
+        margin: 0 -15px 0 5%;
       }
 
-      .hero-section .data-wrap:before {
-        bottom: 0
+      #hero-section .data-wrap:before {
+        bottom: 0;
       }
-
     }
   }
 </style>
+
 <!-- Hero Section Snippet Changes Style -->
 <style>
-
-  .hero-section {
+  #hero-section {
 
   }
   .brand-intro-cover-img-mobile {
     display: none !important;
   }
 
-  .hero-section .brand-welcome-text {
+  #hero-section .brand-welcome-text {
     padding: 10rem 0 3.5rem;
   }
 
-  .hero-section .data-wrap:before {
+  #hero-section .data-wrap:before {
     background-color: #E8E8E8 !important;
   }
 
-  .hero-section .brand-welcome-text * {
+  #hero-section .brand-welcome-text * {
     color: white;
     line-height: 1;
     font-size: clamp(6vw, 4vw, 80px) !important;
   }
 
-  .hero-section .brand-welcome-text h2 {
+  #hero-section .brand-welcome-text h2 {
     background: var(--green);
     padding: 0 30px;
     width: max-content;
@@ -258,14 +239,14 @@
       left: -8vw;
     }
 
-    .hero-section .brand-welcome-text * {
+    #hero-section .brand-welcome-text * {
       font-size: 6vw;
       color: {% if regColor %}#62C1C5 {% else %} #4B643D {% endif %};
       background: unset !important;
       padding: 0 !important;
     }
 
-    .hero-section .brand-welcome-text {
+    #hero-section .brand-welcome-text {
       margin: 0;
       padding-top: 10px;
       margin-left: 6vw;
@@ -275,12 +256,12 @@
       display: none !important;
     }
 
-    .hero-section {
+    #hero-section {
       min-height: 130vw;
       overflow: visible;
     }
 
-    .hero-section .data-wrap:before {
+    #hero-section .data-wrap:before {
       min-height: 130vw;
     }
 
@@ -337,8 +318,8 @@
 </script>
 
 <script>
-  if (!$(".hero-section .brand-welcome-text .v3").length) {
-    let typed = new Typed('.hero-section .brand-welcome-text span', {
+  if (!$("#hero-section .brand-welcome-text .v3").length) {
+    let typed = new Typed('#hero-section .brand-welcome-text span', {
       strings: ["sleep well", "eat well", "feel energetic", "stay romantic", "stay healthy"],
       typeSpeed: 50,
       backDelay: 3000,
