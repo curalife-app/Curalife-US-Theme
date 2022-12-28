@@ -1,6 +1,7 @@
 {% unless instance_id %}
   {% assign instance_id = 'origin' %}
 {% endunless %}
+
 <div class="sale-banner {{ instance_id }}">
   <div class="container">
     <div class="logo-wrapper">
@@ -89,8 +90,6 @@
 </style>
 
 <style>
-
-
   .sale-banner {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -126,29 +125,29 @@
   }
 
   .sale-banner .cta-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
   }
 
   .sale-banner .off-container {
-      justify-content: center;
-      align-items: center;
-      font-family: 'PP Radio Grotesk';
-      gap: 10px;
-      color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PP Radio Grotesk';
+    gap: 10px;
+    color: white;
   }
 
   .sale-banner .up-to {
-      font-size: 25px;
+    font-size: 25px;
   }
 
   .sale-banner .percents-off {
-      margin-right: 10px;
-      font-size: 35px;
-      font-weight: bold;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .sale-banner a.main-btn {
@@ -161,7 +160,7 @@
   }
 
   @media screen and (max-width: 768px) {
-   .sale-banner p.title {
+    .sale-banner p.title {
       position: unset;
       transform: unset;
       padding-bottom: 10px;
@@ -172,19 +171,19 @@
     }
 
     .sale-banner .off-container {
-        gap: unset;
+      gap: unset;
     }
 
     .sale-banner .up-to {
-        font-size: 4vw;
+      font-size: 4vw;
     }
 
     .sale-banner .percents-off {
-        display:flex;
-        justify-content: center;
-        margin-right: unset;
-        font-size: 6vw;
-        line-height: 6vw;
+      display:flex;
+      justify-content: center;
+      margin-right: unset;
+      font-size: 6vw;
+      line-height: 6vw;
     }
 
     .sale-banner a.main-btn {
@@ -193,5 +192,5 @@
       padding: 3vw;
       height: 10vw;
     }
-}
+  }
 </style>
