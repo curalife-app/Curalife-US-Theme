@@ -3213,8 +3213,7 @@ footer .bottom-info .info-wrap .text p {
 
 .story-data {
   padding: 4.3% 6.6%;
-  background: -o-linear-gradient(331.21deg, rgba(112, 215, 201, 0.2) 0%, rgba(112, 215, 201, 0) 67.73%), #FFFFFF;
-  background: linear-gradient(118.79deg, rgba(112, 215, 201, 0.2) 0%, rgba(112, 215, 201, 0) 67.73%), #FFFFFF;
+  
   -webkit-box-shadow: 0 10px 60px rgba(84, 84, 84, 0.04);
   box-shadow: 0 10px 60px rgba(84, 84, 84, 0.04);
   border-radius: 5px;
