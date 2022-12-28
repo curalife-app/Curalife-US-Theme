@@ -46,7 +46,7 @@
         <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
 
         <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" width="512" height="475" alt="" loading="lazy">
-        {% if linkToProduct %}</a>{% endif %}
+        {% if isLinkToProduct %}</a>{% endif %}
 
         <div class="info">
           <div class="main">
