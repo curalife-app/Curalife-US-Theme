@@ -80,15 +80,8 @@
     </div>
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
-      <div class="rating-stars">
-        <i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i>
-        <span class="reviews-quantity">3000+ Reviews</span>
-      </div>
-      <div class="quotes">
-        <p class="quote">“It’s completely changed my life” - Paul M.</p>
-        <p class="quote">“I’m healthier now than I’ve been in years” - D’Gay F.</p>
-        <p class="quote">“Here’s my proof - my MD is thrilled. I’m a believer!” - Ilyssa E.</p>
-      </div>
+
+      {% render 'product-all-in-one-cta-section-reviews' %}
     </div>
     <div class="product-actions">
       <div class="form-wrap">
@@ -259,31 +252,6 @@
     font-size: 40px;
   }
 
-   .cta-section .product-container .product-info .quotes {
-    margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 1.7rem;
-    min-height: 50px
-  }
-
-   .cta-section .product-container .product-info .quotes .quote {
-    display: none;
-    margin: 5px 0;
-    color: #4c4c4c;
-    font-weight: 300
-  }
-
-   .cta-section .product-container .product-info .rating-stars {
-    font-weight: 300;
-    margin: 5px 0
-  }
-
-   .cta-section .product-container .product-info .rating-stars i {
-    margin-right: 2px;
-    color: #f5b700;
-    font-size: 22px;
-  }
-
    .cta-section .product-container .product-actions {
     grid-area: 2/2/3/3;
     max-width: 450px
@@ -451,177 +419,177 @@
     border-color: #468734;
   }
 
-@media screen and (max-width: 1270px) {
-      .container {
-          max-width: unset;
-          padding: 0 20px
-      }
+  @media screen and (max-width: 1270px) {
+        .container {
+            max-width: unset;
+            padding: 0 20px
+        }
 
-    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box {
-      width: 100%
+      .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box {
+        width: 100%
+    }
+
+    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info {
+        padding: 10px;
+        width: 95%
+    }
+
+    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        margin-right: unset
+    }
+
+    .cta-section .badges-container {
+        padding: 0 0 20px !important;
+        width: calc(100% - 40px)
+    }
+
+    .cta-section .badges-container .trust-badges {
+        margin-top: 20px;
+        gap: 10vw
+    }
+
+    .cta-section .badges-container .trust-badges .trust-badge {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-size: 1.5vw;
+        max-width: 20%;
+        text-transform: uppercase
+    }
+
+    .cta-section .badges-container .trust-badges .trust-badge img {
+        height: 3vw;
+        width: 10vw;
+        -o-object-fit: contain;
+        object-fit: contain;
+        margin-bottom: 10px
+    }
+
+  @media screen and (max-width: 768px) {
+    section {
+        padding: 8vw 0
+    }
+
+    .container {
+        padding: 0 20px !important
+    }
+
+  .cta-section {
+      padding-top: 70px;
+      padding-bottom: 0
   }
 
-   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info {
-      padding: 10px;
-      width: 95%
+  .cta-section .product-container {
+      grid-template-columns: repeat(1, 100%);
+      grid-template-rows: unset;
+      padding: 0 20px 20px
   }
 
-   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      margin-right: unset
+  .cta-section .product-container .product-thumbnails {
+      grid-area: unset;
+      grid-row: 2
   }
 
-   .cta-section .badges-container {
-      padding: 0 0 20px !important;
-      width: calc(100% - 40px)
+  .cta-section .product-container .product-thumbnails .product-slider {
+      margin-left: unset
   }
 
-   .cta-section .badges-container .trust-badges {
-      margin-top: 20px;
-      gap: 10vw
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider {
+      width: 95%;
+      margin: auto
   }
 
-   .cta-section .badges-container .trust-badges .trust-badge {
-      display: flex;
-      flex-direction: column;
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
+      margin-left: unset;
+      left: 0;
+      top: 10%
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper {
+      margin-bottom: 30px;
+      align-items: center
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe {
+      height: 45vh
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe .vp-video-wrapper {
+      border-radius: 10px
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-img::before {
+      padding-bottom: 100%
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
+      display: block;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-prev {
+      left: 0;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-next {
+      right: 0
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet {
+      background: #c78263;
+      opacity: .4;
+      width: 13px;
+      height: 13px
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: #c78263;
+      opacity: 1
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
+      display: none
+  }
+
+  .cta-section .product-container .product-info {
+      grid-area: unset;
+      grid-row: 1;
       text-align: center;
-      align-items: center;
-      font-size: 1.5vw;
-      max-width: 20%;
-      text-transform: uppercase
+      padding: 0 20px;
+      max-width: unset
   }
 
-   .cta-section .badges-container .trust-badges .trust-badge img {
-      height: 3vw;
-      width: 10vw;
-      -o-object-fit: contain;
-      object-fit: contain;
-      margin-bottom: 10px
+  .cta-section .product-container .product-actions {
+      grid-area: unset;
+      grid-row: 3;
+      max-width: unset
   }
 
-@media screen and (max-width: 768px) {
-   section {
-      padding: 8vw 0
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
+      border: 1px solid #ffb22d
   }
 
-   .container {
-      padding: 0 20px !important
+  .cta-section .badges-container .trust-badges {
+      gap: unset;
+      justify-content: space-between
   }
 
- .cta-section {
-    padding-top: 70px;
-    padding-bottom: 0
-}
-
- .cta-section .product-container {
-    grid-template-columns: repeat(1, 100%);
-    grid-template-rows: unset;
-    padding: 0 20px 20px
-}
-
- .cta-section .product-container .product-thumbnails {
-    grid-area: unset;
-    grid-row: 2
-}
-
- .cta-section .product-container .product-thumbnails .product-slider {
-    margin-left: unset
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider {
-    width: 95%;
-    margin: auto
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
-    margin-left: unset;
-    left: 0;
-    top: 10%
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper {
-    margin-bottom: 30px;
-    align-items: center
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe {
-    height: 45vh
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe .vp-video-wrapper {
-    border-radius: 10px
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-img::before {
-    padding-bottom: 100%
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
-    display: block;
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-prev {
-    left: 0;
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-next {
-    right: 0
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet {
-    background: #c78263;
-    opacity: .4;
-    width: 13px;
-    height: 13px
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: #c78263;
-    opacity: 1
-}
-
- .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
-    display: none
-}
-
- .cta-section .product-container .product-info {
-    grid-area: unset;
-    grid-row: 1;
-    text-align: center;
-    padding: 0 20px;
-    max-width: unset
-}
-
- .cta-section .product-container .product-actions {
-    grid-area: unset;
-    grid-row: 3;
-    max-width: unset
-}
-
- .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
-    border: 1px solid #ffb22d
-}
-
- .cta-section .badges-container .trust-badges {
-    gap: unset;
-    justify-content: space-between
-}
-
- .cta-section .badges-container .trust-badges .trust-badge {
-    font-size: 3vw;
-    max-width: 30%
-}
-
- .cta-section .badges-container .trust-badges .trust-badge img {
-    width: 40px;
-    height: 5vw
-}
-  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
-    font-size: 12px !important;
+  .cta-section .badges-container .trust-badges .trust-badge {
+      font-size: 3vw;
+      max-width: 30%
   }
-}
+
+  .cta-section .badges-container .trust-badges .trust-badge img {
+      width: 40px;
+      height: 5vw
+  }
+    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
+      font-size: 12px !important;
+    }
+  }
   @media screen and (max-width: 330px) {
     .cta-section .variant-infos {
         font-size: 10px !important;
@@ -688,17 +656,6 @@
 </script>
 
 <script>
-  // Fade Quotes
-  var quotes = $(".quote");
-  var quoteIndex = -1;
-
-  function showNextQuote() {
-    ++quoteIndex;
-    quotes.eq(quoteIndex % quotes.length).fadeIn(1000).delay(2000).fadeOut(1000, showNextQuote);
-  }
-
-  showNextQuote();
-
   // Slide to Variant Image
   productSliderAllInOne.on('slideChange', function () {
     $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
