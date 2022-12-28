@@ -1,7 +1,7 @@
 
 <section class="hero-banner">
   <div class="container">
-    <div class="holidays-hero-banner-content">
+    <div class="hero-banner-content">
       <div class="text-button">
         <div class="main-title">{{ mainTitle }}</div>
         <div class="subtitle">{{ subTitle }}</div>
@@ -65,13 +65,13 @@
     position: static;
   }
 
-  .holidays-hero-banner-content {
+  .hero-banner-content {
     display: flex;
     align-items: center;
     height: 100%;
   }
 
-  .holidays-hero-banner-content .text-button {
+  .hero-banner-content .text-button {
     display: flex;
     flex-direction: column;
     font-family: 'PP Radio Grotesk';
@@ -79,12 +79,12 @@
     min-width: 40%;
   }
 
-  .holidays-hero-banner-content .text-button .main-title {
+  .hero-banner-content .text-button .main-title {
     color: var(--dark-green);
     font-size: {% if isLP %}clamp(40px, 4vw, 60px){% else %}clamp(50px, 12vw, 120px) {% endif %};
   }
 
-  .holidays-hero-banner-content .text-button .subtitle {
+  .hero-banner-content .text-button .subtitle {
     color: var(--dark-green);
     font-style: normal;
     font-weight: 300;
@@ -114,20 +114,20 @@
       z-index: 2;
     }
 
-    .holidays-hero-banner-content {
+    .hero-banner-content {
       display: block;
     }
 
-    .holidays-hero-banner-content .text-button .main-title {
+    .hero-banner-content .text-button .main-title {
       text-align: center;
     }
 
-    .holidays-hero-banner-content .text-button .subtitle {
+    .hero-banner-content .text-button .subtitle {
       text-align: center;
       max-width: unset;
     }
 
-    .holidays-hero-banner-content .main-img {
+    .hero-banner-content .main-img {
       display: none;
     }
 
@@ -137,7 +137,7 @@
       top: 50vw;
     }
 
-    .holidays-hero-banner-content .text-button {
+    .hero-banner-content .text-button {
       margin-left: unset;
     }
 
