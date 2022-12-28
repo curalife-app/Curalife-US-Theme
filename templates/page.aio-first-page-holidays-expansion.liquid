@@ -1,4 +1,5 @@
-{% layout 'theme.lps' %} 
+{% layout 'theme.lps' %}
+
 {% if shop.name == 'CuraLife' %}
   {% assign store_domain = "curalife.com" %}
   {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
@@ -6,22 +7,6 @@
   {% assign store_domain = "global.curalife.com" %}
   {% assign yotpo_script_id = "oMYBvmnASlHzmouicgkepg" %}
 {% endif %}
-{% render 'layout.head.geo-redirect-script' %}
-{% render 'layout.head.redirects-script' %}
-{% render 'layout.head.google-tag-manager' %}
-{% render 'layout.head.meta-tags' %}
-{% render 'layout.head.canonicals-us' %}
-{% render 'layout.head.fonts' %}
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
-<script src="{{ 'libs.js' | asset_url }}"></script>
-
-<!-- Swiper Import -->
-<link rel="preload" href="{{ 'swiper.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<script src="{{ 'swiper.min.js' | asset_url }}"></script>
-
 <style>
   @font-face {
 font-family: 'Takota';
@@ -97,14 +82,6 @@ font-weight: normal;
 font-style: normal;
 font-display: block; }
 </style>
-
-
-{% comment %} <script src="{{ 'lp-aio-support-pack.js' | asset_url }}" defer></script> {% endcomment %}
-<script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
-
-<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
-
-
 
 {% if shop.name == "CuraLife" %}
   {% assign meetCuralins = 'lp-aio-client-tested-icon.svg*Clinically tested:with results published in a peer-reviewed journal
