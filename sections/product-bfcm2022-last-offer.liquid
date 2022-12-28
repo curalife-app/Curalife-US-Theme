@@ -1,14 +1,3 @@
-{%- comment -%} Get If User Is Admin {%- endcomment -%}
-{% capture CFH %}{{ content_for_header }}{% endcapture %}
-
-{% if CFH contains 'adminBarInjector' %}
-  {% assign admin = true %}
-{% elsif CFH contains 'admin-bar-iframe' %}
-  {% assign admin = true %}
-{% elsif CFH contains 'preview_bar_injector-' %}
-  {% assign admin = true %}
-{% endif %}
-
 {%- comment -%} Differences Between US and Global {%- endcomment -%}
 {% if shop.name == "CuraLife" %}
   {% assign bundle_notice_text = "+ Life Changing Bonus" %}
@@ -29,7 +18,6 @@
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challenge_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% render 'script.round-converted-currency' %}
-{% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Get into the holiday spirit!", bgColor: "red" %}
 
 <div class="product-data">
   <div class="container">
