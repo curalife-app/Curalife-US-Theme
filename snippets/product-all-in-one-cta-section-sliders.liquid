@@ -79,7 +79,7 @@
       </div>
     </div>
     <div class="product-info">
-        <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+      <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
       <div class="rating-stars">
         <img class="rating-stars-img" src="{{ 'product-aio-rating-stars.png' | asset_url }}" width="159" height="30" alt="">
         <span class="reviews-quantity">3000+ Reviews</span>
@@ -105,7 +105,7 @@
               {% endif %}
 
               {% if var.title contains "CuraEats" %}
-                {% assign bundle_value = challenge_value | plus: curaeats_value %}
+                {% assign bundle_value = challange_value | plus: curaeats_value %}
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
               {% else %}
                 {% assign bundle_value = 0 %}
@@ -187,48 +187,48 @@
       display: grid;
       grid-template-columns: 60% 40%;
       grid-column-gap: 0;
-      grid-row-gap: 0;
+      grid-row-gap: 0
   }
 
    .cta-section .product-container .product-thumbnails {
-    grid-area: 1/1/3/2;
+    grid-area: 1/1/3/2
   }
 
    .cta-section .product-container .product-thumbnails .product-slider {
     width: unset !important;
-    margin-left: 10%;
+    margin-left: 10%
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider {
     padding: unset;
-    margin-left: unset;
+    margin-left: unset
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
     position: absolute;
-    margin-left: 10%;
+    margin-left: 10%
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio:before {
-    padding-bottom: 60%;
+    padding-bottom: 60%
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio .img-wrap {
     padding: unset;
-    text-align: center;
+    text-align: center
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio .img-wrap img {
-    max-height: 460px;
+    max-height: 460px
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-video iframe {
     height: 400px;
-    width: 100%;
+    width: 100%
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
-    display: none;
+    display: none
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
@@ -253,18 +253,18 @@
     padding: 40px 0 10px;
     width: unset;
     max-width: 450px;
-    grid-area: 1/2/2/3;
+    grid-area: 1/2/2/3
   }
 
-   .cta-section .product-container .product-info .sub-title h1 {
-    font-weight: 600;
+   .cta-section .product-container .product-info h1 {
+    font-weight: 600
   }
 
    .cta-section .product-container .product-info .quotes {
     margin-bottom: 10px;
     font-size: 18px;
     line-height: 1.7rem;
-    min-height: 50px;
+    min-height: 50px
   }
 
    .cta-section .product-container .product-info .quotes .quote {
@@ -276,17 +276,17 @@
 
    .cta-section .product-container .product-info .rating-stars {
     font-weight: 300;
-    margin: 5px 0;
+    margin: 5px 0
   }
 
    .cta-section .product-container .product-info .rating-stars img {
     height: 25px;
-    margin-right: 5px;
+    margin-right: 5px
   }
 
    .cta-section .product-container .product-actions {
     grid-area: 2/2/3/3;
-    max-width: 450px;
+    max-width: 450px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm {
@@ -295,7 +295,7 @@
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .cta-title {
     font-size: 18px;
-    margin: 10px 0;
+    margin: 10px 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box {
@@ -305,34 +305,35 @@
     height: 80px;
     background: #fff;
     border: 1px solid #cbcbcb;
+    box-sizing: border-box;
     border-radius: 2px;
     margin-bottom: 10px;
     cursor: pointer;
     filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.1));
     transition: all .5s;
-    position: relative;
+    position: relative
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box:hover {
     border-color: #2f2f2f;
-    filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3));
+    filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3))
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box:hover>.radio-box input[type=radio]:after {
-    background-color: #a9a9a9;
+    background-color: #a9a9a9
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box {
     width: 5%;
     align-items: center;
     display: flex;
-    padding: 10px;
+    padding: 10px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio] {
     position: relative;
     left: -3px;
-    pointer-events: none;
+    pointer-events: none
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:before {
@@ -345,7 +346,7 @@
     top: 50%;
     margin-top: -7px;
     border: 1px solid #000;
-    border-radius: 8px;
+    border-radius: 8px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:after {
@@ -359,19 +360,19 @@
     left: 8px;
     margin-top: 0;
     border-radius: 4px;
-    transition: .2s ease-in-out;
+    transition: .2s ease-in-out
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:checked:after {
     height: 8px;
     width: 8px;
     margin-top: -4px;
-    left: 4px;
+    left: 4px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info {
     padding: 10px;
-    width: 70%;
+    width: 70%
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-title {
@@ -382,11 +383,11 @@
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
     font-weight: 200;
     display: inline-block;
-    margin: 0;
+    margin: 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info b {
-    font-weight: 800;
+    font-weight: 800
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
@@ -394,34 +395,34 @@
     align-items: center;
     min-width: 15px;
     margin-right: 40px;
-    padding-bottom: unset;
+    padding-bottom: unset
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price.centered {
-    margin-top: 18px;
+    margin-top: 18px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .compared-at-price {
     margin-right: 5px !important;
-    font-size: unset;
+    font-size: unset
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .compared-at-price strike {
-    font-size: 10px !important;
+    font-size: 10px !important
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .real-price {
-    font-size: 20px;
+    font-size: 20px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap {
-    display: flex;
+    display: flex
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data {
     padding-right: unset;
     width: 20%;
-    min-width: 80px;
+    min-width: 80px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
@@ -430,12 +431,12 @@
     padding: unset;
     border-color: #e0af50;
     height: 100%;
-    border-radius: 0;
+    border-radius: 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn {
     padding-top: unset;
-    width: 100%;
+    width: 100%
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn {
@@ -447,23 +448,23 @@
     transition: all .5s;
     height: 100%;
     padding: 15px 20px;
-    border-radius: 0;
+    border-radius: 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn:hover {
     background-color: #404733;
-    border-color: #404733;
+    border-color: #404733
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn .save {
     font-size: 14px;
     font-weight: 400;
-    transition: all .3s;
+    transition: all .3s
   }
 
    .cta-section .badges-container {
     border-bottom: 1px solid #d3d3d3;
-    padding-bottom: 30px;
+    padding-bottom: 30px
   }
 
    .cta-section .badges-container .trust-badges {
@@ -472,58 +473,58 @@
     align-items: center;
     gap: 50px;
     opacity: .5;
-    font-size: 18px;
+    font-size: 18px
   }
 
    .cta-section .badges-container .trust-badges .trust-badge img {
-    margin-right: 10px;
+    margin-right: 10px
   }
    .cta-section .product-container {
       display: grid;
       grid-template-columns: 60% 40%;
       grid-column-gap: 0;
-      grid-row-gap: 0;
+      grid-row-gap: 0
   }
 
    .cta-section .product-container .product-thumbnails {
-      grid-area: 1/1/3/2;
+      grid-area: 1/1/3/2
   }
 
    .cta-section .product-container .product-thumbnails .product-slider {
       width: unset !important;
-      margin-left: 10%;
+      margin-left: 10%
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider {
       padding: unset;
-      margin-left: unset;
+      margin-left: unset
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
       position: absolute;
-      margin-left: 10%;
+      margin-left: 10%
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio:before {
-      padding-bottom: 60%;
+      padding-bottom: 60%
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio .img-wrap {
       padding: unset;
-      text-align: center;
+      text-align: center
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio .img-wrap img {
-      max-height: 460px;
+      max-height: 460px
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-video iframe {
       height: 400px;
-      width: 100%;
+      width: 100%
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
-      display: none;
+      display: none
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
@@ -534,59 +535,49 @@
       margin-left: auto;
       margin-right: auto;
       padding-left: 3em;
-      padding-right: 3em;
+      padding-right: 3em
   }
 
    .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider .swiper-wrapper .thumbs-img {
       border-radius: unset;
       width: 120px;
       height: 120px;
-      border-radius: 5px;
-  }
-
-   .cta-section .product-container .product-info {
-      padding: 40px 0 10px;
-      width: unset;
-      max-width: 450px;
-      grid-area: 1/2/2/3;
-  }
-
-   .cta-section .product-container .product-info .sub-title h1 {
-      font-weight: 600
+      border-radius: 5px
   }
 
    .cta-section .product-container .product-info .quotes {
       margin-bottom: 10px;
       font-size: 18px;
       line-height: 1.7rem;
-      min-height: 50px;
+      min-height: 50px
   }
 
    .cta-section .product-container .product-info .quotes .quote {
       display: none;
       margin: 5px 0;
       color: #4c4c4c;
-      font-weight: 300;
+      font-weight: 300
   }
 
    .cta-section .product-container .product-info .rating-stars {
       font-weight: 300;
-      margin: 5px 0;
+      margin: 5px 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info {
       padding: 10px;
-      width: 70%;
+      width: 70%
   }
+
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
       font-weight: 200;
       display: inline-block;
-      margin: 0;
+      margin: 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info b {
-      font-weight: 800;
+      font-weight: 800
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
@@ -594,24 +585,24 @@
       align-items: center;
       min-width: 15px;
       margin-right: 40px;
-      padding-bottom: unset;
+      padding-bottom: unset
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price.centered {
-      margin-top: 18px;
+      margin-top: 18px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .compared-at-price {
       margin-right: 5px !important;
-      font-size: unset;
+      font-size: unset
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .compared-at-price strike {
-      font-size: 10px !important;
+      font-size: 10px !important
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .real-price {
-      font-size: 20px;
+      font-size: 20px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap {
@@ -621,7 +612,7 @@
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data {
       padding-right: unset;
       width: 20%;
-      min-width: 80px;
+      min-width: 80px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
@@ -630,12 +621,12 @@
       padding: unset;
       border-color: #e0af50;
       height: 100%;
-      border-radius: 0;
+      border-radius: 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn {
       padding-top: unset;
-      width: 100%;
+      width: 100%
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn {
@@ -647,23 +638,23 @@
       transition: all .5s;
       height: 100%;
       padding: 15px 20px;
-      border-radius: 0;
+      border-radius: 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn:hover {
       background-color: #404733;
-      border-color: #404733;
+      border-color: #404733
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .btn .main-btn .save {
       font-size: 14px;
       font-weight: 400;
-      transition: all .3s;
+      transition: all .3s
   }
 
    .cta-section .badges-container {
       border-bottom: 1px solid #d3d3d3;
-      padding-bottom: 30px;
+      padding-bottom: 30px
   }
 
    .cta-section .badges-container .trust-badges {
@@ -672,30 +663,30 @@
       align-items: center;
       gap: 50px;
       opacity: .5;
-      font-size: 18px;
+      font-size: 18px
   }
 
    .cta-section .badges-container .trust-badges .trust-badge img {
-      margin-right: 10px;
+      margin-right: 10px
   }
 
    .cta-section .product-container .product-info .rating-stars img {
       height: 25px;
-      margin-right: 5px;
+      margin-right: 5px
   }
 
    .cta-section .product-container .product-actions {
       grid-area: 2/2/3/3;
-      max-width: 450px;
+      max-width: 450px
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm {
-      display: unset;
+      display: unset
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .cta-title {
       font-size: 18px;
-      margin: 10px 0;
+      margin: 10px 0
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box {
@@ -705,42 +696,43 @@
       height: 80px;
       background: #fff;
       border: 1px solid #cbcbcb;
+      box-sizing: border-box;
       border-radius: 2px;
       margin-bottom: 10px;
       cursor: pointer;
       filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.1));
       transition: all .5s;
-      position: relative;
+      position: relative
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box:hover {
       border-color: #2f2f2f;
-      filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3));
+      filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3))
   }
 
    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box:hover>.radio-box input[type=radio]:after {
-      background-color: #a9a9a9;
+      background-color: #a9a9a9
   }
 
    .swiper-button-prev,
    .swiper-button-next {
       color: gray;
-      transition: opacity .5s;
+      transition: opacity .5s
   }
 
    .swiper-button-prev.disabled,
    .swiper-button-next.disabled {
-      opacity: 0;
+      opacity: 0
   }
 
   .product-template-all-in-one .swiper-button-prev::after,
   .product-template-all-in-one .swiper-button-next::after {
-      font-size: 28px;
+      font-size: 28px
   }
 .swiper-button-prev,
  .swiper-button-next {
     color: gray;
-    transition: opacity .5s;
+    transition: opacity .5s
 }
 
 .variant-notice p {
@@ -813,14 +805,9 @@
     height: 120px;
     border-radius: 5px
   }
- .cta-section .product-container .product-info {
-    padding: 40px 0 10px;
-    width: unset;
-    max-width: 450px;
-    grid-area: 1/2/2/3
-  }
- .cta-section .product-container .product-info .sub-title h1 {
-    font-weight: 600
+ .cta-section .product-container .product-info h1 {
+    font-weight: 600;
+    font-size: 50px;
   }
 
  .cta-section .product-container .product-info .quotes {
@@ -868,6 +855,7 @@
     height: 80px;
     background: #fff;
     border: 1px solid #cbcbcb;
+    box-sizing: border-box;
     border-radius: 2px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -1249,219 +1237,7 @@
   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
     font-size: 12px !important;
   }
-
 }
-
-
-
-  @media screen and (max-width: 768px) {
-     .cta-section {
-        padding-top: 70px;
-        padding-bottom: 0
-    }
-
-     .cta-section .product-container {
-        grid-template-columns: repeat(1, 100%);
-        grid-template-rows: unset;
-        padding: 0 20px 20px
-    }
-
-     .cta-section .product-container .product-thumbnails {
-        grid-area: unset;
-        grid-row: 2
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider {
-        margin-left: unset
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider {
-        width: 95%;
-        margin: auto
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
-        margin-left: unset;
-        left: 0;
-        top: 10%
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper {
-        margin-bottom: 30px;
-        align-items: center
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe {
-        height: 45vh
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe .vp-video-wrapper {
-        border-radius: 10px
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-img::before {
-        padding-bottom: 100%
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
-        display: block
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-prev {
-        left: 0
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-next {
-        right: 0
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet {
-        background: #c78263;
-        opacity: .4;
-        width: 13px;
-        height: 13px
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-        background: #c78263;
-        opacity: 1
-    }
-
-     .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
-        display: none
-    }
-
-     .cta-section .product-container .product-info {
-        grid-area: unset;
-        grid-row: 1;
-        text-align: center;
-        padding: 0 20px;
-        max-width: unset
-    }
-
-     .cta-section .product-container .product-actions {
-        grid-area: unset;
-        grid-row: 3;
-        max-width: unset
-    }
-
-     .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
-        border: 1px solid #ffb22d
-    }
-
-     .cta-section .badges-container .trust-badges {
-        gap: unset;
-        justify-content: space-between
-    }
-
-     .cta-section .badges-container .trust-badges .trust-badge {
-        font-size: 3vw;
-        max-width: 30%
-    }
-
-     .cta-section .badges-container .trust-badges .trust-badge img {
-        width: 40px;
-        height: 5vw
-    }
-    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
-       top: 8vw;
-    }
-
-    .cta-section {
-        padding-top: 70px;
-        padding-bottom: 0
-    }
-
-    .cta-section .product-container {
-        grid-template-columns: repeat(1, 100%);
-        grid-template-rows: unset;
-        padding: 0 20px 20px
-    }
-
-    .cta-section .product-container .product-thumbnails {
-        grid-area: unset;
-        grid-row: 2
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider {
-        margin-left: unset
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider {
-        width: 95%;
-        margin: auto
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
-        margin-left: unset;
-        left: 0;
-        top: 10%
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper {
-        margin-bottom: 30px;
-        align-items: center
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe {
-        height: 45vh
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe .vp-video-wrapper {
-        border-radius: 10px
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-img::before {
-        padding-bottom: 100%
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
-        display: block
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-prev {
-        left: 0
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-next {
-        right: 0
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet {
-        background: #c78263;
-        opacity: .4;
-        width: 13px;
-        height: 13px
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-        background: #c78263;
-        opacity: 1
-    }
-
-    .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
-        display: none
-    }
-
-    .cta-section .product-container .product-info {
-        grid-area: unset;
-        grid-row: 1;
-        text-align: center;
-        padding: 0 20px;
-        max-width: unset
-    }
-
-    .cta-section .product-container .product-actions {
-        grid-area: unset;
-        grid-row: 3;
-        max-width: unset
-    }
-
-    .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
-        border: 1px solid #ffb22d
-    }
-  }
-
   @media screen and (max-width: 330px) {
     .cta-section .variant-infos {
         font-size: 10px !important;
