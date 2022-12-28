@@ -5,14 +5,12 @@
   {% assign curaeats_value = 24 %}
 {% endif %}
 
-{% render 'sale-banner', desktopContent: "title", mobileContent: "title", title: "Spread the cheer. Free Curalin for a year!", bgColor: "red" %}
-
 <div class="catalog-page">
   <div class="container">
-    {% render 'sale-titles' %}
-    {% render 'products-catalog-section-holidays-expansion', Prods: collection.products, challange_value: challange_value, curaeats_value: curaeats_value %}
-    {% render 'trust-badges-section' %}
+    {% render 'collection-titles' %}
+    {% render 'products-catalog-section-new-year', Prods: collection.products, challange_value: challange_value, curaeats_value: curaeats_value %}
+    {% render 'trust-badges-section', colors: "#5c5c5c" %}
   </div>
-  {% render 'holidays-raffle-section' %}
+
   {% render 'bundle-gifts-section', challange_value: challange_value, curaeats_value: curaeats_value %}
 </div>

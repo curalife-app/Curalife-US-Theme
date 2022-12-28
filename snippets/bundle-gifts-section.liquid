@@ -2,37 +2,32 @@
 
 <section id="curaeats-section">
   {% if shop.name == "CuraLife" %}
-    <h2>With every order of Curalin, we’re gifting you:</h2>
+    <h2>Everything you need to keep your blood sugar happy!</h2>
 
     <div class="challange">
       <div class="container">
-        <div class="badge-img">SAVE {{ challange_value | times: 100 | money | replace: ".00", "" }}</div>
-
-        <div class="badge" style="display: none;">
-          <div class="badge-bg">
-            <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
-          </div>
-        </div>
         <h3>30 Day Life Changing Program</h3>
         <p>There is a science to healthy blood sugar, and we’ve cracked it.<br><br>
         Together, we’ll help you kickstart a healthier, stronger, and more determined you... because you deserve health that lasts.<br><br>
         Let’s build good habits together. <b>We’ll guide you every step of the way!</b></p>
 
-        <img class="main-image" src="{{ 'hs-curaeats-main-image.png' | asset_url }}" alt="">
+        <div class="features-wrapper">
+          {% assign features = "<b>Curalin</b> - clinically tested for blood sugar health
+            |Tips on what to eat to nourish your body (and cravings 😉)
+            |Easy exercise routines that you’ll love
+            |A community of 100K+ people cheering you on and helping you out
+            |24/7 unlimited access to Curalife’s customer success team" | split: "|" %}
 
-        {% assign features = "<b>Curalin</b> - clinically tested for blood sugar health
-          |Tips on what to eat to nourish your body (and cravings 😉)
-          |Easy exercise routines that you’ll love
-          |A community of 100K+ people cheering you on and helping you out
-          |24/7 unlimited access to Curalife’s customer success team" | split: "|" %}
+          <div class="features">
+            {% for feature in features %}
+              <div class="feature">
+                <div class="feature-icon"><i class="icofont-check"></i></div>
+                <div class="feature-text">{{ feature | split: "|" | last }}</div>
+              </div>
+            {% endfor %}
+          </div>
 
-        <div class="features">
-          {% for feature in features %}
-            <div class="feature">
-              <div class="feature-icon"><i class="icofont-check"></i></div>
-              <div class="feature-text">{{ feature | split: "|" | last }}</div>
-            </div>
-          {% endfor %}
+          <img class="main-image" src="{{ 'challange-section-main-img.png' | asset_url }}" alt="">
         </div>
       </div>
     </div>
@@ -44,19 +39,13 @@
     <br><br><br>
     {% endif %}
     <div class="container">
-
-      <div class="badge">
-        <div class="badge-bg">
-          <p><span class="rounded floor">{{ curaeats_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
-        </div>
-      </div>
       <div class="content-wrapper">
-        <img class="main-image" src="{{ 'hs-curaeats-main-image-app.png' | asset_url }}" width="413" height="482" alt="" loading="lazy">
+        <img class="main-image" src="{{ 'curaeats-section-main-img.png' | asset_url }}" width="413" height="482" alt="" loading="lazy">
         <div class="titles">
-          <p class="limited-time">Holiday Bonus!</p>
+          <p class="upper-title">Limited Time Bonus!</p>
           <div class="main-titles">
-            <p class="title"><i class="icofont-star"></i> CuraEats Meal Plan! <i class="icofont-star"></i></p>
-            <p class="subtitle">93 recipes you’ll love with special edition holiday recipes!</p>
+            <p class="title">CuraEats Meal Plan!<span>*</span></p>
+            <p class="subtitle">84 recipes you’ll love making and devouring</p>
           </div>
         </div>
       </div>
@@ -71,98 +60,31 @@
     padding-top: 20px;
   }
 
-  #curaeats-section h2 {
-    font-family: 'Poppins';
-    font-weight: 800;
-    font-size: clamp(30px, 2vw, 45px);
-    color: #404733;
-  }
-
   #curaeats-section .container {
     font-weight: bold;
     position: relative;
-    padding: 0 100px;
-  }
-
-  #curaeats-section .badge {
-    width: 100px;
-    height: 100px;
-    background: #FFE746;
-    border-radius: 50%;
-    position: absolute;
-    right: 10px;
-    z-index: 2;
-    font-size: 25px;
-    line-height: 2rem;
-    font-family: 'Montserrat';
-    text-align: center;
-    font-weight: 700;
-    border: 3px solid #FFE746;
-    box-shadow: 0px 3px 3px rgb(0 0 0 / 25%);
-    color: black;
-  }
-
-  #curaeats-section .badge .badge-bg {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 50%;
-    position: absolute;
-    box-shadow: inset 0px 0px 0px 1px black;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
   }
 
   #curaeats-section h2 {
-    color: #404733;
     text-align: center;
-    padding: 0 10px;
+    font-family: 'PP Radio Grotesk';
+    font-size: 56px;
+    color: var(--dark-green);
   }
 
   #curaeats-section .challange {
     position: relative;
-    background: #4B643D;
-    color: white;
+    background: #FFF9F5;
+    color: var(--dark-green);
     padding: 50px 0;
     line-height: 1.2em;
-  }
-
-  #curaeats-section .challange .badge-img {
-    background-image: url("{{ 'hs-badge.png' | asset_url }}");
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: -50px;
-    right: 10px;
-    width: 100px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    padding-top: 16px;
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: clamp(20px, 2vw, 22px);
-    text-align: center;
-    color: #404733;
-    z-index: 0;
-  }
-
-
-  #curaeats-section .challange .badge {
-    background: #FFE746;
-    border-color: #FFE746;
   }
 
   #curaeats-section .challange h3 {
     font-family: 'Poppins';
     color: #404733;
     font-weight: 700;
-    font-size: clamp(22px, 4vw, 39px);
+    font-size: 48px;
     line-height: 1em;
     margin-top: unset;
     margin-bottom: 40px;
@@ -171,26 +93,18 @@
     width: fit-content;
   }
 
-  #curaeats-section .challange h3::before {
-    content: "";
-    background-image: url("{{ 'hs-curaeats-title-decoration.png' | asset_url }}");
-    width: 106%;
-    height: 85px;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: -16px;
-    left: -17px;
-    z-index: -1;
+  #curaeats-section .challange p {
+    font-weight: normal;
+    color: var(--dark-green);
   }
 
-  #curaeats-section .challange p {
-    max-width: 780px;
+  #curaeats-section .challange .features-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #curaeats-section .challange .main-image {
-    position: absolute;
-    right: -100px;
-    bottom: -50px;
     max-width: 60%;
   }
 
@@ -203,8 +117,11 @@
   #curaeats-section .challange .features .feature {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #D9D9D9;
     padding: 15px 0;
+    font-family: "PP Radio Grotesk";
+    font-weight: normal;
+    font-size: 24px;
   }
 
   #curaeats-section .challange .features .feature:last-child {
@@ -212,8 +129,8 @@
   }
 
   #curaeats-section .challange .features .feature .feature-icon {
-    background: white;
-    color: #404733;
+    background: var(--light-green);
+    color: white;
     border-radius: 50%;
     min-width: 45px;
     height: 45px;
@@ -227,20 +144,11 @@
   #curaeats-section .curaeats {
     position: relative;
     text-align: center;
-  }
-
-  #curaeats-section .curaeats .badge {
-    background: #C00101;
-    border-color: #C00101;
-    color: white;
-  }
-
-  #curaeats-section .curaeats .badge .badge-bg {
-    box-shadow: inset 0px 0px 0px 1px white;
+    padding: 50px 0;
   }
 
   #curaeats-section i.plus {
-    color: #C00101;
+    color: var(--dark-green);
     font-size: 200px;
     position: absolute;
     top: -115px;
@@ -258,23 +166,26 @@
     position: relative;
   }
 
-  #curaeats-section .curaeats .content-wrapper p.limited-time {
-    font-size: clamp(30px, 3vw, 56px);
+  #curaeats-section .curaeats .content-wrapper p.upper-title {
+    font-size: 60px;
     font-weight: bold;
     margin: 0.3em 0;
-    color: #4B643D;
+    color: #FFB22D;
+  }
+
+  #curaeats-section .curaeats .content-wrapper .titles {
+    font-family: "PP Radio Grotesk";
   }
 
   #curaeats-section .curaeats .content-wrapper .main-titles {
-    border-top: 1px solid #4B643D;
-    border-bottom: 1px solid #4B643D;
+    border-top: 1px solid #FFB22D;
+    border-bottom: 1px solid #FFB22D;
     padding: 1.5em 0;
   }
 
   #curaeats-section .curaeats .content-wrapper .main-titles p.title {
-    font-family: 'Montserrat';
     letter-spacing: -2px;
-    font-size: 2.1em;
+    font-size: 85px;
     font-weight: bold;
     margin: 0;
     display: flex;
@@ -284,15 +195,15 @@
   }
 
   #curaeats-section .curaeats .content-wrapper .main-titles p.title {
-    color:#C00101;
+    color: var(--dark-green);
   }
-  #curaeats-section .curaeats .content-wrapper .main-titles p.title i {
-    font-size: 0.5em;
-    color: #4B643D;
+
+  #curaeats-section .curaeats .content-wrapper .main-titles p.title span {
+    color: #FFB22D;
   }
 
   #curaeats-section .curaeats .content-wrapper .main-titles p.subtitle {
-    font-size: 1.1em;
+    font-size: 53px;
     font-weight: 100;
     max-width: 650px;
     margin: 0 auto;
@@ -303,14 +214,7 @@
     margin: 20px 0 0;
   }
 
-
   @media screen and (max-width: 768px) {
-    #curaeats-section .challange .badge-img {
-      right: 1vw;
-      padding-top: 4vw;
-      line-height: 23px;
-
-    }
     #curaeats-section {
       font-size: 5.4vw;
     }
@@ -319,24 +223,12 @@
       padding: 0 15px;
     }
 
-    #curaeats-section .badge {
-      width: 20vw;
-      height: 20vw;
-      font-size: 4.4vw;
-      top: -10vw;
-      right: 5vw;
-    }
-
     #curaeats-section .challange h3 {
       margin-top: unset;
       max-width: 75%;
       color: #FFFFFF;
       font-weight: 400;
       line-height: 1.2em;
-    }
-
-    #curaeats-section .challange h3::before {
-      content: unset;
     }
 
     #curaeats-section .challange .main-image {
@@ -369,7 +261,7 @@
       width: 100%;
     }
 
-    #curaeats-section .curaeats .content-wrapper .titles p.limited-time {
+    #curaeats-section .curaeats .content-wrapper .titles p.upper-title {
       font-size: 1.3em;
     }
 
@@ -393,5 +285,3 @@
     }
   }
 </style>
-
-{% render 'sparkles', element_selector: '.challange' %}
