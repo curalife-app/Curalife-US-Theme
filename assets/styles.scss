@@ -879,26 +879,25 @@ h1, h2, h3 {
       }
     }
   }
+}
 
+.badges {
+  padding-top: 60px;
 
-  .badges {
-    padding-top: 60px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
+    li {
+      display: block;
+      width: calc(100% / 6);
+      padding: 4px;
+      text-align: center;
 
-      li {
-        display: block;
-        width: calc(100% / 6);
-        padding: 4px;
-        text-align: center;
-
-        img {
-          object-fit: contain;
-        }
+      img {
+        object-fit: contain;
       }
     }
   }
