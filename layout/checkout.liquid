@@ -216,17 +216,7 @@
 
         {% if extensions_exist %}
           <div class="sidebar-extentions">
-            <div id="trust-badges" class="trust-badges">
-              <div class="badge">
-                <img class="badge-icon" src="{{ 'icon-money-back.png' | asset_url }}" alt="60 Days Money Back Guarantee Icon" loading="lazy">
-                <p class="badge-title">60 DAYS GUARANTEE</p>
-              </div>
-              <div class="badge">
-                <img class="badge-icon" src="{{ 'icon-secure-checkout.png' | asset_url }}" alt="Secure Checkout Icon" loading="lazy">
-                <p class="badge-title">100% SECURE CHECKOUT</p>
-              </div>
-            </div>
-
+            {% render 'checkout-badges-widget' %}
             {% render 'checkout-reviews-widget' %}
           </div>
         {% endif %}
@@ -669,29 +659,6 @@
         display: none;
       }
 
-      .trust-badges {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin: 10px 0;
-      }
-
-      .trust-badges .badge {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .trust-badges .badge img.badge-icon {
-        height: 25px;
-      }
-
-      .trust-badges .badge .badge-title {
-        font-size: 13px;
-      }
-
       .money-back-guarantee {
         display: flex;
       }
@@ -760,63 +727,6 @@
         top: 0;
         width: 210px;
         height: 30px;
-      }
-
-      .reviews {
-        margin-top: 50px;
-      }
-
-      .reviews-title {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #000;
-        line-height: 0.1em;
-        margin: 10px 0 20px;
-      }
-
-      .reviews-title span {
-        background: #fafafa;
-        padding: 0 10px;
-        font-size: 18px;
-      }
-
-      .review {
-        padding: 20px;
-        margin-bottom: 30px;
-        background: white;
-        border-radius: 9px;
-        box-shadow: 0px 10px 19px -17px #000000, 5px 5px 15px 5px rgb(0 0 0 / 0%);
-      }
-
-      .review .review-info {
-        display: flex;
-        gap: 10px;
-        position: relative;
-      }
-
-      .review .review-info img {
-        height: 55px;
-      }
-
-      .review .review-info .review-details .reviewer {
-        font-size: 20px;
-        font-weight: 500;
-      }
-
-      .review .review-info .review-date {
-        position: absolute;
-        right: 0;
-      }
-
-      .review .review-title {
-        font-size: 20px;
-        font-weight: 500;
-        margin: 15px 0 5px;
-      }
-
-      .review-content {
-        font-size: 17px;
-        font-weight: 300;
       }
 
       .order-summary__sections {
