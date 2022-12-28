@@ -4,7 +4,7 @@
             <div class="mini-wrap">
                 <div class="advantages-section">
                     <div class="sub-title">
-                        <h3>{{section.settings.cpwr_titl}}</h3>
+                        <h3>{{ section.settings.cpwr_titl }}</h3>
                     </div>
                     <div class="advantages-wrap">
                         {% assign cura_powers = 'new-year-group-1.png*Supports healthy pancreatic beta cells function
@@ -18,7 +18,7 @@
                            
                             
                                
-                           {%for cura_power in cura_powers %}
+                           {% for cura_power in cura_powers %}
                                <li class="advantage-content">
                                   <div class="icon-wrap">
                                       <img src="{{ cura_power | split: '*' | first | asset_url }}" width="128" height="112" alt="icon-wrap" loading="lazy">
@@ -141,10 +141,6 @@
 
 .icon-wrap img {
     position: relative;
-    top: 40%;
-    left: 0%;
-    width: 80px;
-    height: 60px;
     object-fit: contain;
 }
 
