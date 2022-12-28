@@ -31,7 +31,6 @@
   .hero-banner {
     position: relative;
     overflow: hidden;
-
     background: #E8E8B0;
   }
 
@@ -105,19 +104,19 @@
     gap: 1vw;
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
+    min-width: 40%;
   }
 
   .holidays-hero-banner-content .text-button .holiday-title {
     color: var(--dark-green);
-    font-size: {% if isLP %}clamp(30px, 2vw, 50px){% else %}clamp(50px, 12vw, 80px) {% endif %};
+    font-size: {% if isLP %}clamp(30px, 2vw, 120px){% else %}clamp(50px, 12vw, 120px) {% endif %};
   }
 
   .holidays-hero-banner-content .text-button .holiday-text {
     color: var(--dark-green);
     font-style: normal;
     font-weight: 300;
-    font-size: clamp(26px, 2vw, 42px);
-    max-width: 400px;
+    font-size: clamp(26px, 2vw, 45px);
   }
 
    .hero-banner .main-img-mb {
