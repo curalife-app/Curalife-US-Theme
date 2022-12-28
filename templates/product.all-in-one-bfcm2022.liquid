@@ -1,12 +1,12 @@
 
 {% if shop.name == "CuraLife" %}
     {% assign shipping_worldwide = 'US Free Shipping' %}
-    {% assign challange_value = 150 %}
+    {% assign challenge_value = 150 %}
     {% assign curaeats_value = 49 %}
     {% assign currency_symbol = '$' %}
 {% elsif shop.name == "CuraLife Global" %}
     {% assign shipping_worldwide = 'Free Shipping Above £99' %}
-    {% assign challange_value = 0 %}
+    {% assign challenge_value = 0 %}
     {% assign curaeats_value = 40 %}
     {% assign currency_symbol = '£' %}
 {% endif %}
@@ -18,7 +18,7 @@
   {%- comment -%} <img class="main-logo" src="{{ 'logo-colored.png' | asset_url }}" alt=""> {%- endcomment -%}
   <a id="back-to-top-btn" style="color: white;">Try CuraLin</a>
   {% render 'product-all-in-one-cta-section-sliders' %}
-  {% render 'collection-curaeats-section-last-offer', challange_value: challange_value, curaeats_value: curaeats_value %}
+  {% render 'collection-curaeats-section-last-offer', challenge_value: challenge_value, curaeats_value: curaeats_value %}
 
   <section class="how-to-section" id="how-to">
     <div class="container">

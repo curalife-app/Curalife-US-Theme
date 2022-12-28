@@ -2,17 +2,17 @@
     {% assign currency_symbol = '$' %}
 
     {% if localization.country.iso_code == 'CA' %}
-        {% assign challange_value = 132 %}
+        {% assign challenge_value = 132 %}
         {% assign curaeats_value = 39 %}
     {% elsif localization.country.iso_code == 'AU' %}
-        {% assign challange_value = 147 %}
+        {% assign challenge_value = 147 %}
         {% assign curaeats_value = 43 %}
     {% else %}
-        {% assign challange_value = 99 %}
+        {% assign challenge_value = 99 %}
         {% assign curaeats_value = 29 %}
     {% endif %}
 {% elsif shop.name == "CuraLife Global" %}
-    {% assign challange_value = 0 %}
+    {% assign challenge_value = 0 %}
     {% assign curaeats_value = 24 %}
     {% assign currency_symbol = '£' %}
 {% endif %}
@@ -41,10 +41,10 @@
 
 
 <div class="product-template-all-in-one">
-{% render 'product-all-in-one-cta-section-sliders', challange_value: challange_value, curaeats_value: curaeats_value %}
+{% render 'product-all-in-one-cta-section-sliders', challenge_value: challenge_value, curaeats_value: curaeats_value %}
 {% render 'trust-badges-section' %}
 {% render 'product-all-in-one-back-to-top' %}
-{% render 'bundle-gifts-section', challange_value: challange_value, curaeats_value: curaeats_value %}
+{% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
 {% render 'product-all-in-one-how-to-section' %}
 {% render 'product-all-in-one-reviews-section', reviewsItems: reviewsItems %}
 {% render 'lps-video-reviews-2', maintitle: 'Customers Reviews Of CuraLin' %}

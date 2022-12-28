@@ -5,14 +5,14 @@
     {% unless product.title == "CuraLin BFCM 2022" %}
     <h2>Everything you need to keep your blood sugar happy!</h2>
     {% endunless %}
-    <div class="challange">
+    <div class="challenge">
 
       <div class="container">
-        <div class="badge-img">SAVE {{ challange_value | times: 100 | money | replace: ".00", "" }}</div>
+        <div class="badge-img">SAVE {{ challenge_value | times: 100 | money | replace: ".00", "" }}</div>
 
         <div class="badge" style="display: none;">
           <div class="badge-bg">
-            <p><span class="rounded floor">{{ challange_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
+            <p><span class="rounded floor">{{ challenge_value | times: 100 | money | replace: ".00", "" }}</span><br>Value</p>
           </div>
         </div>
         <h3>30 Day Life Changing Program</h3>
@@ -123,7 +123,7 @@
     padding: 0 10px;
   }
 
-  #curaeats-section .challange {
+  #curaeats-section .challenge {
     position: relative;
     background: #4B643D;
     color: white;
@@ -131,7 +131,7 @@
     line-height: 1.2em;
   }
 
-  #curaeats-section .challange .badge-img {
+  #curaeats-section .challenge .badge-img {
     background-image: url("{{ 'hs-badge.png' | asset_url }}");
     background-size: contain;
     background-repeat: no-repeat;
@@ -155,12 +155,12 @@
   }
 
 
-  #curaeats-section .challange .badge {
+  #curaeats-section .challenge .badge {
     background: #FFE746;
     border-color: #FFE746;
   }
 
-  #curaeats-section .challange h3 {
+  #curaeats-section .challenge h3 {
     font-family: 'Poppins';
     color: #404733;
     font-weight: 700;
@@ -173,7 +173,7 @@
     width: fit-content;
   }
 
-  #curaeats-section .challange h3::before {
+  #curaeats-section .challenge h3::before {
     content: "";
     background-image: url("{{ 'hs-curaeats-title-decoration.png' | asset_url }}");
     width: 106%;
@@ -185,35 +185,35 @@
     z-index: -1;
   }
 
-  #curaeats-section .challange p {
+  #curaeats-section .challenge p {
     max-width: 780px;
   }
 
-  #curaeats-section .challange .main-image {
+  #curaeats-section .challenge .main-image {
     position: absolute;
     right: -100px;
     bottom: -50px;
     max-width: 60%;
   }
 
-  #curaeats-section .challange .features {
+  #curaeats-section .challenge .features {
     max-width: 415px;
     display: flex;
     flex-direction: column;
   }
 
-  #curaeats-section .challange .features .feature {
+  #curaeats-section .challenge .features .feature {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #fff;
     padding: 15px 0;
   }
 
-  #curaeats-section .challange .features .feature:last-child {
+  #curaeats-section .challenge .features .feature:last-child {
     border-bottom: unset;
   }
 
-  #curaeats-section .challange .features .feature .feature-icon {
+  #curaeats-section .challenge .features .feature .feature-icon {
     background: white;
     color: #404733;
     border-radius: 50%;
@@ -306,7 +306,7 @@
 
 
   @media screen and (max-width: 768px) {
-    #curaeats-section .challange .badge-img {
+    #curaeats-section .challenge .badge-img {
       right: 1vw;
       padding-top: 4vw;
       line-height: 23px;
@@ -328,7 +328,7 @@
       right: 5vw;
     }
 
-    #curaeats-section .challange h3 {
+    #curaeats-section .challenge h3 {
       margin-top: unset;
       max-width: 75%;
       color: #FFFFFF;
@@ -336,18 +336,18 @@
       line-height: 1.2em;
     }
 
-    #curaeats-section .challange h3::before {
+    #curaeats-section .challenge h3::before {
       content: unset;
     }
 
-    #curaeats-section .challange .main-image {
+    #curaeats-section .challenge .main-image {
       position: relative;
       min-width: 170%;
       right: 35%;
       bottom: 0;
     }
 
-    #curaeats-section .challange .features {
+    #curaeats-section .challenge .features {
       max-width: unset;
     }
 
