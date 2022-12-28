@@ -153,7 +153,7 @@
               </div>
             </div>
 
-            <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save" style="color: white;font-weight:100;"></span></button>
+            <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
           </div>
         </div>
       </div>
@@ -415,8 +415,14 @@
   .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap button span:first-child {
     border-right: 1px solid white;
   }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap button span.save {
+    font-weight: 100;
+    font-size: 75%;
+  }
+
   .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
-    border-color: #468734;
+    border-color: var(--dark-green);
   }
 
   @media screen and (max-width: 1270px) {
