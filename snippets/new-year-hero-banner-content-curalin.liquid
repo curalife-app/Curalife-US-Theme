@@ -6,14 +6,22 @@
   <div class="text-button">
     <div class="holiday-title">curalin</div>
     <div class="holiday-text">Natural Blood Sugar Support Supplement</div>
+    {% if isLP %}
+    <a class="cta-btn" href="/collections/all-holidays2022">Order Now</a>
+    {% else %}
     <a class="cta-btn" href="/collections/all-holidays2022">Shop Now</a>
+{% endif %}
   </div>
      <img class="main-img" src="{{ 'mask-and-bottle.png' | asset_url }}" width="1039" height="528" alt="bottle-hand-mask" loading="lazy">
 </div>
 </div>
 <img class="main-img-mb" src="{{ 'mask-and-bottle-mb.png' | asset_url }}" width="750" height="1084" alt="bottle-hand-mask-mb" loading="lazy"> 
 <div class="container">
+{% if isLP %}
+<a class="main-btn mobile-btn" id='main-cta-btn' href="/collections/all-holidays2022">ORDER NOW</a></div>
+{% else %} 
 <a class="main-btn mobile-btn" id='main-cta-btn' href="/collections/all-holidays2022">SHOP NOW</a></div> 
+{% endif %}
 </section>
 
 
