@@ -5,7 +5,7 @@
                   <div class="main-side footer-column">
                     {% if section.settings.ftr_logoimage != blank %}
                     <div class="title">
-                      <div class="logo">               
+                      <div class="logo">
                           <a href="{{section.settings.lgo_ftrlink}}"><img src="{{section.settings.ftr_logoimage | img_url: 183 }}" width="183px" height="52px" alt=""></a>
                       </div>
                     </div>
@@ -38,7 +38,7 @@
                                 <img src="{{block.settings.phn_img | img_url: width: 32 }}" alt="" width="20" height="20">
                               </span>
                               {% endif %}
-                              {{block.settings.phn_title}} 
+                              {{block.settings.phn_title}}
                             </div>
                               <div class="show-phone">
                                 <div class="show-phone-btn"><i class="{{block.settings.phn_icn}}"></i> Show Phone</div>
@@ -49,7 +49,7 @@
                           </li>
                           {% endif %}
                           {% endfor %}
-                         
+
                       </ul>
                   </div>
                   <div class="social-bar">
@@ -65,7 +65,7 @@
                     </ul>
                 </div>
                   </div>
-                  
+
               </div>
               <div class="text">
                   <p>{{section.settings.ftr_desc}}</p>
@@ -143,8 +143,8 @@
       "label": "All Rights Title",
       "default": "All Rights Title"
      }
-     
-     
+
+
   ],
   "blocks": [
   {
@@ -197,7 +197,7 @@
               "type": "image_picker",
               "id": "phn_img",
               "label": "Select Image"
-            },    
+            },
             {
               "type": "text",
               "id": "phn_title",
@@ -216,8 +216,8 @@
               "label": "Contact Number",
               "default": " Enter Phone Number "
             }
-      
-          ]    
+
+          ]
         },
         {
         "type": "social",
@@ -240,8 +240,8 @@
               "type": "url",
               "label": "Add Link"
             }
-      
-          ]    
+
+          ]
         },
         {
         "type": "payment",
@@ -252,8 +252,8 @@
               "id": "pymnt_img",
               "label": "Select Image"
             }
-      
-          ]    
+
+          ]
         }
 
 ]
@@ -301,7 +301,7 @@ padding-bottom: 30px;
   margin-right: 50px
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 768px){
 footer .footer-columns {
     font-size: 20px;
 }

@@ -11,7 +11,7 @@
         <h2 class="main-title">Your Work<br>Should<span class="main-title-bolder">MATTER.</span></h2>
         <img src="{{ "careers-hero-image-mobile.png" | asset_url }}" alt="creers-image">
         <p class="subtitle">We are on a mission to <b>REDEFINE HEALTHCARE.</b></p>
-        <div class="description">By disrupting an industry, we help millions of people live healthy, happy lives. As a team, we put the health and wellness of our community at the brink of our job! We are creators/builders/innovators - and we’re disrupting how the world sees health, one person at a time.<br><b>Sounds fun right?</b></div>        
+        <div class="description">By disrupting an industry, we help millions of people live healthy, happy lives. As a team, we put the health and wellness of our community at the brink of our job! We are creators/builders/innovators - and we’re disrupting how the world sees health, one person at a time.<br><b>Sounds fun right?</b></div>
       </div>
       <div class="hero-image-wrapper">
         <img src="{{ "careers-hero-image.png" | asset_url }}" alt="creers-image">
@@ -101,11 +101,11 @@
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
-    
+
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    
+
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
@@ -137,7 +137,7 @@
       var scroll_position = $(window).scrollTop();
       var bottom_of_video = $(this).offset().top + ($(this).outerHeight() / 2);
       var bottom_of_window3 = $(window).scrollTop() + $(window).height();
-      if( bottom_of_window3 > bottom_of_video && scroll_position < bottom_of_video ) {  
+      if( bottom_of_window3 > bottom_of_video && scroll_position < bottom_of_video ) {
         player.playVideo();
         $('#player').css({'opacity':'1'});
       } else {
@@ -146,7 +146,7 @@
       }
     });
   });
-  
+
 });
     </script>
     <div class="vid-section">
@@ -170,7 +170,7 @@
   {% endif %}
 
   {% for listing in listings %}
-      
+
       {% assign parts = listing  | split: '|||' %}
       {% assign handle = parts[0] %}
       {% assign title = parts[1] %}
@@ -191,7 +191,7 @@
       {% assign career_amount_min = "" %}
       {% assign career_amount_max = "" %}
       {% assign career_show_salary = "" %}
-      
+
       {% if parts.size > 12 %}
         {% assign career_currency = parts[7] %}
         {% assign career_period = parts[8] %}
@@ -223,13 +223,13 @@
           {% endcase %}
         {% endcapture %}
       {% endif %}
-        
+
       {% if career_show_salary != blank and career_show_salary == 'true' %}
 
         {% assign size_value = career_amount_value | size %}
         {% assign size_max = career_amount_max | size %}
         {% assign size_min = career_amount_min | size %}
-        
+
         {% if size_value > 3 %}
           {% assign val_slice = career_amount_value | slice: -3, 3 %}
           {% if val_slice == '000' %}
@@ -237,7 +237,7 @@
             {% assign career_amount_value = career_amount_value | slice: 0, size | append: 'K' %}
           {% endif %}
         {% endif %}
-      
+
         {% if size_max > 3 %}
           {% assign max_slice = career_amount_max | slice: -3, 3 %}
           {% if val_slice == '000' %}
@@ -245,7 +245,7 @@
             {% assign career_amount_max = career_amount_max | slice: 0, size | append: 'K' %}
           {% endif %}
         {% endif %}
-      
+
         {% if size_min > 3 %}
           {% assign min_slice = career_amount_min | slice: -3, 3 %}
           {% if val_slice == '000' %}
@@ -253,7 +253,7 @@
             {% assign career_amount_min = career_amount_min | slice: 0, size | append: 'K' %}
           {% endif %}
         {% endif %}
-        
+
 
         {% assign suffix_string = " " | append: career_currency | downcase %}
         {% assign suffix_string = suffix_string | append: " / " | append: career_period_text | downcase %}
@@ -268,7 +268,7 @@
         {% endif %}
 
         {% assign salary = salary | append: suffix_string %}
-    
+
       {% endif %}
 
     {% if external_link == blank or external_link == 'null' %}
@@ -477,7 +477,7 @@
   clear: none;
   display: inline-block;
   float: left;
-  } 
+  }
   #smoothie-job-content .details{
   display:block;
   margin: 5px 0;
@@ -507,17 +507,17 @@
   padding: 26px 54px;
   border-bottom: 1px solid #eee;
   cursor: pointer;
-  color: black; 
+  color: black;
   }
   #smoothie-job-content .job-page li:hover{
-  background: rgba(0, 0, 0, 0.04);    
+  background: rgba(0, 0, 0, 0.04);
   }
   #smoothie-job-content .job-page li:after{
   content: "";
   clear: both;
   display: block;
   }
-  
+
   #smoothie-job-content .job-page{
   padding: 30px;
   margin: 0 auto;
@@ -537,12 +537,12 @@
   #smoothie-job-content a:last-child > li{
     border: 0px;
   }
-  
+
   p.ql-align-center{
     text-align: center;
   }
-  
-  @media(max-width: 760px){
+
+  @media(max-width: 768px){
     #smoothie-job-content .job-page {
       padding: 16px;
     }
@@ -575,7 +575,7 @@
     line-height: 12vw;
     margin-top: 10px;
     }
-    
+
     #smoothie-job-content h2 .main-title-bolder {
       display: block;
       font-size: 18vw;
@@ -586,7 +586,7 @@
       line-height: 40px;
       font-size: 5vw;
     }
-    
+
     #smoothie-job-content button#scroll-to-careers {
       width: 100%;
       color: black !important;
@@ -630,7 +630,7 @@
     justify-content: center;
     align-items: center;
  }
- 
+
  .box {
    position: absolute;
    width: 410px;
@@ -643,7 +643,7 @@
    overflow: hidden;
    transition: box-shadow ease 1s;
  }
- 
+
  .icon {
    position: relative;
    transition: all 0.6s ease;
@@ -656,7 +656,7 @@
   max-height: 80px;
     object-fit: contain;
  }
- 
+
  .icon_bg {
    width: 120px;
    height: 120px;
@@ -669,28 +669,28 @@
            transition-delay: 0.32s;
    will-change: transform;
  }
- 
+
  .text .title {
    position: relative;
    font-size: 36px !important;
    font-weight: 200;
    transition: all 0.4s ease-in-out;
  }
- 
+
  .benefit:hover .box {
            box-shadow: 0 3px 4px 0 rgba(44, 71, 146, 0.25);
            transition-delay: 0.32s;
  }
- 
+
  .benefit:hover .icon_bg {
            transform: translateY(-32px) scale(8);
  }
- 
+
  .benefit:hover .icon {
            transform: translateY(-130px) scale(0.7);
            opacity: 0;
  }
- 
+
  .benefit {
      width: 410px;
    height: 340px;
@@ -699,7 +699,7 @@
            align-items: center;
            flex-direction: column;
  }
- 
+
  .benefit .text {
    position: relative;
    top: -70px;
@@ -707,16 +707,16 @@
    transition: all 0.4s ease-in-out;
            transition-delay: 0.32s;
  }
- 
+
  .benefit:hover .text {
    transform: translateY(-230px) scale(.8);
   }
-  
+
   .benefit:hover .text .title {
    color: white;
    font-weight: 500;
  }
- 
+
  .box::after {
    content: "We celebrate that each individual brings diversity and a different talent to our team, and we want your voice to be heard. Our work culture thrives on respect and support from each other. We want to hear you!";
    position: absolute;
@@ -752,7 +752,7 @@
  .benefit:nth-child(5) .box:after {
    content: "We’re a little bit of everywhere, but remain a close family with all of our offices! We’re located in Tel Aviv, Barcelona and the USA, and make up 8 nationalities between us! We visit, we collaborate, and we move as one.";
  }
- 
+
  .benefit:hover .box::after {
    opacity: 1;
  }
@@ -791,7 +791,7 @@
   transition: all .5s ease-in-out;
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width:768px) {
   .vid-wrap {
     height: 60vw;
   }
