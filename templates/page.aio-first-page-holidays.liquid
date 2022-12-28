@@ -1,4 +1,4 @@
-{% layout 'theme.lps' %} 
+{% layout 'theme.lps' %}
 {% if shop.name == 'CuraLife' %}
   {% assign store_domain = "curalife.com" %}
   {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
@@ -105,15 +105,11 @@
 
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
 
-
-
-{% render 'sale-banner', desktopContent: "logo,title", mobileContent: "logo,cta", title: "Get into the holiday spirit!", bgColor: "red", logoFileName: "hs-santa-logo-green" %}
-
 {% if shop.name == "CuraLife" %}
     {% assign meetCuralins = 'lp-aio-client-tested-icon.svg*Clinically tested:with results published in a peer-reviewed journal
-    |lp-aio-capsules-icon.svg*Easy to take capsules:take 1-2 after meals   
-    |lp-aio-formula-doctors.svg*Formulated by doctors:specifically for glucose support 
-    |lp-aio-quick-results-icon.svg*See results quickly:on average in 2-3 weeks  
+    |lp-aio-capsules-icon.svg*Easy to take capsules:take 1-2 after meals
+    |lp-aio-formula-doctors.svg*Formulated by doctors:specifically for glucose support
+    |lp-aio-quick-results-icon.svg*See results quickly:on average in 2-3 weeks
     |lp-aio-research-icon.svg*10 years of research:support CuraLin&apos;s formula
     |lp-aio-recommend-doctors-icon.svg*700+ doctors recommend:CuraLin to their patients
     |lp-aio-supports-icon.svg*Supports 18 cellular functions:that promote healthy blood sugar
@@ -132,7 +128,7 @@
     {% assign meetCuralins = 'lp-aio-client-tested-icon.svg*Clinically tested:with results published in a peer-reviewed journal
     |lp-aio-capsules-icon.svg*Easy to take capsules:take 1-2 after meals
     |lp-aio-formula-doctors.svg*Formulated by doctors:specifically for glucose support
-    |lp-aio-quick-results-icon.svg*See results quickly:on average in 2-3 weeks  
+    |lp-aio-quick-results-icon.svg*See results quickly:on average in 2-3 weeks
     |lp-aio-research-icon.svg*10 years of research:support CuraLin&apos;s formula
     |lp-aio-recommend-doctors-icon.svg*700+ doctors recommend:CuraLin to their patients
     |lp-aio-supports-icon.svg*Supports 18 cellular functions:that promote healthy blood sugar
@@ -147,7 +143,7 @@
           |lp-aio-vegan.svg:Vegan friendly
           |lp-aio-gmp.png:GMP and ISO9001 Certified facilities
           ' | split: '|' %}
-    		
+
 {% endif %}
 
 {% assign faqItems = "Can I take CuraLin alongside my drugs?:CuraLin is a natural dietary supplement, meaning that it’s meant as a compliment to your existing regime. You simply take it as part of your diet to help maintain a healthy blood sugar level. Thousands of CuraLin users take CuraLin alongside their prescribed drugs and treatments and no serious negative interactions have been recorded. Of course, please consult with your doctor before starting on CuraLin, whether you’re on drugs or not.
@@ -197,7 +193,7 @@ anymore
 health.
 ' | split: '|' %}
 
-<div class="page-overflow"> 
+<div class="page-overflow">
     {% render 'aio-first-page-hero-section' %}
     {% render 'partnerships-featured' %}
     {% render 'aio-first-page-meet-curalin', meetCuralins: meetCuralins %}
@@ -207,10 +203,10 @@ health.
     {% render 'aio-first-page-trusted-doctors', doctors: doctors %}
     {% render 'aio-first-page-testimonials-section' %}
     {% render 'aio-first-page-natural-ingredients', natural_ingredients: natural_ingredients %}
-    {% render 'aio-first-page-cta-button' %}  
+    {% render 'aio-first-page-cta-button' %}
     {% render 'aio-first-page-why-curalife' %}
     {% render 'aio-first-page-supported-community' %}
-    {% render 'aio-first-page-satisfaction-survey' %}  
+    {% render 'aio-first-page-satisfaction-survey' %}
     {% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "complex" %}
 </div>
 
