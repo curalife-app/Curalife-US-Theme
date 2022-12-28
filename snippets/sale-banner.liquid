@@ -2,10 +2,9 @@
   {% assign instance_id = 'origin' %}
 {% endunless %}
 <div class="sale-banner {{ instance_id }}">
-  {% render 'snow-effect' %}
   <div class="container">
     <div class="logo-wrapper">
-        {% if logoFileName %}<img class="logo" src="{{ logoFileName | append: '.png' | asset_url }}" width="164" height="45" alt="logo">{% endif %}
+        {% if logoFileName %}<img class="logo" src="{{ logoFileName | asset_url }}" width="164" height="45" alt="logo">{% endif %}
     </div>
 
     <p class="title">{{ title }}</p>
@@ -22,7 +21,7 @@
         </div>
       {% endif %}
 
-      <a class="main-btn" id='main-cta-btn' href="{{ ctaButtonLink }}">ORDER NOW</a>
+      <a class="main-btn" id='main-cta-btn' href="{{ ctaButtonLink }}">{{ ctaButtonTitle }}</a>
     </div>
   </div>
 </div>
