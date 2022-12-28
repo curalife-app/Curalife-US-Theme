@@ -25,112 +25,14 @@
         <img src="{{ "icon-flag-us.png" | asset_url }}" width="32" height="32" alt="" loading="lazy">
         <a href="tel:+18882867307"><p>US-Toll-Free: +1 888 286 7307</p></a>
       </div>
-      {% if isLP %}
       <div class="phone-number">
           <img src="{{ "icon-flag-au.png" | asset_url }}" alt="" loading="lazy">
           <a href="tel:+611800942961"><p>AU-Toll-Free: +61 1800 942 961</p></a>
       </div>
-    {% endif %}
     </div>
   </div>
   {% if box_link %}</a>{% endif %}
 </section>
-{%- comment -%}
-<style>
-  #contact-us-section {
-    {%- comment -%} margin-bottom: 50px; {%- endcomment -%}
-  }
-
-  #contact-us-section .container {
-    {% if border %}border: 1px solid;{% endif %}
-    padding: 40px;
-    max-width: 1130px;
-  }
-
-  #contact-us-section .container h2 {
-    text-align: center;
-    font-size: 40px;
-    font-weight: normal;
-    max-width: 920px;
-    margin: auto;
-  }
-
-  #contact-us-section .container .contact-options {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    margin-top: 80px;
-  }
-
-  #contact-us-section .container .contact-options .contact-option {
-    text-align: center;
-    font-size: 18px;
-  }
-
-  #contact-us-section .container .contact-options .contact-option .img-wrapper {
-    border-radius: 50%;
-    background-color: {{icons-background-color}};
-    padding: 20px;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    margin: auto;
-  }
-
-  #contact-us-section .container .contact-options .contact-option .img-wrapper img {
-    object-fit: contain;
-  }
-
-  #contact-us-section .container .phone-numbers {
-    display: flex;
-    flex-direction: column;
-    max-width: 340px;
-    margin: auto;
-    margin-top: 30px;
-  }
-
-  #contact-us-section .container .phone-numbers .phone-number {
-    display: flex;
-    align-items: center;
-    margin: auto;
-  }
-
-  #contact-us-section .container .phone-numbers .phone-number img {
-    width: 25px;
-  }
-
-  #contact-us-section .container .phone-numbers .phone-number p {
-    font-size: 18px;
-    margin: 10px;
-    color: black;
-  }
-
-@media screen and (max-width: 768px) {
-  #contact-us-section {
-    padding: 5vw;
-  }
-
-  #contact-us-section .container h2 {
-    font-size: 6vw;
-  }
-
-  #contact-us-section .container .contact-options {
-    gap: 10vw;
-    margin-top: 40px;
-  }
-
-  #contact-us-section .container .contact-options .contact-option .img-wrapper {
-    width: 10vw;
-    height: 10vw;
-    padding: 15px;
-  }
-
-  #contact-us-section .container .phone-numbers .phone-number a p {
-    font-size: 4vw;
-  }
-}
-</style> {%- endcomment -%}
 
 <style>
 .contact-us-section .container h2 {
@@ -171,6 +73,7 @@
     flex-direction: column;
     max-width: 340px;
     margin: 30px auto auto;
+    align-items: center;
 }
 
 .contact-us-section .container .phone-numbers .phone-number {
