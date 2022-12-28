@@ -49,12 +49,7 @@
     {{ 'go-cart.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'go-cart.js' | asset_url | script_tag }}
 
-    <script>var goCart = new GoCart({
-        cartMode: 'drawer', //drawer or mini-cart
-        drawerDirection: 'right', //cart drawer from left or right
-        displayModal: true, //display success modal when adding product to cart
-        moneyFormat: '${{amount}}', //template for money format when displaying money
-    });</script>
+    <script>var goCart = new GoCart();</script>
 
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
