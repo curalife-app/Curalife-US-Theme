@@ -46,8 +46,11 @@
     {% endif %}
     {{ content_for_header }} <!-- Header hook for plugins -->
 
-    <script src="{{ 'go-cart.js' | asset_url }}" async></script>
     {{ 'go-cart.css' | asset_url | stylesheet_tag: preload: true }}
+    <script src="{{ 'go-cart.js' | asset_url }}" async></script>
+    <script>
+      var goCart = new GoCart();
+    </script>
 
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
