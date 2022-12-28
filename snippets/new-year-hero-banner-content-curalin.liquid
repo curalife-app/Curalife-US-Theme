@@ -6,7 +6,7 @@
   <div class="text-button">
     <div class="holiday-title">curalin</div>
     <div class="holiday-text">Natural Blood Sugar Support Supplement</div>
-    <div class="holiday-text">Natural Blood Sugar Support Supplement</div>
+    <a class="cta-btn" href="/collections/all-holidays2022">Shop Now</a>
   </div>
      <img class="main-img" src="{{ 'mask-and-bottle.png' | asset_url }}" width="1039" height="528" alt="bottle-hand-mask" loading="lazy">
 </div>
@@ -49,6 +49,23 @@
   }
 
   .main-btn:hover {
+    background: var(--green);
+    border: var(--green);
+  }
+
+  .cta-btn {
+    font-weight: 700;
+    background: var(--dark-green);
+    text-align: center;
+    border: 1px solid  var(--dark-green);
+    border-radius: 4px;
+    font-size: clamp(20px, 2vw, 28px);
+    box-shadow: 0px 5px 12.5px rgba(0, 0, 0, 0.15);
+    transition: unset;
+    margin-bottom: 20px;
+  }
+
+  .cta-btn:hover {
     background: var(--green);
     border: var(--green);
   }
@@ -107,6 +124,9 @@
   }
 
   @media screen and (max-width: 768px) {
+    .cta-btn {
+      display: none;
+    }
     .holidays-hero-banner-content {
       justify-content: center;
     }
