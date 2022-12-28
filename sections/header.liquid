@@ -88,12 +88,10 @@
       $(document).on("click", ".main-links ul li a.open-menu", function () {
           if ($(this).hasClass("active")) {
               activeMenu = false;
-              hold_scroll_page(false);
               $(this).removeClass('active');
               $(".main-menu").removeClass('active')
           } else {
               activeMenu = true;
-              hold_scroll_page(true);
               $(this).addClass('active');
               $(".main-menu").addClass('active')
           }
