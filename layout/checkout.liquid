@@ -82,16 +82,8 @@
     {{ 'swiper.min.css' | asset_url | stylesheet_tag: preload: true }}
     <script src="{{ 'swiper.min.js' | asset_url }}"></script>
 
-    <link rel="stylesheet" href="{{ "icofont.min.css" | asset_url }}">
-    <style>
-      @font-face {
-        font-family: IcoFont;
-        font-weight: 400;
-        font-style: Regular;
-        src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),
-        url({{ "icoFont.woff" | asset_url }}) format("woff")
-      }
-    </style>
+    {{ 'icofont.min.css' | asset_url | stylesheet_tag: preload: true }}
+    <style>@font-face{font-family:IcoFont;font-weight:400;font-style:Regular;src:url({{ "icofont.woff2" | asset_url }}) format("woff2"),url({{ "icofont.woff" | asset_url }}) format("woff")}</style>
 
     <style>
       @font-face {
