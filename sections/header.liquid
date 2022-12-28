@@ -72,6 +72,12 @@
       stickyHeader()
   };
 
+  let screenWidth = window.innerWidth;
+
+  $(window).on('resize', function () {
+      screenWidth = window.innerWidth;
+  });
+
   let activeMenu = false;
 
   $(document).ready(function () {
