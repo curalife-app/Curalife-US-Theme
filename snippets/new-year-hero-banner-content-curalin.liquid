@@ -8,11 +8,11 @@
     <div class="holiday-text">Natural Blood Sugar Support Supplement</div> 
   </div>
      <img class="main-img" src="{{ 'mask-and-bottle.png' | asset_url }}" width="1039" height="528" alt="bottle-hand-mask" loading="lazy">
-    
 </div>
-<img class="main-img-mb" src="{{ 'mask-and-bottle-mb.png' | asset_url }}" width="" height="" alt="bottle-hand-mask-mb" loading="lazy"> 
+</div>
+<img class="main-img-mb" src="{{ 'mask-and-bottle-mb.png' | asset_url }}" width="750" height="1084" alt="bottle-hand-mask-mb" loading="lazy"> 
 <div class="container">
-<a class="main-btn" id='main-cta-btn' href="/collections/all-holidays2022">SHOP NOW</a></div> 
+<a class="main-btn mobile-btn" id='main-cta-btn' href="/collections/all-holidays2022">SHOP NOW</a></div> 
 </section>
 
 
@@ -23,7 +23,7 @@
   .hero-banner {
     position: relative;
     overflow: hidden;
-    {% comment %} height: clamp(520px,34vw,600px); {% endcomment %}
+    
     background: #E8E8B0;
   }
 
@@ -35,7 +35,7 @@
     font-weight: 700;
   }
 
-  .holidays-hero-banner-content .main-btn {
+   .main-btn {
     font-weight: 700;
     background: var(--dark-green);
     text-align: center;
@@ -47,7 +47,7 @@
     margin-bottom: 20px;
   }
 
-  .holidays-hero-banner-content .text-button .main-btn:hover {
+  .main-btn:hover {
     background: var(--green);
     border: var(--green);
   }
@@ -59,28 +59,6 @@
     position: relative;
     z-index: 1;
     
-  }
-
-  @media screen and (max-width:1192px) {
-    .holidays-hero-banner-content .main-btn {
-      margin-bottom: unset;
-    }
-  }  
-  }
-
-  @media screen and (max-width: 768px) {
-
-  .hero-banner {
-    height: 70vh;
-    min-height: 130vw;
-  }
-
-    .holidays-hero-banner-content .main-btn {
-      max-width: 50vw;
-      margin: auto;
-    }
-
-
   }
 
 </style>
@@ -118,50 +96,15 @@
     max-width: 400px;
   }
 
-
-
-  .holidays-hero-banner-content  .main-img {
-    {% comment %} position: absolute;
-    z-index: -1;
-    right: 0;
-    top: 0; {% endcomment %}
-  }
-
-  .holidays-hero-banner-content  .main-img-mb {
+   .hero-banner .main-img-mb {
     display: none;
   }
-{% comment %} 
-@media screen and (max-width: 1192px) {
-  .holidays-hero-banner-content .main-img {
-    right: -240px;
-  }
-}
 
-@media screen and (max-width: 1024px) {
-  .holidays-hero-banner-content .main-img {
-    right: -400px;
-    top: 24px;
+  .hero-banner .container .main-btn.mobile-btn {
+    display: none;
+   
   }
-}
 
-@media screen and (max-width: 975px) {
-  .holidays-hero-banner-content .main-img {
-    top: 8vw;
-  }
-}
-
-@media screen and (max-width: 882px) {
-  .holidays-hero-banner-content .main-img {
-    top: 12vw;
-  }
-}
-
-
-@media screen and (max-width: 825px) {
-  .holidays-hero-banner-content .main-img {
-    top: 17vw;
-  }
-} {% endcomment %}
 
 
 
@@ -171,6 +114,9 @@
     .holidays-hero-banner-content {
       justify-content: center;
     }
+
+
+  
   .holidays-hero-banner-content .text-button .holiday-title {
     text-align: center;
   }
@@ -185,10 +131,10 @@
     display: none;
   }
 
-  .holidays-hero-banner-content .main-img-mb {
-    display: flex;
-    margin: 6vw 0;
-    overflow: hidden;
+  .hero-banner .main-img-mb {
+    display: block;
+    width: 150%;
+    
   }
 
   .holidays-hero-banner-content .text-button {
@@ -196,7 +142,8 @@
 
   }
 
-  .holidays-hero-banner-content .main-btn {
+  .hero-banner .container .main-btn.mobile-btn {
+    display: flex;
     margin: 7vw 0;
   }
 
