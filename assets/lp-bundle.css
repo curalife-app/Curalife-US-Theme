@@ -3455,7 +3455,7 @@ footer {
     right: 0;
     bottom: 0;
     z-index: -2;
-    background-color: #4B643D;
+    background-color: var(--dark-green);
     pointer-events: none; }
   .tested-ingredients .wrap {
     padding: 14.2% 0 5.8% 0; }
@@ -3467,7 +3467,7 @@ footer {
     padding-top: 23px;
     text-align: center; }
   .tested-ingredients + .safe-work:before {
-    background-color: #4B643D; }
+    background-color: var(--dark-green); }
   .tested-ingredients.no-image {
     margin-top: 55px; }
     .tested-ingredients.no-image .wrap {
@@ -3486,7 +3486,7 @@ footer {
     left: 0;
     right: 0;
     z-index: -1;
-    background-color: #4B643D;
+    background-color: var(--dark-green);
     background-image: url(../images/safe-bg.png);
     background-size: auto 100%;
     background-repeat: repeat-x;
@@ -3499,9 +3499,9 @@ footer {
     right: 0;
     bottom: 0;
     z-index: -2;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(69%, #4B643D), color-stop(31%, #0472cd));
-    background: -o-linear-gradient(top, #4B643D 69%, #0472cd 31%);
-    background: linear-gradient(to bottom, #4B643D 69%, #0472cd 31%); }
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(69%, var(--dark-green)), color-stop(31%, #0472cd));
+    background: -o-linear-gradient(top, var(--dark-green) 69%, #0472cd 31%);
+    background: linear-gradient(to bottom, var(--dark-green) 69%, #0472cd 31%); }
   .clinically-proven + .safe-work:before {
     background-color: #0472cd; }
   .clinically-proven + .safe-work .wrap {
@@ -3735,7 +3735,7 @@ footer {
 
 .extra-labels {
   padding: 40px 0;
-  background: #4B643D; }
+  background: var(--dark-green); }
   .extra-labels ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6287,7 +6287,7 @@ footer {
           .goods-list .list-wrap .card .submit-btn a span.mobile-only {
             display: none; }
           .goods-list .list-wrap .card .submit-btn a:hover {
-            background: #4B643D; }
+            background: var(--dark-green); }
   .goods-list .a-labels {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6728,7 +6728,7 @@ footer {
             font-size: 20px;
             -webkit-text-decoration-line: line-through;
                     text-decoration-line: line-through;
-            color: #4B643D; }
+            color: var(--dark-green); }
         .goods-list .list-wrap .sale-card .price p {
           margin: 0;
           padding: 0 6px;
@@ -6943,7 +6943,7 @@ footer {
       font-family: "Poppins", sans-serif;
       font-weight: normal;
       text-decoration: line-through;
-      color: #4B643D;}
+      color: var(--dark-green);}
 
     .goods-list.sale .list-wrap .card .discount-label {
       width: 78px;

@@ -1460,7 +1460,7 @@ body.compensate-for-scrollbar {
 	--gray: #EBEBEB;
 	--darker-green: #2d3224;
 	--dark-green: #404733;
-	--green: #4B643D;
+	--green: var(--dark-green);
 	--light-green: #99B182;
 	--brown: #D3AE5F;
 	--orange: #DEB63A;
