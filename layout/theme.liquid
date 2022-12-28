@@ -47,7 +47,7 @@
     {{ content_for_header }} <!-- Header hook for plugins -->
 
     {{ 'go-cart.js' | asset_url | script_tag }}
-    {{ 'go-cart.css' | asset_url | style_tag }}
+    {{ 'go-cart.css' | asset_url | stylesheet_tag }}
 
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
