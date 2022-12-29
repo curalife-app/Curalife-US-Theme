@@ -3,27 +3,25 @@
     <div class="container">
       <div class="info-wrap">
         <div class="main-side footer-column">
-          <a href="/"><img class="title" src="{{ 'logo-white.png' | asset_url }}" width="135" height="40" alt=""></a>
+          <a href="/"><img class="title" src="{{ 'logo-new.svg' | asset_url }}" width="135" height="40" alt="" style="fill: white;"></a>
 
           <div class="menu-list">
             {% for block in section.blocks %}
-            {%- assign footer_linklist = block.settings.footer_linklist -%}
-            {% if linklists[footer_linklist].links.size > 0 %}
-              <ul>
-                {% for link in linklists[footer_linklist].links %}
-                  <li><a href="{{link.url}}"{% if link.url contains 'professionals' or link.url contains 'retail' %} rel="nofollow"{% endif %}>{{link.title}}</a></li>
-                {% endfor %}
-              </ul>
+              {%- assign footer_linklist = block.settings.footer_linklist -%}
+              {% if linklists[footer_linklist].links.size > 0 %}
+                <ul>
+                  {% for link in linklists[footer_linklist].links %}
+                    <li><a href="{{link.url}}"{% if link.url contains 'professionals' or link.url contains 'retail' %} rel="nofollow"{% endif %}>{{link.title}}</a></li>
+                  {% endfor %}
+                </ul>
               {% endif %}
-              {% endfor %}
+            {% endfor %}
           </div>
         </div>
 
           <div class="right-column footer-column">
             <div class="support-contacts">
-              <div class="title">
-                  <h3>24/7 CUSTOMER SUPPORT</h3>
-              </div>
+              <h3 class="title">24/7 CUSTOMER SUPPORT</h3>
               <ul>
                 {% for block in section.blocks %}
                   {% if block.type == 'contact' %}
@@ -46,43 +44,46 @@
                 {% endfor %}
             </ul>
           </div>
+
           <div class="social-bar">
-            <div class="title"><h3>FOLLOW US ON</h3></div>
+            <h3 class="title">FOLLOW US ON</h3>
             <ul>
               {% for block in section.blocks %}
                 {% if block.type == 'social' %}
-                <li><a href="{{block.settings.socil_link}}" target="_blank"><i class="{{block.settings.socil_icn}}"></i></a></li>
+                  <li><a href="{{block.settings.socil_link}}" target="_blank"><i class="{{block.settings.socil_icn}}"></i></a></li>
                 {% endif %}
               {% endfor %}
             </ul>
           </div>
         </div>
       </div>
-      <p>{{section.settings.ftr_desc}}</p>
+
+      <p>*CuraLin, CuraLife products, and statements on this website and other CuraLife assets have not been evaluated by the Food and Drug Administration, and are not intended to diagnose, treat, cure, or prevent any disease. Results will vary from one person to another and there is no guarantee of specific results. We recommend consulting your doctor or your primary healthcare provider before using our products, especially when if you’re taking any medications.</p>
     </div>
   </div>
+
   <div class="bottom-info">
-      <div class="container">
-          <div class="mini-wrap">
-              <div class="info-wrap">
-                  <div class="text">
-                      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
-                  </div>
-                  <div class="payment-methods">
-                      <ul>
-                        {% for block in section.blocks %}
-                          {% if block.type == 'payment' %}
-                            {% if block.settings.pymnt_img != blank %}
-                              <li><span><img src="{{block.settings.pymnt_img | img_url: ''}}" width="51px" height="32px" alt=""></span></li>
-                            {% endif %}
-                          {% endif %}
-                        {% endfor %}
-                      </ul>
-                  </div>
-                  <p>{{ section.settings.alrght_titl }}</p>
-              </div>
+    <div class="container">
+      <div class="mini-wrap">
+        <div class="info-wrap">
+          <div class="text"><p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</p> </div>
+
+          <div class="payment-methods">
+            <ul>
+              {% for block in section.blocks %}
+                {% if block.type == 'payment' %}
+                  {% if block.settings.pymnt_img != blank %}
+                    <li><span><img src="{{block.settings.pymnt_img | img_url: ''}}" width="51px" height="32px" alt=""></span></li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
           </div>
+
+          <p>{{ section.settings.alrght_titl }}</p>
+        </div>
       </div>
+    </div>
   </div>
 </footer>
 
