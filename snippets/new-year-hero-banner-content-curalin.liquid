@@ -103,7 +103,7 @@
     .hero-banner {
       text-align: center;
       height: calc(100vh - 60px);
-      padding-top: 75px;
+      padding-top: {% if isLP %} 75px {% endif %};
     }
 
     .hero-banner .text-button .cta-btn {
@@ -116,6 +116,7 @@
 
     .hero-banner-content {
       display: block;
+      margin-top: 20px;
     }
 
     .hero-banner-content .text-button .main-title {
@@ -150,21 +151,27 @@
 
   }
 
+  @media screen and (max-width: 610px) {
+    .hero-banner .main-img-mb {
+      top: 35vw;
+    }
+  }
+
   @media screen and (max-width: 530px) {
     .hero-banner .main-img-mb {
-      top: 30vw;
+      top: 45vw;
     }
   }
 
   @media screen and (max-width: 420px) {
     .hero-banner .main-img-mb {
-      top: 50vw;
+      top: 60vw;
     }
   }
 
   @media screen and (max-width: 342px) {
     .hero-banner .main-img-mb {
-      top: 60vw;
+      top: 80vw;
     }
   }
 </style>
