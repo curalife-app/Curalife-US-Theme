@@ -64,10 +64,6 @@
                 <p id="original-price" class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
               {% endif %}
             </div>
-            {% assign bonus_value = curaeats_value | plus: challenge_value %}
-            {% assign life_changing_bonus = "Life Changing Bonus " %}
-            <div class="bonus-value">{{ life_changing_bonus }} ({{ bonus_value }} Value!) </div>
-
             <p class="promotion-title">{{ promotion_title }} ({{ bundle_addition_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value!)</p>
           </div>
 
