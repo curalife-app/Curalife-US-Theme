@@ -1,5 +1,5 @@
 {% if shop.name == "CuraLife" %}
-  {% assign bundle_notice_text = "+ Life Changing Bonus" %}
+  {% assign promotional_title = "+ Life Changing Bonus" %}
 
   {% if localization.country.iso_code == 'CA' %}
     {% assign bundle_addition_value = 17100 %}
@@ -9,7 +9,7 @@
     {% assign bundle_addition_value = 12800 %}
   {% endif %}
 {% elsif shop.name == "CuraLife Global" %}
-  {% assign bundle_notice_text = "+ CuraEats App" %}
+  {% assign promotional_title = "+ CuraEats App" %}
   {% assign bundle_addition_value = 2400 %}
 {% endif %}
 
@@ -78,7 +78,7 @@
             </div>
 
             {% if shop.name == "CuraLife" %}
-              <div class="free-shipping" style="font-size: 14px; text-align: center;">US SHIPPING: <span class="free-red"> FREE</span></div>
+              <div class="free-shipping">US SHIPPING: <span>FREE</span></div>
             {% elsif shop.name == "CuraLife Global" %}
               {% comment %} {% unless product.tags contains "no-free-shipping" %}
                 <div class="free-shipping" style="font-size: 14px; text-align: center;"><span class="free-red">FREE</span> SHIPPING</div>
@@ -139,10 +139,6 @@
     text-align: left;
   }
 
-  #product-catalog-section .product-card .info .price p strike {
-    margin-top: 20px;
-  }
-
   #product-catalog-section .total-and-shipping {
     display: flex;
     flex-direction: column;
@@ -156,13 +152,20 @@
     min-height: 42px;
   }
 
-  #product-catalog-section .total-and-shipping .free-shipping .free-red {
-    color: #ED073E;
+  #product-catalog-section .total-and-shipping .free-shipping {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #product-catalog-section .total-and-shipping .free-shipping span {
+    color: var(--red);
   }
 
   #product-catalog-section .product-card .info .price p {
     display: flex;
+    align-items: center;
   }
+
   #product-catalog-section h3 {
       font-family: 'PP Radio Grotesk';
       text-align: center;
