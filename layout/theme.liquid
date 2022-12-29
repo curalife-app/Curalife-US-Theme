@@ -46,9 +46,9 @@
     {% endif %}
     {{ content_for_header }} <!-- Header hook for plugins -->
 
-    {{ 'go-cart.css' | asset_url | stylesheet_tag: preload: true }}
+    {% comment %} {{ 'go-cart.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'go-cart.js' | asset_url | script_tag }}
-    <script>var goCart = new GoCart();</script>
+    <script>var goCart = new GoCart();</script> {% endcomment %}
 
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
@@ -66,7 +66,7 @@
 
     <main role="main">{{ content_for_layout }}</main>
     {% section 'footer'%}
-    {% render 'go-cart' %}
+    {% comment %} {% render 'go-cart' %} {% endcomment %}
 
     {% comment %} {% render 'layout.footer.cart-drawer'%} {% endcomment %}
     {% render 'layout.footer.cart-functionality-scripts' %}
