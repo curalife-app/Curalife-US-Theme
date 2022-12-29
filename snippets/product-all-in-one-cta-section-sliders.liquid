@@ -108,6 +108,8 @@
 
               {% if var.title contains "CuraEats" %}
                 {% assign bundle_value = challenge_value | plus: curaeats_value %}
+                <script>console.log("challenge_value "+ challenge_value)</script>
+                <script>console.log("curaeats_value "+ curaeats_value)</script>
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
               {% else %}
                 {% assign bundle_value = 0 %}
