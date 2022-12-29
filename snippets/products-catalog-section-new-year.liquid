@@ -1,6 +1,11 @@
 {% if shop.name == "CuraLife" %}
+<<<<<<< HEAD
+  {% assign promotional_title = "+ Life Changing Bonus" %}
+ 
+=======
   {% assign promotion_title = "+ Life Changing Bonus" %}
 
+>>>>>>> a36c5926b22f1a536fa13a5dca2b463de64628d3
   {% if localization.country.iso_code == 'CA' %}
     {% assign bundle_addition_value = 17100 %}
   {% elsif localization.country.iso_code == 'AU' %}
@@ -59,6 +64,9 @@
                 <p id="original-price" class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
               {% endif %}
             </div>
+            {% assign bonus_value = curaeats_value | plus: challenge_value %}
+            {% assign life_changing_bonus = "Life Changing Bonus " %}
+            <div class="bonus-value">{{ life_changing_bonus }} ({{ bonus_value }} value!) </div>
 
             <p class="promotion-title">{{ promotion_title }} ({{ bundle_addition_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value!)</p>
           </div>
