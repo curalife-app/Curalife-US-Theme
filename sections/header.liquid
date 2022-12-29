@@ -38,14 +38,14 @@
         <ul>
           {% if customer %}
             <li><a href="/account">
-            <i class="icon-user"></i><span>{% if customer.first_name %}Welcome {{customer.first_name | capitalize}}!{% else %}My Account{% endif %}</span></a></li>
+            <i class="icon-user"></i><span class="option-title">{% if customer.first_name %}Welcome {{customer.first_name | capitalize}}!{% else %}My Account{% endif %}</span></a></li>
           {% else %}
             <li><a href="/account/login"><i class="icofont-ui-user"></i><span>Account</span></a></li>
           {% endif %}
           <li>
             {% comment %} {% render 'go-cart-button' %} {% endcomment %}
             <a href="javascript:void(0)" class="open-modal" data-fancybox data-src="#side-cart">
-            <i class="icofont-shopping-cart" data-items="{{ cart.item_count }}"></i><span>Cart </span>
+            <i class="icofont-shopping-cart" data-items="{{ cart.item_count }}"></i><span class="option-title">Cart </span>
             {% if cart.item_count > 0 %}<span class="header_cart_count">{{ cart.item_count }}</span>{% endif %}
             </a>
           </li>
@@ -209,6 +209,12 @@
     color: white;
     font-weight: bold;
     margin-left: 10px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    header .option-title {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 768px) {
