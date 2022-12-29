@@ -1,6 +1,11 @@
 {% if shop.name == "CuraLife" %}
+<<<<<<< HEAD
   {% assign promotional_title = "+ Life Changing Bonus" %}
  
+=======
+  {% assign promotion_title = "+ Life Changing Bonus" %}
+
+>>>>>>> a36c5926b22f1a536fa13a5dca2b463de64628d3
   {% if localization.country.iso_code == 'CA' %}
     {% assign bundle_addition_value = 17100 %}
   {% elsif localization.country.iso_code == 'AU' %}
@@ -9,7 +14,7 @@
     {% assign bundle_addition_value = 12800 %}
   {% endif %}
 {% elsif shop.name == "CuraLife Global" %}
-  {% assign promotional_title = "+ CuraEats App" %}
+  {% assign promotion_title = "+ CuraEats App" %}
   {% assign bundle_addition_value = 2400 %}
 {% endif %}
 
@@ -63,7 +68,7 @@
             {% assign life_changing_bonus = "Life Changing Bonus " %}
             <div class="bonus-value">{{ life_changing_bonus }} ({{ bonus_value }} value!) </div>
 
-            <p class="promotion-title">{{ promotion_title }}</p>
+            <p class="promotion-title">{{ promotion_title }} ({{ bundle_addition_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value!)</p>
           </div>
 
           {% unless isSkipCart %}
@@ -281,7 +286,7 @@
     font-size: 24px;
     padding-right: 10px;
   }
-{% comment %} 
+{% comment %}
   #product-catalog-section .icon-cart:before {
     content: "\efe7";
   } {% endcomment %}
