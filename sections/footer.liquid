@@ -96,67 +96,65 @@
     object-fit: contain;
   }
 
-footer .payment-methods ul:nth-child(2) {
-display: none;
-}
+  footer .payment-methods ul:nth-child(2) {
+    display: none;
+  }
 
-footer .phone-title {
-line-height: 2.5;
-}
+  footer .phone-title {
+    line-height: 2.5;
+  }
 
-footer .show-phone-btn {
-background: white;
-border-radius: 10px;
-cursor: pointer;
-color: var(--green);
-padding: 3px 10px;
-margin-left: 5px;
-}
+  footer .show-phone-btn {
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--green);
+    padding: 3px 10px;
+    margin-left: 5px;
+  }
 
-footer .show-phone-content {
-display: none;
-}
+  footer .show-phone-content {
+    display: none;
+  }
 
-footer .social-bar {
-max-width: 500px;
-}
+  footer .social-bar {
+    max-width: 500px;
+  }
 
-footer .footer-column {
-padding-bottom: 30px;
-}
+  footer .footer-column {
+    padding-bottom: 30px;
+  }
 
-.main-side .menu-list ul {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 300px;
-}
+  .main-side .menu-list ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 300px;
+  }
 
-.main-side .menu-list ul li {
-  margin-right: 50px
-}
+  .main-side .menu-list ul li {
+    margin-right: 50px
+  }
 
-@media screen and (max-width: 768px) {
-footer .footer-columns {
-  font-size: 20px;
-}
+  @media screen and (max-width: 768px) {
+    footer .footer-columns {
+      font-size: 20px;
+    }
 
-
-
-.main-side .menu-list ul {
-  flex-wrap: nowrap;
-  max-height: unset;
-}
-}
+    .main-side .menu-list ul {
+      flex-wrap: nowrap;
+      max-height: unset;
+    }
+  }
 </style>
 
 <script>
-Array.from(document.getElementsByClassName("show-phone-btn")).forEach(function(e) {
-e.addEventListener('click', (event)=>{
-  event.target.style.display = 'none';
-  event.target.nextElementSibling.style.display = 'block';
-})
-})
+  Array.from(document.getElementsByClassName("show-phone-btn")).forEach(function(e) {
+    e.addEventListener('click', (event) => {
+      event.target.style.display = 'none';
+      event.target.nextElementSibling.style.display = 'block';
+    })
+  })
 </script>
 
 {% schema %}
@@ -192,8 +190,6 @@ e.addEventListener('click', (event)=>{
       "label": "All Rights Title",
       "default": "All Rights Title"
      }
-
-
   ],
   "blocks": [
   {
@@ -304,7 +300,6 @@ e.addEventListener('click', (event)=>{
 
           ]
         }
-
-]
+  ]
 }
 {% endschema %}
