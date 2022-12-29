@@ -144,15 +144,15 @@
 
   .title-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    font-size: 28px;
   }
 
   .title-wrapper p {
     padding-top: unset;
     font-size: 16px;
     color: #6f6f6f;
-    margin-top: -5px;
+    margin: unset;
   }
 
   .promotion-title {
@@ -184,7 +184,7 @@
   }
 
   .total-and-shipping {
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
@@ -192,7 +192,7 @@
   }
 
   .total-and-shipping .free-shipping1 .free-red {
-    color: #ED073E;
+    color: var(--red);
   }
 
   @media screen and (max-width: 768px) {
