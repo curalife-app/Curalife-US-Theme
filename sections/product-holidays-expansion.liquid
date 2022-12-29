@@ -46,10 +46,8 @@
 
       <div class="product-info">
         <div class="title-wrapper">
-          <div class="sub-title">
-            <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
-            <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
-          </div>
+          <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+          <p>Up To {{ product.metafields.my_fields.supply_days.value }} Days Supply</p>
         </div>
 
         <div class="description">
@@ -150,7 +148,7 @@
     align-items: center;
   }
 
-  .sub-title p {
+  .title-wrapper p {
     padding-top: unset;
     font-size: 16px;
     color: #6f6f6f;
