@@ -78,7 +78,7 @@
             </div>
 
             {% if shop.name == "CuraLife" %}
-              <div class="free-shipping" style="font-size: 14px; text-align: center;">US SHIPPING: <span>FREE</span></div>
+              <div class="free-shipping">US SHIPPING: <span>FREE</span></div>
             {% elsif shop.name == "CuraLife Global" %}
               {% comment %} {% unless product.tags contains "no-free-shipping" %}
                 <div class="free-shipping" style="font-size: 14px; text-align: center;"><span class="free-red">FREE</span> SHIPPING</div>
@@ -150,6 +150,11 @@
     margin-top: 10px;
     text-align: center;
     min-height: 42px;
+  }
+
+  #product-catalog-section .total-and-shipping .free-shipping {
+    font-size: 14px;
+    text-align: center;
   }
 
   #product-catalog-section .total-and-shipping .free-shipping span {
