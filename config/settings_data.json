@@ -1483,7 +1483,17 @@
           "rst_mbldes": "We will send you an email<br> to reset your password."
         }
       },
-    
+      "articles-custom-banner-section": {
+        "type": "articles-custom-banner-section",
+        "settings": {
+          "article-bg-color": "",
+          "heading": "What is",
+          "subheading1": "TYPE 2 DIABETES",
+          "subheading2": "in Plain English",
+          "article-banner-content": "Type 2 diabetes is a chronic condition that affects <br> the way the body metabolizes glucose.",
+          "banner-image": "shopify:\/\/shop_images\/mainhero_ae83591e-7ba5-4e47-bdfa-73f2669d8df9.png"
+        }
+      },
       "articles-your-body-section": {
         "type": "articles-your-body-section",
         "settings": {
@@ -1493,8 +1503,59 @@
           "arrow-small": "shopify:\/\/shop_images\/bodyarrowsmall_78bd6cdf-38fd-45c3-9315-e703327c1638.png"
         }
       },
-
-     
+      "articles-circulatory-section": {
+        "type": "articles-circulatory-section",
+        "settings": {
+          "cir-bg-color": "",
+          "cir-bg-img": "shopify:\/\/shop_images\/syrupsmall_69a2ae88-8f56-4961-9e85-9afd8a033d27.png",
+          "heading": "This is your",
+          "subheading": "CIRCULATORY SYSTEM.",
+          "cir-main-image": "shopify:\/\/shop_images\/syrupmain_86154d0d-2ea4-465e-baf9-1e0c3d00e86c.png",
+          "desc_left": "<p>It’s a pathway for blood to flow through your body. Blood carries oxygen and nutrients to feed your body. These nutrients include glucose. <br> <span>What is glucose?<\/span> <br> <span>Glucose is your body’s fuel.<\/span><\/p>\n\t\t\t\t\t<p>Your body is constantly regulating the amount of glucose in your blood. That way, you always have the energy you need. <br> This incredible process is managed by insulin. Insulin kind of acts as a key to unlock the door of your cell so that it can remove glucose from your body. That's how insulin naturally cotrols your blood sugar levels.<\/p>\n\t\t\t\t\t<p class=\"big__txt\"><span>For most people, this process is so seamless, they don’t even realize it’s happening.<\/span><\/p>",
+          "desc_right": "<p>As we know all too well, there are times when something goes wrong. Perhaps the body isn’t producing enough insulin to offset sugar intake. Or the blood cells aren’t complying well with insulin’s orders.  If this happens, glucose cannot exit the bloodstream.<\/p>\n\t\t\t\t\t<p class=\"weight__txt\">Next thing you know, there’s a huge traffic jam of glucose in the bloodstream, one that keeps piling up.<\/p>\n\t\t\t\t\t<p>With no way to use up the existing glucose, the glucose traffic jam grows, getting bigger and bigger. This build-up of glucose changes the blood from its normal ‘watery-like’ state into a thicker liquid. Something more like <span>syrup.<\/span> And if the amount of sugar in someone’s blood reaches a certain level, this person will be diagnosed as diabetic.<\/p>\n\t\t\t\t\t<p class=\"weight__txt\">So, in a nutshell, diabetes is the body’s inability to process glucose.<\/p>",
+          "image-left": "shopify:\/\/shop_images\/syrup_dbc703d5-f63a-4d8a-ab67-21da7e752619.png",
+          "image-right": "shopify:\/\/shop_images\/fullody_ee0b2654-37c5-46f5-a74c-c414def929f2.png"
+        }
+      },
+      "articles-diabetes-harmful-section": {
+        "type": "articles-diabetes-harmful-section",
+        "blocks": {
+          "3fa2239d-ce41-4ffc-87c8-fea284b29e14": {
+            "type": "harmful-list",
+            "settings": {
+              "harmful-list-content": "The thicker blood puts more pressure on the eye (intraocular eye pressure), which is why diabetes can lead to blurry vision or blindness.",
+              "harmful-list-image": "shopify:\/\/shop_images\/diabet1_7bef4a27-d331-400d-a2fd-66105c975aa5.png"
+            }
+          },
+          "1023a4f3-267d-4586-b78d-fbfbd092b818": {
+            "type": "harmful-list",
+            "settings": {
+              "harmful-list-content": "Thick blood slows circulation, preventing the nervous system from getting enough blood. This can lead to nerve damage and neuropathy, a constant tingling or burning feeling in the limbs.",
+              "harmful-list-image": "shopify:\/\/shop_images\/diabet2_55687fa2-4459-4289-90d5-5666f4587e95.png"
+            }
+          },
+          "42930ffc-545e-426d-81fa-dce796922184": {
+            "type": "harmful-list",
+            "settings": {
+              "harmful-list-content": "Not enough blood flow can starve outer limbs like the feet and legs. This can lead to complications ending with limb amputations.",
+              "harmful-list-image": "shopify:\/\/shop_images\/diabet3_51729d4c-6090-4aa0-892b-36541bee435d.png"
+            }
+          },
+          "c03ba5ea-1dce-4940-a4a5-2ce06e57d99a": {
+            "type": "harmful-list",
+            "settings": {
+              "harmful-list-content": "Organs like the kidneys, liver, and pancreas need to work harder to filter all that sugar from the body. They can get overworked, leading to organ failure. Plaque begins to build up in the bloodstream, increasing the risk of a stroke.",
+              "harmful-list-image": "shopify:\/\/shop_images\/diabet4_91f11634-3646-4ec7-89ee-34e553ee15d7.png"
+            }
+          },
+          "a072e00f-23e7-4be5-8d7f-9bb687cbf644": {
+            "type": "harmful-list",
+            "settings": {
+              "harmful-list-content": "<b>Worst of all, this puts more pressure on your heart, increasing the risk of a heart attack.<\/b>",
+              "harmful-list-image": "shopify:\/\/shop_images\/diabet5_c1cd9094-f4a7-4fa4-9580-4c7a3f4a07cc.png"
+            }
+          }
+        },
         "block_order": [
           "3fa2239d-ce41-4ffc-87c8-fea284b29e14",
           "1023a4f3-267d-4586-b78d-fbfbd092b818",
@@ -1886,7 +1947,16 @@
           "content": "Many diabetics use their disease to become the happiest and healthiest they have ever been. Here are some tips for doing that yourself."
         }
       },
- 
+      "articles-ayurvedic-supplement-section": {
+        "type": "articles-ayurvedic-supplement-section",
+        "blocks": {
+          "8e4f4599-8aa4-461f-acf0-fb4da9266b9c": {
+            "type": "supplements-images",
+            "settings": {
+              "sup-class": "left__leaf",
+              "sup-image": "shopify:\/\/shop_images\/lfleaf_6b4187be-8fdc-43b9-be78-62b796b98c9c.png"
+            }
+          },
           "de507bdd-4864-43c2-8430-20bd28178409": {
             "type": "supplements-images",
             "settings": {
