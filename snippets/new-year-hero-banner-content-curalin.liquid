@@ -134,7 +134,8 @@
     .hero-banner .main-img-mb {
       display: block;
       position: absolute;
-      top: 50vw;
+      top: 15vw;
+      width: 120%;
     }
 
     .hero-banner-content .text-button {
@@ -145,6 +146,25 @@
       display: block;
       margin-top: -30vw;
       text-transform: unset !important;
+    }
+
+  }
+
+  @media screen and (max-width: 530px) {
+    .hero-banner .main-img-mb {
+      top: 30vw;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .hero-banner .main-img-mb {
+      top: 50vw;
+    }
+  }
+
+  @media screen and (max-width: 342px) {
+    .hero-banner .main-img-mb {
+      top: 60vw;
     }
   }
 </style>
