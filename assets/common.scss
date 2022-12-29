@@ -1684,7 +1684,7 @@ header.scrolled {
 					-ms-flex-align: center;
 					align-items: center;
 					position: absolute;
-					top: 7vw;
+					top: 10px;
 					right: 0;
 					-webkit-transition: -webkit-transform var(--transition);
 					transition: -webkit-transform var(--transition);
@@ -2371,6 +2371,7 @@ header.scrolled {
 						-webkit-transform: rotate(-90deg);
 						-ms-transform: rotate(-90deg);
 						transform: rotate(-90deg);
+						top: 25px;
 					}
 				}
 				.dropdown-menu {
