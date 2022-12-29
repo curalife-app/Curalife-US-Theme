@@ -1,9 +1,3 @@
-{% if shop.name == "CuraLife" %}
-  {% assign curaeats_value = 29 %}
-  {% assign challenge_value = 99 %}
-{% elsif shop.name == "CuraLife Global" %}
-  {% assign curaeats_value = 24 %}
-{% endif %}
 
 <section class="cta-section">
   <div class="container product-container">
@@ -113,7 +107,9 @@
               {% endif %}
 
               {% if var.title contains "CuraEats" %}
-                {% assign bundle_value = challange_value | plus: curaeats_value %}
+                {% assign bundle_value = challenge_value | plus: curaeats_value %}
+                <script>console.log("challenge_value "+ challenge_value)</script>
+                <script>console.log("curaeats_value "+ curaeats_value)</script>
                 <div class="variant-notice"><p><b>Bonus</b> - CuraEats App <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
               {% else %}
                 {% assign bundle_value = 0 %}
