@@ -100,7 +100,6 @@
     max-width: 30%;
     padding: 10px;
     display: flex;
-    padding: unset;
     flex-direction: column;
     overflow: hidden;
     margin-top: 60px;
@@ -233,7 +232,8 @@
     justify-content: center;
   }
 
-  #product-catalog-section .product-card .info .price .rounded.current-price {
+  #product-catalog-section .product-card .info .price .rounded.current-price,
+  #product-catalog-section .product-card .info .price .original-price {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
     font-size: 45px;
@@ -244,11 +244,15 @@
   #product-catalog-section .product-card .info .price p {
     margin: 0;
     font-weight: 800;
-    font-size: 45px;
+    font-size: 18px;
     line-height: 1;
     text-align: center;
     color: var(--dark);
     white-space: nowrap;
+  }
+
+  #product-catalog-section .product-card .info .price p {
+    font-size: 18px;
   }
 
   #product-catalog-section .product-card .info .main-btn {
