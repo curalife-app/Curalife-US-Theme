@@ -16,6 +16,8 @@
 {% render 'script.round-converted-currency' %}
 
 <section id="product-catalog-section">
+  {% render 'collection-titles' %}
+
   <div class="container">
     <div class="product-list" id="product-list-section">
       {% for prod in Prods %}
@@ -93,6 +95,8 @@
       {% endfor %}
     </div>
   </div>
+
+  {% render 'trust-badges-section', colors: "#5c5c5c" %}
 </section>
 
 <style>
