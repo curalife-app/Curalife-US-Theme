@@ -5040,7 +5040,7 @@ footer {
   .missing-piece:before {
     content: '';
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     height: 220px;
     position: absolute;
     right: 0;
@@ -7153,7 +7153,7 @@ footer {
 .about-intro.count-title.black-sale .a-labels:before {
   content: '';
   width: 101vw;
-  min-width: 1400px;
+  min-width: 1200px;
   position: absolute;
   left: 50%;
   top: 0;

@@ -17,8 +17,8 @@
 .feedback{height:45px!important;width:45px!important;top:11px!important}
 }
   </style>
-   
-    
+
+
   <div class="lifestyle__block every-diabt">
       <div class="head__lifestyle">
         <div class="text__lifestyle">
@@ -42,7 +42,7 @@
         <div class="top__circulatory">
           <div class="txt__circulatory">
             <h2>Diabetes Explained</h2>
-            <h6>in Plain English</h6>                   
+            <h6>in Plain English</h6>
             <p>
               An easy to understand infographic (free) for newly diagnosed diabetics. This is the diabetes education we wish we had when our loved ones were diagnosed.
             </p>
@@ -54,13 +54,13 @@
             <button class="submit">Send ></button>
             <script src="https://curalife7081.activehosted.com/f/embed.php?id=5" type="text/javascript" charset="utf-8"></script>
             </div>
-            
+
           </div>
           <div class="image__circulatory">
             <img src="https://curalin.curalife.com/infographic-diabetes-in-plain-english-lead/img/man-behind.svg" alt="fullbody">
           </div>
         </div>
-        
+
       </div>
     </div>
   <section class="test_mon latest-dibt">
@@ -85,7 +85,7 @@
         <div class="diabetes-text">
           <div class="diabete__list">
             <div class="column__diabete">
-              <div class="elem__diabete">                           
+              <div class="elem__diabete">
                 <span><img src="https://curalin.curalife.com/infographic-diabetes-in-plain-english-lead/img/diabete8.svg" alt="diabete" /></span>
                 <p>
                   What does diabetes <br>do inside the body?
@@ -111,7 +111,7 @@
                   Do I need to do<br>
                   certain exercises?
                 </p>
-              </div>                     
+              </div>
             </div>
 
             <div class="column__diabete">
@@ -140,7 +140,7 @@
                   Does bitter melon and other <br />
                   natural supplements help?
                 </p>
-              </div>                         
+              </div>
               <div class="elem__diabete">
                 <span><img src="https://curalin.curalife.com/infographic-diabetes-in-plain-english-lead/img/book.svg" alt="diabete" /></span>
                 <p>
@@ -158,13 +158,13 @@
         <p>Just add your email address and we’ll send it over right away</p>
         <div class="footer_form">
           <div class="salesforce">
-          
+
              <div class="errorsign_form_footer" style="display:none;"></div>
             <div class="_form_5 footer_form_sub">
             </div>
             <button class="subtest">Send ></button>
             <script src="https://curalife7081.activehosted.com/f/embed.php?id=5" type="text/javascript" charset="utf-8"></script>
-                
+
           </div>
         </div>
       </div>
@@ -181,7 +181,7 @@
             <p>Start your 'Diabetes Crash Course' by joining the Facebook group <strong>'Winning Type 2 Diabetes Together'.</strong></p>
             <a href="https://www.facebook.com/groups/261568611056436" class="btn btn_blue" target="_blank">Click here to Start</a>
          </div>
-      </div> 
+      </div>
     </div>
   </div>
   </div>
@@ -217,12 +217,12 @@
             document.querySelector('[data-name^="lead_geo"]').value = response.country;
           }
         })
-        
+
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         var osdata = getOperatingSys();
         var dev_type = getDeviceType();
-        
+
         document.querySelector('[data-name^="lead_os"]').value = osdata;
         document.querySelector('[data-name^="lead_device"]').value = dev_type;
         document.querySelector('[data-name^="lead_source"]').value = "Infographic V1";
@@ -235,9 +235,9 @@
         document.querySelector('[data-name^="lead_url"]').value = window.location.href;
         getGeo();
         //document.querySelector('[data-name^="lead_os"]').value = osdata;
-        
-        /**NEW CODE**/	
-        
+
+        /**NEW CODE**/
+
         document.getElementById("lead_source").value = "<insert_lead_name>";
         document.getElementById("lead_utm_source").value = urlParams.get('utm_source');
         document.getElementById("lead_utm_medium").value = urlParams.get('utm_medium');
@@ -248,52 +248,52 @@
         document.getElementById("lead_url").value = window.location.href;
         getGeo();
         document.getElementById("lead_os").value = getOperatingSys();
-        document.getElementById("lead_device").value = getDeviceType(); 
-        
-        
+        document.getElementById("lead_device").value = getDeviceType();
+
+
       }
     $(function() {
-      
+
       $('.sign-form button.submit').click(function(e){
         e.preventDefault();
         var em = $('.sign-form ._form_5 input[name="email"]').val();
-    
+
           if( em != '' && em != null){
             $('.errorsign_form').hide();
               var ajaxurl = 'https://geo.curalife.com/email.php';
             var datasend = {
               email : em,
             }
-            $('.sign-form ._form_5').addClass('form_fade');	
+            $('.sign-form ._form_5').addClass('form_fade');
 
             $.ajax( {
                 url: ajaxurl,
                 dataType: 'JSON',
                 data: datasend,
                 success: function(data){
-                
-                $('.sign-form ._form_5').removeClass('form_fade');	
+
+                $('.sign-form ._form_5').removeClass('form_fade');
                 console.log(data.success);
                  if(data.success == true)
                  {
                   $('.errorsign_form').hide();
                     $('#sub_succ').modal('show');
                     $('.sign-form ._form_5 input[name="email"]').removeClass('notvalid');
-                    
+
                     setTimeout(function(){
                         $('.sign-form ._form_5 button._submit').trigger('click');
                         $('#sub_succ').modal('hide');
                       }, 5000);
                     $( ".sign-form ._form_5" ).submit(function( event ) {
-                    
+
                       woopra.track("signup", {
                         company: "Curalin",
                         username: em
                       });
                       window.location.href = "https://www.facebook.com/groups/261568611056436";
                     });
-                    
-                    
+
+
                  }
                  if(data.success == false)
                  {
@@ -309,56 +309,56 @@
                       $('.errorsign_form').html("Please enter a valid email address");
                       $('.errorsign_form').show();
                     }
-                    
+
                  }
                 }
               } );
-            
-            
+
+
           }
           else
           {
             $('.errorsign_form').html("Please Enter Your Email Address.");
             $('.errorsign_form').show();
-            
+
           }
-        
-          
-                
+
+
+
       });
 
     });
     </script>
     <script>
     $(function() {
-      
+
       $('.footer_form button.subtest').click(function(e){
         e.preventDefault();
         var em = $('.footer_form_sub input[name="email"]').val();
-    
+
           if(em != '' && em != null){
             $('.errorsign_form_footer').hide();
-            
+
             var ajaxurl1 = 'https://geo.curalife.com/email.php';
             var datasend1 = {
               email : em,
             }
-            $('.footer_form_sub').addClass('form_fade');	
+            $('.footer_form_sub').addClass('form_fade');
 
             $.ajax( {
                 url: ajaxurl1,
                 dataType: 'JSON',
                 data: datasend1,
                 success: function(data){
-                
-                $('.footer_form_sub').removeClass('form_fade');	
+
+                $('.footer_form_sub').removeClass('form_fade');
                 console.log(data.success);
                  if(data.success == true)
                  {
                   $('.errorsign_form_footer').hide();
                     $('#sub_succ').modal('show');
                     $('.footer_form_sub input[name="email"]').removeClass('notvalid');
-                    
+
                     setTimeout(function(){
                         $('.footer_form_sub button._submit').trigger('click');
                         $('#sub_succ').modal('hide');
@@ -368,7 +368,7 @@
                         username: em
                       });
                      window.location.href = "https://www.facebook.com/groups/261568611056436";
-                    
+
                  }
                  if(data.success == false)
                  {
@@ -384,22 +384,22 @@
                       $('.errorsign_form_footer').html("Please enter a valid email address");
                       $('.errorsign_form_footer').show();
                     }
-                    
+
                  }
                 }
               } );
-            
-            
+
+
           }
           else
           {
             $('.errorsign_form_footer').html("Please Enter Your Email Address.");
             $('.errorsign_form_footer').show();
-            
+
           }
-        
-          
-                
+
+
+
       });
 
     });
@@ -579,7 +579,7 @@ display:none;
   .text__info>p{
     font-family:"Pacifico" , sans-serif;
     color:#134B49;
-    text-align:center;	
+    text-align:center;
     font-size:45px;
     margin:0px;
     line-height:45px;
@@ -604,7 +604,7 @@ display:none;
     line-height:31px;
     font-weight:400;
     text-align:center;
-  }	
+  }
   .outer__body{
     max-width:860px;
     margin-left:auto;
@@ -677,7 +677,7 @@ display:none;
     width:100%;
   }
   .outer__circulatory{
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding-left:150px;
@@ -762,7 +762,7 @@ display:none;
     padding-bottom:135px;
   }
   .outer__why--diabet{
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding-left:125px;
@@ -879,7 +879,7 @@ display:none;
     font-weight:bold;
   }
   .inner__symptoms{
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding:50px 80px;
@@ -951,7 +951,7 @@ display:none;
     position: relative;
   }
   .inner__myths{
-    max-width:1400px;
+    max-width:1200px;
     padding:0px 70px;
     display: grid;
     grid-template-columns:repeat(2 , 1fr);
@@ -978,7 +978,7 @@ display:none;
     line-height:55px;
   }
   .main__treatments{
-    max-width:1400px;
+    max-width:1200px;
     padding-left:150px;
     padding-right:150px;
     margin-left:auto;
@@ -996,7 +996,7 @@ display:none;
     padding-top: 90px;
   }
   .head__treatments{
-    max-width:1400px;
+    max-width:1200px;
     display: flex;
     align-items:center;
     flex-direction:column;
@@ -1217,7 +1217,7 @@ display:none;
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding:70px 150px;
@@ -1280,7 +1280,7 @@ display:none;
     top:0px;
   }
   .what__eat--block .top__eat{
-    max-width:1400px;
+    max-width:1200px;
     padding-left:140px;
     margin-left:auto;
     margin-right: auto;
@@ -1288,7 +1288,7 @@ display:none;
     align-items:center;
   }
   .bottom__eat{
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding-left:140px;
@@ -1384,7 +1384,7 @@ display:none;
   .top__movement{
     display: flex;
     align-items:center;
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding-left:140px;
@@ -1397,7 +1397,7 @@ display:none;
     padding-top:220px;
   }
   .bottom__movement{
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding-left:140px;
@@ -1494,7 +1494,7 @@ display:none;
   }
   .lifestyle__block .inner__lifestyle{
     padding-top: 160px;
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding-left:140px;
@@ -1512,7 +1512,7 @@ display:none;
     display: flex;
     align-items:center;
     justify-content: space-between;
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding-left:120px;
@@ -1675,7 +1675,7 @@ display:none;
     margin-bottom:0px;
   }
   .outer__compounds{
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     width:100%;
@@ -1749,7 +1749,7 @@ display:none;
   }
   .outer__info--supplements{
     padding-left:80px;
-    max-width:1400px;
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
     padding-top:80px;
@@ -2086,8 +2086,8 @@ display:none;
   @media only screen and (max-width: 1542px) {
   .next-step{padding: 6% 0 0px;}
   }
-  @media only screen and (max-width: 1420px) {
-  .next-step .container {width: 94%;}	
+  @media only screen and (max-width: 1200px) {
+  .next-step .container {width: 94%;}
   .next-step{background-size: 94%;}
   .your-next{width: 508px;}
   .step{width:340px;}
@@ -2095,7 +2095,7 @@ display:none;
   }
   @media only screen and (max-width: 1240px) {
   .diabete__list{
-    margin-bottom:80px;	
+    margin-bottom:80px;
   }
   .your-next {width: 440px;}
   .step{width: 300px; padding: 0;}
@@ -2142,7 +2142,7 @@ display:none;
   }
   @media only screen and (max-width: 786px) {
   .right-li {float: left; clear: both;}
-  .diet-li{width: 73%; margin: 0 auto;}	
+  .diet-li{width: 73%; margin: 0 auto;}
   .left-li li{min-height: auto; clear: both; float: left;}
   .left-li li.tea {margin: 0 auto;}
   .diabetes-text p{margin: 0 auto 17px;}
@@ -2442,7 +2442,7 @@ display:none;
     }
     .outer__compounds{
       padding-left:70px;
-      padding-right:70px;	
+      padding-right:70px;
     }
     .supplements__block>img{
       right:30%;
@@ -3048,7 +3048,7 @@ display:none;
     }
     .head__treatments>h6{
       font-size:30px;
-      line-height:30px; 	
+      line-height:30px;
     }
     .column__myths{
       margin-bottom:20px;
@@ -3898,7 +3898,7 @@ display:none;
     margin-top: 20px;
   }
   .yellow-fomdtl .sign-form input[type="submit"]:hover, .yellow-fomdtl .sign-form button.submit:hover {
-          background: #fff; 
+          background: #fff;
           border-color: #ffc330;
         color: #18263e;
   }
@@ -4592,7 +4592,7 @@ display:none;
     }
   }
   @media (max-width:400px){
-  .lifestyle__block .head__lifestyle>.text__lifestyle>h2, 
+  .lifestyle__block .head__lifestyle>.text__lifestyle>h2,
   .lifestyle__block.every-diabt .head__lifestyle>.text__lifestyle>h2{
           font-size: 20px;
   }
@@ -4767,7 +4767,7 @@ display:none;
   }
   .next-step.plain-english {
         padding: 40px 0px;
-  }	
+  }
   }
 
 </style>
