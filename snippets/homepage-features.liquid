@@ -55,6 +55,15 @@
 
     {% render 'homepage-changing-experience', experienses: experienses %}
 
+    {% assign logoImages = "log6.png
+    |log1.png
+    |log7.png
+    |the-sun.png
+    |daily-express-seeklogo.com.png
+    |daily-mail.png" | split: "|" %}
+
+    {% render 'homepage-making-headlines', logoImages: logoImages %}
+
 
   
     {% comment %} <div class="making-headlines">
