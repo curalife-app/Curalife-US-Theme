@@ -85,11 +85,13 @@
         </div>
       </div>
     </div>
+
     <div class="product-details">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
 
       {% render 'product-all-in-one-cta-section-reviews' %}
     </div>
+
     <div class="product-actions">
       <div class="form-wrap">
         <div id="CTAForm">
