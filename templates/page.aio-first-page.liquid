@@ -163,13 +163,6 @@ health.
   }
 </script>
 
-<style>
-  .page-overflow {
-    overflow: hidden
-  }
-</style>
-
-
 <script>
   function runAfterElementExists(jquery_selector, callback) {
     var checker = window.setInterval(function () {
@@ -260,8 +253,16 @@ health.
 {% render 'layout.footer.woopra-snippet' %}
 
 <style>
-#wisepops-root {
-  transition: opacity 0.5s;
-}
+  .page-overflow {
+    overflow: hidden
+  }
+
+  #wisepops-root {
+    transition: opacity 0.5s;
+  }
+
+  section {
+    padding: 50px 0;
+  }
 </style>
 {% render 'wisepops-generated' %}
