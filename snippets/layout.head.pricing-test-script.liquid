@@ -16,19 +16,13 @@
           window.location.replace(window.location.pathname + '-p');
         }
 
-        window.addEventListener('DOMContentLoaded', function() {
-          console.log("HYUSH");
-          (function($) {
-            console.log("HYUSH");
-            let linksQuery = '';
-            redirectPages.forEach((value, index)=>{linksQuery += 'a[href="' + redirectPages[index] + '"], '});
-            console.log("linksQuery: " + linksQuery);
-            linksQuery = linksQuery.slice(0, -2);
-            console.log("linksQuery: " + linksQuery);
-            $(linksQuery).each(function () {
-              $(this).attr('href', $(this).attr('href') + '-p');
-            });
-          })(jQuery);
+        let linksQuery = '';
+        redirectPages.forEach((value, index)=>{linksQuery += 'a[href="' + redirectPages[index] + '"], '});
+        console.log("linksQuery: " + linksQuery);
+        linksQuery = linksQuery.slice(0, -2);
+        console.log("linksQuery: " + linksQuery);
+        $(linksQuery).each(function () {
+          $(this).attr('href', $(this).attr('href') + '-p');
         });
       }
     }
