@@ -8,7 +8,7 @@
 <div class="catalog-page">
   <div class="container">
     {% render 'collection-titles' %}
-    {% render 'products-catalog-section-new-year', Prods: collection.products, challenge_value: challenge_value, curaeats_value: curaeats_value, isLinkToProduct: true %}
+    {% render 'products-catalog-section', Prods: collection.products, challenge_value: challenge_value, curaeats_value: curaeats_value, isLinkToProduct: true %}
     {% render 'trust-badges-section', colors: "#5c5c5c" %}
   </div>
 
