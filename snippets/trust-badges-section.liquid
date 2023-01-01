@@ -34,6 +34,7 @@
     align-items: center;
     text-transform: uppercase;
     {% if colors %}color: {{ colors }};{% endif %}
+    padding-bottom: 20px;
   }
 
   #trust-badges-section .trust-badge i {
@@ -49,9 +50,14 @@
       justify-content: space-between;
     }
 
+    #trust-badges-section .container {
+      border-bottom: unset;
+    }
+
     #trust-badges-section .trust-badge {
       font-size: 3vw;
       flex-direction: column;
+      padding-bottom: unset;
     }
 
     #trust-badges-section .trust-badge i {
