@@ -85,7 +85,7 @@
         </div>
       </div>
     </div>
-    <div class="product-info">
+    <div class="product-details">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
 
       {% render 'product-all-in-one-cta-section-reviews' %}
@@ -246,14 +246,14 @@
     border-radius: 5px
   }
 
-   .cta-section .product-container .product-info {
+   .cta-section .product-container .product-details {
     padding: 40px 0 10px;
     width: unset;
     max-width: 450px;
     grid-area: 1/2/2/3
   }
 
-   .cta-section .product-container .product-info h1 {
+   .cta-section .product-container .product-details h1 {
     font-weight: 600;
     font-size: 40px;
   }
@@ -568,7 +568,7 @@
       display: none
   }
 
-  .cta-section .product-container .product-info {
+  .cta-section .product-container .product-details {
       grid-area: unset;
       grid-row: 1;
       text-align: center;
