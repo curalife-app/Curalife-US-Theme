@@ -1,7 +1,9 @@
 <script>
   $( document ).ready(function() {
     if ($.cookie('_gaexp')) {
+      console.log("HYUSH");
       if ($.cookie('_gaexp').endsWith('1') && $.cookie('_gaexp').startsWith('GAX1.2.z5')) {
+        console.log("HYUSH");
         let redirectPages = [
           '/collections/all',
           '/collections/all-2',
