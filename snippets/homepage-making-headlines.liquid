@@ -1,6 +1,4 @@
 
-
-
 <div class="making-headlines">
   <div class="container">
     <div class="sub-title">
@@ -8,12 +6,10 @@
     </div>
     <div class="logo-list">
       <ul>
-        {% for block in section.blocks %}
-        {% if block.type == 'partners' %}
-        {% if block.settings.fetr_imgfour != blank %}
-        <li><img src="{{ block.settings.fetr_imgfour | img_url: '' }}" alt=""></li>
-        {% endif %}
-        {% endif %}
+        {% for logoImage in logoImages %}
+        
+        <li><img src="{{ logoImage | file_url | split: "|" | first }}" alt=""></li>
+        
         {% endfor %}
       </ul>
     </div>
