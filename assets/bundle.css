@@ -2223,6 +2223,7 @@ footer .bottom-info .info-wrap {
 }
 
 footer .bottom-info .info-wrap .text p {
+  color: #ffffff;
   margin: 0;
   font-weight: normal;
   font-size: 14px;
