@@ -52,7 +52,10 @@
 
     ' | split: '|' %}
 
-    <div class="container">
+
+    {% render 'homepage-changing-experience', experiences: experiences %}
+
+    {% comment %} <div class="container">
       <div class="mini-wrap">
         <div class="changing-experiences">
           <div class="sub-title">
@@ -94,7 +97,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> {% endcomment %}
 
   
     {% comment %} <div class="making-headlines">

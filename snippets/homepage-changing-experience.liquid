@@ -1,4 +1,4 @@
-{% assign experienses = '“Outstanding product and results. I cannot thank you enough for making
+{% comment %} {% assign experienses = '“Outstanding product and results. I cannot thank you enough for making
 this
 possible.”*Michael Edwards
 |“CuraLin has worked exceptionally well for me! Thank you CuraLin for
@@ -7,11 +7,10 @@ me help
 myself feel better naturally. Definitely 5 stars!”*Colin Reader
 |lp-aio-raz.png*Jeff Ogden
 
-' | split: '|' %}
+' | split: '|' %} {% endcomment %}
 
-{% render 'homepage-changing-experience', experiences: experiences %}
 
-{% comment %} <div class="container">
+<div class="container">
   <div class="mini-wrap">
     <div class="changing-experiences">
       <div class="sub-title">
@@ -53,13 +52,12 @@ myself feel better naturally. Definitely 5 stars!”*Colin Reader
       </div>
     </div>
   </div>
-</div> {% endcomment %}
+</div> 
 
 
 
 
-
-{% comment %} <script>
+ <script>
   quoteSlider = new Swiper(".quote-slider .swiper", {
     slidesPerView: 2,
     spaceBetween: 0,
@@ -85,4 +83,4 @@ myself feel better naturally. Definitely 5 stars!”*Colin Reader
       }
     }
   });
-</script> {% endcomment %}
+</script> 
