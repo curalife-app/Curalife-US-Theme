@@ -171,118 +171,6 @@
           "alrght_titl": "All rights reserved"
         }
       },
-      "1619071284c9bbcc58": {
-        "type": "features",
-        "blocks": {
-          "d00a094a-df9d-4afe-9be4-0af7ddf5e663": {
-            "type": "qute",
-            "settings": {
-              "quot_descript": "”CuraLin has worked exceptionally well for me! Thank you CuraLin for helping me help myself feel better naturally. Definitely 5 stars!”",
-              "authr_name": "Colin Reader",
-              "quor_ratingone": "icon-star",
-              "quor_ratingtwo": "icon-star",
-              "quor_ratingthree": "icon-star",
-              "quor_ratingfoue": "icon-star",
-              "quor_ratingfive": "icon-star"
-            }
-          },
-          "96df6b0f-aaa6-4c6e-81e0-3ab1b64fb19b": {
-            "type": "qute",
-            "settings": {
-              "quot_descript": "“It started with my manager now 4 of us are on it. My doctor said give it\n                            a\n                            try.”",
-              "authr_name": "Jeff Ogden",
-              "quor_ratingone": "icon-star",
-              "quor_ratingtwo": "icon-star",
-              "quor_ratingthree": "icon-star",
-              "quor_ratingfoue": "icon-star",
-              "quor_ratingfive": "icon-star"
-            }
-          },
-          "1d5700bd-c050-46d0-b848-fb487a6c8e95": {
-            "type": "qute",
-            "settings": {
-              "quot_descript": "“Outstanding product and results. I cannot thank you enough for making\n                            this\n                            possible.”",
-              "authr_name": "Michael Edwards",
-              "quor_ratingone": "icon-star",
-              "quor_ratingtwo": "icon-star",
-              "quor_ratingthree": "icon-star",
-              "quor_ratingfoue": "icon-star",
-              "quor_ratingfive": "icon-star"
-            }
-          },
-          "adae4013-b5d0-43ff-8856-e6263fbd4bfb": {
-            "type": "partners",
-            "settings": {
-            }
-          },
-          "25dc5b08-6d65-45f0-bc50-805d17604461": {
-            "type": "partners",
-            "settings": {
-            }
-          },
-          "c7a5b1e9-7c96-47cd-8585-ac10c6b645d3": {
-            "type": "partners",
-            "settings": {
-            }
-          },
-          "4e33b58d-6d1d-4fe1-a90a-7226d49f928d": {
-            "type": "partners",
-            "settings": {
-            }
-          },
-          "515d16a4-d370-4cf5-8efd-64d3d966649a": {
-            "type": "partners",
-            "settings": {
-            }
-          },
-          "f19cc252-c700-4157-a247-c7e62fe8a129": {
-            "type": "partners",
-            "settings": {
-            }
-          }
-        },
-        "block_order": [
-          "d00a094a-df9d-4afe-9be4-0af7ddf5e663",
-          "96df6b0f-aaa6-4c6e-81e0-3ab1b64fb19b",
-          "1d5700bd-c050-46d0-b848-fb487a6c8e95",
-          "adae4013-b5d0-43ff-8856-e6263fbd4bfb",
-          "25dc5b08-6d65-45f0-bc50-805d17604461",
-          "c7a5b1e9-7c96-47cd-8585-ac10c6b645d3",
-          "4e33b58d-6d1d-4fe1-a90a-7226d49f928d",
-          "515d16a4-d370-4cf5-8efd-64d3d966649a",
-          "f19cc252-c700-4157-a247-c7e62fe8a129"
-        ],
-        "settings": {
-          "fetr_titlone": "Safe & Powerful <br>Glucose Support",
-          "fter_descone": "CuraLin is designed specifically for people looking for an effective and natural way to maintain healthy glucose levels so they can enjoy life’s events to the fullest.",
-          "fterbtn_titlone": "learn more",
-          "fterbnr_btnlinkone": "https:\/\/curalife.com\/pages\/curalin-advanced-glucose-support",
-          "fetr_titltwo": "9 powerful natural<br> ingredients combined<br> into one capsule.",
-          "fterbtn_titltwo": "learn more",
-          "fterbnr_btnlinktwo": "https:\/\/curalife.com\/pages\/curalin-advanced-glucose-support",
-          "fetr_titlthree": "Life Changing Experiences",
-          "fetr_titlfour": "We're making headlines..."
-        }
-      },
-      "16190717353dc6eba6": {
-        "type": "winning-diabetes",
-        "settings": {
-          "win_titl": "Winning Type 2<br> Diabetes Together",
-          "winr_desc": "Every day, people around the world connect in our active community to share advice, get support, and help each other live a healthier fuller life. It’s a movement changing lives across the globe.",
-          "win_btntitl": "Join the Community",
-          "win_btnlink": "https:\/\/www.facebook.com\/groups\/winningtype2diabetestogether"
-        }
-      },
-      "161907184276b20bf1": {
-        "type": "friend-refer",
-        "settings": {
-          "refr_img": "shopify:\/\/shop_images\/Frame_23365.png",
-          "refr_titl": "Introduce a Friend<br> to CuraLin",
-          "refr_desc": "Earn Free bottles of CuraLin as a special thank you for referring your friends.\nYou’ll also get to send them a $25 coupon off their first order!",
-          "refr_btntitl": "Start Now",
-          "refr_btnlink": "shopify:\/\/pages\/refer-a-friend"
-        }
-      },
       "our-story-banner": {
         "type": "our-story-banner",
         "settings": {
@@ -627,7 +515,6 @@
           "374b6ed8-a829-4968-b495-aba3e440980a"
         ],
         "settings": {
-          "cpwr_titl": "CuraLin Powerfully Helps",
           "wht_titl": "What is CuraLin?",
           "wht_desc": "CuraLin is a 100% natural glucose support supplement for people looking to maintain\n                                    healthy blood sugar levels and enjoy life's events to the fullest. It works by\n                                    blending\n                                    ancient Ayurveda practices with modern science and technology into a spectacular,\n                                    synergistic glucose support formula.\n                                    <br><br>\n                                    Each CuraLin capsule is manufactured close to the source, using only premium\n                                    ingredients. Secret production processes ensure that each capsule is highly potent\n                                    and\n                                    safe. All facilities are GMP & ISO 9001 certified, independent quality controls\n                                    assures that you get only the safest, highest quality supplements possible.\n                                    <br><br>\n                                    CuraLin comprises of 9 natural ingredients. Scroll down to learn more about the\n                                    formula."
         }
@@ -765,16 +652,6 @@
           "ea499d44-9aa0-4286-a65e-391b9aa4a1a0"
         ],
         "settings": {
-        }
-      },
-      "curalife_products": {
-        "type": "curalife_products",
-        "settings": {
-          "rtlprdct_title": "Curalife Products",
-          "rtlprdct_desc": "Recommended for Safe and Powerful Glucose Support",
-          "rtlcollection": "all-holidays2022-o",
-          "rtlprdct_bgimg": "shopify:\/\/shop_images\/bg.jpg",
-          "rtlbtm_desc": "If you’re excited by the impact CuraLife products can make in your community, we should discuss partnership opportunities. Simply fill in the contact form to get started."
         }
       },
       "retail-contact-us": {
@@ -1019,19 +896,6 @@
           "continue_btn_text": "NO THANKS, CONTINUE TO CART"
         }
       },
-      "related-product": {
-        "type": "related-product",
-        "settings": {
-          "show_product_recommendations": true,
-          "rltdprdct_title": "You may also like"
-        }
-      },
-      "banner-bottom": {
-        "type": "banner-bottom",
-        "settings": {
-          "banr_btmimg": "shopify:\/\/shop_images\/imgpsh_fullsize_anim.png"
-        }
-      },
       "cart-template": {
         "type": "cart-template",
         "settings": {
@@ -1055,17 +919,6 @@
           "lgn_titl": "Customer Login",
           "lgn_img": "shopify:\/\/shop_images\/login.jpg",
           "lgn_sbtitl": "Customer Login"
-        }
-      },
-      "featured-product": {
-        "type": "featured-product",
-        "settings": {
-          "prdct_title": "Curalife Products",
-          "prdct_desc": "Recommended for Safe and Powerful Glucose Support",
-          "prdct_pymnticn": "icon-afterpay",
-          "collection": "frontpage",
-          "prdct_bgimg": "shopify:\/\/shop_images\/bg.jpg",
-          "bnr_btmimg": "shopify:\/\/shop_images\/splitit.jpg"
         }
       },
       "collection-template": {
@@ -1152,233 +1005,6 @@
           "newsleter-banner-image": "shopify:\/\/shop_images\/tablet_22bc685b-ea1c-4768-8c17-c9728029ad87.png"
         }
       },
-      "companies-logo": {
-        "type": "companies-logo",
-        "blocks": {
-          "a2ad0f72-59f4-4315-ad7c-ce2582c077af": {
-            "type": "team",
-            "settings": {
-              "assets": "shopify:\/\/shop_images\/log1.png"
-            }
-          },
-          "f45f47e4-b63c-4940-b1a6-c88ef9bcefbd": {
-            "type": "team",
-            "settings": {
-              "assets": "shopify:\/\/shop_images\/log2.png"
-            }
-          },
-          "0663062b-c1d2-4cab-a19a-56f41b3d1106": {
-            "type": "team",
-            "settings": {
-              "assets": "shopify:\/\/shop_images\/log3.png"
-            }
-          },
-          "4af22186-37ac-4088-9aff-0f2f6085ba35": {
-            "type": "team",
-            "settings": {
-              "assets": "shopify:\/\/shop_images\/log4.png"
-            }
-          },
-          "bf117603-0732-4197-840b-39d5e1438d04": {
-            "type": "team",
-            "settings": {
-              "assets": "shopify:\/\/shop_images\/log5.png"
-            }
-          },
-          "fb720d38-5085-45ac-9617-fc60c2cfcab6": {
-            "type": "team",
-            "settings": {
-              "assets": "shopify:\/\/shop_images\/log6.png"
-            }
-          },
-          "4d00a837-b09c-4716-827e-0d0ae8caa52f": {
-            "type": "team",
-            "settings": {
-              "assets": "shopify:\/\/shop_images\/log7.png"
-            }
-          },
-          "43cd3ca9-320e-464e-b4e8-c707ec4ba967": {
-            "type": "team",
-            "settings": {
-              "assets": "shopify:\/\/shop_images\/log8.png"
-            }
-          }
-        },
-        "block_order": [
-          "a2ad0f72-59f4-4315-ad7c-ce2582c077af",
-          "f45f47e4-b63c-4940-b1a6-c88ef9bcefbd",
-          "0663062b-c1d2-4cab-a19a-56f41b3d1106",
-          "4af22186-37ac-4088-9aff-0f2f6085ba35",
-          "bf117603-0732-4197-840b-39d5e1438d04",
-          "fb720d38-5085-45ac-9617-fc60c2cfcab6",
-          "4d00a837-b09c-4716-827e-0d0ae8caa52f",
-          "43cd3ca9-320e-464e-b4e8-c707ec4ba967"
-        ],
-        "settings": {
-        }
-      },
-      "customers-stories": {
-        "type": "customers-stories",
-        "blocks": {
-          "f85764e9-a874-4407-b39f-d397d2049e4b": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/ezgif.com-gif-maker_23.png",
-              "link": "https:\/\/player.vimeo.com\/video\/447474765",
-              "name": "Mr Jonathan Hughes"
-            }
-          },
-          "abfaa35b-5ff7-496b-9537-e1f59dd424b3": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/35_27a278b7-e0e1-4e61-b204-b3d914372c6b.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "dbff8de9-6e7e-4654-b1a4-f90d93138ca1": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/37_6238ccef-6a20-4745-afae-1c17c963198a.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "0a57fd34-4ae4-4b0e-8838-c7f748c44fdd": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/32_d88a2719-b59d-4839-8850-3c6da29a5d40.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "9d1d1fed-2f90-48e0-8be4-fc2fe9e893ed": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/29_d5d5cc79-3e3e-4160-8049-00056924d529.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "cc5270d3-b9b7-4259-98d6-5b22efab8652": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/31_2d5dc1e4-35e0-4db9-906b-840f33b13e5e.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "114e62f8-4d51-4949-89d5-f11a86b5ebf1": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/30_be79c8f6-a699-46f5-9e1b-fc9d14dae606.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "b9489970-ced1-412f-908a-59402ccb82a6": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/34_fa858c3f-b6b0-47a2-9450-8b1675990297.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "2cb92eae-68fd-4456-9cca-75f1c5f7ee9b": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/33_80d864b4-b448-4c6f-88ac-9839b57f0378.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "95e825b5-3ab0-424a-a3ff-a7503ab13030": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/28_e667145f-250f-47de-a91f-d435d772c3fb.png",
-              "link": "",
-              "name": ""
-            }
-          },
-          "533901ee-d6d0-4c06-964a-06bd06d25f73": {
-            "type": "team",
-            "settings": {
-              "video_bg": "shopify:\/\/shop_images\/36_be6b2665-2695-4b5f-ac55-9379af13096c.png",
-              "link": "",
-              "name": ""
-            }
-          }
-        },
-        "block_order": [
-          "f85764e9-a874-4407-b39f-d397d2049e4b",
-          "abfaa35b-5ff7-496b-9537-e1f59dd424b3",
-          "dbff8de9-6e7e-4654-b1a4-f90d93138ca1",
-          "0a57fd34-4ae4-4b0e-8838-c7f748c44fdd",
-          "9d1d1fed-2f90-48e0-8be4-fc2fe9e893ed",
-          "cc5270d3-b9b7-4259-98d6-5b22efab8652",
-          "114e62f8-4d51-4949-89d5-f11a86b5ebf1",
-          "b9489970-ced1-412f-908a-59402ccb82a6",
-          "2cb92eae-68fd-4456-9cca-75f1c5f7ee9b",
-          "95e825b5-3ab0-424a-a3ff-a7503ab13030",
-          "533901ee-d6d0-4c06-964a-06bd06d25f73"
-        ],
-        "settings": {
-          "title": "Happy Customers<br> <span>Tell Their Stories<\/span>"
-        }
-      },
-      "natural-supplement": {
-        "type": "natural-supplement",
-        "blocks": {
-          "096ac9b4-eda8-4fdc-a46c-612fef9b4ca6": {
-            "type": "team",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/01_6ea72331-5a8f-4714-9de7-89498559cd0d.png"
-            }
-          },
-          "785dfea6-621f-41af-92ea-d7a10957df20": {
-            "type": "team",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/02_47450747-793a-4005-82b7-d954fd1aafef.png"
-            }
-          },
-          "b881ed3b-9d9d-493c-831f-55bfd5d79a9b": {
-            "type": "team",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/06_ae7c7710-7cc7-4982-a735-808ff5edfcb3.png"
-            }
-          },
-          "1f135e73-7ac8-4b2d-9aa5-3e57d0439c0a": {
-            "type": "team",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/04_87d176d5-f866-43fd-891e-2b706eb35713.png"
-            }
-          },
-          "dc48bc8c-0f58-48c4-a761-5ef383d2c39e": {
-            "type": "team",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/05_610822b2-bdd3-4748-9b41-5925822d2818.png"
-            }
-          }
-        },
-        "block_order": [
-          "096ac9b4-eda8-4fdc-a46c-612fef9b4ca6",
-          "785dfea6-621f-41af-92ea-d7a10957df20",
-          "b881ed3b-9d9d-493c-831f-55bfd5d79a9b",
-          "1f135e73-7ac8-4b2d-9aa5-3e57d0439c0a",
-          "dc48bc8c-0f58-48c4-a761-5ef383d2c39e"
-        ],
-        "settings": {
-          "title": "<b>CuraLin is a 100% natural<\/b><br> glucose support supplement",
-          "text": "A supplement powerful enough to help people maintain healthy blood sugar levels and enjoy life's events to the fullest."
-        }
-      },
-      "product-formula": {
-        "type": "product-formula",
-        "settings": {
-          "text": "CuraLin works by blending ancient Ayurveda practices with modern science and technology. The result is a synergistic glucose support formula you can count on. CuraLin comprises of 10 natural ingredients",
-          "btn": "Scroll down to learn more<br> about the formula"
-        }
-      },
       "reset-password": {
         "type": "reset-password",
         "settings": {
@@ -1408,27 +1034,18 @@
         "settings": {
         }
       },
-      "16442424129a03df23": {
-        "type": "homepage-banner",
+      "f6b8726d-437b-4700-887c-2b36167b1639": {
+        "type": "homepage-content",
         "settings": {
         }
       }
     },
     "content_for_index": [
-      "16442424129a03df23",
-      "1619071284c9bbcc58",
-      "16190717353dc6eba6",
-      "161907184276b20bf1"
+      "f6b8726d-437b-4700-887c-2b36167b1639"
     ],
     "blocks": {
       "7878088468538493966": {
         "type": "shopify:\/\/apps\/pop-ups-bars-by-wisepops\/blocks\/app-embed\/e7d7a4f7-0df4-4073-9375-5f36db513952",
-        "disabled": false,
-        "settings": {
-        }
-      },
-      "3847134708050210359": {
-        "type": "shopify:\/\/apps\/transcy-ai-language-translate\/blocks\/switcher_embed_block\/bce4f1c0-c18c-43b0-b0b2-a1aefaa44573",
         "disabled": false,
         "settings": {
         }
