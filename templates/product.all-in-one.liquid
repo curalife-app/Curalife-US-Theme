@@ -9,12 +9,9 @@
     {% assign challenge_value = 99 %}
     {% assign curaeats_value = 29 %}
   {% endif %}
-
-  {% assign currency_symbol = '$' %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign challenge_value = 0 %}
   {% assign curaeats_value = 24 %}
-  {% assign currency_symbol = '£' %}
 {% endif %}
 
 {% assign reviewsItems = '"This is the greatest! My husband started taking this! Finally found a product that works!":Linda Valtsiotis
@@ -39,7 +36,7 @@
 {% render 'script.round-converted-currency' %}
 
 <div class="product-template-all-in-one">
-  {% render 'product-all-in-one-cta-section-sliders', challenge_value: challenge_value, curaeats_value: curaeats_value, currency_symbol: currency_symbol %}
+  {% render 'product-all-in-one-cta-section-sliders', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'trust-badges-section', colors: "#5c5c5c" %}
   {% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'product-all-in-one-how-to-section' %}
