@@ -134,7 +134,12 @@
                 </div>
 
                 <div class="price">
-                  <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
+                  {% if forloop.index > 0 %}
+                    <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap | money_without_trailing_zeros }}</strike></p>
+                  {% else %}
+                    <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
+                  {% endif %}
+
                   <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
                 </div>
               </div>
