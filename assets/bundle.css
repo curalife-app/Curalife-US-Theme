@@ -571,7 +571,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1460px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -9363,7 +9363,7 @@ footer .bottom-info .info-wrap .text p {
   }
 }
 
-@media screen and (max-width: 1430px) {
+@media screen and (max-width: 1200px) {
   body {
     padding-top: 99px;
   }
@@ -13841,7 +13841,7 @@ a.lgoutlnk:hover {
   color: #DEB63A;
 }
 
-@media screen and (max-width: 1430px) {
+@media screen and (max-width: 1200px) {
   a.lgoutlnk {
     margin: 5px 0;
     padding-left: 16px;
