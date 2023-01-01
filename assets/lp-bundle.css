@@ -9163,7 +9163,7 @@ footer {
   .product-list .card .discount {
     padding-top: 6px; }
   .product-list:not(.line-decoration) .card:nth-child(3n + 2) {
-    border: 2px solid #DEB63A;
+    border: 2px solid var(--orange);
     border-radius: 20px; }
   .product-list.line-decoration .card {
     padding: 57px 10px;

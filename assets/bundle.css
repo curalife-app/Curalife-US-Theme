@@ -1591,7 +1591,7 @@ body.compensate-for-scrollbar {
   --green: var(--dark-green);
   --light-green: #9EB069;
   --brown: #D3AE5F;
-  --orange: #DEB63A;
+  --orange: var(--orange);
   --red: #FF0000;
 }
 
@@ -7034,7 +7034,7 @@ footer .bottom-info .info-wrap .text p {
 }
 
 .account-data .rewards-table table tbody tr td span.refunded {
-  color: #DEB63A;
+  color: var(--orange);
 }
 
 .contact-info {
@@ -13838,7 +13838,7 @@ a.lgoutlnk {
 }
 
 a.lgoutlnk:hover {
-  color: #DEB63A;
+  color: var(--orange);
 }
 
 @media screen and (max-width: 1200px) {
@@ -13874,7 +13874,7 @@ p.form-message.form-message--success {
 input.shopify-challenge__button.btn {
   padding: 14px 35px;
   font-size: 14px;
-  background: #deb63a;
+  background: var(--orange);
   border: none;
   color: #fff;
   transition: .3s ease-in-out;
