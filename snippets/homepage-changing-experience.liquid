@@ -9,7 +9,9 @@ myself feel better naturally. Definitely 5 stars!”*Colin Reader
 
 ' | split: '|' %}
 
-<div class="container">
+{% render 'homepage-changing-experience', experiences: experiences %}
+
+{% comment %} <div class="container">
   <div class="mini-wrap">
     <div class="changing-experiences">
       <div class="sub-title">
@@ -51,13 +53,13 @@ myself feel better naturally. Definitely 5 stars!”*Colin Reader
       </div>
     </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 
 
 
 
-<script>
+{% comment %} <script>
   quoteSlider = new Swiper(".quote-slider .swiper", {
     slidesPerView: 2,
     spaceBetween: 0,
@@ -83,4 +85,4 @@ myself feel better naturally. Definitely 5 stars!”*Colin Reader
       }
     }
   });
-</script>
+</script> {% endcomment %}
