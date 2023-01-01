@@ -4237,7 +4237,7 @@ h1, h2, h3 {
             }
 
             span.refunded {
-              color: #DEB63A;
+              color: var(--orange);
             }
           }
         }
@@ -5211,7 +5211,7 @@ a.lgoutlnk {
   transition: color var(--transition);
 
   &:hover {
-    color: #DEB63A;
+    color: var(--orange);
   }
 }
 
