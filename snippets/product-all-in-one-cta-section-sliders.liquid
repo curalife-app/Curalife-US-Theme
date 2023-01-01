@@ -134,9 +134,9 @@
                 </div>
 
                 <div class="price">
-                  {% if forloop.index > 0 %}
+                  {% if original_item_cap_total_with_bundle > var.price %}
                     <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap | money_without_trailing_zeros }}</strike></p>
-                  {% else %}
+    
                     <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
                   {% endif %}
 
