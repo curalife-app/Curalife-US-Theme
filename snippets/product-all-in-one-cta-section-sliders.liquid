@@ -114,7 +114,7 @@
               {% endif %}
 
               {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
-              {% assign original_item_cap_total = original_item_cap | times: var.metafields.my_fields.pack_bottles_quantity %}
+              {% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
               {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
 
               <div class="variant-box">
@@ -136,7 +136,7 @@
                 <div class="price">
                   {% if original_item_cap_total_with_bundle > var.price %}
                     {% comment %} <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap | money_without_trailing_zeros }}</strike></p> {% endcomment %}
-    
+
                     <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
                   {% endif %}
 
