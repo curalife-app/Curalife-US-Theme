@@ -5,7 +5,6 @@
         let redirectPages = [
           '/collections/all',
           '/collections/all-2',
-          '/collections/all',
           '/products/curalin-pack',
           '/products/curalin',
           '/products/curalin-3-pack',
@@ -21,8 +20,9 @@
           (function($) {
             let linksQuery = '';
             redirectPages.forEach((value, index)=>{linksQuery += 'a[href="' + redirectPages[index] + '"], '});
+            console.log("linksQuery: " + linksQuery);
             linksQuery = linksQuery.slice(0, -2);
-            console.log(linksQuery);
+            console.log("linksQuery: " + linksQuery);
             $(linksQuery).each(function () {
               $(this).attr('href', $(this).attr('href') + '-p');
             });
