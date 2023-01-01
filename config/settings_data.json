@@ -171,19 +171,6 @@
           "alrght_titl": "All rights reserved"
         }
       },
-      "16190701775cb6c02f": {
-        "type": "banner",
-        "disabled": true,
-        "settings": {
-          "bnr_titl": "Effective. Safe. Natural.",
-          "bnr_desc": "Science based supplements <br> that improve quality of life.",
-          "btn_titl": "shop now",
-          "bnr_btnlink": "https:\/\/curalife.com\/collections\/all",
-          "bnr_img": "shopify:\/\/shop_images\/homepage_bunner_buttel_1_2.png",
-          "mblbnr_img": "shopify:\/\/shop_images\/X_-_2.png",
-          "shipping_icon": "shopify:\/\/shop_images\/car_icon_1.png"
-        }
-      },
       "1619071284c9bbcc58": {
         "type": "features",
         "blocks": {
@@ -2283,10 +2270,26 @@
         "type": "partnerships-map",
         "settings": {
         }
+      },
+      "1640766506aa030779": {
+        "type": "banner-new-year",
+        "disabled": true,
+        "settings": {
+          "bnr_titl": "Effective. Safe. Natural",
+          "bnr_desc": "Science based supplements that improve quality of life.",
+          "btn_titl": "shop now",
+          "bnr_btnlink": "shopify:\/\/collections\/all",
+          "bnr_img": "shopify:\/\/shop_images\/Frame_15.png",
+          "mblbnr_img": "shopify:\/\/shop_images\/Frame_16.png"
+        }
+      },
+      "16442424129a03df23": {
+        "type": "homepage-banner",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
-      "1640766506aa030779",
       "1619071284c9bbcc58",
       "16190717353dc6eba6",
       "161907184276b20bf1"
