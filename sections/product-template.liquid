@@ -12,10 +12,12 @@
     {% assign challenge_value = 99 %}
     {% assign curaeats_value = 29 %}
   {% endif %}
+  {% assign promotion_title = "Life Changing Program<br>& CuraEats Meal Plan ($128 value)" %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign bundle_notice_text = "+ CuraEats App Bonus" %}
   {% assign challenge_value = 0 %}
   {% assign curaeats_value = 24 %}
+  {% assign promotion_title = "CuraEats Meal Plan ($29 value)" %}
 {% endif %}
 
 {%- comment -%} More Variables {%- endcomment -%}
@@ -59,7 +61,7 @@
             </p>
           </div>
 
-          <p class="promotion-title">Bonus: Life Changing Program<br>& CuraEats Meal Plan ($128 value)</p>
+          <p class="promotion-title">Bonus: {{ promotion_title }}</p>
 
           <div class="form-wrap">
             <form method="post" id="addTocartForm" action="/cart/add">
