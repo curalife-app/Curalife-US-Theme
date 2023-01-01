@@ -3249,7 +3249,7 @@ footer .bottom-info .info-wrap .text p {
   font-weight: normal;
   font-size: 20px;
   line-height: 1.6;
-  color: var(--dark);
+  /* color: var(--dark); */
 }
 
 .story-data .author {
