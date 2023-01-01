@@ -37,7 +37,6 @@
 
   .sale-banner.{{ instance_id }} img.logo {
     display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
-    max-width:{% if longTitle %}93%{% else %}100%{% endif %};
   }
 
   .sale-banner.{{ instance_id }} p.title {
@@ -70,6 +69,7 @@
 
     .sale-banner.{{ instance_id }} img.logo {
       display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
+      width: 100%;
     }
 
     .sale-banner.{{ instance_id }} p.title {
