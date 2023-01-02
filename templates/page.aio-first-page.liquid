@@ -86,7 +86,7 @@ anymore
 health.
 ' | split: '|' %}
 
-<div class="page-overflow">
+
   {% render 'aio-first-page-hero-section', isLogo: true %}
   {% render 'partnerships-featured' %}
   {% render 'aio-first-page-meet-curalin', meetCuralins: meetCuralins %}
@@ -101,7 +101,7 @@ health.
   {% render 'aio-first-page-supported-community' %}
   {% render 'aio-first-page-satisfaction-survey' %}
   {% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "complex" %}
-</div>
+
 
 <script>
   (function () {
@@ -253,9 +253,6 @@ health.
 {% render 'layout.footer.woopra-snippet' %}
 
 <style>
-  .page-overflow {
-    overflow: hidden
-  }
 
   #wisepops-root {
     transition: opacity 0.5s;
