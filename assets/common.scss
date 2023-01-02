@@ -85,16 +85,7 @@ pre {
 }
 a {
 	background-color: $background-color_1;
-	text-decoration: none;
 	color: $color_3;
-	&:focus {
-		text-decoration: none;
-		color: $color_3;
-	}
-	&:hover {
-		text-decoration: none;
-		color: $color_3;
-	}
 }
 abbr[title] {
 	border-bottom: none;
