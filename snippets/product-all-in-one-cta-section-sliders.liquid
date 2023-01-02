@@ -721,9 +721,7 @@
       })
 
     // Save Text Change
-
-    let saveText = "You Save " + "{{ shop.curreny.symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
-    console.log("saveText: "+ saveText)
+    let saveText = "You Save " + "{{ shop.currency.symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
     }).animate({'opacity': 1}, 800);
