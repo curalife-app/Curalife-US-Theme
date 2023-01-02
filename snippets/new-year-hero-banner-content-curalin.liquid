@@ -90,7 +90,7 @@
     .hero-banner {
       text-align: center;
       height: calc(100vh - 60px);
-      padding-top:  80px;
+      padding-top:  {% if isLP %}75px{% endif %} ;
     }
 
     .hero-banner .text-button .cta-btn {
