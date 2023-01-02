@@ -61,7 +61,7 @@
             </p>
           </div>
 
-          <p class="promotion-title">Bonus: {{ promotion_title }} ({{ cart.currency.symbol }}{{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value)</p>
+          <p class="promotion-title">Bonus: {{ promotion_title }} ({{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value)</p>
 
           <div class="form-wrap">
             <form method="post" id="addTocartForm" action="/cart/add">
