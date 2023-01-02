@@ -124,7 +124,7 @@
                   {% else %}
                     {% assign discount = 0 %}
                   {% endif %}
-                <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: forloop.index  | plus: 1 }}" {% if forloop.index == 3 %}checked=true{% endif %}></input>
+                <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: forloop.index | plus: 1 }}" {% if forloop.index == 3 %} checked=true{% endif %}></input>
                 </div>
                 <div class="variant-info">
                   <p class="variant-title">{{ var.title }}</p>
@@ -678,7 +678,7 @@
 
   let isFirstClick = true;
   $( document ).ready(function() {
-    let saveText = "You Save " + "{{ shop.curreny.symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    let saveText = "You Save " + "{{ shop.currency.symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
 
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
