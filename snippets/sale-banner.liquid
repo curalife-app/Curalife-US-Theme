@@ -5,7 +5,7 @@
 <div class="sale-banner {{ instance_id }}">
   <div class="container">
     <div class="logo-wrapper">
-        {% if logoFileName %}<img class="logo" src="{{ logoFileName | asset_url }}" width="164" height="45" alt="logo">{% endif %}
+      {% if logoFileName %}<img class="logo" src="{{ logoFileName | asset_url }}" width="164" height="45" alt="logo">{% endif %}
     </div>
 
     <p class="title">{{ title }}</p>
@@ -37,7 +37,6 @@
 
   .sale-banner.{{ instance_id }} img.logo {
     display: {% if desktopContent contains 'logo' %}block{% else %}none{% endif %};
-    max-width:{% if longTitle %}93%{% else %}100%{% endif %};
   }
 
   .sale-banner.{{ instance_id }} p.title {
@@ -54,9 +53,12 @@
   .sale-banner.{{ instance_id }} .off-container {
     display: {% if desktopContent contains 'cta' %}flex{% else %}none{% endif %};
   }
-  .sale-banner.{{ instance_id }} a.main-btn {
-    display: {% if desktopContent contains 'cta-button' %}block{% else %}none{% endif %};
-  }
+
+  {% unless desktopContent contains 'cta-button' %}
+    .sale-banner.{{ instance_id }} a.main-btn {
+      display: none;
+    }
+  {% endunless %}
 
   @media screen and (max-width: 768px) {
     {% if mobileContent contains ',' %}
@@ -67,6 +69,7 @@
 
     .sale-banner.{{ instance_id }} img.logo {
       display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
+      width: 100%;
     }
 
     .sale-banner.{{ instance_id }} p.title {
