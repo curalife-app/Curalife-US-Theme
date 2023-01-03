@@ -25,7 +25,7 @@
 
   .hero-banner .main-img {
     position: relative;
-    left: 50px;
+    left: {% if isLP %}36px{% else %}50px{% endif %};
   }
 
   .hero-button h1 {
