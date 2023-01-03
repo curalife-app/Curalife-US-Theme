@@ -167,7 +167,7 @@
 
   .main-logo img {
     margin-top: -3px;
-    max-width: 80px;
+    max-width: 120px;
   }
 
   .main-menu ul li {
@@ -215,9 +215,17 @@
     header .option-title {
       display: none;
     }
+
+    header .main-toolbar {
+      gap: unset;
+    }
   }
 
   @media screen and (max-width: 768px) {
+    .main-logo img {
+      max-width: 80px;
+    }
+
     header {
       position: fixed;
     }
