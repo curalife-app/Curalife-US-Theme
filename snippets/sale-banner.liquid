@@ -223,8 +223,8 @@
       display:flex;
       justify-content: center;
       margin-right: unset;
-      font-size: 6vw;
-      line-height: 6vw;
+      font-size: {% if isFlash %} 4vw {% else %} 6vw {% endif %};
+      line-height: {% if isFlash %} 4vw {% else %} 6vw {% endif %};
     }
 
     .sale-banner a.main-btn {
