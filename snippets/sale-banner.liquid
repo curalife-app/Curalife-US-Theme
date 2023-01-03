@@ -292,7 +292,7 @@
   }
 
   .sale-banner .up-to {
-    font-size: 25px;
+    font-size: {% unless isFlash %} 25px{% endunless %};
   }
 
   .sale-banner .percents-off {
@@ -327,7 +327,7 @@
     }
 
     .sale-banner .up-to {
-      font-size: 4vw;
+      font-size:{% unless isFlash %} 4vw{% endunless %};
     }
 
     .sale-banner .percents-off {
