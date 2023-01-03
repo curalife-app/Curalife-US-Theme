@@ -87,7 +87,7 @@
 
   .featured-section {
       font-family: "Poppins", sans-serif;
-      padding: 105px 0 0 ; 
+      padding: 80px 0 0 ; 
   }
 
   .featured-section .sub-title {
@@ -217,7 +217,9 @@
     }
 
     @media screen and (max-width: 768px) {
- 
+      .featured-section {
+        padding: {% if isFlash %}150px{% else %}110px{% endif %};
+      }
       .featured-section .sub-title h4 {
         font-size: 1.125rem;
         letter-spacing: normal;
