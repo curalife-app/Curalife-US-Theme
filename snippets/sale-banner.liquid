@@ -7,7 +7,12 @@
     <div class="logo-wrapper">
       {% if logoFileName %}<img class="logo" src="{{ logoFileName | asset_url }}" width="164" height="45" alt="logo">{% endif %}
     </div>
-
+    {% if isFlash %}
+    <div class="middle-flash-sale part-60">
+        <div class="flash-sale-desktop"><img src="{{ 'header-flash-sale.png' | asset_url }}" alt="" loading="lazy"></div>
+        <div class="flash-sale-mobile"><img src="{{ 'header-flash-sale-mobile.png' | asset_url }}" alt="" loading="lazy"></div>
+    </div>
+    {% endif %}
     <p class="title">{{ title }}</p>
 
     <div class="cta-wrapper">
@@ -26,6 +31,32 @@
     </div>
   </div>
 </div>
+<style>
+  .sale-banner .middle-flash-sale {
+      padding: 0 20px;
+      z-index: 5;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .sale-banner .middle-flash-sale .flash-sale-mobile {
+      display: none;
+  }
+
+
+
+  @media screen and (max-width: 768px) {
+     .sale-banner .middle-flash-sale .flash-sale-desktop {
+        display: none;
+    }
+
+    .sale-banner .middle-flash-sale .flash-sale-mobile {
+        display: block;
+    }
+  }
+</style>
 <style>
   .sale-banner.{{ instance_id }} {
     background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(var(--dark-green), var(--dark-green)) {% elsif bgColor == "pink" %}linear-gradient(#F59E80, #F59E80){% else %}white{% endif %};
