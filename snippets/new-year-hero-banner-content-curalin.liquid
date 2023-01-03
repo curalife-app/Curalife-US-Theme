@@ -91,12 +91,22 @@
     display: none;
   }
 
+  @media screen and (max-width: 877px) {
+    .hero-banner-content {
+      padding-top: 80px;
+      
+    }
+  }
+
   @media screen and (max-width: 768px) {
     .hero-banner {
       text-align: center;
       height: calc(100vh - 60px);
       padding-top:  {% if isLP %}75px{% endif %} ;
     }
+
+
+    
 
     .hero-banner .text-button .cta-btn {
       bottom: 15px;
@@ -108,7 +118,7 @@
 
     .hero-banner-content {
       display: block;
-      margin-top: 20px;
+      padding-top: 20px;
     }
 
     .hero-banner-content .text-button .main-title {
