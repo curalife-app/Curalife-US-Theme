@@ -118,7 +118,7 @@
 
     .hero-banner-content {
       display: block;
-      padding-top: 20px;
+      padding-top: {% if isLP %} 20px {% else %}60px{% endif %};
     }
 
     .hero-banner-content .text-button .main-title {
