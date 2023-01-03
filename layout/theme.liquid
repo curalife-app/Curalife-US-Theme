@@ -19,10 +19,11 @@
     {% render 'layout.head.fonts' %}
 
     <!-- Stylesheets -->
+    {{ 'bamboo.min.css' | asset_url | stylesheet_tag: preload: true }}
     {% if request.path contains 'curalin-pack' %}
-    {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
+      {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
     {% elsif request.path contains 'curaeats' %}
-    {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
+      {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
     {% endif %}
     {{ 'common.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'styles.css' | asset_url | stylesheet_tag: preload: true }}
@@ -53,7 +54,6 @@
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
-  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/oMYBvmnASlHzmouicgkepg" async></script>
 </head>
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->
