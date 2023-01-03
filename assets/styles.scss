@@ -8013,6 +8013,10 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  h1 {
+    font-size: 10vw;
+  }
+
   .page-intro {
     .intro-wrap {
       .data-wrap {
