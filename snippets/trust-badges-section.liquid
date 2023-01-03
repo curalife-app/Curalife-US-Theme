@@ -11,6 +11,11 @@
     <div class="trust-badge"><i class="icofont-ui-lock"></i>100% Secure Checkout</div>
   </div>
 </section>
+{% if bottomLine %};
+  <div class="line">
+    <div class="container" style="border-bottom: 1px solid {{ colors }}"></div>
+  </div>
+{% endif %}
 
 <style>
   #trust-badges-section {
@@ -33,7 +38,6 @@
     text-align: center;
     align-items: center;
     text-transform: uppercase;
-    {% if colors %}color: {{ colors }};{% endif %}
   }
 
   #trust-badges-section .trust-badge i {
