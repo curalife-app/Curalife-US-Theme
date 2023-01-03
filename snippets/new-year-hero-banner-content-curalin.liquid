@@ -14,6 +14,10 @@
 </section>
 
 <style>
+
+  section {
+    padding: {% if isLP %}unset{% endif %};
+  }
   .hero-banner {
     position: relative;
     overflow: hidden;
