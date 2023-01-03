@@ -62,6 +62,9 @@
   }
 </style>
 <style>
+  .sale-banner {
+    top: 0;
+  }
   .sale-banner.{{ instance_id }} {
     background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(var(--dark-green), var(--dark-green)) {% elsif bgColor == "pink" %}linear-gradient(#F59E80, #F59E80){% else %}white{% endif %};
   }
