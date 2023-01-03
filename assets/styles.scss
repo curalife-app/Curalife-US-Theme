@@ -9485,8 +9485,9 @@ html {
   .qty-control {
     label {
       input {
-        width: 50%;
+        width: 50% !important;
         padding: 3px;
+        background: unset;
       }
     }
 
