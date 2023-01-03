@@ -10,16 +10,10 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-// *, *:before, *:after {
-//   -webkit-box-sizing: border-box;
-//   box-sizing: border-box;
-// }
-
 h1, h2, h3 {
   font-family: "PP Radio Grotesk", sans-serif;
   margin: unset;
 }
-
 
 .container {
   position: relative;
@@ -8060,8 +8054,7 @@ html {
 
   .sub-title {
     h1 {
-      font-size: 36px;
-      line-height: 1.28;
+      font-size: 10vw;
       text-align: center;
     }
 
