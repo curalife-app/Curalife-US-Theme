@@ -21,6 +21,10 @@ h1, h2, h3 {
   margin: unset;
 }
 
+a:hover {
+  text-decoration: unset;
+}
+
 section {
   padding: 50px 0;
 }
