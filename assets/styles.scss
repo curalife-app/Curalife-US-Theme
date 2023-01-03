@@ -332,6 +332,7 @@ h1, h2, h3 {
     margin: 0;
     padding: 29px 0;
     position: relative;
+    border-left: unset;
 
     &:before {
       font-family: 'icoFont', serif !important;
