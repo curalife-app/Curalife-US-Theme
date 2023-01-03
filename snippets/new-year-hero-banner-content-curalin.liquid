@@ -93,7 +93,7 @@
 
   @media screen and (max-width: 877px) {
     .hero-banner-content {
-      padding-top: 80px;
+      padding-top: {% if isLP %}80px {% endif %};
       
     }
   }
