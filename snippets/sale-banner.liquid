@@ -69,7 +69,7 @@
 
     .sale-banner.{{ instance_id }} img.logo {
       display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
-      width: {% if logoFileName contains 'white'%}unset {% else %} 100% {% endif %};
+      width: {% unless logoFileName contains 'white' %}100%{% endunless %};
     }
 
     .sale-banner.{{ instance_id }} p.title {
