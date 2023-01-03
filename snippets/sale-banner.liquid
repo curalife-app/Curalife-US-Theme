@@ -176,7 +176,7 @@
   .sale-banner .off-container {
     justify-content: center;
     align-items: center;
-    font-family: 'PP Radio Grotesk';
+    font-family:{% if isFlash %}'Montserrat'{% else %} 'PP Radio Grotesk' {% endif %};
     gap: 10px;
     color: {% unless isFlash %} white {% endunless %};
   }
