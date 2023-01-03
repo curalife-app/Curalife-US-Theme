@@ -225,9 +225,9 @@
     }
 
     #hero-section {
-      min-height: 135vw;
+      min-height:{% if isFlash %}150vw {% else %} 135vw{% else %};
       overflow: visible;
-      padding-top: {% if isFlash %}100px {% else %}5vw{% endif %};
+      padding-top: {% if isFlash %}100px {% else %}5vw{% else %};
     }
 
     #hero-section:before {
