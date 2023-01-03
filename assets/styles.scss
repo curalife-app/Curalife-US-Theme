@@ -2,12 +2,17 @@
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type=number] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+body {
+  padding-left: unset;
+  padding-right: unset;
 }
 
 h1, h2, h3 {
