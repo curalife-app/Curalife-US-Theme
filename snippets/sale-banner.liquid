@@ -108,7 +108,7 @@
     .sale-banner.{{ instance_id }} img.logo {
       display: {% if mobileContent contains 'logo' %}block{% else %}none{% endif %};
       width: {% unless logoFileName contains 'white' %}100%{% endunless %};
-      max-width: {% if isFlash %} 150px {% endif %};
+      max-width: {% if isFlash %} 100px {% endif %};
     }
 
     .sale-banner.{{ instance_id }} p.title {
