@@ -1,7 +1,7 @@
 {% if shop.name == "CuraLife Global" %}
   {% assign linkAdd = '/collections/all' %}
 {% elsif shop.name == "CuraLife" %}
-  {% assign linkAdd = '/products/curalin-pack-holidays2022' %}
+  {% assign linkAdd = '/products/curalin-pack' %}
 {% endif %}
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
@@ -516,26 +516,7 @@ a:hover {
 
 </style>
 
-<script>
-  function LinkToProduct(element, url) {
-    woopra.track('Click CTA', {
-      button_title: element.innerText
-    });
 
-    window.location.href = url;
-  }
-
-  const get_utm = window.location.search.substring(1);
-  if (get_utm) {
-      let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
-      window.onload = function () {
-          for (let i = 0; i < product_link.length; i++) {
-              product_link[i].href = product_link[i].href + "?" + get_utm
-          }
-      }
-  }
-
-</script>
 <script>
   function showvideo() {
       this.classList.add('show-video');
