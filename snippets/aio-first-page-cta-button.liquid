@@ -12,29 +12,6 @@
 
 <!-- Floating CTA & btn General Theme Style -->
 <style>
-
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box
-}
-
-a,
-a:focus,
-a:hover {
-  text-decoration: none
-}
-    button {
-        font-family: "Poppins", sans-serif;
-        font-size: 100%;
-        line-height: 1.15;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-        border-radius: 0;
-        -webkit-appearance: none
-    }
     .btn-cta {
       border: none;
       background: var(--dark-green);
@@ -54,6 +31,7 @@ a:hover {
     .btn-cta:hover {
       background: var(--darker-green);
     }
+
     .floating-cta {
       position: fixed;
       left: 20px;
@@ -61,8 +39,6 @@ a:hover {
       bottom: 1.25rem;
       z-index: 20;
       pointer-events: none;
-      -webkit-transition: opacity var(--transition), visibility var(--transition);
-      -o-transition: opacity var(--transition), visibility var(--transition);
       transition: opacity var(--transition), visibility var(--transition)
     }
 
@@ -91,7 +67,6 @@ a:hover {
         max-width: 15.625rem;
         font-size: 1.875rem
       }
-
     }
 
     @media screen and ( max-width: 768px) {
@@ -106,13 +81,11 @@ a:hover {
       .btn-cta b {
         font-weight: 700
       }
-
-
     }
-  </style>
+</style>
 
   <!-- Floating CTA Style -->
-  <style>
+<style>
       .btn-cta {
           border: none;
           background: {% if regColor %}#FDD246 {% else %} var(--dark-green) {% endif %};
@@ -140,7 +113,7 @@ a:hover {
           }
 
       }
-  </style>
+</style>
 
 
   <script>
