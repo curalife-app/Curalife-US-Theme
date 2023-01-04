@@ -109,18 +109,9 @@ health.
       button_title: element.innerText
     });
 
-    let newUrl = url;
+    console.log("newUrl", url + window.location.search)
 
-    const get_utm = window.location.search.substring(1);
-    if (get_utm) {
-      for (let i = 0; i < product_link.length; i++) {
-        newUrl = product_link[i].href + "?" + get_utm
-      }
-    }
-
-    console.log("newUrl", newUrl)
-
-    {% comment %} window.location.href = newUrl; {% endcomment %}
+    {% comment %} window.location.href = url + window.location.search; {% endcomment %}
   }
 </script>
 
