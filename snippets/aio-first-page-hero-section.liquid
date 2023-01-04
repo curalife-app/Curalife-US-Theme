@@ -142,7 +142,7 @@
       }
 
       #hero-section .brand-welcome-text * {
-        font-size: 7vw;
+        font-size: 8vw;
         color: var(--dark-green);
       }
 
@@ -198,13 +198,6 @@
       left: -8vw;
     }
 
-    #hero-section .brand-welcome-text * {
-      font-size: 6vw;
-      color: {% if regColor %}#62C1C5 {% else %} var(--dark-green) {% endif %};
-      background: unset !important;
-      padding: 0 !important;
-    }
-
     #hero-section .brand-welcome-text {
       margin: 0;
       padding-top: 10px;
@@ -216,7 +209,7 @@
     }
 
     #hero-section {
-    min-height:{% if isFlash %} 150vw {% else %} 135vw{% endif %};
+      min-height:{% if isFlash %} 150vw {% else %} 135vw{% endif %};
       overflow: visible;
       padding-top: {% if isFlash %}100px {% else %}5vw{% endif %};
     }
