@@ -25,10 +25,11 @@
           {% endif %}
 
           {% if admin %}
-          <div class="edit">
-            <a href="/admin/articles/{{ article.id }}"> <i class="icofont-ui-edit" style="position:relative;top:10px;left:20px;font-size:20px;"></i></a>
-          </div>
+            <div class="edit">
+              <a href="/admin/articles/{{ article.id }}"> <i class="icofont-ui-edit" style="position:relative;top:10px;left:20px;font-size:20px;"></i></a>
+            </div>
           {% endif %}
+
           <div class="article-author">
             {% if article.user.image %}
               <div class="photo">
