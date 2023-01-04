@@ -56,3 +56,7 @@
 {% else %}
 <meta property="twitter:image" content="{{ 'meta-thumbnail.png' | asset_url }}" />
 {% endif %}
+
+{% if product.metafields.custom.no_index %}
+  <meta name="robots" content="noindex">
+{% endif %}
