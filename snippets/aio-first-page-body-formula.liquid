@@ -41,20 +41,6 @@
 
 
 <style>
-
- *,
- *:before,
- *:after {
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box
- }
-
- .container {
-   width: 100%;
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 0 15px
- }
     .body-formula {
       padding: 2.3125rem 0;
       background: rgba(234, 234, 234, .5);
@@ -65,7 +51,11 @@
       padding: 0 1.375rem
     }
 
-
+  .meet-curalin h3,
+  .meet-curalin p.subtitle {
+    font-size: 40px;
+    margin: unset;
+  }
 
     .body-formula .sub-title h3 {
       font-size: clamp(20px, 3vw, 50px);
@@ -76,13 +66,8 @@
       font-weight: 600
     }
 
-
-
     .formula-wrapper {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       margin-top: 2.125rem;
       padding: 0 1.0625rem
@@ -143,6 +128,14 @@
             padding: 1.5625rem 0
           }
 
+          .meet-curalin h3 {
+            font-size: 7vw;
+          }
+
+          .meet-curalin p {
+            font-size: 5vw;
+          }
+
           .body-formula .sub-title h3 span {
             font-weight: inherit
           }
@@ -167,8 +160,6 @@
           .formula-text p {
             padding-bottom: 1.25rem
           }
-
     }
-
 </style>
 
