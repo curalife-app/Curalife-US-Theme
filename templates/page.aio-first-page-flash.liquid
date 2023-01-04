@@ -36,7 +36,6 @@
       |lp-aio-vegan.svg:Vegan friendly
       |lp-aio-gmp.png:GMP and ISO9001 Certified facilities
       ' | split: '|' %}
-
 {% endif %}
 
 {% assign faqItems = "Can I take CuraLin alongside my drugs?:CuraLin is a natural dietary supplement, meaning that it’s meant as a compliment to your existing regime. You simply take it as part of your diet to help maintain a healthy blood sugar level. Thousands of CuraLin users take CuraLin alongside their prescribed drugs and treatments and no serious negative interactions have been recorded. Of course, please consult with your doctor before starting on CuraLin, whether you’re on drugs or not.
@@ -75,16 +74,15 @@ hunger should go away after meals
 |lp-aio-v3-benefits-weight.png*Weight Loss is easier:to manage because your body is metabolizing food better and is not trying to sabatage
 you
 anymore
-|lp-aio-v3-benefits-internal.png*Supports internal systems:that are responsible for keeping your blood sugar healthy on a cellular level
-
-' | split: '|' %}
+|lp-aio-v3-benefits-internal.png*Supports internal systems:that are responsible for keeping your blood sugar healthy on a cellular level'
+| split: '|' %}
 
 {% assign doctors = 'lp-aio-michel.png*Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code.
 |lp-aio-nancy.png*Dr. Nancy Russell:Internal Medicine Specialist, North Kansas City Hospital
 |lp-aio-raz.png*Prof. Itamar Raz:World renouned diabetes expert with over 400 published peer-reviewed studies.
 |lp-aio-sarah.png*Dr. Sarah Brewer:Functional doctor, diabetes expert, and author of over 60 books on personal
-health.
-' | split: '|' %}
+health.'
+| split: '|' %}
   {% render 'sale-banner', isFlash: true, isFixed: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "pink", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
   {% render 'aio-first-page-hero-section', isFlash: true %}
   {% render 'partnerships-featured', isFlash: true %}
