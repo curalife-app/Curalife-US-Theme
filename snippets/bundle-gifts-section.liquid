@@ -1,7 +1,8 @@
 <section id="bundles-section">
   {% if shop.name == "CuraLife" %}
     <h2>Everything you need to keep your blood sugar happy!</h2>
-    <div class="icon-arrow"></div>
+
+    {% if isArrow %}<div class="icon-arrow"></div>{% endif %}
 
     {% render 'challenge-section' %}
 
@@ -22,6 +23,7 @@
     font-family: 'PP Radio Grotesk';
     font-size: 48px;
     color: var(--dark-green);
+    margin-bottom: 30px;
   }
 
   #bundles-section i.plus {
@@ -29,7 +31,7 @@
     font-size: 150px;
     position: absolute;
     z-index: 1;
-    margin-top: -85px;
+    margin-top: -110px;
     left: calc(50% - 0.5em);
     text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     line-height: unset !important;
@@ -50,12 +52,11 @@
     #bundles-section h2 {
       font-family: 'Poppins';
       font-size: 9vw;
-      padding: 30px 0;
     }
 
     #bundles-section i.plus {
-      font-size: 30vw;
-      margin-top: -17vw;
+      font-size: 40vw;
+      margin-top: -30vw;
     }
 
     #bundles-section .icon-arrow {

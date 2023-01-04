@@ -100,6 +100,10 @@
 </section>
 
 <style>
+  #product-catalog-section {
+    padding: unset;
+  }
+
   #product-catalog-section .product-card {
     max-width: 30%;
     padding: 10px;
@@ -181,6 +185,7 @@
       font-weight: bold;
       margin: unset;
       margin-top: 30px;
+      margin-bottom: 5px;
   }
 
   #product-catalog-section .product-card.recommended h3 {
@@ -290,8 +295,12 @@
 
   @media screen and (max-width:768px) {
     #product-catalog-section .product-list {
-      gap: 3vw;
+      gap: 10vw;
       flex-direction: column;
+    }
+
+    #product-catalog-section .promotion-title {
+      font-size: 5vw;
     }
 
     #product-catalog-section .product-card {
@@ -302,11 +311,12 @@
     }
 
     #product-catalog-section .product-card h3 {
-      font-size: 7vw;
+      font-size: 10vw;
+      margin-top: 5vw;
     }
 
     #product-catalog-section .product-card .info .price {
-      padding-top: 4vw;
+      padding-top: 0;
     }
 
     #product-catalog-section .product-card .info .price strike {
