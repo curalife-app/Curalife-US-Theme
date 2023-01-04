@@ -1,24 +1,22 @@
 <section class="meet-curalin" id="meet-curalin">
   <div class="container">
-    <div class="data-wrap">
-      <h3>Meet CuraLin.</h3>
-      <p>Blood sugar support made for you...</p>
+    <h3>Meet CuraLin.</h3>
+    <p>Blood sugar support made for you...</p>
 
-      <div class="curalin-intro">
-        {% for meetCuralin in meetCuralins %}
-        <div class="curaline-widget-item">
-          <div class="curaline-widget-icon">
-            <img src="{{ meetCuralin | file_url | split: "*" | first }}" alt="">
-          </div>
-          <div class="curaline-widget-text">
-            <h4>{{ meetCuralin | split: "*" | last | split: ":" | first }}</h4>
-            <p>{{ meetCuralin | split: "*" | last | split: ":" | last }}</p>
-          </div>
+    <div class="curalin-intro">
+      {% for meetCuralin in meetCuralins %}
+      <div class="curaline-widget-item">
+        <div class="curaline-widget-icon">
+          <img src="{{ meetCuralin | file_url | split: "*" | first }}" alt="">
         </div>
-      {% endfor %}
-        <div class="curaline-brandmark">
-          <img src="{{ 'lp-aio-brand-mark.png' | file_url}}" width="339" height="448" alt="">
+        <div class="curaline-widget-text">
+          <h4>{{ meetCuralin | split: "*" | last | split: ":" | first }}</h4>
+          <p>{{ meetCuralin | split: "*" | last | split: ":" | last }}</p>
         </div>
+      </div>
+    {% endfor %}
+      <div class="curaline-brandmark">
+        <img src="{{ 'lp-aio-brand-mark.png' | file_url}}" width="339" height="448" alt="">
       </div>
     </div>
   </div>
