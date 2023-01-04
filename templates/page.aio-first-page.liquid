@@ -86,7 +86,7 @@ anymore
 health.
 ' | split: '|' %}
 
-
+{% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "pink", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
 {% render 'aio-first-page-hero-section', isLogo: true %}
 {% render 'partnerships-featured' %}
 {% render 'aio-first-page-meet-curalin', meetCuralins: meetCuralins %}
@@ -101,6 +101,15 @@ health.
 {% render 'aio-first-page-supported-community' %}
 {% render 'aio-first-page-satisfaction-survey' %}
 {% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "complex" %}
+
+{% comment %} Toggle Sale Banner {% endcomment %}
+<script>
+  let queryParam = window.location.search;
+
+  if (queryParam.includes('sale=flash')) {
+    $('.sale-banner').toggleClass('hidden');
+  }
+</script>
 
 <script>
   function LinkToProduct(element, url) {
