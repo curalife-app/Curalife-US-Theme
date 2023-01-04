@@ -184,7 +184,6 @@
   transition: transform 0.3s;
 }
 
-
 .faq-section .container .faq .faq-item .question.active:after {
   content: "+";
   transform: rotate(45deg);
@@ -238,32 +237,32 @@
 }
 
 @media screen and (max-width:768px) {
-   .faq-section .container .faq .faq-item .question {
+  .faq-section .container .faq .faq-item .question {
     font-size: 14px
   }
 
-   .faq-section .container .faq .faq-item .answer .ingredients-main-slider {
+  .faq-section .container .faq .faq-item .answer .ingredients-main-slider {
     padding: 0
   }
 
-   .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient {
+  .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient {
     flex-direction: column;
     max-width: 80%
   }
 
-   .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content {
+  .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content {
     margin-left: unset
   }
 
-   .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-title {
+  .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-title {
     margin: 0
   }
 
-   .faq-section .container .faq .faq-item .answer .ingredients-main-slider .swiper-nav {
+  .faq-section .container .faq .faq-item .answer .ingredients-main-slider .swiper-nav {
     top: 120px
   }
   .faq-section .container .faq .faq-item .question {
-  font-size: 14px;
+    font-size: 14px;
   }
 
   .faq-section .swiper-slide {
@@ -271,24 +270,24 @@
   }
 
   .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient {
-  flex-direction: column;
-  max-width: 80%;
-}
+    flex-direction: column;
+    max-width: 80%;
+  }
 
-.faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content {
-  margin-left: unset;
-}
+  .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content {
+    margin-left: unset;
+  }
 
-.faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-title {
-  margin: 0;
-}
+  .faq-section .container .faq .faq-item .answer .ingredients-main-slider .ingredients .ingredient .ingredient-content .ingredient-title {
+    margin: 0;
+  }
 }
 </style>
 
 <script>
   const accordionItemHeaders = document.querySelectorAll(".question");
 
-accordionItemHeaders.forEach(accordionItemHeader => {
+  accordionItemHeaders.forEach(accordionItemHeader => {
   accordionItemHeader.addEventListener("click", event => {
 
   {% if isAllowOneOpen %}
@@ -307,7 +306,6 @@ accordionItemHeaders.forEach(accordionItemHeader => {
   else {
     accordionItemBody.style.maxHeight = 0;
   }
-
   });
 });
 
@@ -327,9 +325,9 @@ faqIngredientsMainSliderAllInOne = new Swiper('.faq-section .ingredients-main-sl
 
   // Open FAQ
   $('.question').click(function() {
-     woopra.track('Open FAQ', {
-     question_display_text: $(this).text(),
-     question_order:  $(this).parents('.faq-item').index() + 1
-     })
-     });
+    woopra.track('Open FAQ', {
+      question_display_text: $(this).text(),
+      question_order:  $(this).parents('.faq-item').index() + 1
+    })
+  });
 </script>
