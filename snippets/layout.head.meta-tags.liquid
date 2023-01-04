@@ -57,6 +57,6 @@
 <meta property="twitter:image" content="{{ 'meta-thumbnail.png' | asset_url }}" />
 {% endif %}
 
-{% if product.metafields.custom.no_index %}
+{% if product.metafields.custom.no_index == true or page.metafields.custom.no_index == true %}
   <meta name="robots" content="noindex">
 {% endif %}
