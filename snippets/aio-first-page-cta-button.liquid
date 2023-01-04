@@ -120,16 +120,18 @@
       button_title: element.innerText
     });
 
-    window.location.href = url;
-  }
+    let newUrl = url;
 
-  const get_utm = window.location.search.substring(1);
-  if (get_utm) {
-    let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
-    window.onload = function () {
-      for (let i = 0; i < product_link.length; i++) {
-        product_link[i].href = product_link[i].href + "?" + get_utm
+    const get_utm = window.location.search.substring(1);
+    if (get_utm) {
+      let product_link = document.querySelectorAll('.btn-cta, .floating-cta .btn-cta');
+      window.onload = function () {
+        for (let i = 0; i < product_link.length; i++) {
+          newUrl = product_link[i].href + "?" + get_utm
+        }
       }
     }
+
+    window.location.href = newUrl;
   }
 </script>
