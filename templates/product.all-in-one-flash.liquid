@@ -33,8 +33,22 @@
 |Can I buy CuraLin in pharmacies and grocery stores?:We’re still working on getting CuraLin on the shelves of all the major US pharmacies. That’s part of our 2022 plan. For now, the best place to order CuraLin is online, though this page!"
 | split: '|' %}
 
+{% capture CFH %}{{ content_for_header }}{% endcapture %}
+
+{% if CFH contains 'adminBarInjector' %}
+{% assign admin = true %}
+{% elsif CFH contains 'admin-bar-iframe' %}
+{% assign admin = true %}
+{% elsif CFH contains 'preview_bar_injector-' %}
+{% assign admin = true %}
+{% endif %}
+
+
+
 {% render 'script.round-converted-currency' %}
+{% if admin %}
 {% render 'sale-banner', isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "pink", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
+{% endif %}
 <div class="product-template-all-in-one">
   {% render 'product-all-in-one-cta-section-sliders', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}

@@ -36,6 +36,7 @@
 {% render 'script.round-converted-currency' %}
 
 <div class="product-template-all-in-one">
+  {% render 'sale-banner', isFlash: true, isFixed: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "pink", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
   {% render 'product-all-in-one-cta-section-sliders', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'product-all-in-one-how-to-section' %}
@@ -49,6 +50,14 @@
   {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
   {% render 'product-all-in-one-back-to-top' %}
 </div>
+
+<script>
+  let queryParam = window.location.search;
+
+  if (!queryParam.includes('sale=flash')) {
+    $('.sale-banner').hide();
+  }
+</script>
 
 <style>
   .product-template-all-in-one {
