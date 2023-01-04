@@ -2,7 +2,7 @@
   {% assign instance_id = 'origin' %}
 {% endunless %}
 
-<div class="sale-banner {{ instance_id }}">
+<div class="sale-banner {{ instance_id }} {% if isHidden %}hide{% endif %}">
   <div class="container">
     <div class="logo-wrapper">
       {% if logoFileName %}<img class="logo" src="{{ logoFileName | asset_url }}" width="164" height="45" alt="logo">{% endif %}
@@ -236,6 +236,10 @@
     width: 100%;
     z-index: 20;
     min-height: 80px;
+  }
+
+  .sale-banner.hide {
+    display: none;
   }
 
   .sale-banner .container {
