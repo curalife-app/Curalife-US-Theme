@@ -155,6 +155,28 @@ health.'
 </script>
 
 <script>
+  function LinkToProduct(element, url) {
+    woopra.track('Click CTA', {
+      button_title: element.innerText
+    });
+
+    let newUrl = url;
+
+    const get_utm = window.location.search.substring(1);
+    if (get_utm) {
+      for (let i = 0; i < product_link.length; i++) {
+        newUrl = product_link[i].href + "?" + get_utm
+      }
+    }
+
+    console.log("newUrl", newUrl)
+
+    {% comment %} window.location.href = newUrl; {% endcomment %}
+  }
+</script>
+
+<!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter and the addition. -->
+<script>
   let urlParams = new URLSearchParams(window.location.search);
   let linksAddition = urlParams.get('add');
 
@@ -174,19 +196,6 @@ health.'
         callback();
       }
     }, 200);
-  }
-</script>
-
-<!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter. -->
-<script>
-  let urlParameters = new URLSearchParams(window.location.search);
-  let productVar = urlParameters.get('prod-var');
-
-  if (productVar) {
-  $('a').each(function() {
-    var currLink = $(this).attr('href');
-    if (currLink) { $(this).attr('href', "/products/curalin-pack-" + productVar) };
-  });
   }
 </script>
 
