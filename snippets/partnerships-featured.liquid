@@ -1,4 +1,4 @@
-<section class="featured-section">
+<section id="featured-section">
   <div class="container" data-aos="fade-up">
     <div class="data-wrap">
       <h4>As Featured On</h4>
@@ -77,12 +77,12 @@
 
 <!-- Featured Section from General Page Style -->
 <style>
-  .featured-section {
+  #featured-section {
       font-family: "Poppins", sans-serif;
       padding: 0px 0px 30px;
   }
 
-  .featured-section  h4 {
+  #featured-section  h4 {
     font-size: 24px;
     opacity: .6;
     text-align: center;
@@ -175,17 +175,17 @@
         padding-right: 1rem
       }
 
-      .featured-section {
+      #featured-section {
         padding-bottom: 1.875rem
       }
 
     }
 
     @media screen and (max-width: 768px) {
-      .featured-section {
+      #featured-section {
         padding: {% if isFlash %}150px{% else %}110px{% endif %};
       }
-      .featured-section .sub-title h4 {
+      #featured-section .sub-title h4 {
         font-size: 1.125rem;
         letter-spacing: normal;
         margin: 45px 0;
@@ -217,10 +217,10 @@
 
 <!-- Featured Section Snippet Changes Style -->
 <style>
-  .featured-section {
+  #featured-section {
       border-bottom: 1px solid #DCD9D9;
   }
-  .featured-section {
+  #featured-section {
     background-color: var(--brown-lighter);
 
   }
@@ -274,7 +274,7 @@
 
   @media screen and (max-width:768px) {
 
-    .featured-section .sub-title h4 {
+    #featured-section .sub-title h4 {
       font-size: 1.125rem;
       letter-spacing: normal;
     }
