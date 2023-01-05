@@ -1,7 +1,18 @@
 {% layout 'theme.lps' %}
+
+{% assign realChanges = 'thirty-day-challenge-what-is-for-you-01.png*Maintain Glucose:Supporting your overall health,
+mobility, and mood!
+
+|thirty-day-challenge-what-is-for-you-02.png*Feel better:You’ll feel and look great!
+|thirty-day-challenge-what-is-for-you-03.png*Get energy:You have energy to go the extra mile in your life!
+
+|thirty-day-challenge-what-is-for-you-04.png*Enjoy food:You won’t dread healthy cooking. You’ll enjoy it!
+
+' | split: '|' %}
 {% render 'sale-banner', isOnlyLogo: true, desktopContent: "logo", mobileContent: "logo", bgColor: "green", logoFileName: "logo-white-black-friday.png" %}
 {% render 'thirty-day-challenge-hero-banner', mainTitle: "30 Days to
 Sweet Success: ", subTitle: "A Blood Sugar Challenge", textHero: "Support your glucose and feel amazing. Expert guidance. Personalized support. All natural supplements. We're with you every step  of the way." %}
 {% render 'thirty-day-challenge-say-goodby-section' %}
+{% render 'thirty-day-what-is-for-you' realChanges: realChanges %}
 {% render 'thirty-day-challenge-section' ctaButtonLink:"/collections/all", ctaTitle: "Join the Challenge!" %}
 
