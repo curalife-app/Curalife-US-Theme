@@ -1,20 +1,16 @@
 <div class="real-changes">
     <div class="container">
-        <div class="data-wrap">
+        
             <div class="sub-title">
                 <h3><b>What’s in it for you?</b></h3>
                 <div class="description-overlay">
                     <h4>
                       To list a few...
-
                     </h4>
                 </div>
             </div>
             <div class="real-changes-wrapper">
                 {% for realChange in realChanges %}
-                <div class="rw-item-col">
-                    <div class="rw-item-box">
-
                         <div class="rw-item-thumbnail">
                             <img src="{{ realChange | file_url | split: "*" | first }}" width="102" height="86" alt="">
                         </div>
@@ -22,19 +18,16 @@
                             <h4>{{ realChange | split: "*" | last | split: ":" | first }}</h4>
                             <p>{{ realChange | split: "*" | last | split: ":" | last }}</p>
                         </div>
-
-                    </div>
-                </div>
+            
             {% endfor %}
             </div>
-        </div>
     </div>
 </div>
-<!-- Real_Changes Section from General Page Style -->
+
 <style>
   .real-changes {
   background: var(--light-brown);
-  }
+   }
   .real-changes .sub-title h3 {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
@@ -52,74 +45,21 @@
     
 
   
-    .rw-item-description {
-      width: 67.14%;
-      padding-left: .9375rem
-    }
 
-    .rw-item-description h4 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 1.13145rem;
-      line-height: 1.29;
-      color: #000
-    }
+   
 
-    .rw-item-description p {
-      margin: 0;
-      font-weight: 300;
-      font-size: 1.1rem;
-      line-height: 1.29;
-      color: #000000b3
-    }
+   
 
    
     @media screen and (max-width: 768px) {
-      .rw-item-col {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%
-      }
-
-      .rw-item-description h4 {
-        font-size: .875rem
-      }
-
-      .rw-item-description p {
-        padding-top: .25rem;
-        font-size: .875rem;
-        line-height: 1.28
-      }
-
-      .real-changes-wrapper .rw-item-col {
-        padding: 0 0 1.6875rem
-      }
-
-      .real-changes-wrapper .rw-item-col:nth-child(3) .rw-item-thumbnail {
-        margin-top: -1.5625rem
-      }
-
-      .rw-item-thumbnail {
-        width: 30%
-      }
-
-      .rw-item-description {
-        width: 70%
-      }
-
-      .real-changes-wrapper {
-        padding-top: 2.4375rem
-      }
-      .real-changes .sub-title h3 {
-          font-size: 6vw;
-          line-height: unset;
-      }
+     
 
 
-      .real-changes .sub-title h4 {
-        font-size: 1.06rem
-      }
+    
+
+     
+
+
 
 
 
