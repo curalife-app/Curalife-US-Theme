@@ -24,7 +24,7 @@
           </div>
         {% endfor %}
       </div>
-
+      <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
      
     </div>
   </div>
@@ -112,6 +112,27 @@
     align-items: center;
     justify-content: center;
     margin-right: 20px;
+  }
+
+  .cta-btn {
+    font-weight: 100;
+    background: var(--orange);
+    text-align: center;
+    border: 1px solid  var(--orange);
+    border-radius: 4px;
+    font-size: clamp(20px, 2vw, 18px);
+    letter-spacing: {% if isLP %} 1.5px {% endif %};
+    color: var(--dark-green);
+    padding: 10px 30px;
+    box-shadow: 0px 5px 12.5px rgba(0, 0, 0, 0.15);
+    transition: unset;
+    margin-bottom: 20px;
+    width: 250px;
+    margin-top: 40px;
+  }
+
+  .cta-btn:hover {
+    background: var(--light-orange);
   }
 
   @media screen and (max-width: 768px) {
