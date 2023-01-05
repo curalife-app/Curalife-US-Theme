@@ -57,13 +57,10 @@
 </header>
 
 <script>
-  function stickyHeader() {
-    const header = document.querySelector("header");
-    header && (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) ? header.classList.add("scrolled") : header.classList.remove("scrolled");
-  }
-
+  // Sticky Header
   window.onscroll = function () {
-      stickyHeader()
+    const header = document.querySelector("header");
+      header && (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) ? header.classList.add("scrolled") : header.classList.remove("scrolled");
   };
 
   let screenWidth = window.innerWidth;
