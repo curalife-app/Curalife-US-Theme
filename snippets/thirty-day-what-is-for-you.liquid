@@ -13,7 +13,7 @@
       {% for realChange in realChanges %}
       <div class="change-item-and-desc">
         <div class="change-item-thumbnail">
-          <img src="{{ realChange | file_url | split: " *" | first }}" width="102" height="86" alt="">
+          <img src="{{ realChange | file_url | split: "*" | first }}" width="102" height="86" alt="">
           <h4>{{ realChange | split: "*" | last | split: ":" | first }}</h4>
         </div>
         <div class="rw-item-description">
