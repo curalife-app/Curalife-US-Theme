@@ -36,24 +36,15 @@
           sessionStorage.setItem('country', country);
           const host = location.hostname === 'global.curalife.com' ? 'Global' : 'USA';
           const countriesUs = ['US', 'PR', 'CA', 'AU'];
-          switch (country) {
-            case 'LT':
-            case 'LV':
-              redirectTo('https://curalife.lv');
-              break;
-            case 'AT':
-              redirectTo('https://curalife.at');
-              break;
-            case 'KW':
-              redirectTo('https://trycuralife.com');
-              break;
-            default:
-              if (host === 'USA' && !countriesUs.includes(country)) {
-                redirectTo('global.curalife.com');
-              } else if (host === 'Global' && countriesUs.includes(country)) {
-                redirectTo('curalife.com');
-              }
-          }
+          const urls = {
+            LT: 'https://curalife.lv',
+            LV: 'https://curalife.lv',
+            AT: 'https://curalife.at',
+            KW: 'https://trycuralife.com',
+            USA: 'curalife.com',
+            Global: 'global.curalife.com'
+          };
+          redirectTo(urls[country] || urls[host]);
         });
     }
   </script>
