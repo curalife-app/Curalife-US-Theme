@@ -145,7 +145,7 @@
   .new-price {
     font-family: 'Poppins';
     font-weight: 700;
-    font-size: 52px;
+    font-size: clamp(45px, 2vw, 52px);
     text-align: center;
   }
 
@@ -204,10 +204,6 @@
       position: absolute;
       width: 90%;
       z-index: 2;
-    }
-
-    .new-price {
-      font-size: 44px;
     }
   }
 </style>
