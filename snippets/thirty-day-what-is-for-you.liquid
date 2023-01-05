@@ -14,9 +14,10 @@
                   <div class="change-item-and-desc">
                         <div class="change-item-thumbnail">
                             <img src="{{ realChange | file_url | split: "*" | first }}" width="102" height="86" alt="">
+                            <h4>{{ realChange | split: "*" | last | split: ":" | first }}</h4>
                         </div>
                         <div class="rw-item-description">
-                            <h4>{{ realChange | split: "*" | last | split: ":" | first }}</h4>
+                            
                             <p>{{ realChange | split: "*" | last | split: ":" | last }}</p>
                         </div>
                         </div>
@@ -69,7 +70,7 @@
       text-align: center;
     }
 
-    .rw-item-description h4 {   
+    .change-item-thumbnail h4 {   
       font-family: 'PP Radio Grotesk';
       font-weight: 700;
       font-size: 35px;
@@ -109,7 +110,7 @@
   
       }
 
-      .rw-item-description h4 {        
+      .change-item-thumbnail h4 {        
         font-size: 30px;
       }
 
