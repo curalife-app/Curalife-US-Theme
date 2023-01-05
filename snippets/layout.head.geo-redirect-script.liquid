@@ -25,7 +25,7 @@
 
 {% unless admin %}
   <script>
-    const redirectTo = url => console.log(url);
+    const redirectTo = url => window.location.href = url;
 
     const isRobot = /bot|spider|crawl|APIs-Google|AdsBot|Googlebot|mediapartners|Google Favicon|FeedFetcher|Google-Read-Aloud|DuplexWeb-Google|googleweblight|bing|yandex|baidu|duckduck|yahoo|ecosia|ia_archiver|facebook|instagram|pinterest|reddit|slack|twitter|whatsapp|youtube|semrush/i.test(navigator.userAgent);
 
@@ -34,7 +34,6 @@
         .then(response => response.json())
         .then(({ country }) => {
           sessionStorage.setItem('country', country);
-          console.log('Country:', country);
           const host = location.hostname === 'global.curalife.com' ? 'Global' : 'US';
           const countriesUs = ['US', 'PR', 'CA', 'AU'];
           const urls = {
