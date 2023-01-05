@@ -58,8 +58,15 @@
 
 <script>
   function stickyHeader() {
-    const header = document.querySelector("header");
-    header && (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) ? header.classList.add("scrolled") : header.classList.remove("scrolled");
+      const element = document.querySelector("header");
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      if (element) {
+          if (element.classList && winScroll > 0) {
+              element.classList.add("scrolled");
+          } else {
+              element.classList.remove("scrolled");
+          }
+      }
   }
 
   window.onscroll = function () {
