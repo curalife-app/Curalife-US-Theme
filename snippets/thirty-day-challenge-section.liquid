@@ -24,7 +24,7 @@
           </div>
         {% endfor %}
         <div class="total-value">Total Value Before Discount: $185 </div>
-        <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | money | replace: "GBP", "" }}</span></div>
+        <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | times: 100.0 | divided_by: quantity_by_cents | money | replace: "GBP", "" }}</span></div>
       </div>
       
       <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
@@ -132,8 +132,6 @@
     font-family: 'Poppins';
     font-weight: 700;
     font-size: 52px;
-    display: flex;
-    align-items: center;
     text-align: center;
   }
 
