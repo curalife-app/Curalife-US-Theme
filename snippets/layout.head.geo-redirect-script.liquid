@@ -25,8 +25,16 @@
 
 {% unless admin %}
   <script>
-    const detectRobot = (userAgent) => {
-      const robots = new RegExp([
+    function redirectTo(url, slug) {
+      if (slug) {
+        window.location.hostname = url;
+      } else {
+        window.location.href = url;
+      }
+    }
+
+    function detectRobot(userAgent) {
+      const robotRegexes = [
         /bot/, /spider/, /crawl/,
         /APIs-Google/, /AdsBot/, /Googlebot/,
         /mediapartners/, /Google Favicon/,
@@ -37,17 +45,9 @@
         /facebook/, /instagram/, /pinterest/, /reddit/,
         /slack/, /twitter/, /whatsapp/, /youtube/,
         /semrush/,
-      ].map((r) => r.source).join("|"), "i");
-      return robots.test(userAgent);
-    };
+      ];
 
-    function redirectTo(url, slug) {
-      if (slug) {
-        window.location.hostname = url;
-      }
-      else {
-        window.location.href = url;
-      }
+      return robotRegexes.some(regex => regex.test(userAgent));
     }
 
     const userAgent = navigator.userAgent;
@@ -55,25 +55,29 @@
 
     if (!isRobot) {
       console.log('REDIRECTING...');
-      let req = new XMLHttpRequest;
-      req.overrideMimeType("application/json"), req.open("GET", "https://geo.curalife.com/", !0), req.onload = function() {
-        console.log(JSON.parse(req.responseText));
-        let country = JSON.parse(req.responseText).country;
-        let host = location.hostname == "global.curalife.com" ? "Global" : "USA";
-        let countriesUS = ["US", "PR", "CA", "AU"]; // Countries for main domain (USA)
-        sessionStorage.setItem('country', country);
+      fetch('https://geo.curalife.com/')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          const country = data.country;
+          const host = location.hostname === 'global.curalife.com' ? 'Global' : 'USA';
+          const countriesUs = ['US', 'PR', 'CA', 'AU'];
 
-        if (["LT", "LV"].includes(country)) {redirectTo("https://curalife.lv", false)} // If Lithuania Or Latvia
-        else if (country == "AT") {redirectTo("https://curalife.at", false)} // If Austria
-        else if (country == "KW") {redirectTo("https://trycuralife.com", false)} // If Kuwait
-        else if ((host == "USA") && (!countriesUS.includes(country))) { // If host is US but not on US Countries
-          redirectTo("global.curalife.com", true)
-        }
-        else if ((host == "Global") && (countriesUS.includes(country))) { // If Global and we are on US Countries so go US
-          redirectTo("curalife.com", true);
-        }
+          sessionStorage.setItem('country', country);
 
-      }, req.send(null);
+          if (['LT', 'LV'].includes(country)) {
+            redirectTo('https://curalife.lv', false);
+          } else if (country === 'AT') {
+            redirectTo('https://curalife.at', false);
+          } else if (country === 'KW') {
+            redirectTo('https://trycuralife.com', false);
+          } else if (host === 'USA' && !countriesUs.includes(country)) {
+            redirectTo('global.curalife.com', true);
+          } else if (host === 'Global' && countriesUs.includes(country)) {
+            redirectTo('curalife.com', true);
+          }
+        });
     }
+
   </script>
 {% endunless %}
