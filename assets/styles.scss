@@ -3147,6 +3147,10 @@ section {
     width: 95%;
     min-height: 56px;
     font-size: 18px;
+
+    &button {
+      background: var(--green);
+    }
   }
 }
 
