@@ -11,12 +11,14 @@
             </div>
             <div class="real-changes-wrapper">
                 {% for realChange in realChanges %}
+                  <div class="change-item-and-desc">
                         <div class="change-item-thumbnail">
                             <img src="{{ realChange | file_url | split: "*" | first }}" width="102" height="86" alt="">
                         </div>
                         <div class="rw-item-description">
                             <h4>{{ realChange | split: "*" | last | split: ":" | first }}</h4>
                             <p>{{ realChange | split: "*" | last | split: ":" | last }}</p>
+                        </div>
                         </div>
             
             {% endfor %}
@@ -56,7 +58,7 @@
     .real-changes-wrapper {    
       display: flex;
     }
-    .change-item-thumbnail {
+    .change-item-and-desc {
             display: flex;
             flex-direction: column;
     }
