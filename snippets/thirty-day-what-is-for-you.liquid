@@ -11,7 +11,7 @@
             </div>
             <div class="real-changes-wrapper">
                 {% for realChange in realChanges %}
-                        <div class="rw-item-thumbnail">
+                        <div class="change-item-thumbnail">
                             <img src="{{ realChange | file_url | split: "*" | first }}" width="102" height="86" alt="">
                         </div>
                         <div class="rw-item-description">
@@ -55,6 +55,9 @@
 
     .real-changes-wrapper {    
       display: flex;
+    }
+    .change-item-thumbnail {
+
     }
 
   
