@@ -86,71 +86,33 @@ anymore
 health.
 ' | split: '|' %}
 
-
-  {% render 'aio-first-page-hero-section', isLogo: true %}
-  {% render 'partnerships-featured' %}
-  {% render 'aio-first-page-meet-curalin', meetCuralins: meetCuralins %}
-  {% render 'aio-first-page-life-changes' %}
-  {% render 'aio-first-page-body-formula' %}
-  {% render 'aio-first-page-real-changes', realChanges: realChanges %}
-  {% render 'aio-first-page-trusted-doctors', doctors: doctors %}
-  {% render 'aio-first-page-testimonials-section' %}
-  {% render 'aio-first-page-natural-ingredients', natural_ingredients: natural_ingredients %}
-  {% render 'aio-first-page-cta-button' %}
-  {% render 'aio-first-page-why-curalife' %}
-  {% render 'aio-first-page-supported-community' %}
-  {% render 'aio-first-page-satisfaction-survey' %}
-  {% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "complex" %}
-
+{% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "pink", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
+{% render 'aio-first-page-hero-section', isLogo: true %}
+{% render 'partnerships-featured' %}
+{% render 'aio-first-page-meet-curalin', meetCuralins: meetCuralins %}
+{% render 'aio-first-page-life-changes' %}
+{% render 'aio-first-page-body-formula' %}
+{% render 'aio-first-page-real-changes', realChanges: realChanges %}
+{% render 'aio-first-page-trusted-doctors', doctors: doctors %}
+{% render 'aio-first-page-testimonials-section' %}
+{% render 'aio-first-page-natural-ingredients', natural_ingredients: natural_ingredients %}
+{% render 'aio-first-page-cta-button' %}
+{% render 'aio-first-page-why-curalife' %}
+{% render 'aio-first-page-supported-community' %}
+{% render 'aio-first-page-satisfaction-survey' %}
+{% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "complex" %}
 
 <script>
-  (function () {
-      /*count-effect*/
-      const counters = document.querySelectorAll('.satisfaction-survey .success-list ul li .percentage p span');
-      const countingSpeed = 6000;
-      let animateCounters = true;
-      /*count-effect*/
+  function LinkToProduct(element, url) {
+    woopra.track('Click CTA', {
+      button_title: element.innerText
+    });
 
-      window.addEventListener('scroll', (e) => {
-          // var btn = $('#wisepops-root');
-          let last_known_scroll_position = window.scrollY;
-          if (counters && animateCounters && window.innerHeight > document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top && window.innerHeight < document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top + document.querySelector('.satisfaction-survey .survey-button').getBoundingClientRect().top) {
-              animateCounters = false;
-              counters.forEach(counter => {
-                  const animate = () => {
-                      const value = parseFloat(+counter.getAttribute('data-count'));
-                      const dataLine = counter.closest('li').querySelector('.line span');
-                      const data = +counter.innerText;
-
-                      const time = value / countingSpeed;
-                      if (data < value) {
-                          counter.innerText = Math.ceil(data + time);
-                          dataLine.style.width = Math.ceil(data + time) + '%';
-                          setTimeout(animate, 0.1);
-                      } else {
-                          counter.innerText = value;
-                          dataLine.style.width = value + '%';
-                      }
-                  }
-                  animate();
-              });
-          }
-
-          if ((document.querySelector('.real-changes').getBoundingClientRect().top < -(document.querySelector('.life-changes .survey-button .btn-cta').getBoundingClientRect().height / 2) || document.querySelector('.body-formula').getBoundingClientRect().top < -(document.querySelector('.life-changes .survey-button .btn-cta').getBoundingClientRect().height / 2)) &&
-              window.innerHeight < document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().top) {
-              document.querySelector('.floating-cta').classList.add('show');
-              // btn.addClass('hide');
-          } else if (document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().top < -document.querySelector('.satisfaction-survey .survey-button .btn-cta').getBoundingClientRect().height && !document.querySelector('.floating-cta').classList.contains("active")) {
-              document.querySelector('.floating-cta').classList.add('show');
-              // btn.addClass('hide');
-          } else {
-              document.querySelector('.floating-cta').classList.remove('show');
-              // btn.removeClass('hide');
-          }
-      });
-  })();
+    window.location.href = url + window.location.search;
+  }
 </script>
 
+<!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter and the addition. -->
 <script>
   let urlParams = new URLSearchParams(window.location.search);
   let linksAddition = urlParams.get('add');
@@ -171,19 +133,6 @@ health.
         callback();
       }
     }, 200);
-  }
-</script>
-
-<!-- This script is taking the URL parameter and replacing all the links on the page with the URL parameter. -->
-<script>
-  let urlParameters = new URLSearchParams(window.location.search);
-  let productVar = urlParameters.get('prod-var');
-
-  if (productVar) {
-  $('a').each(function() {
-    var currLink = $(this).attr('href');
-    if (currLink) { $(this).attr('href', "/products/curalin-pack-" + productVar) };
-  });
   }
 </script>
 
