@@ -1,4 +1,4 @@
-
+{% assign item_price = 67 %}
 <section id="challenge-section">
   <div class="container">
     <h3> Everything you need
@@ -24,6 +24,7 @@
           </div>
         {% endfor %}
         <div class="total-value">Total Value Before Discount: $185 </div>
+        <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | money | replace: "GBP", "" }}</span></div>
       </div>
       
       <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
@@ -127,6 +128,15 @@
     padding-top: 20px;
   }
 
+  .new-price {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 52px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
   .cta-btn {
     font-weight: 100;
     background: var(--orange);
@@ -182,6 +192,10 @@
       position: absolute;
       width: 90%;
       z-index: 2;
+    }
+
+    .new-price {
+      font-size: 44px;
     }
   }
 </style>
