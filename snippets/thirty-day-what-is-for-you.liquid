@@ -18,7 +18,7 @@
                     <div class="rw-item-box">
 
                         <div class="rw-item-thumbnail">
-                            <img src="{{ realChange | file_url | split: "*" | first }}" alt="">
+                            <img src="{{ realChange | file_url | split: "*" | first }}" width="102" height="86" alt="">
                         </div>
                         <div class="rw-item-description">
                             <h4>{{ realChange | split: "*" | last | split: ":" | first }}</h4>
@@ -35,19 +35,6 @@
 <!-- Real_Changes Section from General Page Style -->
 <style>
 
-  *,
-  *:before,
-  *:after {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box
-  }
-
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px
-  }
 
 
   .description-overlay {
@@ -60,6 +47,7 @@
     font-size: 1.3rem;
   }
   .real-changes {
+    background: var(--light-brown);
     font-family: "Poppins", sans-serif;
   }
     .real-changes .data-wrap {
