@@ -7,11 +7,11 @@
 
     <div class="features-wrapper">
       <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="886" height="689" alt="">
-      {% assign features = "<b>30 day supply of Curalin</b>  (180 capsules): $75 
-        |<b>30 day mouth-watering meal plan</b> including recipes and videos: $29
-        |<b>14 day easy-to-do movement and exercise plan</b> with videos: $59
-        |<b>Blood Sugar Explained</b> In Plain English (infographic): $14
-        |<b>Curalife Blood Sugar Healthy Cookbook</b>:      $40
+      {% assign features = "<b>30 day supply of Curalin</b>  (180 capsules): $75 Value 
+        |<b>30 day mouth-watering meal plan</b> including recipes and videos: $29 Value
+        |<b>14 day easy-to-do movement and exercise plan</b> with videos: $59 Value
+        |<b>Blood Sugar Explained</b> In Plain English (infographic): $14 Value
+        |<b>Curalife Blood Sugar Healthy Cookbook</b>:      $40 Value
         |<b>Free Shipping </b>:$8
         |<b>Community support</b>  with 100K+ peers: Priceless
         |<b>24/7 Customer Support</b>  (phone, email, or live chat): Priceless" | split: "|" %}
@@ -21,7 +21,7 @@
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
             <div class="feature-text">{{ feature | split: ":" | first }}</div>
-            <div class="feature-price">{{ feature | split: ":" | last }} Value</div>
+            <div class="feature-price">{{ feature | split: ":" | last }}</div>
           </div>
         {% endfor %}
         <div class="total-value">Total Value Before Discount: $185 </div>
