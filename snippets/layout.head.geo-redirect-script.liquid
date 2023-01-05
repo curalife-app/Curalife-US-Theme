@@ -35,7 +35,7 @@
         .then(({ country }) => {
           sessionStorage.setItem('country', country);
           console.log('Country:', country);
-          const host = location.hostname === 'global.curalife.com' ? 'Global' : 'USA';
+          const host = location.hostname === 'global.curalife.com' ? 'Global' : 'US';
           const countriesUs = ['US', 'PR', 'CA', 'AU'];
           const urls = {
             LT: 'https://curalife.lv',
