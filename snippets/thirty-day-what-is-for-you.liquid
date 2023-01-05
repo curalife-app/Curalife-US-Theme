@@ -25,14 +25,23 @@
 </div>
 
 <style>
-  .real-changes {
+   .real-changes {
        background: var(--light-brown);
    }
-  .real-changes .sub-title h3 {
+   .real-changes .sub-title h3 {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
     font-size: 60px;
     line-height: 35px;
+    color: var(--dark-green);
+  }
+
+  .real-changes .sub-title .description-overlay h4 {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 24px;
+    text-align: center;
     color: var(--dark-green);
   }
 
@@ -42,28 +51,21 @@
       display: flex;
     }
 
-    
-
   
-
-   
-
-   
-
-   
-    @media screen and (max-width: 768px) {
+ @media screen and (max-width: 768px) {
      
-
-
-    
-
-     
-
-
-
-
-
-    }
+ .real-changes .sub-title h3 {
+     text-align: left;
+     font-size: 32px;
+     line-height: 35px;
+ }
+  .real-changes .sub-title .description-overlay h4 {
+     text-align: left;
+     font-size: 20px;
+     line-height: 24px;
+   }
+   
+   }
 
 </style>
 
