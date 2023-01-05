@@ -250,3 +250,11 @@
     });
   }
 </script>
+
+<script>
+  let queryParam = window.location.search;
+
+  if (queryParam.includes('sale=')) {
+    $('#hero-section .logo').hide();
+  }
+</script>
