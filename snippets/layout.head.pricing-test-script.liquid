@@ -1,30 +1,31 @@
 <script>
-  $( document ).ready(function() {
-    if ($.cookie('_gaexp')) {
-      if ($.cookie('_gaexp').endsWith('1') && $.cookie('_gaexp').startsWith('GAX1.2.aMz')) {
-        let redirectPages = [
-          '/collections/all',
-          '/collections/all-2',
-          '/products/curalin-pack',
-          '/products/curalin',
-          '/products/curalin-3-pack',
-          '/products/curalin-6-pack',
-          '/products/curalin-2-pack',
-          '/pages/glucose-support-lp01n-v2'];
+  $(document).ready(function() {
+    const redirectPages = [
+      '/collections/all',
+      '/collections/all-2',
+      '/products/curalin-pack',
+      '/products/curalin',
+      '/products/curalin-3-pack',
+      '/products/curalin-6-pack',
+      '/products/curalin-2-pack',
+      '/pages/glucose-support-lp01n-v2'
+    ];
 
-        if (redirectPages.includes(window.location.pathname)) {
-          window.location.replace(window.location.pathname + '-p');
-        }
-
-        let linksQuery = '';
-        redirectPages.forEach((value, index)=>{linksQuery += 'a[href="' + redirectPages[index] + '"], '});
-        console.log("linksQuery: " + linksQuery);
-        linksQuery = linksQuery.slice(0, -2);
-        console.log("linksQuery: " + linksQuery);
-        $(linksQuery).each(function () {
-          $(this).attr('href', $(this).attr('href') + '-p');
-        });
-      }
+    const gaCookie = $.cookie('_gaexp');
+    if (!gaCookie || !gaCookie.endsWith('1') || !gaCookie.startsWith('GAX1.2.aMz')) {
+      return;
     }
+
+    const isRedirectPage = redirectPages.includes(window.location.pathname);
+    if (isRedirectPage) {
+      window.location.replace(`${window.location.pathname}-p`);
+    }
+
+    const linksQuery = redirectPages
+      .map(page => `a[href="${page}"]`)
+      .join(', ');
+    $(linksQuery).each(function() {
+      $(this).attr('href', `${$(this).attr('href')}-p`);
+    });
   });
 </script>
