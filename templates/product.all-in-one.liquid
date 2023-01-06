@@ -36,6 +36,9 @@
 {% render 'script.round-converted-currency' %}
 
 <div class="product-template-all-in-one">
+  <div class="welcome-message">
+    <p id="welcome"></p>
+  </div>
   {% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "pink", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
   {% render 'product-all-in-one-cta-section-sliders', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
@@ -78,6 +81,7 @@
           console.log(xhr.responseText);
           open_ai_response = xhr.responseText;
           prompt(open_ai_response["choices"][0]["text"]);
+          $('#welcome').html(open_ai_response["choices"][0]["text"]);
        }};
 
     var data = `{
