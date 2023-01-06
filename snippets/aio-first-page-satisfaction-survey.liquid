@@ -460,32 +460,32 @@
 </style>
 
 <script>
-const counters = document.querySelectorAll('.satisfaction-survey .success-list ul li .percentage p span');
-const countingSpeed = 6000;
-let animateCounters = true;
+  const counters = document.querySelectorAll('.satisfaction-survey .success-list ul li .percentage p span');
+  const countingSpeed = 6000;
+  let animateCounters = true;
 
-window.addEventListener('scroll', (event) => {
-  const lastKnownScrollPosition = window.scrollY;
-  const dataWrap = document.querySelector('.satisfaction-survey .data-wrap');
-  const surveyButton = document.querySelector('.satisfaction-survey .survey-button');
+  window.addEventListener('scroll', (event) => {
+    const lastKnownScrollPosition = window.scrollY;
+    const dataWrap = document.querySelector('.satisfaction-survey .data-wrap');
+    const surveyButton = document.querySelector('.satisfaction-survey .survey-button');
 
-  if (counters && animateCounters && window.innerHeight > dataWrap.getBoundingClientRect().top && window.innerHeight < dataWrap.getBoundingClientRect().top + surveyButton.getBoundingClientRect().top) {
-    animateCounters = false;
-    counters.forEach((counter) => {
-      const value = parseFloat(+counter.getAttribute('data-count'));
-      const dataLine = counter.closest('li').querySelector('.line span');
-      let data = +counter.innerText;
-      const time = value / countingSpeed;
+    if (counters && animateCounters && window.innerHeight > dataWrap.getBoundingClientRect().top && window.innerHeight < dataWrap.getBoundingClientRect().top + surveyButton.getBoundingClientRect().top) {
+      animateCounters = false;
+      counters.forEach((counter) => {
+        const value = parseFloat(+counter.getAttribute('data-count'));
+        const dataLine = counter.closest('li').querySelector('.line span');
+        let data = +counter.innerText;
+        const time = value / countingSpeed;
 
-      while (data < value) {
-        data = Math.ceil(data + time);
-        counter.innerText = data;
-        dataLine.style.width = `${data}%`;
-      }
-      counter.innerText = value;
-      dataLine.style.width = `${value}%`;
-    });
-  }
-});
+        while (data < value) {
+          data = Math.ceil(data + time);
+          counter.innerText = data;
+          dataLine.style.width = `${data}%`;
+        }
+        counter.innerText = value;
+        dataLine.style.width = `${value}%`;
+      });
+    }
+  });
 </script>
 
