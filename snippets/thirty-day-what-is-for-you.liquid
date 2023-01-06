@@ -17,8 +17,7 @@
           <h4>{{ realChange | split: "*" | last | split: ":" | first }}</h4>
         </div>
         <div class="rw-item-description">
-
-          <p>{{ realChange | split: "*" | last | split: ":" | last }}</p>
+        {{ realChange | split: "*" | last | split: ":" | last }}
         </div>
       </div>
 
@@ -77,7 +76,7 @@
     color: var(--dark-green);
   }
 
-  .rw-item-description p {
+  .rw-item-description {
     font-family: 'DM Sans';
     font-weight: 400;
     font-size: 20px;
@@ -121,14 +120,8 @@
     .rw-item-description {
       display: flex;
       width: 100%;
-    }
-
-    .rw-item-description p {
       text-align: left;
     }
-
-
-
 
   }
 </style>
