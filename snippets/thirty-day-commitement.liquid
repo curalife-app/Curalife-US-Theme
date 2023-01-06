@@ -154,7 +154,7 @@
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
+    font-size: clamp(17px,2vw, 25px);
     line-height: 30px;
     color: var(--dark-green);
     padding-right: 75px;
@@ -208,6 +208,7 @@
 
      .commitments .commitment .commitment-text {
       max-width: unset;
+      line-height: unset;
      
     }
   }
