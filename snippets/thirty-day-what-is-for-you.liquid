@@ -28,6 +28,8 @@
     <div class="rw-item-description">
       If you’re not satisfied with the program, we’ll give you your money back for up to 60 days! That’s how confident we feel about the program. We’re your partner through the whole journey. 
     </div></div>
+
+    <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
   </div>
 </div>
 
@@ -103,6 +105,26 @@
     text-align: center;
     color: var(--dark-green);
 
+  }
+
+  .cta-btn {
+    font-weight: 100;
+    background: var(--dark-green);
+    text-align: center;
+    border: 1px solid  var(--dark-green);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: clamp(14px, 2vw, 18px);
+    color: var(--white);
+    padding: 15px 40px;
+    box-shadow: 0px 5px 12.5px rgba(0, 0, 0, 0.15);
+    transition: unset;
+    margin-bottom: 20px;
+    margin-left: 16%;
+  }
+
+  .cta-btn:hover {
+    background: var(--regular-green);
   }
 
 
