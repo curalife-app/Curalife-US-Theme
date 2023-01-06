@@ -80,7 +80,6 @@
           console.log(xhr.status);
           console.log(xhr.responseText);
           open_ai_response = xhr.responseText;
-          prompt(open_ai_response["choices"][0]["text"]);
           $('#welcome').html(open_ai_response["choices"][0]["text"]);
        }};
 
