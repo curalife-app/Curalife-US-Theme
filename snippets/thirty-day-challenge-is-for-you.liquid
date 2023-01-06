@@ -9,7 +9,9 @@
       <div class="challenge-item-and-desc">
         <div class="challenge-item-thumbnail">
           <img src="{{ challenge | asset_url | split: "*" | first }}" width="148" height="122" alt="">
-          {{ challenge | split: "*" | last }}
+          <div class="chalenge-text">
+            {{ challenge | split: "*" | last }}
+          </div>
         </div>    
       </div>
       {% endfor %}
@@ -51,7 +53,7 @@
   .challenge-item-and-desc {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 33%;
     text-align: center;
   }
 
