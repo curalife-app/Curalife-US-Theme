@@ -1,10 +1,11 @@
 <div class="commitement-for-you">
   <div class="container">
 
-    <div class="sub-title">
-      <h3><b>Celebrate your commitment!</b></h3>
-    </div>
     <div class="commitement-for-you-wrapper">
+      
+      <div class="sub-title">
+        <h3><b>Celebrate your commitment!</b></h3>
+      </div>
       <img class="commit-img" src="{{ 'thirty-day-commit-gift-card.png' | asset_url }}" width="368" height="253" alt="gift-card" loading="lazy"> 
       <div class="commitement-text">
         When you finish the 30 days, you’ll be entered into a raffle to win <b>a $200 Amazon Gift Card</b>  as a bonus! Buy something good for your health!
@@ -22,11 +23,11 @@
     
   }
 
-  .commitement-for-you .sub-title {
+  .commitement-for-you-wrapper .sub-title {
     padding-top: 60px;
   }
 
-  .commitement-for-you .sub-title h3 {
+  .commitement-for-you-wrapper .sub-title h3 {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
     font-size: clamp(55px, 2vw, 60px);
@@ -66,7 +67,7 @@
       padding-bottom: unset;
     }
 
-    .commitement-for-you .sub-title h3 {
+    .commitement-for-you-wrapper .sub-title h3 {
       text-align: left;
       font-size: 32px;
       line-height: 35px;
