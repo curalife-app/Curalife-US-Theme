@@ -8,14 +8,14 @@
       {% for challenge in challenges %}
       <div class="challenge-item-and-desc">
         <div class="challenge-item-thumbnail">
-          <img src="{{ challenge | asset_url | split: "*" | first }}" width="102" height="86" alt="">
+          <img src="{{ challenge | asset_url | split: "*" | first }}" width="148" height="122" alt="">
           {{ challenge | split: "*" | last }}
         </div>    
       </div>
       {% endfor %}
     </div>
-    <div class="descripton-wrapper">
-    <div class="rw-item-description">
+    <div class="challenge-wrapper">
+    <div class="challenge-item-description">
       Then YES! This challenge is for you! 
     </div></div>
       <div class="button-wrapper">
@@ -42,28 +42,10 @@
     padding-bottom: 30px;
   }
 
-  .challenge-for-you .sub-title .description-overlay  {
-    font-family: 'DM Sans';
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 24px;
-    text-align: center;
-    color: var(--dark-green);
-    padding-bottom: 20px;
-  }
-
-
-
   .challenge-for-you-wrapper {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 40px;
-  }
-
-  .border-desk {
-    border-top: 1px solid var(--dark-green);
-    width: 60%;
-    margin: 0 auto;  
   }
 
   .challenge-item-and-desc {
@@ -74,29 +56,20 @@
   }
 
   .challenge-item-thumbnail {
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: 35px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
     text-align: center;
-    color: var(--dark-green);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    color: var(--white);
   }
 
-  .descripton-wrapper {
+  .challenge-wrapper {
     padding: 30px 0;
   }
 
-  .rw-item-description {
-    font-family: 'DM Sans';
-    font-weight: 400;
-    font-size: 20px;
-    text-align: center;
-    color: var(--dark-green);
 
-  }
 
   .button-wrapper {
     display: flex;
@@ -105,11 +78,11 @@
   }
 
   .challenge-for-you .container .cta-btn {  
-    background: var(--dark-green);
-    border: 1px solid var(--dark-green);
+    background: var(--white-cream);
+    border: 1px solid var(--white-cream);
     font-weight: 700;
     font-size: clamp(14px, 2vw, 18px);
-    color: var(--white);
+    color: var(--dark-green);
     margin-left: unset;
     
   }
@@ -122,10 +95,6 @@
 
 
   @media screen and (max-width: 768px) {
-    .border-desk {
-      display: none;
-    }
-
     .challenge-for-you-wrapper {
       padding-bottom: unset;
     }
@@ -134,14 +103,6 @@
       text-align: left;
       font-size: 32px;
       line-height: 35px;
-    }
-
-    .challenge-for-you .sub-title .description-overlay {
-      text-align: left;
-      font-size: 20px;
-      line-height: 24px;
-      font-weight: 700;
-      padding-bottom: unset;
     }
 
     .challenge-item-and-desc {
@@ -158,9 +119,6 @@
       text-align: left;
     }
 
-    .rw-item-description {
-      text-align: left;
-    }
 
     .challenge-for-you .container .cta-btn {  
       position: unset; 
