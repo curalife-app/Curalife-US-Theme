@@ -79,7 +79,7 @@
        if (xhr.readyState === 4) {
           console.log(xhr.status);
           console.log(xhr.responseText);
-          open_ai_response = xhr.responseText;
+          open_ai_response = JSON.parse(xhr.responseText);
           $('#welcome').html(open_ai_response["choices"][0]["text"]);
        }};
 
