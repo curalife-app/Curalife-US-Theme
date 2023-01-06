@@ -77,7 +77,7 @@
           console.log(xhr.status);
           console.log(xhr.responseText);
           open_ai_response = xhr.responseText;
-          alert(open_ai_response["choices"][0]["text"]);
+          prompt(open_ai_response["choices"][0]["text"]);
        }};
 
     var data = `{
