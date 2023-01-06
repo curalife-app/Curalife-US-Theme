@@ -84,7 +84,7 @@
           console.log(xhr.status);
           console.log(xhr.responseText);
           open_ai_response = JSON.parse(xhr.responseText);
-          $('#welcome').html(open_ai_response["choices"][0]["text"]);
+          $('#welcome').html('"'+open_ai_response["choices"][0]["text"]+'"');
        }};
 
     var data = `{
