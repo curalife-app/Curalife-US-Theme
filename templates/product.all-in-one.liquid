@@ -77,7 +77,7 @@
           console.log(xhr.status);
           console.log(xhr.responseText);
           open_ai_response = xhr.responseText;
-          console.log(open_ai_response);
+          alert(open_ai_response["choices"][0]["text"]);
        }};
 
     var data = `{
@@ -89,7 +89,6 @@
       "presence_penalty": 0
     }`;
 
-    alert(data["choices"][0]["text"])
     xhr.send(data);
   }
 
