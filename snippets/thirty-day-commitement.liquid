@@ -18,7 +18,24 @@
     We’re proud of you!
    </div>
    <div class="commitment-have-to-do">What do you have to do? </div>
+   <div class="commitment-wrapper">
     
+      {% assign commitments = "Commit and complete the 30 Day Challenge 
+       
+        |Send us your testimonial about how you feel!" | split: "|" %}
+
+      <div class="commitments">
+        {% for commitment in commitments %}
+          <div class="commitment">
+            <div class="commitment-icon"><i class="icofont-check"></i></div>
+            <div class="commitment-text">{{ commitment | split: ":" | first }}</div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
+
+    </div>
   </div>
 </div>
 
@@ -96,6 +113,56 @@
     padding: 20px 0;
   }
 
+
+   .commitment-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+
+  .commitments {
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+  }
+
+ .commitments .commitment {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    font-family: "PP Radio Grotesk";
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 20px;
+
+  }
+
+
+
+  .commitments .commitment .commitment-icon {
+    background: var(--light-green);
+    color: white;
+    border-radius: 50%;
+    min-width: 45px;
+    height: 45px;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+
+   .commitments .commitment .commitment-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 404px;
+    padding-right: 75px;
+  }
+
+
   @media screen and (max-width: 768px) {
     .commitement-for-you-wrapper {
       padding-bottom: unset;
@@ -131,6 +198,15 @@
       text-align: left;
       font-size: 20px;
       line-height: 22px
+    }
+     .commitment {
+      max-width: unset;
+      width: 100%;
+    }
+
+     .commitments .commitment .commitment-text {
+      max-width: unset;
+      padding-right: 92px;
     }
   }
 
