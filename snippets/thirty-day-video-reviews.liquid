@@ -56,6 +56,7 @@
       </div>
       <div class="swiper-button-next"></div>
     </div>
+    <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
   </div>
 </section>
 
@@ -95,6 +96,27 @@
       width: 100% !important;
       height: 100% !important
   }
+
+  .thirty-day-video-reviews-section .container .cta-btn {
+    font-weight: 100;
+    background: var(--orange);
+    text-align: center;
+    border: 1px solid  var(--orange);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: clamp(14px, 2vw, 18px);
+    color: var(--dark-green);
+    padding: 15px 40px;
+    box-shadow: 0px 5px 12.5px rgba(0, 0, 0, 0.15);
+    transition: unset;
+    margin-bottom: 20px;
+    margin-left: 16%;
+  }
+
+  .thirty-day-video-reviews-section .container .cta-btn:hover {
+    background: var(--light-orange);
+  }
+
 
   @media screen and (max-width: 768px) {
   .thirty-day-video-reviews-section .green-leaf {
@@ -285,6 +307,15 @@
 
     .thirty-day-video-reviews-section .video-reviews .video-review .review-quote .quote-author {
       font-size: 14px;
+    }
+
+    .thirty-day-video-reviews-section .container .cta-btn {
+      margin-left: unset;
+      bottom: -75px;
+      left: 5%;
+      position: absolute;
+      width: 90%;
+      z-index: 2;
     }
   }
 </style>
