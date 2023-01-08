@@ -27,6 +27,18 @@
       <div class="time">Week 2</div>
       <div class="border-bottom"></div>
       <p>Powerful supplements that promote your metabolism and keep your glucose healthy!</p></div>
+      <div class="faq">
+              <div class="faq-item">
+              <div class="question">
+              Learn more about Curalin
+              </div>
+              <div class="answer">
+                  <p>Curalin is a clinically tested blood sugar support supplement. It’s rated #1 most recommended by the world’s largest blood sugar support community.</p>
+
+              </div>
+         </div>
+
+      </div>
       <img class="img-break" src="{{ 'thirty-day-break-2.png' | asset_url }}" width="831" height="546" alt="" loading="lazy">
       </div> 
     </li>
@@ -68,6 +80,54 @@
 
   </div>
 </section>
+
+<style>
+  .faq {
+ margin: 1rem auto;
+}
+
+.faq .faq-item {
+ border-bottom: 1px solid #d3d3d3;
+}
+
+.faq .faq-item .question {
+ padding: 0.7rem 3rem 0.7rem 0;
+ line-height: 1.25rem;
+ display: flex;
+ align-items: center;
+ position: relative;
+ cursor: pointer;
+ font-size: 18px;
+}
+
+.faq .faq-item .question:after {
+ content: "+";
+ font-size: 2rem;
+ position: absolute;
+ right: 1rem;
+ transition: transform 0.3s;
+}
+
+
+.faq .faq-item .question.active:after {
+ content: "+";
+ transform: rotate(45deg);
+}
+
+.faq .faq-item .answer {
+ max-height: 0;
+ overflow: hidden;
+ transition: max-height .2s ease-out;
+}
+
+.faq .faq-item .answer p {
+ padding: 0 1rem 1rem;
+ line-height: 1.5rem;
+ font-weight: 300;
+}
+
+ 
+ </style>
 
 <style>
 
