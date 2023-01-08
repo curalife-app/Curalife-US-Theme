@@ -117,12 +117,31 @@
       background: #F45B69;
     }
 
- 
+    .timeline ul li div::before {
+      content: '';
+      position: absolute;
+      bottom: 7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
     .timeline ul li div {
       left: 45px;
     }
 
-  
+    .timeline ul li div::before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent #F45B69 transparent transparent;
+    }
+
+
+    .timeline ul li:nth-child(even) div::before {
+      right: -15px;
+      border-width: 8px 0 8px 16px;
+      border-color: transparent transparent transparent #F45B69;
+    }
 
     time {
       display: block;
@@ -140,7 +159,7 @@
     }
 
     .timeline ul li.in-view::after {
-      background: #B9C86B;
+      background: #F45B69;
     }
 
     .timeline ul li div {
