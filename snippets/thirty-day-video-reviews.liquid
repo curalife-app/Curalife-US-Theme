@@ -1,4 +1,4 @@
-<section class="video-reviews-section">
+<section class="thirty-day-video-reviews-section">
   <div class="container">
     <h2>{{ maintitle }}</h2>
     <div class="video-reviews swiper">
@@ -56,27 +56,27 @@
 </section>
 
 <style>
-  .video-reviews-section {
+  .thirty-day-video-reviews-section {
     
   }
-  .video-reviews-section .container .video-reviews {
+  .thirty-day-video-reviews-section .container .video-reviews {
       overflow: unset;
       max-width: unset;
   }
 
-  .video-reviews-section .container .video-reviews .swiper-slide .video-review {
+  .thirty-day-video-reviews-section .container .video-reviews .swiper-slide .video-review {
       display: flex;
       align-items: center;
       justify-content: center;
   }
 
-  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video {
+  .thirty-day-video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video {
       width: 50%;
       margin-left: unset;
       height: 500px
   }
 
-  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video iframe {
+  .thirty-day-video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video iframe {
       width: 100% !important;
       height: 100% !important
   }
@@ -86,23 +86,23 @@
 
   @media screen and (max-width: 768px) {
 
-   .video-reviews-section {
+   .thirty-day-video-reviews-section {
       background-color: unset;
   }
 
-   .video-reviews-section .container .video-reviews {
+   .thirty-day-video-reviews-section .container .video-reviews {
       max-width: unset;
       margin-top: 30px
   }
 
-   .video-reviews-section .container .video-reviews .swiper-slide .video-review {
+   .thirty-day-video-reviews-section .container .video-reviews .swiper-slide .video-review {
       flex-direction: column;
       max-width: 80%;
       margin: auto;
       text-align: center
   }
 
-   .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video {
+   .thirty-day-video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video {
       width: unset;
       margin-left: unset;
       height: 300px;
@@ -113,7 +113,7 @@
 </style>
 
 <script>
-  videoReviewsSliderAllInOne = new Swiper('.video-reviews-section .swiper', {
+  videoReviewsSliderAllInOne = new Swiper('.thirty-day-video-reviews-section .swiper', {
       slidesPerView: 'auto',
       spaceBetween: 8, 
       centeredSlides: true,
@@ -121,8 +121,8 @@
       slideToClickedSlide: true,
       loop: false,
       navigation: {
-          nextEl: '.video-reviews-section .swiper-button-next',
-          prevEl: '.video-reviews-section .swiper-button-prev',
+          nextEl: '.thirty-day-video-reviews-section .swiper-button-next',
+          prevEl: '.thirty-day-video-reviews-section .swiper-button-prev',
           disabledClass: 'disabled'
       }
   });
@@ -157,115 +157,115 @@
       transition: opacity .5s
   }
 
-  .video-reviews-section {
+  .thirty-day-video-reviews-section {
     padding: 50px 0;
   }
 
-  .video-reviews-section h2 {
+  .thirty-day-video-reviews-section h2 {
     color: var(--dark-green);
     font-size: 40px;
     margin: 0;
     margin-bottom: unset;
   }
 
-  .video-reviews-section .video-reviews {
+  .thirty-day-video-reviews-section .video-reviews {
     overflow: visible;
     max-width: 70%;
   }
 
-  .video-reviews-section .swiper-button-prev, .video-reviews-section .swiper-button-next {
+  .thirty-day-video-reviews-section .swiper-button-prev, .thirty-day-video-reviews-section .swiper-button-next {
     color: gray;
     transition: opacity .5s;
   }
 
-  .video-reviews-section .swiper-button-prev.disabled, .video-reviews-section .swiper-button-next.disabled {
+  .thirty-day-video-reviews-section .swiper-button-prev.disabled, .thirty-day-video-reviews-section .swiper-button-next.disabled {
     opacity: 0;
   }
 
-  .video-reviews-section .swiper-button-prev::after, .video-reviews-section .swiper-button-next::after {
+  .thirty-day-video-reviews-section .swiper-button-prev::after, .thirty-day-video-reviews-section .swiper-button-next::after {
     font-size: 28px;
   }
 
-  .video-reviews-section .video-reviews .video-review {
+  .thirty-day-video-reviews-section .video-reviews .video-review {
     display: flex;
     align-items: center;
   }
 
-  .video-reviews-section .video-reviews .video-review .review-video {
+  .thirty-day-video-reviews-section .video-reviews .video-review .review-video {
     width: 40%;
     margin-left: 10%;
     height: 500px;
   }
 
-  .video-reviews-section .video-reviews .video-review .review-video iframe {
+  .thirty-day-video-reviews-section .video-reviews .video-review .review-video iframe {
     width: 100% !important;
     height: 100% !important;
   }
 
-  .video-reviews-section .video-reviews .video-review .review-quote {
+  .thirty-day-video-reviews-section .video-reviews .video-review .review-quote {
     padding: 50px;
     width: 50%;
     font-size: 22px;
     position: relative;
   }
 
-  .video-reviews-section .video-reviews .video-review .review-quote img {
+  .thirty-day-video-reviews-section .video-reviews .video-review .review-quote img {
     opacity: .1;
     width: 70px;
     position: absolute;
     left: 50px;
   }
 
-  .video-reviews-section .video-reviews .video-review .review-quote .quote-author {
+  .thirty-day-video-reviews-section .video-reviews .video-review .review-quote .quote-author {
     font-size: 18px;
     margin-bottom: 0;
   }
 
   @media screen and (max-width: 768px) {
-    .video-reviews-section {
+    .thirty-day-video-reviews-section {
       background-color: #f0f0f0;
       padding: 8vw 0;
     }
 
-    .video-reviews-section h2 {
+    .thirty-day-video-reviews-section h2 {
       font-size: 6vw;
       text-align: center;
       max-width: unset;
       margin-bottom: 10px;
     }
 
-    .video-reviews-section .video-reviews {
+    .thirty-day-video-reviews-section .video-reviews {
       max-width: unset;
       margin-top: 30px;
     }
 
-    .video-reviews-section .video-reviews .video-review {
+    .thirty-day-video-reviews-section .video-reviews .video-review {
       flex-direction: column;
       max-width: 80%;
       margin: auto;
       text-align: center;
     }
 
-    .video-reviews-section .video-reviews .video-review .review-video {
+    .thirty-day-video-reviews-section .video-reviews .video-review .review-video {
       width: unset;
       margin-left: unset;
       height: 300px;
       margin-bottom: 10px;
     }
 
-    .video-reviews-section .video-reviews .video-review .review-quote {
+    .thirty-day-video-reviews-section .video-reviews .video-review .review-quote {
       padding: unset;
       width: 100%;
       font-size: 16px;
     }
 
-    .video-reviews-section .video-reviews .video-review .review-quote img {
+    .thirty-day-video-reviews-section .video-reviews .video-review .review-quote img {
       width: 40px;
       left: -10px;
       top: 0px;
     }
 
-    .video-reviews-section .video-reviews .video-review .review-quote .quote-author {
+    .thirty-day-video-reviews-section .video-reviews .video-review .review-quote .quote-author {
       font-size: 14px;
     }
   }
