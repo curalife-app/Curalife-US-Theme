@@ -8,8 +8,12 @@
     <li>
       <div>
         <time>Week</time>
-          <img src="http://archive.codeforamerica.org/media/images/governments/oakland_seal.png" alt="overhead oakland picture" style"width: 150px; height: 125px;">
-      was the year of our Lord in which I was born in the city of Oakland which lies in the state of California.
+        {% for i in (1..4) %}
+           
+              {% assign imgUrl = "thirty-day-break-" | append: i | append: ".png" %}
+              <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
+            </div>
+            {% endfor %}
       </div> 
     
   
