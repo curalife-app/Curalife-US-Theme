@@ -24,7 +24,7 @@
             <div class="feature-text">{{ feature | split: ":" | first }}</div>
             {% assign price = feature | split: ":" | last %}
             {% if price == '0' %}
-            <div class="feature-price">Priceless</div>
+            <div class="feature-price priceless">Priceless</div>
             {% else %}
             <div class="feature-price">{{ price | times: 100 | money_without_trailing_zeros }}<sup>00</sup> Value</div>
             {% endif %}
@@ -138,6 +138,10 @@
     position: absolute;
     right: 0;
     color:  var(--dark-brown);
+  }
+
+  #challenge-features-section .features .feature .feature-price.priceless {
+    color: #95A157;
   }
   
   #challenge-features-section .features .feature .feature-price sup {
