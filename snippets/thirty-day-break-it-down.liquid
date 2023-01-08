@@ -9,7 +9,7 @@
       
      
     <div>
-    
+      <div class="time">Week 1</div>
       <img class="img-break" src="{{ 'thirty-day-break-1.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
       </div> 
           
@@ -19,7 +19,8 @@
 
 
     <div>
-     
+  <div class="time">Week 2</div>
+
       <img class="img-break" src="{{ 'thirty-day-break-2.png' | asset_url }}" width="831" height="546" alt="" loading="lazy">
       </div> 
 
@@ -30,7 +31,8 @@
 
 
        <div>
-      
+  <divclass="time">Week 3</divclass=>
+
        <img class="img-break" src="{{ 'thirty-day-break-3.png' | asset_url }}" width="1097" height="675" alt="" loading="lazy">
        </div> 
 
@@ -42,7 +44,8 @@
 
        <div>
         
-       
+        <div class="time">Week 4</div>
+
         <img src="{{ 'thirty-day-break-4.png' | asset_url }}" width="889" height="539" alt="" loading="lazy">
         </div> 
   
@@ -127,7 +130,7 @@
     .time {
       font-family: 'PP Radio Grotesk';
       font-weight: 700;
-      font-size: 45px;
+      font-size: clamp(35px, 2vw, 45px);
       line-height: 49px;
       text-align: center;
       letter-spacing: -0.01em;
