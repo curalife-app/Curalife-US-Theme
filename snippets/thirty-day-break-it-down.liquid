@@ -10,7 +10,9 @@
      
     <div>
      <div class="time-and-text">
-     <div class="time">Week 1</div></div>
+     <div class="time">Week 1</div>
+     <p>Dozens of delicious recipes you can choose from that don’t compromise flavor! Don’t like a certain recipe? Choose another!</p>
+     </div>
       <img class="img-break" src="{{ 'thirty-day-break-1.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
       </div> 
           
@@ -20,21 +22,21 @@
 
 
     <div>
-  <div class="time-and-text">
-  <div class="time">Week 2</div></div>
-
+    <div class="time-and-text">
+      <div class="time">Week 2</div>
+      <p>Powerful supplements that promote your metabolism and keep your glucose healthy!</p></div>
       <img class="img-break" src="{{ 'thirty-day-break-2.png' | asset_url }}" width="831" height="546" alt="" loading="lazy">
       </div> 
-
-
     </li>
 
     <li>
 
 
        <div>
- <div class="time-and-text">
- <div class="time">Week 3</div></div>
+    <div class="time-and-text">
+     <div class="time">Week 3</div>
+     <p>Easy-to-do exercises that will energize your day you’ll actually look forward to! </p>
+     </div>
 
        <img class="img-break" src="{{ 'thirty-day-break-3.png' | asset_url }}" width="1097" height="675" alt="" loading="lazy">
        </div> 
@@ -47,7 +49,11 @@
 
        <div>
         <div class="time-and-text">
-        <div class="time">Week 4</div></div>
+        <div class="time">Week 4</div>
+        <p>
+          Finding the balance between food, movement and supplements! We're here to cheer you on!
+        </p>
+        </div>
 
         <img src="{{ 'thirty-day-break-4.png' | asset_url }}" width="889" height="539" alt="" loading="lazy">
         </div> 
@@ -127,6 +133,14 @@
     display: flex;
     flex-direction: column;
   }
+
+  .time-and-text p {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 35px;
+    color: #FFFFFF;
+  }
  
 
     .time {
@@ -186,16 +200,23 @@
         flex-direction: column;
         justify-content: flex-start;
       }
+
+      .time {
+        line-height: 30px;
+      }
+
+      .img-break {
+        padding-left: unset;
+      }
+
+      .time-and-text p {
+        font-size: 20px;
+        line-height: 24px;
+      }
      
     }
     
-    .time {
-      line-height: 30px;
-    }
-
-    .img-break {
-      padding-left: unset;
-    }
+  
 
 </style>
 
