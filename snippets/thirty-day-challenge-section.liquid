@@ -17,6 +17,7 @@
       <img class="main-image" src="{{ 'thirty-day-challenge-features-section-main-img.png' | asset_url }}" width="886" height="689" alt="">
 
       <div class="features">
+        {% assign total = 0 %}
         {% for feature in features %}
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
@@ -28,6 +29,7 @@
             <div class="feature-price">{{ price | times: 100 | money_without_trailing_zeros }}<sup>00</sup> Value</div>
             {% endif %}
           </div>
+          {% assign total = total | plus: price %}
         {% endfor %}
         <div class="total-value">Total Value Before Discount: $185 </div>
         <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | times: 100.0 | money | replace: "GBP", "" }}</span></div>
