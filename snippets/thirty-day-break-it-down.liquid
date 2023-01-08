@@ -6,12 +6,10 @@
 
   <ul>
     <li>
-      <div>
         {% assign timeWeek = "Week " | append: i %}
         {% assign imgUrl = "thirty-day-break-" | append: i | append: ".png" %}
-        
-        {% for i in (1..4) %}
-           
+      <div> 
+        {% for i in (1..4) %}  
             <time>{{ timeWeek }}</time> 
               <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
             </div>
