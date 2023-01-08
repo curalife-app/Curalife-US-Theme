@@ -31,7 +31,7 @@
           </div>
           {% assign total = total | plus: price %}
         {% endfor %}
-        <div class="total-value">Total Value Before Discount: $185 </div>
+        <div class="total-value">Total Value Before Discount: {{ total | times: 100 | money_without_trailing_zeros }} </div>
         <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | times: 100.0 | money | replace: "GBP", "" }}</span></div>
       </div>
       
