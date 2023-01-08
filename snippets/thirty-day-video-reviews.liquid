@@ -1,16 +1,17 @@
-<section id="video-reviews-section">
+<section class="video-reviews-section">
   <div class="container">
-    <div class="swiper-button swiper-button-prev"></div>
+    <h2>{{ maintitle }}</h2>
     <div class="video-reviews swiper">
+      <div class="swiper-button-prev"></div>
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="video-review">
             <div class="review-video">
-              <iframe id="review-video-1" src="https://player.vimeo.com/video/662207384?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+              <iframe src="https://player.vimeo.com/video/662207384?h=d512ec6cd1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="C - Jo R Testimonial"></iframe>
             </div>
             <div class="review-quote">
-              <img src="{{ 'onboarding-icon-quote.png' | asset_url }}" alt="" width="84" height="68" loading="lazy">
-              <p class="quote-content">I now feel that I’m being rewarded for my hard work. I am now a permanent customer. Just give it a try. You’ll be delighted.</p>
+              <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
+              <p class="quote-content">From the first bottle it has been amazing. I feel rewarded for my hard work</p>
               <p class="quote-author">Jo R.</p>
             </div>
           </div>
@@ -18,11 +19,11 @@
         <div class="swiper-slide">
           <div class="video-review">
             <div class="review-video">
-              <iframe id="review-video-2" src="https://player.vimeo.com/video/562754760?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+              <iframe src="https://player.vimeo.com/video/770733369?h=fd73eeaa72&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="compliant_-_d&#039;gaye_curalin_testimonial (1080p).mp4"></iframe>
             </div>
             <div class="review-quote">
-              <img src="{{ 'onboarding-icon-quote.png' | asset_url }}" alt="" width="84" height="68" loading="lazy">
-              <p class="quote-content">Curalin sounded too good to be true. But it works. Oh man, it works.</p>
+              <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
+              <p class="quote-content">CuraLin sounded too good to be true. But it works. Oh man, it works.</p>
               <p class="quote-author">D’Gaye</p>
             </div>
           </div>
@@ -30,46 +31,131 @@
         <div class="swiper-slide">
           <div class="video-review">
             <div class="review-video">
-              <iframe id="review-video-3" src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+              <iframe src="https://player.vimeo.com/video/770743565?h=f39297466f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="compliant_-_Denise_CuraLin_Testimony.mp4"></iframe>
             </div>
             <div class="review-quote">
-              <img src="{{ 'onboarding-icon-quote.png' | asset_url }}" alt="" width="84" height="68" loading="lazy">
-              <p class="quote-content">This is the best product I found for glucose support and I tried them all in the past.</p>
-              <p class="quote-author">Carol S.</p>
+              <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
+              <p class="quote-content">Curalin has really helped me. It’s a wonderful tool in my toolbox</p>
+              <p class="quote-author">Denise R.</p>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="video-review">
             <div class="review-video">
-              <iframe id="review-video-4" src="https://player.vimeo.com/video/562754846?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+              <iframe src="https://player.vimeo.com/video/662208879?h=2a85cd00e8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="C - Sherry L Testimonial"></iframe>
             </div>
             <div class="review-quote">
-              <img src="{{ 'onboarding-icon-quote.png' | asset_url }}" alt="" width="84" height="68" loading="lazy">
-              <p class="quote-content">The biggest thing that Curalin has done for me is interrupt my mindset of hopelessness. It’s a wonderful tool in my toolbox.</p>
-              <p class="quote-author">Denise R.</p>
+              <img src="{{ 'icon-quote.png' | asset_url }}" alt="" loading="lazy">
+              <p class="quote-content">I thought ‘well, let’s give it a try'. And I did. And I was amazed. My doctor was totally amazed.</p>
+              <p class="quote-author">Sherry L.</p>
             </div>
           </div>
         </div>
       </div>
+      <div class="swiper-button-next"></div>
     </div>
-    <div class="swiper-button swiper-button-next"></div>
   </div>
 </section>
 
+<style>
+  .video-reviews-section .container .video-reviews {
+      overflow: visible;
+      max-width: 70%
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review {
+      display: flex;
+      align-items: center
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video {
+      width: 40%;
+      margin-left: 10%;
+      height: 500px
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video iframe {
+      width: 100% !important;
+      height: 100% !important
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote {
+      padding: 50px;
+      width: 50%;
+      font-size: 22px;
+      position: relative
+  }
+
+  .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote img {
+      opacity: .1;
+      width: 70px;
+      position: absolute;
+      left: 50px
+  }
+
+   .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote .quote-author {
+      font-size: 18px;
+      margin-bottom: 0
+  }
+
+  @media screen and (max-width: 768px) {
+
+   .video-reviews-section {
+      background-color: #f0f0f0
+  }
+
+   .video-reviews-section .container .video-reviews {
+      max-width: unset;
+      margin-top: 30px
+  }
+
+   .video-reviews-section .container .video-reviews .swiper-slide .video-review {
+      flex-direction: column;
+      max-width: 80%;
+      margin: auto;
+      text-align: center
+  }
+
+   .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-video {
+      width: unset;
+      margin-left: unset;
+      height: 300px;
+      margin-bottom: 10px
+  }
+
+   .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote {
+      padding: unset;
+      width: 100%;
+      font-size: 16px
+  }
+
+   .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote img {
+      width: 40px;
+      left: -10px;
+      top: 0
+  }
+
+   .video-reviews-section .container .video-reviews .swiper-slide .video-review .review-quote .quote-author {
+      font-size: 14px
+  }
+    
+  }
+</style>
+
 <script>
-  videoReviewsSliderAllInOne = new Swiper('#video-reviews-section .swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 8,
-    centeredSlides: true,
-    grabCursor: true,
-    slideToClickedSlide: true,
-    loop: false,
-    navigation: {
-      nextEl: '#video-reviews-section .swiper-button-next',
-      prevEl: '#video-reviews-section .swiper-button-prev',
-      disabledClass: 'disabled'
-    }
+  videoReviewsSliderAllInOne = new Swiper('.video-reviews-section .swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      grabCursor: true,
+      slideToClickedSlide: true,
+      loop: false,
+      navigation: {
+          nextEl: '.video-reviews-section .swiper-button-next',
+          prevEl: '.video-reviews-section .swiper-button-prev',
+          disabledClass: 'disabled'
+      }
   });
 </script>
 
@@ -85,8 +171,8 @@
   players.forEach(function(el, index) {
     el.on('play', function() {
       woopra.track('Playing Video Rewievs', {
-        section: "Customers Reviews Of Curalin",
-        video_order: index + 1
+       section: "Customers Reviews Of CuraLin",
+       video_order: index + 1
 
       })
     });
@@ -94,122 +180,122 @@
 </script>
 
 <style>
-  #video-reviews-section {
-    position: relative;
+  .swiper-button-prev,
+   .swiper-button-next {
+      color: gray;
+      transition: opacity .5s
   }
 
-  #video-reviews-section .video-reviews {
-    overflow: hidden;
-    max-width: 100%;
+  .video-reviews-section {
+    padding: 50px 0;
   }
 
-  #video-reviews-section .swiper-button {
-    transition: opacity 0.5s;
-    background: #424733;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    color: white;
+  .video-reviews-section h2 {
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 30px;
   }
 
-  #video-reviews-section .swiper-button.swiper-button-prev {
-    left: -8.5%;
+  .video-reviews-section .video-reviews {
+    overflow: visible;
+    max-width: 70%;
   }
 
-  #video-reviews-section .swiper-button.swiper-button-next {
-    right: -8.5%;
+  .video-reviews-section .swiper-button-prev, .video-reviews-section .swiper-button-next {
+    color: gray;
+    transition: opacity .5s;
   }
 
-  #video-reviews-section .swiper-button-prev.disabled,
-  #video-reviews-section .swiper-button-next.disabled {
+  .video-reviews-section .swiper-button-prev.disabled, .video-reviews-section .swiper-button-next.disabled {
     opacity: 0;
   }
 
-  #video-reviews-section .swiper-button-prev::after,
-  #video-reviews-section .swiper-button-next::after {
+  .video-reviews-section .swiper-button-prev::after, .video-reviews-section .swiper-button-next::after {
     font-size: 28px;
   }
 
-  #video-reviews-section .video-reviews .video-review {
+  .video-reviews-section .video-reviews .video-review {
     display: flex;
     align-items: center;
   }
 
-  #video-reviews-section .video-reviews .video-review .review-video {
-    height: 320px;
+  .video-reviews-section .video-reviews .video-review .review-video {
+    width: 40%;
+    margin-left: 10%;
+    height: 500px;
   }
 
-  #video-reviews-section .video-reviews .video-review .review-video iframe {
+  .video-reviews-section .video-reviews .video-review .review-video iframe {
     width: 100% !important;
     height: 100% !important;
   }
 
-  #video-reviews-section .video-reviews .video-review .review-quote {
+  .video-reviews-section .video-reviews .video-review .review-quote {
     padding: 50px;
     width: 50%;
     font-size: 22px;
     position: relative;
-    line-height: 1.5em;
-    font-family: 'DM Sans';
-    font-weight: 400;
-    font-size: 19px;
-  }
-}
-
-#video-reviews-section .video-reviews .video-review .review-quote img {
-  opacity: .1;
-  width: 70px;
-  position: absolute;
-  left: 50px;
-  object-fit: contain;
-}
-
-#video-reviews-section .video-reviews .video-review .review-quote .quote-author {
-  font-size: 18px;
-  margin-bottom: 0;
-}
-
-@media screen and (max-width: 768px) {
-  #video-reviews-section .video-reviews {
-    margin-top: 30px;
   }
 
-  #video-reviews-section .video-reviews .video-review {
-    flex-direction: column;
-    max-width: 80%;
-    margin: auto;
+  .video-reviews-section .video-reviews .video-review .review-quote img {
+    opacity: .1;
+    width: 70px;
+    position: absolute;
+    left: 50px;
   }
 
-  #video-reviews-section .video-reviews .video-review .review-video {
-    width: unset;
-    margin-left: unset;
-    height: 300px;
-    margin-bottom: 10px;
+  .video-reviews-section .video-reviews .video-review .review-quote .quote-author {
+    font-size: 18px;
+    margin-bottom: 0;
   }
 
-  #video-reviews-section .video-reviews .video-review .review-quote {
-    width: 100%;
-    font-size: 4vw;
-    padding: 5vw;
-  }
+  @media screen and (max-width: 768px) {
+    .video-reviews-section {
+      background-color: #f0f0f0;
+      padding: 8vw 0;
+    }
 
-  #video-reviews-section .swiper-button.swiper-button-prev {
-    left: -3%;
-  }
+    .video-reviews-section h2 {
+      font-size: 6vw;
+      text-align: center;
+      max-width: unset;
+      margin-bottom: 10px;
+    }
 
-  #video-reviews-section .swiper-button.swiper-button-next {
-    right: -3%;
-  }
+    .video-reviews-section .video-reviews {
+      max-width: unset;
+      margin-top: 30px;
+    }
 
-  #video-reviews-section .video-reviews .video-review .review-quote img {
-    width: 40px;
-    left: -10px;
-    top: 0;
-    height: auto;
-  }
+    .video-reviews-section .video-reviews .video-review {
+      flex-direction: column;
+      max-width: 80%;
+      margin: auto;
+      text-align: center;
+    }
 
-  #video-reviews-section .video-reviews .video-review .review-quote .quote-author {
-    font-size: 3vw;
+    .video-reviews-section .video-reviews .video-review .review-video {
+      width: unset;
+      margin-left: unset;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+
+    .video-reviews-section .video-reviews .video-review .review-quote {
+      padding: unset;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .video-reviews-section .video-reviews .video-review .review-quote img {
+      width: 40px;
+      left: -10px;
+      top: 0px;
+    }
+
+    .video-reviews-section .video-reviews .video-review .review-quote .quote-author {
+      font-size: 14px;
+    }
   }
-}
 </style>
+
