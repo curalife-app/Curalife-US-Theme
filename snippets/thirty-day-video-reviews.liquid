@@ -130,8 +130,10 @@
   var player2 = new Vimeo.Player(document.querySelector('#review-video-2'));
   var player3 = new Vimeo.Player(document.querySelector('#review-video-3'));
   var player4 = new Vimeo.Player(document.querySelector('#review-video-4'));
+  var player5 = new Vimeo.Player(document.querySelector('#review-video-5'));
+  var player6 = new Vimeo.Player(document.querySelector('#review-video-6'));
 
-  let players = [player1, player2, player3, player4];
+  let players = [player1, player2, player3, player4, player5, player6];
 
   players.forEach(function(el, index) {
     el.on('play', function() {
