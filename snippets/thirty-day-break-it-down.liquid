@@ -9,11 +9,12 @@
       <div>
         <time>Week</time>
         {% for i in (1..4) %}
-           
+           <div class="images-break">
               {% assign imgUrl = "thirty-day-break-" | append: i | append: ".png" %}
               <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
             </div>
             {% endfor %}
+            </div>
       </div> 
     
   
