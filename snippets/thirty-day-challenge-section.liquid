@@ -1,15 +1,15 @@
 {% assign item_price = 67 %}
 
-{% assign features = "<b>30 day supply of Curalin</b> (180 capsules)
-|<b>30 day mouth-watering meal plan</b> including recipes and videos
-|<b>14 day easy-to-do movement and exercise plan</b> with videos
-|<b>Blood Sugar Explained</b> In Plain English (infographic)
-|<b>Curalife Blood Sugar Healthy Cookbook</b>
-|<b>Free Shipping </b>
-|<b>Community support</b> with 100K+ peers
-|<b>24/7 Customer Support</b>  (phone, email, or live chat)" | split: "|" %}
+{% assign features = "<b>30 day supply of Curalin</b> (180 capsules),75
+|<b>30 day mouth-watering meal plan</b> including recipes and videos,29
+|<b>14 day easy-to-do movement and exercise plan</b> with videos,59
+|<b>Blood Sugar Explained</b> In Plain English (infographic),14
+|<b>Curalife Blood Sugar Healthy Cookbook</b>,40
+|<b>Free Shipping </b>,8
+|<b>Community support</b> with 100K+ peers,0
+|<b>24/7 Customer Support</b>  (phone, email, or live chat),0" | split: "|" %}
 
-{% assign prices = "75,29,59,14,40,8,0,0" | split: "," %}
+{% comment %} {% assign prices = "75,29,59,14,40,8,0,0" | split: "," %} {% endcomment %}
 
 <section id="challenge-features-section">
   <div class="container">
@@ -24,9 +24,8 @@
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
             <div class="feature-text">{{ feature }}</div>
-            {% assign index = forloop.index %}
-            <script>console.log("{{ index }}")</script>
-            <div class="feature-price">{% if prices[index] == 0 %}Priceless{% else %}{{ prices[forloop.index] }}{% endif %}</div>
+            {% assign price = feature | split: "," | last %}
+            <div class="feature-price">{% if price == 0 %}Priceless{% else %}{{ price }}{% endif %}</div>
           </div>
         {% endfor %}
         <div class="total-value">Total Value Before Discount: $185 </div>
