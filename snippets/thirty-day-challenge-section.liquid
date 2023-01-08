@@ -25,7 +25,7 @@
             {% if price == '0' %}
             <div class="feature-price">Priceless</div>
             {% else %}
-            <div class="feature-price"></div>{{ price | times: 100 | money_with_currency }}<sup>00</sup> Value</div>
+            <div class="feature-price"></div>{{ price | times: 100 | money_without_trailing_zeros }}<sup>00</sup> Value</div>
             {% endif %}
           </div>
         {% endfor %}
