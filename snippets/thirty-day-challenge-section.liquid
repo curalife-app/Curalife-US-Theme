@@ -23,7 +23,7 @@
         {% for feature in features %}
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
-            <div class="feature-text">{{ feature }}</div>
+            <div class="feature-text">{{ feature | split: "|" | first }}</div>
             {% assign price = feature | split: "," | last %}
             <div class="feature-price">{% if price == 0 %}Priceless{% else %}{{ price }}{% endif %}</div>
           </div>
