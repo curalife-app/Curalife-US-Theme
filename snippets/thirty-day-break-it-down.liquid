@@ -88,6 +88,12 @@
     padding-bottom: 30px;
  }
 
+ @-webkit-keyframes pulsate {
+     0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+     50% {opacity: 1.0;}
+     100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+ }
+
     .timeline ul li {
       list-style-type: none;
       position: relative;
@@ -108,6 +114,9 @@
       height: 30px;
       border-radius: 50%;
       background: inherit;
+      -webkit-animation: pulsate 1s ease-out;
+      -webkit-animation-iteration-count: 2; 
+      opacity: 0.0
     }
 
     .timeline ul li div {
