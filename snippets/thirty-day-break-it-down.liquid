@@ -6,19 +6,50 @@
 
   <ul>
     <li>
-       {% assign timeWeek = "Week " | append: i %}
-       {% assign imgUrl = "thirty-day-break-" | append: i | append: ".png" %}
+      
      
        <div>
-        
-        {% for i in (1..4) %}  
-           <time>{{ timeWeek }}</time> 
-             <img src="{{ imgUrl | asset_url }}" alt="" loading="lazy">
-           </div>
-           {% endfor %}
+       <time>Week 1</time>
+       <img src="{{ 'thirty-day-break-1.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
+       Dozens of delicious recipes you can choose from that don’t compromise flavor! Don’t like a certain recipe? Choose another!
        </div> 
           
     
+    </li>
+    <li>
+
+
+       <div>
+       <time>Week 2</time>
+       <img src="{{ 'thirty-day-break-2.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
+       Dozens of delicious recipes you can choose from that don’t compromise flavor! Don’t like a certain recipe? Choose another!
+       </div> 
+
+
+    </li>
+
+    <li>
+
+
+       <div>
+       <time>Week 3</time>
+       <img src="{{ 'thirty-day-break-3.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
+       Dozens of delicious recipes you can choose from that don’t compromise flavor! Don’t like a certain recipe? Choose another!
+       </div> 
+
+
+    </li>
+
+    <li>
+
+
+       <div>
+       <time>Week 4</time>
+       <img src="{{ 'thirty-day-break-4.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
+       Dozens of delicious recipes you can choose from that don’t compromise flavor! Don’t like a certain recipe? Choose another!
+       </div> 
+
+
     </li>
     
   
