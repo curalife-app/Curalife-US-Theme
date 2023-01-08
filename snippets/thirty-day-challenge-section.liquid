@@ -1,4 +1,29 @@
+{% if shop.name == "CuraLife" %}
+  {% assign supply_value = 75 %}
+  {% assign mealplan_value = 29 %}
+  {% assign exercise_value = 59 %}
+  {% assign infographic_value = 14 %}
+  {% assign cookbook_value = 40 %}
+  {% assign shipping_value = 8 %}
+  {% assign community_value = 0 %}
+  {% assign support_value = 0 %}
+{% elsif shop.name == "CuraLife Global" %}
+  {% assign curaeats_value = 24 %}
+{% endif %}
+
 {% assign item_price = 67 %}
+
+{% assign features = "<b>30 day supply of Curalin</b>  (180 capsules)
+|<b>30 day mouth-watering meal plan</b> including recipes and videos
+|<b>14 day easy-to-do movement and exercise plan</b> with videos
+|<b>Blood Sugar Explained</b> In Plain English (infographic)
+|<b>Curalife Blood Sugar Healthy Cookbook</b>
+|<b>Free Shipping </b>
+|<b>Community support</b> with 100K+ peers
+|<b>24/7 Customer Support</b>  (phone, email, or live chat)" | split: "|" %}
+
+{% assign prices = "75,29,59,14,40,8,0,0" %}
+
 <section id="challenge-features-section">
   <div class="container">
     <h3> Everything you need
@@ -7,14 +32,6 @@
 
     <div class="features-wrapper">
       <img class="main-image" src="{{ 'thirty-day-challenge-features-section-main-img.png' | asset_url }}" width="886" height="689" alt="">
-      {% assign features = "<b>30 day supply of Curalin</b>  (180 capsules): $75<sup>00</sup> Value 
-        |<b>30 day mouth-watering meal plan</b> including recipes and videos: $29<sup>00</sup> Value
-        |<b>14 day easy-to-do movement and exercise plan</b> with videos: $59<sup>00</sup> Value
-        |<b>Blood Sugar Explained</b> In Plain English (infographic): $14<sup>00</sup> Value
-        |<b>Curalife Blood Sugar Healthy Cookbook</b>: $40<sup>00</sup> Value
-        |<b>Free Shipping </b>:$8<sup>00</sup> Value
-        |<b>Community support</b>  with 100K+ peers: Priceless
-        |<b>24/7 Customer Support</b>  (phone, email, or live chat): Priceless" | split: "|" %}
 
       <div class="features">
         {% for feature in features %}
@@ -22,11 +39,10 @@
             <div class="feature-icon"><i class="icofont-check"></i></div>
             <div class="feature-text">{{ feature | split: ":" | first }}</div>
             {% if feature contains "Priceless" %}
-            <div class="feature-price" style="color: #95A157
-            ;">{{ feature | split: ":" | last }}</div>
+              <div class="feature-price" style="color: #95A157;">{{ feature | split: ":" | last }}</div>
             {% else %}
-            <div class="feature-price">{{ feature | split: ":" | last }}</div>
-        {% endif %}
+              <div class="feature-price">{{ feature | split: ":" | last }}</div>
+            {% endif %}
           </div>
         {% endfor %}
         <div class="total-value">Total Value Before Discount: $185 </div>
