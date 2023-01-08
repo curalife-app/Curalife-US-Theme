@@ -2,7 +2,7 @@
 
 <section class="timeline">
 <div class="container">
-     <h1>Vertical Timeline &darr;</h1>
+     <div class="break-it">Let’s break it down:</div>
 
   <ul>
     <li>
@@ -74,6 +74,18 @@
 
  .timeline {
     background: #555F44;
+ }
+
+ .timeline .break-it {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: clamp(55px, 2vw, 60px);
+    line-height: 35px;
+    color: white;
+
  }
 
     .timeline ul li {
