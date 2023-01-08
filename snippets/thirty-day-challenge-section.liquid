@@ -24,7 +24,8 @@
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
             <div class="feature-text">{{ feature }}</div>
-            <div class="feature-price">{% if prices[forloop.index - 1] == 0 %}Priceless{% else %}{{ prices[forloop.index] }}{% endif %}</div>
+            {% assign index = forloop.index | minus: 1 %}
+            <div class="feature-price">{% if prices[index] == 0 %}Priceless{% else %}{{ prices[forloop.index] }}{% endif %}</div>
           </div>
         {% endfor %}
         <div class="total-value">Total Value Before Discount: $185 </div>
