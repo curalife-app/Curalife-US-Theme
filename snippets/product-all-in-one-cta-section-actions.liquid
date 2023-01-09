@@ -164,7 +164,7 @@
     $(this).find('input[type=radio]').prop('checked', true);
 
     // Slide to Variant Image
-    let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
+    let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
     productSliderAllInOne.slideTo(slideIndex);
 
     // Track in GA
