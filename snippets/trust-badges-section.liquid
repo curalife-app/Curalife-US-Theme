@@ -5,14 +5,16 @@
 {% endif %}
 
 <section id="trust-badges-section">
-  <div class="container">
+    {% if content contains  %}
+
+    {% endif %}
+
     <div class="trust-badge"><i class="icofont-vehicle-delivery-van" style="font-size:40px"></i>{{ shipping_worldwide }}</div>
     <div class="trust-badge"><i class="icofont-badge" style="font-size:36px"></i>60 Day Money Back Guarantee</div>
     <div class="trust-badge"><i class="icofont-ui-lock"></i>100% Secure Checkout</div>
-  </div>
 </section>
 
-{% if bottomLine %};
+{% if bottomLine %}
   <div class="line">
     <div class="container" style="border-bottom: 1px solid {{ colors }}"></div>
   </div>
