@@ -2,23 +2,19 @@
 
 <section class="timeline">
 <div class="container">
-     <div class="break-it">Let’s break it down:</div>
-
-  <ul>
-    {% for week in weeks %}
-      <li>
-      <div>
-       <div class="time-and-text">
-       <div class="time">Week {{ forloop.index }}</div>
-       <div class="border-bottom"></div>
-       <p>{{ week }}</p>
-       </div>
-        <img class="img-break" src="{{ 'thirty-day-break-{{ forloop.index }}.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
-        </div> 
-      </li>
-    {% endfor %}
-  </ul>
-
+  <div class="break-it">Let’s break it down:</div>
+    <ul>
+      {% for week in weeks %}
+        <li>
+          <div class="time-and-text">
+            <div class="time">Week {{ forloop.index }}</div>
+            <div class="border-bottom"></div>
+            <p>{{ week }}</p>
+          </div>
+          <img class="img-break" src="{{ 'thirty-day-break-{{ forloop.index }}.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
 
