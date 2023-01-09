@@ -3,7 +3,9 @@
         <div class="sub-title">
           <h3><b>As easy as 1, 2, 3!</b></h3>         
         </div>
-        <div class="easy-wrapper"></div>
+        <div class="easy-wrapper">
+            <img class="easy-img" src="{{ 'thirty-day-product-easy-group.png' | asset_url }}" width="967" height="329" alt="">
+        </div>
     </div>
 </div>
 
@@ -30,9 +32,14 @@
 
 
     @media screen and (max-width: 768px) {
+        
         .easy .sub-title h3 {
           font-size: 32px;
           line-height: 35px;
+        }
+
+        .easy-img {
+            display: none;
         }
       
     }
