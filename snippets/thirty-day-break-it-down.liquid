@@ -46,6 +46,7 @@
           <p></p>
         </div>
         <img class="img-break-confetty" src="{{ 'thirty-day-break-confetti.png' | asset_url }}" width="1211" height="211" alt="" loading="lazy">
+        <img class="img-break-confetty-mb" src="{{ 'thirty-day-break-confetti-mb.png' | asset_url }}" width="368" height="223" alt="" loading="lazy">
         </div>
       </li>
       <li>
@@ -237,6 +238,10 @@
       max-width: 200%;
     }
 
+    .img-break-confetty-mb {
+      display: none;
+    }
+
     .time-and-text .time.achivement {
       font-family: 'PP Radio Grotesk';
       font-weight: 700;
@@ -281,6 +286,13 @@
 
 
     @media screen and (max-width: 768px) {
+      .img-break-confetty {
+        display: none;
+      }
+
+      .img-break-confetty-mb {
+        display: block;
+      }
       .time-and-text .time.achivement {   
         font-size: 35px;
         line-height: 32px;
