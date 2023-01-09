@@ -159,7 +159,7 @@
 
 <script>
   $(".variant-box").click(function() {
-    {% if isUpdateSaveTitle %}updateSave();{% endif %}
+    updateSave();
 
     $(this).find('input[type=radio]').prop('checked', true);
 
