@@ -16,8 +16,10 @@
           <div class="time-and-text">
             {% if forloop.index == 5 %}
             <div class="time">Beyond</div>
-           {% endif %}
+            {% else %}
             <div class="time">Week {{ forloop.index }}</div>
+           {% endif %}
+            
             <div class="border-bottom"></div>
             <p>{{ week }}</p>
             {% if forloop.index == 2 %}
