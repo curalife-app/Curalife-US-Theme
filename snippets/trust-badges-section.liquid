@@ -5,13 +5,17 @@
 {% endif %}
 
 <section id="trust-badges-section">
-    {% if content contains  %}
-
+    {% if content contains "free-shipping" %}
+      <div class="trust-badge"><i class="icofont-vehicle-delivery-van" style="font-size:40px"></i>{{ shipping_worldwide }}</div>
     {% endif %}
 
-    <div class="trust-badge"><i class="icofont-vehicle-delivery-van" style="font-size:40px"></i>{{ shipping_worldwide }}</div>
-    <div class="trust-badge"><i class="icofont-badge" style="font-size:36px"></i>60 Day Money Back Guarantee</div>
-    <div class="trust-badge"><i class="icofont-ui-lock"></i>100% Secure Checkout</div>
+    {% if content contains "money-back" %}
+      <div class="trust-badge"><i class="icofont-badge" style="font-size:36px"></i>60 Day Money Back Guarantee</div>
+    {% endif %}
+
+    {% if content contains "secure-checkout" %}
+      <div class="trust-badge"><i class="icofont-ui-lock"></i>100% Secure Checkout</div>
+    {% endif %}
 </section>
 
 {% if bottomLine %}
