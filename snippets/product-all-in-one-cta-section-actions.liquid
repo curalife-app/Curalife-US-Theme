@@ -158,9 +158,8 @@
 
 <script>
   $(".variant-box").click(function() {
-    updateSave();
-
     $(this).find('input[type=radio]').prop('checked', true);
+    updateSave();
 
     // Slide to Variant Image
     let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
