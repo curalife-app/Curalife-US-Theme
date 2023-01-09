@@ -9,16 +9,18 @@
  
     <ul>
       {% for week in weeks %}
-        <div>
+        
         <li>
+          <div>
           <div class="time-and-text">
             <div class="time">Week {{ forloop.index }}</div>
             <div class="border-bottom"></div>
             <p>{{ week }}</p>
           </div>
           <img class="img-break" src="{{ 'thirty-day-break-' | append: forloop.index | append: '.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
+          </div>
         </li>
-        </div>
+       
       {% endfor %}
     </ul>
   </div>
