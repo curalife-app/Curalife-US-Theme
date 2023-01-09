@@ -676,9 +676,8 @@
 </script>
 
 <script>
-  /*Slide to Variant Image*/
-  productSliderAllInOne.on('slideChange', function () {
-    $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
+  $( document ).ready(function() {
+    updateSave();
   });
 
   function updateSave() {
@@ -689,8 +688,9 @@
     }).animate({'opacity': 1}, 800);
   }
 
-  $( document ).ready(function() {
-    updateSave();
+  /*Slide to Variant Image*/
+  productSliderAllInOne.on('slideChange', function () {
+    $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
   });
 
   $(".variant-box").click(function() {
@@ -727,27 +727,23 @@
       price: $(this).find("input").attr("price")
     })
   });
-</script>
 
-<script>
-// Change Quantity Widget On Product Page
-$(document).on("click", ".submit-wrap .qty-control a", function (e) {
-      e.preventDefault();
-      let newVal, $button = $(this),
-          inputObj = $button.closest(".qty-control").find("input"),
-          oldValue = inputObj.val();
-      if ($button.attr('data-act') === "+") {
-          newVal = parseInt(oldValue) + 1;
-      }
-      else {
-          newVal = parseInt(oldValue) - 1;
-      }
+  // Change Quantity Widget On Product Page
+  $(document).on("click", ".submit-wrap .qty-control a", function (e) {
+    e.preventDefault();
+    let newVal, $button = $(this),
+      inputObj = $button.closest(".qty-control").find("input"),
+      oldValue = inputObj.val();
+    if ($button.attr('data-act') === "+") {
+      newVal = parseInt(oldValue) + 1;
+    }
+    else {
+      newVal = parseInt(oldValue) - 1;
+    }
 
-      inputObj.val(newVal);
+    inputObj.val(newVal);
   });
-</script>
 
-<script>
   $('.thumbs-img').click(function() {
     woopra.track('Product Image Click', {});
   });
@@ -759,25 +755,59 @@ $(document).on("click", ".submit-wrap .qty-control a", function (e) {
     let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity;
     window.location.href = checkoutLink;
   })
-
 </script>
 
 <script>
-$(document).on("click", "#buy-button", function () {
+  $(document).on("click", "#buy-button", function () {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'add_to_cart',
+      ecommerce: {
+      items: [{
+        item_name: '{{ product.title }}',
+        item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+        affiliation: '{{ shop.name }}',
+        price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
+        quantity: parseInt($(".qty-control input").val())
+      }]
+      },
+      email: '{{ customer.email }}',
+      phone: '{{ customer.phone }}',
+      name: '{{ customer.first_name }}',
+      surname: '{{ customer.last_name }}',
+      city: '{{ customer.customer_address.city }}',
+      state: '{{ customer.customer_address.province }}',
+      zip: '{{ customer.customer_address.zip }}',
+      country: '{{customer.customer_address.country_code | t}}',
+      user_agent: navigator.userAgent
+    });
+
+    woopra.track('add to cart', {
+      product_sku: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+      product_name: '{{ product.title }}',
+      product_price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+      currency: '{{ shop.currency }}',
+      quantity: parseInt($(".qty-control input").val())
+    });
+  });
+
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    event: 'add_to_cart',
+    event: 'view_item',
     ecommerce: {
-    items: [{
-      item_name: '{{ product.title }}',
-      item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
-      affiliation: '{{ shop.name }}',
-      price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
-      currency: '{{ shop.currency }}',
-      item_brand: 'CuraLife',
-      item_category: 'CuraLin',
-      quantity: parseInt($(".qty-control input").val())
-    }]
+      items: [{
+        item_name: '{{ product.title }}',
+        item_id: '{{ product.title }}',
+        affiliation: '{{ shop.name }}',
+        price: '',
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
+        quantity: 1
+      }]
     },
     email: '{{ customer.email }}',
     phone: '{{ customer.phone }}',
@@ -790,60 +820,12 @@ $(document).on("click", "#buy-button", function () {
     user_agent: navigator.userAgent
   });
 
-  woopra.track('add to cart', {
-    product_sku: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
-    product_name: '{{ product.title }}',
-    product_price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
-    currency: '{{ shop.currency }}',
-    quantity: parseInt($(".qty-control input").val())
+  //Product Arrow Click
+  $('#product-thumbs-slider-nav-next, #product-thumbs-slider-nav-prev').click(function() {
+    woopra.track('Arrow Click', {
+      section: "Product"
+    });
   });
-});
-
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'view_item',
-  ecommerce: {
-    items: [{
-      item_name: '{{ product.title }}',
-      item_id: '{{ product.title }}',
-      affiliation: '{{ shop.name }}',
-      price: '',
-      currency: '{{ shop.currency }}',
-      item_brand: 'CuraLife',
-      item_category: 'CuraLin',
-      quantity: 1
-    }]
-  },
-  email: '{{ customer.email }}',
-  phone: '{{ customer.phone }}',
-  name: '{{ customer.first_name }}',
-  surname: '{{ customer.last_name }}',
-  city: '{{ customer.customer_address.city }}',
-  state: '{{ customer.customer_address.province }}',
-  zip: '{{ customer.customer_address.zip }}',
-  country: '{{customer.customer_address.country_code | t}}',
-  user_agent: navigator.userAgent
-});
-</script>
-
-<script>
-
- //Product Arrow Click
-
- $('#product-thumbs-slider-nav-next, #product-thumbs-slider-nav-prev').click(function() {
- woopra.track('Arrow Click', {
-   section: "Product"
- });
-
- });
-
-
- $('.slider-nav').click(function() {
- woopra.track('Arrow Click', {
-   section: "Over 3000 5 Star Reviews"
- });
-
- });
 </script>
 
 
