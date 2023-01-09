@@ -115,8 +115,8 @@
 
   // On Buy Button Click
   $(document).on("click", "#buy-button", function () {
-    let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
-    let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
+    let checkedPack = $('input[name=pack]:checked').val();
+    let checkedQuantity = $('input[name=quantity]').val();
     let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity;
     window.location.href = checkoutLink;
 
@@ -126,9 +126,9 @@
       ecommerce: {
       items: [{
         item_name: '{{ product.title }}',
-        item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+        item_id: $('input[name=pack]:checked').attr('sku'),
         affiliation: '{{ shop.name }}',
-        price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+        price: $('input[name=pack]:checked').attr('price'),
         currency: '{{ shop.currency }}',
         item_brand: 'CuraLife',
         item_category: 'CuraLin',
@@ -147,9 +147,9 @@
     });
 
     woopra.track('add to cart', {
-      product_sku: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+      product_sku: $('input[name=pack]:checked').attr('sku'),
       product_name: '{{ product.title }}',
-      product_price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+      product_price: $('input[name=pack]:checked').attr('price'),
       currency: '{{ shop.currency }}',
       quantity: parseInt($(".qty-control input").val())
     });
@@ -169,7 +169,7 @@
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'variant-click',
-      'label': $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+      'label': $('input[name=pack]:checked').attr('sku'),
       'userId': '{{ customer.id }}',
       'email': '{{ customer.email }}',
       'country': '{{customer.customer_address.country_code }}',

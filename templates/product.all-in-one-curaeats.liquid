@@ -174,7 +174,7 @@
   $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
 
   // Save Text Change
-  let saveText = "You Save " + $('input[name=pack]:checked', '#CTAForm').attr('save') + "%";
+  let saveText = "You Save " + $('input[name=pack]:checked').attr('save') + "%";
   saveText.style.color='#ffffff'
   $('#save').animate({'opacity': 0}, 800, function () {
     $(this).text(saveText);
@@ -187,8 +187,8 @@
 
   // Buy Button Functionality
   $("#buy-button").click(function() {
-  let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
-  let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
+  let checkedPack = $('input[name=pack]:checked').val();
+  let checkedQuantity = $('input[name=quantity]').val();
 
   $.ajax({
     type: "POST",
@@ -279,9 +279,9 @@
     ecommerce: {
     items: [{
     item_name: '{{ product.title }}',
-    item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+    item_id: $('input[name=pack]:checked').attr('sku'),
     affiliation: '{{ shop.name }}',
-    price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+    price: $('input[name=pack]:checked').attr('price'),
     currency: '{{ shop.currency }}',
     item_brand: 'CuraLife',
     item_category: 'CuraLin',
@@ -300,9 +300,9 @@
   });
 
   woopra.track('add to cart', {
-    product_sku: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+    product_sku: $('input[name=pack]:checked').attr('sku'),
     product_name: '{{ product.title }}',
-    product_price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+    product_price: $('input[name=pack]:checked').attr('price'),
     currency: '{{ shop.currency }}',
     quantity: parseInt($(".qty-control input").val())
   });
@@ -535,14 +535,14 @@
     }
     else {
       // Slide to Variant Image
-      let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
+      let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
       productSliderAllInOne.slideTo(slideIndex);
 
       // Track in GA
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'event': 'variant-click',
-        'label': $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+        'label': $('input[name=pack]:checked').attr('sku'),
         'userId': '{{ customer.id }}',
         'email': '{{ customer.email }}',
         'country': '{{customer.customer_address.country_code }}',
