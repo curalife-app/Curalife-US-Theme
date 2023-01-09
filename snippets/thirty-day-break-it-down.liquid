@@ -137,7 +137,7 @@
     right: -500px;
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
-    font-size: 39px;
+    font-size: clamp(29px, 2vw, 39px);
     line-height: 40px;
     text-align: center;
     color: #FFFFFF;
@@ -306,6 +306,9 @@
     @media screen and (max-width: 1190px){
       .timeline ul li {
         margin-left: 20px;
+      }
+      .celebrate {
+        right: -400px;
       }
     }
 
