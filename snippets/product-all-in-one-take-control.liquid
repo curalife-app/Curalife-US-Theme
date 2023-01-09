@@ -3,12 +3,9 @@
 
     <div class="take-control-wrapper">
       
-      <div class="sub-title">
-        <h3><b>Celebrate your commitment!</b></h3>
-        <img class="control-img-mb" src="{{ 'thirty-day-control-gift-card.png' | asset_url }}" width="368" height="253" alt="gift-card" loading="lazy"> 
-      </div>
+   
       <div class="control-sub-wrapper">
-      <img class="control-img" src="{{ 'thirty-day-control-gift-card.png' | asset_url }}" width="368" height="253" alt="gift-card" loading="lazy"> 
+      <img class="control-img" src="{{ 'thirty-day-product-whistle.png' | asset_url }}" width="219" height="140" alt="whistle" loading="lazy"> 
       <div class="controller-text">
         When you finish the 30 days, you’ll be entered into a raffle to win <b>a $200 Amazon Gift Card</b>  as a bonus! Buy something good for your health!
       </div>
@@ -42,21 +39,6 @@
     
   }
 
-  .take-control-wrapper .sub-title {
-    display:flex;
-    justify-content: center;
-    padding-top: 60px;
-    margin-bottom: unset;
-    padding-bottom: 20px;
-  }
-
-  .take-control-wrapper .sub-title h3 {
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: clamp(34px, 2vw, 60px);
-    line-height: 35px;
-    color: var(--dark-green);
-  }
 
   .take-control-wrapper {
     display: flex;
@@ -73,11 +55,6 @@
   .control-sub-wrapper .control-img {
     max-width: 20%;
   }
-
-  .sub-title .control-img-mb {
-    display: none;
-  }
-
 
   .control-sub-wrapper .controller-text {
     font-family: 'DM Sans';
@@ -170,24 +147,14 @@
 
 
 
-    .take-control-wrapper .sub-title {
-      justify-content: space-between;
-    }
 
     .control-sub-wrapper .control-img {
       display: none;
     }
 
-    .sub-title .control-img-mb {
-      display: inline-block;
-      max-width: 35%;
-    }
+ 
 
-    .take-control-wrapper .sub-title h3 {
-      text-align: left;
-      font-size: clamp(30px, 2vw, 32px);
-      line-height: 35px;
-    }
+  
 
     .commitment-we-proud {
       line-height: 54px;
@@ -219,9 +186,5 @@
     }
   }
 
-  @media screen and (max-width: 350px) {
-    .sub-title .control-img-mb {
-      max-width: 31%;
-    }
-  }
+
 </style>
