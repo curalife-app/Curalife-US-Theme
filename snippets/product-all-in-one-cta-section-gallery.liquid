@@ -160,4 +160,72 @@
   .product-template-all-in-one .swiper-button-next::after {
     font-size: 28px;
   }
+
+  @media screen and (max-width: 768px) {
+    .cta-section .product-container .product-thumbnails {
+      grid-area: unset;
+      grid-row: 2;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider {
+      margin-left: unset;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider {
+      width: 95%;
+      margin: auto
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
+      margin-left: unset;
+      left: 0;
+      top: 10%;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper {
+      margin-bottom: 30px;
+      align-items: center
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe {
+      height: 45vh
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe .vp-video-wrapper {
+      border-radius: 10px;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-img::before {
+      padding-bottom: 100%
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
+      display: block;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-prev {
+      left: 0;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-next {
+      right: 0
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet {
+      background: var(--green);
+      opacity: .4;
+      width: 13px;
+      height: 13px;
+      border: 0;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: var(--green);
+      opacity: 1
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
+      display: none
+    }
+  }
 </style>
