@@ -86,7 +86,8 @@
 
 <script>
   $( document ).ready(function() {
-    updateSave();
+    $(".variant-box").last().trigger( "click" );
+    {% comment %} updateSave(); {% endcomment %}
   });
 
   function updateSave() {
