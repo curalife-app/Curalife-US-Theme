@@ -41,163 +41,163 @@
   </div>
 </div>
 
-<style>
-  .variant-notice p {
-    background: #9EB069;;
-    color: white;
-    padding: 4px;
-    margin: unset;
-  }
+{% if isLastRender %}
+  <style>
+    .variant-notice p {
+      background: #9EB069;;
+      color: white;
+      padding: 4px;
+      margin: unset;
+    }
 
-  .variant-box {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 80px;
-    background: #fff;
-    border: 1px solid #cbcbcb;
-    box-sizing: border-box;
-    border-radius: 2px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.1));
-    transition: all .5s;
-    position: relative;
-  }
-
-  .variant-box:hover {
-    border-color: #2f2f2f;
-    filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3));
-  }
-
-  .variant-box:hover>.radio-box input[type=radio]:after {
-    background-color: #a9a9a9;
-  }
-
-  .variant-box .radio-box {
-    width: 5%;
-    align-items: center;
-    display: flex;
-    padding: 10px;
-  }
-
-  .variant-box .radio-box input[type=radio] {
-    position: relative;
-    left: -3px;
-    pointer-events: none;
-  }
-
-  .variant-box .radio-box input[type=radio]:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    left: 1px;
-    top: 50%;
-    margin-top: -7px;
-    border: 1px solid #000;
-    border-radius: 8px;
-  }
-
-  .variant-box .radio-box input[type=radio]:after {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: var(--dark-green) !important;
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 8px;
-    margin-top: 0;
-    border-radius: 4px;
-    transition: .2s ease-in-out
-  }
-
-  .variant-box .radio-box input[type=radio]:checked:after {
-    height: 8px;
-    width: 8px;
-    margin-top: -4px;
-    left: 4px
-  }
-
-  .variant-box .variant-info {
-    padding: 10px;
-    width: 70%
-  }
-
-  .variant-box .variant-info .variant-title {
-    margin: 0;
-    font-size: 17px;
-  }
-
-  .variant-box .variant-info .variant-infos p {
-    font-weight: 200;
-    display: inline-block;
-    margin: 0;
-  }
-
-  .variant-box .variant-info .variant-infos p b {
-    font-weight: 700;
-  }
-
-  .variant-box .price {
-    display: flex;
-    align-items: center;
-    min-width: 15px;
-    margin-right: 40px;
-    padding-bottom: unset;
-  }
-
-  .variant-box .price .compared-at-price {
-    margin-right: 5px !important;
-    font-size: unset;
-  }
-
-  .variant-box .price .compared-at-price strike {
-    font-size: 10px !important;
-  }
-
-  .variant-box .price .real-price {
-    font-size: 20px;
-  }
-
-  @media screen and (max-width: 1270px) {
     .variant-box {
-      width: 100%
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 80px;
+      background: #fff;
+      border: 1px solid #cbcbcb;
+      box-sizing: border-box;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.1));
+      transition: all .5s;
+      position: relative;
+    }
+
+    .variant-box:hover {
+      border-color: #2f2f2f;
+      filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3));
+    }
+
+    .variant-box:hover>.radio-box input[type=radio]:after {
+      background-color: #a9a9a9;
+    }
+
+    .variant-box .radio-box {
+      width: 5%;
+      align-items: center;
+      display: flex;
+      padding: 10px;
+    }
+
+    .variant-box .radio-box input[type=radio] {
+      position: relative;
+      left: -3px;
+      pointer-events: none;
+    }
+
+    .variant-box .radio-box input[type=radio]:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: 1px;
+      top: 50%;
+      margin-top: -7px;
+      border: 1px solid #000;
+      border-radius: 8px;
+    }
+
+    .variant-box .radio-box input[type=radio]:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: var(--dark-green) !important;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 8px;
+      margin-top: 0;
+      border-radius: 4px;
+      transition: .2s ease-in-out
+    }
+
+    .variant-box .radio-box input[type=radio]:checked:after {
+      height: 8px;
+      width: 8px;
+      margin-top: -4px;
+      left: 4px
     }
 
     .variant-box .variant-info {
       padding: 10px;
-      width: 95%;
+      width: 70%
     }
 
-    .variant-box .price {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      margin-right: unset;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
     .variant-box .variant-info .variant-title {
-      font-size: 14px;
+      margin: 0;
+      font-size: 17px;
     }
 
     .variant-box .variant-info .variant-infos p {
-      font-size: 12px !important;
+      font-weight: 200;
+      display: inline-block;
+      margin: 0;
     }
-  }
 
-  @media screen and (max-width: 330px) {
-    .variant-box .variant-infos {
+    .variant-box .variant-info .variant-infos p b {
+      font-weight: 700;
+    }
+
+    .variant-box .price {
+      display: flex;
+      align-items: center;
+      min-width: 15px;
+      margin-right: 40px;
+      padding-bottom: unset;
+    }
+
+    .variant-box .price .compared-at-price {
+      margin-right: 5px !important;
+      font-size: unset;
+    }
+
+    .variant-box .price .compared-at-price strike {
       font-size: 10px !important;
     }
-  }
-</style>
 
-{% if isLastRender %}
+    .variant-box .price .real-price {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 1270px) {
+      .variant-box {
+        width: 100%
+      }
+
+      .variant-box .variant-info {
+        padding: 10px;
+        width: 95%;
+      }
+
+      .variant-box .price {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        margin-right: unset;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .variant-box .variant-info .variant-title {
+        font-size: 14px;
+      }
+
+      .variant-box .variant-info .variant-infos p {
+        font-size: 12px !important;
+      }
+    }
+
+    @media screen and (max-width: 330px) {
+      .variant-box .variant-infos {
+        font-size: 10px !important;
+      }
+    }
+  </style>
+
   <script>
     $(".variant-box").click(function() {
       {% if isUpdateSaveTitle %}updateSave();{% endif %}
