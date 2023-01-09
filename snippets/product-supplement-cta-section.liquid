@@ -11,7 +11,9 @@
     {% render 'product-all-in-one-cta-section-actions' %}
   </div>
 
-  {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true %}
+  {% if badgesPosition %}
+    {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true %}
+  {% endif %}
 </section>
 
 <style>
