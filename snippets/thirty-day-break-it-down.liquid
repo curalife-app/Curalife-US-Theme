@@ -9,26 +9,27 @@
  
     <ul>
       {% for week in weeks %}
-        {% if forloop.index == 2 %}
-        <div class="faq">
-                <div class="faq-item">
-                <div class="question">
-                Learn more about Curalin
-                </div>
-                <div class="answer">
-                    <p>Curalin is a clinically tested blood sugar support supplement. It’s rated #1 most recommended by the world’s largest blood sugar support community.</p>
-
-                </div>
-           </div>
-
-        </div>
-      {% endif %}
+       
         <li>
           <div>
           <div class="time-and-text">
             <div class="time">Week {{ forloop.index }}</div>
             <div class="border-bottom"></div>
             <p>{{ week }}</p>
+            {% if forloop.index == 2 %}
+              <div class="faq">
+                      <div class="faq-item">
+                      <div class="question">
+                      Learn more about Curalin
+                      </div>
+                      <div class="answer">
+                          <p>Curalin is a clinically tested blood sugar support supplement. It’s rated #1 most recommended by the world’s largest blood sugar support community.</p>
+
+                      </div>
+                 </div>
+
+              </div>
+            {% endif %}
           </div>
           <img class="img-break" src="{{ 'thirty-day-break-' | append: forloop.index | append: '.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
           </div>
