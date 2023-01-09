@@ -68,12 +68,12 @@
 
         <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
       </div>
-
-      {% if badgesPosition == "cta" %}
-        {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true, content: "free-shipping,money-back" %}
-      {% endif %}
     </div>
   </div>
+
+  {% if badgesPosition == "cta" %}
+    {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true, content: "free-shipping,money-back" %}
+  {% endif %}
 </div>
 
 <style>
