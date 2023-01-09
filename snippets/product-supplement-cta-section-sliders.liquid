@@ -611,6 +611,7 @@
       font-size: 12px !important;
     }
   }
+
   @media screen and (max-width: 330px) {
     .cta-section .variant-infos {
         font-size: 10px !important;
@@ -701,7 +702,7 @@
 
     /*Slide to Variant Image*/
     let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
-    productSliderAllInOne.slideTo(slideIndex)
+    productSliderAllInOne.slideTo(slideIndex);
 
     // Track in GA
     window.dataLayer = window.dataLayer || [];
@@ -820,19 +821,8 @@
     user_agent: navigator.userAgent
   });
 
-  //Product Arrow Click
+  // Product Arrow Click
   $('#product-thumbs-slider-nav-next, #product-thumbs-slider-nav-prev').click(function() {
-    woopra.track('Arrow Click', {
-      section: "Product"
-    });
+    woopra.track('Arrow Click', { section: "Product" });
   });
 </script>
-
-
-
-
-
-
-
-
-
