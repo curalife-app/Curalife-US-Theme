@@ -1,0 +1,859 @@
+
+<section class="cta-section">
+  <div class="container product-container">
+    <div class="product-thumbnails">
+      <div class="product-slider">
+        <div class="sliders-group">
+          <div class="main-slider">
+            <div id="product-main-slider-sc" class="swiper">
+              <div class="swiper-wrapper">
+                {% assign imagesCounter = 0 %}
+                {% for i in (1..6) %}
+                  {% assign imagesCounter = imagesCounter | plus: 1 %}
+                  <div class="swiper-slide">
+                  {% unless forloop.index == 1 %}<img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">{% endunless %}
+                    <div class="product-img">
+                      <div class="img-wrap">
+                        <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" width="588" height="453" alt="" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+
+                <div class="swiper-slide">
+                  <div class="product-video">
+                    <iframe id="product-video-iframe" src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+                  </div>
+                </div>
+
+                {% for image in product.images %}
+                  <div class="swiper-slide">
+                    {% if shop.name == "CuraLife Global" %}
+                      <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">
+                    {% endif %}
+
+                    <div class="product-img">
+                      <div class="img-wrap">
+                        <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" width="1176" height="905" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div id="product-main-slider-nav-prev" class="swiper-button-prev nav"></div>
+            <div id="product-main-slider-nav-next" class="swiper-button-next nav"></div>
+          </div>
+
+          <div class="thumbs-slider">
+            <div id="product-thumbs-slider-sc" class="swiper">
+              <div class="swiper-wrapper">
+                {% for i in (1..6) %}
+                  <div class="swiper-slide">
+                    <div class="thumbs-img">
+                      <div class="img-wrap">
+                        <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" width="588" height="453" alt="" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+
+                <div class="swiper-slide">
+                  <div class="thumbs-img video-thumbnail">
+                    <div class="img-wrap">
+                      <img src="{{ "product-aio-product-video-thumbnail.png" | asset_url }}" width="720" height="680" alt="" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+
+                {% for image in product.images %}
+                  <div class="swiper-slide">
+                    <div class="thumbs-img">
+                      <div class="img-wrap">
+                        <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div id="product-thumbs-slider-nav-prev" class="swiper-button-prev"></div>
+            <div id="product-thumbs-slider-nav-next" class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+
+      {% render 'product-all-in-one-cta-section-reviews' %}
+    </div>
+    <div class="product-actions">
+      <div class="form-wrap">
+        <div id="CTAForm">
+          <p class="cta-title">Select Your Pack</p>
+          <div class="input-field product-option-select">
+            {% for var in product.variants %}
+              {% if localization.country.iso_code == 'CA' %}
+                {% assign original_item_cap = var.metafields.custom.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
+              {% elsif localization.country.iso_code == 'AU' %}
+                {% assign original_item_cap = var.metafields.custom.original_item.value.metafields.my_fields.au_cap | times: 100 %}
+              {% else %}
+                {% assign original_item_cap = var.metafields.custom.original_item.value.compare_at_price %}
+              {% endif %}
+
+              {% if var.title contains "CuraEats" %}
+                {% assign bundle_value = challenge_value | plus: curaeats_value %}
+                <div class="variant-notice"><p><b>Bonus</b> - 30 Day Life Changing Program <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
+              {% else %}
+                {% assign bundle_value = 0 %}
+              {% endif %}
+
+              {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
+              {% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
+              {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
+
+              <div class="variant-box">
+                <div class="radio-box">
+                  {% if original_item_cap_total_with_bundle > var.price %}
+                    {% assign discount = original_item_cap_total_with_bundle | minus: var.price | divided_by: 100 %}
+                  {% else %}
+                    {% assign discount = 0 %}
+                  {% endif %}
+                <input type="radio" name="pack" value="{{ var.id }}" price="{{ var.price | money_without_currency }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: forloop.index | plus: 1 }}" {% if forloop.index == 3 %} checked=true{% endif %}></input>
+                </div>
+                <div class="variant-info">
+                  <p class="variant-title">{{ var.title }}</p>
+                  <div class="variant-infos">
+                    <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
+                  </div>
+                </div>
+
+                <div class="price">
+                  {% if original_item_cap_total_with_bundle > var.price %}
+                    {% comment %} <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap | money_without_trailing_zeros }}</strike></p> {% endcomment %}
+                    <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
+                  {% endif %}
+                  <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+          <div class="submit-wrap">
+            <div class="qty-data" style="display:none">
+              <div class="qty-control">
+                <a data-act="-" href="javascript:void(0)">
+                  <span class="icon-minus"></span>
+                </a>
+                <label>
+                  <input maxlength="4" name="quantity" type="number" value="1">
+                </label>
+                <a data-act="+" href="javascript:void(0)">
+                  <span class="icon-plus"></span>
+                </a>
+              </div>
+            </div>
+
+            <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true %}
+</section>
+
+<style>
+  button, input, textarea {
+      border-radius: 0;
+      -webkit-appearance: none;
+  }
+  button, input {
+      overflow: visible;
+  }
+
+   section {
+      padding: 50px 0
+  }
+
+  .cta-section .product-container {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      grid-column-gap: 0;
+      grid-row-gap: 0
+  }
+
+   .cta-section .product-container .product-thumbnails {
+    grid-area: 1/1/3/2
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider {
+    width: unset !important;
+    padding: unset;
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .main-slider {
+    padding: unset;
+    margin-left: unset
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
+    position: absolute;
+    margin-left: 10%
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio:before {
+    padding-bottom: 60%
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio .img-wrap {
+    padding: unset;
+    text-align: center
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio .img-wrap img {
+    max-height: 460px
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-video iframe {
+    height: 400px;
+    width: 100%
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
+    display: none
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
+    position: relative;
+    display: flex;
+    margin-top: 30px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3em;
+    padding-right: 3em
+  }
+
+   .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider .swiper-wrapper .thumbs-img {
+    border-radius: unset;
+    width: 120px;
+    height: 120px;
+    border-radius: 5px
+  }
+
+   .cta-section .product-container .product-info {
+    padding: unset;
+    width: unset;
+    max-width: 450px;
+    grid-area: 1/2/2/3
+  }
+
+   .cta-section .product-container .product-info h1 {
+    font-weight: 600;
+    font-size: 40px;
+  }
+
+   .cta-section .product-container .product-actions {
+    grid-area: 2/2/3/3;
+    max-width: 450px
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm {
+    display: unset
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .cta-title {
+    font-size: 18px;
+    margin: 10px 0
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+    background: #fff;
+    border: 1px solid #cbcbcb;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.1));
+    transition: all .5s;
+    position: relative
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box:hover {
+    border-color: #2f2f2f;
+    filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3))
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box:hover>.radio-box input[type=radio]:after {
+    background-color: #a9a9a9
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box {
+    width: 5%;
+    align-items: center;
+    display: flex;
+    padding: 10px
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio] {
+    position: relative;
+    left: -3px;
+    pointer-events: none
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 1px;
+    top: 50%;
+    margin-top: -7px;
+    border: 1px solid #000;
+    border-radius: 8px
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: var(--dark-green) !important;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 8px;
+    margin-top: 0;
+    border-radius: 4px;
+    transition: .2s ease-in-out
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .radio-box input[type=radio]:checked:after {
+    height: 8px;
+    width: 8px;
+    margin-top: -4px;
+    left: 4px
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info {
+    padding: 10px;
+    width: 70%
+  }
+
+   .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-title {
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
+    font-weight: 200;
+    display: inline-block;
+    margin: 0;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p b {
+    font-weight: 700;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
+    display: flex;
+    align-items: center;
+    min-width: 15px;
+    margin-right: 40px;
+    padding-bottom: unset;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .compared-at-price {
+    margin-right: 5px !important;
+    font-size: unset;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .compared-at-price strike {
+    font-size: 10px !important;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price .real-price {
+    font-size: 20px;
+  }
+   .swiper-button-prev,
+   .swiper-button-next {
+      color: gray;
+      transition: opacity .5s;
+  }
+
+   .swiper-button-prev.disabled,
+   .swiper-button-next.disabled {
+      opacity: 0
+  }
+
+  .product-template-all-in-one .swiper-button-prev::after,
+  .product-template-all-in-one .swiper-button-next::after {
+      font-size: 28px;
+  }
+
+  .variant-notice p {
+                background: #9EB069;;
+                color: white;
+                padding: 4px;
+                margin: unset;
+              }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap button {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+    color: white;
+    width: 100%;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap button span {
+    width: 50%;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap button span:first-child {
+    border-right: 1px solid white;
+    font-size: 130%;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap button span.save {
+    font-weight: 100;
+    font-size: 75%;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
+    border-color: var(--dark-green);
+  }
+
+  @media screen and (max-width: 1270px) {
+        .container {
+            max-width: unset;
+            padding: 0 20px;
+        }
+
+      .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box {
+        width: 100%
+    }
+
+    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info {
+        padding: 10px;
+        width: 95%;
+    }
+
+    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .price {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        margin-right: unset;
+    }
+
+    .cta-section .badges-container {
+        padding: 0 0 20px !important;
+        width: calc(100% - 40px);
+    }
+
+    .cta-section .badges-container .trust-badges {
+        margin-top: 20px;
+        gap: 10vw;
+    }
+
+    .cta-section .badges-container .trust-badges .trust-badge {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-size: 1.5vw;
+        max-width: 20%;
+        text-transform: uppercase;
+    }
+
+    .cta-section .badges-container .trust-badges .trust-badge img {
+        height: 3vw;
+        width: 10vw;
+        -o-object-fit: contain;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+  @media screen and (max-width: 768px) {
+    section {
+        padding: 8vw 0;
+    }
+
+    .container {
+        padding: 0 20px !important;
+    }
+
+  .cta-section {
+      padding-top: 70px;
+      padding-bottom: 0;
+  }
+
+  .cta-section .product-container {
+      grid-template-columns: repeat(1, 100%);
+      grid-template-rows: unset;
+      padding: 0 20px 20px;
+  }
+
+  .cta-section .product-container .product-thumbnails {
+      grid-area: unset;
+      grid-row: 2;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider {
+      margin-left: unset;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider {
+      width: 95%;
+      margin: auto
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
+      margin-left: unset;
+      left: 0;
+      top: 10%;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper {
+      margin-bottom: 30px;
+      align-items: center
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe {
+      height: 45vh
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe .vp-video-wrapper {
+      border-radius: 10px;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-img::before {
+      padding-bottom: 100%
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
+      display: block;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-prev {
+      left: 0;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-next {
+      right: 0
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet {
+      background: var(--green);
+      opacity: .4;
+      width: 13px;
+      height: 13px;
+      border: 0;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: var(--green);
+      opacity: 1
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
+      display: none
+  }
+
+  .cta-section .product-container .product-info {
+      grid-area: unset;
+      grid-row: 1;
+      text-align: center;
+      padding: 0 20px;
+      max-width: unset
+  }
+
+  .cta-section .product-container .product-actions {
+      grid-area: unset;
+      grid-row: 3;
+      max-width: unset
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-title {
+    font-size: 14px;
+  }
+
+  .cta-section .product-container .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
+      border: 1px solid #ffb22d
+  }
+
+  .cta-section .badges-container .trust-badges {
+      gap: unset;
+      justify-content: space-between
+  }
+
+  .cta-section .badges-container .trust-badges .trust-badge {
+      font-size: 3vw;
+      max-width: 30%
+  }
+
+  .cta-section .badges-container .trust-badges .trust-badge img {
+      width: 40px;
+      height: 5vw
+  }
+    .cta-section .product-container .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
+      font-size: 12px !important;
+    }
+  }
+  @media screen and (max-width: 330px) {
+    .cta-section .variant-infos {
+        font-size: 10px !important;
+    }
+  }
+</style>
+
+<script>
+  productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    watchSlidesVisibility: true,
+    grabCursor: true,
+    loop: false,
+    navigation: {
+      nextEl: '#product-thumbs-slider-nav-next',
+      prevEl: '#product-thumbs-slider-nav-prev',
+      disabledClass: 'disabled'
+    },
+    breakpoints: {
+      760: {
+      slidesPerView: 1,
+      },
+      1080: {
+      slidesPerView: 2,
+      },
+      1200: {
+      slidesPerView: 3,
+      },
+      1400: {
+      slidesPerView: 4,
+      }
+    }
+  });
+
+  productSliderAllInOne = new Swiper('#product-main-slider-sc', {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    centeredSlides: true,
+    watchSlidesVisibility: false,
+    loop: false,
+    slideToClickedSlide: true,
+    thumbs: {swiper: productThumbsAllInOne},
+    breakpoints: {
+      0: {
+        pagination: {
+          el: '.product-slider .swiper-pagination',
+          clickable: 'true',
+          type: 'bullets',
+        },
+        navigation: {
+          nextEl: '#product-main-slider-nav-next',
+          prevEl: '#product-main-slider-nav-prev',
+          disabledClass: 'disabled'
+        }
+      },
+      760: {
+        pagination: {},
+        navigation: {}
+      }
+    }
+  });
+
+</script>
+
+<script>
+  /*Slide to Variant Image*/
+  productSliderAllInOne.on('slideChange', function () {
+    $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
+  });
+
+  let isFirstClick = true;
+  $( document ).ready(function() {
+    let saveText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+
+    $('#save').animate({'opacity': 0}, 800, function () {
+      $(this).text(saveText);
+    }).animate({'opacity': 1}, 800);
+  });
+
+  $(".variant-box").click(function() {
+    $(this).find('input[type=radio]').prop('checked', true);
+    $("#productVaraintSelected").prop('value', $(this).find('input[type=radio]')[0].value);
+
+
+      /*Slide to Variant Image*/
+      let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked', '#CTAForm').attr('index');
+      productSliderAllInOne.slideTo(slideIndex)
+
+      // Track in GA
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'variant-click',
+        'label': $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+        'userId': '{{ customer.id }}',
+        'email': '{{ customer.email }}',
+        'country': '{{customer.customer_address.country_code }}',
+        'city': '{{customer.customer_address.city }}',
+        'name': '{{ customer.first_name }}',
+        'surname': '{{ customer.last_name }}',
+        'phone_number': '{{customer.phone }}',
+        'state': '{{customer.customer_address.province }}',       //state or province
+        'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+      });
+
+      // Track in Woopra
+      woopra.track('Product_Variant_Select', {
+        sku: $(this).find("input").attr("sku"),
+        variant_id: $(this).find("input").attr("value"),
+        variant_title: $(this).find("input").attr("title"),
+        price: $(this).find("input").attr("price")
+      })
+
+    // Save Text Change
+    let saveText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    $('#save').animate({'opacity': 0}, 800, function () {
+      $(this).text(saveText);
+    }).animate({'opacity': 1}, 800);
+  });
+</script>
+
+<script>
+// Change Quantity Widget On Product Page
+$(document).on("click", ".submit-wrap .qty-control a", function (e) {
+      e.preventDefault();
+      let newVal, $button = $(this),
+          inputObj = $button.closest(".qty-control").find("input"),
+          oldValue = inputObj.val();
+      if ($button.attr('data-act') === "+") {
+          newVal = parseInt(oldValue) + 1;
+      }
+      else {
+          newVal = parseInt(oldValue) - 1;
+      }
+
+      inputObj.val(newVal);
+  });
+</script>
+
+<script>
+  $('.thumbs-img').click(function() {
+    woopra.track('Product Image Click', {});
+  });
+
+  // Buy Button Functionality
+  $("#buy-button").click(function() {
+    let checkedPack = $('input[name=pack]:checked', '#CTAForm').val();
+    let checkedQuantity = $('input[name=quantity]', '#CTAForm').val();
+    let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity;
+    window.location.href = checkoutLink;
+  })
+
+</script>
+
+<script>
+$(document).on("click", "#buy-button", function () {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'add_to_cart',
+    ecommerce: {
+    items: [{
+      item_name: '{{ product.title }}',
+      item_id: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+      affiliation: '{{ shop.name }}',
+      price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+      currency: '{{ shop.currency }}',
+      item_brand: 'CuraLife',
+      item_category: 'CuraLin',
+      quantity: parseInt($(".qty-control input").val())
+    }]
+    },
+    email: '{{ customer.email }}',
+    phone: '{{ customer.phone }}',
+    name: '{{ customer.first_name }}',
+    surname: '{{ customer.last_name }}',
+    city: '{{ customer.customer_address.city }}',
+    state: '{{ customer.customer_address.province }}',
+    zip: '{{ customer.customer_address.zip }}',
+    country: '{{customer.customer_address.country_code | t}}',
+    user_agent: navigator.userAgent
+  });
+
+  woopra.track('add to cart', {
+    product_sku: $('input[name=pack]:checked', '#CTAForm').attr('sku'),
+    product_name: '{{ product.title }}',
+    product_price: $('input[name=pack]:checked', '#CTAForm').attr('price'),
+    currency: '{{ shop.currency }}',
+    quantity: parseInt($(".qty-control input").val())
+  });
+});
+
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'view_item',
+  ecommerce: {
+    items: [{
+      item_name: '{{ product.title }}',
+      item_id: '{{ product.title }}',
+      affiliation: '{{ shop.name }}',
+      price: '',
+      currency: '{{ shop.currency }}',
+      item_brand: 'CuraLife',
+      item_category: 'CuraLin',
+      quantity: 1
+    }]
+  },
+  email: '{{ customer.email }}',
+  phone: '{{ customer.phone }}',
+  name: '{{ customer.first_name }}',
+  surname: '{{ customer.last_name }}',
+  city: '{{ customer.customer_address.city }}',
+  state: '{{ customer.customer_address.province }}',
+  zip: '{{ customer.customer_address.zip }}',
+  country: '{{customer.customer_address.country_code | t}}',
+  user_agent: navigator.userAgent
+});
+</script>
+
+<script>
+
+ //Product Arrow Click
+
+ $('#product-thumbs-slider-nav-next, #product-thumbs-slider-nav-prev').click(function() {
+ woopra.track('Arrow Click', {
+   section: "Product"
+ });
+
+ });
+
+
+ $('.slider-nav').click(function() {
+ woopra.track('Arrow Click', {
+   section: "Over 3000 5 Star Reviews"
+ });
+
+ });
+</script>
+
+
+
+
+
+
+
+
+
