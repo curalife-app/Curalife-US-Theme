@@ -4,6 +4,8 @@
   {% assign shipping_worldwide = 'Free Shipping Above £99' %}
 {% endif %}
 
+
+
 <section id="trust-badges-section">
     {% if content contains "free-shipping" %}
       <div class="trust-badge"><i class="icofont-vehicle-delivery-van" style="font-size:40px"></i>{{ shipping_worldwide }}</div>
@@ -44,7 +46,7 @@
     text-align: center;
     align-items: center;
     text-transform: uppercase;
-    max-width: 33%;
+    max-width: {% if badgesPosition == "cta" %}33%{% else %}50%{% endif %};
   }
 
   #trust-badges-section .trust-badge i {
