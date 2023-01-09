@@ -39,7 +39,7 @@
     text-align: center;
     align-items: center;
     text-transform: uppercase;
-    max-width: {% if badgesPosition == "cta" %}33%{% else %}50%{% endif %};
+    max-width: {% if isMiniVersion %}50%{% else %}33%{% endif %};
   }
 
   #trust-badges-widget .trust-badge i {
