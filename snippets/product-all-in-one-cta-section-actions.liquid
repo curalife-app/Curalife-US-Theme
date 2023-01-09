@@ -1,31 +1,29 @@
 <div class="product-actions">
   <div class="form-wrap">
-    <div id="CTAForm">
-      <p class="cta-title">Select Your Pack</p>
-      <div class="input-field product-option-select">
-        {% for var in product.variants %}
-          {% render 'product-all-in-one-cta-section-actions-variant-box' %}
-        {% endfor %}
-      </div>
+    <p class="cta-title">Select Your Pack</p>
+    <div class="input-field product-option-select">
+      {% for var in product.variants %}
+        {% render 'product-all-in-one-cta-section-actions-variant-box' %}
+      {% endfor %}
+    </div>
 
-      <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/>
-      <div class="submit-wrap">
-        <div class="qty-data" style="display:none">
-          <div class="qty-control">
-            <a data-act="-" href="javascript:void(0)">
-              <span class="icon-minus"></span>
-            </a>
-            <label>
-              <input maxlength="4" name="quantity" type="number" value="1">
-            </label>
-            <a data-act="+" href="javascript:void(0)">
-              <span class="icon-plus"></span>
-            </a>
-          </div>
+    <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/>
+    <div class="submit-wrap">
+      <div class="qty-data" style="display:none">
+        <div class="qty-control">
+          <a data-act="-" href="javascript:void(0)">
+            <span class="icon-minus"></span>
+          </a>
+          <label>
+            <input maxlength="4" name="quantity" type="number" value="1">
+          </label>
+          <a data-act="+" href="javascript:void(0)">
+            <span class="icon-plus"></span>
+          </a>
         </div>
-
-        <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
       </div>
+
+      <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
     </div>
   </div>
 
@@ -40,37 +38,33 @@
     max-width: 450px;
   }
 
-  .product-actions .form-wrap #CTAForm {
-    display: unset;
-  }
-
-  .product-actions .form-wrap #CTAForm .cta-title {
+  .product-actions .form-wrap .cta-title {
     font-size: 18px;
     margin: 10px 0;
   }
 
-  .product-actions .form-wrap #CTAForm .submit-wrap button {
+  .product-actions .form-wrap .submit-wrap button {
     background-color: var(--dark-green);
     border-color: var(--dark-green);
     color: white;
     width: 100%;
   }
 
-  .product-actions .form-wrap #CTAForm .submit-wrap button span {
+  .product-actions .form-wrap .submit-wrap button span {
     width: 50%;
   }
 
-  .product-actions .form-wrap #CTAForm .submit-wrap button span:first-child {
+  .product-actions .form-wrap .submit-wrap button span:first-child {
     border-right: 1px solid white;
     font-size: 130%;
   }
 
-  .product-actions .form-wrap #CTAForm .submit-wrap button span.save {
+  .product-actions .form-wrap .submit-wrap button span.save {
     font-weight: 100;
     font-size: 75%;
   }
 
-  .product-actions .form-wrap #CTAForm .submit-wrap .qty-data .qty-control {
+  .product-actions .form-wrap .submit-wrap .qty-data .qty-control {
     border-color: var(--dark-green);
   }
 
