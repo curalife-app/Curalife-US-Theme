@@ -225,6 +225,13 @@
     border-color: var(--dark-green);
   }
 
+  .product-actions .form-wrap #CTAForm .variant-notice p {
+    background: #9EB069;;
+    color: white;
+    padding: 4px;
+    margin: unset;
+  }
+
   @media screen and (max-width: 1270px) {
     .product-actions .form-wrap #CTAForm .variant-box {
       width: 100%
@@ -244,6 +251,12 @@
   }
 
   @media screen and (max-width: 768px) {
+    .product-actions {
+      grid-area: unset;
+      grid-row: 3;
+      max-width: unset
+    }
+
     .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-title {
       font-size: 14px;
     }
@@ -254,6 +267,12 @@
 
     .product-actions .form-wrap #CTAForm .variant-box .variant-info .variant-infos p {
       font-size: 12px !important;
+    }
+  }
+
+  @media screen and (max-width: 330px) {
+    .product-actions .variant-infos {
+      font-size: 10px !important;
     }
   }
 </style>
