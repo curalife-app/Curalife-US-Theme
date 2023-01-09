@@ -5,10 +5,10 @@
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
 
-      {% render 'product-all-in-one-cta-section-reviews',  %}
+      {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: isReviewsQuotes  %}
     </div>
 
-    {% render 'product-all-in-one-cta-section-actions', product: product %}
+    {% render 'product-all-in-one-cta-section-actions' %}
   </div>
 
   {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true %}
