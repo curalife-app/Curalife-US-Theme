@@ -90,7 +90,7 @@
   });
 
   function updateSave() {
-    let saveText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked', '#CTAForm').attr('discount');
+    let saveText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
 
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
