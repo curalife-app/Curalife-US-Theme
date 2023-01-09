@@ -56,7 +56,9 @@
       </div>
       <div class="swiper-button-next"></div>
     </div>
+    {% unless isProduct %}
     <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
+   {% endunless %}
   </div>
 </section>
 
