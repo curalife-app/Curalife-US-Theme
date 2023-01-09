@@ -11,7 +11,7 @@
       {% for week in weeks %}
        
         <li>
-          {% comment %} <div> {% endcomment %}
+          <div class="wrapper-div">
           <div class="time-and-text">
             <div class="time">Week {{ forloop.index }}</div>
             <div class="border-bottom"></div>
@@ -32,7 +32,7 @@
             {% endif %}
           </div>
           <img class="img-break" src="{{ 'thirty-day-break-' | append: forloop.index | append: '.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
-          {% comment %} </div> {% endcomment %}
+          </div>
         </li>
        
       {% endfor %}
@@ -144,7 +144,7 @@
      
     }
 
-    .timeline ul li div {
+    .timeline ul li .wrapper-div {
       position: relative;
       bottom: 0;
       padding: 0 10px;
@@ -153,7 +153,7 @@
       
     }
 
-    .timeline ul li div::before {
+    .timeline ul li .wrapper-div::before {
       content: '';
       position: absolute;
       width: 0;
@@ -210,19 +210,19 @@
         opacity: 1.0;
     }
 
-    .timeline ul li div {
+    .timeline ul li .wrapper-div {
       visibility: hidden;
       opacity: 0;
       transition: all .5s ease-in-out;
     }
 
-    .timeline ul li div {
+    .timeline ul li .wrapper-div {
       transform: translate3d(0px, 0, 0);
     }
 
   
 
-    .timeline ul li.in-view div {
+    .timeline ul li.in-view .wrapper-div {
       transform: none;
       visibility: visible;
       opacity: 1;
@@ -234,7 +234,7 @@
       .timeline ul li {
         margin-left: 20px;
       }
-      .timeline ul li div {
+      .timeline ul li .wrapper-div {
         width: calc(100vw - 91px);
         flex-direction: column;
       }
