@@ -198,7 +198,7 @@
   }
 </style>
 
-{% unless isAlreadyRun %}
+{% if isLastRender %}
   <script>
     $(".variant-box").click(function() {
       {% if isUpdateSaveTitle %}updateSave();{% endif %}
@@ -236,4 +236,4 @@
       })
     });
   </script>
-{% endunless %}
+{% endif %}

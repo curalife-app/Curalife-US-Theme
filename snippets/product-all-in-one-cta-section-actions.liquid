@@ -3,10 +3,10 @@
 
   <div class="variants">
     {% for var in product.variants %}
-      {% if forloop.index == 1 %}
-        {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, isUpdateSaveTitle: true, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+      {% if forloop.last %}
+        {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, isUpdateSaveTitle: true, challenge_value: challenge_value, curaeats_value: curaeats_value, isLastRender: true %}
       {% else %}
-        {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, isUpdateSaveTitle: true, challenge_value: challenge_value, curaeats_value: curaeats_value, isAlreadyRun: true %}
+        {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, isUpdateSaveTitle: true, challenge_value: challenge_value, curaeats_value: curaeats_value %}
       {% endif %}
     {% endfor %}
   </div>
