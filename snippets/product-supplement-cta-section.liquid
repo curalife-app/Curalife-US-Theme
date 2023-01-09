@@ -9,10 +9,14 @@
     </div>
 
     {% render 'product-all-in-one-cta-section-actions' %}
+
+    {% if badgesPosition == "cta" %}
+      {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true, content: "free-shipping,money-back" %}
+    {% endif %}
   </div>
 
-  {% if badgesPosition %}
-    {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true %}
+  {% if badgesPosition == "bottom" %}
+    {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true, content: "free-shipping,money-back,secure-checkout" %}
   {% endif %}
 </section>
 
