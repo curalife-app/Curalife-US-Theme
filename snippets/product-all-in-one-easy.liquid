@@ -5,6 +5,7 @@
         </div>
         <div class="easy-wrapper">
             <img class="easy-img" src="{{ 'thirty-day-product-easy-group.png' | asset_url }}" width="967" height="329" alt="">
+            <img class="easy-img-mb" src="{{ 'thirty-day-product-easy-group-mb.png' | asset_url }}" width="362" height="593" alt="">
         </div>
     </div>
 </div>
@@ -30,6 +31,10 @@
         justify-content: center;
     }
 
+    .easy-img-mb {
+        display: none;
+    }
+
 
     @media screen and (max-width: 768px) {
         
@@ -40,6 +45,10 @@
 
         .easy-img {
             display: none;
+        }
+
+        .easy-img-mb {
+            display: flex;
         }
       
     }
