@@ -161,7 +161,7 @@
 
 <script>
   videoReviewsSliderAllInOne = new Swiper('.thirty-day-video-reviews-section .swiper', {
-      slidesPerView: '1',
+      slidesPerView: 'auto',
       spaceBetween: 8, 
       centeredSlides: true,
       grabCursor: true,
@@ -266,9 +266,10 @@
   .quote-content {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
-    font-size: clamp(28px, 2vw, 40px);
+    font-size: clamp(20px, 2vw, 40px);
     letter-spacing: -0.02em;
     color: var(--dark-green);
+    padding-top: 20px;
   }
 
   .thirty-day-video-reviews-section .video-reviews .video-review .review-quote img {
