@@ -8,11 +8,7 @@
       {% render 'product-all-in-one-cta-section-reviews', isQuotes: isReviewsQuotes  %}
     </div>
 
-    {% render 'product-all-in-one-cta-section-actions' %}
-
-    {% if badgesPosition == "cta" %}
-      {% render 'trust-badges-section', colors: "#5c5c5c", bottomLine: true, content: "free-shipping,money-back" %}
-    {% endif %}
+    {% render 'product-all-in-one-cta-section-actions', badgesPosition == "cta" %}
   </div>
 
   {% if badgesPosition == "bottom" %}
