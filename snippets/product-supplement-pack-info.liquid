@@ -7,10 +7,10 @@
 
     <div class="info-tabs">
       <div class="tab-cont">
-        <button onclick="city(event, 'highlights')">Product Highlights</button>
-        <button onclick="city(event, 'instructions')">Usage Instructions</button>
-        <button onclick="city(event, 'ingredients')">Ingredients</button>
-        <button onclick="city(event, 'facts')">Supplement Facts</button>
+        <button onclick="tab(event, 'highlights')">Product Highlights</button>
+        <button onclick="tab(event, 'instructions')">Usage Instructions</button>
+        <button onclick="tab(event, 'ingredients')">Ingredients</button>
+        <button onclick="tab(event, 'facts')">Supplement Facts</button>
       </div>
       <div class="tab-content" id="highlights">
         <div class="highlights">
@@ -128,13 +128,13 @@
   button[0].classList.add('active');
   tabContent[0].style.display = 'block';
 
-  function city(e, city) {
+  function tab(e, tab) {
     var i;
     for (i = 0; i < button.length; i++) {
       tabContent[i].style.display = 'none';
       button[i].classList.remove('active');
     }
-    document.getElementById(city).style.display = 'block';
+    document.getElementById(tab).style.display = 'block';
     e.currentTarget.classList.add('active');
   }
 </script>
