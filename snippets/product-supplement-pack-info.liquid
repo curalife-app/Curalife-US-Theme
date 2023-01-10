@@ -5,7 +5,7 @@
       <p class="subtitle">{{ product.description }}</p>
     </div>
 
-    <div class="content-wrapper">
+    <div class="info-tabs">
       <div class="tab-cont">
           <button class="but" onclick="city(event, 'london')">London</button>
           <button class="but" onclick="city(event, 'paris')">Paris</button>
@@ -28,6 +28,16 @@
 </section>
 
 <style>
+  .info-tabs {
+    width: 90%;
+    margin: auto;
+    overflow:hidden;
+    border: 1px solid #d1d1d1;
+    height: 300px;
+    margin-top: 20px;
+    max-width: 800px;
+  }
+
   .tab-cont {
     float: left;
     width: 30%;
@@ -72,8 +82,8 @@
   }
 
   @keyframes anime {
-    from{opacity: 0}
-    to{opacity: 1}
+    from {opacity: 0}
+    to {opacity: 1}
   }
 </style>
 
