@@ -51,9 +51,8 @@
              <div class="feature-price">a {{ price | times: 100 | money_without_trailing_zeros }} Value</div>
              {% endif %}
            </div>
-           <div class="feature-img">{{ feature | split: ":" | last | split: "*" | first }}</div>
-           {% comment %} <img class="feature-img" src="{{ feature | asset_url | split: ':' | last | split: '*' | last }}" width="92" height="92" alt=""> {% endcomment %}
-
+           
+            <img class="feature-img" src="{{ feature | asset_url | split: ':' | last | split: '*' | last }}" width="92" height="92" alt=""> 
          </div>
        
        {% endfor %}
