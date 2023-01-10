@@ -20,13 +20,13 @@
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
       {% if forloop.last %}
-        {% render 'product-supplement-pack-info', product: prod, productIndex: forloop.index, isLastRender: true %}
+        {% render 'product-supplement-pack-info', product: prod, index: forloop.index, isLastRender: true %}
       {% else %}
-        {% render 'product-supplement-pack-info', product: prod, productIndex: forloop.index %}
+        {% render 'product-supplement-pack-info', product: prod, index: forloop.index %}
       {% endif %}
     {% endfor %}
   {% else %}
-    {% render 'product-supplement-pack-info', product: product, productIndex: forloop.index, isLastRender: true %}
+    {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
   {% endif %}
 </div>
 
