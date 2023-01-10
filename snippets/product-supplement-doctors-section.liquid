@@ -10,8 +10,7 @@
 
     <div class="doctors">
       {% for doctor in doctors %}
-        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-        <div class="doctor" data-aos="flip-{%if thecycle == 'odd'%}right{%else%}left{%endif%}">
+        <div class="doctor">
           <img src="{{ 'partnerships-doctors-doctor-' | append: forloop.index | append: ".png" | asset_url }}" alt="curalife info" loading="lazy">
           <div class="line"></div>
           <h3 class="name">{{ doctor | split: ":" | first }}</h3>
