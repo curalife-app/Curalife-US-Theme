@@ -14,8 +14,8 @@
       </div>
       <div class="tab-content" id="highlights">
         <div class="highlights">
+          <script>console.log("{{product}}")</script>
           {% for highlight in product.metafields.custom.data.value.highlights %}
-            <script>console.log("highlight")</script>
             <div class="highlight"><b>{{ highlight["title"] }}</b><br>{{ highlight["subtitle"] }}</div>
           {% endfor %}
         </div>
