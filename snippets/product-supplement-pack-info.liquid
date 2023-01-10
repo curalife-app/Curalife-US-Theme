@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <img src="{{ product.featured_image.src | img_url: 'original' }}" alt="{{ product.featured_image.alt }}" class="product-image">
+    <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" alt="{{ product.featured_image.alt }}" class="product-image">
   </div>
 </section>
 
@@ -83,6 +83,12 @@
 
   .pack-info-section {
     background: var(--beige);
+  }
+
+  .pack-info-section .product-image {
+    position: absolute;
+    bottom: -120px;
+    right: 0;
   }
 
   .highlights {
@@ -202,7 +208,7 @@
      .tabbed-content.tabs-side .tabs {
        width: 300px;
        float: left;
-       margin-right: 100px;
+       margin-right: 50px;
     }
      .tabbed-content.tabs-side .tabs li {
        display: block;
