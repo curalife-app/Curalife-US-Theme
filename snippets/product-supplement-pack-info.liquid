@@ -7,17 +7,17 @@
 
     <div class="info-tabs">
       <div class="tab-cont">
-          <button class="but" onclick="city(event, 'highlights')">Product Highlights</button>
-          <button class="but" onclick="city(event, 'instructions')">Usage Instructions</button>
-          <button class="but" onclick="city(event, 'ingredients')">Ingredients</button>
-          <button class="but" onclick="city(event, 'facts')">Supplement Facts</button>
+        <button class="but" onclick="city(event, 'highlights')">Product Highlights</button>
+        <button class="but" onclick="city(event, 'instructions')">Usage Instructions</button>
+        <button class="but" onclick="city(event, 'ingredients')">Ingredients</button>
+        <button class="but" onclick="city(event, 'facts')">Supplement Facts</button>
       </div>
       <div class="tab-content" id="highlights">
-          <div class="highlights">
-            {% for highlight in product.metafields.custom.data.value.highlights %}
-              <div class="highlight"><b>{{ highlight["title"] }}</b><br>{{ highlight["subtitle"] }}</div>
-            {% endfor %}
-          </div>
+        <div class="highlights">
+          {% for highlight in product.metafields.custom.data.value["highlights"] %}
+            <div class="highlight"><b>{{ highlight["title"] }}</b><br>{{ highlight["subtitle"] }}</div>
+          {% endfor %}
+        </div>
       </div>
       <div class="tab-content" id="instructions">
           <h2>Paris</h2>
