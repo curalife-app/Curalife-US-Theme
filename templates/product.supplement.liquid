@@ -19,7 +19,7 @@
   {% render 'product-supplement-health-benefits',productHandle: productHandle, title: healthBenefitsTitle, subtitle: healthBenefitsSubtitle, benefits: benefits %}
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
-      {% if forloop.index.last %}
+      {% if forloop.last %}
         {% render 'product-supplement-pack-info', product: prod, isLastRender: true %}
       {% else %}
         {% render 'product-supplement-pack-info', product: prod %}
