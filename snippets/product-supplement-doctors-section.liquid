@@ -1,7 +1,8 @@
 <section id="doctors-section">
-  <div class="bg"></div>
   <div class="container">
-    <h2 data-aos="fade-up">Trusted By More Than 700 Doctors</h2>
+    <div class="titles">
+      <h2 data-aos="fade-up">Trusted By More Than 700 Doctors</h2>
+    </div>
 
     {% assign doctors = "Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code
               |Dr. Nancy Russell:Internal Medicine Specialist, <br>North Kansas City Hospital
@@ -24,15 +25,6 @@
 </section>
 
 <style>
-  #doctors-section .bg {
-    position: absolute;
-    top: 360px;
-    z-index: -1;
-    background-color: var(--brown);
-    height: 700px;
-    width: 100%;
-  }
-
   #doctors-section .doctors {
     display: flex;
     justify-content: space-between;
