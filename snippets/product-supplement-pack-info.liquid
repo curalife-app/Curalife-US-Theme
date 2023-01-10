@@ -319,7 +319,7 @@
         });
       } else {
         $('.item').on('click', function() {
-          var container = $(this).parents('.tabbed-content'),
+          var container = $(this).parents('.pack-info-section.instance-{{ index }} .tabbed-content'),
               currId = $(this).attr('id'),
               items = container.find('.item');
           container.find('.tabs a').removeClass('active');
