@@ -10,6 +10,7 @@
 
 <section id="product-feature-section">
   <div class="container">
+    <div class="all-features-wrapper">
     <div class="features-wrapper">
       <div class="features">
         {% assign total = 0 %}
@@ -28,6 +29,25 @@
         {% endfor %}
       </div>
     </div>
+    <div class="features-wrapper">
+      <div class="features">
+        {% assign total = 0 %}
+        {% for feature in features %}
+          <div class="feature">
+            <div class="feature-icon"><i class="icofont-check"></i></div>
+            <div class="feature-text">{{ feature | split: ":" | first }}</div>
+            {% assign price = feature | split: ":" | last %}
+            {% if price == '0' %}
+            <div class="feature-price priceless">Priceless</div>
+            {% else %}
+            <div class="feature-price">{{ price | times: 100 | money_without_trailing_zeros }}<sup>00</sup> Value</div>
+            {% endif %}
+          </div>
+          {% assign total = total | plus: price %}
+        {% endfor %}
+      </div>
+    </div>
+    </div>
   </div>
 </section>
 
@@ -42,6 +62,10 @@
     color: var(--dark-green);
     padding: 50px 0;
     line-height: 1.2em;
+  }
+
+  #product-feature-section .container .all-features-wrapper {
+        display: flex;
   }
 
 
