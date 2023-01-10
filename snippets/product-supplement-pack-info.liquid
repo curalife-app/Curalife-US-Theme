@@ -28,15 +28,19 @@
         </div>
 
         <div id="instructions" class="item" data-title="Usage Instructions">
-          <div class="item-content">
-            <div class="insructions">
-              {% for highlight in product.metafields.custom.product-highlights.value %}
-                <div class="highlight">
-                  <div class="highlight-icon"><i class="icofont-check"></i></div>
-                  <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
+          <div class="instructions item-content">
+            {% for step in product.metafields.custom.instructions.value %}
+              <div class="step">
+                <h3>{{ step.title }}</h3>
+                <div class="capsules">
+                  {% for item in collection %}
+                    <img src="{{ "onboarding-capsule.png" | asset_url }}" alt="Capsule Pill">
+                  {% endfor %}
                 </div>
-              {% endfor %}
-            </div>
+                <div class="highlight-icon"><i class="icofont-check"></i></div>
+                <p>{{ step.subtitle }}</p>
+              </div>
+            {% endfor %}
           </div>
         </div>
 
