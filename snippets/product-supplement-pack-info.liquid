@@ -13,14 +13,7 @@
         <button onclick="tab(event, 'facts')">Supplement Facts</button>
       </div>
       <div class="tab-content" id="highlights">
-        <div class="highlights">
-          {% for highlight in product.metafields.custom.product-highlights.value %}
-            <div class="highlight">
-              <div class="highlight-icon"><i class="icofont-check"></i></div>
-              <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
-            </div>
-          {% endfor %}
-        </div>
+
       </div>
       <div class="tab-content" id="instructions">
           <h2>Paris</h2>
@@ -34,6 +27,29 @@
           <h2>Tokyo</h2>
           <p>Tokyo is the capital of Japan.</p>
       </div>
+    </div>
+
+    <div class="tabbed-content tabs-side">
+      <nav class="tabs">
+        <ul>
+          <li><a href="#highlights" class="active">Product Highlights</a></li>
+          <li><a href="#instructions">Usage Instructions</a></li>
+          <li><a href="#ingredients">Ingredients</a></li>
+          <li><a href="#facts">Supplement Facts</a></li>
+        </ul>
+      </nav>
+      <section id="highlights" class="item active" data-title="Product Highlights">
+        <div class="item-content">
+          <div class="highlights">
+            {% for highlight in product.metafields.custom.product-highlights.value %}
+              <div class="highlight">
+                <div class="highlight-icon"><i class="icofont-check"></i></div>
+                <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </section>
@@ -123,18 +139,55 @@
 </style>
 
 <script>
-  var button = $('.tab-cont button'),
-  tabContent = $('.tab-content');
-  button[0].classList.add('active');
-  tabContent[0].style.display = 'block';
+  tabControl();
 
-  function tab(e, tab) {
-    var i;
-    for (i = 0; i < button.length; i++) {
-      tabContent[i].style.display = 'none';
-      button[i].classList.remove('active');
+  /*
+  We also apply the switch when a viewport change is detected on the fly
+  (e.g. when you resize the browser window or flip your device from
+  portrait mode to landscape). We set a timer with a small delay to run
+  it only once when the resizing ends. It's not perfect, but it's better
+  than have it running constantly during the action of resizing.
+  */
+  var resizeTimer;
+  $(window).on('resize', function(e) {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      tabControl();
+    }, 250);
+  });
+
+  /*
+  The function below is responsible for switching the tabs when clicked.
+  It switches both the tabs and the accordion buttons even if
+  only the one or the other can be visible on a screen. We prefer
+  that in order to have a consistent selection in case the viewport
+  changes (e.g. when you esize the browser window or flip your
+  device from portrait mode to landscape).
+  */
+  function tabControl() {
+    var tabs = $('.tabbed-content').find('.tabs');
+    if(tabs.is(':visible')) {
+      tabs.find('a').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this).attr('href'),
+            tabs = $(this).parents('.tabs'),
+            buttons = tabs.find('a'),
+            item = tabs.parents('.tabbed-content').find('.item');
+        buttons.removeClass('active');
+        item.removeClass('active');
+        $(this).addClass('active');
+        $(target).addClass('active');
+      });
+    } else {
+      $('.item').on('click', function() {
+        var container = $(this).parents('.tabbed-content'),
+            currId = $(this).attr('id'),
+            items = container.find('.item');
+        container.find('.tabs a').removeClass('active');
+        items.removeClass('active');
+        $(this).addClass('active');
+        container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
+      });
     }
-    document.getElementById(tab).style.display = 'block';
-    e.currentTarget.classList.add('active');
   }
 </script>
