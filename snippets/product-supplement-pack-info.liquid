@@ -8,15 +8,15 @@
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
         <ul>
-          <li><a href="#highlights" class="active">Product Highlights</a></li>
-          <li><a href="#instructions">Usage Instructions</a></li>
-          <li><a href="#ingredients">Ingredients</a></li>
-          <li><a href="#facts">Supplement Facts</a></li>
+          <li><a href="#highlights-{{ index }}" class="active">Product Highlights</a></li>
+          <li><a href="#instructions-{{ index }}">Usage Instructions</a></li>
+          <li><a href="#ingredients-{{ index }}">Ingredients</a></li>
+          <li><a href="#facts-{{ index }}">Supplement Facts</a></li>
         </ul>
       </nav>
 
       <div class="content">
-        <div id="highlights" class="item" data-title="Product Highlights">
+        <div id="highlights-{{ index }}" class="item" data-title="Product Highlights">
           <div class="highlights item-content">
             {% for highlight in product.metafields.custom.product-highlights.value %}
               <div class="highlight">
@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <div id="instructions" class="item" data-title="Usage Instructions">
+        <div id="instructions-{{ index }}" class="item" data-title="Usage Instructions">
           <div class="instructions item-content">
             {% for step in product.metafields.custom.instructions.value %}
               <div class="step">
@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <div id="ingredients" class="item" data-title="Ingredients">
+        <div id="ingredients-{{ index }}" class="item" data-title="Ingredients">
           <div class="ingredients item-content">
             {% for ingredient in product.metafields.custom.ingredients.value %}
               <div class="ingredient">
@@ -55,7 +55,7 @@
           </div>
         </div>
 
-        <div id="facts" class="item active" data-title="Supplement Facts">
+        <div id="facts-{{ index }}" class="item active" data-title="Supplement Facts">
           <div class="facts item-content">
               <img src="{{ product.metafields.custom.supplement_fact | img_url: 'original' }}" alt="Supplement Facts" loading="lazy">
           </div>
