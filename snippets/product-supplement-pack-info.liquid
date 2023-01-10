@@ -16,7 +16,7 @@
       </nav>
 
       <div class="content">
-        <div id="highlights-{{ index }}" class="item" data-title="Product Highlights">
+        <div id="highlights-{{ index }}" class="item active" data-title="Product Highlights">
           <div class="highlights item-content">
             {% for highlight in product.metafields.custom.product-highlights.value %}
               <div class="highlight">
@@ -55,7 +55,7 @@
           </div>
         </div>
 
-        <div id="facts-{{ index }}" class="item active" data-title="Supplement Facts">
+        <div id="facts-{{ index }}" class="item" data-title="Supplement Facts">
           <div class="facts item-content">
               <img src="{{ product.metafields.custom.supplement_fact | img_url: 'original' }}" alt="Supplement Facts" loading="lazy">
           </div>
