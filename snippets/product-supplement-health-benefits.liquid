@@ -1,13 +1,23 @@
 <section id="health-benefits-section">
-  <h2>Give joy to your joints</h2>
-  <p>It’s the optimal combo of vitamins & herbal supplements! Naturally lubricate your joints and help them recover from daily stresses.</p>
+  <div class="container">
+    <h2>Give joy to your joints</h2>
+    <p>It’s the optimal combo of vitamins & herbal supplements! Naturally lubricate your joints and help them recover from daily stresses.</p>
 
-  <ul class="health-benefits">
-    {% for benefit in benefits %}
-      <li class="health-benefit">
-        <img src="{{ "product-supplement-" | append: productHandle | append: "-health-benefits-" | append: forloop.index | append: ".png" | asset_url }}" alt="health-benefit-1" loading="lazy">
-        <p>{{ benefit }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+    <ul class="health-benefits">
+      {% for benefit in benefits %}
+        <li class="health-benefit">
+          <img src="{{ "product-supplement-" | append: productHandle | append: "-health-benefits-" | append: forloop.index | append: ".png" | asset_url }}" alt="health-benefit-1" loading="lazy">
+          <p>{{ benefit }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
+
+<style>
+  #health-benefits-section .health-benefits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
