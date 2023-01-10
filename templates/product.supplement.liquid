@@ -20,9 +20,9 @@
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
       {% if forloop.last %}
-        {% render 'product-supplement-pack-info', product: prod, isLastRender: true %}
+        {% render 'product-supplement-pack-info', product: prod, isNumbered: true, isLastRender: true %}
       {% else %}
-        {% render 'product-supplement-pack-info', product: prod %}
+        {% render 'product-supplement-pack-info', product: prod, isNumbered: true %}
       {% endif %}
     {% endfor %}
   {% else %}
