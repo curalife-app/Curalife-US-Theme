@@ -17,13 +17,17 @@
         {% for feature in features %}
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
-            <div class="feature-text">{{ feature | split: ":" | first }}</div>
-            {% assign price = feature | split: ":" | last %}
-            {% if price == '0' %}
-            <div class="feature-price priceless">Priceless</div>
-            {% else %}
-            <div class="feature-price">{{ price | times: 100 | money_without_trailing_zeros }}<sup>00</sup> Value</div>
-            {% endif %}
+            <div class="text-features">
+              <div class="feature-text">{{ feature | split: ":" | first }}</div>
+              {% assign price = feature | split: ":" | last %}
+              {% if price == '0' %}
+              <div class="feature-price priceless">Priceless</div>
+              {% else %}
+              <div class="feature-price">a {{ price | times: 100 | money_without_trailing_zeros }} Value</div>
+              {% endif %}
+            </div>
+
+
           </div>
           {% assign total = total | plus: price %}
         {% endfor %}
@@ -41,11 +45,9 @@
               {% if price == '0' %}
               <div class="feature-price priceless">Priceless</div>
               {% else %}
-              <div class="feature-price">{{ price | times: 100 | money_without_trailing_zeros }}<sup>00</sup> Value</div>
+              <div class="feature-price">a {{ price | times: 100 | money_without_trailing_zeros }} Value</div>
               {% endif %}
-            </div>
-            
-            
+            </div>           
           </div>
           {% assign total = total | plus: price %}
         {% endfor %}
@@ -130,22 +132,13 @@
     padding-right: 75px;
   }
 
-  #product-feature-section .features .feature .feature-price {
-    width: 89px;
-    position: absolute;
-    right: 0;
-    color:  var(--dark-brown);
-  }
-
-  #product-feature-section .features .feature .feature-price.priceless {
+  #product-feature-section .features .feature .feature-price { 
     color: #95A157;
   }
+
+
   
-  #product-feature-section .features .feature .feature-price sup {
-    font-size: 10px;
-    position: relative;
-    top: 1px;
-  }
+
 
 
 
