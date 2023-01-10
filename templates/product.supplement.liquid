@@ -21,6 +21,13 @@
 |Can I take these supplements alongside my medications?:Generally speaking, these supplements are very safe. However, always consult your doctor before starting on a new supplement."
 | split: '|' %}
 
+{% assign isCuralinBundled = false %}
+{% for prod in product.metafields.custom.bundle_products.value %}
+  {% if prod.handle == 'curalin' %}
+    {% assign isCuralinBundled = true %}
+  {% endif %}
+{% endfor %}
+
 <div id="supplement-page">
   {% render 'product-supplement-cta-section', badgesPosition: "cta" %}
   {% render 'product-supplement-health-benefits',productHandle: productHandle, title: healthBenefitsTitle, subtitle: healthBenefitsSubtitle, benefits: benefits %}
