@@ -5,7 +5,7 @@
   <ul class="health-benefits">
     {% for benefit in benefits %}
       <li class="health-benefit">
-        <img src="{{ "product-supplement-health-benefits-" | append: product-handle | append: "-" | append: forloop.index | append: ".png" | asset_url }}" alt="health-benefit-1">
+        <img src="{{ "product-supplement-health-benefits-" | append: product-handle | append: "-" | append: forloop.index | append: ".png" | asset_url }}" alt="health-benefit-1" loading="lazy">
         <h3>Reduce inflammation</h3>
         <p>Reduce inflammation and pain in your joints with our powerful blend of vitamins and herbal supplements.</p>
       </li>
