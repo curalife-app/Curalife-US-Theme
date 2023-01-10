@@ -1,4 +1,4 @@
-{% assign benefits = "Promote healthy blood sugar levels|Naturally support your joint cushions|Keep joint inflammation in check" | split: "|" %}
+{% assign handle = "joint-care" %}
 
 <section id="health-benefits-section">
   <h2>Give joy to your joints</h2>
@@ -7,7 +7,7 @@
   <ul class="health-benefits">
     {% for benefit in benefits %}
       <li class="health-benefit">
-        <img src="{{ "product-supplement-health-benefits-" | append: product-handle | append: "-" | append: forloop.index | append: ".png" | asset_url }}" alt="health-benefit-1" loading="lazy">
+        <img src="{{ "product-supplement-" | append: handle | append: "-health-benefits-" | append: forloop.index | append: ".png" | asset_url }}" alt="health-benefit-1" loading="lazy">
         <p>{{ benefit }}</p>
       </li>
     {% endfor %}
