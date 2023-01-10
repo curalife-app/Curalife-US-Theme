@@ -15,6 +15,9 @@
       <div class="tab-content" id="highlights">
         <div class="highlights">
           <script>console.log("{{ product.metafields.custom.data.value['highlights'].first }}")</script>
+          <script>console.log("{{ product.metafields.custom.data.value.first }}")</script>
+          <script>console.log("{{ product.metafields.custom.data.value['highlights'][0] }}")</script>
+          <script>console.log("{{ product.metafields.custom.data.value['highlights'][0].value }}")</script>
           {% for highlight in product.metafields.custom.data.value['highlights'] %}
             <div class="highlight"><b>{{ highlight["title"] }}</b><br>{{ highlight["subtitle"] }}</div>
           {% endfor %}
