@@ -1,9 +1,21 @@
+{% comment %} Health Benefits Section Variables {% endcomment %}
+{% assign healthBenefitsTitle = "Give joy to your joints" %}
+{% assign healthBenefitsSubtitle = "It’s the optimal combo of vitamins & herbal supplements! Naturally lubricate your joints and help them recover from daily stresses" %}
+{% assign benefits = "Promote healthy blood sugar levels|Naturally support your joint cushions|Keep joint inflammation in check" | split: "|" %}
+{% assign productHandle = "joint-care" %}
+
+{% comment %} Packs Sections Variables {% endcomment %}
+{% assign packsTitles = "curalin|Platinum Joint Care|Joint Care Gummies" %}
+{% assign packsSubtitles = "Clinically tested blood sugar support. Unleash the 9 natural ingredients with the power to keep your life, and blood sugar in balance
+|8 powerful ingredients for comfortable movement. Give your joints the nutrition and lubrication it needs to keep moving freely.
+|Delicious bites of joint joy. This great-tasting gummy is exactly what you need to cushion your joints and to protect against wear." | split: "|" %}
 {% assign benefits = "Promote healthy blood sugar levels|Naturally support your joint cushions|Keep joint inflammation in check" | split: "|" %}
 {% assign productHandle = "joint-care" %}
 
 <div id="supplement-page">
   {% render 'product-supplement-cta-section', badgesPosition: "cta" %}
-  {% render 'product-supplement-health-benefits',productHandle: productHandle, title: "Give joy to your joints", subtitle:"It’s the optimal combo of vitamins & herbal supplements! Naturally lubricate your joints and help them recover from daily stresses", benefits: benefits %}
+  {% render 'product-supplement-health-benefits',productHandle: productHandle, title: healthBenefitsTitle, subtitle: healthBenefitsSubtitle, benefits: benefits %}
+  {% render 'product-supplement-pack-info' %}
 </div>
 
 <style>
