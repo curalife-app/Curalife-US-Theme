@@ -34,7 +34,7 @@
                 <h3>{{ step.title }}</h3>
                 <div class="capsules">
                   {% for item in collection %}
-                    <img src="{{ "onboarding-capsule.png" | asset_url }}" alt="Capsule Pill">
+                    <img src="{{ "onboarding-capsule.png" | asset_url }}" alt="Capsule Pill" loading="lazy">
                   {% endfor %}
                 </div>
                 <div class="highlight-icon"><i class="icofont-check"></i></div>
