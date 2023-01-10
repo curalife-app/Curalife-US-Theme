@@ -1,0 +1,78 @@
+<section class="pack-info-section {{ product.handle }}">
+  <div class="container">
+    <div class="titles">
+      <h2 class="title">{{ product.title }}</h2>
+      <p class="subtitle">{{ product.description }}</p>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="tab-cont">
+          <button class="but" onclick="city(event, 'london')">London</button>
+          <button class="but" onclick="city(event, 'paris')">Paris</button>
+          <button class="but" onclick="city(event, 'tokyo')">Tokyo</button>
+      </div>
+      <div class="tab-content" id="london">
+          <h2>London</h2>
+          <p>London is the capital city of England.</p>
+      </div>
+      <div class="tab-content" id="paris">
+          <h2>Paris</h2>
+          <p>Paris is the capital of France.</p>
+      </div>
+      <div class="tab-content" id="tokyo">
+          <h2>Tokyo</h2>
+          <p>Tokyo is the capital of Japan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tab-cont {
+    float: left;
+    width: 30%;
+    background-color: #eee;
+    height: 100%;
+    border-right: 1px solid #d1d1d1;
+  }
+
+  .tab-cont button {
+    width: 100%;
+    background-color: inherit;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .tab-cont button:hover {
+    background-color: #ccc;
+  }
+  .tab-content {
+    height: 100%;
+    float: left;
+    padding: 20px;
+    width: 70%;
+    animation: anime 1s;
+  }
+
+  .tab-content h2{
+    font-size: 24px;
+    font-weight: 400;
+    margin: 20px 0 10px 0;
+  }
+
+  .tab-content p{
+    font-weight: 100;
+    color: #666;
+    margin-top: 20px
+  }
+
+  .tab-cont .but.active{
+    background-color: #b4b4b4;
+  }
+
+  @keyframes anime {
+    from{opacity: 0}
+    to{opacity: 1}
+  }
+</style>
