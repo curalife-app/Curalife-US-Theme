@@ -1,0 +1,188 @@
+{% assign item_price = 67 %}
+
+{% assign features = "<b>30 day supply of Curalin</b> (180 capsules):75
+|<b>30 day mouth-watering meal plan</b> including recipes and videos:29
+|<b>14 day easy-to-do movement and exercise plan</b> with videos:59
+|<b>Blood Sugar Explained</b> In Plain English (infographic):14
+|<b>Curalife Blood Sugar Healthy Cookbook</b>:40
+|<b>Free Shipping </b>:8
+|<b>Community support</b> with 100K+ peers:0|<b>24/7 Customer Support</b> (phone, email, or live chat):0" | split: "|" %}
+
+<section id="product-feature-section">
+  <div class="container">
+    <div class="features-wrapper">
+      <div class="features">
+        {% assign total = 0 %}
+        {% for feature in features %}
+          <div class="feature">
+            <div class="feature-icon"><i class="icofont-check"></i></div>
+            <div class="feature-text">{{ feature | split: ":" | first }}</div>
+            {% assign price = feature | split: ":" | last %}
+            {% if price == '0' %}
+            <div class="feature-price priceless">Priceless</div>
+            {% else %}
+            <div class="feature-price">{{ price | times: 100 | money_without_trailing_zeros }}<sup>00</sup> Value</div>
+            {% endif %}
+          </div>
+          {% assign total = total | plus: price %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #product-feature-section .container {
+    font-weight: bold;
+    position: relative;
+  }
+
+  #product-feature-section {
+    position: relative;
+    color: var(--dark-green);
+    padding: 50px 0;
+    line-height: 1.2em;
+  }
+
+
+
+
+  #product-feature-section .features-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+ 
+
+  #product-feature-section .features {
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #product-feature-section .features .feature {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 15px 0;
+    font-family: "PP Radio Grotesk";
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 20px;
+   
+  }
+
+  #product-feature-section .features .feature:nth-child(8) {
+    border-bottom: unset;
+  }
+
+  #product-feature-section .features .feature .feature-icon {
+    background: var(--light-green);
+    color: white;
+    border-radius: 50%;
+    min-width: 45px;
+    height: 45px;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+
+  #product-feature-section .features .feature .feature-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 404px;
+    padding-right: 75px;
+  }
+
+  #product-feature-section .features .feature .feature-price {
+    width: 89px;
+    position: absolute;
+    right: 0;
+    color:  var(--dark-brown);
+  }
+
+  #product-feature-section .features .feature .feature-price.priceless {
+    color: #95A157;
+  }
+  
+  #product-feature-section .features .feature .feature-price sup {
+    font-size: 10px;
+    position: relative;
+    top: 1px;
+  }
+
+
+
+
+
+  .new-price {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: clamp(45px, 2vw, 52px);
+    text-align: center;
+  }
+
+ 
+
+
+  @media screen and (max-width: 898px) {
+    #product-feature-section .features .feature .feature-price {
+      width: 73px;
+  
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #product-feature-section .container {
+      padding: 0 15px;
+    }
+
+    #product-feature-section .features {
+      max-width: unset;
+      width: 100%;
+    }
+
+    #product-feature-section .features .feature .feature-text {
+      max-width: unset;
+      padding-right: 92px;
+    }
+
+    #product-feature-section .features .feature .feature-price {
+      width: 9vw;
+    }
+
+  
+
+  
+  }
+
+  @media screen and (max-width: 627px) {
+    #product-feature-section .features .feature .feature-price {
+        width: 11vw;
+    }
+  }
+
+  @media screen and (max-width: 513px) {
+    #product-feature-section .features .feature .feature-price {
+        width: 13vw;
+    }
+  }
+
+  @media screen and (max-width: 434px) {
+    #product-feature-section .features .feature .feature-price {
+        width: 15vw;
+    }
+  }
+
+  @media screen and (max-width: 376px) {
+    #product-feature-section .features .feature .feature-price {
+        width: 18vw;
+    }
+  }
+</style>
+
