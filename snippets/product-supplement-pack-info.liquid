@@ -309,7 +309,7 @@
         tabs.find('a').on('click', function(event) {
           event.preventDefault();
           var target = $(this).attr('href'),
-              tabs = $(this).parents('.tabs'),
+              tabs = $(this).parents('.pack-info-section.instance-{{ index }} .tabs'),
               buttons = tabs.find('a'),
               item = tabs.parents('.pack-info-section.instance-{{ index }} .tabbed-content').find('.item');
           buttons.removeClass('active');
