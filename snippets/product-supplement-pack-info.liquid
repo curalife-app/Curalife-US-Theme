@@ -95,12 +95,11 @@
 
   .tabbed-content {
     max-width: 800px;
-    min-height: 300px;
   }
 
   .tabs ul li {
     text-align: center;
-    height: 25%;
+    height: 70px;
     border-bottom: 1px solid;
   }
 
@@ -108,11 +107,12 @@
     border-top: 1px solid;
   }
   .tabs ul li a {
-    padding: 0.5em 1em;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
   .tabs ul li a:hover, .tabs ul li a.active {
-    background: #444;
-    color: #eee;
   }
   .item {
     margin-bottom: 2px;
@@ -169,7 +169,7 @@
        display: inline-block;
     }
      .tabbed-content .tabs li a {
-       display: block;
+       display: flex;
     }
      .tabbed-content .item {
        min-height: 0;
