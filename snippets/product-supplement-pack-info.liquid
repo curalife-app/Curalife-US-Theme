@@ -38,7 +38,8 @@
           <li><a href="#facts">Supplement Facts</a></li>
         </ul>
       </nav>
-      <section id="highlights" class="item active" data-title="Product Highlights">
+
+      <div id="highlights" class="item active" data-title="Product Highlights">
         <div class="item-content">
           <div class="highlights">
             {% for highlight in product.metafields.custom.product-highlights.value %}
@@ -49,7 +50,46 @@
             {% endfor %}
           </div>
         </div>
-      </section>
+      </div>
+
+      <div id="instructions" class="item active" data-title="Usage Instructions">
+        <div class="item-content">
+          <div class="highlights">
+            {% for highlight in product.metafields.custom.product-highlights.value %}
+              <div class="highlight">
+                <div class="highlight-icon"><i class="icofont-check"></i></div>
+                <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div id="ingredients" class="item active" data-title="Ingredients">
+        <div class="item-content">
+          <div class="highlights">
+            {% for highlight in product.metafields.custom.product-highlights.value %}
+              <div class="highlight">
+                <div class="highlight-icon"><i class="icofont-check"></i></div>
+                <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div id="facts" class="item active" data-title="Supplement Facts">
+        <div class="item-content">
+          <div class="highlights">
+            {% for highlight in product.metafields.custom.product-highlights.value %}
+              <div class="highlight">
+                <div class="highlight-icon"><i class="icofont-check"></i></div>
+                <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
