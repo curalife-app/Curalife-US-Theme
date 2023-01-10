@@ -17,10 +17,13 @@
 <div id="supplement-page">
   {% render 'product-supplement-cta-section', badgesPosition: "cta" %}
   {% render 'product-supplement-health-benefits',productHandle: productHandle, title: healthBenefitsTitle, subtitle: healthBenefitsSubtitle, benefits: benefits %}
-  {% render 'product-supplement-pack-info', product: product %}
-  {% for prod in product.metafields.custom.bundle-products %}
-    {% render 'product-supplement-pack-info', product: prod %}
-  {% endfor %}
+  {% if product.metafields.custom.bundle-products %}
+    {% for prod in product.metafields.custom.bundle-products %}
+      {% render 'product-supplement-pack-info', product: prod %}
+    {% endfor %}
+  {% else %}
+    {% render 'product-supplement-pack-info', product: product %}
+  {% endif %}
 </div>
 
 <style>
