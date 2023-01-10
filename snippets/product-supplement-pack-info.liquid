@@ -95,6 +95,47 @@
 </section>
 
 <style>
+  .tabbed-content {
+    background: #fff;
+    box-shadow: 1px 1px 6px #ccc;
+    max-width: 800px;
+    padding: 1em;
+  }
+
+  .tabs ul {
+    margin: 0;
+    padding: 0 0 1em 0;
+    font-weight: bold;
+  }
+
+  .tabs ul li {
+    background: #eee;
+  }
+  .tabs ul li a {
+    padding: 0.5em 1em;
+  }
+  .tabs ul li a:hover, .tabs ul li a.active {
+    background: #444;
+    color: #eee;
+  }
+  .item {
+    margin-bottom: 2px;
+  }
+  .item::before {
+    cursor: pointer;
+    font-weight: bold;
+    background: #eee;
+    padding: 0.5em;
+    display: block;
+  }
+   .item.active::before {
+     background: #444;
+     color: #eee;
+  }
+   .item.active .item-content {
+     padding: 1em;
+     transition: opacity 0.3s ease-in-out;
+  }
    @media all and (min-width: 800px) {
      .item.active .item-content {
        padding-top: 0;
