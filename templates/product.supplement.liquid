@@ -26,7 +26,7 @@
       {% endif %}
     {% endfor %}
   {% else %}
-    {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
+    {% render 'product-supplement-pack-info', product: product, productIndex: forloop.index, isLastRender: true %}
   {% endif %}
 </div>
 
