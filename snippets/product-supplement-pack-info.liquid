@@ -57,14 +57,9 @@
         </div>
 
         <div id="facts" class="item active" data-title="Supplement Facts">
-          <div class="highlights item-content">
-              {% for highlight in product.metafields.custom.product-highlights.value %}
-                <div class="highlight">
-                  <div class="highlight-icon"><i class="icofont-check"></i></div>
-                  <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
-                </div>
-              {% endfor %}
-            </div>
+          <div class="facts item-content">
+              <img src="{{ product.metafields.custom.supplement_facts.src | img_url: 'original' }}" alt="Supplement Facts" loading="lazy">
+          </div>
         </div>
       </div>
     </div>
@@ -138,6 +133,10 @@
     font-size: 28px;
     font-weight: bold;
     min-width: 105px;
+  }
+
+  .pack-info-section .instructions .step .capsules {
+    min-width: 80px;
   }
 
   .tabbed-content {
