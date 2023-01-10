@@ -63,7 +63,13 @@
       </div>
     </div>
 
-    <img class="product-image" src="{{ product.metafields.custom.bottle_image | img_url: 'original' }}" alt="{{ product.title }}" loading="lazy">
+    <div class="product-image-wrapper">
+      {% if productIndex %}
+        <p class="number">{{ productIndex }}</p>
+      {% endif %}
+
+      <img class="product-image" src="{{ product.metafields.custom.bottle_image | img_url: 'original' }}" alt="{{ product.title }}" loading="lazy">
+    </div>
   </div>
 </section>
 
