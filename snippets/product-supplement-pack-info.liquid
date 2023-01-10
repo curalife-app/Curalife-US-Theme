@@ -88,6 +88,10 @@
     align-items: center;
   }
 
+  .highlights .highlight p {
+    margin: unset;
+  }
+
   .highlight-icon {
     background: var(--light-green);
     color: white;
@@ -103,6 +107,9 @@
 
   .tabbed-content {
     max-width: 800px;
+    display: flex;
+    align-items: center;
+    height: 300px;
   }
 
   .tabs ul li {
@@ -137,7 +144,6 @@
      color: #eee;
   }
    .item.active .item-content {
-     padding: 1em;
      transition: opacity 0.3s ease-in-out;
   }
    @media all and (min-width: 800px) {
