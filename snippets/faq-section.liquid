@@ -2,7 +2,7 @@
 <section class="faq-section">
   <div class="container">
     <div class="titles">
-      {% if title_type == 'light' %}
+      {% if titleVersion == 'light' %}
         <h2>FAQ</h2>
       {% else %}
         <div class="sub-title">
@@ -123,7 +123,7 @@
     line-height: 2rem
   }
 
-  {% if title_type == "complex" %}
+  {% if titleVersion == "complex" %}
     .faq-section .titles {
       display: flex;
       align-items: center;
@@ -145,7 +145,7 @@
     }
   {% endif %}
 
-  {% if title_type == "light" %}
+  {% if titleVersion == "light" %}
     .faq-section .titles h2 {
       margin: 0;
       font-weight: bold;
