@@ -1,3 +1,6 @@
+{% assign benefits = "Promote healthy blood sugar levels|Naturally support your joint cushions|Keep joint inflammation in check" | split: "|" %}
+
 <div id="supplement-page">
   {% render 'product-supplement-cta-section', badgesPosition: "cta" %}
+  {% render 'product-supplement-health-benefits', benefits: benefits %}
 </div>
