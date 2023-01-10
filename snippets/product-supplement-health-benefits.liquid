@@ -1,0 +1,14 @@
+<section id="health-benefits-section">
+  <h2>Give joy to your joints</h2>
+  <p>It’s the optimal combo of vitamins & herbal supplements! Naturally lubricate your joints and help them recover from daily stresses.</p>
+
+  <ul class="health-benefits">
+    {% for benefit in benefits %}
+      <li class="health-benefit">
+        <img src="{{ "product-supplement-health-benefits-" | append: product-handle | append: "-" | append: forloop.index | append: ".png" | asset_url }}" alt="health-benefit-1">
+        <h3>Reduce inflammation</h3>
+        <p>Reduce inflammation and pain in your joints with our powerful blend of vitamins and herbal supplements.</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
