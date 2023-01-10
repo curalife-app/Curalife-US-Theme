@@ -16,7 +16,7 @@
     <div class="all-features-wrapper">
     <div class="features-wrapper">
       <div class="features">
-        {% assign total = 0 %}
+
         {% for feature in features %}
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
@@ -32,13 +32,13 @@
             <img class="feature-img" src="{{ 'thirty-day-product-chalenge-08.png' | asset_url | split: ":" | last | split: "*" | last}}" width="92" height="92" alt="">
 
           </div>
-          {% assign total = total | plus: price %}
+        
         {% endfor %}
       </div>
     </div>
     <div class="features-wrapper">
       <div class="features">
-        {% assign total = 0 %}
+       
        {% for feature in features_1 %}
          <div class="feature">
            <div class="feature-icon"><i class="icofont-check"></i></div>
@@ -54,7 +54,7 @@
            <img class="feature-img" src="{{ feature | asset_url | split: ':' | last | split: '*' | last }}" width="92" height="92" alt="">
 
          </div>
-         {% assign total = total | plus: price %}
+       
        {% endfor %}
       </div>
     </div>
