@@ -304,14 +304,14 @@
     });
 
     function tabControl() {
-      var tabs = $('.pack-info-section.instance-{{ index }} .tabbed-content').find('.pack-info-section.instance-{{ index }} .tabs');
+      var tabs = $('.pack-info-section.instance-{{ index }} .tabbed-content').find('.tabs');
       if(tabs.is(':visible')) {
         tabs.find('a').on('click', function(event) {
           event.preventDefault();
           var target = $(this).attr('href'),
-              tabs = $(this).parents('.pack-info-section.instance-{{ index }} .tabs'),
+              tabs = $(this).parents('.tabs'),
               buttons = tabs.find('a'),
-              item = tabs.parents('.pack-info-section.instance-{{ index }} .tabbed-content').find('.pack-info-section.instance-{{ index }} .item');
+              item = tabs.parents('.pack-info-section.instance-{{ index }} .tabbed-content').find('.item');
           buttons.removeClass('active');
           item.removeClass('active');
           $(this).addClass('active');
@@ -321,11 +321,11 @@
         $('.item').on('click', function() {
           var container = $(this).parents('.pack-info-section.instance-{{ index }} .tabbed-content'),
               currId = $(this).attr('id'),
-              items = container.find('.pack-info-section.instance-{{ index }} .item');
-          container.find('.pack-info-section.instance-{{ index }} .tabs a').removeClass('active');
+              items = container.find('.item');
+          container.find('.tabs a').removeClass('active');
           items.removeClass('active');
           $(this).addClass('active');
-          container.find('.pack-info-section.instance-{{ index }} .tabs a[href$="#'+ currId +'"]').addClass('active');
+          container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
         });
       }
     }
