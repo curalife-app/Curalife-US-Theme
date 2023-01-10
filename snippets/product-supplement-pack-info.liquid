@@ -33,7 +33,7 @@
               <div class="step">
                 <h3>{{ step.title }}</h3>
                 <div class="capsules">
-                  {% for item in collection %}
+                  {% for item in (1..step.capsules) %}
                     <img src="{{ "onboarding-capsule.png" | asset_url }}" alt="Capsule Pill" loading="lazy">
                   {% endfor %}
                 </div>
