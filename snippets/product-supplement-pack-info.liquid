@@ -7,19 +7,27 @@
 
     <div class="info-tabs">
       <div class="tab-cont">
-          <button class="but" onclick="city(event, 'london')">London</button>
-          <button class="but" onclick="city(event, 'paris')">Paris</button>
-          <button class="but" onclick="city(event, 'tokyo')">Tokyo</button>
+          <button class="but" onclick="city(event, 'highlights')">Product Highlights</button>
+          <button class="but" onclick="city(event, 'instructions')">Usage Instructions</button>
+          <button class="but" onclick="city(event, 'ingredients')">Ingredients</button>
+          <button class="but" onclick="city(event, 'facts')">Supplement Facts</button>
       </div>
-      <div class="tab-content" id="london">
-          <h2>London</h2>
-          <p>London is the capital city of England.</p>
+      <div class="tab-content" id="highlights">
+          <div class="highlights">
+            {% for highlight in product.metafields.custom.data.highlights.value %}
+              <div class="highlight"><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</div>
+            {% endfor %}
+          </div>
       </div>
-      <div class="tab-content" id="paris">
+      <div class="tab-content" id="instructions">
           <h2>Paris</h2>
           <p>Paris is the capital of France.</p>
       </div>
-      <div class="tab-content" id="tokyo">
+      <div class="tab-content" id="ingredients">
+          <h2>Tokyo</h2>
+          <p>Tokyo is the capital of Japan.</p>
+      </div>
+      <div class="tab-content" id="facts">
           <h2>Tokyo</h2>
           <p>Tokyo is the capital of Japan.</p>
       </div>
