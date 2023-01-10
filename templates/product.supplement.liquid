@@ -29,7 +29,7 @@
 {% endfor %}
 
 <div id="supplement-page">
-  {% render 'product-supplement-cta-section', badgesPosition: "cta" %}
+  {% render 'product-supplement-cta-section', isReviews: isCuralinBundled, badgesPosition: "cta" %}
   {% render 'product-supplement-health-benefits',productHandle: productHandle, title: healthBenefitsTitle, subtitle: healthBenefitsSubtitle, benefits: benefits %}
 
   {% if product.metafields.custom.bundle-products.value %}
