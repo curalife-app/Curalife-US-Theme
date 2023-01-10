@@ -7,6 +7,9 @@
             <img class="easy-img" src="{{ 'thirty-day-product-easy-group.png' | asset_url }}" width="967" height="329" alt="">
             <img class="easy-img-mb" src="{{ 'thirty-day-product-easy-group-mb.png' | asset_url }}" width="362" height="593" alt="">
         </div>
+        <div class="button-wrapper">
+        <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
+        </div>
     </div>
 </div>
 
@@ -34,6 +37,30 @@
     .easy-img-mb {
         display: none;
     }
+
+    button-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0 0;
+    }
+
+     .cta-btn {  
+      background: var(--dark-green);
+      border: 1px solid var(--dark-green);
+      font-weight: 700;
+      font-size: clamp(14px, 2vw, 18px);
+      color: var(--white);
+      margin-left: unset;
+      border-radius: 5px;
+      padding: 15px 40px;
+
+    }
+
+    .cta-btn:hover {
+      background: #697938;
+      border: 1px solid  #697938;
+    }
+
 
 
     @media screen and (max-width: 768px) {
