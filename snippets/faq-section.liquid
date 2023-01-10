@@ -33,6 +33,12 @@
 </section>
 
 <style>
+  {% if bgColor %}
+    .faq-section {
+      background-color: {{ bgColor }};
+    }
+  {% endif %}
+
   .swiper-button-prev,
   .swiper-button-next {
     color: gray;
@@ -115,10 +121,6 @@
     font-size: 20px;
     font-weight: 300;
     line-height: 2rem
-  }
-
-  .faq-section {
-    font-family: "Poppins", sans-serif;
   }
 
   {% if title_type == "complex" %}
