@@ -7,10 +7,10 @@
 
     <div class="info-tabs">
       <div class="tab-cont">
-        <button class="but" onclick="city(event, 'highlights')">Product Highlights</button>
-        <button class="but" onclick="city(event, 'instructions')">Usage Instructions</button>
-        <button class="but" onclick="city(event, 'ingredients')">Ingredients</button>
-        <button class="but" onclick="city(event, 'facts')">Supplement Facts</button>
+        <button onclick="city(event, 'highlights')">Product Highlights</button>
+        <button onclick="city(event, 'instructions')">Usage Instructions</button>
+        <button onclick="city(event, 'ingredients')">Ingredients</button>
+        <button onclick="city(event, 'facts')">Supplement Facts</button>
       </div>
       <div class="tab-content" id="highlights">
         <div class="highlights">
@@ -83,13 +83,13 @@
     margin: 20px 0 10px 0;
   }
 
-  .tab-content p{
+  .tab-content p {
     font-weight: 100;
     color: #666;
     margin-top: 20px
   }
 
-  .tab-cont .but.active {
+  .tab-cont button.active .tab-cont button {
     background-color: #b4b4b4;
   }
 
@@ -118,8 +118,8 @@
 </style>
 
 <script>
-  var button = document.getElementsByClassName('but'),
-  tabContent = document.getElementsByClassName('tab-content');
+  var button = $('.tab-cont button')),
+  tabContent = $('.tab-content');
   button[0].classList.add('active');
   tabContent[0].style.display = 'block';
 
