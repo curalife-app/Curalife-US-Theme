@@ -1,12 +1,12 @@
+{% assign doctors = "Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code
+|Dr. Nancy Russell:Internal Medicine Specialist, <br>North Kansas City Hospital
+|Dr. Renee Plummer:Naturopathic Primary Care Physician at Health Moves in Woodinville, WA
+|Dr. Sarah Brewer:Functional doctor, diabetes expert, and author of over 60 books on personal health"
+| split: '|'%}
+
 <section id="doctors-section">
   <div class="container">
     <div class="titles"><h2>Trusted By More Than 700 Doctors</h2></div>
-
-    {% assign doctors = "Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code
-              |Dr. Nancy Russell:Internal Medicine Specialist, <br>North Kansas City Hospital
-              |Dr. Renee Plummer:Naturopathic Primary Care Physician at Health Moves in Woodinville, WA
-              |Dr. Sarah Brewer:Functional doctor, diabetes expert, and author of over 60 books on personal health"
-              | split: '|'%}
 
     <div class="doctors">
       {% for doctor in doctors %}
