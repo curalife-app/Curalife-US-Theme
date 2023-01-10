@@ -222,11 +222,17 @@
       align-items: center;
       display: flex;
       justify-content: center;
+      transition: all 0.5s ease;
     }
     .tabs ul li a:hover,
     .tabs ul li a.active {
       color: var(--brown);
       font-weight: bold;
+    }
+
+    .tabs ul li a:hover i,
+    .tabs ul li a.active i {
+      margin-left: 20px;
     }
 
     .pack-info-section:nth-of-type(even) .tabs ul li a:hover,
