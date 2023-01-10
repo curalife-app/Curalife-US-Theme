@@ -95,6 +95,28 @@
 </section>
 
 <style>
+  .pack-info-section {
+    background: var(--beige);
+  }
+
+  .highlights .highlight {
+    display: flex;
+    align-items: center;
+  }
+
+  .highlight-icon {
+    background: var(--light-green);
+    color: white;
+    border-radius: 50%;
+    min-width: 30px;
+    height: 30px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
   .tabbed-content {
     max-width: 800px;
   }
@@ -188,90 +210,6 @@
      .tabbed-content.tabs-side .item {
        margin-left: 150px;
     }
-  }
-</style>
-
-<style>
-  .pack-info-section {
-    background: var(--beige);
-  }
-
-  .info-tabs {
-    width: 90%;
-    overflow:hidden;
-    height: 300px;
-    margin-top: 20px;
-    max-width: 800px;
-  }
-
-  .tab-cont {
-    float: left;
-    width: 30%;
-    height: 100%;
-  }
-
-  .tab-cont button {
-    width: 100%;
-    font-size: 22px;
-    height: 25%;
-    color: #404733;
-    background: unset;
-    border-bottom: 1px solid black;
-  }
-
-  .tab-cont button:first-child {
-    border-top: 1px solid black;
-  }
-
-  .tab-cont button:hover .arrow-icon {
-    margin-right: 10px;
-  }
-
-  .tab-content {
-    height: 100%;
-    float: left;
-    padding: 20px;
-    width: 70%;
-    animation: anime 1s;
-  }
-
-  .tab-content h2 {
-    font-size: 24px;
-    font-weight: 400;
-    margin: 20px 0 10px 0;
-  }
-
-  .tab-content p {
-    font-weight: 100;
-    color: #666;
-    margin-top: 20px
-  }
-
-  .tab-cont button.active .tab-cont button {
-    background-color: #b4b4b4;
-  }
-
-  @keyframes anime {
-    from {opacity: 0}
-    to {opacity: 1}
-  }
-
-  .highlights .highlight {
-    display: flex;
-    align-items: center;
-  }
-
-  .highlight-icon {
-    background: var(--light-green);
-    color: white;
-    border-radius: 50%;
-    min-width: 30px;
-    height: 30px;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
   }
 </style>
 
