@@ -15,7 +15,7 @@
       <div class="tab-content" id="highlights">
           <div class="highlights">
             {% for highlight in product.metafields.custom.data.value.highlights %}
-              <div class="highlight"><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</div>
+              <div class="highlight"><b>{{ highlight["title"] }}</b><br>{{ highlight["subtitle"] }}</div>
             {% endfor %}
           </div>
       </div>
