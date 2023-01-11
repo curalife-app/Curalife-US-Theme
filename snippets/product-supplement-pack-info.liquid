@@ -254,8 +254,10 @@
       display: block;
     }
     .pack-info-section .item.active::before {
-      background: #444;
-      color: #eee;
+      color: var(--brown);
+    }
+    .pack-info-section:nth-child(even) .item.active::before {
+      color: var(--dark-purple);
     }
     .pack-info-section .item.active .item-content {
       transition: opacity 0.8s ease-in-out;
