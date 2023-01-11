@@ -35,8 +35,9 @@
           </div>
           <img class="img-break" src="{{ 'thirty-day-break-' | append: forloop.index | append: '.png' | asset_url }}" width="831" height="513" alt="" loading="lazy"> 
           </div>
-          <div class="bottom-line"></div> 
+         
         </li> 
+        <div class="bottom-line-horizontal"></div> 
        
       {% endfor %}
      
@@ -135,8 +136,9 @@
  </style>
 
 <style>
-  .bottom-line {
-    border-bottom: 1px solid  #B9C86B; 
+  .bottom-line-horisontal {
+    background: #B9C86B; 
+    height: 1px;
   }
   .celebrate{
     position: absolute;
