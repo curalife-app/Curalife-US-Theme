@@ -1,3 +1,9 @@
+{% if product.tags contains "sleep" %}
+  {% assign category = "sleep" %}
+{% elsif product.tags contains "joint" %}
+  {% assign category = "joint-care" %}
+{% endif %}
+
 <section id="health-benefits-section">
   <div class="container">
     <div class="titles">
