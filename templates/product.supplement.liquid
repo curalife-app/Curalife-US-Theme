@@ -26,10 +26,7 @@
   {% if prod.handle == 'curalin' %}
     {% assign isCuralinBundled = true %}
   {% endif %}
-  <script>console.log("curalin {{isCuralinBundled}}")</script>
 {% endfor %}
-
-
 
 <div id="supplement-page">
   {% render 'product-all-in-one-cta-section', isCuralinContent: isCuralinBundled, badgesPosition: "cta" %}
