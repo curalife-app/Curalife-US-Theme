@@ -164,7 +164,9 @@
 <style>
   .sale-banner {
     top: 0;
+    {% if desktopContent == 'none' %}display: none;{% endif %}
   }
+
   .sale-banner.{{ instance_id }} {
     background: {{ bgColor }};
   }
@@ -199,6 +201,12 @@
   {% endunless %}
 
   @media screen and (max-width: 768px) {
+    {% if mobileContent == 'none' %}
+      .sale-banner {
+        display: none;
+      }
+    {% endif %}
+
     {% if mobileContent contains ',' %}
       .sale-banner.{{ instance_id }} .container {
         gap: 3vw;
