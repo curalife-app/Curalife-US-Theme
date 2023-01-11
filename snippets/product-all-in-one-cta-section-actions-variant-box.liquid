@@ -137,6 +137,12 @@
       font-weight: 200;
       display: inline-block;
       margin: 0;
+      {% if isHighlightSubtitle %}
+        color: white;
+        border-radius: 15pxpx;
+        padding: 0px 10px;
+        background: var(--light-green);
+      {% endif %}
     }
 
     .variant-box .variant-info .variant-infos p b {
