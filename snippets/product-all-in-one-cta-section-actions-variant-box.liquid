@@ -45,7 +45,7 @@
       {% endif %}
       <p class="real-price rounded no-letters">{{ original_item_price | money_without_trailing_zeros }}</p>
     </div>
-      <p style="color: var(--light-green)">Per Month</p>
+      <p class="per-month">Per Month</p>
     </div>
     {% else %}
     <div class="price">
@@ -196,6 +196,7 @@
     }
 
     .variant-box .price .per-month {
+      font-family: "PP Radio Grotesk";
       color: var(--grey);
       font-size: 16px;
     }
