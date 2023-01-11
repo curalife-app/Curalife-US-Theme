@@ -162,9 +162,11 @@
 
 <script>
   videoReviewsSliderAllInOne = new Swiper('.thirty-day-video-reviews-section .swiper', {
-      slidesPerView: '1',
+      slidesPerView: 'auto',
       spaceBetween: 8, 
       grabCursor: true,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
       slideToClickedSlide: true,
       loop: false,
       navigation: {
