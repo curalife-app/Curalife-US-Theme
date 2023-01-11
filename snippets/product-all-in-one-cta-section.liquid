@@ -1,6 +1,10 @@
 <section class="cta-section">
   <div class="container product-container">
-    {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent, isHideThumbsSlider: isHideThumbsSlider %}
+    {% if isSingleThumbnail %}
+      <img src="{{ product.images[0].src }}" alt="{{ product.images[0].alt }}" class="product-image">
+    {% else %}
+        {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent, isHideThumbsSlider: isHideThumbsSlider %}
+    {% endif %}
 
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
