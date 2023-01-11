@@ -374,7 +374,7 @@
         });
       } else {
         $('.item').on('click', function() {
-          var container = $(this).parents('.pack-info-section.instance-{{ index }} .tabbed-content'),
+          var container = $(this).parents('.tabbed-content'),
               currId = $(this).attr('id'),
               items = container.find('.item');
               console.log(items);
