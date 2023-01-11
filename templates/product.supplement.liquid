@@ -1,9 +1,3 @@
-{% if product.tags contains "sleep" %}
-  {% assign category = "sleep" %}
-{% elsif product.tags contains "joint" %}
-  {% assign category = "joint-care" %}
-{% endif %}
-
 {% assign isCuralinBundled = false %}
 {% for prod in product.metafields.custom.bundle-products.value %}
   {% if prod.handle == 'curalin' %}
@@ -14,7 +8,7 @@
 <div id="supplement-page">
   {% render 'sale-banner', desktopContent: "none", mobileContent: "title", bgColor: "var(--light-green)", title: "Buy curalin & get 60% off happy joints" %}
   {% render 'product-all-in-one-cta-section', isCuralinContent: isCuralinBundled, badgesPosition: "cta", isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)" %}
-  {% render 'product-supplement-health-benefits', category: category %}
+  {% render 'product-supplement-health-benefits' %}
 
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
