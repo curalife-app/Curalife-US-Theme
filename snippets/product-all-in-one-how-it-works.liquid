@@ -1,6 +1,6 @@
 {% assign weeks = "Week 1 <br>
 Mindful Munching:Access your new meal plan with tons of new recipes that don’t compromise flavor!
-|Week 2<br>
+|Week 2<br> 
 Supplement Savvy:Start adding Curalin to your regime. We’ll guide you through it every step of the way!
 |Week 3<br>
 Find your Flow:Add in a movement routine that works for YOU! Go at your own pace, from the comfortability of your home. It’s doable, maintainable, and even enjoyable!
@@ -16,7 +16,10 @@ Small Steps, Big Wins:Set yourself up for success! Learn the health habits that 
         <div class="sub-text">Each week, we’ll conquer a new health habit together!</div>
         </div>
         <div class="grid-wrapper">
-          <img class="grid-img" src="{{ 'thirty-day-product-grid.png' | asset_url }}" width="891" height="20" alt=""> 
+          <img class="grid-img" src="{{ 'thirty-day-product-grid.png' | asset_url }}" width="891" height="20" alt="">   
+        </div>
+        <div class="grid-wrapper-mb">
+          <img class="grid-img-mb" src="{{ 'thirty-day-product-grid-mb.png' | asset_url }}" width="40" height="1502" alt="">
         </div>
     <div class="how-work-wrapper">
       {% for week in weeks %}
@@ -66,6 +69,10 @@ Small Steps, Big Wins:Set yourself up for success! Learn the health habits that 
       padding: 20px 50px;
     }
 
+    .grid-wrapper-mb {
+      display: none;
+    }
+
     .grid-img {
       width: 76%;
     }
@@ -108,6 +115,10 @@ Small Steps, Big Wins:Set yourself up for success! Learn the health habits that 
     @media screen and (max-width: 849px) {
         .grid-wrapper {
           display: none;
+        }
+
+        .grid-wrapper-mb {
+          display: flex;
         }
         .how-work .sub-title  {
           font-size: 28px;
