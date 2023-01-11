@@ -36,7 +36,7 @@
       </nav>
 
       <div class="content">
-        <div id="highlights-{{ index }}" class="item active" data-title="Product Highlights">
+        <div id="highlights-{{ index }}" class="item active always-active" data-title="Product Highlights">
           <div class="highlights item-content">
             {% for highlight in product.metafields.custom.product-highlights.value %}
               <div class="highlight">
@@ -277,6 +277,12 @@
 
     .pack-info-section .item.active .item-content {
       transition: opacity 0.8s ease-in-out;
+    }
+
+    .pack-info-section .item.always-active .item-content {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
     }
 
     .pack-info-section .tabbed-content .tabs {
