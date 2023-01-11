@@ -25,8 +25,8 @@
 {% for prod in product.metafields.custom.bundle_products %}
   {% if prod.handle == 'curalin' %}
     {% assign isCuralinBundled = true %}
-    <script>console.log("curalin {{isCuralinBundled}}")</script>
   {% endif %}
+  <script>console.log("curalin {{isCuralinBundled}}")</script>
 {% endfor %}
 
 
