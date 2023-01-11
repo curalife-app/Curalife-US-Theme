@@ -91,7 +91,7 @@
 
 <script>
   $( document ).ready(function() {
-      $(".variant-box").{% if defaultSelectionIndex %}eq({{ defaultSelectionIndex }}){% else %}last(){% endif %}.trigger( "click" );
+      $(".variant-box").{% if defaultSelectionIndex %}eq({{ defaultSelectionIndex | minus: 1 }}){% else %}last(){% endif %}.trigger( "click" );
   });
 
   function updateSave() {
