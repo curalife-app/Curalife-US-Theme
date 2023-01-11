@@ -22,7 +22,7 @@
 | split: '|' %}
 
 {% assign isCuralinBundled = false %}
-{% for prod in product.metafields.custom.bundle_products.value %}
+{% for prod in product.metafields.custom.bundle-products.value %}
   {% if prod.handle == 'curalin' %}
     {% assign isCuralinBundled = true %}
   {% endif %}
