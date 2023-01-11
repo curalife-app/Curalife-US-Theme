@@ -84,6 +84,7 @@
 
     .pack-info-section {
       background: var(--light-brown);
+      padding-bottom: 50vw;
     }
 
     .pack-info-section:nth-of-type(even) {
@@ -318,13 +319,14 @@
     @media all and (max-width: 768px) {
       .pack-info-section .tabbed-content {
         display: block;
-        margin-top: 80vw;
       }
 
       .pack-info-section .product-image-wrapper {
         bottom: 0;
-        top: 40vw;
         width: 100%;
+        position: relative;
+        text-align: center;
+        margin-top: 10vw;
       }
 
       .pack-info-section .product-image-wrapper .product-image {
@@ -341,6 +343,10 @@
 
       .pack-info-section .tabbed-content .item.active .item-content {
         padding: 5vw 0;
+      }
+
+      .pack-info-section .ingredient {
+        width: 27vw;
       }
     }
   </style>
