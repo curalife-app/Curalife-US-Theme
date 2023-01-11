@@ -186,9 +186,9 @@
 
     .variant-box .price .calculations p::after {
       content: "00";
-      font-size: 10px;
+      font-size: 0.6rem;
+      vertical-align: super;
       margin-right: 5px;
-      margin-top: -8px;
     }
 
     .variant-box .price .per-month {
@@ -243,26 +243,6 @@
       }
     }
   </style>
-
-  {% if isMini %}
-  <style>
-    .product-actions {
-      max-width: 350px;
-    }
-    .variant-box .variant-info {
-      width: 60%;
-    }
-
-    .cta-section .product-container {
-      grid-template-columns: 65% 35%;
-    }
-
-    .cta-section .product-image {
-      max-height: 700px;
-    }
-  </style>
-
-  {% endif %}
 
   <script>
     $(".variant-box").click(function() {
