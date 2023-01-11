@@ -46,6 +46,11 @@
     margin: 10px 0;
   }
 
+  .product-actions .variants {
+    display: flex;
+    flex-direction: {% if isReversed %}column-reverse{% else %}column{% endif %};
+  }
+
   .product-actions .submit-wrap button {
     background-color: var(--dark-green);
     border-color: var(--dark-green);
