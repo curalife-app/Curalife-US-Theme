@@ -124,22 +124,22 @@
       right: -10px;
     }
 
-    .highlights {
+    .pack-info-section .highlights {
       display: flex;
       flex-direction: column;
       gap: 30px;
     }
 
-    .highlights .highlight {
+    .pack-info-section .highlights .highlight {
       display: flex;
       align-items: center;
     }
 
-    .highlights .highlight p {
+    .pack-info-section .highlights .highlight p {
       margin: unset;
     }
 
-    .highlight-icon {
+    .pack-info-section .highlight-icon {
       background: var(--light-green);
       color: white;
       border-radius: 50%;
@@ -152,7 +152,7 @@
       margin-right: 20px;
     }
 
-    .instructions {
+    .pack-info-section .instructions {
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -178,61 +178,61 @@
       min-width: 80px;
     }
 
-    .ingredients {
+    .pack-info-section .ingredients {
       display: flex;
       flex-wrap: wrap;
       max-width: 400px;
       gap: 10px;
     }
 
-    .ingredient {
+    .pack-info-section .ingredient {
       width: 120px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .ingredient p {
+    .pack-info-section .ingredient p {
       font-size: 16px;
       text-align: center;
     }
 
-    .facts img {
+    .pack-info-section .facts img {
       max-height: 300px;
     }
 
-    .tabbed-content {
+    .pack-info-section .tabbed-content {
       max-width: 800px;
       display: flex;
       align-items: center;
       height: 300px;
     }
 
-    .tabs ul li {
+    .pack-info-section .tabs ul li {
       text-align: center;
       height: 70px;
       border-bottom: 1px solid;
     }
 
-    .tabs ul li:first-child {
+    .pack-info-section .tabs ul li:first-child {
       border-top: 1px solid;
     }
-    .tabs ul li a {
+    .pack-info-section .tabs ul li a {
       height: 100%;
       align-items: center;
       display: flex;
       justify-content: center;
     }
 
-    .tabs ul li a i {
+    .pack-info-section .tabs ul li a i {
       position: relative;
       transition: all 0.5s ease-in-out;
       font-style: normal;
       left: 20px;
     }
 
-    .tabs ul li a:hover,
-    .tabs ul li a.active {
+    .pack-info-section .tabs ul li a:hover,
+    .pack-info-section .tabs ul li a.active {
       color: var(--brown);
       font-weight: bold;
     }
@@ -241,21 +241,23 @@
     .pack-info-section:nth-of-type(even) .tabs ul li a.active {
       color: var(--dark-purple);
     }
-    .item {
+
+    .pack-info-section .item {
       margin-bottom: 2px;
     }
-    .item::before {
+
+    .pack-info-section .item::before {
       cursor: pointer;
       font-weight: bold;
       background: #eee;
       padding: 0.5em;
       display: block;
     }
-    .item.active::before {
+    .pack-info-section .item.active::before {
       background: #444;
       color: #eee;
     }
-    .item.active .item-content {
+    .pack-info-section .item.active .item-content {
       transition: opacity 0.8s ease-in-out;
     }
 
@@ -268,47 +270,47 @@
       }
     }
 
-    .tabbed-content .tabs {
+    .pack-info-section .tabbed-content .tabs {
       display: none;
     }
     .tabbed-content .item {
       min-height: 2em;
     }
-    .tabbed-content .item::before {
+    .pack-info-section .tabbed-content .item::before {
       content: attr(data-title);
     }
-    .tabbed-content .item .item-content {
+    .pack-info-section .tabbed-content .item .item-content {
       opacity: 0;
       visibility: hidden;
       height: 0;
     }
-    .tabbed-content .item.active .item-content {
+    .pack-info-section .tabbed-content .item.active .item-content {
       opacity: 1;
       visibility: visible;
       height: auto;
     }
     @media all and (min-width: 800px) {
-      .tabbed-content .tabs {
+      .pack-info-section .tabbed-content .tabs {
         display: block;
       }
-      .tabbed-content .tabs li {
+      .pack-info-section .tabbed-content .tabs li {
         display: inline-block;
       }
-      .tabbed-content .tabs li a {
+      .pack-info-section .tabbed-content .tabs li a {
         display: flex;
       }
-      .tabbed-content .item {
+      .pack-info-section .tabbed-content .item {
         min-height: 0;
       }
-      .tabbed-content .item::before {
+      .pack-info-section .tabbed-content .item::before {
         display: none;
       }
-      .tabbed-content.tabs-side .tabs {
+      .pack-info-section .tabbed-content.tabs-side .tabs {
         width: 300px;
         float: left;
         margin-right: 50px;
       }
-      .tabbed-content.tabs-side .tabs li {
+      .pack-info-section .tabbed-content.tabs-side .tabs li {
         display: block;
       }
     }
