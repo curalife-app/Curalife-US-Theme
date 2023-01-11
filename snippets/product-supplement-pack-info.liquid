@@ -258,6 +258,7 @@
     .item.active .item-content {
       transition: opacity 0.8s ease-in-out;
     }
+
     @media all and (min-width: 800px) {
       .item.active .item-content {
         padding-top: 0;
@@ -267,7 +268,6 @@
       }
     }
 
-    /* The project specific CSS starts here This is the minimum CSS that you will need in order for this to work */
     .tabbed-content .tabs {
       display: none;
     }
@@ -310,6 +310,19 @@
       }
       .tabbed-content.tabs-side .tabs li {
         display: block;
+      }
+    }
+
+    @media all and (max-width: 768px) {
+      .tabbed-content {
+        display: block;
+        margin-top: 70vw;
+      }
+
+      .product-image-wrapper {
+        bottom: 0;
+        top: 40vw;
+        width: 100%;
       }
     }
   </style>
