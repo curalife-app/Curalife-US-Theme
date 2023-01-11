@@ -28,9 +28,9 @@
         <ul>
           <li><a href="#highlights-{{ index }}" class="active">Product Highlights <i>></i></a></li>
           <li><a href="#instructions-{{ index }}">Usage Instructions <i>></i></a></li>
-          {% unless product.metafields.custom.ingredients.value %}
+          {% if product.metafields.custom.ingredients.value %}
             <li><a href="#ingredients-{{ index }}">Ingredients <i>></i></a></li>
-          {% endunless %}
+          {% endif %}
           <li><a href="#facts-{{ index }}">Supplement Facts <i>></i></a></li>
         </ul>
       </nav>
@@ -63,17 +63,19 @@
           </div>
         </div>
 
-        <div id="ingredients-{{ index }}" class="item" data-title="Ingredients">
-          <div class="ingredients item-content">
-            {% for ingredient in product.metafields.custom.ingredients.value %}
-              <div class="ingredient">
-                {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-'  %}
-                <img src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" alt="Ingredient" loading="lazy">
-                <p>{{ ingredient }}</p>
-              </div>
-            {% endfor %}
+        {% if product.metafields.custom.ingredients.value %}
+          <div id="ingredients-{{ index }}" class="item" data-title="Ingredients">
+            <div class="ingredients item-content">
+              {% for ingredient in product.metafields.custom.ingredients.value %}
+                <div class="ingredient">
+                  {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-'  %}
+                  <img src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" alt="Ingredient" loading="lazy">
+                  <p>{{ ingredient }}</p>
+                </div>
+              {% endfor %}
+            </div>
           </div>
-        </div>
+        {% endif %}
 
         <div id="facts-{{ index }}" class="item" data-title="Supplement Facts">
           <div class="facts item-content">
