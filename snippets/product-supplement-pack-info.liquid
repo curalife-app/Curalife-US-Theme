@@ -28,7 +28,9 @@
         <ul>
           <li><a href="#highlights-{{ index }}" class="active">Product Highlights <i>></i></a></li>
           <li><a href="#instructions-{{ index }}">Usage Instructions <i>></i></a></li>
-          <li><a href="#ingredients-{{ index }}">Ingredients <i>></i></a></li>
+          {% if product.metafields.custom.ingredients.value %}
+            <li><a href="#ingredients-{{ index }}">Ingredients <i>></i></a></li>
+          {% endif %}
           <li><a href="#facts-{{ index }}">Supplement Facts <i>></i></a></li>
         </ul>
       </nav>
