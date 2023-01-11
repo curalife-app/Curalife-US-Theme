@@ -28,6 +28,8 @@
   {% endif %}
 {% endfor %}
 
+<script>console.log("curalin {{isCuralinBundled}}")</script>
+
 <div id="supplement-page">
   {% render 'product-all-in-one-cta-section', isCuralinContent: isCuralinBundled, badgesPosition: "cta" %}
   {% render 'product-supplement-health-benefits',productHandle: productHandle, title: healthBenefitsTitle, subtitle: healthBenefitsSubtitle, benefits: benefits %}
