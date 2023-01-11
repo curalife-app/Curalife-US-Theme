@@ -1,3 +1,9 @@
+{% if page.template_suffix contains "supplement" %}
+  {% assign product_title = product.title %}
+{% else %}
+  {% assign product_title = "Curalin" %}
+{% endif %}
+
 <section id="call-expert-section">
   <div class="container">
     <div class="call-background">
@@ -5,10 +11,12 @@
         <img class="avatar" src="{{ 'onboarding-calling-woman.png' | asset_url }}" width="209" height="209" alt="" loading="lazy">
         <div class="text-calling">
           <div class="titles">
-            <h2>Schedule a call with a Curalin expert!</h2>
+            <h2>Schedule a call with our customer success expert!</h2>
           </div>
+
           <div class="grey-border"></div>
-          <p>With your purchase of Curalin, you can schedule a free 15 minute call with one of our Curalin experts to answer all your questions about Curalin! They will help guide your first 5 days on Curalin so you can go into it with confidence!</p>
+
+          <p>With your purchase of {{ product_title }}, you can schedule a free 15 minute call with one of our customer success experts to answer all your questions about {{ product_title }}! They will help guide your first 5 days on {{ product_title }} so you can go into it with confidence!</p>
           <div class="call">
             <a href="https://calendly.com/hellocuralife">
               <button>
