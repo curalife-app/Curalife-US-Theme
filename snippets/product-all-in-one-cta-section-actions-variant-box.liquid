@@ -17,6 +17,12 @@
 {% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
 {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
 
+
+{%- comment -%} More Variables {%- endcomment -%}
+{% assign quantity_by_cents = bottle_quantity | times: 100 %}
+{% assign item_price = var.price | divided_by: quantity %}
+
+
 <div class="variant-box">
   <div class="radio-box">
     {% if original_item_cap_total_with_bundle > var.price %}
@@ -40,7 +46,7 @@
       {% if original_item_cap_total_with_bundle > var.price %}
         <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
       {% endif %}
-      <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
+      <p class="real-price rounded no-letters">{{ item_price | money_without_trailing_zeros }}</p>
     </div>
     {% else %}
     <div class="price">
