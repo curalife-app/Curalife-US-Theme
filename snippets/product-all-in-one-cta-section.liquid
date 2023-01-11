@@ -1,6 +1,6 @@
 <section class="cta-section">
   <div class="container product-container">
-    {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent %}
+    {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent, isHideThumbsSlider: isHideThumbsSlider %}
 
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
