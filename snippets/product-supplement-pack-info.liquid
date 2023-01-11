@@ -1,7 +1,9 @@
 {% if product.tags contains "sleep" %}
-  {% assign supplement_type = "sleep" %}
+  {% assign bg_color = "var(--light-turquoise)" %}
+  {% assign number_color = "var(--dark-turquoise)" %}
 {% elsif product.tags contains "joint" %}
-  {% assign supplement_type = "joint" %}
+  {% assign bg_color = "var(--light-brown)" %}
+  {% assign number_color = "var(--dark-orange)" %}
 {% endif %}
 
 <section class="pack-info-section instance-{{ index }}">
@@ -93,7 +95,7 @@
     }
 
     .pack-info-section:nth-of-type(even) {
-      background: var(--light-purple);
+      background: {{ theme_color }};
     }
 
     .pack-info-section .product-image-wrapper {
