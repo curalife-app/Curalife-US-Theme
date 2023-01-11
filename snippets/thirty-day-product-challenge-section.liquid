@@ -29,7 +29,7 @@
               <div class="feature-price">a {{ price | times: 100 | money_without_trailing_zeros }} Value</div>
               {% endif %}
             </div>
-            <img class="feature-img" src="{{ feature | asset_url | split: ":" | last | split: "*" | last }}" width="92" height="92" alt="">
+            <img class="feature-img" src="{{ feature  | split: ":" | last | split: "*" | last | asset_url }}" width="92" height="92" alt="">
 
           </div>
           <script>console.log("{{ feature | asset_url }}")</script>
