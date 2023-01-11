@@ -29,7 +29,7 @@
 {% endfor %}
 
 <div id="supplement-page">
-  {% render 'sale-banner', isFlash: true, isFixed: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "var(--green)", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
+  {% render 'sale-banner', desktopContent: "", mobileContent: "title", bgColor: "var(--green)", title: "Buy curalin & get 60% off happy joints" %}
   {% render 'product-all-in-one-cta-section', isCuralinContent: isCuralinBundled, badgesPosition: "cta" %}
   {% render 'product-supplement-health-benefits',productHandle: productHandle, title: healthBenefitsTitle, subtitle: healthBenefitsSubtitle, benefits: benefits %}
 
