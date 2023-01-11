@@ -1,16 +1,11 @@
 <section id="info-section">
   <div class="container">
-    <img class="main-image" src="{{ "product-supplement-joint-info-section-main-image.png" | asset_url }}" alt="Joint Info" loading="lazy">
+    <img class="main-image" src="{{ "product-supplement-info-section-main-image.png" | asset_url }}" alt="Joint Info" loading="lazy">
 
     <div class="content">
-      <h2 class="title">How do your joints cushion themselves?</h2>
+      <h2 class="title">{{ product.metafields.custom.info_section_title }}</h2>
       <div class="line"></div>
-      <p class="description">Joints are cushioned by cartilage and fluids.<br>
-        Cartilage is a smooth, strong, stretchy tissue that covers bones at a joint. It absorbs shock and reduces friction and wear as you move.<br>
-        Synovial fluid is like an oil that surrounds and lubricates joints. It lets bones smoothly move against each other. It also nourishes cartilage.</p>
-      <h3>How does Curalin and the Happy Joints help?</h3>
-      <p>By supporting cartilage, synovial fluid, joint capsules, and by keeping inflammation in check.<br>
-        Combined, the supplements in the Happy Joints Bundle in addition to the ingredients in Curalin also support healthy blood sugar, which reinforces your joint health! </p>
+      <p class="description">{{ product.metafields.custom.info_section_description }}</p>
       <div class="button-wrapper">
         <a href="#" class="button">Learn More</a>
     </div>
@@ -18,51 +13,51 @@
 </section>
 
 <style>
-  #joint-info-section {
+  #info-section {
     background: #ECF2F2;
     padding: 50px 0;
   }
 
-  #joint-info-section .container {
+  #info-section .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  #joint-info-section .content {
+  #info-section .content {
     max-width: 500px;
   }
 
-  #joint-info-section .main-image {
+  #info-section .main-image {
     margin-left: -300px;
   }
 
-  #joint-info-section h2 {
+  #info-section h2 {
     color: var(--dark-orange);
     white-space: unset !important;
   }
 
-  #joint-info-section h3 {
+  #info-section h3 {
     margin: 30px 0;
     font-size: 24px;
   }
 
-  #joint-info-section .line {
+  #info-section .line {
     width: 100px;
     margin: 30px 0;
     border-bottom: 1px solid black;
   }
 
-  #joint-info-section p {
+  #info-section p {
     white-space: pre-line;
   }
 
   @media screen and (max-width: 768px) {
-    #joint-info-section .main-image {
+    #info-section .main-image {
       display: none;
     }
 
-    #joint-info-section .content {
+    #info-section .content {
       max-width: 100%;
     }
   }
