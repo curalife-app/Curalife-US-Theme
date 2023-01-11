@@ -104,41 +104,6 @@
     font-weight: 300;
     line-height: 2rem
   }
-
-  {% if titleVersion == "complex" %}
-    .faq-section .titles {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .faq-section .titles .sub-title h2 {
-      font-size: 1.9rem;
-    }
-
-    .faq-section .titles .sub-title p {
-      font-size: 1.4rem;
-    }
-
-    @media screen and (max-width:768px) {
-      .faq-section .titles {
-        flex-direction: column;
-      }
-    }
-  {% endif %}
-
-  {% if titleVersion == "light" %}
-    .faq-section .titles h2 {
-      margin: 0;
-      font-weight: bold;
-    }
-
-    @media screen and (max-width:768px) {
-      .faq-section .titles h2 {
-        margin-bottom: unset;
-      }
-    }
-  {% endif %}
 </style>
 
 <style>
