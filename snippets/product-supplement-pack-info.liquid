@@ -1,9 +1,11 @@
 {% if product.tags contains "sleep" %}
   {% assign bg_color = "var(--light-turquoise)" %}
   {% assign number_color = "var(--dark-turquoise)" %}
+  {% assign link_color = "var(--dark-turquoise)" %}
 {% elsif product.tags contains "joint" %}
-  {% assign bg_color = "var(--light-brown)" %}
-  {% assign number_color = "var(--dark-orange)" %}
+  {% assign bg_color = "var(--light-purple)" %}
+  {% assign number_color = "var(--purple)" %}
+  {% assign link_color = "var(--dark-purple)" %}
 {% endif %}
 
 <section class="pack-info-section instance-{{ index }}">
@@ -95,7 +97,7 @@
     }
 
     .pack-info-section:nth-of-type(even) {
-      background: {{ theme_color }};
+      background: {{ bg_color }};
     }
 
     .pack-info-section .product-image-wrapper {
@@ -124,7 +126,7 @@
     }
 
     .pack-info-section.pack-info-section:nth-of-type(even) .product-image-wrapper .number {
-      color: var(--purple);
+      color: {{ number_color }};
     }
 
     .pack-info-section .product-image-wrapper .product-image {
@@ -248,7 +250,7 @@
 
     .pack-info-section:nth-of-type(even) .tabs ul li a:hover,
     .pack-info-section:nth-of-type(even) .tabs ul li a.active {
-      color: var(--dark-purple);
+      color: {{ link_color }};
     }
 
     .pack-info-section .item {
