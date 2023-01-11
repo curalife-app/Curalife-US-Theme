@@ -4,16 +4,6 @@
   {% assign healthBenefitsTitle = "Glucose & Sleep?" %}
   {% assign healthBenefitsSubtitle = "They go together like your head and a pillow! Maintaining healthy blood sugar levels contributes to better sleep. Stable blood sugar levels help keep the production of melatonin, which is critical to sleep." %}
   {% assign benefits = "Supports healthy nighttime and morning blood sugar|Enjoy restful and comfortable sleep throughout the night|Promote your metabolic health and other health markers" | split: "|" %}
-  {% assign productHandle = "joint-care" %}
-
-  {% comment %} Packs Sections Variables {% endcomment %}
-  {% assign packsTitles = "curalin|Platinum Joint Care|Joint Care Gummies" %}
-  {% assign packsSubtitles = "Clinically tested blood sugar support. Unleash the 9 natural ingredients with the power to keep your life, and blood sugar in balance
-  |8 powerful ingredients for comfortable movement. Give your joints the nutrition and lubrication it needs to keep moving freely.
-  |Delicious bites of joint joy. This great-tasting gummy is exactly what you need to cushion your joints and to protect against wear." | split: "|" %}
-  {% assign packsHighlights = "<b>Clinically tested</b><br>by the world’s top endocrinologists;<b>Rated #1 recommended</b><br>by the biggest blood sugar support forum;<b>700+ doctors recommends</b><br>Curalin to their patients
-  |<b>Formulated for joints</b><br>with 8 synergistic ingredients;<b>Supports flexibility</b><br>and helps with joint stiffness;<b>Keeps inflammation</b><br>in check and promotes healthy blood pressure
-  |<b>Cushions joints</b><br>and keeps them feeling comfortable;<b>Regenerates cartilage</b><br>with glucosamine, which helps connective tissue;<b>Tastes great!</b><br>these gummies are delicious and taste like passionfruit!" | split: "|" %}
 
   {% assign faqItems = "How much should I take of each supplement?:Curalin-<br>On days 1&2 of use, take 1 capsule with every meal.<br>On days 3&4, take 1 capsule 30 minutes after each meal.<br>Day 5+, take 2 capsules 30 minutes after each meal.<br>Never exceed 6 capsules per day.<br><br>Platinum Joint Care-<br>Take 2 capsules once per day.<br>For best results take 20-30 min before a meal with an 8oz. glass of water.<br><br>Joint Care Gummies-<br>Take 2 gummies once per day.<br><br>Always consult a doctor before taking a new supplement.
   |Is this bundle for me?:If you’re looking to maintain healthy blood sugar level and support your joint function to sooth and lubricate your joints after a long day, this is a great product for you.<br>Of course, consult your doctor.
@@ -23,20 +13,14 @@
   | split: '|' %}
 {% elsif product.tags contains "joint" %}
   {% assign category = "joint-care" %}
-  {% comment %} Health Benefits Section Variables {% endcomment %}
+  {% if product.tags contains "gummies"%}
+
+  {% else %}
+
+  {% endif %}
   {% assign healthBenefitsTitle = "Give joy to your joints" %}
   {% assign healthBenefitsSubtitle = "It’s the optimal combo of vitamins & herbal supplements! Naturally lubricate your joints and help them recover from daily stresses" %}
   {% assign benefits = "Promote healthy blood sugar levels|Naturally support your joint cushions|Keep joint inflammation in check" | split: "|" %}
-
-  {% comment %} Packs Sections Variables {% endcomment %}
-  {% assign packsTitles = "curalin|Platinum Joint Care|Joint Care Gummies" %}
-  {% assign packsSubtitles = "Clinically tested blood sugar support. Unleash the 9 natural ingredients with the power to keep your life, and blood sugar in balance
-  |8 powerful ingredients for comfortable movement. Give your joints the nutrition and lubrication it needs to keep moving freely.
-  |Delicious bites of joint joy. This great-tasting gummy is exactly what you need to cushion your joints and to protect against wear." | split: "|" %}
-  {% assign packsHighlights = "<b>Clinically tested</b><br>by the world’s top endocrinologists;<b>Rated #1 recommended</b><br>by the biggest blood sugar support forum;<b>700+ doctors recommends</b><br>Curalin to their patients
-  |<b>Formulated for joints</b><br>with 8 synergistic ingredients;<b>Supports flexibility</b><br>and helps with joint stiffness;<b>Keeps inflammation</b><br>in check and promotes healthy blood pressure
-  |<b>Cushions joints</b><br>and keeps them feeling comfortable;<b>Regenerates cartilage</b><br>with glucosamine, which helps connective tissue;<b>Tastes great!</b><br>these gummies are delicious and taste like passionfruit!" | split: "|" %}
-  {% assign productHandle = "joint-care" %}
 
   {% assign faqItems = "How much should I take of each supplement?:Curalin-<br>On days 1&2 of use, take 1 capsule with every meal.<br>On days 3&4, take 1 capsule 30 minutes after each meal.<br>Day 5+, take 2 capsules 30 minutes after each meal.<br>Never exceed 6 capsules per day.<br><br>Platinum Joint Care-<br>Take 2 capsules once per day.<br>For best results take 20-30 min before a meal with an 8oz. glass of water.<br><br>Joint Care Gummies-<br>Take 2 gummies once per day.<br><br>Always consult a doctor before taking a new supplement.
   |Is this bundle for me?:If you’re looking to maintain healthy blood sugar level and support your joint function to sooth and lubricate your joints after a long day, this is a great product for you.<br>Of course, consult your doctor.
