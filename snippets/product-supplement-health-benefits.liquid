@@ -6,10 +6,10 @@
     </div>
 
     <ul class="health-benefits">
-      {% for benefit in product.metafields.custom.benefits_section_items.value %}
+      {% for benefit in product.metafields.custom.benefits_images.value %}
         <li class="health-benefit">
-          <img src="{{ product.metafields.custom.benefits_images[forloop.index].src | image_url }}" alt="health benefit" loading="lazy">
-          <p>{{ benefit }}</p>
+          <img src="{{ benefit.src | image_url }}" alt="health benefit" loading="lazy">
+          <p>{{ benefit.alt }}</p>
         </li>
       {% endfor %}
     </ul>
