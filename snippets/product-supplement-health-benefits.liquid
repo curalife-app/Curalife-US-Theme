@@ -38,9 +38,13 @@
     }
 
     #health-benefits-section .health-benefits .health-benefit {
-      flex-direction: row-reverse;
+      flex-direction: row;
       max-width: unset;
       gap: 50px;
+    }
+
+    #health-benefits-section .health-benefits .health-benefit:nth-child(even) {
+      flex-direction: row-reverse;
     }
   }
 </style>
