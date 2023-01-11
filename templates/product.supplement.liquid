@@ -25,10 +25,11 @@
 {% for prod in product.metafields.custom.bundle_products %}
   {% if prod.handle == 'curalin' %}
     {% assign isCuralinBundled = true %}
+    <script>console.log("curalin {{isCuralinBundled}}")</script>
   {% endif %}
 {% endfor %}
 
-<script>console.log("curalin {{isCuralinBundled}}")</script>
+
 
 <div id="supplement-page">
   {% render 'product-all-in-one-cta-section', isCuralinContent: isCuralinBundled, badgesPosition: "cta" %}
