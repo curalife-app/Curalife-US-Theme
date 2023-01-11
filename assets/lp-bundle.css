@@ -61,7 +61,7 @@ pre {
 /* Text-level semantics
    ========================================================================== */
 /**
- * Remove the gray background on active links in IE 10.
+ * Remove the grey background on active links in IE 10.
  */
 a {
   background-color: transparent; }
@@ -392,7 +392,7 @@ template {
   line-height: inherit;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: greyscale; }
 
 .icon-paywithfour:before {
   content: "\e900"; }

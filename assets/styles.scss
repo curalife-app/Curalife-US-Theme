@@ -486,7 +486,7 @@ section {
   box-shadow: 0px 76px 70px -57px rgb(0 0 0 / 10%);
 }
 
-.gray-bg {
+.grey-bg {
   position: relative;
   z-index: 3;
 
@@ -585,7 +585,7 @@ section {
         font-size: 16px;
         line-height: 1;
         background: none;
-        border: 1px solid var(--gray);
+        border: 1px solid var(--grey);
         border-radius: 2px;
       }
     }
@@ -749,7 +749,7 @@ section {
         padding-top: 20px;
         font-size: 18px;
         line-height: 1.5;
-        color: var(--dark-gray);
+        color: var(--dark-grey);
       }
     }
 
@@ -1453,7 +1453,7 @@ section {
   .sub-title {
     p {
       padding-top: 17px;
-      color: var(--dark-gray);
+      color: var(--dark-grey);
     }
   }
 
@@ -3191,7 +3191,7 @@ section {
   }
 }
 
-.retail-text.gray-bg {
+.retail-text.grey-bg {
   background: #F0F1F4;
 }
 
@@ -3762,7 +3762,7 @@ section {
           font-size: 18px;
           line-height: 1.5;
           text-align: center;
-          color: var(--dark-gray);
+          color: var(--dark-grey);
         }
       }
 
