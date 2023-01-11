@@ -6,7 +6,7 @@
     </div>
 
     <ul class="health-benefits">
-      {% for benefit in benefits %}
+      {% for benefit in product.metafields.custom.benefits.value %}
         <li class="health-benefit">
           <img src="{{ "product-supplement-" | append: category | append: "-health-benefits-" | append: forloop.index | append: ".png" | asset_url }}" alt="health-benefit-1" loading="lazy">
           <p>{{ benefit }}</p>
