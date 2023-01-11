@@ -14,11 +14,10 @@ Small Steps, Big Wins:Set yourself up for success! Learn the health habits that 
           How the 30 day challenge works:         
         </div>
         <div class="sub-text">Each week, we’ll conquer a new health habit together!</div>
-       
-          <img class="grid-img" src="{{ 'thirty-day-product-grid.png' | asset_url }}" width="891" height="20" alt=""> 
-        
+      
         </div>
     <div class="how-work-wrapper">
+      <img class="grid-img" src="{{ 'thirty-day-product-grid.png' | asset_url }}" width="891" height="20" alt=""> 
       {% for week in weeks %}
         <div class="how-work-text">
           <div class="week-title">{{ week | split: ":" | first }}</div>
