@@ -8,7 +8,7 @@
     <ul class="health-benefits">
       {% for benefit in product.metafields.custom.benefits %}
         <li class="health-benefit">
-          <img src="{{ product.metafields.custom.benefits_images[forloop.index] | image_url }}" alt="health-benefit-1" loading="lazy">
+          <img src="{{ product.metafields.custom.benefits_images[forloop.index] | image_url }}" alt="health benefit" loading="lazy">
           <p>{{ benefit }}</p>
         </li>
       {% endfor %}
