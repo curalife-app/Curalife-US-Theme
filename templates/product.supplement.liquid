@@ -1,15 +1,19 @@
 {% if product.tags contains "sleep" %}
   {% assign category = "sleep" %}
-  {% comment %} Health Benefits Section Variables {% endcomment %}
-  {% assign healthBenefitsTitle = "Glucose & Sleep?" %}
-  {% assign healthBenefitsSubtitle = "They go together like your head and a pillow! Maintaining healthy blood sugar levels contributes to better sleep. Stable blood sugar levels help keep the production of melatonin, which is critical to sleep." %}
-  {% assign benefits = "Supports healthy nighttime and morning blood sugar|Enjoy restful and comfortable sleep throughout the night|Promote your metabolic health and other health markers" | split: "|" %}
-  {% assign faqItems = "How much should I take of each supplement?:Curalin-<br>On days 1&2 of use, take 1 capsule with every meal.<br>On days 3&4, take 1 capsule 30 minutes after each meal.<br>Day 5+, take 2 capsules 30 minutes after each meal.<br>Never exceed 6 capsules per day.<br><br>Platinum Joint Care-<br>Take 2 capsules once per day.<br>For best results take 20-30 min before a meal with an 8oz. glass of water.<br><br>Joint Care Gummies-<br>Take 2 gummies once per day.<br><br>Always consult a doctor before taking a new supplement.
-  |Is this bundle for me?:If you’re looking to maintain healthy blood sugar level and support your joint function to sooth and lubricate your joints after a long day, this is a great product for you.<br>Of course, consult your doctor.
-  |Where are the products made?:Platinum Joint Care and Joint Care Gummies are made right here in the USA!<br>Curalin is powdered in India and capsuled and bottled in the USA.
-  |Are these supplements certified?:All of our supplements are made in NSF and GMP certified, and FDA registered facilities.
-  |Can I take these supplements alongside my medications?:Generally speaking, these supplements are very safe. However, always consult your doctor before starting on a new supplement."
-  | split: '|' %}
+  {% if product.tags contains "gummies" %}
+
+  {% else %}
+    {% comment %} Health Benefits Section Variables {% endcomment %}
+    {% assign healthBenefitsTitle = "Glucose & Sleep?" %}
+    {% assign healthBenefitsSubtitle = "They go together like your head and a pillow! Maintaining healthy blood sugar levels contributes to better sleep. Stable blood sugar levels help keep the production of melatonin, which is critical to sleep." %}
+    {% assign benefits = "Supports healthy nighttime and morning blood sugar|Enjoy restful and comfortable sleep throughout the night|Promote your metabolic health and other health markers" | split: "|" %}
+    {% assign faqItems = "How much should I take of each supplement?:Curalin-<br>On days 1&2 of use, take 1 capsule with every meal.<br>On days 3&4, take 1 capsule 30 minutes after each meal.<br>Day 5+, take 2 capsules 30 minutes after each meal.<br>Never exceed 6 capsules per day.<br><br>Platinum Joint Care-<br>Take 2 capsules once per day.<br>For best results take 20-30 min before a meal with an 8oz. glass of water.<br><br>Joint Care Gummies-<br>Take 2 gummies once per day.<br><br>Always consult a doctor before taking a new supplement.
+    |Is this bundle for me?:If you’re looking to maintain healthy blood sugar level and support your joint function to sooth and lubricate your joints after a long day, this is a great product for you.<br>Of course, consult your doctor.
+    |Where are the products made?:Platinum Joint Care and Joint Care Gummies are made right here in the USA!<br>Curalin is powdered in India and capsuled and bottled in the USA.
+    |Are these supplements certified?:All of our supplements are made in NSF and GMP certified, and FDA registered facilities.
+    |Can I take these supplements alongside my medications?:Generally speaking, these supplements are very safe. However, always consult your doctor before starting on a new supplement."
+    | split: '|' %}
+  {% endif %}
 {% elsif product.tags contains "joint" %}
   {% assign category = "joint-care" %}
   {% if product.tags contains "gummies"%}
@@ -45,7 +49,7 @@
 <div id="supplement-page">
   {% render 'sale-banner', desktopContent: "none", mobileContent: "title", bgColor: "var(--light-green)", title: "Buy curalin & get 60% off happy joints" %}
   {% render 'product-all-in-one-cta-section', isCuralinContent: isCuralinBundled, badgesPosition: "cta", isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)" %}
-  {% render 'product-supplement-health-benefits', title: healthBenefitsTitle, subtitle: healthBenefitsSubtitle, benefits: benefits, category: category %}
+  {% render 'product-supplement-health-benefits', category: category %}
 
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
