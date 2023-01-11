@@ -244,6 +244,18 @@
     }
   </style>
 
+  {% if isMini %}
+  <style>
+    .product-actions {
+      max-width: 350px;
+    }
+    .variant-box .variant-info {
+      width: 60%;
+    }
+  </style>
+
+  {% endif %}
+
   <script>
     $(".variant-box").click(function() {
       $(this).find('input[type=radio]').prop('checked', true);
