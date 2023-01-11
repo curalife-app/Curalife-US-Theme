@@ -49,10 +49,21 @@
 
   #joint-info-section .line {
     width: 100px;
-    padding: 30px 0;
+    margin: 30px 0;
+    border-bottom: 1px solid black;
   }
 
   #joint-info-section p {
     white-space: pre-line;
+  }
+
+  @media screen and (max-width: 768px) {
+    #joint-info-section .main-image {
+      display: none;
+    }
+
+    #joint-info-section .content {
+      max-width: 100%;
+    }
   }
 </style>
