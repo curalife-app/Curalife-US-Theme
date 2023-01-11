@@ -16,10 +16,6 @@
 {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
 {% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
 {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
-
-
-{%- comment -%} More Variables {%- endcomment -%}
-{% assign quantity_by_cents = bottle_quantity | times: 100 %}
 {% assign original_item_price = var.price | divided_by: bottle_quantity %}
 
 
