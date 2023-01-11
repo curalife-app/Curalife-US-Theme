@@ -1,3 +1,9 @@
+{% if product.tags contains "sleep" %}
+  {% assign supplement_type = "sleep" %}
+{% elsif product.tags contains "joint" %}
+  {% assign supplement_type = "joint" %}
+{% endif %}
+
 <section class="pack-info-section instance-{{ index }}">
   <div class="container">
     <div class="titles">
