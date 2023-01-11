@@ -1,9 +1,9 @@
 <section class="cta-section">
   <div class="container product-container">
-    {% if isSingleThumbnail %}
-      <img src="{{ product.images[0].src }}" alt="{{ product.images[0].alt }}" class="product-image">
-    {% else %}
+    {% if product.images.length > 1 %}
       {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent %}
+    {% else %}
+      <img src="{{ product.images[0].src }}" alt="{{ product.images[0].alt }}" class="product-image">
     {% endif %}
 
     <div class="product-info">
