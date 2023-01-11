@@ -10,7 +10,9 @@
       {% endif %}
     </div>
 
-    {% render 'product-all-in-one-cta-section-actions', title: "Select Your Pack", challenge_value: challenge_value, curaeats_value: curaeats_value %}
+    {% if badgesPosition == "cta" %}
+      {% render 'product-all-in-one-cta-section-actions', title: "Select Your Deal", isBadges: true, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+    {% endif %}
   </div>
 
   {% render 'trust-badges-widget', content: "free-shipping,money-back,secure-checkout", colors: "#5c5c5c", bottomLine: true %}
