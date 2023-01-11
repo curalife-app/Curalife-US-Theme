@@ -201,9 +201,9 @@
   {% endunless %}
 
   @media screen and (max-width: 768px) {
-    {% if mobileContent == 'none' %}
+    {% if desktopContent == 'none' %}
       .sale-banner {
-        display: none;
+        display: block;
       }
     {% endif %}
 
