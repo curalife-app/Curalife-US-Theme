@@ -4,6 +4,9 @@
   <div class="container">
     <div class="product-list" id="product-list-section">
       {% for prod in Prods %}
+        {% if forloop.index == "2" %}
+          {% assign isRecommended = true %}
+        {% endif %}
         {% if request.page_type == 'collection' %}
           {% assign product = prod %}
         {% else %}
