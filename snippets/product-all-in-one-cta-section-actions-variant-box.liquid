@@ -26,7 +26,7 @@
     {% else %}
       {% assign discount = 0 %}
     {% endif %}
-    <input type="radio" name="pack" value="{{ var.id }}" pack-quantity="{{ var.metafields.my_fields.bottle_pack_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
+    <input type="radio" name="pack" value="{{ var.id }}" pack-quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
   </div>
   <div class="variant-info">
     <p class="variant-title">{{ var.title }}</p>
