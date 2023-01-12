@@ -4,16 +4,17 @@
   <div class="container">
     <div class="product-list" id="product-list-section">
       {% for prod in Prods %}
-        {% if forloop.index == "2" %}
-          {% assign isRecommended = true %}
-        {% endif %}
         {% if request.page_type == 'collection' %}
           {% assign product = prod %}
         {% else %}
           {% assign product = all_products[prod] %}
         {% endif %}
 
-        {% render 'product-card', product: product %}
+        {% if forloop.index == "2" %}
+          {% assign isRecommended = true %}
+        {% endif %}
+
+        {% render 'product-card', product: product, isRecommended: isRecommended %}
       {% endfor %}
     </div>
   </div>
