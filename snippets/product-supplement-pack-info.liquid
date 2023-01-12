@@ -266,6 +266,7 @@
 
     .pack-info-section .item {
       margin-bottom: 2px;
+      position: relative;
     }
 
     .pack-info-section .item::before {
@@ -351,6 +352,13 @@
       .pack-info-section .item::after {
         content: "+";
         font-size: 30px;
+        position: absolute;
+        top: 3vw;
+        right: 2vw;
+      }
+
+      .pack-info-section .item.active::after {
+        content: "-";
       }
 
       .pack-info-section .product-image-wrapper {
