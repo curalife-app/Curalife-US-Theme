@@ -6,6 +6,7 @@
   </ul>
 </div>
 
+{% for collection in collections %}
 <div class="product-grid">
   {% for product in collection.products %}
     {% if product.collections contains collection_handle %}
@@ -17,7 +18,7 @@
     {% endif %}
   {% endfor %}
 </div>
-
+{% endfor %}
 <script>
   var tabs = document.querySelectorAll('.category-tabs a');
   var productGrid = document.querySelector('.product-grid');
