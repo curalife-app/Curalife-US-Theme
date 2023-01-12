@@ -16,7 +16,7 @@
           {% assign isLast = true %}
         {% endif %}
 
-        {% render 'product-card', product: product, isRecommended: isRecommended, isLastRender: isLast %}
+        {% render 'product-card', product: product, isRecommended: isRecommended, isLastRender: isLast, isSkipCart: isSkipCart %}
       {% endfor %}
     </div>
   </div>
