@@ -1581,7 +1581,7 @@ body.compensate-for-scrollbar {
 
 :root {
   --transition: .3s ease-in-out;
-  --poppins: 'Poppins', sans-serif;
+  --sub-font: 'Poppins', sans-serif;
   --white: #ffffff;
   --black: #000000;
   --dark: #222222;
@@ -1600,7 +1600,7 @@ body {
   position: relative;
   min-width: 320px;
   color: var(--black);
-  font-family: var(--poppins);
+  font-family: var(--sub-font);
   min-height: 100vh;
 }
 
@@ -2058,7 +2058,7 @@ header.scrolled:before {
   position: absolute;
   top: 0;
   right: 0;
-  font-family: var(--poppins);
+  font-family: var(--sub-font);
   font-weight: 600;
   font-size: 12px;
   line-height: 1;

@@ -17,7 +17,7 @@ $color_16: var(--dark);
 $font-family_1: monospace,monospace;
 $font-family_2: inherit;
 $font-family_3: icoFont;
-$font-family_4: var(--poppins);
+$font-family_4: var(--sub-font);
 $font-family_5: icoFont,serif;
 $background-color_1: transparent;
 $background-color_2: rgba(0,0,0,.1);
@@ -1312,7 +1312,8 @@ body.compensate-for-scrollbar {
 }
 :root {
 	--transition: .3s ease-in-out;
-	--poppins: 'DM Sans',sans-serif;
+	--main-font: 'PP Radio Grotesk','DM Sans',sans-serif;
+	--sub-font: 'DM Sans',sans-serif;
 	--white: #ffffff;
 	--black: #000000;
 	--dark: #222222;
