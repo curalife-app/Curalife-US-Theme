@@ -9,7 +9,7 @@
 {% for collection in collections %}
 <div class="product-grid">
   {% for product in collection.products %}
-    <script>console.log("{{ collection_handle }}"")</script>
+    <script>console.log("{{ collection_handle }}")</script>
 
     {% if product.collections contains collection_handle %}
       <div class="product-card">
