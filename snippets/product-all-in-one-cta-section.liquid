@@ -8,7 +8,16 @@
         <p class="multiplier">X2</p>
 
         {% if isCuralinContent %}
-          <img src="{{ "product-sale-60-badge.png" | asset_url }}" alt="Curalin" class="cucuralife sale badge" loading="lazy">
+          <img src="{{ "product-sale-60-badge.png" | asset_url }}" alt="Curalin" class="sale-badge" loading="lazy">
+
+          <style>
+            .sale-badge {
+              position: absolute;
+              top: 100px;
+              right: 100px;
+              width: 100px;
+            }
+          </style>
         {% endif %}
       {% endif %}
     </div>
