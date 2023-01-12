@@ -250,6 +250,7 @@
     $(".variant-box").click(function() {
       $(this).find('input[type=radio]').prop('checked', true);
       updateCTA();
+      updateMultiplier();
 
       // Slide to Variant Image
       let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');

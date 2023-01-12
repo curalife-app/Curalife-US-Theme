@@ -109,6 +109,11 @@
     }).animate({'opacity': 1}, 800);
   }
 
+  function updateMultiplier() {
+    let varIndex = $('input[name=pack]:checked').attr('index');
+    varIndex > 1 ? $(".multiplier").text(varIndex) : $(".multiplier").text("");
+  }
+
   // On Quantity Change
   $(document).on("click", ".submit-wrap .qty-control a", function (e) {
     e.preventDefault();
