@@ -98,8 +98,12 @@
       $(".variant-box").{% if defaultSelectionIndex %}eq({{ defaultSelectionIndex | minus: 1 }}){% else %}last(){% endif %}.trigger( "click" );
   });
 
-  function updateSave() {
-    let saveText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
+  function updateCTA() {
+    {% if ctaTextType == "Total" %}
+      let saveText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
+    {% else %}
+      let saveText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
+    {% endif %}
 
     $('#save').animate({'opacity': 0}, 800, function () {
       $(this).text(saveText);
