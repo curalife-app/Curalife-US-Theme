@@ -6,6 +6,7 @@
   </ul>
 </div>
 
+{% for collection in collections %}
 <div class="product-grid">
   {% for product in products %}
     <div class="product-card" data-product-collections="{{ product.collections | map: 'handle' | join: ' ' }}">
@@ -15,6 +16,7 @@
     </div>
   {% endfor %}
 </div>
+{% endfor %}
 
 <script>
   $('.category-tabs a').click(function (e) {
