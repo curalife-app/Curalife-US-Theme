@@ -8,7 +8,7 @@
 
 {% for collection in collections %}
 <div class="product-grid">
-  {% for product in products %}
+  {% for product in collection.products %}
     <div class="product-card" data-product-collections="{{ product.collections | map: 'handle' | join: ' ' }}">
       <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
       <h2>{{ product.title }}</h2>
