@@ -6,26 +6,28 @@
       {% if forloop.last %}
         {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value, isLastRender: true %}
       {% else %}
-        {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+        {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
       {% endif %}
     {% endfor %}
   </div>
 
   {% comment %} <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/> {% endcomment %}
   <div class="submit-wrap">
-    <div class="qty-data" style="display:none">
-      <div class="qty-control">
-        <a data-act="-" href="javascript:void(0)">
-          <span class="icon-minus"></span>
-        </a>
-        <label>
-          <input maxlength="4" name="quantity" type="number" value="1">
-        </label>
-        <a data-act="+" href="javascript:void(0)">
-          <span class="icon-plus"></span>
-        </a>
+    {% if isBuyQuantity %}
+      <div class="qty-data" style="display:none">
+        <div class="qty-control">
+          <a data-act="-" href="javascript:void(0)">
+            <span class="icon-minus"></span>
+          </a>
+          <label>
+            <input maxlength="4" name="quantity" type="number" value="1">
+          </label>
+          <a data-act="+" href="javascript:void(0)">
+            <span class="icon-plus"></span>
+          </a>
+        </div>
       </div>
-    </div>
+    {% endif %}
 
     <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
   </div>
@@ -71,7 +73,6 @@
 
   .product-actions .submit-wrap button span.save {
     font-weight: 100;
-    font-size: 75%;
   }
 
   .product-actions .submit-wrap .qty-data .qty-control {
@@ -96,12 +97,21 @@
       $(".variant-box").{% if defaultSelectionIndex %}eq({{ defaultSelectionIndex | minus: 1 }}){% else %}last(){% endif %}.trigger( "click" );
   });
 
-  function updateSave() {
-    let saveText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
+  function updateCTA() {
+    {% if ctaTextType == "Total" %}
+      let ctaText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
+    {% else %}
+      let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
+    {% endif %}
 
     $('#save').animate({'opacity': 0}, 800, function () {
-      $(this).text(saveText);
+      $(this).text(ctaText);
     }).animate({'opacity': 1}, 800);
+  }
+
+  function updateMultiplier() {
+    let varIndex = $('input[name=pack]:checked').attr('quantity');
+    varIndex > 1 ? $(".multiplier").text("X" + varIndex) : $(".multiplier").text("");
   }
 
   // On Quantity Change
@@ -123,7 +133,7 @@
   // On Buy Button Click
   $(document).on("click", "#buy-button", function () {
     let checkedPack = $('input[name=pack]:checked').val();
-    let checkedQuantity = $('input[name=quantity]').val();
+    let checkedQuantity = 1;
     let checkoutLink = "https://" + location.hostname + "/cart/" + checkedPack + ":" + checkedQuantity;
     window.location.href = checkoutLink;
 
