@@ -9,7 +9,8 @@
 {% for collection in collections %}
 <div class="product-grid">
   {% for product in collection.products %}
-    console.log("{{ collection_handle }}"")
+    <script>console.log("{{ collection_handle }}"")</script>
+
     {% if product.collections contains collection_handle %}
       <div class="product-card">
         <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
