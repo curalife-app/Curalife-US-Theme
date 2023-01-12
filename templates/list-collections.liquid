@@ -9,6 +9,7 @@
 {% for collection in collections %}
 <div class="product-grid">
   {% for product in collection.products %}
+    console.log("{{ collection_handle }}"")
     {% if product.collections contains collection_handle %}
       <div class="product-card">
         <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
@@ -19,6 +20,7 @@
   {% endfor %}
 </div>
 {% endfor %}
+
 <script>
   var tabs = document.querySelectorAll('.category-tabs a');
   var productGrid = document.querySelector('.product-grid');
