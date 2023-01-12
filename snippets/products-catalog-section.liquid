@@ -1,20 +1,3 @@
-{% if shop.name == "CuraLife" %}
-  {% assign promotion_title = "+ Life Changing Bonus" %}
-
-  {% if localization.country.iso_code == 'CA' %}
-    {% assign bundle_addition_value = 17100 %}
-  {% elsif localization.country.iso_code == 'AU' %}
-    {% assign bundle_addition_value = 19000 %}
-  {% else %}
-    {% assign bundle_addition_value = 12800 %}
-  {% endif %}
-{% elsif shop.name == "CuraLife Global" %}
-  {% assign promotion_title = "+ CuraEats App" %}
-  {% assign bundle_addition_value = 2400 %}
-{% endif %}
-
-{% render 'script.round-converted-currency' %}
-
 <section id="product-catalog-section">
   {% render 'collection-titles' %}
 
