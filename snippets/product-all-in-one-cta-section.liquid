@@ -1,10 +1,13 @@
 <section class="cta-section">
   <div class="container product-container">
-    {% if product.images.size > 1 %}
-      {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent %}
-    {% else %}
-      <img src="{{ product.images[0].src | image_url }}" alt="{{ product.images[0].alt }}" class="product-image" loading="lazy">
-    {% endif %}
+    <div class="product-image-wrapper">
+      {% if product.images.size > 1 %}
+        {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent %}
+      {% else %}
+        <img src="{{ product.images[0].src | image_url }}" alt="{{ product.images[0].alt }}" class="product-image" loading="lazy">
+        <p class="multiplier">X3</p>
+      {% endif %}
+    </div>
 
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
