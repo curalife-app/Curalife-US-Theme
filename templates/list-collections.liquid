@@ -6,21 +6,19 @@
   </ul>
 </div>
 
-{% for collection in collections %}
 <div class="product-grid">
-  {% for product in collection.products %}
-    <script>console.log("{{ collection_handle }}")</script>
-
-    {% if product.collections contains collection_handle %}
-      <div class="product-card">
-        <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
-        <h2>{{ product.title }}</h2>
-        <p>{{ product.price }}</p>
-      </div>
-    {% endif %}
+  {% for product in products %}
+    {% for collection in product.collections %}
+      {% if collection.handle == collection_handle %}
+        <div class="product-card">
+          <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
+          <h2>{{ product.title }}</h2>
+          <p>{{ product.price }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 </div>
-{% endfor %}
 
 <script>
   var tabs = document.querySelectorAll('.category-tabs a');
