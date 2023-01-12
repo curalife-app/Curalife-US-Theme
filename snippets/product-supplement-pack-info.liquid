@@ -58,7 +58,7 @@
                   {% endfor %}
                 </div>
                 <p>{{ step.subtitle }} <br> {{ step.text }} <br> {{ step.text_2 }}</p>
-               
+
               </div>
             {% endfor %}
           </div>
@@ -266,6 +266,7 @@
 
     .pack-info-section .item {
       margin-bottom: 2px;
+      position: relative;
     }
 
     .pack-info-section .item::before {
@@ -348,11 +349,26 @@
         margin-left: unset !important;
       }
 
-      {% comment %} .pack-info-section .item.always-active .item-content {
-        opacity: 1;
-        visibility: visible;
-        height: auto;
-      } {% endcomment %}
+      .pack-info-section .item::after {
+        content: "+";
+        font-size: 30px;
+        position: absolute;
+        top: 3vw;
+        right: 2vw;
+        border: 2px solid var(--light-green);
+        border-radius: 50%;
+        width: 5vw;
+        height: 5vw;
+        font-size: 6vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light-green);
+      }
+
+      .pack-info-section .item.active::after {
+        content: "-";
+      }
 
       .pack-info-section .product-image-wrapper {
         bottom: 0;
@@ -365,16 +381,15 @@
       .pack-info-section .product-image-wrapper .product-image {
         right: unset;
         text-align: center;
-        max-width: 70vw;
       }
 
       .pack-info-section .product-image-wrapper .number {
-        top: 15vw;
-        font-size: 70vw;
+        top: -15vw;
+        font-size: 70vw !important;
         right: 13vw;
       }
 
-      .pack-info-section .tabbed-content .item .item-content {
+      .pack-info-section .tabbed-content .item.active .item-content {
         padding: 5vw 0;
       }
 
