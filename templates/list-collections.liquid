@@ -1,5 +1,3 @@
-{% assign collection_handle = collection.handle %}
-
 <div class="category-tabs">
   <ul>
     {% for collection in collections %}
@@ -8,40 +6,27 @@
   </ul>
 </div>
 
+{% for collection in collections %}
 <div class="product-grid">
-  {% for product in products %}
-    {% for collection in product.collections %}
-      {% if collection.handle == collection_handle %}
-        <div class="product-card">
-          <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
-          <h2>{{ product.title }}</h2>
-          <p>{{ product.price }}</p>
-        </div>
-      {% endif %}
-    {% endfor %}
+  {% for product in collection.products %}
+    <div class="product-card" data-product-collections="{{ product.collections | map: 'handle' | join: ' ' }}">
+      <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.price }}</p>
+    </div>
   {% endfor %}
 </div>
+{% endfor %}
 
 <script>
-  var tabs = document.querySelectorAll('.category-tabs a');
-  var productGrid = document.querySelector('.product-grid');
+  $('.category-tabs a').click(function (e) {
+    e.preventDefault();
 
-  for (var i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener('click', function(event) {
-      event.preventDefault();
+    $('.category-tabs a').removeClass('active');
+    $(this).addClass('active');
 
-      var collectionHandle = this.dataset.collectionHandle;
-      productGrid.setAttribute('data-collection-handle', collectionHandle);
-    });
-  }
+    var collectionHandle = $(this).data('collection-handle');
+    $('.product-grid .product-card').hide();
+    $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').show();
+  });
 </script>
-
-<style>
-  .product-card {
-    display: none;
-  }
-
-  [data-collection-handle="{{ collection_handle }}"] .product-card {
-    display: block;
-  }
-</style>
