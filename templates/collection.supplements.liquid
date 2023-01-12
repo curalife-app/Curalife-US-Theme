@@ -1,0 +1,44 @@
+<div class="category-tabs">
+  <ul>
+    {% for collection in collections %}
+      <li><a href="#" data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="product-grid">
+  {% for product in collection.products %}
+    {% if product.collections contains collection_handle %}
+      <div class="product-card">
+        <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.price }}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<script>
+  var tabs = document.querySelectorAll('.category-tabs a');
+  var productGrid = document.querySelector('.product-grid');
+
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', function(event) {
+      event.preventDefault();
+
+      var collectionHandle = this.dataset.collectionHandle;
+      productGrid.setAttribute('data-collection-handle', collectionHandle);
+    });
+  }
+</script>
+
+<style>
+  .product-card {
+    display: none;
+  }
+
+  [data-collection-handle="{{ collection_handle }}"] .product-card {
+    display: block;
+  }
+
+</style>
