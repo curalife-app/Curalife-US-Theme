@@ -1,12 +1,22 @@
+{% if product.template_suffix contains "supplement" %}
+  {% assign product_title = product.title %}
+{% else %}
+  {% assign product_title = "Curalin" %}
+{% endif %}
+
 <section id="call-expert-section">
   <div class="container">
     <div class="call-background">
       <div class="schedule-call">
         <img class="avatar" src="{{ 'onboarding-calling-woman.png' | asset_url }}" width="209" height="209" alt="" loading="lazy">
         <div class="text-calling">
-          <div class="title">Schedule a call with a Curalin expert!</div>
+          <div class="titles">
+            <h2>Schedule a call with our customer success expert!</h2>
+          </div>
+
           <div class="grey-border"></div>
-          <p>With your purchase of Curalin, you can schedule a free 15 minute call with one of our Curalin experts to answer all your questions about Curalin! They will help guide your first 5 days on Curalin so you can go into it with confidence!</p>
+
+          <p>With your purchase of {{ product_title }}, you can schedule a free 15 minute call with one of our customer success experts to answer all your questions about {{ product_title }}! They will help guide your first 5 days on {{ product_title }} so you can go into it with confidence!</p>
           <div class="call">
             <a href="https://calendly.com/hellocuralife">
               <button>
@@ -44,12 +54,16 @@
     align-items: flex-start;
   }
 
-  #call-expert-section .text-calling .title {
-    font-family: 'PP Radio Grotesk';
+  #call-expert-section .text-calling .titles {
+    max-width: unset;
+    margin: auto;
+  }
+
+  #call-expert-section .text-calling h2 {
     font-weight: 700;
     font-size: 34px;
     line-height: 41px;
-    color: #000000;
+    text-align: left;
   }
 
   #call-expert-section .avatar {
@@ -59,10 +73,9 @@
 
   #call-expert-section .grey-border {
     width: 98px;
-    border: 2px solid #333333;
+    border: 1px solid #333333;
     position: relative;
-    top: 15%;
-    margin-bottom: 10%;
+    margin: 10px 0;
   }
 
   #call-expert-section .text-calling p {
@@ -106,6 +119,7 @@
     #call-expert-section .avatar {
       width: 40vw;
       height: auto;
+      {% if isHideImageOnMobile %}display: none;{% endif %}
     }
 
     #call-expert-section .grey-border {
@@ -118,7 +132,7 @@
     #call-expert-section .text-calling p {
       font-size: 18px;
       line-height: 23px;
-      margin-top: 15vw;
+      padding: 2vw 0;
     }
 
     #call-expert-section .call button {

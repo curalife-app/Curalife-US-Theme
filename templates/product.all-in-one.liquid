@@ -43,8 +43,9 @@
       margin: auto;
     "></p>
   </div>
-  {% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "pink", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
-  {% render 'product-all-in-one-cta-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
+
+  {% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "#F59E80", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
+  {% render 'product-all-in-one-cta-section', isCuralinContent: true, isReviews: true, badgesPosition: "bottom", ctaColor: "var(--dark-green)", bottomLineColor: "black", challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'product-all-in-one-how-to-section' %}
   {% render 'product-all-in-one-reviews-section', reviewsItems: reviewsItems %}
@@ -53,7 +54,7 @@
   {% render 'product-all-in-one-badges-section' %}
   {% render 'product-all-in-one-return-policy-section' %}
   {% comment %} {% render 'product-all-in-one-free-shipping-section' %} {% endcomment %}
-  {% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "light" %}
+  {% render 'faq-section', faqItems: faqItems, isAllowOneOpen: true, titleVersion: "light" %}
   {% render 'contact-us-section', title: 'We’re here for you 24/7. <br>Get in touch any time.', icons-background-color: 'var(--light-green)', border: false %}
   {% render 'product-all-in-one-back-to-top' %}
 </div>
@@ -63,6 +64,34 @@
     background: #f7f7f7
   }
 </style>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'view_item',
+    ecommerce: {
+      items: [{
+        item_name: '{{ product.title }}',
+        item_id: '{{ product.title }}',
+        affiliation: '{{ shop.name }}',
+        price: '',
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
+        quantity: 1
+      }]
+    },
+    email: '{{ customer.email }}',
+    phone: '{{ customer.phone }}',
+    name: '{{ customer.first_name }}',
+    surname: '{{ customer.last_name }}',
+    city: '{{ customer.customer_address.city }}',
+    state: '{{ customer.customer_address.province }}',
+    zip: '{{ customer.customer_address.zip }}',
+    country: '{{customer.customer_address.country_code | t}}',
+    user_agent: navigator.userAgent
+  });
+</script>
 
 {% comment %} <script>
   let open_ai_response;

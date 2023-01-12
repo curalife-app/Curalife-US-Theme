@@ -9,10 +9,10 @@
     </div>
 
     {% if isFlash %}
-    <div class="middle-flash-sale part-60">
+      <div class="middle-flash-sale part-60">
         <div class="flash-sale-desktop"><img src="{{ 'header-flash-sale.png' | asset_url }}" alt="" loading="lazy"></div>
         <div class="flash-sale-mobile"><img src="{{ 'header-flash-sale-mobile.png' | asset_url }}" alt="" loading="lazy"></div>
-    </div>
+      </div>
     {% endif %}
 
     <p class="title">{{ title }}</p>
@@ -45,6 +45,7 @@
     </div>
   </div>
 </div>
+
 <style>
   .twenty-percent-off {
     display: flex;
@@ -163,9 +164,11 @@
 <style>
   .sale-banner {
     top: 0;
+    {% if desktopContent == 'none' %}display: none;{% endif %}
   }
+
   .sale-banner.{{ instance_id }} {
-    background: {% if bgColor == "red" %}linear-gradient(#A9151E, #d50b15){% elsif bgColor == "green" %}linear-gradient(var(--dark-green), var(--dark-green)) {% elsif bgColor == "pink" %}linear-gradient(#F59E80, #F59E80){% else %}white{% endif %};
+    background: {{ bgColor }};
   }
 
   .sale-banner.{{ instance_id }} {
@@ -198,6 +201,12 @@
   {% endunless %}
 
   @media screen and (max-width: 768px) {
+    {% if desktopContent == 'none' %}
+      .sale-banner {
+        display: block;
+      }
+    {% endif %}
+
     {% if mobileContent contains ',' %}
       .sale-banner.{{ instance_id }} .container {
         gap: 3vw;
@@ -260,13 +269,13 @@
     font-family: 'PP Radio Grotesk';
     color: #ffffff;
     padding: 10px 0;
-    text-shadow: 2px 1px 4px #ffffff;
     margin: unset;
     text-align: center;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: max-content;
+    line-height: 1.2em;
   }
 
   .sale-banner .cta-wrapper {

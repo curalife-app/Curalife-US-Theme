@@ -17,7 +17,7 @@ $color_16: var(--dark);
 $font-family_1: monospace,monospace;
 $font-family_2: inherit;
 $font-family_3: icoFont;
-$font-family_4: var(--poppins);
+$font-family_4: var(--sub-font);
 $font-family_5: icoFont,serif;
 $background-color_1: transparent;
 $background-color_2: rgba(0,0,0,.1);
@@ -151,7 +151,7 @@ select {
 	text-transform: none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: greyscale;
 }
 .icon-quote {
 	&:before {
@@ -1312,17 +1312,28 @@ body.compensate-for-scrollbar {
 }
 :root {
 	--transition: .3s ease-in-out;
-	--poppins: 'DM Sans',sans-serif;
+	--main-font: 'PP Radio Grotesk','DM Sans',sans-serif;
+	--sub-font: 'DM Sans',sans-serif;
 	--white: #ffffff;
 	--black: #000000;
 	--dark: #222222;
-	--dark-gray: #838383;
-	--gray: #EBEBEB;
+	--dark-grey: #838383;
+	--grey: #C4C4C4;
 	--darker-green: #2d3224;
 	--dark-green: #404733;
 	--green: #4B643D;
+	--dark-turquoise: #5D8F8F;
+	--light-turquoise: #F9FFFF;
 	--light-green: #9EB069;
-	--brown: #D3AE5F;
+	--lighter-green: #E1E8CF;
+	--dark-purple: #897389;
+	--purple: #D6C7D6;
+	--light-purple: #FCF9FC;
+	--brown: #C0956B;
+	--light-brown: #FFFAF5;
+	--beige: #FFFAF5;
+	// --brown: #D3AE5F;
+	--dark-orange: #E58638;
 	--orange: #FFB22D;
 	--red: #ED073E;
 	--vomit: #E8E8B0;

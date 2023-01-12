@@ -1,3 +1,143 @@
+{% assign isCuralinBundled = false %}
+{% for prod in product.metafields.custom.bundle-products.value %}
+  {% if prod.handle == 'curalin' %}
+    {% assign isCuralinBundled = true %}
+  {% endif %}
+{% endfor %}
+
+{% if product.tags contains "sleep" %}
+  {% assign title_color = "var(--dark-turquoise)" %}
+{% else %}
+  {% assign title_color = "var(--dark-orange)" %}
+{% endif %}
+
 <div id="supplement-page">
-  {% render 'product-supplement-cta-section', badgesPosition: "cta" %}
+  {% comment %} {% render 'sale-banner', desktopContent: "none", mobileContent: "title", bgColor: "var(--light-green)", title: "Buy curalin & get 60% off happy joints" %} {% endcomment %}
+  {% render 'product-all-in-one-cta-section', isCuralinContent: isCuralinBundled, badgesPosition: "cta", isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2 %}
+  {% render 'product-supplement-health-benefits' %}
+
+  {% if product.metafields.custom.bundle-products.value %}
+    {% for prod in product.metafields.custom.bundle-products.value %}
+      {% if forloop.last %}
+        {% render 'product-supplement-pack-info', product: prod, index: forloop.index, isLastRender: true %}
+      {% else %}
+        {% render 'product-supplement-pack-info', product: prod, index: forloop.index %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
+  {% endif %}
+
+  {% render 'product-supplement-info-section', titleColor: title_color %}
+
+  {% if isCuralinBundled %}
+    {% render 'product-supplement-doctors-section' %}
+  {% endif %}
+
+  {% render 'onboarding-curalin-call-expert', background_color: '#FAF5E9', border: false, isHideImageOnMobile: true %}
+  {% render 'product-faq-section', bgColor: "var(--lighter-green)" %}
 </div>
+
+{% comment %} Temp {% endcomment %}
+<style>
+  .variant-box {
+    border-radius: 10px;
+    border-color: var(--light-green);
+    height: 70px;
+  }
+  .product-actions {
+    max-width: 350px;
+  }
+
+  .variant-box .variant-info {
+    width: 60%;
+  }
+
+  .cta-section .product-container {
+    grid-template-columns: 60% 40%;
+  }
+
+  .cta-section .product-image {
+    max-height: 600px;
+  }
+
+  .variant-box .price {
+    flex-direction: column;
+    align-items: end;
+    gap: unset;
+  }
+</style>
+
+<style>
+  #supplement-page {
+    font-size: 20px;
+    line-height: 1.2em;
+  }
+
+  p {
+    line-height: 1.2em;
+  }
+
+  #supplement-page section .titles {
+    text-align: center;
+    max-width: 650px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  #supplement-page section h2 {
+    font-size: 48px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  #supplement-page section p {
+    margin: unset;
+  }
+
+  @media screen and (max-width: 768px) {
+    #supplement-page section .titles {
+      flex-direction: column !important;
+      align-items: baseline;
+      gap: 2vw;
+    }
+
+    #supplement-page section h2 {
+      white-space: unset;
+      text-align: left;
+      font-size: 9vw;
+    }
+  }
+</style>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'view_item',
+    ecommerce: {
+      items: [{
+        item_name: '{{ product.title }}',
+        item_id: '{{ product.title }}',
+        affiliation: '{{ shop.name }}',
+        price: '',
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
+        quantity: 1
+      }]
+    },
+    email: '{{ customer.email }}',
+    phone: '{{ customer.phone }}',
+    name: '{{ customer.first_name }}',
+    surname: '{{ customer.last_name }}',
+    city: '{{ customer.customer_address.city }}',
+    state: '{{ customer.customer_address.province }}',
+    zip: '{{ customer.customer_address.zip }}',
+    country: '{{customer.customer_address.country_code | t}}',
+    user_agent: navigator.userAgent
+  });
+</script>

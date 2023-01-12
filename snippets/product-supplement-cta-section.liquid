@@ -1,15 +1,21 @@
 <section class="cta-section">
   <div class="container product-container">
-    {% render 'product-all-in-one-cta-section-gallery' %}
+    {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent %}
 
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
 
+<<<<<<< HEAD
       {% render 'product-all-in-one-cta-section-reviews', isQuotes: isReviewsQuotes %}
+=======
+      {% if isCuralinContent %}
+        {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: isReviewsQuotes  %}
+      {% endif %}
+>>>>>>> 061384ef8f3f2bd430167a86db144c11be94eb17
     </div>
 
     {% if badgesPosition == "cta" %}
-      {% render 'product-all-in-one-cta-section-actions', isBadges: true %}
+      {% render 'product-all-in-one-cta-section-actions', title: "Select Your Deal", isBadges: true, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% endif %}
   </div>
 
@@ -17,6 +23,8 @@
     {% render 'trust-badges-widget', content: "free-shipping,money-back,secure-checkout", colors: "#5c5c5c", bottomLine: true %}
   {% endif %}
 </section>
+
+<div class="container line" style="border-bottom: 1px solid var(--light-green)"></div>
 
 <style>
   section {
@@ -35,6 +43,7 @@
     width: unset;
     max-width: 450px;
     grid-area: 1/2/2/3;
+    padding-bottom: 30px;
   }
 
   .cta-section .product-container .product-info h1 {

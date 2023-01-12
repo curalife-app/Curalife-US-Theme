@@ -18,19 +18,14 @@
   {% endif %}
 </div>
 
-{% if bottomLine %}
-  <div class="line">
-    <div class="container" style="border-bottom: 1px solid {{ colors }}"></div>
-  </div>
-{% endif %}
-
 <style>
   #trust-badges-widget {
     padding: 20px 0;
     display: flex;
     justify-content: center;
     gap: 50px;
-    font-size: 16px;
+    font-size: {% if isMiniVersion %}14px{% else %}16px{% endif %};
+    line-height: 1.2rem;
   }
 
   #trust-badges-widget .trust-badge {

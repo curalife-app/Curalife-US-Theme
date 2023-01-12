@@ -84,7 +84,7 @@ anymore
 health.'
 | split: '|' %}
 
-{% render 'sale-banner', isFlash: true, isFixed: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "pink", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
+{% render 'sale-banner', isFlash: true, isFixed: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "#F59E80", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
 {% render 'aio-first-page-hero-section', isFlash: true %}
 {% render 'partnerships-featured', isFlash: true %}
 {% render 'aio-first-page-meet-curalin', meetCuralins: meetCuralins %}
@@ -98,7 +98,7 @@ health.'
 {% render 'aio-first-page-why-curalife' %}
 {% render 'aio-first-page-supported-community' %}
 {% render 'aio-first-page-satisfaction-survey' %}
-{% render 'section-faq', faqItems: faqItems, isAllowOneOpen: true, title_type: "complex" %}
+{% render 'faq-section', faqItems: faqItems, isAllowOneOpen: true, titleVersion: "complex" %}
 
 <style>
   .sub-title * {
