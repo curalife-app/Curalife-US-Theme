@@ -100,13 +100,13 @@
 
   function updateCTA() {
     {% if ctaTextType == "Total" %}
-      let saveText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
+      let ctaText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
     {% else %}
-      let saveText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
+      let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
     {% endif %}
 
     $('#save').animate({'opacity': 0}, 800, function () {
-      $(this).text(saveText);
+      $(this).text(ctaText);
     }).animate({'opacity': 1}, 800);
   }
 
