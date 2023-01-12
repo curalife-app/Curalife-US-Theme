@@ -348,11 +348,10 @@
         margin-left: unset !important;
       }
 
-      {% comment %} .pack-info-section .item.always-active .item-content {
-        opacity: 1;
-        visibility: visible;
-        height: auto;
-      } {% endcomment %}
+      .pack-info-section .item::before {
+        content: "+";
+        font-size: 30px;
+      }
 
       .pack-info-section .product-image-wrapper {
         bottom: 0;
