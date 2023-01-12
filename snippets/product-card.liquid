@@ -79,99 +79,129 @@
   </div>
 </div>
 
-<style>
-  #product-catalog-section .product-card {
-    max-width: 30%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    margin-top: 60px;
-  }
+{% if isLastRender %}
+  <style>
+    #product-catalog-section .product-card {
+      max-width: 30%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      margin-top: 60px;
+    }
 
-  #product-catalog-section .product-card.recommended {
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
-    border-radius: 7px;
-    margin-top: unset;
-  }
+    #product-catalog-section .product-card.recommended {
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+      border-radius: 7px;
+      margin-top: unset;
+    }
 
-  #product-catalog-section .product-card.recommended::before {
-    content: "- RECOMMENDED -";
-    font-family: 'PP Radio Grotesk';
-    padding: 10px;
-    text-align: center;
-    background: var(--vomit);
-    color: var(--dark-green);
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  #product-catalog-section .promotion-title {
-    font-size: 18px;
-    margin: unset;
-    color: #404733;
-  }
-
-  .product-card .info .main {
-    flex: auto;
-    padding-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    text-align: center;
-  }
-
-  #product-catalog-section .per-bottle {
-    font-size: 17px;
-    margin-top: 5px;
-    text-align: left;
-  }
-
-  #product-catalog-section .total-and-shipping {
-    display: flex;
-    flex-direction: column;
-    margin: 10px auto;
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
-    margin-top: 10px;
-    text-align: center;
-    min-height: 42px;
-  }
-
-  #product-catalog-section .total-and-shipping .free-shipping {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  #product-catalog-section .total-and-shipping .free-shipping span {
-    color: var(--red);
-  }
-
-  #product-catalog-section .product-card .info .price p {
-    display: flex;
-    align-items: center;
-  }
-
-  #product-catalog-section h3 {
+    #product-catalog-section .product-card.recommended::before {
+      content: "- RECOMMENDED -";
       font-family: 'PP Radio Grotesk';
+      padding: 10px;
       text-align: center;
-      font-size: 32px;
+      background: var(--vomit);
+      color: var(--dark-green);
+      font-size: 20px;
       font-weight: bold;
+    }
+
+    #product-catalog-section .promotion-title {
+      font-size: 18px;
       margin: unset;
-      margin-top: 30px;
-      margin-bottom: 5px;
-  }
+      color: #404733;
+    }
 
-  #product-catalog-section .product-card.recommended h3 {
-    font-size: 35px;
-  }
+    .product-card .info .main {
+      flex: auto;
+      padding-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      text-align: center;
+    }
 
-  #product-catalog-section .changing-programm {
-    text-align: center;
-    font-size: clamp(16px, 2.5vw, 30px);
-    padding-bottom: 10px;
-    font-weight: 100;
-  }
-</style>
+    #product-catalog-section .per-bottle {
+      font-size: 17px;
+      margin-top: 5px;
+      text-align: left;
+    }
+
+    #product-catalog-section .total-and-shipping {
+      display: flex;
+      flex-direction: column;
+      margin: 10px auto;
+      font-family: 'PP Radio Grotesk';
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 20px;
+      margin-top: 10px;
+      text-align: center;
+      min-height: 42px;
+    }
+
+    #product-catalog-section .total-and-shipping .free-shipping {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    #product-catalog-section .total-and-shipping .free-shipping span {
+      color: var(--red);
+    }
+
+    #product-catalog-section .product-card .info .price p {
+      display: flex;
+      align-items: center;
+    }
+
+    #product-catalog-section h3 {
+        font-family: 'PP Radio Grotesk';
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        margin: unset;
+        margin-top: 30px;
+        margin-bottom: 5px;
+    }
+
+    #product-catalog-section .product-card.recommended h3 {
+      font-size: 35px;
+    }
+
+    #product-catalog-section .changing-programm {
+      text-align: center;
+      font-size: clamp(16px, 2.5vw, 30px);
+      padding-bottom: 10px;
+      font-weight: 100;
+    }
+  </style>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'view_item',
+      ecommerce: {
+      items: [{
+        item_name: '{{ product.title }}',
+        item_id: '{{ product.selected_or_first_available_variant.sku }}',
+        affiliation: '{{ shop.name }}',
+        price: '{{ product.selected_or_first_available_variant.price | money_without_currency }}',
+        currency: '{{ shop.currency }}',
+        item_brand: 'CuraLife',
+        item_category: 'CuraLin',
+        quantity: 1
+      }]
+      },
+      email: '{{ customer.email }}',
+      phone: '{{ customer.phone }}',
+      name: '{{ customer.first_name }}',
+      surname: '{{ customer.last_name }}',
+      city: '{{ customer.customer_address.city }}',
+      state: '{{ customer.customer_address.province }}',
+      zip: '{{ customer.customer_address.zip }}',
+      country: '{{customer.customer_address.country_code | t}}',
+      user_agent: navigator.userAgent
+    });
+  </script>
+{% endif %}
