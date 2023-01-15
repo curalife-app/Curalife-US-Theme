@@ -11,6 +11,7 @@
     {% for collection in collections %}
     <div class="product-grid">
       {% for product in collection.products %}
+        <script>console.log({{"product.collections"}})</script>
         {% if forloop.last %}
           {% render 'product-card', product: product, productCollections: {{ product.collections | map: 'handle' | join: ' ' }}, isLastRender: true %}
         {% else %}
