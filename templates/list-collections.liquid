@@ -15,23 +15,21 @@
     </ul>
 
     {% for collection_handle in collections_handles %}
-      {% unless collection.metafields.custom.is_hidden %}
-        <div class="product-grid">
-          {% if forloop.last %}
-            {% assign isLastCollectionRender = true %}
+      <div class="product-grid">
+        {% if forloop.last %}
+          {% assign isLastCollectionRender = true %}
+        {% endif %}
+
+        {% assign isProductCardLast = value %}
+        {% for product in collections[collection_handle].products %}
+          {% if forloop.last and isLastCollectionRender %}
+            {% assign isLastCardRender = true %}
           {% endif %}
 
-          {% assign isProductCardLast = value %}
-          {% for product in collections[collection_handle].products %}
-            {% if forloop.last and isLastCollectionRender %}
-              {% assign isLastCardRender = true %}
-            {% endif %}
-
-            {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
-            {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: isLastCardRender %}
-          {% endfor %}
-        </div>
-      {% endunless %}
+          {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
+          {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: isLastCardRender %}
+        {% endfor %}
+      </div>
     {% endfor %}
   </div>
 </div>
