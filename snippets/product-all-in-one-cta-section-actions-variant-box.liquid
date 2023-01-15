@@ -22,6 +22,7 @@
 
 
 <div class="variant-box">
+  {% if isCuralinContent %}
   <div class="radio-box">
     {% if original_item_cap_total_with_bundle > var.price %}
       {% assign discount = original_item_cap_total_with_bundle | minus: var.price | divided_by: 100 %}
@@ -30,6 +31,7 @@
     {% endif %}
     <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
   </div>
+  {% endif %}
   <div class="variant-info">
     <p class="variant-title">{{ var.title }}</p>
     <div class="variant-infos">
