@@ -31,17 +31,16 @@
 
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
 
+{% if isLinkToProduct %}<a href="{{ product.url }}">{% endif %}
 <div class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollections }}">
-  {% if isLinkToProduct %}<a href="{{ product.url }}">{% endif %}
-  <h3>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h3>
-
-  <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
-
   <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" width="512" height="475" alt="" loading="lazy">
-  {% if isLinkToProduct %}</a>{% endif %}
+
 
   <div class="info">
     <div class="main">
+      <h3>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h3>
+      <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+
       <div class="price">
         {% if quantity > 1 %}
           <p class="divided-price"><strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike><span class="rounded current-price">{{ item_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span> <span class="per-bottle"> PER<br>BOTTLE</span> </p>
@@ -51,6 +50,7 @@
           <p class="original-price" class="rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</p>
         {% endif %}
       </div>
+
       <p class="promotion-title">{{ promotion_title }} ({{ bundle_addition_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value!)</p>
     </div>
 
@@ -74,6 +74,7 @@
     </div>
   </div>
 </div>
+{% if isLinkToProduct %}</a>{% endif %}
 
 {% if isLastRender %}
   <style>
