@@ -12,9 +12,9 @@
     <div class="product-grid">
       {% for product in collection.products %}
         {% if forloop.last %}
-          {% render 'product-card', product: product, productCollection: {{ product.collections | map: 'handle' | join: ' ' }}, isLastRender: true %}
+          {% render 'product-card', product: product, productCollections: {{ product.collections | map: 'handle' | join: ' ' }}, isLastRender: true %}
         {% else %}
-          {% render 'product-card', product: product, productCollection: {{ product.collections | map: 'handle' | join: ' ' }} %}
+          {% render 'product-card', product: product, productCollections: {{ product.collections | map: 'handle' | join: ' ' }} %}
         {% endif %}
       {% endfor %}
     </div>
