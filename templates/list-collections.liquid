@@ -14,13 +14,19 @@
 
     {% for collection in collections %}
     <div class="product-grid">
+      {% if forloop.last %}
+        {% assign isLastCollection = true %}
+      {% endif %}
+
+      {% assign isProductCardLast = value %}
       {% for product in collection.products %}
         {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
-        {% if forloop.last %}
-          {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: true %}
-        {% else %}
-          {% render 'product-card-new', product: product, productCollections: product_collections %}
+
+        {% if forloop.last or isLastCollection %}
+          {% assign isLastRender = true %}
         {% endif %}
+
+        {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: isLastRender %}
       {% endfor %}
     </div>
     {% endfor %}
