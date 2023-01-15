@@ -9,7 +9,7 @@
     <ul class="category-tabs">
       {% for collection in collections %}
         {% unless collection.metafields.custom.is_hidden %}
-          <li><a href="#" data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
+      <li><a href="#" {% if forloop.first %}class="active"{% endif %} data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
         {% endunless %}
       {% endfor %}
     </ul>
