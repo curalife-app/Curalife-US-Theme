@@ -10,7 +10,7 @@
   {% assign bundle_value = challenge_value | plus: curaeats_value %}
   <div class="variant-notice"><p><b>Bonus</b> - 30 Day Life Changing Program <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
   {% elsif var.title contains "Sugar Challenge Bundle" %}
-  <div class="variant-notice"><p><b>Special offer- Value of $185!</b></p></div>
+  <div class="variant-notice special"><p><b>Special offer- Value of $185!</b></p></div>
 {% else %}
   {% assign bundle_value = 0 %} 
 {% endif %}
@@ -60,11 +60,23 @@
 {% if isLastRender %}
   <style>
     .variant-notice p {
-      background: #9EB069;;
+      background: #9EB069;
       color: white;
       padding: 2px 10px;
       margin: unset;
       font-size: 14px;
+    }
+
+    .variant-notice.special p {
+      background: #E8E8B0;
+      font-family: 'PP Radio Grotesk';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 17px;
+      text-align: center;
+      letter-spacing: -0.01em;
+      color: #404733;
     }
 
     .variant-box {
