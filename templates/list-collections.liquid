@@ -14,7 +14,7 @@
       {% endfor %}
     </ul>
 
-    {% comment %} {% for collection in collections %}
+    {% for collection in collections %}
       {% unless collection.metafields.custom.is_hidden %}
         <div class="product-grid">
           {% if forloop.last %}
@@ -32,7 +32,7 @@
           {% endfor %}
         </div>
       {% endunless %}
-    {% endfor %} {% endcomment %}
+    {% endfor %}
   </div>
 </div>
 
