@@ -31,7 +31,7 @@
 
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
 
-<div class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section">
+<div class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollection }}">
   {% if isLinkToProduct %}<a href="{{ product.url }}">{% endif %}
   <h3>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h3>
 
