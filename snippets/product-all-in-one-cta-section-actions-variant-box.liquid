@@ -67,12 +67,9 @@
       </div>
 
     </div>
-    <div class="price-challenge">
-     
-      <div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="bold-real-price">00</sup>
+    <div class="price-challenge"> 
+      <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>    
       
-        <div class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></div><sup class="bold-real-price">00</sup>
-    
     </div>
   </div>
   {% endif %} 
@@ -210,7 +207,11 @@
       color: #404733;
     }
 
-    .price-challenge .real-price .bold-real-price {
+    .price-with-null {
+      display: flex;
+    }
+
+    .price-challenge .price-with-null .thin-real-price {
       font-weight: 400;
     }
    
