@@ -53,7 +53,7 @@
         {% endif %}
       </div>
 
-      <p class="promotion-title">{{ promotion_title }} ({{ bundle_addition_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value!)</p>
+      {% comment %} <p class="promotion-title">{{ promotion_title }} ({{ bundle_addition_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value!)</p> {% endcomment %}
     </div>
 
     {% unless isSkipCart %}
