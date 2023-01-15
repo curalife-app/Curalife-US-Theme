@@ -1,0 +1,46 @@
+{% assign badges = value %}
+
+<section id="collection-badges">
+  <div class="conteiner">
+    <div class="collection-badges">
+      {% for badge in collection_badges %}
+        <div class="badge">
+          <img src="{{ "collection-badge-" | append: forloop.index | append: ".png" | asset_url }}" alt="{{ badge.title }}" loading="lazy">
+          <p class="badge-title">{{ badge.title }}</p>
+          <p class="badge-description">{{ badge.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #collection-badges {
+    background-color: var(--vomit);
+  }
+
+  .collection-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .collection-badges .badge {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .collection-badges .badge img {
+    object-fit: contain;
+    min-height: 80px;
+  }
+
+  .collection-badges .badge .badge-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+</style>
