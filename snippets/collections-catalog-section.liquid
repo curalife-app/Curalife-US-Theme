@@ -78,9 +78,11 @@
     $(this).addClass('active');
 
     var collectionHandle = $(this).data('collection-handle');
-    $('h1').hide(100);
-    $('h1').text($(this).text());
-    $('h1').show(100);
+    const collectionTitle = $(this).text();
+
+    $("h1").fadeOut(function() {
+      $(this).text(collectionTitle).fadeIn();
+    });
     $('.product-grid .product-card').hide("slow");
     $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').show("slow");
   });
