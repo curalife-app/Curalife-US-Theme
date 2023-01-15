@@ -39,7 +39,7 @@
   <div class="info">
     <div class="main">
       <h3>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h3>
-      <p class="supply-days">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+      <p class="subtitle">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
 
       <div class="price">
         {% if quantity > 1 %}
@@ -78,10 +78,6 @@
 
 {% if isLastRender %}
   <style>
-    .product-grid {
-      display: flex;
-    }
-
     .product-card {
       max-width: 25%;
       padding: 10px;
@@ -89,6 +85,7 @@
       align-items: center;
       flex-direction: column;
       overflow: hidden;
+      border: 1px solid var(--lighter-green);
     }
 
     .product-card.recommended {
@@ -183,7 +180,7 @@
     .product-card h3 {
         font-family: 'PP Radio Grotesk';
         text-align: center;
-        font-size: 32px;
+        font-size: 20px;
         font-weight: bold;
         margin: unset;
         margin-top: 30px;
