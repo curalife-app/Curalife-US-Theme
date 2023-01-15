@@ -32,7 +32,7 @@
 
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
-        {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: isReviewsQuotes %}
+        {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}
     </div>
 
     {% if badgesPosition == "cta" %}
