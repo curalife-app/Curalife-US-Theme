@@ -2,7 +2,7 @@
   <div class="container">
     <h2>{{ collection.metafields.custom.category_badges_title }}</h2>
     <div class="category-badges">
-      {% for badge in collection.metafields.custom.category_badges %}
+      {% for badge in collection.metafields.custom.category_badges.value %}
         <div class="category-badge">
           <img src="{{ badge.src | image_url }}" alt="{{ badge.altText }}">
           <h3>{{ badge.altText }}</h3>
