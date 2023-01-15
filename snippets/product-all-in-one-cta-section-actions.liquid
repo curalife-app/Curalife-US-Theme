@@ -1,6 +1,7 @@
 <div class="product-actions">
+  {% if badgesPosition %}
   <p class="cta-title">{{ title }}</p>
-
+  {% endif %}
   <div class="variants">
     {% for var in product.variants %}
       {% if forloop.last %}
