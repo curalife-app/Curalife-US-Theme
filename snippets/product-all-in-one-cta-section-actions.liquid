@@ -10,29 +10,11 @@
         {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
       {% endif %}
     {% endfor %}
-    {% unless isCuralinContent %}
-    <div class="submit-wrap">
-      {% if isBuyQuantity %}
-        <div class="qty-data" style="display:none">
-          <div class="qty-control">
-            <a data-act="-" href="javascript:void(0)">
-              <span class="icon-minus"></span>
-            </a>
-            <label>
-              <input maxlength="4" name="quantity" type="number" value="1">
-            </label>
-            <a data-act="+" href="javascript:void(0)">
-              <span class="icon-plus"></span>
-            </a>
-          </div>
-        </div>
-      {% endif %}  
-      <button class="main-btn" id="buy-button"><span>Join the Challenge</span></button> 
-    </div>
-  {% endunless %}
+  
   </div>
 
   {% comment %} <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/> {% endcomment %}
+  {% if isCuralinContent %}
   <div class="submit-wrap">
     {% if isBuyQuantity %}
       <div class="qty-data" style="display:none">
@@ -49,10 +31,11 @@
         </div>
       </div>
     {% endif %}
-    {% if isCuralinContent %}
+    
     <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
-  {% endif %}
+ 
   </div>
+{% endif %}
 
   {% if isBadges %}
     {% render 'trust-badges-widget', content: "free-shipping,money-back", colors: "#5c5c5c", isMiniVersion: true %}
