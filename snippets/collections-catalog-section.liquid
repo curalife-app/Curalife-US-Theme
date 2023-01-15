@@ -84,6 +84,10 @@
       $(this).text(collectionTitle).fadeIn();
     });
 
+    $(".description").fadeOut(function() {
+      $(this).attr('data-collection-description').fadeIn();
+    });
+
     $('.product-grid .product-card').fadeOut();
     $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').fadeIn();
   });
