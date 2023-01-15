@@ -69,9 +69,9 @@
     </div>
     <div class="price-challenge">
      
-      <div class="real-price rounded no-letters"><b>{{ var.price | money_without_trailing_zeros }}</b> <sup>00</sup></div>
+      <div class="real-price rounded no-letters"><span class="bold-real-price">{{ var.price | money_without_trailing_zeros }}</span> <sup>00</sup></div>
       
-        <div class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}<sup style="font-size: 10px; position: relative; top: 1px">00</sup></strike></div>
+        <div class="compared-at-price"><strike class="rounded no-letters"><span class="bold-real-price ">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</span><sup>00</sup></strike></div>
     
     </div>
   </div>
@@ -209,6 +209,11 @@
       letter-spacing: -0.03em;
       color: #404733;
     }
+
+    .price-challenge .bold-real-price {
+      font-weight: 700;
+    }
+   
 
     .submit-wrap {
        display: {% unless isCuralinContent %}flex{% endunless %};
