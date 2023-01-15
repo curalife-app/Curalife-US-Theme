@@ -1,7 +1,7 @@
 <section id="collections-catalog-section">
   <div class="container">
     <div class="titles">
-      <h1>{% if collections[activeCollection] %}{{ collections[activeCollection].title }}{% else %}Collections{% endif %}</h1>
+      <h1>{% if activeCollection %}{{ collections[activeCollection].title }}{% else %}Collections{% endif %}</h1>
       <div class="line"></div>
       <p class="description"></p>
     </div>
