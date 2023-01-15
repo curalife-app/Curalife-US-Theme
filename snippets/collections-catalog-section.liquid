@@ -40,7 +40,6 @@
   #collections-catalog-section .product-grid {
     display: flex;
     gap: 40px;
-    padding: 50px 0;
   }
 
   #collections-catalog-section .category-tabs {
@@ -73,5 +72,5 @@
     $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').show();
   });
 
-  $('.category-tabs a:first').click();
+  $('.category-tabs a['data-collection-handle'={{ activeCollection }}]').click();
 </script>
