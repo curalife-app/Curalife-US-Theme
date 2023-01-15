@@ -77,15 +77,16 @@
     $('.category-tabs a').removeClass('active');
     $(this).addClass('active');
 
-    var collectionHandle = $(this).data('collection-handle');
+    const collectionHandle = $(this).data('collection-handle');
     const collectionTitle = $(this).text();
+    const collectionDescription = $(this).attr('data-collection-description');
 
     $("h1").fadeOut(function() {
       $(this).text(collectionTitle).fadeIn();
     });
 
     $(".description").fadeOut(function() {
-      $(this).attr('data-collection-description').fadeIn();
+      $(this).text(collectionDescription).fadeIn();
     });
 
     $('.product-grid .product-card').fadeOut();
