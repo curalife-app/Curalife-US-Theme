@@ -13,7 +13,7 @@
     </ul>
 
     {% for collection_handle in collectionsHandles %}
-      <div class="product-grid">
+      <div class="product-grid" style="display: none">
         {% if forloop.last %}
           {% assign isLastCollectionRender = true %}
         {% endif %}
