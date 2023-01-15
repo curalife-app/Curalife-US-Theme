@@ -68,7 +68,7 @@
     </div>
     <div class="price-challenge">      
       <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>  
-      <strike class="initial-price"><div class="real-price rounded no-letters">{{ "185" | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></strike>                 
+      <strike class="initial-price"><div class="real-price">{{ "185" | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></strike>                 
     </div> 
   </div>
   {% endif %} 
