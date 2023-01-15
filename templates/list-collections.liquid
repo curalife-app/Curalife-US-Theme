@@ -11,7 +11,7 @@
     <ul class="category-tabs">
       {% for coll in colls %}
         {% comment %} {% unless collection.metafields.custom.is_hidden %} {% endcomment %}
-          <li><a href="#" data-collection-handle="{{ collections[coll].handle }}">{{ collections[coll].title }}</a></li>
+          <li><a href="#" data-collection-handle="{{ collections[coll] }}">{{ collections[coll].title }}</a></li>
         {% comment %} {% endunless %} {% endcomment %}
       {% endfor %}
     </ul>
