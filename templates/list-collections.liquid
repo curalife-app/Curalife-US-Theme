@@ -1,3 +1,15 @@
 {% assign collections_handles = "glucose-support,joint-care,sleep" | split: "," %}
 
-{% render 'collections-catalog-section', collectionsHandles: collections_handles %}
+{% render 'collection-catalog-section', collectionsHandles: collections_handles %}
+
+{% for collection_handle in collections_handles %}
+  {% if forloop.last %}
+    {% assign isLastRender = true %}
+  {% endif %}
+
+  <div class="product-grid">
+    {% render 'collection-category-badges', collection: collections[collection_handle], isLastRender: isLastRender %}
+  </div>
+{% endfor %}
+
+{% render 'collection-badges' %}
