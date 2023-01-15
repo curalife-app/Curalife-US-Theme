@@ -74,7 +74,7 @@
 
   .product-actions .submit-wrap button span:first-child {
     border-right: {% if isCuralinContent %} 1px solid white {% endif %};
-    font-size: 130%;
+    font-size: {% if isCuralinContent %}130%{% endif %};
   }
 
   .product-actions .submit-wrap button span.save {
