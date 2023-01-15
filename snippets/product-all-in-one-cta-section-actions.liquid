@@ -29,8 +29,11 @@
         </div>
       </div>
     {% endif %}
-
+    {% if isCuralinContent %}
     <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
+    {% else %}
+    <button class="main-btn" id="buy-button"><span>Join the Challenge</span></button>
+  {% endif %}
   </div>
 
   {% if isBadges %}
