@@ -1,3 +1,5 @@
+{% assign colls = "joint-care,sleep" %}
+
 <div id="collections-page">
   <div class="container">
     <div class="titles">
@@ -7,16 +9,14 @@
     </div>
 
     <ul class="category-tabs">
-      {% for collection in collections %}
-        {% unless collection.metafields.custom.is_hidden %}
-          <li><a href="#" data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
-        {% endunless %}
+      {% for coll in colls %}
+        {% comment %} {% unless collection.metafields.custom.is_hidden %} {% endcomment %}
+          <li><a href="#" data-collection-handle="{{ collections[coll].handle }}">{{ collections[coll].title }}</a></li>
+        {% comment %} {% endunless %} {% endcomment %}
       {% endfor %}
     </ul>
 
-    {% assign colls = "joint-care,sleep" %}
-
-    {% for coll in colls %}
+    {% for collection in collections %}
       {% unless collection.metafields.custom.is_hidden %}
         <div class="product-grid">
           {% if forloop.last %}
@@ -24,7 +24,7 @@
           {% endif %}
 
           {% assign isProductCardLast = value %}
-          {% for product in collections[coll].products %}
+          {% for product in collection.products %}
             {% if forloop.last and isLastCollectionRender %}
               {% assign isLastCardRender = true %}
             {% endif %}
