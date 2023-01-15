@@ -8,11 +8,19 @@
 
     <ul class="category-tabs">
       {% for collection in collections %}
+        {% if collection.metafields.custom.is_hidden %}
+          {% break %}
+        {% endif %}
+
         <li><a href="#" data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
       {% endfor %}
     </ul>
 
     {% for collection in collections %}
+    {% if collection.metafields.custom.is_hidden %}
+      {% break %}
+    {% endif %}
+
     <div class="product-grid">
       {% if forloop.last %}
         {% assign isLastCollectionRender = true %}
