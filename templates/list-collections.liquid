@@ -2,8 +2,6 @@
 
 {% render 'collection-catalog-section', collectionsHandles: collections_handles %}
 
-
-
 {% for collection_handle in collections_handles %}
   {% if forloop.last %}
     {% assign isLastRender = true %}
@@ -13,3 +11,5 @@
     {% render 'collection-category-badges', collection: collections[collection_handle], isLastRender: isLastRender %}
   </div>
 {% endfor %}
+
+{% render 'collection-badges' %}
