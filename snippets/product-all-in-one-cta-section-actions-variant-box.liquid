@@ -210,7 +210,7 @@
 
     .variant-box .variant-info {
       padding: 10px;
-      width: 70%
+      width: {% if isCuralinContent %}70%{% else %}50%{% endif %};
     }
 
     .variant-box .variant-info .variant-title {
