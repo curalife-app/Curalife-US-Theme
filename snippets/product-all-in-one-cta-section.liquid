@@ -9,7 +9,6 @@
 
         {% if isCuralinContent %}
           <img src="{{ "product-sale-60-badge.png" | asset_url }}" width="200" height="200" alt="Curalin" class="sale-badge" loading="lazy">
-
           <style>
             .sale-badge {
               position: absolute;
@@ -38,7 +37,7 @@
     {% if badgesPosition == "cta" %}
       {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: "Select Your Deal:", isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value, isBadges: true %}
     {% else %}
-      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: "Select Your Deal:", isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: "Special offer- Value of $185!", isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% endif %}
   </div>
 
