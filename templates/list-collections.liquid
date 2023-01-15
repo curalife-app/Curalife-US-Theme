@@ -1,3 +1,4 @@
 {% assign collections_handles = "glucose-support,joint-care,sleep" | split: "," %}
 
-{% render 'collections-catalog-section', collectionsHandles: collections_handles %}
+{% render 'collection-catalog-section', collectionsHandles: collections_handles %}
+{% render 'collection-category-badges' %}
