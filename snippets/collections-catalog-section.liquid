@@ -83,8 +83,9 @@
     $("h1").fadeOut(function() {
       $(this).text(collectionTitle).fadeIn();
     });
-    $('.product-grid .product-card').hide("slow");
-    $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').show("slow");
+
+    $('.product-grid .product-card').fadeOut();
+    $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').fadeIn();
   });
 
   $('.category-tabs a[data-collection-handle="{{ activeCollection }}"]').click();
