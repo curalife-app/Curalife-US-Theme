@@ -1,20 +1,62 @@
-<div class="category-tabs">
-  <ul>
+<div id="collections-page">
+  <div class="container">
+    <div class="titles">
+      <h1 class="text-center">Collections</h1>
+      <div class="line"></div>
+      <p class="description"></p>
+    </div>
+
+    <ul class="category-tabs">
+      {% for collection in collections %}
+        {% unless collection.metafields.custom.is_hidden %}
+          <li><a href="#" data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+
     {% for collection in collections %}
-      <li><a href="#" data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
+      {% unless collection.metafields.custom.is_hidden %}
+        <div class="product-grid">
+          {% if forloop.last %}
+            {% assign isLastCollectionRender = true %}
+          {% endif %}
+
+          {% assign isProductCardLast = value %}
+          {% for product in collection.products %}
+            {% if forloop.last and isLastCollectionRender %}
+              {% assign isLastCardRender = true %}
+            {% endif %}
+
+            {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
+            {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: isLastCardRender %}
+          {% endfor %}
+        </div>
+      {% endunless %}
     {% endfor %}
-  </ul>
+  </div>
 </div>
 
-<div class="product-grid">
-  {% for product in products %}
-    <div class="product-card" data-product-collections="{{ product.collections | map: 'handle' | join: ' ' }}">
-      <img src="{{ product.featured_image.src }}" alt="{{ product.title }}">
-      <h2>{{ product.title }}</h2>
-      <p>{{ product.price }}</p>
-    </div>
-  {% endfor %}
-</div>
+<style>
+  #collections-page {
+    padding: 50px 0;
+  }
+
+  .category-tabs {
+    display: flex;
+    gap: 50px;
+  }
+
+  .category-tabs li a.active {
+    color: var(--light-green);
+    padding: 10px 20px;
+    border-radius: 20px;
+  }
+
+  .category-tabs li a.active {
+    background: var(--vomit);
+    color: var(--dark-green);
+  }
+</style>
 
 <script>
   $('.category-tabs a').click(function (e) {
