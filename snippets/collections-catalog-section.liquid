@@ -78,9 +78,9 @@
     $(this).addClass('active');
 
     var collectionHandle = $(this).data('collection-handle');
-    $('h1').hide(100, function() {
-        $('h1').text($(this).text()).show(100);
-    });
+    $('h1').hide(100);
+    $(this).text($(this).text());
+    $('h1').hide(show);
     $('.product-grid .product-card').hide("slow");
     $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').show("slow");
   });
