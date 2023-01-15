@@ -1,4 +1,4 @@
-{% assign collis = "joint-care,sleep" | split: "," %}
+{% assign colls = "joint-care,sleep" | split: "," %}
 
 <div id="collections-page">
   <div class="container">
@@ -9,7 +9,7 @@
     </div>
 
     <ul class="category-tabs">
-      {% for coll in collis %}
+      {% for coll in colls %}
           <li><a href="#" data-collection-handle="{{ coll }}">{{ collections[coll].title }}</a></li>
       {% endfor %}
     </ul>
