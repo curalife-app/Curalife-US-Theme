@@ -1,0 +1,304 @@
+<div class="product-thumbnails">
+  <div class="product-slider">
+    <div class="sliders-group">
+      <div class="main-slider">
+        <div id="product-main-slider-sc" class="swiper">
+          <div class="swiper-wrapper">
+            {% if isCuralinContent %}
+              {% for i in (1..6) %}
+                <div class="swiper-slide">
+                {% unless forloop.index == 1 %}<img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">{% endunless %}
+                  <div class="product-img">
+                    <div class="img-wrap">
+                      <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" width="588" height="453" alt="" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+
+              <div class="swiper-slide">
+                <div class="product-video">
+                  <iframe id="product-video-iframe" src="https://player.vimeo.com/video/365492409?playsinline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+                </div>
+              </div>
+            {% endif %}
+
+            {% for image in product.images %}
+              <div class="swiper-slide">
+                {% if shop.name == "CuraLife Global" %}
+                  <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">
+                {% endif %}
+
+                <div class="product-img">
+                  <div class="img-wrap">
+                    <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" width="1176" height="905" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div id="product-main-slider-nav-prev" class="swiper-button-prev nav"></div>
+        <div id="product-main-slider-nav-next" class="swiper-button-next nav"></div>
+      </div>
+
+      <div class="thumbs-slider">
+        <div id="product-thumbs-slider-sc" class="swiper">
+          <div class="swiper-wrapper">
+            {% if isCuralinContent %}
+              {% for i in (1..6) %}
+                <div class="swiper-slide">
+                  <div class="thumbs-img">
+                    <div class="img-wrap">
+                      <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" width="588" height="453" alt="" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+
+              <div class="swiper-slide">
+                <div class="thumbs-img video-thumbnail">
+                  <div class="img-wrap">
+                    <img src="{{ "product-aio-product-video-thumbnail.png" | asset_url }}" width="720" height="680" alt="" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            {% for image in product.images %}
+              <div class="swiper-slide">
+                <div class="thumbs-img">
+                  <div class="img-wrap">
+                    <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div id="product-thumbs-slider-nav-prev" class="swiper-button-prev"></div>
+        <div id="product-thumbs-slider-nav-next" class="swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cta-section .product-container .product-thumbnails {
+    grid-area: 1/1/3/2;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider {
+    width: unset !important;
+    padding: unset;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider {
+    padding: unset;
+    margin-left: unset
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
+    position: absolute;
+    margin-left: 10%
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio:before {
+    padding-bottom: 60%
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio .img-wrap {
+    padding: unset;
+    text-align: center
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-img-aio .img-wrap img {
+    max-height: 460px
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-slide .product-video iframe {
+    height: 400px;
+    width: 100%
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
+    display: none;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
+    position: relative;
+    display: flex;
+    margin-top: 30px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider .swiper-wrapper .thumbs-img {
+    border-radius: unset;
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: grey;
+    transition: opacity .5s;
+  }
+
+  .swiper-button-prev.disabled,
+  .swiper-button-next.disabled {
+    opacity: 0;
+  }
+
+  .product-template-all-in-one .swiper-button-prev::after,
+  .product-template-all-in-one .swiper-button-next::after {
+    font-size: 28px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .cta-section .product-container .product-thumbnails {
+      grid-area: unset;
+      grid-row: 2;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider {
+      margin-left: unset;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider {
+      width: 95%;
+      margin: auto
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
+      margin-left: unset;
+      left: 0;
+      top: 10%;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper {
+      margin-bottom: 30px;
+      align-items: center
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe {
+      height: 45vh
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-video iframe .vp-video-wrapper {
+      border-radius: 10px;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-wrapper .swiper-slide .product-img::before {
+      padding-bottom: 100%
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
+      display: block;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-prev {
+      left: 0;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav.swiper-button-next {
+      right: 0
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet {
+      background: var(--green);
+      opacity: .4;
+      width: 13px;
+      height: 13px;
+      border: 0;
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .main-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: var(--green);
+      opacity: 1
+    }
+
+    .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
+      display: none
+    }
+  }
+</style>
+
+<script>
+  productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    watchSlidesVisibility: true,
+    grabCursor: true,
+    loop: false,
+    navigation: {
+      nextEl: '#product-thumbs-slider-nav-next',
+      prevEl: '#product-thumbs-slider-nav-prev',
+      disabledClass: 'disabled'
+    },
+    breakpoints: {
+      760: {
+        slidesPerView: 1,
+      },
+      1080: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+      1400: {
+        slidesPerView: 4,
+      }
+    }
+  });
+
+  productSliderAllInOne = new Swiper('#product-main-slider-sc', {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    centeredSlides: true,
+    watchSlidesVisibility: false,
+    loop: false,
+    slideToClickedSlide: true,
+    thumbs: {swiper: productThumbsAllInOne},
+    breakpoints: {
+      0: {
+        pagination: {
+          el: '.product-slider .swiper-pagination',
+          clickable: 'true',
+          type: 'bullets',
+        },
+        navigation: {
+          nextEl: '#product-main-slider-nav-next',
+          prevEl: '#product-main-slider-nav-prev',
+          disabledClass: 'disabled'
+        }
+      },
+      760: {
+        pagination: {},
+        navigation: {}
+      }
+    }
+  });
+
+  // Slide to Variant Image
+  productSliderAllInOne.on('slideChange', function () {
+    $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
+  });
+
+  $('.thumbs-img').click(function() {
+    woopra.track('Product Image Click', {});
+  });
+
+  // Product Arrow Click
+  $('#product-thumbs-slider-nav-next, #product-thumbs-slider-nav-prev').click(function() {
+    woopra.track('Arrow Click', { section: "Product" });
+  });
+</script>
