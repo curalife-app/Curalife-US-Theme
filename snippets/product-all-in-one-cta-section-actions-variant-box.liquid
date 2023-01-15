@@ -19,6 +19,7 @@
 {% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
 {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
 {% assign original_item_price = var.price | divided_by: bottle_quantity %}
+{% assign compared_at_challenge = 185 %} 
 
 
 <div class="variant-box">
@@ -67,9 +68,9 @@
       </div>
 
     </div>
-    <div class="price-challenge"> 
+    <div class="price-challenge">      
       <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>   
-      <div class="initial-price"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>                 
+      <div class="initial-price"><div class="real-price rounded no-letters">{{ compared_at_challenge | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>                 
     </div> 
   </div>
   {% endif %} 
