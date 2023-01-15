@@ -1,4 +1,4 @@
-{% assign colls = "joint-care,sleep" | split: "," %}
+{% assign collis = "joint-care,sleep" | split: "," %}
 
 <div id="collections-page">
   <div class="container">
@@ -9,7 +9,7 @@
     </div>
 
     <ul class="category-tabs">
-      {% for coll in colls %}
+      {% for coll in collis %}
         {% comment %} {% unless collection.metafields.custom.is_hidden %} {% endcomment %}
           <li><a href="#" data-collection-handle="{{ collections[coll] }}">{{ collections[coll].title }}</a></li>
         {% comment %} {% endunless %} {% endcomment %}
