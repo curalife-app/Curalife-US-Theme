@@ -20,7 +20,7 @@
 
       {% assign isProductCardLast = value %}
       {% for product in collection.products %}
-        {% if forloop.last or isLastCollection %}
+        {% if forloop.last and isLastCollection %}
           {% assign isLastRender = true %}
         {% endif %}
 
