@@ -68,7 +68,7 @@
     $(this).addClass('active');
 
     var collectionHandle = $(this).data('collection-handle');
-    $('h1').text(collectionHandle);
+    $('h1').text($(this).text());
     $('.product-grid .product-card').hide();
     $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').show();
   });
