@@ -202,6 +202,12 @@
       padding: 10px;
     }
 
+    .submit-wrap {
+       display: {% unless isCuralinContent %}flex{% endunless %};
+       justify-content: {% unless isCuralinContent %}center{% endunless %};
+       padding-bottom: {% unless isCuralinContent %}20px{% endunless %};
+    }
+
     .variant-box .variant-info {
       padding: 10px;
       width: 70%
