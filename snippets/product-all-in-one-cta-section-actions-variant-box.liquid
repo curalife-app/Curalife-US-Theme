@@ -70,9 +70,7 @@
     </div>
     <div class="price-challenge">      
       <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>  
-      {% assign compared_at_challenge = 185 %}  
-      <script>console.log("compared_at_challenge ":compared_at_challenge)</script>
-      <strike class="initial-price"><div class="real-price rounded no-letters">{{ compared_at_challenge | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></strike>                 
+      <strike class="initial-price"><div class="real-price rounded no-letters">{{ original_item_cap | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></strike>                 
     </div> 
   </div>
   {% endif %} 
