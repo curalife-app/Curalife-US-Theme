@@ -9,7 +9,11 @@
     </div>
 
     <ul class="category-tabs">
-
+      {% for coll in collis %}
+        {% comment %} {% unless collection.metafields.custom.is_hidden %} {% endcomment %}
+          <li><a href="#" data-collection-handle="{{ coll }}">{{ collections[coll].title }}</a></li>
+        {% comment %} {% endunless %} {% endcomment %}
+      {% endfor %}
     </ul>
 
     {% for collection in collections %}
