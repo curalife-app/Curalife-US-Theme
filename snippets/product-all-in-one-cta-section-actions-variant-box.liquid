@@ -12,8 +12,7 @@
 {% else %}
   {% assign bundle_value = 0 %}
   {% else %}
-  {% assign bundle_value = 185 %}
-  <div class="variant-notice"><p><b>Special offer- Value of (<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)!</b></p></div>
+  <div class="variant-notice"><p><b>Special offer- Value of $185!</b></p></div>
 {% endif %}
 
 {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
