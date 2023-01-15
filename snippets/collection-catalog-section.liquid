@@ -99,6 +99,9 @@
 
     $('.product-grid .product-card').fadeOut();
     $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').fadeIn();
+
+    $('.category-badges-section').fadeOut();
+    $('.category-badges-section[data-product-collections*="' + collectionHandle + '"]').fadeIn();
   });
 
   $('.category-tabs a[data-collection-handle="{{ activeCollection }}"]').click();
