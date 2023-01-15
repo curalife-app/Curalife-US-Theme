@@ -35,26 +35,7 @@
     <div class="variant-infos">
       <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
     </div>
-    {% unless isCuralinContent %}
-      <div class="submit-wrap">
-        {% if isBuyQuantity %}
-          <div class="qty-data" style="display:none">
-            <div class="qty-control">
-              <a data-act="-" href="javascript:void(0)">
-                <span class="icon-minus"></span>
-              </a>
-              <label>
-                <input maxlength="4" name="quantity" type="number" value="1">
-              </label>
-              <a data-act="+" href="javascript:void(0)">
-                <span class="icon-plus"></span>
-              </a>
-            </div>
-          </div>
-        {% endif %}  
-        <button class="main-btn" id="buy-button"><span>Join the Challenge</span></button> 
-      </div>
-    {% endunless %}
+    
   </div>
 
   {% if isPricePerUnit %}
@@ -75,6 +56,26 @@
       <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
     </div>
   {% endif %}
+  {% unless isCuralinContent %}
+    <div class="submit-wrap">
+      {% if isBuyQuantity %}
+        <div class="qty-data" style="display:none">
+          <div class="qty-control">
+            <a data-act="-" href="javascript:void(0)">
+              <span class="icon-minus"></span>
+            </a>
+            <label>
+              <input maxlength="4" name="quantity" type="number" value="1">
+            </label>
+            <a data-act="+" href="javascript:void(0)">
+              <span class="icon-plus"></span>
+            </a>
+          </div>
+        </div>
+      {% endif %}  
+      <button class="main-btn" id="buy-button"><span>Join the Challenge</span></button> 
+    </div>
+  {% endunless %}
 </div>
 
 {% if isLastRender %}
