@@ -11,11 +11,11 @@
     {% for collection in collections %}
     <div class="product-grid">
       {% for product in collection.products %}
-        <script>console.log("{{product.collections | map: 'handle' | join: ' '}}")</script>
+        {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
         {% if forloop.last %}
-          {% render 'product-card', product: product, productCollections: {{ product.collections | map: 'handle' | join: ' ' }}, isLastRender: true %}
+          {% render 'product-card', product: product, productCollections: product_collections, isLastRender: true %}
         {% else %}
-          {% render 'product-card', product: product, productCollections: {{ product.collections | map: 'handle' | join: ' ' }} %}
+          {% render 'product-card', product: product, productCollections: product_collections %}
         {% endif %}
       {% endfor %}
     </div>
