@@ -31,7 +31,7 @@
 
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
 
-{% if isLinkToProduct %}<a href="{{ product.url }}">{% endif %}
+<a href="{{ product.url }}">
 <div class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollections }}" style="display: none">
   <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" width="512" height="475" alt="" loading="lazy">
 
@@ -76,7 +76,7 @@
     </div>
   </div>
 </div>
-{% if isLinkToProduct %}</a>{% endif %}
+</a>
 
 {% if isLastRender %}
   <style>
