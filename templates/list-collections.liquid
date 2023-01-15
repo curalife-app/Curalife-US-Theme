@@ -5,13 +5,12 @@
       <div class="line"></div>
       <p class="description"></p>
     </div>
-    <div class="category-tabs">
-      <ul>
-        {% for collection in collections %}
-          <li><a href="#" data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
+
+    <ul class="category-tabs">
+      {% for collection in collections %}
+        <li><a href="#" data-collection-handle="{{ collection.handle }}">{{ collection.title }}</a></li>
+      {% endfor %}
+    </ul>
 
     {% for collection in collections %}
     <div class="product-grid">
@@ -33,18 +32,18 @@
     padding: 50px 0;
   }
 
-  .category-tabs ul {
+  .category-tabs {
     display: flex;
     gap: 50px;
   }
 
-  .category-tabs ul li a.active {
+  .category-tabs li a.active {
     color: var(--light-green);
     padding: 10px 20px;
     border-radius: 20px;
   }
 
-  .category-tabs ul li a.active {
+  .category-tabs li a.active {
     background: var(--vomit);
     color: var(--dark-green);
   }
