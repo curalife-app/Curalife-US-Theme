@@ -68,10 +68,11 @@
 
     </div>
     <div class="price-challenge">
+     
+      <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
       {% if original_item_cap_total_with_bundle > var.price %}
         <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
       {% endif %}
-      <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
     </div>
   </div>
   {% endif %} 
@@ -225,12 +226,7 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 22px;
-      /* or 110% */
-
       letter-spacing: -0.01em;
-
-      /* Primary/green01 */
-
       color: #404733;
     }
 
