@@ -5,7 +5,7 @@
       {% for badge in collection.metafields.custom.category_badges.value %}
         <div class="category-badge">
           <img src="{{ badge.src | image_url }}" alt="{{ badge.alt }}">
-          <h3>{{ badge.alt }}</h3>
+          <p>{{ badge.alt }}</p>
         </div>
       {% endfor %}
     </div>
@@ -32,7 +32,7 @@
         gap: 15px;
       }
 
-      #category-badges-section .category-badge h3 {
+      #category-badges-section .category-badge p {
         font-size: 24px;
         font-weight: normal;
       }
