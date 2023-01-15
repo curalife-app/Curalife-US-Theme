@@ -1,0 +1,72 @@
+{% assign collections_handles = "joint-care,sleep" | split: "," %}
+
+<div id="collections-page">
+  <div class="container">
+    <div class="titles">
+      <h1 class="text-center">Collections</h1>
+      <div class="line"></div>
+      <p class="description"></p>
+    </div>
+
+    <ul class="category-tabs">
+      {% for collection_handle in collections_handles %}
+          <li><a href="#" data-collection-handle="{{ collection_handle }}">{{ collections[collection_handle].title }}</a></li>
+      {% endfor %}
+    </ul>
+
+    {% for collection_handle in collections_handles %}
+      <div class="product-grid">
+        {% if forloop.last %}
+          {% assign isLastCollectionRender = true %}
+        {% endif %}
+
+        {% assign isProductCardLast = value %}
+        {% for product in collections[collection_handle].products %}
+          {% if forloop.last and isLastCollectionRender %}
+            {% assign isLastCardRender = true %}
+          {% endif %}
+
+          {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
+          {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: isLastCardRender %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  #collections-page {
+    padding: 50px 0;
+  }
+
+  .category-tabs {
+    display: flex;
+    gap: 50px;
+  }
+
+  .category-tabs li a.active {
+    color: var(--light-green);
+    padding: 10px 20px;
+    border-radius: 20px;
+  }
+
+  .category-tabs li a.active {
+    background: var(--vomit);
+    color: var(--dark-green);
+  }
+</style>
+
+<script>
+  $('.category-tabs a').click(function (e) {
+    e.preventDefault();
+
+    $('.category-tabs a').removeClass('active');
+    $(this).addClass('active');
+
+    var collectionHandle = $(this).data('collection-handle');
+    $('.product-grid .product-card').hide();
+    $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').show();
+  });
+
+  $('.category-tabs a:first').click();
+</script>
