@@ -20,12 +20,11 @@
 
       {% assign isProductCardLast = value %}
       {% for product in collection.products %}
-        {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
-
         {% if forloop.last or isLastCollection %}
           {% assign isLastRender = true %}
         {% endif %}
 
+        {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
         {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: isLastRender %}
       {% endfor %}
     </div>
