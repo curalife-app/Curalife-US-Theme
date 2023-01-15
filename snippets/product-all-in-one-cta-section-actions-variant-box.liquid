@@ -68,8 +68,9 @@
 
     </div>
     <div class="price-challenge"> 
-      <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>          
-    </div>
+      <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>   
+      <div class="initial-price"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>                 
+    </div> 
   </div>
   {% endif %} 
   
@@ -209,6 +210,17 @@
     .price-with-null {
       display: flex;
     }
+
+    .initial-price {
+      display: flex;
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    .initial-price .thin-real-price {
+      position: relative;
+    }
+
 
     .price-challenge .price-with-null .thin-real-price {
       position: relative;
