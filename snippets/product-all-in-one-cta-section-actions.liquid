@@ -59,6 +59,9 @@
   .product-actions .variants {
     display: flex;
     flex-direction: {% if isReversed %}column-reverse{% else %}column{% endif %};
+    background: {% unless isCuralinContent %} #FFFFFF {% endunless %};
+    border: {% unless isCuralinContent %} 1px solid #CBCBCB {% endunless %};
+    border-radius:{% unless isCuralinContent %} 2px  {% endunless %};
   }
 
   .product-actions .submit-wrap button {
