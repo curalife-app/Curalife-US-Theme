@@ -4,8 +4,8 @@
     <div class="category-badges">
       {% for badge in collection.metafields.custom.category_badges.value %}
         <div class="category-badge">
-          <img src="{{ badge.src | image_url }}" alt="{{ badge.altText }}">
-          <h3>{{ badge.altText }}</h3>
+          <img src="{{ badge.src | image_url }}" alt="{{ badge.alt }}">
+          <h3>{{ badge.alt }}</h3>
         </div>
       {% endfor %}
     </div>
