@@ -3,7 +3,7 @@
     <div class="titles">
       <h1>{% if activeCollection %}{{ collections[activeCollection].title }}{% else %}Collections{% endif %}</h1>
       <div class="line"></div>
-      <p class="description"></p>
+      <p class="description">{% if activeCollection %}{{ collections[activeCollection].title }}{% else %}{% endif %}</p>
     </div>
 
     <ul class="category-tabs">
