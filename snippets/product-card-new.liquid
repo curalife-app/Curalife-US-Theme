@@ -70,10 +70,6 @@
 
       {% if shop.name == "CuraLife" %}
         <div class="free-shipping">US SHIPPING: <span>FREE</span></div>
-      {% elsif shop.name == "CuraLife Global" %}
-        {% comment %} {% unless product.tags contains "no-free-shipping" %}
-          <div class="free-shipping" style="font-size: 14px; text-align: center;"><span class="free-red">FREE</span> SHIPPING</div>
-        {% endunless %} {% endcomment %}
       {% endif %}
     </div>
   </div>
