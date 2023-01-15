@@ -204,7 +204,6 @@
       font-weight: 700;
       font-size: 38px;
       line-height: 100%;
-    
       text-align: right;
       letter-spacing: -0.03em;
       color: #404733;
@@ -306,7 +305,7 @@
 
       .variant-box .variant-info {
         padding: 10px;
-        width: 95%;
+        width: {% if isCuralinContent %}95%{% endif %};
       }
 
       .variant-box .price {
