@@ -14,7 +14,9 @@
       {% endfor %}
     </ul>
 
-    {% for collection in collections %}
+    {% assign colls = "joint-care,sleep" %}
+
+    {% for coll in colls %}
       {% unless collection.metafields.custom.is_hidden %}
         <div class="product-grid">
           {% if forloop.last %}
@@ -22,7 +24,7 @@
           {% endif %}
 
           {% assign isProductCardLast = value %}
-          {% for product in collection.products %}
+          {% for product in collections[coll].products %}
             {% if forloop.last and isLastCollectionRender %}
               {% assign isLastCardRender = true %}
             {% endif %}
