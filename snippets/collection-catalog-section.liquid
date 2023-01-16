@@ -12,7 +12,7 @@
 
 
     {% for collection_handle in collectionsHandles %}
-      <div class="product-grid">
+      <div class="product-grid" data-product-collections="{{ productCollections }}" style="display: none">
         {% if forloop.last %}
           {% assign isLastCollectionRender = true %}
         {% endif %}
@@ -107,6 +107,10 @@
     $(".description").fadeOut(function() {
       $(this).text(collectionDescription).fadeIn();
     });
+
+
+    $('.product-grid').fadeOut();
+    $('.product-grid[data-product-collections*="' + collectionHandle + '"]').fadeIn();
 
     $('.product-grid .product-card').fadeOut();
     $('.product-grid .product-card[data-product-collections*="' + collectionHandle + '"]').fadeIn();
