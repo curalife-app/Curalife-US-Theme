@@ -270,8 +270,9 @@
     $('.print-button').on('click',function(){
       $("header").hide();
       $("footer").hide();
-      $("#recipe").show();
       window.print();
+      $("header").show();
+      $("footer").show();
     });
   </script>
 
