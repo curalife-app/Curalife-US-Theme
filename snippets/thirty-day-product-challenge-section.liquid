@@ -106,9 +106,9 @@
     background: var(--light-green);
     color: white;
     border-radius: 50%;
-    min-width: 45px;
-    height: 45px;
-    font-size: 40px;
+    min-width: {% if isThirtyDay %}30px{% else %}45px{% endif %};
+    height: {% if isThirtyDay %}30px{% else %}45px{% endif %};
+    font-size: {% if isThirtyDay %}30px{% else %}40px{% endif %};
     display: flex;
     align-items: center;
     justify-content: center;
