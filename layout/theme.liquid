@@ -51,6 +51,12 @@
     {{ 'go-cart.js' | asset_url | script_tag }}
     <script>var goCart = new GoCart();</script> {% endcomment %}
 
+    <script
+      src="https://browser.sentry-cdn.com/7.31.0/bundle.tracing.min.js"
+      integrity="sha384-g/zdHeV5+PqD7HmWeWVuK9wYkqRN+1NlqveOyyditZgHVahR/Et3SFTLepAHqQyo"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
