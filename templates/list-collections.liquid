@@ -7,9 +7,7 @@
     {% assign isLastRender = true %}
   {% endif %}
 
-  <div class="product-grid">
-    {% render 'collection-category-badges', collection: collections[collection_handle], isLastRender: isLastRender %}
-  </div>
+  {% render 'collection-category-badges', collection: collections[collection_handle], isLastRender: isLastRender %}
 {% endfor %}
 
 {% render 'collection-badges' %}

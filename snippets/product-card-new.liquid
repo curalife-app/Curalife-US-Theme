@@ -32,15 +32,14 @@
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
 
 <a href="{{ product.url }}">
-<div class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollections }}" style="display: none">
+<div class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollections }}">
   <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" width="512" height="475" alt="" loading="lazy">
-
 
   <div class="info">
     <div class="main">
       <div class="product-titles">
         <h3>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h3>
-        <p class="subtitle">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+        <p class="subtitle">{{ product.metafields.my_fields.subtitle }}</p>
       </div>
 
       <div class="price">
@@ -113,6 +112,10 @@
       color: #404733;
     }
 
+    .product-card .info {
+      width: 100%;
+    }
+
     .product-card .info .main {
       flex: auto;
       padding-bottom: 10px;
@@ -151,11 +154,10 @@
     }
 
     .product-card .info .price {
-      padding-top: 14px;
       position: relative;
       display: flex;
       justify-content: center;
-      padding-bottom: 10px;
+      padding-bottom: 10px 0;
     }
 
     .product-card .info .price p {
@@ -192,7 +194,7 @@
         text-align: center;
         font-size: 20px;
         font-weight: bold;
-        margin: 5px 0;
+        margin-top: 5px;
     }
 
     .product-card.recommended h3 {
@@ -233,11 +235,10 @@
 
       .product-card h3 {
         font-size: 10vw;
-        margin-top: 5vw;
       }
 
-      .product-card .info .price {
-        padding-top: 0;
+      .product-card .subtitle {
+        font-size: 5vw;
       }
 
       .product-card .info .price strike {

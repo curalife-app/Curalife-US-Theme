@@ -25,9 +25,11 @@
 <style>
   #health-benefits-section .health-benefits {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
     align-items: center;
     font-weight: bold;
+    flex-wrap: wrap;
   }
 
   #health-benefits-section .health-benefit {
@@ -36,6 +38,11 @@
     align-items: center;
     text-align: center;
     max-width: 250px;
+    gap: 20px;
+  }
+
+  #health-benefits-section .health-benefit p {
+    font-weight: normal;
   }
 
   @media screen and (max-width: 768px) {
