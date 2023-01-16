@@ -1,7 +1,7 @@
   <div id="recipe-page">
     <div class="carbs-level-bar">
       <div class="container">
-        <div class="level-icon {{ article.metafields.recipe.carbs_level }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
+        <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
         <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
       </div>
     </div>
