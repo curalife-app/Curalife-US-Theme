@@ -34,6 +34,8 @@
           </div>
         </div>
 
+        <div class="line"></div>
+
         <div class="description">
           <div class="ingredients">
             <h2>Ingredients</h2>
@@ -65,6 +67,13 @@
   </div>
 
   <style>
+
+    .line {
+      width: 300px;
+      border-bottom: 2px solid var(--light-peach);
+      margin: 30px 0;
+    }
+
     .level-icon {
       display: flex;
       align-items: baseline;
@@ -234,6 +243,7 @@
 
       #recipe-page .info .subtitles {
         font-size: 4vw;
+        flex-direction: column-reverse;
       }
 
       #recipe-page .info .nutrients {
