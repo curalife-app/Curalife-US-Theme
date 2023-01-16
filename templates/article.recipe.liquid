@@ -14,6 +14,7 @@
           <p class="calories"><i></i>{{ article.metafields.recipe.calories }}kcal</p>
           <p class="cooking-duration"><i class="icofont-clock-time"></i>{{ article.metafields.recipe.cooking_duration }}</p>
         </div>
+
         <div class="nutrients">
           <p class="fat"><i class="icofont-cheese"></i>Fat | {{ article.metafields.recipe.fat }}</p>
           <p class="carbs"><i class="icofont-wheat"></i>Carbs | {{ article.metafields.recipe.carbs }}</p>
@@ -21,6 +22,7 @@
           <p class="fiber"><i class="icofont-fruits"></i></i>Fiber | {{ article.metafields.recipe.fiber }}</p>
         </div>
       </div>
+
       <div class="description">
         <div class="ingredients-wrapper">
           <h2>Ingredients</h2>
@@ -30,6 +32,7 @@
             {% endfor %}
           </ul>
         </div>
+
         <div class="instructions-wrapper">
           <h2>instructions</h2>
           <ul class="instructions">
@@ -38,6 +41,7 @@
             {% endfor %}
           </ul>
         </div>
+
         <div class="tip-wrapper">
           <h2><i class="icofont-bulb-alt"></i>Tip</h2>
           <p>{{ article.metafields.recipe.tip }}</p>
