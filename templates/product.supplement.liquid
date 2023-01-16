@@ -27,9 +27,9 @@
   {% else %}
     {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
   {% endif %}
-
+  {% unless product.title contains "Curalin Monthly Deals" %}
   {% render 'product-supplement-info-section', titleColor: title_color %}
-
+  {% endunless %}
   {% if isCuralinBundled %}
     {% render 'product-supplement-doctors-section' %}
   {% endif %}
