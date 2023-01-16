@@ -1,9 +1,9 @@
 {% if article.metafields.recipe.carbs_level == "High" %}
-  {% assign carbs_bar_bg_color = 'var(--bright-peach)' %}
+  {% assign carbs_bar_bg_color = 'var(--light-peach)' %}
 {% elsif article.metafields.recipe.carbs_level == "Mid" %}
-  {% assign carbs_bar_bg_color = 'var(--bright-beige)' %}
+  {% assign carbs_bar_bg_color = 'var(--light-beige)' %}
 {% elsif article.metafields.recipe.carbs_level == "Low" %}
-  {% assign carbs_bar_bg_color = 'var(--bright-green)' %}
+  {% assign carbs_bar_bg_color = 'var(--light-green)' %}
 {% endif %}
 
   <div id="recipe-page">
