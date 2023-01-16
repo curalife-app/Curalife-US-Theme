@@ -1,5 +1,5 @@
 <div id="recipe-page">
-  <div id="carbs-level-bar">
+  <div class="carbs-level-bar">
     <div class="container">
       <div class="level-icon"></div>
       <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
@@ -49,5 +49,17 @@
 </div>
 
 <style>
+  #recipe-page .carbs-level-bar{
+    background-color: var(--bright-red);
+    color: var(--dark-red)
+  }
+
+  #recipe-page .carbs-level-bar .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
 
 </style>
