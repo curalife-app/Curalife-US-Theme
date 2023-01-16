@@ -57,19 +57,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      Sentry.init({
-        dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
-        // this assumes your build process replaces `process.env.npm_package_version` with a value
-        release: "my-project-name@" + process.env.npm_package_version,
-        integrations: [new Sentry.BrowserTracing()],
-
-        // We recommend adjusting this value in production, or using tracesSampler
-        // for finer control
-        tracesSampleRate: 1.0,
-      });
-    </script>
-
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
     <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
