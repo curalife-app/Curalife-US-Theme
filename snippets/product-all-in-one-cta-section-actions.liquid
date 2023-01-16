@@ -108,9 +108,13 @@
       let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
     {% endif %}
 
-    $('#save').animate({'opacity': 0}, 800, function () {
+    $("#save").fadeOut(300, function () {
       $(this).text(ctaText);
-    }).animate({'opacity': 1}, 800);
+    }).fadeIn(300);
+
+    {% comment %} $('#save').animate({'opacity': 0}, 800, function () {
+      $(this).text(ctaText);
+    }).animate({'opacity': 1}, 800); {% endcomment %}
   }
 
   function updateMultiplier() {
