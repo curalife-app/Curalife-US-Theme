@@ -1,9 +1,10 @@
-{% assign realChanges = 'thirty-day-challenge-what-is-for-you-01.png*Maintain Glucose:Supporting your overall health, mobility, and mood!
-|thirty-day-challenge-what-is-for-you-02.png*Feel better:You’ll feel <b> and </b> look great!
-|thirty-day-challenge-what-is-for-you-03.png*Get energy:You have <b> energy </b> to go the extra mile in your life!
-|thirty-day-challenge-what-is-for-you-04.png*Enjoy food:You won’t dread healthy cooking. You’ll <b> enjoy </b> it!
+{% assign realChanges = 'thank-you-week-1.png*Week 1:We’ll start with “Carb Cycling.” 
+|thank-you-week-2.png*Week 2:Meet curalin. Your new best friend. You’ll start taking it consistently, making your first step to sugar freedom!
+|thank-you-week-3.png*Week 3:Slowly but surely, you’ll get into a movement routine that works for YOU!
+|thank-you-week-4.png*Week 4:Move forward with a carb SMART diet that you can actually maintain.
 ' | split: '|' %}
 
 
 
 {% render 'thank-you-new-ready-to-start-your-plan', ctaButtonLink: '/collections/all' ctaTitle: 'YOUR 30 DAY PLAN AWAITS!' %}
+{% render 'thank-you-new-weeks', realChanges: realChanges  %}
