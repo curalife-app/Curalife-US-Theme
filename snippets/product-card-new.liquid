@@ -39,7 +39,7 @@
     <div class="main">
       <div class="product-titles">
         <h3>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h3>
-        <p class="subtitle">Up To {{ product.metafields.my_fields.supply_days }} Days Supply</p>
+        <p class="subtitle">{{ product.metafields.my_fields.subtitle }}</p>
       </div>
 
       <div class="price">
