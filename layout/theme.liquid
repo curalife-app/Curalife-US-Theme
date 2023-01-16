@@ -19,7 +19,7 @@
     {% render 'layout.head.fonts' %}
 
     <!-- Stylesheets -->
-    {% comment %} {{ 'bamboo.min.css' | asset_url | stylesheet_tag: preload: true }} {% endcomment %}
+    {{ 'bamboo.min.css' | asset_url | stylesheet_tag: preload: true }}
     {% if request.path contains 'curalin-pack' %}
       {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
     {% elsif request.path contains 'curaeats' %}
