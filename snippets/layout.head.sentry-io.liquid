@@ -1,0 +1,19 @@
+<script
+  src="https://browser.sentry-cdn.com/7.31.0/bundle.tracing.min.js"
+  integrity="sha384-g/zdHeV5+PqD7HmWeWVuK9wYkqRN+1NlqveOyyditZgHVahR/Et3SFTLepAHqQyo"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  Sentry.init({
+    dsn: "https://b23f8c29bcc94ada97c85abc9bf4a590@o4504515615916032.ingest.sentry.io/4504515620962304",
+    integrations: [
+      new Sentry.Integrations.BrowserTracing(),
+    ],
+
+    // Set tracesSampleRate to 1.0 to capture 100%
+    // of transactions for performance monitoring.
+    // We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+  });
+</script>
