@@ -1,0 +1,141 @@
+<div class="ready-to-start">
+  <div class="container">
+
+    <div class="sub-title">
+      <h3><b>What’s in it for you?</b></h3>
+      <div class="description-overlay">
+       
+          To list a few...
+       
+      </div>
+    </div>
+   
+    <div class="border-desk"></div>
+    <div class="descripton-wrapper">
+    <div class="ready-to-start-item-description">
+      If you’re not satisfied with the program, we’ll give you your money back for up to 60 days! That’s how confident we feel about the program. We’re your partner through the whole journey. 
+    </div>
+    </div>
+      <div class="button-wrapper">
+    <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ready-to-start {
+    background: var(--light-brown);
+  }
+
+  .ready-to-start .sub-title {
+    padding-top: 60px;
+  }
+
+  .ready-to-start .sub-title h3 {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 35px;
+    color: var(--dark-green);
+    padding-bottom: 30px;
+  }
+
+  .ready-to-start .sub-title .description-overlay  {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 24px;
+    text-align: center;
+    color: var(--dark-green);
+    padding-bottom: 20px;
+  }
+
+
+
+
+  .border-desk {
+    border-top: 1px solid var(--dark-green);
+    width: 60%;
+    margin: 0 auto;  
+  }
+
+ 
+
+
+  .descripton-wrapper {
+    padding: 30px 0;
+  }
+
+  .ready-to-start-item-description {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: var(--dark-green);
+
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
+  .ready-to-start .container .cta-btn {  
+    background: var(--dark-green);
+    border: 1px solid var(--dark-green);
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 26px;
+    padding: 20px 60px;  
+    color: var(--white);
+    margin-left: unset;
+    margin-top: 20px;
+    
+  }
+
+  .ready-to-start .container .cta-btn:hover {
+    background: var(--regular-green);
+    border: 1px solid  var(--regular-green);
+  }
+
+
+
+  @media screen and (max-width: 768px) {
+    .border-desk {
+      display: none;
+    }
+
+
+    .ready-to-start .sub-title h3 {
+      text-align: left;
+      font-size: 32px;
+      line-height: 35px;
+      padding-bottom: unset;
+    }
+
+    .ready-to-start .sub-title .description-overlay {
+      text-align: left;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 700;
+      padding-bottom: unset;
+    }
+
+
+
+
+    .ready-to-start-item-description {
+      text-align: left;
+    }
+
+    .ready-to-start .container .cta-btn {  
+      position: unset; 
+      width: unset;
+      z-index: unset;
+      padding: 20px 40px;
+      font-size: 21px;
+    }
+
+  }
+</style>
