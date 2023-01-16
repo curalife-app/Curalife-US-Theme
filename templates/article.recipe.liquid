@@ -15,7 +15,7 @@
         <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
         <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
 
-        <i class="icofont-printer" onclick="window.print()" style="cursor:pointer;position:absolute;right:0;top:15px;font-size:28px;color:{{ carbs_bar_text_color }}"></i>
+        <i class="icofont-printer" onclick="printRecipe()" style="cursor:pointer;position:absolute;right:0;top:5px;font-size:28px;color:{{ carbs_bar_text_color }}"></i>
       </div>
     </div>
 
@@ -129,7 +129,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 10px 0;
+      padding: 5px 0;
       font-weight: bold;
     }
 
@@ -265,6 +265,19 @@
       }
     }
   </style>
+
+  <script>
+    function printRecipe(divId) {
+        var originalHtml = document.body.innerHTML;
+        var printContent = document.querySelectorAll('img').forEach(img => img.remove());
+        var printContent = document.querySelectorAll('header').forEach(img => img.remove());
+        var printContent = document.querySelectorAll('footer').forEach(img => img.remove());
+        printContent = document.getElementById(divId).innerHTML;
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalHtml;
+    }
+  </script>
 
 {% comment %}
   <div class="container" style="text-align:center;padding:100px;font-size:32px;">
