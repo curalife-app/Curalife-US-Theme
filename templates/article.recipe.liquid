@@ -1,4 +1,3 @@
-{% comment %} {% if customer.tags contains "30-days-challenge" %} {% endcomment %}
   <div id="recipe-page">
     <div class="carbs-level-bar">
       <div class="container">
@@ -12,7 +11,7 @@
         <div class="info">
           <h1>{{ article.title }}</h1>
           <div class="subtitles">
-            <p class="calories"><i></i>{{ article.metafields.recipe.calories }}kcal</p>
+            <p class="calories"><i class="icofont-fire-burn"></i>{{ article.metafields.recipe.calories }}kcal</p>
             <p class="cooking-duration"><i class="icofont-clock-time"></i>{{ article.metafields.recipe.duration }}</p>
           </div>
 
@@ -20,7 +19,7 @@
             <p class="fat"><i class="icofont-cheese"></i>Fat | {{ article.metafields.recipe.fat }}</p>
             <p class="carbs"><i class="icofont-wheat"></i>Carbs | {{ article.metafields.recipe.carbs }}</p>
             <p class="protein"><i class="icofont-chicken-fry"></i>Protein | {{ article.metafields.recipe.protein }}</p>
-            <p class="fiber"><i class="icofont-fruits"></i></i>Fiber | {{ article.metafields.recipe.fiber }}</p>
+            <p class="fiber"><i class="icofont-pear"></i>Fiber | {{ article.metafields.recipe.fiber }}</p>
           </div>
         </div>
 
@@ -43,10 +42,12 @@
             </ul>
           </div>
 
-          <div class="tip-wrapper">
-            <h2><i class="icofont-bulb-alt"></i>Tip</h2>
-            <p>{{ article.metafields.recipe.tip }}</p>
-          </div>
+          {% if article.metafields.recipe.tip %}
+            <div class="tip-wrapper">
+              <h2><i class="icofont-bulb-alt"></i>Tip</h2>
+              <p>{{ article.metafields.recipe.tip }}</p>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -123,6 +124,7 @@
     #recipe-page .info i {
       color: var(--peach);
       margin-right: 10px;
+      font-size: 30px;
     }
 
     #recipe-page .description {
@@ -211,8 +213,9 @@
       }
     }
   </style>
-{% comment %} {% else %}
+
+{% comment %}
   <div class="container" style="text-align:center;padding:100px;font-size:32px;">
     <h1>You are not suppose to be here ;)</h1>
   </div>
-{% endif %} {% endcomment %}
+{% endcomment %}
