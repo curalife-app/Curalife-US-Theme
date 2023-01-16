@@ -53,7 +53,7 @@
 
 <style>
   #recipe-page {
-    font-size: 15px;
+    font-size: 22px;
   }
 
   #recipe-page h2 {
@@ -94,7 +94,7 @@
   }
 
   #recipe-page .info h1 {
-    font-size: 32px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
@@ -140,8 +140,24 @@
   }
 
   #recipe-page .instructions ul {
-    grid-column: 1/3;
-    grid-row: 2/3;
+    list-style: none;
+    counter-reset: instructions-counter;
+  }
+
+  #recipe-page .instructions ul li {
+    counter-increment: instructions-counter;
+    margin-bottom: 20px;
+  }
+
+  #recipe-page .instructions ul li::before {
+    content: counter(instructions-counter) "";
+    color: white;
+    background: var(--peach);
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 50%;
+    max-width: 10px;
+    max-height: 10px;
   }
 
   #recipe-page .tip-wrapper {
