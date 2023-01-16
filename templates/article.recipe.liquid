@@ -1,5 +1,4 @@
 {% comment %} {% if customer.tags contains "30-days-challenge" %} {% endcomment %}
-{% if true %}
   <div id="recipe-page">
     <div class="carbs-level-bar">
       <div class="container">
@@ -212,8 +211,8 @@
       }
     }
   </style>
-{% else %}
+{% comment %} {% else %}
   <div class="container" style="text-align:center;padding:100px;font-size:32px;">
     <h1>You are not suppose to be here ;)</h1>
   </div>
-{% endif %}
+{% endif %} {% endcomment %}
