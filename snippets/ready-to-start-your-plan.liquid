@@ -1,6 +1,8 @@
 <div class="ready-to-start">
   <div class="container">
-
+    <div class="thank-you-page-img">
+        <img class="whistle-img" src="{{ 'thank-you-page-whistle.png' | asset_url }}" width="268" height="171" alt="thank-you-whistle" loading="lazy">
+    </div>
     <div class="sub-title">
       <h3><b>What’s in it for you?</b></h3>
       <div class="description-overlay">
@@ -25,6 +27,11 @@
 <style>
   .ready-to-start {
     background-image: linear-gradient(to top, #d07d5b, #db8262, #e58869, #f08d70, #fb9378);
+  }
+
+  .thank-you-page-img {
+    display: flex;
+    justify-content: center;
   }
 
   .ready-to-start .sub-title {
