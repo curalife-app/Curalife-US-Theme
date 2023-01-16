@@ -267,10 +267,10 @@
   </style>
 
   <script>
-    function printRecipe() {
+    $('.print-button').on('click',function(){
       $("#recipe").show();
       window.print();
-    }
+    });
   </script>
 
 {% comment %}
