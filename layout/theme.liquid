@@ -59,7 +59,9 @@
     <!-- TODO: make another solution for removing header from curalin-pack page -->
     {% unless request.path contains 'curalin-pack' %}
       {% unless request.path contains 'curaeats' %}
+      {% unless request.path contains 'challenge-pp' %}
         {% section 'header' %}
+        {% endunless %}
       {% endunless %}
     {% endunless %}
 
