@@ -22,7 +22,7 @@
       font-size: 30px;
       padding: 0 20px;
       font-weight: bold;
-      height: 50px;
+      height: {% unless isThirtyDay %}50px {% endunless %};
       text-align: center;
       border-radius: {% unless isThirtyDay %} 30px {% endunless %};
       position: fixed;
