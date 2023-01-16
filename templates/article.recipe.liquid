@@ -1,3 +1,11 @@
+{% if article.metafields.recipe.carbs_level == "High" %}
+  {% assign carbs_bar_bg_color = 'var(--bright-peach)' %}
+{% elsif article.metafields.recipe.carbs_level == "Mid" %}
+  {% assign carbs_bar_bg_color = 'var(--bright-beige)' %}
+{% elsif article.metafields.recipe.carbs_level == "Low" %}
+  {% assign carbs_bar_bg_color = 'var(--bright-green)' %}
+{% endif %}
+
   <div id="recipe-page">
     <div class="carbs-level-bar">
       <div class="container">
