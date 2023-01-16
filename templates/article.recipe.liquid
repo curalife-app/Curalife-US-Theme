@@ -268,8 +268,11 @@
 
   <script>
     $('.print-button').on('click',function(){
-      $("#recipe").show();
+      $("header").hide();
+      $("footer").hide();
       window.print();
+      $("header").show();
+      $("footer").show();
     });
   </script>
 
