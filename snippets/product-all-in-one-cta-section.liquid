@@ -1,4 +1,4 @@
-<section class="cta-section">
+<section class="cta-section">cta-section
   <div class="container product-container">
     <div class="product-image-wrapper">
       {% comment %} If there are multiple images, render the gallery {% endcomment %}
@@ -47,8 +47,9 @@
     {% render 'trust-badges-widget', content: "free-shipping,money-back,secure-checkout", colors: "#5c5c5c" %}
   {% endif %}
 </section>
-
+{% unless isThirtyDay %}
 <div class="container line" style="border-bottom: 1px solid {{ bottomLineColor }}"></div>
+{% endunless %}
 
 
 <style>
