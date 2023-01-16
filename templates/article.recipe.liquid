@@ -42,10 +42,12 @@
             </ul>
           </div>
 
-          <div class="tip-wrapper">
-            <h2><i class="icofont-bulb-alt"></i>Tip</h2>
-            <p>{{ article.metafields.recipe.tip }}</p>
-          </div>
+          {% if article.metafields.recipe.tip %}
+            <div class="tip-wrapper">
+              <h2><i class="icofont-bulb-alt"></i>Tip</h2>
+              <p>{{ article.metafields.recipe.tip }}</p>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
