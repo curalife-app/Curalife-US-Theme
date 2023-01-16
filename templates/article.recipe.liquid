@@ -1,5 +1,49 @@
 <div id="recipe-page">
-  <div class="container">
+  <div id="carbs-level-bar">
+    <div class="container">
+      <div class="level-icon"></div>
+      <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
+    </div>
+  </div>
 
+  <div class="recipe">
+    <div class="container">
+      <div class="info">
+        <h1>{{ article.title }}</h1>
+        <div class="subtitles">
+          <p class="calories"><i></i>{{ article.metafields.recipe.calories }}kcal</p>
+          <p class="cooking-duration"><i class="icofont-clock-time"></i>{{ article.metafields.recipe.duration }}</p>
+        </div>
+        <div class="nutritions">
+          <p class="fat">{{ article.metafields.recipe.fat }}</p>
+          <p class="carbs">{{ article.metafields.recipe.carbs }}</p>
+          <p class="protein">{{ article.metafields.recipe.protein }}</p>
+          <p class="fiber">{{ article.metafields.recipe.fiber }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="description">
+      <div class="ingredients-wrapper">
+        <h2>Ingredients</h2>
+        <ul class="ingredients">
+          {% for ingredient in article.metafields.recipe.ingredients.value %}
+            <li>{{ ingredient }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="instructions-wrapper">
+        <h2>instructions</h2>
+        <ul class="instructions">
+          {% for instruction in article.metafields.recipe.instructions.value %}
+            <li>{{ instruction }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="tip-wrapper">
+        <h2><i class="icofont-bulb-alt"></i>Tip</h2>
+        <p>{{ article.metafields.recipe.tip }}</p>
+      </div>
+    </div>
   </div>
 </div>
