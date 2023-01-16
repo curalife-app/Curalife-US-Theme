@@ -21,28 +21,27 @@
           <p class="fiber"><i class="icofont-fruits"></i></i>Fiber | {{ article.metafields.recipe.fiber }}</p>
         </div>
       </div>
-    </div>
-
-    <div class="description">
-      <div class="ingredients-wrapper">
-        <h2>Ingredients</h2>
-        <ul class="ingredients">
-          {% for ingredient in article.metafields.recipe.ingredients.value %}
-            <li>{{ ingredient }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="instructions-wrapper">
-        <h2>instructions</h2>
-        <ul class="instructions">
-          {% for instruction in article.metafields.recipe.instructions.value %}
-            <li>{{ instruction }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="tip-wrapper">
-        <h2><i class="icofont-bulb-alt"></i>Tip</h2>
-        <p>{{ article.metafields.recipe.tip }}</p>
+      <div class="description">
+        <div class="ingredients-wrapper">
+          <h2>Ingredients</h2>
+          <ul class="ingredients">
+            {% for ingredient in article.metafields.recipe.ingredients.value %}
+              <li>{{ ingredient }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="instructions-wrapper">
+          <h2>instructions</h2>
+          <ul class="instructions">
+            {% for instruction in article.metafields.recipe.instructions.value %}
+              <li>{{ instruction }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="tip-wrapper">
+          <h2><i class="icofont-bulb-alt"></i>Tip</h2>
+          <p>{{ article.metafields.recipe.tip }}</p>
+        </div>
       </div>
     </div>
   </div>
