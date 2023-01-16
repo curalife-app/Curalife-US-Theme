@@ -256,7 +256,7 @@
       updateCTA();
       updateMultiplier();
 
-      {% if product.images.size > 0 %}
+      {% if slideToVariantImage %}
         // Slide to Variant Image
         let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
         productSliderAllInOne.slideTo(slideIndex);
