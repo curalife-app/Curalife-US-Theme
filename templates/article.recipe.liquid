@@ -15,7 +15,7 @@
         <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
         <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
 
-        <i class="icofont-printer" onclick="printRecipe(this)" style="cursor:pointer;position:absolute;right:0;top:5px;font-size:28px;color:{{ carbs_bar_text_color }}"></i>
+        <i class="icofont-printer print-button" style="cursor:pointer;position:absolute;right:0;top:5px;font-size:28px;color:{{ carbs_bar_text_color }}"></i>
       </div>
     </div>
 
@@ -267,9 +267,10 @@
   </style>
 
   <script>
-    function printRecipe() {
-      $("#recipe").printElement();
-    }
+    $('.print-button').on('click',function(){
+      $("#recipe").show();
+      window.print();
+    });
   </script>
 
 {% comment %}
