@@ -24,18 +24,18 @@
       </div>
 
       <div class="description">
-        <div class="ingredients-wrapper">
+        <div class="ingredients">
           <h2>Ingredients</h2>
-          <ul class="ingredients">
+          <ul>
             {% for ingredient in article.metafields.recipe.ingredients.value %}
               <li>{{ ingredient }}</li>
             {% endfor %}
           </ul>
         </div>
 
-        <div class="instructions-wrapper">
+        <div class="instructions">
           <h2>instructions</h2>
-          <ul class="instructions">
+          <ul>
             {% for instruction in article.metafields.recipe.instructions.value %}
               <li>{{ instruction }}</li>
             {% endfor %}
@@ -54,6 +54,10 @@
 <style>
   #recipe-page {
     font-size: 15px;
+  }
+
+  #recipe-page h2 {
+    color: var(--peach);
   }
 
   #recipe-page p {
@@ -115,5 +119,32 @@
 
   #recipe-page .info .nutrients i {
     color: var(--peach)
+  }
+
+  #recipe-page .description {
+    display: grid;
+    gap: 50px;
+  }
+
+  #recipe-page .ingredients {
+    grid-column: 1/2;
+  }
+
+  #recipe-page .ingredients ul {
+    list-style: disc;
+  }
+
+  #recipe-page .instructions {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  #recipe-page .instructions ul {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+
+  #recipe-page .tip-wrapper {
+    grid-column: 2/3;
   }
 </style>
