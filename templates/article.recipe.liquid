@@ -149,13 +149,14 @@
   #recipe-page .instructions ul li {
     counter-increment: instructions-counter;
     margin-bottom: 20px;
+    line-height: 1.8em;
   }
 
   #recipe-page .instructions ul li::before {
     content: counter(instructions-counter) "";
     color: white;
     background: var(--peach);
-    padding: 5px;
+    padding: 5px 13px;
     font-weight: bold;
     border-radius: 50%;
     max-width: 10px;
@@ -200,6 +201,10 @@
       display: flex;
       flex-direction: column;
       padding: 15px;
+    }
+
+    #recipe-page .instructions ul li::before {
+      margin-right: 4vw;
     }
   }
 </style>
