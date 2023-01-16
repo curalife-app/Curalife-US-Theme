@@ -59,6 +59,29 @@
       align-items: baseline;
       gap: 1px;
     }
+    .level-icon .rec {
+      height: 30px;
+      width: 10px;
+      background: var(--dark-peach);
+      border-radius: 3px;
+    }
+
+    .level-icon.high .rec:first-child {
+      height: 10px;
+    }
+
+    .level-icon.low .rec:first-child {
+      height: 30px;
+    }
+
+    .level-icon.high .rec:last-child {
+      height: 30px;
+    }
+
+    .level-icon.low .rec:last-child {
+      height: 10px;
+    }
+
     #recipe-page {
       font-size: 22px;
     }
