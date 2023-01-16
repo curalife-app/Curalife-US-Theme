@@ -115,7 +115,9 @@
 
   function updateMultiplier() {
     let varIndex = $('input[name=pack]:checked').attr('quantity');
-    varIndex > 1 ? $(".multiplier").text("X" + varIndex) : $(".multiplier").text("");
+    $(".multiplier").fadeout(100m function () {
+      varIndex > 1 ? $(".multiplier").text("X" + varIndex) : $(".multiplier").text("");
+    }).fadein(100);
   }
 
   // On Quantity Change
