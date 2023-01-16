@@ -95,8 +95,8 @@
     align-items: center;
     padding: 15px 0;
     font-family: "PP Radio Grotesk";
-    font-size: clamp(14px, 2vw, 20px);
-    line-height: 20px;
+    font-size: {% if isThirtyDay %}clamp(14px, 2vw, 26px){% else %}(14px, 2vw, 20px){% endif %};
+    line-height:{% if isThirtyDay %}26px{% else %}20px{% endif %};
     font-weight: 400;
    
   }
@@ -113,7 +113,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 20px;
-    margin-top: {% if isThirtyDay %}-27px{% endif %};
+    margin-top: {% if isThirtyDay %}-40px{% endif %};
   }
 
 .text-features {
@@ -123,8 +123,8 @@
   #product-feature-section .features .feature .feature-text {
     display: flex;
     flex-direction: column;
-    max-width: 404px;
-    padding-right: 75px;
+    max-width:  {% if isThirtyDay %}383px{% else %}404px{% endif %};
+    padding-right: {% if isThirtyDay %}55px{% else %} 75px{% endif %};
   }
 
   #product-feature-section .features .feature .feature-price { 
@@ -164,6 +164,10 @@
     #product-feature-section .features {
       max-width: unset;
       width: 100%;
+    }
+
+    #product-feature-section .features .feature {
+      line-height: 20px;
     }
 
     #product-feature-section .features .feature .feature-text {
