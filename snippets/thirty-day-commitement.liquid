@@ -136,6 +136,7 @@
     font-family: "PP Radio Grotesk";
     font-size: clamp(14px, 2vw, 20px);
     line-height: 20px;
+    max-width: 367px;
 
   }
 
@@ -166,6 +167,9 @@
 
 
   @media screen and (max-width: 768px) {
+    .commitments .commitment {
+      max-width: unset;
+    }
     .commitement-for-you-wrapper {
       padding-bottom: unset;
       width: 100%;
