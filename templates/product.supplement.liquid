@@ -27,7 +27,7 @@
   {% else %}
     {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
   {% endif %}
-  {% unless prod.title contains "Curalin Monthly Deals" %}
+  {% unless product.title contains "Curalin Monthly Deals" %}
   {% render 'product-supplement-info-section', titleColor: title_color %}
   {% endunless %}
   {% if isCuralinBundled %}
