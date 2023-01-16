@@ -1,7 +1,7 @@
   <div id="recipe-page">
     <div class="carbs-level-bar">
       <div class="container">
-        <div class="level-icon"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
+        <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
         <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
       </div>
     </div>
@@ -54,6 +54,34 @@
   </div>
 
   <style>
+    .level-icon {
+      display: flex;
+      align-items: baseline;
+      gap: 1px;
+    }
+    .level-icon .rec {
+      height: 20px;
+      width: 10px;
+      background: var(--dark-peach);
+      border-radius: 3px;
+    }
+
+    .level-icon.high .rec:first-child {
+      height: 10px;
+    }
+
+    .level-icon.low .rec:first-child {
+      height: 30px;
+    }
+
+    .level-icon.high .rec:last-child {
+      height: 30px;
+    }
+
+    .level-icon.low .rec:last-child {
+      height: 10px;
+    }
+
     #recipe-page {
       font-size: 22px;
     }
