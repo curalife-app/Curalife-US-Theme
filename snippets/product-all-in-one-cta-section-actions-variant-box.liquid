@@ -256,9 +256,11 @@
       updateCTA();
       updateMultiplier();
 
-      // Slide to Variant Image
-      let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
-      productSliderAllInOne.slideTo(slideIndex);
+      {% if product.images.size > 0 %}
+        // Slide to Variant Image
+        let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
+        productSliderAllInOne.slideTo(slideIndex);
+      {% endif %}
 
       // Track in GA
       window.dataLayer = window.dataLayer || [];
