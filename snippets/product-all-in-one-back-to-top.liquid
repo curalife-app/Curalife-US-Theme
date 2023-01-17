@@ -37,12 +37,12 @@
 
    #back-to-top-btn:hover {
       cursor: pointer;
-      background: {% if isThirtyDay %}#697938{% else %} #404733 {% endif %};
-      border: {% if isThirtyDay %}#697938{% else %} #404733 {% endif %};
+      background: {% if isThirtyDay %}#FFB22D{% else %} #404733 {% endif %};
+      border: {% if isThirtyDay %}#FFB22D{% else %} #404733 {% endif %};
   }
 
    #back-to-top-btn:active {
-      background-color: #404733;
+    background-color: {% if isThirtyDay %}#FFB22D{% else %}#404733{% endif %};
   }
 
    #back-to-top-btn.show {
