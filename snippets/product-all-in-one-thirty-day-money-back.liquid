@@ -1,0 +1,26 @@
+<section class="free-shipping-section">
+  
+  <img src="{{ "thirty-day-product-money-back-icon.png" | asset_url }}" width="2085" height="288" alt="" class="free-shipping-line" loading="lazy">
+</section>
+
+
+
+
+<style>
+  .free-shipping-section {
+    display: flex;
+    justify-content: center;
+  }
+  .free-shipping-section img {
+    max-width: 40%;
+  }
+  @media screen and (max-width: 768px) {
+     .free-shipping-section img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: left;
+        object-position: left
+    }
+
+  }
+</style>
