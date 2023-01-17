@@ -1,5 +1,6 @@
 {% if shop.name == "CuraLife" %}
-  {% assign shipping_worldwide = 'Free Shipping' %}
+  {% assign shipping_worldwide = 'FREE WORLDWILD
+  SHIPPING' %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign shipping_worldwide = 'Free Shipping Above £99' %}
 {% endif %}
@@ -13,9 +14,9 @@
     <div class="trust-badge"><i class="icofont-badge" style="font-size:36px"></i>60 Day Money Back Guarantee</div>
   {% endif %}
 
-  {% if content contains "secure-checkout" %}
+ 
     <div class="trust-badge"><i class="icofont-ui-lock"></i>100% Secure Checkout</div>
-  {% endif %}
+  
 </div>
 
 <style>
@@ -23,18 +24,19 @@
     padding: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
     font-size: {% if isMiniVersion %}14px{% else %}16px{% endif %};
     line-height: 1.2rem;
   }
 
   #trust-badges-widget .trust-badge {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     text-transform: uppercase;
     max-width: {% if isMiniVersion %}50%{% else %}33%{% endif %};
+    color: rgba(0, 0, 0, 0.6);
   }
 
   #trust-badges-widget .trust-badge i {
@@ -48,7 +50,7 @@
   @media screen and (max-width:768px) {
     #trust-badges-widget {
       gap: unset;
-      justify-content: space-between;
+      justify-content: space-around;
     }
 
     #trust-badges-widget .container {
