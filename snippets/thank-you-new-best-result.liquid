@@ -9,6 +9,9 @@
       How to get the best results
       over the next 30 days:
     </div>
+    <p class="consistency-text">
+     <span class="consistency">Consistency</span> is key to success. By consistently following your meal plan, taking your Curalin, and engaging in your movement routine, you will be well on your way to achieving your goals!
+    </p>
 
   
   </div>
@@ -40,7 +43,24 @@
     text-align: center;
     color: #404733;
     max-width: 70%;
+    margin: 20px auto;
+  }
+
+  .consistency-text {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(30px, 2vw, 40px);
+    line-height: 36px;
+    color: #404733;
+    max-width: 70%;
     margin: auto;
+    
+  }
+
+  .consistency {
+    font-weight: 700;
+    font-size: clamp(40px, 2vw, 50px);
   }
 
 
@@ -51,7 +71,7 @@
 
   @media screen and (max-width: 768px) {
     .thank-you-new-best-result .pink-leaf {
-      
+      max-width: 35%;
     }
 
     .thank-you-new-best-result .green-leaf {
@@ -68,6 +88,11 @@
     font-size: 40px;
     line-height: 40px;
     max-width: unset;
+  }
+
+  .consistency-text {
+    max-width: 78%;
+    line-height: 30px;
   }
    
   }
