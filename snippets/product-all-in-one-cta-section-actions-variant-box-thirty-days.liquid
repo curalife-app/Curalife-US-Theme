@@ -10,10 +10,7 @@
 {% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
 {% assign original_item_price = var.price | divided_by: bottle_quantity %}
 
-
-
 <div class="variant-box">
-  {% if isCuralinContent %}
   <div class="radio-box">
     {% if original_item_cap_total > var.price %}
       {% assign discount = original_item_cap_total | minus: var.price | divided_by: 100 %}
@@ -27,16 +24,13 @@
     <div class="variant-infos">
       <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
     </div>
-
   </div>
-
 
   <div class="variant-contain">
     <div class="variant-info">
       <p class="variant-title">{{ var.title }}</p>
-
-
     </div>
+
     <div class="price-challenge">
       <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>
       <strike class="initial-price"><div class="real-price">{{ "18500" | money_without_trailing_zeros }}</div><span class="thin-real-span">.00</span></strike>
@@ -44,21 +38,6 @@
   </div>
 
   <div class="submit-wrap">
-    {% if isBuyQuantity %}
-      <div class="qty-data" style="display:none">
-        <div class="qty-control">
-          <a data-act="-" href="javascript:void(0)">
-            <span class="icon-minus"></span>
-          </a>
-          <label>
-            <input maxlength="4" name="quantity" type="number" value="1">
-          </label>
-          <a data-act="+" href="javascript:void(0)">
-            <span class="icon-plus"></span>
-          </a>
-        </div>
-      </div>
-    {% endif %}
     <button class="main-btn" id="buy-button"><span>Join the Challenge</span></button>
   </div>
 </div>
