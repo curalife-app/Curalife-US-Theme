@@ -290,10 +290,11 @@
     }
   });
 
-  // Slide to Variant Image
-  productSliderAllInOne.on('slideChange', function () {
-    $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
-  });
+  {% if isCuralinContent %}
+    productSliderAllInOne.on('slideChange', function () {
+      $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
+    });
+  {% endif %}  
 
   $('.thumbs-img').click(function() {
     woopra.track('Product Image Click', {});
