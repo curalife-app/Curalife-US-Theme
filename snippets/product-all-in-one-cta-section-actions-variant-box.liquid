@@ -20,57 +20,52 @@
 {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
 {% assign original_item_price = var.price | divided_by: bottle_quantity %}
 
-
-
 <div class="variant-box">
-  {% if isCuralinContent %}
-  <div class="radio-box">
-    {% if original_item_cap_total_with_bundle > var.price %}
-      {% assign discount = original_item_cap_total_with_bundle | minus: var.price | divided_by: 100 %}
-    {% else %}
-      {% assign discount = 0 %}
-    {% endif %}
-    <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
-  </div>
-  <div class="variant-info">
-    <p class="variant-title">{{ var.title }}</p>
-    <div class="variant-infos">
-      <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
-    </div>
-
-  </div>
-
-  {% if isPricePerUnit %}
-  <div class="price">
-    <div class="calculations">
-      {% if original_item_cap_total > var.price %}
-        <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total | money_without_trailing_zeros }}</strike></p>
-      {% endif %}
-      <p class="real-price rounded no-letters">{{ original_item_price | money_without_trailing_zeros }}</p>
-    </div>
-      <p class="per-month">Per Month</p>
-    </div>
-  {% else %}
-    <div class="price">
+  {% if request.path contains "30-day-blood-sugar" %}
+    <div class="radio-box">
       {% if original_item_cap_total_with_bundle > var.price %}
-        <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
+        {% assign discount = original_item_cap_total_with_bundle | minus: var.price | divided_by: 100 %}
+      {% else %}
+        {% assign discount = 0 %}
       {% endif %}
-      <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
+      <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
     </div>
-  {% endif %}
- 
-  {% else %}
-  <div class="variant-contain">
     <div class="variant-info">
       <p class="variant-title">{{ var.title }}</p>
-    
-
+      <div class="variant-infos">
+        <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
+      </div>
     </div>
-    <div class="price-challenge">      
-      <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>  
-      <strike class="initial-price"><div class="real-price">{{ "18500" | money_without_trailing_zeros }}</div><span class="thin-real-span">.00</span></strike>                 
-    </div> 
-  </div>
+
+    {% if isPricePerUnit %}
+    <div class="price">
+      <div class="calculations">
+        {% if original_item_cap_total > var.price %}
+          <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total | money_without_trailing_zeros }}</strike></p>
+        {% endif %}
+        <p class="real-price rounded no-letters">{{ original_item_price | money_without_trailing_zeros }}</p>
+      </div>
+        <p class="per-month">Per Month</p>
+      </div>
+    {% else %}
+      <div class="price">
+        {% if original_item_cap_total_with_bundle > var.price %}
+          <p class="compared-at-price"><strike class="rounded no-letters">{{ original_item_cap_total_with_bundle | money_without_trailing_zeros }}</strike></p>
+        {% endif %}
+        <p class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</p>
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="variant-contain">
+      <div class="variant-info">
+        <p class="variant-title">{{ var.title }}</p>
+      </div>
+
+      <div class="price-challenge">      
+        <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>  
+        <strike class="initial-price"><div class="real-price">{{ "18500" | money_without_trailing_zeros }}</div><span class="thin-real-span">.00</span></strike>                 
+      </div> 
+    </div>
   {% endif %} 
   
   {% if request.path contains "30-day-blood-sugar" %}
