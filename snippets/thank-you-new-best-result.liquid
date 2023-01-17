@@ -50,7 +50,7 @@
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: clamp(30px, 2vw, 40px);
     line-height: 36px;
     color: #404733;
     max-width: 70%;
@@ -60,7 +60,7 @@
 
   .consistency {
     font-weight: 700;
-    font-size: 50px;
+    font-size: clamp(40px, 2vw, 50px);
   }
 
 
@@ -88,6 +88,11 @@
     font-size: 40px;
     line-height: 40px;
     max-width: unset;
+  }
+
+  .consistency-text {
+    max-width: 78%;
+    line-height: 30px;
   }
    
   }
