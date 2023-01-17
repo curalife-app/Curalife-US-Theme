@@ -31,7 +31,7 @@
 
                 <div class="product-img">
                   <div class="img-wrap">
-                    <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" width="1176" height="905" loading="lazy">
+                    <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}"  loading="lazy">
                   </div>
                 </div>
               </div>
@@ -242,10 +242,10 @@
     navigation: {
       nextEl: '#product-thumbs-slider-nav-next',
       prevEl: '#product-thumbs-slider-nav-prev',
-      disabledClass: 'disabled'
+      disabledClass: 'disabled',
     },
     breakpoints: {
-      768: {
+      760: {
         slidesPerView: 1,
       },
       1080: {
@@ -264,8 +264,9 @@
     slidesPerView: 1,
     spaceBetween: 15,
     centeredSlides: true,
-    watchSlidesVisibility: false,
+    watchSlidesVisibility: true,
     loop: false,
+    grabCursor: true,
     slideToClickedSlide: true,
     thumbs: {swiper: productThumbsAllInOne},
     breakpoints: {
