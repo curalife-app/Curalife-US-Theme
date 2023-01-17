@@ -1,7 +1,6 @@
 <div class="product-actions">
-  {% if badgesPosition %}
   <p class="cta-title">{{ title }}</p>
-  {% endif %}
+
   <div class="variants">
     {% for var in product.variants %}
       {% if forloop.last %}
@@ -10,11 +9,9 @@
         {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
       {% endif %}
     {% endfor %}
-
   </div>
 
   {% comment %} <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/> {% endcomment %}
-  {% if isCuralinContent %}
   <div class="submit-wrap">
     {% if isBuyQuantity %}
       <div class="qty-data" style="display:none">
@@ -33,12 +30,10 @@
     {% endif %}
 
     <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
-
   </div>
-{% endif %}
 
   {% if isBadges %}
-    {% render 'trust-badges-widget', badgesContent: badgesContent, colors: "#5c5c5c", isMiniVersion: true %}
+    {% render 'trust-badges-widget', content: "free-shipping,money-back", colors: "#5c5c5c", isMiniVersion: true %}
   {% endif %}
 </div>
 
@@ -48,37 +43,33 @@
   .product-actions {
     grid-area: 2/2/3/3;
     max-width: 450px;
-    margin-top: {% unless isCuralinContent %}10px{% endunless %};
-
   }
 
   .product-actions .cta-title {
     font-size: 18px;
     padding: 10px 0;
+    margin: unset;
   }
 
   .product-actions .variants {
     display: flex;
     flex-direction: {% if isReversed %}column-reverse{% else %}column{% endif %};
-    background: {% unless isCuralinContent %} #FFFFFF {% endunless %};
-    border: {% unless isCuralinContent %} 1px solid #CBCBCB {% endunless %};
-    border-radius:{% unless isCuralinContent %} 2px  {% endunless %};
   }
 
   .product-actions .submit-wrap button {
     background-color: {{ ctaColor }};
     border-color: {{ ctaColor }};
     color: white;
-    width: {% if isCuralinContent %} 100%{% else %}80% {% endif %};
+    width: 100%;
   }
 
   .product-actions .submit-wrap button span {
-    width: {% if isCuralinContent %}50%{% endif %};
+    width: 50%;
   }
 
   .product-actions .submit-wrap button span:first-child {
-    border-right: {% if isCuralinContent %} 1px solid white {% endif %};
-    font-size: {% if isCuralinContent %}130%{% endif %};
+    border-right: 1px solid white;
+    font-size: 130%;
   }
 
   .product-actions .submit-wrap button span.save {
@@ -93,8 +84,11 @@
     .product-actions {
       grid-area: unset;
       grid-row: 3;
-      max-width: unset;
-      margin-top: unset;
+      max-width: unset
+    }
+
+    .product-actions .submit-wrap button span:first-child {
+      font-size: 3vw;
     }
 
     .submit-wrap .qty-data .qty-control {
@@ -115,14 +109,17 @@
       let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
     {% endif %}
 
-    $('#save').animate({'opacity': 0}, 800, function () {
+    $("#save").fadeOut(300, function () {
       $(this).text(ctaText);
-    }).animate({'opacity': 1}, 800);
+    }).fadeIn(300);
   }
 
   function updateMultiplier() {
     let varIndex = $('input[name=pack]:checked').attr('quantity');
-    varIndex > 1 ? $(".multiplier").text("X" + varIndex) : $(".multiplier").text("");
+
+    $(".multiplier").fadeOut(300, function () {
+      varIndex > 1 ? $(".multiplier").text("X" + varIndex) : $(".multiplier").text("");
+    }).fadeIn(300);
   }
 
   // On Quantity Change
