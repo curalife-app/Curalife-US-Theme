@@ -10,7 +10,7 @@
         {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
       {% endif %}
     {% endfor %}
-  
+
   </div>
 
   {% comment %} <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/> {% endcomment %}
@@ -31,14 +31,14 @@
         </div>
       </div>
     {% endif %}
-    
+
     <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
- 
+
   </div>
 {% endif %}
 
   {% if isBadges %}
-    {% render 'trust-badges-widget', content: "free-shipping,money-back", colors: "#5c5c5c", isMiniVersion: true %}
+    {% render 'trust-badges-widget', badgesContent: badgesContent, colors: "#5c5c5c", isMiniVersion: true %}
   {% endif %}
 </div>
 
