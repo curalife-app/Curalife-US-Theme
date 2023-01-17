@@ -35,6 +35,8 @@
       {% assign curaeats_exist = true %}
     {% elsif item.variant.title contains 'CuraEats' %}
       {% assign curaeats_exist = true %}
+    {% elsif item.sku contains '30-Days-Challenge' %}
+      {% assign thirty_days_challenge_exist = true %}
     {% endif %}
   {% endfor %}
 
@@ -43,10 +45,10 @@
     {% assign customer_order_count = customer_order_count | plus: 1 %}
   {% endfor %}
   {% unless shop.name == "CuraLife Global" %}
-  {% if customer_order_count <= 1 %}
-    {% assign onboarding_exist = true %}
-  {% endif %}
-{% endunless %}
+    {% if customer_order_count <= 1 %}
+      {% assign onboarding_exist = true %}
+    {% endif %}
+  {% endunless %}
 {% endif %}
 
 <!DOCTYPE html>
