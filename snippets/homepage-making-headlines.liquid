@@ -7,9 +7,7 @@
     <div class="logo-list">
       <ul>
         {% for logoImage in logoImages %}
-        
-        <li><img src="{{ logoImage | file_url | split: "|" | first }}" alt=""></li>
-        
+          <li><img src="{{ logoImage | file_url | split: "|" | first }}" alt="" loading="lazy"></li>
         {% endfor %}
       </ul>
     </div>
