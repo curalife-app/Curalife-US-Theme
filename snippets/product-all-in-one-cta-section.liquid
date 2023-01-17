@@ -1,16 +1,16 @@
 <section class="cta-section">
   <div class="container product-container">
     <div class="product-image-wrapper">
+      {% comment %} If there are multiple images, render the gallery {% endcomment %}
       {% if product.images.size > 1 %}
         {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent %}
       {% else %}
-
         <img src="{{ product.images[0].src | image_url }}" alt="{{ product.images[0].alt }}" class="product-image" loading="lazy">
         <p class="multiplier">X2</p>
 
-        {% if product.metafields.custom.badge_img %}
-          <img src="{{ product.metafields.custom.badge_img.src | image_url }}" alt="Curalin" class="sale-badge" loading="lazy">
-
+        {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
+        {% if isCuralinContent %}
+          <img src="{{ "product-sale-60-badge.png" | asset_url }}" width="200" height="200" alt="Curalin" class="sale-badge" loading="lazy">
           <style>
             .sale-badge {
               position: absolute;
@@ -28,22 +28,18 @@
             }
           </style>
         {% endif %}
-
       {% endif %}
     </div>
 
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
-
-      {% if isCuralinContent %}
-        {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: isReviewsQuotes  %}
-      {% endif %}
+        {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}
     </div>
 
     {% if badgesPosition == "cta" %}
       {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: "Select Your Deal:", isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value, isBadges: true %}
     {% else %}
-      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: "Select Your Deal:", isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% endif %}
   </div>
 
@@ -51,7 +47,6 @@
     {% render 'trust-badges-widget', content: "free-shipping,money-back,secure-checkout", colors: "#5c5c5c" %}
   {% endif %}
 </section>
-
 {% unless isThirtyDay %}
 <div class="container line" style="border-bottom: 1px solid {{ bottomLineColor }}"></div>
 {% endunless %}
@@ -74,12 +69,17 @@
     width: unset;
     max-width: 450px;
     grid-area: 1/2/2/3;
-    padding-bottom: 30px;
   }
 
   .cta-section .product-container .product-info h1 {
-    font-weight: 600;
-    font-size: 48px;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #404733;
+    margin-bottom: {% if isThirtyDay %} 30px {% endif %};
   }
 
   .cta-section .product-image-wrapper {
@@ -92,7 +92,6 @@
     bottom: 50px;
     right: 150px;
     background: var(--light-green);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     padding: 0px 15px;
     border-radius: 40px;
     color: white;
@@ -124,6 +123,8 @@
 
     .cta-section .product-image-wrapper {
       grid-row: unset;
+      display: flex;
+      justify-content: center;
     }
 
     .cta-section .product-container .product-info {
@@ -135,7 +136,8 @@
     }
 
     .cta-section .product-container .product-info h1 {
-      font-size: 10vw;
+      font-size: 28px;
+      line-height: 30px;
     }
 
     .multiplier {

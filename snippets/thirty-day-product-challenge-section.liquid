@@ -1,0 +1,181 @@
+
+
+{% assign features = "<b>30 day supply of Curalin</b> (180 capsules):75*thirty-day-product-chalenge-01.png
+|<b>30 day mouth-watering meal plan</b> including recipes and videos:29*thirty-day-product-chalenge-02.png
+|<b>14 day easy-to-do movement and exercise plan</b> with videos:59*thirty-day-product-chalenge-03.png
+|<b>Blood Sugar Explained</b> In Plain English (infographic):14*thirty-day-product-chalenge-04.png
+" | split: "|" %}
+{% assign features_1 = "<b>Curalife Blood Sugar Healthy Cookbook</b>:40*thirty-day-product-chalenge-05.png
+|<b>Free Shipping </b>:8*thirty-day-product-chalenge-06.png
+|<b>Community support</b> with 100K+ peers:0*thirty-day-product-chalenge-07.png
+|<b>24/7 Customer Support</b> (phone, email, or live chat):0*thirty-day-product-chalenge-08.png
+" | split: "|" %}
+
+<section id="product-feature-section">
+  <div class="container">
+    <div class="all-features-wrapper">
+    <div class="features-wrapper">
+      <div class="features">
+
+        {% for feature in features %}
+          <div class="feature">
+            <div class="feature-icon"><i class="icofont-check"></i></div>
+            <div class="text-features">
+              <div class="feature-text">{{ feature | split: ":" | first }}</div>
+              {% assign price = feature | split: ":" | last | split: "*" | first %}
+              {% if price == '0' %}
+              <div class="feature-price priceless">Priceless</div>
+              {% else %}
+              <div class="feature-price">a {{ price | times: 100 | money_without_trailing_zeros }} Value</div>
+              {% endif %}
+            </div>
+            <img class="feature-img" src="{{ feature  | split: ":" | last | split: "*" | last | asset_url }}" width="92" height="92" alt="">
+
+          </div>
+        
+        {% endfor %}
+      </div>
+    </div>
+    <div class="features-wrapper">
+      <div class="features">
+       
+       {% for feature in features_1 %}
+         <div class="feature">
+           <div class="feature-icon"><i class="icofont-check"></i></div>
+           <div class="text-features">
+             <div class="feature-text">{{ feature | split: ":" | first }}</div>
+             {% assign price = feature | split: ":" | last | split: "*" | first %}
+             {% if price == '0' %}
+             <div class="feature-price priceless">Priceless</div>
+             {% else %}
+             <div class="feature-price">a {{ price | times: 100 | money_without_trailing_zeros }} Value</div>
+             {% endif %}
+           </div>
+           
+            <img class="feature-img" src="{{ feature  | split: ":" | last | split: "*" | last | asset_url }}" width="92" height="92" alt=""> 
+         </div>
+       
+       {% endfor %}
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #product-feature-section .container {
+    font-weight: bold;
+    position: relative;
+  }
+
+  #product-feature-section {
+    position: relative;
+    color: var(--dark-green);
+    padding: 50px 0;
+    line-height: 1.2em;
+  }
+
+  .all-features-wrapper {
+        display: flex;
+        justify-content: space-between;
+  }
+
+
+
+ 
+
+  #product-feature-section .features {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #product-feature-section .features .feature {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    font-family: "PP Radio Grotesk";
+    font-size: {% if isThirtyDay %}clamp(14px, 2vw, 26px){% else %}(14px, 2vw, 20px){% endif %};
+    line-height:{% if isThirtyDay %}26px{% else %}20px{% endif %};
+    font-weight: 400;
+   
+  }
+
+ 
+  #product-feature-section .features .feature .feature-icon {
+    background: var(--light-green);
+    color: white;
+    border-radius: 50%;
+    min-width: {% if isThirtyDay %}30px{% else %}45px{% endif %};
+    height: {% if isThirtyDay %}30px{% else %}45px{% endif %};
+    font-size: {% if isThirtyDay %}30px{% else %}40px{% endif %};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-top: {% if isThirtyDay %}-40px{% endif %};
+  }
+
+.text-features {
+  display: flex;
+  flex-direction: column;
+}
+  #product-feature-section .features .feature .feature-text {
+    display: flex;
+    flex-direction: column;
+    max-width:  {% if isThirtyDay %}383px{% else %}404px{% endif %};
+    padding-right: {% if isThirtyDay %}55px{% else %} 75px{% endif %};
+  }
+
+  #product-feature-section .features .feature .feature-price { 
+    color: #95A157;
+    padding-top: 5px;
+  }
+
+#product-feature-section .features .feature .feature-img {
+  width: 75px;
+  position: absolute;
+  right: 0;
+
+}
+  
+
+  .new-price {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: clamp(45px, 2vw, 52px);
+    text-align: center;
+  }
+
+ 
+
+
+
+
+  @media screen and (max-width: 768px) {
+    #product-feature-section .container {
+      padding: 0 15px;
+    }
+
+     .all-features-wrapper {
+         flex-direction: column;
+    }
+
+    #product-feature-section .features {
+      max-width: unset;
+      width: 100%;
+    }
+
+    #product-feature-section .features .feature {
+      line-height: {% if isThirtyDay %}24px{% endif %};
+    }
+
+    #product-feature-section .features .feature .feature-text {
+      max-width: unset;
+      padding-right: 92px;
+    }
+
+  }
+
+</style>
+
