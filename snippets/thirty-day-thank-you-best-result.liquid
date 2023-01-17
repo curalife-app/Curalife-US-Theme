@@ -33,6 +33,7 @@
    position: absolute;
    right: 0;
    bottom: 0;
+   width: auto;
   }
 
   .best-result-title {
@@ -63,7 +64,7 @@
     font-size: clamp(40px, 2vw, 50px);
   }
 
-@media screen and (max-width: 1130px) {
+@media screen and (max-width: 1200px) {
   .thank-you-new-best-result .result-bottle {
     right: -50px;
   }
@@ -88,7 +89,6 @@
   
   .thank-you-new-best-result .result-bottle {
     right: 30vw;
-    width: 43vw;
     bottom: -18px;
   }
 
@@ -106,6 +106,12 @@
     margin-bottom: 25vw;
   }
    
+  }
+
+  @media screen and (max-width: 400px) {
+    .thank-you-new-best-result .result-bottle {   
+      width: 43vw;
+    }
   }
 </style>
 
