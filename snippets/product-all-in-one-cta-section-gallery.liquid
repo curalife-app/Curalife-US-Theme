@@ -7,7 +7,8 @@
             {% if isCuralinContent %}
               {% for i in (1..6) %}
                 <div class="swiper-slide">
-                {% unless forloop.index == 1 %}<img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">{% endunless %}
+                  {% unless forloop.index == 1 %}<img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">{% endunless %}
+                  
                   <div class="product-img">
                     <div class="img-wrap">
                       <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" width="588" height="453" alt="" loading="lazy">
@@ -247,10 +248,9 @@
     breakpoints: {
       760: {
         slidesPerView: 1,
+        freemode:true,
       },
-      1080: {
-        slidesPerView: 2,
-      },
+     
       1200: {
         slidesPerView: 3,
       },
@@ -272,7 +272,7 @@
     breakpoints: {
       0: {
         pagination: {
-          el: '.product-slider .swiper-pagination',
+          el: '.swiper-pagination',
           clickable: 'true',
           type: 'bullets',
         },
@@ -280,7 +280,8 @@
           nextEl: '#product-main-slider-nav-next',
           prevEl: '#product-main-slider-nav-prev',
           disabledClass: 'disabled'
-        }
+        },
+        loop:true
       },
       760: {
         pagination: {},
