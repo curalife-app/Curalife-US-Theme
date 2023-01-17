@@ -14,8 +14,8 @@
   }
 
    #back-to-top-btn:hover {
-    background: #404733;
-      border: #404733;
+      background: {% if isThirtyDay %}#FFB22D {% else %}#404733{% endif %};
+      border: {% if isThirtyDay %}#FFB22D {% else %}#404733{% endif %};
   }
 
  #back-to-top-btn {
