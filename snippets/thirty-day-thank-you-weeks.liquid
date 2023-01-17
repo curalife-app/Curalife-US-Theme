@@ -1,3 +1,9 @@
+{% assign realChanges = 'thank-you-week-1.png*Week 1:We’ll start with “Carb Cycling.”
+|thank-you-week-2.png*Week 2:Meet curalin. Your new best friend. You’ll start taking it consistently, making your first step to sugar freedom!
+|thank-you-week-3.png*Week 3:Slowly but surely, you’ll get into a movement routine that works for YOU!
+|thank-you-week-4.png*Week 4:Move forward with a carb SMART diet that you can actually maintain.
+' | split: '|' %}
+
 <div class="weeks-for-you">
   <div class="container">
 
@@ -7,9 +13,9 @@
         <div class="change-item-thumbnail">
           <img src="{{ realChange | asset_url | split: "*" | first }}" width="126" height="108" alt="">
           {{ realChange | split: "*" | last | split: ":" | first }}
-          <div class="border-desk"></div>  
+          <div class="border-desk"></div>
         </div>
-        
+
         <div class="weeks-item-description">
         {{ realChange | split: "*" | last | split: ":" | last }}
         </div>
@@ -17,7 +23,7 @@
 
       {% endfor %}
     </div>
-    
+
   </div>
 </div>
 
@@ -39,7 +45,7 @@
   .border-desk {
     border: 1px solid #B9C86B;
     width: 35%;
-    margin: 20px auto;  
+    margin: 20px auto;
   }
 
   .change-item-and-desc {
@@ -66,11 +72,11 @@
         font-weight: 400;
         font-size: 20px;
         line-height: 24px;
-      
+
       }
 
 
- 
+
 
 
 
