@@ -10,7 +10,10 @@
 {% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
 {% assign original_item_price = var.price | divided_by: bottle_quantity %}
 
+
+
 <div class="variant-box">
+  {% if isCuralinContent %}
   <div class="radio-box">
     {% if original_item_cap_total > var.price %}
       {% assign discount = original_item_cap_total | minus: var.price | divided_by: 100 %}
