@@ -1,6 +1,7 @@
 <div class="product-thumbnails">
   <div class="product-slider">
     <div class="sliders-group">
+    <img class="img-temp-mb" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="534" height="342" alt="">{% endunless %}
       <div class="main-slider">
         <div id="product-main-slider-sc" class="swiper">
           <div class="swiper-wrapper">
@@ -87,8 +88,21 @@
     </div>
   </div>
 </div>
+<style>
+  .img-temp-mb {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .img-temp-mb {
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>
 
 <style>
+
   .cta-section .product-container .product-thumbnails {
     grid-area: 1/1/3/2;
   }
