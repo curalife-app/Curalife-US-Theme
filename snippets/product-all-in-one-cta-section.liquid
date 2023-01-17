@@ -33,7 +33,10 @@
 
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+
+      {% if isCuralinContent %}
         {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}
+      {% endif %}
     </div>
 
     {% if badgesPosition == "cta" %}
@@ -82,7 +85,7 @@
     line-height: 40px;
     letter-spacing: -0.01em;
     color: #404733;
-    margin-bottom: {% if isThirtyDay %} 30px {% endif %};
+    margin-bottom: {% if request.path contains "30-day" %}30px{% endif %};
   }
 
   .cta-section .product-image-wrapper {
