@@ -1,16 +1,11 @@
-{% if product.metafields.custom.faq.value %}
-  
-{% assign variable = product.metafields.custom.faq.value %}
-{% else %}
-  
-{% endif %}
+
 
 <section class="faq-section">
   <div class="container">
     <div class="titles">
       <h2>Popular Questions</h2>
     </div>
-
+    {% if product.metafields.custom.faq.value %}
     <div class="faq">
       {% for faqItem in product.metafields.custom.faq.value %}
         <div class="faq-item">
@@ -19,6 +14,23 @@
         </div>
       {% endfor %}
     </div>
+    {% else %}
+    <div class="faq">
+        {% for faqItem in faqItems %}
+          <div class="faq-item">
+          <div class="question">
+          {{ faqItem | split: ":" | first }}
+          </div>
+          <div class="answer">
+            <p>{{ faqItem | split: ":" | last }}</p>
+            {% if faqItem contains 'How does each ingredient work' %}
+              {% render 'product-all-in-one-ingredients-section' %}
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    {% endif %}
   </div>
 </section>
 
