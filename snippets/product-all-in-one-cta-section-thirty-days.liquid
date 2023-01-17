@@ -6,34 +6,12 @@
         {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent %}
       {% else %}
         <img src="{{ product.images[0].src | image_url }}" alt="{{ product.images[0].alt }}" class="product-image" loading="lazy">
-        <p class="multiplier">X2</p>
-
-        {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
-        {% if isCuralinContent %}
-          <img src="{{ "product-sale-60-badge.png" | asset_url }}" width="200" height="200" alt="Curalin" class="sale-badge" loading="lazy">
-          <style>
-            .sale-badge {
-              position: absolute;
-              top: 100px;
-              right: 130px;
-              width: 100px;
-            }
-
-            @media screen and (max-width: 768px) {
-              .sale-badge {
-                top: 10vw;
-                right: 0;
-                width: 25vw;
-              }
-            }
-          </style>
-        {% endif %}
       {% endif %}
     </div>
 
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
-        {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}
+      {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}
     </div>
 
     {% if badgesPosition == "cta" %}
