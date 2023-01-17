@@ -1,0 +1,175 @@
+
+<section class="hero-banner">
+    <img class="main-img-mb" src="{{ 'thirty-strong-woman-mobile.png' | asset_url }}" width="750" height="727" alt="bottle-hand-mask-mb" loading="lazy"> 
+    <div class="container">
+      <div class="hero-banner-content">
+        <div class="text-button">
+          <div class="main-title">{{ mainTitle }}</div>
+          <div class="subtitle">{{ subTitle }}</div>
+          <div class="text-hero">{{ textHero }} </div>
+        </div>
+        <img class="main-img" src="{{ 'thirty-strong-woman.png' | asset_url }}" width="1271" height="879" alt="bottle-hand-mask" loading="lazy">
+      </div>
+    </div>
+     
+  </section>
+  
+  <style>
+  
+    
+    .hero-banner {
+      padding: 20px 0;
+      position: relative;
+      overflow: hidden;
+      background-image: linear-gradient(to top, #d07d5b, #db8262, #e58869, #f08d70, #fb9378);
+      z-index: -2;
+    }
+  
+    .hero-banner-content {
+      display: flex;
+  
+    }
+  
+    .hero-banner .main-img {
+      position: relative;
+      z-index: -1;
+      right: 566px;
+      top: 30px
+    }
+  
+  
+   
+  
+    .hero-banner-content .text-button {
+      display: flex;
+      flex-direction: column;
+      min-width: 66%;
+    }
+  
+    .hero-banner-content .text-button .main-title {
+      color: #FFF1E8;
+      font-family: 'PP Radio Grotesk';
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 115px);
+      padding: 40px 0px 0px 90px;
+  }
+    .hero-banner-content .text-button .subtitle {
+      padding-left: 85px;
+      color: var(--dark-green);
+      font-family: 'PP Radio Grotesk';
+      font-weight: 700;
+      font-size: clamp(26px, 7vw, 62px);
+      
+    }
+  
+    .hero-banner-content .text-button .text-hero {
+        padding-top: 81px;
+        padding-left: 84px;
+        font-family: 'DM Sans';
+        font-weight: 700;
+        font-size: clamp(24px, 5vw, 28px);
+        color: #FFFFFF;
+        max-width: 504px;
+      
+    }
+  
+    .hero-banner .main-img-mb {
+      display: none;
+    }
+  
+  
+  
+    @media screen and (max-width: 1125px) {
+      .hero-banner .main-img {
+          right: 200px;
+          width: 70%;
+      }
+  
+      .hero-banner-content .text-button .text-hero {
+        padding-top: 16px;
+        max-width: 470px;
+      }
+    }
+  
+  
+  
+  
+  
+    @media screen and (max-width: 768px) {
+      .hero-banner {
+        text-align: center;
+  
+      }
+      .hero-banner-content {
+        display: block;
+      }
+  
+      .hero-banner-content .text-button .main-title {
+        padding: unset;
+        text-align: center;
+        
+      }
+  
+      .hero-banner-content .text-button .subtitle {
+        padding-top: unset;
+        padding-left: unset;
+        text-align: center;
+  
+      }
+  
+      .hero-banner-content .text-button .text-hero {
+        padding-top: unset;
+        padding-left: unset;
+        line-height: 24px;
+        margin: 0 auto;
+        letter-spacing: -0.02em;
+        max-width: unset;
+        padding-top: 94vw;
+      }
+  
+      .hero-banner-content .main-img {
+        display: none;
+      }
+  
+      .hero-banner .main-img-mb {
+        display: block;
+        position: absolute;
+        top:  10vw;
+        width: 100%;
+      }
+  
+      .hero-banner-content .text-button {
+        margin-left: unset;
+      }
+  
+    
+    }
+  
+    @media screen and (max-width: 684px) {
+      .hero-banner .main-img-mb {
+        top:  20vw;
+      }
+      }
+  
+      @media screen and (max-width: 564px) {
+      .hero-banner .main-img-mb {
+        top:  30vw;
+      }
+    }
+  
+    @media screen and (max-width: 449px) {
+      .hero-banner .main-img-mb {
+        top:  40vw;
+      }
+    }
+  
+    @media screen and (max-width: 364px) {
+      .hero-banner .main-img-mb {
+        top:  50vw;
+      }
+    }
+  
+  
+  
+  
+  </style>
