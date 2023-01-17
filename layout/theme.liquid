@@ -61,7 +61,9 @@
     {% unless request.path contains 'curalin-pack' %}
       {% unless request.path contains 'curalin_pack' %}
         {% unless request.path contains 'curaeats' %}
-          {% section 'header' %}
+          {% unless request.path contains '30-days' %}
+            {% section 'header' %}
+          {% endunless %}
         {% endunless %}
       {% endunless %}
     {% endunless %}
