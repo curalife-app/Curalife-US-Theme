@@ -10,7 +10,7 @@
         {% render 'product-all-in-one-cta-section-actions-variant-box-thirty-days', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
       {% endif %}
     {% endfor %}
-  
+
   </div>
 
   {% comment %} <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/> {% endcomment %}
@@ -31,9 +31,9 @@
         </div>
       </div>
     {% endif %}
-    
+
     <button class="main-btn" id="buy-button"><span>Shop Now</span> <span class="save" id="save"></span></button>
- 
+
   </div>
 {% endif %}
 
@@ -106,39 +106,6 @@
 <script>
   $( document ).ready(function() {
       $(".variant-box").{% if defaultSelectionIndex %}eq({{ defaultSelectionIndex | minus: 1 }}){% else %}last(){% endif %}.trigger( "click" );
-  });
-
-  function updateCTA() {
-    {% if ctaTextType == "Total" %}
-      let ctaText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
-    {% else %}
-      let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
-    {% endif %}
-
-    $('#save').animate({'opacity': 0}, 800, function () {
-      $(this).text(ctaText);
-    }).animate({'opacity': 1}, 800);
-  }
-
-  function updateMultiplier() {
-    let varIndex = $('input[name=pack]:checked').attr('quantity');
-    varIndex > 1 ? $(".multiplier").text("X" + varIndex) : $(".multiplier").text("");
-  }
-
-  // On Quantity Change
-  $(document).on("click", ".submit-wrap .qty-control a", function (e) {
-    e.preventDefault();
-    let newVal, $button = $(this),
-      inputObj = $button.closest(".qty-control").find("input"),
-      oldValue = inputObj.val();
-    if ($button.attr('data-act') === "+") {
-      newVal = parseInt(oldValue) + 1;
-    }
-    else {
-      newVal = parseInt(oldValue) - 1;
-    }
-
-    inputObj.val(newVal);
   });
 
   // On Buy Button Click
