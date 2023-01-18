@@ -14,7 +14,7 @@
 {% assign original_item_price = var.price | divided_by: bottle_quantity %}
 
 
-<div class="variant-notice special"><p><b>Special offer- Value of {{ var.original_item_cap }}!</b></p></div>
+<div class="variant-notice special"><p><b>Special offer- Value of {{ original_item_cap_total_with_bundle }}!</b></p></div>
 <div class="variant-box">
   {% if isCuralinContent %}
   <div class="radio-box">
