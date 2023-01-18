@@ -268,6 +268,7 @@
       | split: '|' %}
 
       <div id="thirty-day-challenge-content">
+        {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
         {% render 'thirty-day-thank-you-ready-to-start' %}
         {% render 'thirty-day-thank-you-best-results' %}
         {% render 'thirty-day-thank-you-weeks' %}
@@ -280,7 +281,6 @@
         {% assign thanksTitle = 'Order number ' | append: order.name | append: ' is confirmed!' %}
         {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
         {% render 'curaeats-download-section' %}
-        {%- comment -%} {% render 'curaeats-upgrade-section' %} {%- endcomment -%}
         {% render 'contact-us-section', title: 'If you face any problem with accessing the app, do not hesitate to approach our customer support.', icons-background-color: 'white', border: true, box_link: '/pages/contact-us' %}
       </div>
 
