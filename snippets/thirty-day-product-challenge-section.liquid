@@ -77,10 +77,11 @@
     justify-content: space-between;
   }
 
-  .features-wrapper {
-   
+  .features-wrapper {  
     columns: 2;
-    
+    width: 100%;
+    gap: 10%;
+   
   }
 
   #product-feature-section .features {
@@ -146,6 +147,14 @@
   @media screen and (max-width: 768px) {
     #product-feature-section .container {
       padding: 0 15px;
+    }
+
+
+    .features-wrapper {  
+      columns: 1;
+     
+      gap: unset;
+
     }
 
     .all-features-wrapper {
