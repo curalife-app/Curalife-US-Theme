@@ -1,4 +1,4 @@
-{% assign item_price = 67 %}
+{% comment %} {% assign item_price = 67 %} {% endcomment %}
 
 {% assign features = "<b>30 day supply of Curalin</b> (180 capsules):75
 |<b>30 day mouth-watering meal plan</b> including recipes and videos:29
@@ -18,12 +18,12 @@
 
       <div class="features">
         {% assign total = 0 %}
-        {% for feature in features %}
+        {% for prod in product.metafields.custom.bundle-products.value %}
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
-            <div class="feature-text">{{ feature | split: ":" | first }}</div>
-            {% assign price = feature | split: ":" | last %}
-            {% if price == '0' %}
+            <div class="feature-text">{{ prod.title }}</div>
+            {% assign price = prod.price %}
+            {% if prod.price == 0.00 %}
             <div class="feature-price priceless">Priceless</div>
             {% else %}
             <div class="feature-price">{{ price | times: 100 | money_without_trailing_zeros }}<sup>00</sup> Value</div>
