@@ -576,31 +576,22 @@
         jQuery(".upper-extentions").hide();
         jQuery(".sidebar-extentions").hide();
         jQuery("aside.sidebar").addClass("onboarding");
+        jQuery(".sidebar").insertBefore(".content-box:first");
       {% endif %}
 
       {% if thirty_days_challenge_exist %}
-        jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
-        jQuery(".sidebar").insertBefore(".content-box:first");
+        jQuery("#thirty-day-challenge-content").insertAfter(".thank-you__additional-content");
         jQuery("#thirty-day-challenge-content").show();
-        changeThankYouLayout();
       {% endif %}
 
       {% if curaeats_exist %}
         jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
-        jQuery(".sidebar").insertAfter("#curaeats-content");
         jQuery("#curaeats-content").show();
-        changeThankYouLayout();
       {% endif %}
 
       {% if onboarding_exist %}
         jQuery("#onboarding-content").insertAfter(".thank-you__additional-content");
-        if (jQuery("#curaeats-content").length) {
-          jQuery(".sidebar").insertAfter("#curaeats-content");
-        } else {
-          jQuery(".sidebar").insertAfter("#onboarding-content");
-        }
         jQuery("#onboarding-content").show();
-        changeThankYouLayout();
       {% endif %}
 
       // Track Purchase
