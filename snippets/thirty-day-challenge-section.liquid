@@ -18,11 +18,11 @@
 
       <div class="features">
         {% assign total = 0 %}
-        {% for feature in features %}
+        {% for prod in product.metafields.custom.bundle-products.value %}
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
-            <div class="feature-text">{{ feature | split: ":" | first }}</div>
-            {% assign price = feature | split: ":" | last %}
+            <div class="feature-text">{{ prod.title }}</div>
+            {% assign price = prod.price %}
             {% if price == '0' %}
             <div class="feature-price priceless">Priceless</div>
             {% else %}
