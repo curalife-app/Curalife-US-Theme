@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="features-wrapper">
+    {% comment %} <div class="features-wrapper">
       <div class="features">
 
       {% for feature in features_1 %}
@@ -54,7 +54,7 @@
         </div>
       {% endfor %}
       </div>
-    </div>
+    </div> {% endcomment %}
     </div>
   </div>
 </section>
@@ -75,6 +75,13 @@
   .all-features-wrapper {
     display: flex;
     justify-content: space-between;
+  }
+
+  .features-wrapper {
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2;
+    padding-left: 0;
   }
 
   #product-feature-section .features {
