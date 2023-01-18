@@ -581,6 +581,8 @@
           jQuery(".sidebar").insertBefore(".content-box:first");
         {% endif %}
 
+        console.log("{{thirty_days_challenge_exist}}");
+
         {% if thirty_days_challenge_exist %}
           jQuery("#thirty-day-challenge-content").insertBefore(".wrap:first");
           jQuery("#thirty-day-challenge-content").show();
