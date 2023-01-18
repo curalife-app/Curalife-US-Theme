@@ -565,34 +565,37 @@
       console.log("- step: processing")
     {% elsif is_thank_you_step %}
       console.log("- step: thank you")
-      jQuery("#progressbar").hide();
 
-      {% if thankYouAdditions %}
-        jQuery(".anyflexbox .content .wrap").css("flex-direction", "column");
-        jQuery(".anyflexbox .content .wrap .main").css("width", "unset");
-        jQuery(".anyflexbox .content .wrap .main").css("padding-right", "unset");
-        jQuery(".anyflexbox .content .wrap .main").css("padding-top", "50px");
-        jQuery(".anyflexbox .content .wrap .main .step .step__sections .section[data-order-update-options]").hide();
-        jQuery(".upper-extentions").hide();
-        jQuery(".sidebar-extentions").hide();
-        jQuery("aside.sidebar").addClass("onboarding");
-        jQuery(".sidebar").insertBefore(".content-box:first");
-      {% endif %}
+      $( document ).ready(function() {
+        jQuery("#progressbar").hide();
 
-      {% if thirty_days_challenge_exist %}
-        jQuery("#thirty-day-challenge-content").insertBefore(".wrap:first");
-        jQuery("#thirty-day-challenge-content").show();
-      {% endif %}
+        {% if thankYouAdditions %}
+          jQuery(".anyflexbox .content .wrap").css("flex-direction", "column");
+          jQuery(".anyflexbox .content .wrap .main").css("width", "unset");
+          jQuery(".anyflexbox .content .wrap .main").css("padding-right", "unset");
+          jQuery(".anyflexbox .content .wrap .main").css("padding-top", "50px");
+          jQuery(".anyflexbox .content .wrap .main .step .step__sections .section[data-order-update-options]").hide();
+          jQuery(".upper-extentions").hide();
+          jQuery(".sidebar-extentions").hide();
+          jQuery("aside.sidebar").addClass("onboarding");
+          jQuery(".sidebar").insertBefore(".content-box:first");
+        {% endif %}
 
-      {% if curaeats_exist %}
-        jQuery("#curaeats-content").insertBefore(".wrap:first");
-        jQuery("#curaeats-content").show();
-      {% endif %}
+        {% if thirty_days_challenge_exist %}
+          jQuery("#thirty-day-challenge-content").insertBefore(".wrap:first");
+          jQuery("#thirty-day-challenge-content").show();
+        {% endif %}
 
-      {% if onboarding_exist %}
-        jQuery("#onboarding-content").insertBefore(".wrap:first");
-        jQuery("#onboarding-content").show();
-      {% endif %}
+        {% if curaeats_exist %}
+          jQuery("#curaeats-content").insertBefore(".wrap:first");
+          jQuery("#curaeats-content").show();
+        {% endif %}
+
+        {% if onboarding_exist %}
+          jQuery("#onboarding-content").insertBefore(".wrap:first");
+          jQuery("#onboarding-content").show();
+        {% endif %}
+      });
 
       // Track Purchase
       {% assign coupon = checkout.discount_applications | first %}
