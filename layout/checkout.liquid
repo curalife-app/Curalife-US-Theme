@@ -153,7 +153,7 @@
         padding: 0 15px;
       }
 
-      .section {
+      section {
         padding: 30px 0;
       }
     </style>
@@ -590,26 +590,27 @@
           jQuery(".sidebar-extentions").hide();
           jQuery("aside.sidebar").addClass("onboarding");
           jQuery(".sidebar").insertBefore(".content-box:first");
-          jQuery("header").insertBefore(".content .wrap");
         {% endif %}
 
         console.log("{{thirty_days_challenge_exist}}");
 
         {% if thirty_days_challenge_exist %}
-          jQuery("#thirty-day-challenge-content").insertAfter("header");
+          jQuery("#thirty-day-challenge-content").insertBefore(".content .wrap");
           jQuery("#thirty-day-challenge-content").show();
         {% endif %}
 
         {% if curaeats_exist %}
-          jQuery("#curaeats-content").insertAfter("header");
+          jQuery("#curaeats-content").insertBefore(".content .wrap");
           jQuery("#curaeats-content").show();
         {% endif %}
 
         {% if onboarding_exist %}
-          jQuery("#onboarding-content").insertAfter("header");
+          jQuery("#onboarding-content").insertBefore(".content .wrap");
           jQuery("#onboarding-content").show();
         {% endif %}
       });
+
+      jQuery("header").insertBefore(".content .wrap");
 
       // Track Purchase
       {% assign coupon = checkout.discount_applications | first %}
