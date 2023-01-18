@@ -14,7 +14,7 @@
 {% assign original_item_price = var.price | divided_by: bottle_quantity %}
 
 
-<div class="variant-notice special"><p><b>Special offer- Value of {{ original_item_cap_total }}!</b></p></div>
+<div class="variant-notice special"><p><b>Special offer- Value of {{ product.compare_at_price | money_without_trailing_zeros }}!</b></p></div>
 <div class="variant-box">
   {% if isCuralinContent %}
   <div class="radio-box">
@@ -61,7 +61,7 @@
     </div>
     <div class="price-challenge">
       <div class="price-with-null"><div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div><sup class="thin-real-price">00</sup></div>
-      <strike class="initial-price"><div class="real-price">{{ "22500" | money_without_trailing_zeros }}</div><span class="thin-real-span">.00</span></strike>
+      <strike class="initial-price"><div class="real-price">{{ product.compare_at_price | money_without_trailing_zeros }}</div><span class="thin-real-span">.00</span></strike>
     </div>
   </div>
   {% endif %}
