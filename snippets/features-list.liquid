@@ -29,7 +29,7 @@
             {% endunless %}
             </div>
             {% if isTotal %}
-            {% assign total = total | plus: price %}
+                {% assign total = total | plus: price %}
             {% endif %}
        {% endfor %}
        {% unless isTotal %}
@@ -44,10 +44,64 @@
       {% endunless %}
  </div>
 
+ {% if isTotal %}
+ <div class="total-wrapper">
+      <div class="total-value">Total Value Before Discount: {{ total | times: 100 | money_without_trailing_zeros }} </div>
+      <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | times: 100 | money_without_trailing_zeros }}</span><sup>00</sup></div>
+    </div>
+
+    <style>
+        .total-value {  
+           font-family: 'PP Radio Grotesk';
+           font-weight: 700;
+           font-size: 18px;
+           line-height: 17px;
+           text-align: center;
+           letter-spacing: -0.01em;
+           color: var(--light-green);
+           padding-top: 20px;
+         }
+
+         .price-today {
+           padding-top: 30px;
+           padding-bottom: 20px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 1vw;
+           font-family: 'PP Radio Grotesk';
+           font-weight: 400;
+           font-size: clamp(20px, 2vw, 37px);
+           letter-spacing: -0.01em;
+           color: var(--dark-green);
+
+         }
+
+        .price-today sup {
+           position: relative;
+           top: -12px; 
+           right: 9px
+         }
+
+
+         .new-price {
+           font-family: 'Poppins';
+           font-weight: 700;
+           font-size: clamp(45px, 2vw, 52px);
+           text-align: center;
+         }
+
+         @media screen and (max-width: 768px) {
+         .price-today sup {
+           top: -11px; 
+           right: 2px
+         }
+         }
+    </style>
+ {% endif %}
+
 {% if isLP %}
 <style>
-
-
  .features {
 
     display: flex;
@@ -108,9 +162,6 @@
     position: relative;
     top: 1px;
   }
-
-
-
 
   @media screen and (max-width: 898px) {
     .features .feature .feature-price {
