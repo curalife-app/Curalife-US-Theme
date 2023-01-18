@@ -1,0 +1,242 @@
+<div class="features">
+  {% if isTotal %}
+   {% assign total = 0 %}
+{% endif %}
+  {% for prod in product.metafields.custom.bundle-products.value %}
+     <div class="feature">
+              <div class="feature-icon"><i class="icofont-check"></i></div>
+              <div class="text-features">
+                {% if prod.title contains "CuraLin" %}
+                <div class="feature-text"><b>30 day supply of Curalin</b></div>
+                <div class="feature-text">(180 capsules)</div>
+                {% else %}
+                <div class="feature-text"><b>{{ prod.title }}</b></div>
+                <div class="feature-text">{{ prod.subtitle }}</div>
+                {% endif %}                      
+                {% assign price = prod.price %}
+                {% if prod.price == 0.00 %}
+                  <div class="feature-price priceless">Priceless</div>
+                {% else %}
+                  <div class="feature-price">a {{ price | money_without_trailing_zeros }} Value</div>
+                {% endif %}
+              </div>
+             {% unless isLP %}   
+              {% if prod.title contains "CuraLin" %}
+              <img class="feature-img" src="{{ prod.metafields.custom.bottle_image | img_url: 'original' }}" width="92" height="92" alt="">
+              {% else %}
+              <img class="feature-img" src="{{ prod.images[0].src | img_url: 'original'  }}" width="92" height="92" alt="">
+              {% endif %}
+            {% endunless %}
+            </div>
+            {% if isTotal %}
+            {% assign total = total | plus: price %}
+            {% endif %}
+       {% endfor %}
+       {% unless isTotal %}
+  <div class="feature">
+ <div class="feature-icon"><i class="icofont-check"></i></div>
+ <div class="text-features">
+  <div class="feature-text"><b>Free Shipping</b></div>
+    <div class="feature-price">a $8 Value</div>      
+    </div>
+    <img class="feature-img" src="{{ 'thirty-day-product-chalenge-06.png' | asset_url  }}" width="92" height="92" alt="">
+  </div>
+      {% endunless %}
+ </div>
+
+{% if isLP %}
+<style>
+
+
+ .features {
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .features .feature {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 15px 0;
+    font-family: "PP Radio Grotesk";
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 20px;
+
+  }
+
+  .features .feature:nth-child(8) {
+    border-bottom: unset;
+  }
+
+  .features .feature .feature-icon {
+    background: var(--light-green);
+    color: white;
+    border-radius: 50%;
+    min-width: 45px;
+    height: 45px;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+
+  .features .feature .feature-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 404px;
+    padding-right: 75px;
+  }
+
+  .features .feature .feature-price {
+    width: 89px;
+    position: absolute;
+    right: 0;
+    color:  var(--dark-brown);
+  }
+
+  .features .feature .feature-price.priceless {
+    color: #95A157;
+  }
+
+  .features .feature .feature-price sup {
+    font-size: 10px;
+    position: relative;
+    top: 1px;
+  }
+
+
+
+
+  @media screen and (max-width: 898px) {
+    .features .feature .feature-price {
+      width: 73px;
+
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .features {
+      max-width: unset;
+      width: 100%;
+    }
+
+    .features .feature .feature-text {
+      max-width: unset;
+      padding-right: 92px;
+    }
+
+    .features .feature .feature-price {
+      width: 9vw;
+    }
+
+  }
+
+  @media screen and (max-width: 627px) {
+    .features .feature .feature-price {
+        width: 11vw;
+    }
+  }
+
+  @media screen and (max-width: 513px) {
+    .features .feature .feature-price {
+        width: 13vw;
+    }
+  }
+
+  @media screen and (max-width: 434px) {
+    .features .feature .feature-price {
+        width: 15vw;
+    }
+  }
+
+  @media screen and (max-width: 376px) {
+    .features .feature .feature-price {
+        width: 18vw;
+    }
+  }
+</style>
+
+{% else %}
+
+<style>
+
+
+    .features {
+    display: flex;
+    flex-direction: column;
+  }
+
+    .features .feature {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    font-family: "PP Radio Grotesk";
+    font-size: clamp(14px, 2vw, 26px);
+    line-height: 26px;
+    font-weight: 400;
+  }
+
+    .features .feature .feature-icon {
+    background: var(--light-green);
+    color: white;
+    border-radius: 50%;
+    min-width: 30px;
+    height: 30px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-top: -40px;
+  }
+
+  .text-features {
+    display: flex;
+    flex-direction: column;
+  }
+
+    .features .feature .feature-text {
+    display: flex;
+    flex-direction: column;
+    max-width:  383px;
+    padding-right: 55px;
+  }
+
+    .features .feature .feature-price {
+    color: #95A157;
+    padding-top: 5px;
+  }
+
+    .features .feature .feature-img {
+    width: 75px;
+    position: absolute;
+    right: 0;
+  }
+
+
+
+  @media screen and (max-width: 768px) {
+  
+    .features {
+      max-width: unset;
+      width: 100%;
+    }
+
+    .features .feature {
+      line-height: 24px;
+    }
+
+    .features .feature .feature-text {
+      max-width: unset;
+      padding-right: 92px;
+    }
+  }
+</style>
+ {% endif %}
+ 
