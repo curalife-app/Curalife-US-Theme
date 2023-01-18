@@ -2,10 +2,10 @@
   <div class="product-slider">
     <div class="sliders-group">
       {% if isCuralinContent %}
-      <img class="img-temp-mb" src="{{ 'product-aio-product-thumbnail-1.png' | asset_url }}" width="534" height="342" alt="">
-     {% else %}
-    <img class="img-temp-mb" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="534" height="342" alt="">
-    {% endif %}
+        <img class="img-temp-mb" src="{{ 'product-aio-product-thumbnail-1.png' | asset_url }}" width="534" height="342" alt="">
+      {% else %}
+        <img class="img-temp-mb" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="534" height="342" alt="">
+      {% endif %}
       <div class="main-slider">
         <div id="product-main-slider-sc" class="swiper">
           <div class="swiper-wrapper">
@@ -13,7 +13,7 @@
               {% for i in (1..6) %}
                 <div class="swiper-slide">
                   {% unless forloop.index == 1 %}<img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">{% endunless %}
-                  
+
                   <div class="product-img">
                     <div class="img-wrap">
                       <img src="{{ "product-aio-product-thumbnail-" | append: i | append: ".png" | asset_url }}" width="588" height="453" alt="" loading="lazy">
@@ -75,6 +75,7 @@
             {% endif %}
 
             {% for image in product.images %}
+              <script>console.log("hi")</script>
               <div class="swiper-slide">
                 <div class="thumbs-img">
                   <div class="img-wrap">
@@ -312,7 +313,7 @@
     productSliderAllInOne.on('slideChange', function () {
       $('iframe#product-video-iframe').attr( 'src', function ( i, val ) { return val; });
     });
-  {% endif %}  
+  {% endif %}
 
   $('.thumbs-img').click(function() {
     woopra.track('Product Image Click', {});
