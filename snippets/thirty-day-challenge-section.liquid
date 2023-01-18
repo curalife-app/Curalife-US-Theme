@@ -15,10 +15,10 @@
 
     <div class="features-wrapper">
       <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="886" height="689" alt="">
-    
-      <div class="features">
-        {% render 'thirty-day-product-challenge-section', isTotal: true %}
-        {% comment %} {% assign total = 0 %}
+      {% render 'thirty-day-product-challenge-section', isTotal: true %}
+      {% comment %} <div class="features">
+       
+      {% assign total = 0 %}
         {% for feature in features %}
           <div class="feature">
             <div class="feature-icon"><i class="icofont-check"></i></div>
@@ -31,11 +31,11 @@
             {% endif %}
           </div>
           {% assign total = total | plus: price %}
-        {% endfor %} {% endcomment %}
+        {% endfor %} 
         <div class="total-value">Total Value Before Discount: {{ total | times: 100 | money_without_trailing_zeros }} </div>
         <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | times: 100 | money_without_trailing_zeros }}</span><sup>00</sup></div>
       </div>
-      
+       {% endcomment %}
       <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
     </div>
   </div>
