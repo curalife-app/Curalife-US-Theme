@@ -1,4 +1,4 @@
-{% comment %} {% assign item_price = 67 %} {% endcomment %}
+{% assign item_price = 67 %} 
 
 {% assign features = "<b>30 day supply of Curalin</b> (180 capsules):75
 |<b>30 day mouth-watering meal plan</b> including recipes and videos:29
@@ -32,7 +32,7 @@
           {% assign total = total | plus: price %}
         {% endfor %}
         <div class="total-value">Total Value Before Discount: {{ total | times: 100 | money_without_trailing_zeros }} </div>
-        <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | times: 100 | money_without_trailing_zeros }}</span><sup>00</sup></div>
+        <div class="price-today">Your Price Today  <span class="rounded new-price">{{ product.price | times: 100 | money_without_trailing_zeros }}</span><sup>00</sup></div>
       </div>
       
       <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
