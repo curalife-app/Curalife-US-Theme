@@ -37,11 +37,13 @@
                     <img class="feature-img" src="{{ prod.images[0].src | img_url: 'original'  }}" width="92" height="92" alt="">
                     {% endif %}
                   </div>
-                  <div class="feature-text"><b>Free Shipping</b></div>
-                  <div class="feature-price">a $8 Value</div>
-                  <img class="feature-img" src="{{ 'thirty-day-product-chalenge-06.png' | asset_url  }}" width="92" height="92" alt="">
         {% endfor %}
-    
+        <div class="feature">
+       <div class="feature-icon"><i class="icofont-check"></i></div>
+        <div class="feature-text"><b>Free Shipping</b></div>
+        <div class="feature-price">a $8 Value</div>
+        <img class="feature-img" src="{{ 'thirty-day-product-chalenge-06.png' | asset_url  }}" width="92" height="92" alt="">
+        </div>
       </div>
     </div>
   </div>
