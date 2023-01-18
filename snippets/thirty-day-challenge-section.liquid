@@ -6,7 +6,8 @@
     <div class="features-wrapper">
       <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="886" height="689" alt="">
       {% render 'features-list', product: all_products["30-day-blood-sugar-challenge-pp"], isTotal: true, isLP: true %}
-   
+    <div class="total-value">Total Value Before Discount: {{ total | times: 100 | money_without_trailing_zeros }} </div>
+    <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | times: 100 | money_without_trailing_zeros }}</span><sup>00</sup></div>
       <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
     </div>
   </div>
@@ -124,12 +125,6 @@
     color: white;
   }
 
-  @media screen and (max-width: 898px) {
-    #challenge-features-section .features .feature .feature-price {
-      width: 73px;
-  
-    }
-  }
 
   @media screen and (max-width: 768px) {
     #challenge-features-section .container {
