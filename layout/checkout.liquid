@@ -219,7 +219,7 @@
     </div>
   </div>
 
-  {% if onboarding_exist or curaeats_exist %}
+  {% if onboarding_exist or curaeats_exist or thirty_days_challenge_exist %}
     <style>
       aside[role="complementary"]:not(.onboarding) {
         display: none;
@@ -249,7 +249,6 @@
         }
       }
     </style>
-
 
     {% if thirty_days_challenge_exist %}
       {% assign faqItems = "When should I start the 30 day challenge?*We recommend starting as soon as you receive your plan. Starting is the hardest part, but we’re here to cheer you on and help you get started!
