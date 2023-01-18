@@ -35,7 +35,7 @@
       {% assign curaeats_exist = true %}
     {% elsif item.variant.title contains 'CuraEats' %}
       {% assign curaeats_exist = true %}
-    {% elsif product.title contains '30 Days Challenge' %}
+    {% elsif product.variant.sku contains '30-Days-Challenge-1-Months' %}
       {% assign thirty_days_challenge_exist = true %}
     {% endif %}
   {% endfor %}
