@@ -15,7 +15,7 @@
         {% if isTotal %}
          {% assign total = 0 %}
       {% endif %}
-        {% for prod in product.metafields.custom.bundle-products.value %}
+        {% for prod in all_products["30-day-blood-sugar-challenge-pp"].metafields.custom.bundle-products.value %}
            <div class="feature">
                     <div class="feature-icon"><i class="icofont-check"></i></div>
                     <div class="text-features">
