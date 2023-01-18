@@ -145,6 +145,17 @@
         src: local(''),
         url('{{ "PPRadioGrotesk-Bold.otf" | asset_url }}') format('otf'),
       }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .section {
+        padding: 30px 0;
+      }
     </style>
   {% endif %}
 </head>
@@ -268,7 +279,7 @@
       | split: '|' %}
 
       <div id="thirty-day-challenge-content">
-        {% render 'onboarding-hero', title: thanksTitle, icon_file: "onboarding-order-icon.png" %}
+        {% render 'onboarding-hero', title: "Your order is confirmed!", icon_file: "onboarding-order-icon.png" %}
         {% render 'thirty-day-thank-you-ready-to-start' %}
         {% render 'thirty-day-thank-you-best-results' %}
         {% render 'thirty-day-thank-you-weeks' %}
@@ -584,17 +595,17 @@
         console.log("{{thirty_days_challenge_exist}}");
 
         {% if thirty_days_challenge_exist %}
-          jQuery("#thirty-day-challenge-content").insertBefore(".wrap:first");
+          jQuery("#thirty-day-challenge-content").insertBefore(".content .wrap");
           jQuery("#thirty-day-challenge-content").show();
         {% endif %}
 
         {% if curaeats_exist %}
-          jQuery("#curaeats-content").insertBefore(".wrap:first");
+          jQuery("#curaeats-content").insertBefore(".content .wrap");
           jQuery("#curaeats-content").show();
         {% endif %}
 
         {% if onboarding_exist %}
-          jQuery("#onboarding-content").insertBefore(".wrap:first");
+          jQuery("#onboarding-content").insertBefore(".content .wrap");
           jQuery("#onboarding-content").show();
         {% endif %}
       });
@@ -650,6 +661,11 @@
         padding-left: 20px !important;
         float: left !important;
         background: white !important;
+      }
+
+      .logo {
+        top: unset;
+        padding: 30px;
       }
     </style>
   {% endif %}
