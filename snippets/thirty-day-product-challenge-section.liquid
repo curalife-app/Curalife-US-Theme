@@ -31,7 +31,7 @@
                       {% endif %}
                     </div>
                     {% if prod.title contains "CuraLin" %}
-                    <img class="feature-img" src="{{ 'thirty-day-product-chalenge-01.png' | asset_url  }}" width="92" height="92" alt="">
+                    <img class="feature-img" src="{{ prod.metafields.custom.bottle_image.src | img_url: 'original'  }}" width="92" height="92" alt="">
                     {% else %}
                     <img class="feature-img" src="{{ prod.images[0].src | img_url: 'original'  }}" width="92" height="92" alt="">
                     {% endif %}
