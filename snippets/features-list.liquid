@@ -47,7 +47,7 @@
  {% if isTotal %}
  <div class="total-wrapper">
       <div class="total-value">Total Value Before Discount: {{ total | times: 100 | money_without_trailing_zeros }} </div>
-      <div class="price-today">Your Price Today  <span class="rounded new-price">{{ item_price | times: 100 | money_without_trailing_zeros }}</span><sup>00</sup></div>
+      <div class="price-today">Your Price Today  <span class="rounded new-price">{{ product.price | times: 100 | money_without_trailing_zeros }}</span><sup>00</sup></div>
     </div>
 
     <style>
