@@ -33,6 +33,7 @@
                         <div class="feature-price">a {{ price | money_without_trailing_zeros }} Value</div>
                       {% endif %}
                     </div>
+
                     {% if prod.title contains "CuraLin" %}
                     <img class="feature-img" src="{{ prod.metafields.custom.bottle_image | img_url: 'original' }}" width="92" height="92" alt="">
                     {% else %}
@@ -102,18 +103,15 @@
   }
 
   #product-feature-section .features-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
   }
 
   #product-feature-section .main-image {
-    max-width: 55%;
+     grid-row: 1/2;
   }
 
   #product-feature-section .features {
-    max-width: 45%;
+    
     display: flex;
     flex-direction: column;
   }
