@@ -31,8 +31,11 @@
                         <div class="feature-price">a {{ price | money_without_trailing_zeros }} Value</div>
                       {% endif %}
                     </div>
-
+                    {% if prod.title contains 'Curalin' %}
+                    <img class="feature-img" src="{{ prod.custom.bottle_image | img_url: 'original'  }}" width="92" height="92" alt="">
+                    {% else %}
                     <img class="feature-img" src="{{ prod.images[0].src | img_url: 'original'  }}" width="92" height="92" alt="">
+                    {% endif %}
                   </div>
         {% endfor %}
        
