@@ -37,7 +37,6 @@
       {% assign curaeats_exist = true %}
     {% elsif item.product.title contains '30 Days Challenge' %}
       {% assign thirty_days_challenge_exist = true %}
-      <script>console.log("thirty_days_challenge_exist " + thirty_days_challenge_exist)</script>
     {% endif %}
   {% endfor %}
 
@@ -50,6 +49,10 @@
       {% assign onboarding_exist = true %}
     {% endif %}
   {% endunless %}
+{% endif %}
+
+{% if onboarding_exist or curaeats_exist or thirty_days_challenge_exist %}
+  {% assign thankYouAdditions = true %}
 {% endif %}
 
 <!DOCTYPE html>
@@ -219,7 +222,7 @@
     </div>
   </div>
 
-  {% if onboarding_exist or curaeats_exist or thirty_days_challenge_exist %}
+  {% if thankYouAdditions %}
     <style>
       aside[role="complementary"]:not(.onboarding) {
         display: none;
@@ -264,7 +267,7 @@
       |What do I do if I don’t like certain meals on my meal plan?*No biggie! Rotating and repeating meals to your liking is totally fine! Just make sure the meals you’re replacing follow the same carb-cycling theme day you’re on!"
       | split: '|' %}
 
-      <div class="thirty-days-challenge-content">
+      <div class="thirty-day-challenge-content">
         {% render 'thirty-day-thank-you-ready-to-start' %}
         {% render 'thirty-day-thank-you-best-results' %}
         {% render 'thirty-day-thank-you-weeks' %}
@@ -564,7 +567,7 @@
       console.log("- step: thank you")
       jQuery("#progressbar").hide();
 
-      function changeThankYouLayout() {
+      {% if thankYouAdditions %}
         jQuery(".anyflexbox .content .wrap").css("flex-direction", "column");
         jQuery(".anyflexbox .content .wrap .main").css("width", "unset");
         jQuery(".anyflexbox .content .wrap .main").css("padding-right", "unset");
@@ -573,12 +576,12 @@
         jQuery(".upper-extentions").hide();
         jQuery(".sidebar-extentions").hide();
         jQuery("aside.sidebar").addClass("onboarding");
-      }
+      {% endif %}
 
       {% if thirty_days_challenge_exist %}
         jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
-        jQuery(".sidebar").insertAfter("#curaeats-content");
-        jQuery("#thirty-days-challenge-content").show();
+        jQuery(".sidebar").insertBefore(".content-box:first");
+        jQuery("#thirty-day-challenge-content").show();
         changeThankYouLayout();
       {% endif %}
 
