@@ -10,7 +10,7 @@
 
 <section id="product-feature-section">
   <div class="container">
-    <div class="all-features-wrapper">
+    
     <div class="features-wrapper">
       <div class="features">
         {% for prod in product.metafields.custom.bundle-products.value %}
@@ -20,7 +20,7 @@
                       <div class="feature-text">{{ prod.title }}</div>
                 <div class="feature-text">{{ prod.subtitle }}</div>
                       {% assign price = prod.price %}
-                      {% if price contains '0' %}
+                      {% if prod.price == 0.00 %}
                         <div class="feature-price priceless">Priceless</div>
                       {% else %}
                         <div class="feature-price">a {{ price | money_without_trailing_zeros }} Value</div>
@@ -32,29 +32,6 @@
         {% endfor %}
        
       </div>
-    </div>
-
-    {% comment %} <div class="features-wrapper">
-      <div class="features">
-
-      {% for feature in features_1 %}
-        <div class="feature">
-          <div class="feature-icon"><i class="icofont-check"></i></div>
-          <div class="text-features">
-            <div class="feature-text">{{ feature | split: ":" | first }}</div>
-            {% assign price = feature | split: ":" | last | split: "*" | first %}
-            {% if price == '0' %}
-              <div class="feature-price priceless">Priceless</div>
-            {% else %}
-              <div class="feature-price">a {{ price | times: 100 | money_without_trailing_zeros }} Value</div>
-            {% endif %}
-          </div>
-
-          <img class="feature-img" src="{{ feature  | split: ":" | last | split: "*" | last | asset_url }}" width="92" height="92" alt="">
-        </div>
-      {% endfor %}
-      </div>
-    </div> {% endcomment %}
     </div>
   </div>
 </section>
@@ -77,10 +54,11 @@
     justify-content: space-between;
   }
 
-  .features-wrapper {
-   
+  .features-wrapper {  
     columns: 2;
-    
+    width: 100%;
+    gap: 10%;
+   
   }
 
   #product-feature-section .features {
@@ -146,6 +124,13 @@
   @media screen and (max-width: 768px) {
     #product-feature-section .container {
       padding: 0 15px;
+    }
+
+
+    .features-wrapper {  
+      columns: 1;  
+      gap: unset;
+
     }
 
     .all-features-wrapper {
