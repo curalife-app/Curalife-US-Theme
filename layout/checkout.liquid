@@ -280,7 +280,7 @@
 
       <div id="thirty-day-challenge-content">
         {% render 'onboarding-hero', title: "Your order is confirmed!", icon_file: "onboarding-order-icon.png" %}
-        {% render 'thirty-day-thank-you-ready-to-start' %}
+        {% render 'thirty-day-thank-you-ready-to-start', ctaButtonLink: "/pages/30-days-hub", ctaTitle: "YOUR 30 DAY PLAN AWAITS!" %}
         {% render 'thirty-day-thank-you-best-results' %}
         {% render 'thirty-day-thank-you-weeks' %}
         {% render 'product-faq-section', bgColor: "#FFF1E8", faqItems: faqItems %}
@@ -662,6 +662,8 @@
         padding-top: 20px !important;
         padding-left: 20px !important;
         float: left !important;
+      }
+      .sidebar::after {
         background: white !important;
       }
 
