@@ -565,10 +565,7 @@
       console.log("- step: thank you")
       jQuery("#progressbar").hide();
 
-      {% if curaeats_exist %}
-        jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
-        jQuery(".sidebar").insertAfter("#curaeats-content");
-        jQuery("#curaeats-content").show();
+      function changeThankYouLayout() {
         jQuery(".anyflexbox .content .wrap").css("flex-direction", "column");
         jQuery(".anyflexbox .content .wrap .main").css("width", "unset");
         jQuery(".anyflexbox .content .wrap .main").css("padding-right", "unset");
@@ -577,6 +574,20 @@
         jQuery(".upper-extentions").hide();
         jQuery(".sidebar-extentions").hide();
         jQuery("aside.sidebar").addClass("onboarding");
+      }
+
+      {% if curaeats_exist %}
+        jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
+        jQuery(".sidebar").insertAfter("#curaeats-content");
+        jQuery("#thirty-days-challenge-content").show();
+        changeThankYouLayout();
+      {% endif %}
+
+      {% if curaeats_exist %}
+        jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
+        jQuery(".sidebar").insertAfter("#curaeats-content");
+        jQuery("#curaeats-content").show();
+        changeThankYouLayout();
       {% endif %}
 
       {% if onboarding_exist %}
@@ -587,14 +598,7 @@
           jQuery(".sidebar").insertAfter("#onboarding-content");
         }
         jQuery("#onboarding-content").show();
-        jQuery(".anyflexbox .content .wrap").css("flex-direction", "column");
-        jQuery(".anyflexbox .content .wrap .main").css("width", "unset");
-        jQuery(".anyflexbox .content .wrap .main").css("padding-right", "unset");
-        jQuery(".anyflexbox .content .wrap .main").css("padding-top", "50px");
-        jQuery(".anyflexbox .content .wrap .main .step .step__sections .section[data-order-update-options]").hide();
-        jQuery(".upper-extentions").hide();
-        jQuery(".sidebar-extentions").hide();
-        jQuery("aside.sidebar").addClass("onboarding");
+        changeThankYouLayout();
       {% endif %}
 
       // Track Purchase
