@@ -12,6 +12,9 @@
   <div class="container">   
     <div class="features-wrapper">
       <div class="features">
+        {% if isTotal %}
+         {% assign total = 0 %}
+      {% endif %}
         {% for prod in product.metafields.custom.bundle-products.value %}
            <div class="feature">
                     <div class="feature-icon"><i class="icofont-check"></i></div>
@@ -36,7 +39,11 @@
                     <img class="feature-img" src="{{ prod.images[0].src | img_url: 'original'  }}" width="92" height="92" alt="">
                     {% endif %}
                   </div>
-        {% endfor %}
+                  {% if isTotal %}
+                  {% assign total = total | plus: price %}
+                  {% endif %}
+             {% endfor %}
+             {% unless isTotal %}
         <div class="feature">
        <div class="feature-icon"><i class="icofont-check"></i></div>
        <div class="text-features">
@@ -45,10 +52,274 @@
           </div>
           <img class="feature-img" src="{{ 'thirty-day-product-chalenge-06.png' | asset_url  }}" width="92" height="92" alt="">
         </div>
+            {% endunless %}
        </div>
     </div>
   </div>
 </section>
+{% if isTotal %}
+<style>
+  #challenge-features-section .container {
+    font-weight: bold;
+    position: relative;
+  }
+
+  #challenge-features-section {
+    position: relative;
+    color: var(--dark-green);
+    padding: 50px 0;
+    line-height: 1.2em;
+  }
+
+  #challenge-features-section h3 {
+    font-family: 'PP Radio Grotesk';
+    color: var(--dark-green);
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1em;
+    margin: 0 auto;
+    z-index: 0;
+    position: relative;
+    width: fit-content;
+  }
+
+  #challenge-features-section .maintained {
+    text-align: center;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--dark-green);
+    padding-bottom: 40px;
+  }
+
+  #challenge-features-section .features-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #challenge-features-section .main-image {
+    max-width: 55%;
+  }
+
+  #challenge-features-section .features {
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #challenge-features-section .features .feature {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 15px 0;
+    font-family: "PP Radio Grotesk";
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 20px;
+   
+  }
+
+  #challenge-features-section .features .feature:nth-child(8) {
+    border-bottom: unset;
+  }
+
+  #challenge-features-section .features .feature .feature-icon {
+    background: var(--light-green);
+    color: white;
+    border-radius: 50%;
+    min-width: 45px;
+    height: 45px;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+
+
+  #challenge-features-section .features .feature .feature-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 404px;
+    padding-right: 75px;
+  }
+
+  #challenge-features-section .features .feature .feature-price {
+    width: 89px;
+    position: absolute;
+    right: 0;
+    color:  var(--dark-brown);
+  }
+
+  #challenge-features-section .features .feature .feature-price.priceless {
+    color: #95A157;
+  }
+  
+  #challenge-features-section .features .feature .feature-price sup {
+    font-size: 10px;
+    position: relative;
+    top: 1px;
+  }
+
+
+  .total-value {  
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: var(--light-green);
+    padding-top: 20px;
+  }
+
+  .price-today {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 37px);
+    letter-spacing: -0.01em;
+    color: var(--dark-green);
+
+  }
+
+ .price-today sup {
+    position: relative;
+    top: -12px; 
+    right: 9px
+  }
+
+
+  .new-price {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: clamp(45px, 2vw, 52px);
+    text-align: center;
+  }
+
+  #challenge-features-section .cta-btn {
+    font-weight: 100;
+    background: var(--orange);
+    text-align: center;
+    border: 1px solid  var(--orange);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 26px;
+    color: var(--dark-green);
+    padding: 15px 45px;
+    box-shadow: 0px 5px 12.5px rgba(0, 0, 0, 0.15);
+    transition: unset;
+    margin-bottom: 20px;
+    margin-left: 25%;
+    margin-top: -60px;
+  }
+
+  #challenge-features-section .cta-btn:hover {
+    background: #FFB22D;
+    color: white;
+  }
+
+  @media screen and (max-width: 898px) {
+    #challenge-features-section .features .feature .feature-price {
+      width: 73px;
+  
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #challenge-features-section .container {
+      padding: 0 15px;
+    }
+
+    #challenge-features-section h3 {
+      font-size: 32px;
+      line-height: 35px;
+    }
+
+    #challenge-features-section .maintained {
+      font-size: 29px;
+      line-height: 30px;
+      padding-bottom: unset;
+    }
+
+    #challenge-features-section .main-image {
+      position: relative;
+      min-width: 140%;
+      right: 20%;
+      bottom: 0;
+    }
+
+    #challenge-features-section .features {
+      max-width: unset;
+      width: 100%;
+    }
+
+    #challenge-features-section .features .feature .feature-text {
+      max-width: unset;
+      padding-right: 92px;
+    }
+
+    #challenge-features-section .features .feature .feature-price {
+      width: 9vw;
+    }
+
+    .price-today sup {
+      top: -11px; 
+      right: 2px
+    }
+  
+
+     {
+      margin-left: unset;
+      bottom: -80px;
+      font-size: 21px;
+      left: 5%;
+      position: absolute;
+      width: 90%;
+      z-index: 2;
+    }
+  }
+
+  @media screen and (max-width: 627px) {
+    #challenge-features-section .features .feature .feature-price {
+        width: 11vw;
+    }
+  }
+
+  @media screen and (max-width: 513px) {
+    #challenge-features-section .features .feature .feature-price {
+        width: 13vw;
+    }
+  }
+
+  @media screen and (max-width: 434px) {
+    #challenge-features-section .features .feature .feature-price {
+        width: 15vw;
+    }
+  }
+
+  @media screen and (max-width: 376px) {
+    #challenge-features-section .features .feature .feature-price {
+        width: 18vw;
+    }
+  }
+</style>
+
+{% else %}
 
 <style>
   #product-feature-section .container {
@@ -166,4 +437,4 @@
     }
   }
 </style>
-
+          {% endif %}
