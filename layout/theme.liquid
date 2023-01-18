@@ -21,11 +21,6 @@
 
     <!-- Stylesheets -->
     {{ 'bamboo.min.css' | asset_url | stylesheet_tag: preload: true }}
-    {% if request.path contains 'curalin-pack' %}
-      {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
-    {% elsif request.path contains 'curaeats' %}
-      {{ 'styles-product-aio.css' | asset_url | stylesheet_tag: preload: true }}
-    {% endif %}
     {{ 'common.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'styles.css' | asset_url | stylesheet_tag: preload: true }}
 
