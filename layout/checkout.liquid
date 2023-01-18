@@ -580,17 +580,17 @@
       {% endif %}
 
       {% if thirty_days_challenge_exist %}
-        jQuery("#thirty-day-challenge-content").insertAfter(".thank-you__additional-content");
+        jQuery("#thirty-day-challenge-content").insertBefore(".wrap:first");
         jQuery("#thirty-day-challenge-content").show();
       {% endif %}
 
       {% if curaeats_exist %}
-        jQuery("#curaeats-content").insertAfter(".thank-you__additional-content");
+        jQuery("#curaeats-content").insertBefore(".wrap:first");
         jQuery("#curaeats-content").show();
       {% endif %}
 
       {% if onboarding_exist %}
-        jQuery("#onboarding-content").insertAfter(".thank-you__additional-content");
+        jQuery("#onboarding-content").insertBefore(".wrap:first");
         jQuery("#onboarding-content").show();
       {% endif %}
 
