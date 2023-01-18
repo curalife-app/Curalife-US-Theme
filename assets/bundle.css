@@ -4550,7 +4550,7 @@ footer .bottom-info .info-wrap .text p {
 }
 
 .product-slider .main-slider .product-img .img-wrap img {
-  width: 100%;
+  width: 110%;
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
