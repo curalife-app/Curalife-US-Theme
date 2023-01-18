@@ -14,23 +14,26 @@ Small Steps, Big Wins:Set yourself up for success! Learn the health habits that 
           How the 30 day challenge works:         
         </div>
         <div class="sub-text">Each week, we’ll conquer a new health habit together!</div>
-        </div>
-        <div class="grid-wrapper">
-          <img class="grid-img" src="{{ 'thirty-day-product-grid.png' | asset_url }}" width="891" height="20" alt="">   
-        </div>
-        <div class="grid-wrapper-mb">
-          <img class="grid-img-mb" src="{{ 'thirty-day-product-grid-mb.png' | asset_url }}" width="40" height="1502" alt="">
         
-    <div class="how-work-wrapper">
-      {% for week in weeks %}
-        <div class="how-work-text">
-          <div class="week-title">{{ week | split: ":" | first }}</div>
-          <div class="border-bottom-week"></div>
-          <div class="week-text">{{ week | split: ":" | last }}</div>
+        <div class="container-greed">
+          <div class="grid-wrapper">
+                <img class="grid-img" src="{{ 'thirty-day-product-grid.png' | asset_url }}" width="891" height="20" alt="">   
+              </div>
+              <div class="grid-wrapper-mb">
+                <img class="grid-img-mb" src="{{ 'thirty-day-product-grid-mb.png' | asset_url }}" width="40" height="1502" alt="">
+
+          <div class="how-work-wrapper">
+            {% for week in weeks %}
+              <div class="how-work-text">
+                <div class="week-title">{{ week | split: ":" | first }}</div>
+                <div class="border-bottom-week"></div>
+                <div class="week-text">{{ week | split: ":" | last }}</div>
+              </div>
+            {% endfor %}
+
+          </div>
         </div>
-      {% endfor %}
-      
-    </div>
+    
     </div>
 </div>
 
