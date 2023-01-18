@@ -58,28 +58,22 @@
 </style>
 
 <script>
-  var btn = $('#back-to-top-btn');
-
-  btn.click(function() {
-    woopra.track('Scroll To Top Click', {});
-  });
-
   $(window).scroll(function() {
     if ($(window).scrollTop() > 600) {
-      btn.addClass('show');
+      $('#back-to-top-btn').addClass('show');
       if (screen.width < 760) {
         $('.helpButton').attr('style', 'bottom: 60px !important');
       }
     }
     else {
-      btn.removeClass('show');
+      $('#back-to-top-btn').removeClass('show');
       if (screen.width < 760) {
         $('.helpButton').attr('style', 'bottom: 4px !important');
       }
     }
   });
 
-  btn.on('click', function(e) {
+  $('#back-to-top-btn').on('click', function(e) {
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
   });
