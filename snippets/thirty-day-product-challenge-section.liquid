@@ -17,8 +17,13 @@
            <div class="feature">
                     <div class="feature-icon"><i class="icofont-check"></i></div>
                     <div class="text-features">
-                      <div class="feature-text">{{ prod.title }}</div>
-                <div class="feature-text">{{ prod.subtitle }}</div>
+                      {% if prod.title contains 'Curalin' %}
+                      <div class="feature-text"><b>30 day supply of Curalin</b></div>
+                      <div class="feature-text">(180 capsules)</div>
+                      {% else %}
+                      <div class="feature-text"><b>{{ prod.title }}</b></div>
+                      <div class="feature-text">{{ prod.subtitle }}</div>
+                      {% endif %}                      
                       {% assign price = prod.price %}
                       {% if prod.price == 0.00 %}
                         <div class="feature-price priceless">Priceless</div>
