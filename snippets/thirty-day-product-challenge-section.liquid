@@ -20,7 +20,7 @@
                       <div class="feature-text">{{ prod.title }}</div>
                 <div class="feature-text">{{ prod.subtitle }}</div>
                       {% assign price = prod.price %}
-                      {% if price contains '0' %}
+                      {% if prod.price contains '0' %}
                         <div class="feature-price priceless">Priceless</div>
                       {% else %}
                         <div class="feature-price">a {{ price | money_without_trailing_zeros }} Value</div>
