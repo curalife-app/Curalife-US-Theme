@@ -1,21 +1,5 @@
 {% layout 'theme.lps' %}
 
-{% if shop.name == "CuraLife" %}
-  {% if localization.country.iso_code == 'CA' %}
-    {% assign challenge_value = 132 %}
-    {% assign curaeats_value = 39 %}
-  {% elsif localization.country.iso_code == 'AU' %}
-    {% assign challenge_value = 147 %}
-    {% assign curaeats_value = 43 %}
-  {% else %}
-    {% assign challenge_value = 99 %}
-    {% assign curaeats_value = 29 %}
-  {% endif %}
-{% elsif shop.name == "CuraLife Global" %}
-  {% assign challenge_value = 0 %}
-  {% assign curaeats_value = 24 %}
-{% endif %}
-
 {% render 'script.round-converted-currency' %}
 
 <div class="product-template-all-in-one">
