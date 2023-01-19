@@ -12793,7 +12793,7 @@ footer .bottom-info .info-wrap .text p {
   }
 
   .product-slider:before {
-    display: none;
+    /* display: none; */
   }
 
   .product-slider .sliders-group:before {
