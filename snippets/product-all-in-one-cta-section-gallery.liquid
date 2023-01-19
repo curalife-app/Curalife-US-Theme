@@ -198,6 +198,19 @@
       display: {% unless isCuralinContent %}none{% endunless %};
     }
 
+    .product-slider .sliders-group:before {
+      content: "";
+      width: 150vw;
+      position: absolute;
+      top: 0;
+      right: 50%;
+      bottom: 0;
+      z-index: -1;
+      transform: translate(50%);
+      background: #f8f8f8;
+      pointer-events: none;
+    }
+
     .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
       margin-left: unset;
       left: 0;
