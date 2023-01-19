@@ -262,7 +262,7 @@
     }
 
     .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
-          display: none ;
+          display: {% unless isCuralinContent %}none{% endunless %} ;
     }
   }
 </style>
