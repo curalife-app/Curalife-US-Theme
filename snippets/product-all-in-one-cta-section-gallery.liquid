@@ -145,7 +145,7 @@
   }
 
   .cta-section .product-container .product-thumbnails .product-slider .main-slider .nav {
-    display: none;
+     display: {% unless isCuralinContent %}none{% endunless %};
   }
 
   .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
