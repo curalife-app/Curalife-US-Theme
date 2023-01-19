@@ -195,7 +195,7 @@
     .cta-section .product-container .product-thumbnails .product-slider .main-slider {
       width: 95%;
       margin: auto;
-      display: none;
+      display: {% unless isCuralinContent %}none{% endunless %};
     }
 
     .cta-section .product-container .product-thumbnails .product-slider .main-slider .main-slider-vector-bg {
