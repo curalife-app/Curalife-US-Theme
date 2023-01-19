@@ -1,6 +1,6 @@
 <section class="free-shipping-section">
   <div class="trust-badge"><i class="icofont-badge"></i>60 Day Money Back Guarantee</div>
-  {% comment %} <img src="{{ "thirty-day-product-money-back-icon.png" | asset_url }}" width="2085" height="288" alt="" class="free-shipping-line" loading="lazy"> {% endcomment %}
+ 
 </section>
 
 
@@ -16,19 +16,14 @@
   }
 
   .free-shipping-section .trust-badge {
-    font-size: clamp(36px, 4vw, 120px);
+    font-size: clamp(30px, 4vw, 120px);
     color: #404733;
   }
 
-  .free-shipping-section .icofont-badge {
-
-  }
   @media screen and (max-width: 768px) {
-     .free-shipping-section img {
-        -o-object-fit: cover;
-        object-fit: cover;
-        -o-object-position: left;
-        object-position: left
+    .free-shipping-section .trust-badge {
+      text-align: center;
+      padding: 0 5vw;
     }
 
   }
