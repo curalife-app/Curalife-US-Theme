@@ -198,6 +198,12 @@
       display: {% unless isCuralinContent %}none{% endunless %};
     }
 
+    .cta-section .product-container .product-thumbnails .product-slider .thumbs-slider {
+      
+      display: {% if isCuralinContent %}none{% endif %};
+     
+    }
+
     .product-slider .sliders-group:before {
       content: "";
       width: 150vw;
