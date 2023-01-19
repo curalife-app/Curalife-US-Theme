@@ -294,33 +294,7 @@
   });
 
   productSliderAllInOne = new Swiper('#product-main-slider-sc', {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    centeredSlides: true,
-    watchSlidesVisibility: true,
-    loop: false,
-    grabCursor: true,
-    slideToClickedSlide: true,
-    thumbs: {swiper: productThumbsAllInOne},
-    breakpoints: {
-      0: {
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: 'true',
-          type: 'bullets',
-        },
-        navigation: {
-          nextEl: '#product-main-slider-nav-next',
-          prevEl: '#product-main-slider-nav-prev',
-          disabledClass: 'disabled'
-        },
-        loop:true
-      },
-      760: {
-        pagination: {},
-        navigation: {}
-      }
-    }
+    
   });
 
   {% if isCuralinContent %}
