@@ -42,12 +42,12 @@
     {% if badgesPosition == "cta" %}
       {% render 'product-all-in-one-cta-section-actions', badgesContent: badgesContent, ctaColor: ctaColor, title: "Select Your Deal:", isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% else %}
-      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: "Select Your Deal:", isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% endif %}
   </div>
 
   {% if badgesPosition == "bottom" %}
-    {% render 'trust-badges-widget', badgesContent: "free-shipping,money-back,secure-checkout", colors: "#5c5c5c" %}
+    {% render 'trust-badges-widget', badgesContent: badgesContent, colors: "#5c5c5c" %}
   {% endif %}
 </section>
 {% unless isThirtyDay %}
