@@ -53,8 +53,14 @@
               <div class="step">
                 <h3>{{ step.title }}</h3>
                 <div class="capsules">
+                  {% if product.tags contains "gummies" %}
+                    {% assign serving_img = "onboarding-gummy.png" %}
+                  {% else %}
+                    {% assign serving_img = "onboarding-capsule.png" %}
+                  {% endif %}
+
                   {% for item in (1..step.capsules) %}
-                    <img src="{{ "onboarding-gummy.png" | asset_url }}" width="20" height="31" alt="Capsule Pill" loading="lazy">
+                    <img src="{{ serving_img | asset_url }}" width="20" height="31" alt="Capsule Pill" loading="lazy">
                   {% endfor %}
                 </div>
                 <p>{{ step.subtitle }} <br> {{ step.text }} <br> {{ step.text_2 }}</p>
