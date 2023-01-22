@@ -16,7 +16,11 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 <div class="container">
   <div class="break-it">{{ mainTitle }}</div>
   {% if isSecondLP %}
-  <div class="break-it">{{ mainTitle }}</div>
+  <div class="break-it-wrapper">
+    {% for week_1 in weeks_1 %}
+      <div class="time"></div>
+    {% endfor %}
+  </div>
    {% else %}
     <ul>
       {% for week in weeks %}    
