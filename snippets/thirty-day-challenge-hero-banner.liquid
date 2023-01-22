@@ -4,7 +4,7 @@
     <div class="container">
       <div class="hero-banner-content">
         <div class="text-button">
-<div class="main-title">{{ mainTitle }}{% if isSecondLP %}<span class="plus">+</span>{% endif %} </div>
+<div class="main-title">{{ mainTitle }}{% if isSecondLP %} <span class="plus">+</span>{% endif %} </div>
           <div class="subtitle">{{ subTitle }}</div>
           <div class="text-hero">{{ textHero }} </div>
         </div>
@@ -57,10 +57,10 @@
    .plus {
     color: #404733;
     font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 45px;
-    letter-spacing: -0.02em;
+    font-weight: 900;
+    font-size: clamp(50px, 7vw, 72px);
+    position: relative;
+    top: 0.5rem;
   }
     .hero-banner-content .text-button .subtitle {
       padding-left: 85px;
@@ -119,11 +119,6 @@
         
       }
 
-      .plus {
-        font-size: 25px;
-        line-height: 28px;
-      }
-  
       .hero-banner-content .text-button .subtitle {
         padding-top: unset;
         padding-left: unset;
