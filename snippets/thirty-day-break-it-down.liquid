@@ -19,7 +19,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
   <div class="break-it-wrapper">
     {% for week_1 in weeks_1 %}
       <div class="time-wrapper">
-      <div class="time">{{ week_1 | split: "*" | first }}</div>
+      <div class="time-title">{{ week_1 | split: "*" | first }}</div>
       <div class="border-bottom"></div>
       </div>
       <div class="time-desc">{{ week_1 | split: "*" | last }}</div>
@@ -156,7 +156,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
  </style>
 
  <style>
-  .time-wrapper {
+  .break-it-wrapper {
     display: flex;
     justify-content: space-around;
   }
@@ -171,7 +171,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 
 
   @media screen and (max-width: 768px) {
-    .time-wrapper {
+    .break-it-wrapper {
       flex-direction: column;
     }
 
