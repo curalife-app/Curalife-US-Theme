@@ -6,7 +6,7 @@
     <div class="feature">
       <div class="feature-icon"><i class="icofont-check"></i></div>
       <div class="text-features">     
-        <div class="feature-text">
+        <div class="feature-text img-txt">
           <img src="{{ 'lp02-challenge-section-percent-off.png' | asset_url  }}" width="90" height="46" alt="free">
          </div>       
       </div>     
@@ -211,6 +211,12 @@
     flex-direction: column;
     max-width: 395px;
     padding-right: 75px;
+  }
+
+  .features .feature .feature-text.img-txt {
+    max-width: unset;
+    padding-right: unset;
+    display: flex;
   }
 
   .features .feature .feature-price {
