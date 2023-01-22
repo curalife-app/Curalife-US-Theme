@@ -2,6 +2,9 @@
   {% if isTotal %}
    {% assign total = 0 %}
 {% endif %}
+  {% if isSecondLP %}
+  <h1>Hello</h1>
+  {% else %}
   {% for prod in product.metafields.custom.bundle-products.value %}
      <div class="feature">
               <div class="feature-icon"><i class="icofont-check"></i></div>
@@ -32,7 +35,8 @@
                 {% assign total = total | plus: price %}
             {% endif %}
        {% endfor %}
-       {% unless isSecondLP %}
+      
+      
        {% unless isTotal %}
   <div class="feature">
  <div class="feature-icon"><i class="icofont-check"></i></div>
@@ -43,7 +47,7 @@
     <img class="feature-img" src="{{ 'thirty-day-product-chalenge-06.png' | asset_url  }}" width="92" height="92" alt="">
   </div>
       {% endunless %}
-    {% endunless %}
+    {% endif %}
  </div>
 
  {% if isTotal %}
