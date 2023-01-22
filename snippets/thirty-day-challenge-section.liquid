@@ -1,4 +1,8 @@
-
+{% assign features = 'thirty-day-challenge-what-is-for-you-01.png*Maintain Glucose:Supporting your overall health, mobility, and mood!
+|thirty-day-challenge-what-is-for-you-02.png*Feel better:You’ll feel <b> and </b> look great!
+|thirty-day-challenge-what-is-for-you-03.png*Get energy:You have <b> energy </b> to go the extra mile in your life!
+|thirty-day-challenge-what-is-for-you-04.png*Enjoy food:You won’t dread healthy cooking. You’ll <b> enjoy </b> it!
+' | split: '|' %}
 
 
 
@@ -17,7 +21,7 @@
       {% endif %}
       <div class="features-wrap">
         {% if isSecondLP %}
-        {% render 'features-list', product: features, isSecondLP: true %}
+        {% render 'features-list', features: features, isSecondLP: true %}
         {% else %}
         {% render 'features-list', product: all_products["30-day-blood-sugar-challenge-pp"], isTotal: true, isLP: true %}
         {% endif %}
