@@ -7,9 +7,11 @@
             <img class="easy-img" src="{{ 'thirty-day-product-easy-group.png' | asset_url }}" width="967" height="329" alt="">
             <img class="easy-img-mb" src="{{ 'thirty-day-product-easy-group-mb.png' | asset_url }}" width="362" height="593" alt="">
         </div>
+        {% unless isSecondLP %}
         <div class="button-wrapper">
         <a class="cta-btn" id="back-to-top-btn">{{ ctaTitle }}</a>
         </div>
+       {% endunless %}
        
     </div>
     <div class="experience-wrapper">
