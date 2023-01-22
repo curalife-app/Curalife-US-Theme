@@ -13,8 +13,12 @@
           <div class="text-hero">{{ textHero }} </div>
         </div>
         <img class="main-img" src="{{ 'thirty-strong-woman.png' | asset_url }}" width="1271" height="879" alt="bottle-hand-mask" loading="lazy">
-      </div>
+      </div>    
     </div>
+
+    {% if isSecondLP %} 
+      <div class="bottom-text">Exclusive for existing Curalife customers!</div>
+    {% endif %}
      
   </section>
   
@@ -81,13 +85,17 @@
         font-family: 'DM Sans';
         font-weight: 700;
         font-size: clamp(24px, 5vw, 28px);
-        color: {% if isSecondLP %}var(--dark-green){% else %}#ffffff {% endif %};
+        color: #ffffff;
         max-width: 504px;
       
     }
   
     .hero-banner .main-img-mb {
       display: none;
+    }
+
+    .bottom-text{
+
     }
   
   
