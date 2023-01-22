@@ -3,8 +3,12 @@
     <img class="main-img-mb" src="{{ 'thirty-strong-woman-mobile.png' | asset_url }}" width="750" height="727" alt="bottle-hand-mask-mb" loading="lazy"> 
     <div class="container">
       <div class="hero-banner-content">
+       
         <div class="text-button">
-<div class="main-title">{{ mainTitle }}{% if isSecondLP %} <span class="plus">+</span>{% endif %} </div>
+          {% if isSecondLP %} 
+          <img class="title-img" src="{{ 'lp02-percent-off.png' | asset_url }}" width="456" height="235" alt="bottle-hand-mask" loading="lazy">
+          {% endif %}
+      <div class="main-title">{{ mainTitle }}{% if isSecondLP %} <span class="plus">+</span>{% endif %} </div>
           <div class="subtitle">{{ subTitle }}</div>
           <div class="text-hero">{{ textHero }} </div>
         </div>
