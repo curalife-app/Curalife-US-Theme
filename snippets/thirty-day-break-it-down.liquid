@@ -15,10 +15,11 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 <section class="timeline">
 <div class="container">
   <div class="break-it">{{ mainTitle }}</div>
- 
+  {% if isSecondLP %}
+  <div class="break-it">{{ mainTitle }}</div>
+   {% else %}
     <ul>
-      {% for week in weeks %}
-        
+      {% for week in weeks %}    
         <li>
           <div class="wrapper-div">
           <div class="time-and-text">
@@ -47,8 +48,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
           </div>
          
         </li> 
-        {% comment %} <div class="bottom-line-horizontal"></div>  {% endcomment %}
-       
+        {% comment %} <div class="bottom-line-horizontal"></div>  {% endcomment %}      
       {% endfor %}
      
       <div class="light-div"></div>
@@ -77,6 +77,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
         </div>
       </li>
     </ul>
+    {% endif %}
   </div>
 </section>
 
