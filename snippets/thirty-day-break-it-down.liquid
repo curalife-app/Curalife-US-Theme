@@ -18,7 +18,11 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
   {% if isSecondLP %}
   <div class="break-it-wrapper">
     {% for week_1 in weeks_1 %}
-      <div class="time"></div>
+      <div class="time-wrapper">
+      <div class="time">{{ week_1 | split: "*" | first }}</div>
+      <div class="border-bottom"></div>
+      </div>
+      <div class="time-desc">{{ week_1 | split: "*" | last }}</div>
     {% endfor %}
   </div>
    {% else %}
@@ -149,6 +153,33 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 }
 
  
+ </style>
+
+ <style>
+  .time-wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .time-desc {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    color: #FFFFFF;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .time-wrapper {
+      flex-direction: column;
+    }
+
+    .time-desc {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
  </style>
 
 <style>
