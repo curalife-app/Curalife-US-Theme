@@ -114,6 +114,7 @@
       justify-content: center;
       position: relative;
       bottom: -20px;
+      max-height: 100px;
     }
   
   
@@ -196,6 +197,7 @@
 
       .bottom-text {
         line-height: 26px;
+        bottom: 5px;
       }
   
     
@@ -210,6 +212,12 @@
       @media screen and (max-width: 564px) {
       .hero-banner .main-img-mb {
         top:  30vw;
+      }
+    }
+
+    @media screen and (max-width: 450px){
+      .bottom-text {
+        bottom: 32px;
       }
     }
   
