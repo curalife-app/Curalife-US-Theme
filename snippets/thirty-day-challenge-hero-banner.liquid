@@ -10,7 +10,9 @@
           {% endif %}
       <div class="main-title">{{ mainTitle }}{% if isSecondLP %} <span class="plus">+</span>{% endif %} </div>
           <div class="subtitle">{{ subTitle }}</div>
+          {% unless isSecondLP %}
           <div class="text-hero">{{ textHero }} </div>
+         {% endunless %}
         </div>
         <img class="main-img" src="{{ 'thirty-strong-woman.png' | asset_url }}" width="1271" height="879" alt="bottle-hand-mask" loading="lazy">
       </div>    
