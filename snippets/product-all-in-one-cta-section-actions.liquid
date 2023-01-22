@@ -14,7 +14,7 @@
   {% comment %} <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/> {% endcomment %}
   <div class="submit-wrap">
     {% if isBuyQuantity %}
-      <div class="qty-data" style="display:none">
+      <div class="qty-data">
         <div class="qty-control">
           <a data-act="-" href="javascript:void(0)">
             <span class="icon-minus"></span>
@@ -54,6 +54,10 @@
   .product-actions .variants {
     display: flex;
     flex-direction: {% if isReversed %}column-reverse{% else %}column{% endif %};
+  }
+
+  .product-actions .submit-wrap {
+    display: flex;
   }
 
   .product-actions .submit-wrap button {
