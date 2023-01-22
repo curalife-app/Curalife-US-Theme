@@ -14,7 +14,7 @@
       {% endif %}
       <div class="features-wrap">
         {% if isSecondLP %}
-        {% render 'features-list', isSecondLP: true %}
+        {% render 'features-list', isSecondLP: true, isLP: true %}
         {% else %}
         {% render 'features-list', product: all_products["30-day-blood-sugar-challenge-pp"], isTotal: true, isLP: true %}
         {% endif %}
