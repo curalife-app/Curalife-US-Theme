@@ -167,8 +167,8 @@
         padding-top: unset;
         padding-left: unset;
         text-align: center;
-        max-width: unset;
-  
+        max-width: {% if isSecondLP %}60vw{% else %} unset {% endif %};
+        margin: {% if isSecondLP %}auto{% endif %};
       }
   
       .hero-banner-content .text-button .text-hero {
