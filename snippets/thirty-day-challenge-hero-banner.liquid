@@ -225,13 +225,13 @@
   
     @media screen and (max-width: 449px) {
       .hero-banner .main-img-mb {
-        top:  40vw;
+        top: {% if isSecondLP %}80vw{% else %} 40vw{% endif %};
       }
     }
   
     @media screen and (max-width: 364px) {
       .hero-banner .main-img-mb {
-        top:  50vw;
+        top:  {% if isSecondLP %}90vw{% else %}50vw{% endif %};
       }
     }
   
