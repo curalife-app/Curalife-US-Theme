@@ -111,6 +111,12 @@
     box-shadow: unset;
   }
 
+  @media screen and (max-width: 1200px) {
+    #challenge-features-section .cta-btn {
+       margin-top: {% if isSecondLP %}unset{% endif %}; 
+    }
+  }
+
 
   @media screen and (max-width: 768px) {
 
@@ -145,7 +151,7 @@
       grid-column: 1/3;
       font-size: 21px;
       line-height: 20px;
-      margin-top: {% if isSecondLP %}unset{% endif %};    
+        
     }
   
     }
