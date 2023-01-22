@@ -183,9 +183,15 @@
 
   }
 
-  .features .feature:nth-child(8) {
+  {% if isSecondLP %}
+   .features .feature:nth-child(5) {
+    border-bottom: unset;
+   }
+ {% else %}
+   .features .feature:nth-child(8) {
     border-bottom: unset;
   }
+{% endif %}
 
   .features .feature .feature-icon {
     background: var(--light-green);
