@@ -12,7 +12,11 @@
       <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="886" height="689" alt="">
       {% endif %}
       <div class="features-wrap">
+        {% if isSecondLP %}
+        {% render 'features-list', product: all_products["30-day-blood-sugar-challenge-pp"], isLP: true %}
+        {% else %}
         {% render 'features-list', product: all_products["30-day-blood-sugar-challenge-pp"], isTotal: true, isLP: true %}
+        {% endif %}
       </div>
       <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
     </div>
