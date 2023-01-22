@@ -47,7 +47,7 @@
     }
   
     .hero-banner-content .text-button .main-title {
-      color: #FFF1E8;
+      color: {% if isSecondLP %}#ffffff{% else %} #FFF1E8{% endif %};
       font-family: 'PP Radio Grotesk';
       font-weight: 700;
       font-size: {% if isSecondLP %} clamp(43px, 2vw, 75px){% else %} clamp(40px, 5vw, 115px){% endif %};
