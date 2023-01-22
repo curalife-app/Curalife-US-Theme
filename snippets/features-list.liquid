@@ -32,6 +32,7 @@
                 {% assign total = total | plus: price %}
             {% endif %}
        {% endfor %}
+       {% unless isSecondLP %}
        {% unless isTotal %}
   <div class="feature">
  <div class="feature-icon"><i class="icofont-check"></i></div>
@@ -42,6 +43,7 @@
     <img class="feature-img" src="{{ 'thirty-day-product-chalenge-06.png' | asset_url  }}" width="92" height="92" alt="">
   </div>
       {% endunless %}
+    {% endunless %}
  </div>
 
  {% if isTotal %}
