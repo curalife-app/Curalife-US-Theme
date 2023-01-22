@@ -207,7 +207,7 @@
   
     @media screen and (max-width: 684px) {
       .hero-banner .main-img-mb {
-        top:  20vw;
+         top: {% if isSecondLP %}50vw {% else %} 20vw {% endif %};
       }
       }
   
