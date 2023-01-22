@@ -40,9 +40,9 @@
     </div>
 
     {% if badgesPosition == "cta" %}
-      {% render 'product-all-in-one-cta-section-actions', badgesContent: badgesContent, ctaColor: ctaColor, title: title, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+      {% render 'product-all-in-one-cta-section-actions', badgesContent: badgesContent, ctaColor: ctaColor, title: title, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, isBuyQuantity: true, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% else %}
-      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: title, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: title, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, isBuyQuantity: true, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% endif %}
   </div>
 
