@@ -30,7 +30,7 @@
 
   #challenge-features-section h3 {
     font-family: 'PP Radio Grotesk';
-    color: var(--dark-green);
+    color: {% if isSecondLP %}#9EB069{% else %}var(--dark-green){% endif %};
     font-weight: 700;
     font-size: 60px;
     line-height: 60px;
