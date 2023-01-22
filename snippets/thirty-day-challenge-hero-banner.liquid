@@ -77,7 +77,7 @@
         font-family: 'DM Sans';
         font-weight: 700;
         font-size: clamp(24px, 5vw, 28px);
-        color: #FFFFFF;
+        color: {% if isSecondLP %}var(--dark-green){% else %}#ffffff {% endif %};
         max-width: 504px;
       
     }
