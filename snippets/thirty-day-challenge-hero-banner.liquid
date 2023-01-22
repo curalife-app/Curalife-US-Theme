@@ -80,6 +80,7 @@
       font-weight: 700;
       font-size:{% if isSecondLP %}clamp(26px, 2vw, 50px){% else %} clamp(26px, 7vw, 62px){% endif %};
       {% if isSecondLP %}letter-spacing: -0.02em{% endif %};
+      max-width: {% if isSecondLP %}60%{% endif %};
     }
   
     .hero-banner-content .text-button .text-hero {
@@ -160,6 +161,7 @@
         padding-top: unset;
         padding-left: unset;
         text-align: center;
+        max-width: unset;
   
       }
   
