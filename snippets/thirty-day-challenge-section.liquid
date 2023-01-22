@@ -1,3 +1,5 @@
+
+
 <section id="challenge-features-section">
   <div class="container">
     <h3>{{ mainTitle }}</h3>
@@ -13,7 +15,7 @@
       {% endif %}
       <div class="features-wrap">
         {% if isSecondLP %}
-        {% render 'features-list', product: all_products["30-day-blood-sugar-challenge-pp"], isLP: true %}
+        {% render 'features-list', product: features, isSecondLP: true %}
         {% else %}
         {% render 'features-list', product: all_products["30-day-blood-sugar-challenge-pp"], isTotal: true, isLP: true %}
         {% endif %}
