@@ -24,7 +24,7 @@
     padding: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: {% if isMiniVersion %}30px{% else %}50px{% endif %};
     font-size: {% if isMiniVersion %}14px{% else %}16px{% endif %};
     line-height: 1.2rem;
   }
