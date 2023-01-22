@@ -3,7 +3,16 @@
    {% assign total = 0 %}
 {% endif %}
   {% if isSecondLP %}
-  <h1>Hello</h1>
+  {% for feature in features %}
+    <div class="feature">
+      <div class="feature-icon"><i class="icofont-check"></i></div>
+      <div class="text-features">     
+        <div class="feature-text">{{ feature | split: "*" | first }}</div>
+        <div class="feature-text">{{ feature | split: "*" | last }}</div>   
+      </div>
+     
+    </div>
+  {% endfor %}
   {% else %}
   {% for prod in product.metafields.custom.bundle-products.value %}
      <div class="feature">
