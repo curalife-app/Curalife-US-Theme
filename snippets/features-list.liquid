@@ -9,6 +9,7 @@
       <div class="text-features">     
         <div class="feature-text">{{ feature | split: "*" | first }}</div>
         <img class="feature-img" src="{{ feature | asset_url | split: "*" | last }}" width="114" height="114" alt="free">
+        
       </div>     
     </div>
   {% endfor %}
