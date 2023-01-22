@@ -1,7 +1,9 @@
 <section id="challenge-features-section">
   <div class="container">
     <h3>{{ mainTitle }}</h3>
+    {% unless isSecondLP %}
     <div class="maintained">to keep your blood sugar maintained:</div>
+    {% endunless %}
 
     <div class="features-wrapper">
       <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="886" height="689" alt="">
