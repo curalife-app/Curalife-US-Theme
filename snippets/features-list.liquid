@@ -2,17 +2,18 @@
   {% if isTotal %}
    {% assign total = 0 %}
 {% endif %}
-  {% if isSecondLP %}
-  {% for feature in features %}
+  {% if isSecondLP %}  
     <div class="feature">
       <div class="feature-icon"><i class="icofont-check"></i></div>
       <div class="text-features">     
-        <div class="feature-text">{{ feature | split: "*" | first }}</div>
-        <img class="feature-img" src="{{ feature | asset_url | split: "*" | last }}" width="114" height="114" alt="free">
+        <div class="feature-text">
+          <img src="{{ 'lp02-challenge-section-percent-off.png' | asset_url | }}" width="90" height="46" alt="discount-30">
+
+           <b>Curalin </b></div>
         
       </div>     
     </div>
-  {% endfor %}
+  
   {% else %}
   {% for prod in product.metafields.custom.bundle-products.value %}
      <div class="feature">
