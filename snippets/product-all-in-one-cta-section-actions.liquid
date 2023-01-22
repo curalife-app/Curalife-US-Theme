@@ -58,13 +58,15 @@
 
   .product-actions .submit-wrap {
     display: flex;
+    border: 1px solid {{ ctaColor }};
   }
 
   .product-actions .submit-wrap button {
     background-color: {{ ctaColor }};
-    border-color: {{ ctaColor }};
+    border: 0;
     color: white;
     width: 100%;
+    height: unset;
   }
 
   .product-actions .submit-wrap button:hover {
@@ -86,7 +88,8 @@
   }
 
   .product-actions .submit-wrap .qty-data .qty-control {
-    border-color: var(--dark-green);
+    border: 0;
+    background: white;
   }
 
   @media screen and (max-width: 768px) {
