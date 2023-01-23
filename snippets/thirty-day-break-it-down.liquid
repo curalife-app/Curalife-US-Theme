@@ -1,11 +1,11 @@
 {% assign weeks = "Dozens of delicious recipes you can choose from that don’t compromise flavor! Don’t like a certain recipe? Choose another!
 |Powerful supplements that promote your metabolism and keep your glucose healthy!
-|Easy-to-do exercises that will energize your day you’ll actually look forward to! 
+|Easy-to-do exercises that will energize your day you’ll actually look forward to!
 |Finding the balance between food, movement and supplements! We're here to cheer you on!
 " | split: "|" %}
 
 {% assign weeks_1 = "Curalin*Continue with Curalin as part of your daily regime. We’ll guide you through it every step of the way whenever needed.
-|Smart 
+|Smart
 Meal plan*Access your new meal plan with tons of new recipes that don’t compromise flavor!
 |Find your Flow*A movement routine that works for YOU! Go at your own pace, from the comfortability of your home. It’s doable, maintainable, and even enjoyable!
 |Small Steps
@@ -16,7 +16,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 <div class="container">
   <div class="break-it">{{ mainTitle }}</div>
   {% if isSecondLP %}
- 
+
     {% for week_1 in weeks_1 %}
       <div class="break-it-wrapper">
       <div class="time-wrapper">
@@ -26,15 +26,15 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
       <div class="time-desc">{{ week_1 | split: "*" | last }}</div>
       </div>
     {% endfor %}
- 
+
    {% else %}
     <ul>
-      {% for week in weeks %}    
+      {% for week in weeks %}
         <li>
           <div class="wrapper-div">
           <div class="time-and-text">
             <div class="time">Week {{ forloop.index }}</div>
-                   
+
             <div class="border-bottom"></div>
             <p>{{ week }}</p>
             {% if forloop.index == 2 %}
@@ -52,25 +52,25 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
               </div>
             {% endif %}
           </div>
-         
-          <img class="img-break" src="{{ 'thirty-day-break-' | append: forloop.index | append: '.png' | asset_url }}" width="831" height="513" alt="" loading="lazy"> 
+
+          <img class="img-break" src="{{ 'thirty-day-break-' | append: forloop.index | append: '.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
 
           </div>
-         
-        </li> 
-        {% comment %} <div class="bottom-line-horizontal"></div>  {% endcomment %}      
+
+        </li>
+        {% comment %} <div class="bottom-line-horizontal"></div>  {% endcomment %}
       {% endfor %}
-     
+
       <div class="light-div"></div>
       <li>
         <div class="wrapper-div">
         <div class="time-and-text">
-          <div class="time achivement">Achievement 
+          <div class="time achivement">Achievement
           unlocked!</div>
           <div class="border-bottom"></div>
           <div class="celebrate">Celebrate your win, rockstar! Together, we’re just getting started!</div>
         </div>
-       
+
         <img class="img-break-confetty" src="{{ 'thirty-day-break-confetti.png' | asset_url }}" width="1211" height="211" alt="" loading="lazy">
         <img class="img-break-confetty-mb" src="{{ 'thirty-day-break-confetti-mb.png' | asset_url }}" width="368" height="223" alt="" loading="lazy">
         </div>
@@ -111,7 +111,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
  font-size: 18px;
  line-height: 35px;
  color: var(--vomit);
- width: 100%; 
+ width: 100%;
 }
 
 .faq .faq-item .question:after {
@@ -141,7 +141,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
  max-height: 0;
  overflow: hidden;
  transition: max-height .2s ease-out;
- background: var(--vomit); 
+ background: var(--vomit);
  border-radius: 5px;
 }
 
@@ -154,14 +154,14 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
   padding: 0 15px;
 }
 
- 
+
  </style>
 
  <style>
   .break-it-wrapper {
     display: flex;
-    gap: 5%;
-    padding: 30px 100px;
+    gap: 15%;
+    padding: 30px 0;
   }
 
   .time-wrapper {
@@ -205,7 +205,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 
 <style>
   .bottom-line-horizontal {
-    background: #B9C86B; 
+    background: #B9C86B;
     height: 1px;
     width: 232%;
     position: absolute;
@@ -278,7 +278,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
       height: 30px;
       border-radius: 50%;
       background: inherit;
-     
+
     }
 
     .timeline ul li .wrapper-div {
@@ -286,7 +286,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
       bottom: 0;
       padding: 0 10px;
       display: flex;
-           
+
     }
 
 
@@ -314,7 +314,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
     line-height: 30px;
     color: #FFFFFF;
   }
- 
+
 
     .time-and-text .time {
       font-family: 'PP Radio Grotesk';
@@ -333,7 +333,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
       max-width: 122px;
     }
 
- 
+
 
     .img-beyond {
       padding-bottom: 10px;
@@ -341,7 +341,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 
     .img-break {
       max-width: 200%;
-     
+
     }
 
     .img-break-confetty {
@@ -359,12 +359,12 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
       font-family: 'PP Radio Grotesk';
       font-weight: 700;
       font-size: clamp(38px, 2vw, 45px);
-      line-height: 44px;   
+      line-height: 44px;
       letter-spacing: -0.01em;
       color: #FFFFFF;
     }
 
- 
+
 
 
     .timeline ul li::after {
@@ -374,7 +374,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
     .timeline ul li.in-view::after {
         background: #B9C86B;
         -webkit-animation: pulsate 1s ease-out;
-        -webkit-animation-iteration-count: 2; 
+        -webkit-animation-iteration-count: 2;
         opacity: 1.0;
     }
 
@@ -388,7 +388,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
       transform: translate3d(0px, 0, 0);
     }
 
-  
+
 
     .timeline ul li.in-view .wrapper-div {
       transform: none;
@@ -412,14 +412,14 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
         right: -500px;
         max-width: 50vw;
       }
-    
+
     }
 
     @media screen and (max-width: 860px){
-    
+
       .celebrate {
         right: -370px;
-        
+
       }
 
     }
@@ -455,17 +455,17 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
         top: -6vw;
         max-height: 150px;
       }
-      .time-and-text .time.achivement {   
+      .time-and-text .time.achivement {
         font-size: clamp(32px, 2vw, 36px);
         line-height: 32px;
         max-width: 53vw;
-        margin-top: -40px;    
+        margin-top: -40px;
       }
 
       .img-break {
         max-width: 120%;
       }
-    
+
       .timeline ul li .wrapper-div {
         width: calc(100vw - 91px);
         flex-direction: column;
@@ -484,7 +484,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
         line-height: 24px;
         max-width: 68vw;
       }
-     
+
     }
 
   @media screen and (max-width: 617px) {
@@ -532,9 +532,9 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
     .light-div {
       height: 225px;
     }
-   
+
   }
-    
+
 </style>
 
 
