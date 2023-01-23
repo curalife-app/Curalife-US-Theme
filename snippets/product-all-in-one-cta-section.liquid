@@ -33,9 +33,7 @@
 
       {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
       {% if isSaleBadge %}
-        <div class="sale-badge">
-          <p>SAVE {{ save_price }}</p>
-        </div>
+        <div class="sale-badge"><p>SAVE {{ save_price | money_without_trailing_zeros}}</p></div>
       {% endif %}
     </div>
 
