@@ -50,9 +50,10 @@
     {% render 'trust-badges-widget', badgesContent: badgesContent, colors: "#5c5c5c" %}
   {% endif %}
 </section>
-{% unless isThirtyDay %}
-<div class="container line" style="border-bottom: 1px solid {{ bottomLineColor }}"></div>
-{% endunless %}
+
+{% if bottomLineColor %}
+  <div class="container line" style="border-bottom: 1px solid {{ bottomLineColor }}"></div>
+{% endif %}
 
 
 <style>
