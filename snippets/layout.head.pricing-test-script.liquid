@@ -19,8 +19,7 @@
       return;
     }
 
-    const isRedirectPage = redirectPages.includes(window.location.pathname);
-    if (isRedirectPage) {
+    if (redirectPages.includes(window.location.pathname)) {
       window.location.replace(`${window.location.pathname}-p`);
     }
 
