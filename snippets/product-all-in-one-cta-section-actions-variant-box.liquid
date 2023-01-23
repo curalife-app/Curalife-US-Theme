@@ -262,9 +262,9 @@
 
   <script>
     function updateCTA() {
-      {% if ctaTextType == "Total" %}
+      {% if ctaTextType == "save" %}
         let ctaText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
-      {% else %}
+      {% elsif ctaTextType == "total" %}
         let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
       {% endif %}
 
