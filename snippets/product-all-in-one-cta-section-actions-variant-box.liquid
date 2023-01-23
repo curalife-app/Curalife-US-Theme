@@ -272,7 +272,7 @@
       }).fadeIn(300);
     }
 
-    updateSelectedVariantInformation(infoAttributeName, targetElementToUpdate) {
+    function updateSelectedVariantInformation(infoAttributeName, targetElementToUpdate) {
       let varIndex = $('input[name=pack]:checked').attr(infoAttributeName);
 
       $(targetElementToUpdate).fadeOut(300, function () {
