@@ -4,9 +4,9 @@
   <div class="variants">
     {% for var in product.variants %}
       {% if forloop.last %}
-        {% render 'product-all-in-one-cta-section-actions-variant-box', product: product, var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value, isLastRender: true %}
+        {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value, isLastRender: true %}
       {% else %}
-        {% render 'product-all-in-one-cta-section-actions-variant-box', product: product, var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+        {% render 'product-all-in-one-cta-section-actions-variant-box', var: var, index: forloop.index, isHighlightSubtitle: isHighlightSubtitle, isUpdateSaveTitle: true, isPricePerUnit: isPricePerUnit, challenge_value: challenge_value, curaeats_value: curaeats_value %}
       {% endif %}
     {% endfor %}
   </div>
