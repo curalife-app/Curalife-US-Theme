@@ -23,9 +23,7 @@
       window.location.replace(`${window.location.pathname}-p`);
     }
 
-    const linksQuery = redirectPages
-      .map(page => `a[href="${page}"]`)
-      .join(', ');
+    const linksQuery = redirectPages.map(page => `a[href="${page}"]`).join(', ');
     $(linksQuery).each(function() {
       $(this).attr('href', `${$(this).attr('href')}-p`);
     });
