@@ -193,125 +193,125 @@
                             margin: 10px 0;
                         }
 
-                        // .variant-box {
-                        //     display: flex;
-                        //     justify-content: space-evenly;
-                        //     align-items: center;
-                        //     height: 80px;
-                        //     background: #FFFFFF;
-                        //     border: 1px solid #CBCBCB;
-                        //     box-sizing: border-box;
-                        //     border-radius: 2px;
-                        //     margin-bottom: 10px;
-                        //     cursor: pointer;
-                        //     filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.1));
-                        //     transition: all 0.5s;
-                        //     position: relative;
+                        .variant-box {
+                            display: flex;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            height: 80px;
+                            background: #FFFFFF;
+                            border: 1px solid #CBCBCB;
+                            box-sizing: border-box;
+                            border-radius: 2px;
+                            margin-bottom: 10px;
+                            cursor: pointer;
+                            filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.1));
+                            transition: all 0.5s;
+                            position: relative;
 
-                        //     &:hover {
-                        //         border-color: rgb(47, 47, 47);
-                        //         filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3));
+                            &:hover {
+                                border-color: rgb(47, 47, 47);
+                                filter: drop-shadow(0px 4px 4px rgba(47, 47, 47, 0.3));
 
-                        //         &>.radio-box input[type='radio']:after {
-                        //             background-color: #a9a9a9;
-                        //         }
-                        //     }
+                                &>.radio-box input[type='radio']:after {
+                                    background-color: #a9a9a9;
+                                }
+                            }
 
-                        //     .radio-box {
-                        //         width: 5%;
-                        //         align-items: center;
-                        //         display: flex;
-                        //         padding: 10px;
+                            .radio-box {
+                                width: 5%;
+                                align-items: center;
+                                display: flex;
+                                padding: 10px;
 
-                        //         input[type='radio'] {
-                        //             position: relative;
-                        //             left: -3px;
-                        //             pointer-events: none;
+                                input[type='radio'] {
+                                    position: relative;
+                                    left: -3px;
+                                    pointer-events: none;
 
-                        //             &:before {
-                        //                 content: "";
-                        //                 display: block;
-                        //                 position: absolute;
-                        //                 width: 14px;
-                        //                 height: 14px;
-                        //                 left: 1px;
-                        //                 top: 50%;
-                        //                 margin-top: -7px;
-                        //                 border: 1px solid black;
-                        //                 border-radius: 8px;
-                        //             }
+                                    &:before {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        width: 14px;
+                                        height: 14px;
+                                        left: 1px;
+                                        top: 50%;
+                                        margin-top: -7px;
+                                        border: 1px solid black;
+                                        border-radius: 8px;
+                                    }
 
-                        //             &:after {
-                        //                 content: "";
-                        //                 display: block;
-                        //                 position: absolute;
-                        //                 background-color: #01C6B2 !important;
-                        //                 width: 0;
-                        //                 height: 0;
-                        //                 top: 50%;
-                        //                 left: 8px;
-                        //                 margin-top: 0;
-                        //                 border-radius: 4px;
-                        //                 transition: .2s ease-in-out;
-                        //             }
+                                    &:after {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        background-color: #01C6B2 !important;
+                                        width: 0;
+                                        height: 0;
+                                        top: 50%;
+                                        left: 8px;
+                                        margin-top: 0;
+                                        border-radius: 4px;
+                                        transition: .2s ease-in-out;
+                                    }
 
-                        //             &:checked:after {
-                        //                 height: 8px;
-                        //                 width: 8px;
-                        //                 margin-top: -4px;
-                        //                 left: 4px;
-                        //             }
-                        //         }
-                        //     }
+                                    &:checked:after {
+                                        height: 8px;
+                                        width: 8px;
+                                        margin-top: -4px;
+                                        left: 4px;
+                                    }
+                                }
+                            }
 
-                        //     .variant-info {
-                        //         padding: 10px;
-                        //         width: 70%;
+                            .variant-info {
+                                padding: 10px;
+                                width: 70%;
 
-                        //         .variant-title {
-                        //             margin: 0;
-                        //             font-size: 20px;
+                                .variant-title {
+                                    margin: 0;
+                                    font-size: 20px;
 
-                        //             b {
-                        //                 font-weight: 600;
-                        //             }
-                        //         }
+                                    b {
+                                        font-weight: 600;
+                                    }
+                                }
 
-                        //         .variant-infos {
-                        //             p {
-                        //                 font-weight: 200;
-                        //                 display: inline-block;
-                        //                 margin: 0;
-                        //             }
-                        //         }
-                        //     }
+                                .variant-infos {
+                                    p {
+                                        font-weight: 200;
+                                        display: inline-block;
+                                        margin: 0;
+                                    }
+                                }
+                            }
 
-                        //     .price {
-                        //         display: flex;
-                        //         align-items: center;
-                        //         min-width: 15px;
-                        //         margin-right: 40px;
-                        //         padding-bottom: unset;
+                            .price {
+                                display: flex;
+                                align-items: center;
+                                min-width: 15px;
+                                margin-right: 40px;
+                                padding-bottom: unset;
 
-                        //         &.centered {
-                        //             margin-top: 18px;
-                        //         }
+                                &.centered {
+                                    margin-top: 18px;
+                                }
 
-                        //         .compared-at-price {
-                        //             margin-right: 5px !important;
-                        //             font-size: unset;
+                                .compared-at-price {
+                                    margin-right: 5px !important;
+                                    font-size: unset;
 
-                        //             strike {
-                        //                 font-size: 10px !important;
-                        //             }
-                        //         }
+                                    strike {
+                                        font-size: 10px !important;
+                                    }
+                                }
 
-                        //         .real-price {
-                        //             font-size: 20px;
-                        //         }
-                        //     }
+                                .real-price {
+                                    font-size: 20px;
+                                }
+                            }
 
-                        // }
+                        }
 
                         .submit-wrap {
                             display: flex;
