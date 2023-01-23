@@ -61,7 +61,7 @@
 </div>
 <style>
   body {
-    accent-color: black;
+    accent-color:  var(--dark-green);
   }
 </style>
 
@@ -106,47 +106,7 @@
       display: flex;
       padding: 10px;
     }
-
-    .variant-box .radio-box input[type=radio] {
-      position: relative;
-      left: -3px;
-      pointer-events: none;
-    }
-
-    .variant-box .radio-box input[type=radio]:before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      left: 1px;
-      top: 50%;
-      margin-top: -7px;
-      border: 1px solid #000;
-      border-radius: 8px;
-    }
-
-    .variant-box .radio-box input[type=radio]:after {
-      content: "";
-      display: block;
-      position: absolute;
-      background-color: var(--dark-green) !important;
-      width: 0;
-      height: 0;
-      top: 50%;
-      left: 8px;
-      margin-top: 0;
-      border-radius: 4px;
-      transition: .2s ease-in-out
-    }
-
-    .variant-box .radio-box input[type=radio]:checked:after {
-      height: 8px;
-      width: 8px;
-      margin-top: -4px;
-      left: 4px
-    }
-
+    
     .variant-box .variant-info {
       padding: 10px;
       width: 70%
