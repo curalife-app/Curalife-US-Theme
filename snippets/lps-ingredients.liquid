@@ -24,17 +24,17 @@
 
         <div class="ingredients swiper-wrapper">
           {% for ingredient in ingredients %}
-          <div class="swiper-slide">
-            <div class="ingredient">
-              <img src="{{ ingredient | asset_url | split: "*" | first }}" alt="" loading="lazy">
+            <div class="swiper-slide">
+              <div class="ingredient">
+                <img src="{{ ingredient | asset_url | split: "*" | first }}" alt="" loading="lazy">
 
-              <div class="ingredient-content">
-                <p class="ingredient-title">{{ ingredient | split: "*" | last | split: ":" | first }}</p>
-                <p class="ingredient-description">{{ ingredient | split: "*" | last | split: ":" | last }}</p>
+                <div class="ingredient-content">
+                  <p class="ingredient-title">{{ ingredient | split: "*" | last | split: ":" | first }}</p>
+                  <p class="ingredient-description">{{ ingredient | split: "*" | last | split: ":" | last }}</p>
+                </div>
               </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
         </div>
 
         <div class="swiper-button-next swiper-nav"></div>
