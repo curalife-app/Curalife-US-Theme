@@ -1,15 +1,6 @@
 {% layout 'theme.lps' %}
 
-{% assign realChanges = 'thirty-day-challenge-what-is-for-you-01.png*Maintain Glucose:Supporting your overall health, mobility, and mood!
-|thirty-day-challenge-what-is-for-you-02.png*Feel better:You’ll feel <b> and </b> look great!
-|thirty-day-challenge-what-is-for-you-03.png*Get energy:You have <b> energy </b> to go the extra mile in your life!
-|thirty-day-challenge-what-is-for-you-04.png*Enjoy food:You won’t dread healthy cooking. You’ll <b> enjoy </b> it!
-' | split: '|' %}
 
-{% assign challenges = 'thirty-day-accepted-01.png*Do you have a stove or an oven to cook?
-|thirty-day-accepted-02.png*Do you have a couch or space to do some easy, 20 minute workouts?
-|thirty-day-accepted-03.png*Do you have the motivation to change your life?
-' | split: '|' %}
 
 {% render 'sale-banner', isOnlyLogo: true, desktopContent: "logo", mobileContent: "logo", bgColor: "#ffffff", logoFileName: "curalife-dark-green.png" %}
 {% render 'thirty-day-challenge-hero-banner', mainTitle: "Curalin", subTitle: "Freebies to kick-off the year right! ", isSecondLP: true %}
