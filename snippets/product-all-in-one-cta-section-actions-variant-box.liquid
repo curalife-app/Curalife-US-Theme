@@ -16,7 +16,9 @@
 {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
 {% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
 {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
-{% assign original_item_price = var.price | divided_by: bottle_quantity %}
+{% assign original_item_price = var.metafields.my_fields.original_item.value.price %}
+{% assign item_price = var.price | divided_by: quantity_by_cents | times: 100 %}
+{% assign save_price = original_item_price | minus: item_price | times: quantity %}
 
 
 <div class="variant-box">
@@ -26,7 +28,7 @@
     {% else %}
       {% assign discount = 0 %}
     {% endif %}
-    <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
+    <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ save_price }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
   </div>
   <div class="variant-info">
     <p class="variant-title">{{ var.title }}</p>
