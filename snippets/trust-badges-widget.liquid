@@ -1,6 +1,5 @@
 {% if shop.name == "CuraLife" %}
-  {% assign shipping_worldwide = 'FREE WORLDWILD
-  SHIPPING' %}
+  {% assign shipping_worldwide = 'FREE WORLDWILD SHIPPING' %}
 {% elsif shop.name == "CuraLife Global" %}
   {% assign shipping_worldwide = 'Free Shipping Above £99' %}
 {% endif %}
@@ -14,7 +13,7 @@
     <div class="trust-badge"><i class="icofont-badge" style="font-size:36px"></i>60 Day Money Back Guarantee</div>
   {% endif %}
 
-  {% if badgesContent contains "money-back" %}
+  {% if badgesContent contains "secure-checkout" %}
     <div class="trust-badge"><i class="icofont-ui-lock"></i>100% Secure Checkout</div>
   {% endif %}
 </div>

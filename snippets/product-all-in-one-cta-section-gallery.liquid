@@ -251,7 +251,7 @@
 
 <script>
   productThumbsAllInOne = new Swiper('#product-thumbs-slider-sc', {
-    slidesPerView: 4,
+    slidesPerView: 'auto',
     spaceBetween: 10,
     watchSlidesVisibility: true,
     grabCursor: true,
@@ -267,10 +267,10 @@
         freemode:true,
       },
       1200: {
-        slidesPerView: 3,
+        slidesPerView: {{ product.images.size | minus: 1 }},
       },
       1400: {
-        slidesPerView: 4,
+          slidesPerView: {% if product.images.size < 5 %}{{ product.images.size }}{% else %}4{% endif %},
       }
     }
   });

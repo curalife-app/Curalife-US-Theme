@@ -1,20 +1,11 @@
 {% layout 'theme.lps' %}
 
-{% assign realChanges = 'thirty-day-challenge-what-is-for-you-01.png*Maintain Glucose:Supporting your overall health, mobility, and mood!
-|thirty-day-challenge-what-is-for-you-02.png*Feel better:You’ll feel <b> and </b> look great!
-|thirty-day-challenge-what-is-for-you-03.png*Get energy:You have <b> energy </b> to go the extra mile in your life!
-|thirty-day-challenge-what-is-for-you-04.png*Enjoy food:You won’t dread healthy cooking. You’ll <b> enjoy </b> it!
-' | split: '|' %}
 
-{% assign challenges = 'thirty-day-accepted-01.png*Do you have a stove or an oven to cook?
-|thirty-day-accepted-02.png*Do you have a couch or space to do some easy, 20 minute workouts?
-|thirty-day-accepted-03.png*Do you have the motivation to change your life?
-' | split: '|' %}
 
 {% render 'sale-banner', isOnlyLogo: true, desktopContent: "logo", mobileContent: "logo", bgColor: "#ffffff", logoFileName: "curalife-dark-green.png" %}
 {% render 'thirty-day-challenge-hero-banner', mainTitle: "Curalin", subTitle: "Freebies to kick-off the year right! ", isSecondLP: true %}
-{% render 'thirty-day-challenge-section', mainTitle: "When you buy Curalin you GET", ctaButtonLink: "#cta-section", ctaTitle: "SHOP NOW", isSecondLP: true %}
+{% render 'thirty-day-challenge-section', mainTitle: "When you buy Curalin you GET", ctaButtonLink: "#product-thumbnails", ctaTitle: "SHOP NOW", isSecondLP: true %}
 {% render 'thirty-day-break-it-down', mainTitle: "New year, same you, but healthier", isSecondLP: true %}
 {% render 'product-all-in-one-easy', isSecondLP: true %}
-{% render 'product-all-in-one-cta-section-thirty-days', badgesPosition: "cta", badgesContent: "free-shipping,money-back", isBadges: true, isThirtyDay: true %}
-{% render 'lps-video-reviews', maintitle: 'This helped me like nothing else did' %}
+{% render 'product-all-in-one-cta-section', product: all_products['30-days-monthly-deals'], mainTitle: "Including our meal and movement plans <span style='color:var(--light-green)'>FREE</span>", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", defaultSelectionIndex: 2, isPricePerUnit: true %}
+{% render 'lps-video-reviews', maintitle: 'This helped me like nothing else did', isSecondLP: true %}

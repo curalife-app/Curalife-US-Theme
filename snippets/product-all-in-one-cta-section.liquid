@@ -3,7 +3,7 @@
     <div class="product-image-wrapper">
       {% comment %} If there are multiple images, render the gallery {% endcomment %}
       {% if product.images.size > 1 %}
-        {% render 'product-all-in-one-cta-section-gallery', isCuralinContent: isCuralinContent %}
+        {% render 'product-all-in-one-cta-section-gallery', product: product, isCuralinContent: isCuralinContent %}
       {% else %}
         <img src="{{ product.images[0].src | image_url }}" alt="{{ product.images[0].alt }}" class="product-image" loading="lazy">
         <p class="multiplier">X2</p>
@@ -32,17 +32,17 @@
     </div>
 
     <div class="product-info">
-      <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
+      <h1>{% if mainTitle %}{{ mainTitle }}{% elsif product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
 
-      {% if isCuralinContent %}
+      {% if isReviews %}
         {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}
       {% endif %}
     </div>
 
     {% if badgesPosition == "cta" %}
-      {% render 'product-all-in-one-cta-section-actions', badgesContent: badgesContent, ctaColor: ctaColor, title: title, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, isBuyQuantity: isBuyQuantity, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+      {% render 'product-all-in-one-cta-section-actions', product: product, badgesContent: badgesContent, ctaColor: ctaColor, title: title, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, isBuyQuantity: isBuyQuantity, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% else %}
-      {% render 'product-all-in-one-cta-section-actions', ctaColor: ctaColor, title: title, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, isBuyQuantity: isBuyQuantity, challenge_value: challenge_value, curaeats_value: curaeats_value %}
+      {% render 'product-all-in-one-cta-section-actions', product: product, ctaColor: ctaColor, title: title, isHighlightSubtitle: isHighlightSubtitle, isReversed: isReversed, defaultSelectionIndex: defaultSelectionIndex, isPricePerUnit: isPricePerUnit, isBuyQuantity: isBuyQuantity, challenge_value: challenge_value, curaeats_value: curaeats_value %}
     {% endif %}
   </div>
 
@@ -50,9 +50,10 @@
     {% render 'trust-badges-widget', badgesContent: badgesContent, colors: "#5c5c5c" %}
   {% endif %}
 </section>
-{% unless isThirtyDay %}
-<div class="container line" style="border-bottom: 1px solid {{ bottomLineColor }}"></div>
-{% endunless %}
+
+{% if bottomLineColor %}
+  <div class="container line" style="border-bottom: 1px solid {{ bottomLineColor }}"></div>
+{% endif %}
 
 
 <style>
