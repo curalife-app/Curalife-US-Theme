@@ -12,6 +12,7 @@
     <title>{{ page_title }}</title>
 
     {% render 'layout.head.geo-redirect-script' %}
+    {% render 'layout.head.pricing-test-script' %}
     {% render 'layout.head.redirects-script' %}
     {% render 'layout.head.google-tag-manager'%}
     {% render 'layout.head.meta-tags' %}
@@ -28,7 +29,6 @@
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-    {% render 'layout.head.pricing-test-script' %}
 
     <script src="{{ 'fancybox-script.js' | asset_url }}" async></script>
 
