@@ -140,7 +140,6 @@
       .hero-banner {
         height: {% if isSecondLP %} 100vh {% endif %};
         text-align: center;
-  
       }
       .hero-banner-content {
         display: block;
@@ -227,11 +226,18 @@
       .hero-banner .main-img-mb {
         top: {% if isSecondLP %}80vw{% else %} 40vw{% endif %};
       }
+
+      .hero-banner {
+        height: {% if isSecondLP %} 91vh {% endif %};
+      }
     }
   
     @media screen and (max-width: 364px) {
       .hero-banner .main-img-mb {
         top:  {% if isSecondLP %}90vw{% else %}50vw{% endif %};
+      }
+      .hero-banner {
+        height: {% if isSecondLP %} 81vh {% endif %};
       }
     }
   
