@@ -11,20 +11,13 @@
     {% endfor %}
   </div>
 
-  {% comment %} <input id="productVaraintSelected" type="hidden" name="id" value="{{ product.variants.first.id }}"/> {% endcomment %}
   <div class="submit-wrap">
     {% if isBuyQuantity %}
       <div class="qty-data">
         <div class="qty-control">
-          <a data-act="-" href="javascript:void(0)">
-            <span class="icon-minus"></span>
-          </a>
-          <label>
-            <input maxlength="4" name="quantity" type="number" value="1">
-          </label>
-          <a data-act="+" href="javascript:void(0)">
-            <span class="icon-plus"></span>
-          </a>
+          <a data-act="-" href="javascript:void(0)"><span class="icon-minus"></span></a>
+          <label><input maxlength="4" name="quantity" type="number" value="1"></label>
+          <a data-act="+" href="javascript:void(0)"><span class="icon-plus"></span></a>
         </div>
       </div>
     {% endif %}
