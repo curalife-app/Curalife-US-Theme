@@ -13,7 +13,7 @@
 
 <div id="supplement-page">
   {% comment %} {% render 'sale-banner', desktopContent: "none", mobileContent: "title", bgColor: "var(--light-green)", title: "Buy curalin & get 60% off happy joints" %} {% endcomment %}
-  {% render 'product-all-in-one-cta-section', isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
+  {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
   {% render 'product-supplement-health-benefits' %}
 
   {% if product.metafields.custom.bundle-products.value %}
