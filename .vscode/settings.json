@@ -15,5 +15,20 @@
     },
     "peacock.color": "#005fd3",
     "docwriter.style": "JSDoc",
-    "liquid.format.enable": true
+    "liquid.format.enable": true,
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "167.99.195.112",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "FB-Import",
+            "database": "curalife",
+            "username": "curalifeuser",
+            "password": "DhTAw5dzKYzDl62k"
+        }
+    ]
 }
