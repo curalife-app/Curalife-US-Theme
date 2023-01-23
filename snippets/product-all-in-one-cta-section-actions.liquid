@@ -22,7 +22,7 @@
       </div>
     {% endif %}
 
-  <button class="main-btn" id="buy-button"><span>Shop Now</span>{% if ctaTextType %}<span class="save" id="save"></span>{% endif %}</button>
+    <button class="main-btn" id="buy-button"><span>Shop Now</span>{% if ctaTextType %}<span class="save" id="save"></span>{% endif %}</button>
   </div>
 
   {% if badgesContent %}
@@ -75,12 +75,12 @@
   }
 
   .product-actions .submit-wrap button span:first-child {
-    border-right: 1px solid white;
     font-size: 130%;
   }
 
   .product-actions .submit-wrap button span.save {
     font-weight: 100;
+    border-left: 1px solid white;
   }
 
   .product-actions .submit-wrap .qty-data .qty-control {
