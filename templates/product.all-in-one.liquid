@@ -40,7 +40,7 @@
     <p id="welcome" style="text-align: center;max-width: 1200px;margin: auto;"></p>
   </div>
 
-  {% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "#F59E80", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %}
+  {% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "#F59E80", logoFileName: "logo-black-friday.svg", ctaTitle: "flash", isLogoSmall: true %}
   {% render 'product-all-in-one-cta-section', ctaTextType: "save", isVariantNotice: true, isCuralinContent: true, isReviews: true, title: "Select Your Deal:", badgesPosition: "bottom", badgesContent: "free-shipping,money-back,secure-checkout", ctaColor: "var(--dark-green)", bottomLineColor: "black", challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% render 'product-all-in-one-how-to-section' %}
