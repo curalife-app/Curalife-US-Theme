@@ -6,11 +6,13 @@
   {% assign original_item_cap = var.metafields.custom.original_item.value.compare_at_price %}
 {% endif %}
 
-{% if var.title contains "CuraEats" and product.title != "CuraEats App" %}
-  {% assign bundle_value = challenge_value | plus: curaeats_value %}
-  <div class="variant-notice"><p><b>Bonus</b> - 30 Day Life Changing Program <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
-{% else %}
-  {% assign bundle_value = 0 %}
+{% if isVariantNotice %}
+  {% if var.title contains "CuraEats" and product.title != "CuraEats App" %}
+    {% assign bundle_value = challenge_value | plus: curaeats_value %}
+    <div class="variant-notice"><p><b>Bonus</b> - 30 Day Life Changing Program <b>(<span class="rounded no-letters">{{ bundle_value | times: 100 | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</span> value)</b></p></div>
+  {% else %}
+    {% assign bundle_value = 0 %}
+  {% endif %}
 {% endif %}
 
 {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
