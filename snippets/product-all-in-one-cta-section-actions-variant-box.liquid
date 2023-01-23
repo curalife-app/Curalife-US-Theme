@@ -262,15 +262,17 @@
 
   <script>
     function updateCTA() {
-      {% if ctaTextType == "save" %}
-        let ctaText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
-      {% elsif ctaTextType == "total" %}
-        let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
-      {% endif %}
+      {% if ctaTextType %}
+        {% if ctaTextType == "save" %}
+          let ctaText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
+        {% elsif ctaTextType == "total" %}
+          let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
+        {% endif %}
 
-      $("#save").fadeOut(300, function () {
-        if (ctaText) { $(this).text(ctaText) };
-      }).fadeIn(300);
+        $("#save").fadeOut(300, function () {
+          $(this).text(ctaText);
+        }).fadeIn(300);
+      {% endif %}
     }
 
     function updateSelectedVariantInformation(infoAttributeName, targetElementToUpdate) {
