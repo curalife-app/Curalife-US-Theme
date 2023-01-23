@@ -22,7 +22,6 @@
 {% assign item_price = var.price | divided_by: quantity_by_cents | times: 100 %}
 {% assign save_price = original_item_price | minus: item_price | times: quantity %}
 
-
 <div class="variant-box">
   <div class="radio-box">
     {% if original_item_cap_total_with_bundle > var.price %}
