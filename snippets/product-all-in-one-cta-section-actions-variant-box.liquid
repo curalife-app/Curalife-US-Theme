@@ -281,7 +281,7 @@
     }
 
     $(".variant-box").click(function() {
-      $(this).find('input[type=radio]').prop('checked', true);
+      $(this).find('input[type=pack]').prop('checked', true);
       updateCTA();
       updateSelectedVariantInformation('quantity', '.multiplier');
       updateSelectedVariantInformation('save', '.save-badge');
