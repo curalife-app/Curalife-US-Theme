@@ -106,7 +106,6 @@
 
 <style>
   .cta-section .save-title {
-    background-image: url("{{ 'title-bg.svg' | asset_url }}");
     color: white;
     font-size: 35px;
     position: absolute;
@@ -114,6 +113,12 @@
     text-align: center;
     width: 100%;
     top: 200px;
+    }
+
+  .cta-section .save-title p {
+    background-image: url("{{ 'title-bg.svg' | asset_url }}");
+    width: 235px;
+    margin: auto;
   }
 
   .cta-section .product-container .product-thumbnails {
