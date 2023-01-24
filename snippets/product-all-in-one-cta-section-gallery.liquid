@@ -47,6 +47,11 @@
                   {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
                   {% assign original_item_price = var.metafields.custom.original_item.value.price %}
                   {% assign item_price = var.price | divided_by: bottle_quantity %}
+
+                  {% if original_item_price == item_price %}
+                    {% assign save_price = var.compare_at_price | minus: item_price | times: bottle_quantity %}
+                  {% endif %}
+
                   {% assign save_price = original_item_price | minus: item_price | times: bottle_quantity %}
 
                   <div class="save-title"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div>
