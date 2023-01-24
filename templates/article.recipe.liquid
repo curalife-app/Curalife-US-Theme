@@ -14,8 +14,10 @@
       <div class="container">
         <i class="icofont-arrow-left top-bar-button"></i>
 
-        <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
-        <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
+        <div class="carbs-level">
+          <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
+          <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
+        </div>
 
         <i class="icofont-printer top-bar-button"></i>
       </div>
