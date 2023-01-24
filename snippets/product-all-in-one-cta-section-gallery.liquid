@@ -285,7 +285,7 @@
         slidesPerView: {{ product.images.size | minus: 1 }},
       },
       1400: {
-          slidesPerView: {% if product.images.size < 5 %}{{ product.images.size }}{% else %}4{% endif %},
+          slidesPerView: {% if product.images.size < 4 %}'auto'{% else %}4{% endif %},
       }
     }
   });
