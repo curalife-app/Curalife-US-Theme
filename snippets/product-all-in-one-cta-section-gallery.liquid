@@ -43,7 +43,7 @@
                 </div>
 
                 {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
-                {% if isSaleTitle %}
+                {% if isSaveTitle %}
                   {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
                   {% assign original_item_price = var.metafields.custom.original_item.value.price %}
                   {% assign item_price = var.price | divided_by: bottle_quantity %}
