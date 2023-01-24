@@ -1,3 +1,9 @@
+{% if isCuralinContent %}
+  {% assign images_counter = product.image.size | plus: 6 %}
+{% else %}
+  {% assign images_counter = product.image.size %}
+{% endif %}
+
 <div class="product-thumbnails">
   <div class="product-slider">
     <div class="sliders-group">
@@ -285,7 +291,7 @@
         slidesPerView: {{ product.images.size | minus: 1 }}
       },
       1400: {
-        slidesPerView: {% if product.images.size < 4 %}'auto'{% else %}4{% endif %}
+        slidesPerView: {% if product.images.size < 4 %}{{ images_counter }}{% else %}4{% endif %}
       }
     }
   });
