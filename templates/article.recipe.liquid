@@ -50,11 +50,11 @@
 
           <div class="instructions">
             <h2>Instructions</h2>
-            <ul>
+           
               {% for instruction in article.metafields.recipe.instructions.value %}
-                <li><div class="text-instructions">{{ instruction }}</div></li>
+               <div class="text-instructions">{{ instruction }}</div>
               {% endfor %}
-            </ul>
+            
           </div>
 
           {% if article.metafields.recipe.tip %}
@@ -214,13 +214,13 @@
       counter-reset: instructions-counter;
     }
 
-    #recipe-page .instructions ul li {
+    #recipe-page .instructions .text-instructions {
       counter-increment: instructions-counter;
       margin-bottom: 20px;
       line-height: 1.8em;
     }
 
-    #recipe-page .instructions ul li::before {
+    #recipe-page .instructions .text-instructions::before {
       content: counter(instructions-counter) "";
       color: white;
       background: var(--peach);
@@ -273,7 +273,7 @@
         gap: 10vw;
       }
 
-      #recipe-page .instructions ul li::before {
+      #recipe-page .instructions .text-instructions::before {
         margin-right: 4vw;
       }
     }
