@@ -48,18 +48,16 @@
     {{ 'go-cart.js' | asset_url | script_tag }}
     <script>var goCart = new GoCart();</script> {% endcomment %}
 
-    {% if global %}
-      <style>
-        @media screen and (max-width: 768px) {
-          body {
-            padding: unset !important;
-          }
-          header {
-            position: unset !important;
-          }
+    <style>
+      @media screen and (max-width: 768px) {
+        body {
+          padding: unset !important;
         }
-      </style>
-    {% endif %}
+        header {
+          position: unset !important;
+        }
+      }
+    </style>
 
     <!-- Other Scripts -->
     {% render 'layout.head.marker-io-snippet' %}
