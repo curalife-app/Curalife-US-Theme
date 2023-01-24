@@ -1,12 +1,17 @@
 {% if page.title contains '30 Day Challenge' %}
-  {% assign lock_icon_class = value %}
+  {% assign lock_icon_class = 'icofont-simple-smile' %}
   {% assign lock_title = 'Happy to see you here!<br>
   Ready to take control of your health?<br>
   Join our health program and get the support you need to live a healthier life.' %}
   {% assign lock_cta_link = '/products/30-day-blood-sugar-challenge-pp' %}
   {% assign lock_cta_title = 'Get Started Today!' %}
 {% elsif page.title contains 'Freebies' %}
-
+  {% assign lock_icon_class = 'icofont-simple-smile' %}
+  {% assign lock_title = 'Happy to see you here!<br>
+  Ready to take control of your health?<br>
+  Join our health program and get the support you need to live a healthier life.' %}
+  {% assign lock_cta_link = '/products/curalin-freebies' %}
+  {% assign lock_cta_title = 'Get Started Today!' %}
 {% endif %}
 
 {% if customer.tags contains '30-days-challenge' or customer.tags contains 'freebies' %}
