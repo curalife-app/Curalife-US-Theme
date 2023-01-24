@@ -32,7 +32,7 @@
 
                 <div class="product-img">
                   <div class="img-wrap">
-                    <img src="{{ var.featured_image | image_url }}" alt="{{ image.alt | escape }}"  loading="lazy">
+                    <img src="{{ var.featured_image.src | image_url }}" alt="{{ image.alt | escape }}"  loading="lazy">
                   </div>
                 </div>
               </div>
@@ -79,11 +79,11 @@
               </div>
             {% endif %}
 
-            {% for image in product.images %}
+            {% for var product.variants %}
               <div class="swiper-slide">
                 <div class="thumbs-img">
                   <div class="img-wrap">
-                    <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
+                    <img src="{{ var.featured_image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
                   </div>
                 </div>
               </div>
