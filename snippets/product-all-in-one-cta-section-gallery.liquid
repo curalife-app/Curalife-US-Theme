@@ -49,7 +49,7 @@
                   {% assign item_price = var.price | divided_by: bottle_quantity %}
 
                   {% if original_item_price == item_price %}
-                    {% assign save_price = var.compare_at_price | minus: item_price | times: bottle_quantity %}
+                    {% assign save_price = var.compare_at_price | minus: item_price %}
                   {% endif %}
 
                   {% assign save_price = original_item_price | minus: item_price | times: bottle_quantity %}
