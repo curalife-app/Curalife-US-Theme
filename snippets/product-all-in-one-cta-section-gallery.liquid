@@ -43,13 +43,20 @@
                 </div>
 
                 {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
-                {% if isSaleTitle %}
-                  {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
+                {% if isSaveTitle %}
+                  {% comment %} {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
                   {% assign original_item_price = var.metafields.custom.original_item.value.price %}
                   {% assign item_price = var.price | divided_by: bottle_quantity %}
-                  {% assign save_price = original_item_price | minus: item_price | times: quantity %}
 
-                  <div class="sale-title"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div>
+                  {% if original_item_price == item_price %}
+                    {% assign save_price = var.compare_at_price | minus: item_price %}
+                  {% else %}
+                    {% assign save_price = original_item_price | minus: item_price | times: bottle_quantity %}
+                  {% endif %} {% endcomment %}
+
+                  {% assign save_price = var.compare_at_price | minus: var.price %}
+
+                  <div class="save-title"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div>
                 {% endif %}
               </div>
             {% endfor %}
@@ -106,9 +113,20 @@
 
 <style>
   .cta-section .save-title {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    top: 200px;
+    }
+
+  .cta-section .save-title p {
     background-image: url("{{ 'title-bg.svg' | asset_url }}");
-    color: white;
+    width: 235px;
     font-size: 35px;
+    font-weight: bold;
+    color: white;
+    margin: auto;
   }
 
   .cta-section .product-container .product-thumbnails {
@@ -288,10 +306,10 @@
         freemode: true
       },
       1200: {
-        slidesPerView: {{ product.images.size | minus: 1 }}
+        slidesPerView: 3
       },
       1400: {
-        slidesPerView: {% if product.images.size < 4 %}'auto'{% else %}4{% endif %}
+        slidesPerView: 4
       }
     }
   });
