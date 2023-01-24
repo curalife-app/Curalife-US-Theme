@@ -9,7 +9,8 @@
   {% assign carbs_bar_text_color = 'var(--dark-green)' %}
 {% endif %}
 
-  <div id="recipe-page">
+{% if customer.tags contains '30-day-challenge' %}
+<div id="recipe-page">
     <div class="top-bar">
       <div class="container">
         <i class="icofont-arrow-left top-bar-button" onclick="history.back()"></i>
@@ -294,9 +295,8 @@
       $("footer").show();
     });
   </script>
-
-{% comment %}
+{% else %}
   <div class="container" style="text-align:center;padding:100px;font-size:32px;">
     <h1>You are not suppose to be here ;)</h1>
   </div>
-{% endcomment %}
+{% endif %}
