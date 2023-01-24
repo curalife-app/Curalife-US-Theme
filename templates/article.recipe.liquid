@@ -9,11 +9,11 @@
   {% assign carbs_bar_text_color = 'var(--dark-green)' %}
 {% endif %}
 
-{% if customer.tags contains '30-day-challenge' %}
+{% if customer.tags contains '30-days-challenge' %}
 <div id="recipe-page">
     <div class="top-bar">
       <div class="container">
-        <i class="icofont-arrow-left top-bar-button" onclick="history.back()"></i>
+        <i class="icofont-arrow-left top-bar-button" id="go-back"></i>
 
         <div class="carbs-level">
           <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
@@ -327,3 +327,9 @@
     }
   </style>
 {% endif %}
+
+<script>
+  document.getElementById('go-back').addEventListener('click', () => {
+    history.back();
+  });
+</script>
