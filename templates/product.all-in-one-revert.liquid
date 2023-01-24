@@ -36,9 +36,9 @@
 {% render 'script.round-converted-currency' %}
 
 <div class="product-template-all-in-one">
-  <div class="welcome-message">
+  {% comment %} <div class="welcome-message">
     <p id="welcome" style="text-align: center;max-width: 1200px;margin: auto;"></p>
-  </div>
+  </div> {% endcomment %}
 
   {% comment %} {% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "#F59E80", logoFileName: "logo-black-friday.svg", ctaTitle: "flash" %} {% endcomment %}
   {% render 'product-all-in-one-cta-section', ctaColor: "#FFB22D", isCuralinContent: true, isReviews: true, isBuyQuantity: true, title: "Select Your Deal:", badgesPosition: "bottom", isSaleBadge: true, badgesContent: "free-shipping,money-back,secure-checkout", bottomLineColor: "black", challenge_value: challenge_value, curaeats_value: curaeats_value %}
@@ -86,7 +86,7 @@
     user_agent: navigator.userAgent
   });
 </script>
- 
+
 {% comment %} <script>
   let open_ai_response;
 
