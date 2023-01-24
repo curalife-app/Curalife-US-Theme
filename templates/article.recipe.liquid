@@ -3,19 +3,24 @@
   {% assign carbs_bar_text_color = 'var(--dark-peach)' %}
 {% elsif article.metafields.recipe.carbs_level == "Mid" %}
   {% assign carbs_bar_bg_color = 'var(--light-brown)' %}
-  {% assign carbs_bar_text_color = 'var(--brown)' %}
+  {% assign carbs_bar_text_color = 'var(--dark-brown)' %}
 {% elsif article.metafields.recipe.carbs_level == "Low" %}
   {% assign carbs_bar_bg_color = 'var(--lighter-green)' %}
   {% assign carbs_bar_text_color = 'var(--dark-green)' %}
 {% endif %}
 
-  <div id="recipe-page">
-    <div class="carbs-level-bar">
+{% if customer.tags contains '30-day-challenge' %}
+<div id="recipe-page">
+    <div class="top-bar">
       <div class="container">
-        <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
-        <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
+        <i class="icofont-arrow-left top-bar-button" onclick="history.back()"></i>
 
-        <i class="icofont-printer print-button"></i>
+        <div class="carbs-level">
+          <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
+          <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
+        </div>
+
+        <i class="icofont-printer top-bar-button"></i>
       </div>
     </div>
 
@@ -28,7 +33,7 @@
             <p class="cooking-duration"><i class="icofont-clock-time"></i>{{ article.metafields.recipe.duration }}</p>
           </div>
 
-          
+
           {% comment %} <div class="nutrients">
             <p class="fat"><i class="icofont-cheese"></i>Fat | {{ article.metafields.recipe.fat }}</p>
             <p class="carbs"><i class="icofont-wheat"></i>Carbs | {{ article.metafields.recipe.carbs }}</p>
@@ -51,11 +56,11 @@
 
           <div class="instructions">
             <h2>Instructions</h2>
-           
+
               {% for instruction in article.metafields.recipe.instructions.value %}
                <div class="text-instructions"><span class="sub-instructions"></span> {{ instruction }} </div>
               {% endfor %}
-            
+
           </div>
 
           {% if article.metafields.recipe.tip %}
@@ -70,27 +75,20 @@
   </div>
 
   <style>
+    .sub-instructions {
+      padding-left: 10px;
+    }
 
-  .text-instructions {
-    
-  }
-
-  .sub-instructions {
-    padding-left: 10px;    
-  }
-    .print-button {
+    .top-bar-button {
       cursor: pointer;
-      position: absolute;
-      right: 0;
-      top: 5px;
-      font-size: 28px;
+      font-size: 35px;
       color: {{ carbs_bar_text_color }};
     }
 
     .line {
       width: 300px;
       border-bottom: 2px solid var(--peach);
-      margin: 50px auto;
+      margin: 30px auto;
     }
 
     .level-icon {
@@ -100,26 +98,26 @@
     }
 
     .level-icon .rec {
-      height: 10px;
-      width: 7px;
+      height: 15px;
+      width: 10px;
       background: {{ carbs_bar_text_color }};
       border-radius: 3px;
     }
 
     .level-icon.high .rec:first-child {
-      height: 5px;
+      height: 10px;
     }
 
     .level-icon.low .rec:first-child {
-      height: 15px;
+      height: 20px;
     }
 
     .level-icon.high .rec:last-child {
-      height: 15px;
+      height: 20px;
     }
 
     .level-icon.low .rec:last-child {
-      height: 5px;
+      height: 10px;
     }
 
     #recipe-page {
@@ -136,22 +134,29 @@
       margin: unset;
     }
 
-    #recipe-page .carbs-level-bar {
+    #recipe-page .top-bar {
       background-color: {{ carbs_bar_bg_color }};
       color: {{ carbs_bar_text_color }};
     }
 
-    #recipe-page .carbs-level-bar .container {
+    #recipe-page .top-bar .container {
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       gap: 10px;
       padding: 5px 0;
       font-weight: bold;
+      font-size: 26px;
     }
 
-    #recipe-page .carbs-level-bar p {
+    #recipe-page .top-bar .carbs-level {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #recipe-page .top-bar p {
       margin: 0;
       font-weight: bold;
     }
@@ -167,7 +172,7 @@
     }
 
     #recipe-page .info h1 {
-      font-size: 40px;
+      font-size: 48px;
       font-weight: bold;
       margin-bottom: 20px;
       text-align: center;
@@ -214,7 +219,7 @@
       grid-row: 2/3;
     }
 
- 
+
 
     #recipe-page .instructions .text-instructions {
       counter-increment: instructions-counter;
@@ -282,7 +287,7 @@
   </style>
 
   <script>
-    $('.print-button').on('click',function(){
+    $('.print-button').on('click',function() {
       $("header").hide();
       $("footer").hide();
       window.print();
@@ -290,9 +295,35 @@
       $("footer").show();
     });
   </script>
-
-{% comment %}
-  <div class="container" style="text-align:center;padding:100px;font-size:32px;">
-    <h1>You are not suppose to be here ;)</h1>
+{% else %}
+  <div class="container">
+    <i class="icofont-simple-smile main-icon"></i>
+    <h1> Happy to see you here!<br>
+    Ready to take control of your health?<br>
+    Join our health program and get the support you need to live a healthier life.</h1>
+    <a href="/products/30-day-blood-sugar-challenge-pp"><button class="cta-btn">Get Started Today!</button></a>
   </div>
-{% endcomment %}
+
+  <style>
+    .main-icon {
+      font-size: 100px;
+    }
+
+    main .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 20px;
+      font-size: 15px;
+      padding: 80px;
+    }
+
+    .cta-btn {
+      font-size: 20px;
+      font-weight: bold;
+      background-color: var(--green);
+    }
+  </style>
+{% endif %}

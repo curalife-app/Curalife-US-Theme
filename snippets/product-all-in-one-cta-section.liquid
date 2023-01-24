@@ -3,7 +3,7 @@
     <div class="product-image-wrapper">
       {% comment %} If there are multiple images, render the gallery {% endcomment %}
       {% if product.images.size > 1 %}
-        {% render 'product-all-in-one-cta-section-gallery', product: product, isCuralinContent: isCuralinContent %}
+        {% render 'product-all-in-one-cta-section-gallery', product: product, isCuralinContent: isCuralinContent, isSaleTitle: isSaleTitle %}
       {% else %}
         <img src="{{ product.images[0].src | image_url }}" alt="{{ product.images[0].alt }}" class="product-image" loading="lazy">
         <p class="multiplier"></p>
@@ -29,11 +29,6 @@
             }
           }
         </style>
-      {% endif %}
-
-      {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
-      {% if isSaleBadge %}
-        <div class="sale-badge"><p>SAVE {{ save_price | money_without_trailing_zeros}}</p></div>
       {% endif %}
     </div>
 

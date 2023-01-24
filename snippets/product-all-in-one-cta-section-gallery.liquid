@@ -1,3 +1,9 @@
+{% if isCuralinContent %}
+  {% assign images_counter = product.image.size | plus: 6 %}
+{% else %}
+  {% assign images_counter = product.image.size %}
+{% endif %}
+
 <div class="product-thumbnails">
   <div class="product-slider">
     <div class="sliders-group">
@@ -24,17 +30,27 @@
               </div>
             {% endif %}
 
-            {% for image in product.images %}
+            {% for var in product.variants %}
               <div class="swiper-slide">
-                {% if shop.name == "CuraLife Global" %}
+                {% if shop.name == "CuraLife Global" or request.path contains 'curalin-pack-t' %}
                   <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">
                 {% endif %}
 
                 <div class="product-img">
                   <div class="img-wrap">
-                    <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}"  loading="lazy">
+                    <img src="{{ var.featured_image | image_url }}" alt="{{ var.featured_image.alt | escape }}"  loading="lazy">
                   </div>
                 </div>
+
+                {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
+                {% if isSaleTitle %}
+                  {% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
+                  {% assign original_item_price = var.metafields.custom.original_item.value.price %}
+                  {% assign item_price = var.price | divided_by: bottle_quantity %}
+                  {% assign save_price = original_item_price | minus: item_price | times: quantity %}
+
+                  <div class="sale-title"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div>
+                {% endif %}
               </div>
             {% endfor %}
           </div>
@@ -69,11 +85,11 @@
               </div>
             {% endif %}
 
-            {% for image in product.images %}
+            {% for var in product.variants %}
               <div class="swiper-slide">
                 <div class="thumbs-img">
                   <div class="img-wrap">
-                    <img src="{{ image.src | image_url }}" alt="{{ image.alt | escape }}" loading="lazy">
+                    <img src="{{ var.featured_image | image_url }}" alt="{{ var.featured_image.alt | escape }}" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -89,6 +105,12 @@
 </div>
 
 <style>
+  .cta-section .save-title {
+    background-image: url("{{ 'title-bg.svg' | asset_url }}");
+    color: white;
+    font-size: 35px;
+  }
+
   .cta-section .product-container .product-thumbnails {
     grid-area: 1/1/3/2;
   }
@@ -258,18 +280,18 @@
     navigation: {
       nextEl: '#product-thumbs-slider-nav-next',
       prevEl: '#product-thumbs-slider-nav-prev',
-      disabledClass: 'disabled',
+      disabledClass: 'disabled'
     },
     breakpoints: {
       760: {
         slidesPerView: 1,
-        freemode:true,
+        freemode: true
       },
       1200: {
-        slidesPerView: {{ product.images.size | minus: 1 }},
+        slidesPerView: {{ product.images.size | minus: 1 }}
       },
       1400: {
-          slidesPerView: {% if product.images.size < 5 %}{{ product.images.size }}{% else %}4{% endif %},
+        slidesPerView: {% if product.images.size < 4 %}'auto'{% else %}4{% endif %}
       }
     }
   });
