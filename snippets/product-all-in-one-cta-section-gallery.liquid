@@ -274,18 +274,18 @@
     navigation: {
       nextEl: '#product-thumbs-slider-nav-next',
       prevEl: '#product-thumbs-slider-nav-prev',
-      disabledClass: 'disabled',
+      disabledClass: 'disabled'
     },
     breakpoints: {
       760: {
         slidesPerView: 1,
-        freemode:true,
+        freemode:true
       },
       1200: {
-        slidesPerView: {{ product.images.size | minus: 1 }},
+        slidesPerView: {{ product.images.size | minus: 1 }}
       },
       1400: {
-          slidesPerView: {% if product.images.size < 4 %}'auto'{% else %}4{% endif %},
+          slidesPerView: {% if product.images.size < 4 %}'auto'{% else %}4{% endif %}
       }
     }
   });
