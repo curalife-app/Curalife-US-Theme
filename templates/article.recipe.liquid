@@ -52,7 +52,7 @@
             <h2>Instructions</h2>
            
               {% for instruction in article.metafields.recipe.instructions.value %}
-               <div class="text-instructions"><span class="sub-instructions">{{ instruction }}</span> </div>
+               <div class="text-instructions"><span class="sub-instructions"></span> {{ instruction }} </div>
               {% endfor %}
             
           </div>
@@ -221,7 +221,7 @@
       line-height: 1.8em;
     }
 
-    #recipe-page .instructions .text-instructions::before {
+    #recipe-page .instructions .text-instructions .sub-instructions::before {
       content: counter(instructions-counter) "";
       color: white;
       background: var(--peach);
@@ -274,7 +274,7 @@
         gap: 10vw;
       }
 
-      #recipe-page .instructions .text-instructions::before {
+      #recipe-page .instructions .text-instructions .sub-instructions::before {
         margin-right: 4vw;
       }
     }
