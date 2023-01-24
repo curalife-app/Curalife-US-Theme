@@ -13,7 +13,7 @@
 <div id="recipe-page">
     <div class="top-bar">
       <div class="container">
-        <i class="icofont-arrow-left top-bar-button" onclick="goBack()"></i>
+        <i class="icofont-arrow-left top-bar-button" id="go-back"></i>
 
         <div class="carbs-level">
           <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
@@ -329,9 +329,7 @@
 {% endif %}
 
 <script>
-  function goBack(){
-    document.getElementById('go-back').addEventListener('click', () => {
-      history.back();
-    });
-  }
+  document.getElementById('go-back').addEventListener('click', () => {
+    history.back();
+  });
 </script>
