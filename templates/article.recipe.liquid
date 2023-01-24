@@ -52,7 +52,7 @@
             <h2>Instructions</h2>
             <ul>
               {% for instruction in article.metafields.recipe.instructions.value %}
-                <li>{{ instruction }}</li>
+                <li><div class="text-instructions">{{ instruction }}</div></li>
               {% endfor %}
             </ul>
           </div>
@@ -69,6 +69,10 @@
   </div>
 
   <style>
+
+  .text-instructions {
+    padding-left: 10px;
+  }
     .print-button {
       cursor: pointer;
       position: absolute;
