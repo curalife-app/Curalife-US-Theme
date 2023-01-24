@@ -44,7 +44,7 @@
                 {% assign item_price = var.price | divided_by: bottle_quantity %}
                 {% assign save_price = original_item_price | minus: item_price | times: quantity %}
 
-                <div class="sale-badge"><p>SAVE {{ save_price | money_without_trailing_zeros}}</p></div>
+                <div class="sale-badge"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div>
               {% endif %}
             {% endfor %}
           </div>
