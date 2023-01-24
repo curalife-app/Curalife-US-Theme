@@ -846,6 +846,9 @@
 }
 
 @media screen and (max-width: 760px) {
+    .variant-box {
+        height: unset;
+    }
     .product-template-all-in-one {
         section {
             padding: 8vw 0;
