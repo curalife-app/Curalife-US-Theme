@@ -12,6 +12,8 @@
   <div id="recipe-page">
     <div class="carbs-level-bar">
       <div class="container">
+        <i class="icofont-arrow-left back-button"></i>
+
         <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
         <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
 
@@ -28,7 +30,7 @@
             <p class="cooking-duration"><i class="icofont-clock-time"></i>{{ article.metafields.recipe.duration }}</p>
           </div>
 
-          
+
           {% comment %} <div class="nutrients">
             <p class="fat"><i class="icofont-cheese"></i>Fat | {{ article.metafields.recipe.fat }}</p>
             <p class="carbs"><i class="icofont-wheat"></i>Carbs | {{ article.metafields.recipe.carbs }}</p>
@@ -51,11 +53,11 @@
 
           <div class="instructions">
             <h2>Instructions</h2>
-           
+
               {% for instruction in article.metafields.recipe.instructions.value %}
                <div class="text-instructions"><span class="sub-instructions"></span> {{ instruction }} </div>
               {% endfor %}
-            
+
           </div>
 
           {% if article.metafields.recipe.tip %}
@@ -72,11 +74,11 @@
   <style>
 
   .text-instructions {
-    
+
   }
 
   .sub-instructions {
-    padding-left: 10px;    
+    padding-left: 10px;
   }
     .print-button {
       cursor: pointer;
@@ -214,7 +216,7 @@
       grid-row: 2/3;
     }
 
- 
+
 
     #recipe-page .instructions .text-instructions {
       counter-increment: instructions-counter;
