@@ -52,7 +52,7 @@
             <h2>Instructions</h2>
            
               {% for instruction in article.metafields.recipe.instructions.value %}
-               <div class="text-instructions">{{ instruction }}</div>
+               <div class="text-instructions"><span class="sub-instructions">{{ instruction }}</span> </div>
               {% endfor %}
             
           </div>
@@ -71,7 +71,11 @@
   <style>
 
   .text-instructions {
-    padding-left: 10px;
+    
+  }
+
+  .sub-instructions {
+    padding-left: 10px;    
   }
     .print-button {
       cursor: pointer;
@@ -209,10 +213,7 @@
       grid-row: 2/3;
     }
 
-    #recipe-page .instructions ul {
-      list-style: none;
-      counter-reset: instructions-counter;
-    }
+ 
 
     #recipe-page .instructions .text-instructions {
       counter-increment: instructions-counter;
