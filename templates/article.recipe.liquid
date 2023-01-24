@@ -10,14 +10,14 @@
 {% endif %}
 
   <div id="recipe-page">
-    <div class="carbs-level-bar">
+    <div class="top-bar">
       <div class="container">
-        <i class="icofont-arrow-left back-button"></i>
+        <i class="icofont-arrow-left top-bar-button"></i>
 
         <div class="level-icon {{ article.metafields.recipe.carbs_level | downcase }}"><div class="rec"></div><div class="rec"></div><div class="rec"></div></div>
         <p>{{ article.metafields.recipe.carbs_level }} Carbs</p>
 
-        <i class="icofont-printer print-button"></i>
+        <i class="icofont-printer top-bar-button"></i>
       </div>
     </div>
 
@@ -76,11 +76,8 @@
       padding-left: 10px;
     }
 
-    .print-button {
+    .top-bar-button {
       cursor: pointer;
-      position: absolute;
-      right: 0;
-      top: 10px;
       font-size: 35px;
       color: {{ carbs_bar_text_color }};
     }
@@ -134,12 +131,18 @@
       margin: unset;
     }
 
-    #recipe-page .carbs-level-bar {
+    #recipe-page .top-bar {
       background-color: {{ carbs_bar_bg_color }};
       color: {{ carbs_bar_text_color }};
     }
 
-    #recipe-page .carbs-level-bar .container {
+    #recipe-page .top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #recipe-page .top-bar .container {
       position: relative;
       display: flex;
       align-items: center;
@@ -150,7 +153,7 @@
       font-size: 30px;
     }
 
-    #recipe-page .carbs-level-bar p {
+    #recipe-page .top-bar p {
       margin: 0;
       font-weight: bold;
     }
