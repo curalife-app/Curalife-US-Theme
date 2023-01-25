@@ -42,7 +42,12 @@
         <p class="subtitle">{{ product.metafields.my_fields.subtitle }}</p>
       </div>
 
-      {% render 'price', product: product %}
+      {% if product.metafields.custom.original_item_variant.price %}
+      <script>console.log(" hi {{ product.metafields.custom.original_item_variant.price }}")</script>
+        {% render 'price', product: product.metafields.custom.original_item_variant %}
+      {% else %}
+        {% render 'price', product: product %}
+      {% endif %}
       {% if product.tags "Pack" %}
         {% comment %} <div class="total-prices">
           TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
