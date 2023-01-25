@@ -1,12 +1,4 @@
-{% if product.tags contains "sleep" %}
-  {% assign bg_color = "var(--light-turquoise)" %}
-  {% assign number_color = "var(--dark-turquoise)" %}
-  {% assign link_color = "var(--dark-turquoise)" %}
-{% elsif product.tags contains "joint" %}
-  {% assign bg_color = "var(--light-purple)" %}
-  {% assign number_color = "var(--purple)" %}
-  {% assign link_color = "var(--dark-purple)" %}
-{% endif %}
+
 
 <section class="pack-info-section instance-{{ index }}">
   <div class="container">
@@ -15,13 +7,7 @@
       <p class="subtitle">{{ product.description }}</p>
     </div>
 
-  <div class="product-image-wrapper">
-      {% if index %}
-        <p class="number">{{ index }}</p>
-      {% endif %}
 
-      <img class="product-image" src="{{ product.metafields.custom.bottle_image | img_url: 'original' }}" alt="{{ product.title }}" loading="lazy">
-    </div> 
 
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
