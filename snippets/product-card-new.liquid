@@ -77,14 +77,14 @@
 </div>
 </a>
 
-{% if product.metafields.custom.is_badge_collection == true %}
+{% unless product.metafields.custom.is_badge_collection %}
   <style>
     .product-card#{{ product.handle }}::before {
       content: "";
       background-image: url("{{ product.metafields.custom.badge_image | image_url }}");
     }
   </style>
-{% endif %}
+    {% endunless %}
 
 {% if isLastRender %}
   <style>
@@ -102,7 +102,7 @@
     .product-card::before {
       background-size: contain;
       position: absolute;
-      top: 10px;
+      top: 30px;
       right: 10px;
       width: 68px;
       height: 68px;
