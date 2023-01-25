@@ -15,7 +15,7 @@
       <div class="collection-section" data-product-collections="{{ collection_handle }}" >
         <h2>{{ collections[collection_handle].title }}</h2>
         {% if isDescription %}
-          <p class="description">{{ collections[collection_handle].content }}</p>
+          <p class="description">{{ collections[collection_handle].description }}</p>
         {% endif %}
 
         <div class="product-grid" {% if isHiddenCollections %}style="display: none"{% endif %}>
