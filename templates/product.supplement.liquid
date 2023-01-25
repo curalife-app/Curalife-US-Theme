@@ -34,7 +34,7 @@
       {% if forloop.last %}
         {% render 'product-supplement-pack-info', product: prod, index: forloop.index, isLastRender: true %}
       {% elsif isCuralinNew %}
-        {% render 'curalin-pack-info', product: prod, index: forloop.index %}
+        {% render 'curalin-pack-info', product: prod, index: forloop.index, isNoImage: true %}
       {% else %}
         {% render 'product-supplement-pack-info', product: prod, index: forloop.index %}
       {% endif %}
