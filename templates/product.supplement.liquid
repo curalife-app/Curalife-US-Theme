@@ -24,8 +24,10 @@
 {% endif %}
   {% if isCuralinNew %}
     {% render 'curalin-supplement-benefits' %}
+  {% else %}
+    {% render 'product-supplement-health-benefits' %}
   {% endif %}
-  {% render 'product-supplement-health-benefits' %}
+  
 
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
