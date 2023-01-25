@@ -10,6 +10,9 @@
 {% else %}
   {% assign title_color = "var(--dark-orange)" %}
 {% endif %}
+{% if product.title contains 'curalin' %}
+{% assign isCuralinTitle = true %}
+{% endif %}
 
 <div id="supplement-page">
   {% comment %} {% render 'sale-banner', desktopContent: "none", mobileContent: "title", bgColor: "var(--light-green)", title: "Buy curalin & get 60% off happy joints" %} {% endcomment %}
