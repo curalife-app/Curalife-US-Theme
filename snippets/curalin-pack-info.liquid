@@ -6,6 +6,7 @@
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
         <ul>
+          
           <li><a href="#highlights-{{ index }}" class="active">Benefits/Description <i>></i></a></li>
           <li><a href="#instructions-{{ index }}">Usage Instructions <i>></i></a></li>
           {% if product.metafields.custom.ingredients.value %}
@@ -18,12 +19,12 @@
       <div class="content">
         <div id="highlights-{{ index }}" class="item active always-active" data-title="Benefits/Description">
           <div class="highlights item-content">
-            {% for highlight in product.metafields.custom.product-highlights.value %}
-              <div class="highlight">
-                <div class="highlight-icon"><i class="icofont-check"></i></div>
-                <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
-              </div>
-            {% endfor %}
+           {% for benefit in product.metafields.custom.benefits_images.value %}
+             <div class="health-benefit">
+               <img src="{{ benefit.src | image_url }}" alt="health benefit" loading="lazy">
+               <p>{{ benefit.alt }}</p>
+             </div>
+           {% endfor %}
           </div>
         </div>
 
