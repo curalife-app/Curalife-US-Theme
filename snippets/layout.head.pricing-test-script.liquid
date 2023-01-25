@@ -1,5 +1,11 @@
 {% if shop.name == 'CuraLife' %}
   <script>
+    function getCookie (name) {
+      let value = `; ${document.cookie}`;
+      let parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
     $(document).ready(function() {
       const redirectPages = [
         '/collections/all',
@@ -16,13 +22,13 @@
         '/products/30-day-blood-sugar-challenge-pp'
       ];
 
-      const gaCookie = document.cookie.match(new RegExp('(^|;)\\s*_gaexp\\s*=\\s*([^;]+)')) ? decodeURIComponent(RegExp.$2) : null;
+      const expCookie = getCookie('_gaexp');
 
-      if (!gaCookie) {
+      if (!expCookie) {
         return;
       }
 
-      const isTest = gaCookie.startsWith('GAX1.2.aMz') && gaCookie.endsWith('1');
+      const isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1');
 
       if (isTest) {
         // redirect to pricing page
