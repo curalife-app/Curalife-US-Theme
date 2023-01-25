@@ -20,8 +20,9 @@
           <div class="health-benefits item-content">
           {% for benefit in product.metafields.custom.benefits_images.value %}
             <div class="health-benefit">
+              <div class="benefit-wrapper">
               <img src="{{ benefit.src | image_url }}" alt="health benefit" loading="lazy">
-              <p>{{ benefit.alt }}</p>
+              <p>{{ benefit.alt }}</p></div>
             </div>
           {% endfor %}
           </div>
@@ -140,7 +141,7 @@
       gap: 20px;
     }
 
-    .pack-info-section .health-benefits .health-benefit > div {
+    .pack-info-section .health-benefits .health-benefit .benefit-wrapper {
       flex: 50%;
     } 
 
