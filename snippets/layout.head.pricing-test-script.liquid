@@ -15,21 +15,29 @@
       '/products/30-day-blood-sugar-challenge-pp'
     ];
 
-    const gaCookie = $.cookie('_gaexp');
-    if (gaCookie.startsWith('GAX1.2.aMz') && gaCookie.endsWith('1')) {
-      // redirect to pricing page
-      if (redirectPages.includes(window.location.pathname)) {
-        window.location.replace(`${window.location.pathname}-p`);
-      }
-      else {
-        const linksQuery = redirectPages.map(page => `a[href="${page}"]`).join(', ');
-        $(linksQuery).each(function() {
-          $(this).attr('href', `${$(this).attr('href')}-p`);
-        });
-      }
+    const gaCookie = document.cookie.match(new RegExp('(^|;)\\s*_gaexp\\s*=\\s*([^;]+)'))? decodeURIComponent(RegExp.$2):null;
+
+    if (!gaCookie) {
+        return;
     }
-    else {
-      $('.pricing-test').remove();
+
+    const isTest = gaCookie.startsWith('GAX1.2.aMz') && gaCookie.endsWith('1');
+
+    if (isTest) {
+        // redirect to pricing page
+        if (redirectPages.includes(window.location.pathname)) {
+            window.location.replace(`${window.location.pathname}-p`);
+        } else {
+            redirectPages.forEach(page => {
+                const links = document.querySelectorAll(`a[href="${page}"]`);
+                links.forEach(link => {
+                    link.setAttribute("href", `${link.getAttribute("href")}-p`);
+                });
+            });
+        }
+    } else {
+        const pricingTestElements = document.querySelectorAll('.pricing-test');
+        pricingTestElements.forEach(el => el.remove());
     }
   });
 </script>
