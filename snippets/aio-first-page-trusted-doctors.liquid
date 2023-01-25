@@ -3,14 +3,17 @@
         <div class="data-wrap">
             <div class="sub-title">
                 <h3><b>Trusted by 700+ Doctors</b></h3>
+                {% unless noDescription %}
                 <div class="description-overlay">
-                    <h4>
-                        Over 700 doctors and pharmacists recommend CuraLin to their patients. These include top
-                        endocrinologists and faculty members of medical universities. Many of these doctors also
-                        take
-                        CuraLin themselves! Here are just a few of the doctors working with CuraLin:
-                    </h4>
-                </div>
+                      <h4>
+                          Over 700 doctors and pharmacists recommend CuraLin to their patients. These include top
+                          endocrinologists and faculty members of medical universities. Many of these doctors also
+                          take
+                          CuraLin themselves! Here are just a few of the doctors working with CuraLin:
+                      </h4>
+                  </div>
+                {% endunless %}
+               
             </div>
             <div class="doctors-boxes-wrapper">
            {% for doctor in doctors %}
