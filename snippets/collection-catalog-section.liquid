@@ -111,17 +111,6 @@
       $('.category-badges-section').fadeOut();
     }
     else {
-      const collectionTitle = $(this).text();
-      const collectionDescription = $(this).attr('data-collection-description');
-
-      $("h1").fadeOut(function() {
-        $(this).text(collectionTitle).fadeIn();
-      });
-
-      $(".description").fadeOut(function() {
-        $(this).text(collectionDescription).fadeIn();
-      });
-
       $('.collection-section').fadeOut();
       $('.collection-section[data-product-collections*="' + collectionHandle + '"]').fadeIn();
 
