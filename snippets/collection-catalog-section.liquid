@@ -1,7 +1,7 @@
 <section id="collections-catalog-section">
   <div class="container">
     <ul class="category-tabs">
-      <li><a href="#" data-collection-handle="all" class="active">{{ collections[collection_handle].title }}</a></li>
+      <li><a href="#" data-collection-handle="all" class="active">All</a></li>
       {% for collection_handle in collectionsHandles %}
         <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
       {% endfor %}
