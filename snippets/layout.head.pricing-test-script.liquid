@@ -23,13 +23,7 @@
       ];
 
       const expCookie = getCookie('_gaexp');
-
-      if (!expCookie) {
-        console.log('no experiment cookie found');
-        return;
-      }
-
-      const isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1');
+      const isTest = !expCookie && expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1');
 
       if (isTest) {
         // redirect to pricing page
