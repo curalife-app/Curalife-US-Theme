@@ -43,7 +43,7 @@
       </div>
 
       {% if product.metafields.custom.original_item_variant %}
-      <script>console.log(" hi {{ product.metafields.custom.original_item_variant }}")</script>
+      <script>console.log(" hi {{ product.metafields.custom.original_item_variant.price }}")</script>
         {% render 'price', prod: product.metafields.custom.original_item_variant %}
       {% else %}
         {% render 'price', prod: product %}
