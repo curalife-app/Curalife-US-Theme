@@ -21,9 +21,9 @@
         return;
     }
 
-    const isGAX12aMz1 = gaCookie.startsWith('GAX1.2.aMz') && gaCookie.endsWith('1');
+    const isTest = gaCookie.startsWith('GAX1.2.aMz') && gaCookie.endsWith('1');
 
-    if (isGAX12aMz1) {
+    if (isTest) {
         // redirect to pricing page
         if (redirectPages.includes(window.location.pathname)) {
             window.location.replace(`${window.location.pathname}-p`);
@@ -39,6 +39,5 @@
         const pricingTestElements = document.querySelectorAll('.pricing-test');
         pricingTestElements.forEach(el => el.remove());
     }
-
   });
 </script>
