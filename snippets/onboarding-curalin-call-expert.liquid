@@ -1,7 +1,5 @@
 {% if product.template_suffix contains "supplement" %}
   {% assign product_title = product.title %}
-{% elsif product.title == 'curalin' %}
-  {% assign product_title = "Curalin" %}
 {% else %}
   {% assign product_title = "Curalin" %}
 {% endif %}
@@ -34,6 +32,9 @@
 </section>
 
 <style>
+  {{ product_title }} {
+    text-transform: capitalize; 
+  }
   #call-expert-section {
     background-color: {{background_color}};
     padding: 1% 0;
