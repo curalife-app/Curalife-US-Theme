@@ -6,7 +6,7 @@
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
         <ul>
-          <li><a href="#highlights-{{ index }}" class="active">Benefits/Description <i>></i></a></li>
+          <li><a href="#health-benefits-{{ index }}" class="active">Benefits/Description <i>></i></a></li>
           <li><a href="#instructions-{{ index }}">Usage Instructions <i>></i></a></li>
           {% if product.metafields.custom.ingredients.value %}
             <li><a href="#ingredients-{{ index }}">Ingredients <i>></i></a></li>
@@ -16,10 +16,10 @@
       </nav>
 
       <div class="content">
-        <div id="highlights-{{ index }}" class="item active always-active" data-title="Benefits/Description">
-          <div class="highlights item-content">
+        <div id="health-benefits-{{ index }}" class="item active always-active" data-title="Benefits/Description">
+          <div class="health-benefits item-content">
           {% for benefit in product.metafields.custom.benefits_images.value %}
-            <div class="highlight">
+            <div class="health-benefit">
               <img src="{{ benefit.src | image_url }}" alt="health benefit" loading="lazy">
               <p>{{ benefit.alt }}</p>
             </div>
@@ -127,22 +127,22 @@
       right: -10px;
     }
 
-    .pack-info-section .highlights {
+    .pack-info-section .health-benefits {
       display: flex;
       flex-direction: column;
       gap: 30px;
     }
 
-    .pack-info-section .highlights .highlight {
+    .pack-info-section .health-benefits .health-benefit {
       display: flex;
       align-items: center;
     }
 
-    .pack-info-section .highlights .highlight p {
+    .pack-info-section .health-benefits .health-benefit p {
       margin: unset;
     }
 
-    .pack-info-section .highlight-icon {
+    .pack-info-section .health-benefit-icon {
       background: var(--light-green);
       color: white;
       border-radius: 50%;
