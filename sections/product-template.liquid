@@ -55,9 +55,9 @@
         <div class="description">
           {% if product.metafields.custom.original_item_variant.size %}
           <script>console.log("product.metafields.custom.original_item_variant.size")</script>
-            {% render 'price', prod: product.metafields.custom.original_item_variant %}
+            {% render 'price', product: product.metafields.custom.original_item_variant %}
           {% else %}
-            {% render 'price', prod: product %}
+            {% render 'price', product: product %}
           {% endif %}
 
           <p class="promotion-title">Bonus: {{ promotion_title }} ({{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value)</p>
