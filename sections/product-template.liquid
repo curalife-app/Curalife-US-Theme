@@ -36,7 +36,7 @@
 
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP" | replace: "AUD", "" | replace: "CAD", "" %}
 
-{% comment %} {% render 'script.round-converted-currency' %} {% endcomment %}
+{% render 'script.round-converted-currency' %}
 
 <div class="product-data">
   <div class="container">
