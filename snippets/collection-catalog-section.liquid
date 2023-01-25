@@ -1,10 +1,9 @@
 <section id="collections-catalog-section">
   <div class="container">
-    <h1>{% if activeCollection %}{{ collections[activeCollection].title }}{% else %}Collections{% endif %}</h1>
-
     <ul class="category-tabs">
+      <li><a href="#" data-collection-handle="all" class="active">All</a></li>
       {% for collection_handle in collectionsHandles %}
-          <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
+        <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
       {% endfor %}
     </ul>
 
@@ -12,10 +11,12 @@
 
 
     {% for collection_handle in collectionsHandles %}
-      <div class="product-grid" data-product-collections="{{ collection_handle }}" style="display: none">
+    <div class="product-grid" data-product-collections="{{ collection_handle }}" {% if isHiddenCollections %}style="display: none"{% endif %}>
         {% if forloop.last %}
           {% assign isLastCollectionRender = true %}
         {% endif %}
+
+        <h2>{{ collections[collection_handle].title }}</h2>
 
         {% assign isProductCardLast = value %}
         {% for product in collections[collection_handle].products %}
@@ -62,12 +63,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
-    margin: 30px 0;
+    margin: 15px 0;
   }
 
   #collections-catalog-section .category-tabs li a {
     color: var(--light-green);
-    padding: 10px 50px;
+    padding: 10px 20px;
     border-radius: 20px;
     font-size: 20px;
     transition: all 0.3s ease-in-out;
@@ -112,7 +113,6 @@
     $(".description").fadeOut(function() {
       $(this).text(collectionDescription).fadeIn();
     });
-
 
     $('.product-grid').fadeOut();
     $('.product-grid[data-product-collections*="' + collectionHandle + '"]').fadeIn();

@@ -29,8 +29,14 @@
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/2551503516.js" crossorigin="anonymous"></script>
+
+    <!-- Pricing Test -->
     {% render 'layout.head.pricing-test-script' %}
 
+    <!-- Fancybox Import (for Cart)-->
     <script src="{{ 'fancybox-script.js' | asset_url }}" async></script>
 
     <!-- Swiper Import -->
@@ -48,6 +54,7 @@
     {{ 'go-cart.js' | asset_url | script_tag }}
     <script>var goCart = new GoCart();</script> {% endcomment %}
 
+    <!-- Temporary Styles for SALE (fix wisepops banner) -->
     <style>
       @media screen and (max-width: 768px) {
         body {
@@ -67,10 +74,8 @@
   <body>
     <!-- TODO: make another solution for removing header from curalin-pack page -->
     {% unless request.path contains 'curalin-pack' %}
-      {% unless request.path contains 'curalin_pack' %}
-        {% unless request.path contains 'curaeats' %}
-          {% section 'header' %}
-        {% endunless %}
+      {% unless request.path contains 'curaeats' %}
+        {% section 'header' %}
       {% endunless %}
     {% endunless %}
 
