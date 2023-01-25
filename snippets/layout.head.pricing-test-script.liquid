@@ -17,6 +17,7 @@
 
     const gaCookie = $.cookie('_gaexp');
     if (!gaCookie || !gaCookie.endsWith('1') || !gaCookie.startsWith('GAX1.2.aMz')) {
+      $('.pricing-test').remove();
       return;
     }
 
