@@ -1,5 +1,7 @@
 {% if product.template_suffix contains "supplement" %}
   {% assign product_title = product.title %}
+{% elsif product.title == 'curalin' %}
+  {% assign product_title = "Curalin" %}
 {% else %}
   {% assign product_title = "Curalin" %}
 {% endif %}
