@@ -11,13 +11,13 @@
 
 
     {% for collection_handle in collectionsHandles %}
-    <div class="product-grid" data-product-collections="{{ collection_handle }}" {% if isHiddenCollections %}style="display: none"{% endif %}>
-        {% if forloop.last %}
-          {% assign isLastCollectionRender = true %}
-        {% endif %}
+      {% if forloop.last %}
+        {% assign isLastCollectionRender = true %}
+      {% endif %}
 
-        <h2>{{ collections[collection_handle].title }}</h2>
+      <h2>{{ collections[collection_handle].title }}</h2>
 
+      <div class="product-grid" data-product-collections="{{ collection_handle }}" {% if isHiddenCollections %}style="display: none"{% endif %}>
         {% assign isProductCardLast = value %}
         {% for product in collections[collection_handle].products %}
           {% if forloop.last and isLastCollectionRender %}
