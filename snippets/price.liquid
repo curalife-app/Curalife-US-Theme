@@ -6,7 +6,12 @@
   {% assign original_item_cap = prod.metafields.my_fields.original_item.value.compare_at_price %}
 {% endif %}
 
-{% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
+{% if productType == "Variant" %}
+  {% assign quantity = prod.metafields.my_fields.pack_bottles_quantity %}
+{% else %}
+  {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
+{% endif %}
+
 {% assign quantity_by_cents = quantity | times: 100 %}
 {% assign item_price = prod.price | times: 100.0 | divided_by: quantity_by_cents %}
 
