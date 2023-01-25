@@ -89,6 +89,17 @@
       border: 1px solid var(--lighter-green);
     }
 
+    {% if product.metafields.is_badge_collection %}
+      .product-card::before {
+        content: "";
+        background-image: url("{{ product.metafields.custom.badge_img | image_url }}");
+        position: absolute;
+        top: 10px;
+        right: 68px;
+        width: 68px;
+      }
+    {% endif %}
+
     .product-card.recommended {
       box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
       border-radius: 7px;
