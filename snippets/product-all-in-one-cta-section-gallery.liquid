@@ -4,10 +4,6 @@
   {% assign images_counter = product.image.size %}
 {% endif %}
 
-{% if product.variants.size > 1 %}
-  {% assign isVariantsProduct = true %}
-{% endif %}
-
 {% if product.images.size > 1 %}
   <div class="product-thumbnails">
     <div class="product-slider">
