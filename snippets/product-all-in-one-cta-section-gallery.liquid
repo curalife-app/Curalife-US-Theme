@@ -87,7 +87,7 @@
 
                   <div class="product-img">
                     <div class="img-wrap">
-                      <img src="{{ img.src | image_url }}" alt="{{ img.alt | escape }}"  loading="lazy">
+                      <img src="{{ img.src | image_url }}" alt="{{ img.alt | escape }}" loading="lazy">
                     </div>
                   </div>
                 </div>
@@ -129,6 +129,16 @@
                   <div class="thumbs-img">
                     <div class="img-wrap">
                       <img src="{{ var.featured_image | image_url }}" alt="{{ var.featured_image.alt | escape }}" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+
+              {% for img in product.images %}
+                <div class="swiper-slide">
+                  <div class="thumbs-img">
+                    <div class="img-wrap">
+                      <img src="{{ img.src | image_url }}" alt="{{ img.alt | escape }}" loading="lazy">
                     </div>
                   </div>
                 </div>
