@@ -53,7 +53,7 @@
         </div>
 
         <div class="description">
-          {% render 'price', product: product %}
+          {% render 'price' %}
 
           <p class="promotion-title">Bonus: {{ promotion_title }} ({{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value)</p>
 
