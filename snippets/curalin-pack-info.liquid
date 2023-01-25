@@ -1,6 +1,6 @@
 
 
-<section class="curalin-info-section instance-{{ index }}">
+<section class="pack-info-section instance-{{ index }}">
   <div class="container">
     <div class="titles">
       <h2 class="title">{{ product.title }}</h2>
@@ -80,38 +80,38 @@
 
 {% if isLastRender %}
   <style>
-    #supplement-page section.curalin-info-section .titles {
+    #supplement-page section.pack-info-section .titles {
       flex-direction: revert;
       justify-content: start;
       max-width: 100%;
       text-align: left;
     }
 
-    .curalin-info-section {
+    .pack-info-section {
       background: var(--light-brown);
     }
 
-    .curalin-info-section:nth-of-type(even) {
+    .pack-info-section:nth-of-type(even) {
       background: {{ bg_color }};
     }
 
-    .curalin-info-section .product-image-wrapper {
+    .pack-info-section .product-image-wrapper {
       position: absolute;
       bottom: -120px;
       right: 0;
       pointer-events: none;
     }
 
-    .curalin-info-section:nth-of-type(even) .tabbed-content {
+    .pack-info-section:nth-of-type(even) .tabbed-content {
       margin-left: 30%;
     }
 
-    .curalin-info-section:nth-of-type(even) .product-image-wrapper,
-    .curalin-info-section:nth-of-type(even) .product-image-wrapper p{
+    .pack-info-section:nth-of-type(even) .product-image-wrapper,
+    .pack-info-section:nth-of-type(even) .product-image-wrapper p{
       left: 0;
     }
 
-    .curalin-info-section .product-image-wrapper .number {
+    .pack-info-section .product-image-wrapper .number {
       font-family: var(--main-font);
       position: absolute;
       right: 0;
@@ -123,31 +123,31 @@
       margin: unset;
     }
 
-    .curalin-info-section.curalin-info-section:nth-of-type(even) .product-image-wrapper .number {
+    .pack-info-section.pack-info-section:nth-of-type(even) .product-image-wrapper .number {
       color: {{ number_color }};
     }
 
-    .curalin-info-section .product-image-wrapper .product-image {
+    .pack-info-section .product-image-wrapper .product-image {
       position: relative;
       right: -10px;
     }
 
-    .curalin-info-section .highlights {
+    .pack-info-section .highlights {
       display: flex;
       flex-direction: column;
       gap: 30px;
     }
 
-    .curalin-info-section .highlights .highlight {
+    .pack-info-section .highlights .highlight {
       display: flex;
       align-items: center;
     }
 
-    .curalin-info-section .highlights .highlight p {
+    .pack-info-section .highlights .highlight p {
       margin: unset;
     }
 
-    .curalin-info-section .highlight-icon {
+    .pack-info-section .highlight-icon {
       background: var(--light-green);
       color: white;
       border-radius: 50%;
@@ -160,103 +160,103 @@
       margin-right: 20px;
     }
 
-    .curalin-info-section .instructions {
+    .pack-info-section .instructions {
       display: flex;
       flex-direction: column;
       gap: 30px;
     }
 
-    .curalin-info-section .instructions .step {
+    .pack-info-section .instructions .step {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
     }
 
-    .curalin-info-section .instructions .step h3 {
+    .pack-info-section .instructions .step h3 {
       font-size: 28px;
       font-weight: bold;
       min-width: 105px;
     }
 
-    .curalin-info-section .instructions .step .capsules {
+    .pack-info-section .instructions .step .capsules {
       min-width: 80px;
     }
 
-    .curalin-info-section .ingredients {
+    .pack-info-section .ingredients {
       display: flex;
       flex-wrap: wrap;
       max-width: 400px;
       gap: 10px;
     }
 
-    .curalin-info-section .ingredient {
+    .pack-info-section .ingredient {
       width: 120px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .curalin-info-section .ingredient p {
+    .pack-info-section .ingredient p {
       font-size: 16px;
       text-align: center;
     }
 
-    .curalin-info-section .facts {
+    .pack-info-section .facts {
       text-align: center;
     }
 
-    .curalin-info-section .facts img {
+    .pack-info-section .facts img {
       max-height: 300px;
     }
 
-    .curalin-info-section .tabbed-content {
+    .pack-info-section .tabbed-content {
       max-width: 800px;
       display: flex;
       align-items: center;
       height: 300px;
     }
 
-    .curalin-info-section .tabs ul li {
+    .pack-info-section .tabs ul li {
       text-align: center;
       height: 70px;
       border-bottom: 1px solid;
     }
 
-    .curalin-info-section .tabs ul li:first-child {
+    .pack-info-section .tabs ul li:first-child {
       border-top: 1px solid;
     }
 
-    .curalin-info-section .tabs ul li a {
+    .pack-info-section .tabs ul li a {
       height: 100%;
       align-items: center;
       display: flex;
       justify-content: center;
     }
 
-    .curalin-info-section .tabs ul li a i {
+    .pack-info-section .tabs ul li a i {
       position: relative;
       transition: all 0.5s ease-in-out;
       font-style: normal;
       left: 20px;
     }
 
-    .curalin-info-section .tabs ul li a:hover,
-    .curalin-info-section .tabs ul li a.active {
+    .pack-info-section .tabs ul li a:hover,
+    .pack-info-section .tabs ul li a.active {
       color: var(--brown);
       font-weight: bold;
     }
 
-    .curalin-info-section:nth-of-type(even) .tabs ul li a:hover,
-    .curalin-info-section:nth-of-type(even) .tabs ul li a.active {
+    .pack-info-section:nth-of-type(even) .tabs ul li a:hover,
+    .pack-info-section:nth-of-type(even) .tabs ul li a.active {
       color: {{ link_color }};
     }
 
-    .curalin-info-section .item {
+    .pack-info-section .item {
       margin-bottom: 2px;
       position: relative;
     }
 
-    .curalin-info-section .item::before {
+    .pack-info-section .item::before {
       content: attr(data-title);
       border-top: 1px solid var(--light-green);
       cursor: pointer;
@@ -266,11 +266,11 @@
       text-align: center;
     }
 
-    .curalin-info-section .item.active .item-content {
+    .pack-info-section .item.active .item-content {
       transition: opacity 0.8s ease-in-out;
     }
 
-    .curalin-info-section .tabbed-content .tabs {
+    .pack-info-section .tabbed-content .tabs {
       display: none;
     }
 
@@ -278,13 +278,13 @@
       min-height: 2em;
     }
 
-    .curalin-info-section .tabbed-content .item .item-content {
+    .pack-info-section .tabbed-content .item .item-content {
       opacity: 0;
       visibility: hidden;
       height: 0;
     }
 
-    .curalin-info-section .tabbed-content .item.active .item-content {
+    .pack-info-section .tabbed-content .item.active .item-content {
       opacity: 1;
       visibility: visible;
       height: auto;
@@ -295,48 +295,48 @@
         padding-top: 0;
       }
 
-      .curalin-info-section .tabbed-content .tabs {
+      .pack-info-section .tabbed-content .tabs {
         display: block;
       }
 
-      .curalin-info-section .tabbed-content .tabs li {
+      .pack-info-section .tabbed-content .tabs li {
         display: inline-block;
         margin-bottom: 2px;
       }
 
-      .curalin-info-section .tabbed-content .tabs li a {
+      .pack-info-section .tabbed-content .tabs li a {
         display: flex;
       }
 
-      .curalin-info-section .tabbed-content .item {
+      .pack-info-section .tabbed-content .item {
         min-height: 0;
       }
 
-      .curalin-info-section .tabbed-content .item::before {
+      .pack-info-section .tabbed-content .item::before {
         display: none;
       }
 
-      .curalin-info-section .tabbed-content.tabs-side .tabs {
+      .pack-info-section .tabbed-content.tabs-side .tabs {
         min-width: 300px;
         margin-right: 50px;
       }
 
-      .curalin-info-section .tabbed-content.tabs-side .tabs li {
+      .pack-info-section .tabbed-content.tabs-side .tabs li {
         display: block;
       }
     }
 
     @media all and (max-width: 768px) {
-      .curalin-info-section {
+      .pack-info-section {
         padding-bottom: 75vw;
       }
 
-      .curalin-info-section .tabbed-content {
+      .pack-info-section .tabbed-content {
         display: block;
         margin-left: unset !important;
       }
 
-      .curalin-info-section .item::after {
+      .pack-info-section .item::after {
         content: "+";
         font-size: 30px;
         position: absolute;
@@ -353,11 +353,11 @@
         color: var(--light-green);
       }
 
-      .curalin-info-section .item.active::after {
+      .pack-info-section .item.active::after {
         content: "-";
       }
 
-      .curalin-info-section .product-image-wrapper {
+      .pack-info-section .product-image-wrapper {
         bottom: 0;
         width: 100%;
         position: relative;
@@ -365,30 +365,30 @@
         margin-top: 10vw;
       }
 
-      .curalin-info-section .product-image-wrapper .product-image {
+      .pack-info-section .product-image-wrapper .product-image {
         right: unset;
         text-align: center;
       }
 
-      .curalin-info-section .product-image-wrapper .number {
+      .pack-info-section .product-image-wrapper .number {
         top: -15vw;
         font-size: 70vw !important;
         right: 13vw;
       }
 
-      .curalin-info-section .tabbed-content .item.active .item-content {
+      .pack-info-section .tabbed-content .item.active .item-content {
         padding: 5vw 0;
       }
 
-      .curalin-info-section .ingredient {
+      .pack-info-section .ingredient {
         width: 27vw;
       }
 
-      .curalin-info-section .instructions .step {
+      .pack-info-section .instructions .step {
         gap: 2vw;
       }
 
-      .curalin-info-section .instructions .step h3 {
+      .pack-info-section .instructions .step h3 {
         min-width: 20vw;
       }
     }
@@ -407,14 +407,14 @@
     });
 
     function tabControl() {
-      var tabs = $('.curalin-info-section.instance-{{ index }} .tabbed-content').find('.tabs');
+      var tabs = $('.pack-info-section.instance-{{ index }} .tabbed-content').find('.tabs');
       if(tabs.is(':visible')) {
         tabs.find('a').on('click', function(event) {
           event.preventDefault();
           var target = $(this).attr('href'),
               tabs = $(this).parents('.tabs'),
               buttons = tabs.find('a'),
-              item = tabs.parents('.curalin-info-section.instance-{{ index }} .tabbed-content').find('.item');
+              item = tabs.parents('.pack-info-section.instance-{{ index }} .tabbed-content').find('.item');
           buttons.removeClass('active');
           item.removeClass('active');
           $(this).addClass('active');
