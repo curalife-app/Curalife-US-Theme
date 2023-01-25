@@ -54,7 +54,6 @@
 
         <div class="description">
           {% if product.metafields.custom.original_item_variant.price %}
-          <script>console.log(" hi {{ product.metafields.custom.original_item_variant.price }}")</script>
             {% render 'price', product: product.metafields.custom.original_item_variant, productType: "variant" %}
           {% else %}
             {% render 'price', product: product %}

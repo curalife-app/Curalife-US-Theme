@@ -43,7 +43,7 @@
       </div>
 
       {% if product.metafields.custom.original_item_variant.value %}
-        {% render 'price', prod: product.metafields.custom.original_item_variant.value %}
+        {% render 'price', prod: product.metafields.custom.original_item_variant.value, productType: "variant" %}
       {% else %}
         {% render 'price', prod: product %}
       {% endif %}
