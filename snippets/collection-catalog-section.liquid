@@ -41,8 +41,9 @@
     font-size: 20px;
   }
 
-  #collections-catalog-section h1 {
-    font-size: 56px;
+  #collections-catalog-section h2 {
+    margin: 20px 0;
+    font-size: 40px;
   }
 
   #collections-catalog-section .description {
@@ -108,21 +109,9 @@
     const collectionHandle = $(this).data('collection-handle');
     if (collectionHandle == "all") {
       $('.collection-section').fadeIn();
-      $('.category-badges-section').fadeIn();
-      return;
+      $('.category-badges-section').fadeOut();
     }
     else {
-      const collectionTitle = $(this).text();
-      const collectionDescription = $(this).attr('data-collection-description');
-
-      $("h1").fadeOut(function() {
-        $(this).text(collectionTitle).fadeIn();
-      });
-
-      $(".description").fadeOut(function() {
-        $(this).text(collectionDescription).fadeIn();
-      });
-
       $('.collection-section').fadeOut();
       $('.collection-section[data-product-collections*="' + collectionHandle + '"]').fadeIn();
 

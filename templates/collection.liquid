@@ -6,7 +6,7 @@
 {% endif %}
 
 <div class="catalog-page">
-  {% render 'products-catalog-section', Prods: collection.products, challenge_value: challenge_value, curaeats_value: curaeats_value, isLinkToProduct: true %}
+  {% render 'products-catalog-section', Prods: collection.products, isDescription: true, challenge_value: challenge_value, curaeats_value: curaeats_value, isLinkToProduct: true %}
   {% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
 </div>
 
