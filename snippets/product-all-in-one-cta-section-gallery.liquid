@@ -122,25 +122,27 @@
                 </div>
               {% endif %}
 
-              {% for var in product.variants %}
-                <div class="swiper-slide">
-                  <div class="thumbs-img">
-                    <div class="img-wrap">
-                      <img src="{{ var.featured_image | image_url }}" alt="{{ var.featured_image.alt | escape }}" loading="lazy">
+              {% if product.variants.size > 1 %}
+                {% for var in product.variants %}
+                  <div class="swiper-slide">
+                    <div class="thumbs-img">
+                      <div class="img-wrap">
+                        <img src="{{ var.featured_image | image_url }}" alt="{{ var.featured_image.alt | escape }}" loading="lazy">
+                      </div>
                     </div>
                   </div>
-                </div>
-              {% endfor %}
-
-              {% for img in product.images %}
-                <div class="swiper-slide">
-                  <div class="thumbs-img">
-                    <div class="img-wrap">
-                      <img src="{{ img.src | image_url }}" alt="{{ img.alt | escape }}" loading="lazy">
+                {% endfor %}
+              {% else %}
+                {% for img in product.images %}
+                  <div class="swiper-slide">
+                    <div class="thumbs-img">
+                      <div class="img-wrap">
+                        <img src="{{ img.src | image_url }}" alt="{{ img.alt | escape }}" loading="lazy">
+                      </div>
                     </div>
                   </div>
-                </div>
-              {% endfor %}
+                {% endfor %}
+              {% endif %}
             </div>
           </div>
 
