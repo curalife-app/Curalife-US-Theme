@@ -35,50 +35,6 @@
                 </div>
               {% endif %}
 
-              {% for var in product.variants %}
-                <div class="swiper-slide">
-                  {% if shop.name == "CuraLife Global" or request.path contains 'curalin-pack-t' %}
-                    <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">
-                  {% endif %}
-
-                  <div class="product-img">
-                    <div class="img-wrap">
-                      <img src="{{ var.featured_image | image_url }}" alt="{{ var.featured_image.alt | escape }}" loading="lazy">
-                    </div>
-                  </div>
-
-                  {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
-                  {% if isSaveTitle %}
-                    {% assign save_price = var.compare_at_price | minus: var.price %}
-
-                    <div class="save-title"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div>
-                  {% endif %}
-
-                  {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
-                  {% if product.metafields.custom.badge_image %}
-                    <img src="{{ product.metafields.custom.badge_image | image_url }}" width="200" height="200" alt="Curalin" class="sale-badge" loading="lazy">
-
-                    <style>
-                      .sale-badge {
-                        position: absolute;
-                        top: 100px;
-                        right: 130px;
-                        width: 100px;
-                        z-index: 1;
-                      }
-
-                      @media screen and (max-width: 768px) {
-                        .sale-badge {
-                          top: 10vw;
-                          right: 0;
-                          width: 25vw;
-                        }
-                      }
-                    </style>
-                  {% endif %}
-                </div>
-              {% endfor %}
-
               {% for img in product.images %}
                 <div class="swiper-slide">
                   {% if shop.name == "CuraLife Global" or request.path contains 'curalin-pack-t' %}
@@ -92,6 +48,52 @@
                   </div>
                 </div>
               {% endfor %}
+
+              {% if product.variant.size > 1 %}
+                {% for var in product.variants %}
+                  <div class="swiper-slide">
+                    {% if shop.name == "CuraLife Global" or request.path contains 'curalin-pack-t' %}
+                      <img class="main-slider-vector-bg" src="{{ 'product-aio-vector-product-slider.png' | asset_url }}" width="534" height="342" alt="">
+                    {% endif %}
+
+                    <div class="product-img">
+                      <div class="img-wrap">
+                        <img src="{{ var.featured_image | image_url }}" alt="{{ var.featured_image.alt | escape }}" loading="lazy">
+                      </div>
+                    </div>
+
+                    {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
+                    {% if isSaveTitle %}
+                      {% assign save_price = var.compare_at_price | minus: var.price %}
+
+                      <div class="save-title"><p>SAVE {{ save_price | money_without_trailing_zeros }}</p></div>
+                    {% endif %}
+
+                    {% comment %} If Curalin is in the product, render the sale badge {% endcomment %}
+                    {% if product.metafields.custom.badge_image %}
+                      <img src="{{ product.metafields.custom.badge_image | image_url }}" width="200" height="200" alt="Curalin" class="sale-badge" loading="lazy">
+
+                      <style>
+                        .sale-badge {
+                          position: absolute;
+                          top: 100px;
+                          right: 130px;
+                          width: 100px;
+                          z-index: 1;
+                        }
+
+                        @media screen and (max-width: 768px) {
+                          .sale-badge {
+                            top: 10vw;
+                            right: 0;
+                            width: 25vw;
+                          }
+                        }
+                      </style>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              {% endif %}
             </div>
 
             <div class="swiper-pagination"></div>
