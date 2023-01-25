@@ -15,7 +15,7 @@
 {% assign quantity_by_cents = quantity | times: 100 %}
 {% assign item_price = prod.price | times: 100.0 | divided_by: quantity_by_cents %}
 
-<script>console.log(" hi {{ item_price }}")</script>
+<script>console.log(" hi {{ quantity }}")</script>
 
 
 <div class="price">
