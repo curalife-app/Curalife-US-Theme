@@ -1,3 +1,7 @@
+{% if product.metafields.custom.original_item_variant.size %}
+  {% assign product = product.metafields.custom.original_item_variant %}
+{% endif %}
+
 {% if localization.country.iso_code == 'CA' %}
   {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
 {% elsif localization.country.iso_code == 'AU' %}
