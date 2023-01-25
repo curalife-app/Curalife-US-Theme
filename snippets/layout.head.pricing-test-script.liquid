@@ -6,7 +6,7 @@
       ?.split('=')[1]
     )
 
-    $(document).ready(function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const redirectPages = [
         '/collections/all',
         '/collections/all-2',
@@ -25,6 +25,7 @@
       const expCookie = getCookie('_gaexp');
 
       if (!expCookie) {
+        console.log('no experiment cookie found');
         return;
       }
 
@@ -46,6 +47,6 @@
         const pricingTestElements = document.querySelectorAll('.pricing-test');
         pricingTestElements.forEach(el => el.remove());
       }
-    });
+    }, false);
   </script>
 {% endif %}
