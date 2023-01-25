@@ -16,18 +16,20 @@
     ];
 
     const gaCookie = $.cookie('_gaexp');
-    if (!gaCookie || !gaCookie.endsWith('1') || !gaCookie.startsWith('GAX1.2.aMz')) {
-      $('.pricing-test').remove();
-      return;
+    if (gaCookie.startsWith('GAX1.2.aMz') && gaCookie.endsWith('1')) {
+      // redirect to pricing page
+      if (redirectPages.includes(window.location.pathname)) {
+        window.location.replace(`${window.location.pathname}-p`);
+      }
+      else {
+        const linksQuery = redirectPages.map(page => `a[href="${page}"]`).join(', ');
+        $(linksQuery).each(function() {
+          $(this).attr('href', `${$(this).attr('href')}-p`);
+        });
+      }
     }
-
-    if (redirectPages.includes(window.location.pathname)) {
-      window.location.replace(`${window.location.pathname}-p`);
+    else {
+        $('.pricing-test').remove();;
     }
-
-    const linksQuery = redirectPages.map(page => `a[href="${page}"]`).join(', ');
-    $(linksQuery).each(function() {
-      $(this).attr('href', `${$(this).attr('href')}-p`);
-    });
   });
 </script>
