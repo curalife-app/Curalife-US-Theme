@@ -27,8 +27,9 @@
   {% else %}
     {% render 'product-supplement-health-benefits' %}
   {% endif %}
-  
-  {% unless isCuralinNew %}
+  {% if isCuralinNew %}
+  {% render 'curalin-pack-info' %}
+  {% else %}
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
       {% if forloop.last %}
@@ -40,7 +41,7 @@
   {% else %}
     {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
   {% endif %}
-{% endunless %}
+{% endif %}
 
   {% unless product.title contains "Curalin Monthly Deals" %}
     {% render 'product-supplement-info-section', titleColor: title_color %}
