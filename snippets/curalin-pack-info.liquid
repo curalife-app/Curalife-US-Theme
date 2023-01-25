@@ -2,17 +2,11 @@
 
 <section class="pack-info-section instance-{{ index }}">
   <div class="container">
-    <div class="titles">
-      <h2 class="title">Benefits/Description</h2>
-      <p class="subtitle">{{ product.description }}</p>
-    </div>
-
-
-
+   
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
         <ul>
-          <li><a href="#highlights-{{ index }}" class="active">Product Highlights <i>></i></a></li>
+          <li><a href="#highlights-{{ index }}" class="active">Benefits/Description <i>></i></a></li>
           <li><a href="#instructions-{{ index }}">Usage Instructions <i>></i></a></li>
           {% if product.metafields.custom.ingredients.value %}
             <li><a href="#ingredients-{{ index }}">Ingredients <i>></i></a></li>
