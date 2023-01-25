@@ -32,15 +32,19 @@
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
       {% if forloop.last %}
-        {% render 'product-supplement-pack-info', product: prod, index: forloop.index, isLastRender: true %}
-      {% elsif isCuralinNew %}
-        {% render 'curalin-pack-info', product: product, isLastRender: true, index: forloop.index, isNoImage: true %}
+        {% render 'product-supplement-pack-info', product: prod, index: forloop.index, isLastRender: true %}  
+      {% else %}
+    
       {% else %}
         {% render 'product-supplement-pack-info', product: prod, index: forloop.index %}
-      {% endif %}
+     {% endif %}     
     {% endfor %}
   {% else %}
+  {% if isCuralinNew %}
+    {% render 'curalin-pack-info', product: product, isLastRender: true, isNoImage: true %}
+    {% else %}
     {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
+  {% endif %}
   {% endif %}
 
 
