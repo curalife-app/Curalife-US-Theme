@@ -22,6 +22,9 @@
   {% else %}
   {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
 {% endif %}
+  {% if isCuralinNew %}
+    {% render 'curalin-supplement-benefits' %}
+  {% endif %}
   {% render 'product-supplement-health-benefits' %}
 
   {% if product.metafields.custom.bundle-products.value %}
