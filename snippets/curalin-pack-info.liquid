@@ -1,4 +1,15 @@
+{% assign experienses = '“Outstanding product and results. I cannot thank you enough for making
+this
+possible.”*Michael Edwards
+|“CuraLin has worked exceptionally well for me! Thank you CuraLin for
+helping
+me help
+myself feel better naturally. Definitely 5 stars!”*Colin Reader
+|“It started with my manager now 4 of us are on it. My doctor said give it
+a
+try.”*Jeff Ogden
 
+' | split: '|' %}
 
 <section class="pack-info-section instance-{{ index }}">
   <div class="container">
@@ -11,7 +22,7 @@
           {% if product.metafields.custom.ingredients.value %}
             <li><a href="#ingredients-{{ index }}">Ingredients <i>></i></a></li>
           {% endif %}
-          <li><a href="#facts-{{ index }}">Supplement Facts <i>></i></a></li>
+          <li><a href="#facts-{{ index }}">Reviews <i>></i></a></li>
         </ul>
       </nav>
 
@@ -64,9 +75,9 @@
           </div>
         {% endif %}
 
-        <div id="facts-{{ index }}" class="item" data-title="Supplement Facts">
+        <div id="facts-{{ index }}" class="item" data-title="Reviews">
           <div class="facts item-content">
-              <img src="{{ product.metafields.custom.supplement_fact | img_url: 'original' }}" alt="Supplement Facts" loading="lazy">
+              {% render 'homepage-changing-experience', experienses: experienses, onlyData: true %}
           </div>
         </div>
       </div>
