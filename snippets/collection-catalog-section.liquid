@@ -7,10 +7,6 @@
       {% endfor %}
     </ul>
 
-    {% if isDescription %}
-      <p class="description">{% if activeCollection %}{{ collections[activeCollection].title }}{% else %}Welcome to our herbal supplement collection. We offer high-quality, all-natural products to support your health and well-being. Browse our selection and discover the benefits of herbs for yourself. Shop with confidence knowing we stand behind our products.{% endif %}</p>
-    {% endif %}
-
     {% for collection_handle in collectionsHandles %}
       {% if forloop.last %}
         {% assign isLastCollectionRender = true %}
@@ -18,6 +14,9 @@
 
       <div class="collection-section" data-product-collections="{{ collection_handle }}" >
         <h2>{{ collections[collection_handle].title }}</h2>
+        {% if isDescription %}
+          <p class="description">{{ collections[collection_handle].content }}</p>
+        {% endif %}
 
         <div class="product-grid" {% if isHiddenCollections %}style="display: none"{% endif %}>
           {% assign isProductCardLast = value %}
