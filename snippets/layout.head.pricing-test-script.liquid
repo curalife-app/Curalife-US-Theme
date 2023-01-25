@@ -43,6 +43,9 @@
             });
           });
         }
+
+        const pricingTestOriginalElements = document.querySelectorAll('.pricing-test-original');
+        pricingTestOriginalElements.forEach(el => el.remove());
       } else {
         const pricingTestElements = document.querySelectorAll('.pricing-test');
         pricingTestElements.forEach(el => el.remove());
