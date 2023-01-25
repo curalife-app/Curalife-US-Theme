@@ -28,7 +28,7 @@
     {% render 'product-supplement-health-benefits' %}
   {% endif %}
   {% if isCuralinNew %}
-  {% render 'curalin-pack-info' %}
+  {% render 'curalin-pack-info', product: prod, index: forloop.index, %}
   {% else %}
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
