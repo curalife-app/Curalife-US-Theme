@@ -32,7 +32,7 @@
 {% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
 
 <a href="{{ product.url }}">
-<div class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollections }}">
+<div id="{{product.handle}}" class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollections }}">
   <img class="product-image" src="{{ product.featured_image.src | img_url: 'original' }}" width="512" height="475" alt="" loading="lazy">
 
   <div class="info">
@@ -77,6 +77,15 @@
 </div>
 </a>
 
+{% if product.metafields.custom.is_badge_collection == true %}
+  <style>
+    .product-card#{{ product.handle }}::before {
+      content: "";
+      background-image: url("{{ product.metafields.custom.badge_image | image_url }}");
+    }
+  </style>
+{% endif %}
+
 {% if isLastRender %}
   <style>
     .product-card {
@@ -89,16 +98,13 @@
       border: 1px solid var(--lighter-green);
     }
 
-    {% if product.metafields.custom.is_badge_collection %}
-      .product-card::before {
-        content: "";
-        background-image: url("{{ product.metafields.custom.badge_image.src | image_url }}");
-        position: absolute;
-        top: 10px;
-        right: 68px;
-        width: 68px;
-      }
-    {% endif %}
+    .product-card::before {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 68px;
+      height: 68px;
+    }
 
     .product-card.recommended {
       box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
