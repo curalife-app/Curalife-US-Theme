@@ -15,13 +15,13 @@
       <p class="subtitle">{{ product.description }}</p>
     </div>
 
-    <div class="product-image-wrapper">
+    {% comment %} <div class="product-image-wrapper">
       {% if index %}
         <p class="number">{{ index }}</p>
       {% endif %}
 
       <img class="product-image" src="{{ product.metafields.custom.bottle_image | img_url: 'original' }}" alt="{{ product.title }}" loading="lazy">
-    </div>
+    </div> {% endcomment %}
 
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
