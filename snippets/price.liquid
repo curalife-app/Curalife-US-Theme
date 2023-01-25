@@ -1,5 +1,7 @@
 {% if product.metafields.custom.original_item_variant.size %}
   {% assign prod = product.metafields.custom.original_item_variant %}
+{% else %}
+  {% assign prod = product %}
 {% endif %}
 
 {% if localization.country.iso_code == 'CA' %}
