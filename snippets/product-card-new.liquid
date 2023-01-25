@@ -81,7 +81,7 @@
   <style>
     .product-card#{{ product.handle }}::before {
       content: "";
-      background-image: url("{{ product.metafields.custom.badge_image.src | image_url }}");
+      background-image: url("{{ product.metafields.custom.badge_image | image_url }}");
     }
   </style>
 {% endif %}
