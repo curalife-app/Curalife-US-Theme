@@ -11,7 +11,7 @@
 
 
     {% for collection_handle in collectionsHandles %}
-      <div class="product-grid" data-product-collections="{{ collection_handle }}" style="display: none">
+    <div class="product-grid" data-product-collections="{{ collection_handle }}" {% if isHiddenCollections %}style="display: none"{% endif %}>
         {% if forloop.last %}
           {% assign isLastCollectionRender = true %}
         {% endif %}
