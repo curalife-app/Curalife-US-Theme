@@ -33,8 +33,10 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/2551503516.js" crossorigin="anonymous"></script>
 
+    <!-- Pricing Test -->
     {% render 'layout.head.pricing-test-script' %}
 
+    <!-- Fancybox Import (for Cart)-->
     <script src="{{ 'fancybox-script.js' | asset_url }}" async></script>
 
     <!-- Swiper Import -->
@@ -52,6 +54,7 @@
     {{ 'go-cart.js' | asset_url | script_tag }}
     <script>var goCart = new GoCart();</script> {% endcomment %}
 
+    <!-- Temporary Styles for SALE (fix wisepops banner) -->
     <style>
       @media screen and (max-width: 768px) {
         body {
