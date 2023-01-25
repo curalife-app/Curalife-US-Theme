@@ -4,7 +4,7 @@
 
     <ul class="category-tabs">
       {% for collection_handle in collectionsHandles %}
-          <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
+      <li><a href="#" {% if forloop.first %}class="active" %}data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
       {% endfor %}
     </ul>
 
