@@ -1,11 +1,9 @@
 <section id="collections-catalog-section">
   <div class="container">
-    <h1>{% if activeCollection %}{{ collections[activeCollection].title }}{% else %}Collections{% endif %}</h1>
-
     <ul class="category-tabs">
-      <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}" class="active">{{ collections[collection_handle].title }}</a></li>
+      <li><a href="#" data-collection-handle="all" class="active">{{ collections[collection_handle].title }}</a></li>
       {% for collection_handle in collectionsHandles %}
-      <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
+        <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
       {% endfor %}
     </ul>
 
@@ -17,6 +15,8 @@
         {% if forloop.last %}
           {% assign isLastCollectionRender = true %}
         {% endif %}
+
+        <h2>{{ collections[collection_handle].title }}</h2>
 
         {% assign isProductCardLast = value %}
         {% for product in collections[collection_handle].products %}
@@ -113,7 +113,6 @@
     $(".description").fadeOut(function() {
       $(this).text(collectionDescription).fadeIn();
     });
-
 
     $('.product-grid').fadeOut();
     $('.product-grid[data-product-collections*="' + collectionHandle + '"]').fadeIn();
