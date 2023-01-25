@@ -17,7 +17,7 @@
 
 <div id="supplement-page">
   {% if isCuralinNew %}
-  {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true, isReviews: true %}
+  {% render 'product-all-in-one-cta-section', newCuralinTitle: true, ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true, isReviews: true %}
   {% comment %} {% render 'sale-banner', desktopContent: "none", mobileContent: "title", bgColor: "var(--light-green)", title: "Buy curalin & get 60% off happy joints" %} {% endcomment %}
   {% else %}
   {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
