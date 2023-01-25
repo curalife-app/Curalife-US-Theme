@@ -58,7 +58,7 @@
     font-size: {% if newCuralinTitle %}45px {% else %}40px{% endif %};
     line-height: 40px;
     color: #404733;
-    margin-bottom: {% if request.path contains "30-day" %}30px{% endif %};
+    margin-bottom: {% if request.path contains "30-day" or "curalin-new-product" %}30px{% endif %};
   }
 
   .multiplier {
