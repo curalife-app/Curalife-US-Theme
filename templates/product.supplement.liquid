@@ -41,7 +41,7 @@
     {% endfor %}
   {% else %}
   {% if isCuralinNew %}
-    {% render 'curalin-pack-info', product: product %}
+    {% render 'curalin-pack-info', product: product, isLastRender: true %}
     {% else %}
     {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
   {% endif %}
