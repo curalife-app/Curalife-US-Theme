@@ -3,8 +3,9 @@
     <h1>{% if activeCollection %}{{ collections[activeCollection].title }}{% else %}Collections{% endif %}</h1>
 
     <ul class="category-tabs">
+      <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}" class="active">{{ collections[collection_handle].title }}</a></li>
       {% for collection_handle in collectionsHandles %}
-      <li><a href="#" {% if forloop.first %}class="active" %}data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
+      <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}">{{ collections[collection_handle].title }}</a></li>
       {% endfor %}
     </ul>
 
