@@ -1,9 +1,10 @@
 {% if shop.name == 'CuraLife' %}
   <script>
-    function getCookie(name) {
-      const cookie = document.cookie.split(';').find(c => c.trim().startsWith(`${name}=`));
-      return cookie ? cookie.split('=').pop() : undefined;
-    }
+    const getCookie = name => (
+      document.cookie.split(';')
+      .find(c => c.trim().startsWith(`${name}=`))
+      ?.split('=')[1]
+    )
 
     $(document).ready(function() {
       const redirectPages = [
