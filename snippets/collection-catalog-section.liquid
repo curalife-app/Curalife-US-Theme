@@ -16,18 +16,20 @@
         {% assign isLastCollectionRender = true %}
       {% endif %}
 
-      <h2>{{ collections[collection_handle].title }}</h2>
+      <div class="collection-section" data-product-collections="{{ collection_handle }}" >
+        <h2>{{ collections[collection_handle].title }}</h2>
 
-      <div class="product-grid" data-product-collections="{{ collection_handle }}" {% if isHiddenCollections %}style="display: none"{% endif %}>
-        {% assign isProductCardLast = value %}
-        {% for product in collections[collection_handle].products %}
-          {% if forloop.last and isLastCollectionRender %}
-            {% assign isLastCardRender = true %}
-          {% endif %}
+        <div class="product-grid" {% if isHiddenCollections %}style="display: none"{% endif %}>
+          {% assign isProductCardLast = value %}
+          {% for product in collections[collection_handle].products %}
+            {% if forloop.last and isLastCollectionRender %}
+              {% assign isLastCardRender = true %}
+            {% endif %}
 
-          {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
-          {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: isLastCardRender %}
-        {% endfor %}
+            {% assign product_collections = product.collections | map: 'handle' | join: ' ' %}
+            {% render 'product-card-new', product: product, productCollections: product_collections, isLastRender: isLastCardRender %}
+          {% endfor %}
+        </div>
       </div>
     {% endfor %}
   </div>
