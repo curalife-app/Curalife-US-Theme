@@ -7,7 +7,7 @@
     <div class="product-info">
       <h1>{% if mainTitle %}{{ mainTitle }}{% elsif product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
   
-      {% if isReviews or isCuralinNew %}
+      {% if isReviews %}
         {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}    
       {% endif %}
     </div>
