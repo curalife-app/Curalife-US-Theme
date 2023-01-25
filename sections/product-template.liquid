@@ -34,7 +34,9 @@
   {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
 {% endif %}
 
-{% render 'script.round-converted-currency' %}
+{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP" | replace: "AUD", "" | replace: "CAD", "" %}
+
+{% comment %} {% render 'script.round-converted-currency' %} {% endcomment %}
 
 <div class="product-data">
   <div class="container">
@@ -51,7 +53,7 @@
         </div>
 
         <div class="description">
-          {% render 'price', product: product %}
+          {% render 'price', product: product, item_price: item_price, quantity: quantity, original_item_cap: original_item_cap %}
 
           <p class="promotion-title">Bonus: {{ promotion_title }} ({{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value)</p>
 
