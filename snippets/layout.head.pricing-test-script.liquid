@@ -1,43 +1,45 @@
-<script>
-  $(document).ready(function() {
-    const redirectPages = [
-      '/collections/all',
-      '/collections/all-2',
-      '/products/curalin-pack',
-      '/products/curalin-pack-t',
-      '/products/curalin',
-      '/products/curalin-monthly-deals',
-      '/products/curalin-3-pack',
-      '/products/curalin-6-pack',
-      '/products/curalin-2-pack',
-      '/products/curalin-freebies',
-      '/pages/glucose-support-lp01n-v2',
-      '/products/30-day-blood-sugar-challenge-pp'
-    ];
+{% if shop.name == 'CuraLife' %}
+  <script>
+    $(document).ready(function() {
+      const redirectPages = [
+        '/collections/all',
+        '/collections/all-2',
+        '/products/curalin-pack',
+        '/products/curalin-pack-t',
+        '/products/curalin',
+        '/products/curalin-monthly-deals',
+        '/products/curalin-3-pack',
+        '/products/curalin-6-pack',
+        '/products/curalin-2-pack',
+        '/products/curalin-freebies',
+        '/pages/glucose-support-lp01n-v2',
+        '/products/30-day-blood-sugar-challenge-pp'
+      ];
 
-    const gaCookie = document.cookie.match(new RegExp('(^|;)\\s*_gaexp\\s*=\\s*([^;]+)')) ? decodeURIComponent(RegExp.$2) : null;
+      const gaCookie = document.cookie.match(new RegExp('(^|;)\\s*_gaexp\\s*=\\s*([^;]+)')) ? decodeURIComponent(RegExp.$2) : null;
 
-    if (!gaCookie) {
-      return;
-    }
-
-    const isTest = gaCookie.startsWith('GAX1.2.aMz') && gaCookie.endsWith('1');
-
-    if (isTest) {
-      // redirect to pricing page
-      if (redirectPages.includes(window.location.pathname)) {
-        window.location.replace(`${window.location.pathname}-p`);
-      } else {
-        redirectPages.forEach(page => {
-          const links = document.querySelectorAll(`a[href="${page}"]`);
-          links.forEach(link => {
-            link.setAttribute("href", `${link.getAttribute("href")}-p`);
-          });
-        });
+      if (!gaCookie) {
+        return;
       }
-    } else {
-      const pricingTestElements = document.querySelectorAll('.pricing-test');
-      pricingTestElements.forEach(el => el.remove());
-    }
-  });
-</script>
+
+      const isTest = gaCookie.startsWith('GAX1.2.aMz') && gaCookie.endsWith('1');
+
+      if (isTest) {
+        // redirect to pricing page
+        if (redirectPages.includes(window.location.pathname)) {
+          window.location.replace(`${window.location.pathname}-p`);
+        } else {
+          redirectPages.forEach(page => {
+            const links = document.querySelectorAll(`a[href="${page}"]`);
+            links.forEach(link => {
+              link.setAttribute("href", `${link.getAttribute("href")}-p`);
+            });
+          });
+        }
+      } else {
+        const pricingTestElements = document.querySelectorAll('.pricing-test');
+        pricingTestElements.forEach(el => el.remove());
+      }
+    });
+  </script>
+{% endif %}
