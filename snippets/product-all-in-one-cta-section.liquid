@@ -1,6 +1,9 @@
 <section class="cta-section" id="cta-section-anchor">
   <div class="container product-container">
     <div class="product-image-wrapper">
+      {% if newCuralinTitle %}
+      {% render 'product-all-in-one-cta-section-gallery', product: product, isCuralinContent: isCuralinContent, isSaveTitle: isSaveTitle, thambNails: true %}
+      {% else %}
       {% render 'product-all-in-one-cta-section-gallery', product: product, isCuralinContent: isCuralinContent, isSaveTitle: isSaveTitle %}
     </div>
 
