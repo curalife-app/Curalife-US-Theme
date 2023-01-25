@@ -53,10 +53,11 @@
       </div>
 
       {% if product.tags "Pack" %}
-        <div class="total-prices">
+        {% render 'price', product: product %}
+        {% comment %} <div class="total-prices">
           TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
           <span class="real rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
-        </div>
+        </div> {% endcomment %}
       {% endif %}
 
       {% comment %} <p class="promotion-title">{{ promotion_title }} ({{ bundle_addition_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value!)</p> {% endcomment %}

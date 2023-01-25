@@ -53,13 +53,7 @@
         </div>
 
         <div class="description">
-          <div class="price">
-            <p>
-              {% if product.compare_at_price > product.price %}<strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>{% endif %}
-              <span class="rounded new-price">{{ item_price | money | replace: ".00", "" | replace: "GBP", "" }}</span>
-              {% if quantity > 1 %}<span class="per-bottle" style="font-size: 17px;display: inline-block;"> PER<br>BOTTLE</span>{% endif %}
-            </p>
-          </div>
+          {% render 'price', product: product %}
 
           <p class="promotion-title">Bonus: {{ promotion_title }} ({{ bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value)</p>
 
@@ -164,26 +158,6 @@
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 0px;
-  }
-
-  .product-info .description .price {
-    padding-bottom: unset !important;
-  }
-
-  .product-info .description .price p {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .new-price {
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: clamp(41px, 10vw, 47px);
-    display: flex;
-    align-items: center;
-    text-align: center;
   }
 
   .total-and-shipping {
