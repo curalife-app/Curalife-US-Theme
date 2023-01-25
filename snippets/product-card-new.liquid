@@ -89,10 +89,10 @@
       border: 1px solid var(--lighter-green);
     }
 
-    {% if product.metafields.is_badge_collection %}
+    {% if product.metafields.custom.is_badge_collection %}
       .product-card::before {
         content: "";
-        background-image: url("{{ product.metafields.custom.badge_image | image_url }}");
+        background-image: url("{{ product.metafields.custom.badge_image.src | image_url }}");
         position: absolute;
         top: 10px;
         right: 68px;
