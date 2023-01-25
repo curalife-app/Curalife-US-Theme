@@ -9,23 +9,23 @@
             
             <div class="swiper-slide">
               <div class="quote-card">
-              
+              <div class="quote-info">
+                <div class="quote-author">
+                  <p>{{ experience | split: "*" | last }}</p>
+                </div>
+                <div class="quote-rating">
+                  <p>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                  </p>
+                </div>
+              </div>
                   <p>{{ experience | split: "*" | first }}</p>
              
-                <div class="quote-info">
-                  <div class="quote-author">
-                    <p>{{ experience | split: "*" | last }}</p>
-                  </div>
-                  <div class="quote-rating">
-                    <p>
-                      <span class="icon-star"></span>
-                      <span class="icon-star"></span>
-                      <span class="icon-star"></span>
-                      <span class="icon-star"></span>
-                      <span class="icon-star"></span>
-                    </p>
-                  </div>
-                </div>
+              
               </div>
             </div>
             {% endfor %}
