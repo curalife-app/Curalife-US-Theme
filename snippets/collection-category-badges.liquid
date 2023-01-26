@@ -1,4 +1,4 @@
-<div class="category-badges-section" data-product-collections="{{ collection.handle }}" style="display: none;">
+<div class="category-badges-section" data-product-collections="{{ collection.handle }}" {% unless request.path contains collection.handle %}style="display: none;"{% endunless %}>
   <div class="container">
     <h2>{{ collection.metafields.custom.category_badges_title }}</h2>
     <div class="category-badges">
