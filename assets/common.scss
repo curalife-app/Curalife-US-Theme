@@ -2198,13 +2198,11 @@ header.scrolled {
 		padding: 20px 0;
 		position: relative;
 	}
+	.main-logo {
+		z-index: 100;
+	}
 	.main-menu {
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
 		flex-direction: column;
 		padding: 61px 10px 30px 10px;
 		position: fixed;
@@ -2212,16 +2210,12 @@ header.scrolled {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: -2;
+		z-index: 100;
 		background: #fff;
 		opacity: 0;
 		visibility: hidden;
-		-webkit-transform: translateY(-100%);
-		-ms-transform: translateY(-100%);
 		transform: translateY(-100%);
-		-webkit-transition: opacity var(--transition),visibility var(--transition),-webkit-transform var(--transition);
 		transition: opacity var(--transition),visibility var(--transition),-webkit-transform var(--transition);
-		-o-transition: transform var(--transition),opacity var(--transition),visibility var(--transition);
 		transition: transform var(--transition),opacity var(--transition),visibility var(--transition);
 		transition: transform var(--transition),opacity var(--transition),visibility var(--transition),-webkit-transform var(--transition);
 		.menu-scroll {
@@ -2336,6 +2330,7 @@ header.scrolled {
 	.main-links {
 		width: 100%;
 		max-width: 90px;
+		z-index: 100;
 		ul {
 			-webkit-box-pack: end;
 			-ms-flex-pack: end;
