@@ -54,7 +54,7 @@ health.'
   {% endif %}
   
   {% if isCuralinNew %}
-      {% render 'curalin-supplement-info-section', titleColor: title_color %}
+      {% render 'curalin-supplement-info-section' %}
       {% else %}
       {% unless product.title contains "Curalin Monthly Deals" %}
         {% render 'product-supplement-info-section', titleColor: title_color %}
