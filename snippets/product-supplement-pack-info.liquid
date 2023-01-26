@@ -6,6 +6,14 @@
   {% assign bg_color = "var(--light-purple)" %}
   {% assign number_color = "var(--purple)" %}
   {% assign link_color = "var(--dark-purple)" %}
+{% elsif product.tags contains "immune" %}
+  {% assign bg_color = "var(--light-purple)" %}
+  {% assign number_color = "var(--purple)" %}
+  {% assign link_color = "var(--dark-purple)" %}
+{% elsif product.tags contains "multivitamin" %}
+  {% assign bg_color = "var(--light-pink)" %}
+  {% assign number_color = "var(--pink)" %}
+  {% assign link_color = "var(--dark-pink)" %}
 {% endif %}
 
 <section class="pack-info-section instance-{{ index }}">
