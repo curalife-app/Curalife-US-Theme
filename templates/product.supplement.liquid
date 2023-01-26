@@ -64,6 +64,7 @@ health.'
     {% render 'product-supplement-doctors-section' %}
   {% endif %}
   {% if isCuralinNew %}
+    {% render 'curalin-pack-new-results' %}
     {% render 'aio-first-page-trusted-doctors', doctors: doctors, noDescription: true %}
   {% endif %}
   
