@@ -19,7 +19,7 @@
       <div class="commitments">
         {% for commitment in commitments %}
           <div class="commitment">        
-            <img src="{{ commitment | asset_url | split: "*" | first }}" width="228" height="228" alt="">
+            <img class="curalin-new-text" src="{{ commitment | asset_url | split: "*" | first }}" width="228" height="228" alt="">
             <div class="curalin-new-text">{{ commitment | split: "*" | last }}</div>
           </div>
         {% endfor %}
