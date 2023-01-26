@@ -47,7 +47,7 @@
       {% else %}
         {% render 'price', prod: product %}
       {% endif %}
-      {% if product.tags "Pack" %}
+      {% if product.title contains "Pack" %}
         <div class="total-prices">
           TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
           <span class="real rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
