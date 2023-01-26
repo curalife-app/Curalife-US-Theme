@@ -25,7 +25,7 @@
                 </div>
               {% endif %}
 
-              {% if product.variant.size > 1 %}
+              {% if product.variants.size > 1 %}
                 {% for var in product.variants %}
                   <div class="swiper-slide">
                     {% if shop.name == "CuraLife Global" or request.path contains 'curalin-pack-t' %}
