@@ -42,7 +42,7 @@
 
 <style>
   .quote-card {
-    background: rgba(232,	232,	176, .2);
+    background: unset;
   }
   .quote-card .quote-info .quote-rating p span {
    
@@ -88,7 +88,7 @@
 
  <script>
   quoteSlider = new Swiper(".quote-slider .swiper", {
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     spaceBetween: 0,
     grabCursor: true,
     autoHeight: true,
@@ -103,11 +103,11 @@
         slidesPerView: 1
       },
       630: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         centeredSlides: false
       },
       992: {
-        slidesPerView: 3,
+        slidesPerView: 1,
         centeredSlides: true
       }
     }
