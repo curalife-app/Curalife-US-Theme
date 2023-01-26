@@ -14,12 +14,12 @@
     
       {% assign commitments = "curalin-new-satisfied-1.png*Are satisfied with Curalin
        
-        |curalin-new-satisfied-1.png*Feel safe using Curalin" | split: "|" %}
+        |curalin-new-satisfied-2.png*Feel safe using Curalin" | split: "|" %}
 
       <div class="commitments">
         {% for commitment in commitments %}
           <div class="commitment">        
-            <div class="curalin-new-text">{{ commitment | asset_url | split: "*" | first }}</div>
+            <img  src="{{ commitment | asset_url | split: "*" | first }}" width="228" height="228" alt="">
             <div class="curalin-new-text">{{ commitment | split: "*" | last }}</div>
           </div>
         {% endfor %}
@@ -57,29 +57,7 @@
   }
 
 
-  .curalin-new-we-proud {
-    background-image: url("{{ 'thirty-day-curalin-new-swoosh.png' | asset_url }}");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: clamp(32px, 2vw, 40px);
-    line-height: 62px;  
-    text-align: center;
-    letter-spacing: -0.02em;
-    color: var(--dark-green);
-  }
 
-  .curalin-new-have-to-do {
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 28px; 
-    text-align: center;
-    color: var(--dark-green);
-    padding: 20px 0;
-  }
 
 
    .curalin-new-wrapper {
@@ -93,7 +71,7 @@
   .commitments {
     display: flex;
     padding-bottom: 30px;
-    justify-content: center;
+    gap: 20px;
   }
 
  .commitments .commitment {
