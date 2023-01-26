@@ -8,10 +8,9 @@
 
 {% if productType == "variant" %}
   {% assign quantity = prod.metafields.my_fields.pack_bottles_quantity %}
-  <script>console.log("hi {{quantity}}")</script>
 {% else %}
   {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
-  <script>console.log("ho {{quantity}}")</script>
+  <script>console.log("ho {{ quantity }}")</script>
 {% endif %}
 
 {% assign quantity_by_cents = quantity | times: 100 %}
