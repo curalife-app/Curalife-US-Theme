@@ -31,8 +31,8 @@
             {% endfor %}
           </div>
           <div class="slider-control">
-            <div class="prev-slide2"><span class="icon-arrow"></span></div>
-            <div class="next-slide2"><span class="icon-arrow"></span></div>
+            <div id="product-main-slider-nav-prev" class="swiper-button-prev nav"></div>
+            <div id="product-main-slider-nav-next" class="swiper-button-next nav"></div>
           </div>
         </div>
       </div>
@@ -137,7 +137,7 @@
 </style>
 
 
- <script>
+ {% comment %} <script>
   quoteSlider = new Swiper(".quote-slider .swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -163,4 +163,36 @@
       }
     }
   });
-</script> 
+</script>  {% endcomment %}
+
+<script>
+  productSliderAllInOne = new Swiper('.quote-slider .swiper', {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    centeredSlides: true,
+    watchSlidesVisibility: true,
+    loop: false,
+    grabCursor: true,
+    slideToClickedSlide: true,
+    thumbs: {swiper: productThumbsAllInOne},
+    breakpoints: {
+      0: {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: 'true',
+          type: 'bullets',
+        },
+        navigation: {
+          nextEl: '#product-main-slider-nav-next',
+          prevEl: '#product-main-slider-nav-prev',
+          disabledClass: 'disabled'
+        },
+        loop:true
+      },
+      760: {
+        pagination: {},
+        navigation: {}
+      }
+    }
+  });
+</script>
