@@ -23,21 +23,24 @@
 {% assign save_price = original_item_price | minus: item_price | times: quantity %}
 
 <div class="variant-box">
-  <div class="radio-box">
-    {% if original_item_cap_total_with_bundle > var.price %}
-      {% assign discount = original_item_cap_total_with_bundle | minus: var.price | divided_by: 100 %}
-    {% else %}
-      {% assign discount = 0 %}
-    {% endif %}
-    <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ save_price }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
-  </div>
-  <div class="variant-info">
-    <p class="variant-title">{{ var.title }}</p>
-    {% if var.metafields.my_fields.subtitle %}
-      <div class="variant-infos">
-        <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
-      </div>
-    {% endif %}
+  <div class="left-side-wrapper">
+    <div class="radio-box">
+      {% if original_item_cap_total_with_bundle > var.price %}
+        {% assign discount = original_item_cap_total_with_bundle | minus: var.price | divided_by: 100 %}
+      {% else %}
+        {% assign discount = 0 %}
+      {% endif %}
+      <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ save_price }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
+    </div>
+
+    <div class="variant-info">
+      <p class="variant-title">{{ var.title }}</p>
+      {% if var.metafields.my_fields.subtitle %}
+        <div class="variant-infos">
+          <p class="subtitle">{{ var.metafields.my_fields.subtitle }}</p>
+        </div>
+      {% endif %}
+    </div>
   </div>
 
   {% if isPricePerUnit %}
@@ -77,7 +80,7 @@
 
     .variant-box {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
       height: 80px;
       background: #fff;
@@ -104,12 +107,12 @@
       {% comment %} width: 5%; {% endcomment %}
       align-items: center;
       display: flex;
-      padding: 10px;
+      padding: 20px;
     }
-    
+
     .variant-box .variant-info {
-      padding: 10px;
-     
+      padding: 10px 0;
+
     }
 
     .variant-box .variant-info .variant-title {
