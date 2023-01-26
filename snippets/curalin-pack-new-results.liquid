@@ -4,31 +4,24 @@
     <div class="curalin-new-for-you-wrapper">
       
       <div class="sub-title">
-        <h3><b>Real people. Real results</b></h3>
-       
+        <h3><b>Real people. Real results</b></h3>      
       </div>
-      <div class="curalin-new-sub-wrapper">
-      <img class="curalin-new-img" src="{{ 'curalin-new-satisfied-1.png' | asset_url }}" width="228" height="228" alt="gift-card" loading="lazy"> 
-      <div class="commitement-text">
-        <img class="curalin-new-img" src="{{ 'curalin-new-satisfied-2.png' | asset_url }}" width="228" height="228" alt="gift-card" loading="lazy"> 
-      </div>
-      </div>
-    </div>
-   <div class="commitment-we-proud">
-    We’re proud of you!
-   </div>
-   <div class="commitment-have-to-do">What do you have to do? </div>
-   <div class="commitment-wrapper">
     
-      {% assign commitments = "Commit and complete the 30 Day Challenge 
+    </div>
+  
+   
+   <div class="curalin-new-wrapper">
+    
+      {% assign commitments = "curalin-new-satisfied-1.png*Are satisfied with Curalin
        
-        |Send us your testimonial about how you feel!" | split: "|" %}
+        |curalin-new-satisfied-1.png*Feel safe using Curalin" | split: "|" %}
 
       <div class="commitments">
         {% for commitment in commitments %}
           <div class="commitment">
-            <div class="commitment-icon"><i class="icofont-check"></i></div>
-            <div class="commitment-text">{{ commitment | split: ":" | first }}</div>
+            
+            <div class="curalin-new-text">{{ commitment | asset_url | split: "*" | first }}</div>
+            <div class="curalin-new-text">{{ commitment | split: "*" | last }}</div>
           </div>
         {% endfor %}
       </div>
@@ -64,32 +57,8 @@
     margin: 0 auto;
   }
 
-  .curalin-new-sub-wrapper {
-    display: flex;
-    max-width: 69%;
-    margin: 0 auto;
-    padding-bottom: 30px;
-  }
 
-  .curalin-new-sub-wrapper .curalin-new-img {
-    max-width: 31%;
-    object-fit: contain;
-  }
-
-  .sub-title .curalin-new-img-mb {
-    display: none;
-  }
-
-
-  .curalin-new-sub-wrapper .commitement-text {
-    font-family: 'DM Sans';
-    font-weight: 400;
-    font-size: clamp(16px, 2vw, 20px);
-    color: var(--dark-green);
-    line-height: 24px;
-  }
-
-  .commitment-we-proud {
+  .curalin-new-we-proud {
     background-image: url("{{ 'thirty-day-curalin-new-swoosh.png' | asset_url }}");
     background-repeat: no-repeat;
     background-position: center;
@@ -103,7 +72,7 @@
     color: var(--dark-green);
   }
 
-  .commitment-have-to-do {
+  .curalin-new-have-to-do {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
     font-size: 30px;
@@ -114,7 +83,7 @@
   }
 
 
-   .commitment-wrapper {
+   .curalin-new-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,7 +111,7 @@
 
 
 
-  .commitments .commitment .commitment-icon {
+  .commitments .commitment .curalin-new-icon {
     background: var(--peach);
     color: white;
     border-radius: 50%;
@@ -157,7 +126,7 @@
   }
 
 
-   .commitments .commitment .commitment-text {
+   .commitments .commitment .curalin-new-text {
     font-family: 'DM Sans';
     font-weight: 400;
     font-size: clamp(20px,2vw, 25px);
@@ -168,7 +137,7 @@
 
 
   @media screen and (max-width: 768px) {
-    .commitments .commitment .commitment-icon {
+    .commitments .commitment .curalin-new-icon {
       margin-top: unset;
     }
     .commitments .commitment {
@@ -178,25 +147,15 @@
       padding-bottom: unset;
       width: 100%;
     }
-    .curalin-new-sub-wrapper {
-      max-width: unset;
-    }
-
+  
 
 
     .curalin-new-for-you-wrapper .sub-title {
       justify-content: space-between;
     }
 
-    .curalin-new-sub-wrapper .curalin-new-img {
-      display: none;
-    }
 
-    .sub-title .curalin-new-img-mb {
-      display: inline-block;
-      object-fit: contain;
-      max-width: 35%;
-    }
+  
 
     .curalin-new-for-you-wrapper .sub-title h3 {
       text-align: left;
@@ -204,17 +163,9 @@
       line-height: 35px;
     }
 
-    .commitment-we-proud {
-      line-height: 54px;
-    }
 
-    .commitment-have-to-do {
-      text-align: left;
-      font-size: 20px;
-      line-height: 22px
-    }
 
-    .commitment-wrapper {
+    .curalin-new-wrapper {
       justify-content: flex-start;
     }
 
@@ -228,7 +179,7 @@
       width: 100%;
     }
 
-     .commitments .commitment .commitment-text {
+     .commitments .commitment .curalin-new-text {
       max-width: unset;
       line-height: 24px;   
     }
