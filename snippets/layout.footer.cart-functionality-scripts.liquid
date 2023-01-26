@@ -85,7 +85,7 @@
       var finalCartPrice = parseFloat(cartPrice) + parseFloat(changePrice);
       $(".cstm_pric").text(currencySymbol + finalCartPrice.toFixed(2));
       if (finalCartPrice == 0) {
-        $(".plc_order").attr("href", "/collections/all");
+        $(".plc_order").attr("href", "/collections");
       }
     }
     else {
