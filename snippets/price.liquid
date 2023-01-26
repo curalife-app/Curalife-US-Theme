@@ -10,7 +10,6 @@
   {% assign quantity = prod.metafields.my_fields.pack_bottles_quantity %}
 {% else %}
   {% assign quantity = prod.metafields.my_fields.pack_items_quantity %}
-  <script>console.log("ho {{ quantity }}")</script>
 {% endif %}
 
 {% assign quantity_by_cents = quantity | times: 100 %}
