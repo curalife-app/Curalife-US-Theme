@@ -55,6 +55,7 @@ health.'
   
   {% if isCuralinNew %}
       {% render 'curalin-supplement-info-section' %}
+      <script>console.log("reached this!!!")</script>
    {% else %}     
         {% render 'product-supplement-info-section', titleColor: title_color %}
   {% endif %}
