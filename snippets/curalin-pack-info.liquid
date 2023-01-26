@@ -190,13 +190,13 @@
 
     .curalin-pack-info-section .ingredients {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      max-width: 400px;
       gap: 10px;
     }
 
     .curalin-pack-info-section .ingredient {
-      width: 120px;
+      width: 30%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -290,17 +290,15 @@
     }
 
     .curalin-pack-info-section .tabbed-content .item.active .item-content {
+      display: flex;
+      justify-content: center;
       opacity: 1;
       visibility: visible;
       height: auto;
     }
 
     @media all and (min-width: 1130px) {
-      .curalin-pack-info-section .ingredients {
-        max-width: unset;
-      }  
   
-
       .curalin-pack-info-section .health-benefits {
           justify-content: center;
         }
@@ -403,7 +401,7 @@
       }
     }
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
       .curalin-pack-info-section .health-benefits .health-benefit {
         gap: 2vw;
       }
