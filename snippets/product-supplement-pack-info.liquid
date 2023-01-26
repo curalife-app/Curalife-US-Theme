@@ -368,7 +368,7 @@
         content: "+";
         font-size: 30px;
         position: absolute;
-        top: 0.2vw;
+        top: 5px;
         right: 2vw;
         border: 2px solid var(--light-green);
         border-radius: 50%;
@@ -418,6 +418,12 @@
 
       .pack-info-section .instructions .step h3 {
         min-width: 20vw;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .pack-info-section .item::after {
+        top: 4vw;
       }
     }
   </style>
