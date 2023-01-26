@@ -53,7 +53,7 @@
         </div>
 
         <div class="description">
-          {% if product.metafields.custom.original_item_variant.price %}
+          {% if product.metafields.custom.original_item_variant %}
             {% render 'price', product: product.metafields.custom.original_item_variant, productType: "variant" %}
           {% else %}
             {% render 'price', product: product %}
