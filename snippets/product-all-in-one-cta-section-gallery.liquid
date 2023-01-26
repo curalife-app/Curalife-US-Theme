@@ -1,9 +1,3 @@
-{% if isCuralinContent %}
-  {% assign images_counter = product.image.size | plus: 6 %}
-{% else %}
-  {% assign images_counter = product.image.size %}
-{% endif %}
-
 {% if product.images.size > 1 %}
   <div class="product-thumbnails">
     <div class="product-slider">
