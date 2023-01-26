@@ -18,8 +18,7 @@
 
       <div class="commitments">
         {% for commitment in commitments %}
-          <div class="commitment">
-            
+          <div class="commitment">        
             <div class="curalin-new-text">{{ commitment | asset_url | split: "*" | first }}</div>
             <div class="curalin-new-text">{{ commitment | split: "*" | last }}</div>
           </div>
@@ -94,12 +93,13 @@
   .commitments {
     display: flex;
     padding-bottom: 30px;
-    max-width: 79%;
+    justify-content: center;
   }
 
  .commitments .commitment {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 15px 0;
     font-family: "PP Radio Grotesk";
@@ -124,9 +124,7 @@
 
 
   @media screen and (max-width: 768px) {
-    .commitments .commitment {
-      max-width: unset;
-    }
+
     .curalin-new-for-you-wrapper {
       padding-bottom: unset;
       width: 100%;
