@@ -25,17 +25,16 @@ health.'
 
 <div id="supplement-page">
   {% if isCuralinNew %}
-  {% render 'product-all-in-one-cta-section', newCuralinTitle: true, ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true, isReviews: true %}
+    {% render 'product-all-in-one-cta-section', newCuralinTitle: true, ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true, isReviews: true %}
   {% comment %} {% render 'sale-banner', desktopContent: "none", mobileContent: "title", bgColor: "var(--light-green)", title: "Buy curalin & get 60% off happy joints" %} {% endcomment %}
   {% else %}
-  {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
+    {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
 {% endif %}
   {% if isCuralinNew %}
     {% render 'curalin-supplement-benefits' %}
   {% else %}
     {% render 'product-supplement-health-benefits' %}
   {% endif %}
-
 
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
@@ -46,13 +45,12 @@ health.'
       {% endif %}
     {% endfor %}
   {% else %}
-
-  {% if isCuralinNew %}
-    {% render 'curalin-pack-info', product: product, isCuralinRender: true %}
-  {% else %}
-    {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
+    {% if isCuralinNew %}
+      {% render 'curalin-pack-info', product: product, isCuralinRender: true %}
+    {% else %}
+      {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
+    {% endif %}
   {% endif %}
-{% endif %}
   
   {% if isCuralinNew %}
       {% render 'curalin-supplement-info-section' %}
@@ -61,8 +59,6 @@ health.'
         {% render 'product-supplement-info-section', titleColor: title_color %}
       {% endunless %}
   {% endif %}
-
-
 
   {% if isCuralinBundled %}
     {% render 'product-supplement-doctors-section' %}
