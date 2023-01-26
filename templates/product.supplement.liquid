@@ -52,12 +52,14 @@ health.'
   {% else %}
     {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
   {% endif %}
+{% endif %}
   
   {% if isCuralinNew %}
       {% render 'curalin-supplement-info-section' %}
-      <script>console.log("reached this!!!")</script>
-   {% else %}     
+   {% else %}
+      {% unless product.title contains "Curalin Monthly Deals" %}
         {% render 'product-supplement-info-section', titleColor: title_color %}
+      {% endunless %}
   {% endif %}
 
 
