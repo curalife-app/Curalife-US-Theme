@@ -53,8 +53,6 @@
           <span class="real rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
         </div>
       {% endif %}
-
-      {% comment %} <p class="promotion-title">{{ promotion_title }} ({{ bundle_addition_value | money_with_currency | replace: ".00", "" | replace: "GBP", "" }} Value!)</p> {% endcomment %}
     </div>
 
     {% unless isSkipCart %}
