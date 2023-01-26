@@ -170,12 +170,18 @@
       display: flex;
       flex-direction: column;
       gap: 30px;
+      max-width: 650px;
     }
 
     .curalin-pack-info-section .instructions .step {
       display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 70%;
+    }
+
+    .curalin-pack-info-section .instructions .step p {
+        min-width: 210px;
     }
 
     .curalin-pack-info-section .instructions .step h3 {
@@ -402,6 +408,9 @@
     }
 
     @media screen and (max-width: 768px) {
+      .curalin-pack-info-section .health-benefits .health-benefit {
+        width: 40%;
+      }
       .curalin-pack-info-section .health-benefits .health-benefit {
         gap: 2vw;
       }
