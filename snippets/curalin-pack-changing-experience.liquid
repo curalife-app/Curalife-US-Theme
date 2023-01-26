@@ -140,30 +140,26 @@
  <script>
   quoteSlider = new Swiper(".quote-slider .swiper", {
     slidesPerView: 1,
-    spaceBetween: 15,
-    centeredSlides: true,
-    watchSlidesVisibility: true,
-    loop: false,
+    spaceBetween: 0,
     grabCursor: true,
-    slideToClickedSlide: true,
-    thumbs: {swiper: productThumbsAllInOne},
+    autoHeight: true,
+    loop: true,
+    navigation: {
+      nextEl: ".next-slide2",
+      prevEl: ".prev-slide2",
+      disabledClass: 'disabled'
+    },
     breakpoints: {
       0: {
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: 'true',
-          type: 'bullets',
-        },
-        navigation: {
-          nextEl: '.next-slide2',
-          prevEl: '.prev-slide2',
-          disabledClass: 'disabled'
-        },
-        loop:true
+        slidesPerView: 1
       },
-      760: {
-        pagination: {},
-        navigation: {}
+      630: {
+        slidesPerView: 1,
+        centeredSlides: false
+      },
+      992: {
+        slidesPerView: 1,
+        centeredSlides: true
       }
     }
   });
