@@ -23,7 +23,10 @@
       ];
 
       const expCookie = getCookie('_gaexp');
-      const isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1');
+
+      if (expCookie) {
+        const isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1');
+      }
 
       if (isTest) {
         // redirect to pricing page
