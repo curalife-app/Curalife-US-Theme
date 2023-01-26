@@ -3,7 +3,6 @@
     
     <div class="curalin-content">
        <h2 class="curalin-title">{{ product.metafields.custom.info_section_title }}</h2>
-      <div class="line"></div>
       <p class="description">{{ product.metafields.custom.info_section_description }}</p>  
     </div>
     <img class="main-image" src="{{ "curalin-info-section-men.png" | asset_url }}" width="362" height="839" alt="Joint Info" loading="lazy">
@@ -42,32 +41,19 @@
     white-space: unset !important;
   }
 
-  #curalin-info-section h3 {
-    margin: 30px 0;
-    font-size: 24px;
-  }
+ 
 
-  #curalin-info-section .line {
-    width: 100px;
-    margin: 30px 0;
-    border-bottom: 1px solid black;
-  }
-
-  #curalin-info-section p {
-    white-space: pre-line;
-  }
 
   #curalin-info-section .description  {
-    white-space: pre-wrap;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 44px;
+    color: #5E8F8F;
   }
 
   @media screen and (max-width: 768px) {
-    #curalin-info-section .main-image {
-      display: none;
-    }
-
-
-
     #curalin-info-section .curalin-content {
       max-width: 100%;
     }
