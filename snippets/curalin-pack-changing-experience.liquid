@@ -41,11 +41,13 @@
 </div> 
 
 <style>
-  .quote-card {
+
+  .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
+    top: 0;
+    max-width: 60%;
     background: unset;
     box-shadow: unset;
   }
-
   .quote-slider .slider-control {
     justify-content: space-between;
   }
@@ -80,6 +82,12 @@
     line-height: 24px;
     color: #424733;
   }
+
+  @media screen and (max-width: 768px) {
+    .quote-slider .swiper-slide.swiper-slide-active .quote-card {
+      max-width: 80%;
+    }
+  } 
 
 @media screen and (max-width: 629px) {
   .quoted-text {
