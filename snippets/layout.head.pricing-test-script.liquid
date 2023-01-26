@@ -21,11 +21,11 @@
         '/pages/glucose-support-lp01n-v2',
         '/products/30-day-blood-sugar-challenge-pp'
       ];
-
+      let isTest = false;
       const expCookie = getCookie('_gaexp');
 
       if (expCookie) {
-        const isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1');
+        isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
       }
 
       if (isTest) {
