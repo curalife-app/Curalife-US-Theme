@@ -1,16 +1,14 @@
 <section class="cta-section" id="cta-section-anchor">
   <div class="container product-container">
     <div class="product-image-wrapper">
-     
       {% render 'product-all-in-one-cta-section-gallery', product: product, isCuralinContent: isCuralinContent, isSaveTitle: isSaveTitle %}
-     
     </div>
 
     <div class="product-info">
       <h1>{% if mainTitle %}{{ mainTitle }}{% elsif product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
-  
+
       {% if isReviews %}
-        {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}    
+        {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: true %}
       {% endif %}
     </div>
 
