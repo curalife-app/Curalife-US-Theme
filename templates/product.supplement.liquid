@@ -12,7 +12,7 @@
 {% endif %}
 
 {% if product.url contains '/curalin-new-product' %}
-  {% assign isCuralinNew = true %}
+  {% assign isCuralin = true %}
 {% endif %}
 
 {% assign doctors = 'lp-aio-michel.png*Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code.
@@ -24,13 +24,13 @@ health.'
 
 
 <div id="supplement-page">
-  {% if isCuralinNew %}
+  {% if isCuralin %}
     {% render 'product-all-in-one-cta-section', newCuralinTitle: true, ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true, isReviews: true %}
-  {% comment %} {% render 'sale-banner', desktopContent: "none", mobileContent: "title", bgColor: "var(--light-green)", title: "Buy curalin & get 60% off happy joints" %} {% endcomment %}
   {% else %}
     {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
-{% endif %}
-  {% if isCuralinNew %}
+  {% endif %}
+
+  {% if isCuralin %}
     {% render 'curalin-supplement-benefits' %}
   {% else %}
     {% render 'product-supplement-health-benefits' %}
@@ -45,16 +45,16 @@ health.'
       {% endif %}
     {% endfor %}
   {% else %}
-    {% if isCuralinNew %}
+    {% if isCuralin %}
       {% render 'curalin-pack-info', product: product, isCuralinRender: true %}
     {% else %}
       {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
     {% endif %}
   {% endif %}
-  
-  {% if isCuralinNew %}
+
+  {% if isCuralin %}
       {% render 'curalin-supplement-info-section' %}
-   {% else %}
+  {% else %}
       {% unless product.title contains "Curalin Monthly Deals" %}
         {% render 'product-supplement-info-section', titleColor: title_color %}
       {% endunless %}
@@ -64,7 +64,7 @@ health.'
     {% render 'product-supplement-doctors-section' %}
   {% endif %}
 
-  {% if isCuralinNew %}
+  {% if isCuralin %}
     {% render 'curalin-pack-new-results' %}
     {% render 'aio-first-page-trusted-doctors', doctors: doctors, noDescription: true %}
   {% endif %}
