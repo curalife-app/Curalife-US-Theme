@@ -29,14 +29,14 @@
             {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-' %}
             <img class="product-suppliment-mb" src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
             <div id="health-benefits-{{ index }}" class="item active always-active" data-title="{{ ingredient }}">
-                {% for ingridientData in product.metafields.custom.ingredients_data.value %}     
+                {% for ingridient in product.metafields.custom.ingredients_data.value %}     
                     <div class="health-benefits item-content">      
                             <div class="subtitle-data">Impact:</div>
-                            <p class="impact-desc">{{ ingridientData.impact }}</p>
+                            <p class="impact-desc">{{ ingridient.impact }}</p>
                             <div class="subtitle-data">Active compound:</div>
-                            <p class="impact-desc">{{ ingridientData.compound }}</p>
+                            <p class="impact-desc">{{ ingridient.compound }}</p>
                             <div class="subtitle-data">Research:</div>
-                            <p class="impact-desc">{{ ingridientData.recearch }}</p>                 
+                            <p class="impact-desc">{{ ingridient.recearch }}</p>                 
                     </div>
                 {% endfor %}              
             </div>
