@@ -26,20 +26,11 @@
 
       <div class="content">
         {% for ingredient in product.metafields.custom.ingredients.value %}  
-        
-        <div id="health-benefits-{{ index }}" class="item active always-active"            
-         data-title="
-        {{ ingredient }}">       
-          <div class="health-benefits item-content">
-          {% for benefit in product.metafields.custom.benefits_images.value %}
-            <div class="health-benefit">
-             
-              <img src="{{ benefit.src | image_url }}" alt="health benefit" loading="lazy">
-              <p>{{ benefit.alt }}</p></div>
-           
-          {% endfor %}
-          </div>
-        </div>
+            {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-' %}
+            <img src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
+            <div id="health-benefits-{{ index }}" class="item active always-active" data-title="{{ ingredient }}">       
+
+            </div>
         {% endfor %}
 
       </div>
