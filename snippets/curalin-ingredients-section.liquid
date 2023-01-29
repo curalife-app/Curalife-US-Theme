@@ -5,11 +5,11 @@
   <div class="tabbed-content tabs-side">
     <nav class="tabs">
     <ul>
-      {% for ingredient in product.metafields.custom.ingredients.value %}       
+      {% for ingredient in product.metafields.custom.ingredients_data.value %}       
         <li><a href="#health-benefits-{{ index }}" class="active">
           {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-' %}
-          <img  src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
-          {{ ingredient }}
+          <img src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
+          {{ ingredient.title }}
          <i>></i></a></li>     
         {% endfor %}
     </ul>
