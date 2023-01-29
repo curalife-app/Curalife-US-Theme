@@ -22,7 +22,7 @@
             <div id="health-benefits-{{ index }}" class="item active always-active" data-title="{{ ingredient }}">
                    
                     <div class="health-benefits item-content">      
-                        {% for highlight in product.metafields.custom.ingredients_data.value %}
+                        {% for ingridientData in product.metafields.custom.ingredients_data.value %}
                           <div class="highlight">
                             <div class="highlight-icon">{{ ingridientData.impact }}</div>
                             <p><b>{{ ingridientData.compound }}</b><br>{{ ingridientData.recearch }}</p>
