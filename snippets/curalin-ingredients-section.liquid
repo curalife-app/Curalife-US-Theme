@@ -36,10 +36,8 @@
       </nav>
 
       <div class="content">
-        {% for ingredient in ingredients %}
-        
-        <div id="health-benefits-{{ index }}" class="item active always-active"
-        
+        {% for ingredient in ingredients %}      
+        <div id="health-benefits-{{ index }}" class="item active always-active"       
          data-title="
         {{ ingredient | split: "*" | last }}">
         <img src="{{ ingredient | asset_url | split: "*" | first }}" alt="">
