@@ -21,8 +21,10 @@
           <img class="product-suppliment-mb" src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
           <div id="ingredients-{{ ingredient_handle }}" class="item {% if forloop.first %}active{% endif %}" data-title="{{ ingredient.title }}">
             <div class="ingredients item-content"> 
-              <div class="title-impact">Impact</div>     
+              <div class="title-impact">Impact:</div>     
               <div class="impact">{{ ingredient.impact }}</div>
+              <div class="title-impact">Active compound:</div>     
+              <div class="impact">{{ ingredient.compound }}</div>
               <img src="{{ "product-supplement-ingredients-molecule-" | append: ingredient_handle | append: ".png" | asset_url }}" width="1172" height="405" alt="Ingredient2" loading="lazy">
             </div>
           </div>
