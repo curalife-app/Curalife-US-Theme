@@ -5,8 +5,8 @@
       <nav class="tabs">
         <ul>
           {% for ingredient in product.metafields.custom.ingredients_data.value %}       
-            <li><a href="#ingredients-{{ ingredient.title }}" {% if forloop.first %}class="active"{% endif %}>
-              {% assign ingredient_handle = ingredient.title | downcase | replace: ' ', '-' %}
+            {% assign ingredient_handle = ingredient.title | downcase | replace: ' ', '-' %}
+            <li><a href="#ingredients-{{ ingredient_handle }}" {% if forloop.first %}class="active"{% endif %}>
               <img src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
               {{ ingredient.title }}
               <i>></i>
