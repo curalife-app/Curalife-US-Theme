@@ -1,12 +1,3 @@
-{% assign experienses = "“Curalife has kept my sugacuralin-pack-r within normal ranges even after I eat things that I probably shouldn't!”*Alon M.
-|“This is the greatest! My husband started taking this! Finally found a product that works! “*Linda V.
-|“I have tried so many different supplements with no results. This one is amazing and i am excited. I just purchased my second bottle.”*Michael Murillo Sr.
-|“It is so wonderful to find something that really works. I feel so much better!!”*Leanne A.
-|“Have been taking CuraLin over the last four months and am beyond pleased with the results.”*Michael E.
-
-" | split: '|' %}
-
-
 
 <section class="curalin-pack-ingredients-section instance-{{ index }}">
   <div class="container">
@@ -26,7 +17,7 @@
 
       <div class="content">
         {% for ingredient in product.metafields.custom.ingredients.value %}  
-            {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-' %}
+            {% assign ingredient_handle = ingredient.title | downcase | replace: ' ', '-' %}
             <img class="product-suppliment-mb" src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
             <div id="health-benefits-{{ index }}" class="item active always-active" data-title="{{ ingredient }}">
                    
