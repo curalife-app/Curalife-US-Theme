@@ -40,10 +40,7 @@
         <div  class="item active always-active"> <img src="{{ ingredient | asset_url | split: "*" | first }}" width="68" height="53" alt=""></div>    
         <div id="health-benefits-{{ index }}" class="item active always-active"            
          data-title="
-        {{ ingredient | split: "*" | last }}">
-
-       
-        
+        {{ ingredient | split: "*" | last }}">       
           <div class="health-benefits item-content">
           {% for benefit in product.metafields.custom.benefits_images.value %}
             <div class="health-benefit">
