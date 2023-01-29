@@ -29,9 +29,7 @@
             {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-' %}
             <img class="product-suppliment-mb" src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
             <div id="health-benefits-{{ index }}" class="item active always-active" data-title="{{ ingredient }}">       
-                <div class="health-benefits item-content">
-              
-                </div>
+               
             </div>
         {% endfor %}
 
