@@ -37,9 +37,8 @@
 
       <div class="content">
         {% for ingredient in ingredients %}  
-        <div id="health-benefits-{{ index }} class="item active always-active"> <img src="{{ ingredient | asset_url | split: "*" | first }}" width="68" height="53" alt=""></div>    
-        <div id="health-benefits-{{ index }}" class="item active always-active" 
-              
+        <div  class="item active always-active"> <img src="{{ ingredient | asset_url | split: "*" | first }}" width="68" height="53" alt=""></div>    
+        <div id="health-benefits-{{ index }}" class="item active always-active"            
          data-title="
         {{ ingredient | split: "*" | last }}">
 
