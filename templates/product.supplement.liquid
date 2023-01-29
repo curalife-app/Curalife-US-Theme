@@ -53,6 +53,7 @@
 
   {% if isCuralin %}
       {% render 'curalin-supplement-info-section' %}
+      {% render 'curalin-ingredients-section', product: product, isCuralinRender: true %}
   {% else %}
       {% unless product.title contains "Curalin Monthly Deals" %}
         {% render 'product-supplement-info-section', titleColor: title_color %}
