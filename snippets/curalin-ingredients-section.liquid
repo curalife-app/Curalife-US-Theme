@@ -14,8 +14,7 @@
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
         <ul>
-            {% for ingredient in product.metafields.custom.ingredients.value %}
-                
+            {% for ingredient in product.metafields.custom.ingredients.value %}       
                 <li><a href="#health-benefits-{{ index }}" class="active">
                     {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-' %}
                     <img src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
