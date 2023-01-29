@@ -36,7 +36,10 @@
       </nav>
 
       <div class="content">
-        <div id="health-benefits-{{ index }}" class="item active always-active" data-title="Benefits/Description">
+        {% for ingredient in ingredients %}
+        <div id="health-benefits-{{ index }}" class="item active always-active" data-title="<img src='{{ ingredient | asset_url | split: "*" | first }}' alt=''>
+
+        {{ ingredient | split: "*" | last }}">
           <div class="health-benefits item-content">
           {% for benefit in product.metafields.custom.benefits_images.value %}
             <div class="health-benefit">
@@ -47,6 +50,7 @@
           {% endfor %}
           </div>
         </div>
+        {% endfor %}
 
       </div>
     </div>
