@@ -22,6 +22,7 @@
           <div id="ingredients-{{ ingredient_handle }}" class="item {% if forloop.first %}active{% endif %}" data-title="{{ ingredient_handle }}">
             <div class="ingredients item-content">      
               <div class="impact">{{ ingredient.impact }}</div>
+              <img src="{{ "product-supplement-ingredients-molecule-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
             </div>
           </div>
         {% endfor %}
