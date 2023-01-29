@@ -14,7 +14,7 @@
 
  #back-to-top-btn {
       font-size: 30px;
-      padding: 0 20px;
+      padding: {% if isThirtyDay %}20px 100px {% else %} 0 20px {% endif %};
       font-weight: bold;
       height: {% unless isThirtyDay %}50px {% endunless %};
       text-align: center;
