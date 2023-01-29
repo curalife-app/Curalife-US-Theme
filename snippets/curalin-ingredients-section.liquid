@@ -31,10 +31,14 @@
             <div id="health-benefits-{{ index }}" class="item active always-active" data-title="{{ ingredient }}">       
                 <div class="health-benefits item-content">
                     {% for ingridientData in product.metafields.custom.ingredients_data.value %}
-                      <div class="faq-item">
+                      <div class="ingredient-item">
                         <h3 class="title-data">{{ ingridientData.title }}</h3>
-                        <div class="impact-title">{{ ingridientData.impactTitle }}</div>
-                        <p class="impact-title">{{ ingridientData.impactTitle }}</p>
+                        <div class="subtitle-data">Impact:</div>
+                        <p class="impact-desc">{{ ingridientData.impact }}</p>
+                        <div class="subtitle-data">Active compound:</div>
+                        <p class="impact-desc">{{ ingridientData.compound }}</p>
+                        <div class="subtitle-data">Research:</div>
+                        <p class="impact-desc">{{ ingridientData.recearch }}</p>
                       </div>
                     {% endfor %}
                 </div>
