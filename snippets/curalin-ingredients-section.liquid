@@ -21,7 +21,7 @@
             <img class="product-suppliment-mb" src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
             <div id="ingredient-{{ index }}" class="item" data-title="{{ ingredient }}">
                    
-                    <div class="health-benefits item-content">      
+                    <div class="ingredients item-content">      
                         {% for ingredientData in product.metafields.custom.ingredients_data.value %}
                           <div class="highlight">
                             <div class="highlight-icon">{{ ingredientData.impact }}</div>
