@@ -29,7 +29,9 @@
             {% assign ingredient_handle = ingredient | downcase | replace: ' ', '-' %}
             <img class="product-suppliment-mb" src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
             <div id="health-benefits-{{ index }}" class="item active always-active" data-title="{{ ingredient }}">       
-               
+                <div class="health-benefits item-content">
+              
+                </div>
             </div>
         {% endfor %}
 
@@ -42,6 +44,11 @@
   <style>
    .content {
      max-width: 100%;
+    }
+
+
+    .content .product-suppliment-mb {
+        position: absolute;
     }
 
   
@@ -265,9 +272,7 @@
     }
 
     @media all and (min-width: 1130px) {
-        .content .product-suppliment-mb {
-            position: absolute;
-        }
+  
       .curalin-pack-ingredients-section .health-benefits {
           justify-content: center;
         }
