@@ -29,7 +29,7 @@
         
         <div id="health-benefits-{{ index }}" class="item active always-active"            
          data-title="
-        {{ ingredient | split: "*" | last }}">       
+        {{ ingredient }}">       
           <div class="health-benefits item-content">
           {% for benefit in product.metafields.custom.benefits_images.value %}
             <div class="health-benefit">
