@@ -12,6 +12,11 @@
       border: {% if isThirtyDay %}#FFB22D {% else %}#404733{% endif %};
   }
 
+
+  #back-to-top-btn a {
+    color:{% if isThirtyDay %}{{ textColor }} {% else %}#ffffff{% endif %};
+  }
+
  #back-to-top-btn {
       font-size: 30px;
       padding: {% if isThirtyDay %}20px 100px {% else %} 0 20px {% endif %};
