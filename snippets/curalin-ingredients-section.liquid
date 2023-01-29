@@ -24,14 +24,12 @@
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
         <ul>
-        {% for ingredient in ingredients %}
-
-            <li><a href="#health-benefits-{{ index }}" class="active">
-                <img src="{{ ingredient | asset_url | split: "*" | first }}" width="68" height="53" alt="">
-
-                {{ ingredient | split: "*" | last }}
-                 <i>></i></a></li>       
-        {% endfor %}
+            {% for ingredient in product.metafields.custom.ingredients.value %}
+                <li><a href="#health-benefits-{{ index }}" class="active">
+                    <img src="{{ "product-supplement-pack-info-ingredient-icon-" | append: ingredient_handle | append: ".png" | asset_url }}" width="68" height="53" alt="Ingredient" loading="lazy">
+                    {{ ingredient }}
+                 <i>></i></a></li>     
+              {% endfor %}
         </ul>
       </nav>
 
