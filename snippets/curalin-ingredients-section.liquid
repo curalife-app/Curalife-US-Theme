@@ -421,9 +421,9 @@
       line-height: 2.2em;
     }
     #curalin-pack-ingredients-section .item::after {
-      top: 3vw;
-      width: 5vw;
-      height: 5vw;
+      top: 5vw;
+      width: 4vw;
+      height: 4vw;
       font-size: 5vw;
     }
   }
@@ -457,11 +457,14 @@
     } else {
     $('.item').on('click', function() {
       var container = $(this).parents('.tabbed-content'),
-        currId = $(this).attr('id'),
-        items = container.find('.item');
+          currId = $(this).attr('id'),
+          items = container.find('.item');
+      const isCurrentActive = $(this).hasClass('active');
       container.find('.tabs a').removeClass('active');
       items.removeClass('active');
-      $(this).addClass('active');
+      if (!isCurrentActive) {
+        $(this).addClass('active')
+      };
       container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
     });
     }
