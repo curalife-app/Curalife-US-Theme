@@ -4,13 +4,13 @@
     <div class="quote-slider">
       <div class="swiper">
         <div class="swiper-wrapper">
-          {% for experience in experienses %}
+          {% for review in reviews %}
 
           <div class="swiper-slide">
             <div class="quote-card">
             <div class="info">
               <div class="quote-author">
-                <h3>{{ experience | split: "*" | last }}</h3>
+                <h3>{{ review | split: "*" | last }}</h3>
               </div>
               <div class="quote-rating">
                 <p>
@@ -22,7 +22,7 @@
                 </p>
               </div>
             </div>
-                <p class="quoted-text">{{ experience | split: "*" | first }}</p>
+                <p class="quoted-text">{{ review | split: "*" | first }}</p>
 
 
             </div>
