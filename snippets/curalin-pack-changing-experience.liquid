@@ -6,10 +6,10 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             {% for experience in experienses %}
-            
+
             <div class="swiper-slide">
               <div class="quote-card">
-              <div class="quote-info">
+              <div class="info">
                 <div class="quote-author">
                   <h3>{{ experience | split: "*" | last }}</h3>
                 </div>
@@ -24,8 +24,8 @@
                 </div>
               </div>
                   <p class="quoted-text">{{ experience | split: "*" | first }}</p>
-             
-              
+
+
               </div>
             </div>
             {% endfor %}
@@ -38,7 +38,7 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 
 <style>
 
@@ -64,8 +64,8 @@
   .quote-slider .slider-control {
     justify-content: space-between;
   }
-  .quote-card .quote-info .quote-rating p span {
-   
+  .quote-card .info .quote-rating p span {
+
     color: var(--light-green);
   }
 
@@ -84,7 +84,7 @@
 
   .quote-slider .next-slide2:hover {
     background: unset;
-   
+
   }
 
   .quote-slider .prev-slide2 span {
@@ -124,13 +124,13 @@
        top:-120px;
     }
 
-   
-  } 
+
+  }
 
 @media screen and (max-width: 629px) {
   .quoted-text {
     font-size: 3vw;
-    line-height: unset;        
+    line-height: unset;
   }
 }
 
@@ -162,4 +162,4 @@
       }
     }
   });
-</script> 
+</script>
