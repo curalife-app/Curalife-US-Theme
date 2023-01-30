@@ -464,8 +464,7 @@
       items.removeClass('active');
       if (!isCurrentActive) {
         $(this).addClass('active');
-        console.log($(this).attr('class'));
-        container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
+        {% comment %} container.find('.tabs a[href$="#'+ currId +'"]').addClass('active'); {% endcomment %}
       };
     });
     }
