@@ -488,14 +488,9 @@
     });
     } else {
     $('.item').on('click', function() {
-      var container = $(this).parents('.tabbed-content'),
-        currId = $(this).attr('id'),
-        items = container.find('.item');
-        console.log(items);
-      container.find('.tabs a').toggleClass('active');
-      items.toggleClass('active');
+    
       $(this).toggleClass('active');
-      container.find('.tabs a[href$="#'+ currId +'"]').toggleClass('active');
+     
     });
     }
   }
