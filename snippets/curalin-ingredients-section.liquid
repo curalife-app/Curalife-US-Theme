@@ -492,10 +492,10 @@
         currId = $(this).attr('id'),
         items = container.find('.item');
         console.log(items);
-      container.find('.tabs a').removeClass('active');
-      items.removeClass('active');
-      $(this).addClass('active');
-      container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
+      container.find('.tabs a').toggleClass('active');
+      items.toggleClass('active');
+      $(this).toggleClass('active');
+      container.find('.tabs a[href$="#'+ currId +'"]').toggleClass('active');
     });
     }
   }
