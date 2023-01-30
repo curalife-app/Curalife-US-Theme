@@ -11416,9 +11416,9 @@ footer .bottom-info .info-wrap .text p {
 
   .quote-card {
     padding: 8px 18px 17px 18px;
-    background: -webkit-gradient(linear, left bottom, left top, from(#FFFFFF), to(#FFFFFF)), #FFFFFF;
+    /* background: -webkit-gradient(linear, left bottom, left top, from(#FFFFFF), to(#FFFFFF)), #FFFFFF;
     background: -o-linear-gradient(bottom, #FFFFFF, #FFFFFF), #FFFFFF;
-    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF; */
   }
 
   .quote-card blockquote {
