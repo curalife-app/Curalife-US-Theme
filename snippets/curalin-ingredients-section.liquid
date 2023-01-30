@@ -484,8 +484,7 @@
       buttons.removeClass('active');
       item.removeClass('active');
       $(this).addClass('active');
-      $( this ).toggleClass( "active" );
-      {% comment %} $(target).addClass('active'); {% endcomment %}
+      $(target).toggleClass('active'); 
     });
     } else {
     $('.item').on('click', function() {
@@ -496,14 +495,10 @@
       container.find('.tabs a').removeClass('active');
       items.removeClass('active');
       $(this).addClass('active');
-      container.find('.tabs a[href$="#'+ currId +'"]').toggleClass('active');
+      container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
     });
     }
   }
   </script>
 
-  {% comment %} <script>
-  $( ".item" ).click(function() {
-    $( this ).toggleClass( "active" );
-  });
-  </script> {% endcomment %}
+
