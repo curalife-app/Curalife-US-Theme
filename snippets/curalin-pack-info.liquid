@@ -8,7 +8,7 @@
 
 <section class="curalin-pack-info-section instance-{{ index }}">
   <div class="container">
-   
+
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
         <ul>
@@ -26,10 +26,10 @@
           <div class="health-benefits item-content">
           {% for benefit in product.metafields.custom.benefits_images.value %}
             <div class="health-benefit">
-             
+
               <img src="{{ benefit.src | image_url }}" alt="health benefit" loading="lazy">
               <p>{{ benefit.alt }}</p></div>
-           
+
           {% endfor %}
           </div>
         </div>
@@ -93,7 +93,7 @@
     }
 
     .curalin-pack-info-section {
-     
+
     }
 
     .curalin-pack-info-section:nth-of-type(even) {
@@ -146,7 +146,7 @@
     .curalin-pack-info-section .health-benefits .health-benefit {
       display: flex;
       align-items: center;
-      width: 35%;   
+      width: 35%;
       gap: 20px;
     }
 
@@ -200,6 +200,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
+      max-width: 500px;
     }
 
     .curalin-pack-info-section .ingredient {
@@ -305,7 +306,7 @@
     }
 
     @media all and (min-width: 1130px) {
-  
+
       .curalin-pack-info-section .health-benefits {
           justify-content: center;
         }
@@ -394,7 +395,7 @@
         padding: 5vw 0;
       }
 
-    
+
       .curalin-pack-info-section .instructions .step {
         gap: 2vw;
       }
