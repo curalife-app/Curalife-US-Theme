@@ -4,8 +4,8 @@
       <div class="mini-wrap">
         <div class="changing-experiences">
           <div class="sub-title">
-            <h2 class="d-desktop">{{section.settings.clnt_titl}}</h2>
-            <h3 class="d-mobile">{{section.settings.clnt_mbltitl}}</h3>
+            <h2 class="d-desktop">{{ section.settings.clnt_titl }}</h2>
+            <h3 class="d-mobile">{{ section.settings.clnt_mbltitl }}</h3>
           </div>
           <div class="quote-slider">
             <div class="swiper">
@@ -15,11 +15,11 @@
                 <div class="swiper-slide">
                   <div class="quote-card">
                     <blockquote>
-                      <p>{{block.settings.quot_descript}}</p>
+                      <p>{{ block.settings.quot_descript }}</p>
                     </blockquote>
                     <div class="quote-info">
                       <div class="quote-author">
-                        <p>{{block.settings.authr_name}}</p>
+                        <p>{{ block.settings.authr_name }}</p>
                       </div>
                       <div class="quote-rating">
                         <p>
@@ -90,7 +90,7 @@
         <div class="feature-info">
           {% if section.settings.mntain_img != blank %}
           <div class="img-wrap">
-            <span><img src="{{ section.settings.mntain_img | image_url }}" width="442px" height="440px" alt="" loading="lazy"></span>
+            <span><img src="{{ 'curalin-homepage-bottle-global.png' | asset_url }}" width="606" height="538" alt="" loading="lazy"></span>
           </div>
           {% endif %}
           <div class="intro-text">
