@@ -21,7 +21,7 @@
       </nav>
 
       <div class="content">
-        <div id="health-benefits" class="item active always-active" data-title="Benefits/Description">
+        <div id="health-benefits" class="content-item active always-active" data-title="Benefits/Description">
           <div class="health-benefits item-content">
           {% for benefit in product.metafields.custom.benefits_images.value %}
             <div class="health-benefit">
@@ -256,7 +256,7 @@
     color: {{ link_color }};
   }
 
-  .curalin-pack-info-section .item {
+  .curalin-pack-info-section .content-item {
     margin-bottom: 2px;
     position: relative;
   }
@@ -279,11 +279,11 @@
     display: none;
   }
 
-  .tabbed-content .item {
+  .tabbed-content .content-item {
     min-height: 2em;
   }
 
-  .curalin-pack-info-section .tabbed-content .item .item-content {
+  .curalin-pack-info-section .tabbed-content .content-item .item-content {
     opacity: 0;
     visibility: hidden;
     height: 0;
@@ -319,7 +319,7 @@
       display: flex;
     }
 
-    .curalin-pack-info-section .tabbed-content .item {
+    .curalin-pack-info-section .tabbed-content .content-item {
       min-height: 0;
       margin: unset;
       max-width: 800px;
