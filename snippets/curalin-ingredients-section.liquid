@@ -1,4 +1,4 @@
-<section class="curalin-pack-ingredients-section">
+<section id="curalin-pack-ingredients-section">
   <div class="container">
     <h2>Unleash the Power of 9</h2>
     <div class="tabbed-content tabs-side">
@@ -37,19 +37,20 @@
 </section>
 
 <style>
-  .curalin-pack-ingredients-section .container .curalin-titles h2 {
+  #curalin-pack-ingredients-section .container .curalin-titles h2 {
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
     font-size: 48px;
+    margin-bottom: 50px;
     color: #404733;
   }
 
   @media screen and (max-width: 768px) {
-    .curalin-pack-ingredients-section .container .curalin-titles h2 {
+    #curalin-pack-ingredients-section .container .curalin-titles h2 {
       font-size: 8vw;
     }
 
-    .curalin-pack-ingredients-section .container .curalin-titles .curalin-subtitle {
+    #curalin-pack-ingredients-section .container .curalin-titles .curalin-subtitle {
       font-size: 4vw;
     }
   }
@@ -85,27 +86,27 @@
     color: #191A1E;
   }
 
-  .curalin-pack-ingredients-section:nth-of-type(even) {
+  #curalin-pack-ingredients-section:nth-of-type(even) {
     background: {{ bg_color }};
   }
 
-  .curalin-pack-ingredients-section .product-image-wrapper {
+  #curalin-pack-ingredients-section .product-image-wrapper {
     position: absolute;
     bottom: -120px;
     right: 0;
     pointer-events: none;
   }
 
-  .curalin-pack-ingredients-section:nth-of-type(even) .tabbed-content {
+  #curalin-pack-ingredients-section:nth-of-type(even) .tabbed-content {
     margin-left: unset;
   }
 
-  .curalin-pack-ingredients-section:nth-of-type(even) .product-image-wrapper,
-  .curalin-pack-ingredients-section:nth-of-type(even) .product-image-wrapper p{
+  #curalin-pack-ingredients-section:nth-of-type(even) .product-image-wrapper,
+  #curalin-pack-ingredients-section:nth-of-type(even) .product-image-wrapper p{
     left: 0;
   }
 
-  .curalin-pack-ingredients-section .product-image-wrapper .number {
+  #curalin-pack-ingredients-section .product-image-wrapper .number {
     font-family: var(--main-font);
     position: absolute;
     right: 0;
@@ -117,29 +118,29 @@
     margin: unset;
   }
 
-  .curalin-pack-ingredients-section.curalin-pack-ingredients-section:nth-of-type(even) .product-image-wrapper .number {
+  #curalin-pack-ingredients-section#curalin-pack-ingredients-section:nth-of-type(even) .product-image-wrapper .number {
     color: {{ number_color }};
   }
 
-  .curalin-pack-ingredients-section .product-image-wrapper .product-image {
+  #curalin-pack-ingredients-section .product-image-wrapper .product-image {
     position: relative;
     right: -10px;
   }
 
-  .curalin-pack-ingredients-section .health-benefits {
+  #curalin-pack-ingredients-section .health-benefits {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
   }
 
-  .curalin-pack-ingredients-section .health-benefits .health-benefit {
+  #curalin-pack-ingredients-section .health-benefits .health-benefit {
     display: flex;
     align-items: center;
     width: 35%;
     gap: 20px;
   }
 
-  .curalin-pack-ingredients-section .health-benefit-icon {
+  #curalin-pack-ingredients-section .health-benefit-icon {
     background: var(--light-green);
     color: white;
     border-radius: 50%;
@@ -152,14 +153,14 @@
     margin-right: 20px;
   }
 
-  .curalin-pack-ingredients-section .instructions {
+  #curalin-pack-ingredients-section .instructions {
     display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 650px;
   }
 
-  .curalin-pack-ingredients-section .instructions .step {
+  #curalin-pack-ingredients-section .instructions .step {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -167,21 +168,21 @@
     max-width: 70%;
   }
 
-  .curalin-pack-ingredients-section .instructions .step p {
+  #curalin-pack-ingredients-section .instructions .step p {
     min-width: 210px;
   }
 
-  .curalin-pack-ingredients-section .instructions .step h3 {
+  #curalin-pack-ingredients-section .instructions .step h3 {
     font-size: 28px;
     font-weight: bold;
     min-width: 105px;
   }
 
-  .curalin-pack-ingredients-section .instructions .step .capsules {
+  #curalin-pack-ingredients-section .instructions .step .capsules {
     min-width: 80px;
   }
 
-  .curalin-pack-ingredients-section .ingredients {
+  #curalin-pack-ingredients-section .ingredients {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -193,73 +194,73 @@
     justify-content: center;
   }
 
-  .curalin-pack-ingredients-section .ingredient {
+  #curalin-pack-ingredients-section .ingredient {
     width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .curalin-pack-ingredients-section .ingredient p {
+  #curalin-pack-ingredients-section .ingredient p {
     font-size: 16px;
     text-align: center;
   }
 
-  .curalin-pack-ingredients-section .facts {
+  #curalin-pack-ingredients-section .facts {
     text-align: center;
   }
 
-  .curalin-pack-ingredients-section .facts img {
+  #curalin-pack-ingredients-section .facts img {
     max-height: 300px;
   }
 
-  .curalin-pack-ingredients-section .tabbed-content {
+  #curalin-pack-ingredients-section .tabbed-content {
     max-width: 1000px;
     display: flex;
-    align-items: center;
+    gap: 50px;
   }
 
-  .curalin-pack-ingredients-section .tabs ul li {
+  #curalin-pack-ingredients-section .tabs ul li {
     text-align: center;
     height: 70px;
     border-bottom: 1px solid;
   }
 
-  .curalin-pack-ingredients-section .tabs ul li:first-child {
+  #curalin-pack-ingredients-section .tabs ul li:first-child {
     border-top: 1px solid;
   }
 
-  .curalin-pack-ingredients-section .tabs ul li a {
+  #curalin-pack-ingredients-section .tabs ul li a {
     height: 100%;
     align-items: center;
     display: flex;
     justify-content: center;
   }
 
-  .curalin-pack-ingredients-section .tabs ul li a i {
+  #curalin-pack-ingredients-section .tabs ul li a i {
     position: relative;
     transition: all 0.5s ease-in-out;
     font-style: normal;
     left: 20px;
   }
 
-  .curalin-pack-ingredients-section .tabs ul li a:hover,
-  .curalin-pack-ingredients-section .tabs ul li a.active {
+  #curalin-pack-ingredients-section .tabs ul li a:hover,
+  #curalin-pack-ingredients-section .tabs ul li a.active {
     color: var(--brown);
     font-weight: bold;
   }
 
-  .curalin-pack-ingredients-section:nth-of-type(even) .tabs ul li a:hover,
-  .curalin-pack-ingredients-section:nth-of-type(even) .tabs ul li a.active {
+  #curalin-pack-ingredients-section:nth-of-type(even) .tabs ul li a:hover,
+  #curalin-pack-ingredients-section:nth-of-type(even) .tabs ul li a.active {
     color: {{ link_color }};
   }
 
-  .curalin-pack-ingredients-section .item {
+  #curalin-pack-ingredients-section .item {
     margin-bottom: 2px;
     position: relative;
   }
 
-  .curalin-pack-ingredients-section .item::before {
+  #curalin-pack-ingredients-section .item::before {
     content: attr(data-title);
     border-top: 1px solid var(--light-green);
     cursor: pointer;
@@ -269,11 +270,11 @@
     text-align: center;
   }
 
-  .curalin-pack-ingredients-section .item.active .item-content {
+  #curalin-pack-ingredients-section .item.active .item-content {
     transition: opacity 0.8s ease-in-out;
   }
 
-  .curalin-pack-ingredients-section .tabbed-content .tabs {
+  #curalin-pack-ingredients-section .tabbed-content .tabs {
     display: none;
   }
 
@@ -281,13 +282,13 @@
     min-height: 2em;
   }
 
-  .curalin-pack-ingredients-section .tabbed-content .item .item-content {
+  #curalin-pack-ingredients-section .tabbed-content .item .item-content {
     opacity: 0;
     visibility: hidden;
     height: 0;
   }
 
-  .curalin-pack-ingredients-section .tabbed-content .item.active .item-content {
+  #curalin-pack-ingredients-section .tabbed-content .item.active .item-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -301,7 +302,7 @@
       display: none;
     }
 
-    .curalin-pack-ingredients-section .health-benefits {
+    #curalin-pack-ingredients-section .health-benefits {
       justify-content: center;
     }
 
@@ -309,45 +310,45 @@
       padding-top: 0;
     }
 
-    .curalin-pack-ingredients-section .tabbed-content .tabs {
+    #curalin-pack-ingredients-section .tabbed-content .tabs {
       display: block;
     }
 
-    .curalin-pack-ingredients-section .tabbed-content .tabs li {
+    #curalin-pack-ingredients-section .tabbed-content .tabs li {
       display: inline-block;
       margin-bottom: 2px;
     }
 
-    .curalin-pack-ingredients-section .tabbed-content .tabs li a {
+    #curalin-pack-ingredients-section .tabbed-content .tabs li a {
       display: flex;
     }
 
-    .curalin-pack-ingredients-section .tabbed-content .item {
+    #curalin-pack-ingredients-section .tabbed-content .item {
       min-height: 0;
     }
 
-    .curalin-pack-ingredients-section .tabbed-content .item::before {
+    #curalin-pack-ingredients-section .tabbed-content .item::before {
       display: none;
     }
 
-    .curalin-pack-ingredients-section .tabbed-content.tabs-side .tabs {
+    #curalin-pack-ingredients-section .tabbed-content.tabs-side .tabs {
       min-width: 300px;
       margin-right: 50px;
     }
 
-    .curalin-pack-ingredients-section .tabbed-content.tabs-side .tabs li {
+    #curalin-pack-ingredients-section .tabbed-content.tabs-side .tabs li {
       display: flex;
       min-width: 340px;
     }
   }
 
   @media all and (max-width: 1130px) {
-    .curalin-pack-ingredients-section .tabbed-content {
+    #curalin-pack-ingredients-section .tabbed-content {
       display: block;
       margin-left: unset !important;
     }
 
-    .curalin-pack-ingredients-section .item::after {
+    #curalin-pack-ingredients-section .item::after {
       content: "+";
       font-size: 30px;
       position: absolute;
@@ -364,11 +365,11 @@
       color: var(--light-green);
     }
 
-    .curalin-pack-ingredients-section .item.active::after {
+    #curalin-pack-ingredients-section .item.active::after {
       content: "-";
     }
 
-    .curalin-pack-ingredients-section .product-image-wrapper {
+    #curalin-pack-ingredients-section .product-image-wrapper {
       bottom: 0;
       width: 100%;
       position: relative;
@@ -376,50 +377,50 @@
       margin-top: 10vw;
     }
 
-    .curalin-pack-ingredients-section .product-image-wrapper .product-image {
+    #curalin-pack-ingredients-section .product-image-wrapper .product-image {
       right: unset;
       text-align: center;
     }
 
-    .curalin-pack-ingredients-section .product-image-wrapper .number {
+    #curalin-pack-ingredients-section .product-image-wrapper .number {
       top: -15vw;
       font-size: 70vw !important;
       right: 13vw;
     }
 
-    .curalin-pack-ingredients-section .tabbed-content .item.active .item-content {
+    #curalin-pack-ingredients-section .tabbed-content .item.active .item-content {
       padding: 5vw 0;
     }
 
-    .curalin-pack-ingredients-section .instructions .step {
+    #curalin-pack-ingredients-section .instructions .step {
       gap: 2vw;
     }
 
-    .curalin-pack-ingredients-section .instructions .step h3 {
+    #curalin-pack-ingredients-section .instructions .step h3 {
       min-width: 20vw;
     }
   }
 
   @media screen and (max-width: 768px) {
-    .curalin-pack-ingredients-section .health-benefits .health-benefit {
+    #curalin-pack-ingredients-section .health-benefits .health-benefit {
       width: 40%;
     }
-    .curalin-pack-ingredients-section .health-benefits .health-benefit {
+    #curalin-pack-ingredients-section .health-benefits .health-benefit {
       gap: 2vw;
     }
-    .curalin-pack-ingredients-section .health-benefits .health-benefit p {
+    #curalin-pack-ingredients-section .health-benefits .health-benefit p {
       font-size: 2.5vw;
     }
   }
 
   @media screen and (max-width: 500px) {
-    .curalin-pack-ingredients-section .item::before {
+    #curalin-pack-ingredients-section .item::before {
       text-align: left;
       padding: 0.5em 0.5em 0.5em 5em;
       font-size: 4vw;
       line-height: 2.2em;
     }
-    .curalin-pack-ingredients-section .item::after {
+    #curalin-pack-ingredients-section .item::after {
       top: 3vw;
       width: 5vw;
       height: 5vw;
@@ -440,14 +441,14 @@
   });
 
   function tabControl() {
-    var tabs = $('.curalin-pack-ingredients-section .tabbed-content').find('.tabs');
+    var tabs = $('#curalin-pack-ingredients-section .tabbed-content').find('.tabs');
     if(tabs.is(':visible')) {
     tabs.find('a').on('click', function(event) {
       event.preventDefault();
       var target = $(this).attr('href'),
           tabs = $(this).parents('.tabs'),
           buttons = tabs.find('a'),
-          item = tabs.parents('.curalin-pack-ingredients-section .tabbed-content').find('.item');
+          item = tabs.parents('#curalin-pack-ingredients-section .tabbed-content').find('.item');
       buttons.removeClass('active');
       item.removeClass('active');
       $(this).addClass('active');
