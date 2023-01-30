@@ -10,8 +10,9 @@
               <div class="swiper-slide">
                 <div class="quote-card">
                 <div class="quote-info">
+                  <img src="{{ experience | asset_url | split: "*" | first }}" alt="">
                   <div class="quote-author">
-                    <h3>{{ experience | split: "*" | last }}</h3>
+                    <h3>{{ experience | split: "*" | last | split: ":" | first }}</h3>
                   </div>
                   <div class="quote-rating">
                     <p>
@@ -23,7 +24,7 @@
                     </p>
                   </div>
                 </div>
-                    <p class="quoted-text">{{ experience | split: "*" | first }}</p>
+                    <p class="quoted-text">{{ experience | split: "*" | last | split: ":" | last }}</p>
                
                 
                 </div>
