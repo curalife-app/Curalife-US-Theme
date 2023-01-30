@@ -5,23 +5,23 @@
 |“Have been taking CuraLin over the last four months and am beyond pleased with the results.”*Michael E."
 | split: '|' %}
 
-<section class="curalin-pack-info-section instance-{{ index }}">
+<section class="curalin-pack-info-section">
   <div class="container">
 
     <div class="tabbed-content tabs-side">
       <nav class="tabs">
         <ul>
-          <li><a href="#health-benefits-{{ index }}" class="active">Benefits/Description <i>></i></a></li>
-          <li><a href="#instructions-{{ index }}">Usage Instructions <i>></i></a></li>
+          <li><a href="#health-benefits" class="active">Benefits/Description <i>></i></a></li>
+          <li><a href="#instructions">Usage Instructions <i>></i></a></li>
           {% if product.metafields.custom.ingredients.value %}
-            <li><a href="#ingredients-{{ index }}">Ingredients <i>></i></a></li>
+            <li><a href="#ingredients">Ingredients <i>></i></a></li>
           {% endif %}
-          <li><a href="#facts-{{ index }}">Reviews <i>></i></a></li>
+          <li><a href="#facts">Reviews <i>></i></a></li>
         </ul>
       </nav>
 
       <div class="content">
-        <div id="health-benefits-{{ index }}" class="item active always-active" data-title="Benefits/Description">
+        <div id="health-benefits" class="item active always-active" data-title="Benefits/Description">
           <div class="health-benefits item-content">
           {% for benefit in product.metafields.custom.benefits_images.value %}
             <div class="health-benefit">
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div id="instructions-{{ index }}" class="item" data-title="Usage Instructions">
+        <div id="instructions" class="item" data-title="Usage Instructions">
           <div class="instructions item-content">
             {% for step in product.metafields.custom.instructions.value %}
               <div class="step">
@@ -55,7 +55,7 @@
         </div>
 
         {% if product.metafields.custom.ingredients.value %}
-          <div id="ingredients-{{ index }}" class="item" data-title="Ingredients">
+          <div id="ingredients" class="item" data-title="Ingredients">
             <div class="ingredients item-content">
               {% for ingredient in product.metafields.custom.ingredients.value %}
                 <div class="ingredient">
@@ -68,7 +68,7 @@
           </div>
         {% endif %}
 
-        <div id="facts-{{ index }}" class="item" data-title="Reviews">
+        <div id="facts" class="item" data-title="Reviews">
           <div class="facts item-content">
               {% render 'curalin-pack-changing-experience', reviews: reviews, onlyData: true %}
           </div>
