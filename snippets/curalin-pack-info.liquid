@@ -261,7 +261,7 @@
     position: relative;
   }
 
-  .curalin-pack-info-section .item::before {
+  .curalin-pack-info-section .content-item::before {
     content: attr(data-title);
     border-top: 1px solid var(--light-green);
     cursor: pointer;
@@ -271,7 +271,7 @@
     text-align: center;
   }
 
-  .curalin-pack-info-section .item.active .item-content {
+  .curalin-pack-info-section .content-item.active .item-content {
     transition: opacity 0.8s ease-in-out;
   }
 
@@ -289,7 +289,7 @@
     height: 0;
   }
 
-  .curalin-pack-info-section .tabbed-content .item.active .item-content {
+  .curalin-pack-info-section .tabbed-content .content-item.active .item-content {
     display: flex;
     justify-content: center;
     opacity: 1;
@@ -302,7 +302,7 @@
     .curalin-pack-info-section .health-benefits {
         justify-content: center;
       }
-    .item.active .item-content {
+    .content-item.active .item-content {
       padding-top: 0;
     }
 
@@ -331,7 +331,7 @@
       object-fit: contain;
     }
 
-    .curalin-pack-info-section .tabbed-content .item::before {
+    .curalin-pack-info-section .tabbed-content .content-item::before {
       display: none;
     }
 
@@ -351,7 +351,7 @@
       margin-left: unset !important;
     }
 
-    .curalin-pack-info-section .item::after {
+    .curalin-pack-info-section .content-item::after {
       content: "+";
       font-size: 30px;
       position: absolute;
@@ -368,7 +368,7 @@
       color: var(--light-green);
     }
 
-    .curalin-pack-info-section .item.active::after {
+    .curalin-pack-info-section .content-item.active::after {
       content: "-";
     }
 
@@ -391,7 +391,7 @@
       right: 13vw;
     }
 
-    .curalin-pack-info-section .tabbed-content .item.active .item-content {
+    .curalin-pack-info-section .tabbed-content .content-item.active .item-content {
       padding: 5vw 0;
     }
 
@@ -419,7 +419,7 @@
     }
 
     @media screen and (max-width: 500px) {
-      .curalin-pack-info-section .item::after {
+      .curalin-pack-info-section .content-item::after {
           top: 3vw;
           width: 5vw;
           height: 5vw;
@@ -448,17 +448,17 @@
       var target = $(this).attr('href'),
           tabs = $(this).parents('.tabs'),
           buttons = tabs.find('a'),
-          item = tabs.parents('#curalin-pack-ingredients-section .tabbed-content').find('.item');
+          item = tabs.parents('#curalin-pack-ingredients-section .tabbed-content').find('.content-item');
       buttons.removeClass('active');
       item.removeClass('active');
       $(this).addClass('active');
       $(target).addClass('active');
     });
     } else {
-    $('.item').on('click', function() {
+    $('.content-item').on('click', function() {
       var container = $(this).parents('.tabbed-content'),
           currId = $(this).attr('id'),
-          items = container.find('.item');
+          items = container.find('.content-item');
       const isCurrentActive = $(this).hasClass('active');
       container.find('.tabs a').removeClass('active');
       items.removeClass('active');
