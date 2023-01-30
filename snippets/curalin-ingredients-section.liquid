@@ -481,7 +481,7 @@
         tabs = $(this).parents('.tabs'),
         buttons = tabs.find('a'),
         item = tabs.parents('.curalin-pack-ingredients-section .tabbed-content').find('.item');
-      buttons.removeClass('active');
+      buttons.toggleClass('active');
       item.removeClass('active');
       $(this).addClass('active');
       $(target).addClass('active'); 
