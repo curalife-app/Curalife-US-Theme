@@ -59,6 +59,53 @@
   }
 </style>
 
+
+<style>
+  body {
+    padding-top: 0 !important;
+  }
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  .helpButton {
+    bottom: 4px !important;
+    z-index: 1000;
+    transition: bottom 0.5s;
+  }
+
+  .helpButton .helpButtonEnabled {
+    min-width: unset;
+    min-height: unset;
+    width: 50px;
+    font-size: 20px !important;
+    height: 50px;
+    justify-content: center;
+    border-radius: 50%;
+    
+    box-shadow: unset !important;
+  }
+
+  .embeddedServiceHelpButton .uiButton .helpButtonLabel {
+    display: none;
+  }
+
+  .helpButton .helpButtonEnabled .embeddedServiceIcon {
+    margin: 0;
+  }
+
+  .embeddedServiceHelpButton .helpButton .uiButton:focus {
+    outline: unset !important;
+  }
+
+ 
+
+
+}
+</style>
+
 <script>
   $(window).scroll(function() {
     if ($(window).scrollTop() > 600) {
