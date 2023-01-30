@@ -2,18 +2,18 @@
 <div class="container">
     
       <div class="featured-products-new">
-        <div class="new-featured-slider">
+        <div class="quote-slider">
           <div class="swiper">
             <div class="swiper-wrapper">
               {% for experience in experienses %}
               
               <div class="swiper-slide">
-                <div class="new-featured-card">
-                <div class="new-featured-info">
-                  <div class="new-featured-author">
+                <div class="quote-card">
+                <div class="quote-info">
+                  <div class="quote-author">
                     <h3>{{ experience | split: "*" | last }}</h3>
                   </div>
-                  <div class="new-featured-rating">
+                  <div class="quote-rating">
                     <p>
                       <span class="icon-star"></span>
                       <span class="icon-star"></span>
@@ -50,48 +50,48 @@
     
      
     }
-    .new-featured-slider .swiper-slide.swiper-slide-active .new-featured-card  {
+    .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
       top: 0;
       max-width: 60%;
       background: unset;
       box-shadow: unset;
     }
   
-    .new-featured-card {
+    .quote-card {
       background: unset;
     }
-    .new-featured-slider .slider-control {
+    .quote-slider .slider-control {
       justify-content: space-between;
     }
-    .new-featured-card .new-featured-info .new-featured-rating p span {
+    .quote-card .quote-info .quote-rating p span {
      
       color: var(--light-green);
     }
   
-    .new-featured-slider .prev-slide2 {
+    .quote-slider .prev-slide2 {
       background: unset;
     }
   
-    .new-featured-slider .prev-slide2:hover {
+    .quote-slider .prev-slide2:hover {
       background: unset;
     }
   
   
-    .new-featured-slider .next-slide2 {
+    .quote-slider .next-slide2 {
       background: unset;
     }
   
-    .new-featured-slider .next-slide2:hover {
+    .quote-slider .next-slide2:hover {
       background: unset;
      
     }
   
-    .new-featured-slider .prev-slide2 span {
+    .quote-slider .prev-slide2 span {
       font-size: 22px;
       background: unset;
     }
   
-    .new-featured-slider .next-slide2 span {
+    .quote-slider .next-slide2 span {
       font-size: 22px;
       background: unset;
     }
@@ -114,11 +114,11 @@
       .mini-wrap {
         width: 100%;
       }
-      .new-featured-slider .swiper-slide.swiper-slide-active .new-featured-card {
+      .quote-slider .swiper-slide.swiper-slide-active .quote-card {
         max-width: 80%;
       }
   
-      .new-featured-slider .slider-control {
+      .quote-slider .slider-control {
          position: relative;
          top:-120px;
       }
@@ -137,7 +137,7 @@
   
   
    <script>
-    quoteSlider = new Swiper(".new-featured-slider .swiper", {
+    quoteSlider = new Swiper(".quote-slider .swiper", {
       slidesPerView: 4,
       spaceBetween: 0,
       grabCursor: true,
