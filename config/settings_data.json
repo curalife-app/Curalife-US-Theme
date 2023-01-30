@@ -1058,6 +1058,12 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "18393503268697261835": {
+        "type": "shopify:\/\/apps\/seo-king\/blocks\/seo-king-jsonld-collections\/4aa30173-495d-4e49-b377-c5ee4024262f",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
