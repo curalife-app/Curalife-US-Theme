@@ -2,18 +2,18 @@
 <div class="container">
     
       <div class="featured-products-new">
-        <div class="quote-slider">
+        <div class="new-featured-slider">
           <div class="swiper">
             <div class="swiper-wrapper">
               {% for experience in experienses %}
               
               <div class="swiper-slide">
-                <div class="quote-card">
-                <div class="quote-info">
-                  <div class="quote-author">
+                <div class="new-featured-card">
+                <div class="new-featured-info">
+                  <div class="new-featured-author">
                     <h3>{{ experience | split: "*" | last }}</h3>
                   </div>
-                  <div class="quote-rating">
+                  <div class="new-featured-rating">
                     <p>
                       <span class="icon-star"></span>
                       <span class="icon-star"></span>
@@ -48,50 +48,50 @@
     }
     .featured-products-new {
     
-      background: rgba(232,	232,	176, .2);
+     
     }
-    .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
+    .new-featured-slider .swiper-slide.swiper-slide-active .new-featured-card  {
       top: 0;
       max-width: 60%;
       background: unset;
       box-shadow: unset;
     }
   
-    .quote-card {
+    .new-featured-card {
       background: unset;
     }
-    .quote-slider .slider-control {
+    .new-featured-slider .slider-control {
       justify-content: space-between;
     }
-    .quote-card .quote-info .quote-rating p span {
+    .new-featured-card .new-featured-info .new-featured-rating p span {
      
       color: var(--light-green);
     }
   
-    .quote-slider .prev-slide2 {
+    .new-featured-slider .prev-slide2 {
       background: unset;
     }
   
-    .quote-slider .prev-slide2:hover {
+    .new-featured-slider .prev-slide2:hover {
       background: unset;
     }
   
   
-    .quote-slider .next-slide2 {
+    .new-featured-slider .next-slide2 {
       background: unset;
     }
   
-    .quote-slider .next-slide2:hover {
+    .new-featured-slider .next-slide2:hover {
       background: unset;
      
     }
   
-    .quote-slider .prev-slide2 span {
+    .new-featured-slider .prev-slide2 span {
       font-size: 22px;
       background: unset;
     }
   
-    .quote-slider .next-slide2 span {
+    .new-featured-slider .next-slide2 span {
       font-size: 22px;
       background: unset;
     }
@@ -114,11 +114,11 @@
       .mini-wrap {
         width: 100%;
       }
-      .quote-slider .swiper-slide.swiper-slide-active .quote-card {
+      .new-featured-slider .swiper-slide.swiper-slide-active .new-featured-card {
         max-width: 80%;
       }
   
-      .quote-slider .slider-control {
+      .new-featured-slider .slider-control {
          position: relative;
          top:-120px;
       }
@@ -137,7 +137,7 @@
   
   
    <script>
-    quoteSlider = new Swiper(".quote-slider .swiper", {
+    quoteSlider = new Swiper(".new-featured-slider .swiper", {
       slidesPerView: 4,
       spaceBetween: 0,
       grabCursor: true,
