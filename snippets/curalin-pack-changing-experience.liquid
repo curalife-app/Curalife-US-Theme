@@ -1,29 +1,32 @@
 
 <div class="container">
   <div class="reviews">
-    <div class="review-slider">
+    <div class="quote-slider">
       <div class="swiper">
         <div class="swiper-wrapper">
           {% for experience in experienses %}
-            <div class="swiper-slide">
-              <div class="review-card">
-                <div class="info">
-                  <div class="review-author">
-                    <h3>{{ experience | split: "*" | last }}</h3>
-                  </div>
-                  <div class="review-rating">
-                    <p>
-                      <span class="icon-star"></span>
-                      <span class="icon-star"></span>
-                      <span class="icon-star"></span>
-                      <span class="icon-star"></span>
-                      <span class="icon-star"></span>
-                    </p>
-                  </div>
-                </div>
-                <p class="reviewd-text">{{ experience | split: "*" | first }}</p>
+
+          <div class="swiper-slide">
+            <div class="quote-card">
+            <div class="info">
+              <div class="quote-author">
+                <h3>{{ experience | split: "*" | last }}</h3>
+              </div>
+              <div class="quote-rating">
+                <p>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                </p>
               </div>
             </div>
+                <p class="quoted-text">{{ experience | split: "*" | first }}</p>
+
+
+            </div>
+          </div>
           {% endfor %}
         </div>
         <div class="slider-control">
@@ -41,51 +44,51 @@
     background: rgba(232,	232,	176, .2);
   }
 
-  .review-slider .swiper-slide.swiper-slide-active .review-card  {
+  .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
     top: 0;
     max-width: 60%;
     background: unset;
   }
 
-  .review-card {
+  .quote-card {
     background: unset;
   }
-  .review-slider .slider-control {
+  .quote-slider .slider-control {
     justify-content: space-between;
   }
-  .review-card .info .review-rating p span {
+  .quote-card .info .quote-rating p span {
 
     color: var(--light-green);
   }
 
-  .review-slider .prev-slide2 {
+  .quote-slider .prev-slide2 {
     background: unset;
   }
 
-  .review-slider .prev-slide2:hover {
+  .quote-slider .prev-slide2:hover {
     background: unset;
   }
 
-  .review-slider .next-slide2 {
+  .quote-slider .next-slide2 {
     background: unset;
   }
 
-  .review-slider .next-slide2:hover {
+  .quote-slider .next-slide2:hover {
     background: unset;
 
   }
 
-  .review-slider .prev-slide2 span {
+  .quote-slider .prev-slide2 span {
     font-size: 22px;
     background: unset;
   }
 
-  .review-slider .next-slide2 span {
+  .quote-slider .next-slide2 span {
     font-size: 22px;
     background: unset;
   }
 
-  .reviewd-text {
+  .quoted-text {
     font-family: 'DM Sans';
     font-style: italic;
     font-weight: 400;
@@ -99,18 +102,18 @@
       width: 100%;
     }
 
-    .review-slider .swiper-slide.swiper-slide-active .review-card {
+    .quote-slider .swiper-slide.swiper-slide-active .quote-card {
       max-width: 80%;
     }
 
-    .review-slider .slider-control {
+    .quote-slider .slider-control {
       position: relative;
       top:-120px;
     }
   }
 
 @media screen and (max-width: 629px) {
-  .reviewd-text {
+  .quoted-text {
     font-size: 3vw;
     line-height: unset;
   }
@@ -118,7 +121,7 @@
 </style>
 
 <script>
-  reviewSlider = new Swiper(".review-slider .swiper", {
+  quoteSlider = new Swiper(".quote-slider .swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
     grabCursor: true,
