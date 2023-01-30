@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div id="instructions" class="item" data-title="Usage Instructions">
+        <div id="instructions" class="content-item" data-title="Usage Instructions">
           <div class="instructions item-content">
             {% for step in product.metafields.custom.instructions.value %}
               <div class="step">
@@ -55,7 +55,7 @@
         </div>
 
         {% if product.metafields.custom.ingredients.value %}
-          <div id="ingredients" class="item" data-title="Ingredients">
+          <div id="ingredients" class="content-item" data-title="Ingredients">
             <div class="ingredients item-content">
               {% for ingredient in product.metafields.custom.ingredients.value %}
                 <div class="ingredient">
@@ -68,7 +68,7 @@
           </div>
         {% endif %}
 
-        <div id="facts" class="item" data-title="Reviews">
+        <div id="facts" class="content-item" data-title="Reviews">
           <div class="facts item-content">
               {% render 'curalin-pack-changing-experience', reviews: reviews, onlyData: true %}
           </div>
