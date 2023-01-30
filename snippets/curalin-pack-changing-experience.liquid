@@ -5,28 +5,25 @@
       <div class="swiper">
         <div class="swiper-wrapper">
           {% for experience in experienses %}
-
-          <div class="swiper-slide">
-            <div class="review-card">
-            <div class="info">
-              <div class="review-author">
-                <h3>{{ experience | split: "*" | last }}</h3>
-              </div>
-              <div class="review-rating">
-                <p>
-                  <span class="icon-star"></span>
-                  <span class="icon-star"></span>
-                  <span class="icon-star"></span>
-                  <span class="icon-star"></span>
-                  <span class="icon-star"></span>
-                </p>
-              </div>
-            </div>
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="info">
+                  <div class="review-author">
+                    <h3>{{ experience | split: "*" | last }}</h3>
+                  </div>
+                  <div class="review-rating">
+                    <p>
+                      <span class="icon-star"></span>
+                      <span class="icon-star"></span>
+                      <span class="icon-star"></span>
+                      <span class="icon-star"></span>
+                      <span class="icon-star"></span>
+                    </p>
+                  </div>
+                </div>
                 <p class="reviewd-text">{{ experience | split: "*" | first }}</p>
-
-
+              </div>
             </div>
-          </div>
           {% endfor %}
         </div>
         <div class="slider-control">
