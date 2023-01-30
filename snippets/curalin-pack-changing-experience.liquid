@@ -1,39 +1,37 @@
 
 <div class="container">
-  <div class="mini-wrap">
-    <div class="reviews">
-      <div class="quote-slider">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            {% for experience in experienses %}
+  <div class="reviews">
+    <div class="quote-slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {% for experience in experienses %}
 
-            <div class="swiper-slide">
-              <div class="quote-card">
-              <div class="info">
-                <div class="quote-author">
-                  <h3>{{ experience | split: "*" | last }}</h3>
-                </div>
-                <div class="quote-rating">
-                  <p>
-                    <span class="icon-star"></span>
-                    <span class="icon-star"></span>
-                    <span class="icon-star"></span>
-                    <span class="icon-star"></span>
-                    <span class="icon-star"></span>
-                  </p>
-                </div>
+          <div class="swiper-slide">
+            <div class="quote-card">
+            <div class="info">
+              <div class="quote-author">
+                <h3>{{ experience | split: "*" | last }}</h3>
               </div>
-                  <p class="quoted-text">{{ experience | split: "*" | first }}</p>
-
-
+              <div class="quote-rating">
+                <p>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                  <span class="icon-star"></span>
+                </p>
               </div>
             </div>
-            {% endfor %}
+                <p class="quoted-text">{{ experience | split: "*" | first }}</p>
+
+
+            </div>
           </div>
-          <div class="slider-control">
-            <div class="prev-slide2"><span class="icon-arrow"></span></div>
-            <div class="next-slide2"><span class="icon-arrow"></span></div>
-          </div>
+          {% endfor %}
+        </div>
+        <div class="slider-control">
+          <div class="prev-slide2"><span class="icon-arrow"></span></div>
+          <div class="next-slide2"><span class="icon-arrow"></span></div>
         </div>
       </div>
     </div>
@@ -41,13 +39,11 @@
 </div>
 
 <style>
-  .mini-wrap {
-    width: 80%;
-  }
   .reviews {
     width: 50%;
     background: rgba(232,	232,	176, .2);
   }
+
   .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
     top: 0;
     max-width: 60%;
@@ -73,7 +69,6 @@
   .quote-slider .prev-slide2:hover {
     background: unset;
   }
-
 
   .quote-slider .next-slide2 {
     background: unset;
@@ -117,11 +112,9 @@
     }
 
     .quote-slider .slider-control {
-       position: relative;
-       top:-120px;
+      position: relative;
+      top:-120px;
     }
-
-
   }
 
 @media screen and (max-width: 629px) {
@@ -130,11 +123,9 @@
     line-height: unset;
   }
 }
-
 </style>
 
-
- <script>
+<script>
   quoteSlider = new Swiper(".quote-slider .swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
