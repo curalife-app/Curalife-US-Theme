@@ -1,8 +1,8 @@
-
+<section id="new-featured-prods">
 <div class="container">
     
       <div class="featured-products-new">
-        <div class="new-quote-slider">
+        <div class="quote-slider">
           <div class="swiper">
             <div class="swiper-wrapper">
               {% for experience in experienses %}
@@ -31,64 +31,58 @@
         </div>
       </div>
   </div> 
+  </section>
   
   <style>
   
   
   
-    .mini-wrap {
-     
-    }
-    .featured-products-new {
-    
-     
-    }
-    .new-quote-slider .swiper-slide.swiper-slide-active .quote-card  {
+  #new-featured-prods .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
       top: 0;
       background: unset;
       box-shadow: unset;
     }
   
-    .quote-card {
+    #new-featured-prods .quote-card {
       background: unset;
     }
-    .new-quote-slider .slider-control {
+    #new-featured-prods .quote-slider .slider-control {
       justify-content: space-between;
     }
-    .quote-card .quote-info .quote-rating p span {
+    #new-featured-prods .quote-card .quote-info .quote-rating p span {
      
       color: var(--light-green);
     }
   
-    .new-quote-slider .prev-slide2 {
+    #new-featured-prods .quote-slider .prev-slide2 {
       background: unset;
     }
   
-    .new-quote-slider .prev-slide2:hover {
+    #new-featured-prods .quote-slider .prev-slide2:hover {
       background: unset;
     }
   
   
-    .new-quote-slider .next-slide2 {
+    #new-featured-prods .quote-slider .next-slide2 {
       background: unset;
     }
   
-    .new-quote-slider .next-slide2:hover {
+    #new-featured-prods .quote-slider .next-slide2:hover {
       background: unset;
      
     }
   
-    .new-quote-slider .prev-slide2 span {
+    #new-featured-prods .quote-slider .prev-slide2 span {
       font-size: 22px;
       background: unset;
     }
   
-    .new-quote-slider .next-slide2 span {
+    #new-featured-prods .quote-slider .next-slide2 span {
       font-size: 22px;
       background: unset;
     }
   
-    .quoted-text {
+    #new-featured-prods .quoted-text {
       font-family: 'DM Sans';
       font-style: italic;
       font-weight: 400;
@@ -99,16 +93,13 @@
   
     @media screen and (max-width: 768px) {
   
-    .featured-products-new {
+    #new-featured-prods .featured-products-new {
       width: 100%;
     }
   
-      .mini-wrap {
-        width: 100%;
-      }
-   
+ 
   
-      .new-quote-slider .slider-control {
+      #new-featured-prods  .quote-slider .slider-control {
          position: relative;
          top:-120px;
       }
@@ -117,7 +108,7 @@
     } 
   
   @media screen and (max-width: 629px) {
-    .quoted-text {
+    #new-featured-prods .quoted-text {
       font-size: 3vw;
       line-height: unset;        
     }
@@ -127,7 +118,7 @@
   
   
    <script>
-    quoteSlider = new Swiper(".new-quote-slider .swiper", {
+    quoteSlider = new Swiper(".quote-slider .swiper", {
       slidesPerView: 4,
       spaceBetween: 0,
       grabCursor: true,
