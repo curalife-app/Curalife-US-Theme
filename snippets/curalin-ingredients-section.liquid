@@ -481,9 +481,9 @@
         tabs = $(this).parents('.tabs'),
         buttons = tabs.find('a'),
         item = tabs.parents('.curalin-pack-ingredients-section .tabbed-content').find('.item');
-      buttons.removeClass('active');
-      item.removeClass('active');
-      $(this).addClass('active');
+      buttons.toggleClass('active');
+      item.toggleClass('active');
+      $(this).toggleClass('active');
       $(target).toggleClass('active'); 
     });
     } else {
