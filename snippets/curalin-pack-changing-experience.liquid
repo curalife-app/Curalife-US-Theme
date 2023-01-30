@@ -5,28 +5,25 @@
       <div class="swiper">
         <div class="swiper-wrapper">
           {% for review in reviews %}
-
-          <div class="swiper-slide">
-            <div class="quote-card">
-            <div class="info">
-              <div class="quote-author">
-                <h3>{{ review | split: "*" | last }}</h3>
-              </div>
-              <div class="quote-rating">
-                <p>
-                  <span class="icon-star"></span>
-                  <span class="icon-star"></span>
-                  <span class="icon-star"></span>
-                  <span class="icon-star"></span>
-                  <span class="icon-star"></span>
-                </p>
-              </div>
-            </div>
+            <div class="swiper-slide">
+              <div class="quote-card">
+                <div class="info">
+                  <div class="quote-author">
+                    <h3>{{ review | split: "*" | last }}</h3>
+                  </div>
+                  <div class="quote-rating">
+                    <p>
+                      <span class="icon-star"></span>
+                      <span class="icon-star"></span>
+                      <span class="icon-star"></span>
+                      <span class="icon-star"></span>
+                      <span class="icon-star"></span>
+                    </p>
+                  </div>
+                </div>
                 <p class="quoted-text">{{ review | split: "*" | first }}</p>
-
-
+              </div>
             </div>
-          </div>
           {% endfor %}
         </div>
         <div class="slider-control">
