@@ -2,7 +2,7 @@
 <div class="container">
     
       <div class="featured-products-new">
-        <div class="quote-slider">
+        <div class="new-quote-slider">
           <div class="swiper">
             <div class="swiper-wrapper">
               {% for experience in experienses %}
@@ -43,7 +43,7 @@
     
      
     }
-    .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
+    .new-quote-slider .swiper-slide.swiper-slide-active .quote-card  {
       top: 0;
       background: unset;
       box-shadow: unset;
@@ -52,7 +52,7 @@
     .quote-card {
       background: unset;
     }
-    .quote-slider .slider-control {
+    .new-quote-slider .slider-control {
       justify-content: space-between;
     }
     .quote-card .quote-info .quote-rating p span {
@@ -60,30 +60,30 @@
       color: var(--light-green);
     }
   
-    .quote-slider .prev-slide2 {
+    .new-quote-slider .prev-slide2 {
       background: unset;
     }
   
-    .quote-slider .prev-slide2:hover {
+    .new-quote-slider .prev-slide2:hover {
       background: unset;
     }
   
   
-    .quote-slider .next-slide2 {
+    .new-quote-slider .next-slide2 {
       background: unset;
     }
   
-    .quote-slider .next-slide2:hover {
+    .new-quote-slider .next-slide2:hover {
       background: unset;
      
     }
   
-    .quote-slider .prev-slide2 span {
+    .new-quote-slider .prev-slide2 span {
       font-size: 22px;
       background: unset;
     }
   
-    .quote-slider .next-slide2 span {
+    .new-quote-slider .next-slide2 span {
       font-size: 22px;
       background: unset;
     }
@@ -108,7 +108,7 @@
       }
    
   
-      .quote-slider .slider-control {
+      .new-quote-slider .slider-control {
          position: relative;
          top:-120px;
       }
@@ -127,7 +127,7 @@
   
   
    <script>
-    quoteSlider = new Swiper(".quote-slider .swiper", {
+    quoteSlider = new Swiper(".new-quote-slider .swiper", {
       slidesPerView: 4,
       spaceBetween: 0,
       grabCursor: true,
