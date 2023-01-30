@@ -481,19 +481,22 @@
         tabs = $(this).parents('.tabs'),
         buttons = tabs.find('a'),
         item = tabs.parents('.curalin-pack-ingredients-section .tabbed-content').find('.item');
-      buttons.toggleClass('active');
-      item.toggleClass('active');
-      $(this).toggleClass('active');
-      $(target).toggleClass('active'); 
+      buttons.removeClass('active');
+      item.removeClass('active');
+      $(this).addClass('active');
+      $(target).addClass('active'); 
     });
     } else {
     $('.item').on('click', function() {
-    
-      $(this).toggleClass('active');
-     
+      var container = $(this).parents('.tabbed-content'),
+        currId = $(this).attr('id'),
+        items = container.find('.item');
+        console.log(items);
+      container.find('.tabs a').removeClass('active');
+      items.removeClass('active');
+      $(this).addClass('active');
+      container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
     });
     }
   }
   </script>
-
-
