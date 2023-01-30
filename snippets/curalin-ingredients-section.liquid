@@ -342,12 +342,12 @@
     }
 
     .curalin-pack-ingredients-section .tabbed-content .tabs li {
-    display: inline-block;
-    margin-bottom: 2px;
+      display: inline-block;
+      margin-bottom: 2px;
     }
 
     .curalin-pack-ingredients-section .tabbed-content .tabs li a {
-    display: flex;
+     display: flex;
     }
 
     .curalin-pack-ingredients-section .tabbed-content .item {
@@ -494,6 +494,7 @@
         console.log("items: ")
         console.log(items);
       container.find('.tabs a').removeClass('active');
+      console.log(tabs a)
       items.removeClass('active');
       $(this).addClass('active');
       container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
