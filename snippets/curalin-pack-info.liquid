@@ -463,6 +463,7 @@
       container.find('.tabs a').removeClass('active');
       items.removeClass('active');
       if (!isCurrentActive) {
+        console.log('not active')
         $(this).toggleClass('active');
         container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');
       };
