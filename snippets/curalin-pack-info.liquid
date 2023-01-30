@@ -80,18 +80,15 @@
 
 {% if isCuralinRender %}
   <style>
-   .content {
-     max-width: 100%;
+    .content {
+      max-width: 100%;
     }
+
     #supplement-page section.curalin-pack-info-section .titles {
       flex-direction: revert;
       justify-content: start;
       max-width: 100%;
       text-align: left;
-    }
-
-    .curalin-pack-info-section {
-
     }
 
     .curalin-pack-info-section:nth-of-type(even) {
@@ -418,6 +415,8 @@
       }
       .curalin-pack-info-section .health-benefits .health-benefit {
         gap: 2vw;
+        flex-direction: column;
+        text-align: center;
       }
       .curalin-pack-info-section .health-benefits .health-benefit p {
         font-size: 2.5vw;
