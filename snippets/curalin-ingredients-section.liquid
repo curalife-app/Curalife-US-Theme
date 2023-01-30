@@ -487,9 +487,16 @@
       $(target).addClass('active'); 
     });
     } else {
-   $(".item").click(function(){
-     $(this).next(".tabs a").toggleClass("active");
-   });
+    $('.item').on('click', function() {
+      var container = $(this).parents('.tabbed-content'),
+        currId = $(this).attr('id'),
+        items = container.find('.item');
+        console.log(items);
+      container.find('.tabs a').removeClass('active');
+      items.removeClass('active');
+      $(this).addClass('active');
+      container.find('.tabs a[href$="#'+ currId +'"]').toggleClass('active');
+    });
     }
   }
   </script>
