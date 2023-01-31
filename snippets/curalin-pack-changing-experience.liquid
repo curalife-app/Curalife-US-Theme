@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="reviews">
-    <div class="quote-slider">
+    <div class="quote-slider review-page">
       <div class="swiper">
         <div class="swiper-wrapper">
           {% for review in reviews %}
@@ -144,10 +144,9 @@
 </style>
 
 <script>
-  quoteSlider = new Swiper(".quote-slider .swiper", {
-    slidesPerView: 'auto',
+  quoteSlider = new Swiper(".quote-slider.review-page .swiper", {
+    slidesPerView: 1,
     spaceBetween: 0,
-    autoHeight: true,
     grabCursor: true,
     loop: true,
     navigation: {
@@ -161,12 +160,12 @@
       },
       630: {
         slidesPerView: 1,
-        
+        centeredSlides: false
       },
       992: {
-        slidesPerView: 1
-        
+        slidesPerView: 1,
+        centeredSlides: true
       }
     }
   });
-</script>
+</script> 
