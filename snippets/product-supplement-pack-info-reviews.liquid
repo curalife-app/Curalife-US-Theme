@@ -27,8 +27,8 @@
           {% endfor %}
         </div>
         <div class="slider-control">
-          <div class="prev-slide2"><span class="icon-arrow"></span></div>
-          <div class="next-slide2"><span class="icon-arrow"></span></div>
+          <div class="prev-slide"><span class="icon-arrow"></span></div>
+          <div class="next-slide"><span class="icon-arrow"></span></div>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@
 </div>
 
 <style>
- 
+
   .quote-slider {
     padding: unset;
     margin: unset;
@@ -52,14 +52,13 @@
 
   .quote-slider .quote-card {
     top: unset !important;
-    width: unset !important;
     background: rgba(232,	232,	176, .2);
     box-shadow: unset !important;
     justify-content: center;
     height: 260px;
   }
 
-  
+
   .quote-slider .slider-control {
     justify-content: space-between;
   }
@@ -68,31 +67,30 @@
     color: var(--light-green);
   }
 
-  .quote-slider .prev-slide2 {
+  .quote-slider .prev-slide {
     background: unset;
     left: 20px;
   }
 
-  .quote-slider .prev-slide2:hover {
+  .quote-slider .prev-slide:hover {
     background: unset;
   }
 
-  .quote-slider .next-slide2 {
+  .quote-slider .next-slide {
     background: unset;
     right: 20px
   }
 
-  .quote-slider .next-slide2:hover {
-    background: unset;
-
-  }
-
-  .quote-slider .prev-slide2 span {
-    font-size: 22px;
+  .quote-slider .next-slide:hover {
     background: unset;
   }
 
-  .quote-slider .next-slide2 span {
+  .quote-slider .prev-slide span {
+    font-size: 30px;
+    background: unset;
+  }
+
+  .quote-slider .next-slide span {
     font-size: 30px;
     background: unset;
   }
@@ -111,7 +109,7 @@
   }
 
   @media screen and (max-width: 1130px) {
-    
+
     .quote-slider .quote-card {
       padding: 5vw;
       height: unset;
@@ -145,8 +143,8 @@
       delay: 2500
     },
     navigation: {
-      nextEl: ".next-slide2",
-      prevEl: ".prev-slide2",
+      nextEl: ".next-slide",
+      prevEl: ".prev-slide",
       disabledClass: 'disabled'
     },
     breakpoints: {
