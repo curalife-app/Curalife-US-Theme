@@ -11,10 +11,6 @@
   {% assign title_color = "var(--dark-orange)" %}
 {% endif %}
 
-{% if request.path contains 'curalin-monthly-deals' %}
-  {% assign isCuralin = true %}
-{% endif %}
-
 {% assign doctors = 'lp-aio-michel.png*Dr. Michael Binder:Functional doctor, author of Cracking The Diabetic Code.
 |lp-aio-nancy.png*Dr. Nancy Russell:Internal Medicine Specialist, North Kansas City Hospital
 |lp-aio-raz.png*Prof. Itamar Raz:World renouned diabetes expert with over 400 published peer-reviewed studies.
@@ -23,17 +19,8 @@
 
 
 <div id="supplement-page">
-  {% if isCuralin %}
-    {% render 'product-all-in-one-cta-section', newCuralinTitle: true, ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true, isReviews: true %}
-  {% else %}
-    {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
-  {% endif %}
-
-  {% if isCuralin %}
-    {% render 'curalin-supplement-benefits' %}
-  {% else %}
-    {% render 'product-supplement-health-benefits' %}
-  {% endif %}
+  {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
+  {% render 'product-supplement-health-benefits' %}
 
   {% if product.metafields.custom.bundle-products.value %}
     {% for prod in product.metafields.custom.bundle-products.value %}
@@ -43,36 +30,18 @@
         {% render 'product-supplement-pack-info', product: prod, index: forloop.index %}
       {% endif %}
     {% endfor %}
-  {% elsif isCuralin%}
-    {% render 'curalin-pack-info', product: product %}
   {% else %}
     {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
   {% endif %}
 
-  {% if isCuralin %}
-    {% render 'curalin-supplement-info-section' %}
-    {% render 'curalin-ingredients-section', product: product %}
-  {% else %}
-    {% unless product.title contains "Curalin Monthly Deals" %}
-      {% render 'product-supplement-info-section', titleColor: title_color %}
-    {% endunless %}
-  {% endif %}
+  {% render 'product-supplement-info-section', titleColor: title_color %}
 
   {% if isCuralinBundled %}
     {% render 'product-supplement-doctors-section' %}
   {% endif %}
 
-  {% if isCuralin %}
-    {% render 'curalin-pack-new-results' %}
-    {% render 'aio-first-page-trusted-doctors', doctors: doctors, noDescription: true %}
-  {% endif %}
-
-  {% render 'onboarding-curalin-call-expert', background_color: '#FAF5E9', border: false, isHideImageOnMobile: true %}
+  {% render 'onboarding-curalin-call-expert', bgColor: '#FAF5E9', border: false, isHideImageOnMobile: true %}
   {% render 'product-faq-section', bgColor: "var(--lighter-green)" %}
-
-  {% if isCuralin %}
-    {% render 'product-all-in-one-back-to-top', isThirtyDay: true, ctaTitle: "SHOP NOW", textColor: 'white' %}
-  {% endif %}
 </div>
 
 {% comment %} Temp {% endcomment %}
