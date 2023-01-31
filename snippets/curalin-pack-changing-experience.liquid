@@ -36,9 +36,6 @@
 </div>
 
 <style>
-  .swiper-container {
-    overflow: hidden;
-  }
   .reviews {
     width: 50%;
     background: rgba(232,	232,	176, .2);
@@ -54,7 +51,6 @@
   }
 
   .quote-slider .swiper-slide {
-    min-width: 0;
     padding: unset;
   }
 
@@ -132,9 +128,10 @@
     }
 
     .quote-slider .slider-control {
-     
-      position: relative;
-      top: 0;
+      display: none;
+      {% comment %} position: relative;
+      top: 0; {% endcomment %}
+    }
   }
 
 @media screen and (max-width: 629px) {
@@ -146,7 +143,7 @@
 </style>
 
 <script>
-    const quoteSliderReview = new Swiper(".quote-slider.review-page .swiper", {
+  quoteSlider = new Swiper(".quote-slider.review-page .swiper", {
     slidesPerView: 'auto',
     spaceBetween: 0,
     grabCursor: true,
