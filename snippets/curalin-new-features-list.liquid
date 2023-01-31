@@ -1,7 +1,7 @@
 <div id="new-featured-prods">
   <div class="container">
     <div class="featured-products-new">
-      <div class="quote-slider">
+      <div class="quote-slider featured">
         <div class="swiper">
           <div class="swiper-wrapper">
             {% for prod in collections['curalin-related-products'].products %}
@@ -41,6 +41,7 @@
   #new-featured-prods .quote-slider .swiper-slide .quote-card {
     box-shadow: unset;
     background: unset;
+    justify-content: unset;
   }
 
   #new-featured-prods .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
@@ -89,15 +90,21 @@
   }
 
   #new-featured-prods .quote-author {
-    padding-top: 20px;        
+    padding-top: 10px;        
   }
+
+  #new-featured-prods .quote-author h3 {
+      font-size: 25px;   
+  }
+
 
   #new-featured-prods .quoted-text {
     font-family: 'DM Sans';
     font-weight: 400;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 1.2em;
     color: #424733;
+    margin: unset;
   }
 
   @media screen and (max-width: 768px) {
@@ -121,7 +128,7 @@
   
   
 <script>
-  const quoteSliderNew = new Swiper(".quote-slider .swiper", {
+  const quoteSliderNew = new Swiper(".quote-slider.featured .swiper", {
     slidesPerView: 4,
     spaceBetween: 0,
     grabCursor: true,

@@ -1,9 +1,3 @@
-{% if product.template_suffix contains "supplement" %}
-  {% assign product_title = product.title %}  
-{% else %}
-  {% assign product_title = "Curalin" %}
-{% endif %}
-
 <section id="call-expert-section">
   <div class="container">
     <div class="call-background">
@@ -16,12 +10,11 @@
 
           <div class="grey-border"></div>
 
-          <p>With your purchase of {{ product_title }}, you can schedule a free 15 minute call with one of our customer success experts to answer all your questions about {{ product_title }}! They will help guide your first 5 days on {{ product_title }} so you can go into it with confidence!</p>
+          <p>With your purchase of {{ productTitle }}, you can schedule a free 15 minute call with one of our customer success experts to answer all your questions about {{ productTitle }}! They will help guide your first 5 days on {{ productTitle }} so you can go into it with confidence!</p>
           <div class="call">
             <a href="https://calendly.com/hellocuralife" target="_blank">
               <button>
-                <span class="call-text">Schedule a call
-                  <img src="{{ 'onboarding-call-sign.png' | asset_url }}" width="33" height="35" alt="" loading="lazy"></span>
+                <span class="call-text">Schedule A Call<i class="fa-regular fa-headset"></i></span>
               </button>
             </a>
           </div>
@@ -32,9 +25,8 @@
 </section>
 
 <style>
- 
   #call-expert-section {
-    background-color: {{background_color}};
+    background-color: {{bgColor}};
     padding: 1% 0;
   }
 
@@ -88,7 +80,7 @@
     margin-top: 2%;
   }
 
-  .call-expert-section .call-text {
+  #call-expert-section .call-text {
     display: flex;
     gap: 20px;
     align-items: center;
@@ -144,10 +136,26 @@
       font-size: 24px;
     }
   }
-
-  @media screen and (max-width: 350px) {
-    #call-expert-section .call button {
-      font-size: 21px;
-    }
-  }
 </style>
+
+<script>
+  $("#call-expert-section .call a").click(function() {
+    // Track in GA
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'schedule-a-call',
+      'userId': '{{ customer.id }}',
+      'email': '{{ customer.email }}',
+      'country': '{{customer.customer_address.country_code }}',
+      'city': '{{customer.customer_address.city }}',
+      'name': '{{ customer.first_name }}',
+      'surname': '{{ customer.last_name }}',
+      'phone_number': '{{customer.phone }}',
+      'state': '{{customer.customer_address.province }}',       //state or province
+      'zip': '{{customer.customer_address.zip }}'         //ZIP or Postal code
+    });
+
+    // Track in Woopra
+    woopra.track('Schedule A Call', {});
+  });
+</script>

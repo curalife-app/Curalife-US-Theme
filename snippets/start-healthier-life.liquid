@@ -1,18 +1,25 @@
 <section id="healthier-life">
     <div class="background-container">
-        <div class="container">
-            <div class="life-wrapper">
-                <div class="life-title">Start a  healthier life today</div>    
-                <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
-            </div>
-            <div class="life-img">
-                <img class="main-img" src="{{ 'healthier-life-today-bottle.png' | asset_url }}" width="976" height="976" alt="bottle-hand-mask">
-            </div>
+    <div class="container">
+        <div class="life-wrapper">
+            <div class="life-title">Start a  healthier life today</div>    
+              <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
+             
         </div>
+        <div class="life-img">
+            {% assign prod = all_products['curalin-monthly-deals'] %}    
+               <img class="main-img" src="{{ prod.featured_image | image_url }}" width="976" height="976" alt="bottle-hand-mask">       
+        </div>
+   
+    </div>
+  
     </div>
 </section>
 
+
 <style>
+
+   
     #healthier-life .background-container  {
         background: #E8E8B0; 
         position: relative;  
@@ -25,7 +32,8 @@
         position: absolute;
         right: 0;
         top: -80px;     
-    }
+        }
+  
 
     #healthier-life .background-container .container .life-wrapper {
         display: flex;
@@ -37,8 +45,8 @@
     #healthier-life .background-container .container .life-wrapper .life-title {
         font-family: 'PP Radio Grotesk';
         font-weight: 700;
-        font-size: 56px;
-        line-height: 58px;
+        font-size: 54px;
+        line-height: 1.2em;
         letter-spacing: -0.03em;
         color: #404733;
     }
@@ -53,11 +61,10 @@
         font-size: clamp(20px, 2vw, 18px);
         letter-spacing: ;
         color: var(--dark-green);
-        padding: 10px 30px;
+        padding: 5px 20px;
         box-shadow: 0px 5px 12.5px rgb(0 0 0 / 15%);
         transition: unset;
-        margin-bottom: 20px;
-        width: 250px;
+        margin-bottom: 30px;
         margin-top: 40px;
     }
 
@@ -66,6 +73,11 @@
         border-color: #e9a735;
     }
 
+ 
+
+
+
+
     @media screen and (max-width: 1100px) {
         #healthier-life .background-container .container .life-wrapper {
             flex-direction: column;
@@ -73,28 +85,31 @@
             max-width: 45%;
             gap: unset;
         }
-
         #healthier-life .background-container .container .life-wrapper .life-title {  
-            font-size: 6vw;
-            line-height: 7vw;
-            padding-top: 3vw;
-        }
+                font-size: 6vw;
+                line-height: 7vw;
+                padding-top: 3vw;
+            }
 
-        #healthier-life .background-container .life-img {
-            max-width: 43%;
-            top: -6vw;
-        }
+            #healthier-life .background-container .life-img {
+                max-width: 43%;
+                top: -6vw;
+            }
 
 
-        #healthier-life .background-container .container .life-wrapper .cta-btn {
-            padding: 1vw 2vw;               
-            width: 50vw;
-        }
+            #healthier-life .background-container .container .life-wrapper .cta-btn {
+                padding: 1vw 2vw;               
+                width: 50vw;
+            }
+           
     }
 
     @media screen and (max-width: 768px) {
         #healthier-life .background-container .life-img {
             max-width: 53%;
-        }
+            }
+
     }
+
+
 </style>

@@ -921,11 +921,6 @@
           "lgn_sbtitl": "Customer Login"
         }
       },
-      "collection-template": {
-        "type": "collection-template",
-        "settings": {
-        }
-      },
       "article-template": {
         "type": "article-template",
         "blocks": {
@@ -1056,6 +1051,18 @@
         "settings": {
           "inject_modules_loader": false,
           "inject_sdk_loader": false
+        }
+      },
+      "4012516059585860583": {
+        "type": "shopify:\/\/apps\/seo-king\/blocks\/seo-king-robots-preview-image\/4aa30173-495d-4e49-b377-c5ee4024262f",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "18393503268697261835": {
+        "type": "shopify:\/\/apps\/seo-king\/blocks\/seo-king-jsonld-collections\/4aa30173-495d-4e49-b377-c5ee4024262f",
+        "disabled": false,
+        "settings": {
         }
       }
     }
