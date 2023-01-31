@@ -16,7 +16,7 @@
           {% if product.metafields.custom.ingredients.value %}
             <li><a href="#ingredients">Ingredients <i>></i></a></li>
           {% endif %}
-          <li><a href="#facts">Reviews <i>></i></a></li>
+          <li><a href="#reviews">Reviews <i>></i></a></li>
         </ul>
       </nav>
 
@@ -67,8 +67,8 @@
           </div>
         {% endif %}
 
-        <div id="facts" class="content-item" data-title="Reviews">
-          <div class="facts item-content">
+        <div id="reviews" class="content-item" data-title="Reviews">
+          <div class="reviews item-content">
             {% render 'product-supplement-pack-info-reviews', reviews: reviews %}
           </div>
         </div>
@@ -206,11 +206,11 @@
     text-align: center;
   }
 
-  .curalin-pack-info-section .facts {
+  .curalin-pack-info-section .reviews {
     text-align: center;
   }
 
-  .curalin-pack-info-section .facts img {
+  .curalin-pack-info-section .reviews img {
     max-height: 300px;
   }
 
