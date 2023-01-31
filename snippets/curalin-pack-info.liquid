@@ -485,3 +485,11 @@
       pointer-events: auto;
   }
 </style>
+
+<script>
+  const all_p = Array.from(document.querySelectorAll('p'));
+
+  for (let p of all_p) {
+      p.addEventListener("click", listener, false);
+  };
+</script>
