@@ -2,6 +2,10 @@
   {% assign category = "sleep" %}
 {% elsif product.tags contains "joint" %}
   {% assign category = "joint-care" %}
+{% elsif product.tags contains "immune" %}
+  {% assign category = "immune-care" %}
+{% elsif product.tags contains "multivitamin" %}
+  {% assign category = "multivitamins" %}
 {% endif %}
 
 <section id="health-benefits-section">
