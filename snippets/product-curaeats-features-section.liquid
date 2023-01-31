@@ -1,3 +1,8 @@
+{% assign features = "84 delicious recipes:that are delicious for you and the whole family too!
+|Foods you’ll actually want to eat:like banana oat pancakes, Vietnamese crunchy enchiladas, and desserts!
+|Detailed shopping lists:organized by weeks so you can get all your shopping done at once"
+| split: "|" %}
+
 <div id="product-curaeats-features-section">
   <div class="container">
     <div class="titles">
@@ -6,10 +11,12 @@
     </div>
 
     <div class="features">
-      <div class="feature">
-        <div class="highlight-icon"><i class="icofont-check"></i></div>
-        <p><b>{{ highlight.title }}</b><br>{{ highlight.subtitle }}</p>
-      </div>
+      {% for feature in features %}
+        <div class="feature">
+          <div class="feature-icon"><i class="icofont-check"></i></div>
+          <p><b>{{ feature | split: ":" | first }}</b><br>{{ feature | split: ":" | last }}</p>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>
