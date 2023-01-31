@@ -469,3 +469,15 @@
     }
   }
 </script>
+
+<style>
+  .content-item.active {
+      position: relative;
+      pointer-events: none;
+  }
+  .content-item.active .item-content::before {
+      content: "";
+      position: absolute;
+      pointer-events: auto;
+  }
+</style>
