@@ -465,6 +465,12 @@
         $(this).addClass('active');
         container.find('.tabs a[href$="#'+ currId +'"]').addClass('active'); 
       };
+
+      const all_content_item = Array.from(document.querySelectorAll('.content-item:active'));
+
+      for (let p of all_content_item) {
+          p.addEventListener("click", listener, false);
+      };
     });
     }
   }
@@ -485,11 +491,3 @@
       pointer-events: auto;
   }
 </style>
-
-<script>
-  const all_content_item = Array.from(document.querySelectorAll('.content-item'));
-
-  for (let p of all_content_item) {
-      p.addEventListener("click", listener, false);
-  };
-</script>
