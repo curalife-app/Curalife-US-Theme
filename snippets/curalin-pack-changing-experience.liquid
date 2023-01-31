@@ -144,7 +144,7 @@
 
 <script>
   quoteSlider = new Swiper(".quote-slider.review-page .swiper", {
-    slidesPerView: 2,
+    slidesPerView: 'auto',
     spaceBetween: 0,
     grabCursor: true,
     loop: true,
@@ -159,11 +159,11 @@
       },
       630: {
         slidesPerView: 1,
-        centeredSlides: false
+        centeredSlides: true
       },
       992: {
         slidesPerView: 1,
-        centeredSlides: false
+        centeredSlides: true
       }
     }
   });
