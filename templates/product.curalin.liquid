@@ -1,10 +1,3 @@
-{% assign isCuralinBundled = false %}
-{% for prod in product.metafields.custom.bundle-products.value %}
-  {% if prod.handle == 'curalin' %}
-    {% assign isCuralinBundled = true %}
-  {% endif %}
-{% endfor %}
-
 {% if product.tags contains "sleep" %}
   {% assign title_color = "var(--dark-turquoise)" %}
 {% else %}
@@ -17,31 +10,17 @@
 |lp-aio-sarah.png*Dr. Sarah Brewer:Functional doctor, diabetes expert, and author of over 60 books on personal health.'
 | split: '|' %}
 
-
 <div id="supplement-page">
-  {% render 'product-all-in-one-cta-section', ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true %}
+  {% render 'product-all-in-one-cta-section', newCuralinTitle: true, ctaTextType: "total",  isCuralinContent: isCuralinBundled, title: "Select Your Deal:", badgesPosition: "cta", badgesContent: "free-shipping,money-back" isHighlightSubtitle: true, isReversed: true, ctaColor: "var(--orange)", bottomLineColor: "var(--light-green)", defaultSelectionIndex: 2, isPricePerUnit: true, isReviews: true %}
   {% render 'product-benefits' %}
-
-  {% if product.metafields.custom.bundle-products.value %}
-    {% for prod in product.metafields.custom.bundle-products.value %}
-      {% if forloop.last %}
-        {% render 'product-supplement-pack-info', product: prod, index: forloop.index, isLastRender: true %}
-      {% else %}
-        {% render 'product-supplement-pack-info', product: prod, index: forloop.index %}
-      {% endif %}
-    {% endfor %}
-  {% else %}
-    {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
-  {% endif %}
-
-  {% render 'product-supplement-info-section', titleColor: title_color %}
-
-  {% if isCuralinBundled %}
-    {% render 'product-supplement-doctors-section' %}
-  {% endif %}
-
-  {% render 'onboarding-curalin-call-expert', productTitle: product.title, bgColor: '#FAF5E9', border: false, isHideImageOnMobile: true %}
+  {% render 'curalin-pack-info', product: product %}
+  {% render 'curalin-supplement-info-section' %}
+  {% render 'curalin-ingredients-section', product: product %}
+  {% render 'curalin-pack-new-results' %}
+  {% render 'aio-first-page-trusted-doctors', doctors: doctors, noDescription: true %}
+  {% render 'onboarding-curalin-call-expert', productTitle: "Curalin", bgColor: '#FAF5E9', border: false, isHideImageOnMobile: true %}
   {% render 'product-faq-section', bgColor: "var(--lighter-green)" %}
+  {% render 'product-all-in-one-back-to-top', isThirtyDay: true, ctaTitle: "SHOP NOW", textColor: 'white' %}
 </div>
 
 {% comment %} Temp {% endcomment %}

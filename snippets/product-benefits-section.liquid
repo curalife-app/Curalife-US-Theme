@@ -2,9 +2,13 @@
   {% assign category = "sleep" %}
 {% elsif product.tags contains "joint" %}
   {% assign category = "joint-care" %}
+{% elsif product.tags contains "immune" %}
+  {% assign category = "immune-care" %}
+{% elsif product.tags contains "multivitamin" %}
+  {% assign category = "multivitamins" %}
 {% endif %}
 
-<section id="health-benefits-section">
+<section id="benefits-section">
   <div class="container">
     <div class="titles">
       <h2>{{ product.metafields.custom.benefits_section_title }}</h2>
@@ -23,7 +27,7 @@
 </section>
 
 <style>
-  #health-benefits-section .health-benefits {
+  #benefits-section .health-benefits {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -32,7 +36,7 @@
     flex-wrap: wrap;
   }
 
-  #health-benefits-section .health-benefit {
+  #benefits-section .health-benefit {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,24 +44,24 @@
     max-width: 250px;
   }
 
-  #health-benefits-section .health-benefit p {
+  #benefits-section .health-benefit p {
     font-weight: normal;
     min-height: 75px;
   }
 
   @media screen and (max-width: 768px) {
-    #health-benefits-section .health-benefits {
+    #benefits-section .health-benefits {
       flex-direction: column;
       gap: 30px;
     }
 
-    #health-benefits-section .health-benefits .health-benefit {
+    #benefits-section .health-benefits .health-benefit {
       flex-direction: row;
       max-width: unset;
       gap: 50px;
     }
 
-    #health-benefits-section .health-benefits .health-benefit:nth-child(even) {
+    #benefits-section .health-benefits .health-benefit:nth-child(even) {
       flex-direction: row-reverse;
     }
 
