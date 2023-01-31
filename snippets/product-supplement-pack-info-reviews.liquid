@@ -148,7 +148,10 @@
     spaceBetween: 0,
     grabCursor: true,
     loop: true,
-  
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    }
     navigation: {
       nextEl: ".next-slide2",
       prevEl: ".prev-slide2",
@@ -162,14 +165,12 @@
         slidesPerView: 1,
         centeredSlides: true
       },
-      1130: {
+      1131: {
+        autoplay: {},
         slidesPerView: 1,
         centeredSlides: true
       },
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      }
+      
     }
   });
 </script>
