@@ -1,112 +1,112 @@
 <div id="new-featured-prods">
-<div class="container">
-      <div class="featured-products-new">
-        <div class="quote-slider">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              {% for product in products %}
-                <div class="swiper-slide">
-                  <div class="quote-card">
-                    <div class="quote-info">
-                    <img src="{{ product | asset_url | split: "*" | first }}" width="303" height="302" alt="">
-                    
-                    <div class="quote-author">
-                      <h3>{{ product | split: "*" | last | split: ":" | first }}</h3>
-                    </div>
+  <div class="container">
+    <div class="featured-products-new">
+      <div class="quote-slider">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            {% for product in products %}
+              <div class="swiper-slide">
+                <div class="quote-card">
+                  <div class="quote-info">
+                  <img src="{{ product | asset_url | split: "*" | first }}" width="303" height="302" alt="">
+                  
+                  <div class="quote-author">
+                    <h3>{{ product | split: "*" | last | split: ":" | first }}</h3>
                   </div>
-                  <p class="quoted-text">{{ product | split: "*" | last | split: ":" | last }}</p>
                 </div>
+                <p class="quoted-text">{{ product | split: "*" | last | split: ":" | last }}</p>
               </div>
-              {% endfor %}
             </div>
-            <div class="slider-control">
-              <div class="prev-slide2"><span class="icon-arrow"></span></div>
-              <div class="next-slide2"><span class="icon-arrow"></span></div>
-            </div>
+            {% endfor %}
+          </div>
+          <div class="slider-control">
+            <div class="prev-slide2"><span class="icon-arrow"></span></div>
+            <div class="next-slide2"><span class="icon-arrow"></span></div>
           </div>
         </div>
       </div>
+    </div>
   </div> 
 </div>
   
-  <style>
-    #new-featured-prods .quote-slider {
-      padding: unset;
-      margin: unset;
+<style>
+  #new-featured-prods .quote-slider {
+    padding: unset;
+    margin: unset;
+  }
+
+  #new-featured-prods .quote-slider .swiper-slide .quote-card {
+    box-shadow: unset;
+    background: unset;
+  }
+
+  #new-featured-prods .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
+    top: 0;
+    width: unset;
+    background: unset;
+    box-shadow: unset;
+    margin: unset;
+  }
+
+  #new-featured-prods .quote-card {
+    background: unset;
+  }
+
+  #new-featured-prods .quote-card .quote-info {
+    padding-top: unset;
+  } 
+  #new-featured-prods .quote-slider .slider-control {
+    justify-content: space-between;
+  }
+
+  #new-featured-prods .quote-slider .prev-slide2 {
+    background: unset;
+  }
+
+  #new-featured-prods .quote-slider .prev-slide2:hover {
+    background: unset;
+  }
+
+  #new-featured-prods .quote-slider .next-slide2 {
+    background: unset;
+  }
+
+  #new-featured-prods .quote-slider .next-slide2:hover {
+    background: unset;
+  }
+
+  #new-featured-prods .quote-slider .prev-slide2 span {
+    font-size: 22px;
+    background: unset;
+  }
+
+  #new-featured-prods .quote-slider .next-slide2 span {
+    font-size: 22px;
+    background: unset;
+  }
+
+  #new-featured-prods .quote-author {
+    padding-top: 20px;        
+  }
+
+  #new-featured-prods .quoted-text {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #424733;
+  }
+
+  @media screen and (max-width: 768px) {
+    #new-featured-prods .featured-products-new {
+      width: 100%;
     }
 
-    #new-featured-prods .quote-slider .swiper-slide .quote-card {
-      box-shadow: unset;
-      background: unset;
-    }
-
-    #new-featured-prods .quote-slider .swiper-slide.swiper-slide-active .quote-card  {
+    #new-featured-prods  .quote-slider .slider-control {
+      position: relative;
       top: 0;
-      width: unset;
-      background: unset;
-      box-shadow: unset;
-      margin: unset;
     }
-  
-    #new-featured-prods .quote-card {
-      background: unset;
-    }
-
-    #new-featured-prods .quote-card .quote-info {
-      padding-top: unset;
-    } 
-    #new-featured-prods .quote-slider .slider-control {
-      justify-content: space-between;
-    }
-
-    #new-featured-prods .quote-slider .prev-slide2 {
-      background: unset;
-    }
-  
-    #new-featured-prods .quote-slider .prev-slide2:hover {
-      background: unset;
-    }
-  
-    #new-featured-prods .quote-slider .next-slide2 {
-      background: unset;
-    }
-  
-    #new-featured-prods .quote-slider .next-slide2:hover {
-      background: unset;
-    }
-  
-    #new-featured-prods .quote-slider .prev-slide2 span {
-      font-size: 22px;
-      background: unset;
-    }
-  
-    #new-featured-prods .quote-slider .next-slide2 span {
-      font-size: 22px;
-      background: unset;
-    }
-
-    #new-featured-prods .quote-author {
-      padding-top: 20px;        
-    }
-  
-    #new-featured-prods .quoted-text {
-      font-family: 'DM Sans';
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
-      color: #424733;
-    }
-
-    @media screen and (max-width: 768px) {
-      #new-featured-prods .featured-products-new {
-        width: 100%;
-      }
-
-      #new-featured-prods  .quote-slider .slider-control {
-        position: relative;
-        top: 0;
-      }
-    } 
+  } 
 
   @media screen and (max-width: 629px) {
     #new-featured-prods .quoted-text {
