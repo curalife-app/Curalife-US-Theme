@@ -40,6 +40,7 @@
             <li><a href="#ingredients-{{ index }}">Ingredients <i>></i></a></li>
           {% endif %}
           <li><a href="#facts-{{ index }}">Supplement Facts <i>></i></a></li>
+          <li><a href="#reviews">Reviews <i>></i></a></li>
         </ul>
       </nav>
 
@@ -94,6 +95,12 @@
         <div id="facts-{{ index }}" class="item" data-title="Supplement Facts">
           <div class="facts item-content">
               <img src="{{ product.metafields.custom.supplement_fact | img_url: 'original' }}" alt="Supplement Facts" loading="lazy">
+          </div>
+        </div>
+
+        <div id="facts" class="content-item" data-title="Reviews">
+          <div class="facts item-content">
+            {% render 'product-supplement-pack-info-reviews', reviews: reviews, onlyData: true %}
           </div>
         </div>
       </div>
