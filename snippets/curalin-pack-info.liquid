@@ -5,7 +5,7 @@
 |“Have been taking CuraLin over the last four months and am beyond pleased with the results.”*Michael E."
 | split: '|' %}
 
-<section class="curalin-pack-info-section">
+<section class="curalin-pack-info-section" id="curalin-pack-info-section">
   <div class="container">
 
     <div class="tabbed-content tabs-side">
@@ -440,14 +440,14 @@
   });
 
   function tabControl() {
-    var tabs = $('#curalin-pack-ingredients-section .tabbed-content').find('.tabs');
+    var tabs = $('#curalin-pack-info-section .tabbed-content').find('.tabs');
     if(tabs.is(':visible')) {
     tabs.find('a').on('click', function(event) {
       event.preventDefault();
       var target = $(this).attr('href'),
           tabs = $(this).parents('.tabs'),
           buttons = tabs.find('a'),
-          item = tabs.parents('#curalin-pack-ingredients-section .tabbed-content').find('.content-item');
+          item = tabs.parents('#curalin-pack-info-section .tabbed-content').find('.content-item');
       buttons.removeClass('active');
       item.removeClass('active');
       $(this).addClass('active');
@@ -463,7 +463,7 @@
       items.removeClass('active');
       if (!isCurrentActive) {
         $(this).addClass('active');
-         container.find('.tabs a[href$="#'+ currId +'"]').addClass('active'); 
+         {% comment %} container.find('.tabs a[href$="#'+ currId +'"]').addClass('active');  {% endcomment %}
       };
     });
     }
