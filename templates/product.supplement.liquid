@@ -43,12 +43,10 @@
         {% render 'product-supplement-pack-info', product: prod, index: forloop.index %}
       {% endif %}
     {% endfor %}
+  {% elsif isCuralin%}
+    {% render 'curalin-pack-info', product: product %}
   {% else %}
-    {% if isCuralin %}
-      {% render 'curalin-pack-info', product: product %}
-    {% else %}
-      {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
-    {% endif %}
+    {% render 'product-supplement-pack-info', product: product, isLastRender: true %}
   {% endif %}
 
   {% if isCuralin %}
@@ -71,7 +69,7 @@
 
   {% render 'onboarding-curalin-call-expert', background_color: '#FAF5E9', border: false, isHideImageOnMobile: true %}
   {% render 'product-faq-section', bgColor: "var(--lighter-green)" %}
-
+x
   {% if isCuralin %}
     {% render 'product-all-in-one-back-to-top', isThirtyDay: true, ctaTitle: "SHOP NOW", textColor: 'white' %}
   {% endif %}
