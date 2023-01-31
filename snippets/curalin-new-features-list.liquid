@@ -4,20 +4,16 @@
         <div class="quote-slider">
           <div class="swiper">
             <div class="swiper-wrapper">
-              {% for experience in experienses %}
-              
+              {% for product in products %}
               <div class="swiper-slide">
                 <div class="quote-card">
                 <div class="quote-info">
-                  <img src="{{ experience | asset_url | split: "*" | first }}" width="303" height="302" alt="">
+                  <img src="{{ product | asset_url | split: "*" | first }}" width="303" height="302" alt="">
                   <div class="quote-author">
                     <h3>{{ experience | split: "*" | last | split: ":" | first }}</h3>
                   </div>
-                
                 </div>
-                    <p class="quoted-text">{{ experience | split: "*" | last | split: ":" | last }}</p>
-               
-                
+                <p class="quoted-text">{{ product | split: "*" | last | split: ":" | last }}</p>
                 </div>
               </div>
               {% endfor %}
@@ -146,13 +142,12 @@
         0: {
           slidesPerView: 1
         },
-      
         768: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           centeredSlides: true
         },
         992: {
-          slidesPerView: 3,
+          slidesPerView: 4,
           centeredSlides: true
         }
       }
