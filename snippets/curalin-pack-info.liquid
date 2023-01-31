@@ -53,7 +53,7 @@
           </div>
         </div>
 
-        {% if product.metafields.custom.ingredients_data.value.size %}
+        {% if product.metafields.custom.ingredients_data %}
           <div id="ingredients" class="content-item" data-title="Ingredients">
             <div class="ingredients item-content">
               {% for ingredient in product.metafields.custom.ingredients_data.value %}
