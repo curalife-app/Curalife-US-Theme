@@ -14,7 +14,7 @@
       {% for feature in features %}
         <div class="feature">
           <div class="feature-icon"><i class="icofont-check"></i></div>
-          <p><b>{{ feature. }}</b><br>{{ feature.subtitle }}</p>
+          <p><b>{{ feature | split: ":" | first }}</b><br>{{ feature | split: ":" | last }}</p>
         </div>
       {% endfor %}
     </div>
