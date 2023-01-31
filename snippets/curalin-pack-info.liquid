@@ -454,7 +454,7 @@
       $(target).addClass('active');
     });
     } else {
-    $('.content-item:before').on('click', function() {
+    $('.content-item').before().on('click', function() {
       var container = $(this).parents('.tabbed-content'),
           currId = $(this).attr('id'),
           items = container.find('.content-item');
