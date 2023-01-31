@@ -4,18 +4,18 @@
       <div class="quote-slider">
         <div class="swiper">
           <div class="swiper-wrapper">
-            {% for product in collections['curalin-related-products'] %}
+            {% for prod in collections['curalin-related-products'] %}
               <div class="swiper-slide">
                 <div class="quote-card">
                   <div class="quote-info">
-                    <img src="{{ product | asset_url | split: "*" | first }}" width="303" height="302" alt="">
+                    <img src="{{ prod.featured_image | image_url }}" width="303" height="302" alt="">
                     
                     <div class="quote-author">
-                      <h3>{{ product | split: "*" | last | split: ":" | first }}</h3>
+                      <h3>{{ prod.title }}</h3>
                     </div>
                   </div>
 
-                  <p class="quoted-text">{{ product | split: "*" | last | split: ":" | last }}</p>
+                  <p class="quoted-text">{{ prod.metafiels.custom.subtitle }}</p>
                 </div>
               </div>
           {% endfor %}
