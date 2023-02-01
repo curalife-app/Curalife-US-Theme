@@ -104,7 +104,7 @@
 
 <script>
   $('.category-tabs a').click(function (e) {
-    e.preventDefault();
+    {% comment %} e.preventDefault(); {% endcomment %}
 
     $('.category-tabs a').removeClass('active');
     $(this).addClass('active');
