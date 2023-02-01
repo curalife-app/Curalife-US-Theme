@@ -127,7 +127,7 @@
                           </div>
                           <div class="more">
                             <p>
-                    <a href="https://curalife-commerce{% if shop.name == "CuraLife Global" %}-sia{% endif %}.myshopify.com/apps/download?ids={{ order.id }}&t=invoice&public_key={{ invoice_id }}&source=shopify_notification_email" target="_blank">Download Invoice</a>                                                        </p>
+                    <a href="{{ shop.secured_url }}/apps/download?ids={{ order.id }}&t=invoice&public_key={{ invoice_id }}&source=shopify_notification_email" target="_blank">Download Invoice</a>                                                        </p>
                           </div>
                         </div>
                         {% for a in order.line_items  %}
