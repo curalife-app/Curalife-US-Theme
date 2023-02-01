@@ -1,11 +1,13 @@
 <section id="collections-catalog-section">
   <div class="container">
-    <ul class="category-tabs">
-      <li><a href="#" data-collection-handle="all" class="active">All</a></li>
-      {% for collection_handle in collectionsHandles %}
-        <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}" {% if request.path contains collection.handle %}class="active"{% endif %}>{{ collections[collection_handle].title }}</a></li>
-      {% endfor %}
-    </ul>
+    <div class="category-tabs">
+      <ul>
+        <li><a href="#" data-collection-handle="all" class="active">All</a></li>
+        {% for collection_handle in collectionsHandles %}
+          <li><a href="#" data-collection-handle="{{ collection_handle }}" data-collection-description="{{ collections[collection_handle].description }}" {% if request.path contains collection.handle %}class="active"{% endif %}>{{ collections[collection_handle].title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
 
     {% for collection_handle in collectionsHandles %}
       {% if forloop.last %}
@@ -63,14 +65,14 @@
     gap: 40px;
   }
 
-  #collections-catalog-section .category-tabs {
+  #collections-catalog-section .category-tabs ul {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
     margin: 15px 0;
   }
 
-  #collections-catalog-section .category-tabs li a {
+  #collections-catalog-section .category-tabs ul li a {
     color: var(--light-green);
     padding: 10px 20px;
     border-radius: 20px;
@@ -78,7 +80,7 @@
     transition: all 0.3s ease-in-out;
   }
 
-  #collections-catalog-section .category-tabs li a.active {
+  #collections-catalog-section .category-tabs ul li a.active {
     background: var(--vomit);
     color: var(--dark-green);
   }
@@ -88,14 +90,14 @@
       font-size: 10vw;
     }
 
-    #collections-catalog-section .category-tabs {
+    #collections-catalog-section .category-tabs ul {
       gap: 1vw;
       flex-wrap: nowrap;
       width: max-content;
       overflow: scroll;
     }
 
-    #collections-catalog-section .category-tabs li a {
+    #collections-catalog-section .category-tabs ul li a {
       padding: 1vw 4vw;
       font-size: 5vw;
     }
