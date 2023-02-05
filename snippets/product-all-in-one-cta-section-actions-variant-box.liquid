@@ -260,8 +260,11 @@
       }).fadeIn(300);
     }
 
+    console.log("0")
     $(".variant-box").click(function() {
+      console.log("1")
       $(this).find('.variant-box input').prop('checked', true);
+      console.log("2")
       updateCTA();
       updateSelectedVariantInformation('quantity', '.multiplier');
       updateSelectedVariantInformation('save', '.save-badge');
