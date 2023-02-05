@@ -1,4 +1,4 @@
-<section class="quiz-section" id="quiz-section">
+<section id="quiz-section">
   <h2>Support your health journey with lifestyle tips!</h2>
   {% if customer.email %}
     <div data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ customer.email }}" style="width:100%;height:500px;"></div>
@@ -13,7 +13,7 @@
     margin: unset;
   }
 
-  .quiz-section h2 {
+  #quiz-section h2 {
     margin-bottom: 20px;
     color: #424733;
     font-family: 'PP Radio Grotesk';
@@ -25,8 +25,8 @@
 
 <script>
   function submit(event) {
-    $(".quiz-section").css("visibility", "hidden").animate({ opacity: 0.0 }, 1000);
-    $(".quiz-section").height(0);
+    $("#quiz-section").css("visibility", "hidden").animate({ opacity: 0.0 }, 1000);
+    $("#quiz-section").height(0);
     woopra.track('Finished Onboarding Quiz', {});
   }
 </script>
