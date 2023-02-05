@@ -30,7 +30,7 @@
       {% else %}
         {% assign discount = 0 %}
       {% endif %}
-      <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ save_price }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
+      <input type="radio" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ save_price }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
     </div>
 
     <div class="variant-info">
@@ -241,9 +241,9 @@
     function updateCTA() {
       {% if ctaTextType %}
         {% if ctaTextType == "save" %}
-          let ctaText = "You Save " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('discount');
+          let ctaText = "You Save " + "{{ cart.currency.symbol }}" + $('.variant-box input:checked').attr('discount');
         {% elsif ctaTextType == "total" %}
-          let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('input[name=pack]:checked').attr('price');
+          let ctaText = "Total " + "{{ cart.currency.symbol }}" + $('.variant-box input:checked').attr('price');
         {% endif %}
 
         $("#save").fadeOut(300, function () {
@@ -253,7 +253,7 @@
     }
 
     function updateSelectedVariantInformation(infoAttributeName, targetElementToUpdate) {
-      let varIndex = $('input[name=pack]:checked').attr(infoAttributeName);
+      let varIndex = $('.variant-box input:checked').attr(infoAttributeName);
 
       $(targetElementToUpdate).fadeOut(300, function () {
         varIndex > 1 ? $(targetElementToUpdate).text("X" + varIndex) : $(targetElementToUpdate).text("");
@@ -261,14 +261,14 @@
     }
 
     $(".variant-box").click(function() {
-      $(this).find('input[name=pack]').prop('checked', true);
+      $(this).find('.variant-box input').prop('checked', true);
       updateCTA();
       updateSelectedVariantInformation('quantity', '.multiplier');
       updateSelectedVariantInformation('save', '.save-badge');
 
       // Slide to Variant Image
       {% if product.variants.size > 1 and product.images.size > 1 %}
-        let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
+        let slideIndex = productSliderAllInOne.slides.length - jQuery('.variant-box input:checked').attr('index');
         productSliderAllInOne.slideTo(slideIndex);
       {% endif %}
 
@@ -276,7 +276,7 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'event': 'variant-click',
-        'label': $('input[name=pack]:checked').attr('sku'),
+        'label': $('.variant-box input:checked').attr('sku'),
         'userId': '{{ customer.id }}',
         'email': '{{ customer.email }}',
         'country': '{{customer.customer_address.country_code }}',
