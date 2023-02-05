@@ -23,7 +23,7 @@
     {% else %}
       {% assign discount = 0 %}
     {% endif %}
-    <input type="radio" name="pack" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
+    <input type="radio" value="{{ var.id }}" quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" price="{{ var.price | money_without_currency | replace: ".00", "" }}" discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" save="{{ var.metafields.my_fields.discount_percents }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
   </div>
   <div class="variant-info">
     <p class="variant-title">{{ var.title }}</p>
@@ -322,14 +322,14 @@
       $(this).find('input[type=radio]').prop('checked', true);
 
       // Slide to Variant Image
-      let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
+      let slideIndex = productSliderAllInOne.slides.length - jQuery('.variant-box input:checked').attr('index');
       productSliderAllInOne.slideTo(slideIndex);
 
       // Track in GA
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'event': 'variant-click',
-        'label': $('input[name=pack]:checked').attr('sku'),
+        'label': $('.variant-box input:checked').attr('sku'),
         'userId': '{{ customer.id }}',
         'email': '{{ customer.email }}',
         'country': '{{customer.customer_address.country_code }}',
