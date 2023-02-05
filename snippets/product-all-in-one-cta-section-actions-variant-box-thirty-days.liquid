@@ -315,15 +315,13 @@
   </style>
 
   <script>
-    console.log("0")
     $(".variant-box").click(function() {
-      console.log("1")
       $(this).find('input[type=radio]').prop('checked', true);
-        console.log("2")
+
       // Slide to Variant Image
       let slideIndex = productSliderAllInOne.slides.length - jQuery('.variant-box input:checked').attr('index');
       productSliderAllInOne.slideTo(slideIndex);
-      console.log("3")
+
       // Track in GA
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
