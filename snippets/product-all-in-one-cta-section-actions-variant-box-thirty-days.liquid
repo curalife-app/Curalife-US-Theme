@@ -13,6 +13,7 @@
 {% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
 {% assign original_item_price = var.price | divided_by: bottle_quantity %}
 
+
 <div class="variant-notice special"><p><b>Special offer- Value of {{ product.compare_at_price | money_without_trailing_zeros }}!</b></p></div>
 <div class="variant-box">
   {% if isCuralinContent %}
@@ -319,14 +320,14 @@
       $(this).find('input[type=radio]').prop('checked', true);
 
       // Slide to Variant Image
-      let slideIndex = productSliderAllInOne.slides.length - jQuery('.variant-box input:checked').attr('index');
+      let slideIndex = productSliderAllInOne.slides.length - jQuery('input[name=pack]:checked').attr('index');
       productSliderAllInOne.slideTo(slideIndex);
 
       // Track in GA
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'event': 'variant-click',
-        'label': $('.variant-box input:checked').attr('sku'),
+        'label': $('input[name=pack]:checked').attr('sku'),
         'userId': '{{ customer.id }}',
         'email': '{{ customer.email }}',
         'country': '{{customer.customer_address.country_code }}',
