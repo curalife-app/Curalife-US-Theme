@@ -30,7 +30,7 @@
       {% else %}
         {% assign discount = 0 %}
       {% endif %}
-      <input type="radio" name="pack" value="{{ var.id }}" data-quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" data-price="{{ var.price | money_without_currency | replace: ".00", "" }}" data-discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" sku="{{ var.sku }}" data-save="{{ save_price }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
+      <input type="radio" name="pack" value="{{ var.id }}" data-quantity="{{ var.metafields.my_fields.pack_bottles_quantity }}" data-price="{{ var.price | money_without_currency | replace: ".00", "" }}" data-discount="{{ discount | replace: ".00", "" }}" title="{{ var.title }}" data-sku="{{ var.sku }}" data-save="{{ save_price }}" index="{{ product.variants.size | minus: index | plus: 1 }}"></input>
     </div>
 
     <div class="variant-info">
@@ -276,7 +276,7 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'event': 'variant-click',
-        'label': $('input[name=pack]:checked').attr('sku'),
+        'label': $('input[name=pack]:checked').attr('data-sku'),
         'userId': '{{ customer.id }}',
         'email': '{{ customer.email }}',
         'country': '{{customer.customer_address.country_code }}',
@@ -290,9 +290,9 @@
 
       // Track in Woopra
       woopra.track('Product_Variant_Select', {
-        sku: $(this).find("input").attr("sku"),
+        sku: $(this).find("input").attr("data-sku"),
         variant_id: $(this).find("input").attr("value"),
-        variant_title: $(this).find("input").attr("title"),
+        variant_title: $(this).find("input").attr("data-title"),
         price: $(this).find("input").attr("data-price")
       })
     });
