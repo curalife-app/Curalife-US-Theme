@@ -252,6 +252,17 @@
                 bundleDetails.insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']"));
               </script>
             {% endfor %}
+
+            <style>
+              tbody[data-order-summary-section="line-items"] {
+                display: table-row;
+              }
+              .bundle-details p {
+                margin-left: 114px;
+                width: 100%;
+                background: white;
+              }
+            </style>
           </div>
         {% endif %}
       </aside>
