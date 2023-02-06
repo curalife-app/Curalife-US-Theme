@@ -14,8 +14,8 @@
         <div id="player">
           <div class="player">
            
-            <div class="video-title">
-              Half Seated Full Body Yoga Posing and breathing
+            <div class="video-title" id="video-title">
+              
             </div>
          
             <p class="main-video-timer">Video  8:43</p>
@@ -226,6 +226,8 @@
 
   let currentVideo = document.getElementById('current-video')
   currentVideo.src = `${ytVideoPrefix}${arrVideos[0].data}`
+  let currentTitle = document.getElementById('video-title')
+  currentTitle.src = `${ytVideoPrefix}${arrVideos[0].name}`
 
   // Add .gallery__items to .gallery
 
