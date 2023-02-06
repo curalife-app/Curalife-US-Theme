@@ -234,8 +234,7 @@
 
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
-                    {% assign bundle_products = "7896199463063:Platinum Joint Care|
-                    7896200478871:Joint Care Gummies" | split: "|" %}
+                    {% assign bundle_products = "7896199463063:Platinum Joint Care|7896200478871:Joint Care Gummies" | split: "|" %}
 
                     {% for bundle_prod in bundle_products %}
                       {% assign bundle_prod_id = bundle_prod | split: ":" | first %}
