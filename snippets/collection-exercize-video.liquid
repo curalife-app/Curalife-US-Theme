@@ -1,12 +1,12 @@
 
 {% for exercize_video in exercize_videos %} 
- {% assign name = {{ exercize_video | split: "*" | first }} %} 
- {% assign timeVideo = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
- {% assign data = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
+ {% assign name_original = {{ exercize_video | split: "*" | first }} %} 
+ {% assign time_original = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
+ {% assign data_original = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
   {% if forloop.first }
-    {% assign nameFirst = {{ exercize_video | split: "*" | first }}  %}
-    {% assign timeVideoFirst = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
-    {% assign dataFirst = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
+    {% assign name_first = {{ exercize_video | split: "*" | first }}  %}
+    {% assign time_first = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
+    {% assign data_first = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
   {% endif %}
 {% endfor %}
 <section id="collection-exercize-video">
@@ -21,8 +21,8 @@
             
               <div class="video-title" id="video-title">  
                 Half Seated Full Body Yoga Posing and breathing
-                {{ nameFirst }}
-                <script>console.log('nameFirst: ' {{ nameFirst }})</script>
+                {{ name_first }}
+                <script>console.log('nameFirst: ' {{ name_first }})</script>
               </div>
            
           <p class="main-video-timer">Video  8:43</p> 
