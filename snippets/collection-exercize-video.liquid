@@ -13,10 +13,11 @@
       <div id="site">
         <div id="player">
           <div class="player">
-           
-            <div class="video-title" id="video-title">
-              Half Seated Full Body Yoga Posing and breathing
-            </div>
+            {% if forloop.index %}
+              <div class="video-title" id="video-title">  
+                {{ name }}
+              </div>
+             {% endif %}
          
             <p class="main-video-timer">Video  8:43</p>
             <div class="player__video">
