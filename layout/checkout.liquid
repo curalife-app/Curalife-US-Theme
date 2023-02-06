@@ -233,7 +233,7 @@
                 <p>contains:</p>
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
-                    {% assign prod_id = item | split: "/" | last %}
+                    {% assign prod_id = item_prod | split: "/" | last %}
                     <li>{{ prod_id }}</li>
                   {% endfor %}
                 </ul>
