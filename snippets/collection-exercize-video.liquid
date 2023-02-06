@@ -1,6 +1,7 @@
 {% for exercize_video in exercize_videos %} 
-  {% assign name = {{ exercize_video | split: ":" | first }} %} 
-  {% assign timeVideo = {{ exercize_video | split: ":" | last | split: ";" | first }} %} 
+  {% assign name = {{ exercize_video | split: "*" | first }} %} 
+  {% assign timeVideo = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
+  {% assign data = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
 {% endfor %}
 
 <section id="collection-exercize-video">
