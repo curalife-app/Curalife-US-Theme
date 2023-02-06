@@ -234,12 +234,17 @@
 
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
+                    {% assign bundles = "7896246681751:Platinum Joint Care,Joint Care Gummies" | split: "|" %}
+                    {% for bundle in bundles %}
+                      {% assign bundle_id = bundle | split: ":" | first %}
+                      {% assign bundle_items = bundle | split: ":" | last | split: "," %}
 
-                    <script>
-                      jQuery.getJSON("products.json?product_id={{ prod_id }}", function( response ) {
-                        console.log(response.products[0].title);
-                      });
-                    </script>
+                      {% for bundle_item in bundle_items %}
+                        <p>{{ bundle_name }}</p>
+                      {% endfor %}
+                    {% endfor %}
+
+
                   {% endfor %}
               </div>
 
