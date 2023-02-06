@@ -238,9 +238,9 @@
                     {% for bundle in bundles %}
                       {% assign bundle_id = bundle | split: ":" | first %}
                       {% assign bundle_items = bundle | split: ":" | last | split: "," %}
-                      <script>console.log("{{bundle_items|first}}")</script>
                       {% for bundle_item in bundle_items %}
-                        <p>{{ bundle_name }}</p>
+                        <script>console.log("{{bundle_item}}")</script>
+                        <p>{{ bundle_item }}</p>
                       {% endfor %}
                     {% endfor %}
                   {% endfor %}
