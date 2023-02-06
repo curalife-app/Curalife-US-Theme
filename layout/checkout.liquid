@@ -233,7 +233,7 @@
                 <p>contains:</p>
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
-                    <li>{{ item.id }}</li>
+                    <li>{{ item_prod.product.title }}</li>
                   {% endfor %}
                 </ul>
               </div>
