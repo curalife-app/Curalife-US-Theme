@@ -9,11 +9,13 @@
         <div id="player">
           <div class="player">
             {% for exercize_video in exercize_videos %} 
+              {% if forloop.index == 0 %}
             <div class="video-title">
              
                {{ exercize_video | split: "*" | first }}
               
             </div>
+            {% endif %}
           {% endfor %}
             <p class="main-video-timer">Video  8:43</p>
             <div class="player__video">
