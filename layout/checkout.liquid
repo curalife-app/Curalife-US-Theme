@@ -261,7 +261,8 @@
                 <p>contains:</p>
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
-                    <li>{{ item.product.metafields.custom.bundle-products | first | json }}</li>
+                    {% assign qqq = item.product.metafields.custom.bundle-products | first | json %}
+                    <li>{{ qqq.title }}</li>
                   {% endfor %}
                 </ul>
               </div>
