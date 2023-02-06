@@ -249,6 +249,7 @@
     // When click on .gallery__item element
     if (e.target.classList.contains('gallery__item')) {
       currentVideo.src = `${ytVideoPrefix}${e.target.getAttribute('data')}`
+      currentTitle.src = `${e.target.getAttribute('name')}`
     }
     // When click on .gallery__item__img element
     if (e.target.classList.contains('gallery__item__img')) {
