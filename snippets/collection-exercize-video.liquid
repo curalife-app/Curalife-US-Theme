@@ -15,7 +15,7 @@
           <div class="player">
            
             <div class="video-title" id="video-title">
-              
+              Half Seated Full Body Yoga Posing and breathing
             </div>
          
             <p class="main-video-timer">Video  8:43</p>
@@ -227,7 +227,7 @@
   let currentVideo = document.getElementById('current-video')
   currentVideo.src = `${ytVideoPrefix}${arrVideos[0].data}`
   let currentTitle = document.getElementById('video-title')
-  currentTitle.src = `${ytVideoPrefix}${arrVideos[0].name}`
+  currentTitle.src = `${arrVideos[0].name}`
 
   // Add .gallery__items to .gallery
 
@@ -249,7 +249,7 @@
     // When click on .gallery__item element
     if (e.target.classList.contains('gallery__item')) {
       currentVideo.src = `${ytVideoPrefix}${e.target.getAttribute('data')}`
-      currentTitle.src = `${ytVideoPrefix}${e.target.getAttribute('name')}`
+      currentTitle.src = `${e.target.getAttribute('name')}`
     }
     // When click on .gallery__item__img element
     if (e.target.classList.contains('gallery__item__img')) {
@@ -257,7 +257,6 @@
       data = data.replace(ytImagePathPrefix, '')
       data = data.replace(ytImagePathSufix, '')
       currentVideo.src = `${ytVideoPrefix}${data}`
-      currentTitle.src = `${ytVideoPrefix}${name}`
     }
     // When click on .gallery__item__span element
     if (e.target.classList.contains('gallery__item__span')) {
