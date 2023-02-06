@@ -257,6 +257,7 @@
       data = data.replace(ytImagePathPrefix, '')
       data = data.replace(ytImagePathSufix, '')
       currentVideo.src = `${ytVideoPrefix}${data}`
+      currentTitle.src = `${ytVideoPrefix}${name}`
     }
     // When click on .gallery__item__span element
     if (e.target.classList.contains('gallery__item__span')) {
