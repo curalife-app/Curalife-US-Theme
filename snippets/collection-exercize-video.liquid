@@ -21,7 +21,6 @@
 <style>
   #site {
     display: flex;
-    flex-wrap: wrap;
     min-height: 100vh;
   }
 
@@ -51,27 +50,21 @@
   .gallery {
     display: flex;
     flex-direction: column;
+    max-width: 40%;
     background-color: lightgray;
     padding: 1em;
-    &__item {
-    align-items: center;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding: 0 .75em;
-    &__img {
-      width: 40%;
-    }
-    &__span {
-      padding-left: 1em;
-      text-shadow: 1px 1px 2px red;
-      width: 60%;
-    }
-    
+   
   }
 
+  @media screen and (max-width: 768px) {
+    #site {    
+      flex-wrap: wrap;   
+    }
+
+    .gallery {
+      max-width: unset;
+    }
+  }
 
 
 </style>
