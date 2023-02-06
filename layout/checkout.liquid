@@ -235,7 +235,7 @@
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
                     <script>
-                      const api_url = 'https://your-store.myshopify.com/api/2020-07/graphql';
+                      const api_url = 'https://curalife-commerce.myshopify.com/api/2023-01/graphql';
                       const headers = new Headers({
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
