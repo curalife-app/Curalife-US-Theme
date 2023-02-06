@@ -249,8 +249,8 @@
                 let bundleDetails{{ forloop.index }} = $('#bundle-details-{{ forloop.index }}');
                 let lineItem = $("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']");
                 console.log(lineItem);
-                console.log(bundleDetails);
-                bundleDetails.insertAfter(lineItem);
+                console.log(bundleDetails{{ forloop.index }});
+                bundleDetails{{ forloop.index }}.insertAfter(lineItem);
               </script>
             {% endfor %}
 
