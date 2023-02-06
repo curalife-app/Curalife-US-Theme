@@ -234,6 +234,10 @@
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
+
+
+                    <li>
+
                     <script>
                       const api_url = 'https://curalife-commerce.myshopify.com/api/2023-01/graphql';
                       const headers = new Headers({
@@ -264,7 +268,7 @@
                         }
                     </script>
 
-                    <li>{{ item_prod.title }}</li>
+                    {{ item_prod.title }}</li>
                   {% endfor %}
                 </ul>
               </div>
