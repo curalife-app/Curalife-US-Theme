@@ -234,7 +234,7 @@
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign ppp = item.product.metafields.custom.bundle-products | first %}
-                    <li>{{ ppp.title }}</li>
+                    <li>{{ item_prod }}</li>
                   {% endfor %}
                 </ul>
               </div>
