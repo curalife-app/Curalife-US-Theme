@@ -18,5 +18,5 @@
  {% assign data = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
 {% endfor %}
 
-{% render 'collection-exercize-video' exercize_videos: exercize_videos, name: name, timeVideo: timeVideo, data: data %}
+{% render 'collection-exercize-video' exercize_videos: exercize_videos, name: name, titleName: name.forloop.index[0], timeVideo: timeVideo, data: data %}
 
