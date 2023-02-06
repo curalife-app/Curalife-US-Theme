@@ -261,7 +261,7 @@
                 <p>contains:</p>
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
-                    <li>{{ item.product.metafields.custom.bundle-products.value | json }}</li>
+                    <li>{{ item.product.metafields.custom.bundle-products | first | json }}</li>
                   {% endfor %}
                 </ul>
               </div>
