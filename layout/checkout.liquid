@@ -203,7 +203,7 @@
         {% assign payments = "visa,mastercard,amex,discover,jcb,diners" | split: "," %}
           <div id="payment-badges" class="payment-badges">
             {% for payment in payments %}
-              <img class="payment-badge" src="{{ 'checkout-payment-badges-{{ payment }}.png' | asset_url }}" alt="payment provider {{ payment }}" loading="lazy">
+              <img class="payment-badge" src="{{ 'checkout-payment-badges-' | append: payment | append: '.png' | asset_url }}" alt="payment provider {{ payment }}" loading="lazy">
             {% endfor %}
           </div>
         {% endif %}
