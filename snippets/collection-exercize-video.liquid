@@ -223,7 +223,7 @@
   let gallery = document.querySelector('.gallery')
   gallery.innerHTML = ``
 
-  for (let i = 0; i < arrVideos.length; i++) {
+  for (let i = 1; i < arrVideos.length; i++) {
     gallery.innerHTML += `
       <div class="gallery__item" data="${arrVideos[i].data}">
         <img class="gallery__item__img" src="${ytImagePathPrefix}${arrVideos[i].data}${ytImagePathSufix}">
