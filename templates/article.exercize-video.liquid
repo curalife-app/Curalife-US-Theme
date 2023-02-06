@@ -12,5 +12,11 @@
 
 ' | split: '|' %}
 
-{% render 'collection-exercize-video' exercize_videos: exercize_videos %}
+{% for exercize_video in exercize_videos %} 
+ {% assign name = {{ exercize_video | split: "*" | first }} %} 
+ {% assign timeVideo = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
+ {% assign data = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
+{% endfor %}
+
+{% render 'collection-exercize-video' exercize_videos: exercize_videos, name: name, timeVideo: timeVideo, data: data %}
 
