@@ -233,7 +233,6 @@
                 <p>contains:</p>
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
-                    {% assign ppp = item.product.metafields.custom.bundle-products | first %}
                     <li>{{ item_prod.id }}</li>
                   {% endfor %}
                 </ul>
