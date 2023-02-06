@@ -250,9 +250,9 @@
                   {% endfor %}
               </div>
 
-              <script>
+              {% comment %} <script>
                 $('#bundle-details-{{ forloop.index }}').insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']"));
-              </script>
+              </script> {% endcomment %}
             {% endfor %}
           </div>
         {% endif %}
