@@ -226,8 +226,7 @@
 
   let currentVideo = document.getElementById('current-video')
   currentVideo.src = `${ytVideoPrefix}${arrVideos[0].data}`
-  let currentTitle = document.getElementById('video-title')
-  currentTitle.src = `${arrVideos[0].innerText.name}`
+ 
 
   // Add .gallery__items to .gallery
 
@@ -249,7 +248,7 @@
     // When click on .gallery__item element
     if (e.target.classList.contains('gallery__item')) {
       currentVideo.src = `${ytVideoPrefix}${e.target.getAttribute('data')}`
-      currentTitle.src = `${e.target.innerText('name')}`
+      
     }
     // When click on .gallery__item__img element
     if (e.target.classList.contains('gallery__item__img')) {
