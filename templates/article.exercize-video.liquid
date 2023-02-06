@@ -12,7 +12,17 @@
 
 ' | split: '|' %}
 
+{% for arrVideo in arrVideos %} 
+  {% assign name = {{ arrVideo | split: "*" | first }} %} 
+  {% assign time_video = "video: " | append: {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
+  {% assign data = "https://www.youtube.com/embed/" | append: {{ arrVideo | split: "*" | last | split: ";" | last }} %}
+  <script>console.log("name: ", {{ name }} );
+    console.log("time_video: ", {{ time_video }} );
+    console.log("data: ", {{ data }} )
+  </script> 
+{% endfor %} 
 
 
-{% render 'collection-exercize-video' arrVideos: arrVideos %}
+
+{% render 'collection-exercize-video' arrVideos: arrVideos, name:name, time_video:time_video, data:data %}
 
