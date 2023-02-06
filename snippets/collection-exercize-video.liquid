@@ -5,17 +5,18 @@
   <img class="exercize-img-leaf" src="{{ 'video-exercize-leaf.png' | asset_url }}" width="187" height="184" alt="Swoosh">
   <img class="exercize-img-leaf-mb" src="{{ 'video-exercize-leaf-mb.png' | asset_url }}" width="50" height="49" alt="Swoosh">
   <div class="container">
-  {% for exercize_video in exercize_videos %} 
-    {% assign name_original = {{ exercize_video | split: "*" | first }} %} 
-    {% assign time_original = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
-    {% assign data_original = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
-      {% if forloop.first }
-        {% assign name_first = {{ exercize_video | split: "*" | first }}  %}
-        {% assign time_first = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
-        {% assign data_first = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
-      {% endif %}
+ 
       <div id="site">
         <div id="player">
+          {% for exercize_video in exercize_videos %} 
+          {% assign name_original = {{ exercize_video | split: "*" | first }} %} 
+          {% assign time_original = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
+          {% assign data_original = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
+            {% if forloop.first }
+              {% assign name_first = {{ exercize_video | split: "*" | first }}  %}
+              {% assign time_first = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
+              {% assign data_first = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
+            {% endif %}
           <div class="player"> 
               <div class="video-title" id="video-title">  
                 Half Seated Full Body Yoga Posing and breathing
