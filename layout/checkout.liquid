@@ -234,6 +234,79 @@
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
+                    <script>
+                      const api_url = 'https://your-store.myshopify.com/api/2020-07/graphql';
+                      const headers = new Headers({
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-Shopify-Storefront-Access-Token': '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'
+                      });
+
+                      const getShopifyProducts = async () => {
+                        const response = await fetch(api_url, {
+                          method: 'POST',
+                          headers: headers,
+                          body: JSON.stringify({query: query()})
+                        });
+                        const Shop = await response.json();
+                        console.log(Shop)
+                        {% comment %} displayProducts(Shop.data.collectionByHandle.products.edges) {% endcomment %}
+                      }
+
+                      const query = () =>
+                        {
+                          shop {
+                            name
+                            primaryDomain {
+                              url
+                              host
+                            }
+                          }
+                          collectionByHandle(handle: "pomades") {
+                            id
+                            products(first: 10) {
+                              edges {
+                                node {
+                                  title
+                                  id
+                                  priceRange {
+                                    maxVariantPrice {
+                                      amount
+                                    }
+                                    minVariantPrice {
+                                      amount
+                                    }
+                                  }
+                                  images(first: 5) {
+                                    edges {
+                                      node {
+                                        originalSrc
+                                        altText
+                                      }
+                                    }
+                                  }
+                                  variants(first: 100) {
+                                    edges {
+                                      node {
+                                        title
+                                        id
+                                        priceV2 {
+                                          amount
+                                        }
+                                        image {
+                                          originalSrc
+                                          altText
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                    </script>
+
                     {% for product in collections.all.products %}
                       {% if product.id == prod_id %}
                         {% assign shopifyProduct = product %}
