@@ -232,7 +232,7 @@
               <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
                 <p>contains:</p>
                 <ul>
-                  {% for item_prod in item.product.metafields.custom.bundle-products %}
+                  {% for item_prod in item.product.metafields.custom.bundle-products.value %}
                     <li>{{ item_prod.title }}</li>
                   {% endfor %}
                 </ul>
