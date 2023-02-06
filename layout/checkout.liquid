@@ -228,8 +228,6 @@
             {% render 'checkout-badges-widget' %}
             {% render 'checkout-reviews-widget' %}
 
-            <script>console.log("hi")</script>
-
             {% for item in checkout.line_items %}
               <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
                 <p>contains:</p>
@@ -242,6 +240,7 @@
                        var recommendedProducts = response.products;
                        if (recommendedProducts.length > 0) {
                          var firstRecommendedProduct = recommendedProducts[0];
+                         console.log(firstRecommendedProduct.title);
                          alert(
                            "The title of the first recommended product is: " +
                              firstRecommendedProduct.title
