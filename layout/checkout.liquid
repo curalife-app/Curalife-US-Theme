@@ -229,14 +229,12 @@
             {% render 'checkout-reviews-widget' %}
 
             {% for item in checkout.line_items %}
-              {% include 'access-product-metafields', product: item.product %}
-
               <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
                 <p>contains:</p>
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
-                    {% assign qqq = item.product.metafields.custom.bundle-products | first | json %}
-                    <li>{{ qqq.title }}</li>
+                    {% assign prod_id = item | split: "/" | last %}
+                    <li>{{ prod_id }}</li>
                   {% endfor %}
                 </ul>
               </div>
