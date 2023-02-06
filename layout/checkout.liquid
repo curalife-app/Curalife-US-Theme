@@ -254,54 +254,11 @@
                       }
 
                       const query = () =>
-                        {
-                          shop {
-                            name
-                            primaryDomain {
-                              url
-                              host
-                            }
-                          }
-                          collectionByHandle(handle: "pomades") {
-                            id
-                            products(first: 10) {
-                              edges {
-                                node {
-                                  title
-                                  id
-                                  priceRange {
-                                    maxVariantPrice {
-                                      amount
-                                    }
-                                    minVariantPrice {
-                                      amount
-                                    }
-                                  }
-                                  images(first: 5) {
-                                    edges {
-                                      node {
-                                        originalSrc
-                                        altText
-                                      }
-                                    }
-                                  }
-                                  variants(first: 100) {
-                                    edges {
-                                      node {
-                                        title
-                                        id
-                                        priceV2 {
-                                          amount
-                                        }
-                                        image {
-                                          originalSrc
-                                          altText
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
+                      {
+                          product(id: "{{ id }}") {
+                            pizzaSizeInches: metafield(namespace: "custom", key: "pizza-size-inches") {
+                              value
+                              type
                             }
                           }
                         }
