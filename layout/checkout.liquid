@@ -200,7 +200,7 @@
         </main>
 
         {% if extensions_exist %}
-        {% assign payments = "visa,mastercard,amex,discover,jcb,diners" split: "," %}
+        {% assign payments = "visa,mastercard,amex,discover,jcb,diners" | split: "," %}
           <div id="payment-badges" class="payment-badges">
             {% for payment in payments %}
               <img class="payment-badge" src="{{ 'checkout-payment-badges-{{ payment }}.png' | asset_url }}" alt="payment provider {{ payment }}" loading="lazy">
