@@ -1,7 +1,7 @@
 {% for arrVideo in arrVideos %} 
   {% assign name = {{ arrVideo | split: "*" | first }} %} 
-  {% assign time_video = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
-  {% assign data = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
+  {% assign time_video = "video: " | append: {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
+  {% assign data = "https://www.youtube.com/embed/" | append: {{ arrVideo | split: "*" | last | split: ";" | last }} %}
 {% endfor %}  
 <section id="collection-exercize-video">
   <img class="exercize-img-swoosh" src="{{ 'video-exercize-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
