@@ -231,7 +231,7 @@
             {% for item in checkout.line_items %}
               <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
                 <ul>
-                  {% for prod in item.product.metafields.custom.bundle-products %}
+                  {% for prod in item.product.metafields.custom.bundle-products.value %}
                     <li>{{ prod.title }}</li>
                   {% endfor %}
                 </ul>
