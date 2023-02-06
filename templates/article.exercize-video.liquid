@@ -17,7 +17,7 @@
   {% assign time_video = "video: " | append: time_base  %}
   {% assign data_base = {{ arrVideo | split: "*" | last | split: ";" | last }} %} 
   {% assign data = "https://www.youtube.com/embed/" | append: data_base %}
-  <script>console.log("name: ", {{ name }} );
+  <script>console.log("name: ", {{ arrVideo.name }} );
     console.log("time_video: ", {{ time_video }} );
     console.log("data: ", {{ data }} )
   </script> 
