@@ -264,12 +264,7 @@
                         }
                     </script>
 
-                    {% for product in collections.all.products %}
-                      {% if product.id == prod_id %}
-                        {% assign shopifyProduct = product %}
-                      {% endif %}
-                    {% endfor %}
-                    <li>{{ shopifyProduct.title }}</li>
+                    <li>{{ item_prod.title }}</li>
                   {% endfor %}
                 </ul>
               </div>
