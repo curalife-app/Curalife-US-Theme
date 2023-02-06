@@ -248,8 +248,9 @@
               </div>
 
               <script>
-                $('#bundle-details-{{ forloop.index }}').insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']"));
-                $('#bundle-details-{{ forloop.index }}').replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+                let bundleDetails = $('#bundle-details-{{ forloop.index }}');
+                bundleDetails.insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']"));
+                bundleDetails.replaceWith($('<h5>' + bundleDetails.innerHTML + '</h5>'));
               </script>
             {% endfor %}
           </div>
