@@ -259,6 +259,7 @@
 
               .bundle-details {
                 position: relative;
+                top: -18px;
               }
 
               .bundle-details p {
@@ -272,12 +273,12 @@
                 border-bottom: 1px solid #d0d0d0;
               }
 
-              .bundle-details::before {
+              {% comment %} .bundle-details::before {
                 content: "▼";
                 position: absolute;
                 top: -20px;
                 left: 120px;
-              }
+              } {% endcomment %}
             </style>
           </div>
         {% endif %}
