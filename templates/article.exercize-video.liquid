@@ -13,14 +13,21 @@
 
 {% for arrVideo in arrVideos %} 
   {% assign name = {{ arrVideo | split: "*" | first }} %} 
-  <script>console.log("name: ", {{ name }} );</script>
+  
   {% assign time_base = {{ arrVideo | split: "*" | last | split: ";" | first }} %}
   {% assign time_video = "video: " | append: time_base  %}
-  <script> console.log("time_video: ", {{ time_video }} );</script>
+  
   {% assign data_base = {{ arrVideo | split: "*" | last | split: ";" | last }} %} 
   {% assign data = "https://www.youtube.com/embed/" | append: data_base %}
-  <script> console.log("data: ", {{ data }} )</script> 
+  
 {% endfor %} 
+
+{% if forloop.index == 0 %}
+ <script>console.log("name: ", {{ name }}, " time_video: ", {{ time_video }}, " data: ", {{ data }} );
+  
+ </script>
+ 
+{% endif %}
 
 
 
