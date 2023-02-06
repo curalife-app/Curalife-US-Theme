@@ -257,6 +257,8 @@
             {% render 'checkout-reviews-widget' %}
 
             {% for item in checkout.line_items %}
+              {% include 'save-accentuate-metadata', product: item.product %}
+
               <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
                 <p>contains:</p>
                 <ul>
