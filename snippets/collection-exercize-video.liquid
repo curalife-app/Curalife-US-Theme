@@ -1,12 +1,7 @@
 {% for arrVideo in arrVideos %} 
-{% assign name = {{ arrVideo | split: "*" | first }} %} 
-{% assign time_video = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
-{% assign data = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
-  {% if forloop.first }
-    {% assign name_first = {{ arrVideo | split: "*" | first }}  %}
-    {% assign time_first = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
-    {% assign data_first = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
-  {% endif %}
+  {% assign name = {{ arrVideo | split: "*" | first }} %} 
+  {% assign time_video = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
+  {% assign data = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
 {% endfor %}  
 <section id="collection-exercize-video">
   <img class="exercize-img-swoosh" src="{{ 'video-exercize-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
