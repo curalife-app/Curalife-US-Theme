@@ -249,6 +249,7 @@
 
               <script>
                 $('#bundle-details-{{ forloop.index }}').insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']"));
+                $('#bundle-details-{{ forloop.index }}').replaceWith($('<h5>' + this.innerHTML + '</h5>'));
               </script>
             {% endfor %}
           </div>
