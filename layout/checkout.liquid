@@ -237,11 +237,7 @@
 
                     <script>
                       jQuery.getJSON("products.json?product_id={{ prod_id }}", function( response ) {
-                       var recommendedProducts = response.products;
-                       if (recommendedProducts.length > 0) {
-                         var firstRecommendedProduct = recommendedProducts[0];
-                         console.log(firstRecommendedProduct.title);
-                       }
+                        console.log(response.products[0].title);
                       });
                     </script>
                   {% endfor %}
