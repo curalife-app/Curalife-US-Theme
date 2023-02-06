@@ -228,6 +228,8 @@
             {% render 'checkout-badges-widget' %}
             {% render 'checkout-reviews-widget' %}
 
+            <script>console.log("hi")</script>
+
             {% for item in checkout.line_items %}
               <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
                 <p>contains:</p>
