@@ -1,11 +1,11 @@
-{% for exercize_video in exercize_videos %} 
-{% assign name_original = {{ exercize_video | split: "*" | first }} %} 
-{% assign time_original = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
-{% assign data_original = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
+{% for arrVideo in arrVideos %} 
+{% assign name_original = {{ arrVideo | split: "*" | first }} %} 
+{% assign time_original = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
+{% assign data_original = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
   {% if forloop.first }
-    {% assign name_first = {{ exercize_video | split: "*" | first }}  %}
-    {% assign time_first = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
-    {% assign data_first = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
+    {% assign name_first = {{ arrVideo | split: "*" | first }}  %}
+    {% assign time_first = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
+    {% assign data_first = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
   {% endif %}
 {% endfor %}  
 <section id="collection-exercize-video">
