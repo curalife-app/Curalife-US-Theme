@@ -250,7 +250,7 @@
               <script>
                 let bundleDetails = $('#bundle-details-{{ forloop.index }}');
                 bundleDetails.insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']"));
-                {% comment %} bundleDetails.replaceWith($('<tr>' + bundleDetails.html() + '</tr>')); {% endcomment %}
+                bundleDetails.replaceWith($('<tr>' + bundleDetails.text() + '</tr>'));
               </script>
             {% endfor %}
           </div>
