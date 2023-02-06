@@ -119,6 +119,11 @@
     padding-left: 1em;
   }
 
+  .gallery__item__time {
+    
+    font-weight: 400;
+  }
+
   @media screen and (max-width: 768px) {
    
     #site {    
@@ -163,18 +168,18 @@
   // Array of Videos
 
   let arrVideos = [
-    {name: 'Cat Man Do', timeVideo: '', data: 'w0ffwDYo00Q'},
-    {name: 'Let Me In!', timeVideo: '', data: '4rb8aOzy9t4'},
-    {name: 'TV Dinner', timeVideo: '', data: 's13dLaTIHSg'},
-    {name: 'Cat & Mouse', timeVideo: '', data: 'BWIPZvwcnX8'},
-    {name: 'Feed Me', timeVideo: '', data: 'Te4wx4jtiEA'},
-    {name: 'Crazy Time', timeVideo: '', data: 'l5ODwR6FPRQ'},
-    {name: 'Bed Sheets', timeVideo: '', data: 'P3y8vc-3iVU'},
-    {name: 'Box Clever', timeVideo: '', data: 'ZpCl5O6tTv8'},
-    {name: 'Let Me Out!', timeVideo: '', data: 'HDzkaJOT_KI'},
-    {name: 'Mirror Mirror', timeVideo: '', data: 'G5FUH3eoizc'},
-    {name: 'Window Pain', timeVideo: '', data: 'XrivBjlv6Mw'},
-    {name: 'Sticky Tape', timeVideo: '', data: 'tV3SWjrt2rE'}
+    {name: 'Cat Man Do', timeVideo: 'video: 6:23', data: 'w0ffwDYo00Q'},
+    {name: 'Let Me In!', timeVideo: 'video: 6:23', data: '4rb8aOzy9t4'},
+    {name: 'TV Dinner', timeVideo: 'video: 6:23', data: 's13dLaTIHSg'},
+    {name: 'Cat & Mouse', timeVideo: 'video: 6:23', data: 'BWIPZvwcnX8'},
+    {name: 'Feed Me', timeVideo: 'video: 6:23', data: 'Te4wx4jtiEA'},
+    {name: 'Crazy Time', timeVideo: 'video: 6:23', data: 'l5ODwR6FPRQ'},
+    {name: 'Bed Sheets', timeVideo: 'video: 6:23', data: 'P3y8vc-3iVU'},
+    {name: 'Box Clever', timeVideo: 'video: 6:23', data: 'ZpCl5O6tTv8'},
+    {name: 'Let Me Out!', timeVideo: 'video: 6:23', data: 'HDzkaJOT_KI'},
+    {name: 'Mirror Mirror', timeVideo: 'video: 6:23', data: 'G5FUH3eoizc'},
+    {name: 'Window Pain', timeVideo: 'video: 6:23', data: 'XrivBjlv6Mw'},
+    {name: 'Sticky Tape', timeVideo: 'video: 6:23', data: 'tV3SWjrt2rE'}
   ]
 
   // Current video
@@ -192,7 +197,7 @@
       <div class="gallery__item" data="${arrVideos[i].data}">
         <img class="gallery__item__img" src="${ytImagePathPrefix}${arrVideos[i].data}${ytImagePathSufix}">
         <span class="gallery__item__span">${arrVideos[i].name}</span>
-        <p class="gallery__item__span">${arrVideos[i].timeVideo}</p>
+        <p class="gallery__item__time">${arrVideos[i].timeVideo}</p>
       </div>`
   }
 
