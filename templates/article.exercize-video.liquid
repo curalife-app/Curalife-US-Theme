@@ -16,7 +16,10 @@
  {% assign name = {{ exercize_video | split: "*" | first }} %} 
  {% assign timeVideo = {{ exercize_video | split: "*" | last | split: ";" | first }} %} 
  {% assign data = {{ exercize_video | split: "*" | last | split: ";" | last }} %}
+ {% if forloop.first }
+ {% assign titleName = {{ exercize_video | split: "*" | first }}  %}
+{% endif %}
 {% endfor %}
 
-{% render 'collection-exercize-video' exercize_videos: exercize_videos, name: name, titleName: name.forloop.index[0], timeVideo: timeVideo, data: data %}
+{% render 'collection-exercize-video' exercize_videos: exercize_videos, name: name, titleName: titleName, timeVideo: timeVideo, data: data %}
 
