@@ -234,7 +234,12 @@
                 <ul>
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
-                    <li>{{ prod_id }}</li>
+                    {% for product in collections.all.products %}
+                      {% if product.id == prod_id %}
+                        {% assign shopifyProduct = product %}
+                      {% endif %}
+                    {% endfor %}
+                    <li>{{ shopifyProduct.title }}</li>
                   {% endfor %}
                 </ul>
               </div>
