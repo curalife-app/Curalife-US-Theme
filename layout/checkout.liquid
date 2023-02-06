@@ -234,14 +234,16 @@
 
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
-                    {% assign bundles = "7896246681751:Platinum Joint Care,Joint Care Gummies" | split: "|" %}
-                    {% for bundle in bundles %}
-                      {% assign bundle_id = bundle | split: ":" | first %}
-                      {% assign bundle_items = bundle | split: ":" | last | split: "," %}
-                      {% for bundle_item in bundle_items %}
-                        <script>console.log("{{bundle_item}}")</script>
-                        <p>{{ bundle_item }}</p>
-                      {% endfor %}
+                    {% assign bundle_products = "7896246681751:Platinum Joint Care|
+                                         7896200478871:Joint Care Gummies" | split: "|" %}
+
+                    {% for bundle_prod in bundle_products %}
+                      {% assign bundle_prod_id = bundle_prod | split: ":" | first %}
+                      {% assign bundle_prod_name = bundle_prod | split: ":" | last %}
+
+                      {% if bundle_prod_id == prod_id %}
+                        <p>{{ bundle_prod_name }}</p>
+                      {% endif %}
                     {% endfor %}
                   {% endfor %}
               </div>
