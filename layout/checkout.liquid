@@ -16,6 +16,8 @@
   {% endif %}
 {% endif %}
 
+{% assign bundle_products = "5485767655575:Curalin|7896199463063:Platinum Joint Care|7896200478871:Joint Care Gummies|7911564345495:Immune Booster|7911559299223:Immune Gummies|7911568703639:Multivitamin Gummies|7911570473111:Omega 3 6 9 Gummies|7896197660823:Restful Sleep|7896198447255:Sleep Well Gummies" | split: "|" %}
+
 {%- comment -%} If store is US {%- endcomment -%}
 {% if shop.name == 'CuraLife' %}
   {% assign yotpo_script_id = "5AyB8SFKOjnnor-g4qIeMg" %}
@@ -232,7 +234,6 @@
               <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
-                    {% assign bundle_products = "5485767655575:Curalin|7896199463063:Platinum Joint Care|7896200478871:Joint Care Gummies|7911564345495:Immune Booster|7911559299223:Immune Gummies|7911568703639:Multivitamin Gummies|7911570473111:Omega 3 6 9 Gummies|7896197660823:Restful Sleep|7896198447255:Sleep Well Gummies" | split: "|" %}
 
                     {% for bundle_prod in bundle_products %}
                       {% assign bundle_prod_id = bundle_prod | split: ":" | first %}
