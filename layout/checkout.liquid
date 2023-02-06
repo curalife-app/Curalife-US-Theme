@@ -241,7 +241,7 @@
                       {% assign bundle_prod_name = bundle_prod | split: ":" | last %}
                       {% comment %} <script>console.log("{{prod_id}} , {{bundle_prod_id}} , {{ bundle_prod}}")</script> {% endcomment %}
                       {% if bundle_prod_id == prod_id %}
-                        <p>{{ bundle_prod_name }}</p>
+                        <p>{{ bundle_prod_name }}<span>{{ item.variant.metafields.my_fields.pack_bottles_quantity }}</span></p>
                       {% endif %}
                     {% endfor %}
                   {% endfor %}
@@ -249,7 +249,12 @@
 
               <script>
                 let bundleDetails = $('#bundle-details-{{ forloop.index }}');
-                bundleDetails.insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']"));
+                let lineItem = $("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']");
+                bundleDetails.insertAfter(lineItem);
+
+                let monthSupply = lineItem.find(".product__description__variant order-summary__small-text").text();
+                let monthSupplyNumber = monthSupply.replace(" Month Supply", "");
+
               </script>
             {% endfor %}
 
