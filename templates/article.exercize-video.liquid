@@ -2,7 +2,7 @@
 
 {% render 'collection-exercize-video', collectionsHandles: collections_handles, isDescription: true, activeCollection: collection.handle %}
 
-{% for collection_handle in collections_handles %}
+{% comment %} {% for collection_handle in collections_handles %}
   {% if forloop.last %}
     {% assign isLastRender = true %}
   {% endif %}
@@ -10,4 +10,4 @@
   {% render 'collection-category-badges', collection: collections[collection_handle], isLastRender: isLastRender %}
 {% endfor %}
 
-{% render 'collection-badges' %}
+{% render 'collection-badges' %} {% endcomment %}
