@@ -1,7 +1,7 @@
 {% for arrVideo in arrVideos %} 
-{% assign name_original = {{ arrVideo | split: "*" | first }} %} 
-{% assign time_original = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
-{% assign data_original = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
+{% assign name = {{ arrVideo | split: "*" | first }} %} 
+{% assign time_video = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
+{% assign data = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
   {% if forloop.first }
     {% assign name_first = {{ arrVideo | split: "*" | first }}  %}
     {% assign time_first = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
@@ -213,19 +213,19 @@
   // Array of Videos
      
   let arrVideos = [
-    {name: 'Cat & Mouse', timeVideo: 'video: 8:43', data: 'BWIPZvwcnX8'},
-    {name: 'Cat Man Do', timeVideo: 'video: 6:23', data: 'w0ffwDYo00Q'},
-    {name: 'Let Me In!', timeVideo: 'video: 6:23', data: '4rb8aOzy9t4'},
-    {name: 'TV Dinner', timeVideo: 'video: 6:23', data: 's13dLaTIHSg'},
-    {name: 'Cat & Mouse', timeVideo: 'video: 6:23', data: 'BWIPZvwcnX8'},
-    {name: 'Feed Me', timeVideo: 'video: 6:23', data: 'Te4wx4jtiEA'},
-    {name: 'Crazy Time', timeVideo: 'video: 6:23', data: 'l5ODwR6FPRQ'},
-    {name: 'Bed Sheets', timeVideo: 'video: 6:23', data: 'P3y8vc-3iVU'},
-    {name: 'Box Clever', timeVideo: 'video: 6:23', data: 'ZpCl5O6tTv8'},
-    {name: 'Let Me Out!', timeVideo: 'video: 6:23', data: 'HDzkaJOT_KI'},
-    {name: 'Mirror Mirror', timeVideo: 'video: 6:23', data: 'G5FUH3eoizc'},
-    {name: 'Window Pain', timeVideo: 'video: 6:23', data: 'XrivBjlv6Mw'},
-    {name: 'Sticky Tape', timeVideo: 'video: 6:23', data: 'tV3SWjrt2rE'}
+    {name: 'Cat & Mouse', time_video: 'video: 8:43', data: 'BWIPZvwcnX8'},
+    {name: 'Cat Man Do', time_video: 'video: 6:23', data: 'w0ffwDYo00Q'},
+    {name: 'Let Me In!', time_video: 'video: 6:23', data: '4rb8aOzy9t4'},
+    {name: 'TV Dinner', time_video: 'video: 6:23', data: 's13dLaTIHSg'},
+    {name: 'Cat & Mouse', time_video: 'video: 6:23', data: 'BWIPZvwcnX8'},
+    {name: 'Feed Me', time_video: 'video: 6:23', data: 'Te4wx4jtiEA'},
+    {name: 'Crazy Time', time_video: 'video: 6:23', data: 'l5ODwR6FPRQ'},
+    {name: 'Bed Sheets', time_video: 'video: 6:23', data: 'P3y8vc-3iVU'},
+    {name: 'Box Clever', time_video: 'video: 6:23', data: 'ZpCl5O6tTv8'},
+    {name: 'Let Me Out!', time_video: 'video: 6:23', data: 'HDzkaJOT_KI'},
+    {name: 'Mirror Mirror', time_video: 'video: 6:23', data: 'G5FUH3eoizc'},
+    {name: 'Window Pain', time_video: 'video: 6:23', data: 'XrivBjlv6Mw'},
+    {name: 'Sticky Tape', time_video: 'video: 6:23', data: 'tV3SWjrt2rE'}
   ] 
 
   // Current video
@@ -242,7 +242,7 @@
     gallery.innerHTML += `
       <div class="gallery__item" data="${arrVideos[i].data}">
         <img class="gallery__item__img" src="${ytImagePathPrefix}${arrVideos[i].data}${ytImagePathSufix}">
-        <span class="gallery__item__span">${arrVideos[i].name} <div class="gallery__item__time">${arrVideos[i].timeVideo}</div></span>
+        <span class="gallery__item__span">${arrVideos[i].name} <div class="gallery__item__time">${arrVideos[i].time_video}</div></span>
         
       </div>`
   }
