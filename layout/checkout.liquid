@@ -229,10 +229,8 @@
             {% render 'checkout-reviews-widget' %}
 
             {% for item in checkout.line_items %}
-              <tr id="bundle-details-{{ forloop.index }}" class="bundle-details">
-                <td></td>
-                <td>
-                  <p>contains:</p>
+              <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
+                <p>contains:</p>
 
                   {% for item_prod in item.product.metafields.custom.bundle-products %}
                     {% assign prod_id = item_prod | split: "/" | last %}
@@ -247,8 +245,7 @@
                       {% endif %}
                     {% endfor %}
                   {% endfor %}
-                </td>
-              </tr>
+              </div>
 
               <script>
                 $('#bundle-details-{{ forloop.index }}').insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']"));
