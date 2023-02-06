@@ -231,14 +231,14 @@
             {% for item in checkout.line_items %}
               <div id="bundle-details-{{ forloop.index }}" class="bundle-details">
                 <ul>
-                  {% for prod in item.product.metafields.custom.bundle-products.value %}
+                  {% for prod in item.product.metafields.custom.bundle-products %}
                     <li>{{ prod.title }}</li>
                   {% endfor %}
                 </ul>
               </div>
 
               <script>
-                document.getElementById('bundle-details-{{ forloop.index }}').insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-line-item-id='{{ item.id }}']"));
+                $('#bundle-details-{{ forloop.index }}').insertAfter($("tbody[data-order-summary-section='line-items'] tr[data-line-item-id='{{ item.id }}']"));
               </script>
             {% endfor %}
           </div>
