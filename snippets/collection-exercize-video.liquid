@@ -100,7 +100,7 @@
     gallery.innerHTML += `
       <div class="gallery__item" data="${arrVideos[i].data}">
         <img class="gallery__item__img" src="${ytImagePathPrefix}${arrVideos[i].data}${ytImagePathSufix}">
-        <div class="gallery__item__div">${arrVideos[i].name}</div>
+        <span class="gallery__item__span">${arrVideos[i].name}</span>
       </div>`
   }
 
@@ -118,8 +118,8 @@
       data = data.replace(ytImagePathSufix, '')
       currentVideo.src = `${ytVideoPrefix}${data}`
     }
-    // When click on .gallery__item__div element
-    if (e.target.classList.contains('gallery__item__div')) {
+    // When click on .gallery__item__span element
+    if (e.target.classList.contains('gallery__item__span')) {
       console.log(e.target.innerText)
       for (let i = 0; i < arrVideos.length; i++) {
         if (arrVideos[i].name === e.target.innerText) {
