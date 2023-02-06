@@ -1,0 +1,5 @@
+<script>
+  // Initialize our global object only if it doesn't exist yet
+  window.AccentuateLookup = window.AccentuateLookup || {}
+  AccentuateLookup[{{ product.handle | json }}] = {{ product.metafields.accentuate | json }}
+</script>
