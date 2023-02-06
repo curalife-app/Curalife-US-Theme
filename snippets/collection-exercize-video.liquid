@@ -24,13 +24,15 @@
         </div>
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
+          {% for arrVideo in arrVideos %} 
           <div class="gallery">
-            {% for arrVideo in arrVideos %} 
+            
               {% assign name = {{ arrVideo | split: "*" | first }} %} 
               {% assign time_video = {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
               {% assign data = {{ arrVideo | split: "*" | last | split: ";" | last }} %}
-            {% endfor %}  
+            
           </div>
+        {% endfor %} 
         </div>
       </div>
      
