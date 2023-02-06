@@ -73,6 +73,46 @@
 
   <script src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
 
+  <script>
+    import Client from 'shopify-buy';
+
+    // Initializing a client to return content in the store's primary language
+    const client = Client.buildClient({
+      domain: 'your-shop-name.myshopify.com',
+      storefrontAccessToken: 'your-storefront-access-token'
+    });
+
+    // Initializing a client to return translated content
+    const clientWithTranslatedContent = Client.buildClient({
+      domain: 'your-shop-name.myshopify.com',
+      storefrontAccessToken: 'your-storefront-access-token',
+      language: 'ja-JP'
+    });
+
+
+    // Fetch all products in your shop
+    client.product.fetchAll().then((products) => {
+      // Do something with the products
+      console.log(products);
+    });
+
+    // Fetch a single product by ID
+    const productId = 'gid://shopify/Product/7857989384';
+
+    client.product.fetch(productId).then((product) => {
+      // Do something with the product
+      console.log(product);
+    });
+
+    // Fetch a single product by Handle
+    const handle = 'product-handle';
+
+    client.product.fetchByHandle(handle).then((product) => {
+      // Do something with the product
+      console.log(product);
+    });
+  </script>
+
   <!-- Curalife Shopify Redirect for checkout.shopify.com -->
   {% render 'layout.head.google-tag-manager-checkout-redirect'%}
   <!-- Curalife Shopify Only Google Tag Manager -->
