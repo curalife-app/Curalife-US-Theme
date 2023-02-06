@@ -247,10 +247,10 @@
 
               <script>
                 let bundleDetails{{ forloop.index }} = $('#bundle-details-{{ forloop.index }}');
-                let lineItem = $("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']");
-                console.log(lineItem);
+                let lineItem{{ forloop.index }} = $("tbody[data-order-summary-section='line-items'] tr[data-product-id='{{ item.product.id }}']");
+                console.log(lineItem{{ forloop.index }});
                 console.log(bundleDetails{{ forloop.index }});
-                bundleDetails{{ forloop.index }}.insertAfter(lineItem);
+                bundleDetails{{ forloop.index }}.insertAfter(lineItem{{ forloop.index }});
               </script>
             {% endfor %}
 
