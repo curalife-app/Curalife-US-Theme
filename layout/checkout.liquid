@@ -200,13 +200,11 @@
         </main>
 
         {% if extensions_exist %}
+        {% assign payments = "visa,mastercard,amex,discover,jcb,diners" split: "," %}
           <div id="payment-badges" class="payment-badges">
-            <img class="payment-badge" src="{{ 'checkout-payment-badges-visa.png' | asset_url }}" alt="payment provider visa" loading="lazy">
-            <img class="payment-badge" src="{{ 'checkout-payment-badges-mastercard.png' | asset_url }}" alt="payment provider mastercard" loading="lazy">
-            <img class="payment-badge" src="{{ 'checkout-payment-badges-amex.png' | asset_url }}" alt="payment provider amex" loading="lazy">
-            <img class="payment-badge" src="{{ 'checkout-payment-badges-discover.png' | asset_url }}" alt="payment provider discover" loading="lazy">
-            <img class="payment-badge" src="{{ 'checkout-payment-badges-jcb.png' | asset_url }}" alt="payment provider jcb" loading="lazy">
-            <img class="payment-badge" src="{{ 'checkout-payment-badges-diners.png' | asset_url }}" alt="payment provider diners" loading="lazy">
+            {% for payment in payments %}
+              <img class="payment-badge" src="{{ 'checkout-payment-badges-{{ payment }}.png' | asset_url }}" alt="payment provider {{ payment }}" loading="lazy">
+            {% endfor %}
           </div>
         {% endif %}
 
