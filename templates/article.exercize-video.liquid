@@ -13,7 +13,7 @@
 
 {% for arrVideo in arrVideos %} 
   {% assign name = {{ arrVideo | split: "*" | first }} %} 
-  {% assign time_video = "video: " | append: {{ arrVideo | split: "*" | last | split: ";" | first }} %} 
+  {% assign time_video = '"video: " | append: {{ arrVideo | split: "*" | last | split: ";" | first }}' %} 
   {% assign data = "https://www.youtube.com/embed/" | append: {{ arrVideo | split: "*" | last | split: ";" | last }} %}
   <script>console.log("name: ", {{ name }} );
     console.log("time_video: ", {{ time_video }} );
