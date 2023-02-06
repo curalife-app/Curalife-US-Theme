@@ -239,33 +239,16 @@
                     <li>
 
                     <script>
-                      const api_url = 'https://curalife-commerce.myshopify.com/api/2023-01/graphql';
-                      const headers = new Headers({
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                        'X-Shopify-Storefront-Access-Token': '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'
+                      jQuery.getJSON("products.json?product_id={{ prod_id }}", function( response ) {
+                       var recommendedProducts = response.products;
+                       if (recommendedProducts.length > 0) {
+                         var firstRecommendedProduct = recommendedProducts[0];
+                         alert(
+                           "The title of the first recommended product is: " +
+                             firstRecommendedProduct.title
+                         );
+                       }
                       });
-
-                      const getShopifyProducts = async () => {
-                        const response = await fetch(api_url, {
-                          method: 'POST',
-                          headers: headers,
-                          body: JSON.stringify({query: query()})
-                        });
-                        const Shop = await response.json();
-                        console.log(Shop)
-                        {% comment %} displayProducts(Shop.data.collectionByHandle.products.edges) {% endcomment %}
-                      }
-
-                      const query = () =>
-                      {
-                          product(id: "{{ id }}") {
-                            pizzaSizeInches: metafield(namespace: "custom", key: "pizza-size-inches") {
-                              value
-                              type
-                            }
-                          }
-                        }
                     </script>
 
                     {{ item_prod.title }}</li>
