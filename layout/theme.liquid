@@ -54,19 +54,6 @@
   {{ 'go-cart.js' | asset_url | script_tag }}
   <script>var goCart = new GoCart();</script> {% endcomment %}
 
-  <!-- Temporary Styles for SALE (fix wisepops banner) -->
-  <style>
-    @media screen and (max-width: 768px) {
-    body {
-      padding: unset !important;
-    }
-
-    header {
-      position: unset !important;
-    }
-    }
-  </style>
-
   <!-- Other Scripts -->
   {% render 'layout.head.marker-io-snippet' %}
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script>
