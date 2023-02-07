@@ -25,7 +25,7 @@
           <div class="gallery">
             <div class="gallery__item">
              <iframe class="gallery__item__img" src="{{ arrVideo | split: "*" | last | split: ";" | last }}" frameborder="0"></iframe> 
-             <span class="gallery__item__span">{{ arrVideo | split: "*" | last | split: ";" | first }} <div class="gallery__item__time">{{ arrVideo | split: "*" | last | split: ";" | first }}</div></span>
+             <span class="gallery__item__span">{{ arrVideo | split: "*" | first }} <div class="gallery__item__time">{{ arrVideo | split: "*" | last | split: ";" | first }}</div></span>
              </div>
           </div>
           {% endfor %}
@@ -196,7 +196,7 @@
 
 </style>
 
-{% comment %} <script>
+<script>
   
 
   // YouTube sintaxis for embedded videos and images
@@ -233,16 +233,8 @@
   // Add .gallery__items to .gallery
 
   let gallery = document.querySelector('.gallery')
-  {% comment %} gallery.innerHTML = ``
-
-  for (let i = 1; i < arrVideos.length; i++) {
-    gallery.innerHTML += `
-      <div class="gallery__item" data="${arrVideos[i].data}">
-        <img class="gallery__item__img" src="${ytImagePathPrefix}${arrVideos[i].data}${ytImagePathSufix}">
-        <span class="gallery__item__span">${arrVideos[i].name} <div class="gallery__item__time">${arrVideos[i].time_video}</div></span>
-        
-      </div>`
-  } {% endcomment %}
+ 
+  }
 
   // Add event listeners
 
@@ -269,4 +261,4 @@
     }
   });
 
-</script> {% endcomment %}
+</script>
