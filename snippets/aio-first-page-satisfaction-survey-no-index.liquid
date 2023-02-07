@@ -7,9 +7,7 @@
   <div class="container">
     <div class="data-wrap">
       <div class="survey-button">
-      
-         <button   class="btn-cta" onclick="LinkToProduct(this, '{{ linkAdd }}')">JOIN NOW</button>
-        
+         <button>JOIN NOW</button>      
       </div> 
     </div>
   </div>
@@ -76,6 +74,7 @@
 
 <style>
   button {
+    background: white;
     font-family: "Poppins", sans-serif;
     font-size: 100%;
     line-height: 1.15;
@@ -176,13 +175,13 @@
   <style>
     .btn-cta {
       border: none;
-      background: {% if regColor %}#FDD246 {% else %} var(--dark-green) {% endif %};
-      color: {% if regColor %}black {% else %}white {% endif %} ;
+      background: white;
+      color: white;
       font-weight: 400;
     }
 
     .btn-cta:hover {
-      background: {% if regColor %}#e6bb2c {% else %} #314227 {% endif %};
+      background: white;
     }
 
     @media screen and (max-width: 768px) {
