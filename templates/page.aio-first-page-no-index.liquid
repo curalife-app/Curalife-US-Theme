@@ -85,7 +85,7 @@ anymore
 |lp-aio-sarah.png*Dr. Sarah Brewer:Functional doctor, diabetes expert, and author of over 60 books on personal
 health.
 ' | split: '|' %}
-
+<div id="invoice">
 {% render 'sale-banner', isHidden: true, isFlash: true, desktopContent: "logo,ctaTitle", mobileContent: "logo,ctaTitle", bgColor: "#F59E80", logoFileName: "logo-black-friday.svg", ctaTitle: "flash", isLogoSmall: true %}
 {% render 'aio-first-page-hero-section', isLogo: true %}
 {% render 'partnerships-featured' %}
@@ -101,7 +101,8 @@ health.
 {% render 'aio-first-page-supported-community' isNoIndex: true %}
 {% render 'aio-first-page-satisfaction-survey-no-index' %}
 {% render 'faq-section', faqItems: faqItems, isAllowOneOpen: true, titleVersion: "complex" %}
-
+<button class="btn btn-primary" id="download"> download pdf</button>
+</div>
 {% comment %} Toggle Sale Banner {% endcomment %}
 <script>
   let queryParam = window.location.search;
