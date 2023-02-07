@@ -12,12 +12,14 @@
 ' | split: '|' %}
 
 
+{% assign currentVideo = article.metafields.custom.current_video %}
+{% assign currentTime = article.metafields.custom.current_time_of_video %}
+{% assign currentTitle = article.metafields.custom.current_video_title %}
 
 
 
 
 
 
-
-{% render 'collection-exercize-video' currentVideo = "https://www.youtube.com/embed/BWIPZvwcnX8", currentTitle: 'Half Seated Full Body Yoga Posing and breathing', currentTime: 'Video:  8:43' %}
+{% render 'collection-exercize-video' currentVideo = "https://www.youtube.com/embed/BWIPZvwcnX8", currentTitle: currentTitle, currentTime: 'Video:  8:43' %}
 
