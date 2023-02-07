@@ -195,48 +195,4 @@
 
 </style>
 
-<script>
-  
 
-
-
-  
-  let data = document.getElementById ('data')
-  let name = document.getElementById ('name')
-  let time_video = document.getElementById('time_video')
-
-
-  // Current video
-
-  let currentVideo = document.getElementById('current-video')
- 
-
-  // Add .gallery__items to .gallery
-
-  let gallery = document.querySelector('.gallery')
- 
-  
-
-  // Add event listeners
-
-  gallery.addEventListener('click', (e) => {
-   
-  
-    // When click on .gallery__item__img element
-    if (e.target.classList.contains('gallery__item__img')) {
-      let data = e.target.src
-      data = data.replace('currentVideo')
-      currentVideo.src = `${data}`
-    }
-    // When click on .gallery__item__span element
-    if (e.target.classList.contains('gallery__item__span')) {
-      console.log(e.target.innerText)
-      for (let i = 1; i < arrVideos.length; i++) {
-        if (arrVideos[i].name ) {
-          currentVideo.src = `${arrVideos[i].data}`
-        }
-      }
-    }
-  });
-
-</script> 
