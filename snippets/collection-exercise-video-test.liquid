@@ -195,13 +195,10 @@
 
 </style>
 
-{% comment %} <script>
+<script>
   
 
-  // YouTube sintaxis for embedded videos and images
 
-  const ytImagePathPrefix = `https://i.ytimg.com/vi/`
-  const ytImagePathSufix = `/hqdefault.jpg`
 
   
   let data = document.getElementById ('data')
@@ -228,8 +225,7 @@
     // When click on .gallery__item__img element
     if (e.target.classList.contains('gallery__item__img')) {
       let data = e.target.src
-      data = data.replace(ytImagePathPrefix, '')
-      data = data.replace(ytImagePathSufix, '')
+      data = data.replace('currentVideo')
       currentVideo.src = `${data}`
     }
     // When click on .gallery__item__span element
@@ -243,4 +239,4 @@
     }
   });
 
-</script> {% endcomment %}
+</script> 
