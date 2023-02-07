@@ -11,21 +11,6 @@
 |Sticky Tape*6:23;tV3SWjrt2rE
 ' | split: '|' %}
 
-{% for arrVideo in arrVideos %} 
-  {% assign name = {{ arrVideo | split: "*" | first }} %} 
-  
-  {% assign time_base = {{ arrVideo | split: "*" | last | split: ";" | first }} %}
-  {% assign time_video = "video: " | append: time_base  %}
-  
-  {% assign data_base = {{ arrVideo | split: "*" | last | split: ";" | last }} %} 
-  {% assign data = "https://www.youtube.com/embed/" | append: data_base %}
-  
-{% endfor %} 
-
-
- <script>console.log("name: " {{ name }}, " time_video: " {{ time_video }}, " data: " {{ data }} ); 
- </script>
- 
 
 
 
@@ -33,5 +18,6 @@
 
 
 
-{% render 'collection-exercize-video' currentVideo = "https://www.youtube.com/embed/BWIPZvwcnX8", currentTitle: 'Half Seated Full Body Yoga Posing and breathing', currentTime: 'Video  8:43' %}
+
+{% render 'collection-exercize-video' currentVideo = "https://www.youtube.com/embed/BWIPZvwcnX8", currentTitle: 'Half Seated Full Body Yoga Posing and breathing', currentTime: 'Video:  8:43' %}
 
