@@ -24,8 +24,8 @@
           {% for arrVideo in arrVideos %}
           <div class="gallery">
             <div class="gallery__item">
-             <iframe class="gallery__item__img" src="{{ arrVideo | split: "*" | last | split: ";" | last }}" frameborder="0"></iframe> 
-             <span class="gallery__item__span">{{ arrVideo | split: "*" | first }} <div class="gallery__item__time">{{ arrVideo | split: "*" | last | split: ";" | first }}</div></span>
+             <iframe id="data" class="gallery__item__img" src="{{ arrVideo | split: "*" | last | split: ";" | last }}" frameborder="0"></iframe> 
+             <span id="name" class="gallery__item__span">{{ arrVideo | split: "*" | first }} <div id="time_video" class="gallery__item__time">{{ arrVideo | split: "*" | last | split: ";" | first }}</div></span>
              </div>
           </div>
           {% endfor %}
@@ -224,17 +224,19 @@
   ]  {% endcomment %}
 
   
-
+  let data = document.getElementById ('data')
+  let name = document.getElementById ('name')
+  let time_video = document.getElementById('time_video')
   // Current video
 
   let currentVideo = document.getElementById('current-video')
-  currentVideo.src = `${arrVideos[0].data}`
+ 
 
   // Add .gallery__items to .gallery
 
   let gallery = document.querySelector('.gallery')
  
-  }
+  
 
   // Add event listeners
 
@@ -248,7 +250,7 @@
       let data = e.target.src
       data = data.replace(ytImagePathPrefix, '')
       data = data.replace(ytImagePathSufix, '')
-      currentVideo.src = `${ytVideoPrefix}${data}`
+      currentVideo.src = `${data}`
     }
     // When click on .gallery__item__span element
     if (e.target.classList.contains('gallery__item__span')) {
