@@ -231,8 +231,8 @@
     // When click on .gallery__item__span element
     if (e.target.classList.contains('gallery__item__span')) {
       console.log(e.target.innerText)
-      for (let i = 0; i < arrVideos.length; i++) {
-        if (arrVideos[i].name === e.target.innerText) {
+      for (let i = 1; i < arrVideos.length; i++) {
+        if (arrVideos[i].name ) {
           currentVideo.src = `${arrVideos[i].data}`
         }
       }
