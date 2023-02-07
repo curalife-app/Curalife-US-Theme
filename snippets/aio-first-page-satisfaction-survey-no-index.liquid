@@ -1,6 +1,9 @@
-
+{% if shop.name == "CuraLife Global" %}
+  {% assign linkAdd = '/collections' %}
+{% elsif shop.name == "CuraLife" %}
+  {% assign linkAdd = '/products/curalin-pack' %}
+{% endif %}
 <div class="satisfaction-survey">
-
   <div class="satisfaction-survey-bg">
     <div class="container">
       <div class="data-wrap">
@@ -58,15 +61,24 @@
       </div>
     </div>
   </div>
-
+  <div class="container">
+    <div class="data-wrap">
+      <div class="survey-button">
+        {% if isLP %}
+         <a href="/products/curalin-pack" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
+         for glucose support</a>
+         {% else %}
+         <a href="/products/curalin-pack" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
+         for glucose support</a>
+        {% endif %}
+      </div> 
+    </div>
+  </div>
 </div>
 
 
 <style>
   button {
-    border: transparent;
-    color: transparent;
-    background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 100%;
     line-height: 1.15;
@@ -76,23 +88,105 @@
     border-radius: 0;
     -webkit-appearance: none
   }
+  .btn-cta {
+    background: var(--green);
+    -webkit-box-shadow: .625rem .625rem .825rem rgba(0, 0, 0, .3);
+    box-shadow: .625rem .625rem .825rem #0000004d;
+    border-radius: 1.25rem;
+    padding: .875rem;
+    max-width: 39.1875rem;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.867375rem;
+    line-height: 1.2;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    -webkit-transition: all var(--transition);
+    -o-transition: all var(--transition);
+    transition: all var(--transition)
+  }
 
-  button :hover {
-    
+  .btn-cta b {
+    font-weight: 700
+  }
+
+  .btn-cta:hover {
+    background-color: #fff;
+    color: var(--green);
+    -webkit-transition: all var(--transition);
+    -o-transition: all var(--transition);
+    transition: all var(--transition)
+  }
+  .floating-cta {
+    position: fixed;
+    left: 20px;
+    right: 0;
+    bottom: 1.25rem;
+    z-index: 20;
+    pointer-events: none;
+    -webkit-transition: opacity var(--transition), visibility var(--transition);
+    -o-transition: opacity var(--transition), visibility var(--transition);
+    transition: opacity var(--transition), visibility var(--transition)
+  }
+
+  .floating-cta .btn-cta {
+    max-width: 18.375rem;
+    font-size: 2.5rem;
+    pointer-events: auto
+  }
+
+  .floating-cta:not(.show) {
+    opacity: 0;
+    visibility: hidden
+  }
+
+  .floating-cta:not(.show) .btn-cta {
+    pointer-events: none
+  }
+
+  @media screen and (max-width: 991px) {
+    .btn-cta {
+    max-width: 29.0625rem;
+    font-size: 1.375rem
+    }
+
+    .floating-cta .btn-cta {
+    max-width: 15.625rem;
+    font-size: 1.875rem
+    }
 
   }
 
-
   @media screen and ( max-width: 768px) {
 
-  
+    .btn-cta {
+    max-width: 19.25rem;
+    padding: .5625rem .625rem;
+    font-size: 1.125rem;
+    font-weight: 400
+    }
+
+    .btn-cta b {
+    font-weight: 700
+    }
+
 
   }
   </style>
 
   <!-- Floating CTA Style -->
   <style>
+    .btn-cta {
+      border: none;
+      background: {% if regColor %}#FDD246 {% else %} var(--dark-green) {% endif %};
+      color: {% if regColor %}black {% else %}white {% endif %} ;
+      font-weight: 400;
+    }
 
+    .btn-cta:hover {
+      background: {% if regColor %}#e6bb2c {% else %} #314227 {% endif %};
+    }
 
     @media screen and (max-width: 768px) {
 
@@ -375,7 +469,7 @@ let animateCounters = true;
 
 window.addEventListener('scroll', (e) => {
   let last_known_scroll_position = window.scrollY;
-   if (counters && animateCounters && window.innerHeight > document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top && window.innerHeight < document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top {
+   if (counters && animateCounters && window.innerHeight > document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top && window.innerHeight < document.querySelector('.satisfaction-survey .data-wrap').getBoundingClientRect().top + document.querySelector('.satisfaction-survey .survey-button').getBoundingClientRect().top) {
     animateCounters = false; 
     counters.forEach(counter => {
       const animate = () => {
