@@ -207,7 +207,7 @@
 
   // Array of Videos
      
-  let arrVideos = [
+  {% comment %} let arrVideos = [
     {name: 'Cat & Mouse', time_video: 'video: 8:43', data: 'https://www.youtube.com/embed/BWIPZvwcnX8'},
     {name: 'Cat Man Do', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/w0ffwDYo00Q'},
     {name: 'Let Me In!', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/4rb8aOzy9t4'},
@@ -221,7 +221,7 @@
     {name: 'Mirror Mirror', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/G5FUH3eoizc'},
     {name: 'Window Pain', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/XrivBjlv6Mw'},
     {name: 'Sticky Tape', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/tV3SWjrt2rE'}
-  ] 
+  ]  {% endcomment %}
 
   
 
@@ -233,7 +233,7 @@
   // Add .gallery__items to .gallery
 
   let gallery = document.querySelector('.gallery')
-  gallery.innerHTML = ``
+  {% comment %} gallery.innerHTML = ``
 
   for (let i = 1; i < arrVideos.length; i++) {
     gallery.innerHTML += `
@@ -242,7 +242,7 @@
         <span class="gallery__item__span">${arrVideos[i].name} <div class="gallery__item__time">${arrVideos[i].time_video}</div></span>
         
       </div>`
-  }
+  } {% endcomment %}
 
   // Add event listeners
 
