@@ -201,32 +201,15 @@
 
   // YouTube sintaxis for embedded videos and images
 
-  {% comment %} const ytVideoPrefix = `https://www.youtube.com/embed/` {% endcomment %}
   const ytImagePathPrefix = `https://i.ytimg.com/vi/`
   const ytImagePathSufix = `/hqdefault.jpg`
-
-  // Array of Videos
-     
-  {% comment %} let arrVideos = [
-    {name: 'Cat & Mouse', time_video: 'video: 8:43', data: 'https://www.youtube.com/embed/BWIPZvwcnX8'},
-    {name: 'Cat Man Do', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/w0ffwDYo00Q'},
-    {name: 'Let Me In!', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/4rb8aOzy9t4'},
-    {name: 'TV Dinner', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/s13dLaTIHSg'},
-    {name: 'Cat & Mouse', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/BWIPZvwcnX8'},
-    {name: 'Feed Me', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/Te4wx4jtiEA'},
-    {name: 'Crazy Time', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/l5ODwR6FPRQ'},
-    {name: 'Bed Sheets', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/P3y8vc-3iVU'},
-    {name: 'Box Clever', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/ZpCl5O6tTv8'},
-    {name: 'Let Me Out!', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/HDzkaJOT_KI'},
-    {name: 'Mirror Mirror', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/G5FUH3eoizc'},
-    {name: 'Window Pain', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/XrivBjlv6Mw'},
-    {name: 'Sticky Tape', time_video: 'video: 6:23', data: 'https://www.youtube.com/embed/tV3SWjrt2rE'}
-  ]  {% endcomment %}
 
   
   let data = document.getElementById ('data')
   let name = document.getElementById ('name')
   let time_video = document.getElementById('time_video')
+
+  
   // Current video
 
   let currentVideo = document.getElementById('current-video')
@@ -243,7 +226,7 @@
   gallery.addEventListener('click', (e) => {
     // When click on .gallery__item element
     if (e.target.classList.contains('gallery__item')) {
-      currentVideo.src = `${ytVideoPrefix}${e.target.getAttribute('data')}`
+      currentVideo.src = `${e.target.getAttribute('data')}`
     }
     // When click on .gallery__item__img element
     if (e.target.classList.contains('gallery__item__img')) {
@@ -257,7 +240,7 @@
       console.log(e.target.innerText)
       for (let i = 0; i < arrVideos.length; i++) {
         if (arrVideos[i].name === e.target.innerText) {
-          currentVideo.src = `${ytVideoPrefix}${arrVideos[i].data}`
+          currentVideo.src = `${arrVideos[i].data}`
         }
       }
     }
