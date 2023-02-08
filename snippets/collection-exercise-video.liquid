@@ -1,13 +1,18 @@
 {% for video_handle in video_handles %}
   {% assign video = shop.blog.articles[video_handle] %}
-  {% assign related_video_id =  video.id %}
-  <script>console.log("Related Video Id: ",{{ related_video_id }})</script>
+  {{ video.id }}
+
+  {% for metafield in video.metafields %}
+    {{ metafield.key }}: {{ metafield.value }}
+  {% endfor %}
+
 {% endfor %}
+
 {% if video_handles contains page.handle %}
   {% assign selected_video = shop.blog.articles[page.handle] %}
-  {% assign selected_video_id = selected_video.id %}
-  <script>console.log("Selected Video Id: ",{{ selected_video_id }})</script>
+  {{ selected_video.id }}
 {% endif %}
+
 
 <section id="collection-exercise-video">
   <img class="exercise-img-swoosh" src="{{ 'video-exercise-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
@@ -29,7 +34,10 @@
         </div>
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
-          {% for video_handle in video_handles %}
+          {% for metafield in video.metafields %}
+            {% assign relatedVideo = metafield.custom.video_exercise %}
+            {% assign relatedTitle = metafield.custom.current_video_title %}
+            {% assign relatedTime = metafield.custom.current_time_of_video %}
           <div class="gallery">
             <div class="gallery__item">
              <iframe id="data" class="gallery__item__img" src="{{ relatedVideo }}" frameborder="0"></iframe> 
