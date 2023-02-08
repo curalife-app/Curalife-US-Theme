@@ -19,7 +19,7 @@
         </div>
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
-        
+          {% assign video_handles = "video-1,video-2,video-3,video-4,video-5,video-6,video-7,video-8" | split: "," %}
         {% for video_handle in video_handles %}
           {% assign all_video = shop.blog.articles[video_handle] %}
           {% if video_handle == page.handle %}
