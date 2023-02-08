@@ -18,19 +18,11 @@
 {% if video_handles contains page.handle %}
   {% assign selected_video = shop.blog.articles[page.handle] %}
   {% assign selected_video_id = selected_video.id %}
-  <script>console.log("Video Id: ",{{ selected_video_id }})</script>
+  <script>console.log("Selected Video Id: ",{{ selected_video_id }})</script>
 {% endif %}
 
     
-{% for video_handle in video_handles %}
-    {%  assign video_handle = article.id  %}
-    <script>console.log("video_handle: ", {{ video_handle }})</script>
- {% for article in blogs.exercise-video.video_handle %}
-  {% assign relatedVideo = article.metafields.custom.video_exercise %}
-  {% assign relatedTime = article.metafields.custom.current_time_of_video %}
-  {% assign relatedTitle = article.metafields.custom.current_video_title %}
- {% endfor %}
-{% endfor %}
+
   
 
   
