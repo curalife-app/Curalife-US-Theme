@@ -1,5 +1,6 @@
 {% for video_handle in video_handles %}
   {% assign video_handle_related = {{ video_handle | split: "," | first }} %}
+  <script>console.log("video_handle_related: ", {{video_handle_related}})</script>
 {% endfor %}
 {% for article in blogs.exercise-video.video_handle_related %}
   {% assign relatedVideo = article.metafields.custom.video_exercise %}
