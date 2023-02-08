@@ -17,15 +17,13 @@
   
 
   
-{% assign currentVideo = article.metafields.custom.video_exercise %}
-{% assign currentTime = article.metafields.custom.current_time_of_video %}
-{% assign currentTitle = article.metafields.custom.current_video_title %}
 
 
 
 
 
 
-{% render 'collection-exercise-video', arrVideos: arrVideos, currentVideo: currentVideo, currentTitle: currentTitle, currentTime: currentTime %}
+
+{% render 'collection-exercise-video', arrVideos: arrVideos, currentTitle: currentTitle, currentTime: currentTime %}
 
 
