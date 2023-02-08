@@ -1,14 +1,13 @@
 {% for video_handle in video_handles %}
   {% assign all_video = shop.blog.articles[video_handle] %}
   {{ all_video.id }}
-
-
+  {% if video_handles contains page.handle %}
+    {% assign selected_video = shop.blog.articles[page.handle] %}
+    {{ selected_video.id }}
+  {% endif %}
 {% endfor %}
 
-{% if video_handles contains page.handle %}
-  {% assign selected_video = shop.blog.articles[page.handle] %}
-  {{ selected_video.id }}
-{% endif %}
+
 
 
 <section id="collection-exercise-video">
