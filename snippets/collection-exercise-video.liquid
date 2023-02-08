@@ -1,14 +1,11 @@
 {% for video_handle in video_handles %}
-  {% assign video_handle = {{ video_handle | split: "," | first }} %}
+  {% assign video_handle_related = {{ video_handle | split: "," | first }} %}
 {% endfor %}
-{% for article in blogs.blog.video_handle %}
+{% for article in blogs.exercise-video.video_handle_related %}
   {% assign relatedVideo = article.metafields.custom.video_exercise %}
   {% assign relatedTime = article.metafields.custom.current_time_of_video %}
   {% assign relatedTitle = article.metafields.custom.current_video_title %}
 {% endfor %}
-
-
-
 
 <section id="collection-exercise-video">
   <img class="exercise-img-swoosh" src="{{ 'video-exercise-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
@@ -30,7 +27,7 @@
         </div>
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
-          {% for videoHandle in videoHandles %}
+          {% for video_handle in video_handles %}
           <div class="gallery">
             <div class="gallery__item">
              <iframe id="data" class="gallery__item__img" src="{{ relatedVideo }}" frameborder="0"></iframe> 
