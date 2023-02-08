@@ -4,9 +4,7 @@
   {% if video_handles contains page.handle %}
     {% assign selected_video = shop.blog.articles[page.handle] %}
     {{ selected_video.id }}
-  {% endif %}
-
-  <script>console.log("Selected_ID: "{{ selected_video.id }})</script>
+  {% endif %}  
 {% endfor %}
 
 
@@ -210,5 +208,5 @@
 </style>
 
 
-
+<script>console.log("Selected_ID: "{{ selected_video.id }})</script>
 
