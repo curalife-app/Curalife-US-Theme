@@ -1,8 +1,8 @@
 {% for video_handle in video_handles %}
-  {% assign all_video = shop.blogs.blog[video_handle] %}
+  {% assign all_video = blogs.blog[video_handle] %}
   {{ all_video.id }}
   {% if video_handles contains page.handle %}
-    {% assign selected_video = shop.blogs.blog[page.handle] %}
+    {% assign selected_video = blogs.blog[page.handle] %}
     {{ selected_video.id }}
   {% endif %}  
 {% endfor %}
