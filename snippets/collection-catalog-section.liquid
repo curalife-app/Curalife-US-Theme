@@ -1,5 +1,6 @@
 <section id="collections-catalog-section">
   <div class="container">
+    {% unless product.title contains 'Curaeats App' %}
     <div class="category-tabs">
       <ul>
         <li><a href="#" data-collection-handle="all" class="active">All</a></li>
@@ -8,7 +9,7 @@
         {% endfor %}
       </ul>
     </div>
-
+      
     {% for collection_handle in collectionsHandles %}
       {% if forloop.last %}
         {% assign isLastCollectionRender = true %}
@@ -33,6 +34,7 @@
         </div>
       </div>
     {% endfor %}
+  {% endunless %}
   </div>
 </section>
 
