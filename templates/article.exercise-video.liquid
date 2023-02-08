@@ -11,11 +11,13 @@
 
 {% assign video_handles = "video-1,video-2,video-3,video-4,video-5,video-6,video-7,video-8" | split: "," %}
 {% for video_handle in video_handles %}
+    {% assign video_handle = {{ video_handle | split: "," | first }} %}
+{% endfor %}
  {% for article in blogs.blog.video_handle %}
     {% assign relatedVideo = article.metafields.custom.video_exercise %}
     {% assign relatedTime = article.metafields.custom.current_time_of_video %}
     {% assign relatedTitle = article.metafields.custom.current_video_title %}
- {% endfor %}
+ 
 {% endfor %}
 
   
