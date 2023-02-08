@@ -1,3 +1,4 @@
+
 <div class="supported-community">
   <div class="container">
     <div class="data-wrap">
@@ -19,8 +20,47 @@
         </picture>
       </div>
     </div>
+    {% if isNoIndex %}
+    <div class="link-button">
+     <a href="https://www.facebook.com/groups/winningtype2diabetestogether" class="btn-cta">JOIN NOW</a>     
   </div>
+{% endif %}
 </div>
+<style>
+  .link-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+   
+  .btn-cta {
+    background: var(--dark-green);
+    -webkit-box-shadow: .625rem .625rem .825rem rgba(0, 0, 0, .3);
+    box-shadow: .625rem .625rem .825rem #0000004d;
+    border-radius: 1.25rem;
+    padding: .875rem;
+    max-width: 39.1875rem;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.867375rem;
+    line-height: 1.2;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    -webkit-transition: all var(--transition);
+    -o-transition: all var(--transition);
+    transition: all var(--transition)
+  }
+
+
+  .btn-cta:hover {
+    background-color: var(--dark-green);
+    color: white;
+    -webkit-transition: all var(--transition);
+    -o-transition: all var(--transition);
+    transition: all var(--transition)
+  }
+</style>
 {% if isLP %}
   <style>
   .supported-community {

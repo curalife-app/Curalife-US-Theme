@@ -1,0 +1,31 @@
+{% assign arrVideos = 'Cat & Mouse*8:43;https://www.youtube.com/embed/BWIPZvwcnX8
+|Cat Man Do*6:23;https://www.youtube.com/embed/w0ffwDYo00Q
+|Let Me In!*6:23;https://www.youtube.com/embed/s13dLaTIHSg
+|Feed Me*6:23;https://www.youtube.com/embed/Te4wx4jtiEA
+|Crazy Time*6:23;https://www.youtube.com/embed/l5ODwR6FPRQ
+|Bed Sheets*7:23;https://www.youtube.com/embed/P3y8vc-3iVU
+|Let Me Out!*6:23;https://www.youtube.com/embed/HDzkaJOT_KI
+|Mirror Mirror*6:23;https://www.youtube.com/embed/G5FUH3eoizc
+
+' | split: '|' %}
+
+
+
+
+    
+
+  
+
+  
+{% assign currentVideo = article.metafields.custom.video_exercise %}
+{% assign currentTime = article.metafields.custom.current_time_of_video %}
+{% assign currentTitle = article.metafields.custom.current_video_title %}
+
+
+
+
+
+
+{% render 'collection-exercise-video', arrVideos: arrVideos, currentVideo: currentVideo, currentTitle: currentTitle, currentTime: currentTime %}
+
+
