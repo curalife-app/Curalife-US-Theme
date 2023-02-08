@@ -10,14 +10,7 @@
 ' | split: '|' %}
 
 {% assign video_handles = "video-1,video-2,video-3,video-4,video-5,video-6,video-7,video-8" | split: "," %}
-{% for video_handle in video_handles %}
-    {% assign video_handle = {{ video_handle | split: "," | first }} %}
-{% endfor %}
- {% for article in blog.video_handle %}
-    {% assign relatedVideo = article.metafields.custom.video_exercise %}
-    {% assign relatedTime = article.metafields.custom.current_time_of_video %}
-    {% assign relatedTitle = article.metafields.custom.current_video_title %}
-{% endfor %}
+
 
   
 {% assign currentVideo = article.metafields.custom.video_exercise %}
@@ -29,5 +22,5 @@
 
 
 
-{% render 'collection-exercise-video', arrVideos: arrVideos, videoHandles: video_handles, relatedVideo:relatedVideo, relatedTime:relatedTime, relatedTitle:relatedTitle,  currentVideo: currentVideo, currentTitle: currentTitle, currentTime: currentTime %}
+{% render 'collection-exercise-video', arrVideos: arrVideos, video_handles: video_handles, relatedVideo:relatedVideo, relatedTime:relatedTime, relatedTitle:relatedTitle,  currentVideo: currentVideo, currentTitle: currentTitle, currentTime: currentTime %}
 
