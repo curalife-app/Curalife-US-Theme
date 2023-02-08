@@ -16,6 +16,10 @@
   {{ video.id }}
   <script>console.log("Video Id: ",{{ video.id }})</script>
 {% endfor %}
+{% if video_handles contains page.handle %}
+  {% assign selected_video = shop.blog.articles[page.handle] %}
+  {{ selected_video.id }}
+{% endif %}
 
     
 {% for video_handle in video_handles %}
