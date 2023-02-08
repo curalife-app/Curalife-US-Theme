@@ -20,36 +20,32 @@
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
         {% assign video_handles = "video-1,video-2,video-3,video-4,video-5,video-6,video-7,video-8" | split: "," %}
-
-          {% for video_handle in video_handles %}
-            {% assign all_video = shop.blog.articles[video_handle] %}
-              {% if video_handle == page.handle %}
-                {% assign selected_video = all_video %}
-              {% endif %}
-        {% if selected_video %}
-          {% if selected_video.metafields.video_exercise %}
-            {% assign relatedVideo = selected_video.metafields.video_exercise.value %}
-          {% else %}
-            {% assign relatedVideo = "" %}
-        {% endif %}
-        {% if selected_video.metafields.current_video_title %}
-          {% assign relatedTitle = selected_video.metafields.current_video_title.value %}
-        {% else %}
+        {%for video_handle in video_handles %}
+          {% assign all_video = shop.blog.articles[video_handle] %}
+          {% if video_handle == page.handle %}
+            {% assign selected_video = all_video %}
+          {% endif %}
+          {% assign relatedVideo = "" %}
           {% assign relatedTitle = "" %}
-        {% endif %}
-        {% if selected_video.metafields.current_time_of_video %}
-          {% assign relatedTime = selected_video.metafields.current_time_of_video.value %}
-        {% else %}
           {% assign relatedTime = "" %}
-        {% endif %}
+          {% if selected_video %}
+            {% if selected_video.metafields.video_exercise %}
+              {% assign relatedVideo = selected_video.metafields.video_exercise.value %}
+            {% endif %}
+            {% if selected_video.metafields.current_video_title %}
+              {% assign relatedTitle = selected_video.metafields.current_video_title.value %}
+            {% endif %}
+            {% if selected_video.metafields.current_time_of_video %}
+              {% assign relatedTime = selected_video.metafields.current_time_of_video.value %}
+            {% endif %}
+          {% endif %}}
 
-          <div class="gallery">
-            <div class="gallery__item">
-              <iframe id="data" class="gallery__item__img" src="{{ relatedVideo }}" frameborder="0"></iframe> 
-              <span id="name" class="gallery__item__span">{{ relatedTitle }} <div id="time_video" class="gallery__item__time">{{ relatedTime }}</div></span>
-            </div>
-          </div>
-        {% endif %} 
+         <div class="gallery">
+           <div class="gallery__item">
+             <iframe id="data" class="gallery__item__img" src="{{ relatedVideo }}" frameborder="0"></iframe> 
+             <span id="name" class="gallery__item__span">{{ relatedTitle }} <div id="time_video" class="gallery__item__time">{{ relatedTime }}</div></span>
+           </div>
+         </div>
       {% endfor %}       
         </div>
       </div>
