@@ -1,12 +1,3 @@
-{% for video_handle in video_handles %}
-  {% assign video_handle_related = {{ video_handle | split: "," | first }} %}
-  <script>console.log("video_handle_related: ", {{video_handle_related}})</script>
-{% endfor %}
-{% for article in blogs.exercise-video.video_handle_related %}
-  {% assign relatedVideo = article.metafields.custom.video_exercise %}
-  {% assign relatedTime = article.metafields.custom.current_time_of_video %}
-  {% assign relatedTitle = article.metafields.custom.current_video_title %}
-{% endfor %}
 
 <section id="collection-exercise-video">
   <img class="exercise-img-swoosh" src="{{ 'video-exercise-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
