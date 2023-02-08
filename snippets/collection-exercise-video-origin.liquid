@@ -210,3 +210,23 @@
 
 
 
+<script>
+  const player = document.getElementById("player");
+  const gallery = document.getElementById("gallery");
+  const playerVideo = document.querySelector(".player__video");
+  const galleryItems = document.querySelectorAll(".gallery__item");
+
+  galleryItems.forEach(item => {
+    item.addEventListener("click", e => {
+      const src = e.target.src;
+      playerVideo.innerHTML = `<iframe width="560" height="315" src="${src}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      player.style.display = "block";
+      gallery.style.display = "none";
+    });
+  });
+
+  playerVideo.addEventListener("click", e => {
+    player.style.display = "none";
+    gallery.style.display = "block";
+  });
+</script>
