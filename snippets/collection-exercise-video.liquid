@@ -5,6 +5,8 @@
     {% assign selected_video = shop.blog.articles[page.handle] %}
     {{ selected_video.id }}
   {% endif %}
+
+  <script>console.log("Selected_ID: "{{ selected_video.id }})</script>
 {% endfor %}
 
 
