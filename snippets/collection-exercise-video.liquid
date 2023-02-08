@@ -1,6 +1,7 @@
 {% for video_handle in video_handles %}
-  {% assign video = shop.blog.articles[video_handle] %}
-  {{ video.id }}
+  {% assign all_video = shop.blog.articles[video_handle] %}
+  {{ all_video.id }}
+
 
 {% endfor %}
 
@@ -30,7 +31,7 @@
         </div>
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
-          {% for metafield in video.metafields %}
+          {% for metafield in all_video.metafields %}
             {% assign relatedVideo = metafield.custom.video_exercise %}
             {% assign relatedTitle = metafield.custom.current_video_title %}
             {% assign relatedTime = metafield.custom.current_time_of_video %}
