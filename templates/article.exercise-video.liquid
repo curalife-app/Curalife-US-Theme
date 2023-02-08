@@ -13,7 +13,7 @@
 {% for video_handle in video_handles %}
     {% assign video_handle = {{ video_handle | split: "," | first }} %}
 {% endfor %}
- {% for article in blogs.blog.video_handle %}
+ {% for article in blog.video_handle %}
     {% assign relatedVideo = article.metafields.custom.video_exercise %}
     {% assign relatedTime = article.metafields.custom.current_time_of_video %}
     {% assign relatedTitle = article.metafields.custom.current_video_title %}
