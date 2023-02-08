@@ -21,7 +21,7 @@
           <div class="related-videos">Related Videos</div>
         
         {% for video_handle in video_handles %}
-          {% assign all_video = shop.blog.articles[video_handle] %}
+          {% assign all_video = blog.articles[video_handle] %}
           {% if video_handle == page.handle %}
             {% assign selected_video = all_video %}
           {% endif %}
