@@ -15,7 +15,7 @@
     
 
   
-
+{% assign video_handles = "video-1,video-2,video-3,video-4,video-5,video-6,video-7,video-8" | split: "," %}
   
 {% assign currentVideo = article.metafields.custom.video_exercise %}
 {% assign currentTime = article.metafields.custom.current_time_of_video %}
@@ -26,6 +26,6 @@
 
 
 
-{% render 'collection-exercise-video', arrVideos: arrVideos, currentVideo: currentVideo, currentTitle: currentTitle, currentTime: currentTime %}
+{% render 'collection-exercise-video', video_handles: video_handles, arrVideos: arrVideos, currentVideo: currentVideo, currentTitle: currentTitle, currentTime: currentTime %}
 
 
