@@ -20,11 +20,11 @@
         </div>
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
-          {% for arrVideo in arrVideos %}
+          {% for videoHandle in videoHandles %}
           <div class="gallery">
             <div class="gallery__item">
-             <iframe id="data" class="gallery__item__img" src="{{ arrVideo | split: "*" | last | split: ";" | last }}" frameborder="0"></iframe> 
-             <span id="name" class="gallery__item__span">{{ arrVideo | split: "*" | first }} <div id="time_video" class="gallery__item__time">{{ arrVideo | split: "*" | last | split: ";" | first }}</div></span>
+             <iframe id="data" class="gallery__item__img" src="{{ relatedVideo }}" frameborder="0"></iframe> 
+             <span id="name" class="gallery__item__span">{{ relatedTitle }} <div id="time_video" class="gallery__item__time">{{ relatedTime }}</div></span>
              </div>
           </div>
           {% endfor %}
