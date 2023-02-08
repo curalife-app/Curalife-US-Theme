@@ -2,10 +2,6 @@
   {% assign video = shop.blog.articles[video_handle] %}
   {{ video.id }}
 
-  {% for metafield in video.metafields %}
-    {{ metafield.key }}: {{ metafield.value }}
-  {% endfor %}
-
 {% endfor %}
 
 {% if video_handles contains page.handle %}
