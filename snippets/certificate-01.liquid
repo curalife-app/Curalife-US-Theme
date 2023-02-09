@@ -27,15 +27,12 @@
   .certificate-wrap {
     position: relative;
     margin: 50px auto;
-    border: 11px solid #777778;
-    background-image: url("{{ 'certificate-dotted-ornament.png' | asset_url }}");
+    background-image: url("{{ 'certificate-background.png' | asset_url }}");
     background-size: contain;
-    background-position: center;
-    {% comment %} background: #EFEFEF; {% endcomment %}
+    background-position: cover;
     display: flex;
     justify-content: center;
-    max-height: fit-content;
-    max-width: fit-content;
+    
   }
 
  
