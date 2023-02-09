@@ -3,7 +3,7 @@
     <div class="container">
         <div class="certificate-wrap">
            <div class="logo-wrapper">
-                 <img src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
+                 <img class="green-logo" src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
                  <img class="big-title" src="{{ 'certificate-big-title.png' | asset_url }}" width="427" height="54" alt="">
                  <img src="{{ 'certificate-ornament.png' | asset_url }}" width="229" height="20" alt="">
                  <div class="wrapper-text">of Completion</div>
@@ -115,7 +115,9 @@
 
   @media (max-width: 768px) {
     
-   
+   .green-logo {
+    width: 15vw;
+   }
   
   }
 
