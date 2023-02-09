@@ -28,7 +28,6 @@
           {% if video_handle == page.handle %}
             {% assign selected_video = all_video %}
           {% endif %}
-
             {% if selected_video.metafields.custom.video_exercise %}
               {% assign relatedVideo = selected_video.metafields.custom.video_exercise %}
               {% else %}
