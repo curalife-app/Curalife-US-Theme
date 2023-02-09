@@ -23,6 +23,12 @@
   <script>console.log("Redirect Disabled For CuraEats")</script>
 {% endif %}
 
+{%- comment -%} Temp: remove redirect for curaeats product page {%- endcomment -%}
+{% if request.path contains '/blogs/' %}
+  {% assign admin = true %}
+  <script>console.log("Redirect Disabled For Blog")</script>
+{% endif %}
+
 
 
 {% unless admin %}
