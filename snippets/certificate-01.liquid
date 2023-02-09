@@ -1,3 +1,4 @@
+{% assign certified_name = page.metafields.custom.name_certified %}
 <div class="certificate">
     <div class="container">
         <div class="certificate-wrap">
@@ -9,7 +10,7 @@
              </div> 
              <div class="certificate-presentation">
             <p>This certificate is proudly presented to </p> 
-            <div class="name-presented"></div>
+            <div class="name-presented">{{ certified_name }}</div>
             </div>
         </div>
        
@@ -74,6 +75,14 @@
     font-size: 22px;
     text-align: center;
     color: #404733;
+  }
+
+  .name-presented {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    color: #7E3211;
   }
  
 
