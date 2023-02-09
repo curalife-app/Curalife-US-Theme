@@ -46,13 +46,14 @@
             {% else %}    
               {% assign relatedTime = all_video.metafields.custom.current_time_of_video %}
             {% endif %}
+          {% endfor %}  
          <div class="gallery">
            <div class="gallery__item">
              <iframe id="data" class="gallery__item__img" src="{{ relatedVideo }}" frameborder="0"></iframe> 
              <span id="name" class="gallery__item__span">{{ relatedTitle }} <div id="time_video" class="gallery__item__time">{{ relatedTime }}</div></span>
            </div>
          </div>
-        {% endfor %}       
+             
         </div>
       </div>
      
