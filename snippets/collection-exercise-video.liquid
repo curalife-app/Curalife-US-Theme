@@ -29,17 +29,18 @@
             {% assign selected_video = all_video %}
           {% endif %}
 
-          {% if selected_video %}
             {% if selected_video.metafields.custom.video_exercise %}
               {% assign relatedVideo = selected_video.metafields.custom.video_exercise %}
               {% else %}
               {% assign relatedVideo = all_video.metafields.custom.video_exercise %}
             {% endif %}
+
             {% if selected_video.metafields.custom.current_video_title %}
               {% assign relatedTitle = selected_video.metafields.custom.current_video_title %}
               {% else %}
               {% assign relatedTitle = all_video.metafields.custom.current_video_title %}
             {% endif %}
+
             {% if selected_video.metafields.custom.current_time_of_video %}
               {% assign relatedTime = selected_video.metafields.custom.current_time_of_video %}
             {% else %}    
