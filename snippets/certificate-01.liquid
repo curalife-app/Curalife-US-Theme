@@ -8,9 +8,12 @@
                  <img src="{{ 'certificate-ornament.png' | asset_url }}" width="229" height="20" alt="">
                  <div class="wrapper-text">of Completion</div>
              </div> 
-             <div class="certificate-presentation">
+            <div class="certificate-presentation">
             <p>This certificate is proudly presented to </p> 
             <div class="name-presented">{{ certified_name }}</div>
+            </div>
+            <div class="completing-course">
+                <div class="completing">for completing</div>
             </div>
         </div>
        
@@ -82,6 +85,22 @@
     color: #7E3211;
     border-bottom: 1px solid gray;
   }
+
+  .completing-course {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .completing {
+    font-size: 22px;
+    line-height: 15px;
+    color: #404733;
+  }
+
+
 
 
 
