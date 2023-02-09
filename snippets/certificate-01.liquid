@@ -18,6 +18,10 @@
                 <div class="by-curalife">by Curalife</div>
                 <div class="italic-text">This diploma signifies the end of a challenging and rewarding journey of self-discovery and growth. Through this blood sugar challenge, you have gained the knowledge and skills to control your health and live life to the fullest.</div>
             </div>
+            <div class="stamp-wrapper">
+                <img class="green-logo" src="{{ 'certificate-signiture.png' | asset_url }}" width="133" height="124" alt="">
+                <img class="big-title" src="{{ 'certificate-stamp.png' | asset_url }}" width="123" height="123" alt="">
+            </div>
         </div>
        
     </div>
@@ -106,6 +110,11 @@
     font-style: italic;
     max-width: 70%;
     font-size: clamp(10px, 3vw, 22px);
+  }
+
+  .stamp-wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 
   
