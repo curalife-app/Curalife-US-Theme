@@ -11,7 +11,7 @@
             <div class="certificate-presentation">
             <div class="presented">This certificate is proudly presented to </div> 
             <div class="name-presented">{{ certified_name }}</div>
-            <div class="border-gray"></div>
+            <div class="border-gray-init"></div>
             </div>
             <div class="completing-course">
                 <div class="completing">for completing</div>
@@ -86,7 +86,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 5px;
+    gap: 10px;
   }
 
   .presented {
@@ -134,10 +134,13 @@
   .img-stamp {
    width: 30%;
   }
-
+  .border-gray-init {
+    border: 1px solid grey;
+    min-width: 30%;
+}
  .border-gray {
      border: 1px solid grey;
-     min-width: 100px;
+     min-width: 70%;
  }
 
   .ron-sign {  
