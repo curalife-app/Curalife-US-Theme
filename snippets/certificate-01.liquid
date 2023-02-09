@@ -4,9 +4,9 @@
             
               
 
-             <div class="logo-wrapper">
+             {% comment %} <div class="logo-wrapper">
                  <img src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
-             </div> 
+             </div>  {% endcomment %}
            
         </div>
        
@@ -29,7 +29,7 @@
     margin: 50px auto;
     border: 11px solid #777778;
     background-image: url("{{ 'certificate-dotted-ornament.png' | asset_url }}");
-    background: #EFEFEF;
+    {% comment %} background: #EFEFEF; {% endcomment %}
     display: flex;
     justify-content: center;
     max-height: fit-content;
