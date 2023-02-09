@@ -24,8 +24,9 @@
           <div class="related-videos">Related Videos</div>
           {% assign video_handles = "exercise-video/video-1,exercise-video/video-2,exercise-video/video-3,exercise-video/video-4,exercise-video/video-5,exercise-video/video-6,exercise-video/video-7,exercise-video/video-8" | split: "," %}
         {% for video_handle in video_handles %}
-          {% assign all_video = shop.blog.articles[video_handle] %}
-          {% if video_handle == page.handle %}
+          {% assign video_handle_separated = {{ video_handle | split: "," | first }} %}
+          {% assign all_video = shop.blog.articles[video_handle_separated] %}
+          {% if video_handle_separated == page.handle %}
             {% assign selected_video = all_video %}
           {% endif %}
           {% assign relatedVideo = all_video.metafields.custom.video_exercise %}
