@@ -20,7 +20,10 @@
             </div>
             <div class="stamp-wrapper">
                 <div class="signiture">
-                <img class="img-sign"  src="{{ 'certificate-signiture.png' | asset_url }}" width="133" height="124" alt=""></div>
+                <img class="img-sign"  src="{{ 'certificate-signiture.png' | asset_url }}" width="133" height="124" alt="">
+                <div class="ron-sign"><b> Ron Elul</b><br>
+                Founder of Curalife</div>
+                </div>
                 <img class="img-stamp"  src="{{ 'certificate-stamp.png' | asset_url }}" width="123" height="123" alt="">
             </div>
         </div>
@@ -122,6 +125,15 @@
   .signiture {
     display: flex;
     flex-direction: column;
+    text-align: center;
+  }
+
+  .ron-sign {
+    
+    font-size: clamp(12px, 3vw, 18px);
+    line-height: 19px;
+    color: #000000
+
   }
 
   
