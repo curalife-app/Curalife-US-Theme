@@ -25,7 +25,6 @@
           {% assign video_handles = "exercise-video/video-1,exercise-video/video-2,exercise-video/video-3,exercise-video/video-4,exercise-video/video-5,exercise-video/video-6,exercise-video/video-7,exercise-video/video-8" | split: "," %}
         {% for video_handle in video_handles %}
           {% assign all_video = shop.blog.articles[video_handle] %}
-          {{ all_video.title | link_to: all_video.url }}
           {% if video_handle == page.handle %}
             {% assign selected_video = all_video %}
           {% endif %}
