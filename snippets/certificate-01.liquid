@@ -2,14 +2,14 @@
     <div class="container">
         <div class="certificate-wrap">
             
-                <img src="{{ 'certificate-dotted-ornament.png' | asset_url }}" width="561" height="805" alt="">
-
               
+
+             <div class="logo-wrapper">
+                 <img src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
+             </div> 
            
         </div>
-        <div class="logo-wrapper">
-            <img src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
-        </div>
+       
     </div>
 </div>
 
@@ -28,6 +28,7 @@
     position: relative;
     margin: 50px auto;
     border: 11px solid #777778;
+    background-image: url("{{ 'certificate-dotted-ornament.png' | asset_url }}");
     background: #EFEFEF;
     display: flex;
     justify-content: center;
