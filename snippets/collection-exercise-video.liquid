@@ -22,13 +22,11 @@
          {% if forloop.first %}
            {% continue %}
          {% else %}
-          <div class="gallery">
-            <div class="gallery__item">
-              <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
-                <img class="gallery__item__img" id="{{ video_id }}" src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
-                <span id="name" class="gallery__item__span">{{ video_id }}</span>
-              </a>  
-            </div>
+          <div class="gallery-item" id="{{ video_id }}">
+            <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
+              <img class="gallery__item__img" src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
+              <span id="name" class="gallery__item__span">{{ video_id }}</span>
+            </a>  
           </div>
          {% endif %}
         {% endfor %}       
@@ -110,22 +108,8 @@
 
   #gallery {}
 
-  .gallery {
-    display: flex;
-    flex-direction: column;
+  .gallery-item {
     padding-top: 1em;
- 
-  }
-
-  .related-videos {
-    font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: -0.01em;
-    padding: 0em 1em 1em;
-  }
-
-  .gallery__item { 
     cursor: pointer;
     display: flex;
     padding: 0 .75em;
@@ -134,7 +118,14 @@
     font-size: 23px;
     line-height: 30px;
     letter-spacing: -0.01em;
+  }
 
+  .related-videos {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    padding: 0em 1em 1em;
   }
 
   .gallery__item__img {
@@ -179,7 +170,7 @@
       padding: 1em;
     }
 
-    .gallery {
+    .gallery-item {
       padding: 1em;
     }
 
@@ -191,7 +182,7 @@
 
 
   @media screen and (max-width: 390px) {
-    .gallery__item {
+    .gallery-item {
       padding: unset;
     }
   }
@@ -202,10 +193,11 @@
 <script>
 
     {% comment %} let item_ids = ["wkxF7bRHzsc", "BWIPZvwcnX8", "w0ffwDYo00Q", "s13dLaTIHSg", "Te4wx4jtiEA", "l5ODwR6FPRQ","P3y8vc-3iVU","HDzkaJOT_KI","G5FUH3eoizc"] {% endcomment %}
-    let item_ids = $('gallery').find('gallery__item');
+    let elements = $('.gallery__item')
      
-     item_ids.forEach(item_id => {
-      console.log("item_id: ", item_id);
+    elements.forEach(element => {
+      console.log("item_id: ", element);
+      let item_id = element.attr("id");
       const vidurl = `https://www.youtube.com/watch?v=${item_id}`;
 
       fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
