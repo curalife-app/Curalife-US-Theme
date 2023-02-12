@@ -1,3 +1,5 @@
+{% assign videos_data = article.content %}
+
 <section id="collection-exercise-video">
   <img class="exercise-img-swoosh" src="{{ 'video-exercise-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
   <img class="exercise-img-leaf" src="{{ 'video-exercise-leaf.png' | asset_url }}" width="187" height="184" alt="Swoosh">
@@ -18,26 +20,8 @@
           {% assign video_handles = "exercise-video/video-1,exercise-video/video-2,exercise-video/video-3,exercise-video/video-4,exercise-video/video-5,exercise-video/video-6,exercise-video/video-7,exercise-video/video-8" | split: "," %}
         {% for video_handle in video_handles %}
           {% assign all_video = shop.blog.articles[video_handle] %}
-          {% if video_handle == page.handle %}
-            {% assign selected_video = all_video %}
-          {% endif %}
-            {% if selected_video.metafields.custom.video_exercise %}
-              {% assign relatedVideo = selected_video.metafields.custom.video_exercise %}
-              {% else %}
-              {% assign relatedVideo = all_video.metafields.custom.video_exercise %}
-            {% endif %}
 
-            {% if selected_video.metafields.custom.current_video_title %}
-              {% assign relatedTitle = selected_video.metafields.custom.current_video_title %}
-              {% else %}
-              {% assign relatedTitle = all_video.metafields.custom.current_video_title %}
-            {% endif %}
 
-            {% if selected_video.metafields.custom.current_time_of_video %}
-              {% assign relatedTime = selected_video.metafields.custom.current_time_of_video %}
-            {% else %}    
-              {% assign relatedTime = all_video.metafields.custom.current_time_of_video %}
-            {% endif %}
          <div class="gallery">
            <div class="gallery__item">
              <iframe id="data" class="gallery__item__img" src="{{ relatedVideo }}" frameborder="0"></iframe> 
