@@ -19,7 +19,7 @@
           <div class="related-videos">Related Videos</div>
         {% for video_data in videos_data %}
           {% if forloop.first %}
-            {% break %}
+            {% continue %}
           {% endif %}
           <div class="gallery">
             <div class="gallery__item">
