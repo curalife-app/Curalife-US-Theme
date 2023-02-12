@@ -200,11 +200,11 @@
 
       if (currentTop > stickyStartFrom) {
         progressBar.classList.add("sticky");
-        document.querySelector('#progress-bar-section ~ section').style.paddingTop = $('header').css('position') == 'fixed' ? $("#progress-bar-section").height() + 50 + "px" : 0;
-        progressBar.style.top = headerHeight + "px";
+        {% comment %} document.querySelector('#progress-bar-section ~ section').style.paddingTop = $('header').css('position') == 'fixed' ? $("#progress-bar-section").height() + 50 + "px" : 0; {% endcomment %}
+        progressBar.style.top = $('header').css('position') == 'fixed' ? headerHeight + "px" : 0;
       } else {
         progressBar.classList.remove("sticky");
-        document.querySelector('#progress-bar-section ~ section').style.paddingTop = "0px";
+        {% comment %} document.querySelector('#progress-bar-section ~ section').style.paddingTop = "0px"; {% endcomment %}
         progressBar.style.top = 0;
       }
     });
