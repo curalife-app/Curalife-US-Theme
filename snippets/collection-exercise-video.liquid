@@ -200,7 +200,7 @@
         console.log(element);
       fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
         .then(res => res.json())
-        .then(data => console.log('fetch: ', data.title)).then(data => $('.gallery__item__span').text(data.title));
+        .then(data => console.log('fetch: ', data.title)).then(data => $(data =>'.gallery__item__span').text(data.title));
 
         
 
