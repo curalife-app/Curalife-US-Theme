@@ -1,4 +1,4 @@
-{% assign videos_data = article.content | split: "," %}
+{% assign videos_ids = article.content | split: "," %}
 
 <section id="collection-exercise-video">
   <img class="exercise-img-swoosh" src="{{ 'video-exercise-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
@@ -17,13 +17,15 @@
         </div>
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
-        {% for video_data in videos_data %}
+        {% for video_id in videos_ids %}
          {% if forloop.first %}
            {% continue %}
          {% else %}
           <div class="gallery">
             <div class="gallery__item">
-              <iframe id="data"  class="gallery__item__img"  src="https://www.youtube.com/embed/{{ video_data }}" frameborder="0" allowfullscreen></iframe> 
+              <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
+                <img src="{{ 'https://img.youtube.com/vi/' | append: video_id | append: '/0.jpg' | image_url }}" alt="">
+              </a>  
             </div>
           </div>
          {% endif %}
