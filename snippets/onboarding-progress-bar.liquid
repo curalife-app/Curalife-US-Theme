@@ -184,7 +184,7 @@
 <script>
   $(document).ready(function() {
     var progressBar = document.getElementById("progress-bar-section");
-    var headerHeight = $("#shopify-section-header header").length ? $("#shopify-section-header header").height() : 0;
+    var headerHeight = $("#shopify-section-header header").height();
     var stickyStartFrom = progressBar.offsetTop - headerHeight;
 
     document.addEventListener('scroll', () => {
@@ -200,11 +200,11 @@
 
       if (currentTop > stickyStartFrom) {
         progressBar.classList.add("sticky");
-        {% comment %} document.querySelector('#progress-bar-section ~ section').style.paddingTop = $('header').css('position') == 'fixed' ? $("#progress-bar-section").height() + 50 + "px" : 0; {% endcomment %}
+        document.querySelector('#progress-bar-section ~ section').style.paddingTop = $('header').css('position') == 'fixed' ? $("#progress-bar-section").height() + 50 + "px" : 0;
         progressBar.style.top = $('header').css('position') == 'fixed' ? headerHeight + "px" : 0;
       } else {
         progressBar.classList.remove("sticky");
-        {% comment %} document.querySelector('#progress-bar-section ~ section').style.paddingTop = "0px"; {% endcomment %}
+        document.querySelector('#progress-bar-section ~ section').style.paddingTop = "0px";
         progressBar.style.top = 0;
       }
     });
