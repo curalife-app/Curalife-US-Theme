@@ -6,7 +6,7 @@
 
 <section id="quiz-section">
   <div class="container">
-    <div class="quiz" data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ user_email }}"></div>
+    <div id="quiz" data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ user_email }}"></div>
     <script src="//embed.typeform.com/next/embed.js"></script>
   </div>
 </section>
@@ -20,7 +20,7 @@
     max-height: 500px;
   }
 
-  .quiz {
+  #quiz {
     height: 500px;
     border: 4px solid var(--orange);
     box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
@@ -37,6 +37,12 @@
 </style>
 
 <script>
+  $("#quiz").on("load", function() {
+    let head = $("#myiFrame").contents().find("head");
+    let css = '<style>/********* Put your styles here **********</style>';
+    $(head).append(css);
+  });
+
   function submit(event) {
     $("#quiz-section").css("visibility", "hidden").animate({ opacity: 0.0 }, 1000);
     $("#quiz-section").height(0);
