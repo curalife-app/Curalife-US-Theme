@@ -30,7 +30,7 @@
 
 <script>
   $("#quiz").on("load", function() {
-    let head = $("#myiFrame").contents().find("head");
+    let head = $("#quiz").contents().find("head");
     let css = '<style>.RvUNG {margin: unset !important;}.cjZqnY {max-height: 500px;}</style>';
     $(head).append(css);
   });
