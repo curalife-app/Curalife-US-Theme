@@ -203,8 +203,8 @@
 
  let gallery = document.querySelector('.gallery');
 
- gallery.forEach(item =>{
-  item_id: $(this).attr("video_id");
+ gallery.forEach((item) =>{
+   item_id: $(item).attr("video_id");
 
    const vidurl = `https://www.youtube.com/watch?v=${item_id}`;
 
