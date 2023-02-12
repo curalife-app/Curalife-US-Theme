@@ -11,23 +11,21 @@
           <div class="player"> 
             <div class="video-title" id="video-title">{{ article.title }}</div>    
             <div class="player__video">
-              <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="{{ article.content }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="{{ videos_data | first }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>   
         </div>
         <div id="gallery">
           <div class="related-videos">Related Videos</div>
-          {% assign video_handles = "exercise-video/video-1,exercise-video/video-2,exercise-video/video-3,exercise-video/video-4,exercise-video/video-5,exercise-video/video-6,exercise-video/video-7,exercise-video/video-8" | split: "," %}
-        {% for video_handle in video_handles %}
-          {% assign all_video = shop.blog.articles[video_handle] %}
-
-
-         <div class="gallery">
-           <div class="gallery__item">
-             <iframe id="data" class="gallery__item__img" src="{{ relatedVideo }}" frameborder="0"></iframe> 
-             <span id="name" class="gallery__item__span">{{ relatedTitle }} <div id="time_video" class="gallery__item__time">{{ relatedTime }}</div></span>
-           </div>
-         </div>
+        {% for video in videos_data %}
+          {% if forloop.first %}
+            {% break %}
+          {% endif %}
+          <div class="gallery">
+            <div class="gallery__item">
+              <iframe id="data" class="gallery__item__img" src="{{ video }}" frameborder="0"></iframe> 
+            </div>
+          </div>
         {% endfor %}       
         </div>
       </div>
