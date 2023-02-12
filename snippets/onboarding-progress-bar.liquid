@@ -189,7 +189,7 @@
 
     document.addEventListener('scroll', () => {
       let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      let height = $('header').css('position') == 'fixed' ? document.documentElement.scrollHeight - document.documentElement.clientHeight : 0;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       let scrolled = (winScroll / height) * 100;
       let scrollBar = document.getElementById("progressBar").style.width = scrolled + "%";
       let currentTop = window.pageYOffset;
@@ -200,7 +200,7 @@
 
       if (currentTop > stickyStartFrom) {
         progressBar.classList.add("sticky");
-        document.querySelector('#progress-bar-section ~ section').style.paddingTop = $("#progress-bar-section").height() + 50 + "px";
+        document.querySelector('#progress-bar-section ~ section').style.paddingTop = $('header').css('position') == 'fixed' ? $("#progress-bar-section").height() + 50 + "px" : 0;
         progressBar.style.top = headerHeight + "px";
       } else {
         progressBar.classList.remove("sticky");
