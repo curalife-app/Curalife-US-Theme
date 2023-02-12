@@ -25,7 +25,7 @@
           <div class="gallery-item" id="{{ video_id }}">
             <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
               <img class="gallery__item__img" src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
-              <span id="name" class="gallery__item__span">{{ video_id }}</span>
+              <span class="gallery__item__span"></span>
             </a>  
           </div>
          {% endif %}
@@ -199,12 +199,10 @@
         console.log(element);
       fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
         .then(res => res.json())
-        .then(data => console.log('fetch: ', data.title));
+        .then(data => console.log('fetch: ', data.title))
+        .then(element.text(data.title));
 
-        element.innerHTML += `
         
-         
-          <span class="gallery__item__span">${data.title}</span>
       
 
     });
