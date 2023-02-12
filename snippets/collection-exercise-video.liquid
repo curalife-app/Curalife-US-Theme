@@ -204,13 +204,17 @@
     let item_ids = ["wkxF7bRHzsc", "BWIPZvwcnX8", "w0ffwDYo00Q", "s13dLaTIHSg", "Te4wx4jtiEA", "l5ODwR6FPRQ","P3y8vc-3iVU","HDzkaJOT_KI","G5FUH3eoizc"]
 
      
-     item_ids.forEach(item_id =>console.log("item_id: ", item_id))
-     
-     const vidurl = `https://www.youtube.com/watch?v=${item_id}`;
+     item_ids.forEach(item_id => {
+      console.log("item_id: ", item_id);
+      const vidurl = `https://www.youtube.com/watch?v=${item_id}`;
 
-     fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
-      .then(res => res.json())
-      .then(data => console.log('fetch: ', data.title))   
+      fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
+       .then(res => res.json())
+       .then(data => console.log('fetch: ', data.title))   
+
+     })
+     
+     
 
   
   
