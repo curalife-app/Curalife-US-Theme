@@ -1,8 +1,8 @@
 <section id="quiz-section">
   <div class="container">
-    {% if checkout.email %}
+    {% if checkout.email or customer.email %}
       <div data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ checkout.email }}" style="width:100%;height:500px;"></div>
-    {% elsif customer.email %}
+    {% elsif %}
       <div data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ customer.email }}" style="width:100%;height:500px;"></div>
     {% else %}
       <script>console.error("No Email Found")</script>
