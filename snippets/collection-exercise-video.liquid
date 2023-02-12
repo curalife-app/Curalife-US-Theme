@@ -25,7 +25,7 @@
           <div class="gallery">
             <div class="gallery__item">
               <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
-                <img id="video_id" src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
+                <img id="{{video_id}}" src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
               </a>  
             </div>
           </div>
@@ -200,7 +200,7 @@
 
 <script>
   let video_id = document.getElementById('video_id')
-  const vidurl = 'https://www.youtube.com/watch?v='+ video_id;
+  const vidurl = 'https://www.youtube.com/watch?v=BWIPZvwcnX8';
 
   fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
     .then(res => res.json())
