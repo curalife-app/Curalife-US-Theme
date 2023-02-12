@@ -26,18 +26,18 @@
             <div class="gallery__item">
               <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
                 <img src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
-              </a> 
-              {% for video_title in video_titles %}
-              {% if forloop.first %}
-                {% continue %}
-              {% else %}
-              <span id="name" class="gallery__item__span">{{ video_title }} <div id="time_video" class="gallery__item__time"></div></span> 
-              {% endif %}
-            {% endfor %}
+              </a>             
             </div>
           </div>
          {% endif %}
-        {% endfor %}       
+        {% endfor %}   
+        {% for video_title in video_titles %}
+          {% if forloop.first %}
+            {% continue %}
+          {% else %}
+          <span id="name" class="gallery__item__span">{{ video_title }} <div id="time_video" class="gallery__item__time"></div></span> 
+          {% endif %}
+        {% endfor %}    
         </div>
       </div>
      
