@@ -201,9 +201,11 @@
 
 <script>
 
+
+
  let gallery__item = document.querySelector('.gallery__item');
 
- for(let item = 0; item < gallery__item.length; item++) {
+
      item_id: $(this).find("a").attr("video_id");
      console.log("item_id: ", item_id)
      const vidurl = `https://www.youtube.com/watch?v=${item_id}`;
@@ -211,7 +213,7 @@
      fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
       .then(res => res.json())
       .then(data => console.log('fetch: ', data.title))   
- }
+
   
   
 </script>
