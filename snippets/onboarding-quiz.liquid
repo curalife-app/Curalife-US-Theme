@@ -12,14 +12,6 @@
 </section>
 
 <style>
-  .RvUNG {
-    margin: unset !important;
-  }
-
-  .cjZqnY {
-    max-height: 500px;
-  }
-
   #quiz {
     height: 500px;
     border: 4px solid var(--orange);
@@ -38,9 +30,9 @@
 
 <script>
   $("#quiz").on("load", function() {
-    let head = $("#myiFrame").contents().find("head");
-    let css = '<style>/********* Put your styles here **********</style>';
-    $(head).append(css);
+    let head = $("#quiz").contents().find("head")[0];
+    let css = '<style>.RvUNG {margin: unset !important;}.cjZqnY {max-height: 500px;}</style>';
+    head.append(css);
   });
 
   function submit(event) {
