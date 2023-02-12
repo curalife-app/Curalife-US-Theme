@@ -30,9 +30,9 @@
 
 <script>
   $("#quiz").on("load", function() {
-    let head = $("#quiz").contents().find("head");
+    let head = $("#quiz").contents().find("head")[0];
     let css = '<style>.RvUNG {margin: unset !important;}.cjZqnY {max-height: 500px;}</style>';
-    $(head).append(css);
+    head.append(css);
   });
 
   function submit(event) {
