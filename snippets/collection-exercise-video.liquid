@@ -28,16 +28,17 @@
                 <img src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
               </a>             
             </div>
+            {% for video_title in video_titles %}
+              {% if forloop.first %}
+                {% continue %}
+              {% else %}
+              <span id="name" class="gallery__item__span">{{ video_title }} <div id="time_video" class="gallery__item__time"></div></span> 
+              {% endif %}
+            {% endfor %}    
           </div>
          {% endif %}
         {% endfor %}   
-        {% for video_title in video_titles %}
-          {% if forloop.first %}
-            {% continue %}
-          {% else %}
-          <span id="name" class="gallery__item__span">{{ video_title }} <div id="time_video" class="gallery__item__time"></div></span> 
-          {% endif %}
-        {% endfor %}    
+       
         </div>
       </div>
      
