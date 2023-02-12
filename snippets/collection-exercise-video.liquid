@@ -26,7 +26,8 @@
             <div class="gallery__item">
               <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
                 <img src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
-              </a>  
+              </a> 
+              <span id="name" class="gallery__item__span">{{ video_id }} <div id="time_video" class="gallery__item__time"></div></span> 
             </div>
           </div>
          {% endif %}
