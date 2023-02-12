@@ -25,7 +25,7 @@
           <div class="gallery">
             <div class="gallery__item">
               <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
-                <img src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
+                <img id="video_id" src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
               </a>  
             </div>
           </div>
@@ -199,7 +199,8 @@
 
 
 <script>
- 
+  let vido_id = document.getElementById('video_id')
+  
 </script>
 
 
