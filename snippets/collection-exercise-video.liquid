@@ -197,7 +197,7 @@
       let item_id = element.attr("id");
       let vidurl = `https://www.youtube.com/watch?v=${item_id}`;
 
-      fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
+      fetch(`https://noembed.com/embed?dataType=json&url=s13dLaTIHSg`)
         .then(res => res.json())
         .then(data => console.log('fetch: ', data.title))   
     });
