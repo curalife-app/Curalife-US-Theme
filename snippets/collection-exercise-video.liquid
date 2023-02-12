@@ -1,5 +1,5 @@
 {% assign video_ids = article.content | split: "," %}
-{% assign video_titles = article.title | split: "," %}
+
 
 <section id="collection-exercise-video">
   <img class="exercise-img-swoosh" src="{{ 'video-exercise-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
@@ -10,7 +10,7 @@
       <div id="site">
         <div id="player">   
           <div class="player"> 
-            <div class="video-title" id="video-title">{{ video_titles | first }}</div>    
+            <div class="video-title" id="video-title">{{ article.title }}</div>    
             <div class="player__video">
               <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="https://www.youtube.com/embed/{{ video_ids | first }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
@@ -26,19 +26,11 @@
             <div class="gallery__item">
               <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
                 <img src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/0.jpg" }}" alt="">
-              </a>             
+              </a>  
             </div>
-            {% for video_title in video_titles %}
-              {% if forloop.first %}
-                {% continue %}
-              {% else %}
-              <span id="name" class="gallery__item__span">{{ video_title }} <div id="time_video" class="gallery__item__time"></div></span> 
-              {% endif %}
-            {% endfor %}    
           </div>
          {% endif %}
-        {% endfor %}   
-       
+        {% endfor %}       
         </div>
       </div>
      
