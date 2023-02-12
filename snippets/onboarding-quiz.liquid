@@ -1,12 +1,12 @@
+{% if checkout.email %}
+  {% assign user_email = checkout.email %}
+{% elsif customer.email %}
+  {% assign user_email = customer.email %}
+{% endif %}
+
 <section id="quiz-section">
   <div class="container">
-    {% if checkout.email %}
-      <div class="quiz" data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ checkout.email }}"></div>
-    {% elsif customer.email %}
-      <div class="quiz" data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ customer.email }}"></div>
-    {% else %}
-      <script>console.error("No Email Found")</script>
-    {% endif %}
+    <div class="quiz" data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ user_email }}"></div>
     <script src="//embed.typeform.com/next/embed.js"></script>
   </div>
 </section>
