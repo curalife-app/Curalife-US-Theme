@@ -201,9 +201,9 @@
 
 <script>
 
- let gallery = document.querySelector('.gallery');
+ let gallery__item = document.querySelector('.gallery__item');
 
- gallery.forEach((item)=>{
+ gallery__item.forEach((item)=>{
    item_id: $(this).find("a").attr("video_id");
    console.log("item_id: ", item_id)
    const vidurl = `https://www.youtube.com/watch?v=${item_id}`;
