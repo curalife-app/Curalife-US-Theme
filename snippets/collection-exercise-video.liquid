@@ -1,7 +1,3 @@
-{% assign currentVideo = article.metafields.custom.video_exercise %}
-{% assign currentTime = article.metafields.custom.current_time_of_video %}
-{% assign currentTitle = article.metafields.custom.current_video_title %}
-
 <section id="collection-exercise-video">
   <img class="exercise-img-swoosh" src="{{ 'video-exercise-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
   <img class="exercise-img-leaf" src="{{ 'video-exercise-leaf.png' | asset_url }}" width="187" height="184" alt="Swoosh">
@@ -11,12 +7,9 @@
       <div id="site">
         <div id="player">   
           <div class="player"> 
-              <div class="video-title" id="video-title">  
-                {{ currentTitle }}
-              </div>    
-          <p class="main-video-timer">{{ currentTime }}</p> 
+          <div class="video-title" id="video-title">{{ page.title }}</div>    
             <div class="player__video">
-              <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="{{ currentVideo }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="{{ page.content }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>   
         </div>
