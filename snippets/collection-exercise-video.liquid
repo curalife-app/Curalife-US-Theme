@@ -20,12 +20,13 @@
         {% for video_data in videos_data %}
          {% if forloop.first %}
            {% continue %}
-         {% endif %}
+         {% else %}
           <div class="gallery">
             <div class="gallery__item">
               <iframe id="data" class="gallery__item__img" src="{{ video_data }}" frameborder="0"></iframe> 
             </div>
           </div>
+        {% endif %}
         {% endfor %}       
         </div>
       </div>
