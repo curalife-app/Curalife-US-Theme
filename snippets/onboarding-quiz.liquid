@@ -30,11 +30,11 @@
 
 <script>
   $(document).ready(function(){
-      $('#quiz iframe').load(function(){
+      $('#quiz iframe', window.parent.document).load(function(){
           $('#quiz iframe').contents().find('body').html('Hey, i`ve changed content of <body>! Yay!!!');
       });
   });
-  $("#quiz").children().children().on("load", function() {
+  $("#quiz", window.parent.document).children().children().on("load", function() {
     let head = $(this).contents().find("head");
     let css = '<style>.RvUNG {margin: unset !important;}.cjZqnY {max-height: 500px;}</style>';
     head.append(css);
