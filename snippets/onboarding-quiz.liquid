@@ -1,9 +1,9 @@
 <section id="quiz-section">
   <div class="container">
     {% if checkout.email or customer.email %}
-      <div data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ checkout.email }}" style="width:100%;height:500px;"></div>
+      <div class="quiz" data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ checkout.email }}" style="width:100%;height:500px;"></div>
     {% elsif %}
-      <div data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ customer.email }}" style="width:100%;height:500px;"></div>
+      <div class="quiz" data-tf-widget="E2sTfAPl" data-tf-on-submit="submit" data-tf-opacity="100" data-tf-hidden="utm_source=,utm_medium=,utm_campaign=,utm_term=,utm_content=,email={{ customer.email }}" style="width:100%;height:500px;"></div>
     {% else %}
       <script>console.error("No Email Found")</script>
     {% endif %}
@@ -14,6 +14,13 @@
 <style>
   .fQvGaO {
     margin: unset;
+  }
+
+  .quiz {
+    width: 1000px;
+    height: 750px;
+    border: 4px solid var(--orange);
+    box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
   }
 
   #quiz-section h2 {
