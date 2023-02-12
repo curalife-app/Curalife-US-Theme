@@ -189,7 +189,6 @@
 
     document.addEventListener('scroll', () => {
       let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      if( $('header').css('position') == 'fixed') {
       let height = $('header').css('position') == 'fixed' ? document.documentElement.scrollHeight - document.documentElement.clientHeight : 0;
       let scrolled = (winScroll / height) * 100;
       let scrollBar = document.getElementById("progressBar").style.width = scrolled + "%";
