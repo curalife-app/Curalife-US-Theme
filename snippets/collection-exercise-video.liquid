@@ -191,7 +191,8 @@
 
 
 <script>
-    let elements = $('.gallery-item')
+    let elements = $('.gallery-item');
+    let span_element = $('.gallery__item__span')
 
     elements.each((index, element) => {
       let item_id = element.id;
@@ -200,10 +201,7 @@
       fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
         .then(res => res.json())
         .then(data => console.log('fetch: ', data.title))
-        .then(element.text(data.title));
-
-        
-      
+        .then(span_element.text(data.title));
 
     });
 
