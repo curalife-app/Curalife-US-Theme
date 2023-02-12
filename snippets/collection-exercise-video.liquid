@@ -201,14 +201,19 @@
 
 <script>
 
-  let gallery = document.querySelector('.gallery')
+ let gallery = document.querySelector('.gallery');
 
-  
-  const vidurl = 'https://www.youtube.com/watch?v=BWIPZvwcnX8';
+ gallery.forEach(item+>{
+  item_id: $(this).attr("video_id");
+
+  const vidurl = `https://www.youtube.com/watch?v=${item_id}`;
 
   fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
     .then(res => res.json())
     .then(data => console.log('fetch', data.title))
+ })
+  
+  
 </script>
 
 
