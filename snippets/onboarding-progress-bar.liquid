@@ -201,7 +201,7 @@
 
       if (currentTop > stickyStartFrom) {
         progressBar.classList.add("sticky");
-        document.querySelector('#progress-bar-section ~ section').style.paddingTop = isSticky ? $("#progress-bar-section").height() + 50 + "px" : 0;
+        document.querySelector('#progress-bar-section ~ section').style.paddingTop = $("#progress-bar-section").height() + 50 + "px";
         progressBar.style.top = isSticky ? headerHeight + "px" : 0;
       } else {
         progressBar.classList.remove("sticky");
