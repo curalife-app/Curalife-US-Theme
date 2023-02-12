@@ -198,11 +198,11 @@
       let item_id = element.id;
       let vidurl = `https://www.youtube.com/watch?v=${item_id}`;
         console.log(element);
+      let spanElement = $(element).find('.gallery__item__span')[0];
       fetch(`https://noembed.com/embed?dataType=json&url=${vidurl}`)
         .then(res => res.json())
-        .then(data => element.text(data.title));
-
-        
+        .then(data => console.log('fetch: ', data.title))
+        .then(data =>spanElement.text(data.title))
 
     });
 
