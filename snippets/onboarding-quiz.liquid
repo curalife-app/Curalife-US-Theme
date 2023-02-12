@@ -29,7 +29,7 @@
 </style>
 
 <script>
-  $("iframe").on("load", function() {
+  $("#quiz").children().children().on("load", function() {
     let head = $(this).contents().find("head");
     let css = '<style>.RvUNG {margin: unset !important;}.cjZqnY {max-height: 500px;}</style>';
     head.append(css);
