@@ -11,7 +11,7 @@
           <div class="player"> 
             <div class="video-title" id="video-title">{{ article.title }}</div>    
             <div class="player__video">
-              <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="{{ videos_data | split: "," | first }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="{{ article.content | split: "," | first }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>   
         </div>
