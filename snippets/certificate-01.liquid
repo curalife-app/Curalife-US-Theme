@@ -113,6 +113,9 @@
   }
 
   .certificate-presentation {
+    background-image: {% if page.handle contains "certificate-2" %} url("{{ 'certificate-presentation-bg.png' | asset_url }}"){% endif %};
+    background-size: contain;
+    background-repeat: no-repeat;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
