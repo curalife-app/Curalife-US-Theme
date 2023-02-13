@@ -21,6 +21,9 @@
              </div> 
             
             <div class="certificate-presentation">
+            {% if page.handle contains "certificate-2" %}
+            <img class="presentation-bg" src="{{ 'certificate-presentation-bg.png' | asset_url }}" width="490" height="563" alt="">
+            {% endif %}
             <div class="presented">This certificate is proudly presented to </div> 
               {% assign name = customer.first_name %}
               {% assign surname = customer.last_name %}
@@ -121,6 +124,11 @@
     align-items: center;
     text-align: center;
     gap: 10px;
+  }
+
+  .presentation-bg {
+    position: absolute;
+    z-index: -1;
   }
 
   .presented {
