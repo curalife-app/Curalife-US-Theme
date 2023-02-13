@@ -2,16 +2,20 @@
 <div class="certificate" id="content">
     <div class="container">
         <div class="certificate-wrap">
-           <div class="logo-wrapper">
-            {% if page.handle contains "certificate-2" %}
-              <img class="white-logo" src="{{ 'curalife-logo-white.png' | asset_url }}" width="91" height="22" alt="">
+          {% if page.handle contains "certificate-2" %}
+          <div class="logo-wrapper-2">
+            <img class="white-logo" src="{{ 'curalife-logo-white.png' | asset_url }}" width="91" height="22" alt="">
+          </div>
+
              {% else %}
+             <div class="logo-wrapper">
                <img class="green-logo" src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
-              {% endif %}
+             
                  <img class="big-title" src="{{ 'certificate-big-title.png' | asset_url }}" width="427" height="54" alt="">
                  <img class="ornament" src="{{ 'certificate-ornament.png' | asset_url }}" width="229" height="20" alt="">
                  <div class="wrapper-text">of Completion</div>
              </div> 
+            {% endif %}
             <div class="certificate-presentation">
             <div class="presented">This certificate is proudly presented to </div> 
               {% assign name = customer.first_name %}
@@ -76,6 +80,10 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
+  }
+
+  .logo-wrapper-2 {
+    display: flex;
   }
 
   .big-title {
