@@ -83,7 +83,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: {% unless page.handle contains "certificate-2" %} 8px {% endunless %};
   }
 
   .logo-wrapper-2 {
