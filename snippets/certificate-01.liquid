@@ -11,8 +11,12 @@
               {% unless page.handle contains "certificate-2" %}
                <img class="green-logo" src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
               {% endunless %}
+              {% if page.handle contains "certificate-2" %}
+              <div class="big-title-2">certificate</div>
+              {% else %}
                  <img class="big-title" src="{{ 'certificate-big-title.png' | asset_url }}" width="427" height="54" alt="">
                  <img class="ornament" src="{{ 'certificate-ornament.png' | asset_url }}" width="229" height="20" alt="">
+              {% endif %}
                  <div class="wrapper-text">of Completion</div>
              </div> 
             
