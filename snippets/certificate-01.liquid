@@ -35,7 +35,7 @@
     </div>
 </div>
 
-<button class="download-main-btn" onclick="downloadPDF()">Click Here to Download</button>
+<button class="download-main-btn" onclick ="downloadPDF()">Click Here to Download</button>
 
 
 
@@ -203,7 +203,6 @@
 
 
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script>
   function downloadPDF() {
@@ -214,24 +213,27 @@
       return alert("The content element with ID 'content' was not found.");
     }
 
-    // Create a new PDF document
-    const pdf = new jsPDF();
+    // Create a canvas element
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = content.offsetWidth;
+    canvas.height = content.offsetHeight;
 
-    // Get the width and height of the content element
-    const width = content.offsetWidth;
-    const height = content.offsetHeight;
+    // Render the content element onto the canvas
+    ctx.drawImage(content, 0, 0, canvas.width, canvas.height);
+    const dataURL = canvas.toDataURL();
 
-    // Calculate the scale factor for the PDF
-    const scale = 2;
+    // Create a link element and set its properties
+    const link = document.createElement("a");
+    link.download = "certificate.pdf";
+    link.href = dataURL;
+    link.style.display = "none";
+    document.body.appendChild(link);
 
-    // Calculate the new width and height of the content element
-    const newWidth = width * scale;
-    const newHeight = height * scale;
+    // Trigger a click on the link to download the PDF
+    link.click();
 
-    // Render the content element into the PDF
-    pdf.addImage(content, 'PNG', 0, 0, newWidth, newHeight);
-
-    // Save the PDF to the local file system
-    pdf.save("certificate.pdf");
+    // Clean up
+    document.body.removeChild(link);
   }
 </script>
