@@ -201,15 +201,17 @@
 
 </style>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
 <script>
 function downloadPDF() {
-  const content = document.getElementById("content");
-  const blob = new Blob([content.outerHTML], { type: 'text/html' });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "certificate.html";
-  link.click();
+  var pdf = new jsPDF();
+  var certificateElement = document.getElementById('content');
+  pdf.addHTML(certificateElement, function() {
+    pdf.save('certificate.pdf');
+  });
 }
 </script>
+
 
 
