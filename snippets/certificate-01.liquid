@@ -56,7 +56,6 @@
 
   .certificate-wrap {
     background: {% if page.handle contains "certificate-2" %}linear-gradient(297deg, rgba(208,125,91,1) 0%, rgba(251,147,120,1) 54%){% endif %};
-
     margin: 50px auto;
     background-image: {% unless page.handle contains "certificate-2" %} url("{{ 'certificate-background.png' | asset_url }}"){% endunless %};
     background-size: contain;
