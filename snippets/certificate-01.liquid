@@ -204,12 +204,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
 <script>
-function downloadPDF() {
-  var pdf = new jsPDF();
-  var certificateElement = document.getElementById('content');
-  pdf.addHTML(certificateElement, function() {
-    pdf.save('certificate.pdf');
-  });
+  function downloadPDF() {
+    var pdf = new jsPDF();
+    var certificateElement = document.getElementById('content');
+    pdf.addHTML(certificateElement, function() {
+      pdf.save('certificate.pdf');
+    });
 }
 </script>
 
