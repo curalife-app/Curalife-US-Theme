@@ -202,15 +202,14 @@
 </style>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script>
-  function downloadPage() {
+  function downloadPDF() {
     var content = document.getElementById("content").innerHTML;
-    var link = document.createElement("a");
-    link.download = "certificate.pdf";
-    link.href = "data:application/pdf;base64," + btoa(content);
-    link.click();
+    var doc = new jsPDF();
+    doc.text(content, 10, 10);
+    doc.save("certificate.pdf");
   }
-
 </script>
 
 
