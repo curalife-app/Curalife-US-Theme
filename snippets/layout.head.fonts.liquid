@@ -62,7 +62,7 @@
   url('{{ "DMSans-Bold.ttf" | asset_url }}') format('ttf'),
 }
 
-@font-face {
+{% comment %} @font-face {
   font-family: 'Segoe UI';
   src: url("{{ 'SegoeUI.eot' | asset_url }}");
   src: local("Segoe UI"),
@@ -70,7 +70,7 @@
   url("{{ 'SegoeUI.woff' | asset_url }}") format("woff"),  
   font-weight: normal;
   font-style: normal;
-}
+} {% endcomment %}
 
 @font-face {
   font-family: 'icoFont';
