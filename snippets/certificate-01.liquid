@@ -201,10 +201,17 @@
 
 </style>
 
+<script>
+  function downloadPDF() {
+    window.print();
+  }
+</script>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script>
-  function downloadPDF() {
+  function downloadPDF1() {
     const content = document.getElementById("content");
 
     // Check if the content element exists
