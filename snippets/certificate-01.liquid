@@ -105,7 +105,8 @@
   }
 
   .wrapper-text {
-    font-size: clamp(18px, 4vw, 34px);
+    font-size: {% if page.handle contains "certificate-2" %}51px{% else %} clamp(18px, 4vw, 34px){% endif %};
+    font-weight: {% if page.handle contains "certificate-2" %}700{% endif %} ;
     text-align: center;
     color: #404733;
   }
