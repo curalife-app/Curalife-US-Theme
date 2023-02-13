@@ -203,22 +203,36 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-
 <script>
   function downloadPDF() {
     const content = document.getElementById("content");
+
+    // Check if the content element exists
+    if (!content) {
+      return alert("The content element with ID 'content' was not found.");
+    }
+
+    // Create a canvas element
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = content.offsetWidth;
     canvas.height = content.offsetHeight;
+
+    // Render the content element onto the canvas
     ctx.drawImage(content, 0, 0);
     const dataURL = canvas.toDataURL();
+
+    // Create a link element and set its properties
     const link = document.createElement("a");
     link.download = "certificate.pdf";
     link.href = dataURL;
+    link.style.display = "none";
+    document.body.appendChild(link);
+
+    // Trigger a click on the link to download the PDF
     link.click();
+
+    // Clean up
+    document.body.removeChild(link);
   }
 </script>
-
-
-
