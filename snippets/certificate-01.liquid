@@ -74,7 +74,7 @@
  
 
   .logo-wrapper {
-    padding-top: 12%;
+  padding-top: {% unless page.handle contains "certificate-2" %} 12% {% endunless %};
     display: flex;
     flex-direction: column;
     justify-content: center;
