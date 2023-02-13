@@ -116,6 +116,7 @@
   }
 
   .certificate-presentation {
+    margin-top: {% if page.handle contains "certificate-2" %} 20px{% endif %};;
     position: relative;
     padding-top: {% if page.handle contains "certificate-2" %} 40px {% else %} 10px {% endif %};
     display: flex;
