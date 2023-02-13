@@ -2,6 +2,8 @@
   {% assign user_email = checkout.email %}
 {% elsif customer.email %}
   {% assign user_email = customer.email %}
+{% else %}
+  {% assign user_email = 'Did not find customer email' %}
 {% endif %}
 
 <section id="quiz-section">
