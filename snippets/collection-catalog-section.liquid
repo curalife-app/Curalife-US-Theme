@@ -1,6 +1,6 @@
 <section id="collections-catalog-section">
-  <div class="container">
-    <div class="category-tabs">
+  <div class="category-tabs slide">
+    <div class="container">
       <ul>
         <li><a href="#" data-collection-handle="all" class="active">All</a></li>
         {% for collection_handle in collectionsHandles %}
@@ -8,7 +8,9 @@
         {% endfor %}
       </ul>
     </div>
-      
+  </div>
+
+  <div class="container">
     {% for collection_handle in collectionsHandles %}
       {% if forloop.last %}
         {% assign isLastCollectionRender = true %}
@@ -86,11 +88,30 @@
   }
 
   @media screen and (max-width: 768px) {
+    #collections-catalog-section .category-tabs.slide .container {
+        --scrollbar-width: 0;
+        --mask-width: 10px;
+        overflow-y: auto;
+        width: 90vw;
+        padding-right: var(--mask-width);
+        --mask-image-content: linear-gradient(to right, transparent, white var(--mask-width), white calc(100% - var(--mask-width)), transparent);
+        --mask-size-content: calc(100% - var(--scrollbar-width)) 100%;
+        --mask-image-scrollbar: linear-gradient(white, white);
+        --mask-size-scrollbar: var(--scrollbar-width) 100%;
+        -webkit-mask-image: var(--mask-image-content), var(--mask-image-scrollbar);
+        -webkit-mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
+        -webkit-mask-position: 0 0, 100% 0;
+        -webkit-mask-repeat: no-repeat, no-repeat;
+        mask-image: var(--mask-image-content), var(--mask-image-scrollbar);
+        mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
+        mask-position: 0 0, 100% 0;
+        mask-repeat: no-repeat, no-repeat;
+    }
 
    #collections-catalog-section .product-grid {
       justify-content: center;
    }
- 
+
     #collections-catalog-section h2 {
       text-align: center;
       font-size: 10vw;
@@ -98,9 +119,10 @@
 
     #collections-catalog-section .category-tabs ul {
       gap: 1vw;
-      {% comment %} flex-wrap: nowrap;
+    }
+
+    #collections-catalog-section .category-tabs.slide ul {
       width: max-content;
-      overflow: scroll; {% endcomment %}
     }
 
     #collections-catalog-section .category-tabs ul li a {
