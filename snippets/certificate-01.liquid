@@ -57,9 +57,7 @@
   .certificate-wrap {
     
     margin: 50px auto;
-    
-background-image: {% unless page.handle contains "certificate-2" %} url("{{ 'certificate-background.png' | asset_url }}"){% endunless %};
-    {}
+    background-image: {% unless page.handle contains "certificate-2" %} url("{{ 'certificate-background.png' | asset_url }}"){% endunless %};
     background-size: contain;
     background-repeat: no-repeat;
     max-width: 600px;
