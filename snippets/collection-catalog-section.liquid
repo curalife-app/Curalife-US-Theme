@@ -84,6 +84,20 @@
       mask-repeat: no-repeat, no-repeat;
   }
 
+  /* Webkit / Blink */
+  #collections-catalog-section .category-tabs .container::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+  }
+
+  #collections-catalog-section .category-tabs .container::-webkit-scrollbar-thumb {
+    background-color: currentColor;
+    border-radius: 9999px; /* always round */
+  }
+
+  #collections-catalog-section .category-tabs .container::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
   #collections-catalog-section .category-tabs ul {
     display: flex;
     flex-wrap: wrap;
