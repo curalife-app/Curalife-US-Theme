@@ -117,7 +117,7 @@
 
   .certificate-presentation {
     position: relative;
-    padding-top: 10px;
+  padding-top: {% if page.handle contains "certificate-2" %}40px{% else %}10px{% endif %};
     display: flex;
     flex-direction: column;
     justify-content: center;
