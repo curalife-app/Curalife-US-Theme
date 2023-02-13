@@ -35,7 +35,7 @@
     </div>
 </div>
 
-<button class="download-main-btn">Click Here to Download</button>
+<button class="download-main-btn" onclick="downloadPage()">Click Here to Download</button>
 
 
 
@@ -200,6 +200,18 @@
 
 
 </style>
+
+
+<script>
+  function downloadPage() {
+    var content = document.getElementById("content").innerHTML;
+    var link = document.createElement("a");
+    link.download = "certificate.pdf";
+    link.href = "data:application/pdf;base64," + btoa(content);
+    link.click();
+  }
+
+</script>
 
 
 
