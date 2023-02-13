@@ -250,6 +250,7 @@
                 console.log(lineItem{{ forloop.index }});
                 console.log(bundleDetails{{ forloop.index }});
                 bundleDetails{{ forloop.index }}.insertAfter(lineItem{{ forloop.index }});
+                lineItem{{ forloop.index }}.find('.product-thumbnail__quantity').text("{{ item.variant.metafields.my_fields.pack_bottles_quantity }}");
               </script>
             {% endfor %}
 
