@@ -201,16 +201,22 @@
 
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
 
 <script>
   function downloadPDF() {
-    var pdf = new jsPDF();
-    var certificateElement = document.getElementById('content');
-    pdf.addHTML(certificateElement, function() {
-      pdf.save('certificate.pdf');
-    });
-}
+    const content = document.getElementById("content");
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = content.offsetWidth;
+    canvas.height = content.offsetHeight;
+    ctx.drawImage(content, 0, 0);
+    const dataURL = canvas.toDataURL();
+    const link = document.createElement("a");
+    link.download = "certificate.pdf";
+    link.href = dataURL;
+    link.click();
+  }
 </script>
 
 
