@@ -263,8 +263,7 @@
 </style>
 
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
 <script>
   function downloadPDF() {
     const content = document.getElementById("content");
@@ -274,11 +273,25 @@
       return alert("The content element with ID 'content' was not found.");
     }
 
-    html2canvas(content).then(function(canvas) {
-      const dataURL = canvas.toDataURL();
-
-      // Create a link element and set its properties
-      ...
-    });
+    domtoimage.toPng(content)
+      .then(function (dataUrl) {
+        // Create a link element and set its properties
+        var link = document.createElement("a");
+        link.download = "certificate.pdf";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch(function (error) {
+        console.error("Failed to download PDF:", error);
+      });
   }
 </script>
+
+
+
+
+
+
+
+
+
