@@ -67,14 +67,8 @@
     gap: 40px;
   }
 
-  #collections-catalog-section .category-tabs ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    margin: 15px 0;
-
-    width: max-content;
-      /* scroll bar width, for use in mask calculations */
+  #collections-catalog-section .category-tabs .container {
+    /* scroll bar width, for use in mask calculations */
       --scrollbar-width: 8px;
 
       /* mask fade distance, for use in mask calculations */
@@ -125,6 +119,15 @@
 
       /* We don't repeat our mask images */
       mask-repeat: no-repeat, no-repeat;
+  }
+
+  #collections-catalog-section .category-tabs ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 15px 0;
+
+    width: max-content;
   }
 
   #collections-catalog-section .category-tabs ul li a {
