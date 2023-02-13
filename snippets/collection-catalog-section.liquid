@@ -1,6 +1,6 @@
 <section id="collections-catalog-section">
-  <div class="container">
-    <div class="category-tabs">
+  <div class="category-tabs">
+    <div class="container">
       <ul>
         <li><a href="#" data-collection-handle="all" class="active">All</a></li>
         {% for collection_handle in collectionsHandles %}
@@ -8,7 +8,9 @@
         {% endfor %}
       </ul>
     </div>
+  </div>
 
+  <div class="container">
     {% for collection_handle in collectionsHandles %}
       {% if forloop.last %}
         {% assign isLastCollectionRender = true %}
@@ -90,7 +92,7 @@
    #collections-catalog-section .product-grid {
       justify-content: center;
    }
- 
+
     #collections-catalog-section h2 {
       text-align: center;
       font-size: 10vw;
