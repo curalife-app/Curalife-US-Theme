@@ -266,7 +266,7 @@
   function generateCertification() {
     $(".info-form").hide();
     $(".certificate-section").show()
-    $("#name-presented").value($("input#name").value());
+    $("#name-presented").val($("input#name").val());
     
     if ($(".curalifer").attr("checked")) {
       $(".certificate-section").addClass("curalife")
