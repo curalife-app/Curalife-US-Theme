@@ -268,7 +268,7 @@
   function generateCertification() {
     $(".info-form").hide();
     $(".certificate-section").show()
-    $("#name-presented").val($("input#name").val());
+    $("#name-presented").text($("input#name").val());
     console.log("name: " + $("input#name").val())
     
     if ($("#curalifer")[0].checked) {
