@@ -1,4 +1,4 @@
-
+{% assign certificate_ids = page.content | split: "," %}
 {%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
 
 {% comment %} get "name" param from url {% endcomment %}
