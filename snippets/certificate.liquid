@@ -40,7 +40,11 @@
       <input type="radio" id="classic" name="theme" value="classic">
       <label class="verify-text" for="classic">Classic</label><br>
       <input type="radio" id="curalifer" name="theme" value="curalifer">
-      <label class="verify-text" for="curalifer">Curalifer</label>
+      <label class="verify-text" for="curalifer">Curalifer</label>   
+     </div>
+     <div class="thumbnail-img">
+      <img class="certificate-1" src="{{ 'certificate-1.png' | asset_url }}"  alt="">
+      <img class="certificate-2" src="{{ 'certificate-2.png' | asset_url }}"  alt="">
      </div>
      <br>
 
@@ -155,6 +159,10 @@
 
 .radio-container input {
   width: 30px;
+}
+
+.thumbnail-img {
+  display: flex;
 }
 
 
