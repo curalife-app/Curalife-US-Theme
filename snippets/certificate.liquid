@@ -27,7 +27,7 @@
      <input class="input-name" type="text" id="name" name="name"><br>
     <div class="verification">
      <input type="checkbox" id="subscribe" name="subscribe">
-     <label for="subscribe">Please verify this is correct</label>
+     <label class="verify-text" for="subscribe">Please verify this is correct</label>
      </div>
      <br>
 
@@ -132,6 +132,13 @@
 .verification {
   display: flex;
   gap: 10px;
+}
+
+.verify-text {
+  font-family: 'DM Sans';
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 39px;
 }
 
 .certificate-section {
