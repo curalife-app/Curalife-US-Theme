@@ -32,29 +32,27 @@
       <div class="info-title">Generate Your Certificate</div>
 
       <div class="form-submit">
-        <form  method="post" action="/submit">
-          <div class="name">
-            <label class="title" for="name">Full Name:</label>
-            <input class="input-name" type="text" id="name" name="name" value="{{ customerName }}">
-          </div>
+        <div class="name">
+          <label class="title" for="name">Full Name:</label>
+          <input class="input-name" type="text" id="name" name="name" value="{{ customerName }}">
+        </div>
 
-          <label class="title" for="theme">Choose Theme</label>
+        <label class="title" for="theme">Choose Theme</label>
 
-          <div class="radio-container">
-            <input type="radio" id="classic" name="theme" value="classic">
-            <label for="classic"><img class="certificate-img" src="{{ 'certificate-1.png' | asset_url }}" width="1190" height="1684" alt=""></label>
-            <input type="radio" id="curalifer" name="theme" value="curalifer">
-            <label for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
-          </div>
+        <div class="radio-container">
+          <input type="radio" id="classic" name="theme" value="classic">
+          <label for="classic"><img class="certificate-img" src="{{ 'certificate-1.png' | asset_url }}" width="1190" height="1684" alt=""></label>
+          <input type="radio" id="curalifer" name="theme" value="curalifer">
+          <label for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
+        </div>
 
-          <div class="verification">
-            <input type="checkbox" id="presented" name="presented">
-            <label class="presented-text" for="presented">I would love to be presented <br>
-              on <b>Curalife’s Wall of Fame</b> </label>
-          </div>
+        <div class="verification">
+          <input type="checkbox" id="presented" name="presented">
+          <label class="presented-text" for="presented">I would love to be presented <br>
+            on <b>Curalife’s Wall of Fame</b> </label>
+        </div>
 
-          <button class="generate" onclick="generateCertification()">Generate Now</button>
-        </form>
+        <button class="generate" onclick="generateCertification()">Generate Now</button>
       </div>
     </div>
   </div>
@@ -118,10 +116,6 @@
   display: flex; 
   justify-content: center;
   padding: 20px 0;
-}
-
-.form-submit form {
-  display: flex;
   flex-direction: column;
   gap: 20px;
 }
