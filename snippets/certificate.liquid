@@ -25,9 +25,10 @@
    <form  method="post" action="/submit">
      <label class="full-name" for="name">Full Name:</label>
      <input class="input-name" type="text" id="name" name="name"><br>
-
+    <div class="verification">
      <input type="checkbox" id="subscribe" name="subscribe">
      <label for="subscribe">Please verify this is correct</label>
+     </div>
      <br>
 
      <label for="gender">Gender:</label><br>
@@ -125,6 +126,10 @@
   padding: 15px 60px;
   border-radius: 56px;
   border: none;
+}
+
+.verification {
+  display: flex;
 }
 
 .certificate-section {
