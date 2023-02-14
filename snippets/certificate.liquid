@@ -48,12 +48,19 @@
    font-weight: 400;    
  }
 
+ .container {
+   max-width: 1000px;
+ }
+
 
   .certificate-wrap {
-    
+    position: relative;
+    margin: 50px auto;
     background-image: {% if page.handle contains "certificate-2" %} url("{{ 'certificate-2.png' | asset_url }}"){% else %}url("{{ 'certificate-1.png' | asset_url }}"){% endif %};
     background-size: contain;
     background-repeat: no-repeat;
+    max-width: 600px;
+    min-height: 840px
    
     
   }
