@@ -53,7 +53,7 @@
               on <b>Curalife’s Wall of Fame</b> </label>
           </div>
 
-          <input class="generate" type="submit" value="Generate now">
+          <button class="generate" onclick="generateCertification()">Generate Now</button>
         </form>
       </div>
     </div>
@@ -65,7 +65,7 @@
       <div class="container">
           <div class="certificate-wrap">
                 {% assign name = param | default: customerName %}
-                <div class="name-presented">{{ name }}</div>
+                <div id="name-presented">{{ name }}</div>
           </div>
       </div>
   </div>
@@ -216,7 +216,7 @@
     min-height: 840px
   }
 
- .name-presented { 
+ #name-presented { 
     font-family: 'PP Radio Grotesk';
     font-weight: 400; 
     position: relative;
@@ -262,19 +262,19 @@
       max-width: unset;
     }
 
-    .name-presented { 
+    #name-presented { 
      font-size: 4.5vw;  
    }
-
-
-
-
   }
-
-
-
 </style>
 
+<script>
+  function generateCertification() {
+    $(".info-form").hide();
+    $(".certificate-section").show()
+    $("#name-presented").value($("input.input-name")[0].value());
+  }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
 <script>
