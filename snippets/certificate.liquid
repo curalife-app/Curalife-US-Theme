@@ -24,10 +24,10 @@
 {% endif %}
 
 <div class="info-form">
-  <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
-
+  
   <div class="container">
     <div class="box">
+      <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
       <img class="info-three-swooshes" src="{{ 'certificate-info-three-swooshes.png' | asset_url }}" width="137" height="133" alt="">
       <div class="info-title">Generate Your Certificate</div>
 
@@ -77,7 +77,6 @@
 }
 
 .info-form {
-    
     margin: 50px auto;   
     position: relative;        
 }
@@ -115,6 +114,7 @@
 .form-submit form {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 .full-name {
