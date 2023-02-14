@@ -1,4 +1,23 @@
 
+{%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
+{% assign param = blank %}
+
+{% comment %} get "name" param from url {% endcomment %}
+{%- for i in (1..1) -%}
+  {%- unless page_url contains "?" -%}{% break %}{%- endunless -%}
+  {%- assign query_string = page_url | split:'?' | last -%}
+  {%- assign qry_parts= query_string | split:'&' -%}
+
+  {%- for part in qry_parts -%}
+    {%- assign key_and_value = part | split:'=' -%}
+    {%- if key_and_value.size > 1 -%}
+      {% if key_and_value[0] == 'name' %}
+        {% assign param = key_and_value[1] %}
+      {% endif %}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
 <div class="certificate" id="content">
     <div class="container">
         <div class="certificate-wrap">
@@ -25,7 +44,7 @@
             <img class="presentation-bg" src="{{ 'certificate-presentation-bg.png' | asset_url }}" width="490" height="563" alt="">
             {% endif %}
             <div class="presented">This certificate is proudly presented to </div> 
-            {% assign name = url.name | default: (customer.first_name | append: ' ' | append: customer.last_name) | default: 'Unknown' %}
+            {% assign name = param | default: (customer.first_name | append: ' ' | append: customer.last_name) | default: 'Unknown' %}
 
                      
                  <div class="name-presented">{{ name }}</div>
