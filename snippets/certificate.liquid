@@ -35,12 +35,8 @@
         <form  method="post" action="/submit">
           <label class="full-name" for="name">Full Name:</label>
           <input class="input-name" type="text" id="name" name="name" value="{{ customerName }}">
-          <br>
-          <br>
 
           <label class="full-name" for="theme">Choose Theme</label>
-
-          <br>
 
           <div class="radio-container">
             <input type="radio" id="classic" name="theme" value="classic">
@@ -48,13 +44,12 @@
             <input type="radio" id="curalifer" name="theme" value="curalifer">
             <label for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
           </div>
-          <br>
+
           <div class="verification">
             <input type="checkbox" id="presented" name="presented">
             <label class="presented-text" for="presented">I would love to be presented <br>
               on <b>Curalife’s Wall of Fame</b> </label>
           </div>
-          <br>
 
           <input class="generate" type="submit" value="Generate now">
         </form>
@@ -165,9 +160,8 @@
 
 .presented-text{
   font-family: 'DM Sans';
-  font-size: clamp(20px, 2vw, 30px);
   color: #404733;
-
+  font-size: 20px;
 }
 
 .generate {
