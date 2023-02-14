@@ -270,7 +270,7 @@
     $(".certificate-section").show()
     $("#name-presented").val($("input#name").val());
     
-    if ($("#curalifer").attr("checked")) {
+    if ($("#curalifer").prop('checked', 'checked')) {
       $(".certificate-section").addClass("curalife");
     }
   }
