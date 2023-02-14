@@ -1,0 +1,152 @@
+
+{%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
+
+{% comment %} get "name" param from url {% endcomment %}
+{%- for i in (1..1) -%}
+  {%- unless page_url contains "?" -%}{% break %}{%- endunless -%}
+  {%- assign query_string = page_url | split:'?' | last -%}
+  {%- assign qry_parts= query_string | split:'&' -%}
+
+  {%- for part in qry_parts -%}
+    {%- assign key_and_value = part | split:'=' -%}
+    {%- if key_and_value.size > 1 -%}
+      {% if key_and_value[0] == 'name' %}
+        {% assign param = key_and_value[1] | replace: "+" , " " %}
+      {% endif %}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<div class="certificate" id="content">
+    <div class="container">
+        <div class="certificate-wrap">
+              {% if customer %}
+                {% assign customerName = customer.first_name | append: ' ' | append: customer.last_name %}
+              {% else %}
+                {% assign customerName = 'Unknown' %}
+              {% endif %}
+
+              {% assign name = param | default: customerName %}
+
+              <div class="name-presented">{{ name }}</div>
+        </div>
+       
+    </div>
+</div>
+
+<button class="download-main-btn" onclick ="downloadPDF()">Click Here to Download</button>
+
+
+
+
+
+
+
+<style>
+ .certificate {
+   font-family: 'PP Radio Grotesk';
+   font-weight: 400;    
+ }
+
+ .container {
+   max-width: 1000px;
+ }
+
+
+  .certificate-wrap {
+    position: relative;
+    margin: 50px auto;
+    background-image: {% if page.handle contains "certificate-2" %} url("{{ 'certificate-2.png' | asset_url }}"){% else %}url("{{ 'certificate-1.png' | asset_url }}"){% endif %};
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-width: 600px;
+    min-height: 840px
+   
+    
+  }
+
+ .name-presented { 
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400; 
+    position: relative;
+    font-size: 30px;
+    color: #7E3211;
+    display: flex;
+    justify-content: center;
+    padding-top: 54%;
+  }
+
+
+
+  .download-main-btn {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400; 
+    color: white;
+    background: var(--dark-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    font-weight: 300;
+    font-size: clamp(20px, 2vw, 30px);
+    border-color: var(--dark-green);
+    border-radius: 10px;
+  }
+
+
+  
+
+
+
+
+  @media (max-width: 768px) {
+
+
+    .name-presented { 
+     font-size: 4.5vw;  
+   }
+
+
+
+
+  }
+
+
+
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
+<script>
+  function downloadPDF() {
+    const content = document.getElementById("content");
+
+    // Check if the content element exists
+    if (!content) {
+      return alert("The content element with ID 'content' was not found.");
+    }
+
+    domtoimage.toPng(content)
+      .then(function (dataUrl) {
+        // Create a link element and set its properties
+        var link = document.createElement("a");
+        link.download = "certificate.pdf";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch(function (error) {
+        console.error("Failed to download PDF:", error);
+      });
+  }
+</script>
+
+
+
+
+
+
+
+
+
