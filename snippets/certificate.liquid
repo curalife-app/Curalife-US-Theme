@@ -20,12 +20,6 @@
 <div class="certificate" id="content">
     <div class="container">
         <div class="certificate-wrap">
-     
-       
-         
-             
-              
-             
               {% if customer %}
                 {% assign customerName = customer.first_name | append: ' ' | append: customer.last_name %}
               {% else %}
@@ -35,9 +29,6 @@
               {% assign name = param | default: customerName %}
 
               <div class="name-presented">{{ name }}</div>
-              
-         
-       
         </div>
        
     </div>
@@ -60,134 +51,26 @@
 
   .certificate-wrap {
     
-   background-image: {% if page.handle contains "certificate-2" %} url("{{ 'certificate-2.png' | asset_url }}"){% else %}url("{{ 'certificate-1.png' | asset_url }}"){% endif %};
+    background-image: {% if page.handle contains "certificate-2" %} url("{{ 'certificate-2.png' | asset_url }}"){% else %}url("{{ 'certificate-1.png' | asset_url }}"){% endif %};
     background-size: contain;
     background-repeat: no-repeat;
    
     
   }
 
- 
-
-  .logo-wrapper {
-    padding-top: {% unless page.handle contains "certificate-2" %} 12% {% endunless %};
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: {% unless page.handle contains "certificate-2" %} 8px {% endunless %};
-  }
-
-  .logo-wrapper-2 {
-    display: flex;
-    padding: 3em 0 0 1em;
-  }
-
-  .big-title {
-    width: 60%;
-  }
-
-  .big-title-2 {
-    text-align: center;
+ .name-presented { 
     font-family: 'PP Radio Grotesk';
-    font-weight: 700;
-    font-size: 130px;
-    line-height: 100px;
-    color: #FFFFFF;
-
-  }
-
-  .wrapper-text {
-    font-size: {% if page.handle contains "certificate-2" %}51px{% else %} clamp(18px, 4vw, 34px){% endif %};
-    font-weight: {% if page.handle contains "certificate-2" %}700{% endif %} ;
-    text-align: center;
-    color: #404733;
-  }
-
-  .certificate-presentation {
-    margin-top: {% if page.handle contains "certificate-2" %} 20px{% endif %};;
-    position: relative;
-    padding-top: {% if page.handle contains "certificate-2" %} 40px {% else %} 10px {% endif %};
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .presentation-bg {
-    position: absolute;
-    top:0;
-    
-  }
-
-  .presented {
-    position: relative;
-    font-size: 22px;  
-    color: #404733;
-  }
-
-  .certificate-presentation .name-presented { 
+    font-weight: 400; 
     position: relative;
     font-size: 30px;
     color: #7E3211;
   }
 
-  .completing-course {
-    position: relative;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 22px;
-    color: #404733;
-    gap: 5px;
-  }
-
-  .italic-text {
-    font-style: italic;
-    max-width: 70%;
-    font-size: 22px;
-  }
-
-  .stamp-wrapper {
-    position: relative;
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .signiture {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    
-  }
-
-  .img-stamp {
-   width: 30%;
-  }
-  .border-gray-init {
-    position: relative;
-    border: 1px solid grey;
-    min-width: 30%;
-}
- .border-gray {
-     border: 1px solid grey;
-     min-width: 70%;
- }
-
-  .ron-sign {  
-    font-size: clamp(12px, 3vw, 18px);
-    color: #000000
-  }
 
 
   .download-main-btn {
+    font-family: 'PP Radio Grotesk';
+    font-weight: 400; 
     color: white;
     background: var(--dark-green);
     display: flex;
@@ -210,71 +93,16 @@
 
   @media (max-width: 768px) {
 
-  .certificate-wrap {
-    min-height: 120vw;
-  }
-    
-   .green-logo {
-    width: 15vw;
-   }
 
-   .white-logo {
-    width: 15vw;
-   }
-
-   .big-title {
-       width: unset;
-       max-width: 26vw;
-   }
-
-   .big-title-2 {
-    font-size: 17vw;
-    line-height: 14vw;
-   }
-  
-
-   .img-sign {
-    max-width: 25vw;
-   }
-
-   .ornament {
-    max-width: 18px;
-   }
-
-   .wrapper-text {
-      font-size: 4vw;
-   }
-
-   
-   .presented {
-     
-     font-size: 3.5vw;  
-    
-   }
-
-   .certificate-presentation .name-presented { 
+    .name-presented { 
      font-size: 4.5vw;  
    }
 
-   .completing-course {
-    font-size: 3.5vw;
-   }
 
-   .italic-text {
-    font-size: 2.5vw;
-   }
 
 
   }
 
-  @media (max-width: 700px) {
-    .certificate-wrap {
-        min-height: 160vw;
-        padding: {% if page.handle contains "certificate-2" %}0 3vw{% endif %};
-
-    
-    }
-  }
 
 
 </style>
