@@ -17,6 +17,12 @@
   {%- endfor -%}
 {%- endfor -%}
 
+{% if customer %}
+  {% assign customerName = customer.first_name | append: ' ' | append: customer.last_name %}
+{% else %}
+  {% assign customerName = 'Unknown' %}
+{% endif %}
+
 <div class="info-form">
   <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
 
@@ -28,7 +34,7 @@
       <div class="form-submit">
         <form  method="post" action="/submit">
           <label class="full-name" for="name">Full Name:</label>
-          <input class="input-name" type="text" id="name" name="name">
+          <input class="input-name" type="text" id="name" name="name" value="{{ customer.name }}">
           <br>
 
         <div class="verification">
@@ -64,14 +70,7 @@
   <div class="certificate" id="content">
       <div class="container">
           <div class="certificate-wrap">
-                {% if customer %}
-                  {% assign customerName = customer.first_name | append: ' ' | append: customer.last_name %}
-                {% else %}
-                  {% assign customerName = 'Unknown' %}
-                {% endif %}
-
                 {% assign name = param | default: customerName %}
-
                 <div class="name-presented">{{ name }}</div>
           </div>
       </div>
