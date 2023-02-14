@@ -1,4 +1,22 @@
 
+{%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
+
+{% comment %} get "name" param from url {% endcomment %}
+{%- for i in (1..1) -%}
+  {%- unless page_url contains "?" -%}{% break %}{%- endunless -%}
+  {%- assign query_string = page_url | split:'?' | last -%}
+  {%- assign qry_parts= query_string | split:'&' -%}
+
+  {%- for part in qry_parts -%}
+    {%- assign key_and_value = part | split:'=' -%}
+    {%- if key_and_value.size > 1 -%}
+      {% if key_and_value[0] == 'name' %}
+        {% assign param = key_and_value[1] | replace: "+" , " " %}
+      {% endif %}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
 <div class="certificate" id="content">
     <div class="container">
         <div class="certificate-wrap">
@@ -7,28 +25,36 @@
             <img class="white-logo" src="{{ 'curalife-logo-white.png' | asset_url }}" width="134" height="32" alt="">
           </div>
          {% endif %}
-             <div class="logo-wrapper">
-              {% unless page.handle contains "certificate-2" %}
-               <img class="green-logo" src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
-              {% endunless %}
-              {% if page.handle contains "certificate-2" %}
-              <div class="big-title-2">certificate</div>
-              {% else %}
-                 <img class="big-title" src="{{ 'certificate-big-title.png' | asset_url }}" width="427" height="54" alt="">
-                 <img class="ornament" src="{{ 'certificate-ornament.png' | asset_url }}" width="229" height="20" alt="">
-              {% endif %}
-                 <div class="wrapper-text">of Completion</div>
-             </div> 
+            <div class="logo-wrapper">
+            {% unless page.handle contains "certificate-2" %}
+              <img class="green-logo" src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
+            {% endunless %}
+
+            {% if page.handle contains "certificate-2" %}
+            <div class="big-title-2">certificate</div>
+            {% else %}
+                <img class="big-title" src="{{ 'certificate-big-title.png' | asset_url }}" width="427" height="54" alt="">
+                <img class="ornament" src="{{ 'certificate-ornament.png' | asset_url }}" width="229" height="20" alt="">
+            {% endif %}
+                <div class="wrapper-text">of Completion</div>
+            </div> 
             
             <div class="certificate-presentation">
-            {% if page.handle contains "certificate-2" %}
-            <img class="presentation-bg" src="{{ 'certificate-presentation-bg.png' | asset_url }}" width="490" height="563" alt="">
-            {% endif %}
-            <div class="presented">This certificate is proudly presented to </div> 
-              {% assign name = customer.first_name %}
-              {% assign surname = customer.last_name %}
-                 <div class="name-presented">{{ name }} {{ surname }}</div>
-            <div class="border-gray-init"></div>
+              {% if page.handle contains "certificate-2" %}
+                <img class="presentation-bg" src="{{ 'certificate-presentation-bg.png' | asset_url }}" width="490" height="563" alt="">
+              {% endif %}
+              
+              <div class="presented">This certificate is proudly presented to </div> 
+              {% if customer %}
+                {% assign customerName = customer.first_name | append: ' ' | append: customer.last_name %}
+              {% else %}
+                {% assign customerName = 'Unknown' %}
+              {% endif %}
+
+              {% assign name = param | default: customerName %}
+
+              <div class="name-presented">{{ name }}</div>
+              <div class="border-gray-init"></div>
             </div>
             <div class="completing-course">
                 <div class="completing">for completing</div>
