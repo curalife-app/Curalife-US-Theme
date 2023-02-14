@@ -48,7 +48,7 @@
               {% assign fullName = (customer.first_name | append: ' ' | append: customer.last_name) | default: "Unknown" %}
               {% assign name = param | default: fullName %}
 
-              {% if fullName %}
+              {% if fullName > 0 %}
                 <script>console.log("fullName")</script>
                 {% else %}
                 <script>console.log("no fullName")</script>
