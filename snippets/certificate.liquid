@@ -18,7 +18,7 @@
 {%- endfor -%}
 
 <div class="info-form">
-
+  <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
 </div>
 <div class="certificate-section">
 <div class="certificate" id="content">
@@ -55,6 +55,12 @@
     max-width: 1629px;
     min-height: 1234px;
     position: relative;        
+}
+
+.info-swoosh {
+  position: absolute;
+  bottom:0;
+  
 }
 
 .certificate-section {
