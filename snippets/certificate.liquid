@@ -32,10 +32,12 @@
 
       <div class="form-submit">
         <form  method="post" action="/submit">
-          <label class="full-name" for="name">Full Name:</label>
-          <input class="input-name" type="text" id="name" name="name" value="{{ customerName }}">
+          <div class="name">
+            <label class="title" for="name">Full Name:</label>
+            <input class="input-name" type="text" id="name" name="name" value="{{ customerName }}">
+          </div>
 
-          <label class="full-name" for="theme">Choose Theme</label>
+          <label class="title" for="theme">Choose Theme</label>
 
           <div class="radio-container">
             <input type="radio" id="classic" name="theme" value="classic">
@@ -113,10 +115,10 @@
 .form-submit form {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
 }
 
-.full-name {
+.title {
   font-family: 'DM Sans';
   font-weight: 700;
   font-size: clamp(25px, 2vw, 30px);
