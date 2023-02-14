@@ -25,9 +25,12 @@
             <img class="presentation-bg" src="{{ 'certificate-presentation-bg.png' | asset_url }}" width="490" height="563" alt="">
             {% endif %}
             <div class="presented">This certificate is proudly presented to </div> 
-              {% assign name = customer.first_name %}
-              {% assign surname = customer.last_name %}
-                 <div class="name-presented">{{ name }} {{ surname }}</div>
+            {% if url.param %}
+              {% assign name = url.name %}
+           {% else  %} 
+              {% assign name = customer.first_name | append ' ' | append customer.last_name %} 
+            {% endif %}          
+                 <div class="name-presented">{{ name }}</div>
             <div class="border-gray-init"></div>
             </div>
             <div class="completing-course">
