@@ -43,6 +43,12 @@
       <img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt="">
      </div>
      <br>
+     <div class="verification">
+      <input type="checkbox" id="presented" name="presented">
+      <label class="presented-text" for="presented">I would love to be presented <br>
+       on <b>Curalife’s Wall of Fame</b> </label>
+     </div>
+      <br>
 
      <input class="generate" type="submit" value="Generate now">
    </form>
@@ -160,6 +166,14 @@
 .certificate-img {
   max-width: 70px;
   border: 1px solid #404733; 
+}
+
+.presented-text{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-size: clamp(25px, 2vw, 30px);
+  color: #404733;
+
 }
 
 .generate {
