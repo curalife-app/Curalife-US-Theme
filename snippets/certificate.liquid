@@ -21,7 +21,24 @@
   <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
   <img class="info-three-swooshes" src="{{ 'certificate-info-three-swooshes.png' | asset_url }}" width="137" height="133" alt="">
   <div class="info-title">Generate Your Certificate</div>
- 
+ {% if customer %}
+   <form class="form-submit" method="post" action="/submit">
+     <label class="full_name" for="name">Full Name:</label>
+     <input class="input-name" type="text" id="name" name="name"><br>
+
+     <label for="subscribe">Subscribe to newsletter:</label>
+     <input type="checkbox" id="subscribe" name="subscribe"><br>
+
+     <label for="gender">Gender:</label><br>
+     <input type="radio" id="male" name="gender" value="male">
+     <label for="male">Male</label><br>
+     <input type="radio" id="female" name="gender" value="female">
+     <label for="female">Female</label><br>
+
+     <input type="submit" value="Submit">
+   </form>
+ {% endif %}
+
 </div>
 <div class="certificate-section">
 <div class="certificate" id="content">
@@ -81,6 +98,11 @@
   text-align: center;
   letter-spacing: -0.02em;
   color: #404733;
+}
+
+.form-submit {
+  display: flex; 
+  justify-content: center;
 }
 
 .certificate-section {
