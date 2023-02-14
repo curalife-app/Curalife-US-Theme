@@ -12,7 +12,7 @@
     {%- assign key_and_value = part | split:'=' -%}
     {%- if key_and_value.size > 1 -%}
       {% if key_and_value[0] == 'name' %}
-        {% assign param = key_and_value[1] %}
+        {% assign param = key_and_value[1] | replace: "+" , " " %}
       {% endif %}
     {%- endif -%}
   {%- endfor -%}
