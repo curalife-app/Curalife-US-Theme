@@ -21,8 +21,8 @@
   <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
   <img class="info-three-swooshes" src="{{ 'certificate-info-three-swooshes.png' | asset_url }}" width="137" height="133" alt="">
   <div class="info-title">Generate Your Certificate</div>
- 
-   <form class="form-submit" method="post" action="/submit">
+  <div class="form-submit">
+   <form  method="post" action="/submit">
      <label class="full_name" for="name">Full Name:</label>
      <input class="input-name" type="text" id="name" name="name"><br>
 
@@ -37,6 +37,8 @@
 
      <input type="submit" value="Submit">
    </form>
+
+   </div>
 
 
 </div>
