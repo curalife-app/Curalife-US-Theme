@@ -21,39 +21,41 @@
   <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
 
   <div class="container">
-    <img class="info-three-swooshes" src="{{ 'certificate-info-three-swooshes.png' | asset_url }}" width="137" height="133" alt="">
-    <div class="info-title">Generate Your Certificate</div>
-  
-    <div class="form-submit">
-      <form  method="post" action="/submit">
-        <label class="full-name" for="name">Full Name:</label>
-        <input class="input-name" type="text" id="name" name="name">
+    <div class="box">
+      <img class="info-three-swooshes" src="{{ 'certificate-info-three-swooshes.png' | asset_url }}" width="137" height="133" alt="">
+      <div class="info-title">Generate Your Certificate</div>
+
+      <div class="form-submit">
+        <form  method="post" action="/submit">
+          <label class="full-name" for="name">Full Name:</label>
+          <input class="input-name" type="text" id="name" name="name">
+          <br>
+
+        <div class="verification">
+          <input type="checkbox" id="verify" name="verify">
+          <label class="verify-text" for="verify">Please verify this is correct</label>
+        </div>
         <br>
-  
-      <div class="verification">
-        <input type="checkbox" id="verify" name="verify">
-        <label class="verify-text" for="verify">Please verify this is correct</label>
-      </div>
-      <br>
-  
-      <label class="full-name" for="theme">Choose Theme</label>
-      <br>
-      <div class="radio-container">
-      <input type="radio" id="classic" name="theme" value="classic">
-      <label for="classic"><img class="certificate-img" src="{{ 'certificate-1.png' | asset_url }}" width="1190" height="1684" alt=""></label>
-      <input type="radio" id="curalifer" name="theme" value="curalifer">
-      <label for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
-      </div>
-      <br>
-      <div class="verification">
-        <input type="checkbox" id="presented" name="presented">
-        <label class="presented-text" for="presented">I would love to be presented <br>
-          on <b>Curalife’s Wall of Fame</b> </label>
-      </div>
-      <br>
-  
-      <input class="generate" type="submit" value="Generate now">
-    </form>
+
+        <label class="full-name" for="theme">Choose Theme</label>
+        <br>
+        <div class="radio-container">
+        <input type="radio" id="classic" name="theme" value="classic">
+        <label for="classic"><img class="certificate-img" src="{{ 'certificate-1.png' | asset_url }}" width="1190" height="1684" alt=""></label>
+        <input type="radio" id="curalifer" name="theme" value="curalifer">
+        <label for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
+        </div>
+        <br>
+        <div class="verification">
+          <input type="checkbox" id="presented" name="presented">
+          <label class="presented-text" for="presented">I would love to be presented <br>
+            on <b>Curalife’s Wall of Fame</b> </label>
+        </div>
+        <br>
+
+        <input class="generate" type="submit" value="Generate now">
+      </form>
+    </div>
   </div>
 </div>
 
@@ -79,8 +81,12 @@
 </div>
 
 <style>
+.box {
+  background: linear-gradient(297deg, rgba(208,125,91,1) 0%, rgba(251,147,120,1) 54%); 
+}
+
 .info-form {
-    background: linear-gradient(297deg, rgba(208,125,91,1) 0%, rgba(251,147,120,1) 54%); 
+    
     margin: 50px auto;   
     position: relative;        
 }
