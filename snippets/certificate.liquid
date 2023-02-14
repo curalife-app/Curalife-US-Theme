@@ -20,6 +20,7 @@
 <div class="info-form">
   <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
   <img class="info-three-swooshes" src="{{ 'certificate-info-three-swooshes.png' | asset_url }}" width="137" height="133" alt="">
+  <div class="info-title">Generate Your Certificate</div>
 </div>
 <div class="certificate-section">
 <div class="certificate" id="content">
@@ -66,6 +67,19 @@
 .info-three-swooshes {
   position: absolute;
   right: 0;
+}
+
+.info-title {
+  margin-top: 110px;
+  display: flex; 
+  justify-content: center;
+  font-family: 'PP Radio Grotesk';
+  font-weight: 700;
+  font-size: 97px;
+  line-height: 109px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #404733;
 }
 
 .certificate-section {
