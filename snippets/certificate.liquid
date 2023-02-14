@@ -20,31 +20,12 @@
 <div class="certificate" id="content">
     <div class="container">
         <div class="certificate-wrap">
-          {% if page.handle contains "certificate-2" %}
-          <div class="logo-wrapper-2">
-            <img class="white-logo" src="{{ 'curalife-logo-white.png' | asset_url }}" width="134" height="32" alt="">
-          </div>
-         {% endif %}
-            <div class="logo-wrapper">
-            {% unless page.handle contains "certificate-2" %}
-              <img class="green-logo" src="{{ 'curalife-logo-dark-green.png' | asset_url }}" width="91" height="22" alt="">
-            {% endunless %}
-
-            {% if page.handle contains "certificate-2" %}
-            <div class="big-title-2">certificate</div>
-            {% else %}
-                <img class="big-title" src="{{ 'certificate-big-title.png' | asset_url }}" width="427" height="54" alt="">
-                <img class="ornament" src="{{ 'certificate-ornament.png' | asset_url }}" width="229" height="20" alt="">
-            {% endif %}
-                <div class="wrapper-text">of Completion</div>
-            </div> 
-            
+     
+       
             <div class="certificate-presentation">
-              {% if page.handle contains "certificate-2" %}
-                <img class="presentation-bg" src="{{ 'certificate-presentation-bg.png' | asset_url }}" width="490" height="563" alt="">
-              {% endif %}
+             
               
-              <div class="presented">This certificate is proudly presented to </div> 
+             
               {% if customer %}
                 {% assign customerName = customer.first_name | append: ' ' | append: customer.last_name %}
               {% else %}
@@ -54,23 +35,9 @@
               {% assign name = param | default: customerName %}
 
               <div class="name-presented">{{ name }}</div>
-              <div class="border-gray-init"></div>
+              
             </div>
-            <div class="completing-course">
-                <div class="completing">for completing</div>
-                <div class="challenge"><b>30 Days Blood Sugar Challenge</b></div>
-                <div class="by-curalife">by Curalife</div>
-                <div class="italic-text">This diploma signifies the end of a challenging and rewarding journey of self-discovery and growth. Through this blood sugar challenge, you have gained the knowledge and skills to control your health and live life to the fullest.</div>
-            </div>
-            <div class="stamp-wrapper">
-                <div class="signiture">
-                <img class="img-sign"  src="{{ 'certificate-signiture.png' | asset_url }}" width="133" height="124" alt="">
-                <div class="border-gray"></div>
-                <div class="ron-sign"><b> Ron Elul</b><br>
-                Founder of Curalife</div>
-                </div>
-                <img class="img-stamp"  src="{{ 'certificate-stamp.png' | asset_url }}" width="123" height="123" alt="">
-            </div>
+       
         </div>
        
     </div>
@@ -89,18 +56,14 @@
    font-family: 'PP Radio Grotesk';
    font-weight: 400;    
  }
-  .container {
-    max-width: 1000px;
-  }
+
 
   .certificate-wrap {
-    background: {% if page.handle contains "certificate-2" %}linear-gradient(297deg, rgba(208,125,91,1) 0%, rgba(251,147,120,1) 54%){% endif %};
-    margin: 50px auto;
-    background-image: {% unless page.handle contains "certificate-2" %} url("{{ 'certificate-background.png' | asset_url }}"){% endunless %};
+    
+   background-image: {% if page.handle contains "certificate-2" %} url("{{ 'certificate-2.png' | asset_url }}"){% else %}url("{{ 'certificate-1.png' | asset_url }}"){% endif %};
     background-size: contain;
     background-repeat: no-repeat;
-    max-width: 600px;
-    min-height: 840px
+   
     
   }
 
