@@ -40,10 +40,12 @@
         <label class="title" for="theme">Choose Theme</label>
 
         <div class="radio-container">
-          <input type="radio" id="classic" value="classic">
+          <form>
+          <input type="radio" id="classic" name="theme" value="classic">
           <label for="classic"><img class="certificate-img" src="{{ 'certificate-1.png' | asset_url }}" width="1190" height="1684" alt=""></label>
-          <input type="radio" id="curalifer" value="curalifer">
+          <input type="radio" id="curalifer" name="theme" value="curalifer">
           <label for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
+          </form>
         </div>
 
         <div class="verification">
