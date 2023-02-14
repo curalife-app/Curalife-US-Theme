@@ -49,6 +49,12 @@
               {% assign fullName = customer.first_name | append: ' ' | append: customer.last_name | default: "Unknown" %}
               {% assign name = param | default: fullName %}
 
+              {% if param %}
+                <script>console.log("param")</script>
+                {% else %}
+                <script>console.log("no param")</script>
+              {% endif %}
+
               <div class="name-presented">{{ name }}</div>
               <div class="border-gray-init"></div>
             </div>
