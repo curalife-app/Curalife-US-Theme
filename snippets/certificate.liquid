@@ -21,27 +21,7 @@
   <img class="info-swoosh" src="{{ 'certificate-info-swoosh.png' | asset_url }}" width="426" height="503" alt="">
   <img class="info-three-swooshes" src="{{ 'certificate-info-three-swooshes.png' | asset_url }}" width="137" height="133" alt="">
   <div class="info-title">Generate Your Certificate</div>
-  {% form 'customer_login' %}
-
-    <div>
-      <label for="customerEmail">Email Address</label>
-      <input type="email"
-        name="customer[email]"
-        id="customerEmail"
-        autocorrect="off"
-        autocapitalize="off"
-        autocomplete="email">
-    </div>
-    <div>
-      <label for="customerPassword">Password</label>
-      <input type="password"
-        name="customer[password]"
-        id="customerPassword">
-    </div>
-
-    <input type="submit" value="Sign In" />
-
-  {% endform %}
+ 
 </div>
 <div class="certificate-section">
 <div class="certificate" id="content">
