@@ -55,6 +55,7 @@
   <script>var goCart = new GoCart();</script> {% endcomment %}
 
   <!-- Other Scripts -->
+  {% render 'layout.footer.woopra-snippet' %}
   {% render 'layout.head.marker-io-snippet' %}
   {% comment %} <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/{{ yotpo_script_id }}" async></script> {% endcomment %}
 </head>
@@ -72,7 +73,6 @@
 
   {% render 'layout.footer.cart-drawer'%}
   {% render 'layout.footer.cart-functionality-scripts' %}
-  {% render 'layout.footer.woopra-snippet' %}
   {% render 'layout.footer.ac-snippet' %}
   {% render 'wisepops-generated' %}
   {% render 'social-login' %}
