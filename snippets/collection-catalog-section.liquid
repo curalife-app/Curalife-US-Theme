@@ -137,8 +137,8 @@
 <script>
   isEventHappened = false;
 
-  $('.category-tabs a').click(function (e) {
-    tabClick();
+  $('.category-tabs a').click(function (element) {
+    tabClick(element);
     isEventHappened = true;
 
     if (isEventHappened) {
@@ -146,11 +146,11 @@
     }
   });
 
-  function tabClick() {
+  function tabClick(element) {
     $('.category-tabs a').removeClass('active');
-    $(this).addClass('active');
+    element.addClass('active');
 
-    const collectionHandle = $(this).data('collection-handle');
+    const collectionHandle = element.data('collection-handle');
     if (collectionHandle == "all") {
       $('.collection-section').fadeIn();
       $('.category-badges-section').fadeOut();
