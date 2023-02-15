@@ -89,34 +89,6 @@
     })
   }
 
-  // function getOptimizeCookieValue() {
-  //     var result = document.cookie.match('(^|;)\\s*' + '_gaexp' + '\\s*=\\s*([^;]+)');
-  //     return result ? result.pop() : false;
-  // }
-
-  // function trackOptimizeExperiments() {
-  //   var optCookie = getOptimizeCookieValue();
-
-  //   if (optCookie) {
-  //     var experiments = optCookie.replace('GAX1.2.','').split('!');
-
-  //     for (var i = 0; i < experiments.length; i++) {
-  //       var experiment = experiments[i].split('.');
-  //       var fieldName = "optimize_exp_" + experiment[0];
-  //       var varID = experiment[2];
-  //       var trackObj = new Object();
-  //       trackObj[fieldName] = varID;
-
-  //       woopra.identify(trackObj).push();
-  //       console.log("Google Optimize Experiment Logged To Woopra!")
-  //       console.log(trackObj);
-  //     }
-  //   }
-  //   else {
-  //     console.log("No Google Optimize Experiments Found! Cookie not found.");
-  //   }
-  // }
-
   $( document ).ready(function() {
     trackOptimizeExperiments();
   });
