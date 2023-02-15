@@ -1,9 +1,13 @@
 
+{% assign array = article.content | split: "|" %}
+{% assign dayNumber = array[0] %}
+
 <section id="day-template">
     <div class="container">
         <div class="day-title">
-            Habit Day {{ article.content | split: "|" | first  }}
+            Habit Day {{ dayNumber  }}
         </div>
+
     </div>
 
 </section>
