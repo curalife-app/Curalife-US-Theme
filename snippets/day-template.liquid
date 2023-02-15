@@ -44,7 +44,7 @@
                         <img src="{{ articleObject.image.src | image_url }}" alt="">
                         <div class="article-title">{{ articleObject.title  }}</div>
                     </a>
-                    <a href="{{ articleURL }}" class="download-main-btn">Read More</a>
+                    <a href="{{ articleURL }}" class="download-main-btn-link">Read More</a>
                 </div>
             </div>
             <div class="related-picture"><img  src="{{ article.image.src | image_url }}"  alt="">  </div>
@@ -168,7 +168,7 @@
         
     }
 
-    .download-main-btn {
+    .download-main-btn-link {
       display: flex;
       justify-content: center;
       font-family: 'PP Radio Grotesk';
