@@ -41,7 +41,7 @@
                     <a href="{{ articleURL }}" class="link-to-article">
                         {% assign articleHandle = array[4] %}
                         {% assign articleObject = articles[articleHandle] %}
-                        <img src="{{ articles[articleHandle].image.src | image_url }}" alt="">
+                        <img src="{{ articleObject.image.src | image_url }}" alt="">
                         
                     </a>
                     <script>console.log("handle: {{articleHandle}}")</script>
