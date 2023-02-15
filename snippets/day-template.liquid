@@ -1,7 +1,7 @@
 
 {% assign array = article.content | split: "|" %}
 {% assign dayNumber = array[0] %}
-{%  assign daySmallPicture = array[1] %} 
+{%  assign daySmallPicture = array[1] | append: ".png" %} 
 
 <div class="day-template">
     <div class="container">
