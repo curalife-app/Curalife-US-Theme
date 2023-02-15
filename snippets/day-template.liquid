@@ -1,15 +1,10 @@
 
 
-{% for element in article.content %}
-    {% assign day = {{ element | split: "|" | first }} %}
-
-{% endfor %}
-
 
 <section id="day-template">
     <div class="container">
         <div class="day-title">
-            Day {{ day }}
+            Day {{ article.content | split: "|" | first  }}
         </div>
     </div>
 
