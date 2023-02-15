@@ -9,7 +9,7 @@
 
       <ul class="steps">
         {% for step in progress_steps %}
-        <li class="step {% if array[0] <= step %}active{% endif %}">
+        <li class="step {% if array[0] >= step %}active{% endif %}">
             <div class="icon">
               <i class="icofont-ui-press"></i>
               <i class="icofont-check-alt"></i>
