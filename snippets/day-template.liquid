@@ -5,7 +5,7 @@
 {% assign dayTip = array[2] %}
 {% assign dayTip2 = array[3] %}
 {% assign articleURL = "/blogs/blog/" | append: array[4] %}
-articles[array[4]].image.src | image_url
+{% comment %} articles[array[4]].image.src | image_url {% endcomment %}
 <div class="day-template">
     <div class="container">
         <div class="day-title">
