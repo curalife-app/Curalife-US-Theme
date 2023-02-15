@@ -17,7 +17,9 @@
         <div class="image-day">
             <img src="{{ daySmallPicture | file_url }}" width="114" height="104" alt="">
         </div>
-        <div class="text-day"></div>
+        <div class="text-day">
+            Curalin Tips
+        </div>
 
     </div>
    </div> 
@@ -41,6 +43,12 @@
         width: 100%;
         min-height: 369px
     }
+
+    .day-tips {
+        display: flex;
+    }
+
+
 
     @media screen and (max-width: 768px) {
         .day-template .container .day-title {
