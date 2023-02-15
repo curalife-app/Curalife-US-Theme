@@ -33,6 +33,7 @@
         <div class="related-tip">
             <div class="related-article">
                 <div class="related-title">Tip of the day</div>
+                <div class="border-day"></div>
             </div>
             <div class="related-picture"><img  src="{{ article.image.src | image_url }}"  alt="">  </div>
         </div>
@@ -115,6 +116,10 @@
         line-height: 44px;
         text-align: center;
 
+    }
+
+    .border-day {
+        border-bottom: 1px solid #424733;
     }
 
 
