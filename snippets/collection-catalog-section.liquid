@@ -156,4 +156,6 @@
   });
 
   $('.category-tabs a[data-collection-handle="{{ activeCollection }}"]').click();
+
+  woopra.track('Collection Tab Selected', {tab_name: $(this).text()});
 </script>
