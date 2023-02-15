@@ -1,7 +1,7 @@
 {% assign elements = article.content | split: '|' %}
 
 {% for element in elements %}
-    {% assign day =  %}
+    {% assign day = {{ element | split: "|" | first }} %}
 
 {% endfor %}
 
