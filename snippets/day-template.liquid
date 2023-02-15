@@ -38,14 +38,9 @@
                 <div class="related-text">{{ dayTip2 }}</div>
                 <div class="article-from-blog">
                     <div class="blog-title">Related Article</div>
-                    <div class="link-to-article">
-                    
-                         {% for image in articles[array[4]].images %}
-                           <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '110x110', scale: 2 }}" alt="{{ 'sections.featured_product.gallery_thumbnail_alt' | t: imageAlt: image.alt | escape }}">
-                         {% endfor %}
-                      
-                      
-                    </div>
+                    <a href="{{ articleURL }}" class="link-to-article">
+                        <img src="{{ articles[array[4]].image.src | img_url }}" alt="">
+                    </a>
                     <a href="{{ articleURL }}" class="download-main-btn">Read More</a>
                 </div>
             </div>
