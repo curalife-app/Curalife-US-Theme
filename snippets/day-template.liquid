@@ -35,6 +35,9 @@
                 <div class="related-title">Tip of the day</div>
                 <div class="border-day"></div>
                 <div class="related-text">{{ dayTip2 }}</div>
+                <div class="article-from-blog">
+                    <div class="blog-title">Related Article</div>
+                </div>
             </div>
             <div class="related-picture"><img  src="{{ article.image.src | image_url }}"  alt="">  </div>
         </div>
@@ -140,6 +143,14 @@
         line-height: 36px;
     }
 
+    .blog-title {
+        padding: 20px 0;
+        font-family: 'PP Radio Grotesk';
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 44px;
+    }
+
 
 
     @media screen and (max-width: 768px) {
@@ -171,6 +182,11 @@
         }
 
         .related-text {
+            font-size: 5vw;
+            line-height: 5vw;
+        }
+
+        .blog-title {
             font-size: 5vw;
             line-height: 5vw;
         }
