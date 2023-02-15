@@ -19,8 +19,6 @@
 
 {% if customer %}
   {% assign customerName = customer.first_name | append: ' ' | append: customer.last_name %}
-{% else %}
-  {% assign customerName = 'Unknown' %}
 {% endif %}
 
 <div class="info-form">
