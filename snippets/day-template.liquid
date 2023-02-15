@@ -2,6 +2,7 @@
 {% assign array = article.content | split: "|" %}
 {% assign dayNumber = array[0] %}
 {% assign daySmallPicture = array[1] | append: ".png" %} 
+{% assign dayTip = array[2] %}
 
 <div class="day-template">
     <div class="container">
@@ -22,7 +23,7 @@
         </div>
         <div class="text-day">
             <div class="day-title">Curalin Tips</div>
-            
+            <div class="day-tip-text">{{ dayTip }}</div>
         </div>
 
     </div>
@@ -41,6 +42,10 @@
         text-align: left;
     }
 
+    .image-day {
+        max-width: 50%;
+    }
+
     .tip-picture {
         position: relative;
         
@@ -49,8 +54,10 @@
         position: absolute;
         
     }
-    .tip-bg-img img {
-    
+ 
+
+    .text-day {
+        max-width: 50%;
     }
 
     .day-tips {
@@ -70,6 +77,13 @@
        color: #424733;      
     }
 
+    .day-tip-text {
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 50px;
+    }
+
 
 
     @media screen and (max-width: 768px) {
@@ -81,6 +95,11 @@
         .day-title {
             font-size: 6vw;
             line-height: 6vw;
+        }
+
+        .day-tip-text {
+            font-size: 5vw;
+            line-height: 5vw;
         }
     }
  </style>
