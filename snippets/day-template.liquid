@@ -1,13 +1,16 @@
 
 {% assign array = article.content | split: "|" %}
 {% assign dayNumber = array[0] %}
+{%  assign daySmallPicture = array[1] %} %}
 
 <section id="day-template">
     <div class="container">
         <div class="day-title">
             Habit Day {{ dayNumber  }}
         </div>
-
+    </div>
+    <div class="tip-picture">
+        <img src="{{}}" alt="">
     </div>
 
 </section>
