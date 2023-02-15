@@ -39,11 +39,11 @@
                 <div class="article-from-blog">
                     <div class="blog-title">Related Article</div>
                     <div class="link-to-article">
-                       {% if articles and array %}
+                    
                          {% for image in articles[array[4]].images %}
                            <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '110x110', scale: 2 }}" alt="{{ 'sections.featured_product.gallery_thumbnail_alt' | t: imageAlt: image.alt | escape }}">
                          {% endfor %}
-                       {% endif %}
+                      
                       
                     </div>
                     <a href="{{ articleURL }}" class="download-main-btn">Read More</a>
