@@ -19,8 +19,6 @@
 
 {% if customer %}
   {% assign customerName = customer.first_name | append: ' ' | append: customer.last_name %}
-{% else %}
-  {% assign customerName = 'Unknown' %}
 {% endif %}
 
 <div class="info-form">
@@ -61,6 +59,7 @@
 </div>
 
 <div class="certificate-section">
+  <button class="download-main-btn" onclick ="downloadPDF()">Click Here to Download</button>
   <div class="certificate" id="content">
       <div class="container">
           <div class="certificate-wrap">
@@ -69,8 +68,6 @@
           </div>
       </div>
   </div>
-
-  <button class="download-main-btn" onclick ="downloadPDF()">Click Here to Download</button>
 </div>
 
 <style>
@@ -157,6 +154,10 @@
   gap: 10px;
 }
 
+.radio-container form {
+  display: -webkit-inline-box;
+}
+
 .radio-container input {
   width: 30px;
 }
@@ -206,7 +207,8 @@
 
  .certificate-wrap {
     position: relative;
-    margin: 50px auto;
+    margin: auto;
+    margin-bottom: 50px;
     background-image: url("{{ 'certificate-1.png' | asset_url }}");
     background-size: contain;
     background-repeat: no-repeat;
@@ -239,7 +241,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 30px;
+    margin: 30px auto;
     padding: 10px 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
     font-weight: 300;
@@ -283,13 +285,20 @@
       return;
     }
 
+    //if NoName 
+    if (!$('input[id=name]').val().length) {
+      alert('Please select a name.');
+      $(".certificate-section").hide();
+      $(".info-form").show();
+      return;
+    }
+
+
     if ($("#curalifer")[0].checked) {
       $(".certificate-wrap").addClass("curalife");
     }
   }
 </script>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
 <script>
@@ -314,12 +323,3 @@
       });
   }
 </script>
-
-
-
-
-
-
-
-
-
