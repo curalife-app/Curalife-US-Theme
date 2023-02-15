@@ -278,7 +278,7 @@
     console.log("name: " + $("input#name").val())
 
     // Check if any radio button is checked
-    if (!$('input[id=name]').val().length) {
+    if (!$('input[type=radio]:checked').length) {
       alert('Please select an option.');
       $(".certificate-section").hide();
       $(".info-form").show();
@@ -286,7 +286,7 @@
     }
 
     //if NoName 
-    if (!$('input[type=radio]:checked').length) {
+    if (!$('input[id=name]').val().length) {
       alert('Please select a name.');
       $(".certificate-section").hide();
       $(".info-form").show();
