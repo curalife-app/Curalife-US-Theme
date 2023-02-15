@@ -3,20 +3,20 @@
 {% assign dayNumber = array[0] %}
 {%  assign daySmallPicture = array[1] %} %}
 
-<section id="day-template">
+<div class="day-template">
     <div class="container">
         <div class="day-title">
             Habit Day {{ dayNumber  }}
         </div>
     </div>
-    <div class="tip-picture">
-        <img src="{{  'tiphub-curalin-tips.png' | asset_url }}" width="2881" height="369" alt="">
-    </div>
+</div>
 
-</section>
+<div class="tip-picture">
+    <img src="{{  'tiphub-curalin-tips.png' | asset_url }}" width="2881" height="369" alt="">
+</div>
 
  <style>
-    #day-template .container .day-title{
+    .day-template .container .day-title{
         font-family: 'PP Radio Grotesk';
         font-weight: 700;
         font-size: 56px;
@@ -25,8 +25,12 @@
         color: #5E8F8F;
     }
 
+    .tip-picture {
+
+    }
+
     @media screen and (max-width: 768px) {
-        #day-template .container .day-title {
+        .day-template .container .day-title {
             font-size: 8vw;
             line-height: 8vw;
         }
