@@ -39,7 +39,8 @@
                 <div class="article-from-blog">
                     <div class="blog-title">Related Article</div>
                     <a href="{{ articleURL }}" class="link-to-article">
-                        <img src="{{ articles[array[4]].image.src | image_url }}" alt="">
+                        {% assign articleHandle = array[4] %}
+                        <img src="{{ articles[articleHandle].image.src | image_url }}" alt="">
                         
                     </a>
                     <script>console.log("article: {{articles[array[4]].title}}")</script>
