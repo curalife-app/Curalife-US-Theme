@@ -4,7 +4,8 @@
 {% assign daySmallPicture = array[1] | append: ".png" %} 
 {% assign dayTip = array[2] %}
 {% assign dayTip2 = array[3] %}
-
+{% assign articleURL = "/blogs/blog/" | append: array[4] %}
+articles[array[4]].image.src | image_url
 <div class="day-template">
     <div class="container">
         <div class="day-title">
@@ -37,8 +38,10 @@
                 <div class="related-text">{{ dayTip2 }}</div>
                 <div class="article-from-blog">
                     <div class="blog-title">Related Article</div>
-                    <div class="link-to-article"></div>
-                    <button class="download-main-btn">Read More</button>
+                    <div class="link-to-article">
+
+                    </div>
+                    <a href="{{ articleURL }}" class="download-main-btn">Read More</a>
                 </div>
             </div>
             <div class="related-picture"><img  src="{{ article.image.src | image_url }}"  alt="">  </div>
