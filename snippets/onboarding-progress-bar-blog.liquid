@@ -194,34 +194,3 @@
     }
   }
 </style>
-
-<script>
-  $(document).ready(function() {
-    var isSticky = $('header').css('position') == 'fixed';
-    var progressBar = document.getElementById("progress-bar-section");
-    var headerHeight = $("#shopify-section-header header").height();
-    var stickyStartFrom = isSticky ? progressBar.offsetTop - headerHeight : progressBar.offsetTop;
-
-    document.addEventListener('scroll', () => {
-      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      let scrolled = (winScroll / height) * 100;
-      let scrollBar = document.getElementById("progressBar").style.width = scrolled + "%";
-      let currentTop = window.pageYOffset;
-
-      {% for step in progress_steps %}
-        scrolled >{% if progress_steps.size == forloop.index %}={% endif %} 100/{{ progress_steps.size | minus: 1 }}*{{ forloop.index | minus: 1}} ? document.querySelectorAll('#progress-bar-section .step')[{{ forloop.index | minus: 1 }}].classList.add("active") : document.querySelectorAll('#progress-bar-section .step')[{{ forloop.index | minus: 1 }}].classList.remove("active");
-      {% endfor %}
-
-      if (currentTop > stickyStartFrom) {
-        progressBar.classList.add("sticky");
-        document.querySelector('#progress-bar-section ~ section').style.paddingTop = $("#progress-bar-section").height() + 50 + "px";
-        progressBar.style.top = isSticky ? headerHeight + "px" : 0;
-      } else {
-        progressBar.classList.remove("sticky");
-        document.querySelector('#progress-bar-section ~ section').style.paddingTop = "50px";
-        progressBar.style.top = 0;
-      }
-    });
-  });
-</script>
