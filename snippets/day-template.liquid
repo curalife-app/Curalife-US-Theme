@@ -34,6 +34,7 @@
             <div class="related-article">
                 <div class="related-title">Tip of the day</div>
                 <div class="border-day"></div>
+                <div class="related-text">{{ dayTip2 }}</div>
             </div>
             <div class="related-picture"><img  src="{{ article.image.src | image_url }}"  alt="">  </div>
         </div>
@@ -122,6 +123,13 @@
         padding: 10px 0;
         max-width: 50%;
         border-bottom: 1px solid #424733;
+    }
+
+    .related-text {
+        font-family: 'DM Sans';
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
     }
 
 
