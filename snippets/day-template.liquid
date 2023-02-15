@@ -42,10 +42,9 @@
                         {% assign articleHandle = "blog/" | append: array[4] %}
                         {% assign articleObject = articles[articleHandle] %}
                         <img src="{{ articleObject.image.src | image_url }}" alt="">
+                        <div class="article-title">{{ articleObject.title  }}</div>
                     </a>
-                    <script>console.log("handle: {{articleHandle}}")</script>
-                    <script>console.log("article-title: {{articleObject}}")</script>
-                    <script>console.log("article: {{articles[array[4]].title}}")</script>
+                   
                     <a href="{{ articleURL }}" class="download-main-btn">Read More</a>
                 </div>
             </div>
