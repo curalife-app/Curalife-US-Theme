@@ -274,12 +274,19 @@
     $(".certificate-section").show()
     $("#name-presented").text($("input#name").val());
     console.log("name: " + $("input#name").val())
-    
+
+    // Check if any radio button is checked
+    if (!$('input[type=radio]:checked').length) {
+      alert('Please select an option.');
+      return;
+    }
+
     if ($("#curalifer")[0].checked) {
       $(".certificate-wrap").addClass("curalife");
     }
   }
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
 <script>
