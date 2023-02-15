@@ -157,6 +157,6 @@
 
   $('.category-tabs a[data-collection-handle="{{ activeCollection }}"]').click();
 
-  let tabName = $(this).text();
+  let tabName = $('.category-tabs a.active').text();
   woopra.track('Collection Tab Selected', {tab_name: tabName});
 </script>
