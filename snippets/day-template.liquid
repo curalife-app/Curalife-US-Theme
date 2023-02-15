@@ -3,6 +3,7 @@
 {% assign dayNumber = array[0] %}
 {% assign daySmallPicture = array[1] | append: ".png" %} 
 {% assign dayTip = array[2] %}
+{% assign dayTip2 = array[3] %}
 
 <div class="day-template">
     <div class="container">
@@ -30,7 +31,9 @@
 <div class="tip-blog">
     <div class="container">
         <div class="related-tip">
-            <div class="related-article"></div>
+            <div class="related-article">
+                <div class="related-title">Tip of the day</div>
+            </div>
             <div class="related-picture"><img  src="{{ article.image.src | image_url }}"  alt="">  </div>
         </div>
     </div>
@@ -103,6 +106,14 @@
     .related-tip {
         display: flex;
     }
+    .related-title {
+        font-family: 'PP Radio Grotesk';
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 44px;
+        text-align: center;
+
+    }
 
 
 
@@ -120,6 +131,10 @@
         .day-tip-text {
             font-size: 3vw;
             line-height: 3vw;
+        }
+        .related-title {
+            font-size: 4vw;
+            line-height: 4vw;
         }
     }
  </style>
