@@ -1,4 +1,4 @@
-{% assign elements = article.content | split: '|' %}
+
 
 {% for element in article.content %}
     {% assign day = {{ element | split: "|" | first }} %}
