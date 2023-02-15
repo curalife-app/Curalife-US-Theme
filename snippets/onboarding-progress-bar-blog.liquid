@@ -9,12 +9,12 @@
 
       <ul class="steps">
         {% for step in progress_steps %}
-          <li class="step">
+          <li class="step {% if array[0] <= step %}">
             <div class="icon">
               <i class="icofont-ui-press"></i>
               <i class="icofont-check-alt"></i>
             </div>
-            <p class="text">{{ step }}</p>
+            <p class="text">Day {{ step }}</p>
           </li>
         {% endfor %}
       </ul>
