@@ -1,38 +1,36 @@
 {% assign video_ids = article.content | split: "," %}
 
-
 <section id="collection-exercise-video">
   <img class="exercise-img-swoosh" src="{{ 'video-exercise-swoosh.png' | asset_url }}" width="971" height="671" alt="Swoosh">
   <img class="exercise-img-leaf" src="{{ 'video-exercise-leaf.png' | asset_url }}" width="187" height="184" alt="Swoosh">
   <img class="exercise-img-leaf-mb" src="{{ 'video-exercise-leaf-mb.png' | asset_url }}" width="50" height="49" alt="Swoosh">
+
   <div class="container">
- 
-      <div id="site">
-        <div id="player">   
-          <div class="player"> 
-            <div class="video-title" id="video-title">{{ article.title }}</div>    
-            <div class="player__video">
-              <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="https://www.youtube.com/embed/{{ video_ids | first }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-          </div>   
-        </div>
-        <div class="gallery">
-          <div class="related-videos">Related Videos</div>
-        {% for video_id in video_ids %}
-         {% if forloop.first %}
-           {% continue %}
-         {% else %}
-          <div class="gallery-item" id="{{ video_id }}">
-            <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
-              <img class="gallery__item__img" src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/hqdefault.jpg" }}" alt="">
-              <span class="gallery__item__span"></span>
-            </a>  
+    <div id="site">
+      <div id="player">
+        <div class="player">
+          <div class="video-title" id="video-title">{{ article.title }}</div>
+          <div class="player__video">
+            <iframe style="background-color: var(--light-green); padding:0.5em" width="560" height="315" src="https://www.youtube.com/embed/{{ video_ids | first }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-         {% endif %}
-        {% endfor %}       
         </div>
       </div>
-     
+      <div class="gallery">
+        <div class="related-videos">Related Videos</div>
+        {% for video_id in video_ids %}
+          {% if forloop.first %}
+            {% continue %}
+          {% else %}
+            <div class="gallery-item" id="{{ video_id }}">
+              <a href="https://curalife.com/blogs/exercise-video/exercise-video-{{ video_id }}">
+                <img class="gallery__item__img" src="{{ "https://img.youtube.com/vi/" | append: video_id | append: "/hqdefault.jpg" }}" alt="">
+                <span class="gallery__item__span"></span>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </section>
 
@@ -57,18 +55,18 @@
     display: none;
   }
 
-   
+
   #site {
     display: flex;
     min-height: 100vh;
-    justify-content: space-evenly;  
+    justify-content: space-evenly;
   }
 
   #player {}
 
   .player {
     margin: auto;
-    
+
     padding: 1em;
     &__video {
       height: 0;
@@ -95,7 +93,7 @@
     padding-bottom: 1em;
   }
 
-  
+
 
   .gallery {
     max-width: 20%;
@@ -110,7 +108,7 @@
     padding: 0 .75em 0.5em;
     font-family: 'PP Radio Grotesk';
     font-weight: 700;
-    font-size: 18px; 
+    font-size: 18px;
     line-height: 18px;
     letter-spacing: -0.01em;
 
@@ -130,7 +128,7 @@
     margin-bottom: 0.3em;
     padding: 0.3em;
   }
- 
+
 
 
   @media screen and (max-width: 768px) {
@@ -139,7 +137,7 @@
     max-width: unset;
   }
 
-   .exercise-img-swoosh {  
+   .exercise-img-swoosh {
      top: 300px;
    }
 
@@ -152,18 +150,18 @@
     position: absolute;
     top: 0;
    }
-  
-    #site {    
-      flex-wrap: wrap; 
 
-      
+    #site {
+      flex-wrap: wrap;
+
+
     }
 
     .video-title {
       font-size: 7vw;
       line-height: 7vw;
       padding-bottom: 0.3em;
-      
+
     }
 
     .related-videos {
@@ -175,7 +173,7 @@
 
     .gallery-item {
       padding: 1em;
-      
+
     }
 
     .gallery-item a {
@@ -196,7 +194,7 @@
 
 <script>
     let elements = $('.gallery-item');
-   
+
 
     elements.each((index, element) => {
       let item_id = element.id;
