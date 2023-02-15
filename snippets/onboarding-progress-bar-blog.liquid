@@ -21,7 +21,6 @@
     </div>
   </div>
 </section>
-
 <style>
   #progress-bar-section {
     padding: unset;
@@ -90,6 +89,13 @@
     color: #5E8F8F;
   }
 
+  #progress-bar-section .steps .step.active .text {
+   
+    color: black;
+    font-weight: 700;
+  }
+
+
   #progress-bar-section .steps .step .icon {
     width: 30px;
     height: 30px;
@@ -115,21 +121,14 @@
   }
 
   #progress-bar-section .steps .step .icon .active {
-    background-color: #5E8F8F;
+    background-color: #5E8F8F;;
     border: none;
     display: grid;
     place-items: center;
     color:#fff;
   }
 
-  #progress-bar-section .steps .step .icon .active {
-    background-color: black;
-    font-weight: 700;
-    border: none;
-    display: grid;
-    place-items: center;
-    color:#fff;
-  }
+  
 
   #progress-bar-section .steps .step.active .icofont-check-alt {
     font-size: 20px;
@@ -156,7 +155,7 @@
     }
 
     #progress-bar-section .bar-container {
-      margin: 1% auto;
+      margin: 20% auto;
       width: 85%;
     }
 
@@ -164,9 +163,14 @@
       top: 7px;
     }
 
-    #progress-bar-section .steps .step .text {
-      display: none;
+    #progress-bar-section .steps .step.active .text {
+      font-size: 3vw;
     }
+
+    #progress-bar-section .steps .step .text {
+      font-size: 3vw;
+    }
+
 
     #progress-bar-section .steps .step .icon {
       margin: 0 15px;
