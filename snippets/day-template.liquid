@@ -1,4 +1,4 @@
-{% assign elements = page.content %}
+{% assign elements = article.content | split: '|' %}
 
 {% for element in elements %}
     {% assign day =  %}
