@@ -1,5 +1,18 @@
 {% layout 'theme.lps' %}
 
+{% assign faqItems = "When should I start the 30 day challenge?*We recommend starting as soon as you receive your plan. Starting is the hardest part, but we’re here to cheer you on and help you get started!
+|Will I have fun?*Yes! We’re here to celebrate every win with you! No matter how big, or how small.
+|What should I expect?*After a few weeks on your plan, you should expect to be sleeping better, having more energy, and having great maintenance of your glucose levels!
+|Who do I speak to if I have questions about Curalin?* We are available for you 24/7 with any questions you may have! You may schedule a Curalin expert at any time.
+|Can I take Curalin with other treatments?*CuraLin is 100% natural and is very safe to use alongside your medications. Like any supplement, it is always recommended to consult with a doctor before starting CuraLin.
+|How many capsules should be taken?*
+· Day 1+2: 1 capsule, WITH every meal <br><br>
+· Day 3+4: 1 capsule, 30 minutes AFTER every meal<br><br>
+· Day 5+: 2 capsules 30 minutes AFTER every meal
+|Will I be able to do all of the movement routines? *We’ll start by asking about your fitness level and limitations so that you only receive movement routines that you feel confident tackling!
+|What do I do if I don’t like certain meals on my meal plan?*No biggie! Rotating and repeating meals to your liking is totally fine! Just make sure the meals you’re replacing follow the same carb-cycling theme day you’re on!"
+| split: '|' %}
+
 {% assign realChanges = 'thirty-day-challenge-what-is-for-you-01.png*Maintain Glucose:Supporting your overall health, mobility, and mood!
 |thirty-day-challenge-what-is-for-you-02.png*Feel better:You’ll feel <b> and </b> look great!
 |thirty-day-challenge-what-is-for-you-03.png*Get energy:You have <b> energy </b> to go the extra mile in your life!
@@ -24,7 +37,7 @@ Are you ready?" %}
 {% render 'lps-video-reviews', maintitle: 'Real results from real people' %}
 {% render 'thirty-day-challenge-is-for-you', challenges: challenges, ctaButtonLink: "/products/30-day-blood-sugar-challenge-pp", ctaTitle: "Start The Challenge" %}
 {% render 'thirty-day-what-is-for-you', realChanges: realChanges, ctaButtonLink: "/products/30-day-blood-sugar-challenge-pp", ctaTitle: "Sweeter days ahead" %}
-{% render 'product-faq-section', bgColor: "var(--lighter-green)" %}
+{% render 'product-faq-section', faqItems: faqItems, bgColor: "var(--lighter-green)" %}
 {% comment %} {% render 'thirty-day-video-reviews', maintitle: 'Real results from real people', ctaButtonLink: "/products/30-day-blood-sugar-challenge-pp", ctaTitle: "Join the Challenge!" %} {% endcomment %}
 
 
