@@ -122,12 +122,6 @@
 
     #challenge-features-section .features-wrap {   
       padding-top: {% if isSecondLP %}unset{% endif %};
-      display: {% unless isSecondLP %}flex {% endunless %};
-      {% unless isSecondLP %}
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      {% endunless %}
     }
     #challenge-features-section .container {
       padding: 0 15px;
@@ -152,7 +146,7 @@
     }
 
     #challenge-features-section .main-image {
-     padding-left: {% if isSecondLP %}15%{% endif %};
+      padding-left: {% if isSecondLP %}15%{% endif %};
       min-width: 300px;
     }
 
