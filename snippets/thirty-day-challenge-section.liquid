@@ -123,9 +123,9 @@
     #challenge-features-section .features-wrap {   
       padding-top: {% if isSecondLP %}unset{% endif %};
       display: {% unless isSecondLP %}flex {% endunless %};
-      flex-direction: {% unless isSecondLP %}column {% endunless %};
-      justify-content: {% unless isSecondLP %}center{% endunless %};
-      align-items:{% unless isSecondLP %}center{% endunless %};
+      flex-direction: column;
+      justify-content:center;
+      align-items:center;
     }
     #challenge-features-section .container {
       padding: 0 15px;
