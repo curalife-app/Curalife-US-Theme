@@ -533,7 +533,6 @@ section {
 .refer-friend {
   display: flex;
   flex-wrap: nowrap;
-  align-items: center;
   padding: 8.6% 0;
 
   .img-wrap {
@@ -541,8 +540,7 @@ section {
   }
 
   .intro-text {
-    width: calc(100% - 49.2%);
-    padding-left: 10%;
+    padding-left: 3%;
   }
 }
 
