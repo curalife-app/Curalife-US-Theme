@@ -96,16 +96,24 @@
       max-width: {% if isSecondLP %}60%{% endif %};
     }
   
-    .hero-banner-content .text-button .text-hero {
+    .hero-banner-content .text-button .text-hero, .sub-text-hero {
         padding-top: 81px;
         padding-left: 84px;
         font-family: 'DM Sans';
-        font-weight: 700;
-        font-size: clamp(24px, 5vw, 28px);
         color: #ffffff;
-        max-width: 504px;
-      
+        max-width: 504px;  
     }
+
+    .hero-banner-content .text-button .text-hero {
+      font-weight: 700;
+      font-size: clamp(24px, 5vw, 28px);
+    }
+
+    .hero-banner-content .text-button .sub-text-hero {
+      font-weight: 400;
+      font-size: clamp(20px, 3vw, 25px);
+    }
+
   
     .hero-banner .main-img-mb {
       display: none;
