@@ -120,12 +120,7 @@
 
   @media screen and (max-width: 768px) {
 
-      #challenge-features-section .features-wrap  {
-        display: unset;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
+   
   
     #challenge-features-section .features-wrap {   
       padding-top: {% if isSecondLP %}unset{% endif %};
@@ -153,7 +148,7 @@
     }
 
     #challenge-features-section .main-image {
-      padding-left: {% if isSecondLP %}15%{% endif %};
+      padding-left: {% if isSecondLP %} 15% {% else %} 30% {% endif %};
       min-width: 300px;
     }
 
