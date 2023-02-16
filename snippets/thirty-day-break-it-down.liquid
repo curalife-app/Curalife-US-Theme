@@ -124,16 +124,16 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 background: #dd961a;
 box-shadow: unset;
 }
- .faq {
+ {% comment %} .faq {
    margin: 1rem auto;
-}
+} {% endcomment %}
 
-.faq .faq-item {
+{% comment %} .faq .faq-item {
   display: flex;
   flex-wrap: wrap;
-}
+} {% endcomment %}
 
-.faq .faq-item .question {
+{% comment %} .faq .faq-item .question {
  padding: 0.7rem 1rem 0.7rem 0;
  display: flex;
  position: relative;
@@ -144,9 +144,9 @@ box-shadow: unset;
  line-height: 35px;
  color: var(--vomit);
  width: 100%;
-}
+} {% endcomment %}
 
-.faq .faq-item .question:after {
+{% comment %} .faq .faq-item .question:after {
   content: "+";
   font-size: 17px;
   position: absolute;
@@ -161,30 +161,30 @@ box-shadow: unset;
   border: solid 1px beige;
   border-radius: 50%;
   top: 18px;
-}
+} {% endcomment %}
 
 
-.faq .faq-item .question.active:after {
+{% comment %} .faq .faq-item .question.active:after {
  content: "+";
  transform: rotate(45deg);
-}
+} {% endcomment %}
 
-.faq .faq-item .answer {
+{% comment %} .faq .faq-item .answer {
  max-height: 0;
  overflow: hidden;
  transition: max-height .2s ease-out;
  background: var(--vomit);
  border-radius: 5px;
-}
+} {% endcomment %}
 
-.faq .faq-item .answer p {
+{% comment %} .faq .faq-item .answer p {
   font-family: 'DM Sans';
   font-weight: 400;
   font-size: clamp(12px, 2vw, 17px);
   line-height: 15px;
   color: var(--dark-green);
   padding: 0 15px;
-}
+} {% endcomment %}
 
 
  </style>
@@ -558,11 +558,11 @@ box-shadow: unset;
 
   }
 
-  @media screen and (max-width: 350px){
+  {% comment %} @media screen and (max-width: 350px){
     .faq .faq-item .question:after {
         right: 15vw;
       }
-  }
+  } {% endcomment %}
 
   @media screen and (max-width: 323px) {
     .light-div {
