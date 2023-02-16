@@ -97,7 +97,6 @@
     }
   
     .hero-banner-content .text-button .text-hero, .sub-text-hero {
-        padding-top: 81px;
         padding-left: 84px;
         font-family: 'DM Sans';
         color: #ffffff;
@@ -107,11 +106,13 @@
     .hero-banner-content .text-button .text-hero {
       font-weight: 700;
       font-size: clamp(24px, 5vw, 28px);
+      padding-top: 26px;
     }
 
     .hero-banner-content .text-button .sub-text-hero {
       font-weight: 400;
       font-size: clamp(20px, 3vw, 25px);
+      padding-top: 25px;
     }
 
   
@@ -144,8 +145,8 @@
       }
   
       .hero-banner-content .text-button .text-hero, .sub-text-hero {
-        padding-top: 16px;
         max-width: 470px;
+        padding-top: 16px;
       }
     }
   
@@ -204,6 +205,7 @@
 
       .hero-banner-content .text-button .text-hero {
         padding-top: 94vw;
+        padding-bottom: 3vw;
       }
   
       .hero-banner-content .main-img {
@@ -213,7 +215,7 @@
       .hero-banner .main-img-mb {
         display: block;
         position: absolute;
-        top: {% if isSecondLP %}42vw {% else %} 10vw {% endif %};
+        top: {% if isSecondLP %}42vw {% else %} 15vw {% endif %};
         width: 100%;
       }
   

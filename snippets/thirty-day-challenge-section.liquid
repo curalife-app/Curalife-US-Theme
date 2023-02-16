@@ -10,8 +10,14 @@
       {% if isSecondLP %}
         <img class="main-image" src="{{ 'lp02-challenge-section-main-img.png' | asset_url }}" width="802" height="679" alt="">
       {% else %}
-        <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img.png' | asset_url }}" width="886" height="689" alt="">
+        <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img-2.png' | asset_url }}" width="375" height="382" alt="">
       {% endif %}
+      {% unless isSecondLP %}
+      <div class="small-images">
+          <img class="small-img" src="{{ 'thirty-day-challenge-section-free-shiping.png' | asset_url }}" width="172" height="63" alt="free-shipping">
+          <img class="small-img" src="{{ 'thirty-day-challenge-section-customer-support.png' | asset_url }}" width="172" height="63" alt="customer-support">
+        </div>
+    {% endunless %}
       <div class="features-wrap">
         {% if isSecondLP %}
           {% render 'features-list', isSecondLP: true, isLP: true %}
@@ -75,6 +81,10 @@
     object-fit: contain;
   }
 
+  .small-images {
+    grid-row: 2/3;
+  }
+
   #challenge-features-section .features-wrap {
     grid-row: 1/3;
     display: flex;
@@ -83,7 +93,7 @@
   }
 
   #challenge-features-section .cta-btn {
-    grid-row: {% if isSecondLP %}3/3 {% else %} 2/3 {% endif %};
+    grid-row: {% if isSecondLP %}3/3 {% else %} 3/4 {% endif %};
     grid-column: {% if isSecondLP %}2/3 {% endif %};
     font-weight: 100;
     background: var(--orange);
@@ -120,6 +130,8 @@
 
   @media screen and (max-width: 768px) {
 
+   
+  
     #challenge-features-section .features-wrap {   
       padding-top: {% if isSecondLP %}unset{% endif %};
     }
@@ -146,12 +158,13 @@
     }
 
     #challenge-features-section .main-image {
-      padding-left: 15%;
+      padding-left: {% if isSecondLP %} 15% {% endif %};
       min-width: 300px;
     }
 
     
     #challenge-features-section .cta-btn {
+      margin-top: {% unless isSecondLP %}6vw{% endunless %};
       grid-row: 3/4;
       grid-column: 1/3;
       font-size: 21px;
