@@ -61,14 +61,17 @@
     .hero-banner-content .text-button .main-title, .second-title  {
       color: {% if isSecondLP %}#ffffff{% else %} #FFF1E8{% endif %};
       font-family: 'PP Radio Grotesk';
-      font-weight: 700;
-      font-size: {% if isSecondLP %} clamp(43px, 5vw, 75px){% else %} clamp(40px, 5vw, 115px){% endif %};
+      font-weight: 700;  
       padding: {% unless isSecondLP %} 0px 0px 0px 90px {% endunless %};
+  }
+
+  .hero-banner-content .text-button .main-title {
+     font-size: {% if isSecondLP %} clamp(43px, 5vw, 75px){% else %} clamp(40px, 5vw, 115px){% endif %};
   }
 
   .second-title {
     
-    font-size: clamp(38px, 4vw, 110px);
+    font-size: clamp(38px, 4vw, 100px);
   
   }
 
