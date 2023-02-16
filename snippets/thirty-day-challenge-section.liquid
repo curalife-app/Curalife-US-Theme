@@ -10,15 +10,15 @@
       {% if isSecondLP %}
         <img class="main-image" src="{{ 'lp02-challenge-section-main-img.png' | asset_url }}" width="802" height="679" alt="">
       {% else %}
+      <div class="images-all">
         <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img-2.png' | asset_url }}" width="375" height="382" alt="">
-      {% endif %}
-      {% unless isSecondLP %}
-      <div class="small-images">
+        <div class="small-images">
           <img class="small-img" src="{{ 'thirty-day-challenge-section-free-shiping.png' | asset_url }}" width="172" height="63" alt="free-shipping">
           <img class="small-img" src="{{ 'thirty-day-challenge-section-customer-support.png' | asset_url }}" width="172" height="63" alt="customer-support">
         </div>
-    {% endunless %}
-      <div class="features-wrap">
+        </div>
+      {% endif %}
+   ures-wrap">
         {% if isSecondLP %}
           {% render 'features-list', isSecondLP: true, isLP: true %}
         {% else %}
@@ -75,8 +75,10 @@
     display: grid;
   }
 
-  #challenge-features-section .main-image {
+  #challenge-features-section .images-all .main-image {
     grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
     max-height: 600px;
     object-fit: contain;
   }
