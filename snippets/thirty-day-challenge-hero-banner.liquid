@@ -9,6 +9,7 @@
           <img class="title-img" src="{{ 'lp02-percent-off.png' | asset_url }}" width="456" height="235" alt="bottle-hand-mask" loading="lazy">
           {% endif %}
       <div class="main-title">{{ mainTitle }}{% if isSecondLP %} <span class="plus">+</span>{% endif %} </div>
+      <div class="second-title">{{ mainSecondTitle  }}</div>
           <div class="subtitle">{{ subTitle }}</div>
           {% unless isSecondLP %}
           <div class="text-hero">{{ textHero }} </div>
@@ -63,6 +64,13 @@
       font-weight: 700;
       font-size: {% if isSecondLP %} clamp(43px, 5vw, 75px){% else %} clamp(40px, 5vw, 115px){% endif %};
       padding: {% unless isSecondLP %} 40px 0px 0px 90px {% endunless %};
+  }
+
+  .second-title {
+    color: #FFF1E8;
+    font-family: 'PP Radio Grotesk';
+    font-weight: 700;
+    font-size: clamp(38px, 5vw, 110px);
   }
 
   .title-img{
