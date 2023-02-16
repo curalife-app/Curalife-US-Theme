@@ -92,10 +92,40 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
       </li> {% endcomment %}
     </ul>
     {% endif %}
+
+    <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a>
   </div>
 </section>
 
 <style>
+
+.timeline .container .cta-btn {
+grid-row: {% if isSecondLP %}3/3 {% else %} 3/3 {% endif %};
+grid-column: {% if isSecondLP %}2/3 {% endif %};
+font-weight: 100;
+background: var(--orange);
+text-align: center;
+border: 1px solid  var(--orange);
+border-radius: 4px;
+font-weight: 700;
+font-size: 25px;
+line-height: 26px;
+color: {% if isSecondLP %} #ffffff {% else %} var(--dark-green){% endif %};
+padding: {% if isSecondLP %}15px 100px {% else %}15px 45px{% endif %};
+box-shadow: 0px 5px 12.5px rgba(0, 0, 0, 0.15);
+transition: unset;
+margin-bottom: 20px;
+max-width: 430px;   
+margin: 0 auto;
+max-height: 60px;
+margin-top: {% if isSecondLP %}-110px{% endif %};
+margin-left: {% if isSecondLP %}0px{% endif %};
+}
+
+.timeline .container .cta-btn:hover {
+background: #dd961a;
+box-shadow: unset;
+}
  .faq {
    margin: 1rem auto;
 }
