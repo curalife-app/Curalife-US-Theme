@@ -41,7 +41,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
 
             <div class="border-bottom"></div>
             <p>{{ week }}</p>
-            {% if forloop.index == 2 %}
+            {% comment %} {% if forloop.index == 2 %}
               <div class="faq">
                       <div class="faq-item">
                       <div class="question">
@@ -54,7 +54,7 @@ Big Wins*Set yourself up for success! Have all the support you need from peers a
                  </div>
 
               </div>
-            {% endif %}
+            {% endif %} {% endcomment %}
           </div>
 
           <img class="img-break" src="{{ 'thirty-day-break-' | append: forloop.index | append: '.png' | asset_url }}" width="831" height="513" alt="" loading="lazy">
