@@ -10,15 +10,9 @@
       {% if isSecondLP %}
         <img class="main-image" src="{{ 'lp02-challenge-section-main-img.png' | asset_url }}" width="802" height="679" alt="">
       {% else %}
-      <div class="images-all">
         <img class="main-image" src="{{ 'thirty-day-challenge-section-main-img-2.png' | asset_url }}" width="375" height="382" alt="">
-        <div class="small-images">
-          <img class="small-img" src="{{ 'thirty-day-challenge-section-free-shiping.png' | asset_url }}" width="172" height="63" alt="free-shipping">
-          <img class="small-img" src="{{ 'thirty-day-challenge-section-customer-support.png' | asset_url }}" width="172" height="63" alt="customer-support">
-        </div>
-        </div>
       {% endif %}
-   ures-wrap">
+      <div class="features-wrap">
         {% if isSecondLP %}
           {% render 'features-list', isSecondLP: true, isLP: true %}
         {% else %}
@@ -75,16 +69,10 @@
     display: grid;
   }
 
-  #challenge-features-section .images-all .main-image {
+  #challenge-features-section .main-image {
     grid-row: 1/2;
-    display: flex;
-    flex-direction: column;
     max-height: 600px;
     object-fit: contain;
-  }
-
-  .small-images {
-    display: flex;
   }
 
   #challenge-features-section .features-wrap {
@@ -95,7 +83,7 @@
   }
 
   #challenge-features-section .cta-btn {
-    grid-row: {% if isSecondLP %}3/3 {% else %} 3/4 {% endif %};
+    grid-row: {% if isSecondLP %}3/3 {% else %} 2/3 {% endif %};
     grid-column: {% if isSecondLP %}2/3 {% endif %};
     font-weight: 100;
     background: var(--orange);
@@ -159,7 +147,7 @@
     
     }
 
-    #challenge-features-section .images-all .main-image {
+    #challenge-features-section .main-image {
       padding-left: {% if isSecondLP %} 15% {% endif %};
       min-width: 300px;
     }
