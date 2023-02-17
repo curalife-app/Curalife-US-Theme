@@ -316,72 +316,40 @@
       rect.left,
       rect.top - buffer, // add extra buffer to top
       rect.width,
-      rect.height + buffer, // add extra buffer to height
+      rect.height + buffer * 2, // add extra buffer to height
       function (data) {
         var pdf = new jsPDF("l", "pt", [
           rect.width,
-          rect.height + buffer, // add extra buffer to height
+          rect.height + buffer * 2, // add extra buffer to height
         ]);
 
         pdf.addImage(
-          "data:image/png;base64," + data,
+          data,
           "PNG",
           0,
           0,
           rect.width,
-          rect.height + buffer // add extra buffer to height
+          rect.height + buffer * 2 // add extra buffer to height
         );
         pdf.save("certificate.pdf");
       }
     );
   });
 
-  {% comment %} function getScreenshotOfElement(element, posX, posY, width, height, callback) {
-    html2canvas(element, {
-      onrendered: function (canvas) {
-        var context = canvas.getContext("2d");
-        var imageData = context.getImageData(posX, posY, width, height).data;
-        var outputCanvas = document.createElement("canvas");
-        var outputContext = outputCanvas.getContext("2d");
-        outputCanvas.width = width;
-        outputCanvas.height = height;
-
-        var idata = outputContext.createImageData(width, height);
-        idata.data.set(imageData);
-        outputContext.putImageData(idata, 0, 0);
-        callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
-      },
-      width: width,
-      height: height,
-      useCORS: true,
-      taintTest: false,
-      allowTaint: false,
-    });
-  } {% endcomment %}
-
   function getScreenshotOfElement(element, posX, posY, width, height, callback) {
     html2canvas(element, {
-      onrendered: function (canvas) {
-        var context = canvas.getContext("2d");
-        var imageData = context.getImageData(posX, posY, width, height).data;
-        var outputCanvas = document.createElement("canvas");
-        var outputContext = outputCanvas.getContext("2d");
-        outputCanvas.width = width;
-        outputCanvas.height = height;
-
-        var idata = outputContext.createImageData(width, height);
-        idata.data.set(imageData);
-        outputContext.putImageData(idata, 0, 0);
-        callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
+      onclone: function (clone) {
+        clone.style.height = height + "px";
+        clone.style.overflow = "visible";
       },
       width: width,
-      height: height + buffer, // add extra buffer to height
+      height: height + buffer * 2, // add extra buffer to height
       useCORS: true,
       scrollY: -window.scrollY, // take into account any scrolling that has been done
       allowTaint: true,
       backgroundColor: null, // set the background color to transparent
+    }).then(function (canvas) {
+      callback(canvas.toDataURL());
     });
   }
-
-
 </script>
