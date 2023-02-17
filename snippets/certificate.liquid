@@ -43,10 +43,11 @@
 
         <div class="radio-container">
           <form>
-          <input type="radio" id="classic" name="theme" value="classic">
+          
           <label for="classic"><img class="certificate-img" src="{{ 'certificate-1.png' | asset_url }}" width="1190" height="1684" alt=""></label>
-          <input type="radio" id="curalifer" name="theme" value="curalifer">
+          <input type="radio" id="classic" name="theme" value="classic">  
           <label for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
+          <input type="radio" id="curalifer" name="theme" value="curalifer">
           </form>
         </div>
 
@@ -155,6 +156,7 @@
 
 .radio-container {
   display: flex;
+  justify-content: center;
   gap: 10px;
 }
 
