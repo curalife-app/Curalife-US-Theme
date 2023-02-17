@@ -305,7 +305,7 @@
 </script>
 
 
-
+{% comment %} 
 <script>
   $("#downloadPDF").click(function () {
     
@@ -360,4 +360,23 @@
     });
   }
 
+</script> {% endcomment %} 
+
+
+
+
+<script>
+  const downloadButton = document.getElementById("downloadPDF");
+  const contentToDownload = document.getElementById("content2");
+
+  downloadButton.addEventListener("click", () => {
+    html2canvas(contentToDownload).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "PNG", 0, 0);
+      pdf.save("certificate.pdf");
+    });
+  });
+
 </script>
+
