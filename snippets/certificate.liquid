@@ -334,20 +334,26 @@
     );
   });
 
-  function getScreenshotOfElement(element, posX, posY, width, height, buffer, callback) {
+  function getScreenshotOfElement(element, posX, posY, width, height, callback) {
     html2canvas(element, {
-      onclone: function (clone) {
-        clone.style.height = height + "px";
-        clone.style.overflow = "visible";
+      onrendered: function (canvas) {
+        var context = canvas.getContext("2d");
+        var imageData = context.getImageData(posX, posY, width, height).data;
+        var outputCanvas = document.createElement("canvas");
+        var outputContext = outputCanvas.getContext("2d");
+        outputCanvas.width = width;
+        outputCanvas.height = height;
+
+        var idata = outputContext.createImageData(width, height);
+        idata.data.set(imageData);
+        outputContext.putImageData(idata, 0, 0);
+        callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
       },
       width: width,
-      height: height + buffer * 2, // add extra buffer to height
+      height: height,
       useCORS: true,
-      scrollY: -window.scrollY, // take into account any scrolling that has been done
-      allowTaint: true,
-      backgroundColor: null, // set the background color to transparent
-    }).then(function (canvas) {
-      callback(canvas.toDataURL());
+      taintTest: false,
+      allowTaint: false,
     });
   }
 
