@@ -360,7 +360,6 @@
   } {% endcomment %}
 
   function getScreenshotOfElement(element, posX, posY, width, height, callback) {
-    var buffer = 130;
     html2canvas(element, {
       onrendered: function (canvas) {
         var context = canvas.getContext("2d");
