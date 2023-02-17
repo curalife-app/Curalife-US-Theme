@@ -314,6 +314,7 @@
       rect.top - buffer, // add extra buffer to top
       rect.width,
       rect.height + buffer * 2, // add extra buffer to height
+      buffer, // pass buffer value to getScreenshotOfElement function
       function (data) {
         var pdf = new jsPDF("l", "pt", [
           rect.width,
@@ -333,22 +334,21 @@
     );
   });
 
- function getScreenshotOfElement(element, posX, posY, width, height, callback) {
-   var buffer = 130; // add this line to declare the buffer variable
-   html2canvas(element, {
-     onclone: function (clone) {
-       clone.style.height = height + "px";
-       clone.style.overflow = "visible";
-     },
-     width: width,
-     height: height + buffer * 2, // add extra buffer to height
-     useCORS: true,
-     scrollY: -window.scrollY, // take into account any scrolling that has been done
-     allowTaint: true,
-     backgroundColor: null, // set the background color to transparent
-   }).then(function (canvas) {
-     callback(canvas.toDataURL());
-   });
- }
-  
+  function getScreenshotOfElement(element, posX, posY, width, height, buffer, callback) {
+    html2canvas(element, {
+      onclone: function (clone) {
+        clone.style.height = height + "px";
+        clone.style.overflow = "visible";
+      },
+      width: width,
+      height: height + buffer * 2, // add extra buffer to height
+      useCORS: true,
+      scrollY: -window.scrollY, // take into account any scrolling that has been done
+      allowTaint: true,
+      backgroundColor: null, // set the background color to transparent
+    }).then(function (canvas) {
+      callback(canvas.toDataURL());
+    });
+  }
+
 </script>
