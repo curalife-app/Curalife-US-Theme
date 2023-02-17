@@ -317,7 +317,7 @@
       0,
       0,
       $("#content2").width()+45,  // added 200 because the container's (content2) width is smaller than the image, if it's not added then the content from right side will get cut off
-      $("#content2").height()+30, // same issue as above. if the container width / height is changed (currently they are fixed) then these values might need to be changed as well.
+      $("#content2").height()+100, // same issue as above. if the container width / height is changed (currently they are fixed) then these values might need to be changed as well.
       function (data) {
         var pdf = new jsPDF("l", "pt", [
           $("#content2").width(),
