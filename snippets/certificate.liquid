@@ -311,15 +311,14 @@
 
 <script>
   $("#downloadPDF").click(function () {
-    // $("#content2").addClass('ml-215'); // JS solution for smaller screen but better to add media queries to tackle the issue
     getScreenshotOfElement(
       $("div#content2").get(0),
       0,
       0,
-      $("#content2").width(),  // added 45 because the container's (content2) width is smaller than the image, if it's not added then the content from right side will get cut off
-      $("#content2").height(), // same issue as above. if the container width / height is changed (currently they are fixed) then these values might need to be changed as well.
+      $("#content2").width(),
+      $("#content2").height(),
       function (data) {
-        var pdf = new jsPDF("l", "pt", [
+        var pdf = new jsPDF("p", "pt", [
           $("#content2").width(),
           $("#content2").height(),
         ]);
@@ -332,17 +331,14 @@
           $("#content2").width(),
           $("#content2").height()
         );
-        pdf.save("certificte.pdf");
+        pdf.save("certificate.pdf");
       }
     );
   });
 
-  // this function is the configuration of the html2cavas library (https://html2canvas.hertzen.com/)
-  // $("#content2").removeClass('ml-215'); is the only custom line here, the rest comes from the library.
   function getScreenshotOfElement(element, posX, posY, width, height, callback) {
     html2canvas(element, {
       onrendered: function (canvas) {
-        // $("#content2").removeClass('ml-215');  // uncomment this if resorting to ml-125 to resolve the issue
         var context = canvas.getContext("2d");
         var imageData = context.getImageData(posX, posY, width, height).data;
         var outputCanvas = document.createElement("canvas");
@@ -362,6 +358,14 @@
       allowTaint: false,
     });
   }
-
 </script>
+
+<style>
+  /* Add media queries to adjust the styles of the certificate based on the screen size */
+  @media (max-width: 768px) {
+    #content2 {
+      font-size: 12px;
+    }
+  }
+</style>
 
