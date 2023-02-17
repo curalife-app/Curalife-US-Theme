@@ -307,22 +307,22 @@
   }
 </script>
 
-
 <script>
   $("#downloadPDF").click(function () {
     var certificate = document.getElementById("content2");
     var rect = certificate.getBoundingClientRect();
+    var buffer = 50; // adjust this as needed
 
     getScreenshotOfElement(
       $("div#content2").get(0),
-      rect.left - 10,
-      rect.top - 10,
-      rect.width + 20,
-      rect.height + 20, 
+      rect.left,
+      rect.top,
+      rect.width,
+      rect.height + buffer, // add extra buffer to height
       function (data) {
         var pdf = new jsPDF("l", "pt", [
-          rect.width + 20,
-          rect.height + 20,
+          rect.width,
+          rect.height + buffer, // add extra buffer to height
         ]);
 
         pdf.addImage(
@@ -330,8 +330,8 @@
           "PNG",
           0,
           0,
-          rect.width + 20,
-          rect.height + 20
+          rect.width,
+          rect.height + buffer // add extra buffer to height
         );
         pdf.save("certificate.pdf");
       }
