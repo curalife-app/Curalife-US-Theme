@@ -304,7 +304,7 @@
 
 
 
-<script>
+{% comment %} <script>
   $("#downloadPDF").click(function () {
     // $("#content2").addClass('ml-215'); // JS solution for smaller screen but better to add media queries to tackle the issue
     getScreenshotOfElement(
@@ -358,6 +358,57 @@
     });
   }
 
+</script> {% endcomment %}
+<script>
+  $("#downloadPDF").click(function () {
+    getScreenshotOfElement(
+      $("div#content2").get(0),
+      0,
+      0,
+      $("#content2").width(),
+      $("#content2").height(),
+      function (data) {
+        var pdfWidth = 8.27; // A4 size width in inches
+        var pdfHeight = 11.69; // A4 size height in inches
+        var pdf = new jsPDF("p", "in", [pdfWidth, pdfHeight]);
+        var position = 0;
+        var imgWidth = pdfWidth - 0.5; // 0.5 inch margin on each side
+        var imgHeight = (imgWidth / $("#content2").width()) * $("#content2").height();
+        pdf.addImage(
+          "data:image/png;base64," + data,
+          "PNG",
+          0.25, // 0.5 inch margin on left side
+          position + 0.25, // 0.5 inch margin on top side
+          imgWidth,
+          imgHeight
+        );
+        pdf.save("certificate.pdf");
+      }
+    );
+  });
+
+  function getScreenshotOfElement(element, posX, posY, width, height, callback) {
+    html2canvas(element, {
+      onrendered: function (canvas) {
+        var context = canvas.getContext("2d");
+        var imageData = context.getImageData(posX, posY, width, height).data;
+        var outputCanvas = document.createElement("canvas");
+        var outputContext = outputCanvas.getContext("2d");
+        outputCanvas.width = width;
+        outputCanvas.height = height;
+
+        var idata = outputContext.createImageData(width, height);
+        idata.data.set(imageData);
+        outputContext.putImageData(idata, 0, 0);
+        callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
+      },
+      width: width,
+      height: height,
+      useCORS: true,
+      taintTest: false,
+      allowTaint: false,
+    });
+  }
 </script>
 
 
