@@ -375,7 +375,7 @@
       function (data) {
         var pdf = new jsPDF("l", "pt", [
           $("#content2").width(),
-          $("#content2").height()+140,
+          $("#content2").height(),
         ]);
 
         pdf.addImage(
@@ -384,7 +384,7 @@
           0,
           0,
           $("#content2").width(),
-          $("#content2").height()+140;
+          $("#content2").height()
         );
         pdf.save("certificte.pdf");
       }
@@ -402,7 +402,7 @@
         var outputCanvas = document.createElement("canvas");
         var outputContext = outputCanvas.getContext("2d");
         outputCanvas.width = width;
-        outputCanvas.height = height;
+        outputCanvas.height = height + 140;
 
         var idata = outputContext.createImageData(width, height);
         idata.data.set(imageData);
