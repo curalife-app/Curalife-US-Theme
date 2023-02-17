@@ -1,4 +1,11 @@
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+
+
+
+
 {%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
 
 {% comment %} get "name" param from url {% endcomment %}
@@ -59,7 +66,7 @@
 </div>
 
 <div class="certificate-section">
-  <button class="download-main-btn" onclick ="downloadPDF()">Click Here to Download</button>
+  <button class="download-main-btn" id="downloadPDF">Click Here to Download</button>
   <div class="certificate" id="content">
       <div class="container">
           <div class="certificate-wrap">
@@ -300,21 +307,3 @@
   }
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-<script>
-  window.jsPDF = window.jspdf.jsPDF;
-  var docPDF = new jsPDF();
-  function downloadPDF(){
-  var elementHTML = document.querySelector("#content");
-  docPDF.html(elementHTML, {
-   callback: function(docPDF) {
-    docPDF.save('Certificate');
-   },
-   x: 15,
-   y: 15,
-   width: 170,
-   windowWidth: 650
-  });
-  }
-</script>
