@@ -305,7 +305,7 @@
 </script>
 
 
-{% comment %} 
+
 <script>
   $("#downloadPDF").click(function () {
     
@@ -334,12 +334,11 @@
     );
   });
 
-  // this function is the configuration of the html2cavas library (https://html2canvas.hertzen.com/)
-  // $("#content2").removeClass('ml-215'); is the only custom line here, the rest comes from the library.
+  
   function getScreenshotOfElement(element, posX, posY, width, height, callback) {
     html2canvas(element, {
       onrendered: function (canvas) {
-        // $("#content2").removeClass('ml-215');  // uncomment this if resorting to ml-125 to resolve the issue
+        $("#content2").removeClass('ml-215');  
         var context = canvas.getContext("2d");
         var imageData = context.getImageData(posX, posY, width, height).data;
         var outputCanvas = document.createElement("canvas");
@@ -360,23 +359,4 @@
     });
   }
 
-</script> {% endcomment %} 
-
-
-
-
-<script>
-  const downloadButton = document.getElementById("downloadPDF");
-  const contentToDownload = document.getElementById("content2");
-
-  downloadButton.addEventListener("click", () => {
-    html2canvas(contentToDownload).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF();
-      pdf.addImage(imgData, "PNG", 0, 0);
-      pdf.save("certificate.pdf");
-    });
-  });
-
 </script>
-
