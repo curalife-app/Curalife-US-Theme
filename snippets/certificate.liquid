@@ -1,9 +1,6 @@
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 {%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
 
@@ -361,26 +358,18 @@
 
 </script> {% endcomment %}
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
-
 <script>
   $("#downloadPDF").click(function () {
-    var element = $("div#content2").get(0);
-    var posY = $(element).offset().top;
-    var height = $(element).outerHeight();
-    
     getScreenshotOfElement(
-      element,
+      $("div#content2").get(0),
       0,
-      posY,
-      $("#content2").width(),
-      height,
+      0,
+      $("#content2").width(),  
+      $("#content2").height() + 140, 
       function (data) {
         var pdf = new jsPDF("l", "pt", [
           $("#content2").width(),
-          height
+          $("#content2").height(),
         ]);
 
         pdf.addImage(
@@ -389,14 +378,13 @@
           0,
           0,
           $("#content2").width(),
-          height
+          $("#content2").height()
         );
         pdf.save("certificate.pdf");
       }
     );
   });
 
-  
   function getScreenshotOfElement(element, posX, posY, width, height, callback) {
     html2canvas(element, {
       onrendered: function (canvas) {
@@ -405,7 +393,7 @@
         var outputCanvas = document.createElement("canvas");
         var outputContext = outputCanvas.getContext("2d");
         outputCanvas.width = width;
-        outputCanvas.height = height;
+        outputCanvas.height = height + 140;
 
         var idata = outputContext.createImageData(width, height);
         idata.data.set(imageData);
@@ -414,11 +402,12 @@
       },
       width: width,
       height: height,
+      scale: 1, // adjust the scaling factor as needed to capture the entire element
       useCORS: true,
       taintTest: false,
       allowTaint: false,
-      scrollX: 0,
-      scrollY: -window.scrollY
     });
   }
+
 </script>
+
