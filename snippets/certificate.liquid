@@ -375,7 +375,7 @@
       function (data) {
         var pdf = new jsPDF("l", "pt", [
           $("#content2").width(),
-          $("#content2").height(),
+          $("#content2").height()+140,
         ]);
 
         pdf.addImage(
@@ -384,7 +384,7 @@
           0,
           0,
           $("#content2").width(),
-          $("#content2").height()
+          $("#content2").height()+140;
         );
         pdf.save("certificte.pdf");
       }
