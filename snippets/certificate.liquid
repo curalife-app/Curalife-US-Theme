@@ -311,18 +311,17 @@
 <script>
   $("#downloadPDF").click(function () {
     var certificate = document.getElementById("content2");
-    var rect = certificate.getBoundingClientRect();
 
     getScreenshotOfElement(
-      $("div#content2").get(0),
-      rect.left,
-      rect.top,
-      rect.width,
-      rect.height, 
+      certificate,
+      certificate.offsetLeft,
+      certificate.offsetTop,
+      certificate.offsetWidth,
+      certificate.offsetHeight, 
       function (data) {
         var pdf = new jsPDF("l", "pt", [
-          rect.width,
-          rect.height,
+          certificate.offsetWidth,
+          certificate.offsetHeight,
         ]);
 
         pdf.addImage(
@@ -330,8 +329,8 @@
           "PNG",
           0,
           0,
-          rect.width,
-          rect.height
+          certificate.offsetWidth,
+          certificate.offsetHeight
         );
         pdf.save("certificate.pdf");
       }
@@ -362,4 +361,3 @@
   }
 
 </script>
-
