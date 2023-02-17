@@ -310,13 +310,17 @@
       return alert("The content element with ID 'content' was not found.");
     }
 
-    domtoimage.toPng(content)
-      .then(function (dataUrl) {
-        // Create a link element and set its properties
+    domtoimage.toBlob(content)
+      .then(function (blob) {
+        // Create a blob URL and set it as the source of the PDF file
+        var url = URL.createObjectURL(blob);
         var link = document.createElement("a");
         link.download = "certificate.pdf";
-        link.href = dataUrl;
+        link.href = url;
         link.click();
+
+        // Clean up the blob URL after the download has completed
+        URL.revokeObjectURL(url);
       })
       .catch(function (error) {
         console.error("Failed to download PDF:", error);
