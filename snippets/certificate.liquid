@@ -362,32 +362,41 @@
 </script> {% endcomment %}
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
 <script>
   $("#downloadPDF").click(function () {
     var element = $("div#content2").get(0);
-    var elementWidth = element.offsetWidth;
-    var elementHeight = element.offsetHeight;
+    var posY = $(element).offset().top;
+    var height = $(element).outerHeight();
+    
+    getScreenshotOfElement(
+      element,
+      0,
+      posY,
+      $("#content2").width(),
+      height,
+      function (data) {
+        var pdf = new jsPDF("l", "pt", [
+          $("#content2").width(),
+          height
+        ]);
 
-    // Determine the optimal width and height of the screenshot
-    var width = Math.min(elementWidth, window.innerWidth);
-    var height = elementHeight * (width / elementWidth);
-
-    getScreenshotOfElement(element, 0, 0, width, height, function (data) {
-      var pdf = new jsPDF("l", "pt", [width, height]);
-
-      pdf.addImage(
-        "data:image/png;base64," + data,
-        "PNG",
-        0,
-        0,
-        width,
-        height
-      );
-
-      pdf.save("certificate.pdf");
-    });
+        pdf.addImage(
+          "data:image/png;base64," + data,
+          "PNG",
+          0,
+          0,
+          $("#content2").width(),
+          height
+        );
+        pdf.save("certificate.pdf");
+      }
+    );
   });
 
+  
   function getScreenshotOfElement(element, posX, posY, width, height, callback) {
     html2canvas(element, {
       onrendered: function (canvas) {
@@ -408,7 +417,8 @@
       useCORS: true,
       taintTest: false,
       allowTaint: false,
+      scrollX: 0,
+      scrollY: -window.scrollY
     });
   }
-
 </script>
