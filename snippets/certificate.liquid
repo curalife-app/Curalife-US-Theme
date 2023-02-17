@@ -310,7 +310,15 @@
       return alert("The content element with ID 'content' was not found.");
     }
 
-    domtoimage.toBlob(content)
+    domtoimage.toBlob(content, {
+      bgcolor: '#FFFFFF', // Set background color to white
+      style: {
+        'transform': 'none' // Disable CSS transforms
+      },
+      quality: 1, // Use maximum quality
+      width: content.offsetWidth, // Use the actual width of the element
+      height: content.offsetHeight // Use the actual height of the element
+    })
       .then(function (blob) {
         // Create a blob URL and set it as the source of the PDF file
         var url = URL.createObjectURL(blob);
@@ -327,3 +335,4 @@
       });
   }
 </script>
+
