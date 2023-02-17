@@ -1,6 +1,6 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 {%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
 
@@ -303,60 +303,60 @@
 
 
 
-<script>
-  var spapi = new SPApi();
-  spapi.onReady(function() {
-    $("#downloadPDF").click(function() {
-      getScreenshotOfElement(
-        $("div#content2").get(0),
-        0,
-        0,
-        $("#content2").width(),
-        $("#content2").height(),
-        function(data) {
-          var pdf = new jsPDF("l", "pt", [
-            $("#content2").width(),
-            $("#content2").height(),
-          ]);
+ <script>
+  $("#downloadPDF").click(function () {
+    
+    getScreenshotOfElement(
+      $("div#content2").get(0),
+      0,
+      0,
+      $("#content2").width(),  
+      $("#content2").height() + 140, 
+      function (data) {
+        var pdf = new jsPDF("l", "pt", [
+          $("#content2").width(),
+          $("#content2").height(),
+        ]);
 
-          pdf.addImage(
-            "data:image/png;base64," + data,
-            "PNG",
-            0,
-            0,
-            $("#content2").width(),
-            $("#content2").height()
-          );
-          pdf.save("certificate.pdf");
-        }
-      );
-    });
-
-    function getScreenshotOfElement(element, posX, posY, width, height, callback) {
-      html2canvas(element, {
-        onrendered: function(canvas) {
-          var context = canvas.getContext("2d");
-          var imageData = context.getImageData(posX, posY, width, height).data;
-          var outputCanvas = document.createElement("canvas");
-          var outputContext = outputCanvas.getContext("2d");
-          outputCanvas.width = width;
-          outputCanvas.height = height;
-
-          var idata = outputContext.createImageData(width, height);
-          idata.data.set(imageData);
-          outputContext.putImageData(idata, 0, 0);
-          callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
-        },
-        width: width,
-        height: height,
-        useCORS: true,
-        taintTest: false,
-        allowTaint: false,
-      });
-    }
+        pdf.addImage(
+          "data:image/png;base64," + data,
+          "PNG",
+          0,
+          0,
+          $("#content2").width(),
+          $("#content2").height()
+        );
+        pdf.save("certificte.pdf");
+      }
+    );
   });
-</script>
 
+  
+  function getScreenshotOfElement(element, posX, posY, width, height, callback) {
+    html2canvas(element, {
+      onrendered: function (canvas) {
+        $("#content2").removeClass('ml-215');  
+        var context = canvas.getContext("2d");
+        var imageData = context.getImageData(posX, posY, width, height).data;
+        var outputCanvas = document.createElement("canvas");
+        var outputContext = outputCanvas.getContext("2d");
+        outputCanvas.width = width;
+        outputCanvas.height = height + 140;
+
+        var idata = outputContext.createImageData(width, height);
+        idata.data.set(imageData);
+        outputContext.putImageData(idata, 0, 0);
+        callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
+      },
+      width: width,
+      height: height,
+      useCORS: true,
+      taintTest: false,
+      allowTaint: false,
+    });
+  }
+
+</script> 
 
 
 
