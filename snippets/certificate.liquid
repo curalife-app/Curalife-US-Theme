@@ -305,7 +305,7 @@
 
 <script>
   $("#downloadPDF").click(function () {
-   $("#content2").addClass('ml-215'); // JS solution for smaller screen but better to add media queries to tackle the issue
+    // $("#content2").addClass('ml-215'); // JS solution for smaller screen but better to add media queries to tackle the issue
     getScreenshotOfElement(
       $("div#content2").get(0),
       0,
@@ -336,7 +336,7 @@
   function getScreenshotOfElement(element, posX, posY, width, height, callback) {
     html2canvas(element, {
       onrendered: function (canvas) {
-       $("#content2").removeClass('ml-215');  // uncomment this if resorting to ml-125 to resolve the issue
+        // $("#content2").removeClass('ml-215');  // uncomment this if resorting to ml-125 to resolve the issue
         var context = canvas.getContext("2d");
         var imageData = context.getImageData(posX, posY, width, height).data;
         var outputCanvas = document.createElement("canvas");
