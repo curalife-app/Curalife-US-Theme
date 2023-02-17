@@ -313,7 +313,7 @@
     getScreenshotOfElement(
       $("div#content2").get(0),
       0,
-      0,
+      50,
       $("#content2").width() + 45,  // added 45 because the container's (content2) width is smaller than the image, if it's not added then the content from right side will get cut off
       $("#content2").height() + 30, // same issue as above. if the container width / height is changed (currently they are fixed) then these values might need to be changed as well.
       function (data) {
