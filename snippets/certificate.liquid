@@ -370,20 +370,15 @@
       function (data) {
         var pdfWidth = 8.27; // A4 size width in inches
         var pdfHeight = 11.69; // A4 size height in inches
-        var pdfMargin = 0.25; // margin in inches
         var pdf = new jsPDF("p", "in", [pdfWidth, pdfHeight]);
-        var position = pdfMargin; // margin on top side
-        var imgWidth = pdfWidth - (2 * pdfMargin); // margin on each side
+        var position = 0;
+        var imgWidth = pdfWidth - 0.5; // 0.5 inch margin on each side
         var imgHeight = (imgWidth / $("#content2").width()) * $("#content2").height();
-        if (imgHeight > pdfHeight - 1 - position) {
-          imgHeight = pdfHeight - 1 - position;
-          imgWidth = (imgHeight / $("#content2").height()) * $("#content2").width();
-        }
         pdf.addImage(
           "data:image/png;base64," + data,
           "PNG",
-          pdfMargin, // margin on left side
-          position,
+          0.25, // 0.5 inch margin on left side
+          position + 0.25, // 0.5 inch margin on top side
           imgWidth,
           imgHeight
         );
