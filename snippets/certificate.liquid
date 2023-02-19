@@ -374,7 +374,7 @@
               var width = doc.internal.pageSize.width * 2;
               var height = doc.internal.pageSize.height;
               var height = width * hratio;
-              doc.addImage(img, 'JPEG', width - 300, 20, width*.95, height*.95);
+              doc.addImage(img, 'JPEG', width - 300, 0, width*.95, height*.95);
               doc.save('AssetComparison.pdf');
           },
           useCORS: true
