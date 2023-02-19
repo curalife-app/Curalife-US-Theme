@@ -372,8 +372,8 @@
         var pdfHeight = 11.69; // A4 size height in inches
         var pdf = new jsPDF("p", "in", [pdfWidth, pdfHeight]);
         var position = 0;
-        var imgWidth = pdfWidth - 0.5; // 0.5 inch margin on each side
-        var imgHeight = (imgWidth / $("#content2").width()) * $("#content2").height();
+        var imgWidth = $("#content2").width(); // 0.5 inch margin on each side
+        var imgHeight =  $("#content2").height();
         pdf.addImage(
           "data:image/png;base64," + data,
           "PNG",
