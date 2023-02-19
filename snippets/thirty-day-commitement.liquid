@@ -33,8 +33,7 @@
         {% endfor %}
       </div>
     </div>
-
-    {% comment %} <a class="cta-btn" href="{{ ctaButtonLink }}">{{ ctaTitle }}</a> {% endcomment %}
+      {% if isRetention %}  <a class="cta-btn" id="back-to-top-btn">{{ ctaTitle }} {% endif %}</a> 
   </div>
 </div>
 
