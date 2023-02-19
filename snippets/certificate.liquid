@@ -368,7 +368,7 @@
               var img = canvas.toDataURL("image/png", wid = canvas.width, hgt = canvas.height); //image data of canvas
               var hratio = hgt / wid;
               var doc = new jsPDF({orientation: "portrait"});
-              var width = doc.internal.pageSize.width * 2;
+              var width = doc.internal.pageSize.width;
               var height = doc.internal.pageSize.height;
               var height = width * hratio;
               doc.addImage(img, 'JPEG', width - 525, 10, width, height);
