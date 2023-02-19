@@ -376,7 +376,8 @@
               var height = width * hratio;
               doc.addImage(img, 'JPEG', width*.025, 20, width*.95, height*.95);
               doc.save('AssetComparison.pdf');
-          }
+          },
+          useCORS: true
       });
   }
 </script>
