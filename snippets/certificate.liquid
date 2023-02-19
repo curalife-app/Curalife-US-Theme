@@ -64,7 +64,7 @@
 </div>
 
 <div class="certificate-section">
-  <button class="download-main-btn" id="downloadPDF">Click Here to Download</button>
+  <button class="download-main-btn" id="downloadPDF" onclick="downloadPDF()">Click Here to Download</button>
   <div class="certificate" id="content2">
       <div class="container">
           <div class="certificate-wrap">
@@ -360,54 +360,24 @@
 
 
 <script>
-  $("#downloadPDF").click(function () {
-    getScreenshotOfElement(
-      $("div#content2").get(0),
-      0,
-      0,
-      $("#content2").width(),
-      $("#content2").height(),
-      function (data) {
-        var pdfWidth = 20; // A4 size width in inches
-        var pdfHeight = 15; // A4 size height in inches
-        var pdf = new jsPDF("p", "in", [pdfWidth, pdfHeight]);
-        var position = 0;
-        var imgWidth = pdfWidth; // 0.5 inch margin on each side
-        var imgHeight = (imgWidth / $("#content2").width()) * $("#content2").height();
-        pdf.addImage(
-          "data:image/png;base64," + data,
-          "PNG",
-          0.25, // 0.5 inch margin on left side
-          position + 0.25, // 0.5 inch margin on top side
-          imgWidth,
-          imgHeight
-        );
-        pdf.save("certificate.pdf");
-      }
-    );
-  });
-
-  function getScreenshotOfElement(element, posX, posY, width, height, callback) {
-    html2canvas(element, {
-      onrendered: function (canvas) {
-        var context = canvas.getContext("2d");
-        var imageData = context.getImageData(posX, posY, width, height).data;
-        var outputCanvas = document.createElement("canvas");
-        var outputContext = outputCanvas.getContext("2d");
-        outputCanvas.width = width;
-        outputCanvas.height = height;
-
-        var idata = outputContext.createImageData(width, height);
-        idata.data.set(imageData);
-        outputContext.putImageData(idata, 0, 0);
-        callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
-      },
-      width: doc.internal.pageSize.width,
-      height: doc.internal.pageSize.height,
-      useCORS: true,
-      taintTest: false,
-      allowTaint: false,
-    });
+  function downloadPDF() {
+      html2canvas($('#content2'), {
+          onrendered: function (canvas) {
+              var wid;
+              var hgt;
+              var img = canvas.toDataURL("image/png", wid = canvas.width, hgt = canvas
+              .height); //image data of canvas
+              var hratio = hgt / wid;
+              var doc = new jsPDF({
+                  orientation: "landscape"
+              });
+              var width = doc.internal.pageSize.width;
+              var height = doc.internal.pageSize.height;
+              var height = width * hratio;
+              doc.addImage(img, 'JPEG', width*.025, 20, width*.95, height*.95);
+              doc.save('AssetComparison.pdf');
+          }
+      });
   }
 </script>
 
