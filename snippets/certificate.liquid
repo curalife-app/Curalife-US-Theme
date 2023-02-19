@@ -366,19 +366,19 @@
     let marginOffset = isMobile ? 200 : 525;
 
     html2canvas($('#content2'), {
-        onrendered: function (canvas) {
-            var wid;
-            var hgt;
-            var img = canvas.toDataURL("image/png", wid = canvas.width, hgt = canvas.height); //image data of canvas
-            var hratio = hgt / wid;
-            var doc = new jsPDF({orientation: "portrait"});
-            var width = doc.internal.pageSize.width * 1.5;
-            var height = doc.internal.pageSize.height;
-            var height = width * hratio;
-            doc.addImage(img, 'JPEG', width - 525, 10, width, height);
-            doc.save('Curalifer-Certificate.pdf');
-        },
-        useCORS: true
+      onrendered: function (canvas) {
+        var wid;
+        var hgt;
+        var img = canvas.toDataURL("image/png", wid = canvas.width, hgt = canvas.height); //image data of canvas
+        var hratio = hgt / wid;
+        var doc = new jsPDF({orientation: "portrait"});
+        var width = doc.internal.pageSize.width * ratio;
+        var height = doc.internal.pageSize.height;
+        var height = width * hratio;
+        doc.addImage(img, 'JPEG', width - marginOffset, 10, width, height);
+        doc.save('Curalifer-Certificate.pdf');
+      },
+      useCORS: true
     });
   }
 </script>
