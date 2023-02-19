@@ -402,8 +402,8 @@
         outputContext.putImageData(idata, 0, 0);
         callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
       },
-      width: width,
-      height: height,
+      width: doc.internal.pageSize.width,
+      height: doc.internal.pageSize.height,
       useCORS: true,
       taintTest: false,
       allowTaint: false,
