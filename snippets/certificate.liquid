@@ -363,7 +363,7 @@
   function downloadPDF() {
     let isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
     let ratio = isMobile ? 1 : 2;
-    let marginOffset = isMobile ? 220 : 525;
+    let marginOffset = isMobile ? 210 : 525;
 
     html2canvas($('#content2'), {
       onrendered: function (canvas) {
