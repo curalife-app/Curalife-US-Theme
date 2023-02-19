@@ -365,15 +365,15 @@
       $("div#content2").get(0),
       0,
       0,
-      $("#content2").width(),
-      $("#content2").height(),
+      $(window).width(),
+      $(window).height(),
       function (data) {
         var pdfWidth = 8.27; // A4 size width in inches
         var pdfHeight = 11.69; // A4 size height in inches
         var pdf = new jsPDF("p", "in", [pdfWidth, pdfHeight]);
         var position = 0;
         var imgWidth = pdfWidth - 0.5; // 0.5 inch margin on each side
-        var imgHeight = (imgWidth / $("#content2").width()) * $("#content2").height();
+        var imgHeight = (imgWidth / $(window).width()) * $(window).height();
         pdf.addImage(
           "data:image/png;base64," + data,
           "PNG",
@@ -410,6 +410,7 @@
     });
   }
 </script>
+
 
 
 
