@@ -361,6 +361,8 @@
 
 <script>
   function downloadPDF() {
+    let ratio = mobile ? 1 : 2;
+    let marginOffset = mobile ? 200 : 525;
       html2canvas($('#content2'), {
           onrendered: function (canvas) {
               var wid;
