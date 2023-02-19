@@ -37,7 +37,7 @@
       <div class="form-submit">
         <div class="name">
           <label class="title" for="name">Full Name:</label>
-          <input class="input-name" type="text" id="name" name="name" value="{{ customerName }}">
+          <input class="input-name" type="text" id="name" name="name" value="{{ param | default: customerName }}">
         </div>
 
         <label class="title" for="theme">Choose Theme</label>
