@@ -365,12 +365,9 @@
           onrendered: function (canvas) {
               var wid;
               var hgt;
-              var img = canvas.toDataURL("image/png", wid = canvas.width, hgt = canvas
-              .height); //image data of canvas
+              var img = canvas.toDataURL("image/png", wid = canvas.width, hgt = canvas.height); //image data of canvas
               var hratio = hgt / wid;
-              var doc = new jsPDF({
-                  orientation: "portrait"
-              });
+              var doc = new jsPDF({orientation: "portrait"});
               var width = doc.internal.pageSize.width * 2;
               var height = doc.internal.pageSize.height;
               var height = width * hratio;
