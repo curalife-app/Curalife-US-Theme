@@ -34,7 +34,7 @@
       </div>
     </div>
       {% if isRetention %} <div class="button-wrapper">
-        <a class="cta-btn" id="back-to-top-btn">{{ ctaTitle }}</a>
+        <a class="cta-btn" id="buy-button">{{ ctaTitle }}</a>
       </div>  {% endif %}
   </div>
 </div>
@@ -277,14 +277,3 @@
 
 
 
-
-<script>
-  $(window).scroll(function() {
-    $(window).scrollTop() > 1000 ? $('#back-to-top-btn').addClass('show') : $('#back-to-top-btn').removeClass('show');
-  });
-
-  $('#back-to-top-btn').on('click', function(e) {
-    e.preventDefault();
-    $('html, body').animate({scrollTop:0}, '300');
-  });
-</script>
