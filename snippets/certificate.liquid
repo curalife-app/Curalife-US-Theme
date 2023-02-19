@@ -374,6 +374,7 @@
               doc.addImage(img, 'JPEG', width - 525, 10, width, height);
               doc.save('Curalifer-Certificate.pdf');
           },
+          scale: window.devicePixelRatio,
           useCORS: true
       });
   }
