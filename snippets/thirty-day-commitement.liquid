@@ -1,3 +1,17 @@
+
+{% if localization.country.iso_code == 'CA' %}
+  {% assign original_item_cap = var.metafields.custom.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
+{% elsif localization.country.iso_code == 'AU' %}
+  {% assign original_item_cap = var.metafields.custom.original_item.value.metafields.my_fields.au_cap | times: 100 %}
+{% else %}
+  {% assign original_item_cap = var.metafields.custom.original_item.value.compare_at_price %}
+{% endif %}
+
+{% assign bottle_quantity = var.metafields.my_fields.pack_bottles_quantity %}
+{% assign original_item_cap_total = original_item_cap | times: bottle_quantity %}
+{% assign original_item_cap_total_with_bundle = bundle_value | times: 100 | plus: original_item_cap_total %}
+{% assign original_item_price = var.price | divided_by: bottle_quantity %}
+
 <div class="commitement-for-you">
   <div class="container">
 
@@ -17,7 +31,7 @@
       </div>
     </div>
 
-   <div class="commitment-have-to-do">What do you have to do? </div>
+   <div class="commitment-have-to-do">What do you have to do? </div>>
    <div class="commitment-wrapper">
     
       {% assign commitments = "Commit to and complete the 30 Day Challenge  
@@ -34,7 +48,7 @@
       </div>
     </div>
       {% if isRetention %} <div class="button-wrapper">
-        <a class="cta-btn" id="buy-button">{{ ctaTitle }}</a>
+        <a class="cta-btn" id="buy-button">{{ ctaTitle }} {{ original_item_price }} </a>
       </div>  {% endif %}
   </div>
 </div>
