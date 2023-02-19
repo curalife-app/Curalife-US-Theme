@@ -46,7 +46,7 @@
           
           <label for="classic"><img class="certificate-img" src="{{ 'certificate-1.png' | asset_url }}" width="1190" height="1684" alt=""></label>
           <input type="radio" id="classic" name="theme" value="classic">  
-          <label for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
+          <label class="curalifier" for="curalifer"><img class="certificate-img" src="{{ 'certificate-2.png' | asset_url }}" width="1193" height="1684" alt=""></label>
           <input type="radio" id="curalifer" name="theme" value="curalifer">
           </form>
         </div>
@@ -157,9 +157,7 @@
 }
 
 .radio-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  margin: 0 auto;
 }
 
 .radio-container form {
@@ -171,8 +169,12 @@
 }
 
 .certificate-img {
-  max-width: 70px;
+  max-width: 100px;
   border: 1px solid #404733; 
+}
+
+.curalifier{
+  margin-left: 70px;
 }
 
 .presented-text{
@@ -272,6 +274,10 @@
 
     #name-presented { 
      font-size: 4vw;  
+   }
+
+   .curalifier{
+     margin-left: 5vw;
    }
   }
 </style>
