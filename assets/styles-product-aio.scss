@@ -39,7 +39,7 @@
     #back-to-top-btn {
         background-color: #C78263;
         color: white;
-        font-size: 30px;
+        font-size: clamp(20px, 2vw, 30px);
         padding: 10px 20px;
         font-weight: bold;
         height: 50px;
