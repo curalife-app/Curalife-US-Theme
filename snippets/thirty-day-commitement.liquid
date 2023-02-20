@@ -50,7 +50,7 @@
       </div>
     </div>
       {% if isRetention %} <div class="button-wrapper">
-        <a class="cta-btn" id="buy-button">{{ ctaTitle }} <div class="real-price rounded no-letters">{{ var.price | money_without_trailing_zeros }}</div></a>
+        <a class="cta-btn" id="buy-button">{{ ctaTitle }} <div class="real-price rounded no-letters">{{ original_item_price | money_without_trailing_zeros }}</div></a>
       </div>  {% endif %}
   </div>
 </div>
