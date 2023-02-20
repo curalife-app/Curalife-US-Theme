@@ -60,7 +60,7 @@
     }
 
     .pack-info-section:nth-of-type(even) .tabbed-content {
-      margin-left: 30%;
+     
     }
 
 
@@ -103,10 +103,7 @@
  
 
     .pack-info-section .tabbed-content {
-      max-width: 800px;
-      display: flex;
-      align-items: center;
-      height: 300px;
+      
     }
 
     .pack-info-section .tabs ul li {
@@ -154,19 +151,9 @@
       transition: opacity 0.8s ease-in-out;
     }
 
-    .pack-info-section .tabbed-content .tabs {
-      display: none;
-    }
+   
 
-    .tabbed-content .item {
-      min-height: 2em;
-    }
-
-    .pack-info-section .tabbed-content .item .item-content {
-      opacity: 0;
-      visibility: hidden;
-      height: 0;
-    }
+  
 
     .pack-info-section .tabbed-content .item.active .item-content {
       opacity: 1;
@@ -174,90 +161,34 @@
       height: auto;
     }
 
-    @media all and (min-width: 800px) {
-      .item.active .item-content {
-        padding-top: 0;
-      }
-
-      .pack-info-section .tabbed-content .tabs {
-        display: block;
-      }
-
-      .pack-info-section .tabbed-content .tabs li {
-        display: inline-block;
-        margin-bottom: 2px;
-      }
-
-      .pack-info-section .tabbed-content .tabs li a {
-        display: flex;
-      }
-
-      .pack-info-section .tabbed-content .item {
-        min-height: 0;
-      }
-
-   
-      .pack-info-section .tabbed-content.tabs-side .tabs {
-        min-width: 300px;
-        margin-right: 50px;
-      }
-
-      .pack-info-section .tabbed-content.tabs-side .tabs li {
-        display: block;
-      }
-    }
 
     @media all and (max-width: 768px) {
       .pack-info-section {
-        padding-bottom: 75vw;
+        
       }
 
       .product-wrapper {
         
       }  
 
-      .pack-info-section .instructions .step .capsules {
-        min-width: 65px;
-      }
-
+    
       .pack-info-section .tabbed-content {
-        display: block;
-        margin-left: unset !important;
+        
       }
 
     
 
   
-      .pack-info-section .product-image-wrapper {
-        bottom: 0;
+      .pack-info-section .product-image-wrapper {       
         width: 100%;
-        position: relative;
         text-align: center;
         margin-top: 10vw;
       }
 
       .pack-info-section .product-image-wrapper .product-image {
-        right: unset;
         text-align: center;
       }
 
-  
-
-      .pack-info-section .tabbed-content .item.active .item-content {
-        padding: 5vw 0;
-      }
-
-      .pack-info-section .ingredient {
-        width: 27vw;
-      }
-
-      .pack-info-section .instructions .step {
-        gap: 2vw;
-      }
-
-      .pack-info-section .instructions .step h3 {
-        min-width: 20vw;
-      }
     }
 
   </style>
