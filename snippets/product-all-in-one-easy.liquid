@@ -86,7 +86,7 @@
       margin: {% if isRetention %}0 auto {% endif %};
       display: flex;
       padding: 35px 0;
-      justify-content: flex-start;
+      justify-content: {% if isRetention %}center{% else %} flex-start {% endif %};
     }
 
      .easy .container .cta-btn {  
