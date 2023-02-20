@@ -2,6 +2,7 @@
 
 <section class="pack-info-section-retention">
   <div class="container">
+    <div class="info-wrapper">
     <div class="titles">
       <h2 class="title">Nutrition</h2>
       <p class="subtitle">Delicious recipes you’ll love to cook and eat! It’s organized in weekly plans with convenient grocery lists and even easier cooking instructions.</p>
@@ -10,348 +11,39 @@
     <div class="product-image-wrapper">
       <img class="product-image" src="{{'retention-nutrition.png' | asset_url }}" width="342" height="237" alt="" loading="lazy">
     </div>
-
+    </div>
  
   </div>
 </section>
 
 
   <style>
-    .pack-info-section-retention {
-      background: var(--lighter-brown);
-    }
-    .pack-info-section-retention .titles {
+
+  .pack-info-section-retention {
+    background: var(--lighter-brown);
+  }
+
+  .pack-info-section-retention .info-wrapper {
+    display: flex;
+  }
+
+   
+    .pack-info-section-retention .info-wrapper .titles {
       flex-direction: revert;
       justify-content: start;
       max-width: 100%;
       text-align: left;
     }
 
-    .pack-info-section-retention {
-      background: var(--lighter-brown);
-    }
 
-    .pack-info-section-retention:nth-of-type(even) {
-     
-    }
 
-    .pack-info-section-retention .product-image-wrapper {
-      position: absolute;
-      bottom: -120px;
-      right: 0;
-      pointer-events: none;
-    }
-
-    .pack-info-section-retention:nth-of-type(even) .tabbed-content {
-      margin-left: 30%;
-    }
-
-    .pack-info-section-retention:nth-of-type(even) .product-image-wrapper,
-    .pack-info-section-retention:nth-of-type(even) .product-image-wrapper p{
-      left: 0;
-    }
-
-    .pack-info-section-retention .product-image-wrapper .number {
-      font-family: var(--main-font);
-      position: absolute;
-      right: 0;
-      top: -80px;
-      line-height: 1em;
-      font-size: 350px;
-      font-weight: bold;
-      color: var(--dark-orange);
-      margin: unset;
-    }
-
-    .pack-info-section-retention.pack-info-section-retention:nth-of-type(even) .product-image-wrapper .number {
-      
-    }
-
-    .pack-info-section-retention .product-image-wrapper .product-image {
-      position: relative;
-      right: -10px;
-    }
-
-    .pack-info-section-retention .highlights {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .pack-info-section-retention .highlights .highlight {
-      display: flex;
-      align-items: center;
-    }
-
-    .pack-info-section-retention .highlights .highlight p {
-      margin: unset;
-    }
-
-    .pack-info-section-retention .highlight-icon {
-      background: var(--light-green);
-      color: white;
-      border-radius: 50%;
-      min-width: 30px;
-      height: 30px;
-      font-size: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 20px;
-    }
-
-    .pack-info-section-retention .instructions {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .pack-info-section-retention .instructions .step {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .pack-info-section-retention .instructions .step p {
-      min-width: 120px;
-    }
-
-    .pack-info-section-retention .instructions .step h3 {
-      font-size: 28px;
-      font-weight: bold;
-      min-width: 105px;
-    }
-
-    .pack-info-section-retention .instructions .step .capsules {
-      min-width: 80px;
-    }
-
-    .pack-info-section-retention .instructions .step p {
-      max-width: 35vw;
-    }
-
-    .pack-info-section-retention .ingredients {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 400px;
-      gap: 10px;
-      max-width: 500px;
-    }
-
-    .pack-info-section-retention .ingredient {
-      width: 120px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .pack-info-section-retention .ingredient p {
-      font-size: 16px;
-      text-align: center;
-    }
-
-    .pack-info-section-retention .facts {
-      text-align: center;
-    }
-
-    .pack-info-section-retention .facts img {
-      max-height: 300px;
-    }
-
-    .pack-info-section-retention .tabbed-content {
-      max-width: 800px;
-      display: flex;
-      align-items: center;
-      height: 300px;
-    }
-
-    .pack-info-section-retention .tabs ul li {
-      text-align: center;
-      height: 70px;
-      border-bottom: 1px solid;
-    }
-
-    .pack-info-section-retention .tabs ul li:first-child {
-      border-top: 1px solid;
-    }
-
-    .pack-info-section-retention .tabs ul li a {
-      height: 100%;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
-
-    .pack-info-section-retention .tabs ul li a i {
-      position: relative;
-      transition: all 0.5s ease-in-out;
-      font-style: normal;
-      left: 20px;
-    }
-
-    .pack-info-section-retention .tabs ul li a:hover,
-    .pack-info-section-retention .tabs ul li a.active {
-      color: var(--brown);
-      font-weight: bold;
-    }
-
-    .pack-info-section-retention:nth-of-type(even) .tabs ul li a:hover,
-    .pack-info-section-retention:nth-of-type(even) .tabs ul li a.active {
-      
-    }
-
-    .pack-info-section-retention .item {
-      margin-bottom: 2px;
-      position: relative;
-    }
-
-    .pack-info-section-retention .item::before {
-      content: '';
-      border-top: 1px solid var(--light-green);
-      cursor: pointer;
-      font-weight: bold;
-      padding: 0.5em;
-      display: block;
-      text-align: center;
-    }
-
-    .pack-info-section-retention .item.active .item-content {
-      transition: opacity 0.8s ease-in-out;
-    }
-
-    .pack-info-section-retention .tabbed-content .tabs {
-      display: none;
-    }
-
-    .tabbed-content .item {
-      min-height: 2em;
-    }
-
-    .pack-info-section-retention .tabbed-content .item .item-content {
-      opacity: 0;
-      visibility: hidden;
-      height: 0;
-    }
-
-    .pack-info-section-retention .tabbed-content .item.active .item-content {
-      opacity: 1;
-      visibility: visible;
-      height: auto;
-    }
-
-    @media all and (min-width: 800px) {
-      .item.active .item-content {
-        padding-top: 0;
-      }
-
-      .pack-info-section-retention .tabbed-content .tabs {
-        display: block;
-      }
-
-      .pack-info-section-retention .tabbed-content .tabs li {
-        display: inline-block;
-        margin-bottom: 2px;
-      }
-
-      .pack-info-section-retention .tabbed-content .tabs li a {
-        display: flex;
-      }
-
-      .pack-info-section-retention .tabbed-content .item {
-        min-height: 0;
-      }
-
-      .pack-info-section-retention .tabbed-content .item::before {
-        display: none;
-      }
-
-      .pack-info-section-retention .tabbed-content.tabs-side .tabs {
-        min-width: 300px;
-        margin-right: 50px;
-      }
-
-      .pack-info-section-retention .tabbed-content.tabs-side .tabs li {
-        display: block;
-      }
-    }
 
     @media all and (max-width: 768px) {
-      .pack-info-section-retention {
-        padding-bottom: 75vw;
-      }
+    
 
-      .pack-info-section-retention .instructions .step .capsules {
-        min-width: 65px;
-      }
-
-      .pack-info-section-retention .tabbed-content {
-        display: block;
-        margin-left: unset !important;
-      }
-
-      .pack-info-section-retention .item::after {
-        content: "+";
-        font-size: 30px;
-        position: absolute;
-        top: 5px;
-        right: 2vw;
-        border: 2px solid var(--light-green);
-        border-radius: 50%;
-        width: 5vw;
-        height: 5vw;
-        font-size: 5vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--light-green);
-      }
-
-      .pack-info-section-retention .item.active::after {
-        content: "-";
-      }
-
-      .pack-info-section-retention .product-image-wrapper {
-        bottom: 0;
-        width: 100%;
-        position: relative;
-        text-align: center;
-        margin-top: 10vw;
-      }
-
-      .pack-info-section-retention .product-image-wrapper .product-image {
-        right: unset;
-        text-align: center;
-      }
-
-      .pack-info-section-retention .product-image-wrapper .number {
-        top: -15vw;
-        font-size: 70vw !important;
-        right: 13vw;
-      }
-
-      .pack-info-section-retention .tabbed-content .item.active .item-content {
-        padding: 5vw 0;
-      }
-
-      .pack-info-section-retention .ingredient {
-        width: 27vw;
-      }
-
-      .pack-info-section-retention .instructions .step {
-        gap: 2vw;
-      }
-
-      .pack-info-section-retention .instructions .step h3 {
-        min-width: 20vw;
-      }
     }
 
-    @media screen and (max-width: 500px) {
-      .pack-info-section-retention .item::after {
-        top: 4vw;
-      }
-    }
+  
   </style>
 
 
