@@ -295,6 +295,16 @@
 
 </style>
 
+<script>
+  $(window).scroll(function() {
+    $(window).scrollTop() > 1000 ? $('#back-to-top-btn').addClass('show') : $('#back-to-top-btn').removeClass('show');
+  });
+
+  $('#back-to-top-btn').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+  });
+</script>
 
 
 
