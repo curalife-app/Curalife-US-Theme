@@ -5,6 +5,8 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             {% for prod in collections['curalin-related-products'].products %}
+              {% if prod.title != "Curalin" %}
+            
               <div class="swiper-slide">
                 <a href="{{ prod.url }}">
                   <div class="quote-card">
@@ -19,6 +21,7 @@
                   <p class="quoted-text">{{ prod.metafields.custom.short_definition }}</p>
                 </div></a>
               </div>
+            {% endif %}
           {% endfor %}
           </div>
 
