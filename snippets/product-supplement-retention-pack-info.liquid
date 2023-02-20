@@ -16,7 +16,7 @@
   {% assign link_color = "var(--dark-peach)" %}
 {% endif %}
 
-<section class="pack-info-section instance-{{ index }}">
+<section class="pack-info-section">
   <div class="container">
     <div class="titles">
       <h2 class="title">Nutrition</h2>
@@ -24,16 +24,11 @@
     </div>
 
     <div class="product-image-wrapper">
-      {% if index %}
-        <p class="number">{{ index }}</p>
-      {% endif %}
 
       <img class="product-image" src="{{'retention-nutrition.png' | asset_url }}" width="342" height="237" alt="" loading="lazy">
     </div>
 
     <div class="tabbed-content tabs-side">
-     
-
       <div class="content">
         <div id="highlights-{{ index }}" class="item active always-active" data-title="Product Highlights">
           <div class="highlights item-content">
