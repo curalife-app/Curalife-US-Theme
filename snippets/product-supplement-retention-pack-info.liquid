@@ -1,22 +1,6 @@
-{% if product.tags contains "sleep" %}
-  {% assign bg_color = "var(--light-turquoise)" %}
-  {% assign number_color = "var(--dark-turquoise)" %}
-  {% assign link_color = "var(--dark-turquoise)" %}
-{% elsif product.tags contains "joint" %}
-  {% assign bg_color = "var(--light-purple)" %}
-  {% assign number_color = "var(--purple)" %}
-  {% assign link_color = "var(--dark-purple)" %}
-{% elsif product.tags contains "immune" %}
-  {% assign bg_color = "var(--light-purple)" %}
-  {% assign number_color = "var(--purple)" %}
-  {% assign link_color = "var(--dark-purple)" %}
-{% elsif product.tags contains "multivitamin" %}
-  {% assign bg_color = "var(--lighter-peach)" %}
-  {% assign number_color = "var(--peach)" %}
-  {% assign link_color = "var(--dark-peach)" %}
-{% endif %}
 
-<section class="pack-info-section-retention instance-{{ index }}">
+
+<section class="pack-info-section-retention">
   <div class="container">
     <div class="titles">
       <h2 class="title">Nutrition</h2>
@@ -24,10 +8,6 @@
     </div>
 
     <div class="product-image-wrapper">
-      {% if index %}
-        <p class="number">{{ index }}</p>
-      {% endif %}
-
       <img class="product-image" src="{{'retention-nutrition.png' | asset_url }}" width="342" height="237" alt="" loading="lazy">
     </div>
 
@@ -49,7 +29,7 @@
     }
 
     .pack-info-section-retention:nth-of-type(even) {
-      background: {{ bg_color }};
+     
     }
 
     .pack-info-section-retention .product-image-wrapper {
@@ -81,7 +61,7 @@
     }
 
     .pack-info-section-retention.pack-info-section-retention:nth-of-type(even) .product-image-wrapper .number {
-      color: {{ number_color }};
+      
     }
 
     .pack-info-section-retention .product-image-wrapper .product-image {
@@ -215,7 +195,7 @@
 
     .pack-info-section-retention:nth-of-type(even) .tabs ul li a:hover,
     .pack-info-section-retention:nth-of-type(even) .tabs ul li a.active {
-      color: {{ link_color }};
+      
     }
 
     .pack-info-section-retention .item {
@@ -224,7 +204,7 @@
     }
 
     .pack-info-section-retention .item::before {
-      content: attr(data-title);
+      content: '';
       border-top: 1px solid var(--light-green);
       cursor: pointer;
       font-weight: bold;
