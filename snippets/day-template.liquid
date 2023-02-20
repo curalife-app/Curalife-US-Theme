@@ -37,6 +37,7 @@
                 <div class="border-day"></div>
                 <div class="related-text">{{ dayTip2 }}</div>
                 <div class="article-from-blog">
+                    <img class="swoosh-article" src="{{ 'related-article-swoosh.png' | asset_url }}" width="180" height="176" alt="">
                     <div class="blog-title">Related Article</div>
                     <a href="{{ articleURL }}" class="link-to-article">
                         {% assign articleHandle = "blog/" | append: array[4] %}
@@ -159,6 +160,16 @@
         font-size: 34px;
         line-height: 44px;
     }
+
+    .article-from-blog {
+        position: relative;
+    }
+
+    .swoosh-article {
+        position:absolute;
+    }
+
+
 
     .article-title {
         padding: 20px 0;
