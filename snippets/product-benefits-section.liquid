@@ -37,7 +37,7 @@
   }
 
   #benefits-section .titles h2 {
-    color: {{ titlecolor }};
+    color: {% if isTitleColor %} #404733 {% endif %};
   } 
 
   #benefits-section .health-benefit {
