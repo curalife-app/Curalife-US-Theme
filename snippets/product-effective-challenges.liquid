@@ -1,0 +1,145 @@
+<section id="effective-challenges">
+  <div class="container">
+    <div class="call-background">
+      <div class="effective">
+        <div class="text-effective">
+          <div class="titles">
+            <h2>Schedule a call with our customer success expert!</h2>
+          </div>
+
+          <div class="grey-border"></div>
+
+          <p>With your purchase of {{ productTitle }}, you can schedule a free 15 minute call with one of our customer success experts to answer all your questions about {{ productTitle }}! They will help guide your first 5 days on {{ productTitle }} so you can go into it with confidence!</p>
+          <div class="call">
+            <a href="https://calendly.com/hellocuralife" target="_blank">
+              <button>
+                <span class="call-text">Schedule A Call<i class="fa-regular fa-headset"></i></span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #effective-challenges {
+    background-color: {{bgColor}};
+    padding: 1% 0;
+  }
+
+  #effective-challenges .call-background {
+    {% if border %}border: 2px solid #E1E8CF;{% endif %}
+    margin-bottom: 3%;
+  }
+
+  #effective-challenges .effective {
+    margin: 5%;
+    display: flex;
+    gap: 5%;
+  }
+
+  #effective-challenges .text-effective {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #effective-challenges .text-effective .titles {
+    max-width: unset;
+    margin: auto;
+  }
+
+  #effective-challenges .text-effective h2 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: left;
+  }
+
+  #effective-challenges .avatar {
+    object-fit: contain;
+    object-position: top;
+  }
+
+  #effective-challenges .grey-border {
+    width: 98px;
+    border: 1px solid #333333;
+    position: relative;
+    margin: 10px 0;
+  }
+
+  #effective-challenges .text-effective p {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #000000;
+    margin-top: 2%;
+  }
+
+  #effective-challenges .call-text {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #effective-challenges .call button {
+    margin-top: 5%;
+    padding: 15px 30px;
+    background: #FFB22D;
+    border: 0;
+    border-radius: 3.2px;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 768px) {
+    #effective-challenges .effective {
+      flex-direction: column;
+      gap: 7vw;
+    }
+
+    #effective-challenges .text-effective .title {
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    #effective-challenges .avatar {
+      width: 40vw;
+      height: auto;
+      {% if isHideImageOnMobile %}display: none;{% endif %}
+    }
+
+    #effective-challenges .grey-border {
+      width: 98px;
+      border: 2px solid #333333;
+      top: 5vw;
+      margin-bottom: 10%;
+    }
+
+    #effective-challenges .call-text {
+      gap: 2vw;
+    }
+  
+
+    #effective-challenges .text-effective p {
+      font-size: 18px;
+      line-height: 23px;
+      padding: 2vw 0;
+    }
+
+    #effective-challenges .call button {
+      width: 100%;
+    }
+
+    #effective-challenges .call button {
+      font-size: 24px;
+    }
+  }
+</style>
+
