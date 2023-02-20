@@ -5,7 +5,7 @@
       <h2 class="title">Nutrition</h2>
       <p class="subtitle">Delicious recipes you’ll love to cook and eat! It’s organized in weekly plans with convenient grocery lists and even easier cooking instructions.</p>
     </div>
-
+    <div class="product-wrapper">
     <div class="product-image-wrapper">
 
       <img class="product-image" src="{{'retention-nutrition.png' | asset_url }}" width="342" height="237" alt="" loading="lazy">
@@ -33,6 +33,7 @@
       
       </div>
     </div>
+    </div>
   </div>
 </section>
 
@@ -49,9 +50,9 @@
       background: var(--lighter-brown);
     }
 
-    .pack-info-section:nth-of-type(even) {
-      background: {{ bg_color }};
-    }
+    .product-wrapper {
+      display: flex;
+    }        
 
     .pack-info-section .product-image-wrapper {
   
