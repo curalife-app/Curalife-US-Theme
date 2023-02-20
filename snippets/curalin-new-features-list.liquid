@@ -6,9 +6,10 @@
           <div class="swiper-wrapper">
             {% for prod in collections['curalin-related-products'].products %}
               <div class="swiper-slide">
-                <div class="quote-card">
+                <a href="{{ prod.url }}">
+                  <div class="quote-card">
                   <div class="quote-info">
-                  <a href="{{ prod.url }}"><img style="background-color: {{ prod.metafields.custom.bg_color }}; border-radius: 25px;" src="{{ prod.featured_image | image_url }}" width="303" height="302" alt=""></a>  
+                  <img style="background-color: {{ prod.metafields.custom.bg_color }}; border-radius: 25px;" src="{{ prod.featured_image | image_url }}" width="303" height="302" alt="">
                     
                     <div class="quote-author">
                       <h3>{{ prod.title }}</h3>
@@ -16,7 +17,7 @@
                   </div>
 
                   <p class="quoted-text">{{ prod.metafields.custom.short_definition }}</p>
-                </div>
+                </div></a>
               </div>
           {% endfor %}
           </div>
