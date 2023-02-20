@@ -36,6 +36,10 @@
     flex-wrap: wrap;
   }
 
+  #benefits-section .titles {
+    color: {% if titleColor %} {{ titlecolor }} {% endif %};
+  } 
+
   #benefits-section .health-benefit {
     display: flex;
     flex-direction: column;
