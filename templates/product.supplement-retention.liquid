@@ -24,12 +24,13 @@
       {% endif %}
     {% endfor %}
   {% else %}
+  
     {% render 'product-supplement-retention-pack-info', product: product, isLastRender: true %}
   {% endif %}
   {% render 'thirty-day-commitement'  %}
   {% render 'product-all-in-one-easy', isSecondLP: true, ctaTitle: "Start Checkout", isRetention: true %}
   {% render 'product-effective-challenges' %}
-  {% render 'product-schedule-a-call-section', productTitle: product.title, bgColor: 'transparent', border: true, isHideImageOnMobile: true %}  
+  {% render 'product-schedule-a-call-section', productTitle: "Curalin", bgColor: 'transparent', border: true, isHideImageOnMobile: true %}  
   {% render 'product-faq-section', bgColor: "var(--lighter-green)" %}
 </div>
 
