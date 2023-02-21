@@ -204,6 +204,7 @@
         .then(res => res.json())
         .then(data => {
           $(spanElement).text(data.title);
+          console.log(data.title);
         });
     });
 </script>
