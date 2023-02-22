@@ -5,13 +5,10 @@
     <div class="product-info">
       <h1>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h1>
 
-<<<<<<< HEAD
       {% render 'product-all-in-one-cta-section-reviews', isQuotes: isReviewsQuotes %}
-=======
       {% if isCuralinContent %}
         {% render 'product-all-in-one-cta-section-reviews', isReviewsQuotes: isReviewsQuotes  %}
       {% endif %}
->>>>>>> 061384ef8f3f2bd430167a86db144c11be94eb17
     </div>
 
     {% if badgesPosition == "cta" %}
