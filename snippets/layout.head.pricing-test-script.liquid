@@ -27,6 +27,8 @@
         isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
       }
 
+      console.log("isTest: ", isTest)
+
       if (isTest) {
         // redirect to pricing page
         if (redirectPages.includes(window.location.pathname)) {
