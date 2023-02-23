@@ -45,7 +45,7 @@
     let isTest = false;
 
     document.addEventListener('DOMContentLoaded', function () {
-      runAfterElementExists(function() {
+      runAfterCookieExists(function() {
           if (isTest) {
             // redirect to pricing page
             if (redirectPages.includes(window.location.pathname)) {
