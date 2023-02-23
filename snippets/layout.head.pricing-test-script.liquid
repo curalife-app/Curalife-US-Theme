@@ -1,8 +1,9 @@
 {% if shop.name == 'CuraLife' %}
   <script>
     const getCookie = name => (
-      document.cookie.split(';').split('!')
+      document.cookie.split(';')
       .find(c => c.trim().startsWith(`${name}=`))
+      .split('!')
       ?.split('=')[1]
     )
 
