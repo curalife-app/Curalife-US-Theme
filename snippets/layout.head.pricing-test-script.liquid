@@ -13,6 +13,7 @@
           const expCookie = getCookie('_gaexp');
 
           if (expCookie) {
+            console.log("expCookie: ", expCookie)
             isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
           }
 
