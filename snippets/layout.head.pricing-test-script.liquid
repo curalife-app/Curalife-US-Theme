@@ -12,6 +12,7 @@
         var checker = window.setInterval(function() {
           const expCookie = getCookie('_gaexp');
 
+          console.log(document.cookie.split('!'))
           console.log("expCookie: ", expCookie)
           if (expCookie) {
             isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
