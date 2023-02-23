@@ -12,14 +12,13 @@
         var checker = window.setInterval(function() {
           const expCookie = getCookie('_gaexp');
 
-          console.log(document.cookie.split('!'))
           console.log("expCookie: ", expCookie)
           if (expCookie) {
             expCookie.split('!').forEach(cookie => {
               if (cookie.startsWith('GAX1.2.aMz')) {
                 isTest = cookie.endsWith('1') ? true : false;
               }
-            }
+            });
           }
 
           console.log("isTest: ", isTest)
