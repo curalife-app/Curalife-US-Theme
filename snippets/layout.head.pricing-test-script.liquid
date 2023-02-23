@@ -10,21 +10,21 @@
 
     function runAfterCookieExists(callback){
         var checker = window.setInterval(function() {
-        const expCookie = getCookie('_gaexp');
+          const expCookie = getCookie('_gaexp');
 
-        if (expCookie) {
-          isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
-        }
-
-        console.log("isTest: ", isTest)
-
-        if (counter <= 5)
-        {
-          if (isTest) {
-            clearInterval(checker);
-            callback();
+          if (expCookie) {
+            isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
           }
-        }
+
+          console.log("isTest: ", isTest)
+
+          if (counter <= 5)
+          {
+            if (isTest) {
+              clearInterval(checker);
+              callback();
+            }
+          }
         }, 200);
     }
 
