@@ -8,7 +8,7 @@
 
     window.intervalCounter = 0;
 
-    function runAfterCookieExists(callback){
+    function runAfterCookie(callback){
         var checker = window.setInterval(function() {
           const expCookie = getCookie('_gaexp');
 
@@ -45,7 +45,7 @@
     let isTest = false;
 
     document.addEventListener('DOMContentLoaded', function () {
-      runAfterCookieExists(function() {
+      runAfterCookie(function() {
           if (isTest) {
             // redirect to pricing page
             if (redirectPages.includes(window.location.pathname)) {
