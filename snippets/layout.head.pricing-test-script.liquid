@@ -3,7 +3,7 @@
     const getCookie = name => (
       document.cookie.split(';')
       .find(c => c.trim().startsWith(`${name}=`))
-      .split('!')
+      ?.split('!')
       ?.split('=')[1]
     )
 
