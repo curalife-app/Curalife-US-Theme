@@ -1,12 +1,27 @@
 {% if shop.name == 'CuraLife' %}
   <script>
+    const redirectPages = [
+      '/collections/all-2',
+      '/products/curalin-pack',
+      '/products/curalin-pack-t',
+      '/products/curalin',
+      '/products/curalin-monthly-deals',
+      '/products/curalin-3-pack',
+      '/products/curalin-6-pack',
+      '/products/curalin-2-pack',
+      '/products/curalin-freebies',
+      '/pages/glucose-support-lp01n-v2',
+      '/products/30-day-blood-sugar-challenge-pp'
+    ];
+
+    let isTest = false;
+    window.intervalCounter = 0;
+
     const getCookie = name => (
       document.cookie.split(';')
       .find(c => c.trim().startsWith(`${name}=`))
       ?.split('=')[1]
     )
-
-    window.intervalCounter = 0;
 
     function runAfterCookie(callback){
         var checker = window.setInterval(function() {
@@ -32,22 +47,6 @@
           }
         }, 200);
     }
-
-    const redirectPages = [
-      '/collections/all-2',
-      '/products/curalin-pack',
-      '/products/curalin-pack-t',
-      '/products/curalin',
-      '/products/curalin-monthly-deals',
-      '/products/curalin-3-pack',
-      '/products/curalin-6-pack',
-      '/products/curalin-2-pack',
-      '/products/curalin-freebies',
-      '/pages/glucose-support-lp01n-v2',
-      '/products/30-day-blood-sugar-challenge-pp'
-    ];
-
-    let isTest = false;
 
     document.addEventListener('DOMContentLoaded', function () {
       runAfterCookie(function() {
