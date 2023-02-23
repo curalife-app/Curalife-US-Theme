@@ -18,13 +18,14 @@
 
         console.log("isTest: ", isTest)
 
-        if (isTest) {
-          if (counter >= 5)
-          {
+        if (counter <= 5)
+        {
+          if (isTest) {
             clearInterval(checker);
             callback();
           }
-        }}, 200);
+        }
+        }, 200);
     }
 
     const redirectPages = [
