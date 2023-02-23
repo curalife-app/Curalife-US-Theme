@@ -6,6 +6,25 @@
       ?.split('=')[1]
     )
 
+    window.intervalCounter = 0;
+
+    function runAfterCookieExists(cookie_part,callback){
+        var checker = window.setInterval(function() {
+        const expCookie = getCookie('_gaexp');
+
+        if (expCookie) {
+          isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
+        }
+
+        if (isTest) {
+          if (counter >= 5)
+          {
+            clearInterval(checker);
+            callback();
+          }
+        }}, 200);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       const redirectPages = [
         '/collections/all-2',
