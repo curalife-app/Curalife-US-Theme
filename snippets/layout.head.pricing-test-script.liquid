@@ -3,7 +3,6 @@
     const getCookie = name => (
       document.cookie.split(';')
       .find(c => c.trim().startsWith(`${name}=`))
-      ?.split('!')
       ?.split('=')[1]
     )
 
@@ -16,7 +15,11 @@
           console.log(document.cookie.split('!'))
           console.log("expCookie: ", expCookie)
           if (expCookie) {
-            isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
+            expCookie.split('!').forEach(cookie => {
+              if (cookie.startsWith('GAX1.2.aMz')) {
+                isTest = cookie.endsWith('1') ? true : false;
+              }
+            }
           }
 
           console.log("isTest: ", isTest)
