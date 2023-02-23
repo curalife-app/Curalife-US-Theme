@@ -25,48 +25,51 @@
         }}, 200);
     }
 
+    const redirectPages = [
+      '/collections/all-2',
+      '/products/curalin-pack',
+      '/products/curalin-pack-t',
+      '/products/curalin',
+      '/products/curalin-monthly-deals',
+      '/products/curalin-3-pack',
+      '/products/curalin-6-pack',
+      '/products/curalin-2-pack',
+      '/products/curalin-freebies',
+      '/pages/glucose-support-lp01n-v2',
+      '/products/30-day-blood-sugar-challenge-pp'
+    ];
+
     document.addEventListener('DOMContentLoaded', function () {
-      const redirectPages = [
-        '/collections/all-2',
-        '/products/curalin-pack',
-        '/products/curalin-pack-t',
-        '/products/curalin',
-        '/products/curalin-monthly-deals',
-        '/products/curalin-3-pack',
-        '/products/curalin-6-pack',
-        '/products/curalin-2-pack',
-        '/products/curalin-freebies',
-        '/pages/glucose-support-lp01n-v2',
-        '/products/30-day-blood-sugar-challenge-pp'
-      ];
-      let isTest = false;
-      const expCookie = getCookie('_gaexp');
+      runAfterElementExists(".yotpo-email-view", function() {
+          let isTest = false;
+          const expCookie = getCookie('_gaexp');
 
-      if (expCookie) {
-        isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
-      }
+          if (expCookie) {
+            isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
+          }
 
-      console.log("isTest: ", isTest)
+          console.log("isTest: ", isTest)
 
-      if (isTest) {
-        // redirect to pricing page
-        if (redirectPages.includes(window.location.pathname)) {
-          window.location.replace(`${window.location.pathname}-p`);
-        } else {
-          redirectPages.forEach(page => {
-            const links = document.querySelectorAll(`a[href="${page}"]`);
-            links.forEach(link => {
-              link.setAttribute("href", `${link.getAttribute("href")}-p`);
-            });
-          });
-        }
+          if (isTest) {
+            // redirect to pricing page
+            if (redirectPages.includes(window.location.pathname)) {
+              window.location.replace(`${window.location.pathname}-p`);
+            } else {
+              redirectPages.forEach(page => {
+                const links = document.querySelectorAll(`a[href="${page}"]`);
+                links.forEach(link => {
+                  link.setAttribute("href", `${link.getAttribute("href")}-p`);
+                });
+              });
+            }
 
-        const pricingTestOriginalElements = document.querySelectorAll('.pricing-test-original');
-        pricingTestOriginalElements.forEach(el => el.remove());
-      } else {
-        const pricingTestElements = document.querySelectorAll('.pricing-test');
-        pricingTestElements.forEach(el => el.remove());
-      }
+            const pricingTestOriginalElements = document.querySelectorAll('.pricing-test-original');
+            pricingTestOriginalElements.forEach(el => el.remove());
+          } else {
+            const pricingTestElements = document.querySelectorAll('.pricing-test');
+            pricingTestElements.forEach(el => el.remove());
+          }
+      });
     }, false);
   </script>
 {% endif %}
