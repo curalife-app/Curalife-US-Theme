@@ -8,13 +8,15 @@
 
     window.intervalCounter = 0;
 
-    function runAfterCookieExists(cookie_part,callback){
+    function runAfterCookieExists(callback){
         var checker = window.setInterval(function() {
         const expCookie = getCookie('_gaexp');
 
         if (expCookie) {
           isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
         }
+
+        console.log("isTest: ", isTest)
 
         if (isTest) {
           if (counter >= 5)
@@ -39,17 +41,10 @@
       '/products/30-day-blood-sugar-challenge-pp'
     ];
 
+    let isTest = false;
+
     document.addEventListener('DOMContentLoaded', function () {
-      runAfterElementExists(".yotpo-email-view", function() {
-          let isTest = false;
-          const expCookie = getCookie('_gaexp');
-
-          if (expCookie) {
-            isTest = expCookie.startsWith('GAX1.2.aMz') && expCookie.endsWith('1') ? true : false;
-          }
-
-          console.log("isTest: ", isTest)
-
+      runAfterElementExists(function() {
           if (isTest) {
             // redirect to pricing page
             if (redirectPages.includes(window.location.pathname)) {
