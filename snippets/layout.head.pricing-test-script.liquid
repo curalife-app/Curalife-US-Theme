@@ -28,7 +28,20 @@
       pricingTestElements.forEach(el => el.remove());
     }
 
-    function runAfterCookie(callback){
+    function redirectToPricingTestPage() {
+      if (redirectPages.includes(window.location.pathname)) {
+        window.location.replace(`${window.location.pathname}-p`);
+      } else {
+        redirectPages.forEach(page => {
+          const links = document.querySelectorAll(`a[href="${page}"]`);
+          links.forEach(link => {
+            link.setAttribute("href", `${link.getAttribute("href")}-p`);
+          });
+        });
+      }
+    }
+
+    function PricingTest() {
         var checker = window.setInterval(function() {
           if (window.intervalCounter <= 10) {
             let expCookie = getCookie('_gaexp');
@@ -42,7 +55,10 @@
 
             if (isTest) {
               clearInterval(checker);
-              callback();
+              redirectToPricingTestPage();
+
+              const pricingTestOriginalElements = document.querySelectorAll('.pricing-test-original');
+              pricingTestOriginalElements.forEach(el => el.remove());
             }
           }
           else {
@@ -54,27 +70,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      runAfterCookie(function() {
-        console.log("isTest: ", isTest)
-          if (isTest) {
-            // redirect to pricing page
-            if (redirectPages.includes(window.location.pathname)) {
-              window.location.replace(`${window.location.pathname}-p`);
-            } else {
-              redirectPages.forEach(page => {
-                const links = document.querySelectorAll(`a[href="${page}"]`);
-                links.forEach(link => {
-                  link.setAttribute("href", `${link.getAttribute("href")}-p`);
-                });
-              });
-            }
-
-            const pricingTestOriginalElements = document.querySelectorAll('.pricing-test-original');
-            pricingTestOriginalElements.forEach(el => el.remove());
-          } else {
-            hidePricingTestElements();
-          }
-      });
+      PricingTest();
     }, false);
   </script>
 {% endif %}
