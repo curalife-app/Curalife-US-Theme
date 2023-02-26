@@ -23,6 +23,11 @@
       ?.split('=')[1]
     )
 
+    function hidePricingTestElements() {
+      const pricingTestElements = document.querySelectorAll('.pricing-test');
+      pricingTestElements.forEach(el => el.remove());
+    }
+
     function runAfterCookie(callback){
         var checker = window.setInterval(function() {
           const expCookie = getCookie('_gaexp');
@@ -30,8 +35,8 @@
           console.log("expCookie: ", expCookie)
           if (expCookie) {
             expCookie.split('!').forEach(cookie => {
+              console.log("cookie: ", cookie)
               if (cookie.startsWith('GAX1.2.aMz')) {
-                console.log("cookie: ", cookie)
                 isTest = cookie.endsWith('1') ? true : false;
               }
             });
@@ -44,6 +49,9 @@
               clearInterval(checker);
               callback();
             }
+          }
+          else {
+            hidePricingTestElements();
           }
 
           window.intervalCounter++;
@@ -69,8 +77,7 @@
             const pricingTestOriginalElements = document.querySelectorAll('.pricing-test-original');
             pricingTestOriginalElements.forEach(el => el.remove());
           } else {
-            const pricingTestElements = document.querySelectorAll('.pricing-test');
-            pricingTestElements.forEach(el => el.remove());
+            hidePricingTestElements();
           }
       });
     }, false);
