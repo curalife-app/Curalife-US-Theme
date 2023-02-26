@@ -36,7 +36,7 @@
             });
           }
 
-          if (intervalCounter <= 15)
+          if (window.intervalCounter <= 15)
           {
             console.log("isTest0: ", isTest)
             if (isTest) {
@@ -44,6 +44,8 @@
               callback();
             }
           }
+          
+          window.intervalCounter++;
         }, 200);
     }
 
