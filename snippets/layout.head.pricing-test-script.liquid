@@ -35,6 +35,7 @@
           console.log("expCookie: ", expCookie)
           if (expCookie) {
             expCookie.split('!').forEach(cookie => {
+              cookie.replace(" ", "");
               cookie.replace("GAX1.2.", "");
               console.log("cookie: ", cookie)
               if (cookie.startsWith('aMz')) {
@@ -43,7 +44,7 @@
             });
           }
 
-          if (window.intervalCounter <= 15)
+          if (window.intervalCounter <= 10)
           {
             console.log("isTest0: ", isTest)
             if (isTest) {
