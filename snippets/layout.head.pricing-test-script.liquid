@@ -29,6 +29,7 @@
     }
 
     function redirectToPricingTestPage() {
+      console.log("redirectToPricingTestPage"")
       if (redirectPages.includes(window.location.pathname)) {
         window.location.replace(`${window.location.pathname}-p`);
       } else {
