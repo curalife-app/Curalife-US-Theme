@@ -37,13 +37,13 @@
               expCookie = expCookie.replace("GAX1.2.", "");
               console.log("experimentCookie: '" + expCookie + "'")
 
-              isTest = expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1") ? true : false;
-            }
-
-            console.log("isTest0: ", isTest)
-            if (isTest) {
-              clearInterval(checker);
-              callback();
+              if (expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1")) {
+                clearInterval(checker);
+                callback();
+              }
+              else {
+                hidePricingTestElements();
+              }
             }
           }
           else {
