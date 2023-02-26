@@ -32,7 +32,6 @@
         var checker = window.setInterval(function() {
           const expCookie = getCookie('_gaexp');
 
-          console.log("expCookie: ", expCookie)
           if (expCookie) {
             expCookie = expCookie.replace("GAX1.2.", "");
             console.log("experimentCookie: '" + expCookie + "'")
