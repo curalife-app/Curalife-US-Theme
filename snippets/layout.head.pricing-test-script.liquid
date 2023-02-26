@@ -36,7 +36,8 @@
           if (expCookie) {
             expCookie.split('!').forEach(cookie => {
               console.log("cookie: ", cookie)
-              if (cookie.startsWith('GAX1.2.aMz')) {
+              cookie.replace("GAX1.2.", "");
+              if (cookie.startsWith('aMz')) {
                 isTest = cookie.endsWith('1') ? true : false;
               }
             });
