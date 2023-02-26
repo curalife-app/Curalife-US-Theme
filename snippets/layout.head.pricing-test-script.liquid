@@ -42,19 +42,25 @@
       }
     }
 
+    function checkIfPricingTest() {
+      let expCookie = getCookie('_gaexp');
+
+      if (expCookie) {
+        expCookie = expCookie.replace("GAX1.2.", "");
+        console.log("experimentCookie: '" + expCookie + "'")
+
+        return expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1");
+      } else {
+        return false;
+      }
+    }
+
     function PricingTest() {
         var checker = window.setInterval(function() {
           if (window.intervalCounter <= 10) {
-            let expCookie = getCookie('_gaexp');
 
-            if (expCookie) {
-              expCookie = expCookie.replace("GAX1.2.", "");
-              console.log("experimentCookie: '" + expCookie + "'")
 
-              isTest = expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1") ? true : false;
-            }
-
-            if (isTest) {
+            if (checkIfPricingTest()) {
               clearInterval(checker);
               redirectToPricingTestPage();
 
