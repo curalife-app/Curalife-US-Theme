@@ -36,8 +36,6 @@
             });
           }
 
-          console.log("isTest: ", isTest)
-
           if (intervalCounter <= 15)
           {
             if (isTest) {
@@ -50,6 +48,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       runAfterCookie(function() {
+        console.log("isTest: ", isTest)
           if (isTest) {
             // redirect to pricing page
             if (redirectPages.includes(window.location.pathname)) {
