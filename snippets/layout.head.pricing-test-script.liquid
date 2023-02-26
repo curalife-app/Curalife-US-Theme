@@ -61,11 +61,12 @@
         if (window.intervalCounter <= 10) {
           if (checkIfPricingTest()) {
             console.log("pricing test");
-            clearInterval(checker);
             redirectToPricingTestPage();
 
             // hide original elements - false
             hidePricingTestElements(false);
+
+            clearInterval(checker);
           }
         }
         else {
