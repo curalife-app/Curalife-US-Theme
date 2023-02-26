@@ -37,7 +37,7 @@
             expCookie = expCookie.replace("GAX1.2.", "");
 
             expCookie.split('!').forEach(expString => {
-              console.log("cookie: '" + expString + "'")
+              console.log("experiment: '" + expString + "'")
               if (expString = "aMzfYwCAQY6500jCEImDMQ.19453.1") {
                 isTest = expString.endsWith('1') ? true : false;
               }
