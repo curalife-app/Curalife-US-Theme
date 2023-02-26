@@ -23,9 +23,9 @@
       ?.split('=')[1]
     )
 
-    function hidePricingTestElements() {
-      const pricingTestElements = document.querySelectorAll('.pricing-test');
-      pricingTestElements.forEach(el => el.remove());
+    function hidePricingTestElements(isPricingTest) {
+      let elementsSelector = isPricingTest ? '.pricing-test-original' : '.pricing-test';
+      document.querySelectorAll(elementsSelector).forEach(el => el.remove());
     }
 
     function redirectToPricingTestPage() {
@@ -57,8 +57,8 @@
               clearInterval(checker);
               redirectToPricingTestPage();
 
-              const pricingTestOriginalElements = document.querySelectorAll('.pricing-test-original');
-              pricingTestOriginalElements.forEach(el => el.remove());
+              // hide original elements - false
+              hidePricingTestElements(false);
             }
           }
           else {
