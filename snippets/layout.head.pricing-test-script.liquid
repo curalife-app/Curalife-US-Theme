@@ -35,11 +35,9 @@
           console.log("expCookie: ", expCookie)
           if (expCookie) {
             expCookie = expCookie.replace("GAX1.2.", "");
+            console.log("experimentCookie: '" + expCookie + "'")
 
-            expCookie.split('!').forEach(expString => {
-              console.log("experiment: '" + expString + "'")
-              isTest = expString == "aMzfYwCAQY6500jCEImDMQ.19453.1" ? true : false;
-            });
+            isTest = expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1") ? true : false;
           }
 
           if (window.intervalCounter <= 10)
