@@ -30,17 +30,16 @@
 
     function runAfterCookie(callback){
         var checker = window.setInterval(function() {
-          let expCookie = getCookie('_gaexp');
+          if (window.intervalCounter <= 10)b {
+            let expCookie = getCookie('_gaexp');
 
-          if (expCookie) {
-            expCookie = expCookie.replace("GAX1.2.", "");
-            console.log("experimentCookie: '" + expCookie + "'")
+            if (expCookie) {
+              expCookie = expCookie.replace("GAX1.2.", "");
+              console.log("experimentCookie: '" + expCookie + "'")
 
-            isTest = expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1") ? true : false;
-          }
+              isTest = expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1") ? true : false;
+            }
 
-          if (window.intervalCounter <= 10)
-          {
             console.log("isTest0: ", isTest)
             if (isTest) {
               clearInterval(checker);
