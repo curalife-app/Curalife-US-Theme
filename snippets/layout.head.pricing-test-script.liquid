@@ -30,7 +30,7 @@
 
     function runAfterCookie(callback){
         var checker = window.setInterval(function() {
-          const expCookie = getCookie('_gaexp');
+          let expCookie = getCookie('_gaexp');
 
           if (expCookie) {
             expCookie = expCookie.replace("GAX1.2.", "");
