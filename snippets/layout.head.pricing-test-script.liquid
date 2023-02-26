@@ -60,6 +60,7 @@
       var checker = window.setInterval(function() {
         if (window.intervalCounter <= 10) {
           if (checkIfPricingTest()) {
+            console.log("pricing test");
             clearInterval(checker);
             redirectToPricingTestPage();
 
