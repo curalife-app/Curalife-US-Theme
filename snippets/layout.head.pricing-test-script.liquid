@@ -28,6 +28,11 @@
       document.querySelectorAll(elementsSelector).forEach(el => el.remove());
     }
 
+    function showPricingTestElements() {
+      console.log("showPricingTestElements");
+      document.querySelectorAll('.pricing-test').forEach(el => el.style.display = 'block');
+    }
+
     function redirectToPricingTestPage() {
       console.log("redirectToPricingTestPage")
       if (redirectPages.includes(window.location.pathname)) {
