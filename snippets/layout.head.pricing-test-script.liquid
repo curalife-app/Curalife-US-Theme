@@ -34,10 +34,11 @@
     }
 
     function redirectToPricingTestPage() {
-      console.log("redirectToPricingTestPage")
       if (redirectPages.includes(window.location.pathname)) {
+        console.log("redirectToPricingTestPage")
         window.location.replace(`${window.location.pathname}-p`);
       } else {
+        console.log("no need to redirect")
         redirectPages.forEach(page => {
           const links = document.querySelectorAll(`a[href="${page}"]`);
           links.forEach(link => {
