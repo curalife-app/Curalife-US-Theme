@@ -24,7 +24,7 @@
 
     function hidePricingTestElements(isPricingTest) {
       let elementsSelector = isPricingTest ? '.pricing-test-original' : '.pricing-test';
-      console.log("isPricingTest: " + isPricingTest")
+      console.log("isPricingTest: " + isPricingTest)
       console.log("hidePricingTestElements: " + elementsSelector);
       document.querySelectorAll(elementsSelector).forEach(el => el.remove());
     }
