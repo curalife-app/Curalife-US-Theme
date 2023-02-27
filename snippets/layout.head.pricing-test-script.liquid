@@ -32,10 +32,8 @@
         var checker = window.setInterval(function() {
           const expCookie = getCookie('_gaexp');
 
-          console.log("expCookie: ", expCookie)
           if (expCookie) {
             expCookie.split('!').forEach(cookie => {
-              cookie = cookie.replace("GAX1.2.", "");
               console.log("cookie: '" + cookie + "'")
               if (cookie.startsWith('aMz')) {
                 isTest = cookie.endsWith('1') ? true : false;
