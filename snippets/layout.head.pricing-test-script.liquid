@@ -23,8 +23,8 @@
     )
 
     function hidePricingTestElements(isPricingTest) {
-      console.log("hidePricingTestElements");
       let elementsSelector = isPricingTest ? '.pricing-test-original' : '.pricing-test';
+      console.log("hidePricingTestElements: " + elementsSelector);
       document.querySelectorAll(elementsSelector).forEach(el => el.remove());
     }
 
@@ -67,10 +67,9 @@
       var checker = window.setInterval(function() {
         if (window.intervalCounter <= 10) {
           if (checkIfPricingTest()) {
-            console.log("pricing test");
+            console.log("Pricing Test Active");
             redirectToPricingTestPage();
 
-            // hide original elements - false
             hidePricingTestElements();
             showPricingTestElements();
 
