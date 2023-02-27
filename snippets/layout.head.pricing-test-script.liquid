@@ -27,50 +27,6 @@
       document.querySelectorAll(elementsSelector).forEach(el => el.remove());
     }
 
-    function runAfterCookie(callback){
-        var checker = window.setInterval(function() {
-          const expCookie = getCookie('_gaexp');
-
-          if (expCookie) {
-            expCookie.split('!').forEach(cookie => {
-              console.log("cookie: '" + cookie + "'")
-              if (cookie.startsWith('aMz')) {
-                isTest = cookie.endsWith('1') ? true : false;
-              }
-            });
-          }
-
-          if (window.intervalCounter <= 10)
-          {
-            console.log("isTest0: ", isTest)
-            if (isTest) {
-              clearInterval(checker);
-              callback();
-            }
-          }
-          else {
-            hidePricingTestElements();
-          }
-
-          window.intervalCounter++;
-        }, 200);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      runAfterCookie(function() {
-        console.log("isTest: ", isTest)
-          if (isTest) {
-            // redirect to pricing page
-            if (redirectPages.includes(window.location.pathname)) {
-              window.location.replace(`${window.location.pathname}-p`);
-            } else {
-              redirectPages.forEach(page => {
-                const links = document.querySelectorAll(`a[href="${page}"]`);
-                links.forEach(link => {
-                  link.setAttribute("href", `${link.getAttribute("href")}-p`);
-                });
-              });
-            }
     function redirectToPricingTestPage() {
       console.log("redirectToPricingTestPage")
       if (redirectPages.includes(window.location.pathname)) {
