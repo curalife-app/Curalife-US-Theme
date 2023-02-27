@@ -14,7 +14,6 @@
       '/products/30-day-blood-sugar-challenge-pp'
     ];
 
-    let isTest = false;
     window.intervalCounter = 0;
 
     const getCookie = name => (
@@ -23,9 +22,9 @@
       ?.split('=')[1]
     )
 
-    function hidePricingTestElements() {
-      const pricingTestElements = document.querySelectorAll('.pricing-test');
-      pricingTestElements.forEach(el => el.remove());
+    function hidePricingTestElements(isPricingTest) {
+      let elementsSelector = isPricingTest ? '.pricing-test-original' : '.pricing-test';
+      document.querySelectorAll(elementsSelector).forEach(el => el.remove());
     }
 
     function runAfterCookie(callback){
@@ -72,13 +71,54 @@
                 });
               });
             }
+    function redirectToPricingTestPage() {
+      console.log("redirectToPricingTestPage")
+      if (redirectPages.includes(window.location.pathname)) {
+        window.location.replace(`${window.location.pathname}-p`);
+      } else {
+        redirectPages.forEach(page => {
+          const links = document.querySelectorAll(`a[href="${page}"]`);
+          links.forEach(link => {
+            link.setAttribute("href", `${link.getAttribute("href")}-p`);
+          });
+        });
+      }
+    }
 
-            const pricingTestOriginalElements = document.querySelectorAll('.pricing-test-original');
-            pricingTestOriginalElements.forEach(el => el.remove());
-          } else {
-            hidePricingTestElements();
+    function checkIfPricingTest() {
+      let expCookie = getCookie('_gaexp');
+
+      if (expCookie) {
+        expCookie = expCookie.replace("GAX1.2.", "");
+        console.log("experimentCookie: '" + expCookie + "'")
+
+        return expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1");
+      } else {
+        return false;
+      }
+    }
+
+    function PricingTest() {
+      let intervalCounter = 0;
+
+      var checker = window.setInterval(function() {
+        if (window.intervalCounter <= 10) {
+          if (checkIfPricingTest()) {
+            console.log("pricing test");
+            redirectToPricingTestPage();
+
+            // hide original elements - false
+            hidePricingTestElements(false);
+
+            clearInterval(checker);
           }
-      });
-    }, false);
+        }
+        else {
+          hidePricingTestElements();
+        }
+      }, 200);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {PricingTest()}, false);
   </script>
 {% endif %}
