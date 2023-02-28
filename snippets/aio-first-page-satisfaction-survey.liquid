@@ -3,6 +3,9 @@
 {% elsif shop.name == "CuraLife" %}
   {% assign linkAdd = '/products/curalin-pack' %}
 {% endif %}
+{% if isFlash %}
+{% assign linkAdd = '/products/curalin-pack-flash' %}
+{% endif %}
 <div class="satisfaction-survey">
   <div class="satisfaction-survey-bg">
     <div class="container">
