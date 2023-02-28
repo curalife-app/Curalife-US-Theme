@@ -4,7 +4,7 @@
   {% assign linkAdd = '/products/curalin-pack' %}
 {% endif %}
 {% if isFlash %}
-{% assign linkAdd = '/products/curalin-pack-flash' %}
+ {% assign linkAdd = '/products/curalin-pack-flash' %}
 {% endif %}
 <div class="satisfaction-survey">
   <div class="satisfaction-survey-bg">
@@ -66,14 +66,10 @@
   </div>
   <div class="container">
     <div class="data-wrap">
-      <div class="survey-button">
-        {% if isLP %}
+      <div class="survey-button"> 
          <a href="{{ linkAdd }}" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
          for glucose support</a>
-         {% else %}
-         <a href="{{ linkAdd }}" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
-         for glucose support</a>
-        {% endif %}
+     
       </div> 
     </div>
   </div>
