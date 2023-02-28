@@ -23,59 +23,23 @@
     )
 
     function hidePricingTestElements(isPricingTest) {
-      let elementsSelector = isPricingTest ? '.pricing-test-original' : '.pricing-test';
+      let elementsSelector = isPricingTest ? '.pricing-test' : '.pricing-test-original';
+      console.log("isPricingTest: " + isPricingTest)
+      console.log("hidePricingTestElements: " + elementsSelector);
       document.querySelectorAll(elementsSelector).forEach(el => el.remove());
     }
 
-    function runAfterCookie(callback){
-        var checker = window.setInterval(function() {
-          const expCookie = getCookie('_gaexp');
-
-          if (expCookie) {
-            expCookie.split('!').forEach(cookie => {
-              console.log("cookie: '" + cookie + "'")
-              if (cookie.startsWith('aMz')) {
-                isTest = cookie.endsWith('1') ? true : false;
-              }
-            });
-          }
-
-          if (window.intervalCounter <= 10)
-          {
-            console.log("isTest0: ", isTest)
-            if (isTest) {
-              clearInterval(checker);
-              callback();
-            }
-          }
-          else {
-            hidePricingTestElements();
-          }
-
-          window.intervalCounter++;
-        }, 200);
+    function showPricingTestElements() {
+      console.log("showPricingTestElements");
+      document.querySelectorAll('.pricing-test').forEach(el => el.style.display = 'block');
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      runAfterCookie(function() {
-        console.log("isTest: ", isTest)
-          if (isTest) {
-            // redirect to pricing page
-            if (redirectPages.includes(window.location.pathname)) {
-              window.location.replace(`${window.location.pathname}-p`);
-            } else {
-              redirectPages.forEach(page => {
-                const links = document.querySelectorAll(`a[href="${page}"]`);
-                links.forEach(link => {
-                  link.setAttribute("href", `${link.getAttribute("href")}-p`);
-                });
-              });
-            }
     function redirectToPricingTestPage() {
-      console.log("redirectToPricingTestPage")
       if (redirectPages.includes(window.location.pathname)) {
+        console.log("redirectToPricingTestPage")
         window.location.replace(`${window.location.pathname}-p`);
       } else {
+        console.log("no need to redirect")
         redirectPages.forEach(page => {
           const links = document.querySelectorAll(`a[href="${page}"]`);
           links.forEach(link => {
@@ -90,7 +54,7 @@
 
       if (expCookie) {
         expCookie = expCookie.replace("GAX1.2.", "");
-        console.log("experimentCookie: '" + expCookie + "'")
+        console.log("experimentCookie: '" + expCookie + "' " + expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1"))
 
         return expCookie.includes("aMzfYwCAQY6500jCEImDMQ.19453.1");
       } else {
@@ -99,22 +63,28 @@
     }
 
     function PricingTest() {
-      let intervalCounter = 0;
+      window.intervalCounter = 0;
 
       var checker = window.setInterval(function() {
         if (window.intervalCounter <= 10) {
           if (checkIfPricingTest()) {
-            console.log("pricing test");
+            console.log("Pricing Test Active");
             redirectToPricingTestPage();
 
-            // hide original elements - false
             hidePricingTestElements(false);
+            showPricingTestElements();
 
             clearInterval(checker);
           }
+          else {
+            console.log("not pricing test cookie - looks again in 200ms");
+            window.intervalCounter++;
+          }
         }
         else {
-          hidePricingTestElements();
+          console.log("not pricing test cookie");
+          hidePricingTestElements(true);
+          clearInterval(checker);
         }
       }, 200);
     }
