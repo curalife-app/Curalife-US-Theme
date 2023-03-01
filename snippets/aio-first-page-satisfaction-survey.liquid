@@ -3,9 +3,7 @@
 {% elsif shop.name == "CuraLife" %}
   {% assign linkAdd = '/products/curalin-pack' %}
 {% endif %}
-{% if isFlash %}
-  {% assign linkAdd = '/products/curalin-pack-flash-sale' %}
-{% endif %}
+
 
 <div class="satisfaction-survey">
   <div class="satisfaction-survey-bg">
@@ -69,7 +67,7 @@
     <div class="data-wrap">
       <div class="survey-button"> 
         {% if isFlash %}
-         {% assign linkAdd = '/products/curalin-pack-flash' %}
+         {% assign linkAdd = '/products/curalin-pack-flash-sale' %}
         {% endif %}
          <a href="{{ linkAdd }}" class="btn-cta"><b>Yes,</b> I want to try CuraLin <br>
          for glucose support</a>
