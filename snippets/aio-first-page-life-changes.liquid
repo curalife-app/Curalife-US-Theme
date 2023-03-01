@@ -119,7 +119,7 @@ a:hover {
   text-decoration: none
 }
     .btn-cta {
-      background: var(--dark-green);
+      background: {% if isFlash %}#FFB22D {% else %}var(--dark-green){% endif %};
       box-shadow: .625rem .625rem .825rem #0000004d;
       border-radius: 1.25rem;
       padding: .875rem;
