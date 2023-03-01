@@ -82,12 +82,12 @@
 
   @media screen and (max-width: 768px) {
     .up-to {
-      margin-top: {% if isFlash %} 3vw {% else %} 10px {% endif %};
-      width: {% if isFlash %} 8vw {% else %}10px{% endif %};
+      margin-top: 10px;
+      width: 10px;
       height: 11px;
       font-weight: 400;
-      font-size: {% if isFlash %}4vw {% else %}5px{% endif %};
-      line-height: {% if isFlash %}4vw {% else %}5px{% endif %};
+      font-size: 5px;
+      line-height: 5px;
     }
 
     .off {
@@ -353,6 +353,15 @@
       font-size: 4vw;
       padding: 3vw;
       height: 10vw;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .up-to {
+      margin-top: {% if isFlash %} 3vw{% endif %};
+      width: {% if isFlash %} 8vw{% endif %};
+      font-size: {% if isFlash %}4vw{% endif %};
+      line-height: {% if isFlash %}4vw{% endif %};
     }
   }
 </style>
