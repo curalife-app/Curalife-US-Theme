@@ -81,13 +81,14 @@
   }
 
   @media screen and (max-width: 768px) {
+    {% if isFlash %}
     .up-to {
-      margin-top: 10px;
-      width: 10px;
+      margin-top: {% if isFlash %} 3vw {% else %} 10px {% endif %};
+      width: {% if isFlash %} 4vw {% else %}10px{% endif %};
       height: 11px;
-      font-weight: 400;
-      font-size: 5px;
-      line-height: 5px;
+      font-weight: {% if isFlash %}700{% else %} 400{% endif %};
+      font-size: {% if isFlash %}2vw {% else %}5px{% endif %};
+      line-height: {% if isFlash %}2vw {% else %}5px{% endif %};
     }
 
     .off {
