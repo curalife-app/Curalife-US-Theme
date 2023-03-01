@@ -88,13 +88,13 @@
 <style>
       .btn-cta {
           border: none;
-          background: {% if regColor %}#FDD246 {% else %} var(--dark-green) {% endif %};
+          background: {% if regColor %}#FDD246{% elsif isFlash %}#FFB22D {% else %} var(--dark-green) {% endif %};
           color: {% if regColor %}black {% else %}white {% endif %} ;
           font-weight: 400;
       }
 
       .btn-cta:hover {
-          background: {% if regColor %}#e6bb2c {% else %} #314227 {% endif %};
+          background: {% if regColor %}#e6bb2c{% elsif isFlash %}#FFB22D {% else %} #314227 {% endif %};
       }
 
       @media screen and (max-width: 768px) {
