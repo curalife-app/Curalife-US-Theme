@@ -65,12 +65,12 @@
                 <div class="feature-text">{{ prod.subtitle }}</div>
                 {% endif %}                      
                 {% assign price_check = prod.compare_at_price %}
-                {% if price_check == 0 %}
-                 <script>console.log("there are the priceless items here")</script>
-                  <div class="feature-price priceless">Priceless</div>
+                {% if price_check != 0 %}
+                  <script>console.log("no priceless items here")</script>
+                  <div class="feature-price">a {{ price_check | money_without_trailing_zeros }} Value</div>   
                 {% else %}
-                 <script>console.log("no priceless items here")</script>
-                  <div class="feature-price">a {{ price_check | money_without_trailing_zeros }} Value</div>
+                  <script>console.log("there are the priceless items here")</script>
+                  <div class="feature-price priceless">Priceless</div>  
                 {% endif %}
               </div>
              {% unless isLP %}   
