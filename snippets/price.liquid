@@ -8,6 +8,7 @@
     <script>console.log("CAP: {{original_item_cap}}")</script>
   {% else %}
     {% assign original_item_cap = prod.metafields.my_fields.original_item.value.compare_at_price %}
+    <script>console.log("CAP no variant type: {{original_item_cap}}")</script>
   {% endif %}
 {% endif %}
 
