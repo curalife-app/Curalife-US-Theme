@@ -3,7 +3,11 @@
 {% elsif localization.country.iso_code == 'AU' %}
   {% assign original_item_cap = prod.metafields.my_fields.original_item.value.metafields.my_fields.au_cap | times: 100 %}
 {% else %}
-  {% assign original_item_cap = prod.metafields.my_fields.original_item.value.compare_at_price %}
+  {% if productType == "variant" %}
+    {% assign original_item_cap = prod.metafields.custom.original_item.value.compare_at_price %}
+  {% else %}
+    {% assign original_item_cap = prod.metafields.my_fields.original_item.value.compare_at_price %}
+  {% endif %}
 {% endif %}
 
 {% if productType == "variant" %}
