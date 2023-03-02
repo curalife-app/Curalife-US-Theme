@@ -64,7 +64,7 @@
                 <div class="feature-text"><b>{{ prod.title }}</b></div>
                 <div class="feature-text">{{ prod.subtitle }}</div>
                 {% endif %}                      
-                {% assign price = prod.price %}
+                {% assign price = prod.compare_at_price %}
                 {% if prod.price == 0.00 %}
                   <div class="feature-price priceless">Priceless</div>
                 {% else %}
