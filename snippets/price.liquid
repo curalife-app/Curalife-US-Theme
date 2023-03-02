@@ -1,10 +1,4 @@
-<script>console.log("PRICE")</script>
-{% if localization.country.iso_code == 'CA' %}
-  {% assign original_item_cap = prod.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
-{% elsif localization.country.iso_code == 'AU' %}
-  {% assign original_item_cap = prod.metafields.my_fields.original_item.value.metafields.my_fields.au_cap | times: 100 %}
-{% else %}
-<script>console.log("NU")</script>
+
   {% if productType == "variant" %}
     {% assign original_item_cap = prod.metafields.custom.original_item.value.compare_at_price %}
     <script>console.log("CAP: {{original_item_cap}}")</script>
@@ -12,7 +6,6 @@
     {% assign original_item_cap = prod.metafields.my_fields.original_item.value.compare_at_price %}
     <script>console.log("CAP no variant type: {{original_item_cap}}")</script>
   {% endif %}
-{% endif %}
 
 {% if productType == "variant" %}
   {% assign quantity = prod.metafields.my_fields.pack_bottles_quantity %}
