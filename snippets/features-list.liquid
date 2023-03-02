@@ -65,11 +65,11 @@
                 <div class="feature-text">{{ prod.subtitle }}</div>
                 {% endif %}                      
                 {% assign price_check = prod.compare_at_price %}
-                {% if price_check %}
+                {% unless price_check %}
                   <div class="feature-price priceless">Priceless</div>
-                {% else %}
+                {% endunless %}
                   <div class="feature-price">a {{ price_check | money_without_trailing_zeros }} Value</div>
-                {% endif %}
+      
                 <script>console.log(" price_check: <",  {{ price_check }}, ">" )</script>
               </div>
              {% unless isLP %}   
