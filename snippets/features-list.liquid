@@ -70,7 +70,7 @@
                 {% else %}
                   <div class="feature-price">a {{ price_check | money_without_trailing_zeros }} Value</div>
                 {% endif %}
-                <script>console.log(" price_check ",  {{ price_check }})</script>
+                <script>console.log(" price_check: '",  {{ price_check }}, "'")</script>
               </div>
              {% unless isLP %}   
               {% if prod.title contains "CuraLin" %}
