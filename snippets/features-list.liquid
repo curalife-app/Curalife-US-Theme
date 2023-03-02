@@ -81,7 +81,7 @@
             {% endunless %}
             </div>
             {% if isTotal %}
-                {% assign total = total | plus: price %}
+                {% assign total = total | plus: price_check %}
             {% endif %}
        {% endfor %}
       
