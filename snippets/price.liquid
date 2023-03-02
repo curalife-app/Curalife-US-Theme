@@ -5,7 +5,7 @@
 {% else %}
   {% if productType == "variant" %}
     {% assign original_item_cap = prod.metafields.custom.original_item.value.compare_at_price %}
-    <script>console.log("{{origina_item_cap}}")</script>
+    <script>console.log("{{original_item_cap}}")</script>
   {% else %}
     {% assign original_item_cap = prod.metafields.my_fields.original_item.value.compare_at_price %}
   {% endif %}
