@@ -35,6 +35,18 @@
           {% endfor %}
         </div>
       </div>
+
+      <style>
+        {% if collections[collection_handle].metafields.custom.is_align_center %}
+          #collections-catalog-section[data-product-collections="{{ collection_handle }}"] {
+            text-align: center;
+          }
+
+          #collections-catalog-section[data-product-collections="{{ collection_handle }}"] .description {
+            margin: 30px auto;
+          }
+        {% endif %}
+      </style>
     {% endfor %}
   </div>
 </section>
