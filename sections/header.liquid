@@ -31,11 +31,12 @@
               {% endif %}
             {% endfor %}
           </ul>
-          {% if shop.name == 'CuraLife' %}
-          <a href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
-          {% endif %}
         </div>
       </div>
+
+      {% if shop.name == 'CuraLife' %}
+      <a href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
+      {% endif %}
 
       <div class="main-links">
         <ul>
