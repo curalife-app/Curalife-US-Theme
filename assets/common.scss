@@ -1531,8 +1531,6 @@ header.scrolled {
 				letter-spacing: 1px;
 				text-transform: uppercase;
 				color: $color_2;
-				-webkit-transition: color var(--transition);
-				-o-transition: color var(--transition);
 				transition: color var(--transition);
 				&:hover {
 					color: $color_13;
@@ -1667,24 +1665,19 @@ header.scrolled {
 				padding-right: 0;
 			}
 			a {
-				display: -webkit-box;
-				display: -ms-flexbox;
 				display: flex;
-				-webkit-box-align: center;
-				-ms-flex-align: center;
 				align-items: center;
 				font-weight: 400;
 				font-size: 16px;
 				line-height: 1;
 				color: $color_2;
-				-webkit-transition: color var(--transition);
-				-o-transition: color var(--transition);
 				transition: color var(--transition);
 				position: relative;
 				z-index: 1;
+				flex-direction: row-reverse;
+				gap: 5px;
 				i {
 					display: block;
-					padding-right: 10px;
 				}
 				&:hover {
 					color: $color_13;
@@ -1695,11 +1688,7 @@ header.scrolled {
 					position: relative;
 					&:after {
 						content: "\eee1";
-						display: -webkit-box;
-						display: -ms-flexbox;
 						display: flex;
-						-webkit-box-align: center;
-						-ms-flex-align: center;
 						align-items: center;
 						position: absolute;
 						top: 0;
