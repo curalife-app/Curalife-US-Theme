@@ -42,7 +42,7 @@
         <ul>
           {% if customer %}
             <li><a href="/account">
-            <i class="icon-user"></i><span class="option-title">{% if customer.first_name %}Welcome {{customer.first_name | capitalize}}!{% else %}My Account{% endif %}</span></a></li>
+            <i class="icon-user"></i><span class="option-title">{% if customer.first_name %}Hey {{customer.first_name | capitalize}}!{% else %}My Account{% endif %}</span></a></li>
           {% else %}
             <li><a href="/account/login"><i class="icofont-ui-user"></i><span>Account</span></a></li>
           {% endif %}
