@@ -1542,20 +1542,13 @@ header.scrolled {
 				&:after {
 					font-family: $font-family_5 !important;
 					content: "\ea99";
-					display: -webkit-box;
-					display: -ms-flexbox;
 					display: flex;
-					-webkit-box-align: center;
-					-ms-flex-align: center;
 					align-items: center;
 					position: absolute;
+					font-size: 13px;
 					top: 10px;
 					right: 0;
-					-webkit-transition: -webkit-transform var(--transition);
-					transition: -webkit-transform var(--transition);
-					-o-transition: transform var(--transition);
 					transition: transform var(--transition);
-					transition: transform var(--transition),-webkit-transform var(--transition);
 					pointer-events: none;
 				}
 			}
