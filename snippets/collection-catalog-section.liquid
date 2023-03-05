@@ -18,6 +18,7 @@
 
       <div class="collection-section" data-product-collections="{{ collection_handle }}" >
         <h2>{{ collections[collection_handle].title }}</h2>
+
         {% if isDescription %}
           <p class="description">{{ collections[collection_handle].description }}</p>
         {% endif %}
@@ -34,6 +35,18 @@
           {% endfor %}
         </div>
       </div>
+
+      <style>
+        {% if collections[collection_handle].metafields.custom.is_align_center %}
+          .collection-section[data-product-collections="{{ collection_handle }}"] {
+            text-align: center;
+          }
+
+          .collection-section[data-product-collections="{{ collection_handle }}"] .description {
+            margin: 30px auto;
+          }
+        {% endif %}
+      </style>
     {% endfor %}
   </div>
 </section>
