@@ -1671,14 +1671,10 @@ header.scrolled {
 }
 .main-links {
 	ul {
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
 		li {
-			display: -webkit-box;
-			display: -ms-flexbox;
 			display: flex;
-			padding: 6px 14px;
+			padding: 5px;
 			&:last-child {
 				padding-right: 0;
 			}
