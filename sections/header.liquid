@@ -31,11 +31,14 @@
               {% endif %}
             {% endfor %}
           </ul>
+          {% if shop.name == 'CuraLife' %}
+            <a class="quiz-button-mobile" href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
+          {% endif %}
         </div>
       </div>
 
       {% if shop.name == 'CuraLife' %}
-        <a href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
+        <a class="quiz-button-desktop" href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
       {% endif %}
 
       <div class="main-links">
@@ -158,7 +161,7 @@
 
   .main-menu ul li {
     display: flex;
-    padding: 10px 20px;
+    padding: 10px 15px;
     position: relative;
     cursor: pointer;
   }
