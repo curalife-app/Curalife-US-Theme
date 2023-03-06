@@ -32,13 +32,13 @@
             {% endfor %}
           </ul>
           {% if shop.name == 'CuraLife' %}
-            <a class="quiz-button-mobile" href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
+            <a class="quiz-button mobile" href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
           {% endif %}
         </div>
       </div>
 
       {% if shop.name == 'CuraLife' %}
-        <a class="quiz-button-desktop" href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
+        <a class="quiz button desktop" href="/pages/product-recommendation-quiz"><button class="btn-cta">Find Your Match</button></a>
       {% endif %}
 
       <div class="main-links">
@@ -63,9 +63,12 @@
   </div>
 </header>
 
+<script>
+  woopra.track('Clicked On Quiz Button', {});
+</script>
 
 <style>
-  .quiz-button-mobile {
+  .quiz-button.mobile {
     display: none;
   }
 
@@ -75,10 +78,10 @@
   }
 
   @media screen and (max-width: 768px) {
-    .quiz-button-mobile {
+    .quiz-button.mobile {
       display: block;
     }
-    .quiz-button-desktop {
+    .quiz-button.desktop {
       display: none;
     }
     .menu-scroll {
