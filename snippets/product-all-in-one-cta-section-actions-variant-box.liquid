@@ -1,10 +1,4 @@
-{% if localization.country.iso_code == 'CA' %}
-  {% assign original_item_cap = var.metafields.custom.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
-{% elsif localization.country.iso_code == 'AU' %}
-  {% assign original_item_cap = var.metafields.custom.original_item.value.metafields.my_fields.au_cap | times: 100 %}
-{% else %}
-  {% assign original_item_cap = var.metafields.custom.original_item.value.compare_at_price %}
-{% endif %}
+{% assign original_item_cap = var.metafields.custom.original_item.value.compare_at_price %}
 
 {% if isVariantNotice %}
   {% if var.title contains "CuraEats" and product.title != "CuraEats App" %}
