@@ -681,7 +681,7 @@
           tax: '{{ checkout.tax_price | money_without_currency }}',
           shipping: '{{ checkout.shipping_price | money_without_currency }}',
           affiliation: '{{ shop.name }}',
-          transaction_id: '{{ checkout.order.name }}',
+          transaction_id: '{{ checkout.order.id }}',
           coupon: '{{ coupon.title }}',
           items: items_data
         },
