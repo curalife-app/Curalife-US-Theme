@@ -26,15 +26,17 @@
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = curaeats_value | plus: challenge_value | times: 100 %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
-{% if localization.country.iso_code == 'CA' %}
-  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
-{% elsif localization.country.iso_code == 'AU' %}
-  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.au_cap | times: 100 %}
+{% assign original_item = product.metafields.my_fields.original_item.value %}
+{% if original_item.compare_at_price != blank %}
+  {% assign original_item_price = original_item.compare_at_price %}
 {% else %}
-  {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
+  {% assign original_item_price = original_item.price %}
 {% endif %}
+{% assign original_item_cap_total = original_item.compare_at_price | times: quantity %}
+{% assign original_item_cap_total_with_bundle = bundle_addition | times: 100 | plus: original_item_cap_total %}
 
-{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP" | replace: "AUD", "" | replace: "CAD", "" %}
+
+{% assign save_price = original_item_price | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP" | replace: "AUD", "" | replace: "CAD", "" %}
 
 {% comment %} {% render 'script.round-converted-currency' %} {% endcomment %}
 
@@ -79,7 +81,7 @@
 
           <div class="total-and-shipping">
             <div class="total-prices" style="display:flex;align-items:center">
-              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
+              TOTAL: <p style="font-weight: 100;margin:-3px 5px 0 5px;text-decoration: line-through;">{{ original_item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</p>
               <span class="real rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
             </div>
           </div>
