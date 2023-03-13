@@ -19,6 +19,11 @@
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = bundle_addition_value %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
 {% assign original_item = product.metafields.my_fields.original_item.value %}
+{% if original_item.compare_at_price != blank %}
+  {% assign original_item_price = original_item.compare_at_price %}
+{% else %}
+  {% assign original_item_price = original_item.price %}
+{% endif %}
 {% assign original_item_cap_total = original_item.compare_at_price | times: quantity %}
 {% assign original_item_cap_total_with_bundle = bundle_addition | times: 100 | plus: original_item_cap_total %}
 
@@ -43,7 +48,7 @@
 
       {% if product.title contains "Pack" %}
         <div class="total-prices" style="font-size:14px;font-weight:bold;">
-          TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item.compare_at_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+          TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
           <span class="real rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
         </div>
       {% endif %}
