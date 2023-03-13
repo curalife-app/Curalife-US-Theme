@@ -16,7 +16,7 @@
 {% assign item_price = prod.price | times: 100.0 | divided_by: quantity_by_cents %}
 <div class="price">
   <p>
-    {% if original_item_cap %}
+    {% if original_item_cap != blank %}
     <script>console.log("yesh original cap")</script>
       {% if original_item_cap > prod.price %}
         <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
