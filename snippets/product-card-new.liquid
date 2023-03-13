@@ -18,18 +18,11 @@
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = bundle_addition_value %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
-{% assign original_item_cap_total = original_item_cap | times: quantity %}
+{% assign original_item = product.metafields.my_fields.original_item.value %}
+{% assign original_item_cap_total = original_item.compare_at_price | times: quantity %}
 {% assign original_item_cap_total_with_bundle = bundle_addition | times: 100 | plus: original_item_cap_total %}
 
-{% if localization.country.iso_code == 'CA' %}
-  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.ca_cap | times: 100 %}
-{% elsif localization.country.iso_code == 'AU' %}
-  {% assign original_item_cap = product.metafields.my_fields.original_item.value.metafields.my_fields.au_cap | times: 100 %}
-{% else %}
-  {% assign original_item_cap = product.metafields.my_fields.original_item.value.compare_at_price %}
-{% endif %}
-
-{% assign save_price = original_item_cap | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
+{% assign save_price = original_item.compare_at_price | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" %}
 
 <a class="product-link {% if product.tags contains 'PTEST22' %}pricing-test{% else %}{% if product.tags contains 'curalin' %}{% if product.tags contains 'original' %}pricing-test-original{% endif %}{% endif %}{% endif %}" href="{{ product.url }}" {% if product.tags contains 'PTEST22' %}style="display:none"{% endif %}>
 <div id="{{ product.handle }}" class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollections }}">
@@ -50,7 +43,7 @@
 
       {% if product.title contains "Pack" %}
         <div class="total-prices" style="font-size:14px;font-weight:bold;">
-          TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item_cap | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+          TOTAL: <strike class="striked" style="font-weight: 400;">{{ original_item.compare_at_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
           <span class="real rounded">{{ product.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" }}</span>
         </div>
       {% endif %}
