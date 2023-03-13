@@ -17,10 +17,12 @@
 <div class="price">
   <p>
     {% if original_item_cap %}
+    <script>console.log("yesh original cap")</script>
       {% if original_item_cap > prod.price %}
         <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
     {% else %}
+    <script>console.log("Ein original cap")</script>
       {% if original_item.price > prod.price %}
         <strike class="rounded no-letters">{{ original_item.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
