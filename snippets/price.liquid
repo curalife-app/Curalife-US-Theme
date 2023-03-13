@@ -18,12 +18,12 @@
   <p>
     {% if original_item_cap != blank %}
     <script>console.log("{{ prod.title }} - yesh original cap {{ original_item_cap }}")</script>
-      {% if original_item_cap > prod.price %}
+      {% if original_item_cap > item_price %}
         <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
     {% else %}
     <script>console.log("Ein original cap- {{original_item.price}} > {{prod.price}}?")</script>
-      {% if original_item.price > prod.price %}
+      {% if original_item.price > item_price %}
         <strike class="rounded no-letters">{{ original_item.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
     {% endif %}
