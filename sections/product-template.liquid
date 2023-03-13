@@ -35,10 +35,7 @@
 {% assign original_item_cap_total = original_item.compare_at_price | times: quantity %}
 {% assign original_item_cap_total_with_bundle = bundle_addition | times: 100 | plus: original_item_cap_total %}
 
-
 {% assign save_price = original_item_price | minus: item_price | times: quantity | plus: bundle_addition | money_with_currency | replace: ".00", "" | replace: "GBP" | replace: "AUD", "" | replace: "CAD", "" %}
-
-{% comment %} {% render 'script.round-converted-currency' %} {% endcomment %}
 
 <div class="product-data">
   <div class="container">
@@ -104,6 +101,8 @@
     {% render 'bundle-gifts-section', challenge_value: challenge_value, curaeats_value: curaeats_value %}
   {% endif %}
 </div>
+
+{% render 'script.round-converted-currency' %}
 
 <style>
   .product-thumbnail-wrapper {
