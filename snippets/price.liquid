@@ -17,7 +17,7 @@
 <div class="price">
   <p>
     {% if original_item_cap != blank %}
-    <script>console.log("{{produ.title}} - yesh original cap {{ original_item_cap }}")</script>
+    <script>console.log("{{prod.title}} - yesh original cap {{ original_item_cap }}")</script>
       {% if original_item_cap > prod.price %}
         <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
