@@ -25,7 +25,8 @@
       $(this).show();
     });
 
-    $(".transcy-money").each(function() {
+    $(".rounded .transcy-money").each(function() {
+      console.log("rounded field")
       if ($(this).hasClass("floor")) {
         $(this).text("{{ cart.currency.symbol }}" + Math.floor(Number($(this).text().replace(/[^0-9\.-]+/g,""))));
       }
