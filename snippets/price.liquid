@@ -1,8 +1,6 @@
 {% if productType == "variant" %}
-  {% assign original_item_cap = prod.metafields.custom.original_item.value.compare_at_price %}
   {% assign original_item = prod.metafields.custom.original_item.value %}
 {% else %}
-  {% assign original_item_cap = prod.metafields.my_fields.original_item.value.compare_at_price %}
   {% assign original_item = prod.metafields.my_fields.original_item.value %}
 {% endif %}
 
@@ -16,13 +14,11 @@
 {% assign item_price = prod.price | times: 100.0 | divided_by: quantity_by_cents %}
 <div class="price">
   <p>
-    {% if original_item_cap != blank %}
-    <script>console.log("{{ prod.title }} - yesh original cap {{ original_item_cap }}")</script>
-      {% if original_item_cap > item_price %}
-        <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
+    {% if original_item.compare_at_price != blank %}
+      {% if original_item.compare_at_price > item_price %}
+        <strike class="rounded no-letters">{{ original_item.compare_at_price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
     {% else %}
-    <script>console.log("Ein original cap- {{original_item.price}} > {{item_price}}?")</script>
       {% if original_item.price > item_price %}
         <strike class="rounded no-letters">{{ original_item.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
