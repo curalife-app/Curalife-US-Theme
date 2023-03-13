@@ -13,7 +13,7 @@
 </style>
 <script>
   $( document ).ready(function() {
-    $(".rounded, .rounded .transcy-money").each(function() {
+    $(".rounded,.rounded .transcy-money").each(function() {
       if ($(this).hasClass("floor")) {
         $(this).text("{{ cart.currency.symbol }}" + Math.floor(Number($(this).text().replace(/[^0-9\.-]+/g,""))));
       }
