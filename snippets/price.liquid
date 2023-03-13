@@ -22,7 +22,7 @@
         <strike class="rounded no-letters">{{ original_item_cap | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
     {% else %}
-    <script>console.log("Ein original cap")</script>
+    <script>console.log("Ein original cap- {{original_item.price}} > {{prod.price}}?")</script>
       {% if original_item.price > prod.price %}
         <strike class="rounded no-letters">{{ original_item.price | money_with_currency | replace: ".00", "" | replace: "GBP", "" | replace: "AUD", "" | replace: "CAD", "" }}</strike>
       {% endif %}
