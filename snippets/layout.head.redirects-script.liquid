@@ -7,5 +7,7 @@
 
   {% if shop.name == 'CuraLife Global' %}
     redirectToRelative("/collections", "/collections/all" )
+  {% elsif shop.name == 'CuraLife' %}
+    redirectToRelative("/products/curalin-pack-flash", "/products/curalin-pack-flash-sale" )
   {% endif %}
 </script>
