@@ -5,9 +5,9 @@
     <div class="product-list" id="product-list-section">
       {% for prod in Prods %}
         {% if request.page_type == 'collection' %}
-          {% assign product = prod %}
+          {% assign product_object = prod %}
         {% else %}
-          {% assign product = all_products[prod] %}
+          {% assign product_object = all_products[prod] %}
         {% endif %}
 
         {% if forloop.index == "2" %}
@@ -16,7 +16,7 @@
           {% assign isLast = true %}
         {% endif %}
 
-        {% render 'product-card', product: product, isRecommended: isRecommended, isLastRender: isLast, isSkipCart: isSkipCart, isLinkToProduct: true %}
+        {% render 'product-card', product: product_object, isRecommended: isRecommended, isLastRender: isLast, isSkipCart: isSkipCart, isLinkToProduct: true %}
       {% endfor %}
     </div>
   </div>
