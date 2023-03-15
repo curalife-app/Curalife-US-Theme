@@ -27,6 +27,7 @@
 {% assign original_item_cap_total = original_item.compare_at_price | times: quantity %}
 {% assign original_item_cap_total_with_bundle = bundle_addition | times: 100 | plus: original_item_cap_total %}
 
+<script>console.log("original_item_price: {{ original_item_price }}")</script>
 <div class="product-card {% if isRecommended %}recommended{% endif %}" id="product-card-section" data-product-collections="{{ productCollections }}">
   {% if isLinkToProduct %}<a href="{{ product.url }}">{% endif %}
   <h3>{% if product.metafields.my_fields.alternative_title.value %}{{ product.metafields.my_fields.alternative_title.value }}{% else %}{{ product.title }}{% endif %}</h3>
