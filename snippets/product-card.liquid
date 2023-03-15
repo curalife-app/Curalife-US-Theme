@@ -18,7 +18,7 @@
 {% assign item_price = product.price | times: 100.0 | divided_by: quantity_by_cents %}
 {% if product.tags contains "CuraEats" %}{% assign bundle_addition = bundle_addition_value %}{% else %}{% assign bundle_addition = 0 %}{% endif %}
 
-{% assign original_item = product.metafields.my_fields.original_product.value %}
+{% assign original_item = product.metafields.custom.original_product.value %}
 {% if original_item.compare_at_price != blank %}
   {% assign original_item_price = original_item.compare_at_price %}
 {% else %}
