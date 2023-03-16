@@ -353,7 +353,7 @@
 
   @media screen and (max-width: 991px) {
     .satisfaction-survey {
-      padding-bottom: 2.8125rem;
+      padding-bottom: {% unless isLP %}2.8125rem{% endunless %};
       margin-top: 1.875rem
     }
 
