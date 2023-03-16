@@ -104,6 +104,8 @@
       padding-top:  {% if isLP %}75px{% endif %} ;
     }
 
+  
+
 
 
 
@@ -136,7 +138,7 @@
     .hero-banner .main-img-mb {
       display: block;
       position: absolute;
-      top: {% if isLP %} 310px {% else %} 140px {% endif %};
+      top: {% if isLP %} 310px {% else %} 186px {% endif %};
       width: 120%;
     }
 
@@ -152,6 +154,12 @@
 
   }
 
-
+  @media screen and ( max-width: 390px ) {
+    .hero-banner .main-img-mb {
+      top: 230px;
+    }
   }
+
+
+  
 </style>
