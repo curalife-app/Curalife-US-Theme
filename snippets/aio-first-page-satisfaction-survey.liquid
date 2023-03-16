@@ -81,6 +81,10 @@
 
 
 <style>
+  .button-hide-in-mobile a {
+    display: {% if isLP %} none {% endif %};
+  }
+
   button {
     font-family: "Poppins", sans-serif;
     font-size: 100%;
@@ -163,10 +167,7 @@
 
   @media screen and ( max-width: 768px) {
 
-  .button-hide-in-mobile a {
-    display: {% if isLP %} none {% endif %};
-  }
-
+ 
     .btn-cta {
     max-width: 19.25rem;
     padding: .5625rem .625rem;
