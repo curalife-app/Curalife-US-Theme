@@ -51,6 +51,15 @@
     transition: opacity .5s
   }
 
+  .swiper-pagination-bullet {
+    background-color: #fff;
+    border-color: #4b643d;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #4b643d;
+  }
+
   .ingredients-section .ingredients-sliders h2 {
     color: #58AA9E;
     font-weight: 600;
@@ -209,7 +218,7 @@
             el: '.ingredients-main-slider .swiper-pagination',
             clickable: 'true',
             type: 'bullets',
-            dynamicBullets: true,
+            {% comment %} dynamicBullets: true, {% endcomment %}
           },
     navigation: {
       nextEl: '.ingredients-section .swiper-button-next',
