@@ -671,30 +671,32 @@
       jQuery("header").insertBefore(".content .wrap");
 
       // Track Purchase
-      {% assign coupon = checkout.discount_applications | first %}
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'purchase',
-        ecommerce: {
-          currency: '{{ shop.currency }}',
-          value: '{{ checkout.total_price | money_without_currency }}',
-          tax: '{{ checkout.tax_price | money_without_currency }}',
-          shipping: '{{ checkout.shipping_price | money_without_currency }}',
-          affiliation: '{{ shop.name }}',
-          transaction_id: '{{ checkout.order.id }}',
-          coupon: '{{ coupon.title }}',
-          items: items_data
-        },
-        email: '{{ checkout.email }}',
-        phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
-        name: '{{ checkout.shipping_address.first_name }}',
-        surname: '{{ checkout.shipping_address.last_name }}',
-        city: '{{ checkout.shipping_address.city }}',
-        state: '{{ checkout.shipping_address.province }}',
-        zip: '{{ checkout.shipping_address.zip }}',
-        country: '{{ checkout.shipping_address.country_code }}',
-        user_agent: navigator.userAgent
-      });
+
+        {% assign coupon = checkout.discount_applications | first %}
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'purchase',
+          ecommerce: {
+            currency: '{{ shop.currency }}',
+            value: '{{ checkout.total_price | money_without_currency }}',
+            tax: '{{ checkout.tax_price | money_without_currency }}',
+            shipping: '{{ checkout.shipping_price | money_without_currency }}',
+            affiliation: '{{ shop.name }}',
+            transaction_id: '{{ checkout.order.id }}',
+            coupon: '{{ coupon.title }}',
+            items: items_data
+          },
+          email: '{{ checkout.email }}',
+          phone: '{{ checkout.shipping_address.phone | replace: " ", "" }}',
+          name: '{{ checkout.shipping_address.first_name }}',
+          surname: '{{ checkout.shipping_address.last_name }}',
+          city: '{{ checkout.shipping_address.city }}',
+          state: '{{ checkout.shipping_address.province }}',
+          zip: '{{ checkout.shipping_address.zip }}',
+          country: '{{ checkout.shipping_address.country_code }}',
+          user_agent: navigator.userAgent
+        });
+
 
       woopra.track('Checkout Step - Thank You', {});
     {% endif %}
